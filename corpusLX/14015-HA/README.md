@@ -18,10 +18,10 @@ Q.2 "https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/s
 - compare findings and first results:
 - instances concrete vs. light
 
-|token|Mehl:ICE-GB(written)|esteeschwarz:SBC(spoken)|
-| ------------ | ------- | ------ |
-|make-concrete|68|150|
-|make-light|321|366|
+|token|ICE-GB(written)|ICE-GB(spoken)|esteeschwarz: SBC(spoken)|
+| ------------ | ------- | ------ | ------ |
+|make-concrete|68|96|150|
+|make-light|321|353|366|
 
 ![](sbc-ice_dist.png)
 

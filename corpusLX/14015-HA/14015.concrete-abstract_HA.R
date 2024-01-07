@@ -232,7 +232,8 @@ save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/make.df-
 ######################################
 ### count instances concrete vs. light
 ### Q.1: 
-i.make<-c(concrete=68,light=321) #17% vs. 83% 
+i.make<-c(concrete=68,light=321) #17% vs. 83% written ICE 
+i.make.s<-c(concrete=96,light=353) #spoken ICE
 i.take<-c(con=62,light=85) 
 i.give<-c(con=52,light=167) 
 ###########################
@@ -246,4 +247,7 @@ i.make.m[2]/(i.make.m[1]+i.make.m[2]) # 29 vs 71%
 i.make.m
 barplot(i.make.m,main = "SBC / spoken")
 barplot(i.make,main="ICE-GB / written")
-barplot(cbind(ICE=i.make,SBC=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
+barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
+### wks.
+### try semasiologial normalisation:
+###
