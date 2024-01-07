@@ -1,5 +1,8 @@
 # R corpus linguistics essais
 ## 14525.notes
+## info
+- the folder was separated from: [https://github.com/esteeschwarz/R-essais](https://github.com/esteeschwarz/R-essais)
+
 ### content
 the directory contains essais to a collocate analysis of a corpus of nouns/adjectives assembled. 
 we try to assign a noun to a category of a set of categories. 92 out of a set of 918 nouns (the corpus) were assigned manually to one of 9 categories according to (Petterson-Traba, 2021)[^1] and 3 additional defined.
