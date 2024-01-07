@@ -249,5 +249,17 @@ barplot(i.make.m,main = "SBC / spoken")
 barplot(i.make,main="ICE-GB / written")
 barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
 ### wks.
-### try semasiologial normalisation:
+### semantic alternates (p.14)
 ###
+m1<-grep("(produc(e|ing|ed))[^producer]",trndf$text) #take:415,tak:478 obs.
+m1<-grep("(creat(e|ing|ed))[^creator]",trndf$text) #take:415,tak:478 obs.
+m3<-c("(buil(d|ding|t))[^builder]","build")
+get.alt<-function(altregex,alt){
+m1<-grep(altregex,trndf$text)
+trn.temp<-cbind(trndf[m1,],alt=alt)
+trn.alt<-rbind(trn.alt,trn.temp)
+}
+m3<-c("(generat(e|ing|ed))[^generator]","generate")
+m3<-c("(construct(ing|ed))[^constructor]","construct")
+trn.alt<-get.alt(m3[1],m3[2])
+trn.alt<-trn.alt[6:length(trn.alt$scb),]
