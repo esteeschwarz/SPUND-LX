@@ -16,7 +16,8 @@ Q.1: [https://www.linguistics.ucsb.edu/research/santa-barbara-corpus](https://ww
 Q.2 "https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip"
 
 - compare findings and first results:
-- instances concrete vs. light
+
+1. instances concrete vs. light
 
 |token|ICE-GB(written)|ICE-GB(spoken)|esteeschwarz: SBC(spoken)|
 | ------------ | ------- | ------ | ------ |
@@ -25,3 +26,6 @@ Q.2 "https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/s
 
 ![](sbc-ice_dist.png)
 
+2. /make/ vs. semantic alternates
+
+![](sbc_conc-altern.png)

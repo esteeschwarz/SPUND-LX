@@ -249,7 +249,7 @@ barplot(i.make.m,main = "SBC / spoken")
 barplot(i.make,main="ICE-GB / written")
 barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
 ### wks.
-### semantic alternates (p.14)
+### semantic alternates of concrete /make/ (p.14)
 ###
 m1<-grep("(produc(e|ing|ed))[^producer]",trndf$text) #take:415,tak:478 obs.
 m1<-grep("(creat(e|ing|ed))[^creator]",trndf$text) #take:415,tak:478 obs.
@@ -263,3 +263,11 @@ m3<-c("(generat(e|ing|ed))[^generator]","generate")
 m3<-c("(construct(ing|ed))[^constructor]","construct")
 trn.alt<-get.alt(m3[1],m3[2])
 trn.alt<-trn.alt[6:length(trn.alt$scb),]
+barplot(table(trn.alt$alt)/100)
+colnames(trn.alt)
+make.c<-cbind(trn.make.cpt[trn.make.cpt$light==0,c('scb','id','text','lfd')],alt="make")
+trn.all<-rbind(make.c,trn.alt)
+par(las=3)
+barplot(table(trn.all$alt)/sum(table(trn.all$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+table(trn.all$alt)/sum(table(trn.all$alt))
+table(trn.all$alt)/sum(table(trn.all$alt))
