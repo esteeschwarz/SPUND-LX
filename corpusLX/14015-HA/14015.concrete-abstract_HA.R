@@ -1,6 +1,7 @@
 #20240103(07.42)
 #SPUND.corpusLX.stefanowitsch.HA
 ################################
+#study replication Q.1
 Q.1<-"Mehl, S. orcid.org/0000-0003-3036-8132 (2018) What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses. 
 Corpus Linguistics and Linguistic Theory. ISSN 1613-7027 https://doi.org/10.1515/cllt-2017-0039"
 R.p23<-"If onomasiological frequency measurements do indeed correlate with elicitation tests, 
@@ -59,8 +60,8 @@ trndf$lfd<-1:length(trndf$scb)
 #save(trndf,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
 m1<-grep("tak",trndf$text) #take:415,tak:478 obs.
 trn.take<-cbind(trndf[m1,],"concrete"=0,"light"=1)
-m2<-grep("mak",trndf$text) #take:415,tak:478 obs.
-trn.make<-cbind(trndf[m2,],"concrete"=0,"light"=1) #430
+m2<-grep("made",trndf$text) #take:415,tak:478 obs. #mak
+trn.make.2<-cbind(trndf[m2,],"concrete"=0,"light"=1) #430
 m3<-grep("giv",trndf$text) #take:415,tak:478 obs.
 trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
 ### wks., wonderful. now annotate for concrete/light use
@@ -182,10 +183,17 @@ dmake.fix.4$coll[!m]
 save(dmake.fix.4,file = "~/Documents/GitHub/R-essais/SPUND/corpusLX/14015-HA/make.annotated(SkE-coll).RData") # 238 obs.
 load("~/Documents/GitHub/R-essais/SPUND/corpusLX/14015-HA/make.annotated.RData") # 430 obs.
 #####
+get.ann.df<-function(trn.make.a){
 trn.make.a$coll<-NA
+trn.make.a$concrete<-1
+trn.make.a$light<-1
 trn.make.a$synonyme<-NA
 trn.make.a$n.alt<-NA
 trn.make.a$n.0<-NA
+mode(trn.make.a$coll)<-"character" # !!!!important: if not, then fix() will not save string input
+mode(trn.make.a$synonyme)<-"character"
+return(trn.make.a)
+}
 colnames(trn.make.light)
 trn.make.a<-trn.make.a[,c(1,2,3,6,4,5,7,8,9)]
 trn.make.light<-trn.make.a[trn.make.a$concrete==0&trn.make.a$light==1,] #321 obs
@@ -200,3 +208,42 @@ make.l.2[!is.na(make.l.2$synonyme),]
 mode(make.l.2$coll)<-"character" # !!!!important: if not, then fix() will not save string input
 mode(make.l.2$synonyme)<-"character"
 make.l.4<-fix(make.l.3)
+make.a.made<-get.ann.df(trn.make.2)
+make.a.made.l.2<-fix(make.a.made.l)
+m1<-is.na(make.a.made.l.2$light)
+m<-make.a.made.l$light==1
+m
+make.a.made.l.2<-make.a.made.l[m,]
+m2<-!is.na(make.a.made.l.2$light)
+make.a.made.l.2<-make.a.made.l.2[m2,]
+make.a.made.l.3<-fix(make.a.made.l.2)
+m<-!is.na(make.a.made.l.3$light)
+make.a.made.l.4<-make.a.made.l.3[m,]
+make.a.made.l.4$lfd<-rownames(make.a.made.l.4)
+make.l.4$lfd<-rownames(make.l.4)
+colnames(make.l.4)
+colnames(make.a.made.l.4)
+light.ann.make<-rbind(make.a.made.l.4,make.l.4)
+light.ann.make$concrete<-1
+trn.make.a.2$lfd<-rownames(trn.make.a.2)
+trn.make.cpt<-rbind(trn.make.a.2,make.a.made)
+save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/make.annotated.light.RData") # 366 obs.
+save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/make.df-cpt.RData") # 561 obs.
+######################################
+### count instances concrete vs. light
+### Q.1: 
+i.make<-c(concrete=68,light=321) #17% vs. 83% 
+i.take<-c(con=62,light=85) 
+i.give<-c(con=52,light=167) 
+###########################
+m.ns<-make.l.1$id
+lc<-sum(trn.make.cpt$concrete==1,na.rm = T)
+#sum(mna)
+m.c<-trn.make.cpt$concrete==1
+i.make.m<-c(concrete=lc,light=length(light.ann.make$scb))
+i.make[2]/(i.make[1]+i.make[2])
+i.make.m[2]/(i.make.m[1]+i.make.m[2]) # 29 vs 71%
+i.make.m
+barplot(i.make.m,main = "SBC / spoken")
+barplot(i.make,main="ICE-GB / written")
+barplot(cbind(ICE=i.make,SBC=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
