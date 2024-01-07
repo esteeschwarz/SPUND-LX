@@ -247,6 +247,7 @@ i.make.m[2]/(i.make.m[1]+i.make.m[2]) # 29 vs 71%
 i.make.m
 barplot(i.make.m,main = "SBC / spoken")
 barplot(i.make,main="ICE-GB / written")
+
 barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
 ### wks.
 ### semantic alternates of concrete /make/ (p.14)
@@ -267,7 +268,7 @@ barplot(table(trn.alt$alt)/100)
 colnames(trn.alt)
 make.c<-cbind(trn.make.cpt[trn.make.cpt$light==0,c('scb','id','text','lfd')],alt="make")
 trn.all<-rbind(make.c,trn.alt)
-par(las=3)
+par(las=3,cex=0.5,pin=c("1.5","1.5"))
 barplot(table(trn.all$alt)/sum(table(trn.all$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 table(trn.all$alt)/sum(table(trn.all$alt))
 table(trn.all$alt)/sum(table(trn.all$alt))
