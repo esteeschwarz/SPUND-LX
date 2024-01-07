@@ -253,8 +253,18 @@ barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: 
 ### semantic alternates of concrete /make/ (p.14)
 ###
 m1<-grep("(produc(e|ing|ed))[^producer]",trndf$text) #take:415,tak:478 obs.
+trndf$alt<-NA
+trndf$alt[m1]<-"produce"
 m1<-grep("(creat(e|ing|ed))[^creator]",trndf$text) #take:415,tak:478 obs.
+trndf$alt[m1]<-"create"
 m3<-c("(buil(d|ding|t))[^builder]","build")
+m1<-grep("(buil(d|ding|t))[^builder]",trndf$text) #take:415,tak:478 obs.
+trndf$alt[m1]<-"build"
+m1<-grep("(generat(e|ing|ed))[^generator]",trndf$text) #take:415,tak:478 obs.
+trndf$alt[m1]<-"generate"
+m1<-grep("(construct(ing|ed))[^constructor]",trndf$text) #take:415,tak:478 obs.
+trndf$alt[m1]<-"construct"
+trndf$light<-NA
 get.alt<-function(altregex,alt){
 m1<-grep(altregex,trndf$text)
 trn.temp<-cbind(trndf[m1,],alt=alt)
@@ -266,9 +276,73 @@ trn.alt<-get.alt(m3[1],m3[2])
 trn.alt<-trn.alt[6:length(trn.alt$scb),]
 barplot(table(trn.alt$alt)/100)
 colnames(trn.alt)
-make.c<-cbind(trn.make.cpt[trn.make.cpt$light==0,c('scb','id','text','lfd')],alt="make")
+make.c<-cbind(trn.make.cpt[trn.make.cpt$light==0,c('scb','id','text','lfd','light')],alt="make")
+trn.alt$light<-0
 trn.all<-rbind(make.c,trn.alt)
 par(las=3,cex=0.5,pin=c("1.5","1.5"))
 barplot(table(trn.all$alt)/sum(table(trn.all$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 table(trn.all$alt)/sum(table(trn.all$alt))
 table(trn.all$alt)/sum(table(trn.all$alt))
+library(stats)
+lm1<-lm(light~alt,trn.all)
+par(new=T)
+par(page=T)
+plot.new()
+plot(lm1)
+lm1$coefficients
+summary(lm1)
+sum(is.na(trn.all$light))
+m<-!is.na(trn.all$light)
+trn.all<-trn.all[m,]
+make.all<-cbind(trn.make.cpt[,c('scb','id','text','lfd','light')],alt="make")
+make.all.alt<-rbind(make.all,trn.alt)
+lm1<-lm(light~alt,make.all.alt)
+make.int<-c(NA,NA,NA,NA,0,alt="0-intercept")
+make.all.alt<-rbind(make.int,make.all.alt)
+lm1<-lm(light~alt,make.all.alt)
+summary(lm1)
+par(las=3)
+lms<-summary(lm1)
+barplot(lms$coefficients[,4])
+lms
+lms$coefficients[,3]
+#boxplot(lm1$effects)
+m<-trndf$lfd%in%trn.alt$lfd
+trndf.lm<-trndf
+#trndf.lm$alt<-NA
+trndf.lm$alt[m]<-trn.alt$alt
+m<-trndf.lm$lfd%in%make.a.l.cpt$lfd
+sum(m)
+trndf.lm<-trndf.lm
+trndf.lm$alt[m]<-"make"
+trndf.lm$light<-0
+#trndf.lm$light[m]<-make.a.l.cpt$light[make.a.l.cpt$lfd==trndf.lm$lfd[m]]
+for(k in 1:length(make.a.l.cpt$lfd)){
+  lfd<-make.a.l.cpt$lfd[k]
+  light<-make.a.l.cpt$light[k]
+  m<-trndf.lm$lfd==lfd
+  trndf.lm$light[m]<-light
+}
+make.int<-c(NA,NA,NA,NA,alt="0-intercept",0)
+make.all.alt<-rbind(make.int,trndf.lm)
+m<-is.na(trndf.lm$alt)
+sum(m)
+trndf.lm$alt[m]<-"other"
+lm1<-lm(light~alt,make.all.alt)
+summary(lm1)
+par(las=3)
+lms<-summary(lm1)
+barplot(lms$coefficients[,4])
+lms
+trntable<-table(trndf.lm$alt)
+par(las=3,cex=0.5,pin=c("1.5","1.5"))
+barplot(trntable[c(1,2,3,4,5,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+
+lms$coefficients[,3]
+trndf.lm$light[m]<-make.a.l.cpt$light
+head(trndf.lm[m,])
+
+save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trndf.lm.RData")
+save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData")
+save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/light.ann.make.RData")
+
