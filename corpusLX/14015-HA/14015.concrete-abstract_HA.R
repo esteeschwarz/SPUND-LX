@@ -346,3 +346,5 @@ save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trndf.lm.RDa
 save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData")
 save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/light.ann.make.RData")
 
+### binäre logistische regression, anova, mehrdimensionale, nominale daten
+### open american national corpus
