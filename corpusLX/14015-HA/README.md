@@ -14,7 +14,7 @@ bibliography: CORPUS-LX.bib
 
 
 # term paper draft
-polysemous verbs with light and concrete senses, replication study of [@mehl_what_2021](https://doi.org/10.1515/cllt-2017-0039), further used: [@gilquin_what_2008](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)
+topic #6, polysemous verbs with light and concrete senses, replication study of [@mehl_what_2021](https://doi.org/10.1515/cllt-2017-0039), further used: [@gilquin_what_2008](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)
 
 
 ## init
