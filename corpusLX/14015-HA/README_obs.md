@@ -1,37 +1,31 @@
----
-title: "14022.spundLX.HA"
-author: "esteeschwarz"
-date: "2024-01-08"
-output:
-  html_document:
-    toc: true
-    number_sections: true
-#bibliography: ../klemm.bib
-
----
-
-
-
-# term paper essai on:
+# 14022.spundLX.HA.stefanowitsch
+## term paper essai on:
 1. "Mehl, S. orcid.org/0000-0003-3036-8132 (2018) What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses. Corpus Linguistics and Linguistic Theory. ISSN 1613-7027 [https://doi.org/10.1515/cllt-2017-0039](https://doi.org/10.1515/cllt-2017-0039)"
 
-## init
+#### init
 "If onomasiological frequency measurements do indeed correlate with elicitation tests, 
 potential impact would be immense. Researchers would be able to examine onomasiological frequencies in spoken corpora 
 rather than performing elicitation tests. That possibility would facilitate cognitive research into languages and 
 varieties around the world, without the necessity of in situ psycholinguistic testing, 
 and would also encourage the creation of more spoken corpora." (p.23)
 
-## method
+#### method
 - used following corpus:   
 
 Q.1: [https://www.linguistics.ucsb.edu/research/santa-barbara-corpus](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus)   
 Q.2 "https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip"
 
-|         | ICE.written| ICE.spoken| SBC.spoken|
-|:--------|-----------:|----------:|----------:|
-|concrete |          68|         96|        150|
-|light    |         321|        353|        366|
+- compare findings and first results:
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png)![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-2.png)
+1. instances concrete vs. light
 
+|token|ICE-GB(written)|ICE-GB(spoken)|esteeschwarz: SBC(spoken)|
+| ------------ | ------- | ------ | ------ |
+|make-concrete|68|96|150|
+|make-light|321|353|366|
+
+![](sbc-ice_dist.png)
+
+2. /make/ vs. semantic alternates
+
+![](sbc_conc-altern.png)
