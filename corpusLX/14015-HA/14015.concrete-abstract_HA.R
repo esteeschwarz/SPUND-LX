@@ -266,6 +266,14 @@ load(dtemp)
 # sum(m2,na.rm = T)
 # trn.make.cpt$light[m2]<-NA
 # trn.make.cpt$concrete[m2]<-NA
+m<-grep("Wilcox made his money",trn.make.cpt$text)
+trn.make.cpt$light[m]<-1
+trn.make.cpt$concrete[m]<-0
+m<-grep("money",trn.make.cpt$text)
+trn.make.cpt[m,]
+trn.make.cpt['27225','concrete']<-0
+trn.make.cpt['27225','light']<-1
+#trndf.lm$light[m]
 m3<-trn.make.cpt$concrete==1
 l.conc<-sum(m3,na.rm = T)
 #trn.make.cpt[m3,]

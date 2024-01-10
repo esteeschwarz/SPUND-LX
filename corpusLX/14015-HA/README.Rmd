@@ -34,6 +34,18 @@ Q.1: Santa Barbara corpus of spoken American English, ([@ucsb_santa_2005](https:
 
 the corpus data was downloaded from: [https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip](https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip)
 
+### corpus sample
+```{r}
+load("data/trn.make.cpt.RData")
+load("data/light.ann.make.RData")
+load("data/trndf.lm.cpt.RData")
+
+sm.make<-sample(trndf.lm$lfd[trndf.lm$alt=="make"],5)
+sm.build<-sample(trndf.lm$lfd[trndf.lm$alt=="build"],5)
+sm<-c(sm.make,sm.build,sample(1:length(trndf.lm$scb),10))
+trndf.lm[sm,]
+```
+
 ### script used: 
 
 [14015.concrete-abstract_HA.R](14015.concrete-abstract_HA.R)
@@ -51,9 +63,6 @@ i.make.s<-c(concrete=96,light=353) #spoken ICE
 i.take<-c(con=62,light=85) 
 i.give<-c(con=52,light=167) 
 ###########################
-load("data/trn.make.cpt.RData")
-load("data/light.ann.make.RData")
-load("data/trndf.lm.cpt.RData")
 m3<-trn.make.cpt$concrete==1
 l.conc<-sum(m3,na.rm = T)
 trn.make.cpt$light[m3]<-0
