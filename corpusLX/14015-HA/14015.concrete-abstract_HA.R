@@ -269,14 +269,17 @@ load(dtemp)
 # sum(m2,na.rm = T)
 # trn.make.cpt$light[m2]<-NA
 # trn.make.cpt$concrete[m2]<-NA
-#k<-1
+k<-1
 for(k in 1:length(light.ann.make$lfd)){
   lfd<-light.ann.make$lfd[k]
   txt<-light.ann.make$text[k]
   m<-trn.make.cpt$text%in%txt
   sum(m)
-  trn.make.cpt$light[m]<-light.ann.make$light[k]
-  trn.make.cpt$concrete[m]<-light.ann.make$concrete[k]
+  trn.make.cpt[m,]
+  if(is.na(trn.make.cpt$light[m]))
+     trn.make.cpt$light[m]<-light.ann.make$light[k]
+  if(is.na(trn.make.cpt$concrete[m]))
+     trn.make.cpt$concrete[m]<-light.ann.make$concrete[k]
   
   
   }
