@@ -56,8 +56,8 @@ kable(smdf)
 [14015.concrete-abstract_HA.R](14015.concrete-abstract_HA.R)
 
 ### process:
-
-- distribution analysis, cf. [@mehl_what_2021 pp.11-14]
+#### distribution analysis 
+cf. [@mehl_what_2021 pp.11-14]
 
 ```{r,kable-01-dist-make,echo=FALSE,warning=F,}
 ######################################
@@ -87,11 +87,14 @@ kdf<-data.frame(ICE.written=i.make.w,ICE.spoken=i.make.s,SBC.spoken=i.make.m)
 kable(kdf,caption = "distribution of lemma /make/ over corpora")
 ```
 
+
 ```{r fig-01-dist,echo=F,fig.cap="distribution of lemma /make/ over corpora. ICE data from study."}
 barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
 #barplot(kdf,main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
 ###
 ```
+
+#### semantic alternatives to make
 
 ```{r fig-02-alt,echo=F, fig.cap="proportion of semantic alternatives to concrete /make/ in SBC"}
 trntable<-table(trndf.lm$alt[trndf.lm$light==0])

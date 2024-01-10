@@ -36,28 +36,28 @@ the corpus data was downloaded from:
 
 ### 1.2.1 corpus sample
 
-|       | scb |   id | text                                                             |   lfd | light | alt     |
-|:----|---:|----:|:------------------------------------------|----:|----:|:------|
-| 23238 |  19 |  289 | .. who makes his living,                                         | 23238 |     1 | make    |
-| 23878 |  19 |  929 | How are you gonna make the strings.                              | 23878 |     1 | make    |
-| 15912 |  13 | 1647 | It makes me too cold.                                            | 15912 |     1 | make    |
-| 46915 |  41 |   30 | H first of all we make a good guesstimate.                       | 46915 |     1 | make    |
-| 6661  |   6 |  260 | It sounds like the tape I made last night,                       |  6661 |     0 | make    |
-| 12496 |  11 |  270 | .. % needs a larger building.                                    | 12496 |     0 | build   |
-| 44867 |  38 |  587 | H the top deck of that building will be an observation platform, | 44867 |     0 | build   |
-| 21402 |  17 |  188 | And you’re building on the thoughts of th- your predecessors,    | 21402 |     0 | build   |
-| 18118 |  15 |  406 | it’s built during the –                                          | 18118 |     0 | build   |
-| 37784 |  32 | 1034 | we found he’d built the fence.                                   | 37784 |     0 | build   |
-| 55435 |  48 |  774 | you know,                                                        | 55435 |    NA | a-other |
-| 23198 |  19 |  249 | Hx                                                               | 23198 |    NA | a-other |
-| 29469 |  25 |  119 | .. When he will,                                                 | 29469 |    NA | a-other |
-| 34238 |  29 |  986 | SNIFF .. Sure .                                                  | 34238 |    NA | a-other |
-| 9604  |   8 |  706 | .. but when uh uh=,                                              |  9604 |    NA | a-other |
-| 25411 |  21 |  356 | I don’t know.                                                    | 25411 |    NA | a-other |
-| 40061 |  34 |  650 | … She said things to me today.                                   | 40061 |    NA | a-other |
-| 59586 |  51 | 1565 | Four years.                                                      | 59586 |    NA | a-other |
-| 53610 |  47 |  111 | That’s the last thing you wanted to hear.                        | 53610 |    NA | a-other |
-| 24160 |  19 | 1211 | NA                                                               | 24160 |    NA | a-other |
+|       | scb |   id | text                                                           |   lfd | light | alt     |
+|:----|---:|----:|:-------------------------------------------|----:|----:|:------|
+| 15735 |  13 | 1470 | you won’t make half of what I make.                            | 15735 |    NA | make    |
+| 11488 |  10 |  369 | .. H .. to make it sound like we’re taking it seriously.       | 11488 |     1 | make    |
+| 32736 |  28 | 1019 | H … which like made me think,                                  | 32736 |     1 | make    |
+| 13402 |  12 |  180 | H .. We can make generalities.                                 | 13402 |     1 | make    |
+| 43953 |  37 |  651 | … I’m just making em short and stubby.                         | 43953 |    NA | make    |
+| 58323 |  51 |  302 | I don’t know when my building was built.                       | 58323 |     0 | build   |
+| 44301 |  38 |   21 | .. H So they came up here above where the dam was to be built, | 44301 |     0 | build   |
+| 24978 |  20 |  763 | .. H even if uh … they’re working about rebuilding old houses, | 24978 |     0 | build   |
+| 56378 |  49 |  589 | 2house that Joe built2 .                                       | 56378 |     0 | build   |
+| 16947 |  14 |  423 | Oh it’s free-standing building.                                | 16947 |     0 | build   |
+| 49997 |  43 | 1404 | so then,                                                       | 49997 |    NA | a-other |
+| 56563 |  49 |  774 | 9X9                                                            | 56563 |    NA | a-other |
+| 22803 |  18 |  420 | .. Enough to take off.                                         | 22803 |    NA | a-other |
+| 50514 |  44 |  424 | SNIFF                                                          | 50514 |    NA | a-other |
+| 17783 |  15 |   71 | make connections 2through Mexico2 .                            | 17783 |     1 | make    |
+| 44141 |  37 |  839 | … That’s family ~Shane.                                        | 44141 |    NA | a-other |
+| 48125 |  42 |  247 | Fucking stupi=d.                                               | 48125 |    NA | a-other |
+| 6998  |   6 |  597 | cause they’re the wealthy ones TSK ,                           |  6998 |    NA | a-other |
+| 16999 |  14 |  475 | But right now they’re over the forty,                          | 16999 |    NA | a-other |
+| 44599 |  38 |  319 | CROWD AND MACHINE NOISE                                        | 44599 |    NA | a-other |
 
 ### 1.2.2 script used:
 
@@ -65,7 +65,9 @@ the corpus data was downloaded from:
 
 ### 1.2.3 process:
 
--   distribution analysis, cf. (Mehl 2021, 11–14)
+#### 1.2.3.1 distribution analysis
+
+cf. (Mehl 2021, 11–14)
 
 |          | ICE.written | ICE.spoken | SBC.spoken |
 |:---------|------------:|-----------:|-----------:|
@@ -80,6 +82,8 @@ alt="distribution of lemma /make/ over corpora. ICE data from study." />
 <figcaption aria-hidden="true">distribution of lemma /make/ over
 corpora. ICE data from study.</figcaption>
 </figure>
+
+#### 1.2.3.2 semantic alternatives to make
 
 | Var1      | Freq |
 |:----------|-----:|
