@@ -35,7 +35,7 @@ Q.1: Santa Barbara corpus of spoken American English, ([@ucsb_santa_2005](https:
 the corpus data was downloaded from: [https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip](https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip)
 
 ### corpus sample
-```{r}
+```{r,echo=FALSE}
 load("data/trn.make.cpt.RData")
 load("data/light.ann.make.RData")
 load("data/trndf.lm.cpt.RData")
@@ -43,7 +43,10 @@ load("data/trndf.lm.cpt.RData")
 sm.make<-sample(trndf.lm$lfd[trndf.lm$alt=="make"],5)
 sm.build<-sample(trndf.lm$lfd[trndf.lm$alt=="build"],5)
 sm<-c(sm.make,sm.build,sample(1:length(trndf.lm$scb),10))
-trndf.lm[sm,]
+#sm.c<-stri_replace(trndf.lm[sm,'text']," ",regex = "\\(|\\)|\\[|\\]")
+smdf<-trndf.lm[sm,]
+smdf$text<-gsub("\\(|\\)|\\[|\\]"," ",smdf$text)
+kable(smdf)
 ```
 
 ### script used: 

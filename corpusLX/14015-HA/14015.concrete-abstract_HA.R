@@ -258,6 +258,9 @@ download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-
 load(dtemp)
 download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SCB-df.cpt.RData",dtemp)
 load(dtemp)
+load(dtemp)
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/light.ann.make.RData",dtemp)
+load(dtemp)
 
 # load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData") # lemma /make/ annotated DF
 # load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/SCB-df.cpt.RData") # complete corpus, same as created on top
@@ -266,6 +269,17 @@ load(dtemp)
 # sum(m2,na.rm = T)
 # trn.make.cpt$light[m2]<-NA
 # trn.make.cpt$concrete[m2]<-NA
+#k<-1
+for(k in 1:length(light.ann.make$lfd)){
+  lfd<-light.ann.make$lfd[k]
+  txt<-light.ann.make$text[k]
+  m<-trn.make.cpt$text%in%txt
+  sum(m)
+  trn.make.cpt$light[m]<-light.ann.make$light[k]
+  trn.make.cpt$concrete[m]<-light.ann.make$concrete[k]
+  
+  
+  }
 m<-grep("Wilcox made his money",trn.make.cpt$text)
 trn.make.cpt$light[m]<-1
 trn.make.cpt$concrete[m]<-0
@@ -274,14 +288,23 @@ trn.make.cpt[m,]
 trn.make.cpt['27225','concrete']<-0
 trn.make.cpt['27225','light']<-1
 #trndf.lm$light[m]
-m3<-trn.make.cpt$concrete==1
-l.conc<-sum(m3,na.rm = T)
+#m3<-trn.make.cpt$concrete==1
+#m3<-trn.make.cpt$concrete==0
+#m3<-trn.make.cpt$light==0
+m3<-trn.make.cpt$light==1
+trn.make.cpt$concrete[m3]<-0
+sum(m3,na.rm = T)
+l.light<-sum(m3,na.rm = T)
 #trn.make.cpt[m3,]
 trn.make.cpt$light[m3]<-0
 l.conc<-sum(trn.make.cpt$light==0,na.rm = T)
+m5<-trn.make.cpt$light==0&trn.make.cpt$concrete==0
+sum(m5,na.rm = T)
+trn.make.cpt$concrete[m5]<-NA
+trn.make.cpt$light[m5]<-NA
+#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData") # lemma /make/ annotated DF
 m4<-trn.make.cpt$light==1
 sum(m4,na.rm = T)
-#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData") # lemma /make/ annotated DF
 l.light<-sum(m4,na.rm = T)
 l.conc+l.light
 i.make.m<-c(concrete=l.conc,light=l.light)
