@@ -252,13 +252,14 @@ i.take<-c(con=62,light=85)
 i.give<-c(con=52,light=167) 
 ###########################
 #m.ns<-make.l.1$id
+getwd()
 trndf_sf<-trndf # save created, load from github next, same df
 dtemp<-tempfile()
 download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trn.make.cpt.RData",dtemp)
 load(dtemp)
 download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SCB-df.cpt.RData",dtemp)
 load(dtemp)
-load(dtemp)
+#load(dtemp)
 download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/light.ann.make.RData",dtemp)
 load(dtemp)
 
@@ -273,6 +274,7 @@ k<-1
 for(k in 1:length(light.ann.make$lfd)){
   lfd<-light.ann.make$lfd[k]
   txt<-light.ann.make$text[k]
+  txt
   m<-trn.make.cpt$text%in%txt
   sum(m)
   trn.make.cpt[m,]
@@ -284,6 +286,7 @@ for(k in 1:length(light.ann.make$lfd)){
   
   }
 m<-grep("Wilcox made his money",trn.make.cpt$text)
+sum(m)
 trn.make.cpt$light[m]<-1
 trn.make.cpt$concrete[m]<-0
 m<-grep("money",trn.make.cpt$text)
@@ -295,12 +298,14 @@ trn.make.cpt['27225','light']<-1
 #m3<-trn.make.cpt$concrete==0
 #m3<-trn.make.cpt$light==0
 m3<-trn.make.cpt$light==1
+sum(m3,na.rm = T)
 trn.make.cpt$concrete[m3]<-0
 sum(m3,na.rm = T)
 l.light<-sum(m3,na.rm = T)
 #trn.make.cpt[m3,]
-trn.make.cpt$light[m3]<-0
+#trn.make.cpt$light[m3]<-0
 l.conc<-sum(trn.make.cpt$light==0,na.rm = T)
+l.chk<-sum(trn.make.cpt$concrete==1,na.rm = T)
 m5<-trn.make.cpt$light==0&trn.make.cpt$concrete==0
 sum(m5,na.rm = T)
 trn.make.cpt$concrete[m5]<-NA
@@ -351,7 +356,7 @@ put.alt<-function(altregex,alt){
   trndf.all$alt[m1,]<-alt
 }
 table(trn.alt$alt)
-barplot(table(trn.alt$alt)/100)
+#barplot(table(trn.alt$alt)/100)
 colnames(trn.alt)
 sum(trn.make.cpt$light!=1,na.rm = T)
 sum(trn.make.cpt$light==1,na.rm = T)
@@ -381,6 +386,7 @@ barplot(alt.c.table/sum(alt.c.table)*100,main = "SBC concrete /make/ vs. alterna
 #summary(lm1)
 #sum(is.na(trndf.all$light))
 m<-is.na(trndf.all$light)
+sum(m,na.rm = T)
 trndf.all[m,] # obs annotated as -not to assign wether concrete or light-
 #make.all<-cbind(trn.make.cpt[,c('scb','id','text','lfd','light')],alt="make")
 make.all.alt<-trndf.all
@@ -435,9 +441,9 @@ for(k in 1:length(trndf.lm$lfd)){
 chk<-trndf.lm$alt=="make"
 head(trndf.lm[chk,])
 trndf.lm[chk,]
-trndf.lm$text[2808]
-trndf$text[2808]
-trndf_sf$text[2808]
+trndf.lm[2808,]
+trndf[2808,]
+trndf_sf[2808,]
 make.int<-c(NA,NA,NA,NA,alt="0-intercept",0)
 make.all.alt<-rbind(make.int,trndf.lm)
 m<-is.na(trndf.lm$alt)
@@ -450,9 +456,9 @@ par(las=3)
 lms<-summary(lm1)
 #barplot(lms$coefficients[,4])
 lms
-sum(trndf.lm$alt=="make"&trndf.lm$light!=-9,na.rm = T)
+sum(trndf.lm$alt=="make"&trndf.lm$light==1,na.rm = T)
 sum(trndf.lm$alt=="make"&(trndf.lm$light==1|trndf.lm$light==0),na.rm = T)
-sum(trndf.lm$alt=="make"&(trndf.lm$light!=1|trndf.lm$light!=0),na.rm = T)
+sum(trndf.lm$alt=="make"&(trndf.lm$concrete==1|trndf.lm$concrete==0),na.rm = T)
 sum(is.na(trndf.lm$light))
 sum(trndf.lm$light[trndf.lm$light==-9],na.rm = T)
 sum(trndf.lm$light==-9,na.rm = T)
@@ -466,7 +472,7 @@ barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC conc
 #head(trndf.lm[m,])
 
 #save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trndf.lm.cpt.RData")
-#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData")
+#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData")
 #save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/light.ann.make.RData")
 
 #14023.class

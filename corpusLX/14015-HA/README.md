@@ -36,28 +36,28 @@ the corpus data was downloaded from:
 
 ### 1.2.1 corpus sample
 
-|       | scb |   id | text                                                                         |   lfd | light | alt     |
-|:----|---:|---:|:--------------------------------------------|----:|----:|:-----|
-| 4315  |   4 |   37 | 2Just .. makes me feel like I2 ate a candy bar.                              |  4315 |     1 | make    |
-| 60039 |  52 |  337 | H makes me mad,                                                              | 60039 |     1 | make    |
-| 28160 |  23 | 1203 | %= They 7talked7 about what makes 8a8 classic.                               | 28160 |     1 | make    |
-| 13671 |  12 |  449 | .. You made a statement.                                                     | 13671 |     0 | make    |
-| 12049 |  10 |  930 | needs to be more involved than just making decisions on what we publish.     | 12049 |     1 | make    |
-| 21401 |  17 |  187 | and building on top of those.                                                | 21401 |     0 | build   |
-| 56378 |  49 |  589 | 2house that Joe built2 .                                                     | 56378 |     0 | build   |
-| 44298 |  38 |   18 | H In order to build a dam here,                                              | 44298 |     0 | build   |
-| 39945 |  34 |  534 | with .. built-in tables,                                                     | 39945 |     0 | build   |
-| 16949 |  14 |  425 | 2Separate2 building.                                                         | 16949 |     0 | build   |
-| 25020 |  20 |  805 | .. and his heart rejoiced.                                                   | 25020 |     0 | a-other |
-| 74    |   1 |   73 | you know,                                                                    |    74 |     0 | a-other |
-| 46922 |  41 |   37 | .. You probably \<@ aren’t burning much more @\> than like eighteen hundred, | 46922 |     0 | a-other |
-| 24790 |  20 |  575 | H whether it’s the left .. part or,                                          | 24790 |     0 | a-other |
-| 14368 |  13 |  103 | Hx                                                                           | 14368 |     0 | a-other |
-| 4171  |   3 | 1439 | Yeah.                                                                        |  4171 |     0 | a-other |
-| 2583  |   2 | 1270 | .. <X If X> I was going out dancing?                                         |  2583 |     0 | a-other |
-| 16209 |  13 | 1944 | 6@(**6?**) 7\<@ Goo=d7 .                                                     | 16209 |     0 | a-other |
-| 51842 |  45 |  321 | H uh,                                                                        | 51842 |     0 | a-other |
-| 31323 |  27 |  345 | .. Having a good time together.                                              | 31323 |     0 | a-other |
+|       | scb |   id | text                                                             |   lfd | light | alt     |
+|:----|---:|----:|:------------------------------------------|----:|----:|:------|
+| 23238 |  19 |  289 | .. who makes his living,                                         | 23238 |     1 | make    |
+| 23878 |  19 |  929 | How are you gonna make the strings.                              | 23878 |     1 | make    |
+| 15912 |  13 | 1647 | It makes me too cold.                                            | 15912 |     1 | make    |
+| 46915 |  41 |   30 | H first of all we make a good guesstimate.                       | 46915 |     1 | make    |
+| 6661  |   6 |  260 | It sounds like the tape I made last night,                       |  6661 |     0 | make    |
+| 12496 |  11 |  270 | .. % needs a larger building.                                    | 12496 |     0 | build   |
+| 44867 |  38 |  587 | H the top deck of that building will be an observation platform, | 44867 |     0 | build   |
+| 21402 |  17 |  188 | And you’re building on the thoughts of th- your predecessors,    | 21402 |     0 | build   |
+| 18118 |  15 |  406 | it’s built during the –                                          | 18118 |     0 | build   |
+| 37784 |  32 | 1034 | we found he’d built the fence.                                   | 37784 |     0 | build   |
+| 55435 |  48 |  774 | you know,                                                        | 55435 |    NA | a-other |
+| 23198 |  19 |  249 | Hx                                                               | 23198 |    NA | a-other |
+| 29469 |  25 |  119 | .. When he will,                                                 | 29469 |    NA | a-other |
+| 34238 |  29 |  986 | SNIFF .. Sure .                                                  | 34238 |    NA | a-other |
+| 9604  |   8 |  706 | .. but when uh uh=,                                              |  9604 |    NA | a-other |
+| 25411 |  21 |  356 | I don’t know.                                                    | 25411 |    NA | a-other |
+| 40061 |  34 |  650 | … She said things to me today.                                   | 40061 |    NA | a-other |
+| 59586 |  51 | 1565 | Four years.                                                      | 59586 |    NA | a-other |
+| 53610 |  47 |  111 | That’s the last thing you wanted to hear.                        | 53610 |    NA | a-other |
+| 24160 |  19 | 1211 | NA                                                               | 24160 |    NA | a-other |
 
 ### 1.2.2 script used:
 
@@ -67,18 +67,10 @@ the corpus data was downloaded from:
 
 -   distribution analysis, cf. (Mehl 2021, 11–14)
 
-<!-- -->
-
-    ## [1] 323
-
-    ##          ICE.written ICE.spoken SBC.spoken
-    ## concrete          68         96        148
-    ## light            321        353        323
-
 |          | ICE.written | ICE.spoken | SBC.spoken |
 |:---------|------------:|-----------:|-----------:|
-| concrete |          68 |         96 |        148 |
-| light    |         321 |        353 |        323 |
+| concrete |          68 |         96 |         89 |
+| light    |         321 |        353 |        381 |
 
 distribution of lemma /make/ over corpora
 
@@ -89,15 +81,14 @@ alt="distribution of lemma /make/ over corpora. ICE data from study." />
 corpora. ICE data from study.</figcaption>
 </figure>
 
-| Var1      |  Freq |
-|:----------|------:|
-| a-other   | 69390 |
-| build     |   101 |
-| construct |     1 |
-| create    |    23 |
-| generate  |     4 |
-| make      |   199 |
-| produce   |     5 |
+| Var1      | Freq |
+|:----------|-----:|
+| build     |  101 |
+| construct |    1 |
+| create    |   23 |
+| generate  |    4 |
+| make      |   89 |
+| produce   |    5 |
 
 semantic alternatives
 
