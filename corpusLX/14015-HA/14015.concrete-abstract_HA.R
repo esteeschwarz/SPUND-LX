@@ -9,6 +9,9 @@ potential impact would be immense. Researchers would be able to examine onomasio
 rather than performing elicitation tests. That possibility would facilitate cognitive research into languages and 
 varieties around the world, without the necessity of in situ psycholinguistic testing, 
 and would also encourage the creation of more spoken corpora. "
+###############################################################
+### this script runs without local files, all data fetched from online sources.
+###############################################################################
 R.1<-"https://www.linguistics.ucsb.edu/research/santa-barbara-corpus"
 Q.2<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip"
 Q.3<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCSAE_chat.zip"
@@ -72,7 +75,7 @@ trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
 #save(trndf,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
 #write_csv(trn.make.a,"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/make.ann.csv")
 #write_csv(trndf,"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb-raw.csv")
-load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData")
+#load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData")
 #load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/make.df-cpt.RData") # complete /make/ annotated df
 
 #load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/make.df-cpt.RData")
@@ -249,15 +252,30 @@ i.take<-c(con=62,light=85)
 i.give<-c(con=52,light=167) 
 ###########################
 #m.ns<-make.l.1$id
-load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData") # lemma /make/ annotated DF
-trndf_sf<-trndf
-load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/SCB-df.cpt.RData") # complete corpus, same as created on top
+trndf_sf<-trndf # save created, load from github next, same df
+dtemp<-tempfile()
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trn.make.cpt.RData",dtemp)
+load(dtemp)
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SCB-df.cpt.RData",dtemp)
+load(dtemp)
+
+# load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData") # lemma /make/ annotated DF
+# load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/SCB-df.cpt.RData") # complete corpus, same as created on top
 #lc<-sum(trn.make.cpt$concrete==1,na.rm = T)
+# m2<-trn.make.cpt$concrete==0&trn.make.cpt$light==0
+# sum(m2,na.rm = T)
+# trn.make.cpt$light[m2]<-NA
+# trn.make.cpt$concrete[m2]<-NA
+m3<-trn.make.cpt$concrete==1
+l.conc<-sum(m3,na.rm = T)
+#trn.make.cpt[m3,]
+trn.make.cpt$light[m3]<-0
 l.conc<-sum(trn.make.cpt$light==0,na.rm = T)
-#sum(mna)
-#m.c<-trn.make.cpt$concrete==1
-#sum(m.c,na.rm = T)
-l.light<-sum(trn.make.cpt$light,na.rm = T)
+m4<-trn.make.cpt$light==1
+sum(m4,na.rm = T)
+#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData") # lemma /make/ annotated DF
+l.light<-sum(m4,na.rm = T)
+l.conc+l.light
 i.make.m<-c(concrete=l.conc,light=l.light)
 i.make.w[2]/(i.make.w[1]+i.make.w[2])
 i.make.s[2]/(i.make.s[1]+i.make.s[2])
@@ -267,8 +285,8 @@ i.make.s
 i.make.w
 #barplot(i.make.m,main = "SBC / spoken")
 #barplot(i.make,main="ICE-GB / written")
-
-barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
+i.make.m
+barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
 ### wks.
 ### semantic alternates of concrete /make/ (p.14)
 ###
@@ -298,29 +316,36 @@ put.alt<-function(altregex,alt){
   trndf.all$light<-NA
   trndf.all$alt[m1,]<-alt
 }
-
+table(trn.alt$alt)
 barplot(table(trn.alt$alt)/100)
 colnames(trn.alt)
-sum(trn.make.cpt$light==0,na.rm = T)
-#trn.make.cpt$light[trn.make.cpt$concrete==1]<-0
+sum(trn.make.cpt$light!=1,na.rm = T)
+sum(trn.make.cpt$light==1,na.rm = T)
+sum(trn.make.cpt$concrete==1,na.rm = T)
+trn.make.cpt$light[trn.make.cpt$light==-9]<-NA
+trn.make.cpt$concrete[trn.make.cpt$concrete==-9]<-NA
+sum(trn.make.cpt$concrete==1,na.rm = T)
+trn.make.cpt$light[trn.make.cpt$concrete==1]<-0
 trn.make.cpt$alt<-"make"
 make.c<-cbind(trn.make.cpt[,c('scb','id','text','lfd','alt','light')])
 trndf.all<-rbind(make.c,trn.alt)
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
 par(las=3)
-barplot(table(trndf.all$alt)/sum(table(trndf.all$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+alt.c.table<-table(trndf.all$alt[trndf.all$light==0])
+alt.c.table
+barplot(alt.c.table/sum(alt.c.table)*100,main = "SBC concrete /make/ vs. alternate",ylab = "% over verbforms")
 #barplot(table(trn.all$alt)/sum(table(trn.$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 #table(trn.all$alt)/sum(table(trn.all$alt))
 #table(trn.all$alt)/sum(table(trn.all$alt))
-library(stats)
-lm1<-lm(light~alt,trndf.all)
+#library(stats)
+#lm1<-lm(light~alt,trndf.all)
 #par(new=T)
 #par(page=T)
 #plot.new()
 #plot(lm1)
-lm1$coefficients
-summary(lm1)
-sum(is.na(trndf.all$light))
+#lm1$coefficients
+#summary(lm1)
+#sum(is.na(trndf.all$light))
 m<-is.na(trndf.all$light)
 trndf.all[m,] # obs annotated as -not to assign wether concrete or light-
 #make.all<-cbind(trn.make.cpt[,c('scb','id','text','lfd','light')],alt="make")
@@ -328,64 +353,88 @@ make.all.alt<-trndf.all
 #lm1<-lm(light~alt,make.all.alt)
 make.int<-c(NA,NA,NA,NA,alt="0-intercept",1)
 make.all.alt<-rbind(make.int,make.all.alt)
-lm1<-lm(light~alt,make.all.alt)
-summary(lm1)
-par(las=3)
-lms<-summary(lm1)
-lms
-barplot(lms$coefficients[,4])
-lms
-lms$coefficients[,3]
+#lm1<-lm(light~alt,make.all.alt)
+#summary(lm1)
+#par(las=3)
+#lms<-summary(lm1)
+#lms
+#barplot(lms$coefficients[,4])
+#lms
+#lms$coefficients[,3]
 #boxplot(lm1$effects)
-m<-trndf$lfd%in%trn.alt$lfd
-w.m<-which(m)
-trndf.lm<-trndf
-head(m)
-#trndf.lm$alt<-NA
-trndf.lm$text[w.m] # all alt verbs
-#m.2<-trn.alt$lfd%in%trndf.lm$lfd
-#w.m2<-which(m.2)
-#w.m2
-#trndf.lm$alt[m]<-trn.alt$alt
-trndf.lm[w.m,] # all alt verbs
-#m<-trndf.lm$lfd%in%make.a.l.cpt$lfd
-#sum(m)
-#trndf.lm<-trndf.lm
-#trndf.lm$alt[m]<-"make"
+#m<-trndf$lfd%in%trn.alt$lfd
+#w.m<-which(m)
+trndf.lm<-trndf_sf
 trndf.lm$light<-0
 trndf.lm$alt<-"a-other"
+trndf.lm$text[27245]
+trndf.lm[14896,]
+trndf.all[trndf.all$lfd==14896,]
+trndf.all[166,]
+#rownames(trndf.lm)<-trndf.lm$lfd
+#trndf.lm$lfd<-trndf.lm$lfd+1
+sum(trndf.all$alt=="make"&trndf.all$light==0,na.rm = T)
 #trndf.lm$light[m]<-make.a.l.cpt$light[make.a.l.cpt$lfd==trndf.lm$lfd[m]]
-k<-1
-for(k in 1:length(trndf.all$lfd)){
-  lfd<-trndf.all$lfd[k]
-  light<-trndf.all$light[k]
-  alt<-trndf.all$alt[k]
-  m<-trndf.lm$lfd==lfd
-  trndf.lm$light[m]<-light
-  trndf.lm$alt[m]<-alt
-}
+k<-62077
+for(k in 1:length(trndf.lm$lfd)){
+  light<-0
+  alt<-"a-other"
+  lfd<-trndf.lm$lfd[k]
+  trndf.lm[k,]
+  trndf.lm[lfd,]
+  text<-trndf.lm$text[k]
+  m<-trndf.all$text%in%text
+  wm<-which(m)
+  trndf.all[wm,]
+  light<-trndf.all$light[wm]
+  if(length(light)==0)
+    light<-NA
+  alt<-trndf.all$alt[wm]
+#  if(length(light)>0)
+    trndf.lm$light[k]<-light
+  ifelse(length(alt)>0,
+    trndf.lm$alt[k]<-alt,
+    trndf.lm$alt[k]<-"a-other")
+
+  }
+
+chk<-trndf.lm$alt=="make"
+head(trndf.lm[chk,])
+trndf.lm[chk,]
+trndf.lm$text[2808]
+trndf$text[2808]
+trndf_sf$text[2808]
 make.int<-c(NA,NA,NA,NA,alt="0-intercept",0)
 make.all.alt<-rbind(make.int,trndf.lm)
 m<-is.na(trndf.lm$alt)
 sum(m)
+sum(trndf.lm$light==0,na.rm = T)
 #trndf.lm$alt[m]<-"other"
 lm1<-lm(light~alt,trndf.lm)
 summary(lm1)
 par(las=3)
 lms<-summary(lm1)
-barplot(lms$coefficients[,4])
+#barplot(lms$coefficients[,4])
 lms
-trntable<-table(trndf.lm$alt)
+sum(trndf.lm$alt=="make"&trndf.lm$light!=-9,na.rm = T)
+sum(trndf.lm$alt=="make"&(trndf.lm$light==1|trndf.lm$light==0),na.rm = T)
+sum(trndf.lm$alt=="make"&(trndf.lm$light!=1|trndf.lm$light!=0),na.rm = T)
+sum(is.na(trndf.lm$light))
+sum(trndf.lm$light[trndf.lm$light==-9],na.rm = T)
+sum(trndf.lm$light==-9,na.rm = T)
+trntable<-table(trndf.lm$alt[trndf.lm$light==0])
+trntable
+321+199
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
-barplot(trntable[c(2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
-
-lms$coefficients[,3]
+barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+#lms$coefficients[,3]
 #trndf.lm$light[m]<-make.a.l.cpt$light
 #head(trndf.lm[m,])
 
-save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trndf.lm.cpt.RData")
+#save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trndf.lm.cpt.RData")
 #save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData")
 #save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/light.ann.make.RData")
 
+#14023.class
 ### binäre logistische regression, anova, mehrdimensionale, nominale daten
 ### open american national corpus
