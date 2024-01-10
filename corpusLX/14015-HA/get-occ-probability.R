@@ -4,7 +4,10 @@
 #cf. (Mehl, 2021:14)
 ##############################################################
 library(stats)
-load("https://github.com/esteeschwarz/SPUND-LX/raw/main/data/trndf.lm.RData")
+#load("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trndf.lm.RData") # no direct load!
+dtemp<-tempfile()
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trndf.lm.RData",dtemp)
+load(dtemp)
 head(trndf.lm)
 ### >
 ### the dataset consists of the complete SBC corpus with annotation of light/concrete use for /make/ in token areas.
@@ -36,11 +39,16 @@ barplot(lms$coefficients[,1])
 ###
 # 2nd approach, percentage:
 verbfr<-array()
+td<-table(trndf.lm.2$alt)
+td<-td[names(td)!="other"&names(td)!="0-intercept"]
+barplot(td/sum(td))
 k<-2
-for(k in unique(trndf.lm.2$alt)){
-  u<-unique(trndf.lm.2$alt)[k]
-m1<-sum(trndf.lm.2$alt==u,na.rm = T)
-verbfr[k]<-m1
-}
-names(verbfr)<-unique(trndf.lm.2$alt)
-verbfr
+tdlm<-data.frame(alt=td)
+tdlm$p<-0
+tdlm$p[tdlm$alt.Var1=="make"]<-1
+trndf.lm.3<-trndf.lm.2[trndf.lm.2$alt!="other",]
+lm2<-lm(light~alt,trndf.lm.3)
+lms<-summary(lm2)
+lms
+barplot(lms$coefficients[,1])
+trndf.lm[trndf.lm$alt=="make",]

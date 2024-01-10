@@ -58,34 +58,39 @@ trndf<-rbind(trndf,trntemp.2)
 }
 trndf$lfd<-1:length(trndf$scb)
 #save(trndf,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
-m1<-grep("tak",trndf$text) #take:415,tak:478 obs.
+m1<-grep("tak|took",trndf$text) #take:415,tak:478 obs.
 trn.take<-cbind(trndf[m1,],"concrete"=0,"light"=1)
-m2<-grep("made",trndf$text) #take:415,tak:478 obs. #mak
+m2<-grep("made|make|making",trndf$text) #take:415,tak:478 obs. #mak
 trn.make.2<-cbind(trndf[m2,],"concrete"=0,"light"=1) #430
-m3<-grep("giv",trndf$text) #take:415,tak:478 obs.
+m3<-grep("give|gave|giving",trndf$text) #take:415,tak:478 obs.
 trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
 ### wks., wonderful. now annotate for concrete/light use
 #trn.make.a<-fix(trn.make)
-trn.make.a$lfd<-trn.make$lfd
-trndf$lfd<-1:length(trndf$scb)
+#trn.make.a$lfd<-trn.make$lfd
+#trndf$lfd<-1:length(trndf$scb)
 #save(trn.make.a,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/make.annotated.RData")
 #save(trndf,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
-write_csv(trn.make.a,"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/make.ann.csv")
-write_csv(trndf,"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb-raw.csv")
-eval1.m<-(trn.make.a$concrete==1)
-eval2.m<-(trn.make.a$light==1&trn.make.a$concrete==0)
-eval3.m<-(trn.make.a$concrete==0&trn.make.a$light==0|trn.make.a$concrete==-9)
-eval1<-sum(eval1.m)
-eval2<-sum(eval2.m)
-eval3<-sum(eval3.m)
-eval4<-length(trn.make.a$scb)-eval3
-p.light<-eval2/eval4 #89.4%
-p.concrete<-eval1/eval4 #10.6%
-eval1+eval2
+#write_csv(trn.make.a,"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/make.ann.csv")
+#write_csv(trndf,"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb-raw.csv")
+load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData")
+#load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/make.df-cpt.RData") # complete /make/ annotated df
+
+#load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/make.df-cpt.RData")
+
+#eval1.m<-(trn.make.a$concrete==1)
+#eval2.m<-(trn.make.a$light==1&trn.make.a$concrete==0)
+#eval3.m<-(trn.make.a$concrete==0&trn.make.a$light==0|trn.make.a$concrete==-9)
+#eval1<-sum(eval1.m)
+#eval2<-sum(eval2.m)
+#eval3<-sum(eval3.m)
+#eval4<-length(trn.make.a$scb)-eval3
+#p.light<-eval2/eval4 #89.4%
+#p.concrete<-eval1/eval4 #10.6%
+#eval1+eval2
 # load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
 #trndf<-trndf[2:length(trndf$scb),]
 #trndf$lfd<-1:length(trndf$scb)
-library(readr)
+#library(readr)
 library(stringi)
 trn.split<-stri_split_boundaries(trndf$text,type="word",simplify = T)
 get.mfw<-function(t.array){
@@ -124,13 +129,16 @@ cleandf<-function(df){
 }
 k
 df[3,]
-cleantrn<-cleandf(trn.split)
+cleantrn<-cleandf(trn.split) # token df
+tna<-!is.na(cleantrn)
+token.sum.all<-sum(tna)
 cleantrn[4,]
-t.con<-get.mfw(trn.split[trn.make.a$lfd[eval1.m],]) #gets most frequent words for selection
-t.con
+#t.con<-get.mfw(trn.split[trn.make.a$lfd[eval1.m],]) #gets most frequent words for selection
+#t.con
 #t.array<-trn.split[trn.make.a$lfd[eval1.m],]
 ### PoS tagging
-load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
+pos.temp<-function(){
+  load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.cpt.RData")
 library(udpipe)
 library(stringr)
 library(stringi)
@@ -181,7 +189,8 @@ m<-dmake.fix.4$light==1
 dmake.fix.4$concrete[m]<-1
 dmake.fix.4$coll[!m]
 save(dmake.fix.4,file = "~/Documents/GitHub/R-essais/SPUND/corpusLX/14015-HA/make.annotated(SkE-coll).RData") # 238 obs.
-load("~/Documents/GitHub/R-essais/SPUND/corpusLX/14015-HA/make.annotated.RData") # 430 obs.
+}
+#load("~/Documents/GitHub/R-essais/SPUND/corpusLX/14015-HA/make.annotated.RData") # 430 obs.
 #####
 get.ann.df<-function(trn.make.a){
 trn.make.a$coll<-NA
@@ -194,6 +203,7 @@ mode(trn.make.a$coll)<-"character" # !!!!important: if not, then fix() will not 
 mode(trn.make.a$synonyme)<-"character"
 return(trn.make.a)
 }
+temp.ann<-function(){
 colnames(trn.make.light)
 trn.make.a<-trn.make.a[,c(1,2,3,6,4,5,7,8,9)]
 trn.make.light<-trn.make.a[trn.make.a$concrete==0&trn.make.a$light==1,] #321 obs
@@ -229,122 +239,153 @@ trn.make.a.2$lfd<-rownames(trn.make.a.2)
 trn.make.cpt<-rbind(trn.make.a.2,make.a.made)
 save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/make.annotated.light.RData") # 366 obs.
 save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/make.df-cpt.RData") # 561 obs.
+}
 ######################################
 ### count instances concrete vs. light
-### Q.1: 
-i.make<-c(concrete=68,light=321) #17% vs. 83% written ICE 
+### Q.1: (Mehl 2021)
+i.make.w<-c(concrete=68,light=321) #17% vs. 83% written ICE 
 i.make.s<-c(concrete=96,light=353) #spoken ICE
 i.take<-c(con=62,light=85) 
 i.give<-c(con=52,light=167) 
 ###########################
-m.ns<-make.l.1$id
-lc<-sum(trn.make.cpt$concrete==1,na.rm = T)
+#m.ns<-make.l.1$id
+load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData") # lemma /make/ annotated DF
+trndf_sf<-trndf
+load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/SCB-df.cpt.RData") # complete corpus, same as created on top
+#lc<-sum(trn.make.cpt$concrete==1,na.rm = T)
+l.conc<-sum(trn.make.cpt$light==0,na.rm = T)
 #sum(mna)
-m.c<-trn.make.cpt$concrete==1
-i.make.m<-c(concrete=lc,light=length(light.ann.make$scb))
-i.make[2]/(i.make[1]+i.make[2])
+#m.c<-trn.make.cpt$concrete==1
+#sum(m.c,na.rm = T)
+l.light<-sum(trn.make.cpt$light,na.rm = T)
+i.make.m<-c(concrete=l.conc,light=l.light)
+i.make.w[2]/(i.make.w[1]+i.make.w[2])
+i.make.s[2]/(i.make.s[1]+i.make.s[2])
 i.make.m[2]/(i.make.m[1]+i.make.m[2]) # 29 vs 71%
 i.make.m
-barplot(i.make.m,main = "SBC / spoken")
-barplot(i.make,main="ICE-GB / written")
+i.make.s
+i.make.w
+#barplot(i.make.m,main = "SBC / spoken")
+#barplot(i.make,main="ICE-GB / written")
 
-barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
+barplot(cbind(ICE.w=i.make,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
 ### wks.
 ### semantic alternates of concrete /make/ (p.14)
 ###
-m1<-grep("(produc(e|ing|ed))[^producer]",trndf$text) #take:415,tak:478 obs.
-trndf$alt<-NA
-trndf$alt[m1]<-"produce"
-m1<-grep("(creat(e|ing|ed))[^creator]",trndf$text) #take:415,tak:478 obs.
-trndf$alt[m1]<-"create"
-m3<-c("(buil(d|ding|t))[^builder]","build")
-m1<-grep("(buil(d|ding|t))[^builder]",trndf$text) #take:415,tak:478 obs.
-trndf$alt[m1]<-"build"
-m1<-grep("(generat(e|ing|ed))[^generator]",trndf$text) #take:415,tak:478 obs.
-trndf$alt[m1]<-"generate"
-m1<-grep("(construct(ing|ed))[^constructor]",trndf$text) #take:415,tak:478 obs.
-trndf$alt[m1]<-"construct"
-trndf$light<-NA
+
 get.alt<-function(altregex,alt){
 m1<-grep(altregex,trndf$text)
-trn.temp<-cbind(trndf[m1,],alt=alt)
+trn.temp<-cbind(trndf[m1,],alt=alt,light=0)
 trn.alt<-rbind(trn.alt,trn.temp)
 }
-m3<-c("(generat(e|ing|ed))[^generator]","generate")
-m3<-c("(construct(ing|ed))[^constructor]","construct")
+m1<-c("(generat(e|ing|ed))[^generator]","generate")
+m2<-c("(construct(ing|ed))[^constructor]","construct")
+m3<-c("(produc(e|ing|ed))[^producer]","produce")
+m4<-c("(creat(e|ing|ed))[^creator]","create")
+m5<-c("(buil(d|ding|t))[^builder]","build")
+m1.m<-grep(m1[1],trndf$text)
+trn.temp<-cbind(trndf[m1.m,],alt=m1[2],light=0)
+trn.alt<-trn.temp
+trn.alt<-get.alt(m2[1],m2[2])
 trn.alt<-get.alt(m3[1],m3[2])
-trn.alt<-trn.alt[6:length(trn.alt$scb),]
+trn.alt<-get.alt(m4[1],m4[2])
+trn.alt<-get.alt(m5[1],m5[2])
+
+trndf.all<-trndf
+put.alt<-function(altregex,alt){
+  m1<-grep(altregex,trndf$text)
+  trndf.all$alt<-NA
+  trndf.all$light<-NA
+  trndf.all$alt[m1,]<-alt
+}
+
 barplot(table(trn.alt$alt)/100)
 colnames(trn.alt)
-make.c<-cbind(trn.make.cpt[trn.make.cpt$light==0,c('scb','id','text','lfd','light')],alt="make")
-trn.alt$light<-0
-trn.all<-rbind(make.c,trn.alt)
-par(las=3,cex=0.5,pin=c("1.5","1.5"))
-barplot(table(trn.all$alt)/sum(table(trn.all$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
-table(trn.all$alt)/sum(table(trn.all$alt))
-table(trn.all$alt)/sum(table(trn.all$alt))
+sum(trn.make.cpt$light==0,na.rm = T)
+#trn.make.cpt$light[trn.make.cpt$concrete==1]<-0
+trn.make.cpt$alt<-"make"
+make.c<-cbind(trn.make.cpt[,c('scb','id','text','lfd','alt','light')])
+trndf.all<-rbind(make.c,trn.alt)
+#par(las=3,cex=0.5,pin=c("1.5","1.5"))
+par(las=3)
+barplot(table(trndf.all$alt)/sum(table(trndf.all$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+#barplot(table(trn.all$alt)/sum(table(trn.$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+#table(trn.all$alt)/sum(table(trn.all$alt))
+#table(trn.all$alt)/sum(table(trn.all$alt))
 library(stats)
-lm1<-lm(light~alt,trn.all)
-par(new=T)
-par(page=T)
-plot.new()
-plot(lm1)
+lm1<-lm(light~alt,trndf.all)
+#par(new=T)
+#par(page=T)
+#plot.new()
+#plot(lm1)
 lm1$coefficients
 summary(lm1)
-sum(is.na(trn.all$light))
-m<-!is.na(trn.all$light)
-trn.all<-trn.all[m,]
-make.all<-cbind(trn.make.cpt[,c('scb','id','text','lfd','light')],alt="make")
-make.all.alt<-rbind(make.all,trn.alt)
-lm1<-lm(light~alt,make.all.alt)
-make.int<-c(NA,NA,NA,NA,0,alt="0-intercept")
+sum(is.na(trndf.all$light))
+m<-is.na(trndf.all$light)
+trndf.all[m,] # obs annotated as -not to assign wether concrete or light-
+#make.all<-cbind(trn.make.cpt[,c('scb','id','text','lfd','light')],alt="make")
+make.all.alt<-trndf.all
+#lm1<-lm(light~alt,make.all.alt)
+make.int<-c(NA,NA,NA,NA,alt="0-intercept",1)
 make.all.alt<-rbind(make.int,make.all.alt)
 lm1<-lm(light~alt,make.all.alt)
 summary(lm1)
 par(las=3)
 lms<-summary(lm1)
+lms
 barplot(lms$coefficients[,4])
 lms
 lms$coefficients[,3]
 #boxplot(lm1$effects)
 m<-trndf$lfd%in%trn.alt$lfd
+w.m<-which(m)
 trndf.lm<-trndf
+head(m)
 #trndf.lm$alt<-NA
-trndf.lm$alt[m]<-trn.alt$alt
-m<-trndf.lm$lfd%in%make.a.l.cpt$lfd
-sum(m)
-trndf.lm<-trndf.lm
-trndf.lm$alt[m]<-"make"
+trndf.lm$text[w.m] # all alt verbs
+#m.2<-trn.alt$lfd%in%trndf.lm$lfd
+#w.m2<-which(m.2)
+#w.m2
+#trndf.lm$alt[m]<-trn.alt$alt
+trndf.lm[w.m,] # all alt verbs
+#m<-trndf.lm$lfd%in%make.a.l.cpt$lfd
+#sum(m)
+#trndf.lm<-trndf.lm
+#trndf.lm$alt[m]<-"make"
 trndf.lm$light<-0
+trndf.lm$alt<-"a-other"
 #trndf.lm$light[m]<-make.a.l.cpt$light[make.a.l.cpt$lfd==trndf.lm$lfd[m]]
-for(k in 1:length(make.a.l.cpt$lfd)){
-  lfd<-make.a.l.cpt$lfd[k]
-  light<-make.a.l.cpt$light[k]
+k<-1
+for(k in 1:length(trndf.all$lfd)){
+  lfd<-trndf.all$lfd[k]
+  light<-trndf.all$light[k]
+  alt<-trndf.all$alt[k]
   m<-trndf.lm$lfd==lfd
   trndf.lm$light[m]<-light
+  trndf.lm$alt[m]<-alt
 }
 make.int<-c(NA,NA,NA,NA,alt="0-intercept",0)
 make.all.alt<-rbind(make.int,trndf.lm)
 m<-is.na(trndf.lm$alt)
 sum(m)
-trndf.lm$alt[m]<-"other"
-lm1<-lm(light~alt,make.all.alt)
+#trndf.lm$alt[m]<-"other"
+lm1<-lm(light~alt,trndf.lm)
 summary(lm1)
 par(las=3)
 lms<-summary(lm1)
 barplot(lms$coefficients[,4])
 lms
 trntable<-table(trndf.lm$alt)
-par(las=3,cex=0.5,pin=c("1.5","1.5"))
-barplot(trntable[c(1,2,3,4,5,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+#par(las=3,cex=0.5,pin=c("1.5","1.5"))
+barplot(trntable[c(2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 
 lms$coefficients[,3]
-trndf.lm$light[m]<-make.a.l.cpt$light
-head(trndf.lm[m,])
+#trndf.lm$light[m]<-make.a.l.cpt$light
+#head(trndf.lm[m,])
 
-save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trndf.lm.RData")
-save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData")
-save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/light.ann.make.RData")
+save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trndf.lm.cpt.RData")
+#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/trn.make.cpt.RData")
+#save(light.ann.make,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/light.ann.make.RData")
 
 ### binäre logistische regression, anova, mehrdimensionale, nominale daten
 ### open american national corpus
