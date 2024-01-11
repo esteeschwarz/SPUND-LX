@@ -36,28 +36,28 @@ the corpus data was downloaded from:
 
 ### 1.2.1 corpus sample
 
-|       | scb |   id | text                                                           |   lfd | light | alt     |
-|:----|---:|----:|:-------------------------------------------|----:|----:|:------|
-| 15735 |  13 | 1470 | you won’t make half of what I make.                            | 15735 |    NA | make    |
-| 11488 |  10 |  369 | .. H .. to make it sound like we’re taking it seriously.       | 11488 |     1 | make    |
-| 32736 |  28 | 1019 | H … which like made me think,                                  | 32736 |     1 | make    |
-| 13402 |  12 |  180 | H .. We can make generalities.                                 | 13402 |     1 | make    |
-| 43953 |  37 |  651 | … I’m just making em short and stubby.                         | 43953 |    NA | make    |
-| 58323 |  51 |  302 | I don’t know when my building was built.                       | 58323 |     0 | build   |
-| 44301 |  38 |   21 | .. H So they came up here above where the dam was to be built, | 44301 |     0 | build   |
-| 24978 |  20 |  763 | .. H even if uh … they’re working about rebuilding old houses, | 24978 |     0 | build   |
-| 56378 |  49 |  589 | 2house that Joe built2 .                                       | 56378 |     0 | build   |
-| 16947 |  14 |  423 | Oh it’s free-standing building.                                | 16947 |     0 | build   |
-| 49997 |  43 | 1404 | so then,                                                       | 49997 |    NA | a-other |
-| 56563 |  49 |  774 | 9X9                                                            | 56563 |    NA | a-other |
-| 22803 |  18 |  420 | .. Enough to take off.                                         | 22803 |    NA | a-other |
-| 50514 |  44 |  424 | SNIFF                                                          | 50514 |    NA | a-other |
-| 17783 |  15 |   71 | make connections 2through Mexico2 .                            | 17783 |     1 | make    |
-| 44141 |  37 |  839 | … That’s family ~Shane.                                        | 44141 |    NA | a-other |
-| 48125 |  42 |  247 | Fucking stupi=d.                                               | 48125 |    NA | a-other |
-| 6998  |   6 |  597 | cause they’re the wealthy ones TSK ,                           |  6998 |    NA | a-other |
-| 16999 |  14 |  475 | But right now they’re over the forty,                          | 16999 |    NA | a-other |
-| 44599 |  38 |  319 | CROWD AND MACHINE NOISE                                        | 44599 |    NA | a-other |
+|       | scb |   id | text                                      |   lfd | light | alt     |
+|:-----|----:|-----:|:------------------------------------|-----:|-----:|:-------|
+| 30651 |  26 |  577 | … making the application,                 | 30651 |    NA | make    |
+| 68095 |  59 |  881 | 3And a3 lot of homemade cookies.          | 68095 |     0 | make    |
+| 8072  |   6 | 1671 | Or makes whoever it is stop and think,    |  8072 |     1 | make    |
+| 68129 |  59 |  915 | 5A=nd homemade fu5 dge.                   | 68129 |     0 | make    |
+| 13300 |  12 |   78 | … I=f I make the statement which I di=d,  | 13300 |     1 | make    |
+| 58447 |  51 |  426 | … I don’t like the new buildings.         | 58447 |     0 | build   |
+| 18118 |  15 |  406 | it’s built during the –                   | 18118 |     0 | build   |
+| 63702 |  56 |   82 | I build barns and,                        | 63702 |     0 | build   |
+| 13466 |  12 |  244 | .. there’s a lot of coalition building.   | 13466 |     0 | build   |
+| 34651 |  30 |  185 | H And they built … Python,                | 34651 |     0 | build   |
+| 60524 |  52 |  822 | … TSK So,                                 | 60524 |    NA | a-other |
+| 49065 |  43 |  472 | .. So he says,                            | 49065 |    NA | a-other |
+| 4483  |   4 |  205 | 2are2 ,                                   |  4483 |    NA | a-other |
+| 29267 |  24 |  792 | … Okay Hx .                               | 29267 |    NA | a-other |
+| 61983 |  53 |  674 | … We have to really hone in on-,          | 61983 |    NA | a-other |
+| 5840  |   5 |  265 | H … And she’s got,                        |  5840 |    NA | a-other |
+| 28717 |  24 |  242 | Look at that.                             | 28717 |    NA | a-other |
+| 40429 |  35 |  279 | 2 THROAT 2 =                              | 40429 |    NA | a-other |
+| 768   |   1 |  767 | .. it sure does make a mess in the house. |   768 |     1 | make    |
+| 32025 |  28 |  308 | 2@(**2?**) @                              | 32025 |    NA | a-other |
 
 ### 1.2.2 script used:
 

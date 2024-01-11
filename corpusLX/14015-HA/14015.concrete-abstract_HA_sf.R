@@ -84,15 +84,15 @@ i.give<-c(con=52,light=167)
 
 
 getwd()
-trndf_sf<-trndf # save created, load annotations from github
+trndf_sf<-trndf # save created, load from github next, same df
 dtemp<-tempfile()
-# download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trn.make.cpt.RData",dtemp)
-# load(dtemp)
-# download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SCB-df.cpt.RData",dtemp)
-# load(dtemp)
-# #load(dtemp)
-# download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/light.ann.make.RData",dtemp)
-# load(dtemp)
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trn.make.cpt.RData",dtemp)
+load(dtemp)
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SCB-df.cpt.RData",dtemp)
+load(dtemp)
+#load(dtemp)
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/light.ann.make.RData",dtemp)
+load(dtemp)
 ### B
 download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SCB.ann.df.RData",dtemp)
 load(dtemp)
@@ -117,6 +117,49 @@ get.ann.x<-function(scb,ann.df){
 ### B
 trndf.lm<-get.ann.x(trndf.2,scb.ann.df)
 ###
+k<-1
+for(k in 1:length(light.ann.make$lfd)){
+  lfd<-light.ann.make$lfd[k]
+  txt<-light.ann.make$text[k]
+  txt
+  m<-trn.make.cpt$text%in%txt
+  sum(m)
+  trn.make.cpt[m,]
+  if(is.na(trn.make.cpt$light[m]))
+     trn.make.cpt$light[m]<-light.ann.make$light[k]
+  if(is.na(trn.make.cpt$concrete[m]))
+     trn.make.cpt$concrete[m]<-light.ann.make$concrete[k]
+  
+  
+  }
+m<-grep("Wilcox made his money",trn.make.cpt$text)
+sum(m)
+trn.make.cpt$light[m]<-1
+trn.make.cpt$concrete[m]<-0
+m<-grep("money",trn.make.cpt$text)
+trn.make.cpt[m,]
+trn.make.cpt['27225','concrete']<-0
+trn.make.cpt['27225','light']<-1
+#trndf.lm$light[m]
+#m3<-trn.make.cpt$concrete==1
+#m3<-trn.make.cpt$concrete==0
+#m3<-trn.make.cpt$light==0
+m3<-trn.make.cpt$light==1
+sum(m3,na.rm = T)
+trn.make.cpt$concrete[m3]<-0
+sum(m3,na.rm = T)
+l.light<-sum(m3,na.rm = T)
+#trn.make.cpt[m3,]
+#trn.make.cpt$light[m3]<-0
+l.conc<-sum(trn.make.cpt$light==0,na.rm = T)
+l.chk<-sum(trn.make.cpt$concrete==1,na.rm = T)
+m5<-trn.make.cpt$light==0&trn.make.cpt$concrete==0
+sum(m5,na.rm = T)
+trn.make.cpt$concrete[m5]<-NA
+trn.make.cpt$light[m5]<-NA
+#save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData") # lemma /make/ annotated DF
+m4<-trn.make.cpt$light==1
+sum(m4,na.rm = T)
 
 ### B
 m4<-trndf.lm$light==1&trndf.lm$alt=="make"
@@ -165,6 +208,20 @@ put.alt.obs<-function(altregex,alt){
 }
 table(trn.alt$alt)
 ### B <
+#barplot(table(trn.alt$alt)/100)
+colnames(trn.alt)
+sum(trn.make.cpt$light!=1,na.rm = T)
+sum(trn.make.cpt$light==1,na.rm = T)
+sum(trn.make.cpt$concrete==1,na.rm = T)
+trn.make.cpt$light[trn.make.cpt$light==-9]<-NA
+trn.make.cpt$concrete[trn.make.cpt$concrete==-9]<-NA
+sum(trn.make.cpt$concrete==1,na.rm = T)
+trn.make.cpt$light[trn.make.cpt$concrete==1]<-0
+trn.make.cpt$alt<-"make"
+make.c<-cbind(trn.make.cpt[,c('scb','id','text','lfd','alt','light')])
+trndf.all<-rbind(make.c,trn.alt)
+#par(las=3,cex=0.5,pin=c("1.5","1.5"))
+
 ### B >
 par(las=3)
 alt.c.table<-table(trndf.all$alt[trndf.all$light==0])
