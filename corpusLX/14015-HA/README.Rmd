@@ -37,17 +37,17 @@ the corpus data was downloaded from: [https://www.linguistics.ucsb.edu/sites/sec
 ### corpus sample
 ```{r,echo=FALSE}
 #load("data/trn.make.cpt.RData")
-load("data/light.ann.make.RData")
-load("data/trndf.lm.cpt.RData")
-
-sm.make<-sample(trndf.lm$lfd[trndf.lm$alt=="make"],5)
-sm.build<-sample(trndf.lm$lfd[trndf.lm$alt=="build"],5)
-sm<-c(sm.make,sm.build,sample(1:length(trndf.lm$scb),10))
-#sm.c<-stri_replace(trndf.lm[sm,'text']," ",regex = "\\(|\\)|\\[|\\]")
-smdf<-trndf.lm[sm,]
-#trndf.lm[sm,]
-#smdf$text
-smdf$text<-gsub("(\\(|\\)|\\[|\\]|<|>|\\*|_)"," ",smdf$text)
+#load("data/light.ann.make.RData")
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
+load("~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/SBC.20-sample.RData")
+# sm.make<-sample(trndf.lm$lfd[trndf.lm$alt=="make"],5)
+# sm.build<-sample(trndf.lm$lfd[trndf.lm$alt=="build"],5)
+# sm<-c(sm.make,sm.build,sample(1:length(trndf.lm$scb),10))
+# #sm.c<-stri_replace(trndf.lm[sm,'text']," ",regex = "\\(|\\)|\\[|\\]")
+# smdf<-trndf.lm[sm,]
+# #trndf.lm[sm,]
+# #smdf$text
+# smdf$text<-gsub("(\\(|\\)|\\[|\\]|<|>|\\*|_)"," ",smdf$text)
 kable(smdf)
 ```
 
