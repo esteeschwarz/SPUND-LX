@@ -119,7 +119,7 @@ i.make.m
 i.make.s
 i.make.w
 i.make.m
-barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
+# barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
 ### wks.
 ### semantic alternates of concrete /make/ (p.14)
 ###
@@ -151,7 +151,7 @@ table(trn.alt$alt)
 par(las=3)
 alt.c.table<-table(trndf.all$alt[trndf.all$light==0])
 alt.c.table
-barplot(alt.c.table/sum(alt.c.table)*100,main = "SBC concrete /make/ vs. alternate",ylab = "% over verbforms")
+# barplot(alt.c.table/sum(alt.c.table)*100,main = "SBC concrete /make/ vs. alternate",ylab = "% over verbforms")
 ### B <
 chk<-trndf.lm$alt=="make"
 head(trndf.lm[chk,])
@@ -166,7 +166,7 @@ trntable<-table(trndf.lm$alt[trndf.lm$light==0])
 trntable
 
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
-barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+# barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 
 #save(trndf.lm,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trndf.lm.cpt.RData")
 #save(trn.make.cpt,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/trn.make.cpt.RData")
@@ -217,22 +217,17 @@ get.coll<-function(set,alt,alt.g){
   
 }
 #split.build<-get.coll(trndf.lm,"build")
-split.make<-get.coll(trndf.lm,"make")
+split.make<-get.coll(trndf.lm,"make","make")
 split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
-split.make<-get.coll(trndf.lm,"make")
-split.build$tokens.g==split.build$tokens
+#split.make<-get.coll(trndf.lm,"make")
+#split.build$tokens.g==split.build$tokens
 library(udpipe)
 ?udpipe
 get.mfw<-function(df){
   
 }
 
-freq.make<-document_term_frequencies(x=split.make,document = paste("SBC",seq_along(split.make),sep="_"),
-                                     split = "[[:space:][:punct:][:digit:]]+")
 
-df.make<-split.make$df.1c
-df.make$term<-"make"
-keywords_collocation(df.make, "term", "ID", ngram_max = 2, n_min = 2)
 library(quanteda.textstats)
 library(udpipe)
 udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
@@ -296,25 +291,25 @@ return(c(p.make=f.p.1,alt=f.p.2))
 nouns.com.1<-c("couple","lot","water","thing") # this doesnt seem to be totally reasonable
 nouns.com.2<-"thing"
 
-nouns.f.1<-get.n.freq(nouns.com.2)
-nouns.f.1
+#nouns.f.1<-get.n.freq(nouns.com.2)
+#nouns.f.1
 n.x.cr<-get.noun.coll(get.coll(trndf.lm,"create","(creat(ed|ing|e))")) # test
 n.x.bu<-get.noun.coll(get.coll(trndf.lm,"build","(buil(d|t|ding))")) # test
 n.x.man<-get.noun.coll(get.coll(trndf.lm,"build","(manufactur(ing|e|ed))")) # test
 n.x.dev<-get.noun.coll(get.coll(trndf.lm,"build","(develop(ing|e?|ed))")) # test
 n.x.dev
-m<-n.make$nouns%in%n.x$nouns
-sum(m)
-n.make$nouns[m]
-m<-n.x$nouns%in%n.make$nouns
-sum(m)
-n.x$nouns[m]
-m<-n.make$nouns%in%n.x$nouns.g
-sum(m)
-n.make$nouns[m]
-m<-n.x.dev$nouns.g%in%n.make$nouns
-sum(m)
-n.x$nouns.g[m]
+# m<-n.make$nouns%in%n.x$nouns
+# sum(m)
+# n.make$nouns[m]
+# m<-n.x$nouns%in%n.make$nouns
+# sum(m)
+# n.x$nouns[m]
+# m<-n.make$nouns%in%n.x$nouns.g
+# sum(m)
+# n.make$nouns[m]
+# m<-n.x.dev$nouns.g%in%n.make$nouns
+# sum(m)
+# n.x$nouns.g[m]
 ### > no common associates for "produce", "construct", "generate","manufacture","develop"
 nouns.com.create<-c("thing","day","cause")
 #nouns.com.create<-n.x$nouns[m]
@@ -326,6 +321,20 @@ nouns.f.2<-get.n.freq(n.x.bu,nouns.com.build)
 nouns.f.2
 nouns.f.cp<-c(make=sum(nouns.f.1[1]+nouns.f.2[1]),create=nouns.f.1[2],build=nouns.f.2[2],produce=0,generate=0,construct=0)
 nouns.f.cp
-barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
+# barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
 ### p computation: sum.freq.collocates.alt/sum(sum.freq.collocates.make+sum.freq.collocates.alt)
-
+plot.plots<-function(what){
+  if(what=="dist")
+    barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
+  if(what=="alt.1")
+    barplot(alt.c.table/sum(alt.c.table)*100,main = "SBC concrete /make/ vs. alternate",ylab = "% over verbforms")
+  if(what=="alt.2")
+    barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
+  if(what=="alt.3")
+    barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
+  
+}
+# plot.plots("dist")
+# plot.plots("alt.1")
+# plot.plots("alt.2")
+# plot.plots("alt.3")
