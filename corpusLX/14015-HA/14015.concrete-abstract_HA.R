@@ -16,6 +16,7 @@ R.1<-"https://www.linguistics.ucsb.edu/research/santa-barbara-corpus"
 Q.2<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip"
 Q.3<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCSAE_chat.zip"
 library(utils)
+library(stringi)
 getwd()
 #setwd("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA")
 #tempdir()
@@ -174,3 +175,49 @@ barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC conc
 #14023.class
 ### binäre logistische regression, anova, mehrdimensionale, nominale daten
 ### open american national corpus
+
+#14027.Mehl,alternatives,define onomasiological alternates
+#load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
+#save(trndf.lm,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
+
+library(stringi)
+df.build<-trndf.lm[trndf.lm$alt=="build",]
+df.build$alt.true<-0
+#df.build.a<-fix(df.build) # no. not manually. try define objects (collocates) of /make/ first.
+set<-trndf.lm
+alt<-"make"
+get.coll<-function(set,alt){
+    m<-set$alt==alt&set$light==0
+    wm<-which(m)
+    #sum(m,na.rm = T)
+    m.split<-stri_split_boundaries(set$text[wm],simplify = T)
+    m.split.l<-stri_split_boundaries(set$text[wm])
+    
+    df.split<-data.frame(m.split)
+    rownames(m.split)<-wm
+    head(m.split)
+    
+    m.split.a<-array(m.split,dim=length(m.split.l),dimnames = m.split.l)
+    df.1c<-data.frame(term=m.split,id=wm)
+    df.split$ID<-wm
+    returnlist<-list(df=df.split,matrix=m.split,df.1c=df.1c)
+    return(returnlist)
+    return(df.split)
+  
+}
+#split.build<-get.coll(trndf.lm,"build")
+split.make<-get.coll(trndf.lm,"make")
+
+library(udpipe)
+?udpipe
+get.mfw<-function(df){
+  
+}
+
+freq.make<-document_term_frequencies(x=split.make,document = paste("SBC",seq_along(split.make),sep="_"),
+                                     split = "[[:space:][:punct:][:digit:]]+")
+
+df.make<-split.make$df.1c
+df.make$term<-"make"
+keywords_collocation(df.make, "term", "ID", ngram_max = 2, n_min = 2)
+

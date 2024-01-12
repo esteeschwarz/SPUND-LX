@@ -95,6 +95,7 @@ barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution
 ```
 
 #### semantic alternatives to make
+this contrast includes made up alternatives to /make/ that Mehl defined in his study. we do not account for the context of these alternatives in the corpus texts, i.e. all occurences are counted. Mehl contrasted only these alternate occurences which "are defined as those verbs that occur in the corpus with the same concrete direct objects as make, [take, and give,] and with a roughly equivalent meaning." Mehl puts these under "onomasiological alternates". (cf. @Mehl_what_2021 p.13)  
 
 ```{r fig-02-alt,echo=F, fig.cap="proportion of semantic alternatives to concrete /make/ in SBC"}
 trntable<-table(trndf.lm$alt[trndf.lm$light==0])
