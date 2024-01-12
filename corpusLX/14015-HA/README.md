@@ -36,28 +36,28 @@ the corpus data was downloaded from:
 
 ### 1.2.1 corpus sample
 
-|       | scb |   id | text                                      |   lfd | light | alt     |
-|:-----|----:|-----:|:------------------------------------|-----:|-----:|:-------|
-| 30651 |  26 |  577 | … making the application,                 | 30651 |    NA | make    |
-| 68095 |  59 |  881 | 3And a3 lot of homemade cookies.          | 68095 |     0 | make    |
-| 8072  |   6 | 1671 | Or makes whoever it is stop and think,    |  8072 |     1 | make    |
-| 68129 |  59 |  915 | 5A=nd homemade fu5 dge.                   | 68129 |     0 | make    |
-| 13300 |  12 |   78 | … I=f I make the statement which I di=d,  | 13300 |     1 | make    |
-| 58447 |  51 |  426 | … I don’t like the new buildings.         | 58447 |     0 | build   |
-| 18118 |  15 |  406 | it’s built during the –                   | 18118 |     0 | build   |
-| 63702 |  56 |   82 | I build barns and,                        | 63702 |     0 | build   |
-| 13466 |  12 |  244 | .. there’s a lot of coalition building.   | 13466 |     0 | build   |
-| 34651 |  30 |  185 | H And they built … Python,                | 34651 |     0 | build   |
-| 60524 |  52 |  822 | … TSK So,                                 | 60524 |    NA | a-other |
-| 49065 |  43 |  472 | .. So he says,                            | 49065 |    NA | a-other |
-| 4483  |   4 |  205 | 2are2 ,                                   |  4483 |    NA | a-other |
-| 29267 |  24 |  792 | … Okay Hx .                               | 29267 |    NA | a-other |
-| 61983 |  53 |  674 | … We have to really hone in on-,          | 61983 |    NA | a-other |
-| 5840  |   5 |  265 | H … And she’s got,                        |  5840 |    NA | a-other |
-| 28717 |  24 |  242 | Look at that.                             | 28717 |    NA | a-other |
-| 40429 |  35 |  279 | 2 THROAT 2 =                              | 40429 |    NA | a-other |
-| 768   |   1 |  767 | .. it sure does make a mess in the house. |   768 |     1 | make    |
-| 32025 |  28 |  308 | 2@(**2?**) @                              | 32025 |    NA | a-other |
+|       | scb |   id | text                                                          |   lfd | light | alt     |
+|:----|---:|----:|:------------------------------------------|----:|----:|:------|
+| 9465  |   8 |  567 | and then I didn’t and I .. kept making like,                  |  9465 |     1 | make    |
+| 67928 |  59 |  714 | And he’s really good at making out .. the budget.             | 67928 |     1 | make    |
+| 57521 |  50 |  459 | you can make some serious .. @ din 5go working dinner @ 5 .   | 57521 |     0 | make    |
+| 2974  |   3 |  242 | % I wanted it to be home made Q .                             |  2974 |     0 | make    |
+| 61913 |  53 |  604 | and make the payroll,                                         | 61913 |     1 | make    |
+| 35078 |  30 |  612 | … God is continually .. building character.                   | 35078 |     0 | build   |
+| 36022 |  31 |  811 | 3is no3 t built,                                              | 36022 |     0 | build   |
+| 16921 |  14 |  397 | TSK H The building is –                                       | 16921 |     0 | build   |
+| 44860 |  38 |  580 | H and the new building is a new visitors center.              | 44860 |     0 | build   |
+| 44465 |  38 |  185 | H the building of Boulder City about seven miles up the road, | 44465 |     0 | build   |
+| 65343 |  57 |  123 | … It’s gonna get messed up.                                   | 65343 |    NA | a-other |
+| 69438 |  60 |  367 | % this guy 92 s name was LeRoy .. Neiman,                     | 69438 |    NA | a-other |
+| 55500 |  48 |  839 | … Good.                                                       | 55500 |    NA | a-other |
+| 23835 |  19 |  886 | and they suspect an aneurysm,                                 | 23835 |    NA | a-other |
+| 47424 |  41 |  539 | hunh?                                                         | 47424 |    NA | a-other |
+| 22225 |  17 | 1011 | H … Chaos X I guess X is basically analysis of noise.         | 22225 |    NA | a-other |
+| 17675 |  14 | 1151 | H and he was going to .. to tell him,                         | 17675 |    NA | a-other |
+| 37226 |  32 |  476 | so we .. we jumped ship in uh= New York,                      | 37226 |    NA | a-other |
+| 28500 |  24 |   25 | .. Yeah.                                                      | 28500 |    NA | a-other |
+| 40863 |  35 |  713 | 2No,                                                          | 40863 |    NA | a-other |
 
 ### 1.2.2 script used:
 
@@ -74,8 +74,6 @@ cf. (Mehl 2021, 11–14)
 | concrete |          68 |         96 |         89 |
 | light    |         321 |        353 |        381 |
 
-distribution of lemma /make/ over corpora
-
 <figure>
 <img src="README_files/figure-markdown_github/fig-01-dist-1.png"
 alt="distribution of lemma /make/ over corpora. ICE data from study." />
@@ -84,6 +82,14 @@ corpora. ICE data from study.</figcaption>
 </figure>
 
 #### 1.2.3.2 semantic alternatives to make
+
+this contrast includes made up alternatives to /make/ that Mehl defined
+in his study. we do not account for the context of these alternatives in
+the corpus texts, i.e. all occurences are counted. Mehl contrasted only
+these alternate occurences which “are defined as those verbs that occur
+in the corpus with the same concrete direct objects as make, (take, and
+give,) and with a roughly equivalent meaning.” Mehl puts these under
+“onomasiological alternates”. (cf. Mehl (2021) p.13)
 
 | Var1      | Freq |
 |:----------|-----:|
@@ -101,6 +107,13 @@ semantic alternatives
 alt="proportion of semantic alternatives to concrete /make/ in SBC" />
 <figcaption aria-hidden="true">proportion of semantic alternatives to
 concrete /make/ in SBC</figcaption>
+</figure>
+
+<figure>
+<img src="README_files/figure-markdown_github/fig-03-alt-1.png"
+alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
+<figcaption aria-hidden="true">proportion of semantic alternatives, only
+equivalent meaning of alternates</figcaption>
 </figure>
 
 ------------------------------------------------------------------------

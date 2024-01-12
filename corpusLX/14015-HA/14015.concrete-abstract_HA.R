@@ -17,7 +17,20 @@ Q.2<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/
 Q.3<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCSAE_chat.zip"
 library(utils)
 library(stringi)
+library(quanteda.textstats)
+library(udpipe) # for pos tagging
+udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
+### if not yet, the model must be downloaded, comment in above line 
+get.udp<-function(){
+udpipe_download_model("english",model_dir = tempdir("md"))
+mdf<-list.files(tempdir())
+mdw<-grep(".udpipe",mdf)
+mdfile<-paste0(tempdir(),"/",mdf[mdw])
+md<-udpipe_load_model(mdfile)
+}
+ifelse(exists("udpipepath"),md<-udpipe_load_model(udpipepath),md<-get.udp())
 getwd()
+
 #setwd("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA")
 #tempdir()
 #dir.create("data")
@@ -221,17 +234,13 @@ split.make<-get.coll(trndf.lm,"make","make")
 split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
 #split.make<-get.coll(trndf.lm,"make")
 #split.build$tokens.g==split.build$tokens
-library(udpipe)
-?udpipe
+#library(udpipe)
+
 get.mfw<-function(df){
   
 }
 
 
-library(quanteda.textstats)
-library(udpipe)
-udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
-md<-udpipe_load_model(udpipepath)
 
 get.noun.coll<-function(split.df){
 #dfm.make<-dfm(split.make$matrix)
@@ -334,6 +343,13 @@ plot.plots<-function(what){
     barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
   
 }
+save.plotlist<-function(){
+  plotlist<-list(dist=cbind(ICE.written=i.make.w,ICE.spoken=i.make.s,SBC.spoken=i.make.m),alt.c.table=alt.c.table,trntable=trntable,nouns.f.cp=nouns.f.cp)
+  save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
+}
+
+save.plotlist()
+
 # plot.plots("dist")
 # plot.plots("alt.1")
 # plot.plots("alt.2")
