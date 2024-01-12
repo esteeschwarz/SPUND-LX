@@ -190,22 +190,25 @@ get.coll<-function(set,alt){
     m<-set$alt==alt&set$light==0
     wm<-which(m)
     #sum(m,na.rm = T)
-    m.split<-stri_split_boundaries(set$text[wm],simplify = T)
-    m.split.l<-stri_split_boundaries(set$text[wm])
+#    m.split<-stri_split_boundaries(set$text[wm],simplify = T)
+ #   m.split.l<-stri_split_boundaries(set$text[wm])
+    m.split<-tokens(set$text[wm],remove_numbers = T,remove_punct = T,remove_symbols = T,remove_separators = T,split_hyphens = T,include_docvars = T)
+#    df.split<-data.frame(m.split)
+ #   rownames(m.split)<-wm
+  #  head(m.split)
     
-    df.split<-data.frame(m.split)
-    rownames(m.split)<-wm
-    head(m.split)
-    
-    m.split.a<-array(m.split,dim=length(m.split.l),dimnames = m.split.l)
-    df.1c<-data.frame(term=m.split,id=wm)
-    df.split$ID<-wm
-    returnlist<-list(df=df.split,matrix=m.split,df.1c=df.1c)
+#    m.split.a<-array(m.split,dim=length(m.split.l),dimnames = m.split.l)
+   # df.1c<-data.frame(term=m.split,id=wm)
+    #df.split$ID<-wm
+    returnlist<-list(tokens=m.split)
+#    returnlist<-list(df=df.split,tokens=m.split,df.1c=df.1c)
     return(returnlist)
     return(df.split)
   
 }
 #split.build<-get.coll(trndf.lm,"build")
+split.make<-get.coll(trndf.lm,"make")
+split.build<-get.coll(trndf.lm,"build")
 split.make<-get.coll(trndf.lm,"make")
 
 library(udpipe)
@@ -220,4 +223,57 @@ freq.make<-document_term_frequencies(x=split.make,document = paste("SBC",seq_alo
 df.make<-split.make$df.1c
 df.make$term<-"make"
 keywords_collocation(df.make, "term", "ID", ngram_max = 2, n_min = 2)
+library(quanteda.textstats)
+library(udpipe)
+udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
+md<-udpipe_load_model(udpipepath)
+
+get.noun.coll<-function(split.df){
+#dfm.make<-dfm(split.make$matrix)
+dfm.make.2<-split.df$tokens%>%tokens_remove(stopwords("en"))%>%dfm()
+make.freq<-textstat_frequency(dfm.make.2)
+make.freq
+#########
+tna<-make.freq$feature
+length(tna)
+an3<-udpipe_annotate(md,x=tna,tagger = "default",parser = "none")
+#an4<-list(docid=an3$x,pos=an3$conllu)
+#load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.ann.RData")
+#an5<-as.data.frame(an3$x,an3$conllu)
+an6<-as.data.frame(an3)
+unique(an6$upos)
+an6.n<-an6$sentence[an6$upos=="NOUN"]
+returnlist<-list(freq=make.freq,ann=an6,nouns=an6.n)
+#an6.n
+}
+n.build<-get.noun.coll(split.build)
+n.make<-get.noun.coll((split.make))
+#n.build$nouns
+m<-n.make$nouns%in%n.build$nouns
+sum(m)
+n.make[m]
+m<-n.build$nouns%in%n.make$nouns
+sum(m)
+n.build[m]
+###wks.
+### the only valid common associates seem to be "couple", "lot", "water" and "thing" as the rest of the collocates cannot
+### appear as objects of /make/ AND /build/ in a reasonable context
+
+#count these:
+nouns.com<-c("couple","lot","water","thing")
+
+get.n.freq<-function(nouns.com){
+m.build<-n.build$freq$frequency[n.build$freq$feature%in%nouns.com]
+m.build
+m.make<-n.make$freq$frequency[n.make$freq$feature%in%nouns.com]
+m.make
+sum.freq.1<-sum(n.make$freq$frequency)
+sum.freq.2<-sum(n.build$freq$frequency)
+m.p.1<-sum(m.make)/sum.freq.1
+m.p.2<-sum(m.build)/sum.freq.2
+return(c(nf1=m.p.1,nf2=m.p.2))
+}
+
+nouns.f.1<-get.n.freq(nouns.com)
+
 
