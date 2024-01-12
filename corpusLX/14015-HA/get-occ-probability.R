@@ -6,8 +6,11 @@
 library(stats)
 #load("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trndf.lm.RData") # no direct load!
 dtemp<-tempfile()
-download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trndf.lm.cpt.RData",dtemp)
+# download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/trndf.lm.cpt.RData",dtemp)
+# load(dtemp)
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SBC.ann.df.RData",dtemp)
 load(dtemp)
+trndf.lm<-scb.ann.df
 head(trndf.lm)
 ### >
 ### the dataset consists of the complete SBC corpus with annotation of light/concrete use for /make/ in token areas.
