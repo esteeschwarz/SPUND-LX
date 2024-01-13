@@ -157,6 +157,35 @@ scb.ann.list[[ns.list]]<-an7
 }
 #wks.
 #save(scb.ann.list,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.RData")
+t<-grep("token",colnames(scb.ann.list$doc1))
+t<-colnames(scb.ann.list$doc1)=="token"
+t<-which(t)
+t
+scbns<-colnames(scb.ann.list$doc1)
+scbns[t]<-"tok"
+x<-scb.ann.list
+scbns
+k<-1
+for(k in 1:length(scb.ann.list)){
+  colnames(scb.ann.list[[k]])<-scbns
+  xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/xls"
+  ns.df<-paste0(xldir,"/SCB-pos_",k,".xlsx")
+  write_xlsx(scb.ann.list[[k]],ns.df)
+  
+  }
+rename.tok<-function(x)x<-scbns
+rename.list<-function(x)colnames(x)<-scbns
+scb.ann.list.t<-lapply(scb.ann.list, rename.tok)
+scb.ann.list.ns<-lapply(scb.ann.list, name.tok)
+scb.ann.list.nr<-lapply(scb.ann.list, rename.list)
+colnames(scb.ann.list$doc1)
+scb.ann.list.t
+### create annis corpus:
+getwd()
+pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl5.pepper","SBC_v1.0.1","SBC_v1.0.1")
+pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl6.pepper","SBC_v1.0.1","SBC_v1.0.1")
+zipannis("SBC_annis","SBC_annis.zip")
+getwd()
 library(tokenizers)
 tna.t<-tokenize_words(
   trndf$text,
