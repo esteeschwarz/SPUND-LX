@@ -131,15 +131,67 @@ tna[2]
 m<-grep("_",tna)
 tna[m]
 tna<-tna[!m]
-an3<-udpipe_annotate(md,x=tna,tokenizer = "tokenizer",tagger = "default",trace = 2)
-an3<-udpipe_annotate(md,x=tna.m,tokenizer = "tokenizer",tagger = "default",trace = 2)
-an6<-as.data.frame(an3)
-tok.list[[scb.id]]<-trndf.split
-pos.list[[scb.id]]<-an6
-xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/posxls"
+k<-2
+scb.ann.list<-list()
+for(k in 1:length(scb.unique)){
+  cat(k,"\n")
+  sbc<-trndf
+  scb.id<-scb.unique[k]
+  scb.sub<-subset(trndf,trndf$scb==scb.id)
+  colnames(scb.sub)[1]<-"doc_id"
+  scb.sub$text<-gsub("[+%?~,-.0-9()=<>@]|\\]|\\[","",scb.sub$text)
+  scb.sub$text<-gsub("(^ )","",scb.sub$text)
+  mode(scb.sub$text)
+  sbc.sub.c<-corpus(scb.sub,docid_field = 'doc_id',text_field = 'text',unique_docnames = F)
+  an4<-udpipe_annotate(md,x=sbc.sub.c,tokenizer="tokenizer",tagger = "default",trace = 2)
+  ###wks.
+  an7<-data.frame(an4)
+  an7[50:100,]
+  an7$paragraph_id<-paste0("doc",scb.id)
+  colnames(an7)[2]<-"sbc_id"
+xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/posxl"
 ns.df<-paste0(xldir,"/SCB-pos_",scb.id,".xlsx")
-write_xlsx(an6,ns.df)
+write_xlsx(an7,ns.df)
+ns.list<-paste0("doc",scb.id)
+scb.ann.list[[ns.list]]<-an7
 }
+#wks.
+#save(scb.ann.list,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.RData")
+library(tokenizers)
+tna.t<-tokenize_words(
+  trndf$text,
+  lowercase = TRUE,
+  stopwords = NULL,
+  strip_punct = TRUE,
+  strip_numeric = T,
+  simplify = FALSE
+)
+tna.t[[1]]
+tna[1]
+an3<-udpipe_annotate(md,x=tna.t[[1]])
+an3<-udpipe_annotate(md,x=tna)
+anno<-function(x)udpipe_annotate(md,x)
+tna.ann<-lapply(tna, anno)
+todf<-function(x)data.frame(x)
+tna.ann.df<-lapply(tna.ann, todf)
+tna.ann.df$text3$doc_id
+toxl<-function(x)write_xlsx(x,paste0())
 
-
-
+xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/posxl"
+for(k in 1:length(tna.ann.df)){
+  
+  ns.df<-paste0(xldir,"/SCB-pos_",names(tna.ann.df[k]),".xlsx")
+  write_xlsx(tna.ann.df[k],ns.df)
+  
+}
+tna.ann.df[2]
+tna[1]
+names(tna.ann.df[1])
+tna.ann$text1$conllu
+m<-tna.t==" "
+2+3
+sum(m,na.rm = T)
+m<-is.na(tna.t)
+sum(m)
+tna.t<-tna.t[!m]
+an6<-data.frame(an3)
