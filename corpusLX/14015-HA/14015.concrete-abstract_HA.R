@@ -18,6 +18,7 @@ Q.3<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/
 library(utils)
 library(stringi)
 library(quanteda.textstats)
+library(quanteda)
 library(udpipe) # for pos tagging
 udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
 ### if not yet, the model must be downloaded, comment in above line 
@@ -198,40 +199,54 @@ df.build<-trndf.lm[trndf.lm$alt=="build",]
 df.build$alt.true<-0
 #df.build.a<-fix(df.build) # no. not manually. try define objects (collocates) of /make/ first.
 set<-trndf.lm
-alt<-"build"
-alt.g<-"(buil(d|t|ding))"
+alt<-"take"
+alt.g<-"(take|took|taken|taking)"
 ############################
 get.coll<-function(set,alt,alt.g){
     m<-set$alt==alt&set$light==0
     wm<-which(m)
-    m2<-grep(alt.g,set$text)
+    m2<-grepl(alt.g,set$text)
     sum(m)
     sum(m2)
+    m2<-which(m2)
     head(set$text[m])
     head(set$text[m2])
+    set$alt[m2]<-alt
     #sum(m,na.rm = T)
 #    m.split<-stri_split_boundaries(set$text[wm],simplify = T)
  #   m.split.l<-stri_split_boundaries(set$text[wm])
     m.split<-tokens(set$text[wm],remove_numbers = T,remove_punct = T,remove_symbols = T,remove_separators = T,split_hyphens = T,include_docvars = T)
     m.split.g<-tokens(set$text[m2],remove_numbers = T,remove_punct = T,remove_symbols = T,remove_separators = T,split_hyphens = T,include_docvars = T)
-    m.split
-    m.split.g
-#    df.split<-data.frame(m.split)
+    tok.clean<-function(x)gsub("[0-9@]","",x)
+    m.split<-lapply(m.split, tok.clean)
+    
+    m.split.g[[2]]
+    tok.clean<-function(x)gsub("[0-9@]","",x)
+    sum(grep("[0-9]",m.split.g))
+    m.split.g.c<-lapply(m.split.g, tok.clean)
+    sum(grep("[0-9]",m.split.g.c))
+    m.split.g.c[[1]]
+    m.split.g<-m.split.g.c
+    #    df.split<-data.frame(m.split)
  #   rownames(m.split)<-wm
   #  head(m.split)
     
 #    m.split.a<-array(m.split,dim=length(m.split.l),dimnames = m.split.l)
    # df.1c<-data.frame(term=m.split,id=wm)
     #df.split$ID<-wm
-    returnlist<-list(tokens=m.split,tokens.g=m.split.g)
-#    returnlist<-list(df=df.split,tokens=m.split,df.1c=df.1c)
+    returnlist<-list(set=set,tokens=m.split,tokens.g=m.split.g)
+#returnlist$tokens.g[[1]]
+returnlist
+    #    returnlist<-list(df=df.split,tokens=m.split,df.1c=df.1c)
     return(returnlist)
     return(df.split)
   
 }
 #split.build<-get.coll(trndf.lm,"build")
-split.make<-get.coll(trndf.lm,"make","make")
-split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
+# split.make<-get.coll(trndf.lm,"make","make")
+# split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
+split.take<-get.coll(trndf.lm,"take","(take|took|taken|taking)")
+split.take$tokens.g[[1]]
 #split.make<-get.coll(trndf.lm,"make")
 #split.build$tokens.g==split.build$tokens
 #library(udpipe)
@@ -241,36 +256,79 @@ get.mfw<-function(df){
 }
 
 
+# length(split.take$tokens)
+ split.df<-split.take
+# split.make$tokens.g$text1
 
 get.noun.coll<-function(split.df){
 #dfm.make<-dfm(split.make$matrix)
-dfm.make.2<-split.df$tokens%>%tokens_remove(stopwords("en"))%>%dfm()
-make.freq<-textstat_frequency(dfm.make.2)
+make.freq<-"n.a."
+an6<-"n.a."
+an6.n<-"n.a."
+tok.clean<-function(x)gsub("[0-9@]","",x)
+
+  if(length(split.df$tokens)>0){
+    m.split<-split.df$tokens
+    sum(grep("[0-9]",m.split))
+ #   m.split.c<-lapply(m.split, tok.clean)
+  #   sum(grep("[0-9]",m.split.c))
+  #   m.split.c[[1]]
+  # #  m.split<-m.split.c
+    m.split.c<-lapply(split.df$tokens.g, tok.clean)
+    sum(grepl("[0-9]",m.split.c))
+    m.split.c[[2]]
+    #m.split.g<-m.split.g.c
+    m.split.ct<-tokens(m.split.c)
+    
+#  dfm.make.2<-split.df$tokens%>%tokens_remove(stopwords("en"))%>%dfm()
+  dfm.make.2<-m.split.ct%>%tokens_remove(stopwords("en"))%>%dfm()
+  make.freq<-textstat_frequency(dfm.make.2)
 make.freq
-dfm.make.g<-split.df$tokens.g%>%tokens_remove(stopwords("en"))%>%dfm()
-make.freq.g<-textstat_frequency(dfm.make.g)
 make.freq
 #########
 tna<-make.freq$feature
-tna.g<-make.freq.g$feature
 length(tna)
 an3<-udpipe_annotate(md,x=tna,tagger = "default",parser = "none")
+an6<-as.data.frame(an3)
+unique(an6$upos)
+an6.n<-an6$sentence[an6$upos=="NOUN"]
+}
+m.split.g<-split.df$tokens.g
+sum(grepl("[0-9]",m.split.g))
+m.split.g.c<-lapply(split.df$tokens.g, tok.clean)
+sum(grepl("[0-9]",m.split.g.c))
+m.split.g.c[[2]]
+m.split.g<-m.split.g.c
+m.split.t<-tokens(m.split.g.c)
+#dfm.make.g<-split.df$tokens.g%>%tokens_remove(stopwords("en"))%>%dfm()
+dfm.make.g<-m.split.t%>%tokens_remove(stopwords("en"))%>%dfm()
+dfm.make.g
+make.freq.g<-textstat_frequency(dfm.make.g)
+tna.g<-make.freq.g$feature
+#tna.g<-gsub("[0-9@]",tna.g)
 an3.g<-udpipe_annotate(md,x=tna.g,tagger = "default",parser = "none")
 #an4<-list(docid=an3$x,pos=an3$conllu)
 #load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/SCB-df.ann.RData")
 #an5<-as.data.frame(an3$x,an3$conllu)
-an6<-as.data.frame(an3)
-unique(an6$upos)
-an6.n<-an6$sentence[an6$upos=="NOUN"]
 an6.g<-as.data.frame(an3.g)
-unique(an6$upos)
+unique(an6.g$upos)
 an6.n.g<-an6.g$sentence[an6.g$upos=="NOUN"]
-returnlist<-list(freq=make.freq,ann=an6,nouns=an6.n,freq.g=make.freq.g,ann.g=an6.g,nouns.g=an6.n.g)
+if(length(split.df$tokens)==0){
+ make.freq<-make.freq.g
+ an6<-an6.g
+ an6.n<-an6.n.g
+}
+returnlist<-list(set=split.df$set,freq=make.freq,ann=an6,nouns=an6.n,freq.g=make.freq.g,ann.g=an6.g,nouns.g=an6.n.g)
 #an6.n
 }
+#returnlist$freq$frequency
+split.make<-get.coll(trndf.lm,"make","make")
+split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
 n.build<-get.noun.coll(split.build)
 n.make<-get.noun.coll((split.make))
-n.build$nouns.g==n.build$nouns
+split.take<-get.coll(trndf.lm,"take","(take|took|taken|taking)")
+n.take<-get.noun.coll(split.take)
+  n.build$nouns.g==n.build$nouns
 m<-n.make$nouns%in%n.build$nouns
 sum(m)
 n.make[m]
@@ -281,9 +339,10 @@ n.build[m]
 ### the only valid common associates seem to be "couple", "lot", "water" and "thing" as the rest of the collocates cannot
 ### appear as objects of /make/ AND /build/ in a reasonable context
 
-
-get.n.freq<-function(x.build,nouns.com){
+#x.build<-n.x.carry
+get.n.freq<-function(x.build,nouns.com,verb,alt){
 n.build<-x.build  
+n.build$freq
 m.build<-n.build$freq$frequency[n.build$freq$feature%in%nouns.com]
 m.build
 m.make<-n.make$freq$frequency[n.make$freq$feature%in%nouns.com]
@@ -293,7 +352,7 @@ sum.freq.2<-sum(n.build$freq$frequency)
 sum.freq.3<-sum.freq.1+sum.freq.2
 f.p.1<-sum(m.make)/sum.freq.1
 f.p.2<-sum(m.build)/sum.freq.3
-return(c(p.make=f.p.1,alt=f.p.2))
+return(c(q1=verb,q2=alt,p.verb=f.p.1,alt=f.p.2))
 }
 
 #count these:
@@ -306,7 +365,27 @@ n.x.cr<-get.noun.coll(get.coll(trndf.lm,"create","(creat(ed|ing|e))")) # test
 n.x.bu<-get.noun.coll(get.coll(trndf.lm,"build","(buil(d|t|ding))")) # test
 n.x.man<-get.noun.coll(get.coll(trndf.lm,"build","(manufactur(ing|e|ed))")) # test
 n.x.dev<-get.noun.coll(get.coll(trndf.lm,"build","(develop(ing|e?|ed))")) # test
-n.x.dev
+n.x.take<-get.noun.coll(get.coll(trndf.lm,"take","(take|took|taken|taking)"))
+n.x.give<-get.noun.coll(get.coll(trndf.lm,"give","(give|gave|given|giving)"))
+n.x.carry<-get.noun.coll(get.coll(trndf.lm,"carry","(carry|carrying|carried)"))
+n.x.provide<-get.noun.coll(get.coll(trndf.lm,"provide","(provide|provided|providing)"))
+###
+n.x.take$nouns.g # general collocates
+###
+### put alt cat
+get.freq<-function(set,verb){
+  m<-set$alt==verb
+  f<-sum(m)
+}
+
+f.take<-get.freq(n.x.take$set,"take")
+f.give<-get.freq(n.x.give$set,"give")
+f.provide<-get.freq(n.x.provide$set,"provide")
+put.alt<-function(df,regx){
+  m<-grep(regx)
+}
+
+
 # m<-n.make$nouns%in%n.x$nouns
 # sum(m)
 # n.make$nouns[m]
@@ -319,15 +398,29 @@ n.x.dev
 # m<-n.x.dev$nouns.g%in%n.make$nouns
 # sum(m)
 # n.x$nouns.g[m]
+m<-n.take$nouns.g%in%n.x.carry$nouns.g
+sum(m)
+n.take$nouns.g[m]
+m<-n.x.give$nouns.g%in%n.x.provide$nouns.g
+sum(m)
+n.x.provide$nouns.g[m]
 ### > no common associates for "produce", "construct", "generate","manufacture","develop"
 nouns.com.create<-c("thing","day","cause")
+nouns.com.provide<-c("service","period")
 #nouns.com.create<-n.x$nouns[m]
 nouns.com.build<-"thing"
 nouns.com.create<-c("thing")
+nouns.com.carry<-c("bag","lot","chairs","mother")
 nouns.f.1<-get.n.freq(n.x.cr,nouns.com.create)
 nouns.f.1
 nouns.f.2<-get.n.freq(n.x.bu,nouns.com.build)
 nouns.f.2
+nouns.f.3<-get.n.freq(n.x.carry,nouns.com.carry,"take","carry")
+nouns.f.3
+nouns.f.4<-get.n.freq(n.x.provide,nouns.com.provide,"give","provide")
+nouns.f.4
+sum(n.x.give$freq$feature=="service")
+sum(n.x.give$freq$feature=="period") # 0
 nouns.f.cp<-c(make=sum(nouns.f.1[1]+nouns.f.2[1]),create=nouns.f.1[2],build=nouns.f.2[2],produce=0,generate=0,construct=0)
 nouns.f.cp
 # barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
@@ -348,7 +441,7 @@ save.plotlist<-function(){
   save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
 }
 
-save.plotlist()
+#save.plotlist()
 
 # plot.plots("dist")
 # plot.plots("alt.1")
