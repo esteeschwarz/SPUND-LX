@@ -22,10 +22,10 @@ library(quanteda)
 library(udpipe) # for pos tagging
 
 #mini:
-udpipepath<-"/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
+#udpipepath<-"/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
 
 #lapsi
-#udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
+udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
 ### if not yet, the model must be downloaded, comment in above line 
 get.udp<-function(){
 udpipe_download_model("english",model_dir = tempdir("md"))
@@ -206,8 +206,9 @@ df.build$alt.true<-0
 set<-trndf.lm
 alt<-"manufacture"
 alt.g<-"(manufactur(ing|e|ed))"
+trndf.lm$verb<-NA
 ############################
-get.coll<-function(set,alt,alt.g){
+get.coll<-function(set,verb,alt,alt.g){
     m<-set$alt==alt&set$light==0
     wm<-which(m)
     m2<-grepl(alt.g,set$text)
@@ -216,6 +217,7 @@ get.coll<-function(set,alt,alt.g){
     m2<-which(m2)
     head(set$text[m])
     head(set$text[m2])
+    set$verb[m2]<-verb
     set$alt[m2]<-alt
     #sum(m,na.rm = T)
 #    m.split<-stri_split_boundaries(set$text[wm],simplify = T)
@@ -250,7 +252,7 @@ returnlist
 #split.build<-get.coll(trndf.lm,"build")
 # split.make<-get.coll(trndf.lm,"make","make")
 # split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
-split.take<-get.coll(trndf.lm,"take","(take|took|taken|taking)")
+split.take<-get.coll(trndf.lm,"take","take","(take|took|taken|taking)")
 split.take$tokens.g[[1]]
 #split.make<-get.coll(trndf.lm,"make")
 #split.build$tokens.g==split.build$tokens
@@ -302,7 +304,7 @@ m.split.g<-split.df$tokens.g
 sum(grepl("[0-9]",m.split.g))
 m.split.g.c<-lapply(split.df$tokens.g, tok.clean)
 sum(grepl("[0-9]",m.split.g.c))
-m.split.g.c[[2]]
+m.split.g.c[[1]]
 m.split.g<-m.split.g.c
 m.split.t<-tokens(m.split.g.c)
 #dfm.make.g<-split.df$tokens.g%>%tokens_remove(stopwords("en"))%>%dfm()
@@ -327,25 +329,25 @@ returnlist<-list(set=split.df$set,freq=make.freq,ann=an6,nouns=an6.n,freq.g=make
 #an6.n
 }
 #returnlist$freq$frequency
-split.make<-get.coll(trndf.lm,"make","make")
-split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
-n.build<-get.noun.coll(split.build)
-n.make<-get.noun.coll((split.make))
-split.take<-get.coll(trndf.lm,"take","(take|took|taken|taking)")
-n.take<-get.noun.coll(split.take)
-  n.build$nouns.g==n.build$nouns
-m<-n.make$nouns%in%n.build$nouns
-sum(m)
-n.make[m]
-m<-n.build$nouns%in%n.make$nouns
-sum(m)
-n.build[m]
+#split.make<-get.coll(trndf.lm,"make","make")
+#split.build<-get.coll(trndf.lm,"make","build","(buil(d|t|ding))")
+#n.build<-get.noun.coll(split.build)
+#n.make<-get.noun.coll(split.make)
+#split.take<-get.coll(trndf.lm,"take","take","(take|took|taken|taking)")
+#n.take<-get.noun.coll(split.take)
+#  n.build$nouns.g==n.build$nouns
+#m<-n.make$nouns%in%n.build$nouns
+#sum(m)
+#n.make[m]
+#m<-n.build$nouns%in%n.make$nouns
+#sum(m)
+#n.build[m]
 ###wks.
 ### the only valid common associates seem to be "couple", "lot", "water" and "thing" as the rest of the collocates cannot
 ### appear as objects of /make/ AND /build/ in a reasonable context
 
-x.build<-n.x.provide
-nouns.com<-nouns.com.provide
+#x.build<-n.x.provide
+#nouns.com<-nouns.com.provide
 verb<-"give"
 alt<-"provide"
 
@@ -354,6 +356,10 @@ get.n.freq<-function(x.build,nouns.com,verb,alt){
 n.build<-x.build
 n.make<-x.build
 n.build$freq
+nxdf<-n.build$set
+sum.verb<-sum(n.build$set$scb[n.build$set$verb==verb],na.rm = T)
+#############################################
+n.build$nouns
 m.build<-n.build$freq$frequency[n.build$freq$feature%in%nouns.com]
 m<-(n.build$freq$feature%in%nouns.com)
 m.build
@@ -375,16 +381,16 @@ nouns.com.2<-"thing"
 
 #nouns.f.1<-get.n.freq(nouns.com.2)
 #nouns.f.1
-n.x.cr<-get.noun.coll(get.coll(trndf.lm,"create","(creat(ed|ing|e))")) # test
-n.x.bu<-get.noun.coll(get.coll(trndf.lm,"build","(buil(d|t|ding))")) # test
-n.x.man<-get.noun.coll(get.coll(trndf.lm,"manufacture","(manufactur(ing|e|ed))")) # test
+n.x.cr<-get.noun.coll(get.coll(trndf.lm,"make","create","(creat(ed|ing|e))")) # test
+n.x.bu<-get.noun.coll(get.coll(trndf.lm,"make","build","(buil(d|t|ding))")) # test
+n.x.man<-get.noun.coll(get.coll(trndf.lm,"make","manufacture","(manufactur(ing|e|ed))")) # test
 #f1 
-n.x.test<-get.coll(trndf.lm,"manufacture","(manufactur(ing|e|ed))")
-n.x.dev<-get.noun.coll(get.coll(trndf.lm,"develop","(develop(ing|e?|ed))")) # test
-n.x.take<-get.noun.coll(get.coll(trndf.lm,"take","(take|took|taken|taking)"))
-n.x.give<-get.noun.coll(get.coll(trndf.lm,"give","(give|gave|given|giving)"))
-n.x.carry<-get.noun.coll(get.coll(trndf.lm,"carry","(carry|carrying|carried)"))
-n.x.provide<-get.noun.coll(get.coll(trndf.lm,"provide","(provide|provided|providing)"))
+n.x.test<-get.coll(trndf.lm,"make","manufacture","(manufactur(ing|e|ed))")
+n.x.dev<-get.noun.coll(get.coll(trndf.lm,"make","develop","(develop(ing|e?|ed))")) # test
+n.x.take<-get.noun.coll(get.coll(trndf.lm,"take","take","(take|took|taken|taking)"))
+n.x.give<-get.noun.coll(get.coll(trndf.lm,"give","give","(give|gave|given|giving)"))
+n.x.carry<-get.noun.coll(get.coll(trndf.lm,"take","carry","(carry|carrying|carried)"))
+n.x.provide<-get.noun.coll(get.coll(trndf.lm,"give","provide","(provide|provided|providing)"))
 ###
 n.x.take$nouns.g # general collocates
 ###
@@ -393,7 +399,28 @@ get.freq<-function(set,verb){
   m<-set$alt==verb
   f<-sum(m)
 }
-
+k<-1
+### feed in verb occurences to main df >
+#altarray<- c("provide","carry")
+########################################
+### TODO:
+### define concrete:
+c(n.x.provide$nouns,"this","that","the","it") # in trndf.lm$text, subset, fix() for concrete use
+#sum() above, f=sum/sum(all)
+ m<-grepl("provide",n.x.provide$set$alt) 
+print(sum(m))
+unique(trndf.lm$alt)
+#trndf.lm$alt[m]<-altarray[1]
+#trndf.lm$alt[m]<-n.x.provide$set$alt[m]
+print(sum(m))
+#trndf.lm$verb[m]<-n.x.provide$set$verb[m]
+m<-grepl("carry",n.x.carry$set$alt) 
+print(sum(m))
+unique(trndf.lm$verb)
+#trndf.lm$alt[m]<-altarray[1]
+#trndf.lm$alt[m]<-n.x.carry$set$alt[m]
+print(sum(m))
+#trndf.lm$verb[m]<-n.x.carry$set$verb[m]
 f.take<-get.freq(n.x.take$set,"take")
 f.give<-get.freq(n.x.give$set,"give")
 f.provide<-get.freq(n.x.provide$set,"provide")
@@ -414,9 +441,9 @@ put.alt<-function(df,regx){
 # m<-n.x.dev$nouns.g%in%n.make$nouns
 # sum(m)
 # n.x$nouns.g[m]
-m<-n.take$nouns.g%in%n.x.carry$nouns.g
-sum(m)
-n.take$nouns.g[m]
+# m<-n.take$nouns.g%in%n.x.carry$nouns.g
+# sum(m)
+# n.take$nouns.g[m]
 m<-n.x.give$nouns.g%in%n.x.provide$nouns.g
 sum(m)
 n.x.provide$nouns.g[m]
@@ -437,23 +464,32 @@ nouns.f.3
 nouns.f.4<-get.n.freq(n.x.provide,nouns.com.provide,"give","provide")
 nouns.f.4
 n.x.give
-sum(n.x.provide$freq$feature=="service")
-sum(n.x.provide$freq$feature=="period") # 0
+#sum(n.x.provide$freq$feature=="service")
+#sum(n.x.provide$freq$feature=="period") # 0
 # nouns.f.make<-c(make=sum(nouns.f.1['p.verb']+nouns.f.2['p.verb']),create=nouns.f.1['p.alt'],build=nouns.f.2['p.alt'],produce=0,generate=0,construct=0)
 # nouns.f.x<-c(make=sum(nouns.f.1['p.verb']+nouns.f.2['p.verb']),create=nouns.f.1['p.alt'],build=nouns.f.2['p.alt'],produce=0,generate=0,construct=0)
 nouns.f.cpt<-rbind(nouns.f.1,nouns.f.2,nouns.f.3,nouns.f.4)
 nouns.f.cpt
 disdf<-cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m)
 disdf
-nouns.f.df<-cbind(make=nouns.f.cpt[nouns.f.cpt$q1=="make",c('p.verb','alt')],
-                  take=nouns.f.cpt[nouns.f.cpt$q1=="take",c('p.verb','alt')],
-                  give=nouns.f.cpt[nouns.f.cpt$q1=="give",c('p.verb','alt')])
+nouns.f.df<-rbind(cbind(make.create=nouns.f.cpt[nouns.f.cpt$q2=="create",c('p.verb')],
+                  make.build=nouns.f.cpt[nouns.f.cpt$q2=="build",c('p.verb')],
+                  take.carry=nouns.f.cpt[nouns.f.cpt$q1=="take",c('p.verb')],
+                  give.provide=nouns.f.cpt[nouns.f.cpt$q1=="give",c('p.verb')]),
+                  cbind(make.create=nouns.f.cpt[nouns.f.cpt$q2=="create",c('alt')],
+                        make.build=nouns.f.cpt[nouns.f.cpt$q2=="build",c('alt')],
+                        take.carry=nouns.f.cpt[nouns.f.cpt$q1=="take",c('alt')],
+                        give.provide=nouns.f.cpt[nouns.f.cpt$q1=="give",c('alt')])
+                  )
+#nouns.f.df<-cbind(make=nouns.f.cpt[nouns.f.cpt$q1=="make",])
 nouns.f.df
-barplot(nouns.f.df,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
-plot(nouns.f.cpt$alt~nouns.f.cpt$p.verb)
+rownames(nouns.f.df)<-c("verb","alternative")
+#barplot(nouns.f.df,main="distribution: lemma /make/",beside=T,legend.text = rownames(nouns.f.df))
+#plot(nouns.f.cpt$alt~nouns.f.cpt$p.verb)
 ### p computation: sum.freq.collocates.alt/sum(sum.freq.collocates.make+sum.freq.collocates.alt)
 plot.plots<-function(what){
-  if(what=="dist")
+par(las=3)
+    if(what=="dist")
     barplot(cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m),main="distribution: lemma /make/",beside=T,legend.text = c("concrete use","light use"))
   if(what=="alt.1")
     barplot(alt.c.table/sum(alt.c.table)*100,main = "SBC concrete /make/ vs. alternate",ylab = "% over verbforms")
@@ -461,16 +497,19 @@ plot.plots<-function(what){
     barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(trndf.lm$alt))*100,main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
   if(what=="alt.3")
     barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
+  if(what=="alt.4")
+    barplot(nouns.f.df,main="semantic alternates w/ equivalent meaning",beside=T,ylab = "% in corpus",legend.text = rownames(nouns.f.df))
   
 }
 save.plotlist<-function(){
-  plotlist<-list(dist=cbind(ICE.written=i.make.w,ICE.spoken=i.make.s,SBC.spoken=i.make.m),alt.c.table=alt.c.table,trntable=trntable,nouns.f.cp=nouns.f.cp)
+  plotlist<-list(dist=cbind(ICE.written=i.make.w,ICE.spoken=i.make.s,SBC.spoken=i.make.m),alt.c.table=alt.c.table,trntable=trntable,nouns.f.cp=NULL,nouns.f.df=nouns.f.df)
   save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
 }
 
 #save.plotlist()
 
-# plot.plots("dist")
-# plot.plots("alt.1")
-# plot.plots("alt.2")
-# plot.plots("alt.3")
+ plot.plots("dist")
+ plot.plots("alt.1")
+ plot.plots("alt.2")
+ plot.plots("alt.4")
+ # 
