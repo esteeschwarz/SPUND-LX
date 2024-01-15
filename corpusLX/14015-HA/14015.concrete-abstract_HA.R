@@ -505,8 +505,9 @@ save.plotlist<-function(){
   plotlist<-list(dist=cbind(ICE.written=i.make.w,ICE.spoken=i.make.s,SBC.spoken=i.make.m),alt.c.table=alt.c.table,trntable=trntable,nouns.f.cp=NULL,nouns.f.df=nouns.f.df)
   save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
 }
-
-#save.plotlist()
+# plotlist.restore<-plotlist
+# save(plotlist.restore,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
+# save.plotlist()
 
  plot.plots("dist")
  plot.plots("alt.1")
