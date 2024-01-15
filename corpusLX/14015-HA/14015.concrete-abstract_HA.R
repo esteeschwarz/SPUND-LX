@@ -506,7 +506,8 @@ save.plotlist<-function(){
   save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
 }
 # plotlist.restore<-plotlist
-# save(plotlist.restore,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
+
+# save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
 # save.plotlist()
 
  plot.plots("dist")
