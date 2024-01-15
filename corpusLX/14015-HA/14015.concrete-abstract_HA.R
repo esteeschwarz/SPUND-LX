@@ -20,7 +20,12 @@ library(stringi)
 library(quanteda.textstats)
 library(quanteda)
 library(udpipe) # for pos tagging
-udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
+
+#mini:
+udpipepath<-"/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
+
+#lapsi
+#udpipepath<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe"
 ### if not yet, the model must be downloaded, comment in above line 
 get.udp<-function(){
 udpipe_download_model("english",model_dir = tempdir("md"))
@@ -199,8 +204,8 @@ df.build<-trndf.lm[trndf.lm$alt=="build",]
 df.build$alt.true<-0
 #df.build.a<-fix(df.build) # no. not manually. try define objects (collocates) of /make/ first.
 set<-trndf.lm
-alt<-"take"
-alt.g<-"(take|took|taken|taking)"
+alt<-"manufacture"
+alt.g<-"(manufactur(ing|e|ed))"
 ############################
 get.coll<-function(set,alt,alt.g){
     m<-set$alt==alt&set$light==0
@@ -220,7 +225,7 @@ get.coll<-function(set,alt,alt.g){
     tok.clean<-function(x)gsub("[0-9@]","",x)
     m.split<-lapply(m.split, tok.clean)
     
-    m.split.g[[2]]
+    m.split.g[[1]]
     tok.clean<-function(x)gsub("[0-9@]","",x)
     sum(grep("[0-9]",m.split.g))
     m.split.g.c<-lapply(m.split.g, tok.clean)
@@ -339,12 +344,21 @@ n.build[m]
 ### the only valid common associates seem to be "couple", "lot", "water" and "thing" as the rest of the collocates cannot
 ### appear as objects of /make/ AND /build/ in a reasonable context
 
-#x.build<-n.x.carry
+x.build<-n.x.provide
+nouns.com<-nouns.com.provide
+verb<-"give"
+alt<-"provide"
+
+##############
 get.n.freq<-function(x.build,nouns.com,verb,alt){
-n.build<-x.build  
+n.build<-x.build
+n.make<-x.build
 n.build$freq
 m.build<-n.build$freq$frequency[n.build$freq$feature%in%nouns.com]
+m<-(n.build$freq$feature%in%nouns.com)
 m.build
+#m.build<-n.build$freq.g$frequency[n.build$freq$feature%in%nouns.com]
+#m.build
 m.make<-n.make$freq$frequency[n.make$freq$feature%in%nouns.com]
 m.make
 sum.freq.1<-sum(n.make$freq$frequency)
@@ -352,7 +366,7 @@ sum.freq.2<-sum(n.build$freq$frequency)
 sum.freq.3<-sum.freq.1+sum.freq.2
 f.p.1<-sum(m.make)/sum.freq.1
 f.p.2<-sum(m.build)/sum.freq.3
-return(c(q1=verb,q2=alt,p.verb=f.p.1,alt=f.p.2))
+return(data.frame(q1=verb,q2=alt,p.verb=as.double(f.p.1),alt=as.double(f.p.2)))
 }
 
 #count these:
@@ -363,8 +377,10 @@ nouns.com.2<-"thing"
 #nouns.f.1
 n.x.cr<-get.noun.coll(get.coll(trndf.lm,"create","(creat(ed|ing|e))")) # test
 n.x.bu<-get.noun.coll(get.coll(trndf.lm,"build","(buil(d|t|ding))")) # test
-n.x.man<-get.noun.coll(get.coll(trndf.lm,"build","(manufactur(ing|e|ed))")) # test
-n.x.dev<-get.noun.coll(get.coll(trndf.lm,"build","(develop(ing|e?|ed))")) # test
+n.x.man<-get.noun.coll(get.coll(trndf.lm,"manufacture","(manufactur(ing|e|ed))")) # test
+#f1 
+n.x.test<-get.coll(trndf.lm,"manufacture","(manufactur(ing|e|ed))")
+n.x.dev<-get.noun.coll(get.coll(trndf.lm,"develop","(develop(ing|e?|ed))")) # test
 n.x.take<-get.noun.coll(get.coll(trndf.lm,"take","(take|took|taken|taking)"))
 n.x.give<-get.noun.coll(get.coll(trndf.lm,"give","(give|gave|given|giving)"))
 n.x.carry<-get.noun.coll(get.coll(trndf.lm,"carry","(carry|carrying|carried)"))
@@ -407,23 +423,34 @@ n.x.provide$nouns.g[m]
 ### > no common associates for "produce", "construct", "generate","manufacture","develop"
 nouns.com.create<-c("thing","day","cause")
 nouns.com.provide<-c("service","period")
+nouns.com<-c("service","period")
 #nouns.com.create<-n.x$nouns[m]
 nouns.com.build<-"thing"
 nouns.com.create<-c("thing")
 nouns.com.carry<-c("bag","lot","chairs","mother")
-nouns.f.1<-get.n.freq(n.x.cr,nouns.com.create)
+nouns.f.1<-get.n.freq(n.x.cr,nouns.com.create,"make","create")
 nouns.f.1
-nouns.f.2<-get.n.freq(n.x.bu,nouns.com.build)
+nouns.f.2<-get.n.freq(n.x.bu,nouns.com.build,"make","build")
 nouns.f.2
 nouns.f.3<-get.n.freq(n.x.carry,nouns.com.carry,"take","carry")
 nouns.f.3
 nouns.f.4<-get.n.freq(n.x.provide,nouns.com.provide,"give","provide")
 nouns.f.4
-sum(n.x.give$freq$feature=="service")
-sum(n.x.give$freq$feature=="period") # 0
-nouns.f.cp<-c(make=sum(nouns.f.1[1]+nouns.f.2[1]),create=nouns.f.1[2],build=nouns.f.2[2],produce=0,generate=0,construct=0)
-nouns.f.cp
-# barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
+n.x.give
+sum(n.x.provide$freq$feature=="service")
+sum(n.x.provide$freq$feature=="period") # 0
+# nouns.f.make<-c(make=sum(nouns.f.1['p.verb']+nouns.f.2['p.verb']),create=nouns.f.1['p.alt'],build=nouns.f.2['p.alt'],produce=0,generate=0,construct=0)
+# nouns.f.x<-c(make=sum(nouns.f.1['p.verb']+nouns.f.2['p.verb']),create=nouns.f.1['p.alt'],build=nouns.f.2['p.alt'],produce=0,generate=0,construct=0)
+nouns.f.cpt<-rbind(nouns.f.1,nouns.f.2,nouns.f.3,nouns.f.4)
+nouns.f.cpt
+disdf<-cbind(ICE.w=i.make.w,ICE.sp=i.make.s,SBC.sp=i.make.m)
+disdf
+nouns.f.df<-cbind(make=nouns.f.cpt[nouns.f.cpt$q1=="make",c('p.verb','alt')],
+                  take=nouns.f.cpt[nouns.f.cpt$q1=="take",c('p.verb','alt')],
+                  give=nouns.f.cpt[nouns.f.cpt$q1=="give",c('p.verb','alt')])
+nouns.f.df
+barplot(nouns.f.df,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
+plot(nouns.f.cpt$alt~nouns.f.cpt$p.verb)
 ### p computation: sum.freq.collocates.alt/sum(sum.freq.collocates.make+sum.freq.collocates.alt)
 plot.plots<-function(what){
   if(what=="dist")
