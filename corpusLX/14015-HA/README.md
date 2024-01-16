@@ -8,11 +8,10 @@
 
 # 1 term paper draft
 
-topic #6, polysemous verbs with light and concrete senses, replication
-study of [Mehl (2021)](https://doi.org/10.1515/cllt-2017-0039), further
-used: [Gilquin
-(2008)](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)  
-meta:snc:rmd\>md\>wp
+topic \#6, polysemous verbs with light and concrete senses, replication
+study of [Mehl (2021)](https://doi.org/10.1515/cllt-2017-0039), further used [Gilquin(2008)](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)
+
+meta.snc.rmd&gt;md&gt;wp
 
 ## 1.1 init
 
@@ -22,47 +21,115 @@ be able to examine onomasiological frequencies in spoken corpora rather
 than performing elicitation tests. That possibility would facilitate
 cognitive research into languages and varieties around the world,
 without the necessity of in situ psycholinguistic testing, and would
-also encourage the creation of more spoken corpora.” ([Mehl (2021)
-p.23](https://doi.org/10.1515/cllt-2017-0039))
+also encourage the creation of more spoken corpora.” 
+([Mehl (2021) p.23](https://doi.org/10.1515/cllt-2017-0039))
 
 ## 1.2 method
 
 following corpus was used to determine frequencies:
 
-Q.1: Santa Barbara corpus of spoken American English, ([UCSB et al.
-(2005)](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus))
+Q.1: Santa Barbara corpus of spoken American English 
+([UCSB et al. (2005)](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus))
 
 the corpus data was downloaded from:
 <https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip>
 
 ### 1.2.1 corpus sample
 
-|       | scb |   id | text                                                          |   lfd | light | alt     |
-|:----|---:|----:|:------------------------------------------|----:|----:|:------|
-| 9465  |   8 |  567 | and then I didn’t and I .. kept making like,                  |  9465 |     1 | make    |
-| 67928 |  59 |  714 | And he’s really good at making out .. the budget.             | 67928 |     1 | make    |
-| 57521 |  50 |  459 | you can make some serious .. @ din 5go working dinner @ 5 .   | 57521 |     0 | make    |
-| 2974  |   3 |  242 | % I wanted it to be home made Q .                             |  2974 |     0 | make    |
-| 61913 |  53 |  604 | and make the payroll,                                         | 61913 |     1 | make    |
-| 35078 |  30 |  612 | … God is continually .. building character.                   | 35078 |     0 | build   |
-| 36022 |  31 |  811 | 3is no3 t built,                                              | 36022 |     0 | build   |
-| 16921 |  14 |  397 | TSK H The building is –                                       | 16921 |     0 | build   |
-| 44860 |  38 |  580 | H and the new building is a new visitors center.              | 44860 |     0 | build   |
-| 44465 |  38 |  185 | H the building of Boulder City about seven miles up the road, | 44465 |     0 | build   |
-| 65343 |  57 |  123 | … It’s gonna get messed up.                                   | 65343 |    NA | a-other |
-| 69438 |  60 |  367 | % this guy 92 s name was LeRoy .. Neiman,                     | 69438 |    NA | a-other |
-| 55500 |  48 |  839 | … Good.                                                       | 55500 |    NA | a-other |
-| 23835 |  19 |  886 | and they suspect an aneurysm,                                 | 23835 |    NA | a-other |
-| 47424 |  41 |  539 | hunh?                                                         | 47424 |    NA | a-other |
-| 22225 |  17 | 1011 | H … Chaos X I guess X is basically analysis of noise.         | 22225 |    NA | a-other |
-| 17675 |  14 | 1151 | H and he was going to .. to tell him,                         | 17675 |    NA | a-other |
-| 37226 |  32 |  476 | so we .. we jumped ship in uh= New York,                      | 37226 |    NA | a-other |
-| 28500 |  24 |   25 | .. Yeah.                                                      | 28500 |    NA | a-other |
-| 40863 |  35 |  713 | 2No,                                                          | 40863 |    NA | a-other |
+<table style="width:100%;">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 60%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">scb</th>
+<th style="text-align: right;">id</th>
+<th style="text-align: left;">text</th>
+<th style="text-align: right;">lfd</th>
+<th style="text-align: right;">light</th>
+<th style="text-align: left;">alt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2974</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">242</td>
+<td style="text-align: left;">% I wanted it to be home made Q .</td>
+<td style="text-align: right;">2974</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">make</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">65343</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">… It’s gonna get messed up.</td>
+<td style="text-align: right;">65343</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">a-other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9465</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">567</td>
+<td style="text-align: left;">and then I didn’t and I .. kept making
+like,</td>
+<td style="text-align: right;">9465</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">make</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">67928</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">714</td>
+<td style="text-align: left;">And he’s really good at making out .. the
+budget.</td>
+<td style="text-align: right;">67928</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">make</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">35078</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">612</td>
+<td style="text-align: left;">… God is continually .. building
+character.</td>
+<td style="text-align: right;">35078</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">build</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">61913</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">604</td>
+<td style="text-align: left;">and make the payroll,</td>
+<td style="text-align: right;">61913</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">make</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">28500</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">.. Yeah.</td>
+<td style="text-align: right;">28500</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">a-other</td>
+</tr>
+</tbody>
+</table>
 
 ### 1.2.2 script used:
 
-[14015.concrete-abstract_HA.R](14015.concrete-abstract_HA.R)
+[14015.concrete-abstract\_HA.R](14015.concrete-abstract_HA.R)
 
 ### 1.2.3 process:
 
@@ -70,13 +137,33 @@ the corpus data was downloaded from:
 
 cf. (Mehl 2021, 11–14)
 
-|          | ICE.written | ICE.spoken | SBC.spoken |
-|:---------|------------:|-----------:|-----------:|
-| concrete |          68 |         96 |         89 |
-| light    |         321 |        353 |        381 |
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">ICE.written</th>
+<th style="text-align: right;">ICE.spoken</th>
+<th style="text-align: right;">SBC.spoken</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">concrete</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">96</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">light</td>
+<td style="text-align: right;">321</td>
+<td style="text-align: right;">353</td>
+<td style="text-align: right;">381</td>
+</tr>
+</tbody>
+</table>
 
 <figure>
-<img src="README_files/figure-markdown_github/fig-01-dist-1.png"
+<img src="README_files/figure-markdown_strict/fig-01-dist-1.png"
 alt="distribution of lemma /make/ over corpora. ICE data from study." />
 <figcaption aria-hidden="true">distribution of lemma /make/ over
 corpora. ICE data from study.</figcaption>
@@ -92,26 +179,53 @@ in the corpus with the same concrete direct objects as make, (take, and
 give,) and with a roughly equivalent meaning.” Mehl puts these under
 “onomasiological alternates”. (cf. Mehl (2021) p.13)
 
-| Var1      | Freq |
-|:----------|-----:|
-| build     |  101 |
-| construct |    1 |
-| create    |   23 |
-| generate  |    4 |
-| make      |   89 |
-| produce   |    5 |
+<table>
+<caption>semantic alternatives</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Var1</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">build</td>
+<td style="text-align: right;">101</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">construct</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">create</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">generate</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">make</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">produce</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
 
 semantic alternatives
 
 <figure>
-<img src="README_files/figure-markdown_github/fig-02-alt-1.png"
+<img src="README_files/figure-markdown_strict/fig-02-alt-1.png"
 alt="proportion of semantic alternatives to concrete /make/ in SBC" />
 <figcaption aria-hidden="true">proportion of semantic alternatives to
 concrete /make/ in SBC</figcaption>
 </figure>
 
 <figure>
-<img src="README_files/figure-markdown_github/fig-03-alt-1.png"
+<img src="README_files/figure-markdown_strict/fig-03-alt-1.png"
 alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
 <figcaption aria-hidden="true">proportion of semantic alternatives, only
 equivalent meaning of alternates</figcaption>
