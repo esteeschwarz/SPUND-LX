@@ -328,31 +328,17 @@ if(length(split.df$tokens)==0){
 returnlist<-list(set=split.df$set,freq=make.freq,ann=an6,nouns=an6.n,freq.g=make.freq.g,ann.g=an6.g,nouns.g=an6.n.g)
 #an6.n
 }
-#returnlist$freq$frequency
-#split.make<-get.coll(trndf.lm,"make","make")
-#split.build<-get.coll(trndf.lm,"make","build","(buil(d|t|ding))")
-#n.build<-get.noun.coll(split.build)
-#n.make<-get.noun.coll(split.make)
-#split.take<-get.coll(trndf.lm,"take","take","(take|took|taken|taking)")
-#n.take<-get.noun.coll(split.take)
-#  n.build$nouns.g==n.build$nouns
-#m<-n.make$nouns%in%n.build$nouns
-#sum(m)
-#n.make[m]
-#m<-n.build$nouns%in%n.make$nouns
-#sum(m)
-#n.build[m]
 ###wks.
 ### the only valid common associates seem to be "couple", "lot", "water" and "thing" as the rest of the collocates cannot
 ### appear as objects of /make/ AND /build/ in a reasonable context
 
 #x.build<-n.x.provide
-#nouns.com<-nouns.com.provide
+nouns.com<-nouns.com.provide
 verb<-"give"
 alt<-"provide"
-
+topdf<-trndf.lm
 ##############
-get.n.freq<-function(x.build,nouns.com,verb,alt){
+get.n.freq<-function(topdf,x.build,nouns.com,verb,alt){
 n.build<-x.build
 n.make<-x.build
 n.build$freq
@@ -372,7 +358,52 @@ sum.freq.2<-sum(n.build$freq$frequency)
 sum.freq.3<-sum.freq.1+sum.freq.2
 f.p.1<-sum(m.make)/sum.freq.1
 f.p.2<-sum(m.build)/sum.freq.3
-return(data.frame(q1=verb,q2=alt,p.verb=as.double(f.p.1),alt=as.double(f.p.2)))
+###
+k<-1
+f.array<-array(1:(length(nouns.com)+2))
+names(f.array)<-c(nouns.com,"freq","total")
+f.array<-f.array*0
+f.array
+for(k in 1:length(nouns.com)){
+  q<-nouns.com[k]
+  m1<-topdf$verb==verb
+  sum(m1)
+  verb
+  x.sub<-topdf[m1,]
+  m2<-grepl(q,x.sub$text)
+  
+  f.sub<-sum(m2,na.rm = T)
+  m3<-topdf$alt==alt
+  sum(m3)
+  f.array[k]<-f.sub
+  f.array['freq']<-length(x.sub$scb)
+  f.array['freq']<-sum(m3)
+  f.array['total']<-length(trndf$scb)
+  f.array['sub.verb']<-sum(m1)
+
+}
+#f.array['f.sub']<-10
+m<-which(names(f.array)=='freq')
+f.df<-data.frame(cbind(inst=f.array[1:(m-1)],sub.verb=f.array['sub.verb'],sub.alt=f.array['freq'],total=f.array['total']))
+f.df$verb<-verb
+f.df
+#mode(f.df[,2:4])<-"double"
+#colnames(f.df)<-c("verb","inst","sub.alt","total")
+#f.rel<-f.array/f.array['total']
+f.rel<-f.df$inst/f.df$sub.alt/f.df$total
+f.df$p<-f.rel
+f.df
+#f.rel[length(f.rel)]<-f.array[length(f.array)]
+#f.rel
+#chisq.test(f.array)
+# sum.freq.1<-sum(n.make$freq$frequency)
+# sum.freq.2<-sum(n.build$freq$frequency)
+# sum.freq.3<-sum.freq.1+sum.freq.2
+# f.p.1<-get.freq(topdf,verb,alt)[2]/get.freq(topdf,verb,alt)[1]
+# f.p.1
+# f.p.2<-sum(m.build)/sum.freq.3
+
+return(list(f.rel=f.df,f.abs=data.frame(q1=verb,q2=alt,p.verb=as.double(f.p.1),alt=as.double(f.p.2))))
 }
 
 #count these:
@@ -395,10 +426,19 @@ n.x.provide<-get.noun.coll(get.coll(trndf.lm,"give","provide","(provide|provided
 n.x.take$nouns.g # general collocates
 ###
 ### put alt cat
-get.freq<-function(set,verb){
-  m<-set$alt==verb
-  f<-sum(m)
+set<-trndf.lm
+alt<-"take"
+verb<-"take"
+get.freq<-function(set,verb,alt){
+  m.a<-set$alt==alt
+  
+  m.v<-set$verb==verb
+  f.alt<-sum(m.a)
+  f.verb<-sum(m.v)
+  return(c(f.verb=f.verb,f.alt=f.alt))
 }
+f.test<-get.freq(trndf.lm,"take","take")
+f.test
 k<-1
 ### feed in verb occurences to main df >
 #altarray<- c("provide","carry")
@@ -407,43 +447,45 @@ k<-1
 ### define concrete:
 c(n.x.provide$nouns,"this","that","the","it") # in trndf.lm$text, subset, fix() for concrete use
 #sum() above, f=sum/sum(all)
- m<-grepl("provide",n.x.provide$set$alt) 
+m<-grepl("give",n.x.give$set$verb) 
+print(sum(m))
+trndf.lm$verb[m]<-"give"
+trndf.lm$alt[m]<-"give"
+m<-grepl("provide",n.x.provide$set$alt) 
+trndf.lm$alt[m]<-"provide"
+m<-grepl("take",n.x.take$set$verb) 
+print(sum(m))
+trndf.lm$verb[m]<-"take"
+trndf.lm$alt[m]<-"take"
 print(sum(m))
 unique(trndf.lm$alt)
-#trndf.lm$alt[m]<-altarray[1]
-#trndf.lm$alt[m]<-n.x.provide$set$alt[m]
-print(sum(m))
-#trndf.lm$verb[m]<-n.x.provide$set$verb[m]
+unique(trndf.lm$verb)
 m<-grepl("carry",n.x.carry$set$alt) 
 print(sum(m))
-unique(trndf.lm$verb)
-#trndf.lm$alt[m]<-altarray[1]
-#trndf.lm$alt[m]<-n.x.carry$set$alt[m]
+trndf.lm$alt[m]<-"carry"
+m<-grepl("build",trndf.lm$alt) 
 print(sum(m))
-#trndf.lm$verb[m]<-n.x.carry$set$verb[m]
-f.take<-get.freq(n.x.take$set,"take")
-f.give<-get.freq(n.x.give$set,"give")
-f.provide<-get.freq(n.x.provide$set,"provide")
-put.alt<-function(df,regx){
-  m<-grep(regx)
-}
-
-
-# m<-n.make$nouns%in%n.x$nouns
-# sum(m)
-# n.make$nouns[m]
-# m<-n.x$nouns%in%n.make$nouns
-# sum(m)
-# n.x$nouns[m]
-# m<-n.make$nouns%in%n.x$nouns.g
-# sum(m)
-# n.make$nouns[m]
-# m<-n.x.dev$nouns.g%in%n.make$nouns
-# sum(m)
-# n.x$nouns.g[m]
-# m<-n.take$nouns.g%in%n.x.carry$nouns.g
-# sum(m)
-# n.take$nouns.g[m]
+trndf.lm$verb[m]<-"make"
+m<-grepl("construct",trndf.lm$alt) 
+print(sum(m))
+trndf.lm$verb[m]<-"make"
+m<-grepl("produce",trndf.lm$alt) 
+print(sum(m))
+trndf.lm$verb[m]<-"make"
+m<-grepl("generate",trndf.lm$alt) 
+print(sum(m))
+trndf.lm$verb[m]<-"make"
+m<-grepl("create",trndf.lm$alt) 
+print(sum(m))
+trndf.lm$verb[m]<-"make"
+unique(trndf.lm$verb)
+trndf.lm$verb[m]<-"take"
+unique(trndf.lm$alt)
+unique(trndf.lm$verb)
+f.take<-get.freq(trndf.lm,"take","carry")
+f.take
+f.give<-get.freq(trndf.lm,"give","provide")
+f.give
 m<-n.x.give$nouns.g%in%n.x.provide$nouns.g
 sum(m)
 n.x.provide$nouns.g[m]
@@ -451,19 +493,73 @@ n.x.provide$nouns.g[m]
 nouns.com.create<-c("thing","day","cause")
 nouns.com.provide<-c("service","period")
 nouns.com<-c("service","period")
-#nouns.com.create<-n.x$nouns[m]
 nouns.com.build<-"thing"
 nouns.com.create<-c("thing")
 nouns.com.carry<-c("bag","lot","chairs","mother")
-nouns.f.1<-get.n.freq(n.x.cr,nouns.com.create,"make","create")
+###
+f.provide<-get.freq(n.x.provide$set,"provide")
+f.rel.give<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
+f.rel.give$f.abs
+f.rel.give$f.rel
+f.rel.give<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
+f.rel.give$f.abs
+f.rel.give$f.rel
+
+
+nouns.f.1<-get.n.freq(trndf.lm,n.x.cr,nouns.com.create,"make","create")
 nouns.f.1
-nouns.f.2<-get.n.freq(n.x.bu,nouns.com.build,"make","build")
+nouns.f.2<-get.n.freq(trndf.lm,n.x.bu,nouns.com.build,"make","build")
 nouns.f.2
-nouns.f.3<-get.n.freq(n.x.carry,nouns.com.carry,"take","carry")
+nouns.f.3<-get.n.freq(trndf.lm,n.x.carry,nouns.com.carry,"take","carry")
 nouns.f.3
-nouns.f.4<-get.n.freq(n.x.provide,nouns.com.provide,"give","provide")
+nouns.f.4<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
 nouns.f.4
-n.x.give
+nouns.f.all<-rbind(nouns.f.1$f.rel,nouns.f.2$f.rel,nouns.f.3$f.rel,nouns.f.4$f.rel)
+nouns.f.all
+s.inst<-sum(nouns.f.all$inst)
+total<-nouns.f.all$total[1]
+dif.inst<-total-s.inst
+#p.inst<-nouns.f.all$inst*nouns.f.all$sub.alt
+#p.inst
+#nouns.f.all$q.inst<-nouns.f.all$sub.alt-nouns.f.all$inst
+nouns.f.all
+#q.ins.other<-sum(nouns.f.all$q.inst)
+total
+m.other<-trndf.lm$verb=="a-other"
+sum.other<-sum(m.other)
+#a.other<-c(dif.inst,total-sum(nouns.f.all$inst),total-sum(nouns.f.all$inst),total)
+a.other<-c(dif.inst,sum.other,sum.other,total)
+a.other<-array(a.other)
+
+#mode(a.other[1:4])<-"double"
+#mode(a.other[6:7])<-"double"
+a.other['p']<-a.other[1]/total
+#a.other['verb']<-"a-other"
+a.other
+nouns.f.all['a-other',1:4]<-a.other[1:4]
+nouns.f.all['a-other',6]<-a.other[5]
+nouns.f.all['a-other',5]<-"a-other"
+nouns.f.all
+library(clipr)
+write_clip(nouns.f.all[,1:3])
+xy<-nouns.f.all$p[1:8]
+labv<-c("create.thing","build.thing","carry.bag","carry.lot","carry.chairs","carry.mother","provide.service","provide.period")
+labv
+xa<-paste0(nouns.f.all$verb[1:8],"-",labv)
+xa
+nouns.f.all$label<-c(xa,"n.a.")
+nouns.f.all$label<-NA
+nouns.f.all
+par(las=3)
+barplot(nouns.f.all$p[1:8]~nouns.f.all$label[1:8],xlab = "",ylab = "p of verb occurence over corpus")
+xy<-nouns.f.all$inst[1:8]
+xa<-paste0(nouns.f.all$verb[1:8],"-",rownames(nouns.f.all)[1:8])
+par(las=3)
+barplot(xy~xa,xlab = "",ylab = "instances of alternate verbs over corpus")
+m<-which(rownames(nouns.f.all)=="a-other")
+mode(nouns.f.all[m,1:4])<-"double"
+nouns.f.all$p[m]<-nouns.f.all$inst[m]/nouns.f.all$total[m]
+#n.x.give
 #sum(n.x.provide$freq$feature=="service")
 #sum(n.x.provide$freq$feature=="period") # 0
 # nouns.f.make<-c(make=sum(nouns.f.1['p.verb']+nouns.f.2['p.verb']),create=nouns.f.1['p.alt'],build=nouns.f.2['p.alt'],produce=0,generate=0,construct=0)
