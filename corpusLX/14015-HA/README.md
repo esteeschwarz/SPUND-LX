@@ -52,7 +52,7 @@ cf. (Mehl 2021, 11–14)
 | light    |         321 |        353 |        381 |
 
 <figure>
-<img src="/private/var/folders/4d/3c55d5_d0sd8g2015lq4vpt40000gn/T/RtmpsJ0on3/README_files/figure-markdown_phpextra/fig-01-dist-1.png" alt="distribution of lemma /make/ over corpora. ICE data from study." />
+<img src="README_files/figure-markdown_phpextra/fig-01-dist-1.png" alt="distribution of lemma /make/ over corpora. ICE data from study." />
 <figcaption aria-hidden="true">distribution of lemma /make/ over corpora. ICE data from study.</figcaption>
 </figure>
 
@@ -72,12 +72,12 @@ this contrast includes made up alternatives to /make/ that Mehl defined in his s
 semantic alternatives
 
 <figure>
-<img src="/private/var/folders/4d/3c55d5_d0sd8g2015lq4vpt40000gn/T/RtmpsJ0on3/README_files/figure-markdown_phpextra/fig-02-alt-1.png" alt="proportion of semantic alternatives to concrete /make/ in SBC" />
+<img src="README_files/figure-markdown_phpextra/fig-02-alt-1.png" alt="proportion of semantic alternatives to concrete /make/ in SBC" />
 <figcaption aria-hidden="true">proportion of semantic alternatives to concrete /make/ in SBC</figcaption>
 </figure>
 
 <figure>
-<img src="/private/var/folders/4d/3c55d5_d0sd8g2015lq4vpt40000gn/T/RtmpsJ0on3/README_files/figure-markdown_phpextra/fig-03-alt-1.png" alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
+<img src="README_files/figure-markdown_phpextra/fig-03-alt-1.png" alt="proportion of semantic alternatives, only equivalent meaning of alternates" />
 <figcaption aria-hidden="true">proportion of semantic alternatives, only equivalent meaning of alternates</figcaption>
 </figure>
 
