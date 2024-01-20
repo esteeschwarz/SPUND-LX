@@ -1,22 +1,27 @@
--   [1 term paper draft](#term-paper-draft)
-    -   [1.1 init](#init)
-    -   [1.2 method](#method)
-        -   [1.2.1 corpus sample](#corpus-sample)
-        -   [1.2.2 script used:](#script-used)
-        -   [1.2.3 process:](#process)
--   [2 B: references](#b-references)
+<div id="e6o7jt-top-1">
+<style>
+.backtop {font-size:20px;}
+</style>
+</div>
+-   [1 term paper draft](#e6o7jt-term-paper-draft)
+    -   [1.1 init](#e6o7jt-init)
+    -   [1.2 method](#e6o7jt-method)
+        -   [1.2.1 corpus sample](#e6o7jt-corpus-sample)
+        -   [1.2.2 script used:](#e6o7jt-script-used)
+        -   [1.2.3 process:](#e6o7jt-process)
+-   [2 B: references](#e6o7jt-b-references)
 
-# 1 term paper draft 
+# 1 term paper draft {#e6o7jt-term-paper-draft}
 
 topic \#6, polysemous verbs with light and concrete senses, replication study of [Mehl (2021)](https://doi.org/10.1515/cllt-2017-0039), further used [Gilquin (2008)](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)
 
-meta.snc.rmd&gt;md&gt;wp&gt;pkg&gt;toc
+meta.snc.rmd&gt;md&gt;wp&gt;pkg
 
-## 1.1 init 
+## 1.1 init <a class="backtop" href="#e6o7jt-top-1">&#8682;</a> {id="e6o7jt-init"}
 
 “If onomasiological frequency measurements do indeed correlate with elicitation tests, potential impact would be immense. Researchers would be able to examine onomasiological frequencies in spoken corpora rather than performing elicitation tests. That possibility would facilitate cognitive research into languages and varieties around the world, without the necessity of in situ psycholinguistic testing, and would also encourage the creation of more spoken corpora.” ([Mehl (2021) p.23](https://doi.org/10.1515/cllt-2017-0039))
 
-## 1.2 method 
+## 1.2 method <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-method}
 
 following corpus was used to determine frequencies:
 
@@ -24,7 +29,7 @@ Q.1: Santa Barbara corpus of spoken American English, ([UCSB et al. (2005)](http
 
 the corpus data was downloaded from: <https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip>
 
-### 1.2.1 corpus sample 
+### 1.2.1 corpus sample <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-corpus-sample}
 
 |       | scb |  id | text                                              |   lfd | light | alt     |
 |:-----|----:|----:|:---------------------------------------|-----:|-----:|:-------|
@@ -36,13 +41,13 @@ the corpus data was downloaded from: <https://www.linguistics.ucsb.edu/sites/sec
 | 61913 |  53 | 604 | and make the payroll,                             | 61913 |     1 | make    |
 | 28500 |  24 |  25 | .. Yeah.                                          | 28500 |    NA | a-other |
 
-### 1.2.2 script used: 
+### 1.2.2 script used: <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-script-used}
 
 [14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R)
 
-### 1.2.3 process: 
+### 1.2.3 process: <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-process}
 
-#### 1.2.3.1 distribution analysis 
+#### 1.2.3.1 distribution analysis <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-distribution-analysis}
 
 cf. (Mehl 2021, 11–14)
 
@@ -56,7 +61,7 @@ cf. (Mehl 2021, 11–14)
 <figcaption aria-hidden="true">distribution of lemma /make/ over corpora. ICE data from study.</figcaption>
 </figure>
 
-#### 1.2.3.2 semantic alternatives to make 
+#### 1.2.3.2 semantic alternatives to make <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-semantic-alternatives-to-make}
 
 this contrast includes made up alternatives to /make/ that Mehl defined in his study. we do not account for the context of these alternatives in the corpus texts, i.e. all occurences are counted. Mehl contrasted only these alternate occurences which “are defined as those verbs that occur in the corpus with the same concrete direct objects as make, (take, and give,) and with a roughly equivalent meaning.” Mehl puts these under “onomasiological alternates”. (cf. Mehl (2021) p.13)
 
@@ -83,7 +88,7 @@ semantic alternatives
 
 ------------------------------------------------------------------------
 
-# 2 B: references 
+# 2 B: references <a class="backtop" href="#e6o7jt-top-1">&#8682;</a>{#e6o7jt-b-references .unnumbered}
 
 <div id="refs" class="references csl-bib-body hanging-indent" markdown="1">
 

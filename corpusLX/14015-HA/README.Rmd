@@ -26,7 +26,7 @@ topic #6, polysemous verbs with light and concrete senses, replication study of
 [@mehl_what_2021](https://doi.org/10.1515/cllt-2017-0039), 
 further used [@gilquin_what_2008](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)   
 
-meta.snc.rmd>md>wp>pkg
+meta.snc.rmd>md>wp>pkg>toc
 
 
 ## init
@@ -65,7 +65,7 @@ kable(smdf[c(4,11,1,2,6,5,19),])
 
 ### script used: 
 
-[14015.concrete-abstract_HA.R](14015.concrete-abstract_HA.R)
+[14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R)
 
 ### process:
 #### distribution analysis 
