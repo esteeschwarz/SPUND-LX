@@ -1,6 +1,9 @@
 <div id="2085-top-1">
 <style>
-.backtop {font-size:20px;}
+.backtop {
+font-size:24px;
+text-decoration:none;
+}
 </style>
 </div>
 
