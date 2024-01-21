@@ -1,22 +1,22 @@
--   [1 term paper draft](#term-paper-draft)
-    -   [1.1 init](#init)
-    -   [1.2 method](#method)
-        -   [1.2.1 corpus sample](#corpus-sample)
-        -   [1.2.2 script used:](#script-used)
-        -   [1.2.3 process:](#process)
--   [2 B: references](#b-references)
+-   [1 term paper draft](#term-paper-draft){#toc-term-paper-draft}
+    -   [1.1 init](#init){#toc-init}
+    -   [1.2 method](#method){#toc-method}
+        -   [1.2.1 corpus sample](#corpus-sample){#toc-corpus-sample}
+        -   [1.2.2 script used:](#script-used){#toc-script-used}
+        -   [1.2.3 process:](#process){#toc-process}
+-   [2 B: references](#b-references){#toc-b-references}
 
-# 1 term paper draft 
+# 1 term paper draft {#term-paper-draft}
 
 topic \#6, polysemous verbs with light and concrete senses, replication study of [Mehl (2021)](https://doi.org/10.1515/cllt-2017-0039), further used [Gilquin (2008)](https://dial.uclouvain.be/pr/boreal/object/boreal:75833)
 
 meta.snc.rmd&gt;md&gt;wp&gt;pkg&gt;toc
 
-## 1.1 init 
+## 1.1 init {#init}
 
 “If onomasiological frequency measurements do indeed correlate with elicitation tests, potential impact would be immense. Researchers would be able to examine onomasiological frequencies in spoken corpora rather than performing elicitation tests. That possibility would facilitate cognitive research into languages and varieties around the world, without the necessity of in situ psycholinguistic testing, and would also encourage the creation of more spoken corpora.” ([Mehl (2021) p.23](https://doi.org/10.1515/cllt-2017-0039))
 
-## 1.2 method 
+## 1.2 method {#method}
 
 following corpus was used to determine frequencies:
 
@@ -24,7 +24,7 @@ Q.1: Santa Barbara corpus of spoken American English, ([UCSB et al. (2005)](http
 
 the corpus data was downloaded from: <https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip>
 
-### 1.2.1 corpus sample 
+### 1.2.1 corpus sample {#corpus-sample}
 
 |       | scb |  id | text                                              |   lfd | light | alt     |
 |:-----|----:|----:|:---------------------------------------|-----:|-----:|:-------|
@@ -36,13 +36,13 @@ the corpus data was downloaded from: <https://www.linguistics.ucsb.edu/sites/sec
 | 61913 |  53 | 604 | and make the payroll,                             | 61913 |     1 | make    |
 | 28500 |  24 |  25 | .. Yeah.                                          | 28500 |    NA | a-other |
 
-### 1.2.2 script used: 
+### 1.2.2 script used: {#script-used}
 
 [14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R)
 
-### 1.2.3 process: 
+### 1.2.3 process: {#process}
 
-#### 1.2.3.1 distribution analysis 
+#### 1.2.3.1 distribution analysis {#distribution-analysis}
 
 cf. (Mehl 2021, 11–14)
 
@@ -56,7 +56,7 @@ cf. (Mehl 2021, 11–14)
 <figcaption aria-hidden="true">distribution of lemma /make/ over corpora. ICE data from study.</figcaption>
 </figure>
 
-#### 1.2.3.2 semantic alternatives to make 
+#### 1.2.3.2 semantic alternatives to make {#semantic-alternatives-to-make}
 
 this contrast includes made up alternatives to /make/ that Mehl defined in his study. we do not account for the context of these alternatives in the corpus texts, i.e. all occurences are counted. Mehl contrasted only these alternate occurences which “are defined as those verbs that occur in the corpus with the same concrete direct objects as make, (take, and give,) and with a roughly equivalent meaning.” Mehl puts these under “onomasiological alternates”. (cf. Mehl (2021) p.13)
 
@@ -81,9 +81,32 @@ semantic alternatives
 <figcaption aria-hidden="true">proportion of semantic alternatives, only equivalent meaning of alternates</figcaption>
 </figure>
 
+|      | SLOT1     | SLOT2     | fS1 | fS2 | OBS | EXP | ASSOC | COLL.STR.LOGL | SIGNIF     | ns               |
+|:----|:--------|:--------|---:|---:|---:|---:|:-----|----------:|:-----|:-------------|
+| 137  | finish    | afghan    |  13 |   2 |   2 |   0 | attr  |      28.51461 | \*\*\*\*\* | finish.afghan    |
+| 654  | Filled    | cookie    |   1 |   6 |   1 |   0 | attr  |      15.81813 | \*\*\*\*   | Filled.cookie    |
+| 924  | create    | Adam      |  13 |   1 |   1 |   0 | attr  |      14.17394 | \*\*\*     | create.Adam      |
+| 928  | create    | rift      |  13 |   1 |   1 |   0 | attr  |      14.17394 | \*\*\*     | create.rift      |
+| 930  | record    | Simpsons  |  13 |   1 |   1 |   0 | attr  |      14.17394 | \*\*\*     | record.Simpsons  |
+| 1337 | shovel    | food      |   1 |  34 |   1 |   0 | attr  |      12.20185 | \*\*\*     | shovel.food      |
+| 1338 | Unsweeten | food      |   1 |  34 |   1 |   0 | attr  |      12.20185 | \*\*\*     | Unsweeten.food   |
+| 1476 | filling   | stuff     |   1 |  46 |   1 |   0 | attr  |      11.58948 | \*\*\*     | filling.stuff    |
+| 1518 | create    | cause     |  13 |   2 |   1 |   0 | attr  |      11.40296 | \*\*\*     | create.cause     |
+| 1519 | create    | committee |  13 |   2 |   1 |   0 | attr  |      11.40296 | \*\*\*     | create.committee |
+| 1520 | create    | condition |  13 |   2 |   1 |   0 | attr  |      11.40296 | \*\*\*     | create.condition |
+| 1784 | bake      | bread     |   5 |   7 |   1 |   0 | attr  |      10.48243 | \*\*       | bake.bread       |
+| 1862 | roll      | tamale    |   8 |   5 |   1 |   0 | attr  |      10.19627 | \*\*       | roll.tamale      |
+| 2626 | record    | trip      |  13 |   8 |   1 |   0 | attr  |       8.15687 | \*\*       | record.trip      |
+| 3307 | record    | game      |  13 |  16 |   1 |   0 | attr  |       6.71671 | \*\*       | record.game      |
+
+<figure>
+<img src="README_files/figure-markdown_phpextra/fig-04-sema-1.png" alt="semasiological log.like of near synonymes to make" />
+<figcaption aria-hidden="true">semasiological log.like of near synonymes to make</figcaption>
+</figure>
+
 ------------------------------------------------------------------------
 
-# 2 B: references 
+# 2 B: references {#b-references .unnumbered}
 
 <div id="refs" class="references csl-bib-body hanging-indent" markdown="1">
 
