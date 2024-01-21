@@ -135,7 +135,7 @@ barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",yla
 
 
 ```{r fig-04-sema,echo=F, fig.cap="semasiological log.like of near synonymes to make"}
-kable(plotlist$eval.semas)
+kable(plotlist$eval.semas[,1:9])
     barplot(plotlist$eval.semas$COLL.STR.LOGL~plotlist$eval.semas$ns,xlab = "",ylab = "collex.log.like")
 #plot.plots("alt.2")
 ```
