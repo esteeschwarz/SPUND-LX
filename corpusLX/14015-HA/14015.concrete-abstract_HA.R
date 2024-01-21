@@ -194,9 +194,11 @@ trntable
 #14023.class
 ### binäre logistische regression, anova, mehrdimensionale, nominale daten
 ### open american national corpus
-
+##########################################################
+##########################################################
+### from here with preloaded df
 #14027.Mehl,alternatives,define onomasiological alternates
-#load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
 #save(trndf.lm,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
 
 library(stringi)
@@ -249,6 +251,8 @@ returnlist
     return(df.split)
   
 }
+library(udpipe)
+library(quanteda)
 #split.build<-get.coll(trndf.lm,"build")
 # split.make<-get.coll(trndf.lm,"make","make")
 # split.build<-get.coll(trndf.lm,"build","(buil(d|t|ding))")
@@ -333,7 +337,7 @@ returnlist<-list(set=split.df$set,freq=make.freq,ann=an6,nouns=an6.n,freq.g=make
 ### appear as objects of /make/ AND /build/ in a reasonable context
 
 #x.build<-n.x.provide
-nouns.com<-nouns.com.provide
+#nouns.com<-nouns.com.provide
 verb<-"give"
 alt<-"provide"
 topdf<-trndf.lm
@@ -378,7 +382,8 @@ for(k in 1:length(nouns.com)){
   f.array[k]<-f.sub
   f.array['freq']<-length(x.sub$scb)
   f.array['freq']<-sum(m3)
-  f.array['total']<-length(trndf$scb)
+#  f.array['total']<-length(trndf$scb)
+  f.array['total']<-length(topdf$scb)
   f.array['sub.verb']<-sum(m1)
 
 }
@@ -412,6 +417,7 @@ nouns.com.2<-"thing"
 
 #nouns.f.1<-get.n.freq(nouns.com.2)
 #nouns.f.1
+library(quanteda.textstats)
 n.x.cr<-get.noun.coll(get.coll(trndf.lm,"make","create","(creat(ed|ing|e))")) # test
 n.x.bu<-get.noun.coll(get.coll(trndf.lm,"make","build","(buil(d|t|ding))")) # test
 n.x.man<-get.noun.coll(get.coll(trndf.lm,"make","manufacture","(manufactur(ing|e|ed))")) # test
@@ -497,15 +503,17 @@ nouns.com.build<-"thing"
 nouns.com.create<-c("thing")
 nouns.com.carry<-c("bag","lot","chairs","mother")
 ###
-f.provide<-get.freq(n.x.provide$set,"provide")
-f.rel.give<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
-f.rel.give$f.abs
-f.rel.give$f.rel
-f.rel.give<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
-f.rel.give$f.abs
-f.rel.give$f.rel
-
-
+# f.provide<-get.freq(n.x.provide$set,"provide")
+# f.rel.give<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
+# f.rel.give$f.abs
+# f.rel.give$f.rel
+# f.rel.give<-get.n.freq(trndf.lm,n.x.provide,nouns.com.provide,"give","provide")
+# f.rel.give$f.abs
+# f.rel.give$f.rel
+#######################################################################
+#######################################################################
+### from here with preloaded trndf.lm.cpt
+#########################################
 nouns.f.1<-get.n.freq(trndf.lm,n.x.cr,nouns.com.create,"make","create")
 nouns.f.1
 nouns.f.2<-get.n.freq(trndf.lm,n.x.bu,nouns.com.build,"make","build")
@@ -595,6 +603,8 @@ par(las=3)
     barplot(nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
   if(what=="alt.4")
     barplot(nouns.f.df,main="semantic alternates w/ equivalent meaning",beside=T,ylab = "% in corpus",legend.text = rownames(nouns.f.df))
+  if(what=="sema")
+    barplot(plotlist$eval.semas$COLL.STR.LOGL~plotlist$eval.semas$ns,xlab = "",ylab = "collex.log.like")
   
 }
 save.plotlist<-function(){
@@ -605,9 +615,10 @@ save.plotlist<-function(){
 
 # save(plotlist,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotlist.RData")
 # save.plotlist()
-
+#save(plot.plots(,))
  plot.plots("dist")
  plot.plots("alt.1")
  plot.plots("alt.2")
  plot.plots("alt.4")
+ plot.plots("sema")
  # 
