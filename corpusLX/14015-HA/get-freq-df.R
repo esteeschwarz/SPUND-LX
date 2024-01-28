@@ -3,37 +3,59 @@
 # vertical corpus object
 ### sec 1.1
 ### get verb + objects df
-load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.RData")
+#load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.RData")
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.pos-all-dfs.RData")
 # df<-scb.ann.list$doc1
 # x<-scb.ann.list[[2]]
 
 #x<-scb.ann.list[[2]]
-x<-corpus.df
-#x<-scb.pos.df.list$sbc1
+#x<-corpus.df
+#x<-scb.pos.df.list$sbc15
 get.corpus.deprel<-function(x){
   # assign unique id to token
-  x$sbc.token.id<-1:length(x$sbc.id)  
+  x$sbc.token.id<-as.double(paste0(x$sbc.id,".",  1:length(x$sbc.id)))  
   x$pos.0<-"lfd.pos"  
+  x$obj<-NA
   tdf<-t(x)
-  all.zero<-which(tdf=="lfd.pos")
   rtdf<-rownames(tdf)
-  rtdf
-  pos.deprel<-length(rtdf)-grep("dep",rtdf)
-  pos.head<-length(rtdf)-grep("head",rtdf)
-  pos.upos<-length(rtdf)-grep("upos",rtdf)
-  pos.lemma<-length(rtdf)-grep("lemma",rtdf)
-  pos.token<-length(rtdf)-which(rtdf=="token")
-  pos.token.id<-length(rtdf)-which(rtdf=="token_id")
-  t.head<-all.zero-pos.head
-  t.id<-all.zero-pos.token.id
-  t.tag<-all.zero-pos.upos
-  t.token<-all.zero-pos.token
-  t.lemma<-all.zero-pos.lemma
-  t.deprel<-all.zero-pos.deprel
+  rtdf.0<-which(rtdf=="pos.0")
+  all.zero<-which(tdf=="lfd.pos")-rtdf.0
+#  all.zero.0<-all.zero-length(rtdf)
+  # pos.deprel<-length(rtdf)-grep("dep",rtdf)
+  # pos.head<-length(rtdf)-grep("head",rtdf)
+  # pos.upos<-length(rtdf)-grep("upos",rtdf)
+  # pos.lemma<-length(rtdf)-grep("lemma",rtdf)
+  # pos.token<-length(rtdf)-which(rtdf=="token")
+  # pos.token.id<-length(rtdf)-which(rtdf=="token_id")
+  #########################################
+  pos.deprel<-all.zero+grep("dep",rtdf)
+  pos.head<-all.zero+grep("head",rtdf)
+  pos.upos<-all.zero+grep("upos",rtdf)
+  pos.lemma<-all.zero+grep("lemma",rtdf)
+  pos.token<-all.zero+which(rtdf=="token")
+  pos.token.id<-all.zero+which(rtdf=="token_id")
+  #########################
+  # t.head<-all.zero-pos.head
+  # t.head<-all.zero-grep("head",rtdf)
+  # t.id<-all.zero-pos.token.id
+  # t.tag<-all.zero-pos.upos
+  # t.token<-all.zero-pos.token
+  # t.lemma<-all.zero-pos.lemma
+  # t.deprel<-all.zero-pos.deprel
+  t.head<-pos.head
+  t.id<-pos.token.id
+  t.tag<-pos.upos
+  t.token<-pos.token
+  t.lemma<-pos.lemma
+  t.deprel<-pos.deprel
+  m.h.t.0<-which(tdf[t.head]==0)
   h.t.pos.rel<-as.double(tdf[t.id])-as.double(tdf[t.head])
+  h.t.pos.rel[m.h.t.0]<-0
   h.t.pos.abs<-t.id-(h.t.pos.rel*length(tdf[,1]))
   #tdf[h.t.pos.abs]
   h.t.value<-t.token-(h.t.pos.rel*length(tdf[,1]))
+  
+  #head(tdf[h.t.value])
   m1<-which(h.t.value<0)
   sum(m1)
   h.t.value[m1]<-1 # prevent negative subscripts
@@ -41,100 +63,150 @@ get.corpus.deprel<-function(x){
   m2<-which(h.l.value<0)
   sum(m2)
   h.l.value[m2]<-1 # prevent negative subscripts
-  #tdf[h.l.value]
+  head(tdf[h.l.value])
+  ####################
+  all.obj<-tdf=="obj"
+  #all.obj[]
+  all.ob.w<-which(all.obj)
+  all.ob.w
+  obj.head<-as.double(all.ob.w-1)
+  tdf[obj.head]
+  obj.tag<-all.ob.w-4 #4 
+  tdf[obj.tag]
+  obj.lemma<-all.ob.w-5 #5
+  tdf[obj.lemma]
+  obj.token<-all.ob.w-6 #6
+  tdf[obj.token]
+  obj.id<-as.double(all.ob.w-7) #7
+  tdf[obj.id]
+  h.t.o.pos.rel<-as.double(tdf[obj.id])-as.double(tdf[obj.head])
+  h.t.o.pos.abs<-obj.id-(h.t.o.pos.rel*length(tdf[,1]))
+  tdf[h.t.o.pos.abs]
+  h.t.o.value<-obj.token-(h.t.o.pos.rel*length(tdf[,1]))
+  tdf[h.t.o.value]
+  h.l.o.value<-obj.lemma-(h.t.o.pos.rel*length(tdf[,1]))
+  tdf[h.l.o.value]
+  obj.pos<-all.ob.w+5
+  tdf[obj.pos]<-tdf[h.l.o.value]
+  ####################
+  #obj.df<-get.lemma.obj(x)
+  #tdf[obj.df$obj.pos]<-as.character(obj.df$obj)
+  #tdf[16,1]
+ # tdf[675]
+  tdf.r<-as.data.frame(t(tdf))
+  m<-!is.na(tdf.r$obj)
+  sum(m)
+  #length(tdf[obj.pos])
+  #length(tdf[h.t.value])
+  x$obj<-tdf.r$obj
   x$head_token_value<-tdf[h.t.value]
   x$head_lemma_value<-tdf[h.l.value]
+  mode(x$line)<-"double"
+  mode(x$sbc.id)<-"double"
+  mode(x$token_id)<-"double"
+  mode(x$head_token_id)<-"double"
+  
   return(x)  
   
 }
-
-get.lemma.obj<-function(x){
-# matrix of object: annis like horizontal df, token left > right, annotation layer top > bottom
-tdf<-t(x)
-all.obj<-tdf=="obj"
-#all.obj[]
-all.ob.w<-which(all.obj)
-all.ob.w
-obj.head<-as.double(all.ob.w-1)
-tdf[obj.head]
-# tdf1<-rbind(tdf,lfd=c(1:length(tdf)))
-# rownames(tdf1)[14]<-"lfd"
-# tdf1[14,]<-"lfdrun"
-# t.dep<-tdf[11,]
-
-#obj.tag<-all.ob.w-4
-obj.tag<-all.ob.w-4 #4 
-tdf[obj.tag]
-obj.lemma<-all.ob.w-5 #5
-tdf[obj.lemma]
-obj.token<-all.ob.w-6 #6
-tdf[obj.token]
-obj.id<-as.double(all.ob.w-7) #7
-tdf[obj.id]
-h.t.pos.rel<-as.double(tdf[obj.id])-as.double(tdf[obj.head])
-h.t.pos.abs<-obj.id-(h.t.pos.rel*length(tdf[,1]))
-tdf[h.t.pos.abs]
-h.t.value<-obj.token-(h.t.pos.rel*length(tdf[,1]))
-tdf[h.t.value]
-h.l.value<-obj.lemma-(h.t.pos.rel*length(tdf[,1]))
-tdf[h.l.value]
-length(tdf[h.l.value])
-### add headtoken value to df
-tdf.1<-x
-ht.id<-tdf.1$head_token_id
-t.id<-as.double(tdf.1$token_id)
-ht.rel<-as.double(t.id)-as.double(ht.id)
-ht.pos<-t.id-(ht.rel*length(tdf.1))
-ht.pos
-ht<-tdf
-#length(tdf)
-#tdf.ht<-rbind(tdf,tdf[h.l.value])
-df.verb.object<-data.frame(lemma=tdf[h.l.value],object=tdf[obj.lemma])
-}
-#####################################################
-verb.object.list<-lapply(scb.ann.list, get.lemma.obj)
 corpus.head.list<-lapply(scb.pos.df.list, get.corpus.deprel)
+
+#x<-corpus.head.list$sbc1
+
+# get.lemma.obj<-function(x){
+# # matrix of object: annis like horizontal df, token left > right, annotation layer top > bottom
+# x$obj<-NA
+# tdf<-t(x)
+# all.obj<-tdf=="obj"
+# #all.obj[]
+# all.ob.w<-which(all.obj)
+# all.ob.w
+# obj.head<-as.double(all.ob.w-1)
+# tdf[obj.head]
+# # tdf1<-rbind(tdf,lfd=c(1:length(tdf)))
+# # rownames(tdf1)[14]<-"lfd"
+# # tdf1[14,]<-"lfdrun"
+# # t.dep<-tdf[11,]
+# 
+# #obj.tag<-all.ob.w-4
+# obj.tag<-all.ob.w-4 #4 
+# tdf[obj.tag]
+# obj.lemma<-all.ob.w-5 #5
+# tdf[obj.lemma]
+# obj.token<-all.ob.w-6 #6
+# tdf[obj.token]
+# obj.id<-as.double(all.ob.w-7) #7
+# tdf[obj.id]
+# h.t.pos.rel<-as.double(tdf[obj.id])-as.double(tdf[obj.head])
+# h.t.pos.abs<-obj.id-(h.t.pos.rel*length(tdf[,1]))
+# tdf[h.t.pos.abs]
+# h.t.value<-obj.token-(h.t.pos.rel*length(tdf[,1]))
+# tdf[h.t.value]
+# h.l.value<-obj.lemma-(h.t.pos.rel*length(tdf[,1]))
+# tdf[h.l.value]
+# obj.df<-data.frame(obj.pos=h.t.pos.abs,obj=tdf[obj.lemma])
+# return(obj.df)
+# }
+# length(tdf[h.l.value])
+# ### add headtoken value to df
+# #tdf.1<-tdf
+# tdf.1<-x
+# ht.id<-tdf.1$head_token_id
+# t.id<-as.double(tdf.1$token_id)
+# ht.rel<-as.double(t.id)-as.double(ht.id)
+# ht.pos<-t.id-(ht.rel*length(tdf.1))
+# ht.pos
+# ht<-tdf
+# #length(tdf)
+# #tdf.ht<-rbind(tdf,tdf[h.l.value])
+# df.verb.object<-data.frame(lemma=tdf[h.l.value],object=tdf[obj.lemma])
+# }
+#####################################################
+#verb.object.list<-lapply(scb.ann.list, get.lemma.obj)
+# corpus.head.list<-lapply(scb.pos.df.list, get.corpus.deprel)
 #save(verb.object.list,file="verb.object.list.RData")
-library(abind)
-llist<-verb.object.list[[1]]
-for (k in 2:length(verb.object.list)){
-  llist<-abind(llist,freq.list[[k]],along = 1)
-  
-}
+#library(abind)
+# llist<-verb.object.list[[1]]
+# for (k in 2:length(verb.object.list)){
+#   llist<-abind(llist,freq.list[[k]],along = 1)
+#   
+# }
 ### get corpus object
-corpus.df<-data.frame(scb.ann.list$doc1)
-for (k in 2:length(scb.ann.list)){
-  corpus.df<-rbind(corpus.df,scb.ann.list[[k]])
-}
+# corpus.df<-data.frame(scb.ann.list$doc1)
+# for (k in 2:length(scb.ann.list)){
+#   corpus.df<-rbind(corpus.df,scb.ann.list[[k]])
+# }
 ### get corpus object
 corpus.df.deprel<-data.frame(corpus.head.list$sbc1)
 for (k in 2:length(corpus.head.list)){
   corpus.df.deprel<-rbind(corpus.df.deprel,corpus.head.list[[k]])
 }
-save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
+### run until here
+################################
+#save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
 head(corpus.df.deprel,20)
-corpus.df$doc_id<-gsub("doc","",corpus.df$doc_id)
-colnames(corpus.df)[1]<-"line"
-colnames(corpus.df)
-corpus.df.red<-corpus.df[,c(1,2,4,5,6,7,8,9,10,11,12)]
+# corpus.df$doc_id<-gsub("doc","",corpus.df$doc_id)
+# colnames(corpus.df)[1]<-"line"
+# colnames(corpus.df)
+# corpus.df.red<-corpus.df[,c(1,2,4,5,6,7,8,9,10,11,12)]
 #save(llist,file="verb.object.df.cpt.RData")
 #a<-abind(freq.list[[1]],freq.list[[2]],along = 1)
 #bindl<-function(x)abind(x,along = 1)
 #llist.df<-lapply(verb.object.list, bindl)
 #llist.df$
-verb.object.df.cpt<-data.frame(lemma=unlist(llist[,1]),object=unlist(llist[,2]))
+#verb.object.df.cpt<-data.frame(lemma=unlist(llist[,1]),object=unlist(llist[,2]))
 #typeof(llist.df.cpt)
-save(verb.object.df.cpt,file = "verb.object.df.cpt.RData")
-eval1<-collex.covar(verb.object.df.cpt)
-eval1
-collex.eval<-eval1
-#save(collex.eval,file="collex.eval.RData")
-make1<-which(eval1$SLOT1=="make")
-eval1[make1,]
-#target1<-eval1$SLOT2=="pizza"
-#eval1[target1,]
-#t1<-which(target1)
-tail(eval1[make1,],100)
+#save(verb.object.df.cpt,file = "verb.object.df.cpt.RData")
+# eval1<-collex.covar(verb.object.df.cpt)
+# eval1
+# collex.eval<-eval1
+# #save(collex.eval,file="collex.eval.RData")
+# make1<-which(eval1$SLOT1=="make")
+# eval1[make1,]
+# #target1<-eval1$SLOT2=="pizza"
+# #eval1[target1,]
+# #t1<-which(target1)
+# tail(eval1[make1,],100)
 ### wks.
 ###################
 ### 14043.
@@ -521,7 +593,8 @@ m<-corpus.df.deprel$lemma=="take"&corpus.df.deprel$light==1
 #m<-corpus.df.deprel$light==1
 sum(m,na.rm = T)
 #############################
-save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
+#save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
 #############################
 ### now collex again:
 coll6<-get.coll.df(corpus.df.deprel,"lemma","head_lemma_value","light",sub=F,na.rm=F)
