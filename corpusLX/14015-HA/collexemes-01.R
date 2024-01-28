@@ -138,12 +138,12 @@ produce<-sum(eval1$T[eval1$head_lemma=="produce"])
 generate<-sum(eval1$T[eval1$head_lemma=="generate"])
 eval1
 #sum(eval1$T[eval1$head_lemma=="make"])
-plotdf<-data.frame(lemma=factor(eval1$head_lemma),T=eval1$T)
+#plotdf<-data.frame(lemma=factor(eval1$head_lemma),T=eval1$T)
 par(las=3)
-boxplot(plotdf$T~plotdf$lemma,range=0.005,ylim=c(1,2),varwidth=T,outline=T,log="y")
+#boxplot(plotdf$T~plotdf$lemma,range=0.005,ylim=c(1,2),varwidth=T,outline=T,log="y")
 barplot(cbind(make,produce,create,build,generate))
-factor(plotdf$T)
-table(plotdf)
+#factor(plotdf$T)
+#table(plotdf)
 take.array<-c("take","bring","carry")
 eval2<-coll6.2[coll6.2$head_lemma%in%take.array&coll6.2$light==0,]
 take<-sum(eval2$T[eval2$head_lemma=="take"])
@@ -158,3 +158,5 @@ p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
 get.p<-function(x)pt(x,df,lower.tail = F)
 eval1$p<-lapply(eval1$T, get.p)
 eval1
+eval2$p<-lapply(eval2$T, get.p)
+eval2
