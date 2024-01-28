@@ -4,7 +4,7 @@
 #load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
 
 # build annotated token for concrete /take/, /give/ (/make/ already annotated)
-
+tempfun<-function(){
 get.light.annotation<-function(corpus.df.deprel){
 concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
                  61952,64351,67497,69012,70356,71167,74595,75162,76991,77442,77553,81098,81099,81859,81860,94278,
@@ -56,28 +56,7 @@ corpus.df.deprel$light[m31]<-0
 return(corpus.df.deprel)
 }
 
-{
-m1<-corpus.df.deprel$head_lemma_value%in%concrete.give.txt&grepl("give|gave|given|giving",corpus.df.deprel$sentence)
-#m<-corpus.df.deprel$lemma=="give"&corpus.df.deprel$head_lemma_value=="ornament"
-sum(m1)
-corpus.df.deprel$sentence[m1]
-corpus.df.deprel$light[m1]<-0
-m2<-corpus.df.deprel$head_lemma_value%in%concrete.take.txt&grepl("take|took|takenen|taking",corpus.df.deprel$sentence)
-#m<-corpus.df.deprel$lemma=="give"&corpus.df.deprel$head_lemma_value=="ornament"
-sum(m2)
-corpus.df.deprel$sentence[m2]
-corpus.df.deprel$light[m2]<-NA
-m3<-corpus.df.deprel$head_lemma_value%in%concrete.take.txt&grepl("take|took|takenen|taking",corpus.df.deprel$sentence)&
-  !grepl(concrete.false.take.regx,corpus.df.deprel$sentence)
-corpus.df.deprel$sentence[m3]
-corpus.df.deprel$light[m3]<-0
-### apply negative m as 1
-m<-corpus.df.deprel$lemma=="give"&corpus.df.deprel$light==1
-#m<-corpus.df.deprel$light==1
-sum(m,na.rm = T)
-m<-corpus.df.deprel$lemma=="take"&corpus.df.deprel$light==1
-#m<-corpus.df.deprel$light==1
-sum(m,na.rm = T)
+
 }
 #############################
 #save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
@@ -132,7 +111,7 @@ get.collex<-function(coll6,filter.pos,na.rm=FALSE){
  # coll6.2<-collex.covar.mult(data.frame(coll6$lemma,coll6$head_lemma_value,coll6$light,coll6$obj.to),threshold = 1,decimals = 2)
 }
 #save(corpus.df.deprel,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
-#load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 #############################
 ### now collex again:
 # get df with 3 variables:
@@ -152,14 +131,30 @@ eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
 coll6.2[coll6.2$head_lemma=="make",]
 coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
 eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
-sum(eval1$T[eval1$head_lemma=="make"])
-sum(eval1$T[eval1$head_lemma=="build"])
-sum(eval1$T[eval1$head_lemma=="create"])
-sum(eval1$T[eval1$head_lemma=="produce"])
-sum(eval1$T[eval1$head_lemma=="generate"])
+make<-sum(eval1$T[eval1$head_lemma=="make"])
+build<-sum(eval1$T[eval1$head_lemma=="build"])
+create<-sum(eval1$T[eval1$head_lemma=="create"])
+produce<-sum(eval1$T[eval1$head_lemma=="produce"])
+generate<-sum(eval1$T[eval1$head_lemma=="generate"])
 eval1
 #sum(eval1$T[eval1$head_lemma=="make"])
-plotdf<-data.frame(lemma=eval1$head_lemma,T=eval1$T)
+plotdf<-data.frame(lemma=factor(eval1$head_lemma),T=eval1$T)
 par(las=3)
-boxplot(plotdf$T~plotdf$lemma)
-plotdf
+boxplot(plotdf$T~plotdf$lemma,range=0.005,ylim=c(1,2),varwidth=T,outline=T,log="y")
+barplot(cbind(make,produce,create,build,generate))
+factor(plotdf$T)
+table(plotdf)
+take.array<-c("take","bring","carry")
+eval2<-coll6.2[coll6.2$head_lemma%in%take.array&coll6.2$light==0,]
+take<-sum(eval2$T[eval2$head_lemma=="take"])
+bring<-sum(eval2$T[eval2$head_lemma=="bring"])
+carry<-sum(eval2$T[eval2$head_lemma=="carry"])
+barplot(cbind(bring,carry,take))
+df<-factor(coll6.2$head_lemma)
+levels(df)
+df<-length(levels(df))
+#edge
+p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
+get.p<-function(x)pt(x,df,lower.tail = F)
+eval1$p<-lapply(eval1$T, get.p)
+eval1
