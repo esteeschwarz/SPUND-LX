@@ -56,6 +56,8 @@ load(dtemp)
 download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/plotlist.RData",dtemp)
 load(dtemp)
 # load("data/plotlist.RData")
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/collex.eval.RData",dtemp)
+load(dtemp)
    
 
 #load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
@@ -140,8 +142,78 @@ kable(plotlist$eval.semas[,1:9])
 #plot.plots("alt.2")
 ```
 
+#### 2nd approach collexeme evaluation
 
+```{r echo=F}
+coll6.2<-collex.eval
+coll6.2[coll6.2$head_lemma=="make",]
+coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
+coll6.2[coll6.2$head_lemma=="make",]
+coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==1,]
+coll6.2[coll6.2$head_lemma=="make",]
+make.array<-c("make","generate","produce","create","build")
+eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
+coll6.2[coll6.2$head_lemma=="make",]
+coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
+eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
+make<-sum(eval1$T[eval1$head_lemma=="make"])
+build<-sum(eval1$T[eval1$head_lemma=="build"])
+create<-sum(eval1$T[eval1$head_lemma=="create"])
+produce<-sum(eval1$T[eval1$head_lemma=="produce"])
+generate<-sum(eval1$T[eval1$head_lemma=="generate"])
+eval1
+#sum(eval1$T[eval1$head_lemma=="make"])
+#factor(plotdf$T)
+#table(plotdf)
+take.array<-c("take","bring","carry")
+eval2<-coll6.2[coll6.2$head_lemma%in%take.array&coll6.2$light==0,]
+take<-sum(eval2$T[eval2$head_lemma=="take"])
+bring<-sum(eval2$T[eval2$head_lemma=="bring"])
+carry<-sum(eval2$T[eval2$head_lemma=="carry"])
+df<-factor(coll6.2$head_lemma)
+levels(df)
+df<-length(levels(df))
+#df<-177
+#edge
+#p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
+get.p<-function(x)pt(x,df,lower.tail = F)
+#get.p<-function(x)pt(x,df,lower.tail = T)
+eval1$p<-unlist(lapply(eval1$T, get.p))
+eval1
+eval2$p<-unlist(lapply(eval2$T, get.p))
+eval2
+#x<-eval1$head_lemma[1]
+sumobs<-function(x)sum(grepl(x,eval1[['head_lemma']]))
+eval1$obs<-unlist(lapply(eval1$head_lemma, sumobs))
+#obs1
+eval1
+plotdf1<-data.frame(lemma=factor(eval1$head_lemma),p=eval1$p,obs=eval1$obs)
+plotdf2<-data.frame(lemma=factor(eval2$head_lemma),p=eval2$p)
+eval2$obs<-unlist(lapply(eval2$head_lemma, sumobs))
 
+```
+
+```{r fig-05-sema-T-make,echo=F, fig.cap="semasiological: sum T-score of near synonymes to make"}
+barplot(cbind(make,produce,create,build,generate), main="absolute preference in concrete context",ylab="T score sum association strength")
+
+```
+
+```{r fig-06-sema-T-take,echo=F, fig.cap="semasiological: sum T-score of near synonymes to take"}
+barplot(cbind(bring,carry,take),ylab="T score sum association strength", main="absolute preference in concrete context")
+
+```
+
+```{r fig-07-sema-p-make,echo=F, fig.cap="semasiological: p of near synonymes to make"}
+par(las=3)
+boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma /make/ in concrete noun context")
+
+```
+
+```{r fig-08-sema-p-take,echo=F, fig.cap="semasiological: p of near synonymes to take"}
+par(las=3)
+boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma /take/ in concrete noun context")
+
+```
 ---------
 
 # B: references

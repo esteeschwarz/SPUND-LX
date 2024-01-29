@@ -96,7 +96,7 @@ get.collex<-function(coll6,filter.pos,na.rm=FALSE){
   coll6<-coll6[!m3,]
   m4<-is.na(coll6$light)
   
-  if(na.rm!=T)
+  if(na.rm==F)
     coll6$light[m4]<-"n.a."
   # m5<-is.na(coll6$obj.to)
   # coll6<-coll6[!m5,]
@@ -122,11 +122,16 @@ get.collex<-function(coll6,filter.pos,na.rm=FALSE){
 ### now collex again:
 # get df with 3 variables:
 coll6<-get.coll.df(corpus.df.deprel,"lemma","head_lemma_value","light",sub=F,na.rm=F)
-coll6.2.na.rm<-get.collex(coll6,filter.pos = "NOUN",na.rm = T)
-coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F)
-
+coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate them as variant of light > they are part of the computation
+coll6.2.na.rm<-get.collex(coll6,filter.pos = "",na.rm = T)
+#coll6.2<-get.collex(coll6,filter.pos = "",na.rm = F)
+collex.eval<-coll6.2
+save(collex.eval,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/collex.eval.RData")
 coll6.2
 coll6.2.na.rm
+#############
+### subset evaluation
 coll6.2[coll6.2$head_lemma=="make",]
 coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
 coll6.2[coll6.2$head_lemma=="make",]
@@ -160,6 +165,7 @@ df<-length(levels(df))
 #edge
 #p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
 get.p<-function(x)pt(x,df,lower.tail = F)
+#get.p<-function(x)pt(x,df,lower.tail = T)
 eval1$p<-unlist(lapply(eval1$T, get.p))
 eval1
 eval2$p<-unlist(lapply(eval2$T, get.p))
