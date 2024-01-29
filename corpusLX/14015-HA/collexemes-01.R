@@ -127,7 +127,7 @@ coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be rep
 coll6.2.na.rm<-get.collex(coll6,filter.pos = "",na.rm = T)
 #coll6.2<-get.collex(coll6,filter.pos = "",na.rm = F)
 collex.eval<-coll6.2
-save(collex.eval,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/collex.eval.RData")
+#save(collex.eval,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/collex.eval.RData")
 coll6.2
 coll6.2.na.rm
 #############
