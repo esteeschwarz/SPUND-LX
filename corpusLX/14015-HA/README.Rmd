@@ -146,15 +146,15 @@ kable(plotlist$eval.semas[,1:9])
 
 ```{r echo=F}
 coll6.2<-collex.eval
-coll6.2[coll6.2$head_lemma=="make",]
-coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
-coll6.2[coll6.2$head_lemma=="make",]
-coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==1,]
-coll6.2[coll6.2$head_lemma=="make",]
+#coll6.2[coll6.2$head_lemma=="make",]
+#coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
+#coll6.2[coll6.2$head_lemma=="make",]
+#coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==1,]
+#coll6.2[coll6.2$head_lemma=="make",]
 make.array<-c("make","generate","produce","create","build")
 eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
-coll6.2[coll6.2$head_lemma=="make",]
-coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
+#coll6.2[coll6.2$head_lemma=="make",]
+#coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
 eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
 make<-sum(eval1$T[eval1$head_lemma=="make"])
 build<-sum(eval1$T[eval1$head_lemma=="build"])
