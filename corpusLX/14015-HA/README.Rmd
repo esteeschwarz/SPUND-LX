@@ -210,10 +210,13 @@ boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of 
 ```
 
 ```{r fig-08-sema-p-take,echo=F, fig.cap="semasiological: p of near synonymes to take"}
+#getwd()
 par(las=3)
 boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma /take/ in concrete noun context")
 
 ```
+
+
 ---------
 
 # B: references
