@@ -2,6 +2,9 @@
 #14052.SBC.frequency evaluations
 ################################
 #load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
+### replace with local .RData before running:
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
+
 
 # build annotated token for concrete /take/, /give/ (/make/ already annotated)
 tempfun<-function(){
@@ -111,7 +114,7 @@ get.collex<-function(coll6,filter.pos,na.rm=FALSE){
  # coll6.2<-collex.covar.mult(data.frame(coll6$lemma,coll6$head_lemma_value,coll6$light,coll6$obj.to),threshold = 1,decimals = 2)
 }
 #save(corpus.df.deprel,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
-load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
+# load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 #############################
 ### now collex again:
 # get df with 3 variables:
@@ -138,10 +141,7 @@ produce<-sum(eval1$T[eval1$head_lemma=="produce"])
 generate<-sum(eval1$T[eval1$head_lemma=="generate"])
 eval1
 #sum(eval1$T[eval1$head_lemma=="make"])
-#plotdf<-data.frame(lemma=factor(eval1$head_lemma),T=eval1$T)
-par(las=3)
-#boxplot(plotdf$T~plotdf$lemma,range=0.005,ylim=c(1,2),varwidth=T,outline=T,log="y")
-barplot(cbind(make,produce,create,build,generate))
+barplot(cbind(make,produce,create,build,generate), main="absolute preference in concrete context",ylab="T score sum association strength")
 #factor(plotdf$T)
 #table(plotdf)
 take.array<-c("take","bring","carry")
@@ -149,14 +149,32 @@ eval2<-coll6.2[coll6.2$head_lemma%in%take.array&coll6.2$light==0,]
 take<-sum(eval2$T[eval2$head_lemma=="take"])
 bring<-sum(eval2$T[eval2$head_lemma=="bring"])
 carry<-sum(eval2$T[eval2$head_lemma=="carry"])
-barplot(cbind(bring,carry,take))
+barplot(cbind(bring,carry,take),ylab="T score sum association strength", main="absolute preference in concrete context")
 df<-factor(coll6.2$head_lemma)
 levels(df)
 df<-length(levels(df))
+#df<-177
 #edge
-p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
+#p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
 get.p<-function(x)pt(x,df,lower.tail = F)
-eval1$p<-lapply(eval1$T, get.p)
+eval1$p<-unlist(lapply(eval1$T, get.p))
 eval1
-eval2$p<-lapply(eval2$T, get.p)
+eval2$p<-unlist(lapply(eval2$T, get.p))
 eval2
+#x<-eval1$head_lemma[1]
+sumobs<-function(x)sum(grepl(x,eval1[['head_lemma']]))
+eval1$obs<-unlist(lapply(eval1$head_lemma, sumobs))
+#obs1
+eval1
+plotdf1<-data.frame(lemma=factor(eval1$head_lemma),p=eval1$p,obs=eval1$obs)
+par(las=3)
+boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
+plotdf2<-data.frame(lemma=factor(eval2$head_lemma),p=eval2$p)
+eval2$obs<-unlist(lapply(eval2$head_lemma, sumobs))
+par(las=3)
+boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
+### result: preference of build over make, preference of bring over take
+### > the alternative construction is preferred in concrete contexts
+
+
+
