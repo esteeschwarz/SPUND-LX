@@ -7,6 +7,9 @@ load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.d
 
 
 # build annotated token for concrete /take/, /give/ (/make/ already annotated)
+# these annotations are already applied to the actual dataset, the function is not called in script
+# the concrete /give/, /take/ objects below are defined manually as occuring in the corpus as objects of or in context with the given lemma. see https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/get-freq-df.R on how these objects were defined.
+########################################
 tempfun<-function(){
 get.light.annotation<-function(corpus.df.deprel){
 concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
@@ -173,7 +176,14 @@ plotdf2<-data.frame(lemma=factor(eval2$head_lemma),p=eval2$p)
 eval2$obs<-unlist(lapply(eval2$head_lemma, sumobs))
 par(las=3)
 boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
-### result: preference of build over make, preference of bring over take
+### result: preference of build over make, preference of bring over take in p
+### the opposite result in summed up T-score / lemma
+### mehl (2021) on this:
+"The null hypothesis for this test is that the underlying selection preference for each verb or its alternate is random. The single-sample Chi-square test shows that in speech, each concrete verb (make, take, and give) is preferred over its alternate beyond what is expected by chance (p < 0.05).
+Put differently, each concrete verb is significantly preferred over its alternate in speech."
+
+### > here my question, what my results mean resp. the hypothesis and the mehl findings. my p-values show the opposite results, the T-score sum interpretation agrees with mehl. did i find just the opposite result in my corpus or am i wrong in building the results? can i simply boxplot the p-values which then shows that the lemma is below its alternatives? or is the sum of T-score yet the right indicator as the means for all T equals 1 saying it is already a mean interpretation of the association strength over the corpus?
+
 ### > the alternative construction is preferred in concrete contexts
 
 
