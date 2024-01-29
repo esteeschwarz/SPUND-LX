@@ -161,7 +161,7 @@ build<-sum(eval1$T[eval1$head_lemma=="build"])
 create<-sum(eval1$T[eval1$head_lemma=="create"])
 produce<-sum(eval1$T[eval1$head_lemma=="produce"])
 generate<-sum(eval1$T[eval1$head_lemma=="generate"])
-eval1
+#eval1
 #sum(eval1$T[eval1$head_lemma=="make"])
 #factor(plotdf$T)
 #table(plotdf)
@@ -171,7 +171,7 @@ take<-sum(eval2$T[eval2$head_lemma=="take"])
 bring<-sum(eval2$T[eval2$head_lemma=="bring"])
 carry<-sum(eval2$T[eval2$head_lemma=="carry"])
 df<-factor(coll6.2$head_lemma)
-levels(df)
+#levels(df)
 df<-length(levels(df))
 #df<-177
 #edge
@@ -179,14 +179,14 @@ df<-length(levels(df))
 get.p<-function(x)pt(x,df,lower.tail = F)
 #get.p<-function(x)pt(x,df,lower.tail = T)
 eval1$p<-unlist(lapply(eval1$T, get.p))
-eval1
+#eval1
 eval2$p<-unlist(lapply(eval2$T, get.p))
-eval2
+#eval2
 #x<-eval1$head_lemma[1]
 sumobs<-function(x)sum(grepl(x,eval1[['head_lemma']]))
 eval1$obs<-unlist(lapply(eval1$head_lemma, sumobs))
 #obs1
-eval1
+#eval1
 plotdf1<-data.frame(lemma=factor(eval1$head_lemma),p=eval1$p,obs=eval1$obs)
 plotdf2<-data.frame(lemma=factor(eval2$head_lemma),p=eval2$p)
 eval2$obs<-unlist(lapply(eval2$head_lemma, sumobs))
