@@ -1,7 +1,6 @@
 #20240128(10.37)
 #14052.SBC.frequency evaluations
 ################################
-#load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
 ### replace with local .RData before running:
 #load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 
@@ -10,7 +9,6 @@
 # these annotations are already applied to the actual dataset, the function is not called in script
 # the concrete /give/, /take/ objects below are defined manually as occuring in the corpus as objects of or in context with the given lemma. see https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/get-freq-df.R on how these objects were defined.
 ########################################
-tempfun<-function(){
 get.light.annotation<-function(corpus.df.deprel){
 concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
                  61952,64351,67497,69012,70356,71167,74595,75162,76991,77442,77553,81098,81099,81859,81860,94278,
@@ -46,6 +44,7 @@ m11<-corpus.df.deprel$sentence%in%corpus.df.deprel$sentence[m1]
 sum(m11)
 corpus.df.deprel$sentence[m11]
 corpus.df.deprel$light[m11]<-0 # set concrete instances
+corpus.df.deprel$alt[m11]<-"give" # set concrete instances
 m5<-grepl("take|took|taken|taking",corpus.df.deprel$sentence)
 #m<-corpus.df.deprel$lemma=="give"&corpus.df.deprel$head_lemma_value=="ornament"
 sum(m5)
@@ -58,14 +57,15 @@ m31<-corpus.df.deprel$sentence%in%corpus.df.deprel$sentence[m3]
 sum(m31)
 corpus.df.deprel$sentence[m31]
 corpus.df.deprel$light[m31]<-0
+corpus.df.deprel$alt[m31]<-"take"
 #chk
 return(corpus.df.deprel)
 }
 
+#corpus.df.deprel<-get.light.annotation(corpus.df.deprel)
 
-}
 #############################
-#save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.RData")
+#save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 
 
 

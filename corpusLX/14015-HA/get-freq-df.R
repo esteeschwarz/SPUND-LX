@@ -7,7 +7,7 @@
 load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.pos-all-dfs.RData")
 # df<-scb.ann.list$doc1
 # x<-scb.ann.list[[2]]
-
+corpus.df.deprel_sf<-corpus.df.deprel
 #x<-scb.ann.list[[2]]
 #x<-corpus.df
 #x<-scb.pos.df.list$sbc15
@@ -177,9 +177,9 @@ corpus.head.list<-lapply(scb.pos.df.list, get.corpus.deprel)
 #   corpus.df<-rbind(corpus.df,scb.ann.list[[k]])
 # }
 ### get corpus object
-corpus.df.deprel<-data.frame(corpus.head.list$sbc1)
+corpus.df.deprel_f<-data.frame(corpus.head.list$sbc1)
 for (k in 2:length(corpus.head.list)){
-  corpus.df.deprel<-rbind(corpus.df.deprel,corpus.head.list[[k]])
+  corpus.df.deprel_f<-rbind(corpus.df.deprel_f,corpus.head.list[[k]])
 }
 ### run until here
 ################################
