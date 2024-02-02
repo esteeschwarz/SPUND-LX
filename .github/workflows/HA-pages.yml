@@ -109,7 +109,7 @@ jobs:
              print(list.files("temp"))
              #library(bookdown)
              #render_site("./corpusLX/14015-HA/HA-pages/index.Rmd")
-             source("./corpusLX/14015-HA/HA-pages/rendersite.R")
+             #source("./corpusLX/14015-HA/HA-pages/rendersite.R")
         shell: Rscript {0}
       
       # - name: upload docx
@@ -138,7 +138,8 @@ jobs:
       - name: Upload pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./corpusLX/14015-HA/HA-pages/_site
+         # path: ./corpusLX/14015-HA/HA-pages/_site
+          path: ./temp
       # Deployment job
       - name: Check
         run: |
