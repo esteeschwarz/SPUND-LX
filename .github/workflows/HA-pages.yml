@@ -59,7 +59,7 @@ jobs:
           key: cache-r-dep-${{ runner.os }}-r-3.6.1-${{ hashFiles('rdependencies.csv') }}
        #   key: cache-r-dep-Linux-r-3.6.1-2f051200a682436eb92484a70968b5860b38b9e609a371c0c297dfe45be58d5c # #where to look for changes
           restore-keys: |
-               cache-r-dep-Linux-r-3.6.1-a42cab0d5f45dd1ec15252ed75c2477318577804254598d0694e53a4a2ef819a
+               cache-r-dep-Linux-r-3.6.1-954177e8134126aeea967be6826f57f6ba72cc52d014fae368cbecba3daf28ba
                cache-r-dep-${{ runner.os }}-r-3.6.1-
     
     #  - if: ${{ steps.cache-r.outputs.cache-hit != 'true' }}
@@ -109,7 +109,7 @@ jobs:
              print(list.files("temp"))
              #library(bookdown)
              #render_site("./corpusLX/14015-HA/HA-pages/index.Rmd")
-             #source("./corpusLX/14015-HA/HA-pages/rendersite.R")
+             source("./corpusLX/14015-HA/HA-pages/rendersite.R")
         shell: Rscript {0}
       
       # - name: upload docx
@@ -138,8 +138,8 @@ jobs:
       - name: Upload pages
         uses: actions/upload-pages-artifact@v2
         with:
-         # path: ./corpusLX/14015-HA/HA-pages/_site
-          path: ./temp
+          path: ./corpusLX/14015-HA/HA-pages/_site
+         # path: ./temp
       # Deployment job
       - name: Check
         run: |
