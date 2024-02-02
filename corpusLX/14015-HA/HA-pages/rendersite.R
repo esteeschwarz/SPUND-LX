@@ -1,4 +1,4 @@
-.libPaths(new = "/home/runner/work/HU-LX/HU-LX/rlibs", include.site = TRUE)
+.libPaths(new = "/home/runner/work/SPUND-LX/SPUND-LX/rlibs", include.site = TRUE)
 library(rmarkdown)
 #library(bookdown)
 
