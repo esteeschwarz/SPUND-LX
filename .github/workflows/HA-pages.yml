@@ -109,7 +109,8 @@ jobs:
              print(list.files("temp"))
              #library(bookdown)
              #render_site("./corpusLX/14015-HA/HA-pages/index.Rmd")
-             source("./corpusLX/14015-HA/HA-pages/rendersite.R")
+             #source("./corpusLX/14015-HA/HA-pages/rendersite.R")
+             source("./rendersite.R")
         shell: Rscript {0}
       
       # - name: upload docx

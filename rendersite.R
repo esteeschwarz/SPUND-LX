@@ -21,6 +21,7 @@ notermd<-readLines(rmd.f)
 notermd
 #file.copy("corpusLX/14015-HA/HA-pages/_doku.Rmd","corpusLX/14015-HA/HA-pages/_site/_doku.Rmd",overwrite = T)
 notermd<-gsub("#replacemask#","#replacemask1#",notermd)
+print(notermd)
 writeLines(notermd,rmd.f)
 
 
