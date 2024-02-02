@@ -1,7 +1,8 @@
 ---
 title: "corpusLX HA"
-# output: bookdown::gitbook
-# site: bookdown::bookdown_site
+output: 
+   html_document
+    # site: bookdown::bookdown_site
 
 bibliography: CORPUS-LX.bib
 
@@ -9,6 +10,7 @@ bibliography: CORPUS-LX.bib
 ```{r setup}
 #knitr::opts_knit$set(root.dir = normalizePath("/home/runner/work/SPUND-LX/SPUND-LX/corpusLX/14015-HA/HA-pages"))
 #knitr::opts_knit$set(root.dir = normalizePath("/users/guhl/documents/github/SPUND-LX/SPUND-LX/corpusLX/14015-HA/HA-pages"))
+#library(knitr)
 
 ```
 

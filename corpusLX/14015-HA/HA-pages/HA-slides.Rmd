@@ -15,9 +15,7 @@ bibliography: CORPUS-LX.bib
 ---
 
 ```{r setup-slide, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library(knitr)
-
+#knitr::opts_chunk$set(echo = FALSE)
 ```
 
 <!--<style>
@@ -76,8 +74,8 @@ load(dtemp)
 
 ## corpus sample
 
-```{r}
-kable(smdf[c(4,11,1,2,6,5,19),])
+```{r kable-sample}
+knitr::kable(smdf[c(4,11,1,2,6,5,19),])
 
 ```
 
@@ -86,7 +84,7 @@ cf. [@mehl_what_2021 pp.11-14]
 
 ```{r,kable-01-dist-make,echo=FALSE,warning=F,}
 ######################################
-kable(plotlist$dist)
+knitr::kable(plotlist$dist)
 #kable(kdf,caption = "distribution of lemma /make/ over corpora")
 ```
 
@@ -110,7 +108,7 @@ barplot(plotlist$dist,main="distribution: lemma /make/",legend.text = c("concret
 
 
 ```{r}
-kable(plotlist$trntable,caption = "semantic alternatives")
+knitr::kable(plotlist$trntable,caption = "semantic alternatives")
 
 ```
 
@@ -138,7 +136,7 @@ barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",yla
 ---
 
 ```{r}
-kable(plotlist$eval.semas[,1:9])
+knitr::kable(plotlist$eval.semas[,1:9])
 
 ```
 

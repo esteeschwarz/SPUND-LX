@@ -15,8 +15,8 @@ link-citations: yes
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(knitr)
+#knitr::opts_chunk$set(echo = TRUE)
+#library(knitr)
 ```
 
 # term paper draft
@@ -58,7 +58,7 @@ load(dtemp)
 
 #load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
 #load("data/SBC.20-sample.RData")
-kable(smdf[c(4,11,1,2,6,5,19),])
+knitr::kable(smdf[c(4,11,1,2,6,5,19),])
 ```
 
 ### script used: 
@@ -95,7 +95,7 @@ cf. [@mehl_what_2021 pp.11-14]
 # i.make.m<-c(concrete=l.conc,light=l.light)
 # kdf<-data.frame(ICE.written=i.make.w,ICE.spoken=i.make.s,SBC.spoken=i.make.m)
 #kdf
-kable(plotlist$dist)
+knitr::kable(plotlist$dist)
 #kable(kdf,caption = "distribution of lemma /make/ over corpora")
 ```
 
@@ -115,7 +115,7 @@ this contrast includes made up alternatives to /make/ that Mehl defined in his s
 trntable<-table(scb.ann.df$alt[scb.ann.df$light==0])
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
 #kable(trntable,caption = "semantic alternatives")
-kable(plotlist$trntable,caption = "semantic alternatives")
+knitr::kable(plotlist$trntable,caption = "semantic alternatives")
 #barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(scb.ann.df$alt)),main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 barplot(plotlist$trntable[c(1,2,3,4,5,6,7)]/sum(table(scb.ann.df$alt)),main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 ```
@@ -133,7 +133,7 @@ barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",yla
 
 
 ```{r fig-04-sema,echo=F, fig.cap="semasiological log.like of near synonymes to make"}
-kable(plotlist$eval.semas[,1:9])
+knitr::kable(plotlist$eval.semas[,1:9])
 par(las=3)
     barplot(plotlist$eval.semas$COLL.STR.LOGL~plotlist$eval.semas$ns,xlab = "",ylab = "collex.log.like")
 #plot.plots("alt.2")
