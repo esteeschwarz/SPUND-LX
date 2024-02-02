@@ -4,9 +4,10 @@ markdown,xxx,0
 yaml,xxx,0
 jquerylib,xxx,0
 xfun,xxx,0
-jsonlite,xxx,1
-quanteda.textplots,xxx,1
-quanteda,xxx,1
-googlesheets4,xxx,1
-xml2,xxx,1
+jsonlite,xxx,0
+quanteda.textplots,xxx,0
+quanteda,xxx,0
+googlesheets4,xxx,0
+xml2,xxx,0
 bookdown,xxx,0
+revealjs,xxx,0
