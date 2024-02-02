@@ -3,4 +3,4 @@ library(rmarkdown)
 #library(bookdown)
 
 #render_site(input = "./")
-render("index.Rmd")
+render("./index.Rmd")
