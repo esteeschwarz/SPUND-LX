@@ -34,9 +34,11 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./corpusLX/14015-HA/HA-pages
-          destination: ./_site
+          destination: ./corpusLX/14015-HA/HA-pages/_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with: 
+          path: ./corpusLX/14015-HA/HA-pages/_site
 
   # Deployment job
   deploy:
