@@ -103,7 +103,7 @@ trndf<-rbind(trndf,trntemp.2)
 
 #### which look like this
 
-```{r show-trn-rawdata,eval=TRUE}
+```{r show-trn-rawdata,eval=TRUE,echo=TRUE}
 trn.doc.1<-readLines(paste0(sbctrn,filestrn[1]))
 print(trn.doc.1[1:15])
 ```
