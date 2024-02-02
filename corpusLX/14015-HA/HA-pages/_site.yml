@@ -1,5 +1,3 @@
 name: "TOPIC #6"
-output_dir: _site
-output:
-  html_document:
-    highlight: textmate
+#output_dir: _site
+output: html_document
