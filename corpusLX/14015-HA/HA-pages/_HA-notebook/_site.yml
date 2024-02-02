@@ -1,15 +1,15 @@
----
-title: "TOPIC #6"
+name: "TOPIC #6"
 #output_dir: _site
+#title: "R Notebook"
 output:
   html_document:
     df_print: paged
-  ##html_notebook:
-    ##df_print: paged
+  html_notebook:
+    df_print: paged
 navbar:
   title: "topic 6"
   left:
-    - text: "eider"
+    - text: "index"
       href: index.html
     - text: "paper"
       href: paper.html
@@ -17,6 +17,4 @@ navbar:
       href: HA-slides.html
       id: "slides"
     - text: "doku"
-      href: _doku.nb.html
-include: ['_doku.Rmd']
----
+      href: doku.nb.html

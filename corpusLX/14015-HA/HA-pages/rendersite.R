@@ -5,7 +5,8 @@ library(rmarkdown)
 
 
 setwd("corpusLX/14015-HA/HA-pages")
-render("HA-notebook/doku.Rmd")
+render("_doku.Rmd")
+#render("HA-notebook/_doku.Rmd")
 render_site()
 #setwd("corpusLX/14015-HA/HA-pages/HA-notebook")
 
