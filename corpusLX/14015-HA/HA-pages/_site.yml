@@ -4,6 +4,10 @@ title: "TOPIC #6"
 output:
   html_document:
     df_print: paged
+   # toc: true
+  #  number_sections: true
+    pandoc_args: ["--wrap=none"]
+  #  keep_md: true
   ##html_notebook:
     ##df_print: paged
 navbar:
@@ -18,5 +22,8 @@ navbar:
       id: "slides"
     - text: "doku"
       href: _doku.nb.html
+bibliography: CORPUS-LX.bib
+biblio-style: apalike
+link-citations: yes
 include: ['_doku.Rmd']
 ---
