@@ -22,6 +22,7 @@ render_site("corpusLX/14015-HA/HA-pages")
 file.copy("corpusLX/14015-HA/HA-pages/_site.doku.yml","corpusLX/14015-HA/HA-pages/_site/_site.yml",overwrite = T)
 file.copy("corpusLX/14015-HA/HA-pages/_doku.Rmd","corpusLX/14015-HA/HA-pages/_site/_doku.Rmd",overwrite = T)
 file.copy("corpusLX/14015-HA/HA-pages/_doku.nb.html","corpusLX/14015-HA/HA-pages/_site/_doku.nb.html",overwrite = T)
+print("_doku.nb.html, _doku.Rmd copied")
 #render("corpusLX/14015-HA/HA-pages/_site/_doku.Rmd")
 #setwd("corpusLX/14015-HA/HA-pages/HA-notebook")
 sitedir<-paste0("corpusLX/14015-HA/HA-pages/","_site/")
@@ -35,7 +36,7 @@ notermd
 #file.copy("corpusLX/14015-HA/HA-pages/_doku.Rmd","corpusLX/14015-HA/HA-pages/_site/_doku.Rmd",overwrite = T)
 notermd<-gsub("#replacemask#","#replacemask1#",notermd)
 print(notermd)
-writeLines(notermd,rmd.f)
+#writeLines(notermd,rmd.f)
 
 
 
