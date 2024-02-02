@@ -107,6 +107,7 @@ jobs:
              dir.create("temp")
              writeLines(test,"./temp/list.md")
              print(list.files("temp"))
+             library(bookdown)
              render_site("./corpusLX/14015-HA/HA-pages/index.Rmd")
              #source("./overview_render-docx.R")
         shell: Rscript {0}
