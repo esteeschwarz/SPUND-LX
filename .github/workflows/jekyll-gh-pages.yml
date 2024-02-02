@@ -35,6 +35,10 @@ jobs:
         with:
           source: ./corpusLX/14015-HA/HA-pages
           destination: ./corpusLX/14015-HA/HA-pages/_site
+      - run: |
+          ls
+          ls ./corpusLX/14015-HA/HA-pages
+          ls ./corpusLX/14015-HA/HA-pages/_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with: 
