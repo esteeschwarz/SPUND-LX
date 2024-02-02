@@ -2,5 +2,5 @@
 library(rmarkdown)
 #library(bookdown)
 
+render_site(input = "./corpusLX/14015-HA/HA-pages")
 #render_site(input = "./")
-render("./index.Rmd")

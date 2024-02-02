@@ -19,6 +19,6 @@ rmd_stub = "doku.Rmd-e"
 #render("_doku.Rmd",output_file = "doku.nb.html")
 #render(input = "corpusLX/14015-HA/HA-notebook/doku.Rmd")
 #local:
-render(input = "HA-notebook/doku.Rmd")
+render(input = "HA-pages/HA-notebook/doku.Rmd")
 
 ```
