@@ -125,6 +125,7 @@ trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
 ```
 
 ### annotate for /make/
+the annotation of concrete/light use of lemma /make/ was done in a subset table of the corpus, assigning either 0 for concrete and 1 for light use of the verb in context. concrete use would include forms with objects of the lemma that (for /make/) that (in the sense of the alternate constructions) can be also `produced, built, generated, created`. these are obvious semantic alternatives of /make/ defined in [@mehl_what_2021].
 
 ```{r,echo=T,warning=F,eval=FALSE}
 ######################################

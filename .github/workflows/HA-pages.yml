@@ -1,7 +1,7 @@
 name: build HA pages
 on:
   push:
-   # paths: ['mdbook/workflow/src/**.md']
+    paths: ['corpusLX/14051-HA/HA-pages/**.Rmd']
     branches: [ main ]
   pull_request:
     branches: [ main ]
@@ -35,6 +35,7 @@ jobs:
           key: cache-r-dep-${{ runner.os }}-r-3.6.1-${{ hashFiles('rdependencies.csv') }}
           restore-keys: |
                cache-r-dep-${{ runner.os }}-r-3.6.1-${{ hashFiles('rdependencies.csv') }}
+               cache-r-dep-Linux-r-3.6.1-107a73dc8eced01e01605f2877b88311c19583a597784bfe28c76545243a1006
                cache-r-dep-${{ runner.os }}-r-3.6.1-
                cache-r-dep-
       # - name: md libdir

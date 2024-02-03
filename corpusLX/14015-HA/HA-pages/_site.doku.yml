@@ -4,6 +4,8 @@ title: "TOPIC #6"
 output:
   html_notebook:
     df_print: paged
+    toc: true
+    number_sections: true
 navbar:
   title: "topic 6"
   left:
