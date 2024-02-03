@@ -23,7 +23,7 @@ navbar:
     href: _doku.nb.html
 bibliography: ['packages.bib','CORPUS-LX.bib']
 nocite: |
- @R-udpipe,@R-quanteda,@R-quanteda.textstats,@R-readr,@R-stringi,@R-stats,@R-utils
+ @R-udpipe,@R-quanteda,@R-quanteda.textstats,@R-readr,@R-stringi,@R-stats,@R-utils,@R-writexl
 biblio-style: apalike
 link-citations: yes
 ---
@@ -34,7 +34,7 @@ replacemask snc: #replacemask# 14061.5
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
-```{r}
+```{r,eval=FALSE}
 plot(cars)
 ```
 
@@ -63,13 +63,14 @@ library(readr)
 library(quanteda.textstats) 
 library(quanteda)
 library(udpipe) # for pos tagging
+library(writexl)
+
 knitr::write_bib(c(.packages()), "packages.bib")
 ```
 
+
 ### load pos-tag model and corpus .zip
 ```{r script-14015,eval=T,echo=T,warning=FALSE}
-
-
 local<-"~/boxHKW/21S/DH/local/SPUND/corpuslx"
 udpipepath<-sprintf("%s/english-ewt-ud-2.5-191206.udpipe",local)
 ### if not yet, the model must be downloaded, comment in above line 
@@ -92,16 +93,15 @@ sbctempdir<-tempdir()
 download.file(Q.2,sbctemp)
 unzip(sbctemp,exdir = sbctempdir)
 
-### load library for table processing
-# library(readr)
 sbctrn<-paste0(sbctempdir,"/TRN/")
 filestrn<-list.files(sbctrn)
 trndf<-data.frame(scb=NA,id=NA,text=NA)
 #k<-1
 ```
 
+
 ### read in files
-```{r, echo=FALSE}
+```{r, echo=TRUE,eval=FALSE}
 for(k in 1:length(filestrn)){
   #cat(k,"\n")
 trntemp<-read_delim(paste0(sbctrn,filestrn[k]), 
@@ -118,11 +118,13 @@ trndf<-rbind(trndf,trntemp.2)
 }
 ```
 
+
 #### which look like this
 ```{r show-trn-rawdata,eval=TRUE,echo=TRUE}
 trn.doc.1<-readLines(paste0(sbctrn,filestrn[1]))
 print(trn.doc.1[1:15])
 ```
+
 
 ### subsets
 create subsets for /make/ /take/ /give/
@@ -140,7 +142,8 @@ trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
 ### wks., wonderful. now annotate for concrete/light use
 ```
 
-### annotate for /make/
+
+## annotate for /make/
 the annotation of concrete/light use of lemma /make/ was done in a subset table of the corpus, assigning either 0 for concrete and 1 for light use of the verb in context. concrete use would include forms with objects of the lemma that (for /make/) that (in the sense of the alternate constructions) can be also `produced, built, generated, created`. these are obvious semantic alternatives of /make/ defined in [@mehl_what_2021].
 ```{r,echo=T,warning=F,eval=FALSE}
 ######################################
@@ -206,92 +209,130 @@ trntable<-table(trndf.lm$alt[trndf.lm$light==0])
 table(trndf.lm$alt)
 ```
 
-### PoS tagging
-#### tokenize
-```{r tokenize,eval=F,echo=T,warning=FALSE}
-### from here with preloaded df
-load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
-#save(trndf.lm,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
 
-library(stringi)
-df.build<-trndf.lm[trndf.lm$alt=="build",]
-df.build$alt.true<-0
-set<-trndf.lm
-alt<-"manufacture"
-alt.g<-"(manufactur(ing|e|ed))"
-trndf.lm$verb<-NA
-############################
-get.coll<-function(set,verb,alt,alt.g){
-    m<-set$alt==alt&set$light==0
-    wm<-which(m)
-    m2<-grepl(alt.g,set$text)
-    sum(m)
-    sum(m2)
-    m2<-which(m2)
-    head(set$text[m])
-    head(set$text[m2])
-    set$verb[m2]<-verb
-    set$alt[m2]<-alt
-    m.split<-tokens(set$text[wm],remove_numbers = T,remove_punct = T,remove_symbols = T,remove_separators = T,split_hyphens = T,include_docvars = T)
-    m.split.g<-tokens(set$text[m2],remove_numbers = T,remove_punct = T,remove_symbols = T,remove_separators = T,split_hyphens = T,include_docvars = T)
-    tok.clean<-function(x)gsub("[0-9@]","",x)
-    m.split<-lapply(m.split, tok.clean)
-    tok.clean<-function(x)gsub("[0-9@]","",x)
-    m.split.g.c<-lapply(m.split.g, tok.clean)
-    m.split.g<-m.split.g.c
-    returnlist<-list(set=set,tokens=m.split,tokens.g=m.split.g)
-    return(returnlist)
-    return(df.split)
+## PoS tagging
+tokenize and lemmatize/pos-tag df
+```{r tokenize,eval=F,echo=T,warning=FALSE}
+################
+### new with preloaded df
+load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData")
+scb.unique<-unique(trndf$scb)
+k<-1
+scb.unique<-unique(trndf$scb)
+scb<-1
+scb.ann.list<-list()
+
+write.ann.df<-function(df){
+trndf.lm<-df  
+for(scb in 1:length(scb.unique)){
+  cat(scb,"\n")
+###14043.
+  sbc<-trndf.lm
+  scb.id<-scb.unique[scb]
+  scb.sub<-subset(sbc,sbc$scb==scb.id)
+  colnames(scb.sub)[1]<-"doc_id"
+  scb.sub$text<-gsub("[+%?~,-.0-9()=<>@]|\\]|\\[","",scb.sub$text)
+  scb.sub$text<-gsub("(^ )","",scb.sub$text)
+  colnames(scb.sub)[3]<-"text_field"
+  sbc.sub.c<-corpus(scb.sub,docid_field = 'doc_id',text_field = 'text_field',unique_docnames = F)
+  an4<-udpipe_annotate(md,x=sbc.sub.c,tokenizer="tokenizer",tagger = "default",trace = 2)
+  ###wks.
+  an7<-data.frame(an4)
+  an7$doc_id<-gsub("doc","",an7$doc_id)
+  colnames(an7)[1]<-"line"
+  an8<-an7[,c(1,4,5,6,7,8,9,10,11,12)]
+  an8$sbc.id<-scb.id
+  an8<-an8[,c(11,1,2,3,4,5,6,7,8,9,10)]
+  an8$alt<-"a-other"
+  an8$light<-NA
+  line.u<-unique(an8$line)
+#  l<-1
+  for (l in line.u){
+  cat(l,"\n")
+      m1<-trndf.lm$scb==scb&trndf.lm$id==l
+    sum(m1)
+    light<-trndf.lm$light[m1]
+    alt<-trndf.lm$alt[m1]
+    m2<-an8$line==l
+    an8$alt[m2]<-alt
+    an8$light[m2]<-light
+    }
+### prepare excel tables for each SBC id (interview) to create ANNIS corpus via pepper
+xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/posxl2"
+dir.create(xldir)
+ns.df<-paste0(xldir,"/SCB-pos_",scb.id,".xlsx")
+write_xlsx(an8,ns.df)
+ns.list<-paste0("sbc",scb.id)
+scb.ann.list[[ns.list]]<-an8
 }
+return(scb.ann.list)
+}
+### call above function which tokenizes, lemmatizes and postags the corpus & writes xlsx-tables per interview / returns dataframe (list type) of annotated corpus
+ann.x<-write.ann.df(trndf.lm)
+scb.pos.df.list<-ann.x
+#save(scb.pos.df.list,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.pos-all-dfs.RData")
+#wks.
+#save(scb.ann.list,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.RData")
+t<-grep("token",colnames(scb.ann.list$doc1))
+t<-colnames(scb.ann.list$doc1)=="token"
+t<-which(t)
+scbns<-colnames(scb.ann.list$doc1)
+### this is necessary for pepper to recognize the token column in the df
+scbns[t]<-"tok"
+x<-scb.ann.list
+k<-1
+### same as above writing xlsx, here from annotated list
+# for(k in 1:length(scb.ann.list)){
+#   colnames(scb.ann.list[[k]])<-scbns
+#   xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/xls"
+#   ns.df<-paste0(xldir,"/SCB-pos_",k,".xlsx")
+#   write_xlsx(scb.ann.list[[k]],ns.df)
+#   
+#   }
+rename.tok<-function(x)x<-scbns
+rename.list<-function(x)colnames(x)<-scbns
+scb.ann.list.t<-lapply(scb.ann.list, rename.tok)
+scb.ann.list.ns<-lapply(scb.ann.list, name.tok)
+scb.ann.list.nr<-lapply(scb.ann.list, rename.list)
 ```
 
-#### pos-tag/lemmatize
-```{r postag,eval=F,warning=FALSE,echo=T}
-library(udpipe)
-library(quanteda)
-### get token df
-split.take<-get.coll(trndf.lm,"take","take","(take|took|taken|taking)")
-split.df<-split.take
-### get postagged df from token df
-get.noun.coll<-function(split.df){
-make.freq<-"n.a."
-an6<-"n.a."
-an6.n<-"n.a."
-tok.clean<-function(x)gsub("[0-9@]","",x)
-  if(length(split.df$tokens)>0){
-    m.split<-split.df$tokens
-    m.split.c<-lapply(split.df$tokens.g, tok.clean)
-    m.split.ct<-tokens(m.split.c)
-  dfm.make.2<-m.split.ct%>%tokens_remove(stopwords("en"))%>%dfm()
-  make.freq<-textstat_frequency(dfm.make.2)
-### 
-tna<-make.freq$feature
-an3<-udpipe_annotate(md,x=tna,tagger = "default",parser = "none")
-an6<-as.data.frame(an3)
-an6.n<-an6$sentence[an6$upos=="NOUN"]
-}
-m.split.g<-split.df$tokens.g
-m.split.g.c<-lapply(split.df$tokens.g, tok.clean)
-m.split.g<-m.split.g.c
-m.split.t<-tokens(m.split.g.c)
-dfm.make.g<-m.split.t%>%tokens_remove(stopwords("en"))%>%dfm()
-dfm.make.g
-make.freq.g<-textstat_frequency(dfm.make.g)
-tna.g<-make.freq.g$feature
-an3.g<-udpipe_annotate(md,x=tna.g,tagger = "default",parser = "none")
-an6.g<-as.data.frame(an3.g)
-an6.n.g<-an6.g$sentence[an6.g$upos=="NOUN"]
-if(length(split.df$tokens)==0){
- make.freq<-make.freq.g
- an6<-an6.g
- an6.n<-an6.n.g
-}
-returnlist<-list(set=split.df$set,freq=make.freq,ann=an6,nouns=an6.n,freq.g=make.freq.g,ann.g=an6.g,nouns.g=an6.n.g)
-}
+
+## create ANNIS corpus
+the evaluation statistics can be done already with the df, but for different purposes e.g. the better visualisation of the corpus and extensive queries an ANNIS (@druskat_corpus-toolsorg_2016) has been created.   
+
+call to external scripts which run pepper on the provided xlsx and create an ANNIS graph file for import to the ANNIS installation.
+```{r,eval=F}
+pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl5.pepper","SBC_v1.0.1","SBC_v1.0.1")
+pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl6.pepper","SBC_v1.0.1","SBC_v1.0.1")
+zipannis("SBC_annis","SBC_annis.zip")
+```
+
+
+### xlsx to treetagger format
+configuration xml: r-conxl5.pepper
+```{}
+<?xml version='1.0' encoding='UTF-8'?>
+<pepper-job id="tt001" version="1.0">
+<importer name="SpreadsheetImporter" path="./xls"/>	
+<exporter name="TreetaggerExporter" path="./SBC_v1.0.1/"/>
+</pepper-job>
+```
+
+
+### treetagger to ANNIS graph
+configuration xml: r-conxl6.pepper
+```{}
+<?xml version='1.0' encoding='UTF-8'?>
+<pepper-job id="tt001" version="1.0">
+<importer name="TreetaggerImporter" path="./SBC_v1.0.1/">
+</importer>
+<exporter name="ANNISExporter" path="./SBC_annis/">
+</exporter>
+</pepper-job>
 ```
 
 ```{r cite-pkg,eval=T,echo=FALSE}
-# knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")
+ #knitr::write_bib(c(.packages()), "packages.bib")
 
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: "topic #6, polysemous verbs with light and concrete senses."
+title: "topic #6 folien. polysemous verbs with light and concrete senses."
 author: "stschwarz"
 date: "`r Sys.time()`"
 output:
@@ -43,8 +43,8 @@ Q.1: Santa Barbara corpus of spoken American English, ([@ucsb_santa_2005](https:
 
 the corpus data was downloaded from: [https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip](https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip)
 
-### exploring scripts:
-- [14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R): creates corpus of downloaded .zip
+## exploring scripts:
+- [14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R): creates corpus of downloaded .zip / [see documentation](_doku.nb.html)
 - [sbc-postag.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/sbc-postag.R): postags the corpus
 - [get-freq-df.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/get-freq-df.R): first evaluation
 - [collexemes-01.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/collexemes-01.R): 2nd evaluation script
