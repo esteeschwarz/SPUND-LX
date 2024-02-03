@@ -19,6 +19,9 @@ navbar:
     id: slides
   - text: doku
     href: _doku.nb.html
+bibliography: CORPUS-LX.bib
+biblio-style: apalike
+link-citations: yes
 ---
 # PRE
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
