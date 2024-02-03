@@ -21,14 +21,16 @@ navbar:
     id: slides
   - text: doku
     href: _doku.nb.html
-bibliography: CORPUS-LX.bib
+bibliography: ['packages.bib','CORPUS-LX.bib']
+nocite: |
+ @R-udpipe,@R-quanteda,@R-quanteda.textstats,@R-readr,@R-stringi,@R-stats,@R-utils
 biblio-style: apalike
 link-citations: yes
 ---
 # PRE
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
 
-replacemask snc: #replacemask# 14061.1
+replacemask snc: #replacemask# 14061.5
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
@@ -46,7 +48,9 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 # process
 
 ## preliminary
-```{r script-14015,eval=T,echo=T,warning=FALSE}
+load libraries and set SBC ressources adress   
+<!-- libs: @udpipe,@quanteda,@readr,@stringi,@stats,@utils,@schmid_estimation_2008 -->
+```{r pre-14015,eval=T,echo=T,warning=FALSE}
 #20240103(07.42)
 ###############################################################
 ### this script runs without local files, all data fetched from online sources.
@@ -55,9 +59,16 @@ R.1<-"https://www.linguistics.ucsb.edu/research/santa-barbara-corpus"
 Q.2<-"https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip"
 library(utils)
 library(stringi)
-library(quanteda.textstats)
+library(readr)
+library(quanteda.textstats) 
 library(quanteda)
 library(udpipe) # for pos tagging
+knitr::write_bib(c(.packages()), "packages.bib")
+```
+
+### load pos-tag model and corpus .zip
+```{r script-14015,eval=T,echo=T,warning=FALSE}
+
 
 local<-"~/boxHKW/21S/DH/local/SPUND/corpuslx"
 udpipepath<-sprintf("%s/english-ewt-ud-2.5-191206.udpipe",local)
@@ -82,7 +93,7 @@ download.file(Q.2,sbctemp)
 unzip(sbctemp,exdir = sbctempdir)
 
 ### load library for table processing
-library(readr)
+# library(readr)
 sbctrn<-paste0(sbctempdir,"/TRN/")
 filestrn<-list.files(sbctrn)
 trndf<-data.frame(scb=NA,id=NA,text=NA)
@@ -90,7 +101,6 @@ trndf<-data.frame(scb=NA,id=NA,text=NA)
 ```
 
 ### read in files
-
 ```{r, echo=FALSE}
 for(k in 1:length(filestrn)){
   #cat(k,"\n")
@@ -109,7 +119,6 @@ trndf<-rbind(trndf,trntemp.2)
 ```
 
 #### which look like this
-
 ```{r show-trn-rawdata,eval=TRUE,echo=TRUE}
 trn.doc.1<-readLines(paste0(sbctrn,filestrn[1]))
 print(trn.doc.1[1:15])
@@ -117,7 +126,6 @@ print(trn.doc.1[1:15])
 
 ### subsets
 create subsets for /make/ /take/ /give/
-
 ```{r,eval=FALSE,warning=F,echo=T}
 trndf.2<-trndf[2:length(trndf$scb),]
 trndf.2$lfd<-1:length(trndf.2$scb)
@@ -134,7 +142,6 @@ trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
 
 ### annotate for /make/
 the annotation of concrete/light use of lemma /make/ was done in a subset table of the corpus, assigning either 0 for concrete and 1 for light use of the verb in context. concrete use would include forms with objects of the lemma that (for /make/) that (in the sense of the alternate constructions) can be also `produced, built, generated, created`. these are obvious semantic alternatives of /make/ defined in [@mehl_what_2021].
-
 ```{r,echo=T,warning=F,eval=FALSE}
 ######################################
 ### instances concrete vs. light
@@ -238,8 +245,7 @@ get.coll<-function(set,verb,alt,alt.g){
 }
 ```
 
-#### pos tag
-
+#### pos-tag/lemmatize
 ```{r postag,eval=F,warning=FALSE,echo=T}
 library(udpipe)
 library(quanteda)
@@ -283,3 +289,11 @@ if(length(split.df$tokens)==0){
 returnlist<-list(set=split.df$set,freq=make.freq,ann=an6,nouns=an6.n,freq.g=make.freq.g,ann.g=an6.g,nouns.g=an6.n.g)
 }
 ```
+
+```{r cite-pkg,eval=T,echo=FALSE}
+# knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")
+
+```
+
+------
+# B references
