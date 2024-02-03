@@ -4,8 +4,8 @@ title: "TOPIC #6"
 output:
   html_document:
     df_print: paged
-   # toc: true
-  #  number_sections: true
+    toc: true
+    number_sections: true
     pandoc_args: ["--wrap=none"]
   #  keep_md: true
   ##html_notebook:

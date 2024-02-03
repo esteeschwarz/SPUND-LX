@@ -1,7 +1,7 @@
 name: build HA pages
 on:
   push:
-    paths: ['corpusLX/14051-HA/HA-pages/**.Rmd']
+    paths: ['corpusLX/14015-HA/HA-pages/**.Rmd']
     branches: [ main ]
   pull_request:
     branches: [ main ]
