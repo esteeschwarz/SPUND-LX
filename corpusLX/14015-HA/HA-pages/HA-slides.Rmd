@@ -18,6 +18,7 @@ bibliography: CORPUS-LX.bib
 ```{r setup-slide, include=FALSE}
 #knitr::opts_chunk$set(echo = FALSE)
 ```
+
 # term paper draft
 essai of a replication study of @mehl_what_2021: "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
 
