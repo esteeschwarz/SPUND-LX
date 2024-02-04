@@ -1,6 +1,6 @@
 ---
 title: "17373.topic_6.folien"
-name: "topic #6 folien. polysemous verbs with light and concrete senses."
+subtitle: "polysemous verbs with light and concrete senses"
 author: "stschwarz"
 date: "`r Sys.time()`"
 output:
