@@ -8,3 +8,7 @@
 .reveal section .csl-entry {
   text-align: left;
 }
+
+.reveal section a {
+  color: lightblue;
+}

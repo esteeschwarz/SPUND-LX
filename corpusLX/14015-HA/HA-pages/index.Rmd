@@ -1,5 +1,6 @@
 ---
-name: "TOPIC #6"
+title: "17373.topic_6.index"
+name: "TOPIC_6.index"
 #output_dir: _site
 output:
   html_document:

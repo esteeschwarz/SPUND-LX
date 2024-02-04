@@ -1,0 +1,28 @@
+lemma=‎/(make)|(null)|(null)‎/ & lemma=‎/.*‎/ & head_token_id=‎/.*‎/ & upos=‎"NOUN‎" & dep_rel=‎"obj‎" & token_id=‎/.*‎/ & lemma=‎".*‎"
+& #1 . #2
+& #2_=_#3
+& #3_=_#4
+& #4_=_#5
+& #3_i_#6
+& #6_=_#7
+
+lemma & token_id & lemma = ‎/make‎/ & head_token_id &lemma 
+& #2==#4 
+& #1_=_#2
+& #2_=_#3
+& #4_=_#5
+& #2 .1,3 #4
+
+lemma =/.*/ & upos=/NOUN/& lemma=/.*/& head_lemma_value =/make|take|give/ & lemma = /.*/
+& #1_i_#4
+& #1_=_#2
+& #3 .1,5 #1
+& #5 .1,5 #1
+
+------------
+lemma =/.*/ & upos=/NOUN/& head_lemma_value =/make|take|give/ & lemma=/make|take|give/ & light=/.*/
+& #1_=_#2
+& #1 .1,5 #3
+& #1 .1,5 #4
+& #3_=_#5
+--------- 
