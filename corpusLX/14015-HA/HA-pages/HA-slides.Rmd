@@ -1,5 +1,5 @@
 ---
-title: "17373.topic_6.folien"
+title: "17373_topic-6_folien"
 #subtitle: "polysemous verbs with light and concrete senses"
 author: "stschwarz"
 date: "`r Sys.time()`"
@@ -19,7 +19,6 @@ bibliography: CORPUS-LX.bib
 #knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# term paper draft
 essai of a replication study of @mehl_what_2021: "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
 
 ## init
@@ -28,7 +27,6 @@ potential impact would be immense. Researchers would be able to examine onomasio
 ([@mehl_what_2021 p.23](https://doi.org/10.1515/cllt-2017-0039))
 
 ## corpus
-### following corpus was used to determine frequencies:   
 
 Q.1: Santa Barbara corpus of spoken American English, ([@ucsb_santa_2005](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus))
 
