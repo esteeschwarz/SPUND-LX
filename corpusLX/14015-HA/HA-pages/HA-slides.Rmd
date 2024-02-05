@@ -156,11 +156,11 @@ make.array<-c("make","generate","produce","create","build","take","give","carry"
 eval1<-coll6.2[coll6.2[,1]%in%make.array,]
 eval1
 #eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
-# make<-sum(eval1$T[eval1$head_lemma=="make"])
-# build<-sum(eval1$T[eval1$head_lemma=="build"])
-# create<-sum(eval1$T[eval1$head_lemma=="create"])
-# produce<-sum(eval1$T[eval1$head_lemma=="produce"])
-# generate<-sum(eval1$T[eval1$head_lemma=="generate"])
+make<-sum(eval1$T[eval1$head_lemma=="make"])
+build<-sum(eval1$T[eval1$head_lemma=="build"])
+create<-sum(eval1$T[eval1$head_lemma=="create"])
+produce<-sum(eval1$T[eval1$head_lemma=="produce"])
+generate<-sum(eval1$T[eval1$head_lemma=="generate"])
 #eval1
 #sum(eval1$T[eval1$head_lemma=="make"])
 #factor(plotdf$T)
@@ -195,21 +195,21 @@ eval1
 
 ---
 
-```{r fig-05-sema-T-make,echo=F, fig.cap="semasiological: sum T-score of near synonymes to make"}
+```{r fig-05-sema-T-make,echo=F, eval=F,fig.cap="semasiological: sum T-score of near synonymes to make"}
 barplot(cbind(make,produce,create,build,generate), main="absolute preference in concrete context",ylab="T score sum association strength")
 
 ```
 
 ---
 
-```{r fig-06-sema-T-take,echo=F, fig.cap="semasiological: sum T-score of near synonymes to take"}
+```{r fig-06-sema-T-take,echo=F, eval=F,fig.cap="semasiological: sum T-score of near synonymes to take"}
 barplot(cbind(bring,carry,take),ylab="T score sum association strength", main="absolute preference in concrete context")
 
 ```
 
 ---
 
-```{r fig-07-sema-p-make,echo=F, fig.cap="semasiological: p of near synonymes to make"}
+```{r fig-07-sema-p-make,echo=F, eval=F,fig.cap="semasiological: p of near synonymes to make"}
 par(las=3)
 boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma /make/ in concrete noun context")
 
@@ -217,7 +217,7 @@ boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of 
 
 ---
 
-```{r fig-08-sema-p-take,echo=F, fig.cap="semasiological: p of near synonymes to take"}
+```{r fig-08-sema-p-take,echo=F, eval=F,fig.cap="semasiological: p of near synonymes to take"}
 #getwd()
 par(las=3)
 boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma /take/ in concrete noun context")
