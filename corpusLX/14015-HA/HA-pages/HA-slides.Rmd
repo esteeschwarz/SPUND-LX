@@ -118,15 +118,24 @@ barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
 
 ---
 
-```{r,echo=FALSE}
-knitr::kable(plotlist$trntable,caption = "semantic alternatives")
-#print(plotlist$trntable,caption = "semantic alternatives")
+```{r obj-eval-df,echo=FALSE}
+
+obj.eval<-plotdf.ann$obj
+obj.eval
+```
+
+---
+
+```{r obj.eval-plot,echo=FALSE}
+par(las=3)
+barplot(obj.eval,main = "concrete vs. light use over corpus",
+        ylab = "absolute occurences",legend.text = c("light","concrete"))
 
 ```
 
 ---
 
-```{r fig-02-alt,echo=F, fig.cap="proportion of semantic alternatives to concrete /make/ in SBC"}
+```{r fig-02-alt,echo=F, eval=F,fig.cap="proportion of semantic alternatives to concrete /make/ in SBC"}
 #trntable<-table(scb.ann.df$alt[scb.ann.df$light==0])
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
 #kable(trntable,caption = "semantic alternatives")

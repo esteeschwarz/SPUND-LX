@@ -395,12 +395,16 @@ coll6.obj.n<-coll6.obj[coll6.obj$upos=="NOUN"&!is.na(coll6.obj$obj),]
     }
 return(coll6.2)
   }
-coll6.2
+table(coll6.2$obj[coll6.2$OBS!=0])
   coll6.2<-get.collex.obj(coll6,display.light=c(0,1),display.filter = "make")
   coll6.2<-get.collex.obj(coll6,display.light=NULL,display.filter = c("make","take","give"))
-  coll6.2.light<-get.collex.obj(coll6,display.light=c(0,1))
+  coll6.2.light<-get.collex.obj(coll6,display.light=c(0))
+  table(coll6.2.light$obj)
   coll6.2.obj<-get.collex.obj(coll6,display.light=NULL)
-#save(coll6.2.light,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll6.2.light.RData")
+  obj.array<-c(make.array,take.array,"give")
+ display.filter<- obj.array
+  coll6.2.obj.f<-get.collex.obj(coll6,display.light=c(0,1),display.filter = obj.array)
+  #save(coll6.2.light,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll6.2.light.RData")
 #save(coll6.2.obj,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll6.2.obj.RData")
 coll6.2.light
   coll6.2[coll6.2$SLOT1=="make",]
@@ -457,9 +461,31 @@ eval.take<-eval2
 plotdf.ann$eval.sem[['make']]<-eval.make
 plotdf.ann$eval.sem[['take']]<-eval.take
 plotdf.ann$eval.sem$make
-#save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
 
 boxplot(eval1$COLL.STR.LOGL~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG.LIKE of collexeme association strength",main="binding of lemma /make/ vs. alternates")
 boxplot(eval2$COLL.STR.LOGL~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG.LIKE of collexeme association strength",main="binding of lemma /take/ vs. alternates")
 boxplot(eval1$p~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability of concrete collexemes",main="preference of lemma /make/ vs. alternates")
 boxplot(eval2$p~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability index of concrete collexemes",main="preference of lemma /take/ vs. alternates")
+### wks.
+
+### concrete objects frequency
+obj.array<-c(make.array,take.array,"give")
+display.filter<- obj.array
+coll6.2.obj.f<-get.collex.obj(coll6,display.light=NULL,display.filter = obj.array)
+
+obj.t<-table(coll6.2.obj.f[,1])
+obj.all.t<-obj.t[obj.t!=0]
+### concrete objects:
+concrete.array<-c(concrete.give.txt,concrete.make.txt,concrete.take.txt)
+sub.obj.t<-coll6.2.obj.f[coll6.2.obj.f$SLOT2%in%concrete.array,]
+conc.obj.t<-table(sub.obj.t[,1])
+obj.all.conc.t<-conc.obj.t[conc.obj.t!=0]
+obj.eval<-rbind(all.objects=obj.all.t,all.conc.obj=obj.all.conc.t)
+obj.eval
+barplot(obj.eval)
+par(las=3)
+barplot(obj.eval,main = "concrete vs. light use over corpus",
+        ylab = "absolute occurences",legend.text = c("light","concrete"))
+plotdf.ann$obj<-obj.eval
+        
