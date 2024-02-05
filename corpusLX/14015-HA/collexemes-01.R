@@ -341,17 +341,16 @@ i.give.s<-c(con=105,light=227)
 For example, out of the total number of instances of make in all concrete and light uses, 
 just over 80% of instances are the light use, and just under 20% are the concrete use."
 
-
-plotdf.ann<-list(plot.dist=plotdf1,ann=list(main="distribution of lemmas over corpora",ylab="absolute occurences",
+lsbc<-length(corpus.df.deprel$sbc.id)
+plotdf.ann<-list(lsbc=lsbc,plot.dist=plotdf1,ann=list(main="distribution of lemmas over corpora",ylab="absolute occurences",
                                        legend.text = c("concrete use","light use")))
 barplot(plotdf.ann$plot.dist, main=plotdf.ann$ann$main,
         ylab = "absolute occurences",legend.text = plotdf.ann$ann$legend.text)
-save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+#save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
 ###
 #100/plotdf.ann$plot.dist
 m<-grep("sbc",colnames(plotdf.ann$plot.dist))
-lsbc<-length(corpus.df.deprel$sbc.id)
-barplot(plotdf.ann$plot.dist[,m]/lsbc, main=plotdf.ann$ann$main,
+barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
         ylab = "% in corpus",legend.text = plotdf.ann$ann$legend.text)
 
 100/6/100

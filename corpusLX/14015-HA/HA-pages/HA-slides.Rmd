@@ -19,7 +19,7 @@ bibliography: CORPUS-LX.bib
 ```
 
 
-<!-- essai of a replication study of Mehl (2021): "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses". -->
+essai of a replication study of Mehl (2021): "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
 
 # term paper draft
 > "If onomasiological frequency measurements do indeed correlate with elicitation tests, 
@@ -89,13 +89,15 @@ knitr::kable(plotdf.ann$plot.dist,caption = "distribution of lemmas over corpora
 #plot.plots("dist")
 #barplot(kdf,main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
 #barplot(plotlist$dist,main="distribution: lemma /make/",legend.text = c("concrete use","light use"))
+
 barplot(plotdf.ann$plot.dist, main=plotdf.ann$ann$main,
         ylab = "absolute occurences",legend.text = plotdf.ann$ann$legend.text)
 
 ```
 
 ```{r fig-02-dist-rel,echo=F,fig.cap="relative distribution of lemmas over corpora. ICE data from study."}
-barplot(plotdf.ann$plot.dist[,m]/lsbc, main=plotdf.ann$ann$main,
+m<-grep("sbc",colnames(plotdf.ann$plot.dist))
+barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
         ylab = "% in corpus",legend.text = plotdf.ann$ann$legend.text)
 
 ```
