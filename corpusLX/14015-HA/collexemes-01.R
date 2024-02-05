@@ -10,6 +10,7 @@
 # dtemp
 # install.packages(dtemp, repos = NULL, type = "source")
 load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
+load("/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 
 
 # build annotated token for concrete /take/, /give/ (/make/ already annotated)
@@ -174,74 +175,74 @@ get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
   return(coll6.2)
   # coll6.2<-collex.covar.mult(data.frame(coll6$lemma,coll6$head_lemma_value,coll6$light,coll6$obj.to),threshold = 1,decimals = 2)
 }
-coll6.2
+#coll6.2
 #save(corpus.df.deprel,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 # load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 #############################
 ### now collex again:
 # get df with 3 variables:
-coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.rm=F)
-coll6<-get.coll.df(corpus.df.deprel,"lemma","head_lemma_value","light",sub=F,na.rm=F)
-coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
-coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate them as variant of light > they are part of the computation
-coll6.2.na.rm<-get.collex(coll6,filter.pos = "",na.rm = T)
+# coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.rm=F)
+# coll6<-get.coll.df(corpus.df.deprel,"lemma","head_lemma_value","light",sub=F,na.rm=F)
+# coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+# coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate them as variant of light > they are part of the computation
+# coll6.2.na.rm<-get.collex(coll6,filter.pos = "",na.rm = T)
 #coll6.2<-get.collex(coll6,filter.pos = "",na.rm = F)
-collex.eval<-coll6.2
-#save(collex.eval,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/collex.eval.RData")
-coll6.2
-coll6.2.na.rm
+# collex.eval<-coll6.2
+# #save(collex.eval,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/collex.eval.RData")
+# coll6.2
+# coll6.2.na.rm
 #############
 ### subset evaluation
-coll6.2[coll6.2$head_lemma=="make",]
-coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
-coll6.2[coll6.2$head_lemma=="make",]
-coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==1,]
-coll6.2[coll6.2$head_lemma=="make",]
+# coll6.2[coll6.2$head_lemma=="make",]
+# coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
+# coll6.2[coll6.2$head_lemma=="make",]
+# coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==1,]
+# coll6.2[coll6.2$head_lemma=="make",]
 make.array<-c("make","generate","produce","create","build")
-eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
-coll6.2[coll6.2$head_lemma=="make",]
-coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
-eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
-make<-sum(eval1$T[eval1$head_lemma=="make"])
-build<-sum(eval1$T[eval1$head_lemma=="build"])
-create<-sum(eval1$T[eval1$head_lemma=="create"])
-produce<-sum(eval1$T[eval1$head_lemma=="produce"])
-generate<-sum(eval1$T[eval1$head_lemma=="generate"])
-eval1
+# eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
+# coll6.2[coll6.2$head_lemma=="make",]
+# coll6.2[coll6.2$head_lemma=="make"&coll6.2$light==0,]
+# eval1<-coll6.2[coll6.2$head_lemma%in%make.array&coll6.2$light==0,]
+# make<-sum(eval1$T[eval1$head_lemma=="make"])
+# build<-sum(eval1$T[eval1$head_lemma=="build"])
+# create<-sum(eval1$T[eval1$head_lemma=="create"])
+# produce<-sum(eval1$T[eval1$head_lemma=="produce"])
+# generate<-sum(eval1$T[eval1$head_lemma=="generate"])
+# eval1
 #sum(eval1$T[eval1$head_lemma=="make"])
-barplot(cbind(make,produce,create,build,generate), main="absolute preference in concrete context",ylab="T score sum association strength")
+#barplot(cbind(make,produce,create,build,generate), main="absolute preference in concrete context",ylab="T score sum association strength")
 #factor(plotdf$T)
 #table(plotdf)
 take.array<-c("take","bring","carry")
-eval2<-coll6.2[coll6.2$head_lemma%in%take.array&coll6.2$light==0,]
-take<-sum(eval2$T[eval2$head_lemma=="take"])
-bring<-sum(eval2$T[eval2$head_lemma=="bring"])
-carry<-sum(eval2$T[eval2$head_lemma=="carry"])
-barplot(cbind(bring,carry,take),ylab="T score sum association strength", main="absolute preference in concrete context")
-df<-factor(coll6.2$head_lemma)
-levels(df)
-df<-length(levels(df))
+# eval2<-coll6.2[coll6.2$head_lemma%in%take.array&coll6.2$light==0,]
+# take<-sum(eval2$T[eval2$head_lemma=="take"])
+# bring<-sum(eval2$T[eval2$head_lemma=="bring"])
+# carry<-sum(eval2$T[eval2$head_lemma=="carry"])
+# barplot(cbind(bring,carry,take),ylab="T score sum association strength", main="absolute preference in concrete context")
+# df<-factor(coll6.2$head_lemma)
+# levels(df)
+# df<-length(levels(df))
 #df<-177
 #edge
 #p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
 get.p<-function(x)pt(x,df,lower.tail = F)
 #get.p<-function(x)pt(x,df,lower.tail = T)
-eval1$p<-unlist(lapply(eval1$T, get.p))
-eval1
-eval2$p<-unlist(lapply(eval2$T, get.p))
-eval2
-#x<-eval1$head_lemma[1]
-sumobs<-function(x)sum(grepl(x,eval1[['head_lemma']]))
-eval1$obs<-unlist(lapply(eval1$head_lemma, sumobs))
-#obs1
-eval1
-plotdf1<-data.frame(lemma=factor(eval1$head_lemma),p=eval1$p,obs=eval1$obs)
-par(las=3)
-boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
-plotdf2<-data.frame(lemma=factor(eval2$head_lemma),p=eval2$p)
-eval2$obs<-unlist(lapply(eval2$head_lemma, sumobs))
-par(las=3)
-boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
+# eval1$p<-unlist(lapply(eval1$T, get.p))
+# eval1
+# eval2$p<-unlist(lapply(eval2$T, get.p))
+# eval2
+# #x<-eval1$head_lemma[1]
+# sumobs<-function(x)sum(grepl(x,eval1[['head_lemma']]))
+# eval1$obs<-unlist(lapply(eval1$head_lemma, sumobs))
+# #obs1
+# eval1
+# plotdf1<-data.frame(lemma=factor(eval1$head_lemma),p=eval1$p,obs=eval1$obs)
+# par(las=3)
+# boxplot(plotdf1$p~plotdf1$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
+# plotdf2<-data.frame(lemma=factor(eval2$head_lemma),p=eval2$p)
+# eval2$obs<-unlist(lapply(eval2$head_lemma, sumobs))
+# par(las=3)
+# boxplot(plotdf2$p~plotdf2$lemma,varwidth=T,outline=F,xlab = "",ylab="p-value of collexeme association strength",main="binding of lemma in concrete noun context")
 ### result: preference of build over make, preference of bring over take in p
 ### the opposite result in summed up T-score / lemma
 ### mehl (2021) on this:
@@ -257,17 +258,17 @@ Put differently, each concrete verb is significantly preferred over its alternat
 getsubset<-function(df,q.obj){
   df<-subset(df,df$obj==q.obj)
 }
-sub.make<-getsubset(corpus.df.deprel,"make")
-sub.take<-getsubset(corpus.df.deprel,"take")
-sub.give<-getsubset(corpus.df.deprel,"give")
-### wks.
-obj.unique.make<-unique(sub.make$lemma)
-obj.unique.take<-unique(sub.take$lemma)
-obj.unique.give<-unique(sub.give$lemma)
-###
-# manually define concrete make (give/take defined in sec 2)
-concrete.make<-data.frame(obj=obj.unique.make,light=1)
-concrete.make.ann<-fix(concrete.make)
+# sub.make<-getsubset(corpus.df.deprel,"make")
+# sub.take<-getsubset(corpus.df.deprel,"take")
+# sub.give<-getsubset(corpus.df.deprel,"give")
+# ### wks.
+# obj.unique.make<-unique(sub.make$lemma)
+# obj.unique.take<-unique(sub.take$lemma)
+# obj.unique.give<-unique(sub.give$lemma)
+# ###
+# # manually define concrete make (give/take defined in sec 2)
+# concrete.make<-data.frame(obj=obj.unique.make,light=1)
+# concrete.make.ann<-fix(concrete.make)
 # install.packages("devtools")
 # library(devtools)
 # install_github("esteeschwarz/clipX")
@@ -275,27 +276,28 @@ concrete.make.ann<-fix(concrete.make)
 # library(clipr)
 # write_clip(concrete.make.ann$obj[concrete.make.ann$light==0])
 # clipX()
-concrete.make.txt<-c("horseshoe","sound","cartilage","ceviche","food","noise","hay","grape","cookie","spatula","clothes","wiper","quilt","outfit","copy","tape","string","intercession","application","balloon","basket","kebab","salad","juice","gravy","tamale","sauce","ton","tail","stuff","papers","pasta","loaf","sandwich","ornament","picture","pillow","database","statue","pizza","fudge","recipe","pan","plate","decaf","tart")
+# concrete.make.txt<-c("horseshoe","sound","cartilage","ceviche","food","noise","hay","grape","cookie","spatula","clothes","wiper","quilt","outfit","copy","tape","string","intercession","application","balloon","basket","kebab","salad","juice","gravy","tamale","sauce","ton","tail","stuff","papers","pasta","loaf","sandwich","ornament","picture","pillow","database","statue","pizza","fudge","recipe","pan","plate","decaf","tart")
 
 ### predefinition chk (with concrete /make/ defined earlier)
-t.make<-table(sub.make$light) # > 62/305
-t.take<-table(sub.take$light) # > 50/456
-t.give<-table(sub.give$light) # > 43/199
+# t.make<-table(sub.make$light) # > 62/305
+# t.take<-table(sub.take$light) # > 50/456
+# t.give<-table(sub.give$light) # > 43/199
 ###
 corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
-sub.make<-getsubset(corpus.df.deprel.new,"make")
-t.make<-table(sub.make$light) # > 54/375
+#sub.make<-getsubset(corpus.df.deprel.new,"make")
+#t.make<-table(sub.make$light) # > 54/375
 ### for consistency to take&give i integrate this new light annotation
-corpus.light.ann<-corpus.df.deprel.new
-table(corpus.light.ann$light,corpus.light.ann$alt) # 2089/9419
+# corpus.light.ann<-corpus.df.deprel.new
+# table(corpus.light.ann$light,corpus.light.ann$alt) # 2089/9419
 library(collostructions)
-knitr::write_bib(c(.packages()), "pkgtemp.bib")
+#knitr::write_bib(c(.packages()), "pkgtemp.bib")
 
 ###
-coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.rm=F)
-coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
-coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate 
-coll6.2
+#coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.rm=F)
+# coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+# coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate 
+# coll6.2
+tempfun<-function(){
 coll6<-corpus.df.deprel.new
 coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
 ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
@@ -358,7 +360,8 @@ barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
 
 100/6/100
 6/100
-coll6<-corpus.df.deprel
+}
+coll6<-corpus.df.deprel.new
 coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
                     ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
 coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make"))
@@ -461,7 +464,7 @@ eval.take<-eval2
 plotdf.ann$eval.sem[['make']]<-eval.make
 plotdf.ann$eval.sem[['take']]<-eval.take
 plotdf.ann$eval.sem$make
-save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+#save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
 
 boxplot(eval1$COLL.STR.LOGL~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG.LIKE of collexeme association strength",main="binding of lemma /make/ vs. alternates")
 boxplot(eval2$COLL.STR.LOGL~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG.LIKE of collexeme association strength",main="binding of lemma /take/ vs. alternates")
@@ -470,14 +473,16 @@ boxplot(eval2$p~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence proba
 ### wks.
 
 ### concrete objects frequency
+make.array<-c("make","generate","produce","create","build")
+take.array<-c("carry","bring")
 obj.array<-c(make.array,take.array,"give")
 display.filter<- obj.array
 coll6.2.obj.f<-get.collex.obj(coll6,display.light=NULL,display.filter = obj.array)
-
+coll6.2.obj.f
 obj.t<-table(coll6.2.obj.f[,1])
 obj.all.t<-obj.t[obj.t!=0]
 ### concrete objects:
-concrete.array<-c(concrete.give.txt,concrete.make.txt,concrete.take.txt)
+concrete.array<-c("give",concrete.make.txt,concrete.take.txt)
 sub.obj.t<-coll6.2.obj.f[coll6.2.obj.f$SLOT2%in%concrete.array,]
 conc.obj.t<-table(sub.obj.t[,1])
 obj.all.conc.t<-conc.obj.t[conc.obj.t!=0]

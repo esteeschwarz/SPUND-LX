@@ -20,9 +20,17 @@ lemma =/.*/ & upos=/NOUN/& lemma=/.*/& head_lemma_value =/make|take|give/ & lemm
 & #5 .1,5 #1
 
 ------------
+= 2095
 lemma =/.*/ & upos=/NOUN/& head_lemma_value =/make|take|give/ & lemma=/make|take|give/ & light=/.*/
 & #1_=_#2
 & #1 .1,5 #3
 & #1 .1,5 #4
 & #3_=_#5
 --------- 
+=899
+lemma =/.*/ & upos=/NOUN/& head_lemma_value =/make|take|give/ & lemma=/make|take|give/ & light=/.*/
+& #1_=_#2
+& #1_=_#3
+& #4 .1,5 #1
+& #3_=_#5
+---
