@@ -201,7 +201,7 @@ boxplot(eval2$COLL.STR.LOGL~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG
 ---
 
 ```{r fig-07-sema-p-make,echo=F, eval=T,fig.cap="semasiological: p of near synonymes to make"}
-boxplot(eval1$p~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability of concrete collexemes",main="preference of lemma /make/ vs. alternates")
+boxplot(eval1$p~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability index of concrete collexemes",main="preference of lemma /make/ vs. alternates")
 ```
 
 ---

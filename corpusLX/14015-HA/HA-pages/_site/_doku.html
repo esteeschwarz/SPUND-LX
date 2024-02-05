@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>17373.topic_6.doku</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">TOPIC #6</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">INDEX</a></li>
+        <li><a href="paper.html">paper</a></li>
+        <li><a href="HA-slides.html" target="_blank">slides</a></li>
+        <li><a href="_doku.nb.html">script documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA">GitHub</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">17373.topic_6.doku</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#pre" id="toc-pre"><span class="toc-section-number">1</span> PRE</a>
+<ul>
+<li><a href="#cats" id="toc-cats"><span class="toc-section-number">1.1</span> cats</a></li>
+</ul></li>
+<li><a href="#process" id="toc-process"><span class="toc-section-number">2</span> process</a>
+<ul>
+<li><a href="#preliminary" id="toc-preliminary"><span class="toc-section-number">2.1</span> preliminary</a>
+<ul>
+<li><a href="#load-pos-tag-model-and-corpus-.zip" id="toc-load-pos-tag-model-and-corpus-.zip"><span class="toc-section-number">2.1.1</span> load pos-tag model and corpus .zip</a></li>
+<li><a href="#read-in-files" id="toc-read-in-files"><span class="toc-section-number">2.1.2</span> read in files</a></li>
+<li><a href="#subsets" id="toc-subsets"><span class="toc-section-number">2.1.3</span> subsets</a></li>
+</ul></li>
+<li><a href="#annotate-for-make" id="toc-annotate-for-make"><span class="toc-section-number">2.2</span> annotate for /make/</a></li>
+<li><a href="#pos-tagging" id="toc-pos-tagging"><span class="toc-section-number">2.3</span> PoS tagging</a></li>
+<li><a href="#create-annis-corpus" id="toc-create-annis-corpus"><span class="toc-section-number">2.4</span> create ANNIS corpus</a>
+<ul>
+<li><a href="#xlsx-to-treetagger-format" id="toc-xlsx-to-treetagger-format"><span class="toc-section-number">2.4.1</span> xlsx to treetagger format</a></li>
+<li><a href="#treetagger-to-annis-graph" id="toc-treetagger-to-annis-graph"><span class="toc-section-number">2.4.2</span> treetagger to ANNIS graph</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#frequency-evaluations" id="toc-frequency-evaluations"><span class="toc-section-number">3</span> frequency evaluations</a>
+<ul>
+<li><a href="#get-matrix-df-of-annotated-list" id="toc-get-matrix-df-of-annotated-list"><span class="toc-section-number">3.1</span> get matrix df of annotated list</a></li>
+</ul></li>
+<li><a href="#b-references" id="toc-b-references">B references</a></li>
+</ul>
+</div>
+
+<div id="pre" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> PRE</h1>
+<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
+<p>replacemask snc: #replacemask# 14061.5</p>
+<p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
+<pre class="r"><code>plot(cars)</code></pre>
+<div id="cats" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> cats</h2>
+<p>Add a new katze hund dreimal schwarz by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
+<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
+<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
+</div>
+</div>
+<div id="process" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> process</h1>
+<div id="preliminary" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> preliminary</h2>
+<p>load libraries and set SBC ressources adress<br />
+<!-- libs: @udpipe,@quanteda,@readr,@stringi,@stats,@utils,@schmid_estimation_2008 --></p>
+<pre class="r"><code>#20240103(07.42)
+###############################################################
+### this script runs without local files, all data fetched from online sources.
+###############################################################################
+R.1&lt;-&quot;https://www.linguistics.ucsb.edu/research/santa-barbara-corpus&quot;
+Q.2&lt;-&quot;https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip&quot;
+library(utils)
+library(stringi)
+library(readr)
+library(quanteda.textstats) 
+library(quanteda)</code></pre>
+<pre><code>## Package version: 3.2.1
+## Unicode version: 14.0
+## ICU version: 70.1</code></pre>
+<pre><code>## Parallel computing: 16 of 16 threads used.</code></pre>
+<pre><code>## See https://quanteda.io for tutorials and examples.</code></pre>
+<pre class="r"><code>library(udpipe) # for pos tagging
+library(writexl)
+
+#knitr::write_bib(c(.packages()), &quot;packages.bib&quot;)</code></pre>
+<div id="load-pos-tag-model-and-corpus-.zip" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> load pos-tag model and corpus .zip</h3>
+<pre class="r"><code>local&lt;-&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx&quot;
+udpipepath&lt;-sprintf(&quot;%s/english-ewt-ud-2.5-191206.udpipe&quot;,local)
+### if not yet, the model must be downloaded, comment in above line 
+
+get.udp&lt;-function(){
+udpipe_download_model(&quot;english&quot;,model_dir = tempdir(&quot;md&quot;))
+mdf&lt;-list.files(tempdir())
+mdw&lt;-grep(&quot;.udpipe&quot;,mdf)
+mdfile&lt;-paste0(tempdir(),&quot;/&quot;,mdf[mdw])
+md&lt;-udpipe_load_model(mdfile)
+}
+
+### if the model is not on disk, it is downloaded
+ifelse(exists(&quot;udpipepath&quot;),md&lt;-udpipe_load_model(udpipepath),md&lt;-get.udp())</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/english-ewt-ud-2.5-191206.udpipe&quot;</code></pre>
+<pre class="r"><code>getwd()</code></pre>
+<pre><code>## [1] &quot;/Users/guhl/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/HA-pages&quot;</code></pre>
+<pre class="r"><code>### tempfile to store zip
+sbctemp&lt;-tempfile(&quot;SBCtemp.zip&quot;)
+sbctempdir&lt;-tempdir()
+download.file(Q.2,sbctemp)
+unzip(sbctemp,exdir = sbctempdir)
+
+sbctrn&lt;-paste0(sbctempdir,&quot;/TRN/&quot;)
+filestrn&lt;-list.files(sbctrn)
+trndf&lt;-data.frame(scb=NA,id=NA,text=NA)
+#k&lt;-1</code></pre>
+</div>
+<div id="read-in-files" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> read in files</h3>
+<pre class="r"><code>for(k in 1:length(filestrn)){
+  #cat(k,&quot;\n&quot;)
+trntemp&lt;-read_delim(paste0(sbctrn,filestrn[k]), 
+                         delim = &quot;\t&quot;, escape_double = FALSE, 
+                         trim_ws = TRUE,col_names = c(&quot;id&quot;,&quot;spk&quot;,&quot;text&quot;))
+
+l1&lt;-length(trntemp)
+trntext&lt;-trntemp[,l1]
+colnames(trntext)&lt;-&quot;text&quot;
+trntemp.2&lt;-data.frame(scb=k,id=1:length(trntext$text),text=trntext)
+  
+trndf&lt;-rbind(trndf,trntemp.2)
+
+}</code></pre>
+<div id="which-look-like-this" class="section level4" number="2.1.2.1">
+<h4><span class="header-section-number">2.1.2.1</span> which look like this</h4>
+<pre class="r"><code>trn.doc.1&lt;-readLines(paste0(sbctrn,filestrn[1]))
+print(trn.doc.1[1:15])</code></pre>
+<pre><code>##  [1] &quot;0.00 9.21\tLENORE: \t... So you don&#39;t need to go ... borrow equipment from anybody,&quot;
+##  [2] &quot;9.21 9.52\t        \tto --&quot;                                                         
+##  [3] &quot;9.52 14.10\t        \t... to do the feet?&quot;                                          
+##  [4] &quot;14.10 15.78\t        \t... [Do the hooves]?&quot;                                        
+##  [5] &quot;15.01 16.78\tLYNNE:  \t    [(H)=] &lt;YWN Well,&quot;                                       
+##  [6] &quot;16.78 18.32\t        \t   we&#39;re gonna have to find somewhere,&quot;                      
+##  [7] &quot;18.33 18.85\t        \tto get,&quot;                                                     
+##  [8] &quot;18.85 20.69\t        \t(Hx) ... something (Hx) YWN&gt;.&quot;                               
+##  [9] &quot;20.69 21.19\tDORIS:  \t.. So,&quot;                                                      
+## [10] &quot;21.19 21.74\t        \t[~Mae-] --&quot;                                                  
+## [11] &quot;21.26 22.24\tLYNNE:  \t[I&#39;m gonna] (Hx) --&quot;                                         
+## [12] &quot;22.24 23.23\tDORIS:  \t[2~Mae ~Lynne XX2]&quot;                                          
+## [13] &quot;22.28 24.25\tLYNNE:  \t[2(H) We&#39;re not2] gonna do the feet today,&quot;                  
+## [14] &quot;24.25 25.07\t        \tI&#39;m gonna wait till like,&quot;                                   
+## [15] &quot;25.07 26.14\t        \tearly in the morning=,&quot;</code></pre>
+</div>
+</div>
+<div id="subsets" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> subsets</h3>
+<p>create subsets for /make/ /take/ /give/</p>
+<pre class="r"><code>trndf.2&lt;-trndf[2:length(trndf$scb),]
+trndf.2$lfd&lt;-1:length(trndf.2$scb)
+rownames(trndf.2)&lt;-trndf.2$lfd
+#trndf$lfd&lt;-1:length(trndf$scb)
+trndf&lt;-trndf.2
+# m1&lt;-grep(&quot;take|took|taken|taking&quot;,trndf$text) #take:415,tak:478 obs.
+# trn.take&lt;-cbind(trndf[m1,],&quot;concrete&quot;=0,&quot;light&quot;=1)
+# m2&lt;-grep(&quot;made|make|making&quot;,trndf$text) #take:415,tak:478 obs. #mak
+# trn.make.2&lt;-cbind(trndf[m2,],&quot;concrete&quot;=0,&quot;light&quot;=1) #430
+# m3&lt;-grep(&quot;give|gave|giving&quot;,trndf$text) #take:415,tak:478 obs.
+# trn.give&lt;-cbind(trndf[m3,],&quot;concrete&quot;=0,&quot;light&quot;=1) #235
+# ### wks., wonderful. now annotate for concrete/light use</code></pre>
+</div>
+</div>
+<div id="annotate-for-make" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> annotate for /make/</h2>
+<p>the annotation of concrete/light use of lemma /make/ was done in a subset table of the corpus, assigning either 0 for concrete and 1 for light use of the verb in context. concrete use would include forms with objects of the lemma that (for /make/) that (in the sense of the alternate constructions) can be also <code>produced, built, generated, created</code>. these are obvious semantic alternatives of /make/ defined in <span class="citation">(<a href="#ref-mehl_what_2021">Mehl 2021</a>)</span>.</p>
+<pre class="r"><code>######################################
+### instances concrete vs. light
+### Q.1: (Mehl 2021)
+i.make.w&lt;-c(concrete=68,light=321) #17% vs. 83% written ICE 
+i.make.s&lt;-c(concrete=96,light=353) #spoken ICE
+i.take&lt;-c(con=62,light=85) 
+i.give&lt;-c(con=52,light=167) 
+###########################
+#trndf_sf&lt;-trndf # saved created, load only annotations dataframe
+# dtemp&lt;-tempfile()
+# download.file(&quot;https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/SBC.ann.df.RData&quot;,dtemp)
+# load(dtemp)
+# get.ann.x&lt;-function(scb,ann.df){
+#   trndf.lm&lt;-cbind(scb,ann.df)
+# }
+# trndf.lm&lt;-get.ann.x(trndf.2,scb.ann.df)
+# m4&lt;-trndf.lm$light==1&amp;trndf.lm$alt==&quot;make&quot;
+# ### sum light annotated
+# l.light&lt;-sum(m4,na.rm = T)
+# ### concrete annotated
+# l.conc&lt;-sum(trndf.lm$light==0&amp;trndf.lm$alt==&quot;make&quot;,na.rm = T)
+# i.make.m&lt;-c(concrete=l.conc,light=l.light)
+# ### percentage
+# i.make.w[2]/(i.make.w[1]+i.make.w[2])
+# i.make.s[2]/(i.make.s[1]+i.make.s[2])
+# i.make.m[2]/(i.make.m[1]+i.make.m[2]) # 29 vs 71%
+# ### wks.
+# ### semantic alternates of concrete /make/ (p.14)
+# ###
+# ### B &gt;
+# trndf&lt;-trndf.lm
+# ### search for semantic alternates
+# get.alt&lt;-function(altregex,alt){
+# m1&lt;-grep(altregex,trndf$text)
+# trn.temp&lt;-cbind(trndf[m1,],alt=alt,light=0)
+# trn.alt&lt;-rbind(trn.alt,trn.temp)
+# }
+# m1&lt;-c(&quot;(generat(e|ing|ed))[^generator]&quot;,&quot;generate&quot;)
+# m2&lt;-c(&quot;(construct(ing|ed))[^constructor]&quot;,&quot;construct&quot;)
+# m3&lt;-c(&quot;(produc(e|ing|ed))[^producer]&quot;,&quot;produce&quot;)
+# m4&lt;-c(&quot;(creat(e|ing|ed))[^creator]&quot;,&quot;create&quot;)
+# m5&lt;-c(&quot;(buil(d|ding|t))[^builder]&quot;,&quot;build&quot;)
+# m1.m&lt;-grep(m1[1],trndf$text)
+# trn.temp&lt;-cbind(trndf[m1.m,],alt=m1[2],light=0)
+# trn.alt&lt;-trn.temp
+# trn.alt&lt;-get.alt(m2[1],m2[2])
+# trn.alt&lt;-get.alt(m3[1],m3[2])
+# trn.alt&lt;-get.alt(m4[1],m4[2])
+# trn.alt&lt;-get.alt(m5[1],m5[2])
+# 
+# trndf.all&lt;-trndf
+# #table(trn.alt$alt)
+# ### B &lt;
+# ### B &gt;
+# par(las=3)
+# alt.c.table&lt;-table(trndf.all$alt[trndf.all$light==0])
+# #alt.c.table
+# ### B &lt;
+# chk&lt;-trndf.lm$alt==&quot;make&quot;
+# trntable&lt;-table(trndf.lm$alt[trndf.lm$light==0])
+# table(trndf.lm$alt)</code></pre>
+</div>
+<div id="pos-tagging" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> PoS tagging</h2>
+<p>tokenize and lemmatize/pos-tag df</p>
+<pre class="r"><code>################
+### new with preloaded/built df
+#load(&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/trndf.lm.cpt.RData&quot;)
+scb.unique&lt;-unique(trndf$scb)
+k&lt;-1
+#scb.unique&lt;-unique(trndf$scb)
+scb&lt;-1
+# scb.ann.list&lt;-list()
+
+write.ann.df&lt;-function(df){
+scb.ann.list&lt;-list()
+scb.token.list&lt;-list()
+trndf.lm&lt;-df  
+for(scb in 1:length(scb.unique)){
+  cat(scb,&quot;\n&quot;)
+###14043.
+  sbc&lt;-trndf.lm
+  scb.id&lt;-scb.unique[scb]
+  scb.sub&lt;-subset(sbc,sbc$scb==scb.id)
+  colnames(scb.sub)[1]&lt;-&quot;doc_id&quot;
+  scb.sub$text&lt;-gsub(&quot;[+%?~,-.0-9()=&lt;&gt;@]|\\]|\\[&quot;,&quot;&quot;,scb.sub$text)
+  scb.sub$text&lt;-gsub(&quot;(^ )&quot;,&quot;&quot;,scb.sub$text)
+  colnames(scb.sub)[3]&lt;-&quot;text_field&quot;
+  sbc.sub.c&lt;-corpus(scb.sub,docid_field = &#39;doc_id&#39;,text_field = &#39;text_field&#39;,unique_docnames = F)
+  # an4&lt;-data.frame(sbc.sub.c)
+  # an5&lt;-tokenize(an4$sbc.sub.c)
+  # head(an5)
+  an4&lt;-udpipe_annotate(md,x=sbc.sub.c,tokenizer=&quot;tokenizer&quot;,tagger = &quot;default&quot;,trace = 2)
+  ###wks.
+  an7&lt;-data.frame(an4)
+  an7$doc_id&lt;-gsub(&quot;doc&quot;,&quot;&quot;,an7$doc_id)
+  colnames(an7)[1]&lt;-&quot;line&quot;
+  an8&lt;-an7[,c(1,4,5,6,7,8,9,10,11,12)]
+  an8$sbc.id&lt;-scb.id
+  an8&lt;-an8[,c(11,1,2,3,4,5,6,7,8,9,10)]
+  an8$alt&lt;-&quot;a-other&quot;
+  an8$light&lt;-NA
+  line.u&lt;-unique(an8$line)
+#  l&lt;-1
+#   for (l in line.u){
+#   cat(l,&quot;\n&quot;)
+#       m1&lt;-trndf.lm$scb==scb&amp;trndf.lm$id==l
+#     sum(m1)
+#     light&lt;-trndf.lm$light[m1]
+#     alt&lt;-trndf.lm$alt[m1]
+#     m2&lt;-an8$line==l
+#     an8$alt[m2]&lt;-alt
+#     an8$light[m2]&lt;-light
+#     }
+# # ### prepare excel tables for each SBC id (interview) to create ANNIS corpus via pepper
+# # xldir&lt;-&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/posxl2&quot;
+# # dir.create(xldir)
+# # ns.df&lt;-paste0(xldir,&quot;/SCB-pos_&quot;,scb.id,&quot;.xlsx&quot;)
+# # write_xlsx(an8,ns.df)
+# ns.list&lt;-paste0(&quot;sbc&quot;,scb.id)
+# scb.ann.list[[ns.list]]&lt;-an8
+#scb.token.list[[ns.list]]&lt;-sbc.sub.c
+}
+#returnlist&lt;-scb.token.list
+#returnlist&lt;-list(scb.token.list,scb.ann.list)
+#return(returnlist)
+return(scb.ann.list)
+}
+### call above function which tokenizes, lemmatizes and postags the corpus &amp; writes xlsx-tables per interview / returns dataframe (list type) of annotated corpus
+
+#trndf.lm.sf&lt;-trndf.lm
+sbc.token.list&lt;-write.ann.df(trndf.lm)
+ann.x&lt;-write.ann.df(trndf.lm)
+scb.pos.df.list&lt;-ann.x
+scb.ann.list&lt;-scb.pos.df.list
+#save(scb.pos.df.list,file = &quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.pos-all-dfs.RData&quot;)
+#wks.
+#save(scb.ann.list,file=&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/scb.ann.list.RData&quot;)
+#t&lt;-grep(&quot;token&quot;,colnames(scb.ann.list$sbc1))
+t&lt;-colnames(scb.ann.list$sbc1)==&quot;token&quot;
+t&lt;-which(t)
+scbns&lt;-colnames(scb.ann.list$sbc1)
+### this is necessary for pepper to recognize the token column in the df
+scbns[t]&lt;-&quot;tok&quot;
+scbns&lt;-gsub(&quot;\\.&quot;,&quot;_&quot;,scbns)
+rename.list&lt;-function(x){
+  x2&lt;-data.frame(x)
+  colnames(x2)=scbns
+  return(x2)
+}
+scb.ann.list.nr&lt;-lapply(scb.ann.list, rename.list)
+head(scb.ann.list.nr$sbc1)
+scb.ann.list&lt;-scb.ann.list.nr
+
+### same as above writing xlsx, here from annotated list
+# for(k in 1:length(scb.ann.list)){
+#   colnames(scb.ann.list[[k]])&lt;-scbns
+#   xldir&lt;-&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/xls&quot;
+#   ns.df&lt;-paste0(xldir,&quot;/SCB-pos_&quot;,k,&quot;.xlsx&quot;)
+#   write_xlsx(scb.ann.list[[k]],ns.df)
+#   
+#   }
+#x&lt;-scb.ann.list$sbc1
+export.ann&lt;-function(x){
+  ns&lt;-colnames(x)
+  wns&lt;-ns==&quot;sentence&quot;|ns==&quot;tok&quot;
+  wns
+  x1&lt;-x[,!wns]
+  return(x1)
+}
+sbc.only.pos.annotation&lt;-lapply(scb.ann.list, export.ann)
+#save(sbc.only.pos.annotation,file = &quot;~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/sbc.only.pos.annotation.RData&quot;)</code></pre>
+</div>
+<div id="create-annis-corpus" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> create ANNIS corpus</h2>
+<p>the evaluation statistics can be done already with the df, but for different purposes e.g. the better visualisation of the corpus and extensive queries an ANNIS (<span class="citation">Druskat, Gast, and Krause (<a href="#ref-druskat_corpus-toolsorg_2016">2016</a>)</span>) has been created.</p>
+<p>call to external scripts which run pepper on the provided xlsx and create an ANNIS graph file for import to the ANNIS installation.</p>
+<pre class="r"><code>pepper.call(&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl5.pepper&quot;,&quot;SBC_v1.0.1&quot;,&quot;SBC_v1.0.1&quot;)
+pepper.call(&quot;~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl6.pepper&quot;,&quot;SBC_v1.0.1&quot;,&quot;SBC_v1.0.1&quot;)
+zipannis(&quot;SBC_annis&quot;,&quot;SBC_annis.zip&quot;)</code></pre>
+<div id="xlsx-to-treetagger-format" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> xlsx to treetagger format</h3>
+<p>configuration xml: r-conxl5.pepper</p>
+<pre><code>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;pepper-job id=&quot;tt001&quot; version=&quot;1.0&quot;&gt;
+&lt;importer name=&quot;SpreadsheetImporter&quot; path=&quot;./xls&quot;/&gt; 
+&lt;exporter name=&quot;TreetaggerExporter&quot; path=&quot;./SBC_v1.0.1/&quot;/&gt;
+&lt;/pepper-job&gt;</code></pre>
+</div>
+<div id="treetagger-to-annis-graph" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> treetagger to ANNIS graph</h3>
+<p>configuration xml: r-conxl6.pepper</p>
+<pre><code>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;pepper-job id=&quot;tt001&quot; version=&quot;1.0&quot;&gt;
+&lt;importer name=&quot;TreetaggerImporter&quot; path=&quot;./SBC_v1.0.1/&quot;&gt;
+&lt;/importer&gt;
+&lt;exporter name=&quot;ANNISExporter&quot; path=&quot;./SBC_annis/&quot;&gt;
+&lt;/exporter&gt;
+&lt;/pepper-job&gt;</code></pre>
+</div>
+</div>
+</div>
+<div id="frequency-evaluations" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> frequency evaluations</h1>
+<div id="get-matrix-df-of-annotated-list" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> get matrix df of annotated list</h2>
+<pre class="r"><code>dtemp&lt;-tempfile()
+download.file(&quot;https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/sbc.only.pos.annotation.RData&quot;,dtemp)
+load(dtemp)
+x&lt;-
+get.corpus.deprel&lt;-function(x){
+  x.ann&lt;-sbc.only.pos.annotation
+  ns&lt;-colnames(x)
+  x2&lt;-cbind()
+  # assign unique id to token
+  x$sbc.token.id&lt;-as.double(paste0(x$sbc_id,&quot;_&quot;,  1:length(x$sbc.id)))  
+  x$pos.0&lt;-&quot;lfd.pos&quot;  
+  x$obj&lt;-NA
+  tdf&lt;-t(x)
+  rtdf&lt;-rownames(tdf)
+  rtdf.0&lt;-which(rtdf==&quot;pos.0&quot;)
+  all.zero&lt;-which(tdf==&quot;lfd.pos&quot;)-rtdf.0
+  #########################################
+  pos.deprel&lt;-all.zero+grep(&quot;dep&quot;,rtdf)
+  pos.head&lt;-all.zero+grep(&quot;head&quot;,rtdf)
+  pos.upos&lt;-all.zero+grep(&quot;upos&quot;,rtdf)
+  pos.lemma&lt;-all.zero+grep(&quot;lemma&quot;,rtdf)
+  pos.token&lt;-all.zero+which(rtdf==&quot;token&quot;)
+  pos.token.id&lt;-all.zero+which(rtdf==&quot;token_id&quot;)
+  #########################
+  t.head&lt;-pos.head
+  t.id&lt;-pos.token.id
+  t.tag&lt;-pos.upos
+  t.token&lt;-pos.token
+  t.lemma&lt;-pos.lemma
+  t.deprel&lt;-pos.deprel
+  m.h.t.0&lt;-which(tdf[t.head]==0)
+  h.t.pos.rel&lt;-as.double(tdf[t.id])-as.double(tdf[t.head])
+  h.t.pos.rel[m.h.t.0]&lt;-0
+  h.t.pos.abs&lt;-t.id-(h.t.pos.rel*length(tdf[,1]))
+  h.t.value&lt;-t.token-(h.t.pos.rel*length(tdf[,1]))
+  m1&lt;-which(h.t.value&lt;0)
+  sum(m1)
+  h.t.value[m1]&lt;-1 # prevent negative subscripts
+  h.l.value&lt;-t.lemma-(h.t.pos.rel*length(tdf[,1]))
+  m2&lt;-which(h.l.value&lt;0)
+  sum(m2)
+  h.l.value[m2]&lt;-1 # prevent negative subscripts
+  head(tdf[h.l.value])
+  ####################
+  all.obj&lt;-tdf==&quot;obj&quot;
+  all.ob.w&lt;-which(all.obj)
+  all.ob.w
+  obj.head&lt;-as.double(all.ob.w-1)
+  tdf[obj.head]
+  obj.tag&lt;-all.ob.w-4 #4 
+  tdf[obj.tag]
+  obj.lemma&lt;-all.ob.w-5 #5
+  tdf[obj.lemma]
+  obj.token&lt;-all.ob.w-6 #6
+  tdf[obj.token]
+  obj.id&lt;-as.double(all.ob.w-7) #7
+  tdf[obj.id]
+  h.t.o.pos.rel&lt;-as.double(tdf[obj.id])-as.double(tdf[obj.head])
+  h.t.o.pos.abs&lt;-obj.id-(h.t.o.pos.rel*length(tdf[,1]))
+  tdf[h.t.o.pos.abs]
+  h.t.o.value&lt;-obj.token-(h.t.o.pos.rel*length(tdf[,1]))
+  tdf[h.t.o.value]
+  h.l.o.value&lt;-obj.lemma-(h.t.o.pos.rel*length(tdf[,1]))
+  tdf[h.l.o.value]
+  obj.pos&lt;-all.ob.w+5
+  tdf[obj.pos]&lt;-tdf[h.l.o.value]
+  ####################
+  tdf.r&lt;-as.data.frame(t(tdf))
+  m&lt;-!is.na(tdf.r$obj)
+  sum(m)
+  x$obj&lt;-tdf.r$obj
+  x$head_token_value&lt;-tdf[h.t.value]
+  x$head_lemma_value&lt;-tdf[h.l.value]
+  mode(x$line)&lt;-&quot;double&quot;
+  mode(x$sbc.id)&lt;-&quot;double&quot;
+  mode(x$token_id)&lt;-&quot;double&quot;
+  mode(x$head_token_id)&lt;-&quot;double&quot;
+  return(x)  
+}
+
+corpus.head.list&lt;-lapply(scb.pos.df.list, get.corpus.deprel)
+### get corpus object
+corpus.df.deprel_f&lt;-data.frame(corpus.head.list$sbc1)
+for (k in 2:length(corpus.head.list)){
+  corpus.df.deprel_f&lt;-rbind(corpus.df.deprel_f,corpus.head.list[[k]])
+}</code></pre>
+<hr />
+</div>
+</div>
+<div id="b-references" class="section level1 unnumbered">
+<h1 class="unnumbered">B references</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-quanteda.textstats" class="csl-entry">
+Benoit, Kenneth, Kohei Watanabe, Haiyan Wang, Jiong Wei Lua, and Jouni Kuha. 2023. <em>Quanteda.textstats: Textual Statistics for the Quantitative Analysis of Textual Data</em>. <a href="https://quanteda.io">https://quanteda.io</a>.
+</div>
+<div id="ref-R-quanteda" class="csl-entry">
+Benoit, Kenneth, Kohei Watanabe, Haiyan Wang, Paul Nulty, Adam Obeng, Stefan Müller, Akitaka Matsuo, and William Lowe. 2022. <em>Quanteda: Quantitative Analysis of Textual Data</em>. <a href="https://quanteda.io">https://quanteda.io</a>.
+</div>
+<div id="ref-druskat_corpus-toolsorg_2016" class="csl-entry">
+Druskat, Stephan, Volker Gast, and Thomas Krause. 2016. <span>“Corpus-Tools.org: <span>An</span> <span>Interoperable</span> <span>Generic</span> <span>Software</span> <span>Tool</span> <span>Set</span> for <span>Multi</span>-Layer <span>Linguistic</span> <span>Corpora</span>. <span>Proceedings</span> of the <span>Tenth</span> <span>International</span> <span>Conference</span> on <span>Language</span> <span>Resources</span> and <span>Evaluation</span> (<span>LREC</span> 2016).”</span> <a href="http://www.lrec-conf.org/proceedings/lrec2016/summaries/918.html">http://www.lrec-conf.org/proceedings/lrec2016/summaries/918.html</a>.
+</div>
+<div id="ref-R-stringi" class="csl-entry">
+Gagolewski, Marek, Bartek Tartanus, others; Unicode, Inc., et al. 2021. <em>Stringi: Character String Processing Facilities</em>. <a href="https://CRAN.R-project.org/package=stringi">https://CRAN.R-project.org/package=stringi</a>.
+</div>
+<div id="ref-mehl_what_2021" class="csl-entry">
+Mehl, Seth. 2021. <span>“What We Talk about When We Talk about Corpus Frequency: <span>The</span> Example of Polysemous Verbs with Light and Concrete Senses.”</span> <em>Corpus Linguistics and Linguistic Theory</em> 17 (1): 223–47. <a href="https://doi.org/10.1515/cllt-2017-0039">https://doi.org/10.1515/cllt-2017-0039</a>.
+</div>
+<div id="ref-R-writexl" class="csl-entry">
+Ooms, Jeroen. 2023. <em>Writexl: Export Data Frames to Excel Xlsx Format</em>. <a href="https://CRAN.R-project.org/package=writexl">https://CRAN.R-project.org/package=writexl</a>.
+</div>
+<div id="ref-R-readr" class="csl-entry">
+Wickham, Hadley, Jim Hester, and Jennifer Bryan. 2022. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.
+</div>
+<div id="ref-R-udpipe" class="csl-entry">
+Wijffels, Jan. 2023. <em>Udpipe: Tokenization, Parts of Speech Tagging, Lemmatization and Dependency Parsing with the UDPipe ’NLP’ Toolkit</em>. <a href="https://CRAN.R-project.org/package=udpipe">https://CRAN.R-project.org/package=udpipe</a>.
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

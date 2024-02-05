@@ -50,7 +50,6 @@ corpus.df.deprel$alt<-"a-other"
 #concrete.array<-concrete.make.txt
 
 apply.light<-function(corpus.df.deprel=corpus.df.deprel,q.lemma,lemma,concrete.array){
-#m4<-grepl("make|made|making",corpus.df.deprel$sentence)
   corpus.df.deprel$lemma<-gsub("[^a-zA-z']","",corpus.df.deprel$lemma)
   corpus.df.deprel$head_lemma_value<-gsub("[^a-zA-z']","",corpus.df.deprel$head_lemma_value)
   
@@ -73,40 +72,6 @@ for (k in 1:length(concrete.array)){
   corpus.df.deprel$light[m1][m16]<-0
 
   }
-# table(corpus.df.deprel$lemma,corpus.df.deprel$light)
-# m2<-corpus.df.deprel
-# sum(m2)
-# which(m2)
-# #m2<-m2[!is.na(m2)]
-# corpus.df.deprel$sentence[which(m2)]
-# m11<-corpus.df.deprel$sentence%in%corpus.df.deprel$sentence[m2]
-# length(m11)
-# sum(m11)
-# wm11<-which(m11)
-# length(wm11)
-# m12<-corpus.df.deprel$alt==lemma
-# wm12<-which(m12)
-# length(wm12)
-# m13<-wm11%in%wm12
-# wm13<-wm11[m13]
-# wm13
-# #sum(wm13)
-# corpus.df.deprel$sentence[wm13]
-# #corpus.df.deprel$light[wm13]<-0
-# m14<-corpus.df.deprel$lemma[wm13]==lemma
-# sum(m14)
-# k<-1
-# for(k in 1:length(concrete.array)){
-#   m15<-corpus.df.deprel$lemma[m14]==concrete.array[k]
-#   sum(m15,na.rm = T)
-#   concrete.array[k]
-#   corpus.df.deprel$sentence[m14][m15]<-0
-# }
-#m1<-corpus.df.deprel$head_lemma_value[m4]%in%concrete.make.txt
-#m<-corpus.df.deprel$lemma=="give"&corpus.df.deprel$head_lemma_value=="ornament"
-#sum(m1)
-#corpus.df.deprel$sentence[m2]
-#corpus.df.deprel$light[m2]<-0
 return(corpus.df.deprel)
 }
 corpus.df.deprel<-apply.light(corpus.df.deprel,"make|made|making","make",concrete.array=concrete.make.txt)
@@ -116,9 +81,13 @@ table(corpus.df.deprel$alt,corpus.df.deprel$light,corpus.df.deprel$head_lemma_va
 #chk
 return(corpus.df.deprel)
 }
+### 14063.after class
+### how is corpus.df.deprel?
 
 #corpus.df.deprel<-get.light.annotation(corpus.df.deprel)
 corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
+############################################################
+
 
 #############################
 #save(corpus.df.deprel,file="~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
@@ -493,4 +462,7 @@ par(las=3)
 barplot(obj.eval,main = "concrete vs. light use over corpus",
         ylab = "absolute occurences",legend.text = c("light","concrete"))
 plotdf.ann$obj<-obj.eval
-        
+### 
+
+
+
