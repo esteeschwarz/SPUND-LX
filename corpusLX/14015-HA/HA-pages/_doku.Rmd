@@ -65,7 +65,7 @@ library(quanteda)
 library(udpipe) # for pos tagging
 library(writexl)
 
-knitr::write_bib(c(.packages()), "packages.bib")
+#knitr::write_bib(c(.packages()), "packages.bib")
 ```
 
 

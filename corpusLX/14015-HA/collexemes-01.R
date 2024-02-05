@@ -289,6 +289,8 @@ t.make<-table(sub.make$light) # > 54/375
 corpus.light.ann<-corpus.df.deprel.new
 table(corpus.light.ann$light,corpus.light.ann$alt) # 2089/9419
 library(collostructions)
+knitr::write_bib(c(.packages()), "pkgtemp.bib")
+
 ###
 coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.rm=F)
 coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
@@ -347,7 +349,7 @@ plotdf.ann<-list(lsbc=lsbc,plot.dist=plotdf1,ann=list(main="distribution of lemm
 rownames(plotdf.ann$plot.dist)<-c("concrete","light")
 barplot(plotdf.ann$plot.dist, main=plotdf.ann$ann$main,
         ylab = "absolute occurences",legend.text = plotdf.ann$ann$legend.text)
-save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+#save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
 ###
 #100/plotdf.ann$plot.dist
 m<-grep("sbc",colnames(plotdf.ann$plot.dist))
@@ -406,3 +408,58 @@ coll6.2.light
 library(collostructions)
     colldf.lemma<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma)
 coll6.2
+#######
+# semantic alternatives occuring together
+make.array
+take.array
+make.array
+obj.make<-coll6.2.obj[coll6.2.obj$SLOT1%in%make.array,]
+sema.make<-obj.make[obj.make$SLOT2%in%obj.make[duplicated(obj.make$SLOT2),][,2],]
+make.array
+obj.take<-coll6.2.obj[coll6.2.obj$SLOT1%in%take.array,]
+sema.take<-obj.take[obj.take$SLOT2%in%obj.take[duplicated(obj.take$SLOT2),][,2],]
+coll.sema.1<-list(make=sema.make,take=sema.take)
+save(coll.sema.1,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll.sema.1.RData")
+sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
+sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
+sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
+sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
+sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
+x<-sema.make
+y<-make.array
+sema.sum<-function(y)y=sum(x['COLL.STR.LOGL'][x['SLOT1']==y])
+make.sum<-list(make.array)
+make.sum[make.array]<-lapply(y, sema.sum)    
+y
+make.sum
+x<-sema.take
+y<-take.array
+sema.sum<-function(y)y=sum(x['COLL.STR.LOGL'][x['SLOT1']==y])
+take.sum<-list(take.array)
+take.sum[take.array]<-lapply(y, sema.sum)    
+y
+take.sum
+coll6
+df<-factor(coll6.2.obj$SLOT1)
+levels(df)
+df<-length(levels(df))
+get.p<-function(x)pt(x,df,lower.tail = F)
+#get.p<-function(x)pt(x,df,lower.tail = T)
+eval1<-sema.make
+eval1$p<-unlist(lapply(eval1$COLL.STR.LOGL, get.p))
+eval1
+eval2<-sema.take
+eval2$p<-unlist(lapply(eval2$COLL.STR.LOGL, get.p))
+eval2
+par(las=3)
+eval.make<-eval1
+eval.take<-eval2
+plotdf.ann$eval.sem[['make']]<-eval.make
+plotdf.ann$eval.sem[['take']]<-eval.take
+plotdf.ann$eval.sem$make
+#save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+
+boxplot(eval1$COLL.STR.LOGL~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG.LIKE of collexeme association strength",main="binding of lemma /make/ vs. alternates")
+boxplot(eval2$COLL.STR.LOGL~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG.LIKE of collexeme association strength",main="binding of lemma /take/ vs. alternates")
+boxplot(eval1$p~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability of concrete collexemes",main="preference of lemma /make/ vs. alternates")
+boxplot(eval2$p~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability index of concrete collexemes",main="preference of lemma /take/ vs. alternates")
