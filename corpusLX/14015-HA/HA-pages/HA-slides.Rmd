@@ -13,8 +13,12 @@ output:
 bibliography: CORPUS-LX.bib
 ---
 
-# term paper draft
-essai of a replication study of Mehl (2021): "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
+```{r setup-slide, include=FALSE}
+#knitr::opts_chunk$set(echo = FALSE)
+#print("placeholder <document start>")
+```
+
+essai of a replication study of @mehl_what_2021: "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
 
 # init
 > "If onomasiological frequency measurements do indeed correlate with elicitation tests, 
@@ -95,13 +99,16 @@ barplot(plotdf.ann$plot.dist, main=plotdf.ann$ann$main,
         ylab = "absolute occurences",legend.text = plotdf.ann$ann$legend.text)
 
 ```
+
 ---
+
 ```{r fig-02-dist-rel,echo=F,fig.cap="relative distribution of lemmas over corpora. ICE data from study."}
 m<-grep("sbc",colnames(plotdf.ann$plot.dist))
 barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
         ylab = "% in corpus",legend.text = plotdf.ann$ann$legend.text)
 
 ```
+
 ## semantic alternatives to make
 - includes alternatives to /make/ that Mehl defined in his study 
 - all occurences are counted 
@@ -110,11 +117,14 @@ barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
 >"are defined as those verbs that occur in the corpus with the same concrete direct objects as make, (take, and give,) and with a roughly equivalent meaning." (cf. @mehl_what_2021 p.13)  
 
 ---
+
 ```{r,echo=FALSE}
 knitr::kable(plotlist$trntable,caption = "semantic alternatives")
 
 ```
+
 ---
+
 ```{r fig-02-alt,echo=F, fig.cap="proportion of semantic alternatives to concrete /make/ in SBC"}
 #trntable<-table(scb.ann.df$alt[scb.ann.df$light==0])
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
@@ -122,7 +132,9 @@ knitr::kable(plotlist$trntable,caption = "semantic alternatives")
 #barplot(trntable[c(1,2,3,4,5,6,7)]/sum(table(scb.ann.df$alt)),main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 barplot(plotlist$trntable[c(1,2,3,4,5,6,7)]/sum(table(scb.ann.df$alt)),main = "SBC concrete /make/ vs. alternate",ylab = "% in corpus")
 ```
+
 ---
+
 ```{r fig-03-alt,echo=F, fig.cap="proportion of semantic alternatives, only equivalent meaning of alternates"}
 #trntable<-table(scb.ann.df$alt[scb.ann.df$light==0])
 #par(las=3,cex=0.5,pin=c("1.5","1.5"))
@@ -131,12 +143,16 @@ barplot(plotlist$trntable[c(1,2,3,4,5,6,7)]/sum(table(scb.ann.df$alt)),main = "S
 barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",ylab = "% in corpus")
 #plot.plots("alt.2")
 ```
+
 ---
+
 ```{r,echo=FALSE}
 knitr::kable(plotlist$eval.semas[,1:9])
 
 ```
+
 ---
+
 ```{r fig-04-sema,echo=F, fig.cap="semasiological log.like of near synonymes to make"}
 barplot(plotlist$eval.semas$COLL.STR.LOGL~plotlist$eval.semas$ns,xlab = "",ylab = "collex.log.like")
 #plot.plots("alt.2")
