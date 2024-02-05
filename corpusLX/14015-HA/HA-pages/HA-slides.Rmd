@@ -174,7 +174,7 @@ create<-sum(eval1$T[eval1$head_lemma=="create"])
 produce<-sum(eval1$T[eval1$head_lemma=="produce"])
 generate<-sum(eval1$T[eval1$head_lemma=="generate"])
 ```
-showing the collexeme association strength (log.like), computed with: @R-collostructions
+
 ---
 
 ```{r fig-05-sema-T-make,echo=F,fig.cap="semasiological: T-score of near synonymes to make"}
@@ -191,13 +191,13 @@ boxplot(eval2$COLL.STR.LOGL~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="LOG
 
 ---
 
-```{r fig-07-sema-p-make,echo=F, eval=F,fig.cap="semasiological: p of near synonymes to make"}
+```{r fig-07-sema-p-make,echo=F, eval=T,fig.cap="semasiological: p of near synonymes to make"}
 boxplot(eval1$p~eval1$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability of concrete collexemes",main="preference of lemma /make/ vs. alternates")
 ```
 
 ---
 
-```{r fig-08-sema-p-take,echo=F, eval=F,fig.cap="semasiological: p of near synonymes to take"}
+```{r fig-08-sema-p-take,echo=F, eval=T,fig.cap="semasiological: p of near synonymes to take"}
 boxplot(eval2$p~eval2$SLOT1,varwidth=T,outline=F,xlab = "",ylab="occurence probability index of concrete collexemes",main="preference of lemma /take/ vs. alternates")
 ```
 
