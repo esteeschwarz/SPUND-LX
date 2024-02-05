@@ -294,7 +294,7 @@ coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.
 coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
 coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate 
 coll6.2
-coll6<-corpus.df.deprel
+coll6<-corpus.df.deprel.new
 coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
 ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
 coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make","take","give"))
@@ -340,13 +340,14 @@ i.give.s<-c(con=105,light=227)
 "in the written portion of ICE-GB, the light use of each verb is more common than the concrete sense. 
 For example, out of the total number of instances of make in all concrete and light uses, 
 just over 80% of instances are the light use, and just under 20% are the concrete use."
-
+rownames(plotdf.ann$plot.dist)<-c("concrete","light")
 lsbc<-length(corpus.df.deprel$sbc.id)
 plotdf.ann<-list(lsbc=lsbc,plot.dist=plotdf1,ann=list(main="distribution of lemmas over corpora",ylab="absolute occurences",
                                        legend.text = c("concrete use","light use")))
+rownames(plotdf.ann$plot.dist)<-c("concrete","light")
 barplot(plotdf.ann$plot.dist, main=plotdf.ann$ann$main,
         ylab = "absolute occurences",legend.text = plotdf.ann$ann$legend.text)
-#save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
 ###
 #100/plotdf.ann$plot.dist
 m<-grep("sbc",colnames(plotdf.ann$plot.dist))
@@ -355,3 +356,53 @@ barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
 
 100/6/100
 6/100
+coll6<-corpus.df.deprel
+coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
+                    ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make"))
+                    ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+
+coll6.2
+sum(coll6$lemma=="mistake",na.rm = T)
+### lemma/object
+filter<-"make"
+display.filter<-c("make","take","give")
+display.light<-c(0,1)
+display.filter<-NULL
+
+length(display.light)
+coll.obj.noun<-coll6.obj.n
+# save(coll.obj.noun,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll.obj.noun.RData")
+
+get.collex.obj<-function(coll6,display.light=NULL,display.filter=NULL){
+coll6.obj<-data.frame(lemma=unlist(coll6$lemma),obj=unlist(coll6$obj),upos=unlist(coll6$upos),light=coll6$light)
+coll6.obj.n<-coll6.obj[coll6.obj$upos=="NOUN"&!is.na(coll6.obj$obj),]
+  colldf<-data.frame(obj=coll6.obj.n$obj,lemma=coll6.obj.n$lemma,light=coll6.obj.n$light)
+  
+  if(length(display.light)==0){
+    coll6.2<-collex.covar(data.frame(colldf[,1],colldf[,2]),decimals = 3)
+  }
+
+    if(length(display.light)>0){
+    coll6.2<-collex.covar.mult(colldf,threshold = 1,decimals = 3)
+    coll6.2<-coll6.2[coll6.2$light%in%display.light,]
+  }
+  
+    if(length(display.filter)>0){
+    coll6.2<-coll6.2[coll6.2[,1]%in%display.filter,]
+    }
+return(coll6.2)
+  }
+coll6.2
+  coll6.2<-get.collex.obj(coll6,display.light=c(0,1),display.filter = "make")
+  coll6.2<-get.collex.obj(coll6,display.light=NULL,display.filter = c("make","take","give"))
+  coll6.2.light<-get.collex.obj(coll6,display.light=c(0,1))
+  coll6.2.obj<-get.collex.obj(coll6,display.light=NULL)
+#save(coll6.2.light,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll6.2.light.RData")
+#save(coll6.2.obj,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll6.2.obj.RData")
+coll6.2.light
+  coll6.2[coll6.2$SLOT1=="make",]
+#if(vers=="lemma"){
+library(collostructions)
+    colldf.lemma<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma)
+coll6.2
