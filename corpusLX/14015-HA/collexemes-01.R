@@ -308,10 +308,10 @@ corpus.light.ann$sentence[corpus.light.ann$lemma=="butter"]
 sum(is.na(corpus.light.ann$lemma))
 m<-corpus.df.deprel$head_lemma_value=="take"&corpus.df.deprel$lemma=="care"&corpus.df.deprel$light==0
 corpus.df.deprel$sentence[m]
-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make")
-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="create")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make"|corpus.df.deprel.new$lemma=="take"|corpus.df.deprel.new$lemma=="give")
+t1<-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
+t2<-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
+t3<-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make")
 table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
 table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
 table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make")
@@ -319,3 +319,40 @@ table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
 table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
 table(corpus.df.deprel.new$light)
 sum(corpus.df.deprel.new$lemma=="create",na.rm = T)
+plotdf<-data.frame(cbind(make.ice.wr=c(68,321),make.ice.sp=c(96,353),take.ice.wr=c(62,85),take.ice.sp=c(131,79),
+                         give.ice.wr=c(52,167),give.ice.sp=c(105,227),take.sbc=t1[,2],give.sbc=t2[,2],make.sbc=t3[,2]))
+plotdf1<-t(plotdf)
+plotdf1<-t(plotdf1)
+plotdf
+#par(new=T)
+par(las=2,lab=c(2,2,5),cex=0.6)
+barplot(plotdf1,legend.text = c("concrete use","light use"))
+barplot(plotdf1)
+#############
+### instances concrete vs. light
+### Q.1: (Mehl 2021)
+i.make.w<-c(concrete=68,light=321) #17% vs. 83% written ICE 
+i.make.s<-c(concrete=96,light=353) #spoken ICE
+i.take.w<-c(con=62,light=85) 
+i.give.w<-c(con=52,light=167)
+i.take.s<-c(con=131,light=79) 
+i.give.s<-c(con=105,light=227)
+"in the written portion of ICE-GB, the light use of each verb is more common than the concrete sense. 
+For example, out of the total number of instances of make in all concrete and light uses, 
+just over 80% of instances are the light use, and just under 20% are the concrete use."
+
+
+plotdf.ann<-list(plot.dist=plotdf1,ann=list(main="distribution of lemmas over corpora",ylab="absolute occurences",
+                                       legend.text = c("concrete use","light use")))
+barplot(plotdf.ann$plot.dist, main=plotdf.ann$ann$main,
+        ylab = "absolute occurences",legend.text = plotdf.ann$ann$legend.text)
+save(plotdf.ann,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/plotdf.ann.RData")
+###
+#100/plotdf.ann$plot.dist
+m<-grep("sbc",colnames(plotdf.ann$plot.dist))
+lsbc<-length(corpus.df.deprel$sbc.id)
+barplot(plotdf.ann$plot.dist[,m]/lsbc, main=plotdf.ann$ann$main,
+        ylab = "% in corpus",legend.text = plotdf.ann$ann$legend.text)
+
+100/6/100
+6/100
