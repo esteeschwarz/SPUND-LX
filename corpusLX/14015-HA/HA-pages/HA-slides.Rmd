@@ -44,10 +44,12 @@ Q.1: Santa Barbara corpus of spoken American English, ([@ucsb_santa_2005](https:
 the corpus data was downloaded from: [https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip](https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip)
 
 ## exploring scripts:
-- [14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R): creates corpus of downloaded .zip / [see documentation](_doku.nb.html)
+- [14015.concrete-abstract_HA.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R): creates corpus of downloaded .zip 
 - [sbc-postag.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/sbc-postag.R): postags the corpus
 - [get-freq-df.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/get-freq-df.R): first evaluation
 - [collexemes-01.R](https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/collexemes-01.R): 2nd evaluation script
+
+[see documentation](_doku.nb.html)
 
 ```{r,echo=FALSE}
 #load("data/trn.make.cpt.RData")
@@ -74,7 +76,7 @@ load(dtemp)
 
 ## corpus sample
 
-```{r kable-sample}
+```{r kable-sample,echo=FALSE}
 knitr::kable(smdf[c(4,11,1,2,6,5,19),])
 
 ```
@@ -107,7 +109,7 @@ barplot(plotlist$dist,main="distribution: lemma /make/",legend.text = c("concret
 ---
 
 
-```{r}
+```{r,echo=FALSE}
 knitr::kable(plotlist$trntable,caption = "semantic alternatives")
 
 ```
@@ -135,7 +137,7 @@ barplot(plotlist$nouns.f.cp,main="semantic alternates w/ equivalent meaning",yla
 
 ---
 
-```{r}
+```{r,echo=FALSE}
 knitr::kable(plotlist$eval.semas[,1:9])
 
 ```

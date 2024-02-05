@@ -299,8 +299,23 @@ coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make
 ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
 coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make","take","give"))
                     ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make"))
+                    ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+coll6.2<-get.collex(coll6,vers="head_lemma_value",filter.pos<-list(lemma=c("make"),light=0)
+                    ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
 coll6.2
 corpus.light.ann$sentence[corpus.light.ann$lemma=="butter"]
 sum(is.na(corpus.light.ann$lemma))
 m<-corpus.df.deprel$head_lemma_value=="take"&corpus.df.deprel$lemma=="care"&corpus.df.deprel$light==0
 corpus.df.deprel$sentence[m]
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="create")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
+table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
+table(corpus.df.deprel.new$light)
+sum(corpus.df.deprel.new$lemma=="create",na.rm = T)
