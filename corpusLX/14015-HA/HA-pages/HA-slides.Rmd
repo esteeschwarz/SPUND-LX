@@ -14,7 +14,7 @@ bibliography: CORPUS-LX.bib
 
 ---
 
-
+# setup
 essai of a replication study of @mehl_what_2021: "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
 
 # term paper draft
