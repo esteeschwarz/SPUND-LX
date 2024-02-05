@@ -18,7 +18,8 @@ bibliography: CORPUS-LX.bib
 #knitr::opts_chunk$set(echo = FALSE)
 ```
 
-essai of a replication study of @mehl_what_2021: "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses".
+
+<!-- essai of a replication study of Mehl (2021): "What we talk about when we talk about corpus frequency: The example of polysemous verbs with light and concrete senses". -->
 
 # term paper draft
 > "If onomasiological frequency measurements do indeed correlate with elicitation tests, 
