@@ -284,8 +284,7 @@ configuration xml: r-conxl6.pepper
 
 # frequency evaluations
 ## get matrix df of annotated list
-
-```{r corpus-matrix,eval=F}
+```{r corpus-matrix,eval=F,echo=T}
 # dtemp<-tempfile()
 # download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/sbc.only.pos.annotation.RData",dtemp)
 # load(dtemp)
@@ -371,7 +370,10 @@ for (k in 2:length(corpus.head.list)){
 }
 ```
 
-```{r light-ann,eval=F}
+
+## concrete/light assignment
+on base of concrete object arrays for make/take/give
+```{r light-ann,eval=F,echo=T}
 get.light.annotation<-function(corpus.df.deprel){
 concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
                  61952,64351,67497,69012,70356,71167,74595,75162,76991,77442,77553,81098,81099,81859,81860,94278,
@@ -424,8 +426,9 @@ corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
 ```
 
 
-
-```{r collex-func,eval=F}
+## collostruction df
+functions to create a subset and feed into collexeme analysis
+```{r collex-func,eval=F,echo=T}
 get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
   m3<-coll6$lemma==coll6$head_lemma_value # remove observations with lemma==head_lemma
   sum(m3,na.rm = T)
@@ -471,12 +474,10 @@ coll6.obj.n<-coll6.obj[coll6.obj$upos=="NOUN"&!is.na(coll6.obj$obj),]
 return(coll6.2)
   }
 coll6<-corpus.df.deprel.new
-
 ```
 
 
-
-```{r ice-data,eval=F}
+```{r ice-data,eval=F,echo=T}
 #############
 ### instances concrete vs. light
 ### Q.1: (Mehl 2021)
@@ -497,9 +498,9 @@ rownames(plotdf.ann$plot.dist)<-c("concrete","light")
 
 ```
 
-
-
-```{r coll-dfs,eval=F}
+## call collex functions
+define subsets and create collex df
+```{r coll-dfs,eval=F,echo=T}
  coll6.2<-get.collex.obj(coll6,display.light=c(0,1),display.filter = "make")
  coll6.2<-get.collex.obj(coll6,display.light=NULL,display.filter = c("make","take","give"))
  coll6.2.light<-get.collex.obj(coll6,display.light=c(0))
@@ -511,9 +512,8 @@ rownames(plotdf.ann$plot.dist)<-c("concrete","light")
  
 ```
 
-
-
-```{r sema-sums,eval=F}
+## evaluation of collex df
+```{r sema-sums,eval=F,echo=T}
 obj.make<-coll6.2.obj[coll6.2.obj$SLOT1%in%make.array,]
 sema.make<-obj.make[obj.make$SLOT2%in%obj.make[duplicated(obj.make$SLOT2),][,2],]
 obj.take<-coll6.2.obj[coll6.2.obj$SLOT1%in%take.array,]
@@ -544,9 +544,8 @@ eval.take<-eval2
 
 ```
 
-
-
-```{r eval-obj,eval=F}
+## lemma-object collexeme analysis
+```{r eval-obj,eval=F,echo=T}
 ### concrete objects frequency
 make.array<-c("make","generate","produce","create","build")
 take.array<-c("carry","bring")
@@ -563,7 +562,6 @@ conc.obj.t<-table(sub.obj.t[,1])
 obj.all.conc.t<-conc.obj.t[conc.obj.t!=0]
 obj.eval<-rbind(all.objects=obj.all.t,all.conc.obj=obj.all.conc.t)
 obj.eval
-
 ```
 
 
