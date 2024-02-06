@@ -464,5 +464,5 @@ barplot(obj.eval,main = "concrete vs. light use over corpus",
 plotdf.ann$obj<-obj.eval
 ### 
 
-
+#14064.important TODO: not the verb lemma occurence in context to be tagged light/concrete but the noun object to take/make/give, i.e. in general all nouns that can potentially appear as concrete objects
 
