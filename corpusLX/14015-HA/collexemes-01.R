@@ -395,7 +395,7 @@ make.array
 obj.take<-coll6.2.obj[coll6.2.obj$SLOT1%in%take.array,]
 sema.take<-obj.take[obj.take$SLOT2%in%obj.take[duplicated(obj.take$SLOT2),][,2],]
 coll.sema.1<-list(make=sema.make,take=sema.take)
-save(coll.sema.1,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll.sema.1.RData")
+#save(coll.sema.1,file = "~/Documents/GitHub/SPUND-LX/corpusLX/14015-HA/data/coll.sema.1.RData")
 sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
 sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])
 sum(sema.make$COLL.STR.LOGL[sema.make$SLOT1=="make"])

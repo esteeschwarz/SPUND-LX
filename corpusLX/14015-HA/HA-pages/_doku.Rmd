@@ -134,13 +134,6 @@ trndf.2$lfd<-1:length(trndf.2$scb)
 rownames(trndf.2)<-trndf.2$lfd
 #trndf$lfd<-1:length(trndf$scb)
 trndf<-trndf.2
-# m1<-grep("take|took|taken|taking",trndf$text) #take:415,tak:478 obs.
-# trn.take<-cbind(trndf[m1,],"concrete"=0,"light"=1)
-# m2<-grep("made|make|making",trndf$text) #take:415,tak:478 obs. #mak
-# trn.make.2<-cbind(trndf[m2,],"concrete"=0,"light"=1) #430
-# m3<-grep("give|gave|giving",trndf$text) #take:415,tak:478 obs.
-# trn.give<-cbind(trndf[m3,],"concrete"=0,"light"=1) #235
-# ### wks., wonderful. now annotate for concrete/light use
 ```
 
 
@@ -163,51 +156,7 @@ i.give<-c(con=52,light=167)
 #   trndf.lm<-cbind(scb,ann.df)
 # }
 # trndf.lm<-get.ann.x(trndf.2,scb.ann.df)
-# m4<-trndf.lm$light==1&trndf.lm$alt=="make"
-# ### sum light annotated
-# l.light<-sum(m4,na.rm = T)
-# ### concrete annotated
-# l.conc<-sum(trndf.lm$light==0&trndf.lm$alt=="make",na.rm = T)
-# i.make.m<-c(concrete=l.conc,light=l.light)
-# ### percentage
-# i.make.w[2]/(i.make.w[1]+i.make.w[2])
-# i.make.s[2]/(i.make.s[1]+i.make.s[2])
-# i.make.m[2]/(i.make.m[1]+i.make.m[2]) # 29 vs 71%
-# ### wks.
-# ### semantic alternates of concrete /make/ (p.14)
-# ###
-# ### B >
-# trndf<-trndf.lm
-# ### search for semantic alternates
-# get.alt<-function(altregex,alt){
-# m1<-grep(altregex,trndf$text)
-# trn.temp<-cbind(trndf[m1,],alt=alt,light=0)
-# trn.alt<-rbind(trn.alt,trn.temp)
-# }
-# m1<-c("(generat(e|ing|ed))[^generator]","generate")
-# m2<-c("(construct(ing|ed))[^constructor]","construct")
-# m3<-c("(produc(e|ing|ed))[^producer]","produce")
-# m4<-c("(creat(e|ing|ed))[^creator]","create")
-# m5<-c("(buil(d|ding|t))[^builder]","build")
-# m1.m<-grep(m1[1],trndf$text)
-# trn.temp<-cbind(trndf[m1.m,],alt=m1[2],light=0)
-# trn.alt<-trn.temp
-# trn.alt<-get.alt(m2[1],m2[2])
-# trn.alt<-get.alt(m3[1],m3[2])
-# trn.alt<-get.alt(m4[1],m4[2])
-# trn.alt<-get.alt(m5[1],m5[2])
-# 
-# trndf.all<-trndf
-# #table(trn.alt$alt)
-# ### B <
-# ### B >
-# par(las=3)
-# alt.c.table<-table(trndf.all$alt[trndf.all$light==0])
-# #alt.c.table
-# ### B <
-# chk<-trndf.lm$alt=="make"
-# trntable<-table(trndf.lm$alt[trndf.lm$light==0])
-# table(trndf.lm$alt)
+
 ```
 
 
@@ -238,9 +187,6 @@ for(scb in 1:length(scb.unique)){
   scb.sub$text<-gsub("(^ )","",scb.sub$text)
   colnames(scb.sub)[3]<-"text_field"
   sbc.sub.c<-corpus(scb.sub,docid_field = 'doc_id',text_field = 'text_field',unique_docnames = F)
-  # an4<-data.frame(sbc.sub.c)
-  # an5<-tokenize(an4$sbc.sub.c)
-  # head(an5)
   an4<-udpipe_annotate(md,x=sbc.sub.c,tokenizer="tokenizer",tagger = "default",trace = 2)
   ###wks.
   an7<-data.frame(an4)
@@ -252,34 +198,12 @@ for(scb in 1:length(scb.unique)){
   an8$alt<-"a-other"
   an8$light<-NA
   line.u<-unique(an8$line)
-#  l<-1
-#   for (l in line.u){
-#   cat(l,"\n")
-#       m1<-trndf.lm$scb==scb&trndf.lm$id==l
-#     sum(m1)
-#     light<-trndf.lm$light[m1]
-#     alt<-trndf.lm$alt[m1]
-#     m2<-an8$line==l
-#     an8$alt[m2]<-alt
-#     an8$light[m2]<-light
-#     }
-# # ### prepare excel tables for each SBC id (interview) to create ANNIS corpus via pepper
-# # xldir<-"~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/posxl2"
-# # dir.create(xldir)
-# # ns.df<-paste0(xldir,"/SCB-pos_",scb.id,".xlsx")
-# # write_xlsx(an8,ns.df)
-# ns.list<-paste0("sbc",scb.id)
-# scb.ann.list[[ns.list]]<-an8
-#scb.token.list[[ns.list]]<-sbc.sub.c
+ns.list<-paste0("sbc",scb.id)
+scb.ann.list[[ns.list]]<-an8
 }
-#returnlist<-scb.token.list
-#returnlist<-list(scb.token.list,scb.ann.list)
-#return(returnlist)
 return(scb.ann.list)
 }
 ### call above function which tokenizes, lemmatizes and postags the corpus & writes xlsx-tables per interview / returns dataframe (list type) of annotated corpus
-
-#trndf.lm.sf<-trndf.lm
 sbc.token.list<-write.ann.df(trndf.lm)
 ann.x<-write.ann.df(trndf.lm)
 scb.pos.df.list<-ann.x
@@ -328,7 +252,7 @@ sbc.only.pos.annotation<-lapply(scb.ann.list, export.ann)
 the evaluation statistics can be done already with the df, but for different purposes e.g. the better visualisation of the corpus and extensive queries an ANNIS (@druskat_corpus-toolsorg_2016) has been created.   
 
 call to external scripts which run pepper on the provided xlsx and create an ANNIS graph file for import to the ANNIS installation.
-```{r,eval=F}
+```{r call-pepper,eval=F}
 pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl5.pepper","SBC_v1.0.1","SBC_v1.0.1")
 pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-conxl6.pepper","SBC_v1.0.1","SBC_v1.0.1")
 zipannis("SBC_annis","SBC_annis.zip")
@@ -361,13 +285,11 @@ configuration xml: r-conxl6.pepper
 # frequency evaluations
 ## get matrix df of annotated list
 
-```{r,eval=F}
-dtemp<-tempfile()
-download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/sbc.only.pos.annotation.RData",dtemp)
-load(dtemp)
-x<-
+```{r corpus-matrix,eval=F}
+# dtemp<-tempfile()
+# download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/data/sbc.only.pos.annotation.RData",dtemp)
+# load(dtemp)
 get.corpus.deprel<-function(x){
-  x.ann<-sbc.only.pos.annotation
   ns<-colnames(x)
   x2<-cbind()
   # assign unique id to token
@@ -431,7 +353,6 @@ get.corpus.deprel<-function(x){
   ####################
   tdf.r<-as.data.frame(t(tdf))
   m<-!is.na(tdf.r$obj)
-  sum(m)
   x$obj<-tdf.r$obj
   x$head_token_value<-tdf[h.t.value]
   x$head_lemma_value<-tdf[h.l.value]
@@ -449,6 +370,202 @@ for (k in 2:length(corpus.head.list)){
   corpus.df.deprel_f<-rbind(corpus.df.deprel_f,corpus.head.list[[k]])
 }
 ```
+
+```{r light-ann,eval=F}
+get.light.annotation<-function(corpus.df.deprel){
+concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
+                 61952,64351,67497,69012,70356,71167,74595,75162,76991,77442,77553,81098,81099,81859,81860,94278,
+                 96953,99281,99880)
+
+concrete.give.txt<-c("sticker","antibiotic","gift","iguana","recognition","toothpick","herb","anything","enzyme","cake","lettuce","candy","card","literature","ornament","tape","ticket","pair","clothes","juice","pepper","money","goldfish","machine","cup","kiss","amount","bit","picture","mine","pass","dollar","ten","drink","something","car","lot")
+
+concrete.make.txt<-c("horseshoe","sound","cartilage","ceviche","food","noise","hay","grape","cookie","spatula","clothes","wiper","quilt","outfit","copy","tape","string","intercession","application","balloon","basket","kebab","salad","juice","gravy","tamale","sauce","ton","tail","stuff","papers","pasta","loaf","sandwich","ornament","picture","pillow","database","statue","pizza","fudge","recipe","pan","plate","decaf","tart")
+
+concrete.take<-c(848,6381,14466,16674,18611,18809,19366,22031,24813,24827,24829,24831,24832,24834,24835,29159,32908,36540,
+                 38239,38243,38247,38253,38254,38258,45020,45021,45032,49577,49582,49583,49588,53267,56405,56406,56409,
+                 59372,61588,61592,65654,65656,65657,66021,69440,71127,72201,72320,73797,73798,78435,78440,78442,
+                 79454,79456,82282,83099,83834,83836,84599,85311,85932,88155,89310,91865,93070,96464,96465,99149,
+                 99745,104020,117695)
+
+concrete.take.txt<-c("balloon","shelf","checkbook","car","bag","everything","puppies","silverware","torque","tree","Tupperware","wastebasket","wire","money","capsule","guitar","stub","tail","Tylenol","blanket","clipping","tablecloth","crown","medicine","nail","spacesuit","sweater","hers","knife","rack","rock","diary","woodwork","pill","ticket","trash","plug","some","tape","band","flip","water","container","pants","buck","insulin","foot","painting","drug","gift","cart","hair","egg","ball","dollar","pound","drink","thing","NPH")
+concrete.false.take<-c("while","time","care","advantage","picture","half","off","down","dollars to do it","look","with me","out","them to")
+concrete.false.take.regx<-paste0(concrete.false.take,collapse = "|")
+concrete.false.take.regx<-paste0("(",concrete.false.take.regx,")")
+#concrete.take.txt<-gsub("\\.[NA0-1]","",concrete.take.txt)
+# write_clip(paste0(concrete.take.txt,collapse = '","'))
+##########################################################
+### apply light label
+corpus.df.deprel$light<-NA
+corpus.df.deprel$alt<-"a-other"
+###
+apply.light<-function(corpus.df.deprel=corpus.df.deprel,q.lemma,lemma,concrete.array){
+  corpus.df.deprel$lemma<-gsub("[^a-zA-z']","",corpus.df.deprel$lemma)
+  corpus.df.deprel$head_lemma_value<-gsub("[^a-zA-z']","",corpus.df.deprel$head_lemma_value)
+  
+m1<-grepl(q.lemma,corpus.df.deprel$sentence)
+m13<-grepl(lemma,corpus.df.deprel$lemma)
+corpus.df.deprel$alt[m1]<-lemma # set concrete instances
+corpus.df.deprel$light[m13]<-1 # set all to light
+m2<-corpus.df.deprel$head_lemma_value%in%concrete.array#&grepl(lemma,corpus.df.deprel$sentence)
+for (k in 1:length(concrete.array)){
+  m16<-grepl(concrete.array[k],corpus.df.deprel$sentence[m1])
+  corpus.df.deprel$light[m1][m16]<-0
+  }
+return(corpus.df.deprel)
+}
+corpus.df.deprel<-apply.light(corpus.df.deprel,"make|made|making","make",concrete.array=concrete.make.txt)
+corpus.df.deprel<-apply.light(corpus.df.deprel,"take|took|taken|taking","take",concrete.take.txt)
+corpus.df.deprel<-apply.light(corpus.df.deprel,"give|gave|given|giving","give",concrete.give.txt)
+table(corpus.df.deprel$alt,corpus.df.deprel$light,corpus.df.deprel$head_lemma_value)
+#chk
+return(corpus.df.deprel)
+}
+corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
+```
+
+
+
+```{r collex-func,eval=F}
+get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
+  m3<-coll6$lemma==coll6$head_lemma_value # remove observations with lemma==head_lemma
+  sum(m3,na.rm = T)
+  coll6<-coll6[!m3,]
+  m4<-!is.na(coll6$light)
+  k<-1
+  if(na.rm==F)
+    coll6$light[m4]<-"n.a."
+  if(length(filter.pos)>0){
+    for(k in length(filter.pos)){
+    col<-names(filter.pos[k])
+    coll6<-coll6[coll6[[col]]%in%filter.pos[[k]],]
+    }
+}
+  if(vers=="light"){
+    colldf.light<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma,light=coll6$light)
+    coll6.2<-collex.covar.mult(colldf.light,threshold = 1,decimals = 3)
+  }
+  if(vers=="lemma"){
+    colldf.lemma<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma)
+    coll6.2<-collex.covar(colldf.lemma,decimals = 3)
+  }
+  return(coll6.2)
+}
+
+get.collex.obj<-function(coll6,display.light=NULL,display.filter=NULL){
+coll6.obj<-data.frame(lemma=unlist(coll6$lemma),obj=unlist(coll6$obj),upos=unlist(coll6$upos),light=coll6$light)
+coll6.obj.n<-coll6.obj[coll6.obj$upos=="NOUN"&!is.na(coll6.obj$obj),]
+  colldf<-data.frame(obj=coll6.obj.n$obj,lemma=coll6.obj.n$lemma,light=coll6.obj.n$light)
+  
+  if(length(display.light)==0){
+    coll6.2<-collex.covar(data.frame(colldf[,1],colldf[,2]),decimals = 3)
+  }
+
+    if(length(display.light)>0){
+    coll6.2<-collex.covar.mult(colldf,threshold = 1,decimals = 3)
+    coll6.2<-coll6.2[coll6.2$light%in%display.light,]
+  }
+  
+    if(length(display.filter)>0){
+    coll6.2<-coll6.2[coll6.2[,1]%in%display.filter,]
+    }
+return(coll6.2)
+  }
+coll6<-corpus.df.deprel.new
+
+```
+
+
+
+```{r ice-data,eval=F}
+#############
+### instances concrete vs. light
+### Q.1: (Mehl 2021)
+i.make.w<-c(concrete=68,light=321) #17% vs. 83% written ICE 
+i.make.s<-c(concrete=96,light=353) #spoken ICE
+i.take.w<-c(con=62,light=85) 
+i.give.w<-c(con=52,light=167)
+i.take.s<-c(con=131,light=79) 
+i.give.s<-c(con=105,light=227)
+"in the written portion of ICE-GB, the light use of each verb is more common than the concrete sense. 
+For example, out of the total number of instances of make in all concrete and light uses, 
+just over 80% of instances are the light use, and just under 20% are the concrete use."
+rownames(plotdf.ann$plot.dist)<-c("concrete","light")
+lsbc<-length(corpus.df.deprel$sbc.id)
+plotdf.ann<-list(lsbc=lsbc,plot.dist=plotdf1,ann=list(main="distribution of lemmas over corpora",ylab="absolute occurences",
+                                       legend.text = c("concrete use","light use")))
+rownames(plotdf.ann$plot.dist)<-c("concrete","light")
+
+```
+
+
+
+```{r coll-dfs,eval=F}
+ coll6.2<-get.collex.obj(coll6,display.light=c(0,1),display.filter = "make")
+ coll6.2<-get.collex.obj(coll6,display.light=NULL,display.filter = c("make","take","give"))
+ coll6.2.light<-get.collex.obj(coll6,display.light=c(0))
+ #table(coll6.2.light$obj)
+ coll6.2.obj<-get.collex.obj(coll6,display.light=NULL)
+ obj.array<-c(make.array,take.array,"give")
+ display.filter<- obj.array
+ coll6.2.obj.f<-get.collex.obj(coll6,display.light=c(0,1),display.filter = obj.array)
+ 
+```
+
+
+
+```{r sema-sums,eval=F}
+obj.make<-coll6.2.obj[coll6.2.obj$SLOT1%in%make.array,]
+sema.make<-obj.make[obj.make$SLOT2%in%obj.make[duplicated(obj.make$SLOT2),][,2],]
+obj.take<-coll6.2.obj[coll6.2.obj$SLOT1%in%take.array,]
+sema.take<-obj.take[obj.take$SLOT2%in%obj.take[duplicated(obj.take$SLOT2),][,2],]
+coll.sema.1<-list(make=sema.make,take=sema.take)
+x<-sema.make
+y<-make.array
+sema.sum<-function(y)y=sum(x['COLL.STR.LOGL'][x['SLOT1']==y])
+make.sum<-list(make.array)
+make.sum[make.array]<-lapply(y, sema.sum)    
+make.sum
+x<-sema.take
+y<-take.array
+sema.sum<-function(y)y=sum(x['COLL.STR.LOGL'][x['SLOT1']==y])
+take.sum<-list(take.array)
+take.sum[take.array]<-lapply(y, sema.sum)   
+df<-factor(coll6.2.obj$SLOT1)
+df<-length(levels(df))
+get.p<-function(x)pt(x,df,lower.tail = F)
+#get.p<-function(x)pt(x,df,lower.tail = T)
+eval1<-sema.make
+eval1$p<-unlist(lapply(eval1$COLL.STR.LOGL, get.p))
+eval2<-sema.take
+eval2$p<-unlist(lapply(eval2$COLL.STR.LOGL, get.p))
+par(las=3)
+eval.make<-eval1
+eval.take<-eval2
+
+```
+
+
+
+```{r eval-obj,eval=F}
+### concrete objects frequency
+make.array<-c("make","generate","produce","create","build")
+take.array<-c("carry","bring")
+obj.array<-c(make.array,take.array,"give")
+display.filter<- obj.array
+coll6.2.obj.f<-get.collex.obj(coll6,display.light=NULL,display.filter = obj.array)
+coll6.2.obj.f
+obj.t<-table(coll6.2.obj.f[,1])
+obj.all.t<-obj.t[obj.t!=0]
+### concrete objects:
+concrete.array<-c("give",concrete.make.txt,concrete.take.txt)
+sub.obj.t<-coll6.2.obj.f[coll6.2.obj.f$SLOT2%in%concrete.array,]
+conc.obj.t<-table(sub.obj.t[,1])
+obj.all.conc.t<-conc.obj.t[conc.obj.t!=0]
+obj.eval<-rbind(all.objects=obj.all.t,all.conc.obj=obj.all.conc.t)
+obj.eval
+
+```
+
 
 
 ```{r cite-pkg,eval=T,echo=FALSE}
