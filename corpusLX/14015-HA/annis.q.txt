@@ -34,3 +34,16 @@ lemma =/.*/ & upos=/NOUN/& head_lemma_value =/make|take|give/ & lemma=/make|take
 & #4 .1,5 #1
 & #3_=_#5
 ---
+CQP:
+[lemma="take"][]{1,5}[lemma=".*"&obj="take"]; 
+:290
+---
+lemma=/take/&lemma=/.*/&obj=/take/&upos=/NOUN/
+
+&#1 .1,5 #2
+&#2_=_#3
+&#2_=_#4
+: 322
+---
+[lemma="take"][]{1,5}[lemma=".*"&obj="take"&upos="NOUN"];
+:266
