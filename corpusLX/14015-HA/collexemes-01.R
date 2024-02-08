@@ -3,7 +3,7 @@
 ################################
 ### replace with local sources before running:
 #install.packages("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/collostructions_0.2.0.tar.gz", repos = NULL, type = "source")
-# dtemp<-tempfile("colltar.tar.gz")
+dtemp<-tempfile()
 # ### below is the only online source, but only v0.1.0 missing collex.covar.mult()
 # #download.file("http://userpage.fu-berlin.de/~flach/wp-content/uploads/collostructions_0.1.0.tar.gz",dtemp)
 # download.file("http://userpage.fu-berlin.de/stschwarz/file/collostructions_0.2.0.tar.gz",dtemp)
@@ -11,6 +11,9 @@
 # dtemp
 # install.packages(dtemp, repos = NULL, type = "source")
 load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
+#load("/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
+download.file("https://github.com/esteeschwarz/SPUND-LX/raw/main/corpusLX/14015-HA/functions.R",dtemp)
+source(dtemp)
 #load("/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 
 
@@ -172,36 +175,36 @@ library(collostructions)
 # call collex analysis
 # vers<-'lemma'
 coll6<-corpus.df.deprel
-get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
-  m3<-coll6$lemma==coll6$head_lemma_value # remove observations with lemma==head_lemma
-  sum(m3,na.rm = T)
-  #coll6na<-coll6
-  coll6<-coll6[!m3,]
-  m4<-!is.na(coll6$light)
-  sum(m4)
-  k<-1
-  if(na.rm==F)
-    coll6$light[m4]<-"n.a."
-  # m5<-is.na(coll6$obj.to)
-  # coll6<-coll6[!m5,]
-  if(length(filter.pos)>0){
-    for(k in length(filter.pos)){
-    col<-names(filter.pos[k])
-    coll6<-coll6[coll6[[col]]%in%filter.pos[[k]],]
-    }
-}
-  if(vers=="light"){
-    colldf.light<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma,light=coll6$light)
-    coll6.2<-collex.covar.mult(colldf.light,threshold = 1,decimals = 3)
-  }
-#  coll6.2
-  if(vers=="lemma"){
-    colldf.lemma<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma)
-    coll6.2<-collex.covar(colldf.lemma,decimals = 3)
-  }
-  return(coll6.2)
-  # coll6.2<-collex.covar.mult(data.frame(coll6$lemma,coll6$head_lemma_value,coll6$light,coll6$obj.to),threshold = 1,decimals = 2)
-}
+# get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
+#   m3<-coll6$lemma==coll6$head_lemma_value # remove observations with lemma==head_lemma
+#   sum(m3,na.rm = T)
+#   #coll6na<-coll6
+#   coll6<-coll6[!m3,]
+#   m4<-!is.na(coll6$light)
+#   sum(m4)
+#   k<-1
+#   if(na.rm==F)
+#     coll6$light[m4]<-"n.a."
+#   # m5<-is.na(coll6$obj.to)
+#   # coll6<-coll6[!m5,]
+#   if(length(filter.pos)>0){
+#     for(k in length(filter.pos)){
+#     col<-names(filter.pos[k])
+#     coll6<-coll6[coll6[[col]]%in%filter.pos[[k]],]
+#     }
+# }
+#   if(vers=="light"){
+#     colldf.light<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma,light=coll6$light)
+#     coll6.2<-collex.covar.mult(colldf.light,threshold = 1,decimals = 3)
+#   }
+# #  coll6.2
+#   if(vers=="lemma"){
+#     colldf.lemma<-data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma)
+#     coll6.2<-collex.covar(colldf.lemma,decimals = 3)
+#   }
+#   return(coll6.2)
+#   # coll6.2<-collex.covar.mult(data.frame(coll6$lemma,coll6$head_lemma_value,coll6$light,coll6$obj.to),threshold = 1,decimals = 2)
+# }
 #coll6.2
 #save(corpus.df.deprel,file = "~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 # load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
