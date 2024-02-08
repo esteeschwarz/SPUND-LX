@@ -4,13 +4,14 @@
 ### replace with local sources before running:
 #install.packages("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/collostructions_0.2.0.tar.gz", repos = NULL, type = "source")
 # dtemp<-tempfile("colltar.tar.gz")
-### below is the only online source, but only v0.1.0 missing collex.covar.mult()
-# download.file("http://userpage.fu-berlin.de/~flach/wp-content/uploads/collostructions_0.1.0.tar.gz",dtemp)
-# #install.packages("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/collostructions_0.2.0.tar.gz", repos = NULL, type = "source")
+# ### below is the only online source, but only v0.1.0 missing collex.covar.mult()
+# #download.file("http://userpage.fu-berlin.de/~flach/wp-content/uploads/collostructions_0.1.0.tar.gz",dtemp)
+# download.file("http://userpage.fu-berlin.de/stschwarz/file/collostructions_0.2.0.tar.gz",dtemp)
+# install.packages("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/collostructions_0.2.0.tar.gz", repos = NULL, type = "source")
 # dtemp
 # install.packages(dtemp, repos = NULL, type = "source")
 load("~/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
-load("/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
+#load("/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.corpus.df.deprel.ann.RData")
 
 
 # build annotated token for concrete /take/, /give/ (/make/ already annotated)
@@ -18,69 +19,6 @@ load("/volumes/ext/boxHKW/21S/DH/local/SPUND/corpuslx/stefanowitsch/HA/data/sbc.
 # the concrete /give/, /take/ objects below are defined manually as occuring in the corpus as objects of or in context with the given lemma. see https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/get-freq-df.R on how these objects were defined.
 ########################################
 # sec 2.
-#get.light.annotation.obs<-function(corpus.df.deprel){
-concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
-                 61952,64351,67497,69012,70356,71167,74595,75162,76991,77442,77553,81098,81099,81859,81860,94278,
-                 96953,99281,99880)
-
-concrete.give.txt<-c("sticker","antibiotic","gift","iguana","recognition","toothpick","herb","anything","enzyme","cake","lettuce","candy","card","literature","ornament","tape","ticket","pair","clothes","juice","pepper","money","goldfish","machine","cup","kiss","amount","bit","picture","mine","pass","dollar","ten","drink","something","car","lot")
-
-concrete.make.txt<-c("horseshoe","sound","cartilage","ceviche","food","noise","hay","grape","cookie","spatula","clothes","wiper","quilt","outfit","copy","tape","string","intercession","application","balloon","basket","kebab","salad","juice","gravy","tamale","sauce","ton","tail","stuff","papers","pasta","loaf","sandwich","ornament","picture","pillow","database","statue","pizza","fudge","recipe","pan","plate","decaf","tart")
-
-concrete.take<-c(848,6381,14466,16674,18611,18809,19366,22031,24813,24827,24829,24831,24832,24834,24835,29159,32908,36540,
-                 38239,38243,38247,38253,38254,38258,45020,45021,45032,49577,49582,49583,49588,53267,56405,56406,56409,
-                 59372,61588,61592,65654,65656,65657,66021,69440,71127,72201,72320,73797,73798,78435,78440,78442,
-                 79454,79456,82282,83099,83834,83836,84599,85311,85932,88155,89310,91865,93070,96464,96465,99149,
-                 99745,104020,117695)
-
-concrete.take.txt<-c("balloon","shelf","checkbook","car","bag","everything","puppies","silverware","torque","tree","Tupperware","wastebasket","wire","money","capsule","guitar","stub","tail","Tylenol","blanket","clipping","tablecloth","crown","medicine","nail","spacesuit","sweater","hers","knife","rack","rock","diary","woodwork","pill","ticket","trash","plug","some","tape","band","flip","water","container","pants","buck","insulin","foot","painting","drug","gift","cart","hair","egg","ball","dollar","pound","drink","thing","NPH")
-concrete.false.take<-c("while","time","care","advantage","picture","half","off","down","dollars to do it","look","with me","out","them to")
-concrete.false.take.regx<-paste0(concrete.false.take,collapse = "|")
-concrete.false.take.regx<-paste0("(",concrete.false.take.regx,")")
-#concrete.take.txt<-gsub("\\.[NA0-1]","",concrete.take.txt)
-# write_clip(paste0(concrete.take.txt,collapse = '","'))
-##########################################################
-### apply light label
-corpus.df.deprel$light<-NA
-corpus.df.deprel$alt<-"a-other"
-###
-#q.lemma<-"make|made|making"
-#lemma<-"make"
-###
-#concrete.array<-concrete.make.txt
-
-apply.light<-function(corpus.df.deprel=corpus.df.deprel,q.lemma,lemma,concrete.array){
-  corpus.df.deprel$lemma<-gsub("[^a-zA-z']","",corpus.df.deprel$lemma)
-  corpus.df.deprel$head_lemma_value<-gsub("[^a-zA-z']","",corpus.df.deprel$head_lemma_value)
-  
-m1<-grepl(q.lemma,corpus.df.deprel$sentence)
-m13<-grepl(lemma,corpus.df.deprel$lemma)
-
-sum(m1)
-sum(m13)
-corpus.df.deprel$sentence[m1]
-#unique(corpus.df.deprel$head_lemma_value)
-length(unique(corpus.df.deprel$head_token_value))
-length(unique(corpus.df.deprel$token))
-#table(corpus.df.deprel$lemma)
-corpus.df.deprel$alt[m1]<-lemma # set concrete instances
-corpus.df.deprel$light[m13]<-1 # set all to light
-#corpus.df.deprel$light[m4]<-1 # set all give sentences to 1=light
-m2<-corpus.df.deprel$head_lemma_value%in%concrete.array#&grepl(lemma,corpus.df.deprel$sentence)
-for (k in 1:length(concrete.array)){
-  m16<-grepl(concrete.array[k],corpus.df.deprel$sentence[m1])
-  corpus.df.deprel$light[m1][m16]<-0
-
-  }
-return(corpus.df.deprel)
-}
-corpus.df.deprel<-apply.light(corpus.df.deprel,"make|made|making","make",concrete.array=concrete.make.txt)
-corpus.df.deprel<-apply.light(corpus.df.deprel,"take|took|taken|taking","take",concrete.take.txt)
-corpus.df.deprel<-apply.light(corpus.df.deprel,"give|gave|given|giving","give",concrete.give.txt)
-table(corpus.df.deprel$alt,corpus.df.deprel$light,corpus.df.deprel$head_lemma_value)
-#chk
-return(corpus.df.deprel)
-}
 
 get.light.annotation<-function(corpus.df.deprel){
   concrete.give<-c(1066,2620,10469,20369,20373,20377,31957,41100,45424,45538,48045,50236,51759,52340,52341,54654,56016,60668,
@@ -216,7 +154,8 @@ get.light.annotation<-function(corpus.df.deprel){
 ### how is corpus.df.deprel?
 
 #corpus.df.deprel<-get.light.annotation(corpus.df.deprel)
-corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
+# corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
+# corpus.df.deprel<-corpus.df.deprel.new
 ############################################################
 
 
@@ -228,22 +167,10 @@ corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
 #set<-corpus.df.deprel
 library(collostructions)
 # get collocation df to feed into collex.covar()
-get.coll.df<-function(set,var1,var2,var3,sub=F,na.rm=F){
-  m1<-!is.na(set[var1])&!is.na(set[var2])
-  sum(m1)
-  m2<-!is.na(set[var3])
-  set<-set[m1,]
-  if(na.rm)
-    set<-set[m2,]
-  if(sub!=F)
-    
-    coll.1<-subset(set,set$lemma%in%sub)
-  coll.1<-data.frame(cbind(set[var1],set[var2],set[var3],obj.to=set$obj,pos=set$upos))
-}
-filter.pos<-list(head_lemma_value=c("make","take","give"),light=1)
-filter.pos
+# filter.pos<-list(head_lemma_value=c("make","take","give"),light=1)
+# filter.pos
 # call collex analysis
-vers<-'lemma'
+# vers<-'lemma'
 coll6<-corpus.df.deprel
 get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
   m3<-coll6$lemma==coll6$head_lemma_value # remove observations with lemma==head_lemma
@@ -325,7 +252,7 @@ take.array<-c("take","bring","carry")
 #df<-177
 #edge
 #p_value_left = pt(q = -0.77, df = 15, lower.tail = TRUE)
-get.p<-function(x)pt(x,df,lower.tail = F)
+# get.p<-function(x)pt(x,df,lower.tail = F)
 #get.p<-function(x)pt(x,df,lower.tail = T)
 # eval1$p<-unlist(lapply(eval1$T, get.p))
 # eval1
@@ -358,65 +285,104 @@ Put differently, each concrete verb is significantly preferred over its alternat
 getsubset<-function(df,q.obj){
   df<-subset(df,df$obj==q.obj)
 }
-# sub.make<-getsubset(corpus.df.deprel,"make")
-# sub.take<-getsubset(corpus.df.deprel,"take")
-# sub.give<-getsubset(corpus.df.deprel,"give")
-# ### wks.
-# obj.unique.make<-unique(sub.make$lemma)
-# obj.unique.take<-unique(sub.take$lemma)
-# obj.unique.give<-unique(sub.give$lemma)
-# ###
-# # manually define concrete make (give/take defined in sec 2)
-# concrete.make<-data.frame(obj=obj.unique.make,light=1)
-# concrete.make.ann<-fix(concrete.make)
-# install.packages("devtools")
-# library(devtools)
-# install_github("esteeschwarz/clipX")
-# library(clipX)
-# library(clipr)
-# write_clip(concrete.make.ann$obj[concrete.make.ann$light==0])
-# clipX()
-# concrete.make.txt<-c("horseshoe","sound","cartilage","ceviche","food","noise","hay","grape","cookie","spatula","clothes","wiper","quilt","outfit","copy","tape","string","intercession","application","balloon","basket","kebab","salad","juice","gravy","tamale","sauce","ton","tail","stuff","papers","pasta","loaf","sandwich","ornament","picture","pillow","database","statue","pizza","fudge","recipe","pan","plate","decaf","tart")
-
-### predefinition chk (with concrete /make/ defined earlier)
-# t.make<-table(sub.make$light) # > 62/305
-# t.take<-table(sub.take$light) # > 50/456
-# t.give<-table(sub.give$light) # > 43/199
-###
-corpus.df.deprel.new<-get.light.annotation(corpus.df.deprel)
-#sub.make<-getsubset(corpus.df.deprel.new,"make")
-#t.make<-table(sub.make$light) # > 54/375
-### for consistency to take&give i integrate this new light annotation
-# corpus.light.ann<-corpus.df.deprel.new
-# table(corpus.light.ann$light,corpus.light.ann$alt) # 2089/9419
-library(collostructions)
-#knitr::write_bib(c(.packages()), "pkgtemp.bib")
-
-###
-#coll6<-get.coll.df(corpus.light.ann,"lemma","head_lemma_value","light",sub=F,na.rm=F)
-# coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = T) # light==NA stays NA which lets collex sort them out of computation
-# coll6.2<-get.collex(coll6,filter.pos = "NOUN",na.rm = F) # light==NA will be replaced by "n.a." which lets collex calculate 
-# coll6.2
-####################
-tempfun<-function(){
+# coll6<-corpus.df.deprel.new
+# coll6<-corp
+corpus.df.deprel.new<-corpus.df.deprel
 coll6<-corpus.df.deprel.new
-coll6<-corp
-coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
+coll6.2.lm<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
 ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
-coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make","take","give"))
-                    ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+# coll6.2.m<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make","take","give"))
+#                     ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
 coll6.2<-get.collex(coll6,vers="light",filter.pos<-list(head_lemma_value=c("make"))
                     ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
-coll6.2<-get.collex(coll6,vers="head_lemma_value",filter.pos<-list(lemma=c("make"),light=0)
-                    ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
-coll6.2
-table(coll6.2$head_lemma,coll6.2$light)
-m<-corp$head_lemma_value=="make"
-corpus.light.ann$sentence[corpus.light.ann$lemma=="butter"]
-sum(is.na(corpus.light.ann$lemma))
-m<-corpus.df.deprel$head_lemma_value=="take"&corpus.df.deprel$lemma=="care"&corpus.df.deprel$light==0
-corpus.df.deprel$sentence[m]
-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make"|corpus.df.deprel.new$lemma=="take"|corpus.df.deprel.new$lemma=="give")
+coll6.2.m<-collex.covar.mult(data.frame(head_lemma=coll6$head_lemma_value,lemma=coll6$lemma,light=  coll6$light))
+                       # light==NA stays NA which lets collex sort them out of computation
+# coll6.2<-get.collex(coll6,vers="head_lemma_value",filter.pos<-list(lemma=c("make"),light=0)
+#                     ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
+coll6.2.lm
+coll6.2.m
+table(coll6.2$SLOT1,coll6.2$SLOT2)
+eval3<-coll6.2.m
+#t3<-table()
+df<-factor(eval3$head_lemma)
+levels(df)
+df<-length(levels(df))-1
+eval3$p<-pt(eval3$T,df,lower.tail = T)
+eval3.s<-eval3[eval3$head_lemma%in%c("make","take","give"),]
+t8<-table(factor(eval3.s$head_lemma),eval3.s$light)
+t8
+xt8<-chisq.test(t8)
+xt8
+l8<-length(coll6$sbc.id)
+t8b<-t8/rowSums(t8)
+400/l8
+text(5,label="text",col=3)
+tp<-t((t8/l8))
+tp
+barplot(tp,main = "concrete/light distribution SBC",legend.text = c("concrete","light"),ylab = "% in corpus",xlab = "lemma")
+text(x=1,sum(tp[,1])*1.1,label=round(tp[2,1],6),col=2)
+text(x=2,sum(tp[,1])*1.1,label=round(tp[2,2],6),col=2)
+text(x=3,sum(tp[,1])*1.1,label=round(tp[2,3],6),col=2)
+text(x=0.8,tp[1,1]*1.5,label=round(tp[1,1],6),col=1)
+text(x=2,tp[1,2]*1.5,label=round(tp[1,2],6),col=1)
+text(x=3.1,tp[1,3]*1.5,label=round(tp[1,3],6),col=1)
+barplot(t(t8b),main = "exposure rate SBC")
+text(x=0.8,t8b[1,1]*1.5,label=round(t8b[1,1],5))
+text(x=2,t8b[2,1]*1.5,label=round(t8b[2,1],5))
+text(x=3.1,t8b[3,1]*1.5,label=round(t8b[3,1],5))
+make.ice.wr=c("0"=68,"1"=321)
+make.ice.sp=c("0"=96,"1"=353)
+take.ice.wr=c("0"=62,"1"=85)
+take.ice.sp=c("0"=131,"1"=79)
+give.ice.wr=c("0"=52,"1"=167)
+give.ice.sp=c("0"=105,"1"=227)
+ice.sp<-rbind(make=make.ice.sp,take=take.ice.sp,give=give.ice.sp)
+ice.sp
+t.ice.sp<-ice.sp/rowSums(ice.sp)
+barplot(t(t.ice.sp),main = "exposure rate ICE spoken")
+abline(0.5,0,3)
+
+ice.wr<-rbind(make=make.ice.wr,take=take.ice.wr,give=give.ice.wr)
+ice.wr
+t.ice.wr<-ice.wr/rowSums(ice.wr)
+barplot(t(t.ice.wr),main = "exposure rate ICE written")
+abline(0.5,0,3)
+chisq.test(t8)
+eval3.l<-eval3[eval3$head_lemma%in%c("make","take","give")&eval3$light==1,]
+eval3.c<-eval3[eval3$head_lemma%in%c("make","take","give")&eval3$light==0,]
+
+boxplot(eval3.l$p~factor(eval3.l$head_lemma),outline=F,main="SBC lemma association strength",
+        ylab = "p(LOG.LIKE collexeme association strength)",xlab="lemma in context")
+legend(2.7,0.6,"light",col = 2)
+boxplot(eval3.c$p~factor(eval3.c$head_lemma),outline=F,main="SBC lemma association strength",
+        ylab = "p(LOG.LIKE collexeme association strength)",xlab="lemma context",col=2,add = T)
+legend(2.7,1,"concrete",col = 2)
+abline(0.5,0,3,col=2)
+
+
+t6<-table(coll6.2.m$head_lemma[coll6.2.m$head_lemma%in%c("make","take","give")],coll6.2.m$light[coll6.2.m$head_lemma%in%c("make","take","give")])
+#t6
+#chisq.test(t6) # p: 0.8226 > the probability, that this distribution is random, is 82%
+#t7<-table(coll6.2.lm$SLOT1,coll6.2.lm$SLOT1)
+#chisq.test(t7)
+ #xt6<-chisq.test(t6)
+#xt6
+#xt6$p.value
+# df<-factor(coll6.2$head_lemma)
+# levels(df)
+# df<-length(levels(df))-1
+# xt7<-chisq.test(t7)
+# get.p<-function(x)pt(x,df,lower.tail = T)
+# eval2<-coll6.2
+# eval2$p<-get.p(eval2$T)
+
+# dump("xt6",file=dtemp)
+# readLines(dtemp)%>%write_clip()
+# write_clip(writeLines(xt6))
+
+########################################################################
+tempfunc<-function(){
+{
 t1<-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="take")
 t2<-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="give")
 t3<-table(corpus.df.deprel.new$light,corpus.df.deprel.new$lemma=="make")
@@ -465,6 +431,7 @@ barplot(plotdf.ann$plot.dist[,m]/plotdf.ann$lsbc, main=plotdf.ann$ann$main,
 100/6/100
 6/100
 }
+{
 coll6<-corpus.df.deprel.new
 coll6.2<-get.collex(coll6,vers="lemma",filter.pos<-list(head_lemma_value=c("make","take","give"),light=0)
                     ,na.rm = T) # light==NA stays NA which lets collex sort them out of computation
@@ -617,3 +584,6 @@ corp<-corpus.df.deprel
 
 m<-corp$upos=="NOUN"&corp$head_lemma_value=="take"
 sum(m,na.rm = T)
+}
+  
+}
