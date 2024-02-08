@@ -19,6 +19,8 @@ get.light.annotation<-function(corpus.df.deprel){
   concrete.false.take.regx<-paste0("(",concrete.false.take.regx,")")
   #concrete.take.txt<-gsub("\\.[NA0-1]","",concrete.take.txt)
   # write_clip(paste0(concrete.take.txt,collapse = '","'))
+  
+  alt.array<-c(make=c("build","create","produce","generate"),take=c("carry","bring"),give="give")
   ##########################################################
   ### apply light label
   corpus.df.deprel$light<-NA
@@ -78,12 +80,19 @@ get.light.annotation<-function(corpus.df.deprel){
   corpus.df.deprel<-apply.light(corpus.df.deprel,"make|made|making","make",concrete.make.txt)
   corpus.df.deprel<-apply.light(corpus.df.deprel,"take|took|taken|taking","take",concrete.take.txt)
   corpus.df.deprel<-apply.light(corpus.df.deprel,"give|gave|given|giving","give",concrete.give.txt)
+  corpus.df.deprel<-apply.light(corpus.df.deprel,"(produce[^r]|produced|producing)","produce",concrete.make.txt)
+  corpus.df.deprel<-apply.light(corpus.df.deprel,"create|created|creating","create",concrete.make.txt)
+  corpus.df.deprel<-apply.light(corpus.df.deprel,"generate|generated|generating","generate",concrete.make.txt)
+  corpus.df.deprel<-apply.light(corpus.df.deprel,"build|built|building","build",concrete.make.txt)
+  corpus.df.deprel<-apply.light(corpus.df.deprel,"carry|carried|carrying","carry",concrete.take.txt)
+  corpus.df.deprel<-apply.light(corpus.df.deprel,"bring|brought|bringing","bring",concrete.take.txt)
   table(corpus.df.deprel$alt,corpus.df.deprel$light,corpus.df.deprel$head_lemma_value)
   #chk
   return(corpus.df.deprel)
 }
-
-
+# m<-grepl("(produce[^r]|produced|producing)",corpus.df.deprel$sentence)
+# m<-grepl("(producer)",corpus.df.deprel$sentence)
+# sum(m)
 get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
   m3<-coll6$lemma==coll6$head_lemma_value # remove observations with lemma==head_lemma
   sum(m3,na.rm = T)
@@ -113,3 +122,27 @@ get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
   }
   return(coll6.2)
 }
+get.collex.obj<-function(coll6,display.light=NULL,select.filter=NULL,display.filter=NULL){
+  coll6.obj<-data.frame(lemma=unlist(coll6$lemma),obj=unlist(coll6$obj),upos=unlist(coll6$upos),light=coll6$light)
+  coll6.obj.n<-coll6.obj[coll6.obj$upos=="NOUN"&!is.na(coll6.obj$obj),]
+  colldf<-data.frame(obj=coll6.obj.n$obj,lemma=coll6.obj.n$lemma,light=coll6.obj.n$light)
+  
+  if(length(select.filter)>0){
+    colldf<-colldf[colldf$obj%in%select.filter,]
+  }
+  
+  if(length(display.light)==0){
+    coll6.2<-collex.covar(data.frame(colldf[,1],colldf[,2]),decimals = 3)
+  }
+  
+  if(length(display.light)>0){
+    coll6.2<-collex.covar.mult(colldf,threshold = 1,decimals = 3)
+    coll6.2<-coll6.2[coll6.2$light%in%display.light,]
+  }
+  
+  if(length(display.filter)>0){
+    coll6.2<-coll6.2[coll6.2[,1]%in%display.filter,]
+  }
+  return(coll6.2)
+}
+#colltest<-get.light.annotation(corpus.df.deprel)
