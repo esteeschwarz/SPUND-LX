@@ -45,5 +45,12 @@ lemma=/take/&lemma=/.*/&obj=/take/&upos=/NOUN/
 &#2_=_#4
 : 322
 ---
+lemma="take"&lemma=/.*/&head_lemma_value="take"&pos=/NOUN/
+
+&#1 .0,5 #2
+&#2_=_#3
+&#2_=_#4
+:416
+---
 [lemma="take"][]{1,5}[lemma=".*"&obj="take"&upos="NOUN"];
 :266
