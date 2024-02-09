@@ -10,6 +10,8 @@ make6<-c("make","c8")
 make7<-c("make","c1")
 make8<-c("make","c7")
 make9<-c("make","c5")
+make10<-c("make","c7")
+make11<-c("make","c9")
 pr1<-c("produce","c1")
 pr2<-c("produce","c5")
 pr3<-c("produce","c6")
@@ -29,39 +31,58 @@ b2<-c("build","c9")
 b3<-c("build",eval(rnd1))
 b4<-c("build","c7")
 
-model1<-data.frame(rbind(make1,make2,make3,make4,make5,make6,make7,make8,make9,pr1,pr2,pr3,pr4,pr5,r1,r2,r3,r4,r5,r6,r7,b1,b2,b3,b4))
-model1
+model1<-data.frame(rbind(make1,make2,make3,make4,make5,make6,make7,make8,make9,make10,make11,pr1,pr2,pr3,pr4,pr5,r1,r2,r3,r4,r5,r6,r7,b1,b2,b3,b4))
+### build, produce, make, r
+model2<-data.frame(rbind(make1,make2,make3,make4,make5,make6,make7,make8,make9,make10,make11,pr1,pr2,pr3,pr4,pr5,b1,b2,b3,b4))
+
+model1<-model2
+
 mcoll<-collex.covar(model1,str.dir = T)
 mcoll
-boxplot(mcoll$COLL.STR.LOGL~mcoll$SLOT1,outline=F)
+mcoll<-collex.covar(model2,str.dir = T)
+mcoll
+# boxplot(mcoll$COLL.STR.LOGL~mcoll$SLOT1,outline=F)
 df<-length(levels(factor(mcoll$SLOT1)))-1
 df
-mcoll.d<-rbind(mcoll[duplicated(mcoll$SLOT2,fromLast = T),],mcoll[duplicated(mcoll$SLOT2,fromLast = F),])
-mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T)
-boxplot(mcoll$p~mcoll$SLOT1,outline=F)
-boxplot(mcoll$COLL.STR.LOGL~  mcoll$SLOT1,outline=F)
+# mcoll.d<-rbind(mcoll[duplicated(mcoll$SLOT2,fromLast = T),],mcoll[duplicated(mcoll$SLOT2,fromLast = F),])
+# mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T)
+# boxplot(mcoll$p~mcoll$SLOT1,outline=F)
+# boxplot(mcoll$COLL.STR.LOGL~  mcoll$SLOT1,outline=F)
 df<-length(levels(factor(mcoll.d$SLOT1)))-1
 df
 mcoll.p<-mcoll
-mcoll.p$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = F) # T: depends on number of obs, F for absolute
-mcoll.d<-rbind(mcoll.p[duplicated(mcoll.p$SLOT2,fromLast = T),],mcoll[duplicated(mcoll.p$SLOT2,fromLast = F),])
+mcoll.p$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T) # T: depends on number of obs, F for absolute
+mcoll.p<-rbind(mcoll.p[duplicated(mcoll.p$SLOT2,fromLast = T),],mcoll.p[duplicated(mcoll.p$SLOT2,fromLast = F),])
 mcoll.p
 boxplot(mcoll.p$p~mcoll.p$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "p-value of lemma/object association strength",outline=F)
-boxplot(mcoll.p$STR.DIR  ~mcoll.p$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength",outline=F)
-boxplot(mcoll.p$COLL.STR.LOGL  ~mcoll.p$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength",outline=F)
+# model2, F: produce << make < build
+# model2, T: build < make << produce
+# model1, F: produce << build < make
+# model1, T: make < build  << produce
 
-model2<-model1[model1[,1]%in%c("make","produce"),]
-mcoll<-collex.covar(model2)
+boxplot(mcoll.p$STR.DIR  ~mcoll.p$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength",outline=F)
+# model1, F: make < build << produce
+# model1, T: make < build << produce
+# model2, F: make <= build << produce 
+# model2, T: make <= build << produce
+# boxplot(mcoll.p$COLL.STR.LOGL  ~mcoll.p$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength",outline=F)
+
+model2<-model1[model1[,1]%in%c("make","produce","build"),]
+mcoll<-collex.covar(model2,str.dir = T)
 mcoll
+mcoll<-rbind(mcoll[duplicated(mcoll$SLOT2,fromLast = T),],mcoll[duplicated(mcoll$SLOT2,fromLast = F),])
+
 boxplot(mcoll$COLL.STR.LOGL~mcoll$SLOT1)
 df<-length(levels(factor(mcoll$SLOT1)))-1
 df
 
-mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = F)
+mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T)
 boxplot(mcoll$p~mcoll$SLOT1)
+boxplot(mcoll$COLL.STR.LOGL  ~mcoll$SLOT1)
 
 ### apply model
 amodel<-get.collex.obj(coll6)
+apply.model<-function(amodel,p.ower.tail){
 #boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1)
 df<-length(levels(factor(amodel$SLOT1)))-1
 df
@@ -82,4 +103,4 @@ amodel<-rbind(amodel[duplicated(amodel$SLOT2,fromLast = T),],amodel[duplicated(a
 boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1,outline=F)
 boxplot(amodel$p~amodel$SLOT1,outline=F)
 
-
+}

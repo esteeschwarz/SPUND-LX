@@ -337,6 +337,34 @@ corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="thing"]
 corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="way"]
 ### this is not consistent with the lemma/object evaluation
 
+### apply model
+apply.model<-function(amodel,p.lower.tail){
+  #boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1)
+  df<-length(levels(factor(amodel$SLOT1)))-1
+  df
+  amodel$p<-pt(amodel$COLL.STR.LOGL,df,lower.tail = p.lower.tail)
+  amodel<-amodel[amodel$SLOT1%in%make.array,]
+  amodel<-rbind(amodel[duplicated(amodel$SLOT2,fromLast = T),],amodel[duplicated(amodel$SLOT2,fromLast = F),])
+  #amodel<-amodel.d[amodel.d$SLOT1%in%make.array,]
+  boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1,outline=F,main="preference of make vs. alternates",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength")
+  boxplot(amodel$p~amodel$SLOT1,outline=F,main="preference of make vs. alternates",xlab = "lemma in equivalent context",ylab = "p-value of lemma/object association strength")
+  ### preference of make over produce
+  amodel<-get.collex.obj(coll6)
+  df<-length(levels(factor(amodel$SLOT1)))-1
+  df
+  amodel$p<-pt(amodel$COLL.STR.LOGL,df,lower.tail = p.lower.tail)
+  amodel<-amodel[amodel$SLOT1%in%take.array,]
+  amodel<-rbind(amodel[duplicated(amodel$SLOT2,fromLast = T),],amodel[duplicated(amodel$SLOT2,fromLast = F),])
+  #amodel<-amodel.d[amodel.d$SLOT1%in%make.array,]
+  boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1,outline=F,main="preference of take vs. alternates",xlab = "lemma in equivalent context",ylab = "p-value of lemma/object association strength")
+  boxplot(amodel$p~amodel$SLOT1,outline=F,main="preference of take vs. alternates",xlab = "lemma in equivalent context",ylab = "p-value of lemma/object association strength")
+  
+}
+
+amodel<-get.collex.obj(coll6)
+apply.model(amodel,p.lower.tail = T)
+apply.model(amodel,p.lower.tail = F)
+
 get.preference.df<-function(head.array,discard=NULL){
 #eval3[duplicated(eval3$lemma)&eval3$head_lemma%in%head.array,]
 eval4<-get.collex.obj(coll6,display.filter = head.array,discard=discard)
