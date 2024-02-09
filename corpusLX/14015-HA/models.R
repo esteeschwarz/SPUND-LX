@@ -81,9 +81,9 @@ boxplot(mcoll$p~mcoll$SLOT1)
 boxplot(mcoll$COLL.STR.LOGL  ~mcoll$SLOT1)
 
 ### apply model
-amodel<-get.collex.obj(coll6)
-apply.model<-function(amodel,p.ower.tail){
-#boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1)
+apply.model<-function(coll6,p.lower.tail,select.filter=NULL){
+amodel<-get.collex.obj(coll6,select.filter = select.filter)
+  #boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1)
 df<-length(levels(factor(amodel$SLOT1)))-1
 df
 amodel$p<-pt(amodel$COLL.STR.LOGL,df,lower.tail = F)
@@ -104,3 +104,94 @@ boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1,outline=F)
 boxplot(amodel$p~amodel$SLOT1,outline=F)
 
 }
+
+###
+# Create a 2x2 dataset
+data <- matrix(c(2, 5, 9, 4), nrow = 2)
+# View the dataset
+data
+# Output:
+#      [,1] [,2]
+# [1,]    2    9
+# [2,]    5    4
+
+fisher.test(data)
+"In this example, the rows represent different categories (e.g., “Good” and “Bad”), and the columns represent the presence or absence of an event (e.g., success or failure)."
+
+amodel<-get.collex.obj(coll6)
+amodel<-amodel[amodel$SLOT1%in%make.array,]
+amodel.d<-rbind(amodel[duplicated(amodel$SLOT2,fromLast = T),],amodel[duplicated(amodel$SLOT2,fromLast = F),])
+amodel.d
+f<-fisher.test(cbind(amodel.d$fS1,amodel.d$fS2),simulate.p.value = T)
+f<-fisher.test(cbind(amodel.d$fS1,amodel.d$OBS))
+f<-fisher.test(cbind(amodel.d$fS1,amodel.d$fS2,amodel.d$OBS),simulate.p.value = T)
+f
+amodel.d
+library(stats)
+s<-lm(amodel.d$OBS~amodel.d$fS1)
+df<-data.frame(lemma=factor(amodel.d$fS1),object=factor(amodel.d$fS2),row.names = paste0(amodel.d$SLOT1,amodel.d$SLOT2))
+df<-cbind(lemma=amodel.d$fS1,object=amodel.d$fS2)
+df1<-as.data.frame(df)
+s<-lm(amodel.d$OBS~df)
+summary(s)
+df
+typeof(df1)
+
+un.obj<-length(unique(amodel$SLOT2))
+
+un.l<-length(unique(amodel$SLOT1))
+amodel.i<-amodel[amodel$SLOT1%in%make.array,]
+amodel.d<-rbind(amodel.i[duplicated(amodel.i$SLOT2,fromLast = T),],amodel.i[duplicated(amodel.i$SLOT2,fromLast = F),])
+amodel.d
+get.f<-function(x,lemma)c(x$fS1[x$SLOT1==lemma],x$fS2[x$SLOT1==lemma],x$OBS[x$SLOT1==lemma])
+f.m<-get.f(amodel.d,"make") # presence
+f.b<-get.f(amodel.d,"build")
+f.c<-get.f(amodel.d,"create")
+f.g<-get.f(amodel.d,"generate")
+f.p<-get.f(amodel.d,"produce")
+lemma<-"make"
+get.f.n<-function(x,lemma)c(un.l-(x$fS1[x$SLOT1==lemma]),un.obj-(x$fS2[x$SLOT1==lemma]),un.obj+un.l-(x$OBS[x$SLOT1==lemma]))
+f.m.n<-get.f.n(amodel.d,"make") # absence
+f.b.n<-get.f.n(amodel.d,"build")
+f.c.n<-get.f.n(amodel.d,"create")
+f.g.n<-get.f.n(amodel.d,"generate")
+f.p.n<-get.f.n(amodel.d,"produce")
+f.m.n
+f.m
+k<-1
+lobs<-1:(length(f.m.n)/3)
+lobs1<-lobs+length(lobs)*2
+lobs
+lobs1
+lobsft<-list()
+for(k in lobs){
+pos<-c(k,lobs1[k])
+#print(pos)}
+p.df<-cbind(c(f.m[pos[1]],f.m[pos[2]]),c(f.m.n[pos[1]],f.m.n[pos[2]]))
+print(p.df)
+ft[[k]]<-fisher.test(p.df)
+}
+amodel.d
+ft[[3]]
+max(ft)
+
+#get.f<-function(x,lemma)c(x$OBS[x$SLOT1==lemma],x$fS2[x$SLOT1==lemma],x$OBS[x$SLOT1==lemma])
+f.m<-get.f(amodel.d,"make") # presence
+f.b<-get.f(amodel.d,"build")
+f.c<-get.f(amodel.d,"create")
+f.g<-get.f(amodel.d,"generate")
+f.p<-get.f(amodel.d,"produce")
+
+f.m
+
+dam<-c(3,1)
+report<-c(4,8)
+thing<-c(1,6)
+way<-c(1,1)
+fisher.test(rbind(dam,report,thing,way))
+build<-c(3+1,4+1+1+1+6+1)
+make<-c(4+1+6+1,3+1+1+1)
+create<-c(1,3+4+1+1+1+6+1)
+produce<-c(1,3+4+1+1+1+6+1)
+build
+fisher.test(rbind(build,make,produce,create))
