@@ -32,12 +32,16 @@ df
 mcoll.d<-rbind(mcoll[duplicated(mcoll$SLOT2,fromLast = T),],mcoll[duplicated(mcoll$SLOT2,fromLast = F),])
 mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = F)
 boxplot(mcoll$p~mcoll$SLOT1)
+boxplot(mcoll$COLL.STR.LOGL~  mcoll$SLOT1,outline=F)
 df<-length(levels(factor(mcoll.d$SLOT1)))-1
 df
 mcoll.d$p<-pt(mcoll.d$COLL.STR.LOGL,df,lower.tail = F)
 #mcoll.d<-rbind(mcoll[duplicated(mcoll$SLOT2,fromLast = T),],mcoll[duplicated(mcoll$SLOT2,fromLast = F),])
 mcoll.d
-boxplot(mcoll.d$p~mcoll.d$SLOT1)
+boxplot(mcoll.d$p~mcoll.d$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "p-value of lemma/object association strength")
+boxplot(mcoll.d$STR.DIR  ~mcoll.d$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength")
+boxplot(mcoll.d$COLL.STR.LOGL  ~mcoll.d$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "T-score of lemma/object association strength")
+
 model2<-model1[model1[,1]%in%c("make","produce"),]
 mcoll<-collex.covar(model2)
 mcoll
@@ -48,5 +52,26 @@ df
 mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = F)
 boxplot(mcoll$p~mcoll$SLOT1)
 
+### apply model
+amodel<-get.collex.obj(coll6)
+#boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1)
+df<-length(levels(factor(amodel$SLOT1)))-1
+df
+amodel$p<-pt(amodel$COLL.STR.LOGL,df,lower.tail = F)
+amodel<-amodel[amodel$SLOT1%in%make.array,]
+amodel<-rbind(amodel[duplicated(amodel$SLOT2,fromLast = T),],amodel[duplicated(amodel$SLOT2,fromLast = F),])
+#amodel<-amodel.d[amodel.d$SLOT1%in%make.array,]
+boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1,outline=F)
+boxplot(amodel$p~amodel$SLOT1,outline=F)
+### preference of make over produce
+amodel<-get.collex.obj(coll6)
+df<-length(levels(factor(amodel$SLOT1)))-1
+df
+amodel$p<-pt(amodel$COLL.STR.LOGL,df,lower.tail = F)
+amodel<-amodel[amodel$SLOT1%in%take.array,]
+amodel<-rbind(amodel[duplicated(amodel$SLOT2,fromLast = T),],amodel[duplicated(amodel$SLOT2,fromLast = F),])
+#amodel<-amodel.d[amodel.d$SLOT1%in%make.array,]
+boxplot(amodel$COLL.STR.LOGL~amodel$SLOT1,outline=F)
+boxplot(amodel$p~amodel$SLOT1,outline=F)
 
 
