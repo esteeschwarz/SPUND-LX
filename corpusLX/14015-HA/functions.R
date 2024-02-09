@@ -122,13 +122,18 @@ get.collex<-function(coll6,filter.pos,vers,na.rm=FALSE){
   }
   return(coll6.2)
 }
-get.collex.obj<-function(coll6,display.light=NULL,select.filter=NULL,display.filter=NULL){
+#discard<-"queen"
+get.collex.obj<-function(coll6,display.light=NULL,select.filter=NULL,display.filter=NULL,discard=NULL){
   coll6.obj<-data.frame(lemma=unlist(coll6$lemma),obj=unlist(coll6$obj),upos=unlist(coll6$upos),light=coll6$light)
   coll6.obj.n<-coll6.obj[coll6.obj$upos=="NOUN"&!is.na(coll6.obj$obj),]
   colldf<-data.frame(obj=coll6.obj.n$obj,lemma=coll6.obj.n$lemma,light=coll6.obj.n$light)
   
   if(length(select.filter)>0){
     colldf<-colldf[colldf$obj%in%select.filter,]
+  }
+  
+  if(length(discard)>0){
+    colldf<-colldf[colldf$lemma!=discard,]
   }
   
   if(length(display.light)==0){

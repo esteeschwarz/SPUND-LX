@@ -318,13 +318,51 @@ coll.obj.noun<-coll6.obj.n
 coll6.2.obj.make
 t4<-table(coll6.2.obj.make$obj,coll6.2.obj.make$light)
 t5<-table(coll6.2.obj.make$obj,coll6.2.obj.make$lemma)
-t5.d<-lapply(t5, abind)
 t5.d
 t5
 t5[,8]
-library(abind)
-t51<-abind(t5,sum,along = 1)
-t51
+### which objects occur with different lemmas? where columnsum > 1
+which(colSums(t5)>1)
+# what figures?
+sum(corpus.df.deprel$lemma=="dam",na.rm = T)
+sum(corpus.df.deprel$lemma=="pizza",na.rm = T)
+sum(corpus.df.deprel$lemma=="report",na.rm = T)
+sum(corpus.df.deprel$lemma=="thing",na.rm = T)
+sum(corpus.df.deprel$lemma=="way",na.rm = T)
+
+corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="dam"]
+corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="pizza"]
+corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="report"]
+corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="thing"]
+corpus.df.deprel$head_lemma_value[corpus.df.deprel$lemma=="way"]
+### this is not consistent with the lemma/object evaluation
+
+get.preference.df<-function(head.array,discard=NULL){
+#eval3[duplicated(eval3$lemma)&eval3$head_lemma%in%head.array,]
+eval4<-get.collex.obj(coll6,display.filter = head.array,discard=discard)
+#eval4[duplicated(eval4$SLOT2,fromLast = T),]
+#eval4[duplicated(eval4$SLOT2,fromLast = T),]
+eval41<-rbind(eval4[duplicated(eval4$SLOT2,fromLast = T),],eval4[duplicated(eval4$SLOT2,fromLast = F),])
+eval41
+}
+head.array<-c(make.array,take.array,"give")
+eval4<-get.preference.df(take.array,discard = "queen")
+eval4[order(eval4$OBS,decreasing = T),]
+boxplot(eval4$COLL.STR.LOGL~eval4$SLOT1,outline=F)
+###wks.
+eval4<-get.preference.df(make.array)
+eval4[order(eval4$OBS,decreasing = T),]
+boxplot(eval4$COLL.STR.LOGL~eval4$SLOT1,outline=F)
+df<-length(levels(factor(eval4$SLOT1)))-1
+df
+eval4$p<-pt(eval4$COLL.STR.LOGL,df,lower.tail = F)
+boxplot(eval4$p~eval4$SLOT1,outline=F)
+sum(corpus.df.deprel$lemma=="pizza",na.rm = T)
+sum(corpus.df.deprel$lemma=="report",na.rm = T)
+sum(corpus.df.deprel$lemma=="thing",na.rm = T)
+sum(corpus.df.deprel$lemma=="way",na.rm = T)
+colSums(t5)>1
+t5[,colSums(t5)>1]
 #######
 # semantic alternatives occuring together
 make.array
