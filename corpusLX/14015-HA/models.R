@@ -35,7 +35,7 @@ model1<-data.frame(rbind(make1,make2,make3,make4,make5,make6,make7,make8,make9,m
 ### build, produce, make, r
 model2<-data.frame(rbind(make1,make2,make3,make4,make5,make6,make7,make8,make9,make10,make11,pr1,pr2,pr3,pr4,pr5,b1,b2,b3,b4))
 
-model1<-model2
+#model1<-model2
 
 mcoll<-collex.covar(model1,str.dir = T)
 mcoll
@@ -51,7 +51,10 @@ df
 df<-length(levels(factor(mcoll.d$SLOT1)))-1
 df
 mcoll.p<-mcoll
+#mcoll.p$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T) # T: depends on number of obs, F for absolute
 mcoll.p$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T) # T: depends on number of obs, F for absolute
+### consulting (stefanowitsch) table for critical t, dt() gives better p result
+mcoll.p$p<-dt(mcoll$COLL.STR.LOGL,df) # T: depends on number of obs, F for absolute
 mcoll.p<-rbind(mcoll.p[duplicated(mcoll.p$SLOT2,fromLast = T),],mcoll.p[duplicated(mcoll.p$SLOT2,fromLast = F),])
 mcoll.p
 boxplot(mcoll.p$p~mcoll.p$SLOT1,main="preference of make over produce",xlab = "lemma in equivalent context",ylab = "p-value of lemma/object association strength",outline=F)
@@ -79,7 +82,7 @@ df
 mcoll$p<-pt(mcoll$COLL.STR.LOGL,df,lower.tail = T)
 boxplot(mcoll$p~mcoll$SLOT1)
 boxplot(mcoll$COLL.STR.LOGL  ~mcoll$SLOT1)
-
+select.filter<-c(make.array)
 ### apply model
 apply.model<-function(coll6,p.lower.tail,select.filter=NULL){
 amodel<-get.collex.obj(coll6,select.filter = select.filter)
@@ -176,12 +179,54 @@ ft[[3]]
 max(ft)
 
 #get.f<-function(x,lemma)c(x$OBS[x$SLOT1==lemma],x$fS2[x$SLOT1==lemma],x$OBS[x$SLOT1==lemma])
-f.m<-get.f(amodel.d,"make") # presence
+f.m.build<-get.f(amodel.d,"make","build") # presence
 f.b<-get.f(amodel.d,"build")
 f.c<-get.f(amodel.d,"create")
 f.g<-get.f(amodel.d,"generate")
 f.p<-get.f(amodel.d,"produce")
+x<-amodel.d
+amodel.d
+lemma<-"make"
+vers<-"build"
+vers<-"produce"
+get.lemma.p<-function(x,lemma,vers){
+  m1<-x$SLOT1==lemma
+  m2<-x$SLOT1==vers
+  m3<-x$SLOT2[m1]%in%x$SLOT2[m2]
+  m3
+  m1;m2;m1[m3];m3
+  s1<-sum(x$OBS[m1][m3]) # obs lemma with same object as target
+  m4<-x$SLOT2[m2]%in%x$SLOT2[m1]
+  s2<-sum(x$OBS[m2][m4]) # obs target with same object as lemma
+  # obs absent: lemma without target, target without lemma; stefanowitsch p.230: A with B, A without B, B without A, neither
+  s3.1<-x$fS1[m1][1]-s1       
+  s3.2<-x$fS1[m2][1]-s2
+  s3.4<-x$fS1[m1][1] #f lemma
+  s3.5<-sum(x$fS2[m1][m3]) #f objects
+  s3.6<-sum(x$OBS[m1][m3])
+  s3.7<-x$fS1[m2][1] #f target
+  #s3.8<-sum(x$fS2[m2]) #f objects
+  s3.9<-sum(x$OBS[m2])
+  s4.1<-sum(x$fS2[m1][m3]) # ==
+  s4.2<-sum(x$fS2[m2])
+  lc<-length(coll6$sbc.id) # tokens total
+  s4.3<-lc-s3.4-s3.5 # neither lemma/object
+  s4.4<-lc-s3.7-s3.5 # neither target/object
+  s3.3<-lc-s3.1-s3.2
+  t1<-rbind(lemma=c(present=s1,absent=s3.1),contra=c(present=s2,absent=s3.2))
+  t1<-rbind(lemma=c(present=s1,absent=s3.1,total=s3.3),contra=c(present=s2,absent=s3.2,total=s3.3))
+  t1<-rbind(lemma=c(present=s1,absent=s3.1),contra=c(present=s2,absent=s3.2))
+  t1
+  t2.1<-rbind(lemma=c(present=s3.6,absent=s4.3),target=c(present=s3.9,absent=s4.4))
+#  fisher.test(t1)
+  print(t2.1)
+  fisher.test(t2.1)
+ # c(sum(x$OBS[x$SLOT1==lemma]),sum(x$OBS[x$SLOT1==vers]))
+}
 
+get.lemma.p(amodel.d,"make","produce")
+f.m.build
+fisher.test(f.m.build)
 f.m
 
 dam<-c(3,1)
@@ -189,9 +234,18 @@ report<-c(4,8)
 thing<-c(1,6)
 way<-c(1,1)
 fisher.test(rbind(dam,report,thing,way))
-build<-c(3+1,4+1+1+1+6+1)
+build<-c(3+1,4+1+1+1+6+1) # present / absent
 make<-c(4+1+6+1,3+1+1+1)
 create<-c(1,3+4+1+1+1+6+1)
 produce<-c(1,3+4+1+1+1+6+1)
 build
-fisher.test(rbind(build,make,produce,create))
+fisher.test(rbind(make,build))
+fisher.test(rbind(make,create))
+fisher.test(rbind(make,produce))
+2.577e-05
+
+
+
+
+pt(3.57,df=25.5,lower.tail = F)
+dt(3.5714,df=25.5)
