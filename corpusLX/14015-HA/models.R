@@ -223,8 +223,27 @@ get.lemma.p<-function(x,lemma,vers){
   fisher.test(t2.1)
  # c(sum(x$OBS[x$SLOT1==lemma]),sum(x$OBS[x$SLOT1==vers]))
 }
-
+amodel.d
+e2<-get.lemma.p(amodel.d,"make","produce")
+e3<-get.lemma.p(amodel.d,"make","build")
+e1<-get.lemma.p(amodel.d,"make","create")
 get.lemma.p(amodel.d,"make","produce")
+### only significant p < 0.1 @create i.e. the observed frequencies compared for make/create with object /thing/ are not random. as /create thing/ ranks higher in association strength, we have also the directions
+### see dt():
+amodel.d$p<-dt(amodel.d$COLL.STR.LOGL,df)
+amodel.d$p[3]-e1$p.value
+e1
+amodel.d
+amodel.d$p1<-dt(amodel.d$COLL.STR.LOGL,df)
+amodel.d$p[3]<-e1$p.value
+amodel.d$p[1]<-e3$p.value
+amodel.d$p[5]<-e2$p.value
+amodel.d$p[7]<-e1$p.value
+amodel.d$p[8]<-e3$p.value
+amodel.d$p[2]<-e2$p.value
+amodel.d
+boxplot(amodel.d$p~amodel.d$SLOT2)
+#dt(amodel.d$COLL.STR.LOGL,df)
 f.m.build
 fisher.test(f.m.build)
 f.m
