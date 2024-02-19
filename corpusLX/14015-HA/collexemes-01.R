@@ -211,7 +211,7 @@ tp<-t((t8/l8))
 tp
 ##########################
 plot.dist.sbc<-function(){
-  barplot(tp,main = "concrete/light distribution SBC",legend.text = c("concrete","light"),ylab = "% in corpus",xlab = "lemma")
+barplot(tp,main = "concrete/light distribution SBC",legend.text = c("concrete","light"),ylab = "% in corpus",xlab = "lemma")
 text(x=1,sum(tp[,1])*1.1,label=round(tp[2,1],6),col=2)
 text(x=2,sum(tp[,1])*1.1,label=round(tp[2,2],6),col=2)
 text(x=3,sum(tp[,1])*1.1,label=round(tp[2,3],6),col=2)
@@ -492,6 +492,7 @@ corp<-corpus.df.deprel
 
 m<-corp$upos=="NOUN"&corp$head_lemma_value=="take"
 sum(m,na.rm = T)
+475
 }
   
 }

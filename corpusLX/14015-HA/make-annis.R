@@ -80,6 +80,7 @@ for(k in 1:la){
 write_xlsx(sbc.cwb,"vert/SBC102.xlsx")
 
 "cwb-encode -d sbc102 -xsBC9 -c utf8 -f scb.cwb.vrt -R SBC -P lemma -P upos -P xpos -P feats -P dep_rel -P light -P obj -P head_token_value -P head_lemma_value"
+"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/cwb/corpora/tsv/SBC102.tt"
 
 source("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/callpepper_global.R")
 pepper.call("~/boxHKW/21S/DH/local/SPUND/corpuslx/annis/r-con_xl-tt")
