@@ -268,3 +268,15 @@ fisher.test(rbind(make,produce))
 
 pt(3.57,df=25.5,lower.tail = F)
 dt(3.5714,df=25.5)
+
+##################
+library(cfa)
+configs<-cbind(c("A","B")[rbinom(250,1,0.3)+1],c("C","D")[rbinom(250,1,0.1)+1],
+               c("E","F")[rbinom(250,1,0.3)+1],c("G","H")[rbinom(250,1,0.1)+1])
+counts<-trunc(runif(250)*10)
+cfa(configs,counts) 
+rbinom(250,1,0.3)
+c("A","B")[rbinom(250,1,0.3)+1]
+c("A","B")[sample(0:1,50,replace = T)+1]
+head(coll6.2.m)
+cfa(coll6.2.m[,1:2],coll6.2.m$OBS)
