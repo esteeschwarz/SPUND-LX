@@ -6,6 +6,6 @@ for the network analysis we used [gephi](https://gephi.org) with the network dat
 
 #### visuals
 
-![code distribution over texts](discourse_pivotexpo01.png)
+![code distribution over texts](discourse_pivotexpo02.png)
 
 ![code network over texts](codes-network01.png)
