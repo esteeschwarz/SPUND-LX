@@ -1,0 +1,478 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<style>
+      body{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #333;
+        line-height: 1.42857143;
+        margin: 10px 0 0;
+        overflow-y: scroll; /* always display vertical scrollbar */
+      }
+
+      #macro_level{
+        margin-bottom: 100px;
+        table-layout: fixed;
+      }
+      .white-box{
+         position: fixed;
+         top:0;
+         left: 0;
+         right: 0;
+         height: 25px;
+         background: #fff;
+       }
+      .synopsis-headline {
+        position: sticky;
+        top: 12px;
+        z-index: 2;
+        background: #999999;
+        color: white;
+        text-align: center;
+        border: solid 1px white;
+        font-size: 18px;
+        padding: 4px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.6);
+      }
+      .synopsis-segment {
+        padding: 0 15px;
+        vertical-align: top;
+        text-align: justify;
+        font-family: serif;
+        font-size: 18px;
+        line-height: 1.5;
+        border-right: dotted 1px #999;
+        word-wrap: break-word;
+      }
+      .synopsis-segment:last-child {
+        border-right: 0 none;
+      }
+      .dir_right{
+        direction: rtl;
+      }
+
+      /* styling of missing segment */
+      .synopsis-missing{
+        text-align: center;
+        color: #999999;
+      }
+
+      /* elements for colored markings of differences */
+      hl[c="copy"]{ background-color:#EAEAEA; }
+      hl[c="add"]{ background-color:#99FF99; }
+      hl[c="del"]{ background-color:#FFAAAA; }
+      hl[c="sub"]{ background-color:#BBBBFF; }
+
+      /* menu of micro levels */
+      .synopsis-ml-menu {
+        padding: 20px 5px 40px;
+      }
+      .collapse{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-bottom: none;
+        border-radius: 4px;
+      }
+      .btn-ml-menu {
+        display: block;
+        padding: 1px;
+        text-align: center;
+        border: 1px solid #dddddd;
+        background-color: #f8f8f8;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #337ab7;
+      }
+      .btn-ml-menu:hover {
+        color: #333;
+      }
+
+      /* apparatus of differences within micro level menu */
+      .apparatus-col {
+        padding-bottom: 10px;
+        float:left;
+      }
+      .apparatus-table {
+        margin-right: 20px;
+      }
+      .apparatus-table td {
+        padding-right: 10px;
+      }
+      .apparatus-table td:first-child {
+        font-size: 75%;
+      }
+      .apparatus-table-inner td:first-child {
+        font-size: 100%;
+        font-weight: bold;
+        vertical-align: top;
+      }
+      .apparatus_rtl .apparatus-col {
+        float: right !important;
+        direction: rtl;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="white-box"></div>
+		<table id="macro_level" width="100%">
+			<thead>
+				<tr>
+					<th class="synopsis-headline" width="25%">
+						hart(2016)-001
+					</th>
+					<th class="synopsis-headline" width="25%">
+						hart(2016)-002
+					</th>
+					<th class="synopsis-headline" width="25%">
+						hart(2016)-003
+					</th>
+					<th class="synopsis-headline" width="25%">
+						hart(2016)-004
+					</th>
+				</tr>
+			</thead>
+			<tbody class="micro_level">
+				<tr>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Report <hl c ="copy">1</hl><sup>1</sup>.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Report <hl c ="sub">2</hl><sup>1</sup>.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Report <hl c ="sub">3</hl><sup>1</sup>.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Report <hl c ="sub">4</hl><sup>1</sup>.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="synopsis-ml-menu" colspan="4">
+						<div class="collapse" id="menu_0">
+							<div class="well well-ml-menu">
+								<br>
+								<br><div class="main-font "><div class="row">
+<div class="col apparatus-col">
+<table class="apparatus-table">
+<tbody>
+<tr>
+<td> 1</td>
+<td>
+<table class="apparatus-table-inner">
+<tbody>
+<tr>
+<td>hart(2016)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+							</div>
+						</div>
+						<a class="btn btn-ml-menu collapsed" data-button-type="collape_menu" data-toggle="collapse" data-target="#menu_0">⮟</a>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="micro_level">
+				<tr>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							A protest against local council policy turned violent yesterday in the city of Southfield.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							A protest against local council policy turned violent yesterday in the city of Southfield.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							A protest against local council policy turned violent yesterday in the city of Southfield.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							A protest against local council policy turned violent yesterday in the city of Southfield.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="synopsis-ml-menu" colspan="4">
+						<a class="btn btn-ml-menu btn-ml-menu-non">⮟</a>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="micro_level">
+				<tr>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							<hl c ="copy">Protesters attacked police officers</hl><sup>1</sup> amid scenes of chaos outside City Hall.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							<hl c ="sub">Police</hl><hl c ="copy"> </hl><hl c ="sub">officers</hl><hl c ="copy"> </hl><hl c ="sub">came</hl><hl c ="copy"> </hl><hl c ="sub">under</hl><hl c ="copy"> </hl><hl c ="add">attack</hl><hl c ="copy"> </hl><hl c ="add">from</hl><hl c ="copy"> </hl><hl c ="add">protesters</hl><sup>1</sup> amid scenes of chaos outside City Hall.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							<hl c ="sub">Protesters</hl><hl c ="copy"> </hl><hl c ="sub">clashed</hl><hl c ="copy"> </hl><hl c ="sub">with</hl><hl c ="copy"> </hl><hl c ="sub">police</hl><hl c ="copy"> </hl><hl c ="sub">officers</hl><sup>1</sup> amid scenes of chaos outside City Hall.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							<hl c ="sub">Police</hl><hl c ="copy"> </hl><hl c ="add">officers</hl><hl c ="copy"> clashed with </hl><hl c ="sub">protesters</hl><sup>1</sup> amid scenes of chaos outside City Hall.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="synopsis-ml-menu" colspan="4">
+						<div class="collapse" id="menu_2">
+							<div class="well well-ml-menu">
+								<br>
+								<br><div class="main-font "><div class="row">
+<div class="col apparatus-col">
+<table class="apparatus-table">
+<tbody>
+<tr>
+<td> 1</td>
+<td>
+<table class="apparatus-table-inner">
+<tbody>
+<tr>
+<td>hart(2016)</td>
+<td>Protesters attacked police officers</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>Police officers came under attack from protesters</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>Protesters clashed with police officers</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>Police officers clashed with protesters</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+							</div>
+						</div>
+						<a class="btn btn-ml-menu collapsed" data-button-type="collape_menu" data-toggle="collapse" data-target="#menu_2">⮟</a>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="micro_level">
+				<tr>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							The protest later moved to the central square where <hl c ="copy">protesters</hl><sup>1</sup> continued to <hl c ="copy">assault police officers</hl><sup>2</sup>.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							The protest later moved to the central square where <hl c ="sub">police</hl><hl c ="copy"> </hl><hl c ="add">officers</hl><sup>1</sup> continued to <hl c ="sub">be</hl><hl c ="copy"> </hl><hl c ="sub">assaulted</hl><hl c ="copy"> </hl><hl c ="sub">by</hl><hl c ="copy"> </hl><hl c ="add">protesters</hl><sup>2</sup>.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							The protest later moved to the central square where <hl c ="sub">protesters</hl><sup>1</sup> continued to <hl c ="sub">trade</hl><hl c ="copy"> </hl><hl c ="sub">punches</hl><hl c ="copy"> </hl><hl c ="sub">with</hl><hl c ="copy"> </hl><hl c ="sub">police</hl><hl c ="copy"> </hl><hl c ="add">officers</hl><sup>2</sup>.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							The protest later moved to the central square where <hl c ="sub">police</hl><hl c ="copy"> </hl><hl c ="add">officers</hl><sup>1</sup> continued to <hl c ="copy">trade punches with </hl><hl c ="sub">protesters</hl><sup>2</sup>.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="synopsis-ml-menu" colspan="4">
+						<div class="collapse" id="menu_3">
+							<div class="well well-ml-menu">
+								<br>
+								<br><div class="main-font "><div class="row">
+<div class="col apparatus-col">
+<table class="apparatus-table">
+<tbody>
+<tr>
+<td> 1</td>
+<td>
+<table class="apparatus-table-inner">
+<tbody>
+<tr>
+<td>hart(2016)</td>
+<td>protesters</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>police officers</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>protesters</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>police officers</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col apparatus-col">
+<table class="apparatus-table">
+<tbody>
+<tr>
+<td> 2</td>
+<td>
+<table class="apparatus-table-inner">
+<tbody>
+<tr>
+<td>hart(2016)</td>
+<td>assault police officers</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>be assaulted by protesters</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>trade punches with police officers</td>
+</tr>
+<tr>
+<td>hart(2016)</td>
+<td>trade punches with protesters</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+							</div>
+						</div>
+						<a class="btn btn-ml-menu collapsed" data-button-type="collape_menu" data-toggle="collapse" data-target="#menu_3">⮟</a>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="micro_level">
+				<tr>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Police officers used batons to control the crowds, which eventually dispersed around 9 pm.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Police officers used batons to control the crowds, which eventually dispersed around 9 pm.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Police officers used batons to control the crowds, which eventually dispersed around 9 pm.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							Police officers used batons to control the crowds, which eventually dispersed around 9 pm.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="synopsis-ml-menu" colspan="4">
+						<a class="btn btn-ml-menu btn-ml-menu-non">⮟</a>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="micro_level">
+				<tr>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							10 people received treatment for injuries.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							10 people received treatment for injuries.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							10 people received treatment for injuries.
+						</div>
+					</td>
+					<td class="synopsis-segment">
+						<div class="synopsis-segment-text">
+							10 people received treatment for injuries.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="synopsis-ml-menu" colspan="4">
+						<a class="btn btn-ml-menu btn-ml-menu-non">⮟</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+      // handle collapse buttons
+      var coll = document.getElementsByClassName("btn-ml-menu");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          //this.classList.toggle("active");
+          var content = this.previousElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            this.innerHTML = "⮟";
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.innerHTML = "⮝";
+          }
+        });
+      }
+
+		</script>
+	</body>
+</html>
