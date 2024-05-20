@@ -1,0 +1,23 @@
+---
+title: "VS Auer distant reading"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+contains distant reading essais VS Michael Auer/FUB-SoSe24
+
+#### 1.droste-hülshoff: judenbuche
+- get book from gutenberg.org
+- extract named entities
+- plot named entity occurences over text
+
+```{r plot-ner,fig.cap="named entities"}
+load("ner.plot.RData")
+plot(ner.plot,type="h",main="named entities over text",xlab="characters")
+
+```
+-----
+#### references
+script: [droste-essai.R](droste-essai.R)
