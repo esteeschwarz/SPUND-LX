@@ -18,6 +18,14 @@ load("ner.plot.RData")
 plot(ner.plot,type="h",main="named entities over text",xlab="characters")
 
 ```
+
+
+![](ner-dist.png)
+```{r plot-ner-table,fig.cap="named entity distribution"}
+#load("ner.table.RData")
+#par(las=3)
+#barplot(ner.t,horiz = F,log = "y",xpd = T,beside = T)
+```
 -----
 #### references
 script: [droste-essai.R](droste-essai.R)
