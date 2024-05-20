@@ -1,23 +1,8 @@
-# install.packages("gutenberg_works")
 # library(gutenbergr)
-# csvlist = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT87reVxrWeaYiRL6hP-fnPB9MX6Rq4eZHdEURjbzY5MbY7Q5Y59MWZYc309CqIqLxBmdaRog5BhbWn/pub?gid=0&single=true&output=csv"
-# 
-# booklist <- read.csv(csvlist, header = TRUE, stringsAsFactors=FALSE)
-# path2 <- "/Users/djw12/Desktop/stylo/corpus/"
-# 
-# for (row in 1:nrow(booklist)){
-#   bookname <- booklist[row,4]
-#   stylotext <- gutenberg_download(booklist[row,1])
-#   stylotext <- select(stylotext, text)
-#   write.table(stylotext, file = paste0(path2, bookname), sep="", row.names = FALSE)
-# }
-# 
-# dta <- gutenberg_download(6698)
-# a1<- gutenberg_authors()
-# library(gutenberg_works)
 # works<-gutenberg_works(languages = "de")
 # m<-grep("Droste",works$author)
 # works$title[m]
+# doesnt exist in database, get id from page
 #####################################
 ### droste judenbuche fetch gutenberg
 dr1<-readLines("https://www.gutenberg.org/ebooks/45798.txt.utf-8")
@@ -116,11 +101,4 @@ ner.df<-eplot
 }
 ner.plot<-put.ner(x.df,eplot)
 save(ner.plot,file = "ner.plot.RData")
-barplot(ner.plot)
 plot(ner.plot,type="h",main="named entities over text",xlab="characters")
-?plot
-scatter.smooth(ner.plot)
-hist(ner.plot$ner)
-max(ner.plot$ner)
-put.ner<-function(x)e$ner[x["start"]:x["end"]]<-1
-lapply(x.df, put.ner)
