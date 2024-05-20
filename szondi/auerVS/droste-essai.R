@@ -30,7 +30,7 @@ dr1[m]
 dr2<-dr1[m:m2] 
 stext<-dr1[11:m2]
 head(stext)
-writeLines(stext,)
+writeLines(stext,"~/Documents/GitHub/SPUND-LX/szondi/auerVS/judenbuche.txt")
 #library(quanteda)
 #library(collostructions)
 t1<-tokenize_word1(dr2)
@@ -52,3 +52,75 @@ m<-grep("jud|Jud",dr2)
 dr2[m]
 ### topic: holz
 # frame holz, word field analysis
+
+#################################
+# sitzung 22.05. latour actor-network
+
+#install.packages(c("NLP", "openNLP", "openNLPmodels.de"))
+#install.packages("openNLPmodels.de",repos = "https://datacube.wu.ac.at")
+#install.packages("openNLPmodels.en")
+#install.packages("openNLPmodels.en",repos = "https://datacube.wu.ac.at")
+
+library(NLP)
+library(openNLP)
+library(openNLPmodels.de)
+library(openNLPmodels.en)
+
+text<-stext
+text <- as.String(text)
+s<-text
+sent_token_annotator<-Maxent_Sent_Token_Annotator(language = "de")
+word_token_annotator<-Maxent_Word_Token_Annotator(language = "de")
+entity_annotator<-Maxent_Entity_Annotator()
+a2<-annotate(s,list(sent_token_annotator,word_token_annotator))
+# Annotate the text to find the words, numbers, punctuation, sentences, and named entities
+# annotations <- annotate(text, list(Maxent_Sent_Token_Annotator(language = "de"), 
+#                                    Maxent_Word_Token_Annotator(language = "de"), 
+#                                    entity_annotator))
+
+# Extract the named entities
+named_entities <- subset(annotations, type == "entity")
+
+# Print the named entities
+print(named_entities[[1]])
+annotations[[1]]
+
+entity_annotator(s,a2)
+nes<-s[entity_annotator(s,a2)]
+nes<-gsub("\n"," ",nes)
+write.csv(nes,"named-entities.csv")
+###################################
+head(named_entities)
+x<-named_entities
+x.df<-data.frame(x)
+x<-x.df
+length(x[[1]])
+type(x[[1]])
+library(stringi)
+s
+text.ch<-stri_split_boundaries(s,type="character")
+l.text<-length(text.ch[[1]])
+?stri_split_boundaries
+eplot<-data.frame(point=1:l.text,ner=0)
+#put.ner<-function(x)e<-eplot[x[["start"]]:x[["end"]]]<-1
+e<-eplot
+put.ner<-function(x.df,eplot){
+k<-1
+ner.df<-eplot
+
+    for(k in 1:length(x.df$id)){
+    ne.array<-c(x.df$start[k]:x.df$end[k])
+    ner.df$ner[ne.array]<-1
+  }
+  return(ner.df)
+}
+ner.plot<-put.ner(x.df,eplot)
+save(ner.plot,file = "ner.plot.RData")
+barplot(ner.plot)
+plot(ner.plot,type="h",main="named entities over text",xlab="characters")
+?plot
+scatter.smooth(ner.plot)
+hist(ner.plot$ner)
+max(ner.plot$ner)
+put.ner<-function(x)e$ner[x["start"]:x["end"]]<-1
+lapply(x.df, put.ner)
