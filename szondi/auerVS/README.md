@@ -11,7 +11,7 @@ contains distant reading essais VS Michael Auer/FUB-SoSe24
 
 ``` r
 load("ner.plot.RData")
-plot(ner.plot,type="h",main="named entities over text",xlab="characters")
+plot(ner.plot,type="h",main="named entities over text",xlab="characters (chars, not figures)")
 ```
 
 <figure>
@@ -20,7 +20,14 @@ alt="named entities" />
 <figcaption aria-hidden="true">named entities</figcaption>
 </figure>
 
-![](ner-dist.png)
+#### analysis
+
+assuming that characters (named entities) in the text happen to appear
+often in dialogues, one could say, that the beginning and the middle of
+the *judenbuche* is poor of dialogue and of more epic style, since as
+you see there are fewer occurences of NE.
+
+![](ner-dist.png) mentions distribution of figures in the text
 
 ``` r
 #load("ner.table.RData")
