@@ -16,29 +16,35 @@ dr2<-dr1[m:m2]
 stext<-dr1[11:m2]
 head(stext)
 #writeLines(stext,"~/Documents/GitHub/SPUND-LX/szondi/auerVS/judenbuche.txt")
-#library(quanteda)
-#library(collostructions)
+library(quanteda)
+library(collostructions)
 topic.func<-function(){
-t1<-tokenize_word1(dr2)
+t1<-tokenize_word1(stext)
 frf<-function(x)freq.list(x)
 fr1<-lapply(t1, frf)
 f1<-freq.list(unlist(t1))
 #stopl<-read.csv("/Users/guhl/boxHKW/21S/DH/local/R/rmdessais/corpus/wolf_LE_stopwords.csv",sep = ";")
 #stop2<-readLines("/Users/guhl/Documents/GitHub/ETCRA5_dd23/R/data/stopword_list_de.txt")
-stopx<-stopl[stopl$stop==T,]
-stop3<-c(stop2,stopx$word)
-m<-f1$WORD%in%stop3
-sum(m)
-f2<-f1[!m,]
-f2
-m<-grep("holz",f2$WORD)
-m<-grep("jud",f2$WORD)
-m<-grep("jud|Jud",dr2)
-#f2[m,]
-dr2[m]
+#stopx<-stopl[stopl$stop==T,]
+#stop3<-c(stop2,stopx$word)
+#m<-f1$WORD%in%stop3
+#sum(m)
+#f2<-f1[!m,]
+f2<-f1
+#m<-grep("holz",f2$WORD)
+#dr2[m]
 ### topic: holz
 # frame holz, word field analysis
+return(f1)
 }
+flist<-topic.func()
+head(flist)
+m<-grep("Axt",flist$WORD)
+m<-grepl("Axt",stext)
+sum(m)
+stext[m]
+#m<-grep("jud|Jud",dr2)
+flist[m,]
 #################################
 # sitzung 22.05. latour actor-network
 
