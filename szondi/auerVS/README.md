@@ -29,6 +29,8 @@ you see there are fewer occurences of NE.
 
 ![](ner-dist.png) mentions distribution of figures in the text
 
+![](acteur_network.png) network essai of acteurs
+
 ``` r
 #load("ner.table.RData")
 #par(las=3)

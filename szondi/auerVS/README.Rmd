@@ -25,6 +25,10 @@ assuming that characters (named entities) in the text happen to appear often in 
 ![](ner-dist.png)
 mentions distribution of figures in the text
 
+![](acteur_network.png)
+network essai of acteurs
+
+
 ```{r plot-ner-table,fig.cap="named entity distribution"}
 #load("ner.table.RData")
 #par(las=3)
