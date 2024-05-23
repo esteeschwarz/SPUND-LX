@@ -181,6 +181,7 @@ k<-1
 q<-1
 o<-c(1:length(ent.array))
 o1<-c(2,3:length(ent.array),1)
+# ! this crashes R !
 ent.q.array<-ent.array[o1]
     for (k in 1:length(ent.array)){
     ent<-ent.array[k]
@@ -193,3 +194,39 @@ ent.q.array<-ent.array[o1]
     }
   }
 }
+### the NER results (number of occurences of NE over text) doesnt conform with plain grep of the corresponding NE.
+### for further analysis we use the MAXQDA coded NE
+library(readxl)
+library(quanteda)
+library(stringi)
+ant<-read_excel("AVL_auer-tutCodesystem.xlsx")
+length()
+load("ner.table.RData")
+ent.array<-array(1:(length(ner.t)+1))
+names(ent.array)<-c("Blaukittel",names(ner.t))
+ent.array
+# text1<-readLines("judenbuche.txt")
+# tok.l<-tokenize_word1(text)
+# tok.a<-unlist(tok.l)
+k<-1
+#ent.array<-c("Blaukittel",ent.array)
+ent.df<-data.frame(ent=ent.array,count=NA)
+for (k in 1:length(ent.array)){
+  
+  # m<-grepl(ent.df$ent[k],tok.a)
+  # m.sum<-sum(m)
+  # ent.df$count[k]<-m.sum
+  regx<-names(ent.array[k])
+# m.t<-stri_extract_all_regex(text,regx,simplify = T)
+ m<-stri_count_regex(text,regx)
+ ent.array[k]<-m
+}
+barplot(ent.array)
+ent.array.s<-ent.array[ent.array>5]
+barplot(ent.array.s)
+out<-c("Herr","Sie")
+m<-(names(ent.array.s)%in%out)
+ent.array.s<-ent.array.s[!m]
+par(las=2)
+barplot(ent.array.s,main = "count of figure mentions")
+
