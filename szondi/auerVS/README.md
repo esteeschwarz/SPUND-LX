@@ -27,18 +27,17 @@ often in dialogues, one could say, that the beginning and the middle of
 the *judenbuche* is poor of dialogue and of more epic style, since as
 you see there are fewer occurences of NE.
 
-![](ner-dist.png) mentions distribution of figures in the text
+| ![](ner-dist.png) mentions distribution of figures in the text |
+|----------------------------------------------------------------|
+| ![](acteur_network.png) network essai of acteurs, Q: MAXQDA    |
 
-![](acteur_network.png) network essai of acteurs
-
-``` r
-#load("ner.table.RData")
-#par(las=3)
-#barplot(ner.t,horiz = F,log = "y",xpd = T,beside = T)
-```
+![](acteur_network02.png) network essai of acteurs, Q: Data - MAXQDA,
+Grafix - Gephi
 
 ------------------------------------------------------------------------
 
 #### references
 
-script: [droste-essai.R](droste-essai.R)
+- script: [droste-essai.R](droste-essai.R)
+- coding: MAXQDA
+- network: MAXQDA, Gephi
