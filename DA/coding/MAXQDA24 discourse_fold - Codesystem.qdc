@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBook xmlns="urn:QDA-XML:codebook:0:4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:QDA-XML:codebook:0:4 Codebook.xsd" origin="MAXQDA 24 (Release 24.3.0, Build 240422)">
+	<Codes>
+		<Code guid="{d49146eb-4422-4de3-a4e6-fc5ce52160c9}" name="auto.subject.uni" color="#ef5350" isCodable="true">
+			<Description>12.05.24 13:53
+Textsuche &amp; Autocodieren - 
+Innerhalb von: Dokument</Description>
+		</Code>
+		<Code guid="{68180892-0486-4006-bb78-f923fa649e14}" name="subject" color="#ef5350" isCodable="true">
+			<Code guid="{5dd4cb36-950b-43eb-a0d0-8e904f7d522a}" name="prof" isCodable="true"/>
+			<Code guid="{f76fce1c-85b1-425d-b4b8-c57eddc8d7c4}" name="uni" color="#6f4ab0" isCodable="true"/>
+			<Code guid="{3bb68a3d-d80f-44c9-a091-7968283999d9}" name="students" color="#ef5350" isCodable="true"/>
+			<Code guid="{340a2a9e-7657-4aeb-a4cd-c5f945d4ad17}" name="police" color="#a24ef1" isCodable="true"/>
+		</Code>
+		<Code guid="{d72202d0-aaf8-4a08-8e2b-916fc08fdfc2}" name="israel" color="#71bbff" isCodable="true"/>
+		<Code guid="{597deab7-1432-4ec7-98c1-88890db97adb}" name="palestine" color="#8d6e63" isCodable="true"/>
+		<Code guid="{4c8e1998-04ca-417d-b1de-ad0f8b0e6e6f}" name="text-005" isCodable="true"/>
+		<Code guid="{99bdcb88-78ea-43e4-b0ae-59fd76ab64e2}" name="töten.v" color="#32bd59" isCodable="true">
+			<Description>https://framenet2.icsi.berkeley.edu/fnReports/data/lu/lu8630.xml?mode=annotation</Description>
+			<Code guid="{3dbea404-c24d-42ac-a45d-e7e6c4e39097}" name="töten.patiens" color="#32bd59" isCodable="true"/>
+			<Code guid="{597e0190-fbfc-4e1c-a1cd-f05eec9483ae}" name="töten.time" color="#32bd59" isCodable="true"/>
+			<Code guid="{8db407e5-367d-4a98-825b-432c3c12c820}" name="töten.result" color="#32bd59" isCodable="true"/>
+			<Code guid="{50f6cb77-423a-4d7a-a078-13682b5b772d}" name="töten.purpose" color="#32bd59" isCodable="true"/>
+			<Code guid="{a22d2db4-ca1e-4b4b-b066-9de722e35eab}" name="töten.place" color="#32bd59" isCodable="true"/>
+			<Code guid="{196b4947-9515-4b7a-820d-a65c0ccac8df}" name="töten.period-of-iteration" color="#32bd59" isCodable="true"/>
+			<Code guid="{2699b7df-bc8a-476a-bc64-99f8e7a38443}" name="töten.means" color="#32bd59" isCodable="true"/>
+			<Code guid="{a476d737-02dc-4a64-b15e-48fd8e24d621}" name="töten.manner" color="#32bd59" isCodable="true"/>
+			<Code guid="{697506bc-2d6c-4419-a7cd-d38f82b71a47}" name="töten.agens" color="#32bd59" isCodable="true"/>
+			<Code guid="{016719b2-528c-4504-bc53-80f21e96436d}" name="töten.instrument" color="#32bd59" isCodable="true"/>
+			<Code guid="{14625bc1-8d25-4fd7-9844-dc95e90b60b0}" name="töten.frequency" color="#32bd59" isCodable="true"/>
+			<Code guid="{c6b9caff-5cb6-474b-ba24-90b2347b60d6}" name="töten.explanation" color="#32bd59" isCodable="true"/>
+			<Code guid="{c9aa2979-6c8b-46a1-aea7-ccaa87453b70}" name="töten.depictive" color="#32bd59" isCodable="true"/>
+			<Code guid="{3cf35291-8bbf-4e71-801d-1c5ce8b5e6ce}" name="töten.degree" color="#32bd59" isCodable="true"/>
+			<Code guid="{be6b78fa-6c5b-491d-b35a-cca5e0188ce2}" name="töten.containing-event" color="#32bd59" isCodable="true"/>
+			<Code guid="{1535259c-69d3-4bfc-9d62-5f371bbaf2ca}" name="töten.circumstances" color="#32bd59" isCodable="true"/>
+			<Code guid="{7786ff18-ba9e-4862-bdef-18beb9a33704}" name="töten.cause" color="#32bd59" isCodable="true"/>
+			<Code guid="{576f0a7d-acd2-4a8a-a4a0-4a0f76be04b1}" name="töten.beneficiary" color="#32bd59" isCodable="true"/>
+		</Code>
+		<Code guid="{54cf947c-b617-4eed-aa3d-3a0469ed071d}" name="sterben.v" color="#ef5350" isCodable="true">
+			<Description>https://framenet2.icsi.berkeley.edu/fnReports/data/lu/lu924.xml?mode=annotation</Description>
+			<Code guid="{156b7db5-cefb-407e-b930-aa914bf6b91f}" name="sterben.time" color="#ef5350" isCodable="true"/>
+			<Code guid="{68244d77-4ec7-4e7a-8fa0-779facde4981}" name="sterben.result" color="#ef5350" isCodable="true"/>
+			<Code guid="{be1323e0-ac8f-4420-a8eb-8ddc20898b20}" name="sterben.protagonist" color="#ef5350" isCodable="true"/>
+			<Code guid="{704725f2-26ab-4dda-90b3-93b671e84dad}" name="sterben.place" color="#ef5350" isCodable="true"/>
+			<Code guid="{a1f02c1a-3f3e-4f32-b335-6ec5d8242e48}" name="sterben.manner" color="#ef5350" isCodable="true"/>
+			<Code guid="{82c6dd18-4154-4504-9de4-c91a1ec4d8a2}" name="sterben.maleficiary" color="#ef5350" isCodable="true"/>
+			<Code guid="{7e779824-ba51-4331-a635-6cdf8a5f5ceb}" name="sterben.explanation" color="#ef5350" isCodable="true"/>
+			<Code guid="{d79fb376-f22a-4621-9c10-9db105c5cdbc}" name="sterben.cause" color="#ef5350" isCodable="true"/>
+			<Code guid="{18b5b0ae-7228-498c-989d-99bc15ad01e4}" name="sterben.containing-event" color="#ef5350" isCodable="true"/>
+			<Code guid="{c8bc9585-eb10-43ff-9737-4536496b31dc}" name="sterben.degree" color="#ef5350" isCodable="true"/>
+			<Code guid="{e9e000cc-b94f-492f-ac01-7e6548122c4c}" name="sterben.depictive" color="#ef5350" isCodable="true"/>
+		</Code>
+		<Code guid="{11b35b30-d554-4190-9d4b-0e35f995a867}" name="text-004" isCodable="true"/>
+		<Code guid="{8be449d1-8802-4516-ad44-019cf0886308}" name="text-003" isCodable="true"/>
+		<Code guid="{6f485eaa-bcec-4225-9ada-c67255f23875}" name="text-002" isCodable="true"/>
+		<Code guid="{6150f4ec-4eb2-4a25-a890-4977b985f961}" name="text-001" isCodable="true"/>
+		<Code guid="{21ec97de-4a08-449f-a83d-641123c95f50}" name="text-000" isCodable="true"/>
+		<Code guid="{9f2fde15-7617-4524-b108-b4a32c725711}" name="referents" color="#ff66ff" isCodable="true"/>
+		<Code guid="{9b2d2df3-d694-49ab-8b53-ba68bc79cbeb}" name="MODUS" color="#ffff00" isCodable="true"/>
+		<Code guid="{2d902137-3fe5-4c38-aac9-1effd72d3924}" name="GRÜN" color="#80ff00" isCodable="true"/>
+		<Code guid="{304fae61-ff76-49d6-89ff-027d7def15b2}" name="BLAU" color="#66ccff" isCodable="true"/>
+		<Code guid="{fc10b3f7-c642-4161-8923-486c8f55f85b}" name="ZEIT" color="#ff6666" isCodable="true"/>
+		<Code guid="{db9c42ea-50c6-4c7a-8f7e-2d1f8c9def0a}" name="Autocode - &lt;Protest+&gt;" isCodable="true">
+			<Description>26.05.24 08:21
+Textsuche &amp; Autocodieren - 
+Innerhalb von: Satz</Description>
+		</Code>
+		<Code guid="{1f5bb4f9-b365-4881-8fb3-0aa08e20677d}" name="Autocode - &lt;Protest#&gt;" color="#ef5350" isCodable="true">
+			<Description>26.05.24 09:52
+Textsuche &amp; Autocodieren - 
+Innerhalb von: Satz</Description>
+		</Code>
+		<Code guid="{f44ff4b3-3368-4254-b3c5-2d15b5a799d8}" name="Autocode - &lt;Protestier&gt;" color="#a24ef1" isCodable="true">
+			<Description>26.05.24 09:53
+Textsuche &amp; Autocodieren - 
+Innerhalb von: Satz</Description>
+		</Code>
+	</Codes>
+	<Sets>
+		<Set name="codeset 1" guid="{33a160cf-e14f-4b41-8ff6-55554e6b84e6}">
+			<MemberCode guid="{3dbea404-c24d-42ac-a45d-e7e6c4e39097}"/>
+			<MemberCode guid="{597e0190-fbfc-4e1c-a1cd-f05eec9483ae}"/>
+			<MemberCode guid="{8db407e5-367d-4a98-825b-432c3c12c820}"/>
+			<MemberCode guid="{50f6cb77-423a-4d7a-a078-13682b5b772d}"/>
+			<MemberCode guid="{a22d2db4-ca1e-4b4b-b066-9de722e35eab}"/>
+			<MemberCode guid="{196b4947-9515-4b7a-820d-a65c0ccac8df}"/>
+			<MemberCode guid="{2699b7df-bc8a-476a-bc64-99f8e7a38443}"/>
+			<MemberCode guid="{a476d737-02dc-4a64-b15e-48fd8e24d621}"/>
+			<MemberCode guid="{697506bc-2d6c-4419-a7cd-d38f82b71a47}"/>
+			<MemberCode guid="{016719b2-528c-4504-bc53-80f21e96436d}"/>
+			<MemberCode guid="{14625bc1-8d25-4fd7-9844-dc95e90b60b0}"/>
+			<MemberCode guid="{c6b9caff-5cb6-474b-ba24-90b2347b60d6}"/>
+			<MemberCode guid="{c9aa2979-6c8b-46a1-aea7-ccaa87453b70}"/>
+			<MemberCode guid="{3cf35291-8bbf-4e71-801d-1c5ce8b5e6ce}"/>
+			<MemberCode guid="{be6b78fa-6c5b-491d-b35a-cca5e0188ce2}"/>
+			<MemberCode guid="{1535259c-69d3-4bfc-9d62-5f371bbaf2ca}"/>
+			<MemberCode guid="{7786ff18-ba9e-4862-bdef-18beb9a33704}"/>
+			<MemberCode guid="{576f0a7d-acd2-4a8a-a4a0-4a0f76be04b1}"/>
+			<MemberCode guid="{156b7db5-cefb-407e-b930-aa914bf6b91f}"/>
+			<MemberCode guid="{68244d77-4ec7-4e7a-8fa0-779facde4981}"/>
+			<MemberCode guid="{be1323e0-ac8f-4420-a8eb-8ddc20898b20}"/>
+			<MemberCode guid="{704725f2-26ab-4dda-90b3-93b671e84dad}"/>
+			<MemberCode guid="{a1f02c1a-3f3e-4f32-b335-6ec5d8242e48}"/>
+			<MemberCode guid="{82c6dd18-4154-4504-9de4-c91a1ec4d8a2}"/>
+			<MemberCode guid="{7e779824-ba51-4331-a635-6cdf8a5f5ceb}"/>
+			<MemberCode guid="{d79fb376-f22a-4621-9c10-9db105c5cdbc}"/>
+			<MemberCode guid="{18b5b0ae-7228-498c-989d-99bc15ad01e4}"/>
+			<MemberCode guid="{c8bc9585-eb10-43ff-9737-4536496b31dc}"/>
+			<MemberCode guid="{e9e000cc-b94f-492f-ac01-7e6548122c4c}"/>
+			<MemberCode guid="{d72202d0-aaf8-4a08-8e2b-916fc08fdfc2}"/>
+			<MemberCode guid="{597deab7-1432-4ec7-98c1-88890db97adb}"/>
+			<MemberCode guid="{99bdcb88-78ea-43e4-b0ae-59fd76ab64e2}"/>
+			<MemberCode guid="{54cf947c-b617-4eed-aa3d-3a0469ed071d}"/>
+		</Set>
+		<Set name="Set 1" guid="{6143b33f-5562-4064-bfb4-2194e9093b53}"/>
+	</Sets>
+</CodeBook>

@@ -71,5 +71,6 @@ head(named_entities)
 texts.nom.pass[["NER"]][[k]]<-nes
 }
 #save(texts.nom.pass,file="~/Documents/GitHub/SPUND-LX/DA/nom-pass/texts.nom.pass.RData")
-
+###################################
+# it is not possible to import an xml or other coded document into MAXQDA
 
