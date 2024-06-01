@@ -43,6 +43,7 @@ flist
 # plot keywords
 t2<-unlist(t1)
 library(syuzhet)
+source("~/Documents/GitHub/SPUND-LX/szondi/plotkeywords.R")
 key.plot<-function(t,tok){
   m<-grepl(tok,t)
   m2<-m-1+1
@@ -52,7 +53,7 @@ key.plot<-function(t,tok){
   plotkeywords(m2,title = paste0("plot keyword -",tok,"- over text"))
 }
 key.plot(t2,"Lüge")
-?scatter.smooth
+#?scatter.smooth
 #simple_plot(m)
 #edit(simple_plot)
 #####
