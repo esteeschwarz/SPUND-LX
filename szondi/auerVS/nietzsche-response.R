@@ -10,6 +10,8 @@
 # get text
 library(httr)
 x<-GET("https://www.projekt-gutenberg.org/nietzsch/essays/wahrheit.html")
+### TODO: try with >
+src.kga<-"http://www.nietzschesource.org/?#eKGWB/WL-Titel"
 r<-content(x,"text")
 library(xml2)
 htm<-read_html(r)
@@ -33,7 +35,10 @@ topic.func<-function(){
   return(f2)
 }
 flist<-topic.func()
+flist
 head(flist,20)
+m<-grep("gott",text)
+text[m]
 m<-grep("[a-zA-Z]",flist$WORD)
 flist.r<-flist[m,][1:20,]
 head(flist.r,20)

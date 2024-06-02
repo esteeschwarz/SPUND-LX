@@ -1,5 +1,5 @@
 ---
-title: "VS Auer - Nietzsche response"
+title: "VS Auer - reader response"
 author: "st. schwarz"
 date: "`r Sys.Date()`"
 output:
@@ -15,6 +15,12 @@ link-bibliography: yes
   
 
 ---
+# A. meta
+V_16401: Rhetorik und Literaturtheorie, Auer, S24   
+Stephan Schwarz   
+14221.nietzsche.response paper   
+
+----
 
 ```{r setup, include=FALSE,warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -71,6 +77,10 @@ m.gt<-grep("gott|gött",flist$WORD)
 
 m<-grep("[a-zA-Z]",flist$WORD)
 flist.r<-flist[m,][1:20,]
+flist.r<-flist.r[order(flist.r$FREQ,decreasing = T),]
+t2<-unlist(t1)
+rel<-paste0("REL/",length(t2)," tokens")
+flist.r[rel]<-flist.r$FREQ/length(t2)
 #head(flist.r,20)
 # plural duplicates
 m<-grep("mensch",flist.r$WORD)
@@ -85,7 +95,6 @@ flist.r<-flist.r[!m,]
 # barplot(flist.r$FREQ,names.arg = flist.r$WORD)
 #####
 # plot keywords
-t2<-unlist(t1)
 # library(syuzhet)
 source("https://github.com/esteeschwarz/SPUND-LX/raw/main/szondi/plotkeywords.R")
 key.plot.dist<-function(t,tok){
@@ -105,18 +114,20 @@ key.plot.smooth<-function(t,tok){
 
 
 ```
-
-# 14221.nietzsche.response paper
-Ich stehe in der Auseinandersetzung mit Friedrich Nietzsches *"Ueber Wahrheit und Luege im außermoralischen Sinne"*[^3] noch vor einem grundsätzlichen Problem: Lese ich den Text als eine thematisch und zeitlich genau zu verortende philosophische Erörterung der titelgebenden Phänomenen oder als literarische Randnotiz Nietzsches, die im Oevre an jeder anderen Stelle und in jedem weiteren Zusammenhang ebenso hätte auftauchen können? Haben wir es also mit einem eigenständigen Stück Philosophie zu tun oder ist dasselbe eingebettet in Nietzsches Gesamtwerk und nur aus diesem heraus überhaupt zu verstehen?
+# content
+Ich stehe in der Auseinandersetzung mit Friedrich Nietzsches *"Ueber Wahrheit und Luege im außermoralischen Sinne"*[^3] noch vor einem grundsätzlichen Problem: Lese ich den Text als eine thematisch und zeitlich genau zu verortende philosophische Erörterung der titelgebenden Phänomene oder als literarische Randnotiz Nietzsches, die im Oevre an jeder anderen Stelle und in jedem weiteren Zusammenhang ebenso hätte auftauchen können? Haben wir es also mit einem eigenständigen Stück Philosophie zu tun oder ist dasselbe eingebettet in Nietzsches Gesamtwerk und nur aus diesem heraus überhaupt zu verstehen?
 Da ich mit jenem Werk nur oberflächlich vertraut bin und mehr als die landläufigen Zuschreibungen mir nicht zutrauen würde, anzubringen, versuche ich, etwas Sekundärliteratur zu diesem Text zu lesen, um ihn einordnen zu können und seine Bedeutung abzuschätzen. Der relevanteste Treffer scheint Sarah Scheibenbergers *Kommentar zu Nietzsches "Ueber Wahrheit und Lüge im aussermoralischen Sinne"* aus der mehrbändigen Reihe *"Nietzsche-Kommentar"* bei deGryuter (2016) zu sein. Die folgende Einordnung ist also weitgehend diesem Kommentar entlehnt.
 
 Der Text steht demzufolge nicht zusamenhanglos, sondern "die Entwürfe zu WL [gehörten] eigentlich zu N.s umfangreichen Vorarbeiten zu der ursprünglich als „Philosophenbuch“ angelegten Schrift PHG[^1] vom Frühjahr 1873 [...], [wurden] dann aber ausgegliedert [...]. 1903 erscheint WL das zweite Mal, auch hier verbunden mit Plänen und Studien zum „Philosophenbuch“ (GoA und KoA Abt. 2, Bd. 10: „Nachgelassene Werke aus den Jahren 1872/73–1875/76“)" [@scheibenberger_band_2016].
 Ich habe mir, weil mich das interessierte, C. v. Geersdorfs[^2] Reinschrift des Manuskripts und auch die vorarbeitenden Notizen Nietzsches angeschaut bzw. durchgelesen, soweit es das Schriftbild zuliesz; diese sind im Gegensatz zur Reinschrift für mich nur mühsam zu entziffern. Dennoch ist bemerkenswert, dasz eben im Stadium des Diktats von Nietzsche noch nicht unwesentliche Veränderungen vorgenommen worden zu sein scheinen - dieses enthält einige Streichungen, die wohl im Flusz der Rede noch angepasst wurden. Ich würde mich in diesem nur response paper darauf beschränken, die Streichungen und Aktualisierungen grundsätzlich interessant für weitere Analysen zu halten, um *Dem Schreibenden* Nietzsche auf die Spur zu kommen.
 
-Der Text selbst erschlieszt sich mir nicht leicht, ich habe grosze Probleme, Kernaussagen feststellen zu können. Die titelgebenden Themen Wahrheit und Lüge scheinen auf den ersten Blick präsent, was für ```wahrheit``` allein aus einer technisch angestellten keyword analysis hervorgeht, die, um Zugang zu bekommen, einer ersten Lektüre folgte. Danach ergeben sich die in Table \@ref(table:printkeys) Distributionen für die relevantesten 20 keywords, [cf. this paper @schwarz_spund-lxszondiauervsnietzsche-responsermd_2024], wobei ```r flist$WORD[m.lg]``` erst an ```r m.lg```ter Stelle mit einer Frequenz von ```r flist$FREQ[m.lg]``` erscheinen.
+Der Text selbst erschlieszt sich mir nicht leicht, ich habe grosze Probleme, Kernaussagen feststellen zu können. Die titelgebenden Themen Wahrheit und Lüge scheinen auf den ersten Blick präsent, was für ```wahrheit``` allein aus einer technisch angestellten keyword analysis hervorgeht, die, um Zugang zu bekommen, einer ersten Lektüre folgte. Danach ergeben sich die in Tab. \@ref(tab:printkeys) beschriebenen Distributionen für die relevantesten 20 keywords, die in Abb. \@ref(fig:plot-keywords), \@ref(fig:plot-wahrheit-dist), \@ref(fig:plot-wahrheit-scale) visualisiert sind [cf. this paper @schwarz_r-markdown_2024], wobei ```r flist$WORD[m.lg]``` erst an ```r m.lg```ter Stelle mit einer Frequenz von ```r flist$FREQ[m.lg]``` erscheinen. In Abb. \@ref(fig:plot-wahrheit-dist) und \@ref(fig:plot-wahrheit-scale) ist deutlich zu sehen, wie der Fokus auf `wahrheit` im Verlauf des Texts abnimmt. (Man könnte hier eine parallele Darstellung der Entwicklung der weiteren keywords plotten, die Verwendung von `metapher` und `begriff` werden zunehmen.) 
 
-Meine erste, vielleicht noch weiter zu verfolgende Assoziation war - nachdem auch bei [@scheibenberger_band_2016, p. 8] ein Fokus darauf gelegt wurde - das Pilatus-Wort des *"Was ist Wahrheit?"* aus dem Johannesevangelium [@bibel_john_2024]. Wir wissen, dasz Nietzsche ein wohl kritisch-ambivalentes Verhältnis zur Religion hatte, das zum Beispiel in dem Gedicht *An Richard Wagner* sehr deutlich zum Ausdruck kommt [@nietzsche_nietzsche_1884] und sich bekanntermaszen, ohne dasz ich dies weiter belegen kann auf diesem Raum, durch sein Werk zieht. Die Beschäftigung mit `Wahrheit` im Zusammenhang mit `Konvention, Zwang` musz ihn, auch im Zuge seiner intensiven Auseinandersetzung mit den griechischen Philosophen, auch in diesen Notizen zu dem geradezu archetypischen Pilatus-Wort geführt haben, das ich jdfs. sehr deutlich herausgehört habe. Vielleicht gerade weil das Wort `Religion` selbst in dem Text gar nicht, und ```r flist$WORD[m.gt]``` nur im Zusammenhang mit den Griechen ```r sum(flist$FREQ[m.gt])``` mal überhaupt erwähnt wird, verortet Nietzsche hier die Wahrheit eher in dem Bereich der Wissenschaft, wo sie ja auch eine tragende Rolle spielt, zumal in deren Gegensatz zum Glauben. Dasz diese Dichotomie bei den Griechen noch anders ausgestaltet sein mochte, halte ich für Nietzsches Verständnis von Wahrheit auch prägend.
+Meine erste, vielleicht noch weiter zu verfolgende Assoziation war - nachdem auch bei [@scheibenberger_band_2016, p. 8] ein Fokus darauf gelegt wurde - das Pilatus-Wort des *"Was ist Wahrheit?"* aus dem Johannesevangelium [@bibel_john_2024], das auf Seite 880 der Kritischen Gesamtausgabe anklingt. Wir wissen, dasz Nietzsche ein wohl kritisch-ambivalentes Verhältnis zur Religion hatte, das zum Beispiel in dem Gedicht *An Richard Wagner* sehr deutlich zum Ausdruck kommt [@nietzsche_nietzsche_1884] und sich bekanntermaszen, ohne dasz ich dies weiter belegen kann auf diesem Raum, durch sein Werk zieht. Die Beschäftigung mit `Wahrheit` im Zusammenhang mit `Konvention, Zwang` musz ihn, auch im Zuge seiner intensiven Auseinandersetzung mit den griechischen Philosophen, auch in diesen Notizen zu dem geradezu archetypischen Pilatus-Wort geführt haben, das ich jdfs. sehr deutlich herausgehört habe. Vielleicht gerade weil das Wort `Religion` selbst in dem Text gar nicht, und ```r flist$WORD[m.gt]``` nur im Zusammenhang mit den Griechen ```r sum(flist$FREQ[m.gt])``` mal überhaupt erwähnt wird, verortet Nietzsche hier die Wahrheit eher in dem Bereich der Wissenschaft, wo sie ja auch eine tragende Rolle spielt, zumal in deren Gegensatz zum Glauben. Dasz diese Dichotomie bei den Griechen noch anders ausgestaltet war, halte ich für Nietzsches Verständnis von und Kritik an Wahrheit auch prägend.
 
+Und so liest sich auch der mittlere Teil, der mit dem Pilatus-Wort anhebt, als Apologie der `begriffe`, die es gegen jede Form mystifizierenden Gebarens (`wahrheit`=`metapher`) zu verteidigen gilt. Sprache als Instrument, dem Wahrhaftigen (nicht der Wahrheit) hinter den bloszen Ideen der Dinge (wenngleich dahinter noch wieder die reine Idee stecken mag) auf den Grund zu kommen und es in `begriffe` zu fassen, scheint für Nietzsche wichtig als Anliegen der Wissenschaft (des Menschen, der Vernunft) zu betonen.
+
+Im offiziellen 2. Teil kommt Nietzsche auf den Eingangskonflikt zur Lüge zurück und sieht den Menschen sich nicht anders zu helfen wissend, als in Lüge und Verstellung das wenige an Freiheit zu finden, das ihm die Begriffe lassen: wenn er in der Freiheit *vom* Begriff in Wahrheiten zu flüchten sucht.
 
 ```{r printkeys,echo=F}
 knitr::kable(flist.r,caption = "keywords table")
