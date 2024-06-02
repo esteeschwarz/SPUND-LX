@@ -1,0 +1,19 @@
+---
+title: "VS Auer - Nietzsche response"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#14221.nietzsche.response paper
+Ich stehe in der Auseinandersetzung mit Friedrich Nietzsches **"Ueber Wahrheit und Luege im außermoralischen Sinne"** noch vor einem grundsätzlichen Problem: Lese ich den Text als eine thematisch und zeitlich genau zu verortende philosophische Erörterung der titelgebenden Phänomenen oder als literarische Randnotiz Nietzsches, die im Oevre an jeder anderen Stelle und in jedem weiteren Zusammenhang ebenso hätte auftauchen können? Haben wir es also mit einem eigenständigen Stück Philosophie zu tun oder ist dasselbe eingebettet in Nietzsches Gesamtwerk und nur aus diesem heraus überhaupt zu verstehen?
+Da ich mit jenem Werk nur oberflächlich vertraut bin und mehr als die landläufigen Zuschreibungen mir nicht zutrauen würde, anzubringen, bleibt mir nur, etwas Sekundärliteratur zu diesem Text zu lesen, um ihn einordnen zu können und seine Bedeutung abzuschätzen. Der relevanteste Treffer scheint Sarah Scheibenbergers **Kommentar zu Nietzsches "Ueber Wahrheit und Lüge im aussermoralischen Sinne"** aus der mehrbändigen Reihe **"Nietzsche-Kommentar"** bei deGryuter (2016) zu sein. Die folgende Einordnung ist also weitgehend diesem Kommentar entlehnt.
+
+Der Text steht demzufolge nicht zusamenhanglos, sondern "die Entwürfe zu WL [gehörten] eigentlich zu N.s umfangreichen Vorarbeiten zu der ursprünglich als „Philosophenbuch“ angelegten Schrift PHG(fn) vom Frühjahr 1873 [...], [wurden] dann aber ausgegliedert [...]. 1903 erscheint WL das zweite Mal, auch hier verbunden mit Plänen und Studien zum „Philosophenbuch“ (GoA und KoA Abt. 2, Bd. 10: „Nachgelassene Werke aus den Jahren 1872/73–1875/76“)" (Scheibenberger 2016).
+Ich habe mir, weil mich das interessierte, C. v. Geersdorfs(fn) Reinschrift des Manuskripts und auch die vorarbeitenden Nietzsches angeschaut bzw. durchgelesen, soweit es das Schriftbild zuliesz; die Notizen sind im Gegensatz zur Reinschrift für mich nur mühsam zu entziffern. Dennoch ist bemerkenswert, dasz eben im Stadium des Diktats von Nietzsche noch nicht unwesentliche Veränderungen vorgenommen worden zu sein scheinen - dieses enthält einige Streichungen, die wohl im Flusz der Rede noch angepasst wurden. Ich würde mich in diesem nur response paper darauf beschränken, die Streichungen und Aktualisierungen grundsätzlich interessant für weitere Analysen zu halten, um **Dem Schreibenden** Nietzsche auf die Spur zu kommen.
+
+Der Text selbst erschlieszt sich mir nicht leicht, ich habe grosze Probleme, Kernaussagen feststellen zu können. Die titelgebenden Themen Wahrheit und Lüge sind präsent, was allein aus einer technisch angestellten keyword analysis hervorgeht, die, um Zugang zu bekommen, einer ersten Lektüre folgte. Illustration
