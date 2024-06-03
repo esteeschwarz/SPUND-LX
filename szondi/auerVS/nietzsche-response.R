@@ -9,11 +9,26 @@
 ##################
 # get text
 library(httr)
-x<-GET("https://www.projekt-gutenberg.org/nietzsch/essays/wahrheit.html")
-### TODO: try with >
-src.kga<-"http://www.nietzschesource.org/?#eKGWB/WL-Titel"
-r<-content(x,"text")
 library(xml2)
+x<-GET("https://www.projekt-gutenberg.org/nietzsch/essays/wahrheit.html")
+### TODO: try KGA scrape from >
+src.kga<-"http://www.nietzschesource.org/?#eKGWB/WL-Titel"
+get.kga<-function(src=src.kga){
+x<-GET(src)  
+r<-content(x,"text")
+htm<-read_html(r)
+body<-xml_find_all(htm,"/html/body//*",flatten=T)
+body
+allp<-xml_find_all(htm,'//*[@class id="eKGWB/WL-1"]/div[1]/p') #xpath safari
+allp<-xml_find_all(htm,'.//p') #xpath safari
+allx<-xml_find_all(htm,'//*[id="page_ext"]')
+'#eKGWB\/WL-1 > div:nth-child(8) > p' #selektor path
+allp<-xml_find_all(htm,'//html/body/div')
+allp
+text<-xml_text(body[3:26])
+text
+}
+r<-content(x,"text")
 htm<-read_html(r)
 body<-xml_find_all(htm,"/html/body/*")
 text<-xml_text(body[3:26])
