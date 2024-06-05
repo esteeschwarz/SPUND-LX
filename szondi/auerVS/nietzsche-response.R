@@ -13,12 +13,17 @@ library(xml2)
 x<-GET("https://www.projekt-gutenberg.org/nietzsch/essays/wahrheit.html")
 ### TODO: try KGA scrape from >
 src.kga<-"http://www.nietzschesource.org/?#eKGWB/WL-Titel"
+src<-src.kga
 get.kga<-function(src=src.kga){
 x<-GET(src)  
 r<-content(x,"text")
 htm<-read_html(r)
 body<-xml_find_all(htm,"/html/body//*",flatten=T)
 body
+t<-xml_attr(body,"class")
+t<-xml_attr(body,"id")
+t
+xml_text(body)
 allp<-xml_find_all(htm,'//*[@class id="eKGWB/WL-1"]/div[1]/p') #xpath safari
 allp<-xml_find_all(htm,'.//p') #xpath safari
 allx<-xml_find_all(htm,'//*[id="page_ext"]')
