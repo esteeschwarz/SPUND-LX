@@ -238,4 +238,9 @@ library(devtools)
 devtools::install_github("esteeschwarz/clipX")
 
 library(clipX)
-assoc<-clipX()
+reg.assoc<-"ernst|Armut|(\btot)|schrecklich|(laß mich)|krank|seufz|Schmerz|schmerz|krampf|übel|jammer|Jammer|ächz|sterben|Sterben"
+assoc<-clipX(sep = "|")
+assoc
+### maxqda regex search property in .sea:
+#<PROPERTY id="0">ernst&amp;orArmut&amp;or(\btot)&amp;orschrecklich&amp;or(laß mich)&amp;orkrank&amp;orseufz&amp;orSchmerz&amp;orschmerz&amp;orkrampf&amp;orübel&amp;orjammer&amp;orJammer&amp;orächz&amp;orsterben&amp;orSterben</PROPERTY>
+
