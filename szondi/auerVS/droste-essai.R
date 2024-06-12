@@ -230,3 +230,12 @@ ent.array.s<-ent.array.s[!m]
 par(las=2)
 barplot(ent.array.s,main = "count of figure mentions")
 
+######
+# 14245.droste: grief
+# wortfeldanalysis
+
+library(devtools)
+devtools::install_github("esteeschwarz/clipX")
+
+library(clipX)
+assoc<-clipX()
