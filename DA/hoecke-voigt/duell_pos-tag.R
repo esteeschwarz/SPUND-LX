@@ -167,3 +167,28 @@ adj.list<-t4$token[m.adj]
 sum(m.adj)
 adj.df<-data.frame(tok.id=t4$token.id[m.adj], adj=adj.list,ref=adj.ref)
 write.csv(adj.df,"~/Documents/GitHub/SPUND-LX/DA/hoecke-voigt/adjectives.df.csv")
+
+library(clipr)
+write_clip(adj.df$ref)
+
+m.noun<-t4$upos=="NOUN"
+m.noun[is.na(m.noun)]<-F
+sum(m.noun)
+m.noun[52]
+noun.df<-data.frame(tok.id=t4$token.id[m.noun], noun=t4$token[m.noun],ref=t4$head_token_value[m.noun])
+write.csv(noun.df,"~/Documents/GitHub/SPUND-LX/DA/hoecke-voigt/nouns.df.csv")
+write_clip(noun.df$noun)
+adj.regex<-paste0(adj.df$adj,"|")
+adj.regex.c<-paste(adj.regex,collapse = "")
+write_clip(adj.regex.c)
+write_clip(adj.df$adj)
+noun.regex<-paste0(noun.df$noun,"|")
+noun.regex.c<-paste(noun.regex,collapse = "")
+write_clip(noun.regex.c)
+
+t5<-paste0("#",t4$upos,"-",t4$token)
+t4$tok.pos<-t4$token
+t4$tok.pos[m.adj]<-paste0("#",t4$upos[m.adj],"-",t4$token[m.adj])
+t4$tok.pos[m.noun]<-paste0("#",t4$upos[m.noun],"-",t4$token[m.noun])
+t5<-paste0(t4$tok.pos,collapse = " ")
+write_clip(t5)
