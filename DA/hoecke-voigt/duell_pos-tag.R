@@ -34,11 +34,17 @@ write_clip(adj.regex.c)
 # function from 14015-HA:
 x<-t3
 x2<-as.list(t3)
+
+t.ns<-colnames(t3)
+t.ns
 get.corpus.deprel<-function(x){
 #  x1<-data.frame(x)
  # x<-x1
   # assign unique id to token
-  x$sbc.token.id<-paste0(x$sbc.id,".",  1:length(x$sbc.id))  
+  colnames(x)[1]<-"paragraph"
+  
+  x$paragraph<-gsub("doc","",x$paragraph)
+  x$token.id<-paste0(x$paragraph,".",  1:length(x$paragraph))  
 #  x$sbc.token.id<-1:length(x$sbc.id)  
   x$pos.0<-"lfd.pos"  
   x$obj<-NA
@@ -136,9 +142,6 @@ get.corpus.deprel<-function(x){
   
 }
 
-# t.ns<-colnames(t3)
-# t.ns
-# colnames(t3)[1]<-"sbc.id"
 # corpus.head.list<-lapply(scb.pos.df.list, get.corpus.deprel)
 # 
 # corpus.head.list<-lapply(x2, get.corpus.deprel)
@@ -146,7 +149,7 @@ get.corpus.deprel<-function(x){
 t4<-get.corpus.deprel(t3)
 adj.ref<-t4$head_token_value[m.adj]
 adj.list<-t4$token[m.adj]
-m.adj[is.na(m.adj)]<-F
+#m.adj[is.na(m.adj)]<-F
 sum(m.adj)
-adj.df<-data.frame(tok.id=t4$sbc.token.id[m.adj], adj=adj.list,ref=adj.ref)
+adj.df<-data.frame(tok.id=t4$token.id[m.adj], adj=adj.list,ref=adj.ref)
 write.csv(adj.df,"~/Documents/GitHub/SPUND-LX/DA/hoecke-voigt/adjectives.df.csv")
