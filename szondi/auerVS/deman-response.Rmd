@@ -1,0 +1,57 @@
+---
+title: "VS Auer - reader response"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+output:
+   bookdown::pdf_document2:
+    extra_dependencies: ["float"]
+    toc: no
+   # css: https://school.dh-index.org/public/papers/011/style_HA.css
+
+bibliography: Primo_BibTex_export.bib
+link-bibliography: yes
+  
+
+---
+# A. meta
+V_16401: Rhetorik und Literaturtheorie, Auer, S24   
+Stephan Schwarz   
+14291.paul de man.allegories of reading.semiology and rhetoric.response paper
+
+----
+
+```{r setup, include=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H")
+#knitr::opts_knit$set("out.format"="html")
+#knitr::opts_knit$get("out.format"="html")
+
+Sys.setlocale('LC_ALL', "en_US.UTF-8")
+html_t<-knitr::is_html_output()
+pdf_t<-knitr::is_latex_output()
+```
+
+Since the paper I am referring to is written in english I decided for convenience reason to try writing this response in english too.
+
+# motivation
+Why did I choose that paper? The answer is simple: one alternative, about strukturalism by Deleuze was a real hard time reading and I didn't get much out of it; the second alternative, Judith Butler - gender trouble, seemed to me as probably being chosen by enough of the people for reasons of dealing up today topics in which I may not be up today.
+Reading into it I soon discovered that de Man is talking about things which are not really unknown to me as I am linguist as well. I am fascinated with linguistic methods and theories finding application in the literary studies as to me it seems they offer a lot of more than basic approaches to (texts) that can easily open up these and 2nd can - and thats my favorite thing - deliver results by more technical-practical methods situated in the wide field of the DH which I am about to explore. I made an essai working in the field of semiology last term and brought some interest and knowledge into reading this paper.[^2]
+
+# keys
+## semiology
+As de Man puts it, "Semiology, as opposed to semantics, is the science or study of signs as signifiers; it does not ask what words mean but how they mean" [@de_man_allegories, p. 5]. As such, semiological analysis of a text tends more to investigate on the discourse level of a text than its closed up level (cf. "definite unit", [@de_man_allegories, p. 4]) of WHAT it is telling us - a very important aspect if one doesnt see a text as closed entity but as part of a network of texts referring to each other. This, in times where *links* are the most commonly used and well known techniques to connect (things, concrete and abstract) to each other - in contrast to the time (1979) of the genesis of the book - is some very contemporary approach to literature as it's presenting itself today. As every past text is potentially content of a new text, to trace referents not by *what* they're referring to but by analysing of *how* they refer, provides direct insights in the network-of-ideas behind a text and how these ideas are related and constructed. 
+
+## reference
+De Man's denoting [reference] here as being purely arbitrary as derived from Saussure [@de_man_allegories, p.5] we find that other ways of connecting signifier and signified than in defining the meaning of an expression let appear such secondary, "the entire question of meaning can be bracketed, thus freeing the critical discourse from the debilitating burden of paraphrase" [@de_man_allegories, p.5]. And if that is true, uncovering the reference system in a discourse at the end reveals its very logic (cf. the grammar of rethoric, [@de_man_allegories, p.8]). Peoples expressions as (successful) performances of speech acts are based on the shared knowledge (or impression) of what these speech acts *normally* mean. Taking this knowledge as a system existing independently of the acts allows for stating rules and regularities that can be abstracted from the expressions and the people or texts that give life to these. The system is not further bound to words or figures or meaning but just present in the relations of its constituents which can appear any form of directed exchange or change of the state of the system and are as such subject to absolute measurement. Which..., and that is the nice thing about it, takes on objective character.
+
+## grammar
+If we're able to reduce a set of utterances to the underlying logic of their combinations of propositions it's possible to make statements about their truth value and relate that to the discourse in which they are embedded. That goes beyond a yet valuable but still intuitive perception through the close reading of a text. I contrast this here to proposed methods of the distant reading in which explicitly systems of utterances are object to investigation and this in large scale comparison which these methods offer and close reading simply not. As well as the grammar system of a language can be abstracted to 0/1 patterns so could, after de Man, the grammar of rhetoric, and the logical definition of rhetoric functions of utterances would here narrow the number of alternatives for *correctly* interpreting the text while extending the frameset available for interpretation.
+
+## rethoric
+Since an utterance can be interpreted in different ways concerning the rhetoric aspect of it, we strive to eliminate it's doubtful elements. For that we go into questioning the performance of the utterance.[^1] Here the *success* of the utterance performance comes into play. Transposing this onto a matrix wherein this utterance is part of a larger network of (communication) we will be able to see where analogue utterances fell, with or without success. And this is the key to understanding or first to formulate hypotheses to the understanding of a phrase. That sounds simply like putting it into context and thats part true. But more important than rooting down rhetorical figures to their meaning in the context is the way these figures are structured *and* how they apply structures on the text itself, from which one can deduce to the rhetorical system and, finally, the semiological grammar behind that text. Which can be an interesting thing to know when it comes to determine an authors intention - if that should be of any value for a text critique.
+
+[^2]: see https://github.com/esteeschwarz/SPUND-LX/tree/main/corpusLX/14015-HA fyi.
+[^1]:	*utterance* is in this context associated with a greater meaning of an expression which can be the oral statement of a person but here also simply a line of text in a book.
+
+----
+# REF:
