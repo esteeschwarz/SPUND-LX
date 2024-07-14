@@ -1,6 +1,7 @@
 ---
 title: "VS Auer distant reading"
 output: github_document
+bibliography: szondi.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -8,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 contains distant reading essais VS Michael Auer/FUB-SoSe24
 
-#### 1.droste-hülshoff: judenbuche
+# 1.droste-hülshoff: judenbuche
 - get book from gutenberg.org
 - extract named entities
 - plot named entity occurences over text
@@ -19,7 +20,7 @@ plot(ner.plot,type="h",main="named entities over text",xlab="characters (chars, 
 
 ```
 
-#### analysis
+# analysis
 assuming that characters (named entities) in the text happen to appear often in dialogues, one could say, that the beginning and the middle of the *judenbuche* is poor of dialogue and of more epic style, since as you see there are fewer occurences of NE.
 
 ----
@@ -32,8 +33,21 @@ network essai of acteurs, Q: MAXQDA
 ![](acteur_network02.png)
 network essai of acteurs, Q: Data - MAXQDA, Grafix - Gephi
 
+## analysis for [grievability]
+referring [@butler_what_2022]
+
+- coding of wordfield occurences
+  - regex search in MAXQDA, using the following
+  
+```{r, echo=FALSE}
+t<-readLines("regex.mod.sea")
+print(t[5])
+```
+
+![](droste_grief_codetrend.png) grief wordfield plot, MAXQDA
+
 -----
-#### references
+# REF
 - script: [droste-essai.R](droste-essai.R)
-- coding: MAXQDA
+- coding: R, MAXQDA
 - network: MAXQDA, Gephi
