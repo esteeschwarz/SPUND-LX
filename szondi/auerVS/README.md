@@ -30,9 +30,7 @@ you see there are fewer occurences of NE.
 | ![](ner-dist.png) mentions distribution of figures in the text |
 |----------------------------------------------------------------|
 | ![](acteur_network.png) network essai of acteurs, Q: MAXQDA    |
-
-![](acteur_network02.png) network essai of acteurs, Q: Data - MAXQDA,
-Grafix - Gephi
+| ![](acteur_network02.png) network essai of acteurs, Q: Data - MAXQDA, Grafix - Gephi |
 
 ## analysis for \[grievability\]
 
