@@ -1,0 +1,30 @@
+---
+title: 14312.LX-meetup abstract
+author: stephan schwarz
+date: "`r Sys.time()`"
+output:
+  pdf_document:
+    toc: no
+    number_sections: no
+    pandoc_args: --wrap=none
+bibliography: ['CORPUS-LX.bib','packages.bib']
+biblio-style: apalike
+link-citations: yes
+keywords: ['SBC','light vs. concrete verb use','onomasiological frequencies','semasiological frequencies','semantic alternatives']
+---
+
+# abstract
+this term paper will capture the proceedings of a corpus linguistics class essai (FUB, WS23/24) and deal with the *use of polysemous verbs with light and concrete senses*, started as a replication study of [@mehl_what_2021](https://doi.org/10.1515/cllt-2017-0039).   
+
+We explore onomasiological frequencies in the *Santa Barbara corpus of spoken American English*, ([@ucsb_santa_2005](https://www.linguistics.ucsb.edu/research/santa-barbara-corpus)) to determine the characteristics of both usages dependent on available light alternatives for concrete verbs.
+This contrast includes made up alternatives to `make/take/give` that Mehl defined in his study. We do not account for the context of these alternatives in the corpus texts, i.e. all occurences are counted. Mehl contrasted only these alternate occurences which "are defined as those verbs that occur in the corpus with the same concrete direct objects as make, (take, and give) and with a roughly equivalent meaning." Mehl labels these "onomasiological alternates". (cf. @mehl_what_2021 p.13)   
+Our approach after building a corpus of the available SBC sources is a collexeme evaluation using an R package by Susanne Flach [@R-collostructions].   
+First findings show a similar distribution and behaviour of phenomena as in the study, which used data of the ICE spoken and written corpora i.e. the relation of concrete to light verb use is roughly 1:6 and build/create are the main alternatives to make. (For further diving into, see this project in a [github](https://github.com/esteeschwarz/SPUND-LX/tree/main/corpusLX/14015-HA) repository to the paper with a preview to the results and related scripts.)
+
+
+
+---------
+
+# references
+
+
