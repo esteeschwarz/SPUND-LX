@@ -2,7 +2,7 @@
 ## 14525.notes
 ## info
 - the folder was separated from: [https://github.com/esteeschwarz/R-essais](https://github.com/esteeschwarz/R-essais)
-- <14015-HA> contains a term paper essai to the Santa Barbara corpus of spoken American english, see: <https://esteeschwarzs.github.io/SPUND-LX> for a compact view with first findings. 
+- [14015-HA](14015-HA) contains a term paper essai to the Santa Barbara corpus of spoken American english, see: <https://esteeschwarzs.github.io/SPUND-LX> for a compact view with first findings. 
 
 ### content
 the directory contains essais to a collocate analysis of a corpus of nouns/adjectives assembled. 
