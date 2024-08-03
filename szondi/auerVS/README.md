@@ -54,7 +54,8 @@ referring (Butler 2022)
 - coding: R, MAXQDA
 - network: MAXQDA, Gephi
 
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
 
 <div id="ref-butler_what_2022" class="csl-entry">
 
