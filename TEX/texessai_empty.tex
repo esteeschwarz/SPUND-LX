@@ -10,6 +10,9 @@
 %\usepackage{lipsum}
 \usepackage{forest}
 %!\usetikzlibrary;
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{easyformat}
 \begin{document}
 
 \begin{flushleft}
@@ -27,7 +30,8 @@ Wintersemester 2022/23
 \LARGE{Phrasenschemata}\\[10pt]
 \Large{Themenblatt}\\[10pt]
 \large{XXXX name}\\[3pt]
-\small{\pgfrdfhref{mailto:x@xtdialup.fu-berlin.de}{noadressfu-berlin.de}}\\[10pt]
+\small{\href{mailto:x@xtdialup.fu-berlin.de}{noadressfu-berlin.de}}\\[10pt]
+
 \large{\today}\\[30pt]
 \end{center}
 
@@ -90,21 +94,24 @@ for reference see: %\cref{figure1}
 \begin{figure}
 	\begin{forest}
 
-	[S [NP Herr Matussek, tier=1 
+	[S 
+	[NP Herr Matussek, tier=1 
 	[PrP über Ihrer billigen Feminismusschelte,tier=2]
 	[VP haben Sie 
+	[PrP aus den Augen  [verloren
 	[VP die Jelineks Sprache atmet,  
-	[[NP den scharfen Witz,tier=3], 
+	[NP den scharfen Witz,tier=3], 
 	[NP die wahnwitzige Musikalität,tier=3] 
-	[NP die kalte Luft,]]]]]
-	[
-	[NP dieses Meer an Quantensprüngen,tier=4 [PrP zwischen Stoff und Form, Fühlen und Denken, Politischem wie allzu Menschlichem, tier=5]]
-	[VP [NP kurz: das weiße Rauschen,tier=5 ]das 
-	[NP diese Literatur,tier=4] verkörpert und auszeichnet,tier=3] wie keine zweite,tier=5], und eben:[VP sie einzigartig macht]
+	[NP die kalte Luft,]
+	
+	[NP dieses Meer an Quantensprüngen,tier=4 [PrP zwischen Stoff und Form Fühlen und Denken Politischem wie allzu Menschlichem, tier=5]
+	[NP kurz: das weiße Rauschen,tier=5 ] [das 
+	[NP diese Literatur,tier=4] [VP verkörpert und auszeichnet,tier=3]] [wie keine zweite,tier=5][ und eben:][VP sie einzigartig macht]]]
 	[,][VP und dazu 
-	[NP [AdjP all die gewaltigen wie zarten ]Entwicklungsschritte ]
-	[PrP in Jelineks Werk][VP[AdjP leider ][PrP aus den Augen ]verloren].]]]]]
-	]]]
+	[NP all die [AdjP gewaltigen wie zarten Entwicklungsschritte ]]
+	[PrP in Jelineks Werk][VP[AdjP leider ]
+	]]
+	]]]]]]
 	
 	\end{forest}
 
