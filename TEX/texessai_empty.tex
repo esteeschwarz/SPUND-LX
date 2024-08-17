@@ -1,4 +1,4 @@
-\documentclass[usegeometry, paper=a4, parskip=half, numbers=enddot,  fontsize=11pt, toc=sectionentrywithdots]{scrartcl}
+\documentclass[usegeometry, paper=a4, landscape,parskip=half, numbers=enddot,  fontsize=11pt, toc=sectionentrywithdots]{scrartcl}
 
 %!Deutsches Sprachpaket
 \usepackage[ngerman]{babel}
@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{easyformat}
+%usepackage{comment}
 \begin{document}
 
 \begin{flushleft}
@@ -89,33 +90,33 @@ for reference see: %\cref{figure1}
 ]
 \end{forest}
 \end{figure}
-
+%begin{comment}
 
 \begin{figure}
 	\begin{forest}
 
 	[S 
-	[NP Herr Matussek, tier=1 
-	[PrP über Ihrer billigen Feminismusschelte,tier=2]
-	[VP haben Sie 
-	[PrP aus den Augen  [verloren
-	[VP die Jelineks Sprache atmet,  
-	[NP den scharfen Witz,tier=3], 
-	[NP die wahnwitzige Musikalität,tier=3] 
-	[NP die kalte Luft,]
+	[NP Herr Matussek
+	[PrP über Ihrer billigen Feminismusschelte]
+	[VP haben Sie [AdvP leider ]
+	[PrP aus den Augen verloren
+	[VP die Jelineks Sprache atmet
+	[NP den scharfen Witz] 
+	[NP die wahnwitzige Musikalität] 
+	[NP die kalte Luft]]
 	
-	[NP dieses Meer an Quantensprüngen,tier=4 [PrP zwischen Stoff und Form Fühlen und Denken Politischem wie allzu Menschlichem, tier=5]
-	[NP kurz: das weiße Rauschen,tier=5 ] [das 
-	[NP diese Literatur,tier=4] [VP verkörpert und auszeichnet,tier=3]] [wie keine zweite,tier=5][ und eben:][VP sie einzigartig macht]]]
-	[,][VP und dazu 
+	[NP dieses Meer an Quantensprüngen [PrP zwischen Stoff und Form Fühlen und Denken Politischem wie allzu Menschlichem]
+	[NP kurz das weiße Rauschen ] [DEM das 
+	[NP diese Literatur] [VP verkörpert und auszeichnet]] [COMP wie keine zweite][VP und eben sie einzigartig macht]]]
+	[VP und dazu 
 	[NP all die [AdjP gewaltigen wie zarten Entwicklungsschritte ]]
-	[PrP in Jelineks Werk][VP[AdjP leider ]
+	[PrP in Jelineks Werk]
 	]]
-	]]]]]]
+	]]
 	
 	\end{forest}
 
 \end{figure}
 
-
+%end{comment}
 \end{document}
