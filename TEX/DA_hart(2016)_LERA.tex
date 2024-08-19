@@ -1,0 +1,238 @@
+\documentclass{book}
+\usepackage[landscape, b4paper, top=15mm, left=15mm, right=15mm, bottom=20mm]{geometry}
+
+\usepackage{paracol}		% to devide the page in multiple columns
+
+\usepackage[ruled,para*,perpage]{manyfoot}		% for multiple groups of footnotes
+\DeclareNewFootnote[para]{A}[arabic]		% group A - parallel arranged footnotes with Arabic numbering
+\DeclareNewFootnote[plain]{B}[roman]		% group B - footnotes arranged line-by-line with Roman numbering
+\maxdeadcycles=1000
+
+\newlength{\durchschuss}		% vertical space between two footnotes
+\durchschuss=-5pt
+
+\usepackage[usenames,dvipsnames]{xcolor}		% define own colors
+
+\usepackage[normalem]{ulem}		% for colored markings of the text
+\newcommand\marker[1][yellow]{\bgroup\markoverwith{\textcolor{#1}{\rule[-.5ex]{2pt}{2.5ex}}}\ULon}		% markings with assigned color
+\definecolor{copy}{gray}{0.92}
+\definecolor{add}{rgb}{0.6, 1, 0.6}
+\definecolor{del}{rgb}{1, 0.67, 0.67}
+\definecolor{sub}{rgb}{0.73, 0.73, 1}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setmainfont[Mapping=tex-text]{Linux Libertine O}		% free font with many special characters
+\fontdimen2\font=0.3em	% interword space
+\fontdimen3\font=0.5em	% interword stretch
+\fontdimen4\font=0.1em	% interword shrink
+\tolerance 10000	% helps to force justification
+
+\begin{document}
+	\thispagestyle{empty}           % no pagenumbers
+	\setlength{\columnsep}{0.03\textwidth}		% space between two columns
+
+\setcolumnwidth{0.03\textwidth, \textwidth, \textwidth, \textwidth, \textwidth}
+
+	\newpage
+	\columnratio{0.25, 0.25, 0.25}
+	\begin{paracol}{4}
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn*
+		\noindent
+Report \marker[copy]{1}\footnotemarkA[1].		\switchcolumn
+		\noindent
+Report \marker[sub]{2}\footnotemarkA[1].		\switchcolumn
+		\noindent
+Report \marker[sub]{3}\footnotemarkA[1].		\switchcolumn
+		\noindent
+Report \marker[sub]{4}\footnotemarkA[1].		\switchcolumn
+	\end{paracol}
+
+	% variant apparatus
+	\footnotetextA[1]
+	{
+		\begin{tabular}{rl}
+			hart(2016)&1\\
+			hart(2016)&2\\
+			hart(2016)&3\\
+			hart(2016)&4\\
+			&\\[\durchschuss]
+		\end{tabular}
+	}
+
+	\newpage
+	\columnratio{0.25, 0.25, 0.25}
+	\begin{paracol}{4}
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn*
+		\noindent
+A protest against local council policy turned violent yesterday in the city of Southfield.		\switchcolumn
+		\noindent
+A protest against local council policy turned violent yesterday in the city of Southfield.		\switchcolumn
+		\noindent
+A protest against local council policy turned violent yesterday in the city of Southfield.		\switchcolumn
+		\noindent
+A protest against local council policy turned violent yesterday in the city of Southfield.		\switchcolumn
+	\end{paracol}
+
+	% variant apparatus
+
+	\newpage
+	\columnratio{0.25, 0.25, 0.25}
+	\begin{paracol}{4}
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn*
+		\noindent
+\marker[copy]{Protesters attacked police officers}\footnotemarkA[1] amid scenes of chaos outside City Hall.		\switchcolumn
+		\noindent
+\marker[sub]{Police}\marker[copy]{ }\marker[sub]{officers}\marker[copy]{ }\marker[sub]{came}\marker[copy]{ }\marker[sub]{under}\marker[copy]{ }\marker[add]{attack}\marker[copy]{ }\marker[add]{from}\marker[copy]{ }\marker[add]{protesters}\footnotemarkA[1] amid scenes of chaos outside City Hall.		\switchcolumn
+		\noindent
+\marker[sub]{Protesters}\marker[copy]{ }\marker[sub]{clashed}\marker[copy]{ }\marker[sub]{with}\marker[copy]{ }\marker[sub]{police}\marker[copy]{ }\marker[sub]{officers}\footnotemarkA[1] amid scenes of chaos outside City Hall.		\switchcolumn
+		\noindent
+\marker[sub]{Police}\marker[copy]{ }\marker[add]{officers}\marker[copy]{ clashed with }\marker[sub]{protesters}\footnotemarkA[1] amid scenes of chaos outside City Hall.		\switchcolumn
+	\end{paracol}
+
+	% variant apparatus
+	\footnotetextA[1]
+	{
+		\begin{tabular}{rl}
+			hart(2016)&Protesters attacked police officers\\
+			hart(2016)&Police officers came under attack from protesters\\
+			hart(2016)&Protesters clashed with police officers\\
+			hart(2016)&Police officers clashed with protesters\\
+			&\\[\durchschuss]
+		\end{tabular}
+	}
+
+	\newpage
+	\columnratio{0.25, 0.25, 0.25}
+	\begin{paracol}{4}
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn*
+		\noindent
+The protest later moved to the central square where \marker[copy]{protesters}\footnotemarkA[1] continued to \marker[copy]{assault police officers}\footnotemarkA[2].		\switchcolumn
+		\noindent
+The protest later moved to the central square where \marker[sub]{police}\marker[copy]{ }\marker[add]{officers}\footnotemarkA[1] continued to \marker[sub]{be}\marker[copy]{ }\marker[sub]{assaulted}\marker[copy]{ }\marker[sub]{by}\marker[copy]{ }\marker[add]{protesters}\footnotemarkA[2].		\switchcolumn
+		\noindent
+The protest later moved to the central square where \marker[sub]{protesters}\footnotemarkA[1] continued to \marker[sub]{trade}\marker[copy]{ }\marker[sub]{punches}\marker[copy]{ }\marker[sub]{with}\marker[copy]{ }\marker[sub]{police}\marker[copy]{ }\marker[add]{officers}\footnotemarkA[2].		\switchcolumn
+		\noindent
+The protest later moved to the central square where \marker[sub]{police}\marker[copy]{ }\marker[add]{officers}\footnotemarkA[1] continued to \marker[copy]{trade punches with }\marker[sub]{protesters}\footnotemarkA[2].		\switchcolumn
+	\end{paracol}
+
+	% variant apparatus
+	\footnotetextA[1]
+	{
+		\begin{tabular}{rl}
+			hart(2016)&protesters\\
+			hart(2016)&police officers\\
+			hart(2016)&protesters\\
+			hart(2016)&police officers\\
+			&\\[\durchschuss]
+		\end{tabular}
+	}
+	\footnotetextA[2]
+	{
+		\begin{tabular}{rl}
+			hart(2016)&assault police officers\\
+			hart(2016)&be assaulted by protesters\\
+			hart(2016)&trade punches with police officers\\
+			hart(2016)&trade punches with protesters\\
+			&\\[\durchschuss]
+		\end{tabular}
+	}
+
+	\newpage
+	\columnratio{0.25, 0.25, 0.25}
+	\begin{paracol}{4}
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn*
+		\noindent
+Police officers used batons to control the crowds, which eventually dispersed around 9 pm.		\switchcolumn
+		\noindent
+Police officers used batons to control the crowds, which eventually dispersed around 9 pm.		\switchcolumn
+		\noindent
+Police officers used batons to control the crowds, which eventually dispersed around 9 pm.		\switchcolumn
+		\noindent
+Police officers used batons to control the crowds, which eventually dispersed around 9 pm.		\switchcolumn
+	\end{paracol}
+
+	% variant apparatus
+
+	\newpage
+	\columnratio{0.25, 0.25, 0.25}
+	\begin{paracol}{4}
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn
+		\noindent
+		\centerline{\textbf{hart(2016)}}\\
+		\switchcolumn*
+		\noindent
+10 people received treatment for injuries.		\switchcolumn
+		\noindent
+10 people received treatment for injuries.		\switchcolumn
+		\noindent
+10 people received treatment for injuries.		\switchcolumn
+		\noindent
+10 people received treatment for injuries.		\switchcolumn
+	\end{paracol}
+
+	% variant apparatus
+\end{document}
