@@ -40,7 +40,10 @@ com_button = '//*[@id="js-article"]/header/div[4]/a'
 com_button_fire = '/html/body/div[4]/div/main/article/header/div[4]/a'
 comments_button = driver.find_element(By.XPATH, com_button_fire)
 comments_button.click()
-
+### cookie consent first
+cookie_frame="https://consent-cdn.zeit.de/index.html?message_id=1138846&consentUUID=undefined&preload_message=true&hasCsp=true&version=v1&consent_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fconsent%2Ftcfv2&mms_origin=https%3A%2F%2Fconsent-cdn.zeit.de%2Fmms%2Fv2"
+cookie_search=driver.find_element(By.TAG_NAME,"iframe")
+driver.
 # Wait for comments to load
 driver.implicitly_wait(50)
 
