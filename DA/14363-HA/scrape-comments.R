@@ -85,6 +85,7 @@ remdr$navigate(site.art)
 # be handled
 ### workaround:
 # click accept button, click <comments>, scroll down, then get page source
+get.page.text<-function(){
 art.htm<-remdr$getPageSource()
 art.htm.x<-read_html(art.htm[[1]])
 all.div<-xml_find_all(art.htm.x,"//div")
@@ -92,9 +93,17 @@ div.att<-xml_attrs(all.div)
 m<-grep("comment__body comment__user-input",div.att)
 # m<-grep("comments_thread",div.att)
 text<-xml_text(all.div[m])
-writeLines(text,"comments.txt")
-
-
+writeLines(text,"comments.r.txt")
+html.2<-(all.div[m])
+html.2<-xml_new_document()
+xml_add_child(html.2,"doc")
+html.2$doc<-html
+write_xml(html.2$doc,"comments.r.html")
+writeLines(unlist(html),"comments.r.html")
+}
+run<-readline(prompt = "ready? now process pagesource? (y/n)")
+if (run=="y")
+  get.page.text()
 
 temp.fun<-function(){
 id.window<-remdr$getWindowHandles()
