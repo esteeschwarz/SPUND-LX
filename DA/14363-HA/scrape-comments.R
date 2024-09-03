@@ -79,6 +79,24 @@ rd<-rsDriver(browser = "firefox",port = free_port())
 remdr<-rd$client
 remdr$navigate(site.art)
 
+
+
+# the scrape doesnt work with this site, there is an accept button which cannot
+# be handled
+### workaround:
+# click accept button, click <comments>, scroll down, then get page source
+art.htm<-remdr$getPageSource()
+art.htm.x<-read_html(art.htm[[1]])
+all.div<-xml_find_all(art.htm.x,"//div")
+div.att<-xml_attrs(all.div)
+m<-grep("comment__body comment__user-input",div.att)
+# m<-grep("comments_thread",div.att)
+text<-xml_text(all.div[m])
+writeLines(text,"comments.txt")
+
+
+
+temp.fun<-function(){
 id.window<-remdr$getWindowHandles()
 id.window
 remdr$switchToFrame(Id=1)
@@ -174,3 +192,4 @@ com.list$page[[k]]<-text
 }
 
 
+}

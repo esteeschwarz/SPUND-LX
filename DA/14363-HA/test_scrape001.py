@@ -13,88 +13,112 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from bs4 import BeautifulSoup
 ##
 
-class TestScrape001():
-  def setup_method(self, method):
-#    self.driver = webdriver.Firefox()
-    self.driver = method
-    self.vars = {}
+#class TestScrape001():
+ # #def setup_method(self, method):
+   # driver = webdriver.Firefox()
+   # driver = method
+#vars = {}
   
-  def teardown_method(self, method):
-    self.driver.quit()
+  #def teardown_method(self, method):
+   # driver.quit()
   
-  def test_scrape001(self):
-    self.setup_method(webdriver.Firefox())
-    self.driver.get("https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung")
-    self.driver.set_window_size(550, 691)
-    driver.implicitly_wait(30)
+  ##def test_scrape001(self):
+#class TestScrape001():
+ # def scrape():
+driver = webdriver.Firefox()
+driver.get("https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung")
+   # driver.set_window_size(550, 691)
+driver.implicitly_wait(30)
 
-    self.driver.switch_to.frame(1)
-    self.driver.find_element(By.CSS_SELECTOR, ".message-button:nth-child(1)").click()
-    self.driver.switch_to.default_content()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".article-actions > .z-text-button:nth-child(1)")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-#    actions.move_to_element(element, 0, 0).perform()
-    actions.move_to_element(element).perform()
-    self.driver.execute_script("window.scrollTo(0,22)")
-    self.driver.execute_script("window.scrollTo(0,207)")
-    self.driver.execute_script("window.scrollTo(0,358)")
-    self.driver.find_element(By.CSS_SELECTOR, ".article-actions > .z-text-button:nth-child(1)").click()
-    self.driver.execute_script("window.scrollTo(0,5107.5)")
-    self.driver.execute_script("window.scrollTo(0,11296.5)")
-    self.driver.execute_script("window.scrollTo(0,14366.5)")
-    self.driver.execute_script("window.scrollTo(0,16730.5)")
-    self.driver.execute_script("window.scrollTo(0,17118.5)")
-    self.driver.execute_script("window.scrollTo(0,17406.5)")
-    self.driver.find_element(By.CSS_SELECTOR, ".svelte-13pupk0").click()
-    self.driver.execute_script("window.scrollTo(0,18844.5)")
-    self.driver.execute_script("window.scrollTo(0,19518.5)")
-    self.driver.execute_script("window.scrollTo(0,21971.5)")
-    self.driver.execute_script("window.scrollTo(0,24769.5)")
-    self.driver.execute_script("window.scrollTo(0,25225.5)")
-    self.driver.execute_script("window.scrollTo(0,28038.5)")
-    self.driver.execute_script("window.scrollTo(0,30339.5)")
-    self.driver.execute_script("window.scrollTo(0,31713.5)")
-    self.driver.execute_script("window.scrollTo(0,35732.5)")
-    self.driver.execute_script("window.scrollTo(0,36647.5)")
-    self.driver.execute_script("window.scrollTo(0,39165.5)")
-    self.driver.execute_script("window.scrollTo(0,41851.5)")
-    self.driver.execute_script("window.scrollTo(0,44348.5)")
-    self.driver.execute_script("window.scrollTo(0,47231.5)")
-    self.driver.execute_script("window.scrollTo(0,49454.5)")
-    self.driver.execute_script("window.scrollTo(0,52166.5)")
-    self.driver.execute_script("window.scrollTo(0,55228.5)")
-    self.driver.execute_script("window.scrollTo(0,57958.5)")
-    self.driver.execute_script("window.scrollTo(0,60978.5)")
-    self.driver.execute_script("window.scrollTo(0,63192.5)")
-    self.driver.execute_script("window.scrollTo(0,66087.5)")
-    self.driver.execute_script("window.scrollTo(0,69236.5)")
-    self.driver.execute_script("window.scrollTo(0,72641.5)")
-    self.driver.execute_script("window.scrollTo(0,78535)")
-    self.driver.find_element(By.CSS_SELECTOR, ".paywall-footer__icon-close").click()
-    
-    ###
-    soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-    comments = soup.find_all('div', class_='comment__body comment__user-input')
-    file = open("comments.txt","w")
-    file.write(str(comments))  
+driver.switch_to.frame(1)
+driver.find_element(By.CSS_SELECTOR, ".message-button:nth-child(1)").click()
+driver.find_element(By.PARTIAL_LINK_TEXT, "Zustimmen").click()
+
+driver.switch_to.default_content()
+element = driver.find_element(By.CSS_SELECTOR, ".article-actions > .z-text-button:nth-child(1)")
+actions = ActionChains(driver)
+actions.move_to_element(element).perform()
+element = driver.find_element(By.CSS_SELECTOR, "body")
+actions = ActionChains(driver)
+actions.move_to_element(element, 0, 0).perform()
+ #   actions.move_to_element(element).perform()
+# driver.execute_script("window.scrollTo(0,22)")
+# driver.execute_script("window.scrollTo(0,207)")
+# driver.execute_script("window.scrollTo(0,358)")
+driver.switch_to.frame(1)
+driver.find_element(By.CSS_SELECTOR, ".message-button:nth-child(1)").click()
+
+driver.find_element(By.CSS_SELECTOR, ".article-actions > .z-text-button:nth-child(1)").click()
+driver.switch_to.default_content()
+driver.execute_script("window.scrollTo(0,5107.5)")
+driver.execute_script("window.scrollTo(0,11296.5)")
+driver.execute_script("window.scrollTo(0,14366.5)")
+driver.execute_script("window.scrollTo(0,16730.5)")
+driver.execute_script("window.scrollTo(0,17118.5)")
+driver.execute_script("window.scrollTo(0,17406.5)")
+#driver.find_element(By.CSS_SELECTOR, ".svelte-13pupk0").click()
+driver.find_element(By.LINK_TEXT, "Mehr laden").click()
+driver.execute_script("window.scrollTo(0,18844.5)")
+driver.execute_script("window.scrollTo(0,19518.5)")
+driver.execute_script("window.scrollTo(0,21971.5)")
+driver.execute_script("window.scrollTo(0,24769.5)")
+driver.execute_script("window.scrollTo(0,25225.5)")
+driver.execute_script("window.scrollTo(0,28038.5)")
+driver.execute_script("window.scrollTo(0,30339.5)")
+driver.execute_script("window.scrollTo(0,31713.5)")
+driver.execute_script("window.scrollTo(0,35732.5)")
+driver.execute_script("window.scrollTo(0,36647.5)")
+driver.execute_script("window.scrollTo(0,39165.5)")
+driver.execute_script("window.scrollTo(0,41851.5)")
+driver.execute_script("window.scrollTo(0,44348.5)")
+driver.execute_script("window.scrollTo(0,47231.5)")
+driver.execute_script("window.scrollTo(0,49454.5)")
+driver.execute_script("window.scrollTo(0,52166.5)")
+driver.execute_script("window.scrollTo(0,55228.5)")
+driver.execute_script("window.scrollTo(0,57958.5)")
+driver.execute_script("window.scrollTo(0,60978.5)")
+driver.execute_script("window.scrollTo(0,63192.5)")
+driver.execute_script("window.scrollTo(0,66087.5)")
+driver.execute_script("window.scrollTo(0,69236.5)")
+driver.execute_script("window.scrollTo(0,72641.5)")
+driver.execute_script("window.scrollTo(0,78535)")
+driver.find_element(By.CSS_SELECTOR, ".paywall-footer__icon-close").click()
+
+
+###
+iframe = driver.find_element(By.CSS_SELECTOR, "#modal > iframe")
+
+    # switch to selected iframe
+driver.switch_to.frame(iframe)
+
+    # Now click on button
+driver.find_element(By.TAG_NAME, 'button').click()
+
+###
+#if __name__ == "__main__":
+#scrape_obj = TestScrape001()
+#soup = scrape_obj.scrape()
+#  scrape.scrape
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+comments = soup.find_all('div', class_='comment__body comment__user-input')
+file = open("comments.txt","w")
+file.write(str(comments))  
 # Get the page source and parse it with BeautifulSoup
-if __name__ == "__main__":
-  scrape = TestScrape001()
-  scrape.test_scrape001()
-#soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-# def output_to_file(soup,newfilepath):
+# if __name__ == "__main__":
+#   scrape = TestScrape001()
+#   scrape.scrape()
+#soup = BeautifulSoup(driver.page_source, 'html.parser')
+# #def output_to_file(soup,newfilepath):
 #         with open(newfilepath, 'w') as outfile:
 #             output = str(soup)
 #             outfile.write(output)
 #         return(x)
-html_string = str(soup)
+#html_string = str(soup)
 # with open("output.html", "w") as file:
 #      file.write(html_string)                  
 # output_to_file(soup,"com-test.html")
-# # Find all comment elements
-# comments = soup.find_all('div', class_='comment__body comment__user-input')
-# file = open("comments.txt","w")
-# file.write(str(comments))  
+# # # Find all comment elements
+ # comments = soup.find_all('div', class_='comment__body comment__user-input')
+ # file = open("comments.txt","w")
+ # file.write(str(comments))  
+#scrape.scrape
