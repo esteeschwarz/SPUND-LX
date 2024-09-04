@@ -2,10 +2,13 @@
 # 14363.HA.discourse
 # discourse analysis corpus building
 ####################################
-# library(RSelenium)
-# library(rvest)
-# library(httr)
-# library(xml2)
+library(RSelenium)
+library(rvest)
+library(httr)
+library(xml2)
+library(netstat)
+library(wdman)
+library(binman)
 site.base<-"https://zeit.de"
 site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung"
 
@@ -60,11 +63,11 @@ site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtag
 ###
 #install.packages("netstat")
 #install.packages("wdman")
-library(RSelenium)
-library(netstat)
-library(wdman)
-library(binman)
-library(xml2)
+# library(RSelenium)
+# library(netstat)
+# library(wdman)
+# library(binman)
+# library(xml2)
 #selenium()
 #sel.object<-selenium(retcommand = T,check = F)
 #sel.object
@@ -86,7 +89,38 @@ remdr$navigate(site.art)
 ### workaround:
 # click accept button, click <comments>, scroll down, then get page source
 get.page.text<-function(){
+# click comments
+  com_button_fire.css<-'.article-actions > .z-text-button:nth-child(1)'
+  com_button<-remdr$findElement(using = "css selector", com_button_fire.css)
+  #com_button_fire.xpath = '/html/body/div[4]/div/main/article/header/div[4]/a'
+  #com_button<-remdr$findElement(using = "xpath", com_button_fire.xpath)
+  com_button$clickElement()
+  
+# click <more> button
+  button.more<-'//*[@id="comments"]/div/div[2]/button'
+  #   bm.2<-'#comments > div > div.comments__body > button'
+  #   button.more<-'//*[@id="comments"]/div/div[2]/button'
+     bm.3<-'//*[@data-ct-ck4="thread_loadmore_click"]'
+ # more.button<-remdr$findElement(using = "xpath", button.more)
+     more.button<-remdr$findElement(using = "xpath", bm.3)
+  #   more.button<-remdr$findElement(using = "class","comments__body")
+     more.button$clickElement()
+# scroll to bottom
+  for (k in 1:20){
+     remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
+  }
+    # gets 24 comments
+  # try with manual scroll > 88
+  # with loop max 195, correct
+# >
+
+
 art.htm<-remdr$getPageSource()
+save(art.htm,file = "art.htm.Rdata")
+htm.raw<-unlist(art.htm)
+writeLines(htm.raw,"htm.raw.html")
+htm.in<-read_html("htm.raw.html")
+#write_html(htm.in,"htm.test.html")
 art.htm.x<-read_html(art.htm[[1]])
 all.div<-xml_find_all(art.htm.x,"//div")
 div.att<-xml_attrs(all.div)
@@ -94,12 +128,20 @@ m<-grep("comment__body comment__user-input",div.att)
 # m<-grep("comments_thread",div.att)
 text<-xml_text(all.div[m])
 writeLines(text,"comments.r.txt")
-html.2<-(all.div[m])
-html.2<-xml_new_document()
-xml_add_child(html.2,"doc")
-html.2$doc<-html
-write_xml(html.2$doc,"comments.r.html")
-writeLines(unlist(html),"comments.r.html")
+# html.2<-(all.div[m])
+# html.3<-xml_new_document("html")
+# html.4<-xml_new_root("html")
+# #html.4$doc<-html.2
+# xml_add_child(html.4,"comments")
+# com<-xml_find_all(html.4,"//comments")
+# 
+# xml_replace(com,all.div[m])
+# xml_add_child(html.3,"comments")
+# 
+# #html.2$doc<-html
+# #write_xml(html.4,"comments.r.html")
+# htm_paste<-paste0(unlist(html.2),collapse = "")
+#writeLines(htm_paste,"comments.r.html")
 }
 run<-readline(prompt = "ready? now process pagesource? (y/n)")
 if (run=="y")
