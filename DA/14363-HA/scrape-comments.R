@@ -13,7 +13,7 @@ library(utils)
 library(stringi)
 site.base<-"https://zeit.de"
 site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung"
-
+voyant.getzip<-"https://raw.githubusercontent/esteeschwarz/main/SPUND-LX/DA/14363-HA/zeit-comments.zip"
 # g.simple<-GET(site.comments)
 # r1<-content(g.simple,"text")
 # r1.htm<-read_html(r1)
@@ -124,7 +124,7 @@ get.page.text<-function(){
 
 art.htm<-remdr$getPageSource()
 save(art.htm,file = paste0("article-",run,".htm.Rdata"))
-#load("article-1.htm.Rdata")
+#load("article-2.htm.Rdata")
 htm.raw<-unlist(art.htm)
 writeLines(htm.raw,paste0("htm-",run,".raw.html"))
 #htm.in<-read_html("htm.raw.html")
@@ -135,18 +135,22 @@ div.att<-xml_attrs(all.div)
 m<-grep("comment__body comment__user-input",div.att)
 # m<-grep("comments_thread",div.att)
 text<-xml_text(all.div[m])
+text
+text.m<-paste0('{"textID:"',1:length(text),'} ',text)
+head(text.m)
 # grep title
-ttl<-xml_find_first(art.htm.x,"//title")
+ttl<-xml_find_first(art.htm.x,"//title") 
 ttl.tx<-xml_text(ttl)
 ttl.json<-stri_extract_all_regex(htm.raw,'content: \\{"id":.*\\}')
 ttl.json
-text<-c(ttl.json[[1]],text)
-#writeLines(text,paste0("comments.r-",1,".txt"))
-writeLines(text,paste0("comments.r-",run,".txt"))
+text.3<-c(ttl.json[[1]],text.m)
+#writeLines(text.3,paste0("data/comments.r-",1,".txt"))
+writeLines(text.3,paste0("data/comments.r-",run,".txt"))
 
-f<-list.files()
+f<-list.files("data")
 m.tx<-grep(".txt",f)
-zip("zeit-comments.zip",f[m.tx])
+zip("zeit-comments.zip",paste("data",f[m.tx],sep="/"))
+#zip("zeit-comments.zip",f[m.tx])
 # html.2<-(all.div[m])
 # html.3<-xml_new_document("html")
 # html.4<-xml_new_root("html")
