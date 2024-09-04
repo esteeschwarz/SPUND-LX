@@ -9,6 +9,8 @@ library(xml2)
 library(netstat)
 library(wdman)
 library(binman)
+library(utils)
+library(stringi)
 site.base<-"https://zeit.de"
 site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung"
 
@@ -80,8 +82,9 @@ site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtag
 #binman::list_versions("chromedriver")
 rd<-rsDriver(browser = "firefox",port = free_port())
 remdr<-rd$client
-remdr$navigate(site.art)
 
+#remdr$navigate(site.art)
+run<-2
 
 
 # the scrape doesnt work with this site, there is an accept button which cannot
@@ -97,17 +100,21 @@ get.page.text<-function(){
   com_button$clickElement()
   
 # click <more> button
-  button.more<-'//*[@id="comments"]/div/div[2]/button'
+  #button.more<-'//*[@id="comments"]/div/div[2]/button'
   #   bm.2<-'#comments > div > div.comments__body > button'
   #   button.more<-'//*[@id="comments"]/div/div[2]/button'
      bm.3<-'//*[@data-ct-ck4="thread_loadmore_click"]'
  # more.button<-remdr$findElement(using = "xpath", button.more)
+     remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
+     
      more.button<-remdr$findElement(using = "xpath", bm.3)
   #   more.button<-remdr$findElement(using = "class","comments__body")
      more.button$clickElement()
 # scroll to bottom
-  for (k in 1:20){
+  for (k in 1:30){
      remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
+     Sys.sleep(5)
+    
   }
     # gets 24 comments
   # try with manual scroll > 88
@@ -116,10 +123,11 @@ get.page.text<-function(){
 
 
 art.htm<-remdr$getPageSource()
-save(art.htm,file = "art.htm.Rdata")
+save(art.htm,file = paste0("article-",run,".htm.Rdata"))
+#load("article-1.htm.Rdata")
 htm.raw<-unlist(art.htm)
-writeLines(htm.raw,"htm.raw.html")
-htm.in<-read_html("htm.raw.html")
+writeLines(htm.raw,paste0("htm-",run,".raw.html"))
+#htm.in<-read_html("htm.raw.html")
 #write_html(htm.in,"htm.test.html")
 art.htm.x<-read_html(art.htm[[1]])
 all.div<-xml_find_all(art.htm.x,"//div")
@@ -127,7 +135,18 @@ div.att<-xml_attrs(all.div)
 m<-grep("comment__body comment__user-input",div.att)
 # m<-grep("comments_thread",div.att)
 text<-xml_text(all.div[m])
-writeLines(text,"comments.r.txt")
+# grep title
+ttl<-xml_find_first(art.htm.x,"//title")
+ttl.tx<-xml_text(ttl)
+ttl.json<-stri_extract_all_regex(htm.raw,'content: \\{"id":.*\\}')
+ttl.json
+text<-c(ttl.json[[1]],text)
+#writeLines(text,paste0("comments.r-",1,".txt"))
+writeLines(text,paste0("comments.r-",run,".txt"))
+
+f<-list.files()
+m.tx<-grep(".txt",f)
+zip("zeit-comments.zip",f[m.tx])
 # html.2<-(all.div[m])
 # html.3<-xml_new_document("html")
 # html.4<-xml_new_root("html")
