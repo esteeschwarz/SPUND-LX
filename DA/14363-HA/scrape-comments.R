@@ -46,7 +46,7 @@ get.page.text<-function(){
   #   more.button<-remdr$findElement(using = "class","comments__body")
      more.button$clickElement()
 # scroll to bottom
-  for (k in 1:80){
+  for (k in 1:180){
      remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
      Sys.sleep(5)
     
@@ -79,12 +79,14 @@ ttl<-xml_find_first(art.htm.x,"//title")
 ttl.tx<-xml_text(ttl)
 ttl.json<-stri_extract_all_regex(htm.raw,'content: \\{"id":.*\\}')
 ttl.json
+ttl.json
 text.3<-c(ttl.json[[1]],text.m)
 #writeLines(text.3,paste0("data/comments.r-",1,".txt"))
 writeLines(text.3,paste0("data/comments.r-",run,".txt"))
 ###
 # try as table
-text.df<-data.frame(article.id=3,text.id=1:length(text),comment=text)
+text.4<-c(ttl.json[[1]],text)
+text.df<-data.frame(article.id=run,text.id=1:length(text.4),comment=text.4)
 write.csv(text.df,paste0("data/comments.df-",run,".csv"))
 ###
 f<-list.files("data")
