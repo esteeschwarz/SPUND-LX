@@ -18,7 +18,8 @@ rd<-rsDriver(browser = "firefox",port = free_port())
 remdr<-rd$client
 
 #remdr$navigate(site.art)
-run<-2
+remdr$navigate("https://zeit.de")
+run<-3
 
 
 # the scrape doesnt work with this site, there is an accept button which cannot
@@ -45,7 +46,7 @@ get.page.text<-function(){
   #   more.button<-remdr$findElement(using = "class","comments__body")
      more.button$clickElement()
 # scroll to bottom
-  for (k in 1:30){
+  for (k in 1:80){
      remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
      Sys.sleep(5)
     
@@ -57,6 +58,7 @@ get.page.text<-function(){
 
 
 art.htm<-remdr$getPageSource()
+run
 save(art.htm,file = paste0("article-",run,".htm.Rdata"))
 #load("article-2.htm.Rdata")
 htm.raw<-unlist(art.htm)
@@ -69,7 +71,7 @@ div.att<-xml_attrs(all.div)
 m<-grep("comment__body comment__user-input",div.att)
 # m<-grep("comments_thread",div.att)
 text<-xml_text(all.div[m])
-text
+#text
 text.m<-paste0('{"textID:"',1:length(text),'} ',text)
 head(text.m)
 # grep title
@@ -80,7 +82,11 @@ ttl.json
 text.3<-c(ttl.json[[1]],text.m)
 #writeLines(text.3,paste0("data/comments.r-",1,".txt"))
 writeLines(text.3,paste0("data/comments.r-",run,".txt"))
-
+###
+# try as table
+text.df<-data.frame(article.id=3,text.id=1:length(text),comment=text)
+write.csv(text.df,paste0("data/comments.df-",run,".csv"))
+###
 f<-list.files("data")
 m.tx<-grep(".txt",f)
 zip("zeit-comments.zip",paste("data",f[m.tx],sep="/"))
@@ -104,7 +110,7 @@ zip("zeit-comments.zip",paste("data",f[m.tx],sep="/"))
    html.2[comment][[1]]
 #   print(xml_text(xml_find_all(comment,"//p")))
  }
- xml_text(html.4)
+# xml_text(html.4)
  # #html.4$doc<-html.2
  xml_add_child(html.4,"comments")
  xml_replace(html.4[[1]],html.3)
