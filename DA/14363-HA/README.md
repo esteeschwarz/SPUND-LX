@@ -8,4 +8,4 @@ since we do not know yet, to what aim to analyse which corpus, we first build so
 [zeit.de reader comments](https://voyant-tools.org/?corpus=894dfdbe0ee39a3065309edc7c7fbf0c)    
 
 - insights gaza conflict corpus, 24-09-05 back 4 weeks   
-[zeit.de reader comments](https://voyant-tools.org/?corpus=e3d47e51618f70599ac74f2ade304d99)
+[zeit.de reader comments](https://voyant-tools.org/?corpus=e3d47e51618f70599ac74f2ade304d99&stopList=keywords-c0842123d3e76ab69597f2db9f5903ae)
