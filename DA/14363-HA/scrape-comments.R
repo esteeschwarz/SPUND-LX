@@ -11,9 +11,12 @@ library(wdman)
 library(binman)
 library(utils)
 library(stringi)
+library(clipr)
 site.base<-"https://zeit.de"
 site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung"
-voyant.getzip<-"https://raw.githubusercontent/esteeschwarz/main/SPUND-LX/DA/14363-HA/zeit-comments.zip"
+voyant.getzip<-"https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/DA/14363-HA/zeit-comments.zip"
+voyant.page<-"https://voyant-tools.org/?corpus=e3d47e51618f70599ac74f2ade304d99" # 3
+write_clip(voyant.getzip)
 rd<-rsDriver(browser = "firefox",port = free_port())
 remdr<-rd$client
 
@@ -90,7 +93,7 @@ text.df<-data.frame(article.id=run,text.id=1:length(text.4),comment=text.4)
 write.csv(text.df,paste0("data/comments.df-",run,".csv"))
 ###
 f<-list.files("data")
-m.tx<-grep(".txt",f)
+m.tx<-grep(".txt|.csv",f)
 zip("zeit-comments.zip",paste("data",f[m.tx],sep="/"))
 #zip("zeit-comments.zip",f[m.tx])
  html.2<-(all.div[m])
