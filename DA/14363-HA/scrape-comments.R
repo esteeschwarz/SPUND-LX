@@ -103,9 +103,19 @@ zip("zeit-comments.zip",paste("data",f[m.tx],sep="/"))
  html.4<-xml_new_root("html")
  lc<-length(html.2)
  for (k in 1:lc){
-   xml_add_child(html.4,"node")
+   xml_add_child(html.4,"comment")
  }
-   html.4["node"][[1]]
+ html.4[2][1][1]
+ #html.4
+all.c<- xml_find_all(html.4,"//comment")
+for (k in 1:length(all.c)){ 
+xml_replace(all.c[k],html.2[k][[1]])
+}
+k
+html.2[k][[1]]
+k<-2
+ write_xml(html.4,"data/comments.htm-3.xml")
+   html.4[1][[1]]<-html.2[1][[1]]
    comment<-1
  for (comment in 1:3){
    # xml_add_child(html.4,"comment",xml_find_all(html.2[[comment]],"//p"))
