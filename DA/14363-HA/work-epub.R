@@ -1,37 +1,44 @@
-install.packages("epubr")
-# Load the package
+# 20240907(10.56)
+# 14371.zeit.epub-corpus.grep.afd.occurences
+############################################
+
 library(epubr)
-
-# Read the EPUB file
-epub_data <- epub("sample.epub")
-
-# Extract and print metadata
-metadata <- epub_data$metadata
-print(metadata)
-
-# Extract and print text content
-text_content <- epub_data$data
-print(text_content)
+library(stringi)
+library(quanteda)
 
 f<-list.files()
 m<-grep(".epub",f)
 f.m<-f[m]
-ep<-epub(f.m[1])
-print(ep$date)
-date.array<-array()
-text.df<-data.frame(id=1:length(f.m),date=NA,text=NA)
+text.list<-list()
+k<-"2012-03-15"
+k<-3
 for (k in 1:length(f.m)){
   ep<-epub(f.m[k])
-  text.df$id[k]=k
-  text.df$date[k]<-ep$date
-  text.df$text[k]<-ep$data
-  
-  
+  k.ns<-ep$date
+  text.list[[k.ns]][["content"]]<-ep$data
+print(k)  
 }
-save(text.df,file="../text.df.Rdata")
-m<-grep("afd|AfD|AFD",)
-text.df$text[[1]]$text[6]
-grep.af<-function(x)m<-grep("afd|AfD|AFD",x["text"])
-m.af<-lapply(text.df$text, grep.af)
-m.na<-sum(m.af)>0
-unlist(m.af)
+text.list.s<-text.list[order(names(text.list))]
+#save(text.list.s,file="../text.list.Rdata")
+text.list<-text.list.s
+
+grep.af.c<-grep.af<-function(x){
+  regx<-"AfD|AFD"
+  m.1<-grep(regx,x$content[[1]]$text)
+  m.2<-stri_count_regex(x$content[[1]]$text[m.1],regx)
+ # m.3<-x$content[[1]]$text[m.1]
+  c.af<-corpus(x$content[[1]]$text[m.1])
+  c.af.t<-tokens(c.af)
+  m.af.kwic<-kwic(c.af.t,regx,valuetype = "regex",25)
+}
+m.af.corpus.kwic<-lapply(text.list, grep.af.c)
+m.true<-function(x)x$keyword!=""
+af.corpus.kwic.t<-lapply(m.af.corpus.kwic, m.true)
+af.corpus.exc<-m.af.corpus.kwic[unlist(af.corpus.kwic.t)]
+#save(m.af.corpus.kwic,file="../af.corpus.kwic.Rdata")
+# outputs list with texts including keyword-in-25tokens-window-context
+
+library(clipr)
+library(knitr)
+output<-lapply(m.af.corpus.kwic,kable)
+write_clip(unlist(output))
