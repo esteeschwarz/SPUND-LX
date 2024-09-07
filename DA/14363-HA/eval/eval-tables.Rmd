@@ -1,0 +1,31 @@
+---
+title: "zeit corpus essai"
+author: "esteeschwarz"
+date: "2024-09-07"
+output: 
+  md_document: 
+   variant: markdown_github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+```
+
+# corpus evaluation
+## extracts 2012-2013
+
+```{r pressure, echo=FALSE, results='asis'}
+load("../data/af.corpus.kwic.Rdata")
+df1<-data.frame(m.af.corpus.kwic[[1]])
+for (k in 1:length(m.af.corpus.kwic)){
+df2<-data.frame(m.af.corpus.kwic[[k]])
+
+if(dim(df2)[1]!=0){
+  df1<-rbind(df1,df2)
+}
+}
+  df1$docname<-gsub(".+/(.+\\.xhtml)","\\1",df1$docname)
+  kable(df1)
+```
+

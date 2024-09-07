@@ -29,16 +29,19 @@ grep.af.c<-grep.af<-function(x){
  # m.3<-x$content[[1]]$text[m.1]
   c.af<-corpus(x$content[[1]]$text[m.1])
   c.af.t<-tokens(c.af)
-  m.af.kwic<-kwic(c.af.t,regx,valuetype = "regex",25)
+  m.af.kwic<-kwic(c.af.t,regx,valuetype = "regex",35)
 }
 m.af.corpus.kwic<-lapply(text.list, grep.af.c)
-m.true<-function(x)x$keyword!=""
-af.corpus.kwic.t<-lapply(m.af.corpus.kwic, m.true)
-af.corpus.exc<-m.af.corpus.kwic[unlist(af.corpus.kwic.t)]
+# m.true<-function(x)x$keyword!=""
+# af.corpus.kwic.t<-lapply(m.af.corpus.kwic, m.true)
+# af.corpus.exc<-m.af.corpus.kwic[unlist(af.corpus.kwic.t)]
 #save(m.af.corpus.kwic,file="../af.corpus.kwic.Rdata")
+#save(m.af.corpus.kwic,file="~/documents/github/spund-lx/DA/14363-HA/data/af.corpus.kwic.Rdata")
 # outputs list with texts including keyword-in-25tokens-window-context
 
-library(clipr)
-library(knitr)
-output<-lapply(m.af.corpus.kwic,kable)
-write_clip(unlist(output))
+# library(clipr)
+# library(knitr)
+# output<-lapply(m.af.corpus.kwic,kable)
+# write_clip(unlist(output))
+# output<-lapply(m.af.corpus.kwic,unlist(kable))
+
