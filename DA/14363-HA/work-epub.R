@@ -32,6 +32,24 @@ grep.af.c<-grep.af<-function(x){
   m.af.kwic<-kwic(c.af.t,regx,valuetype = "regex",35)
 }
 m.af.corpus.kwic<-lapply(text.list, grep.af.c)
+# make csv
+load("data/af.corpus.kwic.Rdata")
+df1<-data.frame(m.af.corpus.kwic[[1]])
+df1[1,1:length(df1)]<-NA
+df1<-cbind(date=NA,df1)
+k<-41
+for (k in 1:length(m.af.corpus.kwic)){
+  df2<-data.frame(m.af.corpus.kwic[[k]])
+  if(dim(df2)[1]!=0){
+    df2<-cbind(date=names(m.af.corpus.kwic[k]),df2)
+    df1<-rbind(df1,df2)
+  }
+}
+df1<-df1[2:length(df1$date),]
+df1$docname<-gsub(".+/(.+\\.xhtml)","\\1",df1$docname)
+write.csv(df1,"data/af_corpus-kwic.csv")
+kable(df1)
+
 # m.true<-function(x)x$keyword!=""
 # af.corpus.kwic.t<-lapply(m.af.corpus.kwic, m.true)
 # af.corpus.exc<-m.af.corpus.kwic[unlist(af.corpus.kwic.t)]

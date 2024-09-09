@@ -2,6 +2,7 @@
 # 14363.HA.discourse
 # discourse analysis corpus building
 ####################################
+init<-function(run,page){
 library(RSelenium)
 library(rvest)
 library(httr)
@@ -12,17 +13,26 @@ library(binman)
 library(utils)
 library(stringi)
 library(clipr)
-site.base<-"https://zeit.de"
+library(jsonlite)
+  site.base<-"https://zeit.de"
 site.art<-"https://www.zeit.de/politik/deutschland/2024-09/wahlverhalten-landtagswahlen-sachen-thueringen-alter-beteiligung"
 voyant.getzip<-"https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/DA/14363-HA/zeit-comments.zip"
 voyant.page<-"https://voyant-tools.org/?corpus=e3d47e51618f70599ac74f2ade304d99" # 3
 write_clip(voyant.getzip)
 rd<-rsDriver(browser = "firefox",port = free_port())
 remdr<-rd$client
-
 #remdr$navigate(site.art)
-remdr$navigate("https://zeit.de")
-run<-3
+#remdr$navigate("https://zeit.de")
+remdr$navigate(page)
+return(remdr)
+}
+
+art.comments<-read.csv("data/comments-links.csv")
+page.navi<-art.comments$link[1]
+
+#################
+remdr<-init(4,page.navi)
+run<-4
 
 
 # the scrape doesnt work with this site, there is an accept button which cannot
@@ -49,23 +59,30 @@ get.page.text<-function(){
   #   more.button<-remdr$findElement(using = "class","comments__body")
      more.button$clickElement()
 # scroll to bottom
-  for (k in 1:180){
+  for (k in 1:50){
      remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
      Sys.sleep(5)
-    
+}
+          for (k in 1:180){
+       remdr$executeScript("window.scrollTo(0,document.body.scrollHeight);")
+       Sys.sleep(5)
+       
   }
     # gets 24 comments
   # try with manual scroll > 88
   # with loop max 195, correct
 # >
 
-
+#remdr$getSessions()
 art.htm<-remdr$getPageSource()
-run
-save(art.htm,file = paste0("article-",run,".htm.Rdata"))
-#load("article-2.htm.Rdata")
+run<-1
+#save(art.htm,file = paste0("article-",run,".htm.Rdata"))
+load("article-1.htm.Rdata")
+#############################
+## run with different htm src
+create.txt.csv<-function(){
 htm.raw<-unlist(art.htm)
-#writeLines(htm.raw,paste0("htm-",run,".raw.html"))
+#writeLines(htm.raw,paste0("~/boxhkw/21s/dh/local/spund/da/14363-ha/htm-",run,".raw.html"))
 #htm.in<-read_html("htm.raw.html")
 #write_html(htm.in,"htm.test.html")
 art.htm.x<-read_html(art.htm[[1]])
@@ -74,24 +91,98 @@ div.att<-xml_attrs(all.div)
 m<-grep("comment__body comment__user-input",div.att)
 # m<-grep("comments_thread",div.att)
 text<-xml_text(all.div[m])
-#text
-text.m<-paste0('{"textID:"',1:length(text),'} ',text)
-head(text.m)
 # grep title
 ttl<-xml_find_first(art.htm.x,"//title") 
 ttl.tx<-xml_text(ttl)
 ttl.json<-stri_extract_all_regex(htm.raw,'content: \\{"id":.*\\}')
+ttl.json<-gsub("content:","",ttl.json)
+#write_clip(ttl.json)
+ttl.df<-fromJSON(ttl.json[[1]])
 ttl.json
-ttl.json
+ttl.date<-ttl.df$publishing_date
+date()
+ttl.date
+strptime(ttl.date,format = "")
+#Sys.time()
+#format(ttl.date, "%a %b %e %H:%M:%S %Y")
+# grep comments meta
+x<-all.div[m[4]]
+get.comment.meta<-function(x){
+  c0<-xml_parent(x)
+  c1<-xml_text(xml_child(c0,1))
+  c2<-strsplit(c1,"\n")[[1]][1]
+  c2
+  c3<-gsub(" Beitrag melden","",c2)
+  c3
+  #c3<-gsub("  ")
+  # get widest whitespace
+  c3.w<-strsplit(c3," ")[[1]]
+  c3.w
+  c3.mid<-which(c3.w%in%"")
+  c3.mid<-c3.mid[c3.mid!=1]
+  c3.mid.m<-max(c3.mid)
+  c3.mid.p<-c3.mid.m+1
+  c3.u<-paste0(c3.w[1],"//",paste0(c3.w[2:c3.mid[1]],collapse = " ")) 
+  c3.u
+  c3.d.s<-length(c3.w)-5
+  c3.d.s<-c3.mid.p
+  c3.d<-paste0(c3.w[c3.d.s:length(c3.w)],collapse =  " ")
+  c3.d
+  c4<-strsplit(c3," ")
+  c4
+ # names(c4[[1]])[[1]]<-"user"
+  #names(c4[[1]])[[2]]<-"date"
+  c5<-data.frame(t(unlist(c4)))
+  m.n<-c5[1,]!=""
+#  c5[,3]
+ # cat(unlist(c5))
+  m.n
+  c5<-c5[,m.n]
+  c5<-data.frame(user=c3.u,date=c3.d)
+  c5
+  # colnames(c5)<-c("user","date")
+#  data.frame(t(c4))
+  return(c5)
+}
+#c4
+#c6<-data.frame(unlist(c5))
+comments.meta.user<-lapply(all.div[m], get.comment.meta)
+#head(comments.meta)
+c6<-data.frame(t(matrix(unlist(comments.meta.user),nrow  = 2)))
+#c6<-data.frame(matrix(unlist(comments.meta.user),nrow  = 2))
+colnames(c6)<-c("user","date")
+#comments.meta<-c6
+#comments.meta.2<-array()
+#text
+text.m<-paste0('{"textID": ',1:length(text),',"commentMeta": "["user": "',c6$user,'","date": "',c6$date,'"} ',text)
+head(text.m)
+
+# # grep title
+# ttl<-xml_find_first(art.htm.x,"//title") 
+# ttl.tx<-xml_text(ttl)
+# ttl.json<-stri_extract_all_regex(htm.raw,'content: \\{"id":.*\\}')
+# ttl.json<-gsub("content:","",ttl.json)
+# #write_clip(ttl.json)
+# ttl.df<-fromJSON(ttl.json[[1]])
+# ttl.json
 text.3<-c(ttl.json[[1]],text.m)
 #writeLines(text.3,paste0("data/comments.r-",1,".txt"))
 writeLines(text.3,paste0("data/comments.r-",run,".txt"))
 ###
 # try as table
 text.4<-c(ttl.json[[1]],text)
-text.df<-data.frame(article.id=run,text.id=1:length(text.4),comment=text.4)
+lt<-length(text.4)
+lt<-lt-1
+text.id<-0:lt
+comments.meta.p<-rbind(c('"creator": "esteeschwarz"',paste0('"date of creation": "',Sys.time(),'"')),c6)
+text.df<-data.frame(article.id=run,text.id,date=comments.meta.p$date,user=comments.meta.p$user,comment=text.4)
 write.csv(text.df,paste0("data/comments.df-",run,".csv"))
+} # end create /write txt/csv
 ###
+run<-4
+load(paste0("article-",run,".htm.Rdata"))
+
+create.txt.csv()
 f<-list.files("data")
 m.tx<-grep(".txt|.csv",f)
 zip("zeit-comments.zip",paste("data",f[m.tx],sep="/"))
@@ -142,3 +233,26 @@ k<-2
 run<-readline(prompt = "ready? now process pagesource? (y/n)")
 if (run=="y")
   get.page.text()
+
+### get comment meta
+#all.div<-xml_find_all(art.htm.x,"//div")
+div.att<-xml_attrs(all.div)
+m<-grep("comment__body comment__user-input",div.att)
+comment.parent<-xml_parent(  all.div[m])
+comment.meta<-xml_text(xml_child(comment.parent,1))
+meta.split<-strsplit(comment.meta,"\n")
+x<-comment.parent
+# get.comment.meta<-function(x){
+#   c0<-xml_parent(x)
+#   c1<-xml_text(xml_child(c0,1))
+#   c2<-strsplit(c1,"\n")[[1]][1]
+#   c3<-gsub(" Beitrag melden","",c2)
+#   c4<-strsplit(c3,"  ")
+#   names(c4[[1]])<-c("user","date")
+#   return(c4)
+# }
+# c4
+# c3
+# comments.meta<-lapply(all.div[m], get.comment.meta)
+comments.meta[[3]]
+
