@@ -2,7 +2,7 @@
 # 14363.HA.discourse
 # discourse analysis corpus building
 ####################################
-init<-function(run,page){
+init<-function(){
 library(RSelenium)
 library(rvest)
 library(httr)
@@ -23,12 +23,12 @@ rd<-rsDriver(browser = "firefox",port = free_port())
 remdr<-rd$client
 #remdr$navigate(site.art)
 #remdr$navigate("https://zeit.de")
-remdr$navigate(page)
+#remdr$navigate(page)
 return(remdr)
 }
 
 art.comments<-read.csv("data/comments-links.csv")
-page.navi<-art.comments$link[1]
+page.navi<-art.comments$link[2]
 
 #################
 remdr<-init(4,page.navi)
@@ -256,3 +256,74 @@ x<-comment.parent
 # comments.meta<-lapply(all.div[m], get.comment.meta)
 comments.meta[[3]]
 
+### get epub
+#remdr<-init(4,page.navi)
+
+#remdr$navigate(page.navi)
+id1<-"year"
+xp1<-"//option[. = '2016']"
+css1<-"#year > option:nth-child(4)"
+id2<-"issue"
+xp2<-"//option[. = '02']"
+css2<-"#issue > option:nth-child(3)"
+  css3<-".btn-default-when-collapsed"
+css4<-".col-sm-1-5:nth-child(1) img"
+css5<-".btn-link"
+LINK_TEXT_1<- "EPUB FÜR E-READER LADEN"
+# 'arg' should be one of “xpath”, “css selector”, 
+# “id”, “name”, “tag name”, “class name”, “link text”, “partial link text”
+art.comments<-read.csv("data/comments-links.csv")
+page.navi<-art.comments$link[2]
+remdr<-init()
+remdr$navigate(page.navi)
+
+for (k in 34:53){
+css2<-paste0("#issue > option:nth-child(",k,")")
+com_button<-remdr$findElement(using = "id",id1)
+com_button$clickElement()
+Sys.sleep(5)
+dropdown<-remdr$findElement(using = "id",id1)
+#dropdown
+com_button<-dropdown$findElement(using = "xpath", xp1)
+com_button$clickElement()
+Sys.sleep(5)
+com_button<-remdr$findElement(using = "css selector", css1)
+com_button$clickElement()
+dropdown<-remdr$findElement(using = "id", id2)
+#com_button<-dropdown$findElement
+com_button<-dropdown$findElement(using = "xpath", xp2)
+com_button$clickElement()
+Sys.sleep(5)
+com_button<-remdr$findElement(using = "css selector", css2)
+com_button$clickElement()
+Sys.sleep(5)
+com_button<-remdr$findElement(using = "css selector", css3)
+com_button$clickElement()
+Sys.sleep(5)
+com_button<-remdr$findElement(using = "css selector", css4)
+com_button$clickElement()
+Sys.sleep(5)
+com_button<-remdr$findElement(using = "link text", LINK_TEXT_1)
+com_button$clickElement()
+Sys.sleep(8)
+# get back
+com_button<-remdr$findElement(using = "css selector",".btn-link")
+#com_button$getElementAttribute("data-wt-click")
+#com_button$isElementEnabled()
+com_button$clickElement() #!!!
+Sys.sleep(5)
+#com_button$click()
+#com_button<-remdr$findElement(using = "xpath","/html/body/div[2]/div[2]/section/nav/ul/li/a")
+#com_button$click()
+print(k)
+}
+
+id1<-"year"
+xp1<-"//option[. = '2014']"
+css1<-"#year > option:nth-child(4)"
+id2<-"issue"
+xp2<-"//option[. = '02']"
+css2<-#issue > option:nth-child(3)"
+css3<-".btn-default-when-collapsed"
+css4<-".col-sm-1-5:nth-child(1) img"
+LINK_TEXT_1<- "EPUB FÜR E-READER LADEN"
