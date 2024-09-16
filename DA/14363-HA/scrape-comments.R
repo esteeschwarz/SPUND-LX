@@ -261,8 +261,8 @@ comments.meta[[3]]
 
 #remdr$navigate(page.navi)
 id1<-"year"
-xp1<-"//option[. = '2016']"
-css1<-"#year > option:nth-child(4)"
+xp1<-"//option[. = '2015']"
+css1<-"#year > option:nth-child(5)"
 id2<-"issue"
 xp2<-"//option[. = '02']"
 css2<-"#issue > option:nth-child(3)"
@@ -275,47 +275,69 @@ LINK_TEXT_1<- "EPUB FÜR E-READER LADEN"
 art.comments<-read.csv("data/comments-links.csv")
 page.navi<-art.comments$link[2]
 remdr<-init()
+remdr$browserName
+remdr$userAgent
+remdr
 remdr$navigate(page.navi)
 
-for (k in 34:53){
+for (k in 3:53){
+cat("solving issue",k,"\n")
 css2<-paste0("#issue > option:nth-child(",k,")")
 com_button<-remdr$findElement(using = "id",id1)
 com_button$clickElement()
-Sys.sleep(5)
+Sys.sleep(6)
+print(1)
 dropdown<-remdr$findElement(using = "id",id1)
 #dropdown
 com_button<-dropdown$findElement(using = "xpath", xp1)
 com_button$clickElement()
-Sys.sleep(5)
+Sys.sleep(7)
+print(2)
 com_button<-remdr$findElement(using = "css selector", css1)
 com_button$clickElement()
 dropdown<-remdr$findElement(using = "id", id2)
 #com_button<-dropdown$findElement
 com_button<-dropdown$findElement(using = "xpath", xp2)
 com_button$clickElement()
-Sys.sleep(5)
+Sys.sleep(6)
+print(3)
 com_button<-remdr$findElement(using = "css selector", css2)
 com_button$clickElement()
-Sys.sleep(5)
+Sys.sleep(6)
+print(4)
 com_button<-remdr$findElement(using = "css selector", css3)
 com_button$clickElement()
-Sys.sleep(5)
+Sys.sleep(6)
+print(5)
+
 com_button<-remdr$findElement(using = "css selector", css4)
 com_button$clickElement()
-Sys.sleep(5)
-com_button<-remdr$findElement(using = "link text", LINK_TEXT_1)
-com_button$clickElement()
-Sys.sleep(8)
+Sys.sleep(6)
+print(6)
+#com_button_load<-remdr$findElement(using = "link text", LINK_TEXT_1)
+#com_button_load$clickElement()
+#com_button
 # get back
+#tryCatch(1,finally = print("hello"))
+#simpleError()
+e<-simpleError("testerror")
+#
+# always issue 43 no epub
+com_button_load<-tryCatch(remdr$findElement(using = "link text", LINK_TEXT_1),error=function(e)cat("no epub, moving forth\n"),finally = print("checked epub load"))
+#print("checked load epub button")
+if(!is.null(com_button_load))
+   com_button_load$clickElement()
 com_button<-remdr$findElement(using = "css selector",".btn-link")
 #com_button$getElementAttribute("data-wt-click")
 #com_button$isElementEnabled()
 com_button$clickElement() #!!!
-Sys.sleep(5)
+Sys.sleep(10)
+print(7)
+
 #com_button$click()
 #com_button<-remdr$findElement(using = "xpath","/html/body/div[2]/div[2]/section/nav/ul/li/a")
 #com_button$click()
-print(k)
+cat(k,"finished\n")
 }
 
 id1<-"year"
