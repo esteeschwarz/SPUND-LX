@@ -43,9 +43,9 @@ remdr<-init()
 #remdr
 remdr$navigate(page.navi)
 
-for (k in 31:53){
-  xp1<-"//option[. = '2016']"
-  css1<-"#year > option:nth-child(6)"
+for (k in 7:53){
+  xp1<-"//option[. = '2017']"
+  css1<-"#year > option:nth-child(7)"
   cat("solving issue",k,"\n")
   css2<-paste0("#issue > option:nth-child(",k,")")
   com_button<-remdr$findElement(using = "id",id1)
@@ -88,7 +88,7 @@ for (k in 31:53){
   #simpleError()
   e<-simpleError("testerror")
   # # 28?
-  # 14386:stop 34
+  # 14386:stop 34,14397:2017:6,14401:2017:41
   # always issue 43 no epub
   com_button_load<-tryCatch(remdr$findElement(using = "link text", LINK_TEXT_1),error=function(e)cat("no epub, moving forth\n"),finally = print("checked epub load"))
   #print("checked load epub button")
