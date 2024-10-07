@@ -28,12 +28,13 @@ return(remdr)
 }
 
 art.comments<-read.csv("data/comments-links.csv")
-page.navi<-art.comments$link[2]
+page.navi<-art.comments$link[3]
+
 
 #################
-remdr<-init(4,page.navi)
-run<-4
-
+remdr<-init()
+run<-5
+remdr$navigate(page.navi)
 
 # the scrape doesnt work with this site, there is an accept button which cannot
 # be handled
@@ -205,7 +206,7 @@ xml_replace(all.c[k],html.2[k][[1]])
 k
 html.2[k][[1]]
 k<-2
- write_xml(html.4,"data/comments.htm-3.xml")
+ write_xml(html.4,paste0("data/comments.htm-",run,".xml"))
    html.4[1][[1]]<-html.2[1][[1]]
    comment<-1
  for (comment in 1:3){
