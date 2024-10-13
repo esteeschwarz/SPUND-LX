@@ -37,21 +37,23 @@ init<-function(){
 # “id”, “name”, “tag name”, “class name”, “link text”, “partial link text”
 art.comments<-read.csv("~/Documents/GitHub/SPUND-LX/DA/14363-HA/data/comments-links.csv")
 page.navi<-art.comments$link[2]
-remdr<-init()
+# remdr<-init()
 #remdr$browserName
 #remdr$userAgent
 #remdr
 #remdr$navigate(page.navi)
+remdr<-init()
 page.navi
 remdr$navigate(page.navi)
 #man<-"https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=03&year=2018"
-year<-2019
+year<-2023
 #k
 #man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=0",k,"&year=2018")
-k<-4
-kstart<-49 #14412.48,49 no
+k<-1
+kstart<-1 #14412.48,49 no, 2021/2 stop danach
 #remdr$navigate(man) # first to page, login, then in loop again to page k
 issues<-c(kstart:53)
+#issues<-c(k:k)
 for (k in issues){
   #man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=0",k,"&year=2018")
   #man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=",k,"&year=2018")
@@ -60,6 +62,7 @@ for (k in issues){
     issue<-paste0("0",k)
   man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=",issue,"&year=",year)
   remdr$navigate(man)
+  Sys.sleep(8)
   #id1<-"year"
   #id2<-"issue"
   #xp2<-"//option[. = '02']"
@@ -120,11 +123,12 @@ for (k in issues){
     com_button_load$clickElement()
     Sys.sleep(10)
   }
-  com_button<-remdr$findElement(using = "css selector",".btn-link")
+#original:  com_button<-remdr$findElement(using = "css selector",".btn-link")
+  com_button<-remdr$findElement(using = "link text","Zur Übersicht")
   #com_button$getElementAttribute("data-wt-click")
   #com_button$isElementEnabled()
-  com_button$clickElement() #!!!
-  Sys.sleep(10)
+ # com_button$clickElement() #!!!
+  #Sys.sleep(10)
   print(7)
   
   #com_button$click()
