@@ -46,13 +46,13 @@ remdr<-init()
 page.navi
 remdr$navigate(page.navi)
 #man<-"https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=03&year=2018"
-year<-2023
+year<-2024
 #k
 #man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=0",k,"&year=2018")
 k<-1
-kstart<-1 #14412.48,49 no, 2021/2 stop danach
+kstart<-1 #14412.48,49 no, 2021/2 stop danach, 15422.36.finished
 #remdr$navigate(man) # first to page, login, then in loop again to page k
-issues<-c(kstart:53)
+issues<-c(kstart:52)
 #issues<-c(k:k)
 for (k in issues){
   #man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=0",k,"&year=2018")
@@ -61,6 +61,7 @@ for (k in issues){
   if(k<10)
     issue<-paste0("0",k)
   man<-paste0("https://epaper.zeit.de/abo/diezeit?title=diezeit&issue=",issue,"&year=",year)
+  cat("navigating to:",man,"\n")
   remdr$navigate(man)
   Sys.sleep(8)
   #id1<-"year"
@@ -104,6 +105,7 @@ for (k in issues){
   #safari:
  # css4<- '#content > section.page-section.page-section-archives.js-archives-section > div.row.margin-bottom-20px.archives-filter-results.js-archives-filter-results > div:nth-child(1) > div > div.epaper-cover > a'
   com_button<-remdr$findElement(using = "css selector", css4)
+  cat("finding:",css4,"\n")
   com_button$clickElement()
   Sys.sleep(10)
   print(6)
@@ -120,11 +122,12 @@ for (k in issues){
   com_button_load<-tryCatch(remdr$findElement(using = "link text", LINK_TEXT_1),error=function(e)cat("no epub, moving forth\n"),finally = print("checked epub load"))
   #print("checked load epub button")
   if(!is.null(com_button_load)){
+    cat("load paper\n")
     com_button_load$clickElement()
     Sys.sleep(10)
   }
 #original:  com_button<-remdr$findElement(using = "css selector",".btn-link")
-  com_button<-remdr$findElement(using = "link text","Zur Übersicht")
+ # com_button<-remdr$findElement(using = "link text","Zur Übersicht")
   #com_button$getElementAttribute("data-wt-click")
   #com_button$isElementEnabled()
  # com_button$clickElement() #!!!
