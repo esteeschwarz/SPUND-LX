@@ -146,10 +146,15 @@ library(quanteda)
 ha_dir<-"~/boxHKW/21S/DH/local/SPUND/DA/14363-HA"
 year<-"2014"
 datadir<-paste(ha_dir,paste("zeit",year,sep="/"),sep = "/")
+datadir<-paste(ha_dir,paste("zeit/compiled"),sep = "/")
 datadir
 f<-list.files(datadir)
 m<-grep(".epub",f)
+# duplicates
+f[m2]
 f.m<-f[m]
+m2<-grepl("[)(]",f.m)
+f.m<-f.m[!m2]
 text.list<-list()
 #k<-"2012-03-15"
 #k<-3
@@ -161,6 +166,11 @@ print(k)
 }
 text.list.s<-text.list[order(names(text.list))]
 #save(text.list.s,file=paste(ha_dir,paste0("text.list-",year,".Rdata"),sep = "/"))
+#save(text.list.s,file=paste(ha_dir,paste0("text.list-cpt.Rdata"),sep = "/"))
+issues<-names(text.list.s)
+2025-2013
+12*52 #624
+11*52+(52-(52-42)) #614
 load(paste(ha_dir,paste0("text.list-",2013,".Rdata"),sep = "/"))
 text.list<-text.list.s
 m<-names(text.list)%in%names(text.list.s)
@@ -168,28 +178,36 @@ m1<-!m
 m1
 text.list<-text.list[m1]
 text.list.cpt<-c(text.list.s,text.list)
+text.list.cpt<-text.list.s
 #save(text.list.cpt,file=paste(ha_dir,paste0("text.list-","12-13-14",".Rdata"),sep = "/"))
-grep.af.c<-grep.af<-function(x,kwic=F){
-  regx<-"AfD|AFD"
+grep.af.c<-grep.af<-function(x){
+  regx<-"AfD|AFD|BSW"
   m.1<-grep(regx,x$content[[1]]$text)
   m.2<-stri_count_regex(x$content[[1]]$text[m.1],regx)
   m.3<-x$content[[1]]$text[m.1]
   c.af<-corpus(x$content[[1]]$text[m.1])
   c.af.t<-tokens(c.af)
-  if(kwic)
+  print(length(m.1))
+  if(length(m.1>0))
     return(m.af.kwic<-kwic(c.af.t,regx,valuetype = "regex",35))
   af.corp.extract<-m.3
   
 }
+#kwic
 #m.af.corpus.kwic<-lapply(text.list.cpt, grep.af.c)
 m.af.corpus.extract<-lapply(text.list.cpt, grep.af.c)
 #m.af.corpus.extract$`2014-05-08`
 # make csv
 #load("data/af.corpus.kwic.Rdata")
+m.af.corpus.kwic<-m.af.corpus.extract
 df1<-data.frame(m.af.corpus.kwic[[1]])
+#df1<-data.frame(m.af.corpus.extract[[1]])
+
 df1[1,1:length(df1)]<-NA
 df1<-cbind(date=NA,df1)
 k<-41
+df2<-data.frame(m.af.corpus.kwic$`2013-04-18`)
+
 for (k in 1:length(m.af.corpus.kwic)){
   df2<-data.frame(m.af.corpus.kwic[[k]])
   if(dim(df2)[1]!=0){
