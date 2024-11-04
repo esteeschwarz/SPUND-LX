@@ -40,10 +40,22 @@ extract.metaphors<-function(d3){
   m6<-grep("plag|Plagiat",n3$noun)
   n3$metaphor[m6]<-0
   n4<-n3$noun[n3$metaphor==1]
-  write.csv(n3,"plagiat-noun-range.csv")
-  write.csv(n4,"plagiat-metaphor-range.csv")
+  n4
+  getwd()
+  write.csv(n3,"data/plagiat-noun-range.csv")
+  write.csv(n4,"data/plagiat-metaphor-range.csv")
   m5<-d3$lemma[m3[m4]]%in%n4
-  d4<-unique(d3$sentence[m3[m4]][m5])
-  head(d4)
-  write.csv(d4,"plagiat-metaphor-sentence.csv")
+  d3$token[m3[m4]][m5]
+  d5<-d3
+  d5$token[m3[m4]][m5]<-paste0("<#MET ",d5$token[m3[m4]][m5]," #>")
+  d5$sentence[m3[m4]][m5]<-mapply(gsub,d3$token[m3[m4]][m5],d5$token[m3[m4]][m5],d5$sentence[m3[m4]][m5])
+head(d5$sentence[m3[m4]][m5])
+head(d5$token[m3[m4]][m5])
+head(d3$token[m3[m4]][m5])
+d6<-unique(d5$sentence[m3[m4]][m5])
+  head(d6)
+  write.csv(d6,"data/plagiat-metaphor-sentence.csv")
 }
+
+# plot over years
+
