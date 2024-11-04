@@ -47,15 +47,34 @@ extract.metaphors<-function(d3){
   m5<-d3$lemma[m3[m4]]%in%n4
   d3$token[m3[m4]][m5]
   d5<-d3
-  d5$token[m3[m4]][m5]<-paste0("<#MET ",d5$token[m3[m4]][m5]," #>")
+  d5$token[m3[m4]][m5]<-paste0("<#>",d5$token[m3[m4]][m5],"<#>")
   d5$sentence[m3[m4]][m5]<-mapply(gsub,d3$token[m3[m4]][m5],d5$token[m3[m4]][m5],d5$sentence[m3[m4]][m5])
 head(d5$sentence[m3[m4]][m5])
 head(d5$token[m3[m4]][m5])
 head(d3$token[m3[m4]][m5])
 d6<-unique(d5$sentence[m3[m4]][m5])
+d7<-strsplit(d6,"<#>")
+d8<-lapply(d7,unlist)
+d8<-matrix(unlist(d7),ncol = 3)
+d9<-d5$date[m3[m4]][m5]
   head(d6)
   write.csv(d6,"data/plagiat-metaphor-sentence.csv")
 }
+length(unique(d5$doc_id))
+d5$id<-gsub("doc","",d5$doc_id)
+x<-d5$id[1]
+get.date<-function(x){
+  m<-x==d1$No.
+  d1.date<-unique(d1$Date[m])
+  d1.year<-strsplit(d1.date,"-")[[1]][1]
+}
 
+m6.date<-lapply(d5$id,get.date)
+head(m6.date)
+d5$date<-unlist(m6.date)
 # plot over years
-
+d9<-d5$date[m3[m4]][m5]
+head(d9)
+#d10<-strsplit(d5$date,"-")
+head(d10)
+save(d5,file = "d5.token-df.RData")
