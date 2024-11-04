@@ -78,3 +78,15 @@ head(d9)
 #d10<-strsplit(d5$date,"-")
 head(d10)
 save(d5,file = "d5.token-df.RData")
+
+### sketchengine
+d11<-read.csv("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/ske_plagiat.csv",skip = 4)
+
+### nexis
+library(LexisNexisTools)
+?lnt_read
+d12<-lnt_read("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/nexis-plagiat.DOCX")
+head(d12)
+d13<-lnt_convert(d12,"data.frame","articles")
+
+
