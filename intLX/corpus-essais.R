@@ -89,4 +89,15 @@ d12<-lnt_read("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/nexis-plagia
 head(d12)
 d13<-lnt_convert(d12,"data.frame","articles")
 
+### mastodon query
 
+cred<-read.csv("~/boxHKW/21S/DH/local/R/cred_gener.csv")
+m<-grep("mastodon",cred$q)
+mkey<-cred$key[m]
+server<-cred$url[m]
+query<-"xD"
+output.csv<-"mastodon_query.csv"
+arguments<-paste0(mkey,' ',server,' ',query,' ',output.csv)
+arguments
+system(paste0('python ~/boxHKW/21S/DH/local/SPUND/intLX/mastodon-query.py ',arguments))
+dm<-read.csv("mastodon_query.csv")
