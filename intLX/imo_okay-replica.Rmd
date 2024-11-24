@@ -1,0 +1,70 @@
+---
+title: "interaction-copresence (replic)"
+author: "esteeschwarz"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# replication study
+## preliminaries
+Q1: Imo, W. (2024). Digital vermittelte Interaktion ohne Kopräsenz: Immer noch Interaktion? In Handbuch Sprache und Digitale Kommunikation (Bd. 23, S. 249–268). Walter de Gruyter GmbH. <https://doi.org/10.1515/9783110744163-012>   
+
+## method
+Q2: <https://www.english-corpora.org/glowbe/>   
+query: `okay|oki|oke|okey|okee|okidoki|o?k?|okk|okkk`   
+> no export possible of results   
+
+Q3: <https://corpora.linguistik.uzh.ch/annis/?id=4d1db244-fe3d-4b2d-a47b-04d985f06ea0>   
+> no export possible of results   
+
+Q4: <https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11>   
+> no export possible of results   
+
+Q5: <https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9>
+
+query:
+```{aql}
+tok=‎/.*‎/ & 
+tok=‎/.*‎/ & tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎‎/ & tok=‎/.*‎/ &
+msg_id = ‎/.*‎/ &
+msg_id = ‎/.*‎/ &
+spk = ‎/.*‎/ &
+spk = ‎/.*‎/ 
+& #1 . #2 & #2 _=_ #5
+& #2 . #3
+& #3 . #4 & #3 _=_ #6
+& #5 != #6 
+& #2 _=_ #7 
+& #4 _=_ #8
+```
+
+```{aql}
+tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ &
+msg_id = ‎/.*‎/ &
+msg_id = ‎/.*‎/ 
+& #1 . #2 
+& #1 _=_ #3
+& #2 _=_ #4
+& #3 != #4 
+```
+
+```{aql}
+tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ 
+& #1 . #2 
+```
+
+```{r }
+library(readr)
+d1<- read_delim("data/frequency-12.csv", 
+    delim = "\t", escape_double = FALSE, 
+    trim_ws = TRUE)
+t1<- read_delim("data/annis-export-17.csv", 
+    delim = "\t", escape_double = FALSE, 
+    trim_ws = TRUE,col_names = c("id","label","content"))
+
+#d1<-read.csv("data/frequency_okay.csv")
+```
