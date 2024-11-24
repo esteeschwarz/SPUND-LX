@@ -1,0 +1,51 @@
+## Registry file for the SBC-CWB corpus
+
+NAME "SBC-CWB"
+ID "SBC-CWB"
+DESCRIPTION "Santa Barbara Corpus of Spoken American English"
+LANGUAGE "English"
+ENCODING "UTF-8"
+
+## Data directory
+PATH   '/corpora/sbc/indexed/'
+VERTICAL  '/corpora/sbc/vertical/source'
+
+
+## Structure definitions
+#STRUCTURE doc {
+#    ATTRIBUTE title
+#}
+
+## Attribute def
+ATTRIBUTE   word
+ATTRIBUTE   lemma
+ATTRIBUTE   upos
+ATTRIBUTE   xpos
+ATTRIBUTE   feats	
+ATTRIBUTE   dep_rel	
+ATTRIBUTE   light	
+ATTRIBUTE   obj	
+ATTRIBUTE   head_token_value	
+ATTRIBUTE   head_lemma_value
+
+
+ATTRIBUTE   word {
+	LABEL	"word (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR word
+	TYPE     index
+	TRANSQUERY	yes
+}
+ATTRIBUTE   lemma {
+	LABEL	"lemma (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR lemma
+	TYPE     index
+	TRANSQUERY	yes
+}
