@@ -95,9 +95,67 @@ cred<-read.csv("~/boxHKW/21S/DH/local/R/cred_gener.csv")
 m<-grep("mastodon",cred$q)
 mkey<-cred$key[m]
 server<-cred$url[m]
-query<-"xD"
-output.csv<-"mastodon_query.csv"
+query<-"hamas"
+output.csv<-paste0("~/boxHKW/21S/DH/local/SPUND/intLX/mastodon_query-",query,"-.csv")
 arguments<-paste0(mkey,' ',server,' ',query,' ',output.csv)
 arguments
 system(paste0('python ~/boxHKW/21S/DH/local/SPUND/intLX/mastodon-query.py ',arguments))
-dm<-read.csv("mastodon_query.csv")
+dm<-read.csv(output.csv)
+
+### reddit scrape
+# install.packages("RedditExtractoR")
+# install.packages("dplyr")
+library(RedditExtractoR)
+library(dplyr)
+#Replace with the URL of the Reddit post you want to scrape
+url <- "https://www.reddit.com/r/unpopularopinion/"
+
+# Extract comments
+#comments <- get_reddit(url)
+#comments <- get_thread_content(url)
+url.df<-find_thread_urls(subreddit = "unpopularopinion")
+#url.df<-urls
+comments <- get_thread_content(url.df$url)
+save(comments,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit.df.RData")
+rgdf<-data.frame()
+rgdf[1,1]<-"okay|oki|oke|okey|okee|okidoki|o\\.k\\.|okk|okkk"
+get.okay<-function(x){
+  m<-grep(rgdf[1,1],x$comment)
+  return(x$comment[m])
+  
+}
+com.m<-lapply(comments, get.okay)
+head(com.m$comments)
+com.df<-data.frame(com=comments$comments,okay=0)
+m<-grep(rgdf[1,1],com.df$com.comment)
+#m<-grep("okay",com.df$com.comment)
+head(com.df$com.comment[m])
+#Filter comments containing the keyword "example"
+filtered_comments <- comments %>%
+  filter(grepl("okay", comment_body, ignore.case = TRUE))
+
+# View the filtered comments
+head(filtered_comments)
+#Filter comments with more than 10 upvotes
+popular_comments <- comments %>%
+  filter(upvotes > 10)
+
+# View the popular comments
+head(popular_comments)
+
+#Filter by comment length:
+
+# Filter comments longer than 100 characters
+long_comments <- comments %>%
+  filter(nchar(comment_body) > 100)
+
+# View the long comments
+head(long_comments)
+
+#–	Filter by username:
+# Filter comments by a specific user
+user_comments <- comments %>%
+  filter(author == "specific_username")
+
+# View the user's comments
+head(user_comments)
