@@ -117,19 +117,44 @@ url.df<-find_thread_urls(subreddit = "unpopularopinion")
 #url.df<-urls
 comments <- get_thread_content(url.df$url)
 save(comments,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit.df.RData")
+load("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit.df.RData")
 rgdf<-data.frame()
-rgdf[1,1]<-"okay|oki|oke|okey|okee|okidoki|o\\.k\\.|okk|okkk"
-get.okay<-function(x){
-  m<-grep(rgdf[1,1],x$comment)
-  return(x$comment[m])
-  
-}
-com.m<-lapply(comments, get.okay)
-head(com.m$comments)
-com.df<-data.frame(com=comments$comments,okay=0)
-m<-grep(rgdf[1,1],com.df$com.comment)
+rgdf[1,1]<-"okay|\\boki\\b|\\boke\\b|\\bokey|\\bokee|okidoki|o\\.k\\.|\\bokk\\b|\\bokkk\\b"
+# get.okay<-function(x){
+#   m<-grep(rgdf[1,1],x$comment)
+#   return(x$comment[m])
+#   
+# }
+s<-c("smokedry and nuts","oke","okay")
+grep("okay|oke\\b|dumm",s)
+#com.m<-lapply(comments, get.okay)
+#head(com.m$comments)
+com.df<-data.frame(comments$comments,okay=0)
+m<-grep(rgdf[1,1],com.df$comment)
 #m<-grep("okay",com.df$com.comment)
-head(com.df$com.comment[m])
+com.ok.sub<-com.df[m,]
+head(com.ok.sub$comment)
+### wks.
+# get [okay] at line start
+library(quanteda)
+?tokenize
+library(purrr)
+com.tok<-tokenize_word1(com.ok.sub$comment)
+ok.pos<-stri_split(com.ok.sub$comment[1],regex=rgdf[1,1])
+rgdf[2,1]<-"That|that|I'm|It's|it's"
+ok.get<-function(x){grep(rgdf[1,1],x)[1]}
+ok.out<-function(x){grepl(rgdf[2,1],x)[1]}
+ok.no<-lapply(com.tok, ok.out)
+com.tok.p<-com.tok[unlist(ok.no)]
+ok.pos<-lapply(com.tok, ok.get)
+ok.s<-unlist(ok.pos)<=4
+com.ok.sub$comment[ok.s]
+com.ok.pos<-which(!unlist(ok.no))%in%which(ok.s)
+com.ok.cl<-com.ok.sub$comment[com.ok.pos]
+com.ok.cl
+# library(stringi)
+# stri_ex
+# stri_extract_all_regex(com.ok.sub$comment[1],"\\boke\\b")
 #Filter comments containing the keyword "example"
 filtered_comments <- comments %>%
   filter(grepl("okay", comment_body, ignore.case = TRUE))
