@@ -66,11 +66,10 @@ msg_id = ‎/.*‎/
 
 ----
 
-Q5: <https://corpora.linguistik.uzh.ch/annis/?id=8f60aec2-1aaf-485b-b3d2-0e8de415cb73>   
+Q5: <https://corpora.linguistik.uzh.ch/annis/?id=45d7c183-eab2-451e-9277-3ceda612c2f6>   
 
 ```{aql}
-tok=‎/.*‎/ &  tok=‎/(okay|\boki\b|\boke\b|\bokey|\bokee|okidoki|o\.k\.|\bokk\b|\bokkk\b)‎/ 
-& #1 . #2 
+tok=‎/(okay|\boki\b|\boke\b|\bokey|\bokee|okidoki|o\.k\.|\bokk\b|\bokkk\b|\boki\b)‎/
 ```
 
 ----
