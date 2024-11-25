@@ -78,7 +78,7 @@ tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/
 ### reddit comment extraction
 
 Q6: <https://www.reddit.com/r/unpopularopinion/>   
-script: <https://github.com/esteeschwarz/SPUND-LX/intLX/corpus-essai.R>   
+script: <https://github.com/esteeschwarz/SPUND-LX/blob/main/intLX/corpus-essais.R>   
 
 - extract ```r query```, ```n=112/25120```
 - limit to token within 4 from turn start, ```n=15/112```
