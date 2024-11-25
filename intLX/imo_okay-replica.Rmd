@@ -21,7 +21,7 @@ Q1: [@imo_digital_2024]. Digital vermittelte Interaktion ohne Kopräsenz: Immer 
 ## method
 
 ```{r}
-query<-"okay|oki|oke|okey|okee|okidoki|o.k.|okk|okkk"
+query<-"okay|\\boki\\b|\\boke\\b|\\bokey|\\bokee|okidoki|o\\.k\\.|\\bokk\\b|\\bokkk\\b"
 limit<-"That|that|That's|that's|that\031s|I'm|It's|it's|Its|its"
 
 ```
