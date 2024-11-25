@@ -3,6 +3,7 @@ title: "interaction-copresence (replic)"
 author: "esteeschwarz"
 date: "`r Sys.time()`"
 output: html_document
+bibliography: imo-replic.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # replication study
 ## preliminaries
-Q1: Imo, W. (2024). Digital vermittelte Interaktion ohne Kopräsenz: Immer noch Interaktion? In Handbuch Sprache und Digitale Kommunikation (Bd. 23, S. 249–268). Walter de Gruyter GmbH. <https://doi.org/10.1515/9783110744163-012>   
+Q1: [@imo_digital_2024]. Digital vermittelte Interaktion ohne Kopräsenz: Immer noch Interaktion? In Handbuch Sprache und Digitale Kommunikation (Bd. 23, S. 249–268). Walter de Gruyter GmbH. <https://doi.org/10.1515/9783110744163-012>   
+
+## goal
+- replicate study using another corpus
+- turns out to be reddit-commentaires since the first tried chat corpora either (Q2) doesnt really support export of query results or, in case of the swiss whatsapp corpus (Q3-5) doesnt support export of results of complex queries. (I am working to handle this.)
 
 ## method
 
@@ -25,18 +30,10 @@ limit<-"That|that|That's|that's|that\031s|I'm|It's|it's|Its|its"
 Q2: <https://www.english-corpora.org/glowbe/>   
 > no export possible of results   
 
+### ANNIS queries, swiss whatsapp corpus:
 Q3: <https://corpora.linguistik.uzh.ch/annis/?id=4d1db244-fe3d-4b2d-a47b-04d985f06ea0>   
 > no export possible of results   
 
-Q4: <https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11>   
-> no export possible of results   
-
-Q5: <https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9>   
-
-Q6: <https://www.reddit.com/r/unpopularopinion/>
-
-
-### ANNIS queries:
 ```{aql}
 tok=‎/.*‎/ & 
 tok=‎/.*‎/ & tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎‎/ & tok=‎/.*‎/ &
@@ -54,6 +51,9 @@ spk = ‎/.*‎/
 
 ----
 
+Q4: <https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11>   
+> no export possible of results   
+
 ```{aql}
 tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ &
 msg_id = ‎/.*‎/ &
@@ -66,6 +66,8 @@ msg_id = ‎/.*‎/
 
 ----
 
+Q5: <https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9>   
+
 ```{aql}
 tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ 
 & #1 . #2 
@@ -74,6 +76,10 @@ tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/
 ----
 
 ### reddit comment extraction
+
+Q6: <https://www.reddit.com/r/unpopularopinion/>   
+script: <https://github.com/esteeschwarz/SPUND-LX/intLX/corpus-essai.R>   
+
 - extract ```r query```, ```n=112/25120```
 - limit to token within 4 from turn start, ```n=15/112```
 - limit to turn without ```r limit``` at turn start, ```n=11/15```
@@ -85,3 +91,6 @@ load("data/com.ok.extract.RData")
 print(com.ok.extract)
 
 ```
+
+----
+# B. references

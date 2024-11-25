@@ -252,6 +252,29 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+
+div.csl-bib-body { }
+div.csl-entry {
+clear: both;
+margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+margin-left:2em;
+text-indent:-2em;
+}
+div.csl-left-margin {
+min-width:2em;
+float:left;
+}
+div.csl-right-inline {
+margin-left:2em;
+padding-left:1em;
+}
+div.csl-indent {
+margin-left: 2em;
+}
+</style>
 
 
 
@@ -351,7 +374,7 @@ display: none;
 
 <h1 class="title toc-ignore">interaction-copresence (replic)</h1>
 <h4 class="author">esteeschwarz</h4>
-<h4 class="date">2024-11-25 09:02:30.816668</h4>
+<h4 class="date">2024-11-25 12:32:16.253696</h4>
 
 </div>
 
@@ -360,9 +383,20 @@ display: none;
 <h1>replication study</h1>
 <div id="preliminaries" class="section level2">
 <h2>preliminaries</h2>
-<p>Q1: Imo, W. (2024). Digital vermittelte Interaktion ohne Kopräsenz:
-Immer noch Interaktion? In Handbuch Sprache und Digitale Kommunikation
-(Bd. 23, S. 249–268). Walter de Gruyter GmbH. <a href="https://doi.org/10.1515/9783110744163-012" class="uri">https://doi.org/10.1515/9783110744163-012</a></p>
+<p>Q1: <span class="citation">(Imo 2024)</span>. Digital vermittelte
+Interaktion ohne Kopräsenz: Immer noch Interaktion? In Handbuch Sprache
+und Digitale Kommunikation (Bd. 23, S. 249–268). Walter de Gruyter GmbH.
+<a href="https://doi.org/10.1515/9783110744163-012" class="uri">https://doi.org/10.1515/9783110744163-012</a></p>
+</div>
+<div id="goal" class="section level2">
+<h2>goal</h2>
+<ul>
+<li>replicate study using another corpus</li>
+<li>turns out to be reddit-commentaires since the first tried chat
+corpora either (Q2) doesnt really support export of query results or, in
+case of the swiss whatsapp corpus (Q3-5) doesnt support export of
+results of complex queries. (I am working to handle this.)</li>
+</ul>
 </div>
 <div id="method" class="section level2">
 <h2>method</h2>
@@ -371,14 +405,10 @@ limit&lt;-&quot;That|that|That&#39;s|that&#39;s|that\031s|I&#39;m|It&#39;s|it&#3
 <hr />
 <p>Q2: <a href="https://www.english-corpora.org/glowbe/" class="uri">https://www.english-corpora.org/glowbe/</a><br />
 &gt; no export possible of results</p>
+<div id="annis-queries-swiss-whatsapp-corpus" class="section level3">
+<h3>ANNIS queries, swiss whatsapp corpus:</h3>
 <p>Q3: <a href="https://corpora.linguistik.uzh.ch/annis/?id=4d1db244-fe3d-4b2d-a47b-04d985f06ea0" class="uri">https://corpora.linguistik.uzh.ch/annis/?id=4d1db244-fe3d-4b2d-a47b-04d985f06ea0</a><br />
 &gt; no export possible of results</p>
-<p>Q4: <a href="https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11" class="uri">https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11</a><br />
-&gt; no export possible of results</p>
-<p>Q5: <a href="https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9" class="uri">https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9</a></p>
-<p>Q6: <a href="https://www.reddit.com/r/unpopularopinion/" class="uri">https://www.reddit.com/r/unpopularopinion/</a></p>
-<div id="annis-queries" class="section level3">
-<h3>ANNIS queries:</h3>
 <pre class="aql"><code>tok=‎/.*‎/ &amp; 
 tok=‎/.*‎/ &amp; tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎‎/ &amp; tok=‎/.*‎/ &amp;
 msg_id = ‎/.*‎/ &amp;
@@ -392,6 +422,8 @@ spk = ‎/.*‎/
 &amp; #2 _=_ #7 
 &amp; #4 _=_ #8</code></pre>
 <hr />
+<p>Q4: <a href="https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11" class="uri">https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11</a><br />
+&gt; no export possible of results</p>
 <pre class="aql"><code>tok=‎/.*‎/ &amp;  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ &amp;
 msg_id = ‎/.*‎/ &amp;
 msg_id = ‎/.*‎/ 
@@ -400,12 +432,15 @@ msg_id = ‎/.*‎/
 &amp; #2 _=_ #4
 &amp; #3 != #4 </code></pre>
 <hr />
+<p>Q5: <a href="https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9" class="uri">https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9</a></p>
 <pre class="aql"><code>tok=‎/.*‎/ &amp;  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ 
 &amp; #1 . #2 </code></pre>
 <hr />
 </div>
 <div id="reddit-comment-extraction" class="section level3">
 <h3>reddit comment extraction</h3>
+<p>Q6: <a href="https://www.reddit.com/r/unpopularopinion/" class="uri">https://www.reddit.com/r/unpopularopinion/</a><br />
+script: <a href="https://github.com/esteeschwarz/SPUND-LX/intLX/corpus-essai.R" class="uri">https://github.com/esteeschwarz/SPUND-LX/intLX/corpus-essai.R</a></p>
 <ul>
 <li>extract <code>okay|oki|oke|okey|okee|okidoki|o.k.|okk|okkk</code>,
 <code>n=112/25120</code></li>
@@ -429,7 +464,20 @@ print(com.ok.extract)</code></pre>
 ##  [9] &quot;lol okay&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 ## [10] &quot;lol okay bro&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 ## [11] &quot;Oh okay. I just prefer ios. I&#39;m more familiar with iphones, they&#39;re more user friendly, they have the best watch companion, I like imessage group chats, stuff like that&quot;</code></pre>
+<hr />
 </div>
+</div>
+</div>
+</div>
+<div id="b.-references" class="section level1 unnumbered">
+<h1 class="unnumbered">B. references</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-imo_digital_2024" class="csl-entry">
+Imo, Wolfgang. 2024. <span>“Digital Vermittelte <span>Interaktion</span>
+Ohne <span>Kopräsenz</span>: <span>Immer</span> Noch
+<span>Interaktion</span>?”</span> In <em>Handbuch <span>Sprache</span>
+Und <span>Digitale</span> <span>Kommunikation</span></em>, 23:249–68.
+Germany: Walter de Gruyter GmbH. <a href="https://doi.org/10.1515/9783110744163-012">https://doi.org/10.1515/9783110744163-012</a>.
 </div>
 </div>
 </div>
