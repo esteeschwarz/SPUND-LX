@@ -1,7 +1,7 @@
 ---
 title: "interaction-copresence (replic)"
 author: "esteeschwarz"
-date: "`r Sys.Date()`"
+date: "`r Sys.time()`"
 output: html_document
 ---
 
@@ -74,9 +74,9 @@ tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/
 ----
 
 ### reddit comment extraction
-- extract ```r query```
-- limit to token within 4 from turn start
-- limit to turn without ```r limit``` at turn start
+- extract ```r query```, ```n=112/25120```
+- limit to token within 4 from turn start, ```n=15/112```
+- limit to turn without ```r limit``` at turn start, ```n=11/15```
 
 #### results
 ```{r }
