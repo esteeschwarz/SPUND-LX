@@ -194,6 +194,11 @@ com.ok.sub$okay[ok.no]<-0
 com.ok.sub$comment[com.ok.sub$okay==1]
 com.ok.cl<-com.ok.sub$comment[com.ok.pos]
 com.ok.cl
+com.ok.extract<-com.ok.sub$comment[com.ok.sub$okay==1]
+head<-paste0("@comment extraction: ",url)
+com.ok.extract.t<-c(head,"",paste(1:length(com.ok.extract),sep = ". ",com.ok.extract))
+writeLines(com.ok.extract.t,"data/extract-comments.txt")
+save(com.ok.extract,file = "data/com.ok.extract.RData")
 # stri_ex
 # stri_extract_all_regex(com.ok.sub$comment[1],"\\boke\\b")
 #Filter comments containing the keyword "example"

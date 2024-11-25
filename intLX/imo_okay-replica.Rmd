@@ -14,8 +14,15 @@ knitr::opts_chunk$set(echo = TRUE)
 Q1: Imo, W. (2024). Digital vermittelte Interaktion ohne Kopräsenz: Immer noch Interaktion? In Handbuch Sprache und Digitale Kommunikation (Bd. 23, S. 249–268). Walter de Gruyter GmbH. <https://doi.org/10.1515/9783110744163-012>   
 
 ## method
+
+```{r}
+query<-"okay|oki|oke|okey|okee|okidoki|o.k.|okk|okkk"
+limit<-"That|that|That's|that's|that\031s|I'm|It's|it's|Its|its"
+
+```
+----
+
 Q2: <https://www.english-corpora.org/glowbe/>   
-query: `okay|oki|oke|okey|okee|okidoki|o?k?|okk|okkk`   
 > no export possible of results   
 
 Q3: <https://corpora.linguistik.uzh.ch/annis/?id=4d1db244-fe3d-4b2d-a47b-04d985f06ea0>   
@@ -24,9 +31,12 @@ Q3: <https://corpora.linguistik.uzh.ch/annis/?id=4d1db244-fe3d-4b2d-a47b-04d985f
 Q4: <https://corpora.linguistik.uzh.ch/annis/?id=ae12da87-b757-4a43-ba92-183194f43b11>   
 > no export possible of results   
 
-Q5: <https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9>
+Q5: <https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9>   
 
-query:
+Q6: <https://www.reddit.com/r/unpopularopinion/>
+
+
+### ANNIS queries:
 ```{aql}
 tok=‎/.*‎/ & 
 tok=‎/.*‎/ & tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎‎/ & tok=‎/.*‎/ &
@@ -42,6 +52,8 @@ spk = ‎/.*‎/
 & #4 _=_ #8
 ```
 
+----
+
 ```{aql}
 tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ &
 msg_id = ‎/.*‎/ &
@@ -52,19 +64,24 @@ msg_id = ‎/.*‎/
 & #3 != #4 
 ```
 
+----
+
 ```{aql}
 tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ 
 & #1 . #2 
 ```
 
-```{r }
-library(readr)
-d1<- read_delim("data/frequency-12.csv", 
-    delim = "\t", escape_double = FALSE, 
-    trim_ws = TRUE)
-t1<- read_delim("data/annis-export-17.csv", 
-    delim = "\t", escape_double = FALSE, 
-    trim_ws = TRUE,col_names = c("id","label","content"))
+----
 
-#d1<-read.csv("data/frequency_okay.csv")
+### reddit comment extraction
+- extract ```r query```
+- limit to token within 4 from turn start
+- limit to turn without ```r limit``` at turn start
+
+#### results
+```{r }
+
+load("data/com.ok.extract.RData")
+print(com.ok.extract)
+
 ```
