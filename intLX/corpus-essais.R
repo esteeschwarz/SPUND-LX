@@ -113,10 +113,14 @@ url <- "https://www.reddit.com/r/unpopularopinion/"
 # Extract comments
 #comments <- get_reddit(url)
 #comments <- get_thread_content(url)
+scrape.comments<-function(){
 url.df<-find_thread_urls(subreddit = "unpopularopinion")
 #url.df<-urls
 comments <- get_thread_content(url.df$url)
 save(comments,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit.df.RData")
+}
+### > RUN >
+
 load("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit.df.RData")
 rgdf<-data.frame()
 rgdf[1,1]<-"okay|\\boki\\b|\\boke\\b|\\bokey|\\bokee|okidoki|o\\.k\\.|\\bokk\\b|\\bokkk\\b"
@@ -137,50 +141,87 @@ head(com.ok.sub$comment)
 ### wks.
 # get [okay] at line start
 library(quanteda)
-?tokenize
-library(purrr)
+#?tokenize
+#library(purrr)
 com.tok<-tokenize_word1(com.ok.sub$comment)
-ok.pos<-stri_split(com.ok.sub$comment[1],regex=rgdf[1,1])
-rgdf[2,1]<-"That|that|I'm|It's|it's"
-ok.get<-function(x){grep(rgdf[1,1],x)[1]}
-ok.out<-function(x){grepl(rgdf[2,1],x)[1]}
+library(stringi)
+
+#ok.pos<-stri_split(com.ok.sub$comment[1],regex=rgdf[1,1])
+rgdf[2,1]<-"That|that|That's|that's|that\031s|I'm|It's|it's|Its|its"
+limit.ok<-4
+ok.get<-function(x){
+  m<-grep(rgdf[1,1],x)[1]<=limit.ok
+  m[is.na(m)]<-FALSE
+  return(m)
+}
+ok.out<-function(x){
+m<-grep(rgdf[2,1],x)[1]<=limit.ok
+#m<-unlist(m)
+m[is.na(m)]<-FALSE
+return(m)
+}
+com.tok[3]
+com.ok.sub$comment[7]
 ok.no<-lapply(com.tok, ok.out)
+ok.no<-unlist(ok.no)
 com.tok.p<-com.tok[unlist(ok.no)]
 ok.pos<-lapply(com.tok, ok.get)
-ok.s<-unlist(ok.pos)<=4
+ok.s<-unlist(ok.pos)
+length(ok.s)
+which(ok.s)
+which(ok.no)
+#ok.s<-unlist(ok.pos)<=limit.ok
+com.ok.sub$okay[unlist(ok.s)]<-1
+sum(unlist(ok.no))
+which(ok.s)
+which(ok.no)
 com.ok.sub$comment[ok.s]
-com.ok.pos<-which(!unlist(ok.no))%in%which(ok.s)
+com.ok.sub$comment[ok.no]
+#ok.no<-unlist(ok.no)
+com.ok.pos<-which(ok.s)%in%which(ok.no)
+which(com.ok.pos)
+length(com.ok.pos)
+sum(com.ok.pos)
+ok.s[which(com.ok.pos)]
+#ok.s[which(com.ok.pos)]<-F
+com.ok.sub$comment[ok.s]
+sum(ok.s)
+com.ok.cl<-ok.s
+#com.ok.cl<-which(unlist(ok.s)[!com.ok.pos])
+com.ok.sub$okay<-0
+com.ok.sub$okay[ok.s]<-1
+com.ok.sub$okay[ok.no]<-0
+com.ok.sub$comment[com.ok.sub$okay==1]
 com.ok.cl<-com.ok.sub$comment[com.ok.pos]
 com.ok.cl
-# library(stringi)
 # stri_ex
 # stri_extract_all_regex(com.ok.sub$comment[1],"\\boke\\b")
 #Filter comments containing the keyword "example"
-filtered_comments <- comments %>%
-  filter(grepl("okay", comment_body, ignore.case = TRUE))
-
-# View the filtered comments
-head(filtered_comments)
-#Filter comments with more than 10 upvotes
-popular_comments <- comments %>%
-  filter(upvotes > 10)
-
-# View the popular comments
-head(popular_comments)
-
-#Filter by comment length:
-
-# Filter comments longer than 100 characters
-long_comments <- comments %>%
-  filter(nchar(comment_body) > 100)
-
-# View the long comments
-head(long_comments)
-
-#–	Filter by username:
-# Filter comments by a specific user
-user_comments <- comments %>%
-  filter(author == "specific_username")
-
-# View the user's comments
-head(user_comments)
+# filtered_comments <- comments %>%
+#   filter(grepl("okay", comment_body, ignore.case = TRUE))
+# 
+# # View the filtered comments
+# head(filtered_comments)
+# #Filter comments with more than 10 upvotes
+# popular_comments <- comments %>%
+#   filter(upvotes > 10)
+# 
+# # View the popular comments
+# head(popular_comments)
+# 
+# #Filter by comment length:
+# 
+# # Filter comments longer than 100 characters
+# long_comments <- comments %>%
+#   filter(nchar(comment_body) > 100)
+# 
+# # View the long comments
+# head(long_comments)
+# 
+# #–	Filter by username:
+# # Filter comments by a specific user
+# user_comments <- comments %>%
+#   filter(author == "specific_username")
+# 
+# # View the user's comments
+# head(user_comments)
