@@ -230,3 +230,17 @@ save(com.ok.extract,file = "data/com.ok.extract.RData")
 # 
 # # View the user's comments
 # head(user_comments)
+
+### swiss chat corpus
+library(readr)
+d1<-read_delim("data/annis-export-20.csv", 
+                              delim = "\t", escape_double = FALSE, 
+                              col_names = c("id","label","msg"), trim_ws = TRUE)
+d1.sm<-sample(d1$msg,100)
+write.csv(d1.sm,"data/swisschat_sample.csv")
+save(d1.sm,file="data/swisschat_sample.RData")
+
+  
+  
+  
+  
