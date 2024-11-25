@@ -66,10 +66,10 @@ msg_id = ‎/.*‎/
 
 ----
 
-Q5: <https://corpora.linguistik.uzh.ch/annis/?id=a0fa2756-1342-4c69-a53d-21adca7819b9>   
+Q5: <https://corpora.linguistik.uzh.ch/annis/?id=8f60aec2-1aaf-485b-b3d2-0e8de415cb73>   
 
 ```{aql}
-tok=‎/.*‎/ &  tok=‎/(okay|oki|oke|okey|okee|okidoki|o\.k\.|okk|okkk)‎/ 
+tok=‎/.*‎/ &  tok=‎/(okay|\boki\b|\boke\b|\bokey|\bokee|okidoki|o\.k\.|\bokk\b|\bokkk\b)‎/ 
 & #1 . #2 
 ```
 
@@ -90,6 +90,16 @@ script: <https://github.com/esteeschwarz/SPUND-LX/blob/main/intLX/corpus-essais.
 load("data/com.ok.extract.RData")
 print(com.ok.extract)
 
+```
+
+## NT: swiss chat corpus sample
+
+
+```{r}
+#load("https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/intLX/data/swisschat_sample.RData")
+d1.sm.g<-read.csv("https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/intLX/data/swisschat_sample.csv")
+#library(knitr)
+print(d1.sm.g$x)
 ```
 
 ----
