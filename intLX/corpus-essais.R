@@ -199,6 +199,16 @@ head<-paste0("@comment extraction: ",url)
 com.ok.extract.t<-c(head,"",paste(1:length(com.ok.extract),sep = ". ",com.ok.extract))
 writeLines(com.ok.extract.t,"data/extract-comments.txt")
 save(com.ok.extract,file = "data/com.ok.extract.RData")
+
+### get preceding comment:
+com.id<-as.double(row.names(com.ok.sub))
+com.id.pre<-com.id-1
+com.m<-com.ok.sub$okay
+m<-row.names(com.df)%in%com.id.pre
+which(m)
+com.pre<-com.df$comment[which(m)]
+com.ok.sub$comment.preceding<-com.pre
+save(com.ok.sub,file = "data/com.df_wt_pre.RData")
 # stri_ex
 # stri_extract_all_regex(com.ok.sub$comment[1],"\\boke\\b")
 #Filter comments containing the keyword "example"
