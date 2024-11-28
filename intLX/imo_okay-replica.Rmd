@@ -91,6 +91,14 @@ print(com.ok.extract)
 
 ```
 
+```{r }
+
+load("data/com.df_wt_pre.RData")
+print(com.ok.extract)
+
+```
+
+
 ## NT: swiss chat corpus sample
 
 
