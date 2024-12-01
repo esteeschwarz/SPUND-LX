@@ -1,0 +1,22 @@
+id,item,source,target,edge.label
+1,Gedenkkopf einer Königinmutter,Skulptur,ist ein(e),ist ein(e)
+2,Gedenkkopf einer Königinmutter,Gedenkskulptur,ist ein(e),ist ein(e)
+3,Gedenkkopf einer Königinmutter,Bronze Head of Queen Idia,basiert auf,basiert auf
+4,Gedenkkopf einer Königinmutter,Krone,Motiv,Motiv
+5,Gedenkkopf einer Königinmutter,Halskette,Motiv,Motiv
+6,Gedenkkopf einer Königinmutter,Skarifizierung,Motiv,Motiv
+7,Gedenkkopf einer Königinmutter,menschlicher Kopf,Motiv,Motiv
+8,Gedenkkopf einer Königinmutter,Königinmutter,Motiv,Motiv
+9,Gedenkkopf einer Königinmutter,Eisen,Material,Material
+10,Gedenkkopf einer Königinmutter,Glas,Material,Material
+11,Gedenkkopf einer Königinmutter,Bronze,Material,Material
+12,Gedenkkopf einer Königinmutter,Ethnologisches Museum Berlin,Sammlung,Sammlung
+13,Gedenkkopf einer Königinmutter,Ethnologisches Museum Berlin,Ort,Ort
+14,Gedenkkopf einer Königinmutter,Königreich Benin,Ursprungsland,Ursprungsland
+15,Gedenkkopf einer Königinmutter,Unvergleichlich: Kunst aus Afrika im Bode-Museum,Ausstellung(en),Ausstellung(en)
+16,Gedenkkopf einer Königinmutter,Idia,zentrales Thema,zentrales Thema
+17,Gedenkkopf einer Königinmutter,Benin Stadt,Herstellungsort,Herstellungsort
+18,Gedenkkopf einer Königinmutter,Commemorative head of Queen Mother,verschieden von,verschieden von
+19,Gedenkkopf einer Königinmutter,Wachsausschmelzverfahren,Herstellungsmethode,Herstellungsmethode
+20,Gedenkkopf einer Königinmutter,Inkrustation,Herstellungsmethode,Herstellungsmethode
+21,Gedenkkopf einer Königinmutter,Edo,Kultur,Kultur

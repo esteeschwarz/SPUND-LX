@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="label" attr.type="string" for="node" id="label"/>
+    <key attr.name="Edge Label" attr.type="string" for="edge" id="edgelabel"/>
+    <key attr.name="weight" attr.type="double" for="edge" id="weight"/>
+    <key attr.name="r" attr.type="int" for="node" id="r"/>
+    <key attr.name="g" attr.type="int" for="node" id="g"/>
+    <key attr.name="b" attr.type="int" for="node" id="b"/>
+    <key attr.name="x" attr.type="float" for="node" id="x"/>
+    <key attr.name="y" attr.type="float" for="node" id="y"/>
+    <key attr.name="size" attr.type="float" for="node" id="size"/>
+    <key attr.name="Eingangsgrad" attr.type="int" for="node" id="indegree"/>
+    <key attr.name="Ausgangsgrad" attr.type="int" for="node" id="outdegree"/>
+    <key attr.name="Grad" attr.type="int" for="node" id="degree"/>
+    <key attr.name="Gewichteter Eingangsgrad" attr.type="double" for="node" id="weighted indegree"/>
+    <key attr.name="Gewichteter Ausgangsgrad" attr.type="double" for="node" id="weighted outdegree"/>
+    <key attr.name="Gewichteter Grad" attr.type="double" for="node" id="weighted degree"/>
+    <key attr.name="Eccentricity" attr.type="double" for="node" id="eccentricity"/>
+    <key attr.name="Closeness Centrality" attr.type="double" for="node" id="closnesscentrality"/>
+    <key attr.name="Harmonic Closeness Centrality" attr.type="double" for="node" id="harmonicclosnesscentrality"/>
+    <key attr.name="Betweenness Centrality" attr.type="double" for="node" id="betweenesscentrality"/>
+    <key attr.name="Clustering Coefficient" attr.type="double" for="node" id="clustering"/>
+    <graph edgedefault="directed">
+        <node id="&quot;Commemorative head of a queen mother&quot;@en">
+            <data key="label">Commemorative head of a queen mother</data>
+            <data key="indegree">0</data>
+            <data key="outdegree">35</data>
+            <data key="degree">35</data>
+            <data key="weighted indegree">0.0</data>
+            <data key="weighted outdegree">138.0</data>
+            <data key="weighted degree">138.0</data>
+            <data key="eccentricity">1.0</data>
+            <data key="closnesscentrality">1.0</data>
+            <data key="harmonicclosnesscentrality">1.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">12.0</data>
+            <data key="r">0</data>
+            <data key="g">109</data>
+            <data key="b">44</data>
+            <data key="x">-749.52496</data>
+            <data key="y">-246.62915</data>
+        </node>
+        <node id="&lt;http://commons.wikimedia.org/wiki/Special:FilePath/Afrikaabteilung%20in%20Ethnological%20Museum%20Berlin%2029.JPG&gt;">
+            <data key="label">&lt;http://commons.wikimedia.org/wiki/Special:FilePath/Afrikaabteilung%20in%20Ethnological%20Museum%20Berlin%2029.JPG&gt;</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">23.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">23.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">185</data>
+            <data key="g">226</data>
+            <data key="b">217</data>
+            <data key="x">-394.42606</data>
+            <data key="y">747.06244</data>
+        </node>
+        <node id="&quot;iron&quot;@en">
+            <data key="label">iron</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">18.354256</data>
+            <data key="y">297.81042</data>
+        </node>
+        <node id="&quot;made from material&quot;@en">
+            <data key="label">made from material</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">6.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">6.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">229</data>
+            <data key="g">244</data>
+            <data key="b">245</data>
+            <data key="x">902.37866</data>
+            <data key="y">1031.3809</data>
+        </node>
+        <node id="&lt;http://commons.wikimedia.org/wiki/Special:FilePath/Beyond%20Compare%20%E2%80%93%20Bode-Museum%2011%2003%2029%20768000.jpeg&gt;">
+            <data key="label">&lt;http://commons.wikimedia.org/wiki/Special:FilePath/Beyond%20Compare%20%E2%80%93%20Bode-Museum%2011%2003%2029%20768000.jpeg&gt;</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">23.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">23.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">185</data>
+            <data key="g">226</data>
+            <data key="b">217</data>
+            <data key="x">85.30481</data>
+            <data key="y">-963.73517</data>
+        </node>
+        <node id="&quot;glass&quot;@en">
+            <data key="label">glass</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">613.2749</data>
+            <data key="y">974.75824</data>
+        </node>
+        <node id="&quot;bronze&quot;@en">
+            <data key="label">bronze</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">976.3208</data>
+            <data key="y">295.89374</data>
+        </node>
+        <node id="&quot;crown&quot;@en">
+            <data key="label">crown</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-237.1915</data>
+            <data key="y">844.43353</data>
+        </node>
+        <node id="&quot;depicts&quot;@en">
+            <data key="label">depicts</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">12.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">12.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">217</data>
+            <data key="g">239</data>
+            <data key="b">238</data>
+            <data key="x">249.66191</data>
+            <data key="y">9.309808</data>
+        </node>
+        <node id="&quot;Benin Empire&quot;@en">
+            <data key="label">Benin Empire</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">4.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">4.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">233</data>
+            <data key="g">246</data>
+            <data key="b">248</data>
+            <data key="x">-80.0012</data>
+            <data key="y">225.6645</data>
+        </node>
+        <node id="&quot;country of origin&quot;@en">
+            <data key="label">country of origin</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">4.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">4.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">233</data>
+            <data key="g">246</data>
+            <data key="b">248</data>
+            <data key="x">233.71265</data>
+            <data key="y">93.44818</data>
+        </node>
+        <node id="&quot;necklace&quot;@en">
+            <data key="label">necklace</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">4.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">4.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">233</data>
+            <data key="g">246</data>
+            <data key="b">248</data>
+            <data key="x">363.06128</data>
+            <data key="y">-365.60834</data>
+        </node>
+        <node id="&quot;Benin City&quot;@en">
+            <data key="label">Benin City</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-775.5426</data>
+            <data key="y">-36.108597</data>
+        </node>
+        <node id="&quot;location of creation&quot;@en">
+            <data key="label">location of creation</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-147.346</data>
+            <data key="y">-164.59802</data>
+        </node>
+        <node id="&quot;scarification&quot;@en">
+            <data key="label">scarification</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-377.61285</data>
+            <data key="y">704.9475</data>
+        </node>
+        <node id="&quot;Ethnological Museum Berlin&quot;@en">
+            <data key="label">Ethnological Museum Berlin</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">4.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">4.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">233</data>
+            <data key="g">246</data>
+            <data key="b">248</data>
+            <data key="x">976.0534</data>
+            <data key="y">-560.8632</data>
+        </node>
+        <node id="&quot;collection&quot;@en">
+            <data key="label">collection</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">832.1537</data>
+            <data key="y">765.1031</data>
+        </node>
+        <node id="&quot;location&quot;@en">
+            <data key="label">location</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-816.91046</data>
+            <data key="y">343.30167</data>
+        </node>
+        <node id="&quot;lost-wax casting&quot;@en">
+            <data key="label">lost-wax casting</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">874.3254</data>
+            <data key="y">-39.464622</data>
+        </node>
+        <node id="&quot;fabrication method&quot;@en">
+            <data key="label">fabrication method</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">4.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">4.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">233</data>
+            <data key="g">246</data>
+            <data key="b">248</data>
+            <data key="x">99.50335</data>
+            <data key="y">-791.9282</data>
+        </node>
+        <node id="&quot;sculpture&quot;@en">
+            <data key="label">sculpture</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">665.3632</data>
+            <data key="y">852.0458</data>
+        </node>
+        <node id="&quot;instance of&quot;@en">
+            <data key="label">instance of</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">4.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">4.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">233</data>
+            <data key="g">246</data>
+            <data key="b">248</data>
+            <data key="x">708.9393</data>
+            <data key="y">-23.636007</data>
+        </node>
+        <node id="&quot;inlay&quot;@en">
+            <data key="label">inlay</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-132.29283</data>
+            <data key="y">-515.20496</data>
+        </node>
+        <node id="&quot;Edo people&quot;@en">
+            <data key="label">Edo people</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-960.68756</data>
+            <data key="y">-695.2255</data>
+        </node>
+        <node id="&quot;culture&quot;@en">
+            <data key="label">culture</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">213.736</data>
+            <data key="y">570.02954</data>
+        </node>
+        <node id="&quot;human head&quot;@en">
+            <data key="label">human head</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">333.20496</data>
+            <data key="y">-461.62436</data>
+        </node>
+        <node id="&quot;commemorative sculpture&quot;@en">
+            <data key="label">commemorative sculpture</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-463.69794</data>
+            <data key="y">-407.2629</data>
+        </node>
+        <node id="&quot;queen mother&quot;@en">
+            <data key="label">queen mother</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">89.45213</data>
+            <data key="y">-197.01328</data>
+        </node>
+        <node id="&quot;Bronze Head of Queen Idia&quot;@en">
+            <data key="label">Bronze Head of Queen Idia</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">355.35657</data>
+            <data key="y">485.53458</data>
+        </node>
+        <node id="&quot;based on&quot;@en">
+            <data key="label">based on</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">339.48328</data>
+            <data key="y">-11.285523</data>
+        </node>
+        <node id="&quot;Idia&quot;@en">
+            <data key="label">Idia</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">184.6406</data>
+            <data key="y">-260.99142</data>
+        </node>
+        <node id="&quot;main subject&quot;@en">
+            <data key="label">main subject</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-440.1128</data>
+            <data key="y">-577.39386</data>
+        </node>
+        <node id="&quot;Beyond Compare: Art from Africa in the Bode-Museum&quot;@en">
+            <data key="label">Beyond Compare: Art from Africa in the Bode-Museum</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-231.85164</data>
+            <data key="y">-1.0676807</data>
+        </node>
+        <node id="&quot;exhibition history&quot;@en">
+            <data key="label">exhibition history</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-821.4718</data>
+            <data key="y">-85.75015</data>
+        </node>
+        <node id="&quot;Commemorative head of Queen Mother&quot;@en">
+            <data key="label">Commemorative head of Queen Mother</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-489.87637</data>
+            <data key="y">-628.8541</data>
+        </node>
+        <node id="&quot;different from&quot;@en">
+            <data key="label">different from</data>
+            <data key="indegree">1</data>
+            <data key="outdegree">0</data>
+            <data key="degree">1</data>
+            <data key="weighted indegree">2.0</data>
+            <data key="weighted outdegree">0.0</data>
+            <data key="weighted degree">2.0</data>
+            <data key="eccentricity">0.0</data>
+            <data key="closnesscentrality">0.0</data>
+            <data key="harmonicclosnesscentrality">0.0</data>
+            <data key="betweenesscentrality">0.0</data>
+            <data key="clustering">0.0</data>
+            <data key="size">8.0</data>
+            <data key="r">237</data>
+            <data key="g">248</data>
+            <data key="b">251</data>
+            <data key="x">-556.04376</data>
+            <data key="y">-518.7153</data>
+        </node>
+        <edge id="1100" source="&quot;Commemorative head of a queen mother&quot;@en" target="&lt;http://commons.wikimedia.org/wiki/Special:FilePath/Afrikaabteilung%20in%20Ethnological%20Museum%20Berlin%2029.JPG&gt;">
+            <data key="weight">23.0</data>
+        </edge>
+        <edge id="1101" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;iron&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1102" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;made from material&quot;@en">
+            <data key="weight">6.0</data>
+        </edge>
+        <edge id="1103" source="&quot;Commemorative head of a queen mother&quot;@en" target="&lt;http://commons.wikimedia.org/wiki/Special:FilePath/Beyond%20Compare%20%E2%80%93%20Bode-Museum%2011%2003%2029%20768000.jpeg&gt;">
+            <data key="weight">23.0</data>
+        </edge>
+        <edge id="1107" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;glass&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1113" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;bronze&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1119" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;crown&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1120" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;depicts&quot;@en">
+            <data key="weight">12.0</data>
+        </edge>
+        <edge id="1125" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Benin Empire&quot;@en">
+            <data key="weight">4.0</data>
+        </edge>
+        <edge id="1126" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;country of origin&quot;@en">
+            <data key="weight">4.0</data>
+        </edge>
+        <edge id="1137" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;necklace&quot;@en">
+            <data key="weight">4.0</data>
+        </edge>
+        <edge id="1149" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Benin City&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1150" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;location of creation&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1155" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;scarification&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1161" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Ethnological Museum Berlin&quot;@en">
+            <data key="weight">4.0</data>
+        </edge>
+        <edge id="1162" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;collection&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1165" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;location&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1173" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;lost-wax casting&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1174" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;fabrication method&quot;@en">
+            <data key="weight">4.0</data>
+        </edge>
+        <edge id="1179" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;sculpture&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1180" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;instance of&quot;@en">
+            <data key="weight">4.0</data>
+        </edge>
+        <edge id="1185" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;inlay&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1191" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Edo people&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1192" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;culture&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1197" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;human head&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1203" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;commemorative sculpture&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1209" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;queen mother&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1215" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Bronze Head of Queen Idia&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1216" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;based on&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1221" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Idia&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1222" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;main subject&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1227" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Beyond Compare: Art from Africa in the Bode-Museum&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1228" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;exhibition history&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1233" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;Commemorative head of Queen Mother&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+        <edge id="1234" source="&quot;Commemorative head of a queen mother&quot;@en" target="&quot;different from&quot;@en">
+            <data key="weight">2.0</data>
+        </edge>
+    </graph>
+</graphml>
