@@ -29,7 +29,22 @@ SELECT ?item ?itemLabel ?itemImage ?value ?valueLabel ?valueImage ?edgeLabel WHE
 qd <- SPARQL(endpoint,query,curl_args=list(useragent=useragent))
 df <- qd$results
 df2<-df[,c(2,3,5,7)]
-write_csv(df2,"query-idia.csv")
+gs<-function(x){
+  gsub('(@en|")',"",x)
+  #gsub('"',"",x)
+}
+  
+df2[,1:4]<-lapply(df2[,1:4],gs)
+#df2[,1:4]<-gsub('"',"",df2[,1:4])
+df2[,2]<-gsub('.+Afrika.+',"Dahlem",df2[,2])
+df2[,2]<-gsub('.+Bode.+',"Bode-Museum",df2[,2])
+df3<-cbind(id=1:length(df2$itemLabel),df2[,1:4])
+colnames(df3)[4]<-"Target"
+colnames(df3)[3]<-"Source"
+df3<-cbind(df3[,1:5],Label=df3[,5])
+write_csv(df3[,1:4],"query-idia_sans-edges.csv")
+write_csv(df3[,c(1,2,5,6)],"query-idia_edges.csv")
+write_csv(df3[,1:6],"query-idia_sans_cpt.csv")
 ### > import to gephi, export graphml
 
 

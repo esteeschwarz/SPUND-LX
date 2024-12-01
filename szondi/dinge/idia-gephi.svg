@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg contentScriptType="text/ecmascript" width="2738.2256"
+     xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify"
+     contentStyleType="text/css"
+     viewBox="-1262.981445 -934.521667 2738.225586 1974.994385"
+     height="1974.9944" preserveAspectRatio="xMidYMid meet"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <g id="edges">
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_iron"
+              d="M 563.478882,97.139862 A 564.383421,564.383421 0,0 1,-25.039948,-204.142044"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Bode-Museum id_iron"
+              d="M 880.061890,671.197205 A 1063.822386,1063.822386 0,0 1,-27.859982,-203.225647"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_glass"
+              d="M 572.301697,105.476974 A 213.348151,213.348151 0,0 1,413.328186,284.929352"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Bode-Museum id_glass"
+              d="M 879.986877,672.110779 A 517.098216,517.098216 0,0 1,406.220581,296.813538"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_bronze"
+              d="M 567.545349,87.388214 A 416.281061,416.281061 0,0 1,573.511475,-395.969269"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_bronze"
+              d="M 882.030701,666.405212 A 933.597578,933.597578 0,0 1,576.016174,-394.598999"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_crown"
+              d="M 564.745178,100.628899 A 873.956976,873.956976 0,0 1,-462.467010,-5.498621"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Bode-Museum id_crown"
+              d="M 880.129761,674.194092 A 1268.739879,1268.739879 0,0 1,-465.364624,-3.307628"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_Benin_Empire"
+              d="M 563.351868,95.282532 A 1320.723621,1320.723621 0,0 1,-671.513367,-872.350586"
+              stroke="#909556" stroke-width="2.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Benin_Empire"
+              d="M 880.080322,671.061279 A 1837.659025,1837.659025 0,0 1,-672.674377,-872.106628"
+              stroke="#909556" stroke-width="2.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_necklace"
+              d="M 568.510803,104.283737 A 1011.251893,1011.251893 0,0 1,-521.292725,600.467651"
+              stroke="#909556" stroke-width="2.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_necklace"
+              d="M 881.655334,678.012024 A 1185.817722,1185.817722 0,0 1,-523.366638,604.746338"
+              stroke="#909556" stroke-width="2.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_Benin_City"
+              d="M 570.265991,105.044907 A 1102.293454,1102.293454 0,0 1,-494.403717,862.631775"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Benin_City"
+              d="M 882.833557,679.466309 A 1172.717544,1172.717544 0,0 1,-495.644257,867.254578"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_scarification"
+              d="M 567.529541,103.664383 A 1116.131446,1116.131446 0,0 1,-692.421387,508.210510"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_scarification"
+              d="M 881.377258,677.569580 A 1333.878426,1333.878426 0,0 1,-694.533508,511.762451"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_Ethnological_Museum_Berlin"
+              d="M 564.558655,100.299950 A 1201.562351,1201.562351 0,0 1,-846.848511,-101.954834"
+              stroke="#909556" stroke-width="2.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Ethnological_Museum_Berlin"
+              d="M 880.219360,674.645142 A 1592.511940,1592.511940 0,0 1,-849.071472,-100.267921"
+              stroke="#909556" stroke-width="2.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_lost-wax_casting"
+              d="M 579.794495,103.177345 A 244.954901,244.954901 0,0 1,601.262146,380.050629"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_lost-wax_casting"
+              d="M 880.077087,671.084167 A 340.512656,340.512656 0,0 1,597.802612,398.447327"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_sculpture"
+              d="M 563.653137,97.980385 A 1066.583311,1066.583311 0,0 1,-604.586365,-384.220734"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_sculpture"
+              d="M 879.982910,672.697998 A 1532.955363,1532.955363 0,0 1,-606.653625,-383.280792"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_inlay"
+              d="M 568.861267,86.595352 A 747.516043,747.516043 0,0 1,719.159363,-781.428101"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Bode-Museum id_inlay"
+              d="M 883.157104,665.161316 A 1224.948885,1224.948885 0,0 1,721.353088,-779.696960"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_Edo_people"
+              d="M 572.994263,105.525658 A 974.586753,974.586753 0,0 1,-146.736343,1006.868164"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Edo_people"
+              d="M 884.160034,680.603455 A 916.082117,916.082117 0,0 1,-146.932190,1012.632751"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_human_head"
+              d="M 568.525696,86.771904 A 565.487699,565.487699 0,0 1,655.309509,-569.999023"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_human_head"
+              d="M 882.675476,665.642578 A 1058.549356,1058.549356 0,0 1,657.816162,-568.238586"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_commemorative_sculpture"
+              d="M 563.416565,96.694740 A 1127.569739,1127.569739 0,0 1,-595.205750,-570.572388"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_commemorative_sculpture"
+              d="M 879.997620,671.884460 A 1621.398353,1621.398353 0,0 1,-596.893127,-570.012817"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_queen_mother"
+              d="M 563.392395,94.598679 A 1101.163286,1101.163286 0,0 1,-407.205017,-778.245850"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_queen_mother"
+              d="M 880.186401,670.452209 A 1628.937517,1628.937517 0,0 1,-408.321411,-778.085083"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_Bronze_Head_of_Queen_Idia"
+              d="M 569.613342,104.808083 A 1358.873440,1358.873440 0,0 1,-808.433472,946.195923"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Bronze_Head_of_Queen_Idia"
+              d="M 883.001709,679.634094 A 1441.680749,1441.680749 0,0 1,-809.529297,949.913208"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Dahlem id_Idia"
+              d="M 566.231384,88.507500 A 842.528602,842.528602 0,0 1,413.213104,-894.619019"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none" class="id_Bode-Museum id_Idia"
+              d="M 881.958679,666.500854 A 1370.954841,1370.954841 0,0 1,414.441376,-894.076416"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_Beyond_Compare:_Art_from_Africa_in_the_Bode-Museum"
+              d="M 567.747681,87.247742 A 649.549382,649.549382 0,0 1,599.255859,-675.469116"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Beyond_Compare:_Art_from_Africa_in_the_Bode-Museum"
+              d="M 882.494080,665.841858 A 1154.379939,1154.379939 0,0 1,601.331055,-674.183289"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Dahlem id_Commemorative_head_of_Queen_Mother"
+              d="M 580.028320,102.973961 A 713.090487,713.090487 0,0 1,659.645203,938.815491"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+        <path stroke-linecap="round" fill="none"
+              class="id_Bode-Museum id_Commemorative_head_of_Queen_Mother"
+              d="M 889.167358,682.438721 A 301.653380,301.653380 0,0 1,664.214600,945.050903"
+              stroke="#61a4a7" stroke-width="1.0" stroke-opacity="1.0"/>
+    </g>
+    <g id="arrows">
+        <polyline fill="#61a4a7" fill-opacity="1.0" class="id_Dahlem id_iron"
+                  points="-25.039948,-204.142044 -25.039948,-204.142044 -25.039948,-204.142044"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_iron"
+                  points="-27.859982,-203.225647 -27.859982,-203.225647 -27.859982,-203.225647"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0" class="id_Dahlem id_glass"
+                  points="413.328186,284.929352 413.328186,284.929352 413.328186,284.929352"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_glass"
+                  points="406.220581,296.813538 406.220581,296.813538 406.220581,296.813538"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0" class="id_Dahlem id_bronze"
+                  points="573.511475,-395.969269 573.511475,-395.969269 573.511475,-395.969269"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_bronze"
+                  points="576.016174,-394.598999 576.016174,-394.598999 576.016174,-394.598999"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0" class="id_Dahlem id_crown"
+                  points="-462.467010,-5.498621 -462.467010,-5.498621 -462.467010,-5.498621"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_crown"
+                  points="-465.364624,-3.307629 -465.364624,-3.307629 -465.364624,-3.307629"
+                  stroke="none"/>
+        <polyline fill="#909556" fill-opacity="1.0"
+                  class="id_Dahlem id_Benin_Empire"
+                  points="-671.513367,-872.350586 -671.513367,-872.350586 -671.513367,-872.350586"
+                  stroke="none"/>
+        <polyline fill="#909556" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Benin_Empire"
+                  points="-672.674377,-872.106628 -672.674377,-872.106628 -672.674377,-872.106628"
+                  stroke="none"/>
+        <polyline fill="#909556" fill-opacity="1.0"
+                  class="id_Dahlem id_necklace"
+                  points="-521.292725,600.467651 -521.292725,600.467651 -521.292725,600.467651"
+                  stroke="none"/>
+        <polyline fill="#909556" fill-opacity="1.0"
+                  class="id_Bode-Museum id_necklace"
+                  points="-523.366638,604.746338 -523.366638,604.746338 -523.366638,604.746338"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_Benin_City"
+                  points="-494.403717,862.631775 -494.403717,862.631775 -494.403717,862.631775"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Benin_City"
+                  points="-495.644287,867.254578 -495.644287,867.254578 -495.644287,867.254578"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_scarification"
+                  points="-692.421387,508.210510 -692.421387,508.210510 -692.421387,508.210510"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_scarification"
+                  points="-694.533508,511.762451 -694.533508,511.762451 -694.533508,511.762451"
+                  stroke="none"/>
+        <polyline fill="#909556" fill-opacity="1.0"
+                  class="id_Dahlem id_Ethnological_Museum_Berlin"
+                  points="-846.848511,-101.954834 -846.848511,-101.954834 -846.848511,-101.954834"
+                  stroke="none"/>
+        <polyline fill="#909556" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Ethnological_Museum_Berlin"
+                  points="-849.071472,-100.267921 -849.071472,-100.267921 -849.071472,-100.267921"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_lost-wax_casting"
+                  points="601.262146,380.050629 601.262146,380.050629 601.262146,380.050629"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_lost-wax_casting"
+                  points="597.802612,398.447327 597.802612,398.447327 597.802612,398.447327"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_sculpture"
+                  points="-604.586365,-384.220734 -604.586365,-384.220734 -604.586365,-384.220734"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_sculpture"
+                  points="-606.653625,-383.280792 -606.653625,-383.280792 -606.653625,-383.280792"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0" class="id_Dahlem id_inlay"
+                  points="719.159363,-781.428101 719.159363,-781.428101 719.159363,-781.428101"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_inlay"
+                  points="721.353088,-779.696960 721.353088,-779.696960 721.353088,-779.696960"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_Edo_people"
+                  points="-146.736343,1006.868164 -146.736343,1006.868164 -146.736343,1006.868164"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Edo_people"
+                  points="-146.932190,1012.632751 -146.932190,1012.632751 -146.932190,1012.632751"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_human_head"
+                  points="655.309509,-569.999023 655.309509,-569.999023 655.309509,-569.999023"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_human_head"
+                  points="657.816162,-568.238586 657.816162,-568.238586 657.816162,-568.238586"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_commemorative_sculpture"
+                  points="-595.205750,-570.572388 -595.205750,-570.572388 -595.205750,-570.572388"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_commemorative_sculpture"
+                  points="-596.893127,-570.012817 -596.893127,-570.012817 -596.893127,-570.012817"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_queen_mother"
+                  points="-407.205017,-778.245850 -407.205017,-778.245850 -407.205017,-778.245850"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_queen_mother"
+                  points="-408.321411,-778.085083 -408.321411,-778.085083 -408.321411,-778.085083"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_Bronze_Head_of_Queen_Idia"
+                  points="-808.433472,946.195923 -808.433472,946.195923 -808.433472,946.195923"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Bronze_Head_of_Queen_Idia"
+                  points="-809.529297,949.913208 -809.529297,949.913208 -809.529297,949.913208"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0" class="id_Dahlem id_Idia"
+                  points="413.213104,-894.619019 413.213104,-894.619019 413.213104,-894.619019"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Idia"
+                  points="414.441376,-894.076416 414.441376,-894.076416 414.441376,-894.076416"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_Beyond_Compare:_Art_from_Africa_in_the_Bode-Museum"
+                  points="599.255859,-675.469116 599.255859,-675.469116 599.255859,-675.469116"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Beyond_Compare:_Art_from_Africa_in_the_Bode-Museum"
+                  points="601.331055,-674.183289 601.331055,-674.183289 601.331055,-674.183289"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Dahlem id_Commemorative_head_of_Queen_Mother"
+                  points="659.645203,938.815491 659.645203,938.815491 659.645203,938.815491"
+                  stroke="none"/>
+        <polyline fill="#61a4a7" fill-opacity="1.0"
+                  class="id_Bode-Museum id_Commemorative_head_of_Queen_Mother"
+                  points="664.214600,945.050903 664.214600,945.050903 664.214600,945.050903"
+                  stroke="none"/>
+    </g>
+    <g id="nodes">
+        <circle fill-opacity="1.0" fill="#28b36a" r="9.2" cx="573.34875"
+                class="id_Dahlem" cy="95.531944" stroke="#1c7d4a"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-29.50635"
+                class="id_iron" cy="-213.08919" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#28b36a" r="9.2" cx="889.98035"
+                class="id_Bode-Museum" cy="672.4718" stroke="#1c7d4a"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="403.58197"
+                class="id_glass" cy="287.16794" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="579.5141"
+                class="id_bronze" cy="-403.9673" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-469.84677"
+                class="id_crown" cy="-12.246895" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#f97743" r="9.2" cx="-674.1462"
+                class="id_Benin_Empire" cy="-881.99774" stroke="#ae532e"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#f97743" r="9.2" cx="-531.0703"
+                class="id_necklace" cy="598.3703" stroke="#ae532e"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-504.4016"
+                class="id_Benin_City" cy="862.42664" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-701.8872"
+                class="id_scarification" cy="504.9858" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#f97743" r="9.2" cx="-853.94586"
+                class="id_Ethnological_Museum_Berlin" cy="-108.9995"
+                stroke="#ae532e" stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="596.0719"
+                class="id_lost-wax_casting" cy="388.59824" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-609.73224"
+                class="id_sculpture" cy="-392.7951" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="726.39026"
+                class="id_inlay" cy="-788.33563" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-156.40385"
+                class="id_Edo_people" cy="1009.42535" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="662.2424"
+                class="id_human_head" cy="-577.2057" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-599.1846"
+                class="id_commemorative_sculpture" cy="-579.74677"
+                stroke="#6b69a0" stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-409.18597"
+                class="id_queen_mother" cy="-788.04767" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="-818.3915"
+                class="id_Bronze_Head_of_Queen_Idia" cy="945.2805"
+                stroke="#6b69a0" stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="417.85892"
+                class="id_Idia" cy="-903.4743" stroke="#6b69a0"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="605.5211"
+                class="id_Beyond_Compare:_Art_from_Africa_in_the_Bode-Museum"
+                cy="-683.2631" stroke="#6b69a0" stroke-opacity="1.0"
+                stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#9a96e5" r="9.2" cx="654.4908"
+                class="id_Commemorative_head_of_Queen_Mother" cy="947.38477"
+                stroke="#6b69a0" stroke-opacity="1.0" stroke-width="1.5999999"/>
+    </g>
+    <g id="node-labels">
+        <text font-size="180" x="573.34875" y="128.27121" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Dahlem">
+            Dahlem
+        </text>
+        <text font-size="54" x="-29.50635" y="-203.26741" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_iron">
+            iron
+        </text>
+        <text font-size="180" x="889.98035" y="705.21106" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Bode-Museum">
+            Bode-Museum
+        </text>
+        <text font-size="54" x="403.58197" y="299.67258" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_glass">
+            glass
+        </text>
+        <text font-size="54" x="579.5141" y="-394.1455" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_bronze">
+            bronze
+        </text>
+        <text font-size="54" x="-469.84677" y="-4.9300003" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_crown">
+            crown
+        </text>
+        <text font-size="66" x="-674.1462" y="-866.90765" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Benin_Empire">
+            Benin Empire
+        </text>
+        <text font-size="66" x="-531.0703" y="610.3747" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_necklace">
+            necklace
+        </text>
+        <text font-size="54" x="-504.4016" y="875.09607" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Benin_City">
+            Benin City
+        </text>
+        <text font-size="54" x="-701.8872" y="514.9724" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_scarification">
+            scarification
+        </text>
+        <text font-size="66" x="-853.94586" y="-93.71605" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Ethnological_Museum_Berlin">
+            Ethnological Museum Berlin
+        </text>
+        <text font-size="54" x="596.0719" y="401.10287" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_lost-wax_casting">
+            lost-wax casting
+        </text>
+        <text font-size="54" x="-609.73224" y="-380.44867" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_sculpture">
+            sculpture
+        </text>
+        <text font-size="54" x="726.39026" y="-775.831" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_inlay">
+            inlay
+        </text>
+        <text font-size="54" x="-156.40385" y="1021.7718" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Edo_people">
+            Edo people
+        </text>
+        <text font-size="54" x="662.2424" y="-567.3839" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_human_head">
+            human head
+        </text>
+        <text font-size="54" x="-599.1846" y="-567.4003" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_commemorative_sculpture">
+            commemorative sculpture
+        </text>
+        <text font-size="54" x="-409.18597" y="-775.70123" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_queen_mother">
+            queen mother
+        </text>
+        <text font-size="54" x="-818.3915" y="955.86694" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Bronze_Head_of_Queen_Idia">
+            Bronze Head of Queen Idia
+        </text>
+        <text font-size="54" x="417.85892" y="-893.6525" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Idia">
+            Idia
+        </text>
+        <text font-size="54" x="605.5211" y="-670.5937" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial"
+              class="id_Beyond_Compare:_Art_from_Africa_in_the_Bode-Museum">
+            Beyond Compare: Art from Africa in the Bode-Museum
+        </text>
+        <text font-size="54" x="654.4908" y="957.9712" fill="#000000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_Commemorative_head_of_Queen_Mother">
+            Commemorative head of Queen Mother
+        </text>
+    </g>
+    <g id="edge-labels">
+        <text font-size="24" x="220.48434" y="41.697227" fill="#73c000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_1">
+            made from material
+        </text>
+        <text font-size="24" x="282.6435" y="382.9391" fill="#73c000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_2">
+            made from material
+        </text>
+        <text font-size="24" x="520.4047" y="219.64441" fill="#73c000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_3">
+            made from material
+        </text>
+        <text font-size="24" x="582.56384" y="560.8863" fill="#73c000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_4">
+            made from material
+        </text>
+        <text font-size="24" x="493.18155" y="-155.24522" fill="#73c000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_5">
+            made from material
+        </text>
+        <text font-size="24" x="555.3407" y="185.99663" fill="#73c000"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_6">
+            made from material
+        </text>
+        <text font-size="24" x="33.787853" y="215.50845" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_7">
+            depicts
+        </text>
+        <text font-size="24" x="95.947" y="556.7503" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_8">
+            depicts
+        </text>
+        <text font-size="24" x="-213.32033" y="-185.31708" fill="#ff8805"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_9">
+            country of origin
+        </text>
+        <text font-size="24" x="-151.16118" y="155.92477" fill="#ff8805"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_10">
+            country of origin
+        </text>
+        <text font-size="24" x="104.94562" y="531.021" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_13">
+            depicts
+        </text>
+        <text font-size="24" x="167.10477" y="872.2629" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_14">
+            depicts
+        </text>
+        <text font-size="24" x="162.28935" y="658.6044" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_17">
+            location of creation
+        </text>
+        <text font-size="24" x="224.4485" y="999.84625" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_18">
+            location of creation
+        </text>
+        <text font-size="24" x="3.9730883" y="512.7982" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_19">
+            depicts
+        </text>
+        <text font-size="24" x="66.13223" y="854.0401" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_20">
+            depicts
+        </text>
+        <text font-size="24" x="-174.38713" y="231.14868" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_21">
+            location
+        </text>
+        <text font-size="24" x="-112.22798" y="572.39056" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_23">
+            location
+        </text>
+        <text font-size="24" x="633.5547" y="238.2779" fill="#4c463e"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_25">
+            fabrication method
+        </text>
+        <text font-size="24" x="695.71387" y="579.5198" fill="#4c463e"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_26">
+            fabrication method
+        </text>
+        <text font-size="24" x="-99.57958" y="48.5486" fill="#00c4ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_27">
+            instance of
+        </text>
+        <text font-size="24" x="-37.42043" y="389.79044" fill="#00c4ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_28">
+            instance of
+        </text>
+        <text font-size="24" x="502.55826" y="-371.90875" fill="#4c463e"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_29">
+            fabrication method
+        </text>
+        <text font-size="24" x="564.7174" y="-30.666906" fill="#4c463e"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_30">
+            fabrication method
+        </text>
+        <text font-size="24" x="360.78802" y="674.1041" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_31">
+            culture
+        </text>
+        <text font-size="24" x="422.94717" y="1015.34595" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_32">
+            culture
+        </text>
+        <text font-size="24" x="505.6726" y="-255.65248" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_33">
+            depicts
+        </text>
+        <text font-size="24" x="567.8318" y="85.589386" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_34">
+            depicts
+        </text>
+        <text font-size="24" x="-125.46436" y="-46.685184" fill="#00c4ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_35">
+            instance of
+        </text>
+        <text font-size="24" x="-63.305206" y="294.55667" fill="#00c4ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_36">
+            instance of
+        </text>
+        <text font-size="24" x="-65.181885" y="-182.50208" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_37">
+            depicts
+        </text>
+        <text font-size="24" x="-3.022765" y="158.73984" fill="#df89ff"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_38">
+            depicts
+        </text>
+        <text font-size="24" x="19.103403" y="752.3629" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_39">
+            based on
+        </text>
+        <text font-size="24" x="81.26256" y="1093.6049" fill="#c0c0c0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_40">
+            based on
+        </text>
+        <text font-size="24" x="329.10278" y="-378.0562" fill="#d3b3b0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_41">
+            main subject
+        </text>
+        <text font-size="24" x="391.26196" y="-36.81436" fill="#d3b3b0"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_42">
+            main subject
+        </text>
+        <text font-size="24" x="459.63574" y="-299.22766" fill="#00bd94"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_43">
+            exhibition history
+        </text>
+        <text font-size="24" x="521.7949" y="42.014202" fill="#00bd94"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_44">
+            exhibition history
+        </text>
+        <text font-size="24" x="755.89526" y="507.9347" fill="#ff5584"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_45">
+            different from
+        </text>
+        <text font-size="24" x="818.0544" y="849.1766" fill="#ff5584"
+              style="text-anchor: middle; dominant-baseline: central;"
+              font-family="Arial" class="id_46">
+            different from
+        </text>
+    </g>
+</svg>
