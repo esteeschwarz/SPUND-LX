@@ -250,7 +250,155 @@ d1.sm<-sample(d1$msg,100)
 write.csv(d1.sm,"data/swisschat_sample.csv")
 save(d1.sm,file="data/swisschat_sample.RData")
 
+### 15493.
+rgdf<-data.frame()
+rgdf[1,1]<-"!1!"
+m<-grep(rgdf[1,1],comments$comments)  
+length(comments$comments)  
+head(comments$comments$comment)  
+length(comments$comments$comment)  
+# no occurence in subreddit r/unpopularopinion
+##############################################
+# check
+### r/de <!1!>
+library(RedditExtractoR)
+library(dplyr)
+#Replace with the URL of the Reddit post you want to scrape
+#url <- "https://www.reddit.com/r/unpopularopinion/"
+#url <- "https://www.reddit.com/r/de"
+
+# Extract comments
+#comments <- get_reddit(url)
+#comments <- get_thread_content(url)
+#scrape.comments<-function(){
+  url.df<-find_thread_urls(subreddit = "de")
+  save(url.df,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_url.df.RData")
   
+  #url.df<-urls
+  for (k in 1:1){
+  comments.100 <- get_thread_content(url.df$url[1:100])
+  save(comments.100,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com100.RData")
+  print(100)
+  comments.200 <- get_thread_content(url.df$url[101:200])
+  save(comments.200,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com200.RData")
+  print(200)
+  comments.300 <- get_thread_content(url.df$url[201:300])
+  save(comments.300,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com300.RData")
+  print(300)
   
+  comments.400 <- get_thread_content(url.df$url[301:400])
+  save(comments.400,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com400.RData")
+  print(400)
+  k
+  comments.5<-data.frame()
+  for(k in 402:500){
+  comments.5.l <- get_thread_content(url.df$url[k])
+  #comments.5<-data.frame(comments.5.l$comments)
+  comments.5<-rbind(comments.5,comments.5.l$comments)
+  print(k)
+  }
+  comments.500<-comments.5
+  save(comments.500,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com500.df.RData")
+  print(500)
+  #comments.6<-data.frame()
+  get.comm<-function(run){
+  for(k in 1:100){
+    f<-run*100
+    p<-k+f
+    comments.5.l <- get_thread_content(url.df$url[p])
+    if(k==1)
+      comments.5<-data.frame(comments.5.l$comments)
+    comments.5<-rbind(comments.5,comments.5.l$comments)
+    print(p)
+  }
+    return(comments.5)
+  }
+  comments.600<-get.comm(5)
+ # comments.600 <- get_thread_content(url.df$url[501:600])
+  save(comments.600,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com600.df.RData")
+  print(600)
+  comments.700<-get.comm(6)
+  #
+#  comments.700 <- get_thread_content(url.df$url[601:700])
+  save(comments.700,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com700.df.RData")
+  print(700)
+  comments.800<-get.comm(7)
   
+  #comments.800 <- get_thread_content(url.df$url[701:800])
+  save(comments.800,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com800.df.RData")
+  print(800)
+  comments.900<-get.comm(8)
+#  comments.9.x <- get_thread_content(url.df$url[1001])
   
+#  comments.900 <- get_thread_content(url.df$url[801:900])
+  save(comments.900,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com900.df.RData")
+  print(900)
+  comments.1000<-get.comm(9)
+  
+  #comments.1000 <- get_thread_content(url.df$url[901:1000])
+  save(comments.1000,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.com1000.RData")
+  print(1000)
+  
+  }
+  #save(comments,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15493.df.RData")
+#}
+#scrape.comments()
+com.df<-data.frame(comments.100$comments)
+com.df<-rbind(com.df,comments.200$comments)
+com.df<-rbind(com.df,comments.300$comments)
+com.df<-rbind(com.df,comments.400$comments)
+com.df<-rbind(com.df,comments.500)
+com.df<-rbind(com.df,comments.600)
+com.df<-rbind(com.df,comments.700)
+com.df<-rbind(com.df,comments.800)
+com.df<-rbind(com.df,comments.900)
+com.df<-rbind(com.df,comments.1000)
+com.df<-rbind(com.df,comments.9.x$comments)
+
+head(comments.300$comments)
+save(com.df,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15494.df.RData")
+write.csv(com.df,"/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15494.df.RData")
+getwd()
+writeLines("test123","test.txt")
+library(clipr)
+
+regdf<-data.frame()
+regdf[1,1]<-"!1!"
+m<-grep(regdf[1,1],com.df$comment)
+com.df[m,]
+head(com.df)
+url.df.2<-url.df
+url.df$url[grep(".json",url.df$url)]
+url.df.2$url<-gsub("\\.json?limit=500","",url.df$url)
+url.df$url[510:600]
+
+com.df[10:20,]
+
+### create vertical corpus
+library(quanteda)
+com.vrt.s<-tokenize_sentence(com.df$comment)
+head(com.vrt.s)
+#com.vrt.t<-tokenize_word1(com.vrt.s)
+library(udpipe)
+model<-udpipe::udpipe_load_model("../corpuslx/german-gsd-ud-2.5-191206.udpipe")
+com.vrt.t<-udpipe::udpipe_annotate(model,com.vrt.s)
+unlist(head(com.vrt.s,20))
+x<-com.vrt.s
+cor.tok<-udpipe::udpipe_annotate(model,x[[24]])
+?udpipe_annotate
+as.data.frame(cor.tok)
+cat(cor.tok$conllu)
+get.ann.df<-function(x){
+  cor.tok<-udpipe::udpipe_annotate(model,x)
+  return(as.data.frame(cor.tok))
+}
+#com.vrt.t<-get.ann.df(com.vrt.s)
+com.vrt.t.1<-get.ann.df(com.vrt.s[[1]])
+com.vrt.df<-com.vrt.t.1
+for(k in 2:length(com.vrt.s)){
+com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+print(k)  
+  
+}
+
+
