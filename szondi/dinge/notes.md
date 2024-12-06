@@ -18,3 +18,10 @@ SELECT DISTINCT ?item ?itemLabel WHERE {
 
 > Idia:
 `wd:Q106983702`
+> SPARQL abfrageergebnis
+<https://w.wiki/CJz4>
+
+> DDB # WD:looted qualifier
+<https://www.deutsche-digitale-bibliothek.de/item/T3QD3SVT6Q4NZ2DUIBXLJSNR3NA667EP>
+`id="accordion-wrapper-item-flex_mus_neu_460"`
+<https://www.deutsche-digitale-bibliothek.de/item/T3QD3SVT6Q4NZ2DUIBXLJSNR3NA667EP#accordion-4>

@@ -400,5 +400,59 @@ com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))
 print(k)  
   
 }
+com.vrt.es.1<-get.ann.df(com.df$comment[1:1000])
+write.csv(com.vrt.es.1[1:1000,],"com.vrt.es-1000.csv")
+save(com.vrt.df,file = "reddit.com.vrt-19502.RData")
 
+###
 
+com.vrt.t.1<-get.ann.df(com.vrt.s[[19503]])
+com.vrt.df<-com.vrt.t.1
+for(k in 19504:30000){
+  com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+  print(k)  
+  
+}
+save(com.vrt.df,file = "reddit.com.vrt-30000.RData")
+
+com.vrt.t.1<-get.ann.df(com.vrt.s[[30001]])
+com.vrt.df<-com.vrt.t.1
+for(k in 30002:50000){
+  com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+  print(k)  
+  
+}
+save(com.vrt.df,file = "reddit.com.vrt-50000.RData")
+
+com.vrt.t.1<-get.ann.df(com.vrt.s[[50001]])
+com.vrt.df<-com.vrt.t.1
+for(k in 50002:70000){
+  com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+  print(k)  
+  
+}
+save(com.vrt.df,file = "reddit.com.vrt-70000.RData")
+
+com.vrt.t.1<-get.ann.df(com.vrt.s[[70001]])
+com.vrt.df<-com.vrt.t.1
+for(k in 70002:90000){
+  com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+  print(k)  
+  
+}
+save(com.vrt.df,file = "reddit.com.vrt-90000.RData")
+
+com.vrt.t.1<-get.ann.df(com.vrt.s[[90001]])
+com.vrt.df<-com.vrt.t.1
+for(k in 90002:length(com.df$url)){
+  com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+  print(k)  
+  
+}
+save(com.vrt.df,file = "reddit.com.vrt-end.RData")
+save(com.vrt.s,file = "reddit.com.sent.RData")
+write.csv(com.vrt.df[1:1000,],"com.vrt.df-1000.csv")
+com.sub<-com.vrt.df[1:1000,]
+
+# red.corpus.notes
+15497.30.19521 # sentence too long
