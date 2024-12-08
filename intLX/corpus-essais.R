@@ -558,7 +558,7 @@ which(id.u=="1.100")
 colnames(rcom.dff)
 library(clipr)
 write_clip(paste("ATTRIBUTE",colnames(rcom.dff),sep = "\t"))
-#id<-"1.1"
+id.i<-3
 #rcom.cols<-c()
 ###############################
 library(readr)
@@ -572,29 +572,43 @@ vrt.sample<-rcom.dff[rcom.dff$doc_id==id,]
 vrt.sample.s<-unique(vrt.sample$sentence)
 vrt.sample.s
 #vrt.htm<-list()
-k<-3
+k<-2
 k
 vrt.htm<-tempfile("vrthtm")
 vrt.temp<-tempfile("vrtemp")
 for(k in 1:length(vrt.sample.s)){
-  m<-rcom.dff$sentence==vrt.sample.s[k]
+#  m<-rcom.dff$sentence==vrt.sample.s[k]
+  m<-vrt.sample$sentence==vrt.sample.s[k]
   sum(m)
 #vrt.htm[[k]]<-paste0("<s>",rcom.dff[m,],"</s>")
 #rbind("<s>",rcom.dff[m,],"</s>")
 # vrt.temp<-tempfile("vrtemp")
 #library(readr)
-r.ns<-colnames(rcom.dff)
+r.ns<-colnames(vrt.sample)
 m.2<-r.ns=="token"
 r.ns[m.2]<-"word"
-write.table(rcom.dff[m,],vrt.temp,sep = "\t",row.names = F,col.names = F,quote = F)
+r.ns
+#write.table(rcom.dff[m,],vrt.temp,sep = "\t",row.names = F,col.names = F,quote = F)
+vrt.sample.m<-vrt.sample[m,c(6,7,1:3,8:15)]
+write.table(vrt.sample.m,vrt.temp,sep = "\t",row.names = F,col.names = F,quote = F)
+# writeLines(vrt.sample.m,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt4/com.df_",id,".txt"))
 #?write.csv
-head(rcom.dff[m,])
+head(vrt.sample.m)
 vrt.get<-readLines(vrt.temp)
-vrt.get<-c("<s>",vrt.get,"</s>")
+vrt.get<-vrt.sample.m
+r.ns<-colnames(vrt.sample.m)
+r.ns
+m.2<-r.ns=="token"
+r.ns[m.2]<-"word"
+colnames(vrt.sample.m)<-r.ns
+write_clip(paste("ATTRIBUTE",colnames(vrt.sample.m),sep = "\t"))
+vrt.get<-paste0("<s>",vrt.get,"</s>")
 head(vrt.get)
 vrt.get
 write.table(vrt.get,vrt.htm,sep = "\t",row.names = F,col.names = F,append = T,quote = F)
-#writeLines(vrt.get,vrt.htm)
+write.table(vrt.get,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt4/com.df_",id,".txt"),sep = "\t",row.names = F,col.names = F,append = T,quote = F)
+write.table(vrt.get,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt4/com.df_",id,".txt"),sep = "\t",row.names = F,col.names = F,quote = F)
+# writeLines(vrt.get,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt4/com.df_",id,".txt"))
 #}
 htm.get.l<-readLines(vrt.htm)
 head(htm.get.l)
@@ -602,8 +616,26 @@ htm.get.l
 htm.get.l<-gsub('"',' ',htm.get.l)
 #tt.doc<-c(paste0('<doc id="',id,'">'),htm.get,'</doc>')
 tt.doc<-htm.get.l
-writeLines(tt.doc,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt2/com.df_",id,".txt"))
+writeLines(tt.doc,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt3/com.df_",id,".txt"))
 cat(id,mode(id),"\n")
 }
 }
 id
+### combine files:
+f<-list.files("~/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt2")
+f.p<-paste("~/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt2",f,sep = "/")
+k<-1
+f.list<-list()
+for(k in 1:length(f.p)){
+  t<-readLines(f.p[k])
+  t<-c(paste0('<doc id="',k,'">'),t,"</doc>")
+  t
+  f.list[[f[k]]]<-t
+  write.table(t,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/source",sep = "\t",row.names = F,col.names = F,append = T,quote = F)
+  
+  print(k)
+}
+library(abind)
+f.list.a<-abind(f.list,along=1)
+write_clip(paste("ATTRIBUTE",colnames(rcom.sf),sep = "\t"))
+save(f.list,file = "rcom.list.cpt.RData")
