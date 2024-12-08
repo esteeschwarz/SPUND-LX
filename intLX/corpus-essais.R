@@ -456,3 +456,154 @@ com.sub<-com.vrt.df[1:1000,]
 
 # red.corpus.notes
 15497.30.19521 # sentence too long
+
+# local sql
+library(RSQLite)
+library(RMySQL)
+library(DBI)
+?DBI::s
+db <- dbConnect(SQLite(), "~/boxHKW/21S/DH/local/SPUND/intLX/reddit_comments.sqlite")
+chk.db<-function(){
+  sql_query<-"SELECT * FROM `reddit.comments`"
+  results <- dbGetQuery(db, sql_query)
+  sql_query<-"SHOW TABLES;"
+  #sql_query<-"START TRANSACTION;"
+  results <- RSQLite::dbSendQuery(db, sql_query)
+  #results
+}
+# Read the .sql file
+sql_file <- readLines("~/boxHKW/21S/DH/local/SPUND/intLX/reddit_comments.sql")
+head(sql_file,70)
+# Execute the SQL commands
+for (query in sql_file) {
+  RSQLite::dbSendQuery(db, query)
+}
+
+results<-chk.db()
+
+###
+
+rcom.df<-read.csv("reddit_comments1-32.csv")
+load("reddit_15494.df.RData")
+head(rcom.df)
+rcom.ns<-colnames(rcom.df)
+rcom.ns
+rcom.in<-c(1,2,3,4,5,6,7,8,10,11,12)
+rcom.dff<-rcom.df[,rcom.in]
+head(rcom.dff)
+rm(rcom.df)
+
+l.df<-length(com.df$url)
+chunks<-ceiling(l.df/1000)
+# Create the vector
+vector <- 1:l.df
+
+# Define the chunk size
+chunk_size <- 500  # Example chunk size
+
+# Function to split the vector into chunks of equal length
+split_into_chunks <- function(vec, chunk_size) {
+  split(vec, ceiling(seq_along(vec) / chunk_size))
+}
+
+# Split the vector into chunks
+chunks <- split_into_chunks(vector, chunk_size)
+k<-1
+k
+#pos
+#pos<-chunk.range[1]
+rcom.dff$df_id<-NA
+rcom.dff$date<-NA
+rcom.dff$author<-NA
+rcom.dff$com_id<-NA
+rcom.dff$url<-NA
+###########################
+for(k in 1:length(chunks)){
+  chunk.range<-chunks[[k]]
+  
+  for(pos in 1:length(chunk.range)){
+  chunk.ex<-com.df[chunk.range[pos],]
+  chunk.pos<-paste0(k,".",pos)
+  m<-rcom.dff$doc_id==chunk.pos
+  sum(m)
+  rcom.dff$date[m]<-chunk.ex$date
+  rcom.dff$df_id[m]<-rownames(chunk.ex)
+  rcom.dff$author[m]<-chunk.ex$author
+  rcom.dff$com_id[m]<-chunk.ex$comment_id
+  rcom.dff$url[m]<-chunk.ex$url
+  print(chunk.pos)
+  }
+}
+#save(rcom.dff,file = "rcom.dff-annotated.RData")
+load("rcom.dff-annotated.RData")
+getwd()
+rcom.sub<-rcom.dff[!is.na(rcom.dff$date),]
+rcom.sf<-rcom.dff
+#rcom.dff<-rcom.sub
+#rcom.dff<-rcom.sf
+## create .vrt:
+#rcom.dff$doc_id<-reddit_comments1_32$doc_id
+id.u<-unique(rcom.dff$doc_id)
+head(id.u,20)
+rcom.dff$c_id<-gsub("\\.","_",as.character(rcom.dff$doc_id))
+mode(rcom.dff$doc_id)<-"character"
+#mode(rcom.sf$)
+which(rcom.dff$c_id=="1_20")
+id.u
+mode(id.u)
+id.u.c<-as.character(id.u)
+id.u.s<-id.u[order(id.u)]
+id.u.s[1:20]
+which(id.u=="1.100")
+colnames(rcom.dff)
+library(clipr)
+write_clip(paste("ATTRIBUTE",colnames(rcom.dff),sep = "\t"))
+#id<-"1.1"
+#rcom.cols<-c()
+###############################
+library(readr)
+ for (id.i in 2:length(id.u)){
+#id.i<-2
+#for (id.i in 2:12){
+  #vrt.sample<-rcom.dff[rcom.dff$doc_id==ex[1],]
+id<-id.u[id.i]
+id
+vrt.sample<-rcom.dff[rcom.dff$doc_id==id,]
+vrt.sample.s<-unique(vrt.sample$sentence)
+vrt.sample.s
+#vrt.htm<-list()
+k<-3
+k
+vrt.htm<-tempfile("vrthtm")
+vrt.temp<-tempfile("vrtemp")
+for(k in 1:length(vrt.sample.s)){
+  m<-rcom.dff$sentence==vrt.sample.s[k]
+  sum(m)
+#vrt.htm[[k]]<-paste0("<s>",rcom.dff[m,],"</s>")
+#rbind("<s>",rcom.dff[m,],"</s>")
+# vrt.temp<-tempfile("vrtemp")
+#library(readr)
+r.ns<-colnames(rcom.dff)
+m.2<-r.ns=="token"
+r.ns[m.2]<-"word"
+write.table(rcom.dff[m,],vrt.temp,sep = "\t",row.names = F,col.names = F,quote = F)
+#?write.csv
+head(rcom.dff[m,])
+vrt.get<-readLines(vrt.temp)
+vrt.get<-c("<s>",vrt.get,"</s>")
+head(vrt.get)
+vrt.get
+write.table(vrt.get,vrt.htm,sep = "\t",row.names = F,col.names = F,append = T,quote = F)
+#writeLines(vrt.get,vrt.htm)
+#}
+htm.get.l<-readLines(vrt.htm)
+head(htm.get.l)
+htm.get.l
+htm.get.l<-gsub('"',' ',htm.get.l)
+#tt.doc<-c(paste0('<doc id="',id,'">'),htm.get,'</doc>')
+tt.doc<-htm.get.l
+writeLines(tt.doc,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt2/com.df_",id,".txt"))
+cat(id,mode(id),"\n")
+}
+}
+id
