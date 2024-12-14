@@ -11,4 +11,4 @@ Q: [DWDS](https://www.dwds.de/r/?q=plagiat&corpus=dwdsxl&date-start=1897&date-en
 #### 2. reddit corpus essai
 Q: reddit.com/de
 
-- see [here](reddit) for exploring the corpus in the nosketch engine
+- see [here](reddit) for help exploring the corpus in the nosketch engine
