@@ -639,3 +639,109 @@ library(abind)
 f.list.a<-abind(f.list,along=1)
 write_clip(paste("ATTRIBUTE",colnames(rcom.sf),sep = "\t"))
 save(f.list,file = "rcom.list.cpt.RData")
+
+### reorder table for cqp
+rdf.5<-read.table("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/source")
+rdf.5<-read.csv("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/source",sep = "\t",col.names = 1:16)
+save(rdf.5,file = "~/boxHKW/21S/DH/local/SPUND/intLX/vrt/cqp.vrt.RData")
+rdf.6<-rdf.5[c(6,7,8,1:5,9:length(rdf.5))]
+write.table(rdf.6,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/rdf6.cwb.vrt",col.names = F,row.names = F,quote = F)
+head(rdf.5)
+head(rdf.6)
+tail(rdf.6)
+rdf.7<-rbind('<doc id="1">',rdf.5[1:length(rdf.5$X1),])
+head(rdf.7)
+rdf.7[1,2:length(rdf.7)]<-""
+rdf.8<-rdf.7[,c(6,7,8,1:5,9:length(rdf.7))]
+write.table(rdf.8,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/rdf5.cwb.vrt",col.names = F,row.names = F,quote = F)
+
+###
+load("~/boxHKW/21S/DH/local/SPUND/intLX/rcom.list.cpt.RData")
+library(abind)
+f.list.a<-data.frame(abind(f.list,along=1))
+
+### combine files:
+f<-list.files("~/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt2")
+f.p<-paste("~/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt2",f,sep = "/")
+k<-1
+f.list.1<-list()
+library(stringi)
+ns<-stri_extract_all_regex(f.p,"_[0-9]*.[0-9]*.txt",simplify = T)
+ns<-gsub("[_txt]","",ns)
+ns<-gsub("\\.$","",ns)
+head(ns)
+ns.s<-stri_split(ns,regex = "\\.")
+library(clipr)
+write_clip(head(ns.s))
+# Convert the character vectors to a data frame with numeric values
+df <- do.call(rbind, lapply(ns.s, function(x) as.numeric(x)))
+df <- as.data.frame(df)
+
+# Sort the data frame by the first and second columns
+sorted_df <- df[order(df$V1, df$V2), ]
+ns.rowsort<-rownames(sorted_df)
+head(ns.so)
+# Convert the sorted data frame back to a list of character vectors
+sorted_list <- apply(sorted_df, 1, function(x) as.character(x))
+
+# Print the sorted list
+print(head(sorted_list))
+head(ns.o)
+head(ns.s)
+as.double(ns)
+ns[order(as.double(ns))]
+library(stringi)
+f.p.s<-f.p[as.double(ns.rowsort)]
+f.p.s[10]
+k<-98
+f.list.1<-list()
+for(k in 1:length(f.p.s)){
+  t<-readLines(f.p.s[k])
+  ns<-stri_extract_all_regex(f.p.s[k],"_[0-9]*.[0-9]*.txt",simplify = T)
+  ns<-gsub("[_txt]","",ns)
+  ns<-gsub("\\.$","",ns)
+  ns<-as.character(ns)
+  t<-c(paste0('<doc id="',ns,'">'),t,"</doc>")
+  #?read.csv
+  t.df<-read.csv(f.p.s[k],sep = "\t",col.names = 1:16,flush = T,fill = T)
+  #m<-grep("1.100",t.df$X1)
+  #ml<-grepl("1.100",t.df$X1)
+  m<-which(t.df$X1==ns)
+  ml<-t.df$X1==ns
+  ml1<-c(T,T,ml,T)
+  sum(ml1)
+  #m2<-m+2
+  t.df$X14[ml]
+  t.df$X14[m[1]]
+  t2<-t[ml]
+  #t2[m]
+  tail(t2)
+  head(t2)
+  f.list.1[[k]]<-t2
+  dir.create("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt7/")
+  write.table(t2,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt7/source",sep = "\t",row.names = F,col.names = F,append = T,quote = F)
+
+  print(k)
+}
+f.list.1[[2]]
+### reorder table for cqp
+rdf.5<-read.table("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt6/source")
+rdf.5<-read.csv("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/source",sep = "\t",col.names = 1:16)
+save(rdf.5,file = "~/boxHKW/21S/DH/local/SPUND/intLX/vrt/cqp.vrt.RData")
+rdf.6<-rdf.5[c(6,7,8,1:5,9:length(rdf.5))]
+write.table(rdf.6,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/rdf6.cwb.vrt",col.names = F,row.names = F,quote = F)
+head(rdf.5)
+head(rdf.6)
+tail(rdf.6)
+rdf.7<-rbind('<doc id="1">',rdf.5[1:length(rdf.5$X1),])
+head(rdf.7)
+rdf.7[1,2:length(rdf.7)]<-""
+rdf.8<-rdf.7[,c(6,7,8,1:5,9:length(rdf.7))]
+write.table(rdf.8,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/rdf5.cwb.vrt",col.names = F,row.names = F,quote = F)
+f.p[1]
+f[1]
+f[order(f)]
+f[order(f,method = "quick")]
+?order
+f[1]
+t1<-read.table(f.p[1],col.names = 1:20,fill = T)
