@@ -385,22 +385,123 @@ com.vrt.t<-udpipe::udpipe_annotate(model,com.vrt.s)
 unlist(head(com.vrt.s,20))
 x<-com.vrt.s
 cor.tok<-udpipe::udpipe_annotate(model,x[[24]])
-?udpipe_annotate
+??udpipe_annotate
 as.data.frame(cor.tok)
 cat(cor.tok$conllu)
 get.ann.df<-function(x){
   cor.tok<-udpipe::udpipe_annotate(model,x)
   return(as.data.frame(cor.tok))
 }
-#com.vrt.t<-get.ann.df(com.vrt.s)
-com.vrt.t.1<-get.ann.df(com.vrt.s[[1]])
-com.vrt.df<-com.vrt.t.1
-for(k in 2:length(com.vrt.s)){
-com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
-print(k)  
+clean<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
+x<-com.df[3,]
+get.ann.df_ann<-function(x,clean){
+  # t.out<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
+  t.out<-paste0(clean,collapse = "|")
+  t.out
+  comment<-gsub(t.out," ",x$comment)
+  
+  cor.tok<-udpipe::udpipe_annotate(model,comment)
+ # cor.tok$conllu<-paste0("# timestamp = ",x$timestamp,"\n",cor.tok$conllu)
+  df<-as.data.frame(cor.tok)
+  df.se<-df[1,]
+  df.se[1,]<-""
+  df.se$token<-"<s>"
+  df.s.end<-df.se
+  df.s.end$token<-'</s>'
+    cor.tok$conllu
+  sent.u<-unique(df$sentence_id)
+  sent.u<-sent.u[!is.na(sent.u)]
+  s<-1
+  df.e<-rbind(df.se,df[df$sentence_id==s,],df.s.end)
+  
+  for(s in sent.u[2:length(sent.u)]){
+    df.es<-df[df$sentence_id==s,]
+    if(length(sent.u)>1)
+      df.e<-rbind(df.e,df.se,df.es,df.s.end)
+  }
+  #df.2<-rbind(df.se,df,df.s.end)
+  #sent.p<-rbind()
+  df<-df.e
+  df$timestamp<-x$timestamp
+  df$com_id<-x$comment_id
+  df$author<-x$author
+  df$url<-x$url
+  df$date<-x$date
+  df$votes<-x$upvotes
+  # write.table(cor.tok$conllu,"/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/cor.tok.csv",sep = "\t",row.names = F,col.names = F,quote = F)
+  #l.cor<-length(cor.tok)
+  return(df)
+}
+# length(cor.tok$conllu)
+# #com.vrt.t<-get.ann.df(com.vrt.s)
+# com.vrt.t.1<-get.ann.df(com.vrt.s[[1]])
+# com.vrt.df<-com.vrt.t.1
+# for(k in 2:length(com.vrt.s)){
+# com.vrt.df<-rbind(com.vrt.df,get.ann.df(com.vrt.s[[k]]))  
+# print(k)  
+#   
+# }
+# com.vrt.es.1<-get.ann.df(com.df$comment[1:1000])
+# write.csv(com.vrt.es.1[1:1000,],"com.vrt.es-1000.csv")
+# save(com.vrt.df,file = "reddit.com.vrt-19502.RData")
+# ### 2nd with annotation
+# library(pbapply)
+cleancomments<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
+k<-2
+com.vrt.es.1<-get.ann.df_ann(com.df[1,],cleancomments)
+com.vrt.es.1<-rbind("",com.vrt.es.1,"")
+com.vrt.es.1$token[1]<-'<doc id="doc1">'
+com.vrt.es.1$token[length(com.vrt.es.1$token)]<-"</doc>"
+com.vrt.es.1<-com.vrt.es.1[,df.ns]
+colnames(com.vrt.es.1)<-names(df.ns)
+#head.doc<-com.vrt.es.1[1,]
+k<-3
+for(k in 2:1000){
+  com.ann<-get.ann.df_ann(com.df[k,],cleancomments)
+  com.ex<-rbind("",com.ann,"")
+  m<-colnames(com.ex)=="token"
+ # com.ex[1,m]<-"<s>"
+  #com.ex[length(com.ex$doc_id),m]<-"</s>"
+  # reorder
+  df.ns<-c(token=6,lemma=7,tag=8,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,doc_id=1,par_id=2,sent_id=3,timestamp=15,date=19,com_id=16,author=17,votes=20,url=18)
+  mode(df.ns)
+  com.ann<-com.ex[,df.ns]
+  colnames(com.ann)<-names(df.ns)
+  head.doc<-com.ann[1,]
+  #head.doc[1,]<-NA
+  head.doc[1,]
+  foot.doc<-head.doc
+  head.doc$token<-paste0('<doc id="doc',k,'">')
+  foot.doc$token<-'</doc>'
+  #head.doc<-head.doc[1,df.ns]
+  #colnames(head.d)<-names(df.ns)
+  #foot.doc<-foot.doc[,df.ns]
+  #colnames(foot.doc)<-names(df.ns)
+  doc.ann<-rbind(head.doc,com.ann,foot.doc)
+  #head.doc
+  #com.ann<-rbind(head())
+  com.vrt.es.1<-rbind(com.vrt.es.1,doc.ann)  
+  print(k)  
   
 }
-com.vrt.es.1<-get.ann.df(com.df$comment[1:1000])
+# chk unique tokens:
+com.vrt.es.2<-com.vrt.es.1[!is.na(com.vrt.es.1$token),]
+com.vrt.es.2<-com.vrt.es.2[com.vrt.es.2$token!="",]
+m<-grepl("<doc id",com.vrt.es.2$token)
+com.vrt.es.2[m,2:length(com.vrt.es.2)]<-""
+m2<-com.vrt.es.2$token=="<s>"|com.vrt.es.2$token=="</s>"
+com.vrt.es.2[m2,2:length(com.vrt.es.2)]<-""
+sum(m2)
+#com.vrt.es.3<-com.vrt.es.3[!m2,]
+length(unique(com.vrt.es.2$token)) # 1:1000:9433."".9270." ".9272
+length(unique(com.vrt.es.2$lemma)) # 1:1000:7707.7540.7543
+ttb<-table(com.vrt.es.1$token)
+ttb
+#?write.table
+write.table(com.vrt.es.2,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/com.vrt.1-1000.txt"),sep = "\t",row.names = F,col.names = F,quote = F)
+
+# clean up comments before tagging
+com.vrt.es.10<-pblapply(com.df[1:10,],get.ann.df_ann)
 write.csv(com.vrt.es.1[1:1000,],"com.vrt.es-1000.csv")
 save(com.vrt.df,file = "reddit.com.vrt-19502.RData")
 
@@ -482,10 +583,27 @@ for (query in sql_file) {
 results<-chk.db()
 
 ###
-
-rcom.df<-read.csv("reddit_comments1-32.csv")
-load("reddit_15494.df.RData")
+############################################
+### annotate DF:
+wd<-"~/boxHKW/21S/DH/local/SPUND/intLX"
+rcom.df<-read.csv(paste(wd,"reddit_comments1-32.csv",sep = "/"))
+load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 head(rcom.df)
+t.u<-unique(rcom.df$token)
+t.tb<-table(rcom.df$token)
+t.tb
+m<-grep ("[^a-zA-ZäöüÄÖÜß.0-9\\*-\\'!]",t.u)
+out.reg<-"[^a-zA-ZäöüÄÖÜß.0-9\\*-\\'!]"
+m2<-grep(out.reg,rcom.df$token)
+t.out<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
+t.out<-paste0(t.out,collapse = "|")
+t.out
+rcom.df$token[m2]<-gsub(t.out,"",rcom.df$token[m2])
+t.u<-unique(rcom.df$token)
+m<-grep ("[^a-zA-ZäöüÄÖÜß.0-9\\*-\\'!]",t.u)
+t.u[m]
+t.out<-c("\034","\035","&gt;","\036","\032","&amp","\031","\023","\030","\005","\001","\004","\024","\002","/u","&lt","&lt;","&gt","&20")
+
 rcom.ns<-colnames(rcom.df)
 rcom.ns
 rcom.in<-c(1,2,3,4,5,6,7,8,10,11,12)
@@ -683,7 +801,7 @@ ns.rowsort<-rownames(sorted_df)
 head(ns.so)
 # Convert the sorted data frame back to a list of character vectors
 sorted_list <- apply(sorted_df, 1, function(x) as.character(x))
-
+### files list sorted increasing number, not alphabetically
 # Print the sorted list
 print(head(sorted_list))
 head(ns.o)
@@ -694,7 +812,10 @@ library(stringi)
 f.p.s<-f.p[as.double(ns.rowsort)]
 f.p.s[10]
 k<-98
-f.list.1<-list()
+################
+f.p.s[k]
+df3<-read.table(f.p.s[1],skip = 1)
+f.list.2<-list()
 for(k in 1:length(f.p.s)){
   t<-readLines(f.p.s[k])
   ns<-stri_extract_all_regex(f.p.s[k],"_[0-9]*.[0-9]*.txt",simplify = T)
@@ -714,16 +835,46 @@ for(k in 1:length(f.p.s)){
   t.df$X14[ml]
   t.df$X14[m[1]]
   t2<-t[ml]
+  df.ns<-c(token=6,lemma=7,tag=8,feats=9,sentence=4,tok_id=5,head_tok_id=10,ex=12,doc_id=1,
+           par_id=2,sent_id=3,com_id=15,date=13,author=14,url=16)
   #t2[m]
   tail(t2)
   head(t2)
-  f.list.1[[k]]<-t2
-  dir.create("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt7/")
-  write.table(t2,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt7/source",sep = "\t",row.names = F,col.names = F,append = T,quote = F)
+  t2<-t2[df.ns]
+  f.list.2[[k]]<-t2
+  dir.create("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt8/")
+  write.table(t2,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt8/source",sep = "\t",row.names = F,col.names = F,append = T,quote = F)
 
   print(k)
 }
+
 f.list.1[[2]]
+save(f.list.2,file = "~/boxHKW/21S/DH/local/SPUND/intLX/flist2.RData")
+###
+# try reorder into dataframe
+?read_clip_tbl
+library(clipr)
+df1<-data.frame(read_clip_tbl(write_clip(f.list.1[[1]][[4]]),header =F))
+df1
+get.df<-function(x){
+  data.frame(read_clip_tbl(write_clip(x[[4]]),header =F,sep="\t"))
+}
+df2<-rbind(lapply(f.list.1, get.df))
+f.list.r<-f.list.1
+k<-2
+df.order<-c(6,7,8,9,4,5,10,12,1,2,3,15,13,14,16)
+df.ns<-c("token","lemma","tag","feats","sentence",)
+df.ns<-c(token=6,lemma=7,tag=8,feats=9,sentence=4,tok_id=5,head_tok_id=10,ex=12,doc_id=1,
+         par_id=2,sent_id=3,com_id=15,date=13,author=14,url=16)
+for(k in 1:length(f.list.1)){
+  df2<-data.frame(read_clip_tbl(write_clip(f.list.1[[k]]),skip=1,header =F,sep="\t"))
+  df2<-df2[df.ns]
+  colnames(df2)<-names(df.ns)
+  f.list.r[[k]][[4]]<-df2
+  doc<-df2$doc_id
+  df3<-c
+}
+df2
 ### reorder table for cqp
 rdf.5<-read.table("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt6/source")
 rdf.5<-read.csv("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/intLX/vrt5/source",sep = "\t",col.names = 1:16)
@@ -745,3 +896,5 @@ f[order(f,method = "quick")]
 ?order
 f[1]
 t1<-read.table(f.p[1],col.names = 1:20,fill = T)
+
+install.packages("rccbCWB")
