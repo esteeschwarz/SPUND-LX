@@ -392,12 +392,16 @@ get.ann.df<-function(x){
   cor.tok<-udpipe::udpipe_annotate(model,x)
   return(as.data.frame(cor.tok))
 }
+##########################################
+##########################################
+## 2nd annotation essai>
+########################
 clean<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
 x<-com.df[3,]
 get.ann.df_ann<-function(x,clean){
   # t.out<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
-  t.out<-paste0(clean,collapse = "|")
-  t.out
+  #t.out<-paste0(clean,collapse = "|")
+  t.out<-clean
   comment<-gsub(t.out," ",x$comment)
   
   cor.tok<-udpipe::udpipe_annotate(model,comment)
@@ -446,12 +450,16 @@ get.ann.df_ann<-function(x,clean){
 # save(com.vrt.df,file = "reddit.com.vrt-19502.RData")
 # ### 2nd with annotation
 # library(pbapply)
-cleancomments<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
+
+cleancomments<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt","<")
+cleancomments<-paste0(cleancomments,collapse = "|")
+cleancomments
+gsub(cleancomments,"#","try<weg")
 k<-2
 com.vrt.es.1<-get.ann.df_ann(com.df[1,],cleancomments)
 com.vrt.es.1<-rbind("",com.vrt.es.1,"")
-com.vrt.es.1$token[1]<-'<doc id="doc1">'
-com.vrt.es.1$token[length(com.vrt.es.1$token)]<-"</doc>"
+com.vrt.es.1$token[1]<-'<text id="doc1">'
+com.vrt.es.1$token[length(com.vrt.es.1$token)]<-"</text>"
 com.vrt.es.1<-com.vrt.es.1[,df.ns]
 colnames(com.vrt.es.1)<-names(df.ns)
 #head.doc<-com.vrt.es.1[1,]
@@ -471,8 +479,8 @@ for(k in 2:1000){
   #head.doc[1,]<-NA
   head.doc[1,]
   foot.doc<-head.doc
-  head.doc$token<-paste0('<doc id="doc',k,'">')
-  foot.doc$token<-'</doc>'
+  head.doc$token<-paste0('<text id="doc',k,'">')
+  foot.doc$token<-'</text>'
   #head.doc<-head.doc[1,df.ns]
   #colnames(head.d)<-names(df.ns)
   #foot.doc<-foot.doc[,df.ns]
@@ -487,11 +495,14 @@ for(k in 2:1000){
 # chk unique tokens:
 com.vrt.es.2<-com.vrt.es.1[!is.na(com.vrt.es.1$token),]
 com.vrt.es.2<-com.vrt.es.2[com.vrt.es.2$token!="",]
-m<-grepl("<doc id",com.vrt.es.2$token)
+m<-grepl("<text id",com.vrt.es.2$token)
 com.vrt.es.2[m,2:length(com.vrt.es.2)]<-""
 m2<-com.vrt.es.2$token=="<s>"|com.vrt.es.2$token=="</s>"
 com.vrt.es.2[m2,2:length(com.vrt.es.2)]<-""
 sum(m2)
+com.vrt.es.3<-rbind("<doc>",com.vrt.es.2,"</doc>")
+com.vrt.es.3[1,2:length(com.vrt.es.3)]<-""
+com.vrt.es.3[length(com.vrt.es.3$token),2:length(com.vrt.es.3)]<-""
 #com.vrt.es.3<-com.vrt.es.3[!m2,]
 length(unique(com.vrt.es.2$token)) # 1:1000:9433."".9270." ".9272
 length(unique(com.vrt.es.2$lemma)) # 1:1000:7707.7540.7543
@@ -499,7 +510,8 @@ ttb<-table(com.vrt.es.1$token)
 ttb
 #?write.table
 write.table(com.vrt.es.2,paste0("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/com.vrt.1-1000.txt"),sep = "\t",row.names = F,col.names = F,quote = F)
-
+########################################################
+########################################################
 # clean up comments before tagging
 com.vrt.es.10<-pblapply(com.df[1:10,],get.ann.df_ann)
 write.csv(com.vrt.es.1[1:1000,],"com.vrt.es-1000.csv")
@@ -595,7 +607,7 @@ t.tb
 m<-grep ("[^a-zA-ZäöüÄÖÜß.0-9\\*-\\'!]",t.u)
 out.reg<-"[^a-zA-ZäöüÄÖÜß.0-9\\*-\\'!]"
 m2<-grep(out.reg,rcom.df$token)
-t.out<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt")
+t.out<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt","<")
 t.out<-paste0(t.out,collapse = "|")
 t.out
 rcom.df$token[m2]<-gsub(t.out,"",rcom.df$token[m2])
@@ -897,4 +909,18 @@ f[order(f,method = "quick")]
 f[1]
 t1<-read.table(f.p[1],col.names = 1:20,fill = T)
 
-install.packages("rccbCWB")
+install.packages("RcppCWB")
+library(RcppCWB)
+cwb_makeall("~/boxHKW/21S/DH/local/SPUND/intLX/com.vrt.1-1000.txt")
+Sys.getenv("CORPUS_REGISTRY")
+write_clip(paste0("-P ",colnames(com.vrt.es.3),collapse = " "))
+
+cqp_initialize()
+cqp_list_corpora()
+rg<-"/Users/guhl/pro/cwb/registry/"
+cqp_reset_registry(rg)
+cqp_load_corpus("RGRDF2",rg)
+x<-cqp_query(corpus="RGRDF2",query = '[lemma="ich"][lemma="haben"&timestamp=".*"];')
+cqp_subcorpus_size("RGRDF2",subcorpus = "QUERY")
+cqp_dump_subcorpus("RGRDF2")
+com.vrt.es.3[47970,]
