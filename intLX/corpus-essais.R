@@ -911,7 +911,7 @@ t1<-read.table(f.p[1],col.names = 1:20,fill = T)
 
 install.packages("RcppCWB")
 library(RcppCWB)
-cwb_makeall("~/boxHKW/21S/DH/local/SPUND/intLX/com.vrt.1-1000.txt")
+cwb_makeall("~/boxHKW/21S/DH/local/SPUND/intLX/com.vrt.1-1000.txt","word",paste(rg,"rdf1",sep = "/"))
 Sys.getenv("CORPUS_REGISTRY")
 write_clip(paste0("-P ",colnames(com.vrt.es.3),collapse = " "))
 
@@ -919,8 +919,83 @@ cqp_initialize()
 cqp_list_corpora()
 rg<-"/Users/guhl/pro/cwb/registry/"
 cqp_reset_registry(rg)
-cqp_load_corpus("RGRDF2",rg)
-x<-cqp_query(corpus="RGRDF2",query = '[lemma="ich"][lemma="haben"&timestamp=".*"];')
-cqp_subcorpus_size("RGRDF2",subcorpus = "QUERY")
+cl<-cqp_load_corpus("RGRDF2",rg)
+cl<-cqp_load_corpus("REDDIT",rg)
+cqp_query(corpus="RGRDF2",query = '[word="dumm"];')
+cqp_query(corpus="REDDIT",query = '[word="dumm"];')
+cqp_subcorpus_size("REDDIT",subcorpus = "QUERY")
+cqp_dump_subcorpus("REDDIT")
 cqp_dump_subcorpus("RGRDF2")
+# Get the number of matches
+num_matches <- cqp_subcorpus_size("REDDIT","QUERY")
+
+# Extract the matches
+matches <- cqp_dump_subcorpus("REDDIT", "QUERY")
+
+# Convert the matches to a data frame
+results_df <- as.data.frame(matches, stringsAsFactors = FALSE)
+
+# Extract the matches
+matches <- cqp_dump_subcorpus(corpus, 0, num_matches - 1)
+matches
+#cpos_to_str("word",matches[1,])
+# Initialize an empty list to store KWIC results
+kwic_list <- list()
+
+# Loop through each match to extract KWIC
+for (i in 1:nrow(matches)) {
+  match <- matches[i, ]
+  left_context <- cqp_context("REDDIT", match[1], left_context_size, "left")
+  right_context <- cqp_context("REDDIT", match[2], right_context_size, "right")
+  keyword <- cqp_context("REDDIT", match[1], 0, "keyword")
+  
+  kwic_list[[i]] <- data.frame(
+    left_context = paste(left_context, collapse = " "),
+    keyword = paste(keyword, collapse = " "),
+    right_context = paste(right_context, collapse = " "),
+    stringsAsFactors = FALSE
+  )
+}
+
+# Combine the list into a data frame
+kwic_df <- do.call(rbind, kwic_list)
+
+# Print the KWIC data frame
+print(kwic_df)
+
 com.vrt.es.3[47970,]
+
+# cop
+# Initialize the corpus
+library(RcppCWB)
+corpus <- "RGRDF2"
+rg<-"/Users/guhl/pro/cwb/registry/"
+registry <- rg
+
+# Load the corpus
+#cl <- corpus_load(corpus, registry)
+cl<-cqp_load_corpus("RGRDF2",rg)
+query = '[lemma="ich"][lemma="haben"&timestamp=".*"];'
+# Perform a KWIC query
+#query <- "your_query_term"
+cqp_query(corpus,query)
+#cqp_query(corpus,"set Context s;")
+#cqp_query(corpus,query='show;')
+cqp_subcorpus_size("RGRDF2",subcorpus = "QUERY")
+#sc
+ids<-cqp_dump_subcorpus("RGRDF2")
+#ids<-cqp_dump_subcorpus("QUERY")
+ids
+#id2str("RGRDF2","word",rg,id=ids)
+#kwic_results <- cl_kwic(cl, query, left = 5, right = 5)  # Adjust left and right context as needed
+
+# Convert the results to a data frame
+kwic_df <- data.table(
+  left_context = sapply(kwic_results, function(x) paste(x$left, collapse = " ")),
+  keyword = sapply(kwic_results, function(x) paste(x$node, collapse = " ")),
+  right_context = sapply(kwic_results, function(x) paste(x$right, collapse = " "))
+)
+
+# Display the KWIC dataframe
+print(kwic_df)
+
