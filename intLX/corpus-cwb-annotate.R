@@ -70,6 +70,7 @@ k<-1
 chunk<-1
 head(chunks[1])
 #for(k in 2:1000){
+### > TODO: loop redo, saves false
 for(chunk in 1:length(chunks)){
   for(k in 2:length(chunk.range)){
   
