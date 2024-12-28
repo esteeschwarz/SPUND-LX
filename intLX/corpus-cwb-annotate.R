@@ -8,7 +8,7 @@ library(udpipe)
 model<-udpipe::udpipe_load_model(paste(wd,"../corpuslx/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
 ##################################
 ## test
-x<-com.df[com.df$url==url.u[1],]
+x<-com.df[com.df$url==url.u[556],]
 cleancomments<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt","<","Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.")
 clean<-paste0(cleancomments,collapse = "|")
 #clean<-cleancomments
@@ -26,6 +26,8 @@ get.ann.df_ann<-function(x,clean,chunk){
   comment.raw
   comment<-gsub(cleancomments[length(cleancomments)],"_NO_ANN_",comment.raw)
   comment<-gsub(t.out," ",comment)
+  comment<-gsub("^ +$","_NO_ANN_",comment)
+  comment<-gsub("^.\n\n.$","_NO_ANN_",comment)
   comment
   #ifelse (comment.raw!=cleancomments[length(cleancomments)],
     df<-as.data.frame(udpipe::udpipe_annotate(model,comment))#,df=cor.tok.empty)
@@ -45,6 +47,7 @@ get.ann.df_ann<-function(x,clean,chunk){
   ##########################  
   p<-doc.sent.df[3,]
   p<-doc.sent.u[6]
+  doc.sent.u
   get.sent.div<-function(p){
     m<-doc.sent==p
   #m<-doc.u==p
@@ -54,7 +57,7 @@ get.ann.df_ann<-function(x,clean,chunk){
     s.id<-df.es$sentence_id[1]
     df.start<-df.es[1,]
     df.start[1,]<-""
-    s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'">')
+    s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'" upvotes="',x$upvotes,'">')
     t.u<-unique(s.tag)
     s.tag.s<-s.tag[1]
     s.tag.s
@@ -78,7 +81,7 @@ get.ann.df_ann<-function(x,clean,chunk){
   #df$url<-x$url
   df.ex$url_id<-chunk
   #df$date<-x$date
-  df.ex$votes<-x$upvotes
+  #df.ex$votes<-x$upvotes
   df.df<-data.frame(df.ex)
   return(df.df)
 }
@@ -118,7 +121,7 @@ url.u<-unique(com.df$url)
 #com.df$url_id<-""
 k<-1
 # df.ns<-c(token=6,pos=8,lemma=7,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,url_id=19,par_id=2,sent_id=3,timestamp=15,date=20,com_id=16,author=17,votes=21,url=18)
-df.ns<-c(token=6,pos=8,lemma=7,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,par_id=2,sent_id=3,votes=15)
+df.ns<-c(token=6,pos=8,lemma=7,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,par_id=2,sent_id=3)
 for(k in 1:length(url.u)){
   url<-url.u[k]
   com.df$url_id[com.df$url==url]<-k
@@ -128,7 +131,7 @@ for(k in 1:length(url.u)){
  # for(k in 2:length(chunk.range)){
 #  k<-1
 #  chunk.range<-chunks[[chunk]]
-  url<-1
+  url<-556
   #chunk
 ############## start loop ### >>>>>>>>>>>
    for(url in 1:length(url.u)){
@@ -137,7 +140,7 @@ for(k in 1:length(url.u)){
   k
   chunk.df<-url.df
   length(chunk.df)
-  com<-3
+  com<-30
   #com
   for(com in 1:length(chunk.df$url)){
     chunk.df
