@@ -8,40 +8,60 @@ library(udpipe)
 model<-udpipe::udpipe_load_model(paste(wd,"../corpuslx/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
 ##################################
 ## test
-x<-com.df[1,]
+x<-com.df[com.df$url==url.u[1],]
 cleancomments<-c("\034","\035","&gt;","\036","&amp","\031","\023","\030","\005","\004","\024","\002","/u","&lt","&lt;","&gt","<","Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.")
 clean<-paste0(cleancomments,collapse = "|")
 #clean<-cleancomments
 ##
 chunk
 cor.tok.empty<-udpipe::udpipe_annotate(model,"_NO_ANN_")
+cor.tok.empty<-data.frame(cor.tok.empty)
+m<-grepl("misc",colnames(cor.tok.empty))
+cor.tok.empty<-cor.tok.empty[,!m]
+#df<-cor.tok.empty
 get.ann.df_ann<-function(x,clean,chunk){
   t.out<-clean
+  t.out
   comment.raw<-x$comment
-  comment<-gsub(t.out," ",comment.raw)
-  ifelse (comment.raw!=cleancomments[length(cleancomments)],
-    cor.tok<-udpipe::udpipe_annotate(model,comment),cor.tok<-cor.tok.empty)
-  df<-as.data.frame(cor.tok)
-  sent.u<-unique(df$sentence_id)
-  sent.u<-sent.u[!is.na(sent.u)]
-  sent.u
+  comment.raw
+  comment<-gsub(cleancomments[length(cleancomments)],"_NO_ANN_",comment.raw)
+  comment<-gsub(t.out," ",comment)
+  comment
+  #ifelse (comment.raw!=cleancomments[length(cleancomments)],
+    df<-as.data.frame(udpipe::udpipe_annotate(model,comment))#,df=cor.tok.empty)
+  #df<-as.data.frame(cor.tok)
+  ### critical column, maybe causing errors
+  m<-grepl("misc",colnames(df))
+  df<-df[,!m]
+  doc.sent<-paste(df$doc_id,df$sentence_id,sep = ".")
+  doc.sent.df<-df[,c(1,3)]
+  doc.sent.u<-unique(doc.sent)
+  #sent.u<-sent.u[!is.na(sent.u)]
+  sent.u<-doc.sent.u
+  doc.u<-unique(df$doc_id)
   #s<-2
   
  # for(s in sent.u[1:length(sent.u)]){
   ##########################  
+  p<-doc.sent.df[3,]
+  p<-doc.sent.u[6]
   get.sent.div<-function(p){
-    df.es<-df[df$sentence_id==p,]
-    s.id<-df$sentence_id
-    df.start<-df[1,]
+    m<-doc.sent==p
+  #m<-doc.u==p
+      doc.here<-which(m)
+      m
+    df.es<-df[m,]
+    s.id<-df.es$sentence_id[1]
+    df.start<-df.es[1,]
     df.start[1,]<-""
-    s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',df.es$sentence_id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'">')
-    unique(s.tag)
-    s.tag.s<-s.tag[p]
+    s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'">')
+    t.u<-unique(s.tag)
+    s.tag.s<-s.tag[1]
     s.tag.s
-    df.se$token<-s.tag.s
-    df.end<-df.se
+    df.start$token<-s.tag.s
+    df.end<-df.start
     df.end$token<-'</s>'
-    df.out<-rbind(df.se,df.es,df.end)
+    df.out<-rbind(df.start,df.es,df.end)
     return(data.frame(df.out))
   # df.se$token<-"<s>"
   # df.se$token<-s.tag
@@ -49,7 +69,7 @@ get.ann.df_ann<-function(x,clean,chunk){
  # df.ex<-df[df$sentence_id==sent.u[1],]
 #  df.e<-rbind(df.se,df.s.end)
   }
-  df.ex.l<-lapply(sent.u, get.sent.div)
+  df.ex.l<-lapply(doc.sent.u, get.sent.div)
   df.ex<-abind::abind(df.ex.l,along = 1)
   df.ex<-data.frame(df.ex)
 #  df$timestamp<-x$timestamp
@@ -98,7 +118,7 @@ url.u<-unique(com.df$url)
 #com.df$url_id<-""
 k<-1
 # df.ns<-c(token=6,pos=8,lemma=7,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,url_id=19,par_id=2,sent_id=3,timestamp=15,date=20,com_id=16,author=17,votes=21,url=18)
-df.ns<-c(token=6,pos=8,lemma=7,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,par_id=2,sent_id=3,votes=16)
+df.ns<-c(token=6,pos=8,lemma=7,feats=10,sentence=4,tok_id=5,head_tok_id=11,dep_rel=12,par_id=2,sent_id=3,votes=15)
 for(k in 1:length(url.u)){
   url<-url.u[k]
   com.df$url_id[com.df$url==url]<-k
@@ -117,13 +137,13 @@ for(k in 1:length(url.u)){
   k
   chunk.df<-url.df
   length(chunk.df)
-  com<-1
+  com<-3
   #com
   for(com in 1:length(chunk.df$url)){
     chunk.df
     chunk <- paste0(url,'.',com)
   chunk
-    com.ann<-get.ann.df_ann(chunk.df[com,],cleancomments,chunk)
+    com.ann<-get.ann.df_ann(chunk.df[com,],clean,chunk)
   com.ann
 #  doc.id<-paste0('<com id="',com.ann$url_id[com],'">')
   doc.id<-paste0('<com id="',chunk,'">')
