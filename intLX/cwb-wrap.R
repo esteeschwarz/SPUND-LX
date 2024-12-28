@@ -123,7 +123,7 @@ results_df <- as.data.frame(matches, stringsAsFactors = FALSE)
 
 # Print the data frame
 print(results_df)
-cqp_query("REDDIT",pregdir,"LAST;")
+cqp_query("REDDIT",pregdir,query)
 cqp_query("BTMIN",pregdir,query)
 query = '[word=".*"&pos=".*"];'
 
@@ -158,7 +158,7 @@ cwb_encode(
   )
 )
 pregdir<-"/Users/guhl/pro/cwb/registry"
-demodata = "~/pro/cwb/indexed/rdf3g"
+demodata = "~/pro/cwb/indexed/rdf3h"
 vrt_dir<-"~/boxHKW/21S/DH/local/SPUND/intLX/vrt3"
 list.files(vrt_dir)
 list.files(demodata)
@@ -172,12 +172,33 @@ cwb_encode(
   s_attributes = list(
     doc = c("id"),
     com = c("id"),
-    s = character()
+    s = c("timestamp","sent_id","author","url","url_id","date")
   ),
   xml = T,
   quietly = F
 )
 cwb_makeall(corpus = "REDDIT", p_attribute = c("word"), registry = pregdir)
+
+cqp_load_corpus("REDDIT",pregdir)
+query = '[word=".*"&pos="N.*"];'
+query<-'[word="fre.*"];'
+query = '[word=".*"&lemma="fr."][word=".*"&pos="PRON.*"];'
+#query = '[word=".*"&lemma="fr.*"][pos="PRON.*"];'
+#cqp_query("REDDIT",pregdir,'show -pos;')
+query = '[word=".*"&lemma="frau.*"];'
+query = '[word=".*"&lemma="frau.*"][word=".*"&lemma="hab.*"];'
+query = '[word=".*"&lemma="mann.*"][word=".*"&lemma="hab.*"];'
+
+cqp_query("REDDIT",pregdir,query)
+# Get the number of matches
+num_matches <- cqp_subcorpus_size("REDDIT","QUERY")
+cqp_subcorpus_size("REDDIT",subcorpus = "QUERY")
+
+# Extract the matches
+r<-cqp_dump_subcorpus("REDDIT")
+
+# Convert the matches to a data frame
+results_df <- as.data.frame(matches, stringsAsFactors = FALSE)
 
 vrt_dir = system.file(package = "RcppCWB", "extdata", "vrt")
 vrt_dir
