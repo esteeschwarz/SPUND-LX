@@ -9,16 +9,43 @@ library(pbapply)
 library(abind)
 fns.e<-file_ext(fns)=="txt"
 fns<-fns[fns.e]
+
 get.sent.div<-function(x,id,n){
   df<-x
+  m<-df$sentence_id==id
+  cat("\nsent:",id,".",n,"\n")
+  df.es<-df[m,]
+  s.id<-id
+  df.start<-df.es[1,]
+  df.start[1,]<-""
+  # s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'" upvotes="',x$upvotes,'">')
+  #rownames raw: "doc_id" "paragraph_id" "sentence_id" "sentence" "token_id" "token" "lemma" "upos" "xpos" "feats" "head_token_id" "dep_rel" "deps" "misc"
+  s.tag<-paste0('<s id="',id,'">')
+  print(s.tag)
+  t.u<-unique(s.tag)
+  s.tag.s<-s.tag[1]
+  s.tag.s
+  df.start[,1]<-s.tag.s
+  df.end<-df.start
+  df.end[,1]<-'</s>'
+  df.out<-rbind(df.start,df.es,df.end)
+  return(df.out)
+}
+
+get.doc.div<-function(x,id,n){
+  df<-x
   m<-df$doc_id==id
-  cat(id,".",n,"\n")
+  cat("\ndoc:",id,".",n,"\n")
   #m<-doc.u==p
   doc.here<-which(m)
   m
   df.es<-df[m,c(6,2:5,7:length(df))]
-
-  s.id<-df.es$sentence_id[1]
+  sent.id<-df.es$sentence_id
+  sent.id.u<-unique(sent.id)
+  sent.df<-pblapply(seq_along(sent.id.u), function(i) {
+    get.sent.div(df.es,sent.id.u[[i]], i)
+  })
+  df.es<-data.frame(abind(sent.df,along = 1))
   df.start<-df.es[1,]
   df.start[1,]<-""
   # s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'" upvotes="',x$upvotes,'">')
@@ -42,7 +69,7 @@ fetch.pos<-function(file,fn){
   doc.id<-pos.df$doc_id
   doc.id.u<-unique(doc.id)
   df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {
-    get.sent.div(pos.df,doc.id.u[[i]], i)
+    get.doc.div(pos.df,doc.id.u[[i]], i)
   })
   df.write<-as.data.frame(abind(df.ex.l,along = 1))
   df.write<-rbind(c(paste0('<doc id="',fn,'">'),rep("",length(df.write)-1)),df.write,
@@ -67,7 +94,7 @@ df.ex.l<-pblapply(seq_along(fns), function(i) {
 })
 df.ex<-abind::abind(df.ex.l,along = 1)
 df.ex<-data.frame(df.ex)
-write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/001",sep = "\t",quote = F,row.names = F,col.names = F,na="")
+write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/002",sep = "\t",quote = F,row.names = F,col.names = F,na="")
 ### wks.
 
 

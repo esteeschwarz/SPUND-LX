@@ -1,5 +1,6 @@
 <doc id="9">												
 <text id="url9.doc1">												
+<s id="1">												
 Einer	1	1	Einer, der im Zickzack lief	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root		SpaceAfter=No
 ,	1	1	Einer, der im Zickzack lief	2	,	PUNCT	$,		7	punct		
 der	1	1	Einer, der im Zickzack lief	3	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	7	nsubj		
@@ -8,8 +9,10 @@ in	1	1	Einer, der im Zickzack lief	4	in	ADP	APPR		6	case
 dem	1	1	Einer, der im Zickzack lief	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det		
 Zickzack	1	1	Einer, der im Zickzack lief	6	Zickzack	NOUN	NE	Case=Dat|Gender=Masc|Number=Sing	7	obl		
 lief	1	1	Einer, der im Zickzack lief	7	laufen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	1	acl		SpacesAfter=\n
+</s>												
 </text>												
 <text id="url9.doc2">												
+<s id="1">												
 Und	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gestalt, ob nun skrupellos, innerlich schwach, klassisch opportunistisch oder verschlagen, schwer durchschaubar auf alle Fälle.	1	und	CCONJ	ADJD		3	cc		
 dann	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gestalt, ob nun skrupellos, innerlich schwach, klassisch opportunistisch oder verschlagen, schwer durchschaubar auf alle Fälle.	2	dann	ADV	ADV		3	advmod		
 gibt	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gestalt, ob nun skrupellos, innerlich schwach, klassisch opportunistisch oder verschlagen, schwer durchschaubar auf alle Fälle.	3	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		
@@ -41,6 +44,8 @@ auf	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gesta
 alle	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gestalt, ob nun skrupellos, innerlich schwach, klassisch opportunistisch oder verschlagen, schwer durchschaubar auf alle Fälle.	29	alle	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	30	det		
 Fälle	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gestalt, ob nun skrupellos, innerlich schwach, klassisch opportunistisch oder verschlagen, schwer durchschaubar auf alle Fälle.	30	Fall	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	3	obl		SpaceAfter=No
 .	1	1	Und dann gibt es noch den klassischen Wendehals, eine zwielichtige Gestalt, ob nun skrupellos, innerlich schwach, klassisch opportunistisch oder verschlagen, schwer durchschaubar auf alle Fälle.	31	.	PUNCT	$.		3	punct		
+</s>												
+<s id="2">												
 Schon	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseudonym.	1	schon	ADV	ADV		4	advmod		
 beim	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseudonym.	2-3								
 bei	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseudonym.	2	bei	ADP	APPR		4	case		
@@ -60,6 +65,8 @@ zu	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseu
 dem	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseudonym.	15	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	16	det		
 Pseudonym	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseudonym.	16	Pseudonym	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	12	obl		SpaceAfter=No
 .	1	2	Schon beim Familiennamen war er sich nicht ganz eins, griff auch zum Pseudonym.	17	.	PUNCT	$.		12	punct		
+</s>												
+<s id="3">												
 Aus	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann rechts, wurde zum Raubritter im nationalen Rausch.	1	aus	ADP	APPR		3	case		
 bürgerlichem	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann rechts, wurde zum Raubritter im nationalen Rausch.	2	bürgerlich	ADJ	PWAT	Case=Dat|Gender=Neut|Number=Sing|PronType=Int	3	amod		
 Milieu	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann rechts, wurde zum Raubritter im nationalen Rausch.	3	Milieu	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	4	obl		
@@ -85,6 +92,8 @@ dem	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann re
 nationalen	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann rechts, wurde zum Raubritter im nationalen Rausch.	21	national	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	22	amod		
 Rausch	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann rechts, wurde zum Raubritter im nationalen Rausch.	22	Rausch	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	18	nmod		SpaceAfter=No
 .	1	3	Aus bürgerlichem Milieu stammend, ruderte er mal links, kajakte dann rechts, wurde zum Raubritter im nationalen Rausch.	23	.	PUNCT	$.		6	punct		
+</s>												
+<s id="4">												
 Im	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, ehe er – zwischen allen Stühlen hängend – eine neue Heimat im anderen Deutschland suchte und fand.	1-2								
 In	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, ehe er – zwischen allen Stühlen hängend – eine neue Heimat im anderen Deutschland suchte und fand.	1	in	ADP	APPR		5	case		
 dem	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, ehe er – zwischen allen Stühlen hängend – eine neue Heimat im anderen Deutschland suchte und fand.	2	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	5	det		
@@ -117,6 +126,8 @@ suchte	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, eh
 und	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, ehe er – zwischen allen Stühlen hängend – eine neue Heimat im anderen Deutschland suchte und fand.	28	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	29	cc		
 fand	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, ehe er – zwischen allen Stühlen hängend – eine neue Heimat im anderen Deutschland suchte und fand.	29	finden	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	27	conj		SpaceAfter=No
 .	1	4	Im folgenden zweiten Getümmel gelang ihm eine weitere Kehrtwende, ehe er – zwischen allen Stühlen hängend – eine neue Heimat im anderen Deutschland suchte und fand.	30	.	PUNCT	$.		6	punct		
+</s>												
+<s id="5">												
 Roh	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der Weimarer Republik gegeißelt.	1	roh	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	16	nsubj		SpaceAfter=No
 ,	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der Weimarer Republik gegeißelt.	2	,	PUNCT	$,		3	punct		
 dumm	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der Weimarer Republik gegeißelt.	3	dumm	ADJ	ADJD		1	conj		
@@ -134,6 +145,8 @@ Weimarer	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der
 Republik	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der Weimarer Republik gegeißelt.	15	Republik	PROPN	NN	Case=Gen|Gender=Fem|Number=Sing	12	nmod		
 gegeißelt	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der Weimarer Republik gegeißelt.	16	geißeln	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
 .	1	5	Roh, dumm und blind, hatte ihn ein ehemaliger Weggefährte Ende der Weimarer Republik gegeißelt.	17	.	PUNCT	$.		16	punct		
+</s>												
+<s id="6">												
 Der	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Sprichwort.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det		
 Krug	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Sprichwort.	2	Krug	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	3	nsubj		
 geht	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Sprichwort.	3	gehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		
@@ -154,6 +167,8 @@ in	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Spr
 einem	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Sprichwort.	17	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	18	det		
 Sprichwort	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Sprichwort.	18	Sprichwort	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	14	obl		SpaceAfter=No
 .	1	6	Der Krug geht so lange zum Brunnen, bis er bricht, heißt es in einem Sprichwort.	19	.	PUNCT	$.		3	punct		
+</s>												
+<s id="7">												
 Dieser	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen, ehrenhalber auf einem Friedhof literarischer Säulenheiliger.	1	dies	PRON	PDAT	Case=Nom|Gender=Masc|Number=Sing|PronType=Dem	3	nsubj		
 hier	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen, ehrenhalber auf einem Friedhof literarischer Säulenheiliger.	2	hier	ADV	ADV		3	advmod		
 landete	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen, ehrenhalber auf einem Friedhof literarischer Säulenheiliger.	3	landen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		SpaceAfter=No
@@ -172,6 +187,8 @@ Friedhof	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen,
 literarischer	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen, ehrenhalber auf einem Friedhof literarischer Säulenheiliger.	16	literarisch	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	17	amod		
 Säulenheiliger	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen, ehrenhalber auf einem Friedhof literarischer Säulenheiliger.	17	Säulenheiliger	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	10	conj		SpaceAfter=No
 .	1	7	Dieser hier landete, nach seinem Zickzacklauf eines rasenden Hasen, ehrenhalber auf einem Friedhof literarischer Säulenheiliger.	18	.	PUNCT	$.		3	punct		
+</s>												
+<s id="8">												
 Und	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer ist, was ein Konjunkturritter und was ein nicht ganz wahrhaftiger Kerl.	1	und	CCONJ	ADJD		8	cc		
 die	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer ist, was ein Konjunkturritter und was ein nicht ganz wahrhaftiger Kerl.	2	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	3	det		
 Nachwelt	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer ist, was ein Konjunkturritter und was ein nicht ganz wahrhaftiger Kerl.	3	Nachwelt	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	8	nsubj		
@@ -197,5 +214,6 @@ ganz	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer
 wahrhaftiger	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer ist, was ein Konjunkturritter und was ein nicht ganz wahrhaftiger Kerl.	23	wahrhaftig	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	24	amod		
 Kerl	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer ist, was ein Konjunkturritter und was ein nicht ganz wahrhaftiger Kerl.	24	Kerl	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	17	conj		SpaceAfter=No
 .	1	8	Und die Nachwelt kann sich Gedanken darüber machen, was ein Mitläufer ist, was ein Konjunkturritter und was ein nicht ganz wahrhaftiger Kerl.	25	.	PUNCT	$.		8	punct		SpacesAfter=\n
+</s>												
 </text>												
 </doc>												

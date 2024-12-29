@@ -1,12 +1,15 @@
 <doc id="1">												
 <text id="url1.doc1">												
+<s id="1">												
 Einer	1	1	Einer, der allerlei stibitzte	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root		SpaceAfter=No
 ,	1	1	Einer, der allerlei stibitzte	2	,	PUNCT	$,		5	punct		
 der	1	1	Einer, der allerlei stibitzte	3	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	5	nsubj		
 allerlei	1	1	Einer, der allerlei stibitzte	4	allerlei	PART	PIAT	Definite=Ind|Polarity=Neg|PronType=Neg	5	mark		
 stibitzte	1	1	Einer, der allerlei stibitzte	5	stibitzen	VERB	NN	Case=Nom|Number=Plur	1	acl		SpacesAfter=\n
+</s>												
 </text>												
 <text id="url1.doc2">												
+<s id="1">												
 Es	1	1	Es gab Phasen, da war er streng mit sich selbst.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	expl		
 gab	1	1	Es gab Phasen, da war er streng mit sich selbst.	2	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
 Phasen	1	1	Es gab Phasen, da war er streng mit sich selbst.	3	Phase	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	2	nsubj		SpaceAfter=No
@@ -19,6 +22,8 @@ mit	1	1	Es gab Phasen, da war er streng mit sich selbst.	9	mit	ADP	$(		10	case
 sich	1	1	Es gab Phasen, da war er streng mit sich selbst.	10	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	8	obl		
 selbst	1	1	Es gab Phasen, da war er streng mit sich selbst.	11	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	10	advmod		SpaceAfter=No
 .	1	1	Es gab Phasen, da war er streng mit sich selbst.	12	.	PUNCT	$.		2	punct		
+</s>												
+<s id="2">												
 Etwa	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich keine.“	1	etwa	ADV	ADV		2	advmod		SpaceAfter=No
 ,	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich keine.“	2	,	PUNCT	$,		7	punct		
 als	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich keine.“	3	als	SCONJ	KOUS		7	mark		
@@ -35,6 +40,8 @@ ich	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich k
 keine	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich keine.“	14	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	12	nmod		SpaceAfter=No
 .	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich keine.“	15	.	PUNCT	$.		12	punct		SpaceAfter=No
 “	1	2	Etwa, als er diesen Satz schrieb: „Körperliche Vorzüge besitze ich keine.“	16	“	PUNCT	$.		12	punct		
+</s>												
+<s id="3">												
 Tatsächlich	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gestalt bescheinigt.	1	tatsächlich	ADJ	ADV		9	advmod		
 wird	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gestalt bescheinigt.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	9	aux:pass		
 ihm	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gestalt bescheinigt.	3	er	PRON	PPER	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	9	iobj		
@@ -45,6 +52,8 @@ schwächliche	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gest
 Gestalt	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gestalt bescheinigt.	8	Gestalt	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	9	obj		
 bescheinigt	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gestalt bescheinigt.	9	bescheinigen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
 .	1	3	Tatsächlich wird ihm auf Steckbriefen eine schwächliche Gestalt bescheinigt.	10	.	PUNCT	$.		9	punct		
+</s>												
+<s id="4">												
 Aber	1	4	Aber er sollte es allen zeigen.	1	aber	CCONJ	KON		6	cc		
 er	1	4	Aber er sollte es allen zeigen.	2	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj		
 sollte	1	4	Aber er sollte es allen zeigen.	3	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	aux		
@@ -52,6 +61,8 @@ es	1	4	Aber er sollte es allen zeigen.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Numbe
 allen	1	4	Aber er sollte es allen zeigen.	5	alle	PRON	PIAT	Case=Dat|Definite=Ind|Number=Plur|PronType=Ind	6	iobj		
 zeigen	1	4	Aber er sollte es allen zeigen.	6	zeigen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No
 .	1	4	Aber er sollte es allen zeigen.	7	.	PUNCT	$.		6	punct		
+</s>												
+<s id="5">												
 Die	1	5	Die Voraussetzungen sind dafür nicht günstig.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	2	det		
 Voraussetzungen	1	5	Die Voraussetzungen sind dafür nicht günstig.	2	Voraussetzung	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	6	nsubj		
 sind	1	5	Die Voraussetzungen sind dafür nicht günstig.	3	sein	AUX	ADJD		6	cop		
@@ -59,6 +70,8 @@ dafür	1	5	Die Voraussetzungen sind dafür nicht günstig.	4	dafür	ADV	PAV		6	a
 nicht	1	5	Die Voraussetzungen sind dafür nicht günstig.	5	nicht	PART	CARD	NumType=Card	6	advmod		
 günstig	1	5	Die Voraussetzungen sind dafür nicht günstig.	6	günstig	ADJ	ADJD		0	root		SpaceAfter=No
 .	1	5	Die Voraussetzungen sind dafür nicht günstig.	7	.	PUNCT	$.		6	punct		
+</s>												
+<s id="6">												
 Er	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineingeboren, ergattert trotzdem einen Ausbildungsplatz, der eine Chance auf Bildung und Aufstieg verheißt und verliert ihn wieder, wegen eines kleinen Diebstahls.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
 wird	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineingeboren, ergattert trotzdem einen Ausbildungsplatz, der eine Chance auf Bildung und Aufstieg verheißt und verliert ihn wieder, wegen eines kleinen Diebstahls.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		
 als	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineingeboren, ergattert trotzdem einen Ausbildungsplatz, der eine Chance auf Bildung und Aufstieg verheißt und verliert ihn wieder, wegen eines kleinen Diebstahls.	3	als	ADP	KOKOM		4	case		
@@ -95,6 +108,8 @@ eines	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineing
 kleinen	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineingeboren, ergattert trotzdem einen Ausbildungsplatz, der eine Chance auf Bildung und Aufstieg verheißt und verliert ihn wieder, wegen eines kleinen Diebstahls.	34	klein	ADJ	ADJA	Case=Gen|Gender=Neut|Number=Sing	35	amod		
 Diebstahls	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineingeboren, ergattert trotzdem einen Ausbildungsplatz, der eine Chance auf Bildung und Aufstieg verheißt und verliert ihn wieder, wegen eines kleinen Diebstahls.	35	Diebstahls	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	14	obl		SpaceAfter=No
 .	1	6	Er wird als fünftes von 14 Kindern in eine bitterarme Familie hineingeboren, ergattert trotzdem einen Ausbildungsplatz, der eine Chance auf Bildung und Aufstieg verheißt und verliert ihn wieder, wegen eines kleinen Diebstahls.	36	.	PUNCT	$.		2	punct		
+</s>												
+<s id="7">												
 Leider	1	7	Leider nicht die einzige Missetat, als Häftling scheint die kriminelle Karriere vorgezeichnet.	1	leider	ADV	ADV		5	advmod		
 nicht	1	7	Leider nicht die einzige Missetat, als Häftling scheint die kriminelle Karriere vorgezeichnet.	2	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	advmod		
 die	1	7	Leider nicht die einzige Missetat, als Häftling scheint die kriminelle Karriere vorgezeichnet.	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det		
@@ -109,6 +124,8 @@ kriminelle	1	7	Leider nicht die einzige Missetat, als Häftling scheint die krim
 Karriere	1	7	Leider nicht die einzige Missetat, als Häftling scheint die kriminelle Karriere vorgezeichnet.	12	Karriere	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	13	obj		
 vorgezeichnet	1	7	Leider nicht die einzige Missetat, als Häftling scheint die kriminelle Karriere vorgezeichnet.	13	vorgezeichnen	VERB	VVPP	VerbForm=Part	9	xcomp		SpaceAfter=No
 .	1	7	Leider nicht die einzige Missetat, als Häftling scheint die kriminelle Karriere vorgezeichnet.	14	.	PUNCT	$.		9	punct		
+</s>												
+<s id="8">												
 Aber	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg, wird richtig reich und von sehr vielen Menschen außerordentlich geschätzt.	1	aber	CCONJ	KON		5	cc		
 gegen	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg, wird richtig reich und von sehr vielen Menschen außerordentlich geschätzt.	2	gegen	ADP	APPR		4	case		
 alle	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg, wird richtig reich und von sehr vielen Menschen außerordentlich geschätzt.	3	alle	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Ind	4	det		
@@ -132,6 +149,8 @@ Menschen	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg,
 außerordentlich	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg, wird richtig reich und von sehr vielen Menschen außerordentlich geschätzt.	21	außerordentlich	ADV	ADJD		22	advmod		
 geschätzt	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg, wird richtig reich und von sehr vielen Menschen außerordentlich geschätzt.	22	schätzen	ADJ	VVPP	VerbForm=Part	15	conj		SpaceAfter=No
 .	1	8	Aber gegen alle Wahrscheinlichkeit kriegt er die Kurve, hat Erfolg, wird richtig reich und von sehr vielen Menschen außerordentlich geschätzt.	23	.	PUNCT	$.		15	punct		
+</s>												
+<s id="9">												
 Wie	1	9	Wie kann sich jemand derart ändern?	1	wie	ADV	ADJA	Case=Nom|Gender=Masc|Number=Plur	6	advmod		
 kann	1	9	Wie kann sich jemand derart ändern?	2	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux		
 sich	1	9	Wie kann sich jemand derart ändern?	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	6	obj		
@@ -139,6 +158,8 @@ jemand	1	9	Wie kann sich jemand derart ändern?	4	jemand	PRON	PIS	Case=Nom|Defin
 derart	1	9	Wie kann sich jemand derart ändern?	5	derart	ADV	ADV		6	advmod		
 ändern	1	9	Wie kann sich jemand derart ändern?	6	ändern	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No
 ?	1	9	Wie kann sich jemand derart ändern?	7	?	PUNCT	$.		6	punct		
+</s>												
+<s id="10">												
 Eine	1	10	Eine Theorie ist, das hat er gar nicht.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det		
 Theorie	1	10	Eine Theorie ist, das hat er gar nicht.	2	Theorie	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		
 ist	1	10	Eine Theorie ist, das hat er gar nicht.	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	cop		SpaceAfter=No
@@ -149,6 +170,8 @@ er	1	10	Eine Theorie ist, das hat er gar nicht.	7	er	PRON	PPER	Case=Nom|Gender=M
 gar	1	10	Eine Theorie ist, das hat er gar nicht.	8	gar	ADV	ADV		9	advmod		
 nicht	1	10	Eine Theorie ist, das hat er gar nicht.	9	nicht	PART	CARD	NumType=Card	6	advmod		SpaceAfter=No
 .	1	10	Eine Theorie ist, das hat er gar nicht.	10	.	PUNCT	$.		2	punct		
+</s>												
+<s id="11">												
 Er	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen, indem er sie nicht mehr auslebt, sondern in der Traumwelt belässt.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	5	nsubj		
 hat	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen, indem er sie nicht mehr auslebt, sondern in der Traumwelt belässt.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	aux		
 es	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen, indem er sie nicht mehr auslebt, sondern in der Traumwelt belässt.	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	5	nsubj		
@@ -174,9 +197,13 @@ der	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen
 Traumwelt	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen, indem er sie nicht mehr auslebt, sondern in der Traumwelt belässt.	23	Traumwelt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	24	obl		
 belässt	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen, indem er sie nicht mehr auslebt, sondern in der Traumwelt belässt.	24	belassen	VERB	VVFIN	VerbForm=Part	18	conj		SpaceAfter=No
 .	1	11	Er hat es lediglich geschafft, seine übersteigerte Fantasie zu zähmen, indem er sie nicht mehr auslebt, sondern in der Traumwelt belässt.	25	.	PUNCT	$.		5	punct		
+</s>												
+<s id="12">												
 Meistens	1	12	Meistens jedenfalls.	1	meistens	ADV	ADV		2	advmod		
 jedenfalls	1	12	Meistens jedenfalls.	2	jedenfalls	ADV	ADV		0	root		SpaceAfter=No
 .	1	12	Meistens jedenfalls.	3	.	PUNCT	$.		2	punct		
+</s>												
+<s id="13">												
 Wenn	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das sei alles wahrhaftig und echt.	1	wenn	SCONJ	KOUS		5	mark		
 er	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das sei alles wahrhaftig und echt.	2	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	5	nsubj		
 nicht	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das sei alles wahrhaftig und echt.	3	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	advmod		
@@ -196,5 +223,6 @@ wahrhaftig	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das 
 und	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das sei alles wahrhaftig und echt.	17	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	18	cc		
 echt	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das sei alles wahrhaftig und echt.	18	echen	ADJ	VVFIN		16	conj		SpaceAfter=No
 .	1	13	Wenn er nicht gerade versucht, die Leute glauben zu machen, das sei alles wahrhaftig und echt.	19	.	PUNCT	$.		5	punct		SpacesAfter=\n
+</s>												
 </text>												
 </doc>												

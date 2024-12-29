@@ -1,12 +1,15 @@
 <doc id="2">												
 <text id="url2.doc1">												
+<s id="1">												
 Einer	1	1	Einer, der Finten setzte	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	5	nsubj		SpaceAfter=No
 ,	1	1	Einer, der Finten setzte	2	,	PUNCT	$,		4	punct		
 der	1	1	Einer, der Finten setzte	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det		
 Finten	1	1	Einer, der Finten setzte	4	Fint	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	appos		
 setzte	1	1	Einer, der Finten setzte	5	setzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		SpacesAfter=\n
+</s>												
 </text>												
 <text id="url2.doc2">												
+<s id="1">												
 Geboren	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	1	gebären	VERB	VVPP	VerbForm=Part	0	root		
 wurde	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	2	werden	AUX	KON		1	aux:pass		
 er	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	1	nsubj:pass		
@@ -23,6 +26,8 @@ italienischen	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit ei
 Juwel	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	14	Juwel	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	15	obl		
 vergleichen	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	15	vergleichen	VERB	VVINF	VerbForm=Inf	6	acl		SpaceAfter=No
 .	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	16	.	PUNCT	$.		1	punct		
+</s>												
+<s id="2">												
 Schule	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	1	Schule	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	nsubj		SpaceAfter=No
 ,	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	2	,	PUNCT	$,		3	punct		
 Studium	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	3	Studium	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	1	conj		SpaceAfter=No
@@ -36,6 +41,8 @@ bahnte	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	
 sich	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	11	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	10	obj		
 an	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	12	an	ADP	PTKVZ		10	compound:prt		SpaceAfter=No
 .	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	13	.	PUNCT	$.		10	punct		
+</s>												
+<s id="3">												
 Eine	1	3	Eine, mit der man viel Geld verdienen konnte.	1	ein	PRON	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	0	root		SpaceAfter=No
 ,	1	3	Eine, mit der man viel Geld verdienen konnte.	2	,	PUNCT	$,		8	punct		
 mit	1	3	Eine, mit der man viel Geld verdienen konnte.	3	mit	ADP	$(		4	case		
@@ -46,6 +53,8 @@ Geld	1	3	Eine, mit der man viel Geld verdienen konnte.	7	Geld	NOUN	NN	Case=Acc|G
 verdienen	1	3	Eine, mit der man viel Geld verdienen konnte.	8	verdienen	VERB	VVINF	VerbForm=Inf	1	acl		
 konnte	1	3	Eine, mit der man viel Geld verdienen konnte.	9	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux		SpaceAfter=No
 .	1	3	Eine, mit der man viel Geld verdienen konnte.	10	.	PUNCT	$.		1	punct		
+</s>												
+<s id="4">												
 Doch	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	1	doch	ADV	KON		6	advmod		
 die	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	2	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	3	det		
 Zeiten	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	3	Zeit	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	6	nsubj		
@@ -58,11 +67,15 @@ wurde	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	9	wer
 anderswo	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	10	anderswo	ADV	ADV		11	advmod		
 gebraucht	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	11	brauchen|gebrauchen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
 .	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	12	.	PUNCT	$.		11	punct		
+</s>												
+<s id="5">												
 Ohne	1	5	Ohne Widerspruch folgte er.	1	ohne	ADP	NN	Case=Nom|Gender=Masc|Number=Sing	2	case		
 Widerspruch	1	5	Ohne Widerspruch folgte er.	2	Widerspruch	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	3	obl		
 folgte	1	5	Ohne Widerspruch folgte er.	3	folgen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
 er	1	5	Ohne Widerspruch folgte er.	4	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	nsubj		SpaceAfter=No
 .	1	5	Ohne Widerspruch folgte er.	5	.	PUNCT	$.		3	punct		
+</s>												
+<s id="6">												
 Wie	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	1	wie	ADV	ADJA	Case=Nom|Gender=Masc|Number=Plur	2	advmod		
 aber	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	2	aber	ADV	ADV		5	advmod		
 sollte	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	3	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	aux		
@@ -76,6 +89,8 @@ in	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	10	in	ADP
 seiner	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	11	sein	DET	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	12	det:poss		
 Brust	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	12	Brust	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	9	nmod		SpaceAfter=No
 ?	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	13	?	PUNCT	$.		5	punct		
+</s>												
+<s id="7">												
 Anfangs	1	7	Anfangs schien die eine prägend, doch das änderte sich.	1	anfangs	ADV	ADV		2	advmod		
 schien	1	7	Anfangs schien die eine prägend, doch das änderte sich.	2	scheinen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
 die	1	7	Anfangs schien die eine prägend, doch das änderte sich.	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det		
@@ -87,6 +102,8 @@ das	1	7	Anfangs schien die eine prägend, doch das änderte sich.	8	der	PRON	PDS
 änderte	1	7	Anfangs schien die eine prägend, doch das änderte sich.	9	ändern	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	conj		
 sich	1	7	Anfangs schien die eine prägend, doch das änderte sich.	10	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	9	obj		SpaceAfter=No
 .	1	7	Anfangs schien die eine prägend, doch das änderte sich.	11	.	PUNCT	$.		5	punct		
+</s>												
+<s id="8">												
 Er	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
 legte	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	2	legen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
 sich	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obj		
@@ -99,6 +116,8 @@ ihm	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	9	er	PRON	PPER	
 langsam	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	10	langsam	ADJ	ADJD		11	advmod		
 misstrauten	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	11	misstrauten	VERB	NN	Case=Dat|Number=Plur	2	acl		SpaceAfter=No
 .	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	12	.	PUNCT	$.		2	punct		
+</s>												
+<s id="9">												
 Wagte	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	1	wagen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin	0	root		
 einiges	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	2	einiges	PRON	PIS	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	1	nsubj		
 nahe	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	3	nahe	ADP	NN	Case=Gen|Gender=Neut|Number=Plur	5	case		
@@ -115,6 +134,8 @@ Willen	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen 
 versammeln	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	14	versammeln	VERB	FM	Foreign=Yes	5	acl		
 mussten	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	15	müssen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	14	aux		SpaceAfter=No
 .	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	16	.	PUNCT	$.		1	punct		
+</s>												
+<s id="10">												
 Eine	1	10	Eine Finte nach der anderen dachte er sich aus.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det		
 Finte	1	10	Eine Finte nach der anderen dachte er sich aus.	2	Finte	NOUN	ADJA	Case=Nom|Gender=Fem|Number=Sing	6	nsubj		
 nach	1	10	Eine Finte nach der anderen dachte er sich aus.	3	nach	ADP	ADJA		5	case		
@@ -125,6 +146,8 @@ er	1	10	Eine Finte nach der anderen dachte er sich aus.	7	er	PRON	PPER	Case=Nom|
 sich	1	10	Eine Finte nach der anderen dachte er sich aus.	8	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	6	obj		
 aus	1	10	Eine Finte nach der anderen dachte er sich aus.	9	aus	ADP	PTKVZ		6	compound:prt		SpaceAfter=No
 .	1	10	Eine Finte nach der anderen dachte er sich aus.	10	.	PUNCT	$.		6	punct		
+</s>												
+<s id="11">												
 Seine	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	1	sein	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	2	det:poss		
 Vorgesetzten	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	2	Vorgesetzte	NOUN	NN	Case=Gen|Number=Plur	6	nsubj		
 in	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	3	in	ADP	APPR		5	case		
@@ -139,6 +162,8 @@ ohne	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafun
 Bestrafung	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	12	Bestrafung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	9	obl		
 davon	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	13	davon	ADV	PTKVZ		9	advmod		SpaceAfter=No
 .	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	14	.	PUNCT	$.		6	punct		
+</s>												
+<s id="12">												
 Als	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	1	als	SCONJ	KOUS		3	mark		
 alles	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	2	alle	PRON	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	3	nsubj		
 vorbei	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	3	vorbei	ADJ	NN	Case=Nom|Gender=Neut|Number=Plur	7	advcl		
@@ -156,6 +181,8 @@ seinen	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zw
 zwei	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	15	zwei	NUM	NN	Case=Dat|Gender=Masc|Number=Plur	16	nummod		
 Seelen	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	16	Seel	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	12	obl		SpaceAfter=No
 .	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	17	.	PUNCT	$.		7	punct		
+</s>												
+<s id="13">												
 Das	1	13	Das Ergebnis war niederschmetternd für ihn.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	2	det		
 Ergebnis	1	13	Das Ergebnis war niederschmetternd für ihn.	2	Ergebnis	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	4	nsubj		
 war	1	13	Das Ergebnis war niederschmetternd für ihn.	3	sein	AUX	ADV		4	cop		
@@ -163,6 +190,8 @@ niederschmetternd	1	13	Das Ergebnis war niederschmetternd für ihn.	4	niederschm
 für	1	13	Das Ergebnis war niederschmetternd für ihn.	5	für	ADP	APPR		6	case		
 ihn	1	13	Das Ergebnis war niederschmetternd für ihn.	6	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	4	nmod		SpaceAfter=No
 .	1	13	Das Ergebnis war niederschmetternd für ihn.	7	.	PUNCT	$.		4	punct		
+</s>												
+<s id="14">												
 Seinen	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	1	sein	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	3	det:poss		
 ersten	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	2	erst	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	3	amod		
 Beruf	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	3	Beruf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	8	obj		
@@ -172,6 +201,8 @@ nicht	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	6	nicht	PART	CARD	
 mehr	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	7	mehr	ADV	ADV		6	advmod		
 ausüben	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	8	ausüben	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No
 .	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	9	.	PUNCT	$.		8	punct		
+</s>												
+<s id="15">												
 In	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	1	in	ADP	APPR		4	case		
 einem	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	2	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	4	det		
 anderen	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	3	ander	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	4	amod		
@@ -188,6 +219,8 @@ in	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten
 dem	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	13	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	14	det		
 Grünen	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	14	Grüne	PROPN	NN	Case=Dat|Gender=Neut|Number=Sing	11	obl		SpaceAfter=No
 .	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	15	.	PUNCT	$.		9	punct		
+</s>												
+<s id="16">												
 Da	1	16	Da war er schon lange tot.	1	da	ADV	ADV		6	advmod		
 war	1	16	Da war er schon lange tot.	2	sein	AUX	ADV		6	cop		
 er	1	16	Da war er schon lange tot.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj		
@@ -195,5 +228,6 @@ schon	1	16	Da war er schon lange tot.	4	schon	ADV	ADV		5	advmod
 lange	1	16	Da war er schon lange tot.	5	lange	ADJ	ADV		6	advmod		
 tot	1	16	Da war er schon lange tot.	6	tot	ADJ	ADJD		0	root		SpaceAfter=No
 .	1	16	Da war er schon lange tot.	7	.	PUNCT	$.		6	punct		SpacesAfter=\n
+</s>												
 </text>												
 </doc>												
