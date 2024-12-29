@@ -1,0 +1,58 @@
+<doc id="22.1.1">													
+<text id="22.1.1">													
+<s id="1">													
+Wie	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	1	wie	SCONJ	NN	Case=Nom|Gender=Neut|Number=Sing	4	mark			pid:1.22.1.1.
+bei	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	2	bei	ADP	APPR		4	case			pid:1.22.1.1.
+einer	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	3	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:1.22.1.1.
+Sitzblockade	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	4	Sitzblockade	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	6	obl		SpaceAfter=No	pid:1.22.1.1.
+,	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	5	,	PUNCT	$,		4	punct			pid:1.22.1.1.
+hat	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	6	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.22.1.1.
+es	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	7	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	6	nsubj			pid:1.22.1.1.
+nur	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	8	nur	ADV	CARD		6	advmod			pid:1.22.1.1.
+die	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	9	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	10	det			pid:1.22.1.1.
+Leute	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	10	Leute	NOUN	NN	Case=Nom|Number=Plur	6	nsubj			pid:1.22.1.1.
+gestört	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	11	störn	ADJ	VVPP	VerbForm=Part	6	xcomp		SpaceAfter=No	pid:1.22.1.1.
+,	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	12	,	PUNCT	$,		29	punct			pid:1.22.1.1.
+die	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	13	der	DET	PRELS	Case=Nom|Number=Plur|PronType=Rel	15	det			pid:1.22.1.1.
+genau	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	14	genau	ADJ	ADV		15	amod			pid:1.22.1.1.
+da	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	15	da	NOUN	ADV		29	nsubj			pid:1.22.1.1.
+durch	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	16	durch	ADP	APPR		17	case			pid:1.22.1.1.
+wollten	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	17	wollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	29	aux		SpaceAfter=No	pid:1.22.1.1.
+,	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	18	,	PUNCT	$,		29	punct			pid:1.22.1.1.
+also	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	19	also	ADV	ADV		29	advmod			pid:1.22.1.1.
+die	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	20	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	29	nsubj			pid:1.22.1.1.
+in	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	21	in	ADP	APPR		24	case			pid:1.22.1.1.
+den	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	22	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	24	det			pid:1.22.1.1.
+drei	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	23	drei	NUM	CARD	NumType=Card	24	nummod			pid:1.22.1.1.
+Stunden	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	24	Stunde|Stunden	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	29	obl			pid:1.22.1.1.
+die	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	25	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	det			pid:1.22.1.1.
+Webseite	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	26	Webseite	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	29	obj			pid:1.22.1.1.
+des	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	27	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	28	det			pid:1.22.1.1.
+BND	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	28	BND	PROPN	NN	Case=Gen|Gender=Masc|Number=Sing	26	nmod			pid:1.22.1.1.
+aufrufen	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	29	aufrufen	VERB	VVINF	VerbForm=Inf	11	conj			pid:1.22.1.1.
+wollten	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	30	wollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	29	aux		SpaceAfter=No	pid:1.22.1.1.
+.	1	1	Wie bei einer Sitzblockade, hat es nur die Leute gestört, die genau da durch wollten, also die in den drei Stunden die Webseite des BND aufrufen wollten.	31	.	PUNCT	$.		6	punct			pid:1.22.1.1.
+</s>													
+<s id="2">													
+Wahrscheinlich	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	1	wahrscheinlich	ADV	ADV		10	advmod			pid:2.22.1.1.
+hat	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	aux			pid:2.22.1.1.
+sich	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	10	obj			pid:2.22.1.1.
+das	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	4	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	5	det			pid:2.22.1.1.
+Problem	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	5	Problem	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	10	nsubj			pid:2.22.1.1.
+von	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	6	von	ADP	NE	Case=Nom|Gender=Neut|Number=Sing	7	case			pid:2.22.1.1.
+selbst	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	7	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	10	advmod			pid:2.22.1.1.
+in	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	8	in	ADP	APPR		9	case			pid:2.22.1.1.
+Luft	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	9	Luft	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	10	obl			pid:2.22.1.1.
+aufgelöst	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	10	auflösen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:2.22.1.1.
+,	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	11	,	PUNCT	$,		17	punct			pid:2.22.1.1.
+ohne	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	12	ohne	ADP	NE	Foreign=Yes	17	case			pid:2.22.1.1.
+dass	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	13	dass	SCONJ	KOUS		17	mark			pid:2.22.1.1.
+ein	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	14	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	15	det			pid:2.22.1.1.
+Admin	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	15	Admin	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	17	nsubj			pid:2.22.1.1.
+tätig	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	16	tätig	ADJ	ADJD		17	xcomp			pid:2.22.1.1.
+werden	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	17	werden	VERB	NE	Case=Acc|Number=Plur	10	advcl			pid:2.22.1.1.
+musste	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	18	müssen	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	17	aux		SpaceAfter=No	pid:2.22.1.1.
+.	1	2	Wahrscheinlich hat sich das Problem von selbst in Luft aufgelöst, ohne dass ein Admin tätig werden musste.	19	.	PUNCT	$.		10	punct		SpacesAfter=\n	pid:2.22.1.1.
+</s>													
+</text>													
+</doc>													

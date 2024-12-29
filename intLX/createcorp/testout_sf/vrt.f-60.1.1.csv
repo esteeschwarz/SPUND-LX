@@ -1,0 +1,116 @@
+<doc id="60.1.1">													
+<text id="60.1.1">													
+<s id="1">													
+Ich	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:1.60.1.1.
+verurteile	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	2	verurteilen	ADJ	NN	Case=Nom|Gender=Neut|Number=Plur	3	amod			pid:1.60.1.1.
+Frauen	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	3	Frauen	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	0	root		SpaceAfter=No	pid:1.60.1.1.
+,	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	4	,	PUNCT	$,		9	punct			pid:1.60.1.1.
+die	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	5	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	9	nsubj			pid:1.60.1.1.
+wiederum	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	6	wiederum	ADV	ADV		9	advmod			pid:1.60.1.1.
+Männer	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	7	Mann	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	9	nsubj			pid:1.60.1.1.
+generell	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	8	generell	ADJ	ADJD		9	advmod			pid:1.60.1.1.
+verurteilen	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	9	verurteilen	VERB	VVINF	VerbForm=Inf	3	acl		SpaceAfter=No	pid:1.60.1.1.
+.	1	1	Ich verurteile Frauen, die wiederum Männer generell verurteilen.	10	.	PUNCT	$.		3	punct			pid:1.60.1.1.
+</s>													
+<s id="2">													
+Aber	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	1	aber	ADV	KON		3	advmod			pid:2.60.1.1.
+das	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	2	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	3	det			pid:2.60.1.1.
+Opfergetue	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	3	Opfergetue	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	nsubj			pid:2.60.1.1.
+in	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	4	in	ADP	APPR		6	case			pid:2.60.1.1.
+den	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	6	det			pid:2.60.1.1.
+Kommentaren	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	6	Kommentar	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	3	nmod			pid:2.60.1.1.
+ist	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	7	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	cop			pid:2.60.1.1.
+kein	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	8	kein	PRON	PIAT	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|Polarity=Neg|PronType=Neg	10	nmod			pid:2.60.1.1.
+bisschen	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	9	bissch	ADJ	PIS	Definite=Ind|PronType=Ind	10	advmod			pid:2.60.1.1.
+besser	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	10	gut	ADJ	ADJD		0	root		SpaceAfter=No	pid:2.60.1.1.
+.	1	2	Aber das Opfergetue in den Kommentaren ist kein bisschen besser.	11	.	PUNCT	$.		10	punct			pid:2.60.1.1.
+</s>													
+<s id="3">													
+Die	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	1	der	DET	PDS	Case=Nom|Number=Plur|PronType=Dem	3	det			pid:3.60.1.1.
+wahren	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	2	wahr	ADJ	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	3	amod			pid:3.60.1.1.
+Opfer	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	3	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	8	nsubj			pid:3.60.1.1.
+sind	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	4	sein	AUX	ADJD		8	cop			pid:3.60.1.1.
+immer	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	5	immer	ADV	ADV		6	advmod			pid:3.60.1.1.
+noch	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	6	noch	ADV	CARD	NumType=Card	8	advmod			pid:3.60.1.1.
+die	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	7	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	8	det			pid:3.60.1.1.
+Opfer	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	8	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	0	root			pid:3.60.1.1.
+von	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	9	von	ADP	FM	Foreign=Yes	10	case			pid:3.60.1.1.
+Gewalt	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	10	Gewalt	NOUN	NE	Case=Dat|Gender=Neut|Number=Sing	8	nmod		SpaceAfter=No	pid:3.60.1.1.
+.	1	3	Die wahren Opfer sind immer noch die Opfer von Gewalt.	11	.	PUNCT	$.		8	punct		SpacesAfter=\n\n	pid:3.60.1.1.
+</s>													
+<s id="4">													
+Du	2	4	Du willst ein positives Bild von Männlichkeit?	1	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	2	nsubj			pid:4.60.1.1.
+willst	2	4	Du willst ein positives Bild von Männlichkeit?	2	willsen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:4.60.1.1.
+ein	2	4	Du willst ein positives Bild von Männlichkeit?	3	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	5	det			pid:4.60.1.1.
+positives	2	4	Du willst ein positives Bild von Männlichkeit?	4	positives	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	5	amod			pid:4.60.1.1.
+Bild	2	4	Du willst ein positives Bild von Männlichkeit?	5	Bild	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obj			pid:4.60.1.1.
+von	2	4	Du willst ein positives Bild von Männlichkeit?	6	von	ADP	FM	Foreign=Yes	7	case			pid:4.60.1.1.
+Männlichkeit	2	4	Du willst ein positives Bild von Männlichkeit?	7	Männlichkeit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	5	nmod		SpaceAfter=No	pid:4.60.1.1.
+?	2	4	Du willst ein positives Bild von Männlichkeit?	8	?	PUNCT	$.		2	punct			pid:4.60.1.1.
+</s>													
+<s id="5">													
+Wo	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	1	wo	ADV	PWAV	PronType=Int	9	mark			pid:5.60.1.1.
+sind	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	2	sein	AUX	ADJD		9	cop			pid:5.60.1.1.
+denn	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	3	denn	ADV	KON		9	advmod			pid:5.60.1.1.
+die	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	4	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	5	det			pid:5.60.1.1.
+Männer	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	5	Mann	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	9	nsubj		SpaceAfter=No	pid:5.60.1.1.
+,	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	6	,	PUNCT	$,		9	punct			pid:5.60.1.1.
+die	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	7	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	8	det			pid:5.60.1.1.
+Vorbilder	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	8	Vorbild	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	9	nsubj			pid:5.60.1.1.
+sein	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	9	sein	VERB	VAINF	VerbForm=Inf	0	root			pid:5.60.1.1.
+wollen	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	10	wollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	9	aux		SpaceAfter=No	pid:5.60.1.1.
+?	2	5	Wo sind denn die Männer, die Vorbilder sein wollen?	11	?	PUNCT	$.		9	punct			pid:5.60.1.1.
+</s>													
+<s id="6">													
+Soweit	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	1	soweit	SCONJ	KOUS		3	mark			pid:6.60.1.1.
+ich	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:6.60.1.1.
+weiss	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	3	wissen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	5	advcl		SpaceAfter=No	pid:6.60.1.1.
+,	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	4	,	PUNCT	$,		3	punct			pid:6.60.1.1.
+nimmt	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	5	nehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:6.60.1.1.
+eine	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	6	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	7	det			pid:6.60.1.1.
+Mehrheit	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	7	Mehrheit	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	5	nsubj			pid:6.60.1.1.
+der	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	8	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	9	det			pid:6.60.1.1.
+Männer	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	9	Mann	NOUN	NN	Case=Gen|Gender=Masc|Number=Plur	7	nmod			pid:6.60.1.1.
+immer	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	10	immer	ADV	ADV		11	advmod			pid:6.60.1.1.
+noch	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	11	noch	ADV	CARD	NumType=Card	5	advmod			pid:6.60.1.1.
+keine	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	12	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	13	nmod			pid:6.60.1.1.
+Elternzeit	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	13	Elternzeit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	5	obj			pid:6.60.1.1.
+(	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	14	(	PUNCT	$(		19	punct		SpaceAfter=No	pid:6.60.1.1.
+auch	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	15	auch	ADV	ADV		19	advmod			pid:6.60.1.1.
+wenn	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	16	wenn	SCONJ	VVFIN		19	mark			pid:6.60.1.1.
+sie	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	17	sie	PRON	VVINF	VerbForm=Inf	19	nsubj			pid:6.60.1.1.
+es	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	18	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	19	obj			pid:6.60.1.1.
+könnten	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	19	können	AUX	VMFIN	Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	5	parataxis		SpaceAfter=No	pid:6.60.1.1.
+)	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	20	)	PUNCT	$(		19	punct		SpaceAfter=No	pid:6.60.1.1.
+,	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	21	,	PUNCT	$,		27	punct			pid:6.60.1.1.
+und	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	22	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	27	cc			pid:6.60.1.1.
+wenn	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	23	wenn	SCONJ	VVFIN		27	mark		SpaceAfter=No	pid:6.60.1.1.
+,	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	24	,	PUNCT	$,		27	punct			pid:6.60.1.1.
+dann	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	25	dann	ADV	ADV		27	advmod			pid:6.60.1.1.
+nur	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	26	nur	ADV	CARD	NumType=Card	27	advmod			pid:6.60.1.1.
+kurz	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	27	kurz	ADJ	ADJD		5	conj		SpaceAfter=No	pid:6.60.1.1.
+.	2	6	Soweit ich weiss, nimmt eine Mehrheit der Männer immer noch keine Elternzeit (auch wenn sie es könnten), und wenn, dann nur kurz.	28	.	PUNCT	$.		5	punct			pid:6.60.1.1.
+</s>													
+<s id="7">													
+Wenn	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	1	wenn	SCONJ	KOUS		9	mark			pid:7.60.1.1.
+man	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	2	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	9	nsubj			pid:7.60.1.1.
+z	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	3	z	X	NN	Case=Nom|Gender=Neut|Number=Plur	9	nsubj		SpaceAfter=No	pid:7.60.1.1.
+.	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	4	.	PUNCT	$.		3	punct			pid:7.60.1.1.
+B.	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	5	b.	X	NE	Case=Nom|Gender=Masc|Number=Sing	3	nmod			pid:7.60.1.1.
+die	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	6	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	7	det			pid:7.60.1.1.
+Jungen	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	7	Junge	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	9	obj			pid:7.60.1.1.
+anders	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	8	anders	ADV	ADV		9	advmod			pid:7.60.1.1.
+erziehen	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	9	erziehen	VERB	VVINF	VerbForm=Inf	18	advcl			pid:7.60.1.1.
+will	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	10	wollen	AUX	NE	Case=Acc|Gender=Masc|Number=Plur	9	aux		SpaceAfter=No	pid:7.60.1.1.
+,	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	11	,	PUNCT	$,		9	punct			pid:7.60.1.1.
+soll	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	12	sollen	AUX	NN	Case=Nom|Gender=Masc|Number=Plur	18	aux			pid:7.60.1.1.
+man	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	13	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	18	nsubj			pid:7.60.1.1.
+eben	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	14	eben	ADV	ADV		18	advmod			pid:7.60.1.1.
+auch	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	15	auch	ADV	ADV		18	advmod			pid:7.60.1.1.
+etwas	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	16	etwas	PRON	PIAT	Definite=Ind|PronType=Ind	18	obj			pid:7.60.1.1.
+dafür	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	17	dafür	PRON	PAV		16	nmod			pid:7.60.1.1.
+tun	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	18	tun	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:7.60.1.1.
+.	2	7	Wenn man z. B. die Jungen anders erziehen will, soll man eben auch etwas dafür tun.	19	.	PUNCT	$.		18	punct		SpacesAfter=\n	pid:7.60.1.1.
+</s>													
+</text>													
+</doc>													

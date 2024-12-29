@@ -1,0 +1,185 @@
+<doc id="81.1.1">													
+<text id="81.1.1">													
+<s id="1">													
+&gt	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	1	&gen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:1.81.1.1.
+;Klar	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	2	;Klar	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	1	nsubj		SpaceAfter=No	pid:1.81.1.1.
+,	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	3	,	PUNCT	$,		11	punct			pid:1.81.1.1.
+und	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	4	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	11	cc			pid:1.81.1.1.
+das	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	5	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	11	nsubj			pid:1.81.1.1.
+eine	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	6	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	7	det			pid:1.81.1.1.
+Trennung	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	7	Trennung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	11	nsubj			pid:1.81.1.1.
+dann	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	8	dann	ADV	ADV		11	advmod			pid:1.81.1.1.
+nicht	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	9	nicht	PART	TRUNC	NumType=Card	11	advmod			pid:1.81.1.1.
+leicht	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	10	leicht	ADJ	ADJD		11	advmod			pid:1.81.1.1.
+fällt	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	11	fallen|fällen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	conj			pid:1.81.1.1.
+ist	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	12	sein	AUX	ADJD		1	aux:pass			pid:1.81.1.1.
+auch	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	13	auch	ADV	ADV		14	advmod			pid:1.81.1.1.
+klar	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	14	klar	ADJ	ADJD		1	advmod			pid:1.81.1.1.
+(	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	15	(	PUNCT	$(		17	punct		SpaceAfter=No	pid:1.81.1.1.
+Gemeinsame	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	16	gemeinsam	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Plur	17	amod			pid:1.81.1.1.
+Freunde	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	17	Freund	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	14	appos		SpaceAfter=No	pid:1.81.1.1.
+,	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	18	,	PUNCT	$,		19	punct			pid:1.81.1.1.
+Wohnung	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	19	Wohnung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	17	conj		SpaceAfter=No	pid:1.81.1.1.
+,	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	20	,	PUNCT	$,		21	punct			pid:1.81.1.1.
+Kinder	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	21	Kind	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	17	conj		SpaceAfter=No	pid:1.81.1.1.
+)	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	22	)	PUNCT	$(		17	punct			pid:1.81.1.1.
+..	1	1	&gt;Klar, und das eine Trennung dann nicht leicht fällt ist auch klar (Gemeinsame Freunde, Wohnung, Kinder) ..	23	..	PUNCT	$(		1	punct		SpacesAfter=\n\n	pid:1.81.1.1.
+</s>													
+<s id="2">													
+Die	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:2.81.1.1.
+Sache	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	2	Sache	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	nsubj			pid:2.81.1.1.
+ist	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	cop			pid:2.81.1.1.
+ja	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	4	ja	ADV	ADV		5	advmod			pid:2.81.1.1.
+auch	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	5	auch	ADV	ADV		6	advmod			pid:2.81.1.1.
+oft	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	6	oft	ADV	CARD	NumType=Card	0	root		SpaceAfter=No	pid:2.81.1.1.
+,	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	7	,	PUNCT	$,		16	punct			pid:2.81.1.1.
+das	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	8	der	PRON	PRELS	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	16	nsubj			pid:2.81.1.1.
+die	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	9	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	10	det			pid:2.81.1.1.
+Frauen	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	10	Frau	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	16	obj			pid:2.81.1.1.
+den	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	11	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det			pid:2.81.1.1.
+Mann	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	12	Mann	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	16	obj			pid:2.81.1.1.
+dann	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	13	dann	ADV	ADV		16	advmod			pid:2.81.1.1.
+auch	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	14	auch	ADV	ADV		15	advmod			pid:2.81.1.1.
+noch	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	15	noch	ADV	CARD	NumType=Card	16	advmod			pid:2.81.1.1.
+lieben	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	16	lieben	VERB	VVFIN	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	6	acl			pid:2.81.1.1.
+und	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	17	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	18	cc			pid:2.81.1.1.
+glauben	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	18	glauben	VERB	VVINF	VerbForm=Inf	16	conj		SpaceAfter=No	pid:2.81.1.1.
+,	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	19	,	PUNCT	$,		25	punct			pid:2.81.1.1.
+dass	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	20	dass	SCONJ	KOUS		25	mark			pid:2.81.1.1.
+es	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	21	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	23	nsubj			pid:2.81.1.1.
+der	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	22	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	23	det			pid:2.81.1.1.
+Partner	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	23	Partner	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	25	nsubj			pid:2.81.1.1.
+auch	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	24	auch	ADV	ADV		25	advmod			pid:2.81.1.1.
+tut	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	25	tun	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	ccomp		SpaceAfter=No	pid:2.81.1.1.
+.	2	2	Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	26	.	PUNCT	$.		16	punct			pid:2.81.1.1.
+</s>													
+<s id="3">													
+Das	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	3	det			pid:3.81.1.1.
+menschliche	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	2	menschlich	ADJ	NN	Case=Nom|Gender=Neut|Number=Sing|NumType=Card	3	amod			pid:3.81.1.1.
+Gehirn	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	3	Gehirn	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	4	nsubj			pid:3.81.1.1.
+hasst	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	4	hassen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:3.81.1.1.
+es	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	5	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	obj			pid:3.81.1.1.
+unrecht	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	6	unrecht	ADJ	ADJD		4	advmod			pid:3.81.1.1.
+zu	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	7	zu	PART	NN	Case=Nom|Number=Plur	8	mark			pid:3.81.1.1.
+haben	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	8	haben	VERB	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	xcomp			pid:3.81.1.1.
+und	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	9	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	11	cc			pid:3.81.1.1.
+sucht	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	10	suchen	ADJ	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	amod			pid:3.81.1.1.
+Entschuldigungen	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	11	Entschuldigung	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	8	conj		SpaceAfter=No	pid:3.81.1.1.
+.	2	3	Das menschliche Gehirn hasst es unrecht zu haben und sucht Entschuldigungen.	12	.	PUNCT	$.		4	punct			pid:3.81.1.1.
+</s>													
+<s id="4">													
+Das	2	4	Das liegt nun mal in unserer Natur.	1	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	2	nsubj			pid:4.81.1.1.
+liegt	2	4	Das liegt nun mal in unserer Natur.	2	liegen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:4.81.1.1.
+nun	2	4	Das liegt nun mal in unserer Natur.	3	nun	ADV	ADV		2	advmod			pid:4.81.1.1.
+mal	2	4	Das liegt nun mal in unserer Natur.	4	mal	ADV	ADV		2	advmod			pid:4.81.1.1.
+in	2	4	Das liegt nun mal in unserer Natur.	5	in	ADP	APPR		7	case			pid:4.81.1.1.
+unserer	2	4	Das liegt nun mal in unserer Natur.	6	unser	ADJ	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	7	amod			pid:4.81.1.1.
+Natur	2	4	Das liegt nun mal in unserer Natur.	7	Natur	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	2	obl		SpaceAfter=No	pid:4.81.1.1.
+.	2	4	Das liegt nun mal in unserer Natur.	8	.	PUNCT	$.		2	punct		SpacesAfter=\s\n\n	pid:4.81.1.1.
+</s>													
+<s id="5">													
+&gt;Und	3	5	&gt;Und auch da kann man ja aufklären.	1	&gt;und	CCONJ	ADJD		7	cc			pid:5.81.1.1.
+auch	3	5	&gt;Und auch da kann man ja aufklären.	2	auch	ADV	ADV		7	advmod			pid:5.81.1.1.
+da	3	5	&gt;Und auch da kann man ja aufklären.	3	da	ADV	ADV		7	advmod			pid:5.81.1.1.
+kann	3	5	&gt;Und auch da kann man ja aufklären.	4	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	aux			pid:5.81.1.1.
+man	3	5	&gt;Und auch da kann man ja aufklären.	5	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	7	nsubj			pid:5.81.1.1.
+ja	3	5	&gt;Und auch da kann man ja aufklären.	6	ja	PART	ADV		7	advmod			pid:5.81.1.1.
+aufklären	3	5	&gt;Und auch da kann man ja aufklären.	7	aufklären	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:5.81.1.1.
+.	3	5	&gt;Und auch da kann man ja aufklären.	8	.	PUNCT	$.		7	punct			pid:5.81.1.1.
+</s>													
+<s id="6">													
+Und	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	1	und	CCONJ	ADJD		12	cc			pid:6.81.1.1.
+bei	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	2	bei	ADP	APPR		3	case			pid:6.81.1.1.
+denen	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	3	der	PRON	PRELS	Case=Dat|Number=Plur|PronType=Rel	12	obl			pid:6.81.1.1.
+hab	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	4	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	12	aux			pid:6.81.1.1.
+ich	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	5	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	8	nsubj			pid:6.81.1.1.
+eher	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	6	eher	ADV	ADV		8	advmod			pid:6.81.1.1.
+die	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	7	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	8	det			pid:6.81.1.1.
+Hoffnung	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	8	Hoffnung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	12	obl			pid:6.81.1.1.
+das	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	9	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	12	obj			pid:6.81.1.1.
+man	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	10	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	12	nsubj			pid:6.81.1.1.
+was	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	11	was	PRON	NN	Case=Gen|Gender=Fem|Number=Plur	12	obj			pid:6.81.1.1.
+erreichen	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	12	erreichen	VERB	VVINF	VerbForm=Inf	0	root			pid:6.81.1.1.
+kann	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	13	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux		SpaceAfter=No	pid:6.81.1.1.
+,	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	14	,	PUNCT	$,		15	punct			pid:6.81.1.1.
+als	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	15	als	SCONJ	KOUS		12	dep			pid:6.81.1.1.
+bei	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	16	bei	ADP	APPR		17	case			pid:6.81.1.1.
+Schlägertypen	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	17	Schlägertypen	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	15	nmod		SpaceAfter=No	pid:6.81.1.1.
+.	3	6	Und bei denen hab ich eher die Hoffnung das man was erreichen kann, als bei Schlägertypen.	18	.	PUNCT	$.		12	punct		SpacesAfter=\n\n	pid:6.81.1.1.
+</s>													
+<s id="7">													
+Das	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	1	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	10	nsubj:pass			pid:7.81.1.1.
+wird	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	aux:pass			pid:7.81.1.1.
+ja	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	3	ja	ADV	ADV		10	advmod			pid:7.81.1.1.
+zur	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	4-5									pid:7.81.1.1.
+zu	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	4	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	9	case			pid:7.81.1.1.
+der	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:7.81.1.1.
+genüge	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	6	genüg	ADJ	NN	Case=Dat|Gender=Fem|Number=Sing	9	amod			pid:7.81.1.1.
+in	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	7	in	ADP	APPR		9	case			pid:7.81.1.1.
+der	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:7.81.1.1.
+Öffentlichkeit	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	9	Öffentlichkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	10	obl			pid:7.81.1.1.
+getan	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	10	tun	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:7.81.1.1.
+.	4	7	Das wird ja zur genüge in der Öffentlichkeit getan.	11	.	PUNCT	$.		10	punct			pid:7.81.1.1.
+</s>													
+<s id="8">													
+Aber	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	1	aber	CCONJ	KON		5	cc			pid:8.81.1.1.
+in	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	2	in	ADP	APPR		4	case			pid:8.81.1.1.
+der	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	3	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:8.81.1.1.
+Regel	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	4	Regel	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	5	obl			pid:8.81.1.1.
+gehen	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	5	gehen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:8.81.1.1.
+die	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	6	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	7	det			pid:8.81.1.1.
+Leute	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	7	Leute	NOUN	NN	Case=Nom|Number=Plur	5	nsubj			pid:8.81.1.1.
+ja	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	8	ja	ADV	ADV		5	advmod			pid:8.81.1.1.
+auch	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	9	auch	ADV	ADV		10	advmod			pid:8.81.1.1.
+nicht	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	10	nicht	PART	CARD	NumType=Card	11	advmod			pid:8.81.1.1.
+damit	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	11	damit	ADV	PAV		12	advmod			pid:8.81.1.1.
+hausieren	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	12	hausieren	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	15	xcomp			pid:8.81.1.1.
+das	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	13	der	DET	KOUS	Typo=Yes	14	det			pid:8.81.1.1.
+Sie	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	14	Sie|sie	PRON	PPER	Case=Nom|Number=Plur|Person=3|PronType=Prs	12	nsubj			pid:8.81.1.1.
+geschlagen	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	15	schlagen	VERB	VVPP	VerbForm=Part	5	conj			pid:8.81.1.1.
+werden	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	16	werden	AUX	NE	Case=Acc|Number=Plur	15	aux:pass			pid:8.81.1.1.
+oder	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	17	oder	CCONJ	XY		21	cc			pid:8.81.1.1.
+ihren	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	18	ihr	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	19	det:poss			pid:8.81.1.1.
+Partner	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	19	Partner	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	21	iobj			pid:8.81.1.1.
+Gewalt	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	20	Gewalt	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	21	obj			pid:8.81.1.1.
+zufügen	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	21	zufügen	VERB	VVFIN	Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	15	conj		SpaceAfter=No	pid:8.81.1.1.
+.	4	8	Aber in der Regel gehen die Leute ja auch nicht damit hausieren das Sie geschlagen werden oder ihren Partner Gewalt zufügen.	22	.	PUNCT	$.		15	punct		SpacesAfter=\n\n	pid:8.81.1.1.
+</s>													
+<s id="9">													
+Freunde	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	1	Freund	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	11	nsubj			pid:9.81.1.1.
+und	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	2	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	3	cc			pid:9.81.1.1.
+Verwandte	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	3	Verwandte|Verwandter	NOUN	NN	Case=Acc|Number=Plur	1	conj			pid:9.81.1.1.
+können	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	4	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	11	aux			pid:9.81.1.1.
+sich	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	5	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	11	obj			pid:9.81.1.1.
+in	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	6	in	ADP	APPR		8	case			pid:9.81.1.1.
+der	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	8	det			pid:9.81.1.1.
+Regel	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	8	Regel	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	11	obl			pid:9.81.1.1.
+auch	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	9	auch	ADV	ADV		11	advmod			pid:9.81.1.1.
+nicht	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	10	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	advmod			pid:9.81.1.1.
+vorstellen	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	11	vorstellen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:9.81.1.1.
+,	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	12	,	PUNCT	$,		16	punct			pid:9.81.1.1.
+das	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	13	der	PRON	PRELS	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	16	nsubj			pid:9.81.1.1.
+der	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	14	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	15	det			pid:9.81.1.1.
+Partner	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	15	Partner	NOUN	NN	Case=Gen|Gender=Masc|Number=Plur	16	iobj			pid:9.81.1.1.
+gewalttätig	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	16	gewalttätig	ADJ	ADJD		11	acl			pid:9.81.1.1.
+ist	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	17	sein	AUX	NN	Case=Gen|Gender=Masc|Number=Plur	16	cop		SpaceAfter=No	pid:9.81.1.1.
+.	5	9	Freunde und Verwandte können sich in der Regel auch nicht vorstellen, das der Partner gewalttätig ist.	18	.	PUNCT	$.		11	punct			pid:9.81.1.1.
+</s>													
+<s id="10">													
+Donald	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	1	Donald	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	6	dep			pid:10.81.1.1.
+Trump	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	2	Trump	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	1	flat			pid:10.81.1.1.
+wegen	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	3	wegen	ADP	NN	Case=Nom|Gender=Neut|Number=Sing	5	case			pid:10.81.1.1.
+sexueller	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	4	sexuell	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	5	amod			pid:10.81.1.1.
+Nötigung	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	5	Nötigung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	6	obl			pid:10.81.1.1.
+verurteilt	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	6	verurteilen	VERB	VVPP	VerbForm=Part	0	root			pid:10.81.1.1.
+und	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	7	und	CCONJ	NE	Foreign=Yes	13	cc			pid:10.81.1.1.
+Millionen	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	8	Million	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	13	nsubj			pid:10.81.1.1.
+von	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	9	von	ADP	FM	Foreign=Yes	10	case			pid:10.81.1.1.
+Christen	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	10	Christ	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	8	nmod			pid:10.81.1.1.
+haben	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	11	haben	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	13	aux			pid:10.81.1.1.
+ihn	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	12	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	13	obj			pid:10.81.1.1.
+gewählt	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	13	wählen	VERB	VVPP	VerbForm=Part	6	conj		SpaceAfter=No	pid:10.81.1.1.
+.	5	10	Donald Trump wegen sexueller Nötigung verurteilt und Millionen von Christen haben ihn gewählt.	14	.	PUNCT	$.		6	punct		SpacesAfter=\n	pid:10.81.1.1.
+</s>													
+</text>													
+</doc>													

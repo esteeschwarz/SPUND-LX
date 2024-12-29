@@ -1,0 +1,37 @@
+<doc id="18.1.1">													
+<text id="18.1.1">													
+<s id="1">													
+[	1	1	[https://www.youtube.com/watch?v=66CDGzjLBtY](https://www.youtube.com/watch?v=66CDGzjLBtY)	1	[	PUNCT	$(		2	punct		SpaceAfter=No	pid:1.18.1.1.
+https://www.youtube.com/watch?v=66CDGzjLBtY	1	1	[https://www.youtube.com/watch?v=66CDGzjLBtY](https://www.youtube.com/watch?v=66CDGzjLBtY)	2	https://www.youtube.com/watch?v=66CDGzjLBtY	PROPN	NE	Case=Acc|Number=Sing	0	root		SpaceAfter=No	pid:1.18.1.1.
+](	1	1	[https://www.youtube.com/watch?v=66CDGzjLBtY](https://www.youtube.com/watch?v=66CDGzjLBtY)	3	](	PUNCT	$.		2	punct		SpaceAfter=No	pid:1.18.1.1.
+https://www.youtube.com/watch?v=66CDGzjLBtY	1	1	[https://www.youtube.com/watch?v=66CDGzjLBtY](https://www.youtube.com/watch?v=66CDGzjLBtY)	4	https://www.youtube.com/watch?v=66CDGzjLBtY	PROPN	NE	Case=Acc|Number=Sing	2	flat		SpaceAfter=No	pid:1.18.1.1.
+)	1	1	[https://www.youtube.com/watch?v=66CDGzjLBtY](https://www.youtube.com/watch?v=66CDGzjLBtY)	5	)	PUNCT	$(		2	punct		SpacesAfter=\n\n	pid:1.18.1.1.
+</s>													
+<s id="2">													
+Wir	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	1	wir	PRON	ADJD		2	nsubj			pid:2.18.1.1.
+brauchen	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	2	brauchen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:2.18.1.1.
+nicht	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	3	nicht	PART	CARD	NumType=Card	2	advmod			pid:2.18.1.1.
+allzu	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	4	allzu	ADV	ADV		2	advmod			pid:2.18.1.1.
+sehr	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	5	sehr	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	7	advmod			pid:2.18.1.1.
+zu	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	6	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	7	mark			pid:2.18.1.1.
+reagieren	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	7	reagieren	VERB	VVINF	VerbForm=Inf	2	xcomp		SpaceAfter=No	pid:2.18.1.1.
+,	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	8	,	PUNCT	$,		12	punct			pid:2.18.1.1.
+wir	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	9	wir	PRON	ADJD		12	nsubj			pid:2.18.1.1.
+sind	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	10	sein	AUX	ADJD		12	cop			pid:2.18.1.1.
+bereits	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	11	bereits	ADV	ADV		12	advmod			pid:2.18.1.1.
+dabei	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	12	dabei	ADV	PAV		2	acl		SpaceAfter=No	pid:2.18.1.1.
+,	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	13	,	PUNCT	$,		16	punct			pid:2.18.1.1.
+Russland	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	14	Rußland	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	16	obj			pid:2.18.1.1.
+zu	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	15	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	16	mark			pid:2.18.1.1.
+zerstören	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	16	zerstören	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	12	xcomp		SpaceAfter=No	pid:2.18.1.1.
+,	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	17	,	PUNCT	$,		23	punct			pid:2.18.1.1.
+ohne	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	18	ohne	ADP	NN	Case=Acc|Gender=Masc|Number=Sing	23	case			pid:2.18.1.1.
+einen	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	19	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	21	det			pid:2.18.1.1.
+aktiven	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	20	aktiv	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	21	amod			pid:2.18.1.1.
+Krieg	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	21	Krieg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	23	obj			pid:2.18.1.1.
+zu	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	22	zu	PART	NN	Case=Acc|Gender=Masc|Number=Plur	23	mark			pid:2.18.1.1.
+führen	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	23	führen	VERB	VVINF	VerbForm=Inf	16	obl		SpaceAfter=No	pid:2.18.1.1.
+.	2	2	Wir brauchen nicht allzu sehr zu reagieren, wir sind bereits dabei, Russland zu zerstören, ohne einen aktiven Krieg zu führen.	24	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:2.18.1.1.
+</s>													
+</text>													
+</doc>													

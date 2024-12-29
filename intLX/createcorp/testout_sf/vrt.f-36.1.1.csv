@@ -1,0 +1,21 @@
+<doc id="36.1.1">													
+<text id="36.1.1">													
+<s id="1">													
+Das	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	6	det			pid:1.36.1.1.
+in	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	2	in	ADP	APPR		3	case			pid:1.36.1.1.
+Deutschland	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	3	Deutschland	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	6	nmod			pid:1.36.1.1.
+die	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	4	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	6	det			pid:1.36.1.1.
+meisten	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	5	meist	DET	NN	Case=Dat|Gender=Masc|Number=Sing	6	amod			pid:1.36.1.1.
+Opfer	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	6	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	13	nsubj			pid:1.36.1.1.
+und	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	7	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	9	cc			pid:1.36.1.1.
+Täter	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	8	Täter	NOUN	ADJA		9	nsubj			pid:1.36.1.1.
+deutsch	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	9	deutsch	ADJ	ADJD		6	conj			pid:1.36.1.1.
+sind	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	10	sein	AUX	ADJD		9	cop			pid:1.36.1.1.
+sollte	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	11	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	13	aux			pid:1.36.1.1.
+die	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	12	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	13	det			pid:1.36.1.1.
+Mindestvoraussetzungen	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	13	Mindestvoraussetzung	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	0	root			pid:1.36.1.1.
+sein	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	14	sein	AUX	VAINF	VerbForm=Inf	13	cop		SpaceAfter=No	pid:1.36.1.1.
+.	1	1	Das in Deutschland die meisten Opfer und Täter deutsch sind sollte die Mindestvoraussetzungen sein.	15	.	PUNCT	$.		13	punct		SpacesAfter=\n	pid:1.36.1.1.
+</s>													
+</text>													
+</doc>													

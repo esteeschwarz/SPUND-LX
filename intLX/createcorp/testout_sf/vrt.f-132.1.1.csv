@@ -1,0 +1,19 @@
+<doc id="132.1.1">													
+<text id="132.1.1">													
+<s id="1">													
+Wenn	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	1	wenn	SCONJ	KOUS		4	mark			pid:1.132.1.1.
+ich	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:1.132.1.1.
+eines	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	3	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	4	obj			pid:1.132.1.1.
+gelernt	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	4	lernen	VERB	VVPP	VerbForm=Part	10	advcl			pid:1.132.1.1.
+habe	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	5	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	aux		SpaceAfter=No	pid:1.132.1.1.
+:	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	6	:	PUNCT	$.		4	punct			pid:1.132.1.1.
+Bewusstlose	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	7	Bewusstlose	NOUN	ADJD		10	nsubj			pid:1.132.1.1.
+sind	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	8	sein	AUX	ADJD		10	cop			pid:1.132.1.1.
+entweder	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	9	entweder	CCONJ	KON		10	cc			pid:1.132.1.1.
+wach	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	10	wach	ADJ	ADJD		0	root			pid:1.132.1.1.
+oder	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	11	oder	CCONJ	XY		12	cc			pid:1.132.1.1.
+tot	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	12	tot	ADJ	ADJD		10	conj		SpaceAfter=No	pid:1.132.1.1.
+.	1	1	Wenn ich eines gelernt habe: Bewusstlose sind entweder wach oder tot.	13	.	PUNCT	$.		10	punct		SpacesAfter=\n	pid:1.132.1.1.
+</s>													
+</text>													
+</doc>													

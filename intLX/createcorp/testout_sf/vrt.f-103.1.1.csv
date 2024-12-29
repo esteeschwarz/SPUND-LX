@@ -1,0 +1,234 @@
+<doc id="103.1.1">													
+<text id="103.1.1">													
+<s id="1">													
+&gt	1	1	&gt;	1	&gen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:1.103.1.1.
+;	1	1	&gt;	2	;	PUNCT	$.		1	punct		SpacesAfter=  	pid:1.103.1.1.
+</s>													
+<s id="2">													
+Stalking	1	2	Stalking sollte viel härter bestraft	1	Stalking	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	5	nsubj			pid:2.103.1.1.
+sollte	1	2	Stalking sollte viel härter bestraft	2	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	aux			pid:2.103.1.1.
+viel	1	2	Stalking sollte viel härter bestraft	3	viel	ADV	NE	Foreign=Yes	5	advmod			pid:2.103.1.1.
+härter	1	2	Stalking sollte viel härter bestraft	4	hart	ADJ	ADJD		5	advmod			pid:2.103.1.1.
+bestraft	1	2	Stalking sollte viel härter bestraft	5	bestrafen	VERB	VVPP	VerbForm=Part	0	root		SpacesAfter=\n\n\n	pid:2.103.1.1.
+</s>													
+<s id="3">													
+Definitiv	2	3	Definitiv.	1	definitiv	ADJ	ADJD		0	root		SpaceAfter=No	pid:3.103.1.1.
+.	2	3	Definitiv.	2	.	PUNCT	$.		1	punct			pid:3.103.1.1.
+</s>													
+<s id="4">													
+Das	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	1	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	5	nsubj			pid:4.103.1.1.
+wird	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	aux:pass			pid:4.103.1.1.
+so	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	3	so	ADV	NE	Case=Dat|Number=Plur	5	advmod			pid:4.103.1.1.
+sehr	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	4	sehr	ADV	NN	Case=Dat|Gender=Fem|Number=Plur	5	advmod			pid:4.103.1.1.
+unterschätzt	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	5	unterschätzen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:4.103.1.1.
+,	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	6	,	PUNCT	$,		10	punct			pid:4.103.1.1.
+was	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	7	was	PRON	NE	Foreign=Yes	10	nsubj:pass			pid:4.103.1.1.
+den	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	9	det			pid:4.103.1.1.
+Opfern	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	9	Opfer	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	10	iobj			pid:4.103.1.1.
+angetan	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	10	angetan	VERB	VVPP	VerbForm=Part	5	acl			pid:4.103.1.1.
+wird	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	11	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	10	aux:pass		SpaceAfter=No	pid:4.103.1.1.
+.	2	4	Das wird so sehr unterschätzt, was den Opfern angetan wird.	12	.	PUNCT	$.		5	punct			pid:4.103.1.1.
+</s>													
+<s id="5">													
+Und	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	1	und	CCONJ	ADJD		3	cc			pid:5.103.1.1.
+ich	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:5.103.1.1.
+beziehe	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	3	beziehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:5.103.1.1.
+hier	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	4	hier	ADV	ADV		3	advmod			pid:5.103.1.1.
+auch	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	5	auch	ADV	ADV		3	advmod			pid:5.103.1.1.
+die	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	6	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	8	det			pid:5.103.1.1.
+männlichen	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	7	männlich	ADJ	CARD	NumType=Card	8	amod			pid:5.103.1.1.
+Opfer	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	8	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	3	obj			pid:5.103.1.1.
+mit	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	9	mit	ADP	ADJA	Case=Nom|Gender=Neut|Number=Plur	8	case			pid:5.103.1.1.
+rein	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	10	rein	ADJ	VVPP	VerbForm=Part	3	advmod		SpaceAfter=No	pid:5.103.1.1.
+.	2	5	Und ich beziehe hier auch die männlichen Opfer mit rein.	11	.	PUNCT	$.		3	punct		SpacesAfter= \n\n\n	pid:5.103.1.1.
+</s>													
+<s id="6">													
+Deshalb	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	1	deshalb	ADV	PAV		6	advmod			pid:6.103.1.1.
+ist	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	cop			pid:6.103.1.1.
+es	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	6	expl			pid:6.103.1.1.
+ganz	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	4	ganz	ADJ	ADV		5	advmod			pid:6.103.1.1.
+arg	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	5	arg	ADJ	ADJD		6	advmod			pid:6.103.1.1.
+wichtig	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	6	wichtig	ADJ	NE	Case=Dat|Gender=Neut|Number=Sing	0	root			pid:6.103.1.1.
+diesen	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	7	dies	PRON	PDAT	Case=Dat|Gender=Neut|Number=Plur|PronType=Dem	8	det			pid:6.103.1.1.
+Aspekt	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	8	Aspekt	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	10	obj			pid:6.103.1.1.
+mit	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	9	mit	ADP	$(		10	mark			pid:6.103.1.1.
+reinzunehmen	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	10	reinzunehmen	VERB	VVINF	VerbForm=Inf	6	csubj		SpaceAfter=No	pid:6.103.1.1.
+.	3	6	Deshalb ist es ganz arg wichtig diesen Aspekt mit reinzunehmen.	11	.	PUNCT	$.		6	punct			pid:6.103.1.1.
+</s>													
+<s id="7">													
+Das	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	2	det			pid:7.103.1.1.
+Risiko	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	2	Risiko	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	3	nsubj			pid:7.103.1.1.
+getötet	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	3	töten	VERB	VVPP	VerbForm=Part	0	root			pid:7.103.1.1.
+zu	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	4	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	3	mark			pid:7.103.1.1.
+werden	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	5	werden	AUX	NE	Case=Nom|Gender=Neut|Number=Sing	3	aux:pass			pid:7.103.1.1.
+ist	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	6	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	aux			pid:7.103.1.1.
+bei	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	7	bei	ADP	APPR		9	case			pid:7.103.1.1.
+einer	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	8	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:7.103.1.1.
+Trennung	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	9	Trennung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	20	obl			pid:7.103.1.1.
+am	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	10-11									pid:7.103.1.1.
+an	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	10	an	ADP	APPR		14	case			pid:7.103.1.1.
+dem	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	11	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det			pid:7.103.1.1.
+größten	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	12	groß	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	14	compound			pid:7.103.1.1.
+-	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	13	-	PUNCT	$(		12	punct			pid:7.103.1.1.
+also	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	14	also	ADV	ADV		20	advmod			pid:7.103.1.1.
+wenn	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	15	wenn	SCONJ	VVFIN		20	mark			pid:7.103.1.1.
+die	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	16	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	17	det			pid:7.103.1.1.
+Frau	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	17	Frau	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	20	nsubj			pid:7.103.1.1.
+"	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	18	"	PUNCT	$(		17	punct		SpaceAfter=No	pid:7.103.1.1.
+einfach	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	19	einfach	ADV	ADV		20	advmod			pid:7.103.1.1.
+geht	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	20	gehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	acl		SpaceAfter=No	pid:7.103.1.1.
+"	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	21	"	PUNCT	$(		3	punct		SpaceAfter=No	pid:7.103.1.1.
+.	3	7	Das Risiko getötet zu werden ist bei einer Trennung am größten - also wenn die Frau "einfach geht".	22	.	PUNCT	$.		3	punct		SpacesAfter= \n\n\n	pid:7.103.1.1.
+</s>													
+<s id="8">													
+Die	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:8.103.1.1.
+Gesellschaft	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	2	Gesellschaft	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	3	nsubj			pid:8.103.1.1.
+hat	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	3	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	26	aux			pid:8.103.1.1.
+indes	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	4	indes	ADV	ADV		3	advmod			pid:8.103.1.1.
+bei	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	5	bei	ADP	APPR		7	case			pid:8.103.1.1.
+den	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	6	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	7	det			pid:8.103.1.1.
+Männern	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	7	Mann	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	3	obl			pid:8.103.1.1.
+versagt	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	8	versagen	ADJ	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	compound			pid:8.103.1.1.
+-	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	9	-	PUNCT	$(		8	punct			pid:8.103.1.1.
+Bildung	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	10	Bildung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	26	obj			pid:8.103.1.1.
+in	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	11	in	ADP	APPR		13	case			pid:8.103.1.1.
+der	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det			pid:8.103.1.1.
+Schule	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	13	Schule	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	26	obl			pid:8.103.1.1.
+zum	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	14-15									pid:8.103.1.1.
+zu	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	14	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	16	case			pid:8.103.1.1.
+dem	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	15	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	16	det			pid:8.103.1.1.
+Thema	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	16	Thema	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	26	obl			pid:8.103.1.1.
+Gleichberechtigung	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	17	Gleichberechtigung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	26	obj			pid:8.103.1.1.
+und	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	18	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	19	cc			pid:8.103.1.1.
+Menschenbild	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	19	Menschenbild	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	21	conj			pid:8.103.1.1.
+(	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	20	(	PUNCT	$(		21	punct		SpaceAfter=No	pid:8.103.1.1.
+Ethik	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	21	Ethik	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	26	nsubj:pass			pid:8.103.1.1.
+an	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	22	an	ADP	APPR		23	case			pid:8.103.1.1.
+Grundschulen	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	23	Grundschule	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	21	nmod			pid:8.103.1.1.
+wurde	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	24	werden	AUX	ADV		26	aux:pass			pid:8.103.1.1.
+irgendwo	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	25	irgendwo	ADV	ADV		26	advmod			pid:8.103.1.1.
+gestrichen	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	26	strichen	VERB	ADJA	Case=Acc|Gender=Masc|Number=Sing	27	conj		SpaceAfter=No	pid:8.103.1.1.
+,	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	27	,	PUNCT	$,		30	punct			pid:8.103.1.1.
+habe	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	28	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	30	aux			pid:8.103.1.1.
+ich	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	29	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	30	nsubj			pid:8.103.1.1.
+gelesen	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	30	lesen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:8.103.1.1.
+,	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	31	,	PUNCT	$,		39	punct			pid:8.103.1.1.
+es	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	32	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	39	expl			pid:8.103.1.1.
+wurde	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	33	werden	AUX	ADV		39	aux:pass			pid:8.103.1.1.
+jahrelange	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	34	jahrelang	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	38	amod			pid:8.103.1.1.
+dagegen	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	35	dagegen	ADV	PAV		36	advmod			pid:8.103.1.1.
+gekämpft	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	36	kämpfen	ADJ	VVPP	VerbForm=Part	38	amod			pid:8.103.1.1.
+Islamischen	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	37	islamisch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	38	amod			pid:8.103.1.1.
+Religionsunterricht	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	38	Religionsunterricht	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	39	nsubj:pass			pid:8.103.1.1.
+einzuführen	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	39	einführen	VERB	VVIZU	VerbForm=Inf	30	ccomp			pid:8.103.1.1.
+uvm	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	40	uvm	ADV	NN	Case=Nom|Gender=Neut|Number=Sing	39	advmod		SpaceAfter=No	pid:8.103.1.1.
+)	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	41	)	PUNCT	$(		30	punct		SpaceAfter=No	pid:8.103.1.1.
+.	4	8	Die Gesellschaft hat indes bei den Männern versagt - Bildung in der Schule zum Thema Gleichberechtigung und Menschenbild (Ethik an Grundschulen wurde irgendwo gestrichen, habe ich gelesen, es wurde jahrelange dagegen gekämpft Islamischen Religionsunterricht einzuführen uvm).	42	.	PUNCT	$.		30	punct			pid:8.103.1.1.
+</s>													
+<s id="9">													
+Man	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	1	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	8	nsubj			pid:9.103.1.1.
+muss	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	2	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	aux			pid:9.103.1.1.
+auch	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	3	auch	ADV	ADV		8	advmod			pid:9.103.1.1.
+vor	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	4	vor	ADP	NN	Case=Nom|Gender=Neut|Number=Plur	5	case			pid:9.103.1.1.
+allem	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	5	alle	PRON	PIS	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	8	nmod			pid:9.103.1.1.
+Jungen	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	6	Junge	NOUN	ADJA	Case=Gen|Gender=Masc|Number=Sing	8	nsubj			pid:9.103.1.1.
+dafür	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	7	dafür	ADV	PAV		8	advmod			pid:9.103.1.1.
+sensibilisieren	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	8	sensibilisi	ADJ	VVINF	VerbForm=Inf	0	root			pid:9.103.1.1.
+und	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	9	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	11	cc			pid:9.103.1.1.
+dahingehend	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	10	dahingehend	ADJ	ADJD		11	advmod			pid:9.103.1.1.
+erziehen	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	11	erziehen	ADJ	VVINF	VerbForm=Inf	16	conj			pid:9.103.1.1.
+-	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	12	-	PUNCT	$(		11	punct			pid:9.103.1.1.
+nicht	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	13	nicht	PART	XY	NumType=Card	15	advmod			pid:9.103.1.1.
+immer	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	14	immer	ADV	ADV		15	advmod			pid:9.103.1.1.
+darauf	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	15	darauf	ADV	PAV		16	advmod			pid:9.103.1.1.
+schieben	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	16	schieben	VERB	VVINF	VerbForm=Inf	8	conj			pid:9.103.1.1.
+"	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	17	"	PUNCT	$(		21	punct		SpaceAfter=No	pid:9.103.1.1.
+dass	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	18	dass	SCONJ	KOUS		21	mark			pid:9.103.1.1.
+es	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	19	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	21	nsubj			pid:9.103.1.1.
+eben	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	20	eben	ADV	ADV		21	advmod			pid:9.103.1.1.
+Jungs	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	21	Jungs	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	16	ccomp			pid:9.103.1.1.
+sind	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	22	sein	AUX	ADJD		21	cop		SpaceAfter=No	pid:9.103.1.1.
+,	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	23	,	PUNCT	$,		27	punct			pid:9.103.1.1.
+die	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	24	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	27	nsubj			pid:9.103.1.1.
+sind	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	25	sein	AUX	ADJD		27	cop			pid:9.103.1.1.
+halt	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	26	halt	ADV	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	27	advmod			pid:9.103.1.1.
+so	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	27	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	21	acl		SpaceAfter=No	pid:9.103.1.1.
+"	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	28	"	PUNCT	$(		21	punct		SpaceAfter=No	pid:9.103.1.1.
+.	4	9	Man muss auch vor allem Jungen dafür sensibilisieren und dahingehend erziehen - nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	29	.	PUNCT	$.		8	punct		SpacesAfter= \n\n\n	pid:9.103.1.1.
+</s>													
+<s id="10">													
+Und	5	10	Und hier braucht es gute männliche Beispiele.	1	und	CCONJ	ADJD		3	cc			pid:10.103.1.1.
+hier	5	10	Und hier braucht es gute männliche Beispiele.	2	hier	ADV	ADV		3	advmod			pid:10.103.1.1.
+braucht	5	10	Und hier braucht es gute männliche Beispiele.	3	brauchen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:10.103.1.1.
+es	5	10	Und hier braucht es gute männliche Beispiele.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	nsubj			pid:10.103.1.1.
+gute	5	10	Und hier braucht es gute männliche Beispiele.	5	gut	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	7	amod			pid:10.103.1.1.
+männliche	5	10	Und hier braucht es gute männliche Beispiele.	6	männlich	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	7	amod			pid:10.103.1.1.
+Beispiele	5	10	Und hier braucht es gute männliche Beispiele.	7	Beispiele	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	3	obj		SpaceAfter=No	pid:10.103.1.1.
+.	5	10	Und hier braucht es gute männliche Beispiele.	8	.	PUNCT	$.		3	punct			pid:10.103.1.1.
+</s>													
+<s id="11">													
+Mehr	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	1	mehr	PRON	PIS	Definite=Ind|PronType=Ind	2	det			pid:11.103.1.1.
+Grundschullehrer	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	2	Grundschullehrer	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	0	root		SpaceAfter=No	pid:11.103.1.1.
+,	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	3	,	PUNCT	$,		4	punct			pid:11.103.1.1.
+Pädagogen	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	4	Pädagoge	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	2	conj		SpaceAfter=No	pid:11.103.1.1.
+,	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	5	,	PUNCT	$,		10	punct			pid:11.103.1.1.
+etc.	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	6	etc.	X	ADV		10	dep			pid:11.103.1.1.
+aus	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	7	aus	ADP	APPR		10	case			pid:11.103.1.1.
+allen	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	8	alle	PRON	PIAT	Case=Dat|Definite=Ind|Gender=Fem|Number=Plur|PronType=Ind	10	det			pid:11.103.1.1.
+ethnischen	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	9	ethnisch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	10	amod			pid:11.103.1.1.
+Herkünften	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	10	Herkünft	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	2	conj		SpaceAfter=No	pid:11.103.1.1.
+.	5	11	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	11	.	PUNCT	$.		2	punct			pid:11.103.1.1.
+</s>													
+<s id="12">													
+Jugendzentren	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	1	Jugendzentrum	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	9	dep			pid:12.103.1.1.
+mit	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	2	mit	ADP	$(		3	case			pid:12.103.1.1.
+Ansprechpartnern	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	3	Ansprechpartner	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	nmod			pid:12.103.1.1.
+und	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	4	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	6	cc			pid:12.103.1.1.
+einem	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	5	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	6	det			pid:12.103.1.1.
+Ort	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	6	Ort	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	3	conj			pid:12.103.1.1.
+nur	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	7	nur	ADV	CARD		9	advmod			pid:12.103.1.1.
+für	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	8	für	ADP	APPR		9	case			pid:12.103.1.1.
+Jugendliche	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	9	Jugendliche	NOUN	NN	Case=Acc|Number=Plur	0	root		SpaceAfter=No	pid:12.103.1.1.
+.	5	12	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	10	.	PUNCT	$.		9	punct			pid:12.103.1.1.
+</s>													
+<s id="13">													
+Es	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	7	expl			pid:13.103.1.1.
+wird	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	7	aux:pass			pid:13.103.1.1.
+aber	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	3	aber	ADV	ADV		7	advmod			pid:13.103.1.1.
+Passenderweise	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	4	Passenderweise	ADV	ADV		7	advmod			pid:13.103.1.1.
+genau	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	5	genau	ADJ	ADV		6	advmod			pid:13.103.1.1.
+hier	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	6	hier	ADV	ADV		7	advmod			pid:13.103.1.1.
+gespart	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	7	sparen	ADJ	VVPP	VerbForm=Part	0	root			pid:13.103.1.1.
+und	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	8	und	CCONJ	NE	Foreign=Yes	10	cc			pid:13.103.1.1.
+nicht	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	9	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	advmod			pid:13.103.1.1.
+gefördert	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	10	fördern	VERB	VVPP	VerbForm=Part	7	conj		SpaceAfter=No	pid:13.103.1.1.
+.	5	13	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	11	.	PUNCT	$.		7	punct		SpacesAfter= \n\n\n\n\n\n\n	pid:13.103.1.1.
+</s>													
+<s id="14">													
+Tut	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	1	tut	PROPN	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	nsubj			pid:14.103.1.1.
+mir	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	2	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	3	iobj			pid:14.103.1.1.
+Leid	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	3	Leid	PROPN	NN	Case=Dat|Gender=Masc|Number=Sing	0	root			pid:14.103.1.1.
+für	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	4	für	ADP	APPR		5	case			pid:14.103.1.1.
+den	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	5	d	PRON	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	nmod			pid:14.103.1.1.
+wall	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	6	wall	DET	NN	Case=Acc|Gender=Masc|Number=Sing	7	nsubj			pid:14.103.1.1.
+of	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	7	of	ADJ	ADJD		3	flat			pid:14.103.1.1.
+Text	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	8	Text	NOUN	FM	Foreign=Yes	7	conj		SpaceAfter=No	pid:14.103.1.1.
+,	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	9	,	PUNCT	$,		11	punct			pid:14.103.1.1.
+vielleicht	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	10	vielleicht	NOUN	FM	Foreign=Yes	11	nsubj			pid:14.103.1.1.
+liest	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	11	lesen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	acl			pid:14.103.1.1.
+das	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	12	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	14	det			pid:14.103.1.1.
+noch	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	13	noch	ADV	CARD	NumType=Card	14	advmod			pid:14.103.1.1.
+jemand	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	14	jemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	11	nsubj			pid:14.103.1.1.
+anders	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	15	anders	ADV	ADV		11	advmod			pid:14.103.1.1.
+und	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	16	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	17	cc			pid:14.103.1.1.
+hat	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	17	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	conj			pid:14.103.1.1.
+dann	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	18	dann	ADV	ADV		19	advmod			pid:14.103.1.1.
+was	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	19	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	17	obj			pid:14.103.1.1.
+zum	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	20-21									pid:14.103.1.1.
+zu	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	20	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	22	case			pid:14.103.1.1.
+dem	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	21	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	22	det			pid:14.103.1.1.
+Nachdenken	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	22	Nachdenken	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	19	nmod			pid:14.103.1.1.
+:D	6	14	Tut mir Leid für den wall of Text, vielleicht liest das noch jemand anders und hat dann was zum Nachdenken :D	23	:D	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	22	appos		SpacesAfter= \n	pid:14.103.1.1.
+</s>													
+</text>													
+</doc>													

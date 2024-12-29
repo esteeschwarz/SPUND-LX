@@ -1,0 +1,14 @@
+<doc id="72.1.1">													
+<text id="72.1.1">													
+<s id="1">													
+Lassen	1	1	Lassen wir es einfach gut sein :)	1	lassen	VERB	NN	Case=Nom|Gender=Fem|Number=Plur	0	root			pid:1.72.1.1.
+wir	1	1	Lassen wir es einfach gut sein :)	2	wir	PRON	ADJD		1	nsubj			pid:1.72.1.1.
+es	1	1	Lassen wir es einfach gut sein :)	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	1	obj			pid:1.72.1.1.
+einfach	1	1	Lassen wir es einfach gut sein :)	4	einfach	ADV	ADV		1	advmod			pid:1.72.1.1.
+gut	1	1	Lassen wir es einfach gut sein :)	5	gut	ADJ	ADJD		6	advmod			pid:1.72.1.1.
+sein	1	1	Lassen wir es einfach gut sein :)	6	sein	DET	VAINF	VerbForm=Inf	1	xcomp			pid:1.72.1.1.
+:	1	1	Lassen wir es einfach gut sein :)	7	:	PUNCT	$.		1	punct		SpaceAfter=No	pid:1.72.1.1.
+)	1	1	Lassen wir es einfach gut sein :)	8	)	PUNCT	$(		1	punct		SpacesAfter=\n	pid:1.72.1.1.
+</s>													
+</text>													
+</doc>													

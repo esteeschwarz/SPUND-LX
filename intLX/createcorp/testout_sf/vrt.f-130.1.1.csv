@@ -1,0 +1,38 @@
+<doc id="130.1.1">													
+<text id="130.1.1">													
+<s id="1">													
+Natürlich	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	1	natürlich	ADJ	ADJD		5	amod			pid:1.130.1.1.
+ist	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	cop			pid:1.130.1.1.
+das	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	3	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	5	nsubj			pid:1.130.1.1.
+ein	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	4	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	5	det			pid:1.130.1.1.
+Problem	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	5	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	0	root			pid:1.130.1.1.
+und	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	6	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	9	cc			pid:1.130.1.1.
+muss	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	7	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux			pid:1.130.1.1.
+auch	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	8	auch	ADV	ADV		9	advmod			pid:1.130.1.1.
+angesprochen	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	9	ansprechen	VERB	VVPP	VerbForm=Part	5	conj		SpaceAfter=No	pid:1.130.1.1.
+.	1	1	Natürlich ist das ein Problem und muss auch angesprochen.	10	.	PUNCT	$.		5	punct			pid:1.130.1.1.
+</s>													
+<s id="2">													
+Aber	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	1	aber	CCONJ	KON		5	cc			pid:2.130.1.1.
+der	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	2	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det			pid:2.130.1.1.
+Kommentar	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	3	Kommentar	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	5	nsubj			pid:2.130.1.1.
+oben	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	4	oben	ADV	CARD	NumType=Card	5	advmod			pid:2.130.1.1.
+suggeriert	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	5	suggerieren	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:2.130.1.1.
+,	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	6	,	PUNCT	$,		13	punct			pid:2.130.1.1.
+dass	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	7	dass	SCONJ	KOUS		13	mark			pid:2.130.1.1.
+dieselben	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	8	dieselbe	PRON	PDS	Case=Acc|Gender=Masc|Number=Sing|PronType=Dem	9	det			pid:2.130.1.1.
+Leute	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	9	Leute	NOUN	NN	Case=Nom|Number=Plur	13	nsubj			pid:2.130.1.1.
+immer	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	10	immer	ADV	ADV		11	advmod			pid:2.130.1.1.
+wieder	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	11	wieder	ADV	NN	Case=Acc|Gender=Neut|Number=Plur	13	advmod			pid:2.130.1.1.
+Probleme	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	12	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	13	nsubj			pid:2.130.1.1.
+machen	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	13	machen	VERB	VVINF	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	5	ccomp			pid:2.130.1.1.
+würden	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	14	werden	AUX	NN	Foreign=Yes	13	aux		SpaceAfter=No	pid:2.130.1.1.
+,	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	15	,	PUNCT	$,		13	punct			pid:2.130.1.1.
+und	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	16	und	CCONJ	NE	Foreign=Yes	18	cc			pid:2.130.1.1.
+dafür	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	17	dafür	ADV	PAV		18	advmod			pid:2.130.1.1.
+gibt's	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	18	gibt's	X	PPER	Foreign=Yes	20	conj			pid:2.130.1.1.
+keine	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	19	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|Polarity=Neg|PronType=Neg	18	nmod			pid:2.130.1.1.
+Belege	1	2	Aber der Kommentar oben suggeriert, dass dieselben Leute immer wieder Probleme machen würden, und dafür gibt's keine Belege	20	Beleg	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	5	obj		SpacesAfter=\n	pid:2.130.1.1.
+</s>													
+</text>													
+</doc>													

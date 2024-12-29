@@ -1,0 +1,164 @@
+<doc id="104.1.1">													
+<text id="104.1.1">													
+<s id="1">													
+&gt	1	1	&gt;Definitiv.	1	&gen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:1.104.1.1.
+;Definitiv	1	1	&gt;Definitiv.	2	;Definitiv	PROPN	ADJD		1	nsubj		SpaceAfter=No	pid:1.104.1.1.
+.	1	1	&gt;Definitiv.	3	.	PUNCT	$.		1	punct			pid:1.104.1.1.
+</s>													
+<s id="2">													
+Das	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	1	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	5	nsubj			pid:2.104.1.1.
+wird	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	aux:pass			pid:2.104.1.1.
+so	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	3	so	ADV	NE	Case=Dat|Number=Plur	5	advmod			pid:2.104.1.1.
+sehr	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	4	sehr	ADV	NN	Case=Dat|Gender=Fem|Number=Plur	5	advmod			pid:2.104.1.1.
+unterschätzt	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	5	unterschätzen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:2.104.1.1.
+,	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	6	,	PUNCT	$,		10	punct			pid:2.104.1.1.
+was	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	7	was	PRON	NE	Foreign=Yes	10	nsubj:pass			pid:2.104.1.1.
+den	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	9	det			pid:2.104.1.1.
+Opfern	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	9	Opfer	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	10	iobj			pid:2.104.1.1.
+angetan	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	10	angetan	VERB	VVPP	VerbForm=Part	5	acl			pid:2.104.1.1.
+wird	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	11	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	10	aux:pass		SpaceAfter=No	pid:2.104.1.1.
+.	1	2	Das wird so sehr unterschätzt, was den Opfern angetan wird.	12	.	PUNCT	$.		5	punct			pid:2.104.1.1.
+</s>													
+<s id="3">													
+Und	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	1	und	CCONJ	ADJD		3	cc			pid:3.104.1.1.
+ich	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:3.104.1.1.
+beziehe	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	3	beziehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:3.104.1.1.
+hier	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	4	hier	ADV	ADV		3	advmod			pid:3.104.1.1.
+auch	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	5	auch	ADV	ADV		3	advmod			pid:3.104.1.1.
+die	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	6	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	8	det			pid:3.104.1.1.
+männlichen	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	7	männlich	ADJ	CARD	NumType=Card	8	amod			pid:3.104.1.1.
+Opfer	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	8	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	3	obj			pid:3.104.1.1.
+mit	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	9	mit	ADP	ADJA	Case=Nom|Gender=Neut|Number=Plur	8	case			pid:3.104.1.1.
+rein	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	10	rein	ADJ	VVPP	VerbForm=Part	3	advmod		SpaceAfter=No	pid:3.104.1.1.
+.	1	3	Und ich beziehe hier auch die männlichen Opfer mit rein.	11	.	PUNCT	$.		3	punct		SpacesAfter=\s\n\n	pid:3.104.1.1.
+</s>													
+<s id="4">													
+Ja	2	4	Ja ist geschlechtsunabhängig.	1	Ja	PROPN	PTKANT		3	nsubj			pid:4.104.1.1.
+ist	2	4	Ja ist geschlechtsunabhängig.	2	sein	AUX	ADJD		3	cop			pid:4.104.1.1.
+geschlechtsunabhängig	2	4	Ja ist geschlechtsunabhängig.	3	geschlechtsunabhängig	ADJ	ADJD		0	root		SpaceAfter=No	pid:4.104.1.1.
+.	2	4	Ja ist geschlechtsunabhängig.	4	.	PUNCT	$.		3	punct			pid:4.104.1.1.
+</s>													
+<s id="5">													
+Trifft	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	1	trifft	NOUN	VVPP	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	nsubj			pid:5.104.1.1.
+halt	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	2	halen	VERB	ADV		0	root			pid:5.104.1.1.
+Frauen	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	3	Frau	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	2	nsubj			pid:5.104.1.1.
+deutlich	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	4	deutlich	ADJ	ADJD		5	advmod			pid:5.104.1.1.
+häufiger	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	5	häufig	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	2	advmod			pid:5.104.1.1.
+(	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	6	(	PUNCT	$(		7	punct		SpaceAfter=No	pid:5.104.1.1.
+sage	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	7	sagen	VERB	NE	Case=Nom|Gender=Masc|Number=Sing	2	parataxis			pid:5.104.1.1.
+ich	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	8	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj			pid:5.104.1.1.
+als	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	9	als	ADP	KOKOM		10	case			pid:5.104.1.1.
+Mann	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	10	Mann	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	7	obl		SpaceAfter=No	pid:5.104.1.1.
+)	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	11	)	PUNCT	$(		7	punct		SpaceAfter=No	pid:5.104.1.1.
+.	2	5	Trifft halt Frauen deutlich häufiger (sage ich als Mann).	12	.	PUNCT	$.		2	punct		SpacesAfter=\n\n	pid:5.104.1.1.
+</s>													
+<s id="6">													
+&gt;	3	6	&gt;	1	&gt;	PUNCT	$.		0	root		SpaceAfter=No	pid:6.104.1.1.
+</s>													
+<s id="7">													
+nicht	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	1	nicht	PART	CARD	NumType=Card	3	advmod			pid:7.104.1.1.
+immer	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	2	immer	ADV	ADV		3	advmod			pid:7.104.1.1.
+darauf	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	3	darauf	ADV	PAV		4	advmod			pid:7.104.1.1.
+schieben	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	4	schieben	VERB	VVINF	VerbForm=Inf	0	root			pid:7.104.1.1.
+"	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	5	"	PUNCT	$(		9	punct		SpaceAfter=No	pid:7.104.1.1.
+dass	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	6	dass	SCONJ	KOUS		9	mark			pid:7.104.1.1.
+es	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	7	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	9	nsubj			pid:7.104.1.1.
+eben	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	8	eben	ADV	ADV		9	advmod			pid:7.104.1.1.
+Jungs	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	9	Jungs	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	4	ccomp			pid:7.104.1.1.
+sind	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	10	sein	AUX	ADJD		9	cop		SpaceAfter=No	pid:7.104.1.1.
+,	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	11	,	PUNCT	$,		15	punct			pid:7.104.1.1.
+die	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	12	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	15	nsubj			pid:7.104.1.1.
+sind	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	13	sein	AUX	ADJD		15	cop			pid:7.104.1.1.
+halt	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	14	halt	ADV	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	15	advmod			pid:7.104.1.1.
+so	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	15	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	9	acl		SpaceAfter=No	pid:7.104.1.1.
+"	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	16	"	PUNCT	$(		9	punct		SpaceAfter=No	pid:7.104.1.1.
+.	3	7	nicht immer darauf schieben "dass es eben Jungs sind, die sind halt so".	17	.	PUNCT	$.		4	punct		SpacesAfter=\s\n\n	pid:7.104.1.1.
+</s>													
+<s id="8">													
+100%	4	8	100%.	1	100%	X	NN	Case=Nom|Gender=Neut|Number=Plur	0	root		SpaceAfter=No	pid:8.104.1.1.
+.	4	8	100%.	2	.	PUNCT	$.		1	punct		SpacesAfter=\s\n\n	pid:8.104.1.1.
+</s>													
+<s id="9">													
+&gt;Und	5	9	&gt;Und hier braucht es gute männliche Beispiele.	1	&gt;und	CCONJ	ADJD		3	cc			pid:9.104.1.1.
+hier	5	9	&gt;Und hier braucht es gute männliche Beispiele.	2	hier	ADV	ADV		3	advmod			pid:9.104.1.1.
+braucht	5	9	&gt;Und hier braucht es gute männliche Beispiele.	3	brauchen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:9.104.1.1.
+es	5	9	&gt;Und hier braucht es gute männliche Beispiele.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	nsubj			pid:9.104.1.1.
+gute	5	9	&gt;Und hier braucht es gute männliche Beispiele.	5	gut	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	7	amod			pid:9.104.1.1.
+männliche	5	9	&gt;Und hier braucht es gute männliche Beispiele.	6	männlich	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	7	amod			pid:9.104.1.1.
+Beispiele	5	9	&gt;Und hier braucht es gute männliche Beispiele.	7	Beispiele	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	3	obj		SpaceAfter=No	pid:9.104.1.1.
+.	5	9	&gt;Und hier braucht es gute männliche Beispiele.	8	.	PUNCT	$.		3	punct			pid:9.104.1.1.
+</s>													
+<s id="10">													
+Mehr	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	1	mehr	PRON	PIS	Definite=Ind|PronType=Ind	2	det			pid:10.104.1.1.
+Grundschullehrer	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	2	Grundschullehrer	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	0	root		SpaceAfter=No	pid:10.104.1.1.
+,	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	3	,	PUNCT	$,		4	punct			pid:10.104.1.1.
+Pädagogen	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	4	Pädagoge	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	2	conj		SpaceAfter=No	pid:10.104.1.1.
+,	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	5	,	PUNCT	$,		10	punct			pid:10.104.1.1.
+etc.	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	6	etc.	X	ADV		10	dep			pid:10.104.1.1.
+aus	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	7	aus	ADP	APPR		10	case			pid:10.104.1.1.
+allen	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	8	alle	PRON	PIAT	Case=Dat|Definite=Ind|Gender=Fem|Number=Plur|PronType=Ind	10	det			pid:10.104.1.1.
+ethnischen	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	9	ethnisch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	10	amod			pid:10.104.1.1.
+Herkünften	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	10	Herkünft	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	2	conj		SpaceAfter=No	pid:10.104.1.1.
+.	5	10	Mehr Grundschullehrer, Pädagogen, etc. aus allen ethnischen Herkünften.	11	.	PUNCT	$.		2	punct			pid:10.104.1.1.
+</s>													
+<s id="11">													
+Jugendzentren	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	1	Jugendzentrum	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	9	dep			pid:11.104.1.1.
+mit	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	2	mit	ADP	$(		3	case			pid:11.104.1.1.
+Ansprechpartnern	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	3	Ansprechpartner	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	nmod			pid:11.104.1.1.
+und	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	4	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	6	cc			pid:11.104.1.1.
+einem	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	5	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	6	det			pid:11.104.1.1.
+Ort	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	6	Ort	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	3	conj			pid:11.104.1.1.
+nur	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	7	nur	ADV	CARD		9	advmod			pid:11.104.1.1.
+für	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	8	für	ADP	APPR		9	case			pid:11.104.1.1.
+Jugendliche	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	9	Jugendliche	NOUN	NN	Case=Acc|Number=Plur	0	root		SpaceAfter=No	pid:11.104.1.1.
+.	5	11	Jugendzentren mit Ansprechpartnern und einem Ort nur für Jugendliche.	10	.	PUNCT	$.		9	punct			pid:11.104.1.1.
+</s>													
+<s id="12">													
+Es	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	7	expl			pid:12.104.1.1.
+wird	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	7	aux:pass			pid:12.104.1.1.
+aber	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	3	aber	ADV	ADV		7	advmod			pid:12.104.1.1.
+Passenderweise	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	4	Passenderweise	ADV	ADV		7	advmod			pid:12.104.1.1.
+genau	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	5	genau	ADJ	ADV		6	advmod			pid:12.104.1.1.
+hier	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	6	hier	ADV	ADV		7	advmod			pid:12.104.1.1.
+gespart	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	7	sparen	ADJ	VVPP	VerbForm=Part	0	root			pid:12.104.1.1.
+und	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	8	und	CCONJ	NE	Foreign=Yes	10	cc			pid:12.104.1.1.
+nicht	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	9	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	advmod			pid:12.104.1.1.
+gefördert	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	10	fördern	VERB	VVPP	VerbForm=Part	7	conj		SpaceAfter=No	pid:12.104.1.1.
+.	5	12	Es wird aber Passenderweise genau hier gespart und nicht gefördert.	11	.	PUNCT	$.		7	punct		SpacesAfter=\s\n\n	pid:12.104.1.1.
+</s>													
+<s id="13">													
+Ja	6	13	Ja und man muss auch früher eingreifen.	1	Ja	PROPN	PTKANT		7	obj			pid:13.104.1.1.
+und	6	13	Ja und man muss auch früher eingreifen.	2	und	CCONJ	NE	Foreign=Yes	7	cc			pid:13.104.1.1.
+man	6	13	Ja und man muss auch früher eingreifen.	3	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	7	nsubj			pid:13.104.1.1.
+muss	6	13	Ja und man muss auch früher eingreifen.	4	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	aux			pid:13.104.1.1.
+auch	6	13	Ja und man muss auch früher eingreifen.	5	auch	ADV	ADV		7	advmod			pid:13.104.1.1.
+früher	6	13	Ja und man muss auch früher eingreifen.	6	früh	ADJ	ADJD		7	advmod			pid:13.104.1.1.
+eingreifen	6	13	Ja und man muss auch früher eingreifen.	7	eingreifen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:13.104.1.1.
+.	6	13	Ja und man muss auch früher eingreifen.	8	.	PUNCT	$.		7	punct			pid:13.104.1.1.
+</s>													
+<s id="14">													
+Der	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det			pid:14.104.1.1.
+Typ	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	2	Typ	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	13	nsubj			pid:14.104.1.1.
+der	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	3	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:14.104.1.1.
+andre	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	4	andr	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	5	amod			pid:14.104.1.1.
+rumschubst	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	5	rumschubst	NOUN	ADV		2	nmod			pid:14.104.1.1.
+darf	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	6	dürfen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	aux			pid:14.104.1.1.
+nicht	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	7	nicht	PART	CARD	NumType=Card	13	advmod			pid:14.104.1.1.
+als	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	8	als	ADP	KOKOM		12	case			pid:14.104.1.1.
+der	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	9	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det			pid:14.104.1.1.
+coole	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	10	cool	ADJ	NN	Case=Dat|Gender=Fem|Number=Sing	12	amod			pid:14.104.1.1.
+starke	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	11	stark	ADJ	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	12	amod			pid:14.104.1.1.
+Typ	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	12	Typ	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	13	nmod			pid:14.104.1.1.
+gelten	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	13	gelten	VERB	ADJA	Case=Dat|Gender=Masc|Number=Plur	0	root			pid:14.104.1.1.
+sondern	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	14	sondern	CCONJ	NN	Case=Dat|Gender=Neut|Number=Plur	19	cc			pid:14.104.1.1.
+als	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	15	als	ADP	KOKOM		18	case			pid:14.104.1.1.
+der	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	16	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	18	det			pid:14.104.1.1.
+dumme	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	17	dumm	ADJ	NE	Case=Dat|Number=Sing	18	amod			pid:14.104.1.1.
+Grobian	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	18	Grobian	PROPN	NE	Case=Dat|Number=Sing	19	nmod			pid:14.104.1.1.
+der	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	19	der	DET	PRELS	Case=Dat|Gender=Fem|Number=Sing|PronType=Rel	13	conj			pid:14.104.1.1.
+er	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	20	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	19	nsubj			pid:14.104.1.1.
+ist	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	21	sein	AUX	NN	Case=Gen|Gender=Masc|Number=Plur	19	cop		SpaceAfter=No	pid:14.104.1.1.
+.	6	14	Der Typ der andre rumschubst darf nicht als der coole starke Typ gelten sondern als der dumme Grobian der er ist.	22	.	PUNCT	$.		13	punct		SpacesAfter=\n	pid:14.104.1.1.
+</s>													
+</text>													
+</doc>													

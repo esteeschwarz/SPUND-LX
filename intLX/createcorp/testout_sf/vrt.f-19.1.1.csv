@@ -1,0 +1,21 @@
+<doc id="19.1.1">													
+<text id="19.1.1">													
+<s id="1">													
+Jaja	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	1	Jaja	PROPN	NE	Case=Nom|Gender=Fem|Number=Sing	5	nsubj			pid:1.19.1.1.
+seit	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	2	seit	ADP	ADJA	Case=Acc|Gender=Fem|Number=Plur	4	case			pid:1.19.1.1.
+2	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	3	2	NUM	CARD	NumType=Card	4	nummod			pid:1.19.1.1.
+Jahren	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	4	Jahr	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	5	obl			pid:1.19.1.1.
+hören	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	5	hören	VERB	VVFIN	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:1.19.1.1.
+wir	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	6	wir	PRON	ADJD		5	nsubj			pid:1.19.1.1.
+jede	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	7	jed	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Ind	8	det			pid:1.19.1.1.
+Woche	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	8	Woche	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	5	obl			pid:1.19.1.1.
+Russland	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	9	Rußland	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	5	obj			pid:1.19.1.1.
+hat	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	10	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	parataxis			pid:1.19.1.1.
+nächste	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	11	nächst	NUM	CARD	NumType=Card	12	nummod			pid:1.19.1.1.
+Woche	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	12	Woche	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	10	obl			pid:1.19.1.1.
+keine	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	13	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	14	nmod			pid:1.19.1.1.
+Panzer	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	14	Panzer	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	10	nsubj			pid:1.19.1.1.
+mehr	1	1	Jaja seit 2 Jahren hören wir jede Woche Russland hat nächste Woche keine Panzer mehr	15	mehr	ADV	ADV		10	advmod		SpacesAfter=\n	pid:1.19.1.1.
+</s>													
+</text>													
+</doc>													

@@ -1,0 +1,24 @@
+<doc id="52.1.1">													
+<text id="52.1.1">													
+<s id="1">													
+Könntest	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	1	Könntest	ADV	NN	Case=Nom|Gender=Masc|Number=Sing	2	advmod			pid:1.52.1.1.
+du	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	2	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	7	nsubj			pid:1.52.1.1.
+mir	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	3	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	7	iobj			pid:1.52.1.1.
+da	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	4	da	ADV	ADV		7	advmod			pid:1.52.1.1.
+Stichhaltige	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	5	Stichhaltige	NOUN	ADJA	Case=Acc|Gender=Fem|Number=Plur	7	obj			pid:1.52.1.1.
+Zahlen	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	6	Zahl	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	7	nsubj			pid:1.52.1.1.
+liefern	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	7	liefern	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:1.52.1.1.
+?	1	1	Könntest du mir da Stichhaltige Zahlen liefern?	8	?	PUNCT	$.		7	punct			pid:1.52.1.1.
+</s>													
+<s id="2">													
+Oder	1	2	Oder ist das eher so daher gesagt?	1	oder	PROPN	NE	Case=Nom|Gender=Fem|Number=Sing	7	nsubj			pid:2.52.1.1.
+ist	1	2	Oder ist das eher so daher gesagt?	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	cop			pid:2.52.1.1.
+das	1	2	Oder ist das eher so daher gesagt?	3	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	7	nsubj			pid:2.52.1.1.
+eher	1	2	Oder ist das eher so daher gesagt?	4	eher	ADV	ADV		6	advmod			pid:2.52.1.1.
+so	1	2	Oder ist das eher so daher gesagt?	5	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	6	advmod			pid:2.52.1.1.
+daher	1	2	Oder ist das eher so daher gesagt?	6	daher	ADV	PAV		7	advmod			pid:2.52.1.1.
+gesagt	1	2	Oder ist das eher so daher gesagt?	7	gesagen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:2.52.1.1.
+?	1	2	Oder ist das eher so daher gesagt?	8	?	PUNCT	$.		7	punct		SpacesAfter=\n	pid:2.52.1.1.
+</s>													
+</text>													
+</doc>													

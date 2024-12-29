@@ -1,0 +1,18 @@
+<doc id="8.1.1">													
+<text id="8.1.1">													
+<s id="1">													
+Informationstechnikzentrum	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	1	Informationstechnikzentrum	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	3	nsubj			pid:1.8.1.1.
+ist	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	cop			pid:1.8.1.1.
+halt	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	3	halt	ADV	ADV		4	advmod			pid:1.8.1.1.
+auch	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	4	auch	ADV	ADV		5	advmod			pid:1.8.1.1.
+einfach	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	5	einfach	ADJ	ADV		7	advmod			pid:1.8.1.1.
+zu	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	6	zu	PART	NN	Case=Nom|Number=Plur	7	mark			pid:1.8.1.1.
+lane	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	7	lanen	VERB	NE	Case=Acc|Gender=Fem|Number=Sing	0	root			pid:1.8.1.1.
+für	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	8	für	ADP	APPR		12	case			pid:1.8.1.1.
+ein	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	9	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	12	det			pid:1.8.1.1.
+annähernd	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	10	annähernd	ADJ	ADJD		11	advmod			pid:1.8.1.1.
+quadratisches	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	11	quadratisch	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	12	amod			pid:1.8.1.1.
+Logo	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	12	Logo	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	7	obl		SpacesAfter=\n	pid:1.8.1.1.
+</s>													
+</text>													
+</doc>													

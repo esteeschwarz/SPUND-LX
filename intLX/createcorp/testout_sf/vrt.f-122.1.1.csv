@@ -1,0 +1,23 @@
+<doc id="122.1.1">													
+<text id="122.1.1">													
+<s id="1">													
+Oh	1	1	Oh ja, das überrascht mich sehr.	1	Oh	PROPN	ADJD		0	root			pid:1.122.1.1.
+ja	1	1	Oh ja, das überrascht mich sehr.	2	ja	PROPN	ADV		1	amod		SpaceAfter=No	pid:1.122.1.1.
+,	1	1	Oh ja, das überrascht mich sehr.	3	,	PUNCT	$,		5	punct			pid:1.122.1.1.
+das	1	1	Oh ja, das überrascht mich sehr.	4	der	PRON	PRELS	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	5	nsubj			pid:1.122.1.1.
+überrascht	1	1	Oh ja, das überrascht mich sehr.	5	überrascht	VERB	ADJD		1	acl			pid:1.122.1.1.
+mich	1	1	Oh ja, das überrascht mich sehr.	6	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	1	obj			pid:1.122.1.1.
+sehr	1	1	Oh ja, das überrascht mich sehr.	7	sehr	ADV	NN	Case=Acc|Gender=Fem|Number=Sing	1	advmod		SpaceAfter=No	pid:1.122.1.1.
+.	1	1	Oh ja, das überrascht mich sehr.	8	.	PUNCT	$.		1	punct			pid:1.122.1.1.
+</s>													
+<s id="2">													
+Ebenso	1	2	Ebenso wie die Zunahme an Messerangriffen.	1	ebenso	ADV	ADV		4	advmod			pid:2.122.1.1.
+wie	1	2	Ebenso wie die Zunahme an Messerangriffen.	2	wie	ADP	NE	Case=Nom|Gender=Masc|Number=Sing	4	case			pid:2.122.1.1.
+die	1	2	Ebenso wie die Zunahme an Messerangriffen.	3	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:2.122.1.1.
+Zunahme	1	2	Ebenso wie die Zunahme an Messerangriffen.	4	Zunahme	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	0	root			pid:2.122.1.1.
+an	1	2	Ebenso wie die Zunahme an Messerangriffen.	5	an	ADP	APPR		6	case			pid:2.122.1.1.
+Messerangriffen	1	2	Ebenso wie die Zunahme an Messerangriffen.	6	Messerangriff	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	4	nmod		SpaceAfter=No	pid:2.122.1.1.
+.	1	2	Ebenso wie die Zunahme an Messerangriffen.	7	.	PUNCT	$.		4	punct		SpacesAfter=\n	pid:2.122.1.1.
+</s>													
+</text>													
+</doc>													

@@ -1,0 +1,84 @@
+<doc id="16.1.1">													
+<text id="16.1.1">													
+<s id="1">													
+Ich	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	9	nsubj			pid:1.16.1.1.
+hab	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	9	aux			pid:1.16.1.1.
+manchmal	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	3	manchmal	ADV	ADV		9	advmod			pid:1.16.1.1.
+das	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	4	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	5	det			pid:1.16.1.1.
+absurde	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	5	absurde	X	NE	Case=Nom|Gender=Masc|Number=Sing	8	compound			pid:1.16.1.1.
+Gefühl	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	6	Gefühl	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	5	conj		SpaceAfter=No	pid:1.16.1.1.
+,	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	7	,	PUNCT	$,		6	punct			pid:1.16.1.1.
+Putin	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	8	Putin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	9	nsubj			pid:1.16.1.1.
+macht	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	9	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.16.1.1.
+wirklich	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	10	wirklich	ADV	ADV		9	advmod			pid:1.16.1.1.
+einen	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	11	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	13	det			pid:1.16.1.1.
+auf	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	12	auf	ADP	APPR		13	case			pid:1.16.1.1.
+Tenet	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	13	Tenet	NOUN	NE	Case=Acc|Gender=Neut|Number=Sing	9	obl		SpaceAfter=No	pid:1.16.1.1.
+.	1	1	Ich hab manchmal das absurde Gefühl, Putin macht wirklich einen auf Tenet.	14	.	PUNCT	$.		9	punct			pid:1.16.1.1.
+</s>													
+<s id="2">													
+Sich	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	1	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	13	obj			pid:2.16.1.1.
+nochmal	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	2	nochmal	ADV	ADV		5	advmod			pid:2.16.1.1.
+kurz	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	3	kurz	ADJ	ADJD		4	advmod			pid:2.16.1.1.
+vorm	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	4	vorm	ADJ	NE	Case=Acc|Gender=Fem|Number=Sing	5	amod			pid:2.16.1.1.
+Ableben	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	5	Ableben	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	13	nsubj			pid:2.16.1.1.
+maximal	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	6	maximal	ADV	ADV		11	advmod			pid:2.16.1.1.
+an	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	7	an	ADP	APPR		10	case			pid:2.16.1.1.
+der	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det			pid:2.16.1.1.
+eigenen	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	9	eigen	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	10	amod			pid:2.16.1.1.
+Macht	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	10	Macht	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	11	nmod			pid:2.16.1.1.
+berauschen	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	11	berausch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	5	amod			pid:2.16.1.1.
+-	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	12	-	PUNCT	$(		5	punct			pid:2.16.1.1.
+macht	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	13	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:2.16.1.1.
+für	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	14	für	ADP	APPR		15	case			pid:2.16.1.1.
+ihn	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	15	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	13	obl			pid:2.16.1.1.
+ja	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	16	ja	ADV	ADV		13	advmod			pid:2.16.1.1.
+keinen	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	17	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|Polarity=Neg|PronType=Neg	18	nmod			pid:2.16.1.1.
+Unterschied	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	18	Unterschied	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	13	obj		SpaceAfter=No	pid:2.16.1.1.
+.	1	2	Sich nochmal kurz vorm Ableben maximal an der eigenen Macht berauschen - macht für ihn ja keinen Unterschied.	19	.	PUNCT	$.		13	punct			pid:2.16.1.1.
+</s>													
+<s id="3">													
+Vielleicht	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	1	vielleicht	ADV	ADV		6	advmod			pid:3.16.1.1.
+hat	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux			pid:3.16.1.1.
+er	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj			pid:3.16.1.1.
+ja	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	4	ja	ADV	ADV		6	advmod			pid:3.16.1.1.
+schon	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	5	schon	ADV	ADV		6	advmod			pid:3.16.1.1.
+eingerichtet	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	6	einrichten	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:3.16.1.1.
+,	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	7	,	PUNCT	$,		17	punct			pid:3.16.1.1.
+dass	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	8	dass	SCONJ	KOUS		17	mark			pid:3.16.1.1.
+das	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	9	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	10	det			pid:3.16.1.1.
+Nukleararsenal	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	10	Nukleararsenal	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	17	nsubj:pass			pid:3.16.1.1.
+im	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	11-12									pid:3.16.1.1.
+in	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	11	in	ADP	APPR		13	case			pid:3.16.1.1.
+dem	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det			pid:3.16.1.1.
+Falle	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	13	Falle	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	17	obl			pid:3.16.1.1.
+seines	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	14	sein	DET	PPOSAT	Case=Gen|Gender=Masc|Number=Sing|Poss=Yes	15	det:poss			pid:3.16.1.1.
+Todes	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	15	Tod	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	13	nmod			pid:3.16.1.1.
+komplett	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	16	komplett	ADJ	ADJD		17	advmod			pid:3.16.1.1.
+gestartet	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	17	starten	VERB	VVPP	VerbForm=Part	6	ccomp			pid:3.16.1.1.
+wird	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	18	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	17	aux:pass		SpaceAfter=No	pid:3.16.1.1.
+.	1	3	Vielleicht hat er ja schon eingerichtet, dass das Nukleararsenal im Falle seines Todes komplett gestartet wird.	19	.	PUNCT	$.		6	punct		SpacesAfter=\n\n\n	pid:3.16.1.1.
+</s>													
+<s id="4">													
+"	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	1	"	PUNCT	$(		16	punct		SpaceAfter=No	pid:4.16.1.1.
+Wenn	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	2	wenn	SCONJ	KOUS		7	mark			pid:4.16.1.1.
+ich	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj			pid:4.16.1.1.
+die	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	4	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:4.16.1.1.
+Welt	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	5	Welt	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	7	obj			pid:4.16.1.1.
+nicht	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	6	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	advmod			pid:4.16.1.1.
+haben	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	7	haben	VERB	VVINF	VerbForm=Inf	16	advcl			pid:4.16.1.1.
+kann	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	8	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	aux		SpaceAfter=No	pid:4.16.1.1.
+,	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	9	,	PUNCT	$,		7	punct			pid:4.16.1.1.
+sollen	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	10	sollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	16	aux			pid:4.16.1.1.
+die	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	11	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	12	det			pid:4.16.1.1.
+anderen	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	12	ander	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	16	obj			pid:4.16.1.1.
+sie	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	13	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	16	nsubj			pid:4.16.1.1.
+auch	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	14	auch	ADV	ADV		15	advmod			pid:4.16.1.1.
+nicht	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	15	nicht	PART	CARD	NumType=Card	16	advmod			pid:4.16.1.1.
+haben	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	16	haben	VERB	VAINF	VerbForm=Inf	0	root			pid:4.16.1.1.
+können	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	17	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	16	aux		SpaceAfter=No	pid:4.16.1.1.
+...	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	18	...	PUNCT	$(		16	punct		SpaceAfter=No	pid:4.16.1.1.
+"	2	4	"Wenn ich die Welt nicht haben kann, sollen die anderen sie auch nicht haben können..."	19	"	PUNCT	$(		16	punct		SpacesAfter=\n	pid:4.16.1.1.
+</s>													
+</text>													
+</doc>													

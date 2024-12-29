@@ -1,0 +1,126 @@
+<doc id="89.1.1">													
+<text id="89.1.1">													
+<s id="1">													
+&gt;Ich	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	1	&gt;Ich	CCONJ	ADV		2	cc			pid:1.89.1.1.
+sehe	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	2	sehen	VERB	VVFIN	Mood=Imp|Number=Sing|VerbForm=Fin	0	root			pid:1.89.1.1.
+in	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	3	in	ADP	APPR		6	case			pid:1.89.1.1.
+den	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	4	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	6	det			pid:1.89.1.1.
+letzten	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	5	letzt	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Plur	6	amod			pid:1.89.1.1.
+Tagen	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	6	Tag	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	2	obl			pid:1.89.1.1.
+in	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	7	in	ADP	APPR		9	case			pid:1.89.1.1.
+meiner	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	8	mein	PRON	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	9	det:poss			pid:1.89.1.1.
+Stadt	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	9	Stadt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	2	obl			pid:1.89.1.1.
+Werbung	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	10	Werbung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obj			pid:1.89.1.1.
+gegen	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	11	gegen	ADP	APPR		13	case			pid:1.89.1.1.
+häusliche	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	12	häuslich	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	13	amod			pid:1.89.1.1.
+Gewalt	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	13	Gewalt	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obl			pid:1.89.1.1.
+in	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	14	in	ADP	APPR		16	case			pid:1.89.1.1.
+der	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	15	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	16	det			pid:1.89.1.1.
+Bahn	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	16	Bahn	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	13	nmod			pid:1.89.1.1.
+und	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	17	und	CCONJ	NE	Case=Dat|Gender=Fem|Number=Sing	19	cc			pid:1.89.1.1.
+an	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	18	an	ADP	APPR		19	case			pid:1.89.1.1.
+Inforschirmen	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	19	Inforschirmen	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	13	conj			pid:1.89.1.1.
+auf	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	20	auf	ADP	APPR		22	case			pid:1.89.1.1.
+der	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	21	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	22	det			pid:1.89.1.1.
+Straße	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	22	Straße	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	19	nmod		SpaceAfter=No	pid:1.89.1.1.
+.	1	1	&gt;Ich sehe in den letzten Tagen in meiner Stadt Werbung gegen häusliche Gewalt in der Bahn und an Inforschirmen auf der Straße.	23	.	PUNCT	$.		2	punct			pid:1.89.1.1.
+</s>													
+<s id="2">													
+Die	1	2	Die Frage ist wann und wo man so etwas machen sollte?	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:2.89.1.1.
+Frage	1	2	Die Frage ist wann und wo man so etwas machen sollte?	2	Frage	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	4	nsubj			pid:2.89.1.1.
+ist	1	2	Die Frage ist wann und wo man so etwas machen sollte?	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	cop			pid:2.89.1.1.
+wann	1	2	Die Frage ist wann und wo man so etwas machen sollte?	4	winnen	VERB	PWAV	PronType=Int	0	root			pid:2.89.1.1.
+und	1	2	Die Frage ist wann und wo man so etwas machen sollte?	5	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	10	cc			pid:2.89.1.1.
+wo	1	2	Die Frage ist wann und wo man so etwas machen sollte?	6	wo	ADV	NE	Case=Gen|Definite=Ind|Gender=Neut|Number=Plur|PronType=Ind	10	advmod			pid:2.89.1.1.
+man	1	2	Die Frage ist wann und wo man so etwas machen sollte?	7	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	10	nsubj			pid:2.89.1.1.
+so	1	2	Die Frage ist wann und wo man so etwas machen sollte?	8	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	10	advmod			pid:2.89.1.1.
+etwas	1	2	Die Frage ist wann und wo man so etwas machen sollte?	9	etwas	ADV	ADV		10	advmod			pid:2.89.1.1.
+machen	1	2	Die Frage ist wann und wo man so etwas machen sollte?	10	machen	VERB	VVINF	VerbForm=Inf	4	conj			pid:2.89.1.1.
+sollte	1	2	Die Frage ist wann und wo man so etwas machen sollte?	11	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	aux		SpaceAfter=No	pid:2.89.1.1.
+?	1	2	Die Frage ist wann und wo man so etwas machen sollte?	12	?	PUNCT	$.		4	punct		SpacesAfter=\n\n	pid:2.89.1.1.
+</s>													
+<s id="3">													
+Ja	2	3	Ja da hab ich auch keine Lösung.	1	Ja	PROPN	PTKANT		3	obj			pid:3.89.1.1.
+da	2	3	Ja da hab ich auch keine Lösung.	2	da	ADV	ADV		3	advmod			pid:3.89.1.1.
+hab	2	3	Ja da hab ich auch keine Lösung.	3	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:3.89.1.1.
+ich	2	3	Ja da hab ich auch keine Lösung.	4	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:3.89.1.1.
+auch	2	3	Ja da hab ich auch keine Lösung.	5	auch	ADV	ADV		3	advmod			pid:3.89.1.1.
+keine	2	3	Ja da hab ich auch keine Lösung.	6	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	7	nmod			pid:3.89.1.1.
+Lösung	2	3	Ja da hab ich auch keine Lösung.	7	Lösung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	3	obj		SpaceAfter=No	pid:3.89.1.1.
+.	2	3	Ja da hab ich auch keine Lösung.	8	.	PUNCT	$.		3	punct			pid:3.89.1.1.
+</s>													
+<s id="4">													
+Überall	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	1	überall	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	3	nsubj			pid:4.89.1.1.
+ist	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	cop			pid:4.89.1.1.
+besser	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	3	gut	ADJ	ADJD		0	root			pid:4.89.1.1.
+als	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	4	als	ADP	KOKOM		5	case			pid:4.89.1.1.
+nirgends	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	5	nirgends	ADV	ADV		3	advmod		SpaceAfter=No	pid:4.89.1.1.
+,	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	6	,	PUNCT	$,		10	punct			pid:4.89.1.1.
+aber	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	7	aber	CCONJ	KON		10	cc			pid:4.89.1.1.
+auf	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	8	auf	ADP	APPR		10	case			pid:4.89.1.1.
+irgendwelchen	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	9	irgendwelch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	10	amod			pid:4.89.1.1.
+Schirmen	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	10	Schirmen	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	3	conj			pid:4.89.1.1.
+in	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	11	in	ADP	APPR		13	case			pid:4.89.1.1.
+der	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det			pid:4.89.1.1.
+Stadt	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	13	Stadt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	10	nmod		SpaceAfter=No	pid:4.89.1.1.
+...	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	14	...	PUNCT	$(		16	punct			pid:4.89.1.1.
+wer	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	15	werden	AUX	PWS	Case=Nom|Number=Sing|PronType=Int	16	aux			pid:4.89.1.1.
+liest	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	16	lesen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	conj			pid:4.89.1.1.
+das	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	17	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	16	obj		SpaceAfter=No	pid:4.89.1.1.
+.	2	4	Überall ist besser als nirgends, aber auf irgendwelchen Schirmen in der Stadt... wer liest das.	18	.	PUNCT	$.		3	punct			pid:4.89.1.1.
+</s>													
+<s id="5">													
+Und	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	1	und	CCONJ	ADJD		6	cc			pid:5.89.1.1.
+selbst	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	2	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	1	advmod			pid:5.89.1.1.
+wenn	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	3	wenn	SCONJ	VVFIN		1	mark		SpaceAfter=No	pid:5.89.1.1.
+:	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	4	:	PUNCT	$.		1	punct			pid:5.89.1.1.
+Wer	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	5	wer	PRON	PWS	Case=Nom|Number=Sing|PronType=Int	6	nsubj			pid:5.89.1.1.
+verinnerlicht	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	6	verinnerlichen	VERB	VVPP	VerbForm=Part	0	root			pid:5.89.1.1.
+das	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	7	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	8	det			pid:5.89.1.1.
+dadurch	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	8	dadurch	ADV	PAV		6	advmod		SpaceAfter=No	pid:5.89.1.1.
+...	2	5	Und selbst wenn: Wer verinnerlicht das dadurch...	9	...	PUNCT	$(		6	punct		SpacesAfter=\n\n	pid:5.89.1.1.
+</s>													
+<s id="6">													
+&gt;SInd	3	6	&gt;SInd halt Menschen die man liebt.	1	&gt;SInd	PROPN	ADJD		2	nsubj			pid:6.89.1.1.
+halt	3	6	&gt;SInd halt Menschen die man liebt.	2	halen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:6.89.1.1.
+Menschen	3	6	&gt;SInd halt Menschen die man liebt.	3	Mensch	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	2	nsubj			pid:6.89.1.1.
+die	3	6	&gt;SInd halt Menschen die man liebt.	4	der	DET	ART	Case=Nom|Gender=Masc|Number=Sing	6	obj			pid:6.89.1.1.
+man	3	6	&gt;SInd halt Menschen die man liebt.	5	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	6	nsubj			pid:6.89.1.1.
+liebt	3	6	&gt;SInd halt Menschen die man liebt.	6	lieben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	acl		SpaceAfter=No	pid:6.89.1.1.
+.	3	6	&gt;SInd halt Menschen die man liebt.	7	.	PUNCT	$.		2	punct			pid:6.89.1.1.
+</s>													
+<s id="7">													
+Mann	3	7	Mann kann sich ja nicht so täuschen.	1	Mann	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	7	nsubj			pid:7.89.1.1.
+kann	3	7	Mann kann sich ja nicht so täuschen.	2	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	aux			pid:7.89.1.1.
+sich	3	7	Mann kann sich ja nicht so täuschen.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	7	obj			pid:7.89.1.1.
+ja	3	7	Mann kann sich ja nicht so täuschen.	4	ja	ADV	ADV		5	advmod			pid:7.89.1.1.
+nicht	3	7	Mann kann sich ja nicht so täuschen.	5	nicht	PART	CARD	NumType=Card	7	advmod			pid:7.89.1.1.
+so	3	7	Mann kann sich ja nicht so täuschen.	6	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	7	advmod			pid:7.89.1.1.
+täuschen	3	7	Mann kann sich ja nicht so täuschen.	7	täuschen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:7.89.1.1.
+.	3	7	Mann kann sich ja nicht so täuschen.	8	.	PUNCT	$.		7	punct		SpacesAfter=\n\n	pid:7.89.1.1.
+</s>													
+<s id="8">													
+Ah	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	1	Ah	PROPN	NE	Case=Nom|Number=Sing	10	nsubj		SpaceAfter=No	pid:8.89.1.1.
+,	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	2	,	PUNCT	$,		1	punct			pid:8.89.1.1.
+da	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	3	da	SCONJ	KOUS		1	mark			pid:8.89.1.1.
+würde	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	4	werden	AUX	NE	Case=Nom|Number=Sing	10	aux			pid:8.89.1.1.
+bei	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	5	bei	ADP	APPR		6	case			pid:8.89.1.1.
+mir	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	6	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	10	obl			pid:8.89.1.1.
+die	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	7	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:8.89.1.1.
+pessimistische	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	8	pessimistisch	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	9	amod			pid:8.89.1.1.
+Seite	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	9	Seite	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	obj			pid:8.89.1.1.
+durchkommen	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	10	durchkommen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:8.89.1.1.
+:	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	11	:	PUNCT	$.		13	punct			pid:8.89.1.1.
+"	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	12	"	PUNCT	$(		13	punct		SpaceAfter=No	pid:8.89.1.1.
+War	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	13	sein	NOUN	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	parataxis			pid:8.89.1.1.
+ja	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	14	ja	ADV	ADV		13	advmod			pid:8.89.1.1.
+klar	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	15	klar	ADJ	ADJD		13	advmod			pid:8.89.1.1.
+das	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	16	der	DET	KOUS	Typo=Yes	21	det			pid:8.89.1.1.
+ich	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	17	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	19	nsubj			pid:8.89.1.1.
+mich	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	18	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	19	obj			pid:8.89.1.1.
+täusche	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	19	täusch	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	21	amod		SpaceAfter=No	pid:8.89.1.1.
+"	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	20	"	PUNCT	$(		19	punct			pid:8.89.1.1.
+:P	4	8	Ah, da würde bei mir die pessimistische Seite durchkommen: "War ja klar das ich mich täusche" :P	21	:P	PROPN	NN	Case=Nom|Gender=Fem|Number=Sing	13	nsubj		SpacesAfter=\n	pid:8.89.1.1.
+</s>													
+</text>													
+</doc>													

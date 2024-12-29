@@ -1,0 +1,234 @@
+<doc id="98.1.1">													
+<text id="98.1.1">													
+<s id="1">													
+Nö	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	1	Nö	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	11	nsubj		SpaceAfter=No	pid:1.98.1.1.
+,	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	2	,	PUNCT	$,		4	punct			pid:1.98.1.1.
+ich	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:1.98.1.1.
+bin	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	4	sein	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	11	cop			pid:1.98.1.1.
+auch	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	5	auch	ADV	ADV		4	advmod			pid:1.98.1.1.
+kein	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	6	kein	PRON	PIAT	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|Polarity=Neg|PronType=Neg	7	nmod			pid:1.98.1.1.
+Dieb	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	7	Dieb	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	11	nsubj			pid:1.98.1.1.
+-	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	8	-	PUNCT	$(		10	punct			pid:1.98.1.1.
+aber	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	9	aber	CCONJ	ADV		10	cc			pid:1.98.1.1.
+Diebstahl	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	10	Diebstahl	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	7	conj			pid:1.98.1.1.
+existiert	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	11	existieren	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.98.1.1.
+halt	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	12	halt	ADV	ADV		11	advmod			pid:1.98.1.1.
+und	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	13	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	19	cc			pid:1.98.1.1.
+zu	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	14	zu	PART	NN	Case=Acc|Gender=Masc|Number=Plur	15	mark			pid:1.98.1.1.
+sagen	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	15	sagen	VERB	VVINF	VerbForm=Inf	19	advcl			pid:1.98.1.1.
+wir	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	16	wir	PRON	PPER	Case=Nom|Number=Plur|Person=1|PronType=Prs	19	nsubj			pid:1.98.1.1.
+als	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	17	als	ADP	KOKOM		18	case			pid:1.98.1.1.
+Gesellschaft	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	18	Gesellschaft	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	19	obl			pid:1.98.1.1.
+passen	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	19	passen	VERB	VVFIN	VerbForm=Inf	11	conj			pid:1.98.1.1.
+jetzt	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	20	jetzt	ADV	ADV		19	advmod			pid:1.98.1.1.
+einfach	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	21	einfach	ADJ	ADV		19	advmod			pid:1.98.1.1.
+auf	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	22	auf	ADP	APPR		24	case			pid:1.98.1.1.
+das	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	23	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	24	det			pid:1.98.1.1.
+keiner	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	24	kein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|Polarity=Neg|PronType=Neg	19	obl			pid:1.98.1.1.
+mehr	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	25	mehr	ADV	ADV		24	advmod			pid:1.98.1.1.
+was	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	26	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	28	obj			pid:1.98.1.1.
+klaut	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	27	klaut	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	28	nsubj			pid:1.98.1.1.
+ersetzt	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	28	ersetzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	19	acl			pid:1.98.1.1.
+die	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	29	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	30	det			pid:1.98.1.1.
+Überwachung	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	30	Überwachung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	28	obj			pid:1.98.1.1.
+/	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	31	/	PUNCT	$(		32	punct			pid:1.98.1.1.
+Polizei	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	32	Polizei	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	30	conj			pid:1.98.1.1.
+trotzdem	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	33	trotzdem	ADV	NE	Case=Nom|Gender=Fem|Number=Sing	34	advmod			pid:1.98.1.1.
+nicht.	1	1	Nö, ich bin auch kein Dieb - aber Diebstahl existiert halt und zu sagen wir als Gesellschaft passen jetzt einfach auf das keiner mehr was klaut ersetzt die Überwachung / Polizei trotzdem nicht.	34	nicht.	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	19	obj		SpacesAfter=\n\n	pid:1.98.1.1.
+</s>													
+<s id="2">													
+Wer	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	1	wer	PRON	PWS	Case=Nom|Number=Sing|PronType=Int	2	nsubj			pid:2.98.1.1.
+hat	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux			pid:2.98.1.1.
+denn	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	3	denn	ADV	KON		6	advmod			pid:2.98.1.1.
+hier	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	4	hier	ADV	ADV		6	advmod			pid:2.98.1.1.
+davon	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	5	davon	PRON	PAV		6	dep			pid:2.98.1.1.
+gesprochen	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	6	sprechen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:2.98.1.1.
+,	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	7	,	PUNCT	$,		8	punct			pid:2.98.1.1.
+Überwachung	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	8	Überwachung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	conj			pid:2.98.1.1.
+oder	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	9	oder	CCONJ	XY		12	cc			pid:2.98.1.1.
+Polizei	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	10	Polizei	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	obj			pid:2.98.1.1.
+zu	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	11	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	12	mark			pid:2.98.1.1.
+ersetzen	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	12	ersetzen	VERB	VVINF	VerbForm=Inf	6	conj		SpaceAfter=No	pid:2.98.1.1.
+?	2	2	Wer hat denn hier davon gesprochen, Überwachung oder Polizei zu ersetzen?	13	?	PUNCT	$.		6	punct		SpacesAfter=\n\n	pid:2.98.1.1.
+</s>													
+<s id="3">													
+Ich	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:3.98.1.1.
+weiss	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	2	wissen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:3.98.1.1.
+nicht	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	3	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	advmod		SpaceAfter=No	pid:3.98.1.1.
+,	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	4	,	PUNCT	$,		6	punct			pid:3.98.1.1.
+ob	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	5	ob	SCONJ	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	mark			pid:3.98.1.1.
+du	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	6	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	2	ccomp			pid:3.98.1.1.
+überhaupt	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	7	überhaupt	ADV	ADV		8	advmod			pid:3.98.1.1.
+Erfahrung	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	8	Erfahrung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	6	obj			pid:3.98.1.1.
+mit	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	9	mit	ADP	$(		11	case			pid:3.98.1.1.
+dem	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	10	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	11	det			pid:3.98.1.1.
+Thema	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	11	Thema	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	2	obl			pid:3.98.1.1.
+hast	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	12	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	2	aux		SpaceAfter=No	pid:3.98.1.1.
+,	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	13	,	PUNCT	$,		16	punct			pid:3.98.1.1.
+über	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	14	über	ADP	NN	Foreign=Yes	16	case			pid:3.98.1.1.
+das	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	15	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	16	det			pid:3.98.1.1.
+du	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	16	du	PROPN	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	18	nsubj			pid:3.98.1.1.
+hier	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	17	hier	ADV	ADV		16	advmod			pid:3.98.1.1.
+urteilst	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	18	urteilst	ADV	ADV		2	compound:prt			pid:3.98.1.1.
+-	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	19	-	PUNCT	$(		29	punct			pid:3.98.1.1.
+und	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	20	und	CCONJ	NE	Foreign=Yes	29	cc			pid:3.98.1.1.
+wenn	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	21	wenn	SCONJ	NE	Foreign=Yes	29	mark			pid:3.98.1.1.
+nicht	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	22	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	29	advmod		SpaceAfter=No	pid:3.98.1.1.
+,	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	23	,	PUNCT	$,		29	punct			pid:3.98.1.1.
+wieso	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	24	wieso	ADV	PWAV	PronType=Int	29	advmod			pid:3.98.1.1.
+du	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	25	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	29	nsubj			pid:3.98.1.1.
+dir	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	26	du	PRON	PPER	Case=Dat|Number=Sing|Person=2|PronType=Prs	25	appos			pid:3.98.1.1.
+ein	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	27	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	28	det			pid:3.98.1.1.
+Urteil	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	28	Urteil	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	29	nsubj			pid:3.98.1.1.
+erlaubst	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	29	erlauben	VERB	ADV		18	conj		SpaceAfter=No	pid:3.98.1.1.
+.	3	3	Ich weiss nicht, ob du überhaupt Erfahrung mit dem Thema hast, über das du hier urteilst - und wenn nicht, wieso du dir ein Urteil erlaubst.	30	.	PUNCT	$.		2	punct		SpacesAfter=\n\n	pid:3.98.1.1.
+</s>													
+<s id="4">													
+Ich	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	6	nsubj			pid:4.98.1.1.
+würde	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	2	werden	AUX	NE	Case=Nom|Number=Sing	6	aux			pid:4.98.1.1.
+nie	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	3	nie	ADV	ADV		6	advmod			pid:4.98.1.1.
+naive	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	4	naiv	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Plur	5	amod			pid:4.98.1.1.
+Aussagen	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	5	Aussage	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	6	nsubj			pid:4.98.1.1.
+machen	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	6	machen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:4.98.1.1.
+wie	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	7	wie	ADP	NN	Case=Nom|Gender=Neut|Number=Sing	8	case			pid:4.98.1.1.
+Wir	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	8	Wir	PROPN	PPER	Case=Nom|Number=Plur|Person=1|PronType=Prs	6	obl			pid:4.98.1.1.
+passen	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	9	passen	VERB	VVFIN	VerbForm=Inf	6	xcomp			pid:4.98.1.1.
+halt	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	10	halt	ADJ	ADV		9	advmod			pid:4.98.1.1.
+einfach	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	11	einfach	ADJ	ADV		6	advmod			pid:4.98.1.1.
+auf.	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	12	auf.	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	6	obj			pid:4.98.1.1.
+oder	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	13	oder	CCONJ	XY		15	cc			pid:4.98.1.1.
+Das	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	14	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	15	det			pid:4.98.1.1.
+Opfer	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	15	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	12	conj			pid:4.98.1.1.
+muss	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	16	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	20	aux			pid:4.98.1.1.
+sich	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	17	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	20	obj			pid:4.98.1.1.
+halt	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	18	halt	ADV	ADV		19	advmod			pid:4.98.1.1.
+einfach	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	19	einfach	ADJ	ADV		20	advmod			pid:4.98.1.1.
+schützen	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	20	schützen	VERB	VVINF	VerbForm=Inf	6	xcomp		SpaceAfter=No	pid:4.98.1.1.
+,	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	21	,	PUNCT	$,		23	punct			pid:4.98.1.1.
+dann	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	22	dann	ADV	ADV		23	advmod			pid:4.98.1.1.
+passiert	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	23	passieren	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	advcl			pid:4.98.1.1.
+ihm	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	24	er	PRON	PPER	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	23	iobj			pid:4.98.1.1.
+auch	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	25	auch	ADV	ADV		23	advmod			pid:4.98.1.1.
+nichts.	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	26	nichts.	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	23	obj			pid:4.98.1.1.
+=	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	27	=	SYM	$(		28	cc		SpacesAfter=\t\s	pid:4.98.1.1.
+Gerade	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	28	Gerad	NOUN	NE	Foreign=Yes	26	conj			pid:4.98.1.1.
+weil	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	29	weil	SCONJ	KOUS		33	mark			pid:4.98.1.1.
+die	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	30	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	31	det			pid:4.98.1.1.
+Realität	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	31	Realität	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	33	nsubj			pid:4.98.1.1.
+manchmal	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	32	manchmal	ADV	ADV		33	advmod			pid:4.98.1.1.
+hart	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	33	hart	ADJ	NN	Case=Nom|Gender=Masc|Number=Sing	23	advcl			pid:4.98.1.1.
+und	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	34	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	35	cc			pid:4.98.1.1.
+unfair	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	35	unfair	ADJ	ADJD		33	conj			pid:4.98.1.1.
+ist	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	36	sein	AUX	NN	Case=Gen|Gender=Masc|Number=Plur	33	cop		SpaceAfter=No	pid:4.98.1.1.
+,	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	37	,	PUNCT	$,		42	punct			pid:4.98.1.1.
+muss	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	38	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	42	aux			pid:4.98.1.1.
+man	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	39	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	42	nsubj			pid:4.98.1.1.
+Täter	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	40	Täter	NOUN	NN	Case=Gen|Gender=Masc|Number=Plur	42	obj			pid:4.98.1.1.
+konsequent	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	41	konsequent	ADJ	ADJD		42	advmod			pid:4.98.1.1.
+wegsperren	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	42	wegsperren	VERB	NN	Case=Gen|Gender=Masc|Number=Plur	6	parataxis		SpaceAfter=No	pid:4.98.1.1.
+.	4	4	Ich würde nie naive Aussagen machen wie Wir passen halt einfach auf. oder Das Opfer muss sich halt einfach schützen, dann passiert ihm auch nichts. = Gerade weil die Realität manchmal hart und unfair ist, muss man Täter konsequent wegsperren.	43	.	PUNCT	$.		6	punct		SpacesAfter=\n\n	pid:4.98.1.1.
+</s>													
+<s id="5">													
+Das	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	1	Das	PROPN	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	2	nsubj			pid:5.98.1.1.
+findet	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	2	finden	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:5.98.1.1.
+doch	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	3	doch	ADV	ADV		2	advmod			pid:5.98.1.1.
+überwiegend	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	4	überwiegend	ADJ	ADJD		2	advmod			pid:5.98.1.1.
+unter	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	5	unter	ADP	ADJD		7	case			pid:5.98.1.1.
+4	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	6	4	NUM	CARD	NumType=Card	7	nummod			pid:5.98.1.1.
+Augen	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	7	Auge	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	2	obl			pid:5.98.1.1.
+im	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	8-9									pid:5.98.1.1.
+in	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	8	in	ADP	APPR		13	case			pid:5.98.1.1.
+dem	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	9	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det			pid:5.98.1.1.
+privaten	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	10	privat	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	13	amod			pid:5.98.1.1.
+statt	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	11	statt	ADP	ADJA	Case=Acc|Gender=Masc|Number=Sing	12	case			pid:5.98.1.1.
+-	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	12	-	PUNCT	$(		10	punct			pid:5.98.1.1.
+was	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	13	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	2	obl			pid:5.98.1.1.
+soll	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	14	sollen	AUX	NN	Case=Nom|Gender=Masc|Number=Plur	17	aux			pid:5.98.1.1.
+das	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	15	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	17	det			pid:5.98.1.1.
+da	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	16	da	ADV	ADV		17	advmod			pid:5.98.1.1.
+bringen?	5	5	Das findet doch überwiegend unter 4 Augen im privaten statt - was soll das da bringen?	17	bringen?	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	2	obj		SpacesAfter=\n\n	pid:5.98.1.1.
+</s>													
+<s id="6">													
+Nun	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	1	nun	ADV	ADV		8	advmod		SpaceAfter=No	pid:6.98.1.1.
+,	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	2	,	PUNCT	$,		8	punct			pid:6.98.1.1.
+die	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	3	der	PRON	ART	Case=Nom|Number=Plur|PronType=Art	8	nsubj:pass			pid:6.98.1.1.
+wenigsten	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	4	wenigst	DET	NE	Foreign=Yes	5	amod			pid:6.98.1.1.
+Opfer	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	5	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	8	nsubj:pass			pid:6.98.1.1.
+werden	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	6	werden	AUX	NE	Case=Acc|Number=Plur	8	aux:pass			pid:6.98.1.1.
+dauerhaft	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	7	dauerhaft	ADJ	ADJD		8	advmod			pid:6.98.1.1.
+eingesperrt	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	8	einsperren	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:6.98.1.1.
+.	6	6	Nun, die wenigsten Opfer werden dauerhaft eingesperrt.	9	.	PUNCT	$.		8	punct			pid:6.98.1.1.
+</s>													
+<s id="7">													
+Die	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	2	det			pid:7.98.1.1.
+Nachbarn	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	2	Nachbar	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	4	nsubj			pid:7.98.1.1.
+können	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	3	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	aux			pid:7.98.1.1.
+reagieren	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	4	reagieren	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:7.98.1.1.
+,	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	5	,	PUNCT	$,		7	punct			pid:7.98.1.1.
+die	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	6	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	7	det			pid:7.98.1.1.
+Lehrer	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	7	Lehrer	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	20	nsubj		SpaceAfter=No	pid:7.98.1.1.
+,	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	8	,	PUNCT	$,		20	punct			pid:7.98.1.1.
+bei	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	9	bei	ADP	APPR		10	case			pid:7.98.1.1.
+Übergriffen	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	10	Übergriff	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	20	obl			pid:7.98.1.1.
+im	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	11-12									pid:7.98.1.1.
+in	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	11	in	ADP	APPR		14	case			pid:7.98.1.1.
+dem	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det			pid:7.98.1.1.
+beruflichen	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	13	beruflich	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	14	amod			pid:7.98.1.1.
+Kontext	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	14	Kontext	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	10	nmod			pid:7.98.1.1.
+kann	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	15	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	20	aux			pid:7.98.1.1.
+man	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	16	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	20	nsubj			pid:7.98.1.1.
+für	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	17	für	ADP	APPR		19	case			pid:7.98.1.1.
+bessere	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	18	gut	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	19	amod			pid:7.98.1.1.
+Überwachung	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	19	Überwachung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	20	obl			pid:7.98.1.1.
+sorgen	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	20	sorgen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	conj			pid:7.98.1.1.
+&	6	7	Die Nachbarn können reagieren, die Lehrer, bei Übergriffen im beruflichen Kontext kann man für bessere Überwachung sorgen &	21	&	SYM	NE		20	cc		SpacesAfter=\n\n	pid:7.98.1.1.
+</s>													
+<s id="8">													
+In	7	8	In vielen Bereichen eben: Zu keinen.	1	in	X	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	dep			pid:8.98.1.1.
+vielen	7	8	In vielen Bereichen eben: Zu keinen.	2	viel	DET	PIAT	Case=Dat|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	3	amod			pid:8.98.1.1.
+Bereichen	7	8	In vielen Bereichen eben: Zu keinen.	3	Bereich	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	4	iobj			pid:8.98.1.1.
+eben	7	8	In vielen Bereichen eben: Zu keinen.	4	eben	VERB	ADV		0	root		SpaceAfter=No	pid:8.98.1.1.
+:	7	8	In vielen Bereichen eben: Zu keinen.	5	:	PUNCT	$.		7	punct			pid:8.98.1.1.
+Zu	7	8	In vielen Bereichen eben: Zu keinen.	6	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	7	case			pid:8.98.1.1.
+keinen	7	8	In vielen Bereichen eben: Zu keinen.	7	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|Polarity=Neg|PronType=Neg	4	nmod		SpaceAfter=No	pid:8.98.1.1.
+.	7	8	In vielen Bereichen eben: Zu keinen.	8	.	PUNCT	$.		4	punct			pid:8.98.1.1.
+</s>													
+<s id="9">													
+Wenn	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	1	wenn	SCONJ	KOUS		5	mark			pid:9.98.1.1.
+es	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	2	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	5	nsubj			pid:9.98.1.1.
+keine	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	3	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|Polarity=Neg|PronType=Neg	4	nmod			pid:9.98.1.1.
+Beweise	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	4	Beweis	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	5	nsubj			pid:9.98.1.1.
+gibt	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	5	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	advcl		SpaceAfter=No	pid:9.98.1.1.
+,	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	6	,	PUNCT	$,		8	punct			pid:9.98.1.1.
+oder	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	7	oder	CCONJ	XY		8	cc			pid:9.98.1.1.
+Zeugen	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	8	Zeuge	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	5	conj			pid:9.98.1.1.
+oder	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	9	oder	CCONJ	XY		10	cc			pid:9.98.1.1.
+Vorstrafen	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	10	Vorstrafen	NOUN	NE	Case=Acc|Gender=Masc|Number=Sing	8	conj			pid:9.98.1.1.
+o.ä..	7	9	Wenn es keine Beweise gibt, oder Zeugen oder Vorstrafen o.ä..	11	o.ä..	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root		SpacesAfter=\n\n	pid:9.98.1.1.
+</s>													
+<s id="10">													
+Und	8	10	Und in vielen Bereichen kommt es dazu.	1	und	CCONJ	ADJD		5	cc			pid:10.98.1.1.
+in	8	10	Und in vielen Bereichen kommt es dazu.	2	in	ADP	APPR		4	case			pid:10.98.1.1.
+vielen	8	10	Und in vielen Bereichen kommt es dazu.	3	viel	DET	PIAT	Case=Dat|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	4	det			pid:10.98.1.1.
+Bereichen	8	10	Und in vielen Bereichen kommt es dazu.	4	Bereich	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	5	obl			pid:10.98.1.1.
+kommt	8	10	Und in vielen Bereichen kommt es dazu.	5	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:10.98.1.1.
+es	8	10	Und in vielen Bereichen kommt es dazu.	6	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	5	nsubj			pid:10.98.1.1.
+dazu	8	10	Und in vielen Bereichen kommt es dazu.	7	dazu	ADV	PAV		5	advmod		SpaceAfter=No	pid:10.98.1.1.
+.	8	10	Und in vielen Bereichen kommt es dazu.	8	.	PUNCT	$.		5	punct			pid:10.98.1.1.
+</s>													
+<s id="11">													
+Bei	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	1	bei	ADP	APPR		2	case			pid:11.98.1.1.
+Aussage	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	2	Aussage	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	11	obl			pid:11.98.1.1.
+gegen	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	3	gegen	ADP	APPR		4	case			pid:11.98.1.1.
+Aussage	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	4	Aussage	NOUN	NE	Case=Dat|Gender=Fem|Number=Sing	2	nmod			pid:11.98.1.1.
+werden	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	5	werden	AUX	NE	Case=Acc|Number=Plur	11	aux:pass			pid:11.98.1.1.
+die	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	6	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det			pid:11.98.1.1.
+Vergangenheit	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	7	Vergangenheit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	11	nsubj:pass			pid:11.98.1.1.
+und	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	8	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	10	cc			pid:11.98.1.1.
+die	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	9	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det			pid:11.98.1.1.
+Glaubwürdigkeit	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	10	Glaubwürdigkeit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	7	conj			pid:11.98.1.1.
+durchleuchtet	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	11	durchleuchten	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:11.98.1.1.
+.	8	11	Bei Aussage gegen Aussage werden die Vergangenheit und die Glaubwürdigkeit durchleuchtet.	12	.	PUNCT	$.		11	punct		SpacesAfter=\n	pid:11.98.1.1.
+</s>													
+</text>													
+</doc>													

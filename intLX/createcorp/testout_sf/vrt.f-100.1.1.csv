@@ -1,0 +1,285 @@
+<doc id="100.1.1">													
+<text id="100.1.1">													
+<s id="1">													
+Das	1	1	Das war ne Analogie.	1	Das	PROPN	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	4	nsubj			pid:1.100.1.1.
+war	1	1	Das war ne Analogie.	2	sein	AUX	ADV		4	cop			pid:1.100.1.1.
+ne	1	1	Das war ne Analogie.	3	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:1.100.1.1.
+Analogie	1	1	Das war ne Analogie.	4	Analogie	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:1.100.1.1.
+.	1	1	Das war ne Analogie.	5	.	PUNCT	$.		4	punct			pid:1.100.1.1.
+</s>													
+<s id="2">													
+Wie	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	1	wie	ADV	ADJA		3	advmod			pid:2.100.1.1.
+möchtest	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	2	möchtest	ADV	ADJD		3	advmod			pid:2.100.1.1.
+du	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	3	du	ADJ	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	0	root			pid:2.100.1.1.
+denn	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	4	denn	CCONJ	ADV		10	cc			pid:2.100.1.1.
+grundsätzlich	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	5	grundsätzlich	ADJ	ADJD		10	advmod			pid:2.100.1.1.
+die	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	6	der	DET	PRELS	Case=Nom|Gender=Masc|Number=Plur|PronType=Rel	10	det			pid:2.100.1.1.
+Gesellschaft	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	7	Gesellschaft	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	10	obj			pid:2.100.1.1.
+zu	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	8	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	9	case			pid:2.100.1.1.
+etwas	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	9	etwas	PRON	PIS	Definite=Ind|Gender=Neut|PronType=Ind	10	obl			pid:2.100.1.1.
+bringen	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	10	bringen	VERB	VVINF	VerbForm=Inf	3	conj		SpaceAfter=No	pid:2.100.1.1.
+.	1	2	Wie möchtest du denn grundsätzlich die Gesellschaft zu etwas bringen.	11	.	PUNCT	$.		3	punct			pid:2.100.1.1.
+</s>													
+<s id="3">													
+Es	1	3	Es gibt immer schwarze Schafe.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:3.100.1.1.
+gibt	1	3	Es gibt immer schwarze Schafe.	2	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:3.100.1.1.
+immer	1	3	Es gibt immer schwarze Schafe.	3	immer	ADV	ADV		2	advmod			pid:3.100.1.1.
+schwarze	1	3	Es gibt immer schwarze Schafe.	4	schwarz	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Plur	5	amod			pid:3.100.1.1.
+Schafe	1	3	Es gibt immer schwarze Schafe.	5	Schaf	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	2	obj		SpaceAfter=No	pid:3.100.1.1.
+.	1	3	Es gibt immer schwarze Schafe.	6	.	PUNCT	$.		2	punct			pid:3.100.1.1.
+</s>													
+<s id="4">													
+Die	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:4.100.1.1.
+muss	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	2	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	aux			pid:4.100.1.1.
+man	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	3	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	4	nsubj			pid:4.100.1.1.
+erziehen	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	4	erziehen	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:4.100.1.1.
+oder	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	5	oder	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	6	cc			pid:4.100.1.1.
+bestrafen	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	6	bestrafen	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	4	conj			pid:4.100.1.1.
+oder	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	7	oder	CCONJ	XY		8	cc			pid:4.100.1.1.
+sonstwas	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	8	sonstwas	ADV	PIAT	Definite=Ind|PronType=Ind	4	conj			pid:4.100.1.1.
+-	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	9	-	PUNCT	$(		16	punct			pid:4.100.1.1.
+aber	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	10	aber	CCONJ	ADV		16	cc			pid:4.100.1.1.
+trotzdem	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	11	trotzdem	ADV	ADJA	Case=Dat|Gender=Masc|Number=Sing	16	advmod			pid:4.100.1.1.
+wird	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	12	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	16	aux			pid:4.100.1.1.
+es	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	13	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	16	expl			pid:4.100.1.1.
+noch	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	14	noch	ADV	NE	Case=Nom|Gender=Fem|Number=Sing	16	advmod			pid:4.100.1.1.
+welche	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	15	welch	PRON	NE	Case=Nom|Gender=Fem|Number=Sing	16	nsubj			pid:4.100.1.1.
+geben	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	16	geben	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	8	conj			pid:4.100.1.1.
+die	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	17	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	21	det			pid:4.100.1.1.
+durch	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	18	durch	ADP	APPR		20	case			pid:4.100.1.1.
+die	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	19	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	20	det			pid:4.100.1.1.
+Maschen	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	20	Maschen	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	21	nmod			pid:4.100.1.1.
+kommen.	1	4	Die muss man erziehen oder bestrafen oder sonstwas - aber trotzdem wird es noch welche geben die durch die Maschen kommen.	21	kommen.	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	16	obj		SpacesAfter=\n\n	pid:4.100.1.1.
+</s>													
+<s id="5">													
+Na	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	1	na	PART	XY	NumType=Card	9	advcl			pid:5.100.1.1.
+ja	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	2	ja	PART	PTKANT		1	advmod		SpaceAfter=No	pid:5.100.1.1.
+,	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	3	,	PUNCT	$,		1	punct			pid:5.100.1.1.
+man	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	4	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	9	nsubj			pid:5.100.1.1.
+könnte	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	5	können	AUX	VMFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	aux			pid:5.100.1.1.
+es	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	6	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	9	nsubj			pid:5.100.1.1.
+ja	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	7	ja	ADV	ADV		9	advmod			pid:5.100.1.1.
+mal	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	8	mal	ADV	ADV		9	advmod			pid:5.100.1.1.
+versuchen	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	9	versuchen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:5.100.1.1.
+,	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	10	,	PUNCT	$,		14	punct			pid:5.100.1.1.
+statt	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	11	statt	ADP	ADV		12	case			pid:5.100.1.1.
+Ausreden	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	12	Rede|ausreden	NOUN	NE	Case=Nom|Gender=Neut|Number=Sing	14	obl			pid:5.100.1.1.
+zu	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	13	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	14	mark			pid:5.100.1.1.
+finden	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	14	finden	VERB	VVINF	VerbForm=Inf	9	xcomp		SpaceAfter=No	pid:5.100.1.1.
+.	2	5	Na ja, man könnte es ja mal versuchen, statt Ausreden zu finden.	15	.	PUNCT	$.		9	punct			pid:5.100.1.1.
+</s>													
+<s id="6">													
+Auch	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	1	auch	ADV	ADV		2	advmod			pid:6.100.1.1.
+hier	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	2	hier	ADV	ADV		7	advmod		SpaceAfter=No	pid:6.100.1.1.
+,	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	3	,	PUNCT	$,		7	punct			pid:6.100.1.1.
+wir	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	4	wir	PRON	ADJD		7	nsubj			pid:6.100.1.1.
+sind	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	5	sein	AUX	ADJD		7	cop			pid:6.100.1.1.
+alle	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	6	alle	PRON	PIS	Case=Nom|Definite=Ind|Number=Plur|PronType=Ind	7	det			pid:6.100.1.1.
+Teil	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	7	Teil	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:6.100.1.1.
+der	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	8	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:6.100.1.1.
+Gesellschaft	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	9	Gesellschaft	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	7	nmod		SpaceAfter=No	pid:6.100.1.1.
+.	2	6	Auch hier, wir sind alle Teil der Gesellschaft.	10	.	PUNCT	$.		7	punct			pid:6.100.1.1.
+</s>													
+<s id="7">													
+Ja	2	7	Ja, es gibt welche, die durch die Maschen kommen.	1	Ja	PROPN	PTKANT		4	nsubj		SpaceAfter=No	pid:7.100.1.1.
+,	2	7	Ja, es gibt welche, die durch die Maschen kommen.	2	,	PUNCT	$,		1	punct			pid:7.100.1.1.
+es	2	7	Ja, es gibt welche, die durch die Maschen kommen.	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	1	expl			pid:7.100.1.1.
+gibt	2	7	Ja, es gibt welche, die durch die Maschen kommen.	4	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:7.100.1.1.
+welche	2	7	Ja, es gibt welche, die durch die Maschen kommen.	5	welch	PRON	NN	Case=Acc|Gender=Neut|Number=Sing	4	obj		SpaceAfter=No	pid:7.100.1.1.
+,	2	7	Ja, es gibt welche, die durch die Maschen kommen.	6	,	PUNCT	$,		11	punct			pid:7.100.1.1.
+die	2	7	Ja, es gibt welche, die durch die Maschen kommen.	7	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	11	nsubj			pid:7.100.1.1.
+durch	2	7	Ja, es gibt welche, die durch die Maschen kommen.	8	durch	ADP	APPR		10	case			pid:7.100.1.1.
+die	2	7	Ja, es gibt welche, die durch die Maschen kommen.	9	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	10	det			pid:7.100.1.1.
+Maschen	2	7	Ja, es gibt welche, die durch die Maschen kommen.	10	Maschen	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	11	obl			pid:7.100.1.1.
+kommen	2	7	Ja, es gibt welche, die durch die Maschen kommen.	11	kommen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	5	acl		SpaceAfter=No	pid:7.100.1.1.
+.	2	7	Ja, es gibt welche, die durch die Maschen kommen.	12	.	PUNCT	$.		4	punct			pid:7.100.1.1.
+</s>													
+<s id="8">													
+Und	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	1	und	CCONJ	ADJD		4	cc			pid:8.100.1.1.
+deine	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	2	dein	DET	ADJA	Case=Nom|Gender=Fem|Number=Sing	3	det			pid:8.100.1.1.
+Lösung	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	3	Lösung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	4	nsubj			pid:8.100.1.1.
+ist	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	4	sein	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:8.100.1.1.
+,	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	5	,	PUNCT	$,		12	punct			pid:8.100.1.1.
+sich	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	6	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	12	obj			pid:8.100.1.1.
+deshalb	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	7	deshalb	ADV	PAV		12	advmod			pid:8.100.1.1.
+gar	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	8	gar	ADV	ADV		9	advmod			pid:8.100.1.1.
+nicht	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	9	nicht	PART	CARD	NumType=Card	12	advmod			pid:8.100.1.1.
+erst	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	10	erst	ADV	ADV		12	advmod			pid:8.100.1.1.
+zu	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	11	zu	PART	NN	Case=Nom|Number=Plur	12	mark			pid:8.100.1.1.
+bemühen	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	12	bemühen	VERB	VVINF	VerbForm=Inf	4	xcomp		SpaceAfter=No	pid:8.100.1.1.
+?	2	8	Und deine Lösung ist, sich deshalb gar nicht erst zu bemühen?	13	?	PUNCT	$.		4	punct		SpacesAfter=\n\n	pid:8.100.1.1.
+</s>													
+<s id="9">													
+Und	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	1	und	CCONJ	ADJD		3	cc			pid:9.100.1.1.
+ohne	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	2	ohne	ADP	FM	Foreign=Yes	3	case			pid:9.100.1.1.
+Erfahrung	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	3	Erfahrung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	8	obl			pid:9.100.1.1.
+darf	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	4	dürfen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	aux			pid:9.100.1.1.
+man	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	5	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	8	nsubj			pid:9.100.1.1.
+keine	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	6	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	7	nmod			pid:9.100.1.1.
+Meinung	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	7	Meinung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	8	obj			pid:9.100.1.1.
+haben	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	8	haben	VERB	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:9.100.1.1.
+,	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	9	,	PUNCT	$,		11	punct			pid:9.100.1.1.
+oder	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	10	oder	CCONJ	XY		11	cc			pid:9.100.1.1.
+wie?	3	9	Und ohne Erfahrung darf man keine Meinung haben, oder wie?	11	wie?	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	8	conj		SpacesAfter=\n\n	pid:9.100.1.1.
+</s>													
+<s id="10">													
+Eine	4	10	Eine Meinung kann man immer haben.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:10.100.1.1.
+Meinung	4	10	Eine Meinung kann man immer haben.	2	Meinung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	obj			pid:10.100.1.1.
+kann	4	10	Eine Meinung kann man immer haben.	3	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux			pid:10.100.1.1.
+man	4	10	Eine Meinung kann man immer haben.	4	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	6	nsubj			pid:10.100.1.1.
+immer	4	10	Eine Meinung kann man immer haben.	5	immer	ADV	ADV		6	advmod			pid:10.100.1.1.
+haben	4	10	Eine Meinung kann man immer haben.	6	haben	VERB	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:10.100.1.1.
+.	4	10	Eine Meinung kann man immer haben.	7	.	PUNCT	$.		6	punct			pid:10.100.1.1.
+</s>													
+<s id="11">													
+Sie	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	1	Sie|sie	PRON	PPER	Case=Nom|Gender=Fem|Number=Sing|Person=3|PronType=Prs	3	nsubj			pid:11.100.1.1.
+zu	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	2	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	3	mark			pid:11.100.1.1.
+äußern	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	3	äußern	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:11.100.1.1.
+,	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	4	,	PUNCT	$,		10	punct			pid:11.100.1.1.
+das	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	5	der	PRON	PRELS	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	10	nsubj			pid:11.100.1.1.
+würde	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	6	werden	AUX	NE	Case=Nom|Number=Sing	10	aux			pid:11.100.1.1.
+ich	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	7	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	10	nsubj			pid:11.100.1.1.
+tatsächlich	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	8	tatsächlich	ADJ	ADV		10	advmod			pid:11.100.1.1.
+gerne	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	9	gerne	ADV	ADV		10	advmod			pid:11.100.1.1.
+verbieten	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	10	verbieten	VERB	VVFIN	VerbForm=Inf	3	acl		SpaceAfter=No	pid:11.100.1.1.
+.	4	11	Sie zu äußern, das würde ich tatsächlich gerne verbieten.	11	.	PUNCT	$.		3	punct			pid:11.100.1.1.
+</s>													
+<s id="12">													
+Für	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	1	für	ADP	APPR		2	case			pid:12.100.1.1.
+jemanden	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	2	jemand	PRON	PIS	Case=Acc|Definite=Ind|Number=Sing|PronType=Ind	6	obl		SpaceAfter=No	pid:12.100.1.1.
+,	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	3	,	PUNCT	$,		5	punct			pid:12.100.1.1.
+der	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	4	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:12.100.1.1.
+Erfahrung	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	5	Erfahrung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	2	conj			pid:12.100.1.1.
+hat	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	6	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	csubj		SpaceAfter=No	pid:12.100.1.1.
+,	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	7	,	PUNCT	$,		6	punct			pid:12.100.1.1.
+ist	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	8	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	cop			pid:12.100.1.1.
+es	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	9	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	11	nsubj			pid:12.100.1.1.
+sehr	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	10	sehr	ADV	NN	Case=Nom|Gender=Fem|Number=Sing	11	advmod			pid:12.100.1.1.
+nervig	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	11	nervig	ADJ	ADJD		0	root		SpaceAfter=No	pid:12.100.1.1.
+,	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	12	,	PUNCT	$,		19	punct			pid:12.100.1.1.
+wenn	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	13	wenn	SCONJ	VVFIN		19	mark			pid:12.100.1.1.
+sich	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	14	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	19	obj			pid:12.100.1.1.
+jemand	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	15	jemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	16	nsubj			pid:12.100.1.1.
+einmischt	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	16	einmischen	NOUN	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	19	obj			pid:12.100.1.1.
+und	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	17	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	18	cc			pid:12.100.1.1.
+Einfluss	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	18	Einfluß	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	16	conj			pid:12.100.1.1.
+nimmt	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	19	nehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	advcl		SpaceAfter=No	pid:12.100.1.1.
+,	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	20	,	PUNCT	$,		24	punct			pid:12.100.1.1.
+der	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	21	der	PRON	ART	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	24	nsubj			pid:12.100.1.1.
+sie	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	22	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	24	obj			pid:12.100.1.1.
+nicht	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	23	nicht	PART	NN	Case=Gen|Gender=Masc|Number=Plur	24	advmod			pid:12.100.1.1.
+hat	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	24	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	acl		SpaceAfter=No	pid:12.100.1.1.
+.	4	12	Für jemanden, der Erfahrung hat, ist es sehr nervig, wenn sich jemand einmischt und Einfluss nimmt, der sie nicht hat.	25	.	PUNCT	$.		11	punct		SpacesAfter=\n\n	pid:12.100.1.1.
+</s>													
+<s id="13">													
+Und	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	1	und	CCONJ	ADJD		5	cc			pid:13.100.1.1.
+wie	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	2	wie	ADP	NN	Case=Nom|Gender=Neut|Number=Sing	5	case			pid:13.100.1.1.
+erkennst	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	3	erkennst	ADJ	ADV		4	advmod			pid:13.100.1.1.
+du	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	4	du	ADJ	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	5	amod			pid:13.100.1.1.
+Täter	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	5	Täter	NOUN	ADJA		0	root			pid:13.100.1.1.
+mit	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	6	mit	ADP	ADJA	Case=Nom|Number=Plur	11	case			pid:13.100.1.1.
+(	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	7	(	PUNCT	$(		11	punct		SpaceAfter=No	pid:13.100.1.1.
+nahezu	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	8	nahezu	ADV	ADV		10	advmod		SpaceAfter=No	pid:13.100.1.1.
+)	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	9	)	PUNCT	$(		8	punct			pid:13.100.1.1.
+100%	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	10	100%	SYM	NN		11	cc			pid:13.100.1.1.
+Sicherheit	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	11	Sicherheit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	5	nmod			pid:13.100.1.1.
+als	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	12	als	ADP	KOKOM		13	case			pid:13.100.1.1.
+Rechtsstaat?	5	13	Und wie erkennst du Täter mit (nahezu) 100% Sicherheit als Rechtsstaat?	13	Rechtsstaat?	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	11	nmod		SpacesAfter=\n\n	pid:13.100.1.1.
+</s>													
+<s id="14">													
+Wie	6	14	Wie wir es bisher auch tun?	1	wie	SCONJ	ADJA		6	mark			pid:14.100.1.1.
+wir	6	14	Wie wir es bisher auch tun?	2	wir	PRON	ADJD		6	nsubj			pid:14.100.1.1.
+es	6	14	Wie wir es bisher auch tun?	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	6	nsubj			pid:14.100.1.1.
+bisher	6	14	Wie wir es bisher auch tun?	4	bisher	ADV	ADV		6	advmod			pid:14.100.1.1.
+auch	6	14	Wie wir es bisher auch tun?	5	auch	ADV	ADV		6	advmod			pid:14.100.1.1.
+tun	6	14	Wie wir es bisher auch tun?	6	tun	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:14.100.1.1.
+?	6	14	Wie wir es bisher auch tun?	7	?	PUNCT	$.		6	punct			pid:14.100.1.1.
+</s>													
+<s id="15">													
+Muss	6	15	Muss ich mich wiederholen?	1	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	4	aux			pid:15.100.1.1.
+ich	6	15	Muss ich mich wiederholen?	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:15.100.1.1.
+mich	6	15	Muss ich mich wiederholen?	3	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	4	obj			pid:15.100.1.1.
+wiederholen	6	15	Muss ich mich wiederholen?	4	wiederholen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:15.100.1.1.
+?	6	15	Muss ich mich wiederholen?	5	?	PUNCT	$.		4	punct			pid:15.100.1.1.
+</s>													
+<s id="16">													
+In	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	1	in	ADP	APPR		3	case			pid:16.100.1.1.
+den	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	2	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	3	det			pid:16.100.1.1.
+Fällen	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	3	Fall|Fällen	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	16	nmod		SpaceAfter=No	pid:16.100.1.1.
+,	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	4	,	PUNCT	$,		7	punct			pid:16.100.1.1.
+die	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	5	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	7	nsubj			pid:16.100.1.1.
+mir	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	6	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	7	iobj			pid:16.100.1.1.
+bekannt	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	7	bekannen	ADJ	ADJD		3	acl			pid:16.100.1.1.
+sind	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	8	sein	AUX	ADJD		7	cop		SpaceAfter=No	pid:16.100.1.1.
+,	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	9	,	PUNCT	$,		7	punct			pid:16.100.1.1.
+war	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	10	sein	AUX	ADV		16	cop			pid:16.100.1.1.
+das	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	11	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	12	det			pid:16.100.1.1.
+Problem	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	12	Problem	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	16	nsubj			pid:16.100.1.1.
+nicht	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	13	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	advmod			pid:16.100.1.1.
+wirklich	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	14	wirklich	ADJ	ADV		16	advmod			pid:16.100.1.1.
+die	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	15	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	16	det			pid:16.100.1.1.
+Beweise	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	16	Beweis	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	0	root		SpaceAfter=No	pid:16.100.1.1.
+,	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	17	,	PUNCT	$,		23	punct			pid:16.100.1.1.
+sondern	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	18	sondern	CCONJ	NN	Case=Dat|Gender=Neut|Number=Plur	23	cc			pid:16.100.1.1.
+z.	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	19	z.	ADP	NE		20	case			pid:16.100.1.1.
+B.	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	20	B.	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	23	nmod			pid:16.100.1.1.
+die	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	21	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	23	det			pid:16.100.1.1.
+fehlende	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	22	fehlend	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	23	amod			pid:16.100.1.1.
+Überwachung	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	23	Überwachung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	16	conj		SpaceAfter=No	pid:16.100.1.1.
+.	6	16	In den Fällen, die mir bekannt sind, war das Problem nicht wirklich die Beweise, sondern z. B. die fehlende Überwachung.	24	.	PUNCT	$.		16	punct		SpacesAfter=\n\n	pid:16.100.1.1.
+</s>													
+<s id="17">													
+Klar	7	17	Klar wenn es im öffentlichen Raum passiert.	1	Klar	ADJ	ADJD		0	root			pid:17.100.1.1.
+wenn	7	17	Klar wenn es im öffentlichen Raum passiert.	2	wenn	SCONJ	VVFIN		8	mark			pid:17.100.1.1.
+es	7	17	Klar wenn es im öffentlichen Raum passiert.	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	8	nsubj			pid:17.100.1.1.
+im	7	17	Klar wenn es im öffentlichen Raum passiert.	4-5									pid:17.100.1.1.
+in	7	17	Klar wenn es im öffentlichen Raum passiert.	4	in	ADP	APPR		7	case			pid:17.100.1.1.
+dem	7	17	Klar wenn es im öffentlichen Raum passiert.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det			pid:17.100.1.1.
+öffentlichen	7	17	Klar wenn es im öffentlichen Raum passiert.	6	öffentlich	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	7	amod			pid:17.100.1.1.
+Raum	7	17	Klar wenn es im öffentlichen Raum passiert.	7	Raum	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	8	obl			pid:17.100.1.1.
+passiert	7	17	Klar wenn es im öffentlichen Raum passiert.	8	passieren	VERB	VVPP	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	advcl		SpaceAfter=No	pid:17.100.1.1.
+.	7	17	Klar wenn es im öffentlichen Raum passiert.	9	.	PUNCT	$.		1	punct			pid:17.100.1.1.
+</s>													
+<s id="18">													
+Aber	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	1	aber	CCONJ	KON		7	cc			pid:18.100.1.1.
+wenn	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	2	wenn	SCONJ	VVFIN		7	mark			pid:18.100.1.1.
+es	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	7	nsubj			pid:18.100.1.1.
+in	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	4	in	ADP	APPR		6	case			pid:18.100.1.1.
+der	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:18.100.1.1.
+Wohnung	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	6	Wohnung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	7	obl			pid:18.100.1.1.
+passiert	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	7	passieren	VERB	VVPP	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:18.100.1.1.
+und	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	8	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	13	cc			pid:18.100.1.1.
+das	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	9	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	10	det			pid:18.100.1.1.
+Opfer	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	10	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	13	obj			pid:18.100.1.1.
+sich	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	11	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	13	obj			pid:18.100.1.1.
+niemanden	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	12	niemand	PRON	PIS	Case=Acc|Definite=Ind|Number=Sing|PronType=Ind	13	nsubj			pid:18.100.1.1.
+anvertraut	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	13	anvertrauen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	conj		SpaceAfter=No	pid:18.100.1.1.
+.	7	18	Aber wenn es in der Wohnung passiert und das Opfer sich niemanden anvertraut.	14	.	PUNCT	$.		7	punct			pid:18.100.1.1.
+</s>													
+<s id="19">													
+Was	7	19	Was dann?	1	was	PRON	NE	Case=Nom|Gender=Masc|Number=Sing	2	nsubj			pid:19.100.1.1.
+dann?	7	19	Was dann?	2	dann?	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root		SpacesAfter=\n\n	pid:19.100.1.1.
+</s>													
+<s id="20">													
+Und	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	1	und	CCONJ	NN	Case=Nom|Gender=Masc|Number=Sing	4	cc			pid:20.100.1.1.
+wie	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	2	wie	ADP	NE	Case=Nom|Gender=Masc|Number=Sing	3	case			pid:20.100.1.1.
+oft	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	3	oft	ADV	NE	Case=Nom|Gender=Masc|Number=Sing	4	obl			pid:20.100.1.1.
+passiert	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	4	passieren	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:20.100.1.1.
+das	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	5	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	4	nsubj		SpaceAfter=No	pid:20.100.1.1.
+,	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	6	,	PUNCT	$,		8	punct			pid:20.100.1.1.
+in	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	7	in	ADP	APPR		8	case			pid:20.100.1.1.
+Relation	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	8	Relation	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	5	nmod			pid:20.100.1.1.
+mit	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	9	mit	ADP	$(		11	case			pid:20.100.1.1.
+den	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	10	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	11	det			pid:20.100.1.1.
+Fällen	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	11	Fall|Fällen	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	8	nmod		SpaceAfter=No	pid:20.100.1.1.
+,	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	12	,	PUNCT	$,		17	punct			pid:20.100.1.1.
+in	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	13	in	ADP	APPR		14	case			pid:20.100.1.1.
+denen	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	14	der	PRON	PRELS	Case=Dat|Number=Plur|PronType=Rel	17	obl			pid:20.100.1.1.
+man	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	15	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	17	nsubj			pid:20.100.1.1.
+etwas	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	16	etwas	PRON	ADV		17	obj			pid:20.100.1.1.
+tun	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	17	tun	VERB	VVINF	VerbForm=Inf	8	acl			pid:20.100.1.1.
+kann	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	18	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	17	aux		SpaceAfter=No	pid:20.100.1.1.
+?	8	20	Und wie oft passiert das, in Relation mit den Fällen, in denen man etwas tun kann?	19	?	PUNCT	$.		4	punct		SpacesAfter=\n	pid:20.100.1.1.
+</s>													
+</text>													
+</doc>													

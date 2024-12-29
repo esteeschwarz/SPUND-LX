@@ -1,0 +1,141 @@
+<doc id="82.1.1">													
+<text id="82.1.1">													
+<s id="1">													
+&gt;Die	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	1	&gt;der	DET	PRELS	Case=Nom|Gender=Fem|Number=Sing|PronType=Rel	2	det			pid:1.82.1.1.
+Sache	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	2	Sache	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	6	nsubj			pid:1.82.1.1.
+ist	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	cop			pid:1.82.1.1.
+ja	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	4	ja	ADV	ADV		5	advmod			pid:1.82.1.1.
+auch	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	5	auch	ADV	ADV		6	advmod			pid:1.82.1.1.
+oft	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	6	oft	ADV	CARD	NumType=Card	0	root		SpaceAfter=No	pid:1.82.1.1.
+,	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	7	,	PUNCT	$,		16	punct			pid:1.82.1.1.
+das	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	8	der	PRON	PRELS	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	16	nsubj			pid:1.82.1.1.
+die	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	9	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	10	det			pid:1.82.1.1.
+Frauen	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	10	Frau	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	16	obj			pid:1.82.1.1.
+den	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	11	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det			pid:1.82.1.1.
+Mann	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	12	Mann	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	16	obj			pid:1.82.1.1.
+dann	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	13	dann	ADV	ADV		16	advmod			pid:1.82.1.1.
+auch	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	14	auch	ADV	ADV		15	advmod			pid:1.82.1.1.
+noch	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	15	noch	ADV	CARD	NumType=Card	16	advmod			pid:1.82.1.1.
+lieben	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	16	lieben	VERB	VVFIN	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	6	acl			pid:1.82.1.1.
+und	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	17	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	18	cc			pid:1.82.1.1.
+glauben	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	18	glauben	VERB	VVINF	VerbForm=Inf	16	conj		SpaceAfter=No	pid:1.82.1.1.
+,	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	19	,	PUNCT	$,		25	punct			pid:1.82.1.1.
+dass	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	20	dass	SCONJ	KOUS		25	mark			pid:1.82.1.1.
+es	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	21	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	23	nsubj			pid:1.82.1.1.
+der	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	22	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	23	det			pid:1.82.1.1.
+Partner	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	23	Partner	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	25	nsubj			pid:1.82.1.1.
+auch	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	24	auch	ADV	ADV		25	advmod			pid:1.82.1.1.
+tut	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	25	tun	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	ccomp		SpaceAfter=No	pid:1.82.1.1.
+.	1	1	&gt;Die Sache ist ja auch oft, das die Frauen den Mann dann auch noch lieben und glauben, dass es der Partner auch tut.	26	.	PUNCT	$.		16	punct		SpacesAfter=\n\n	pid:1.82.1.1.
+</s>													
+<s id="2">													
+Meine	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	1	mein	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	3	det:poss			pid:2.82.1.1.
+beste	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	2	gut	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	3	amod			pid:2.82.1.1.
+Freundin	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	3	Freundin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	4	nsubj			pid:2.82.1.1.
+hatte	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	4	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:2.82.1.1.
+einen	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	5	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	6	det			pid:2.82.1.1.
+Freund	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	6	Freund	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	4	obj		SpaceAfter=No	pid:2.82.1.1.
+,	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	7	,	PUNCT	$,		11	punct			pid:2.82.1.1.
+der	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	8	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	11	nsubj			pid:2.82.1.1.
+sie	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	9	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	11	obj			pid:2.82.1.1.
+psychisch	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	10	psychisch	ADJ	ADJD		11	advmod			pid:2.82.1.1.
+gefoltert	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	11	gefoltert	VERB	VVPP	VerbForm=Part	6	acl			pid:2.82.1.1.
+hat	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	12	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	aux		SpaceAfter=No	pid:2.82.1.1.
+,	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	13	,	PUNCT	$,		11	punct			pid:2.82.1.1.
+durch	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	14	durch	ADP	APPR		15	case			pid:2.82.1.1.
+Androhung	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	15	Androhung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	4	obl			pid:2.82.1.1.
+von	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	16	von	ADP	NE	Case=Acc|Gender=Masc|Number=Sing	17	case			pid:2.82.1.1.
+Selbstmord	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	17	Selbstmord	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	15	nmod			pid:2.82.1.1.
+wann	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	18	wann	ADV	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	19	advmod			pid:2.82.1.1.
+immer	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	19	immer	ADV	ADV		22	advmod			pid:2.82.1.1.
+er	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	20	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	22	nsubj			pid:2.82.1.1.
+nicht	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	21	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	22	advmod			pid:2.82.1.1.
+bekommen	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	22	bekommen	VERB	VVPP	VerbForm=Part	4	conj			pid:2.82.1.1.
+hat	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	23	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	advcl		SpaceAfter=No	pid:2.82.1.1.
+,	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	24	,	PUNCT	$,		27	punct			pid:2.82.1.1.
+was	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	25	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	27	obj			pid:2.82.1.1.
+er	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	26	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	27	nsubj			pid:2.82.1.1.
+wollte	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	27	wollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	23	acl		SpaceAfter=No	pid:2.82.1.1.
+.	2	2	Meine beste Freundin hatte einen Freund, der sie psychisch gefoltert hat, durch Androhung von Selbstmord wann immer er nicht bekommen hat, was er wollte.	28	.	PUNCT	$.		4	punct		SpacesAfter=\s\n\n	pid:2.82.1.1.
+</s>													
+<s id="3">													
+Und	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	1	und	CCONJ	NN	Case=Nom|Gender=Masc|Number=Sing	3	cc			pid:3.82.1.1.
+er	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	2	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	nsubj			pid:3.82.1.1.
+hat	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	3	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:3.82.1.1.
+,	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	4	,	PUNCT	$,		7	punct			pid:3.82.1.1.
+während	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	5	während	SCONJ	ADJA	Case=Acc|Gender=Masc|Number=Plur	7	mark			pid:3.82.1.1.
+sie	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	6	sie	PRON	VVINF	VerbForm=Inf	7	nsubj			pid:3.82.1.1.
+geschlafen	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	7	schlafen	VERB	VVPP	VerbForm=Part	3	ccomp			pid:3.82.1.1.
+hat	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	8	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	aux		SpaceAfter=No	pid:3.82.1.1.
+,	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	9	,	PUNCT	$,		13	punct			pid:3.82.1.1.
+Dinge	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	10	Ding	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	13	obj			pid:3.82.1.1.
+mit	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	11	mit	ADP	$(		12	case			pid:3.82.1.1.
+ihr	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	12	ihr	PRON	PPER	Case=Dat|Gender=Fem|Number=Sing|Person=3|PronType=Prs	13	obl			pid:3.82.1.1.
+gemacht	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	13	machen	VERB	VVPP	VerbForm=Part	7	ccomp		SpaceAfter=No	pid:3.82.1.1.
+,	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	14	,	PUNCT	$,		19	punct			pid:3.82.1.1.
+die	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	15	der	PRON	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	19	obj			pid:3.82.1.1.
+sie	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	16	sie	PRON	ADJA	Case=Acc|Gender=Fem|Number=Sing	19	nsubj			pid:3.82.1.1.
+eindeutig	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	17	eindeutig	ADV	ADJD		19	advmod			pid:3.82.1.1.
+nicht	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	18	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	19	advmod			pid:3.82.1.1.
+wollte	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	19	wollen	VERB	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	13	acl		SpaceAfter=No	pid:3.82.1.1.
+.	3	3	Und er hat, während sie geschlafen hat, Dinge mit ihr gemacht, die sie eindeutig nicht wollte.	20	.	PUNCT	$.		3	punct		SpacesAfter=\s\n\n\n\n	pid:3.82.1.1.
+</s>													
+<s id="4">													
+Was	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	1	was	PRON	FM	Foreign=Yes	7	nsubj			pid:4.82.1.1.
+mich	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	2	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	7	obj			pid:4.82.1.1.
+aber	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	3	aber	ADV	ADV		7	advmod			pid:4.82.1.1.
+am	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	4-5									pid:4.82.1.1.
+an	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	4	an	ADP	APPR		6	case			pid:4.82.1.1.
+dem	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det			pid:4.82.1.1.
+meisten	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	6	meist	PRON	NN	Case=Dat|Gender=Masc|Number=Sing	7	obl			pid:4.82.1.1.
+schockiert	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	7	schockiert	VERB	VVPP	VerbForm=Part	18	csubj			pid:4.82.1.1.
+hat	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	8	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	aux		SpaceAfter=No	pid:4.82.1.1.
+,	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	9	,	PUNCT	$,		7	punct			pid:4.82.1.1.
+war	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	10	sein	AUX	ADV		7	cop		SpaceAfter=No	pid:4.82.1.1.
+,	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	11	,	PUNCT	$,		18	punct			pid:4.82.1.1.
+wie	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	12	wie	ADV	NE	Case=Nom|Gender=Neut|Number=Sing	18	advmod			pid:4.82.1.1.
+sehr	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	13	sehr	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	18	advmod			pid:4.82.1.1.
+sie	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	14	sie	PRON	VVINF	VerbForm=Inf	18	nsubj			pid:4.82.1.1.
+trotzdem	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	15	trotzdem	ADV	NE	Case=Dat|Number=Sing	18	advmod			pid:4.82.1.1.
+an	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	16	an	ADP	APPR		17	case			pid:4.82.1.1.
+ihm	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	17	er	PRON	PPER	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	18	obl			pid:4.82.1.1.
+gehangen	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	18	gehangen	VERB	NN	Case=Dat|Gender=Fem|Number=Plur	0	root			pid:4.82.1.1.
+hat	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	19	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	aux			pid:4.82.1.1.
+und	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	20	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	23	cc			pid:4.82.1.1.
+wie	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	21	wie	ADP	NE	Case=Dat|Gender=Neut|Number=Sing	23	case			pid:4.82.1.1.
+viel	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	22	viel	ADJ	NE	Case=Dat|Gender=Neut|Number=Sing	23	amod			pid:4.82.1.1.
+Kraft	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	23	Kraft	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	29	nsubj			pid:4.82.1.1.
+es	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	24	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	23	expl			pid:4.82.1.1.
+(	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	25	(	PUNCT	$(		27	punct		SpaceAfter=No	pid:4.82.1.1.
+auch	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	26	auch	ADV	ADV		27	advmod			pid:4.82.1.1.
+mir	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	27	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	23	iobj		SpaceAfter=No	pid:4.82.1.1.
+)	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	28	)	PUNCT	$(		27	punct			pid:4.82.1.1.
+gekostet	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	29	gekosten	VERB	VVPP	VerbForm=Part	18	ccomp			pid:4.82.1.1.
+hat	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	30	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	29	aux			pid:4.82.1.1.
+sie	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	31	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	18	nsubj			pid:4.82.1.1.
+aus	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	32	aus	ADP	APPR		34	case			pid:4.82.1.1.
+dieser	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	33	dies	PRON	PDAT	Case=Dat|Gender=Fem|Number=Sing|PronType=Dem	34	det			pid:4.82.1.1.
+Beziehung	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	34	Beziehung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	18	obl			pid:4.82.1.1.
+heraus	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	35	heraus	ADV	ADV		18	advmod			pid:4.82.1.1.
+zu	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	36	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	37	mark			pid:4.82.1.1.
+bekommen	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	37	bekommen	VERB	VVPP	VerbForm=Part	18	acl		SpaceAfter=No	pid:4.82.1.1.
+.	4	4	Was mich aber am meisten schockiert hat, war, wie sehr sie trotzdem an ihm gehangen hat und wie viel Kraft es (auch mir) gekostet hat sie aus dieser Beziehung heraus zu bekommen.	38	.	PUNCT	$.		18	punct		SpacesAfter=\s\n\n	pid:4.82.1.1.
+</s>													
+<s id="5">													
+Was	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	1	was	PRON	FM	Foreign=Yes	6	nsubj			pid:5.82.1.1.
+übrigens	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	2	übrigens	ADV	ADV		6	advmod			pid:5.82.1.1.
+0	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	3	0	NUM	CARD	NumType=Card	5	nummod			pid:5.82.1.1.
+materielle/finanzielle	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	4	materielle/finanziell	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Plur	5	amod			pid:5.82.1.1.
+Gründe	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	5	Grund	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	6	obj			pid:5.82.1.1.
+hatte	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	6	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		SpaceAfter=No	pid:5.82.1.1.
+.	5	5	Was übrigens 0 materielle/finanzielle Gründe hatte.	7	.	PUNCT	$.		6	punct			pid:5.82.1.1.
+</s>													
+<s id="6">													
+Hat	5	6	Hat trotzdem Monate gedauert.	1	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	aux			pid:6.82.1.1.
+trotzdem	5	6	Hat trotzdem Monate gedauert.	2	trotzdem	ADV	ADJA	Case=Dat|Gender=Masc|Number=Sing	4	advmod			pid:6.82.1.1.
+Monate	5	6	Hat trotzdem Monate gedauert.	3	Monat	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	4	obj			pid:6.82.1.1.
+gedauert	5	6	Hat trotzdem Monate gedauert.	4	dauern	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:6.82.1.1.
+.	5	6	Hat trotzdem Monate gedauert.	5	.	PUNCT	$.		4	punct		SpacesAfter=\n	pid:6.82.1.1.
+</s>													
+</text>													
+</doc>													

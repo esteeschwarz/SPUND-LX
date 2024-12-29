@@ -1,0 +1,50 @@
+<doc id="58.1.1">													
+<text id="58.1.1">													
+<s id="1">													
+Für	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	1	für	ADP	APPR		4	case			pid:1.58.1.1.
+dieses	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	2	dies	PRON	PDAT	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	4	det			pid:1.58.1.1.
+"	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	3	"	PUNCT	$(		4	punct		SpaceAfter=No	pid:1.58.1.1.
+Mitbeschuldigen	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	4	Mitbeschuldige	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	10	obl		SpaceAfter=No	pid:1.58.1.1.
+"	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	5	"	PUNCT	$(		4	punct			pid:1.58.1.1.
+muss	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	6	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	aux			pid:1.58.1.1.
+es	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	7	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	10	nsubj			pid:1.58.1.1.
+handfeste	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	8	handf	ADJ	ADJA	Case=Nom|Gender=Neut|Number=Sing	9	amod			pid:1.58.1.1.
+Belege	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	9	Beleg	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	10	obj			pid:1.58.1.1.
+geben	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	10	geben	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:1.58.1.1.
+.	1	1	Für dieses "Mitbeschuldigen" muss es handfeste Belege geben.	11	.	PUNCT	$.		10	punct			pid:1.58.1.1.
+</s>													
+<s id="2">													
+Und	1	2	Und sonst?	1	und	CCONJ	ADJD		2	cc			pid:2.58.1.1.
+sonst	1	2	Und sonst?	2	sonsen	VERB	ADJA	Case=Nom|Gender=Neut|Number=Sing	0	root		SpaceAfter=No	pid:2.58.1.1.
+?	1	2	Und sonst?	3	?	PUNCT	$.		2	punct		SpacesAfter=\s\n\n	pid:2.58.1.1.
+</s>													
+<s id="3">													
+Sich	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	1	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	6	nsubj			pid:3.58.1.1.
+vielleicht	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	2	vielleicht	ADV	FM	Foreign=Yes	6	advmod			pid:3.58.1.1.
+nicht	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	3	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	advmod			pid:3.58.1.1.
+immer	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	4	immer	ADV	ADV		5	advmod			pid:3.58.1.1.
+angesprochen	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	5	angesprochen	ADJ	VVPP	VerbForm=Part	6	xcomp			pid:3.58.1.1.
+fühlen	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	6	fühlen	VERB	VVINF	VerbForm=Inf	0	root			pid:3.58.1.1.
+und	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	7	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	16	cc			pid:3.58.1.1.
+mit	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	8	mit	ADP	$(		10	case			pid:3.58.1.1.
+solchen	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	9	solch	PRON	PIAT	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Ind	10	det			pid:3.58.1.1.
+Kommentaren	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	10	Kommentar	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	16	obl			pid:3.58.1.1.
+die	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	11	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det			pid:3.58.1.1.
+Aufmerksamkeit	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	12	Aufmerksamkeit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	10	obj			pid:3.58.1.1.
+auf	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	13	auf	ADP	APPR		14	case			pid:3.58.1.1.
+sich	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	14	er|es|sie	PRON	PRF	Case=Dat|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	16	obl			pid:3.58.1.1.
+selbst	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	15	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	16	advmod			pid:3.58.1.1.
+lenken	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	16	lenken	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	6	conj			pid:3.58.1.1.
+-	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	17	-	PUNCT	$(		20	punct			pid:3.58.1.1.
+und	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	18	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	20	cc			pid:3.58.1.1.
+stattdessen	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	19	stattdessen	ADV	ADJA	Case=Dat|Gender=Fem|Number=Plur	20	advmod			pid:3.58.1.1.
+versuchen	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	20	versuchen	VERB	VVFIN	VerbForm=Inf	16	conj		SpaceAfter=No	pid:3.58.1.1.
+,	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	21	,	PUNCT	$,		25	punct			pid:3.58.1.1.
+den	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	22	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	23	det			pid:3.58.1.1.
+Opfern	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	23	Opfer	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	25	iobj			pid:3.58.1.1.
+Mitgefühl	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	24	Mitgefühl	PROPN	NN	Case=Nom|Gender=Neut|Number=Sing	23	appos			pid:3.58.1.1.
+entgegenzubringen	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	25	entgegenzubringen	VERB	NE	Case=Dat|Gender=Neut|Number=Sing	6	conj		SpaceAfter=No	pid:3.58.1.1.
+?	2	3	Sich vielleicht nicht immer angesprochen fühlen und mit solchen Kommentaren die Aufmerksamkeit auf sich selbst lenken - und stattdessen versuchen, den Opfern Mitgefühl entgegenzubringen?	26	?	PUNCT	$.		6	punct		SpacesAfter=\n	pid:3.58.1.1.
+</s>													
+</text>													
+</doc>													

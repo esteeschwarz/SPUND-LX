@@ -1,0 +1,19 @@
+<doc id="29.1.1">													
+<text id="29.1.1">													
+<s id="1">													
+Vllt	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	1	vllt	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	8	nsubj			pid:1.29.1.1.
+ist	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	cop			pid:1.29.1.1.
+der	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det			pid:1.29.1.1.
+Rechtsruck	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	4	Rechtsruck	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	8	nsubj			pid:1.29.1.1.
+ja	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	5	ja	ADV	ADV		8	advmod			pid:1.29.1.1.
+auch	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	6	auch	ADV	ADV		8	advmod			pid:1.29.1.1.
+eine	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	7	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	8	det			pid:1.29.1.1.
+Auswirkung	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	8	auswirkung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root			pid:1.29.1.1.
+auf	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	9	auf	ADP	APPR		12	case			pid:1.29.1.1.
+die	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	10	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det			pid:1.29.1.1.
+selbe	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	11	selb	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	12	amod			pid:1.29.1.1.
+Ursache	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	12	Ursache	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	8	nmod		SpaceAfter=No	pid:1.29.1.1.
+.	1	1	Vllt ist der Rechtsruck ja auch eine Auswirkung auf die selbe Ursache.	13	.	PUNCT	$.		8	punct		SpacesAfter=\n	pid:1.29.1.1.
+</s>													
+</text>													
+</doc>													

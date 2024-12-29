@@ -1,0 +1,24 @@
+<doc id="51.1.1">													
+<text id="51.1.1">													
+<s id="1">													
+Ja	1	1	Ja und ja	1	Ja	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	nsubj			pid:1.51.1.1.
+und	1	1	Ja und ja	2	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:1.51.1.1.
+ja	1	1	Ja und ja	3	ja	ADV	ADV		2	advmod		SpacesAfter=\n\n	pid:1.51.1.1.
+</s>													
+<s id="2">													
+generell	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	1	generell	ADJ	ADJD		7	advmod			pid:2.51.1.1.
+werden	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	2	werden	AUX	NN	Case=Nom|Gender=Masc|Number=Plur	7	aux:pass			pid:2.51.1.1.
+solche	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	3	solch	PRON	ADJD		4	det			pid:2.51.1.1.
+Straftaten	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	4	Straftat	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	7	nsubj:pass			pid:2.51.1.1.
+wesentlich	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	5	wesentlich	ADJ	ADJD		6	advmod			pid:2.51.1.1.
+öfter	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	6	öfter	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	7	nsubj:pass			pid:2.51.1.1.
+begangen	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	7	begehen	VERB	VVPP	VerbForm=Part	13	xcomp			pid:2.51.1.1.
+als	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	8	als	ADP	KOUS		12	case			pid:2.51.1.1.
+die	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	9	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	12	det			pid:2.51.1.1.
+Bild	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	10	Bild	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	compound		SpaceAfter=No	pid:2.51.1.1.
+-	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	11	-	PUNCT	$(		10	punct		SpaceAfter=No	pid:2.51.1.1.
+Zeitung	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	12	Zeitung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	7	obl			pid:2.51.1.1.
+berichtet	2	2	generell werden solche Straftaten wesentlich öfter begangen als die Bild-Zeitung berichtet	13	berichten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpacesAfter=\n	pid:2.51.1.1.
+</s>													
+</text>													
+</doc>													

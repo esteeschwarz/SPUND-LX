@@ -1,0 +1,28 @@
+<doc id="39.1.1">													
+<text id="39.1.1">													
+<s id="1">													
+Ich	1	1	Ich verteidige hier nichts und verharmlose nichts.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:1.39.1.1.
+verteidige	1	1	Ich verteidige hier nichts und verharmlose nichts.	2	verteidig	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	0	root			pid:1.39.1.1.
+hier	1	1	Ich verteidige hier nichts und verharmlose nichts.	3	hier	ADV	ADV		2	advmod			pid:1.39.1.1.
+nichts	1	1	Ich verteidige hier nichts und verharmlose nichts.	4	nichts	PRON	CARD	NumType=Card	2	obj			pid:1.39.1.1.
+und	1	1	Ich verteidige hier nichts und verharmlose nichts.	5	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	6	cc			pid:1.39.1.1.
+verharmlose	1	1	Ich verteidige hier nichts und verharmlose nichts.	6	verharmlos	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Plur	2	conj			pid:1.39.1.1.
+nichts	1	1	Ich verteidige hier nichts und verharmlose nichts.	7	nichts	PRON	NN	Case=Acc|Gender=Masc|Number=Plur	6	obj		SpaceAfter=No	pid:1.39.1.1.
+.	1	1	Ich verteidige hier nichts und verharmlose nichts.	8	.	PUNCT	$.		2	punct		SpacesAfter=\n\n	pid:1.39.1.1.
+</s>													
+<s id="2">													
+Fakt	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	1	Fakt	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	8	nsubj			pid:2.39.1.1.
+ist	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	cop			pid:2.39.1.1.
+doch	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	3	doch	ADV	ADV		8	advmod			pid:2.39.1.1.
+das	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	4	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	8	det			pid:2.39.1.1.
+diese	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	5	dies	PRON	PDAT	Case=Acc|Gender=Fem|Number=Plur|PronType=Dem	6	det			pid:2.39.1.1.
+Einstellungen	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	6	Einstellung	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	7	obj			pid:2.39.1.1.
+rechtes	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	7	rechtes	ADJ	ADJA	Case=Nom|Gender=Neut|Number=Sing	8	amod			pid:2.39.1.1.
+Gedankengut	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	8	Gedankengut	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	0	root			pid:2.39.1.1.
+ist	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	9	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	cop		SpaceAfter=No	pid:2.39.1.1.
+,	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	10	,	PUNCT	$,		11	punct			pid:2.39.1.1.
+oder	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	11	oder	CCONJ	XY		12	cc		SpaceAfter=No	pid:2.39.1.1.
+?	2	2	Fakt ist doch das diese Einstellungen rechtes Gedankengut ist, oder?	12	?	PUNCT	$.		8	punct		SpacesAfter=\n	pid:2.39.1.1.
+</s>													
+</text>													
+</doc>													

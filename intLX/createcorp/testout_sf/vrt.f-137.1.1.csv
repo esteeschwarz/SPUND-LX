@@ -1,0 +1,29 @@
+<doc id="137.1.1">													
+<text id="137.1.1">													
+<s id="1">													
+Wo	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	1	wo	ADV	PWAV	PronType=Int	2	advmod			pid:1.137.1.1.
+kämen	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	2	kämen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.137.1.1.
+wir	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	3	wir	PRON	ADJD		2	nsubj			pid:1.137.1.1.
+denn	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	4	denn	ADV	KOKOM		2	advmod			pid:1.137.1.1.
+da	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	5	da	SCONJ	ADV		6	mark			pid:1.137.1.1.
+hin	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	6	hin	ADV	PTKVZ		2	compound:prt		SpaceAfter=No	pid:1.137.1.1.
+,	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	7	,	PUNCT	$,		16	punct			pid:1.137.1.1.
+wenn	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	8	wenn	SCONJ	VVFIN		16	mark			pid:1.137.1.1.
+die	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	9	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det			pid:1.137.1.1.
+Leute	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	10	Leute	NOUN	NN	Case=Nom|Number=Plur	16	nsubj			pid:1.137.1.1.
+die	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	11	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det			pid:1.137.1.1.
+"	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	12	"	PUNCT	$(		14	punct		SpaceAfter=No	pid:1.137.1.1.
+harte	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	13	hart	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Plur	14	amod			pid:1.137.1.1.
+Strafen	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	14	Strafe	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	16	obj		SpaceAfter=No	pid:1.137.1.1.
+"	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	15	"	PUNCT	$(		14	punct			pid:1.137.1.1.
+fordern	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	16	fordern	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	2	advcl			pid:1.137.1.1.
+auch	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	17	auch	ADV	ADV		16	advmod			pid:1.137.1.1.
+die	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	18	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	19	det			pid:1.137.1.1.
+Konsequenzen	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	19	Konsequenz	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	16	nsubj			pid:1.137.1.1.
+davon	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	20	davon	ADV	PAV		16	advmod			pid:1.137.1.1.
+komplett	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	21	komplett	ADJ	ADJD		22	advmod			pid:1.137.1.1.
+durchdenken	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	22	durchdenken	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	16	xcomp		SpaceAfter=No	pid:1.137.1.1.
+?	1	1	Wo kämen wir denn da hin, wenn die Leute die "harte Strafen" fordern auch die Konsequenzen davon komplett durchdenken?	23	?	PUNCT	$.		2	punct		SpacesAfter=\n	pid:1.137.1.1.
+</s>													
+</text>													
+</doc>													

@@ -1,0 +1,28 @@
+<doc id="74.1.1">													
+<text id="74.1.1">													
+<s id="1">													
+Tut	1	1	Tut mir leid das du so jemanden im Leben hattest.	1	tut	PROPN	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	nsubj			pid:1.74.1.1.
+mir	1	1	Tut mir leid das du so jemanden im Leben hattest.	2	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	3	iobj			pid:1.74.1.1.
+leid	1	1	Tut mir leid das du so jemanden im Leben hattest.	3	leid	VERB	NN	Case=Dat|Gender=Neut|Number=Sing	0	root			pid:1.74.1.1.
+das	1	1	Tut mir leid das du so jemanden im Leben hattest.	4	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	5	det			pid:1.74.1.1.
+du	1	1	Tut mir leid das du so jemanden im Leben hattest.	5	du	ADV	NN	Foreign=Yes	3	advmod			pid:1.74.1.1.
+so	1	1	Tut mir leid das du so jemanden im Leben hattest.	6	so	ADV	NE	Case=Dat|Number=Plur	7	advmod			pid:1.74.1.1.
+jemanden	1	1	Tut mir leid das du so jemanden im Leben hattest.	7	jemand	PRON	PIS	Case=Acc|Definite=Ind|Number=Sing|PronType=Ind	3	obj			pid:1.74.1.1.
+im	1	1	Tut mir leid das du so jemanden im Leben hattest.	8-9									pid:1.74.1.1.
+in	1	1	Tut mir leid das du so jemanden im Leben hattest.	8	in	ADP	APPR		10	case			pid:1.74.1.1.
+dem	1	1	Tut mir leid das du so jemanden im Leben hattest.	9	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	10	det			pid:1.74.1.1.
+Leben	1	1	Tut mir leid das du so jemanden im Leben hattest.	10	Leben	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	11	obl			pid:1.74.1.1.
+hattest	1	1	Tut mir leid das du so jemanden im Leben hattest.	11	hattesen	VERB	ADJD		3	acl		SpaceAfter=No	pid:1.74.1.1.
+.	1	1	Tut mir leid das du so jemanden im Leben hattest.	12	.	PUNCT	$.		3	punct			pid:1.74.1.1.
+</s>													
+<s id="2">													
+Gut	1	2	Gut das es dein Ex ist.	1	gut	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	0	root			pid:2.74.1.1.
+das	1	2	Gut das es dein Ex ist.	2	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	5	det			pid:2.74.1.1.
+es	1	2	Gut das es dein Ex ist.	3	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	obj			pid:2.74.1.1.
+dein	1	2	Gut das es dein Ex ist.	4	dein	ADJ	PIAT	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	amod			pid:2.74.1.1.
+Ex	1	2	Gut das es dein Ex ist.	5	Ex	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	1	appos			pid:2.74.1.1.
+ist	1	2	Gut das es dein Ex ist.	6	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	cop		SpaceAfter=No	pid:2.74.1.1.
+.	1	2	Gut das es dein Ex ist.	7	.	PUNCT	$.		1	punct		SpacesAfter=\n	pid:2.74.1.1.
+</s>													
+</text>													
+</doc>													

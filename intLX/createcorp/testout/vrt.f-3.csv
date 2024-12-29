@@ -1,262 +1,28 @@
 <doc id="3">													
 <text id="3.1">													
 <s id="1">													
-Eine	1	1	Eine, die alles wegspülen wollte	1	ein	NOUN	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	6	obj		SpaceAfter=No	pid:1.3.1.
-,	1	1	Eine, die alles wegspülen wollte	2	,	PUNCT	$,		5	punct			pid:1.3.1.
-die	1	1	Eine, die alles wegspülen wollte	3	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	5	nsubj			pid:1.3.1.
-alles	1	1	Eine, die alles wegspülen wollte	4	alle	PRON	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	obj			pid:1.3.1.
-wegspülen	1	1	Eine, die alles wegspülen wollte	5	wegspülen	VERB	VVINF	VerbForm=Inf	1	acl			pid:1.3.1.
-wollte	1	1	Eine, die alles wegspülen wollte	6	wollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		SpacesAfter=\n	pid:1.3.1.
-</s>													
-</text>													
-<text id="3.2">													
-<s id="1">													
-Als	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	1	als	SCONJ	KOKOM		3	mark			pid:1.3.2.
-sie	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	2	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	3	nsubj			pid:1.3.2.
-jung	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	3	jung	ADJ	ADJD		15	advcl			pid:1.3.2.
-war	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	4	sein	AUX	TRUNC	Case=Acc|Gender=Fem|Number=Sing	3	cop		SpaceAfter=No	pid:1.3.2.
-,	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	5	,	PUNCT	$,		3	punct			pid:1.3.2.
-konnte	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	6	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	15	aux			pid:1.3.2.
-man	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	7	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	15	nsubj			pid:1.3.2.
-ihr	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	8	ihr	PRON	PPER	Case=Dat|Gender=Fem|Number=Sing|Person=3|PronType=Prs	15	iobj			pid:1.3.2.
-in	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	9	in	ADP	APPR		11	case			pid:1.3.2.
-der	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	10	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	11	det			pid:1.3.2.
-Metropole	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	11	Metropole	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	15	obl			pid:1.3.2.
-an	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	12	an	ADP	APPR		14	case			pid:1.3.2.
-verschiedenen	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	13	verschieden	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Plur	14	amod			pid:1.3.2.
-Orten	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	14	Ort|Orten	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	11	nmod			pid:1.3.2.
-begegnen	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	15	begegnen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:1.3.2.
-.	1	1	Als sie jung war, konnte man ihr in der Metropole an verschiedenen Orten begegnen.	16	.	PUNCT	$.		15	punct			pid:1.3.2.
-</s>													
-<s id="2">													
-Auf	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	1	auf	ADP	APPR		3	case			pid:2.3.2.
-dem	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	2	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	3	det			pid:2.3.2.
-Pflaster	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	3	Pflaster	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	0	root			pid:2.3.2.
-eines	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	4	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	5	det			pid:2.3.2.
-Boulevards	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	5	Boulevard	NOUN	NE	Case=Gen|Gender=Masc|Number=Sing	3	nmod		SpaceAfter=No	pid:2.3.2.
-,	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	6	,	PUNCT	$,		9	punct			pid:2.3.2.
-in	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	7	in	ADP	APPR		8	case			pid:2.3.2.
-einem	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	8	ein	PRON	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	9	obl			pid:2.3.2.
-schicken	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	9	schicken	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	3	acl			pid:2.3.2.
-Lokal	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	10	Lokal	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	9	obj		SpaceAfter=No	pid:2.3.2.
-,	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	11	,	PUNCT	$,		16	punct			pid:2.3.2.
-womöglich	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	12	womöglich	ADV	ADV		16	advmod			pid:2.3.2.
-gar	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	13	gar	ADV	ADV		16	advmod			pid:2.3.2.
-im	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	14-15									pid:2.3.2.
-in	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	14	in	ADP	APPR		16	case			pid:2.3.2.
-dem	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	15	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	16	det			pid:2.3.2.
-Wartezimmer	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	16	Wartezimmer	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	10	nmod			pid:2.3.2.
-eines	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	17	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	18	det			pid:2.3.2.
-Arztes	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	18	Arzt	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	16	nmod		SpaceAfter=No	pid:2.3.2.
-.	1	2	Auf dem Pflaster eines Boulevards, in einem schicken Lokal, womöglich gar im Wartezimmer eines Arztes.	19	.	PUNCT	$.		3	punct			pid:2.3.2.
-</s>													
-<s id="3">													
-Immer	1	3	Immer sah sie blendend aus.	1	immer	ADV	ADV		2	advmod			pid:3.3.2.
-sah	1	3	Immer sah sie blendend aus.	2	sehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:3.3.2.
-sie	1	3	Immer sah sie blendend aus.	3	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	2	nsubj			pid:3.3.2.
-blendend	1	3	Immer sah sie blendend aus.	4	blendend	ADJ	ADJD		2	advmod			pid:3.3.2.
-aus	1	3	Immer sah sie blendend aus.	5	aus	ADP	PTKVZ		2	compound:prt		SpaceAfter=No	pid:3.3.2.
-.	1	3	Immer sah sie blendend aus.	6	.	PUNCT	$.		2	punct			pid:3.3.2.
-</s>													
-<s id="4">													
-Kein	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	1	kein	PRON	PIAT	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|Polarity=Neg|PronType=Neg	2	dep			pid:4.3.2.
-Wunder	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	2	Wunder	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	0	root		SpaceAfter=No	pid:4.3.2.
-,	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	3	,	PUNCT	$,		8	punct			pid:4.3.2.
-dass	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	4	dass	SCONJ	KOUS		8	mark			pid:4.3.2.
-sich	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	5	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	8	obj			pid:4.3.2.
-viele	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	6	viel	PRON	NE	Case=Nom|Gender=Neut|Number=Sing	8	nsubj			pid:4.3.2.
-darum	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	7	darum	ADV	PAV		8	advmod			pid:4.3.2.
-rissen	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	8	rissen	VERB	VVINF	VerbForm=Inf	2	acl		SpaceAfter=No	pid:4.3.2.
-,	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	9	,	PUNCT	$,		11	punct			pid:4.3.2.
-ihr	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	10	ihr	PRON	PPER	Case=Dat|Gender=Fem|Number=Sing|Person=3|PronType=Prs	11	nsubj			pid:4.3.2.
-nah	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	11	nah	ADJ	ADJD		8	xcomp			pid:4.3.2.
-zu	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	12	zu	PART	NN	Case=Nom|Number=Plur	11	mark			pid:4.3.2.
-sein	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	13	sein	AUX	VAINF	VerbForm=Inf	11	cop		SpaceAfter=No	pid:4.3.2.
-.	1	4	Kein Wunder, dass sich viele darum rissen, ihr nah zu sein.	14	.	PUNCT	$.		2	punct			pid:4.3.2.
-</s>													
-<s id="5">													
-Bisweilen	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	1	bisweil	ADJ	ADV		2	advmod			pid:5.3.2.
-ließ	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	2	lassen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:5.3.2.
-sie	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	3	sie	PRON	VVINF	VerbForm=Inf	2	nsubj			pid:5.3.2.
-es	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	obj			pid:5.3.2.
-zu	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	5	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	2	compound:prt		SpaceAfter=No	pid:5.3.2.
-,	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	6	,	PUNCT	$,		8	punct			pid:5.3.2.
-nie	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	7	nie	ADV	ADV		8	advmod			pid:5.3.2.
-war	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	8	sein	VERB	ADV		2	advcl			pid:5.3.2.
-es	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	9	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	8	nsubj			pid:5.3.2.
-lange	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	10	lange	ADJ	ADJA		8	advmod		SpaceAfter=No	pid:5.3.2.
-,	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	11	,	PUNCT	$,		14	punct			pid:5.3.2.
-einmal	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	12	einmal	ADV	ADV		11	advmod			pid:5.3.2.
-zu	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	13	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	14	mark			pid:5.3.2.
-sandig	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	14	sandig	ADJ	ADJD		2	xcomp		SpaceAfter=No	pid:5.3.2.
-.	1	5	Bisweilen ließ sie es zu, nie war es lange, einmal zu sandig.	15	.	PUNCT	$.		2	punct			pid:5.3.2.
-</s>													
-<s id="6">													
-Muße	1	6	Muße hielt sie nicht aus, nippte hier und dort.	1	Muß	ADJ	NN	Case=Nom|Gender=Fem|Number=Sing	2	nsubj			pid:6.3.2.
-hielt	1	6	Muße hielt sie nicht aus, nippte hier und dort.	2	halten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:6.3.2.
-sie	1	6	Muße hielt sie nicht aus, nippte hier und dort.	3	sie	PRON	NN	Case=Acc|Gender=Fem|Number=Sing	2	obj			pid:6.3.2.
-nicht	1	6	Muße hielt sie nicht aus, nippte hier und dort.	4	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	advmod			pid:6.3.2.
-aus	1	6	Muße hielt sie nicht aus, nippte hier und dort.	5	aus	ADP	PTKVZ		2	compound:prt		SpaceAfter=No	pid:6.3.2.
-,	1	6	Muße hielt sie nicht aus, nippte hier und dort.	6	,	PUNCT	$,		7	punct			pid:6.3.2.
-nippte	1	6	Muße hielt sie nicht aus, nippte hier und dort.	7	nippen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj			pid:6.3.2.
-hier	1	6	Muße hielt sie nicht aus, nippte hier und dort.	8	hier	ADV	ADV		7	advmod			pid:6.3.2.
-und	1	6	Muße hielt sie nicht aus, nippte hier und dort.	9	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	10	cc			pid:6.3.2.
-dort	1	6	Muße hielt sie nicht aus, nippte hier und dort.	10	dort	ADV	ADV		7	conj		SpaceAfter=No	pid:6.3.2.
-.	1	6	Muße hielt sie nicht aus, nippte hier und dort.	11	.	PUNCT	$.		2	punct			pid:6.3.2.
-</s>													
-<s id="7">													
-Einen	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	1	ein	PRON	PIS	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	9	nsubj		SpaceAfter=No	pid:7.3.2.
-,	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	2	,	PUNCT	$,		7	punct			pid:7.3.2.
-dem	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	3	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	7	iobj			pid:7.3.2.
-sie	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	4	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	7	nsubj			pid:7.3.2.
-besondere	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	5	besonder	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Plur	6	amod			pid:7.3.2.
-Impulse	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	6	Impuls	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	7	obj			pid:7.3.2.
-verdankte	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	7	verdanken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	1	acl		SpaceAfter=No	pid:7.3.2.
-,	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	8	,	PUNCT	$,		1	punct			pid:7.3.2.
-traf	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	9	treffen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:7.3.2.
-sie	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	10	sie	PRON	NN	Case=Acc|Gender=Fem|Number=Sing	9	nsubj			pid:7.3.2.
-im	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	11-12									pid:7.3.2.
-in	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	11	in	ADP	APPR		13	case			pid:7.3.2.
-dem	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det			pid:7.3.2.
-Café	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	13	Café	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	9	obl			pid:7.3.2.
-einer	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	14	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	15	det			pid:7.3.2.
-Hauptstadt	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	15	Hauptstadt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	13	nmod		SpaceAfter=No	pid:7.3.2.
-,	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	16	,	PUNCT	$,		19	punct			pid:7.3.2.
-unweit	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	17	unweit	ADP	ADJD		19	case			pid:7.3.2.
-eines	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	18	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	19	det			pid:7.3.2.
-Mausoleums	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	19	Mausoleum	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	15	nmod		SpaceAfter=No	pid:7.3.2.
-.	1	7	Einen, dem sie besondere Impulse verdankte, traf sie im Café einer Hauptstadt, unweit eines Mausoleums.	20	.	PUNCT	$.		9	punct			pid:7.3.2.
-</s>													
-<s id="8">													
-Damals	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	1	damals	ADV	ADV		2	advmod			pid:8.3.2.
-wusste	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	2	wissen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:8.3.2.
-sie	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	3	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	2	nsubj			pid:8.3.2.
-noch	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	4	noch	ADV	NE	Case=Nom|Gender=Fem|Number=Sing	5	advmod			pid:8.3.2.
-nicht	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	5	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	advmod		SpaceAfter=No	pid:8.3.2.
-,	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	6	,	PUNCT	$,		15	punct			pid:8.3.2.
-wie	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	7	wie	ADV	NE	Case=Nom|Gender=Neut|Number=Sing	15	advmod			pid:8.3.2.
-sehr	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	8	sehr	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	15	advmod			pid:8.3.2.
-sie	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	9	sie	PRON	VVINF	VerbForm=Inf	15	nsubj			pid:8.3.2.
-sich	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	10	er|es|sie	PRON	PRF	Case=Acc|Number=Plur|Person=3|PronType=Prs|Reflex=Yes	15	obj			pid:8.3.2.
-mit	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	11	mit	ADP	ADJA	Case=Nom|Gender=Neut|Number=Plur	12	case			pid:8.3.2.
-Leid	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	12	Leid	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	15	obl			pid:8.3.2.
-und	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	13	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	14	cc			pid:8.3.2.
-Tod	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	14	Tod	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	12	conj			pid:8.3.2.
-beschäftigen	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	15	beschäftigen	VERB	VVINF	VerbForm=Inf	2	ccomp			pid:8.3.2.
-würde	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	16	werden	AUX	NE	Case=Nom|Number=Sing	15	aux		SpaceAfter=No	pid:8.3.2.
-.	1	8	Damals wusste sie noch nicht, wie sehr sie sich mit Leid und Tod beschäftigen würde.	17	.	PUNCT	$.		2	punct			pid:8.3.2.
-</s>													
-<s id="9">													
-Das	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	1	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	2	nsubj			pid:9.3.2.
-geschah	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	2	geschehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:9.3.2.
-auf	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	3	auf	ADP	APPR		5	case			pid:9.3.2.
-eigenen	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	4	eigen	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	5	amod			pid:9.3.2.
-Wunsch	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	5	Wunsch	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	2	obl		SpaceAfter=No	pid:9.3.2.
-,	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	6	,	PUNCT	$,		8	punct			pid:9.3.2.
-aus	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	7	aus	ADP	APPR		8	case			pid:9.3.2.
-Überzeugung	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	8	Überzeugung	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	2	obl			pid:9.3.2.
-gar	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	9	gar	ADV	ADV		8	advmod		SpaceAfter=No	pid:9.3.2.
-.	1	9	Das geschah auf eigenen Wunsch, aus Überzeugung gar.	10	.	PUNCT	$.		2	punct			pid:9.3.2.
-</s>													
-<s id="10">													
-Schulterfreie	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	1	Schulterfrei	PROPN	ADJA	Case=Nom|Gender=Neut|Number=Plur	3	nsubj			pid:10.3.2.
-Abendkleider	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	2	Abendkleider	PROPN	PIAT	Case=Gen|Definite=Ind|Gender=Neut|Number=Plur|PronType=Ind	1	flat			pid:10.3.2.
-passten	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	3	passen	VERB	NN	Case=Gen|Gender=Masc|Number=Sing	0	root			pid:10.3.2.
-nicht	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	4	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	advmod			pid:10.3.2.
-mehr	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	5	mehr	ADV	ADV		3	advmod		SpaceAfter=No	pid:10.3.2.
-,	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	6	,	PUNCT	$,		9	punct			pid:10.3.2.
-Stöckelschuhe	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	7	Stöckelschuhe	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	9	nsubj			pid:10.3.2.
-waren	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	8	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	9	cop			pid:10.3.2.
-überflüssig	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	9	überflüssig	ADJ	ADJD		3	conj		SpaceAfter=No	pid:10.3.2.
-.	1	10	Schulterfreie Abendkleider passten nicht mehr, Stöckelschuhe waren überflüssig.	10	.	PUNCT	$.		3	punct			pid:10.3.2.
-</s>													
-<s id="11">													
-Der	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det			pid:11.3.2.
-Boden	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	2	Boden	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	10	nsubj		SpaceAfter=No	pid:11.3.2.
-,	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	3	,	PUNCT	$,		6	punct			pid:11.3.2.
-den	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	4	der	PRON	PRELS	Case=Acc|Gender=Masc|Number=Sing|PronType=Rel	6	obj			pid:11.3.2.
-sie	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	5	sie	PRON	NN	Case=Acc|Gender=Masc|Number=Plur	6	nsubj			pid:11.3.2.
-betrat	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	6	betreten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	acl		SpaceAfter=No	pid:11.3.2.
-,	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	7	,	PUNCT	$,		6	punct			pid:11.3.2.
-war	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	8	sein	AUX	ADV		10	cop			pid:11.3.2.
-oft	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	9	oft	ADV	CARD	NumType=Card	10	advmod			pid:11.3.2.
-uneben	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	10	uneben	VERB	NN	Case=Dat|Gender=Masc|Number=Plur	0	root		SpaceAfter=No	pid:11.3.2.
-,	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	11	,	PUNCT	$,		12	punct			pid:11.3.2.
-scharfkantig	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	12	scharfkantig	ADJ	ADJD		10	conj		SpaceAfter=No	pid:11.3.2.
-,	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	13	,	PUNCT	$,		15	punct			pid:11.3.2.
-manchmal	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	14	manchmal	ADV	ADV		15	advmod			pid:11.3.2.
-rot	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	15	rieten	VERB	VVINF	VerbForm=Inf	10	conj		SpaceAfter=No	pid:11.3.2.
-.	1	11	Der Boden, den sie betrat, war oft uneben, scharfkantig, manchmal rot.	16	.	PUNCT	$.		10	punct			pid:11.3.2.
-</s>													
-<s id="12">													
-Was	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	1	was	PRON	FM	Foreign=Yes	4	nsubj			pid:12.3.2.
-die	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	2	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	3	det			pid:12.3.2.
-Gesuchte	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	3	Gesuchte	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	4	obj			pid:12.3.2.
-sah	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	4	sehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	advcl		SpaceAfter=No	pid:12.3.2.
-,	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	5	,	PUNCT	$,		4	punct			pid:12.3.2.
-teilte	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	6	teilen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:12.3.2.
-sie	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	7	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	6	nsubj			pid:12.3.2.
-bald	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	8	bald	ADV	ADV		6	advmod			pid:12.3.2.
-mit	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	9	mit	ADP	CARD	NumType=Card	13	case			pid:12.3.2.
-vielen	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	10	viel	DET	PIAT	Case=Dat|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	13	amod			pid:12.3.2.
-in	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	11	in	ADP	APPR		13	case			pid:12.3.2.
-der	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det			pid:12.3.2.
-Ferne	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	13	Ferne	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	6	obl		SpaceAfter=No	pid:12.3.2.
-.	1	12	Was die Gesuchte sah, teilte sie bald mit vielen in der Ferne.	14	.	PUNCT	$.		6	punct			pid:12.3.2.
-</s>													
-<s id="13">													
-Die	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	1	der	DET	PDS	Case=Nom|Number=Plur|PronType=Dem	4	nsubj			pid:13.3.2.
-konnten	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	2	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	4	aux			pid:13.3.2.
-rasch	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	3	rasch	ADJ	ADJD		4	advmod			pid:13.3.2.
-weiterblättern	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	4	weiterblättern	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:13.3.2.
-,	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	5	,	PUNCT	$,		7	punct			pid:13.3.2.
-zu	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	6	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	7	case			pid:13.3.2.
-Dessous	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	7	Dessous	NOUN	NE	Case=Nom|Number=Sing	4	obl			pid:13.3.2.
-oder	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	8	oder	CCONJ	XY		9	cc			pid:13.3.2.
-Cocktailkleidern	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	9	Cocktailkleid	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	7	conj		SpaceAfter=No	pid:13.3.2.
-.	1	13	Die konnten rasch weiterblättern, zu Dessous oder Cocktailkleidern.	10	.	PUNCT	$.		4	punct			pid:13.3.2.
-</s>													
-<s id="14">													
-Bei	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	1	bei	ADP	APPR		2	case			pid:14.3.2.
-ihr	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	2	ihr	PRON	PPER	Case=Dat|Gender=Fem|Number=Sing|Person=3|PronType=Prs	4	nmod			pid:14.3.2.
-war	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	3	sein	AUX	ADV		4	cop			pid:14.3.2.
-alles	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	4	alle	PRON	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	obj			pid:14.3.2.
-im	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	5-6									pid:14.3.2.
-in	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	5	in	ADP	APPR		7	case			pid:14.3.2.
-dem	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	6	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det			pid:14.3.2.
-Kopf	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	7	Kopf	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	4	nmod		SpaceAfter=No	pid:14.3.2.
-,	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	8	,	PUNCT	$,		10	punct			pid:14.3.2.
-wie	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	9	wie	ADV	NN	Case=Nom|Gender=Masc|Number=Sing	10	advmod			pid:14.3.2.
-eingebrannt	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	10	eingebrennen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:14.3.2.
-.	1	14	Bei ihr war alles im Kopf, wie eingebrannt.	11	.	PUNCT	$.		10	punct			pid:14.3.2.
-</s>													
-<s id="15">													
-Es	1	15	Es musste weggespült werden.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	expl			pid:15.3.2.
-musste	1	15	Es musste weggespült werden.	2	müssen	AUX	NN	Case=Gen|Gender=Neut|Number=Sing|NumType=Card	3	aux			pid:15.3.2.
-weggespült	1	15	Es musste weggespült werden.	3	weggespülen	VERB	VVPP	VerbForm=Part	0	root			pid:15.3.2.
-werden	1	15	Es musste weggespült werden.	4	werden	AUX	NE	Case=Gen|Gender=Masc|Number=Plur	3	aux:pass		SpaceAfter=No	pid:15.3.2.
-.	1	15	Es musste weggespült werden.	5	.	PUNCT	$.		3	punct			pid:15.3.2.
-</s>													
-<s id="16">													
-Wieder	1	16	Wieder und wieder.	1	wieder	ADV	NN	Case=Nom|Gender=Neut|Number=Plur	0	root			pid:16.3.2.
-und	1	16	Wieder und wieder.	2	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	3	cc			pid:16.3.2.
-wieder	1	16	Wieder und wieder.	3	wieder	ADV	NN	Case=Gen|Gender=Neut|Number=Sing	1	conj		SpaceAfter=No	pid:16.3.2.
-.	1	16	Wieder und wieder.	4	.	PUNCT	$.		1	punct			pid:16.3.2.
-</s>													
-<s id="17">													
-Half	1	17	Half nichts.	1	half	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:17.3.2.
-nichts	1	17	Half nichts.	2	nichts	PRON	CARD	NumType=Card	1	obj		SpaceAfter=No	pid:17.3.2.
-.	1	17	Half nichts.	3	.	PUNCT	$.		1	punct			pid:17.3.2.
-</s>													
-<s id="18">													
-Der	1	18	Der Nachlass der Gesuchten zeigt, warum.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det			pid:18.3.2.
-Nachlass	1	18	Der Nachlass der Gesuchten zeigt, warum.	2	Nachlaß	NOUN	NE	Case=Nom|Gender=Fem|Number=Sing	5	nsubj			pid:18.3.2.
-der	1	18	Der Nachlass der Gesuchten zeigt, warum.	3	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:18.3.2.
-Gesuchten	1	18	Der Nachlass der Gesuchten zeigt, warum.	4	Gesucht	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	2	nmod			pid:18.3.2.
-zeigt	1	18	Der Nachlass der Gesuchten zeigt, warum.	5	zeigen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:18.3.2.
-,	1	18	Der Nachlass der Gesuchten zeigt, warum.	6	,	PUNCT	$,		7	punct			pid:18.3.2.
-warum	1	18	Der Nachlass der Gesuchten zeigt, warum.	7	warum	ADV	ADJD		5	compound:prt		SpaceAfter=No	pid:18.3.2.
-.	1	18	Der Nachlass der Gesuchten zeigt, warum.	8	.	PUNCT	$.		5	punct		SpacesAfter=\n	pid:18.3.2.
+Ich	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	11	nsubj			pid:3.1.1
+habe	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	11	aux			pid:3.1.1
+über	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	3	über	ADP	FM	Foreign=Yes	4	case			pid:3.1.1
+es	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	11	obl			pid:3.1.1
+so	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	5	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	11	advmod			pid:3.1.1
+eine	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	6	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	7	det			pid:3.1.1
+Situation	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	7	Situation	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	11	obj			pid:3.1.1
+im	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	8-9									pid:3.1.1
+in	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	8	in	ADP	APPR		10	case			pid:3.1.1
+dem	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	9	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	10	det			pid:3.1.1
+Buch	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	10	Buch	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	11	obl			pid:3.1.1
+gelesen	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	11	lesen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:3.1.1
+,	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	12	,	PUNCT	$,		13	punct			pid:3.1.1
+dachte	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	13	denken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	11	conj			pid:3.1.1
+aber	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	14	aber	ADV	ADV		13	advmod			pid:3.1.1
+nicht	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	15	nicht	PART	CARD	NumType=Card	13	advmod			pid:3.1.1
+das	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	16	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	17	det			pid:3.1.1
+es	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	17	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	13	nsubj			pid:3.1.1
+in	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	18	in	ADP	APPR		19	case			pid:3.1.1
+Wirklichkeit	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	19	Wirklichkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	13	obl			pid:3.1.1
+gibt's	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	20	gibt's	X	PPER	Foreign=Yes	13	compound:prt		SpaceAfter=No	pid:3.1.1
+.	1	1	Ich habe über es so eine Situation im Buch gelesen, dachte aber nicht das es in Wirklichkeit gibt's.	21	.	PUNCT	$.		11	punct		SpacesAfter=\n	pid:3.1.1
 </s>													
 </text>													
 </doc>													

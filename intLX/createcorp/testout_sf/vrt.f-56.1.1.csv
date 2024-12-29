@@ -1,0 +1,19 @@
+<doc id="56.1.1">													
+<text id="56.1.1">													
+<s id="1">													
+[	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	1	[	PUNCT	$(		2	punct		SpaceAfter=No	pid:1.56.1.1.
+Hello	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	2	Hello	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	12	nsubj		SpaceAfter=No	pid:1.56.1.1.
+,	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	3	,	PUNCT	$,		4	punct			pid:1.56.1.1.
+you've	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	4	you'v	ADJ	NE	Case=Nom|Gender=Masc|Number=Sing	5	amod			pid:1.56.1.1.
+reached	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	5	reached	PROPN	FM	Foreign=Yes	2	flat			pid:1.56.1.1.
+the	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	6	the	PROPN	NN	Case=Acc|Gender=Neut|Number=Plur	2	flat			pid:1.56.1.1.
+Not	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	7	not	PROPN	FM	Foreign=Yes	2	flat			pid:1.56.1.1.
+All	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	8	all	PROPN	NE	Case=Nom|Number=Plur	2	flat			pid:1.56.1.1.
+Men	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	9	men	PROPN	$(		2	flat			pid:1.56.1.1.
+Hotline	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	10	Hotline	PROPN	NN	Case=Nom|Gender=Fem|Number=Sing	2	flat			pid:1.56.1.1.
+](	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	11	](	PUNCT	$.		2	punct		SpaceAfter=No	pid:1.56.1.1.
+https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	12	https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline	ADJ	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:1.56.1.1.
+)	1	1	[Hello, you've reached the Not All Men Hotline ](https://www.zawn.net/blog/hello-youve-reached-the-not-all-men-hotline)	13	)	PUNCT	$(		12	punct		SpacesAfter=\n	pid:1.56.1.1.
+</s>													
+</text>													
+</doc>													

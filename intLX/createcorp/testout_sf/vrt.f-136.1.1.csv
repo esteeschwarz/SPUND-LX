@@ -1,0 +1,37 @@
+<doc id="136.1.1">													
+<text id="136.1.1">													
+<s id="1">													
+Dann	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	1	dann	ADV	ADV		9	advmod			pid:1.136.1.1.
+lieber	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	2	lieb	ADV	ADV		9	advmod		SpacesAfter=\s\s	pid:1.136.1.1.
+bei	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	3	bei	ADP	APPR		6	case			pid:1.136.1.1.
+der	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	4	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:1.136.1.1.
+nächsten	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	5	nah	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	6	amod			pid:1.136.1.1.
+Demo	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	6	Demo	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	9	obl			pid:1.136.1.1.
+ganz	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	7	ganz	ADV	ADV		8	advmod			pid:1.136.1.1.
+genau	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	8	genau	ADJ	ADJD		9	advmod			pid:1.136.1.1.
+aufpassen	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	9	aufpassen	VERB	VVINF	VerbForm=Inf	16	advcl			pid:1.136.1.1.
+das	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	10	der	DET	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	12	det			pid:1.136.1.1.
+dein	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	11	dein	ADJ	PIAT	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	12	amod			pid:1.136.1.1.
+Schädel	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	12	Schädel	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	16	nsubj			pid:1.136.1.1.
+keine	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	13	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|Polarity=Neg|PronType=Neg	14	nmod			pid:1.136.1.1.
+zarte	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	14	zart	ADJ	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	16	advmod			pid:1.136.1.1.
+polizistenhand	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	15	polizistenhand	ADJ	ADV		16	advmod			pid:1.136.1.1.
+verletzt	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	16	verletzen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:1.136.1.1.
+...	1	1	Dann lieber bei der nächsten Demo ganz genau aufpassen das dein Schädel keine zarte polizistenhand verletzt...	17	...	PUNCT	$(		16	punct			pid:1.136.1.1.
+</s>													
+<s id="2">													
+Es	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:2.136.1.1.
+traut	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	2	trauen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:2.136.1.1.
+sich	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obj			pid:2.136.1.1.
+ja	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	4	ja	ADV	ADV		2	advmod			pid:2.136.1.1.
+jetzt	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	5	jetzt	ADV	ADV		2	advmod			pid:2.136.1.1.
+schon	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	6	schon	ADV	ADV		7	advmod			pid:2.136.1.1.
+keiner	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	7	kein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|Polarity=Neg|PronType=Neg	2	obl			pid:2.136.1.1.
+mehr	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	8	mehr	ADV	ADV		7	advmod			pid:2.136.1.1.
+Fehlverhalten	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	9	Fehlverhalten	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	12	nsubj			pid:2.136.1.1.
+von	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	10	von	ADP	NE	Case=Acc|Gender=Masc|Number=Sing	12	case			pid:2.136.1.1.
+polizisten	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	11	polizi	ADJ	NN	Case=Acc|Gender=Masc|Number=Plur	12	amod			pid:2.136.1.1.
+anzuzeigen	1	2	Es traut sich ja jetzt schon keiner mehr Fehlverhalten von polizisten anzuzeigen	12	anzuzeig	ADJ	VVINF	VerbForm=Inf	2	xcomp		SpacesAfter=\n	pid:2.136.1.1.
+</s>													
+</text>													
+</doc>													

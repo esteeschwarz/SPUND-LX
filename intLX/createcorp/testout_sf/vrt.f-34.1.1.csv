@@ -1,0 +1,29 @@
+<doc id="34.1.1">													
+<text id="34.1.1">													
+<s id="1">													
+"	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	1	"	PUNCT	$(		4	punct		SpaceAfter=No	pid:1.34.1.1.
+Die	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	2	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:1.34.1.1.
+überwiegende	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	3	überwiegend	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	4	amod			pid:1.34.1.1.
+Zahl	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	4	Zahl	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	11	nsubj			pid:1.34.1.1.
+der	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	5	der	DET	ART	Case=Gen|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	6	det			pid:1.34.1.1.
+Opfer	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	6	Opfer	NOUN	NN	Case=Gen|Gender=Neut|Number=Plur	4	nmod			pid:1.34.1.1.
+und	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	7	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	8	cc		SpacesAfter= 	pid:1.34.1.1.
+Tatverdächtigen	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	8	Tatverdächtig	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	6	conj		SpacesAfter= 	pid:1.34.1.1.
+ist	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	9	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	cop			pid:1.34.1.1.
+deutscher	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	10	deutsch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	11	amod			pid:1.34.1.1.
+Staatsangehörigkeit	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	11	Staatsangehörigkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:1.34.1.1.
+.	1	1	"Die überwiegende Zahl der Opfer und Tatverdächtigen ist deutscher Staatsangehörigkeit.	12	.	PUNCT	$.		11	punct		SpacesAfter= 	pid:1.34.1.1.
+</s>													
+<s id="2">													
+"	1	2	"	1	"	PUNCT	$(		0	root		SpacesAfter= \n\n\n	pid:2.34.1.1.
+</s>													
+<s id="3">													
+BMI	2	3	BMI Pressemitteilung 18.11.2024 Link: https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	1	BMI	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:3.34.1.1.
+Pressemitteilung	2	3	BMI Pressemitteilung 18.11.2024 Link: https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	2	Pressemitteilung	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	flat			pid:3.34.1.1.
+18.11.2024	2	3	BMI Pressemitteilung 18.11.2024 Link: https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	3	18.11.2024	PROPN	XY	NumType=Card	1	appos		SpacesAfter=\n	pid:3.34.1.1.
+Link	2	3	BMI Pressemitteilung 18.11.2024 Link: https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	4	Link	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	1	flat		SpaceAfter=No	pid:3.34.1.1.
+:	2	3	BMI Pressemitteilung 18.11.2024 Link: https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	5	:	PUNCT	$.		6	punct		SpacesAfter= 	pid:3.34.1.1.
+https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	2	3	BMI Pressemitteilung 18.11.2024 Link: https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	6	https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/11/lagebild-geschlechtsspezifische-gewalt.html	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	1	appos		SpacesAfter=\n	pid:3.34.1.1.
+</s>													
+</text>													
+</doc>													

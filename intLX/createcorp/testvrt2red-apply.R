@@ -33,12 +33,12 @@ library(abind)
 fns.e<-file_ext(fns)=="txt"
 fns<-fns[fns.e]
 
-get.sent.div<-function(x,id,n){
+get.sent.div<-function(x,id,n,doc_id){
   df<-x
   m<-df$sentence_id==id
   cat("\nsent:",id,".",n,"\n")
   df.es<-df[m,]
-  df.es$doc_id<-paste0("pid:",id,".",df.es$doc_id)
+  df.es$doc_id<-paste0("pid:",doc_id,".",id)
   
   s.id<-id
   df.start<-df.es[1,]
@@ -66,12 +66,13 @@ get.doc.div<-function(x,id,n){
   doc.here<-which(m)
   m
   df.es<-df[m,c(6,2:5,7:length(df))]
-  df.es$doc_id<-paste0(id,".",df.es$doc_id)
+  doc_id<-paste0(id,".",df.es$doc_id)
+  df.es$doc_id<-doc_id
 
   sent.id<-df.es$sentence_id
   sent.id.u<-unique(sent.id)
   sent.df<-pblapply(seq_along(sent.id.u), function(i) {
-    get.sent.div(df.es,sent.id.u[[i]], i)
+    get.sent.div(df.es,sent.id.u[[i]], i,doc_id)
   })
   df.es<-data.frame(abind(sent.df,along = 1))
   df.start<-df.es[1,]
@@ -100,14 +101,17 @@ fetch.pos<-function(input,fn,data=c("character","file")){
   pos.df$doc_id<-paste0(fn,".",gsub("doc","",pos.df$doc_id))
   doc.id<-pos.df$doc_id
   doc.id.u<-unique(doc.id)
+  print(doc.id.u)
   df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {
     get.doc.div(pos.df,doc.id.u[[i]], i)
   })
   df.write<-as.data.frame(abind(df.ex.l,along = 1))
   rm(pos.df,df.ex.l)
-  df.write<-rbind(c(paste0('<doc id="',fn,'">'),rep("",length(df.write)-1)),df.write,
+  doc_id<-doc.id.u
+  df.write<-rbind(c(paste0('<doc id="',doc_id,'">'),rep("",length(df.write)-1)),df.write,
                   c('</doc>',rep("",length(df.write)-1)))
-  write.table(df.write,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F,na="")
+  dir.create("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/")
+  write.table(df.write,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F,na="",append = T)
   return(abind(df.write,along = 1))
 }
 #?write.table
@@ -122,11 +126,13 @@ fetch.pos<-function(input,fn,data=c("character","file")){
 # result <- lapply(seq_along(my_list), function(i) {
 #   my_function(my_list[[i]], i)
 # })
-go.pos<-function(fns,input){
-df.ex.l<-pblapply(seq_along(fns), function(i) {
+go.pos<-function(list,input,id){
+  cat("\npos run:",id,"\n")
   
-  cat("\npos run:",i,"\n")
-  fetch.pos(fns[[i]], i,input)
+df.ex.l<-pblapply(seq_along(list), function(i) {
+  
+  id<-paste0(id,".",i)
+  return(abind(fetch.pos(list[[i]], id,input),along = 1))
   
 })
 }
@@ -139,20 +145,23 @@ wd<-"~/boxHKW/21S/DH/local/SPUND/intLX"
 load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 urls<-com.df$url
 url.u<-unique(urls)
-url.sub<-url.u[1:5]
+url.sub<-url.u[1:3]
 url.sub.df<-com.df[com.df$url%in%url.sub,]
 get.url.pos<-function(x,id){
-  com<-x$comment[id]
-  df.ex.l<-go.pos(com,"character")
-  return(abind(df.ex.l,along = 1))
+  com<-x$comment
+  df.ex.l<-pblapply(seq_along(com),function(i){
+    go.pos(com[[i]],"character",i)})
+  #df.ex.l$doc_id<-paste0(id,".",df.ex.l$doc_id)
+    return(df.ex.l)
 }
 
-df.ex.l<-pblapply(seq_along(url.sub), function(i) {
-  get.url.pos(url.sub.df, i)
+# df.ex.l<-pblapply(seq_along(url.sub.df$url), function(i) {
+  df.ex.l<-pblapply(seq_along(1:5), function(i) {
+  get.url.pos(url.sub.df[i,], i)
 })
 ### finalise:
 df.ex<-abind::abind(df.ex.l,along = 1)
-rm(df.ex.l)
+#rm(df.ex.l)
 df.ex<-data.frame(df.ex)
 write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/002",sep = "\t",quote = F,row.names = F,col.names = F,na="")
 ### wks.

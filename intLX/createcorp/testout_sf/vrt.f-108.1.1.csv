@@ -1,0 +1,29 @@
+<doc id="108.1.1">													
+<text id="108.1.1">													
+<s id="1">													
+Sorry	1	1	Sorry, mich triggert die Frage ein wenig.	1	Sorry	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	4	nsubj		SpaceAfter=No	pid:1.108.1.1.
+,	1	1	Sorry, mich triggert die Frage ein wenig.	2	,	PUNCT	$,		4	punct			pid:1.108.1.1.
+mich	1	1	Sorry, mich triggert die Frage ein wenig.	3	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	4	obj			pid:1.108.1.1.
+triggert	1	1	Sorry, mich triggert die Frage ein wenig.	4	triggern	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.108.1.1.
+die	1	1	Sorry, mich triggert die Frage ein wenig.	5	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:1.108.1.1.
+Frage	1	1	Sorry, mich triggert die Frage ein wenig.	6	Frage	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	4	nsubj			pid:1.108.1.1.
+ein	1	1	Sorry, mich triggert die Frage ein wenig.	7	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	8	det			pid:1.108.1.1.
+wenig	1	1	Sorry, mich triggert die Frage ein wenig.	8	wenig	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	4	advmod		SpaceAfter=No	pid:1.108.1.1.
+.	1	1	Sorry, mich triggert die Frage ein wenig.	9	.	PUNCT	$.		4	punct			pid:1.108.1.1.
+</s>													
+<s id="2">													
+Ich	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	5	nsubj			pid:2.108.1.1.
+würde	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	2	werden	AUX	NE	Case=Nom|Number=Sing	5	aux			pid:2.108.1.1.
+sie	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	3	sie	PRON	VVINF	VerbForm=Inf	5	nsubj			pid:2.108.1.1.
+gern	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	4	gern	ADV	ADV		5	advmod			pid:2.108.1.1.
+umformulieren	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	5	umformulieren	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:2.108.1.1.
+:	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	6	:	PUNCT	$.		8	punct			pid:2.108.1.1.
+Warum	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	7	warum	PRON	PWAV	PronType=Int	8	xcomp			pid:2.108.1.1.
+werden	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	8	werden	VERB	NE	Case=Acc|Number=Plur	5	parataxis			pid:2.108.1.1.
+einige	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	9	einige	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	10	det			pid:2.108.1.1.
+Männer	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	10	Mann	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	8	nsubj			pid:2.108.1.1.
+gewalttätig	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	11	gewalttätig	ADJ	ADJD		8	xcomp		SpaceAfter=No	pid:2.108.1.1.
+?	1	2	Ich würde sie gern umformulieren: Warum werden einige Männer gewalttätig?	12	?	PUNCT	$.		5	punct		SpacesAfter=\n	pid:2.108.1.1.
+</s>													
+</text>													
+</doc>													

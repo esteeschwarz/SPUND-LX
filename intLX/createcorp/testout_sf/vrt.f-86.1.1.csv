@@ -1,0 +1,101 @@
+<doc id="86.1.1">													
+<text id="86.1.1">													
+<s id="1">													
+Wenn	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	1	wenn	SCONJ	KOUS		4	mark			pid:1.86.1.1.
+du	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	2	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	4	nsubj			pid:1.86.1.1.
+mir	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	3	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	4	iobj			pid:1.86.1.1.
+erklärst	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	4	erklärsen	VERB	ADV		0	root			pid:1.86.1.1.
+warum	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	5	warum	ADV	ADJD		8	mark			pid:1.86.1.1.
+du	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	6	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	8	nsubj			pid:1.86.1.1.
+dich	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	7	du	PRON	PRF	Case=Acc|Number=Sing|Person=2|PronType=Prs|Reflex=Yes	8	obj			pid:1.86.1.1.
+angegriffen	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	8	angreifen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	ccomp			pid:1.86.1.1.
+fühlst	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	9	fühlen	AUX	ADV		8	aux			pid:1.86.1.1.
+und	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	10	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	13	cc			pid:1.86.1.1.
+ich	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	11	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	13	nsubj			pid:1.86.1.1.
+das	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	12	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	13	obj			pid:1.86.1.1.
+verstehen	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	13	verstehen	VERB	VVINF	VerbForm=Inf	4	conj			pid:1.86.1.1.
+kann	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	14	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	aux		SpaceAfter=No	pid:1.86.1.1.
+,	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	15	,	PUNCT	$,		17	punct			pid:1.86.1.1.
+dann	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	16	dann	ADV	ADV		17	advmod			pid:1.86.1.1.
+versuche	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	17	versuchen	VERB	NN	Case=Nom|Gender=Masc|Number=Plur	13	ccomp			pid:1.86.1.1.
+ich	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	18	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	17	nsubj			pid:1.86.1.1.
+daraus	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	19	daraus	ADV	PAV		21	advmod			pid:1.86.1.1.
+zu	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	20	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	21	mark			pid:1.86.1.1.
+lernen	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	21	lernen	VERB	VVINF	VerbForm=Inf	17	xcomp			pid:1.86.1.1.
+was	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	22	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	24	nsubj			pid:1.86.1.1.
+daran	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	23	daran	ADV	PAV		24	advmod			pid:1.86.1.1.
+verletzend	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	24	verletzend	VERB	APPR		21	acl			pid:1.86.1.1.
+war	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	25	sein	AUX	ADV		17	aux		SpaceAfter=No	pid:1.86.1.1.
+.	1	1	Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	26	.	PUNCT	$.		4	punct			pid:1.86.1.1.
+</s>													
+<s id="2">													
+Klär	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	1	Klär	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:2.86.1.1.
+mich	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	2	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	1	obj			pid:2.86.1.1.
+gerne	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	3	gerne	ADV	ADV		1	advmod			pid:2.86.1.1.
+auf	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	4	auf	ADP	PTKVZ		1	compound:prt		SpaceAfter=No	pid:2.86.1.1.
+,	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	5	,	PUNCT	$,		11	punct			pid:2.86.1.1.
+damit	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	6	damit	SCONJ	KOUS		11	mark			pid:2.86.1.1.
+ich	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	7	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	11	nsubj			pid:2.86.1.1.
+in	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	8	in	ADP	APPR		9	case			pid:2.86.1.1.
+Zukunft	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	9	Zukunft	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	11	obl			pid:2.86.1.1.
+niemanden	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	10	niemand	PRON	PIS	Case=Acc|Definite=Ind|Number=Sing|PronType=Ind	11	obj			pid:2.86.1.1.
+verletze	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	11	verletzen	VERB	NN	Case=Acc|Gender=Neut|Number=Plur	1	advcl		SpaceAfter=No	pid:2.86.1.1.
+?	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	12	?	PUNCT	$.		1	punct		SpacesAfter=\n\n	pid:2.86.1.1.
+</s>													
+<s id="3">													
+Ich	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:3.86.1.1.
+denke	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	2	denken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:3.86.1.1.
+es	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	3	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	obj			pid:3.86.1.1.
+ist	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	4	sein	AUX	ADJD		14	aux			pid:3.86.1.1.
+selbsterklärend	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	5	selbsterklärend	ADJ	ADJD		14	advmod			pid:3.86.1.1.
+warum	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	6	warum	ADV	ADJD		14	mark			pid:3.86.1.1.
+der	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	7	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det			pid:3.86.1.1.
+Fokus	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	8	Fokus	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	14	nsubj			pid:3.86.1.1.
+auf	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	9	auf	ADP	APPR		11	case			pid:3.86.1.1.
+'	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	10	'	PUNCT	$(		11	punct		SpaceAfter=No	pid:3.86.1.1.
+Opfer	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	11	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	14	obl			pid:3.86.1.1.
+sollten	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	12	sollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	14	aux			pid:3.86.1.1.
+früher	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	13	früher	ADV	ADV		14	advmod			pid:3.86.1.1.
+gehen	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	14	gehen	VERB	VVINF	VerbForm=Inf	2	csubj			pid:3.86.1.1.
+und	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	15	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	16	cc			pid:3.86.1.1.
+macht	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	16	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	conj			pid:3.86.1.1.
+ja	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	17	ja	ADV	ADV		16	advmod			pid:3.86.1.1.
+auch	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	18	auch	ADV	ADV		16	advmod			pid:3.86.1.1.
+garkeinen	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	19	garkeinen	VERB	ADJA	Case=Acc|Gender=Masc|Number=Sing	16	xcomp			pid:3.86.1.1.
+sinn	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	20	sinn	SCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	23	mark			pid:3.86.1.1.
+das	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	21	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	23	nsubj			pid:3.86.1.1.
+die	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	22	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	23	nsubj			pid:3.86.1.1.
+bleiben	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	23	bleiben	VERB	NN	Case=Acc|Gender=Fem|Number=Plur	19	ccomp		SpaceAfter=No	pid:3.86.1.1.
+'	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	24	'	PUNCT	$(		23	punct			pid:3.86.1.1.
+dazu	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	25	dazu	PRON	PAV		26	dep			pid:3.86.1.1.
+führt	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	26	führen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	23	ccomp		SpaceAfter=No	pid:3.86.1.1.
+,	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	27	,	PUNCT	$,		36	punct			pid:3.86.1.1.
+dass	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	28	dass	SCONJ	KOUS		36	mark			pid:3.86.1.1.
+Opfer	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	29	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	36	nsubj			pid:3.86.1.1.
+sich	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	30	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	36	obj			pid:3.86.1.1.
+als	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	31	als	ADP	KOKOM		35	case			pid:3.86.1.1.
+'	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	32	'	PUNCT	$(		35	punct		SpaceAfter=No	pid:3.86.1.1.
+die	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	33	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	35	det			pid:3.86.1.1.
+dummen	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	34	dummen	ADJ	NN	Case=Acc|Gender=Neut|Number=Sing	35	amod		SpaceAfter=No	pid:3.86.1.1.
+'	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	35	'	NOUN	$(		36	obl			pid:3.86.1.1.
+fühlen	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	36	fühlen	VERB	VVINF	VerbForm=Inf	26	ccomp		SpaceAfter=No	pid:3.86.1.1.
+.	2	3	Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	37	.	PUNCT	$.		2	punct			pid:3.86.1.1.
+</s>													
+<s id="4">													
+Aber	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	1	aber	CCONJ	KON		12	cc			pid:4.86.1.1.
+falls	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	2	falls	ADV	ADV		3	advmod			pid:4.86.1.1.
+nicht	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	3	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	advmod			pid:4.86.1.1.
+überleg	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	4	überleg	ADV	NN	Case=Nom|Gender=Masc|Number=Sing	5	advmod			pid:4.86.1.1.
+ich	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	5	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj			pid:4.86.1.1.
+mir	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	6	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	12	iobj			pid:4.86.1.1.
+gerne	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	7	gerne	ADV	ADV		12	advmod			pid:4.86.1.1.
+wie	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	8	wie	ADP	NN	Case=Nom|Gender=Fem|Number=Sing	9	case			pid:4.86.1.1.
+ich	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	9	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj			pid:4.86.1.1.
+das	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	10	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	12	obj			pid:4.86.1.1.
+besser	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	11	gut	ADJ	ADJD		12	advmod			pid:4.86.1.1.
+erklären	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	12	erklären	VERB	VVINF	VerbForm=Inf	0	root			pid:4.86.1.1.
+kann	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	13	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux		SpaceAfter=No	pid:4.86.1.1.
+.	2	4	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	14	.	PUNCT	$.		12	punct		SpacesAfter=\n	pid:4.86.1.1.
+</s>													
+</text>													
+</doc>													

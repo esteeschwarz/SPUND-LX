@@ -1,0 +1,313 @@
+<doc id="87.1.1">													
+<text id="87.1.1">													
+<s id="1">													
+&gt;Wenn	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	1	&gt;Wenn	SCONJ	KOUS		4	mark			pid:1.87.1.1.
+du	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	2	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	4	nsubj			pid:1.87.1.1.
+mir	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	3	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	4	iobj			pid:1.87.1.1.
+erklärst	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	4	erklärsen	VERB	ADV		0	root			pid:1.87.1.1.
+warum	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	5	warum	ADV	ADJD		8	mark			pid:1.87.1.1.
+du	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	6	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	8	nsubj			pid:1.87.1.1.
+dich	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	7	du	PRON	PRF	Case=Acc|Number=Sing|Person=2|PronType=Prs|Reflex=Yes	8	obj			pid:1.87.1.1.
+angegriffen	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	8	angreifen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	ccomp			pid:1.87.1.1.
+fühlst	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	9	fühlen	AUX	ADV		8	aux			pid:1.87.1.1.
+und	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	10	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	13	cc			pid:1.87.1.1.
+ich	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	11	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	13	nsubj			pid:1.87.1.1.
+das	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	12	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	13	obj			pid:1.87.1.1.
+verstehen	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	13	verstehen	VERB	VVINF	VerbForm=Inf	4	conj			pid:1.87.1.1.
+kann	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	14	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	aux		SpaceAfter=No	pid:1.87.1.1.
+,	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	15	,	PUNCT	$,		17	punct			pid:1.87.1.1.
+dann	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	16	dann	ADV	ADV		17	advmod			pid:1.87.1.1.
+versuche	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	17	versuchen	VERB	NN	Case=Nom|Gender=Masc|Number=Plur	13	ccomp			pid:1.87.1.1.
+ich	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	18	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	17	nsubj			pid:1.87.1.1.
+daraus	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	19	daraus	ADV	PAV		21	advmod			pid:1.87.1.1.
+zu	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	20	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	21	mark			pid:1.87.1.1.
+lernen	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	21	lernen	VERB	VVINF	VerbForm=Inf	17	xcomp			pid:1.87.1.1.
+was	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	22	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	24	nsubj			pid:1.87.1.1.
+daran	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	23	daran	ADV	PAV		24	advmod			pid:1.87.1.1.
+verletzend	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	24	verletzend	VERB	APPR		21	acl			pid:1.87.1.1.
+war	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	25	sein	AUX	ADV		17	aux		SpaceAfter=No	pid:1.87.1.1.
+.	1	1	&gt;Wenn du mir erklärst warum du dich angegriffen fühlst und ich das verstehen kann, dann versuche ich daraus zu lernen was daran verletzend war.	26	.	PUNCT	$.		4	punct			pid:1.87.1.1.
+</s>													
+<s id="2">													
+Klär	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	1	Klär	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:2.87.1.1.
+mich	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	2	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	1	obj			pid:2.87.1.1.
+gerne	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	3	gerne	ADV	ADV		1	advmod			pid:2.87.1.1.
+auf	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	4	auf	ADP	PTKVZ		1	compound:prt		SpaceAfter=No	pid:2.87.1.1.
+,	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	5	,	PUNCT	$,		11	punct			pid:2.87.1.1.
+damit	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	6	damit	SCONJ	KOUS		11	mark			pid:2.87.1.1.
+ich	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	7	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	11	nsubj			pid:2.87.1.1.
+in	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	8	in	ADP	APPR		9	case			pid:2.87.1.1.
+Zukunft	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	9	Zukunft	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	11	obl			pid:2.87.1.1.
+niemanden	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	10	niemand	PRON	PIS	Case=Acc|Definite=Ind|Number=Sing|PronType=Ind	11	obj			pid:2.87.1.1.
+verletze	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	11	verletzen	VERB	NN	Case=Acc|Gender=Neut|Number=Plur	1	advcl		SpaceAfter=No	pid:2.87.1.1.
+?	1	2	Klär mich gerne auf, damit ich in Zukunft niemanden verletze?	12	?	PUNCT	$.		1	punct		SpacesAfter=\n\n	pid:2.87.1.1.
+</s>													
+<s id="3">													
+Habe	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	1	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	6	aux			pid:3.87.1.1.
+ich	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	6	nsubj			pid:3.87.1.1.
+dich	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	3	du	PRON	PRF	Case=Acc|Number=Sing|Person=2|PronType=Prs|Reflex=Yes	6	iobj			pid:3.87.1.1.
+irgendwo	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	4	irgendwo	ADV	ADV		6	advmod			pid:3.87.1.1.
+persönlich	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	5	persönlich	ADJ	ADJD		6	advmod			pid:3.87.1.1.
+angegriffen	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	6	angegriffen	ADJ	VVPP	VerbForm=Part	0	root			pid:3.87.1.1.
+oder	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	7	oder	CCONJ	XY		8	cc			pid:3.87.1.1.
+beleidigt	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	8	beleidigen	VERB	VVPP	VerbForm=Part	6	conj		SpaceAfter=No	pid:3.87.1.1.
+?	2	3	Habe ich dich irgendwo persönlich angegriffen oder beleidigt?	9	?	PUNCT	$.		6	punct			pid:3.87.1.1.
+</s>													
+<s id="4">													
+Nein	2	4	Nein.	1	nein	PART	PTKANT		0	root		SpaceAfter=No	pid:4.87.1.1.
+.	2	4	Nein.	2	.	PUNCT	$.		1	punct		SpacesAfter=\n	pid:4.87.1.1.
+</s>													
+<s id="5">													
+Du	2	5	Du hingegen hast in deiner ersten Antwort:	1	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	2	nsubj			pid:5.87.1.1.
+hingegen	2	5	Du hingegen hast in deiner ersten Antwort:	2	hingegen	ADV	ADV		3	advmod			pid:5.87.1.1.
+hast	2	5	Du hingegen hast in deiner ersten Antwort:	3	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	0	root			pid:5.87.1.1.
+in	2	5	Du hingegen hast in deiner ersten Antwort:	4	in	ADP	APPR		7	case			pid:5.87.1.1.
+deiner	2	5	Du hingegen hast in deiner ersten Antwort:	5	dein	DET	PPOSAT	Case=Gen|Gender=Fem|Number=Sing|Poss=Yes	7	amod			pid:5.87.1.1.
+ersten	2	5	Du hingegen hast in deiner ersten Antwort:	6	erst	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	7	amod			pid:5.87.1.1.
+Antwort	2	5	Du hingegen hast in deiner ersten Antwort:	7	Antwort	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	3	obl		SpaceAfter=No	pid:5.87.1.1.
+:	2	5	Du hingegen hast in deiner ersten Antwort:	8	:	PUNCT	$.		3	punct		SpacesAfter=\n\n	pid:5.87.1.1.
+</s>													
+<s id="6">													
+-	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	1	-	PUNCT	$(		2	punct			pid:6.87.1.1.
+Gesagt	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	2	sagen	VERB	ADJA	VerbForm=Part	9	advmod			pid:6.87.1.1.
+ich	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:6.87.1.1.
+soll	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	4	sollen	AUX	NN	Case=Nom|Gender=Fem|Number=Sing	9	aux			pid:6.87.1.1.
+meine	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	5	mein	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	6	det:poss			pid:6.87.1.1.
+Meinung	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	6	Meinung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	9	obj			pid:6.87.1.1.
+für	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	7	für	ADP	APPR		8	case			pid:6.87.1.1.
+mich	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	8	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	9	obl			pid:6.87.1.1.
+behalten	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	9	behalten	VERB	VVINF	VerbForm=Inf	20	xcomp		SpacesAfter=\n	pid:6.87.1.1.
+-	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	10	-	PUNCT	$(		11	punct			pid:6.87.1.1.
+Mich	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	11	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	9	conj			pid:6.87.1.1.
+als	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	12	als	ADP	KOKOM		14	case			pid:6.87.1.1.
+"	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	13	"	PUNCT	$(		14	punct		SpaceAfter=No	pid:6.87.1.1.
+unempathisch	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	14	unempathisch	ADJ	ADJD		18	conj		SpaceAfter=No	pid:6.87.1.1.
+"	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	15	"	PUNCT	$(		14	punct			pid:6.87.1.1.
+und	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	16	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	18	cc			pid:6.87.1.1.
+"	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	17	"	PUNCT	$(		18	punct		SpaceAfter=No	pid:6.87.1.1.
+uninformiert	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	18	uninformiert	VERB	ADJD		9	conj		SpaceAfter=No	pid:6.87.1.1.
+"	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	19	"	PUNCT	$(		18	punct			pid:6.87.1.1.
+bezeichnet	3	6	- Gesagt ich soll meine Meinung für mich behalten - Mich als "unempathisch" und "uninformiert" bezeichnet	20	bezeichnen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpacesAfter=\n\n	pid:6.87.1.1.
+</s>													
+<s id="7">													
+&gt;Ich	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	1	&gt;Ich	ADV	ADV		2	advmod			pid:7.87.1.1.
+denke	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	2	denken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:7.87.1.1.
+es	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	3	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:7.87.1.1.
+ist	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	4	sein	AUX	ADJD		14	aux			pid:7.87.1.1.
+selbsterklärend	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	5	selbsterklärend	ADJ	ADJD		14	advmod			pid:7.87.1.1.
+warum	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	6	warum	ADV	ADJD		14	mark			pid:7.87.1.1.
+der	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	7	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det			pid:7.87.1.1.
+Fokus	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	8	Fokus	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	14	nsubj			pid:7.87.1.1.
+auf	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	9	auf	ADP	APPR		11	case			pid:7.87.1.1.
+'	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	10	'	PUNCT	$(		11	punct		SpaceAfter=No	pid:7.87.1.1.
+Opfer	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	11	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	14	obl			pid:7.87.1.1.
+sollten	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	12	sollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	14	aux			pid:7.87.1.1.
+früher	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	13	früher	ADV	ADV		14	advmod			pid:7.87.1.1.
+gehen	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	14	gehen	VERB	VVINF	VerbForm=Inf	2	parataxis			pid:7.87.1.1.
+und	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	15	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	16	cc			pid:7.87.1.1.
+macht	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	16	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	conj			pid:7.87.1.1.
+ja	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	17	ja	ADV	ADV		16	advmod			pid:7.87.1.1.
+auch	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	18	auch	ADV	ADV		19	advmod			pid:7.87.1.1.
+garkeinen	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	19	garkeinen	VERB	ADJA	Case=Acc|Gender=Masc|Number=Sing	16	xcomp			pid:7.87.1.1.
+sinn	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	20	sinn	SCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	23	mark			pid:7.87.1.1.
+das	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	21	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	23	nsubj			pid:7.87.1.1.
+die	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	22	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	23	nsubj			pid:7.87.1.1.
+bleiben	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	23	bleiben	VERB	NN	Case=Acc|Gender=Fem|Number=Plur	19	ccomp		SpaceAfter=No	pid:7.87.1.1.
+'	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	24	'	PUNCT	$(		23	punct			pid:7.87.1.1.
+dazu	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	25	dazu	PRON	PAV		26	dep			pid:7.87.1.1.
+führt	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	26	führen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	23	ccomp		SpaceAfter=No	pid:7.87.1.1.
+,	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	27	,	PUNCT	$,		36	punct			pid:7.87.1.1.
+dass	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	28	dass	SCONJ	KOUS		36	mark			pid:7.87.1.1.
+Opfer	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	29	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	36	nsubj			pid:7.87.1.1.
+sich	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	30	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	36	obj			pid:7.87.1.1.
+als	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	31	als	ADP	KOKOM		35	case			pid:7.87.1.1.
+'	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	32	'	PUNCT	$(		33	punct		SpaceAfter=No	pid:7.87.1.1.
+die	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	33	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	35	det			pid:7.87.1.1.
+dummen	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	34	dummen	ADJ	NN	Case=Acc|Gender=Neut|Number=Sing	35	amod		SpaceAfter=No	pid:7.87.1.1.
+'	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	35	'	NOUN	$(		36	obl			pid:7.87.1.1.
+fühlen	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	36	fühlen	VERB	VVINF	VerbForm=Inf	26	ccomp		SpaceAfter=No	pid:7.87.1.1.
+.	4	7	&gt;Ich denke es ist selbsterklärend warum der Fokus auf 'Opfer sollten früher gehen und macht ja auch garkeinen sinn das die bleiben' dazu führt, dass Opfer sich als 'die dummen' fühlen.	37	.	PUNCT	$.		2	punct			pid:7.87.1.1.
+</s>													
+<s id="8">													
+Aber	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	1	aber	CCONJ	KON		12	cc			pid:8.87.1.1.
+falls	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	2	falls	ADV	ADV		3	advmod			pid:8.87.1.1.
+nicht	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	3	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	advmod			pid:8.87.1.1.
+überleg	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	4	überleg	ADV	NN	Case=Nom|Gender=Masc|Number=Sing	5	advmod			pid:8.87.1.1.
+ich	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	5	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj			pid:8.87.1.1.
+mir	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	6	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	12	iobj			pid:8.87.1.1.
+gerne	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	7	gerne	ADV	ADV		12	advmod			pid:8.87.1.1.
+wie	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	8	wie	ADP	NN	Case=Nom|Gender=Fem|Number=Sing	9	case			pid:8.87.1.1.
+ich	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	9	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj			pid:8.87.1.1.
+das	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	10	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	12	obj			pid:8.87.1.1.
+besser	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	11	gut	ADJ	ADJD		12	advmod			pid:8.87.1.1.
+erklären	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	12	erklären	VERB	VVINF	VerbForm=Inf	0	root			pid:8.87.1.1.
+kann	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	13	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux		SpaceAfter=No	pid:8.87.1.1.
+.	4	8	Aber falls nicht überleg ich mir gerne wie ich das besser erklären kann.	14	.	PUNCT	$.		12	punct		SpacesAfter=\n\n	pid:8.87.1.1.
+</s>													
+<s id="9">													
+Deshalb	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	1	deshalb	ADV	PAV		10	advmod			pid:9.87.1.1.
+sollte	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	2	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	aux			pid:9.87.1.1.
+man	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	3	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	10	nsubj			pid:9.87.1.1.
+den	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	4	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	5	det			pid:9.87.1.1.
+Fokus	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	5	Fokus	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	10	obj			pid:9.87.1.1.
+einfach	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	6	einfach	ADJ	ADV		10	advmod			pid:9.87.1.1.
+auf	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	7	auf	ADP	APPR		9	case			pid:9.87.1.1.
+gar	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	8	gar	ADV	ADV		9	advmod			pid:9.87.1.1.
+nix	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	9	nix	PRON	PIS	Definite=Ind|PronType=Ind	10	obl			pid:9.87.1.1.
+setzen	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	10	setzen	VERB	VVINF	VerbForm=Inf	0	root			pid:9.87.1.1.
+und	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	11	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	14	cc			pid:9.87.1.1.
+alle	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	12	alle	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Plur|PronType=Ind	13	det			pid:9.87.1.1.
+Möglichkeiten	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	13	Möglichkeit	NOUN	NN	Case=Gen|Gender=Fem|Number=Plur	14	obj			pid:9.87.1.1.
+ergründen	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	14	ergründen	VERB	ADJA	Case=Gen|Gender=Fem|Number=Sing	10	conj			pid:9.87.1.1.
+wie	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	15	wie	SCONJ	NN	Case=Gen|Gender=Fem|Number=Sing	20	mark			pid:9.87.1.1.
+man	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	16	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	20	nsubj			pid:9.87.1.1.
+da	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	17	da	ADV	ADV		20	advmod			pid:9.87.1.1.
+besser	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	18	gut	ADJ	ADJD		20	advmod			pid:9.87.1.1.
+Gewalt	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	19	Gewalt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	20	obj			pid:9.87.1.1.
+verhindern	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	20	verhindern	VERB	VVINF	VerbForm=Inf	10	advcl			pid:9.87.1.1.
+kann	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	21	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	20	aux		SpaceAfter=No	pid:9.87.1.1.
+?	5	9	Deshalb sollte man den Fokus einfach auf gar nix setzen und alle Möglichkeiten ergründen wie man da besser Gewalt verhindern kann?	22	?	PUNCT	$.		10	punct		SpacesAfter=\n\n	pid:9.87.1.1.
+</s>													
+<s id="10">													
+&gt;Da	6	10	&gt;Da kann ich dann nicht mehr folgen.	1	&gt;Da	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	7	nsubj			pid:10.87.1.1.
+kann	6	10	&gt;Da kann ich dann nicht mehr folgen.	2	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	7	aux			pid:10.87.1.1.
+ich	6	10	&gt;Da kann ich dann nicht mehr folgen.	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj			pid:10.87.1.1.
+dann	6	10	&gt;Da kann ich dann nicht mehr folgen.	4	dann	ADV	ADV		7	advmod			pid:10.87.1.1.
+nicht	6	10	&gt;Da kann ich dann nicht mehr folgen.	5	nicht	PART	CARD	NumType=Card	7	advmod			pid:10.87.1.1.
+mehr	6	10	&gt;Da kann ich dann nicht mehr folgen.	6	mehr	ADV	ADV		5	advmod			pid:10.87.1.1.
+folgen	6	10	&gt;Da kann ich dann nicht mehr folgen.	7	folgen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:10.87.1.1.
+.	6	10	&gt;Da kann ich dann nicht mehr folgen.	8	.	PUNCT	$.		7	punct		SpacesAfter=\n\n	pid:10.87.1.1.
+</s>													
+<s id="11">													
+Der	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det			pid:11.87.1.1.
+Satz	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	2	Satz	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	6	nsubj			pid:11.87.1.1.
+von	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	3	von	ADP	FM	Foreign=Yes	4	case			pid:11.87.1.1.
+mir	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	4	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	2	nmod			pid:11.87.1.1.
+war	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	5	sein	AUX	NN	Case=Gen|Gender=Masc|Number=Sing	6	cop			pid:11.87.1.1.
+reines	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	6	rein	ADJ	PPOSAT	Case=Gen|Gender=Masc|Number=Sing|Poss=Yes	0	root		SpaceAfter=No	pid:11.87.1.1.
+:	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	7	:	PUNCT	$.		21	punct			pid:11.87.1.1.
+"	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	8	"	PUNCT	$(		21	punct		SpaceAfter=No	pid:11.87.1.1.
+Da	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	9	da	SCONJ	KOUS		14	mark			pid:11.87.1.1.
+ich	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	10	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	14	nsubj			pid:11.87.1.1.
+mich	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	11	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	14	obj			pid:11.87.1.1.
+da	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	12	da	ADV	ADV		14	advmod			pid:11.87.1.1.
+nicht	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	13	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	advmod			pid:11.87.1.1.
+reinversetzen	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	14	reinversetzen	VERB	VVINF	VerbForm=Inf	21	advcl			pid:11.87.1.1.
+kann	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	15	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	aux			pid:11.87.1.1.
+-	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	16	-	PUNCT	$(		14	punct			pid:11.87.1.1.
+hab	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	17	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	21	aux			pid:11.87.1.1.
+ich	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	18	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	21	nsubj			pid:11.87.1.1.
+dazu	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	19	dazu	ADV	PAV		21	advmod			pid:11.87.1.1.
+nix	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	20	nix	PRON	PIS	Definite=Ind|PronType=Ind	21	obj			pid:11.87.1.1.
+beizusteuern	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	21	beizusteuern	VERB	VVINF	VerbForm=Inf	6	parataxis		SpaceAfter=No	pid:11.87.1.1.
+,	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	22	,	PUNCT	$,		25	punct			pid:11.87.1.1.
+bei	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	23	bei	ADP	APPR		24	case			pid:11.87.1.1.
+mir	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	24	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	25	obl			pid:11.87.1.1.
+wäre	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	25	sein	AUX	NN	Foreign=Yes	21	conj			pid:11.87.1.1.
+es	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	26	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	27	nsubj		SpaceAfter=No	pid:11.87.1.1.
+:	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	27	:	PUNCT	$.		31	punct			pid:11.87.1.1.
+X	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	28	X	PROPN	XY		31	nsubj			pid:11.87.1.1.
+daher	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	29	daher	ADV	PAV		31	advmod			pid:11.87.1.1.
+keine	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	30	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	31	nmod			pid:11.87.1.1.
+Ahnung	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	31	Ahnung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	25	parataxis			pid:11.87.1.1.
+was	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	32	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	36	nsubj			pid:11.87.1.1.
+in	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	33	in	ADP	APPR		35	case			pid:11.87.1.1.
+den	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	34	der	DET	ART	Case=Dat|Number=Plur|PronType=Art	35	det			pid:11.87.1.1.
+Leuten	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	35	Leute	NOUN	NN	Case=Dat|Number=Plur	36	obl			pid:11.87.1.1.
+vorgeht	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	36	vorgehen	ADP	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	31	acl		SpaceAfter=No	pid:11.87.1.1.
+"	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	37	"	PUNCT	$(		44	punct			pid:11.87.1.1.
+(	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	38	(	PUNCT	$(		39	punct		SpaceAfter=No	pid:11.87.1.1.
+X	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	39	X	PROPN	XY		44	nsubj			pid:11.87.1.1.
+was	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	40	was	PRON	NE	Foreign=Yes	43	obj			pid:11.87.1.1.
+ich	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	41	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	43	nsubj			pid:11.87.1.1.
+danach	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	42	danach	ADV	PAV		43	advmod			pid:11.87.1.1.
+geschrieben	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	43	schreiben	VERB	VVPP	VerbForm=Part	39	acl			pid:11.87.1.1.
+hatte	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	44	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	36	aux		SpaceAfter=No	pid:11.87.1.1.
+)	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	45	)	PUNCT	$(		31	punct		SpaceAfter=No	pid:11.87.1.1.
+.	7	11	Der Satz von mir war reines: "Da ich mich da nicht reinversetzen kann - hab ich dazu nix beizusteuern, bei mir wäre es: X daher keine Ahnung was in den Leuten vorgeht" (X was ich danach geschrieben hatte).	46	.	PUNCT	$.		6	punct		SpacesAfter=\n\n	pid:11.87.1.1.
+</s>													
+<s id="12">													
+Du	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	1	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	8	nsubj			pid:12.87.1.1.
+wirst	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	2	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	8	aux			pid:12.87.1.1.
+mir	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	3	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	8	iobj			pid:12.87.1.1.
+also	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	4	also	ADV	ADV		8	advmod			pid:12.87.1.1.
+vor	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	5	vor	ADP	NN	Case=Nom|Gender=Neut|Number=Plur	6	case			pid:12.87.1.1.
+ich	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	6	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	8	nsubj			pid:12.87.1.1.
+wäre	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	7	sein	AUX	NN	Foreign=Yes	8	cop			pid:12.87.1.1.
+unempathisch	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	8	unempathisch	ADJ	ADJD		0	root			pid:12.87.1.1.
+und	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	9	und	CCONJ	NE	Foreign=Yes	10	cc			pid:12.87.1.1.
+uninformiert	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	10	uninformiert	ADJ	ADJD		8	conj			pid:12.87.1.1.
+und	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	11	und	CCONJ	NE	Foreign=Yes	17	cc			pid:12.87.1.1.
+würde	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	12	werden	AUX	NE	Case=Nom|Number=Sing	17	aux			pid:12.87.1.1.
+den	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	13	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det			pid:12.87.1.1.
+Fokus	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	14	Fokus	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	17	obj			pid:12.87.1.1.
+auf	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	15	auf	ADP	APPR		16	case			pid:12.87.1.1.
+was	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	16	was	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	17	obl			pid:12.87.1.1.
+setzen	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	17	setzen	VERB	VVINF	VerbForm=Inf	8	conj			pid:12.87.1.1.
+und	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	18	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	19	cc			pid:12.87.1.1.
+selbstbewusst	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	19	selbstbewussen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	conj			pid:12.87.1.1.
+meine	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	20	mein	PRON	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	21	det:poss			pid:12.87.1.1.
+Meinung	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	21	Meinung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	22	obj			pid:12.87.1.1.
+raushauen	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	22	raushauen	VERB	VVINF	VerbForm=Inf	19	xcomp		SpaceAfter=No	pid:12.87.1.1.
+.	8	12	Du wirst mir also vor ich wäre unempathisch und uninformiert und würde den Fokus auf was setzen und selbstbewusst meine Meinung raushauen.	23	.	PUNCT	$.		8	punct			pid:12.87.1.1.
+</s>													
+<s id="13">													
+Wenn	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	1	wenn	SCONJ	KOUS		3	mark			pid:13.87.1.1.
+ich	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:13.87.1.1.
+gesagt	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	3	sagen	VERB	VVPP	VerbForm=Part	6	advcl			pid:13.87.1.1.
+hab	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	4	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	3	aux			pid:13.87.1.1.
+"	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	5	"	PUNCT	$(		3	punct		SpaceAfter=No	pid:13.87.1.1.
+Jo	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	6	Jo	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	11	nsubj		SpaceAfter=No	pid:13.87.1.1.
+,	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	7	,	PUNCT	$,		9	punct			pid:13.87.1.1.
+da	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	8	da	ADV	ADV		9	advmod			pid:13.87.1.1.
+bin	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	9	sein	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	11	cop			pid:13.87.1.1.
+ich	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	10	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	9	nsubj			pid:13.87.1.1.
+raus	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	11	raus	ADP	PTKVZ		0	root		SpaceAfter=No	pid:13.87.1.1.
+,	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	12	,	PUNCT	$,		15	punct			pid:13.87.1.1.
+ich	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	13	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	15	nsubj			pid:13.87.1.1.
+bin	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	14	sein	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	15	cop			pid:13.87.1.1.
+unwissend	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	15	unwissend	ADJ	ADJD		11	conj		SpaceAfter=No	pid:13.87.1.1.
+,	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	16	,	PUNCT	$,		18	punct			pid:13.87.1.1.
+keine	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	17	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	18	nmod			pid:13.87.1.1.
+Ahnung	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	18	Ahnung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	15	conj		SpaceAfter=No	pid:13.87.1.1.
+,	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	19	,	PUNCT	$,		24	punct			pid:13.87.1.1.
+da	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	20	da	SCONJ	KOUS		24	mark			pid:13.87.1.1.
+kann	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	21	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	24	aux			pid:13.87.1.1.
+ich	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	22	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	24	nsubj			pid:13.87.1.1.
+nix	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	23	nix	PRON	PIS	Definite=Ind|PronType=Ind	24	obj			pid:13.87.1.1.
+beisteuern	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	24	beisteuern	VERB	VVINF	VerbForm=Inf	11	advcl		SpaceAfter=No	pid:13.87.1.1.
+"	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	25	"	PUNCT	$(		24	punct		SpaceAfter=No	pid:13.87.1.1.
+.	8	13	Wenn ich gesagt hab "Jo, da bin ich raus, ich bin unwissend, keine Ahnung, da kann ich nix beisteuern".	26	.	PUNCT	$.		11	punct		SpacesAfter=\n\n	pid:13.87.1.1.
+</s>													
+<s id="14">													
+Und	9	14	Und da sträuben sich mir die Haare.	1	und	CCONJ	ADJD		3	cc			pid:14.87.1.1.
+da	9	14	Und da sträuben sich mir die Haare.	2	da	ADV	ADV		3	advmod			pid:14.87.1.1.
+sträuben	9	14	Und da sträuben sich mir die Haare.	3	sträuben	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:14.87.1.1.
+sich	9	14	Und da sträuben sich mir die Haare.	4	er|es|sie	PRON	PRF	Case=Acc|Number=Plur|Person=3|PronType=Prs|Reflex=Yes	3	obj			pid:14.87.1.1.
+mir	9	14	Und da sträuben sich mir die Haare.	5	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	3	iobj			pid:14.87.1.1.
+die	9	14	Und da sträuben sich mir die Haare.	6	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	7	det			pid:14.87.1.1.
+Haare	9	14	Und da sträuben sich mir die Haare.	7	Haar	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	3	obj		SpaceAfter=No	pid:14.87.1.1.
+.	9	14	Und da sträuben sich mir die Haare.	8	.	PUNCT	$.		3	punct			pid:14.87.1.1.
+</s>													
+<s id="15">													
+Ich	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	5	nsubj			pid:15.87.1.1.
+mein	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	2	mein	PRON	PPOSAT	Case=Nom|Gender=Masc|Number=Sing|Poss=Yes	3	det:poss			pid:15.87.1.1.
+ich	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	5	nsubj			pid:15.87.1.1.
+seh	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	4	seh	ADV	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	5	advmod			pid:15.87.1.1.
+jetzt	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	5	jetzen	VERB	ADV		0	root		SpaceAfter=No	pid:15.87.1.1.
+,	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	6	,	PUNCT	$,		11	punct			pid:15.87.1.1.
+dass	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	7	dass	SCONJ	KOUS		11	mark			pid:15.87.1.1.
+ich	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	8	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	11	nsubj			pid:15.87.1.1.
+mich	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	9	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	11	obj			pid:15.87.1.1.
+missverständlich	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	10	missverständlich	ADJ	ADV		11	advmod			pid:15.87.1.1.
+ausgedrückt	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	11	ausgedrücken	VERB	VVPP	VerbForm=Part	5	ccomp			pid:15.87.1.1.
+habe	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	12	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	aux		SpaceAfter=No	pid:15.87.1.1.
+.	9	15	Ich mein ich seh jetzt, dass ich mich missverständlich ausgedrückt habe.	13	.	PUNCT	$.		5	punct			pid:15.87.1.1.
+</s>													
+<s id="16">													
+Aber	9	16	Aber puh...	1	aber	ADV	KON		2	advmod			pid:16.87.1.1.
+puh	9	16	Aber puh...	2	puh	ADJ	ADJD		0	root		SpaceAfter=No	pid:16.87.1.1.
+...	9	16	Aber puh...	3	...	PUNCT	$(		2	punct		SpacesAfter=\n	pid:16.87.1.1.
+</s>													
+</text>													
+</doc>													

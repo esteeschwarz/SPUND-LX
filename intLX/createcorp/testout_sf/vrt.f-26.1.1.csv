@@ -1,0 +1,138 @@
+<doc id="26.1.1">													
+<text id="26.1.1">													
+<s id="1">													
+Die	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:1.26.1.1.
+Trennung	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	2	Trennung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	nsubj			pid:1.26.1.1.
+ist	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	cop			pid:1.26.1.1.
+3	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	4	3	NUM	CARD	NumType=Card	5	nummod			pid:1.26.1.1.
+Monate	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	5	Monat	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	6	nmod			pid:1.26.1.1.
+her	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	6	her	ADV	PTKVZ		12	advmod		SpaceAfter=No	pid:1.26.1.1.
+,	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	7	,	PUNCT	$,		12	punct			pid:1.26.1.1.
+ich	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	8	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj			pid:1.26.1.1.
+hab	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	9	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	12	aux			pid:1.26.1.1.
+ihn	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	10	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	12	obj			pid:1.26.1.1.
+überall	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	11	überall	PRON	NN	Case=Acc|Gender=Masc|Number=Sing	12	nsubj			pid:1.26.1.1.
+blockiert	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	12	blockieren	VERB	VVPP	VerbForm=Part	0	root			pid:1.26.1.1.
+das	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	13	der	DET	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	14	obj			pid:1.26.1.1.
+hinderte	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	14	hindern	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	parataxis			pid:1.26.1.1.
+ihn	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	15	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	14	nsubj			pid:1.26.1.1.
+nicht	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	16	nicht	PART	CARD	NumType=Card	21	advmod			pid:1.26.1.1.
+über	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	17	über	ADP	NN	Foreign=Yes	19	case			pid:1.26.1.1.
+3	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	18	3	NUM	CARD	NumType=Card	19	nummod			pid:1.26.1.1.
+Briefe	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	19	Brief	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	21	obl			pid:1.26.1.1.
+zu	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	20	zu	PART	NN	Case=Nom|Number=Plur	21	mark			pid:1.26.1.1.
+schicken	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	21	schicken	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	14	xcomp			pid:1.26.1.1.
+die	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	22	der	PRON	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	nsubj			pid:1.26.1.1.
+über	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	23	über	ADP	NN	Case=Acc|Gender=Fem|Number=Sing	25	case			pid:1.26.1.1.
+3	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	24	3	NUM	CARD	NumType=Card	25	nummod			pid:1.26.1.1.
+Seiten	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	25	Seite	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	26	obl			pid:1.26.1.1.
+gingen	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	26	gehen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	21	acl		SpaceAfter=No	pid:1.26.1.1.
+.	1	1	Die Trennung ist 3 Monate her, ich hab ihn überall blockiert das hinderte ihn nicht über 3 Briefe zu schicken die über 3 Seiten gingen.	27	.	PUNCT	$.		12	punct		SpacesAfter=\n\n	pid:1.26.1.1.
+</s>													
+<s id="2">													
+Die	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:2.26.1.1.
+aber	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	2	aber	ADV	ADV		4	advmod			pid:2.26.1.1.
+nichts	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	3	nichts	PRON	ADJA	Case=Nom|Gender=Masc|Number=Sing	4	nsubj			pid:2.26.1.1.
+aussagten	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	4	aussagen	VERB	ADJA	Case=Acc|Gender=Masc|Number=Sing	0	root			pid:2.26.1.1.
+ausser	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	5	ausser	ADJ	NN	Case=Acc|Gender=Neut|Number=Plur	7	amod			pid:2.26.1.1.
+ein	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	6	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	7	det			pid:2.26.1.1.
+Versuchen	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	7	versuchen	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	10	iobj			pid:2.26.1.1.
+mich	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	8	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	10	obj			pid:2.26.1.1.
+zu	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	9	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	mark			pid:2.26.1.1.
+kaufen	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	10	kaufen	VERB	VVINF	VerbForm=Inf	4	xcomp			pid:2.26.1.1.
+und	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	11	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	18	cc			pid:2.26.1.1.
+das	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	12	der	PRON	PRELS	Case=Acc|Gender=Neut|Number=Sing|PronType=Rel	18	obj			pid:2.26.1.1.
+er	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	13	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	18	nsubj			pid:2.26.1.1.
+nur	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	14	nur	ADV	CARD	NumType=Card	18	advmod			pid:2.26.1.1.
+einer	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	15	ein	DET	ART	Case=Dat|Gender=Fem|Number=Sing|NumType=Card	17	nummod			pid:2.26.1.1.
+Frau	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	16	Frau	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	17	compound			pid:2.26.1.1.
+Hausverbot	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	17	Hausverbot	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	18	obj			pid:2.26.1.1.
+geben	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	18	geben	VERB	VVPP	VerbForm=Part	4	conj			pid:2.26.1.1.
+hat	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	19	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	aux			pid:2.26.1.1.
+und	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	20	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	26	cc			pid:2.26.1.1.
+er	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	21	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	26	nsubj			pid:2.26.1.1.
+für	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	22	für	ADP	APPR		24	case			pid:2.26.1.1.
+meine	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	23	mein	PRON	PPOSAT	Case=Acc|Gender=Neut|Number=Plur|Poss=Yes	24	det:poss			pid:2.26.1.1.
+Probleme	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	24	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	26	obl			pid:2.26.1.1.
+nichts	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	25	nichts	PRON	CARD	NumType=Card	26	obj			pid:2.26.1.1.
+tun	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	26	tun	VERB	VVINF	VerbForm=Inf	18	conj			pid:2.26.1.1.
+könnte	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	27	können	AUX	VMFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	26	aux		SpaceAfter=No	pid:2.26.1.1.
+.	2	2	Die aber nichts aussagten ausser ein Versuchen mich zu kaufen und das er nur einer Frau Hausverbot geben hat und er für meine Probleme nichts tun könnte.	28	.	PUNCT	$.		4	punct		SpacesAfter=\n\n	pid:2.26.1.1.
+</s>													
+<s id="3">													
+Was	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	1	was	PRON	FM	Foreign=Yes	2	nsubj			pid:3.26.1.1.
+lachhaft	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	2	lachhaft	ADJ	ADJD		0	root			pid:3.26.1.1.
+ist	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	3	sein	AUX	ADJD		2	cop			pid:3.26.1.1.
+wenn	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	4	wenn	SCONJ	VVFIN		10	mark			pid:3.26.1.1.
+er	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	5	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	10	nsubj			pid:3.26.1.1.
+es	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	6	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	10	obj			pid:3.26.1.1.
+mit	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	7	mit	ADP	CARD	NumType=Card	8	case			pid:3.26.1.1.
+Druck	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	8	Druck	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	10	obl			pid:3.26.1.1.
+durch	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	9	durch	ADP	APPR		10	case			pid:3.26.1.1.
+setzen	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	10	setzen	VERB	VVINF	VerbForm=Inf	2	ccomp			pid:3.26.1.1.
+würde	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	11	werden	AUX	NE	Case=Nom|Number=Sing	10	aux		SpaceAfter=No	pid:3.26.1.1.
+,	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	12	,	PUNCT	$,		18	punct			pid:3.26.1.1.
+hätte	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	13	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	18	aux			pid:3.26.1.1.
+die	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	14	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	15	det			pid:3.26.1.1.
+Frau	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	15	Frau	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	18	nsubj			pid:3.26.1.1.
+die	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	16	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	17	det			pid:3.26.1.1.
+mich	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	17	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	18	obj			pid:3.26.1.1.
+betatscht	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	18	betatschen	VERB	VVPP	VerbForm=Part	2	conj			pid:3.26.1.1.
+hat	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	19	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	aux			pid:3.26.1.1.
+Hausverbot	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	20	Hausverbot	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	18	xcomp		SpaceAfter=No	pid:3.26.1.1.
+.	3	3	Was lachhaft ist wenn er es mit Druck durch setzen würde, hätte die Frau die mich betatscht hat Hausverbot.	21	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:3.26.1.1.
+</s>													
+<s id="4">													
+Aber	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	1	aber	CCONJ	KON		4	cc			pid:4.26.1.1.
+ich	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:4.26.1.1.
+bin	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	3	sein	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	4	aux			pid:4.26.1.1.
+halt	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	4	halen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:4.26.1.1.
+ich	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	5	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:4.26.1.1.
+und	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	6	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	16	cc			pid:4.26.1.1.
+in	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	7	in	ADP	APPR		9	case			pid:4.26.1.1.
+seiner	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	8	sein	DET	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	9	det:poss			pid:4.26.1.1.
+Welt	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	9	Welt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	16	nmod			pid:4.26.1.1.
+ist	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	10	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	16	cop			pid:4.26.1.1.
+so	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	11	so	ADV	NE	Case=Dat|Number=Plur	12	advmod			pid:4.26.1.1.
+was	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	12	was	PRON	NN	Case=Dat|Gender=Fem|Number=Sing	16	nsubj			pid:4.26.1.1.
+für	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	13	für	ADP	APPR		14	case			pid:4.26.1.1.
+mich	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	14	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	16	obl			pid:4.26.1.1.
+nicht	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	15	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	16	advmod			pid:4.26.1.1.
+drinne	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	16	drinne	ADV	PTKVZ		4	conj		SpaceAfter=No	pid:4.26.1.1.
+.	3	4	Aber ich bin halt ich und in seiner Welt ist so was für mich nicht drinne.	17	.	PUNCT	$.		4	punct		SpacesAfter=\n\n	pid:4.26.1.1.
+</s>													
+<s id="5">													
+Ich	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:5.26.1.1.
+muss	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	2	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	4	aux			pid:5.26.1.1.
+damit	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	3	damit	ADV	PAV		4	advmod			pid:5.26.1.1.
+leben	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	4	leben	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:5.26.1.1.
+obwohl	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	5	obwohl	SCONJ	CARD	NumType=Card	10	mark			pid:5.26.1.1.
+ich	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	6	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	10	nsubj			pid:5.26.1.1.
+den	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	7	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det			pid:5.26.1.1.
+Mann	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	8	Mann	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	10	obj			pid:5.26.1.1.
+sehr	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	9	sehr	ADV	NN	Case=Acc|Gender=Fem|Number=Sing	10	advmod			pid:5.26.1.1.
+geliebt	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	10	lieben	VERB	VVPP	VerbForm=Part	17	csubj			pid:5.26.1.1.
+habe	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	11	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	aux			pid:5.26.1.1.
+obwohl	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	12	obwohl	SCONJ	CARD	NumType=Card	15	mark			pid:5.26.1.1.
+er	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	13	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	15	nsubj			pid:5.26.1.1.
+so	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	14	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	15	advmod			pid:5.26.1.1.
+ist	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	15	sein	AUX	ADJD		17	aux:pass			pid:5.26.1.1.
+wie	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	16	wie	ADP	NE	Case=Nom|Gender=Neut|Number=Sing	17	case			pid:5.26.1.1.
+er	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	17	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	4	nsubj			pid:5.26.1.1.
+ist	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	18	sein	AUX	NN	Case=Nom|Gender=Masc|Number=Sing	17	cop		SpaceAfter=No	pid:5.26.1.1.
+.	4	5	Ich muss damit leben obwohl ich den Mann sehr geliebt habe obwohl er so ist wie er ist.	19	.	PUNCT	$.		4	punct		SpacesAfter=\n\n	pid:5.26.1.1.
+</s>													
+<s id="6">													
+Ich	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	5	nsubj			pid:6.26.1.1.
+muss	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	2	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	5	aux			pid:6.26.1.1.
+mich	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	3	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	5	obj			pid:6.26.1.1.
+halt	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	4	halt	ADV	ADV		5	advmod			pid:6.26.1.1.
+zwingen	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	5	zwingen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:6.26.1.1.
+auf	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	6	auf	ADP	APPR		8	case			pid:6.26.1.1.
+meine	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	7	mein	PRON	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	8	det:poss			pid:6.26.1.1.
+Grenzen	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	8	Grenze	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	10	obl			pid:6.26.1.1.
+zu	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	9	zu	PART	NN	Case=Nom|Number=Plur	10	mark			pid:6.26.1.1.
+setzen	5	6	Ich muss mich halt zwingen auf meine Grenzen zu setzen	10	setzen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	5	xcomp		SpacesAfter=\n	pid:6.26.1.1.
+</s>													
+</text>													
+</doc>													

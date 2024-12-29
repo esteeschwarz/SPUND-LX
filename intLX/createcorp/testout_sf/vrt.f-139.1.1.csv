@@ -1,0 +1,100 @@
+<doc id="139.1.1">													
+<text id="139.1.1">													
+<s id="1">													
+Meine	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	1	mein	PRON	PPOSAT	Case=Nom|Number=Plur|Poss=Yes	2	det:poss			pid:1.139.1.1.
+Güte	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	2	Gut	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	5	nsubj			pid:1.139.1.1.
+-	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	3	-	PUNCT	$(		2	punct			pid:1.139.1.1.
+man	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	4	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	2	nsubj			pid:1.139.1.1.
+schreibt	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	5	schreiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.139.1.1.
+so	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	6	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	5	advmod		SpaceAfter=No	pid:1.139.1.1.
+,	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	7	,	PUNCT	$,		15	punct			pid:1.139.1.1.
+wie	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	8	wie	SCONJ	NN	Case=Nom|Gender=Neut|Number=Sing	15	mark			pid:1.139.1.1.
+es	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	9	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	15	obj			pid:1.139.1.1.
+der	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	10	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	12	det			pid:1.139.1.1.
+breiteste	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	11	breit	ADJ	ADJA	Case=Nom|Gender=Neut|Number=Sing	12	amod			pid:1.139.1.1.
+Teil	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	12	Teil	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	15	nsubj			pid:1.139.1.1.
+des	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	13	der	DET	ART	Case=Gen|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	14	det			pid:1.139.1.1.
+Volkes	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	14	Volk	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	12	nmod			pid:1.139.1.1.
+wahrnimmt	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	15	wahrnehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	advcl		SpaceAfter=No	pid:1.139.1.1.
+.	1	1	Meine Güte - man schreibt so, wie es der breiteste Teil des Volkes wahrnimmt.	16	.	PUNCT	$.		5	punct			pid:1.139.1.1.
+</s>													
+<s id="2">													
+Wenn	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	1	wenn	SCONJ	KOUS		3	mark			pid:2.139.1.1.
+ich	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	2	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj			pid:2.139.1.1.
+sage	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	3	sagen	VERB	NN	Case=Nom|Gender=Masc|Number=Plur	5	advcl		SpaceAfter=No	pid:2.139.1.1.
+,	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	4	,	PUNCT	$,		3	punct			pid:2.139.1.1.
+ich	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	5	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	6	nsubj			pid:2.139.1.1.
+stehe	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	6	stehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:2.139.1.1.
+unter	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	7	unter	ADP	ADJD		8	case			pid:2.139.1.1.
+Drogen	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	8	Droge	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	6	obl		SpaceAfter=No	pid:2.139.1.1.
+,	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	9	,	PUNCT	$,		10	punct			pid:2.139.1.1.
+denkt	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	10	denken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	conj			pid:2.139.1.1.
+da	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	11	da	SCONJ	ADV		14	mark			pid:2.139.1.1.
+jemand	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	12	jemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	14	nsubj			pid:2.139.1.1.
+an	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	13	an	ADP	APPR		14	case			pid:2.139.1.1.
+Koffein	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	14	Koffein	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	10	obl		SpaceAfter=No	pid:2.139.1.1.
+?	1	2	Wenn ich sage, ich stehe unter Drogen, denkt da jemand an Koffein?	15	?	PUNCT	$.		6	punct			pid:2.139.1.1.
+</s>													
+<s id="3">													
+Kaum	1	3	Kaum jemand.	1	kaum	PROPN	ADV		2	nsubj			pid:3.139.1.1.
+jemand	1	3	Kaum jemand.	2	jemehen	VERB	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	0	root		SpaceAfter=No	pid:3.139.1.1.
+.	1	3	Kaum jemand.	3	.	PUNCT	$.		2	punct			pid:3.139.1.1.
+</s>													
+<s id="4">													
+Nikotin	1	4	Nikotin?	1	Nikotin	PROPN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:4.139.1.1.
+?	1	4	Nikotin?	2	?	PUNCT	$.		1	punct			pid:4.139.1.1.
+</s>													
+<s id="5">													
+Genausowenig	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	1	Genausowenig	PROPN	PIS	Definite=Ind|PronType=Ind	7	nsubj			pid:5.139.1.1.
+-	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	2	-	PUNCT	$(		4	punct			pid:5.139.1.1.
+bei	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	3	bei	ADP	APPR		4	case			pid:5.139.1.1.
+Alkohol	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	4	Alkohol	NOUN	NE	Case=Dat|Gender=Masc|Number=Sing	1	nmod			pid:5.139.1.1.
+und	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	5	und	CCONJ	NE	Case=Gen|Gender=Masc|Number=Sing	6	cc			pid:5.139.1.1.
+Cannabis	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	6	Cannabis	NOUN	NE	Case=Gen|Gender=Masc|Number=Sing	4	conj			pid:5.139.1.1.
+liegt	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	7	liegen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:5.139.1.1.
+dann	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	8	dann	ADV	ADV		7	advmod			pid:5.139.1.1.
+die	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	9	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	11	det			pid:5.139.1.1.
+klare	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	10	klar	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	11	amod			pid:5.139.1.1.
+Grenze	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	11	Grenze	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	7	obj			pid:5.139.1.1.
+dessen	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	12	der	PRON	PDAT	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	11	nmod		SpaceAfter=No	pid:5.139.1.1.
+,	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	13	,	PUNCT	$,		19	punct			pid:5.139.1.1.
+was	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	14	was	PRON	NN	Case=Gen|Gender=Fem|Number=Plur	19	obj			pid:5.139.1.1.
+die	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	15	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	16	det			pid:5.139.1.1.
+meisten	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	16	meist	PRON	NN	Case=Dat|Gender=Masc|Number=Sing	19	nsubj			pid:5.139.1.1.
+als	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	17	als	ADP	KOKOM		18	case			pid:5.139.1.1.
+Droge	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	18	Droge	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	19	obl			pid:5.139.1.1.
+sehen	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	19	sehen	VERB	VVINF	VerbForm=Inf	11	acl			pid:5.139.1.1.
+und	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	20	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	21	cc			pid:5.139.1.1.
+wahrnehmen	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	21	wahrnehmen	VERB	VVINF	VerbForm=Inf	19	conj		SpaceAfter=No	pid:5.139.1.1.
+,	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	22	,	PUNCT	$,		26	punct			pid:5.139.1.1.
+nicht	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	23	nicht	PART	XY	NumType=Card	26	advmod			pid:5.139.1.1.
+nach	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	24	nach	ADP	CARD		26	case			pid:5.139.1.1.
+offizieller	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	25	offiziell	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	26	amod			pid:5.139.1.1.
+Definition	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	26	Definition	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	7	nsubj		SpaceAfter=No	pid:5.139.1.1.
+,	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	27	,	PUNCT	$,		30	punct			pid:5.139.1.1.
+sondern	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	28	sondern	CCONJ	NN	Case=Nom|Gender=Fem|Number=Sing	30	cc			pid:5.139.1.1.
+nach	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	29	nach	ADP	CARD		30	case			pid:5.139.1.1.
+Bauchgefühl	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	30	Bauchgefühl	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	26	conj		SpaceAfter=No	pid:5.139.1.1.
+.	1	5	Genausowenig - bei Alkohol und Cannabis liegt dann die klare Grenze dessen, was die meisten als Droge sehen und wahrnehmen, nicht nach offizieller Definition, sondern nach Bauchgefühl.	31	.	PUNCT	$.		7	punct			pid:5.139.1.1.
+</s>													
+<s id="6">													
+Danach	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	1	danach	ADV	PAV		2	advmod			pid:6.139.1.1.
+folgen	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	2	folgen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:6.139.1.1.
+schon	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	3	schon	ADV	ADV		2	advmod			pid:6.139.1.1.
+Koks	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	4	Koks	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	nsubj		SpaceAfter=No	pid:6.139.1.1.
+,	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	5	,	PUNCT	$,		6	punct			pid:6.139.1.1.
+LSD	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	6	LSD	PROPN	NN	Case=Acc|Gender=Neut|Number=Sing	4	conj			pid:6.139.1.1.
+und	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	7	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	8	cc			pid:6.139.1.1.
+Amphetamine	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	8	Amphetamine	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	4	conj		SpaceAfter=No	pid:6.139.1.1.
+,	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	9	,	PUNCT	$,		16	punct			pid:6.139.1.1.
+die	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	10	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	16	nsubj			pid:6.139.1.1.
+die	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	11	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	12	det			pid:6.139.1.1.
+allermeisten	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	12	allermeisten	PRON	PIS	Case=Nom|Definite=Ind|Number=Plur|PronType=Ind	16	nsubj			pid:6.139.1.1.
+klar	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	13	klar	ADJ	ADJD		16	advmod			pid:6.139.1.1.
+als	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	14	als	ADP	KOKOM		15	case			pid:6.139.1.1.
+Drogen	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	15	Droge	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	16	obl			pid:6.139.1.1.
+sehen	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	16	sehen	VERB	VVINF	VerbForm=Inf	4	acl		SpaceAfter=No	pid:6.139.1.1.
+.	1	6	Danach folgen schon Koks, LSD und Amphetamine, die die allermeisten klar als Drogen sehen.	17	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:6.139.1.1.
+</s>													
+</text>													
+</doc>													

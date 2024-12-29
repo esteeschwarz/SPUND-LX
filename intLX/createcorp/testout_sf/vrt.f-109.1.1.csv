@@ -1,0 +1,127 @@
+<doc id="109.1.1">													
+<text id="109.1.1">													
+<s id="1">													
+&gt;Wie	1	1	&gt;Wie wir sehen, bringt es nicht viel.	1	&gt;Wie	SCONJ	KON		3	mark			pid:1.109.1.1.
+wir	1	1	&gt;Wie wir sehen, bringt es nicht viel.	2	wir	PRON	ADJD		3	nsubj			pid:1.109.1.1.
+sehen	1	1	&gt;Wie wir sehen, bringt es nicht viel.	3	sehen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	5	advcl		SpaceAfter=No	pid:1.109.1.1.
+,	1	1	&gt;Wie wir sehen, bringt es nicht viel.	4	,	PUNCT	$,		3	punct			pid:1.109.1.1.
+bringt	1	1	&gt;Wie wir sehen, bringt es nicht viel.	5	bringen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.109.1.1.
+es	1	1	&gt;Wie wir sehen, bringt es nicht viel.	6	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	5	nsubj			pid:1.109.1.1.
+nicht	1	1	&gt;Wie wir sehen, bringt es nicht viel.	7	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	advmod			pid:1.109.1.1.
+viel	1	1	&gt;Wie wir sehen, bringt es nicht viel.	8	viel	ADV	NE	Foreign=Yes	5	obj		SpaceAfter=No	pid:1.109.1.1.
+.	1	1	&gt;Wie wir sehen, bringt es nicht viel.	9	.	PUNCT	$.		5	punct		SpacesAfter=\n\n	pid:1.109.1.1.
+</s>													
+<s id="2">													
+Ist	2	2	Ist dem so?	1	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:2.109.1.1.
+dem	2	2	Ist dem so?	2	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	3	det			pid:2.109.1.1.
+so	2	2	Ist dem so?	3	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	1	advmod		SpaceAfter=No	pid:2.109.1.1.
+?	2	2	Ist dem so?	4	?	PUNCT	$.		1	punct			pid:2.109.1.1.
+</s>													
+<s id="3">													
+Ich	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:3.109.1.1.
+hoffe	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	2	hoffen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:3.109.1.1.
+das	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	3	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	2	obj			pid:3.109.1.1.
+die	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	4	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:3.109.1.1.
+überwiegende	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	5	überwiegend	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	6	amod			pid:3.109.1.1.
+Mehrheit	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	6	Mehrheit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	15	obj			pid:3.109.1.1.
+der	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	7	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	8	det			pid:3.109.1.1.
+Frauen	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	8	Frau	NOUN	NN	Case=Gen|Gender=Fem|Number=Plur	6	nmod			pid:3.109.1.1.
+rechtzeitig	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	9	rechtzeitig	ADP	NN	Case=Dat|Gender=Neut|Number=Sing	11	case			pid:3.109.1.1.
+den	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	10	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det			pid:3.109.1.1.
+Ausstieg	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	11	Ausstieg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	15	obl			pid:3.109.1.1.
+aus	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	12	aus	ADP	APPR		14	case			pid:3.109.1.1.
+solchen	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	13	solch	PRON	PIAT	Case=Dat|Definite=Ind|Gender=Fem|Number=Plur|PronType=Ind	14	det			pid:3.109.1.1.
+Beziehungen	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	14	Beziehung	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	11	nmod			pid:3.109.1.1.
+findet	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	15	finden	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	acl		SpaceAfter=No	pid:3.109.1.1.
+.	2	3	Ich hoffe das die überwiegende Mehrheit der Frauen rechtzeitig den Ausstieg aus solchen Beziehungen findet.	16	.	PUNCT	$.		2	punct		SpacesAfter=\n\n	pid:3.109.1.1.
+</s>													
+<s id="4">													
+&gt;Aber	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	1	&gt;aber	CCONJ	ADV		2	cc			pid:4.109.1.1.
+klar	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	2	klar	ADJ	ADJD		0	root			pid:4.109.1.1.
+ist	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	3	sein	AUX	ADJD		2	cop		SpaceAfter=No	pid:4.109.1.1.
+,	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	4	,	PUNCT	$,		10	punct			pid:4.109.1.1.
+wir	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	5	wir	PRON	ADJD		10	nsubj			pid:4.109.1.1.
+müssen	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	6	müssen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	10	aux			pid:4.109.1.1.
+doch	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	7	doch	ADV	ADV		10	advmod			pid:4.109.1.1.
+viel	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	8	viel	ADV	PIS	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	advmod			pid:4.109.1.1.
+früher	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	9	früher	ADJ	ADV		10	advmod			pid:4.109.1.1.
+ansetzen	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	10	ansetzen	VERB	VVINF	VerbForm=Inf	2	ccomp		SpaceAfter=No	pid:4.109.1.1.
+.	3	4	&gt;Aber klar ist, wir müssen doch viel früher ansetzen.	11	.	PUNCT	$.		2	punct			pid:4.109.1.1.
+</s>													
+<s id="5">													
+Warum	3	5	Warum werden Männer gewalttätig?	1	warum	ADV	PWAV	PronType=Int	4	advmod			pid:5.109.1.1.
+werden	3	5	Warum werden Männer gewalttätig?	2	werden	AUX	NN	Case=Nom|Gender=Masc|Number=Plur	4	aux:pass			pid:5.109.1.1.
+Männer	3	5	Warum werden Männer gewalttätig?	3	Mann	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	4	nsubj			pid:5.109.1.1.
+gewalttätig	3	5	Warum werden Männer gewalttätig?	4	gewalttätig	ADJ	ADJD		0	root		SpaceAfter=No	pid:5.109.1.1.
+?	3	5	Warum werden Männer gewalttätig?	5	?	PUNCT	$.		4	punct			pid:5.109.1.1.
+</s>													
+<s id="6">													
+Das	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	1	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	2	nsubj			pid:6.109.1.1.
+hat	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:6.109.1.1.
+ja	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	3	ja	ADV	ADV		7	advmod			pid:6.109.1.1.
+vor	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	4	vor	ADP	NN	Case=Nom|Gender=Neut|Number=Plur	5	case			pid:6.109.1.1.
+allem	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	5	alle	PRON	PIS	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	6	nmod			pid:6.109.1.1.
+soziale	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	6	sozial	ADJ	NN	Case=Nom|Gender=Neut|Number=Sing	7	amod			pid:6.109.1.1.
+Ursachen	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	7	Ursache	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	2	obj			pid:6.109.1.1.
+und	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	8	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	12	cc			pid:6.109.1.1.
+da	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	9	da	ADV	ADV		12	advmod			pid:6.109.1.1.
+muss	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	10	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux			pid:6.109.1.1.
+man	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	11	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	12	nsubj			pid:6.109.1.1.
+ran	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	12	ran	VERB	PTKVZ		2	conj		SpaceAfter=No	pid:6.109.1.1.
+.	3	6	Das hat ja vor allem soziale Ursachen und da muss man ran.	13	.	PUNCT	$.		2	punct		SpacesAfter=\n\n	pid:6.109.1.1.
+</s>													
+<s id="7">													
+Jow	4	7	Jow, ich finde halt man könnte beides machen.	1	Jow	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	5	nsubj		SpaceAfter=No	pid:7.109.1.1.
+,	4	7	Jow, ich finde halt man könnte beides machen.	2	,	PUNCT	$,		4	punct			pid:7.109.1.1.
+ich	4	7	Jow, ich finde halt man könnte beides machen.	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:7.109.1.1.
+finde	4	7	Jow, ich finde halt man könnte beides machen.	4	finden	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	1	acl			pid:7.109.1.1.
+halt	4	7	Jow, ich finde halt man könnte beides machen.	5	halen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:7.109.1.1.
+man	4	7	Jow, ich finde halt man könnte beides machen.	6	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	5	nsubj			pid:7.109.1.1.
+könnte	4	7	Jow, ich finde halt man könnte beides machen.	7	können	AUX	VMFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	aux			pid:7.109.1.1.
+beides	4	7	Jow, ich finde halt man könnte beides machen.	8	beide	PRON	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	9	nsubj			pid:7.109.1.1.
+machen	4	7	Jow, ich finde halt man könnte beides machen.	9	machen	VERB	VVINF	VerbForm=Inf	5	xcomp		SpaceAfter=No	pid:7.109.1.1.
+.	4	7	Jow, ich finde halt man könnte beides machen.	10	.	PUNCT	$.		5	punct			pid:7.109.1.1.
+</s>													
+<s id="8">													
+Ist	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	1	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	cop			pid:8.109.1.1.
+ein	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	2	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	4	det			pid:8.109.1.1.
+wichtiges	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	3	wichtig	ADJ	ADJA	Case=Nom|Gender=Neut|Number=Sing	4	amod			pid:8.109.1.1.
+Thema	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	4	Thema	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	0	root			pid:8.109.1.1.
+und	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	5	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	12	cc			pid:8.109.1.1.
+das	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	6	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	8	det			pid:8.109.1.1.
+bisschen	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	7	bissch	ADJ	PIS	Definite=Ind|PronType=Ind	8	amod			pid:8.109.1.1.
+Zeit	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	8	Zeit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	12	obj			pid:8.109.1.1.
+könnte	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	9	können	AUX	VMFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	aux			pid:8.109.1.1.
+man	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	10	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	12	nsubj			pid:8.109.1.1.
+dafür	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	11	dafür	PRON	PAV		12	obj			pid:8.109.1.1.
+aufbringen	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	12	aufbringen	VERB	NN	Case=Acc|Gender=Fem|Number=Plur	4	conj		SpaceAfter=No	pid:8.109.1.1.
+.	4	8	Ist ein wichtiges Thema und das bisschen Zeit könnte man dafür aufbringen.	13	.	PUNCT	$.		4	punct			pid:8.109.1.1.
+</s>													
+<s id="9">													
+Wäre	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	1	sein	AUX	NN	Case=Nom|Gender=Neut|Number=Sing	6	aux			pid:9.109.1.1.
+mir	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	2	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	6	iobj			pid:9.109.1.1.
+in	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	3	in	ADP	APPR		5	case			pid:9.109.1.1.
+der	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	4	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:9.109.1.1.
+Schulzeit	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	5	Schulzeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	6	nmod			pid:9.109.1.1.
+wichtiger	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	6	wichtig	ADJ	ADJD		0	root			pid:9.109.1.1.
+gewesen	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	7	sein	AUX	ADJA	Case=Acc|Gender=Fem|Number=Sing	6	cop			pid:9.109.1.1.
+als	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	8	als	ADP	KOKOM		10	case			pid:9.109.1.1.
+dem	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	9	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	10	det			pid:9.109.1.1.
+5	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	10	5	NUM	CARD	NumType=Card	6	nmod		SpaceAfter=No	pid:9.109.1.1.
+.	4	9	Wäre mir in der Schulzeit wichtiger gewesen als dem 5.	11	.	PUNCT	$.		6	punct			pid:9.109.1.1.
+</s>													
+<s id="10">													
+Polizist	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	1	Polizist	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	2	nsubj			pid:10.109.1.1.
+zuzuhören	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	2	zuzuhören	VERB	ADJA	Case=Acc|Gender=Masc|Number=Sing	0	root			pid:10.109.1.1.
+warum	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	3	warum	ADV	ADJD		2	advmod			pid:10.109.1.1.
+ich	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	4	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:10.109.1.1.
+nicht	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	5	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	advmod			pid:10.109.1.1.
+betrunken	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	6	betrunken	ADJ	ADJD		10	advmod			pid:10.109.1.1.
+von	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	7	von	ADP	FM	Foreign=Yes	9	case			pid:10.109.1.1.
+der	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:10.109.1.1.
+Disco	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	9	Disco	PROPN	NN	Case=Dat|Gender=Fem|Number=Sing	10	obl			pid:10.109.1.1.
+heimfahren	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	10	heimfahren	VERB	VVINF	VerbForm=Inf	2	xcomp			pid:10.109.1.1.
+soll	4	10	Polizist zuzuhören warum ich nicht betrunken von der Disco heimfahren soll	11	sollen	AUX	NN	Case=Nom|Gender=Masc|Number=Plur	2	aux		SpacesAfter=\n	pid:10.109.1.1.
+</s>													
+</text>													
+</doc>													

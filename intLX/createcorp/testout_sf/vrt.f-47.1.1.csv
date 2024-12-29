@@ -1,0 +1,9 @@
+<doc id="47.1.1">													
+<text id="47.1.1">													
+<s id="1">													
+Globale	1	1	Globale Turbulenzen.	1	Global	ADJ	NE	Case=Nom|Gender=Masc|Number=Sing	2	amod			pid:1.47.1.1.
+Turbulenzen	1	1	Globale Turbulenzen.	2	Turbulenz	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root		SpaceAfter=No	pid:1.47.1.1.
+.	1	1	Globale Turbulenzen.	3	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:1.47.1.1.
+</s>													
+</text>													
+</doc>													

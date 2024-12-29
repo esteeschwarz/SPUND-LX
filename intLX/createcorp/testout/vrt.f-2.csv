@@ -1,233 +1,87 @@
 <doc id="2">													
 <text id="2.1">													
 <s id="1">													
-Einer	1	1	Einer, der Finten setzte	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	5	nsubj		SpaceAfter=No	pid:1.2.1.
-,	1	1	Einer, der Finten setzte	2	,	PUNCT	$,		4	punct			pid:1.2.1.
-der	1	1	Einer, der Finten setzte	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det			pid:1.2.1.
-Finten	1	1	Einer, der Finten setzte	4	Fint	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	appos			pid:1.2.1.
-setzte	1	1	Einer, der Finten setzte	5	setzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		SpacesAfter=\n	pid:1.2.1.
-</s>													
-</text>													
-<text id="2.2">													
-<s id="1">													
-Geboren	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	1	gebären	VERB	VVPP	VerbForm=Part	0	root			pid:1.2.2.
-wurde	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	2	werden	AUX	KON		1	aux:pass			pid:1.2.2.
-er	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	1	nsubj:pass			pid:1.2.2.
-in	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	4	in	ADP	APPR		6	case			pid:1.2.2.
-einer	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	5	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:1.2.2.
-Stadt	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	6	Stadt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	1	obl		SpaceAfter=No	pid:1.2.2.
-,	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	7	,	PUNCT	$,		15	punct			pid:1.2.2.
-die	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	8	der	DET	PRELS	Case=Nom|Gender=Fem|Number=Sing|PronType=Rel	9	det			pid:1.2.2.
-Einheimische	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	9	einheimische	NOUN	ADJA	Case=Nom|Gender=Fem|Number=Sing	15	nsubj			pid:1.2.2.
-stolz	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	10	stolz	ADV	ADJD		15	advmod			pid:1.2.2.
-mit	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	11	mit	ADP	$(		14	case			pid:1.2.2.
-einem	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	12	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	14	det			pid:1.2.2.
-italienischen	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	13	italienisch	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	14	amod			pid:1.2.2.
-Juwel	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	14	Juwel	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	15	obl			pid:1.2.2.
-vergleichen	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	15	vergleichen	VERB	VVINF	VerbForm=Inf	6	acl		SpaceAfter=No	pid:1.2.2.
-.	1	1	Geboren wurde er in einer Stadt, die Einheimische stolz mit einem italienischen Juwel vergleichen.	16	.	PUNCT	$.		1	punct			pid:1.2.2.
+Ich	1	1	Ich fühle das so sehr mit dir.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:2.1.1
+fühle	1	1	Ich fühle das so sehr mit dir.	2	fühlen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:2.1.1
+das	1	1	Ich fühle das so sehr mit dir.	3	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	7	det			pid:2.1.1
+so	1	1	Ich fühle das so sehr mit dir.	4	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	5	advmod			pid:2.1.1
+sehr	1	1	Ich fühle das so sehr mit dir.	5	sehr	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	7	advmod			pid:2.1.1
+mit	1	1	Ich fühle das so sehr mit dir.	6	mit	ADP	$(		7	case			pid:2.1.1
+dir	1	1	Ich fühle das so sehr mit dir.	7	du	PRON	PPER	Case=Dat|Number=Sing|Person=2|PronType=Prs	2	obj		SpaceAfter=No	pid:2.1.1
+.	1	1	Ich fühle das so sehr mit dir.	8	.	PUNCT	$.		2	punct			pid:2.1.1
 </s>													
 <s id="2">													
-Schule	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	1	Schule	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	nsubj		SpaceAfter=No	pid:2.2.2.
-,	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	2	,	PUNCT	$,		3	punct			pid:2.2.2.
-Studium	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	3	Studium	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	1	conj		SpaceAfter=No	pid:2.2.2.
-,	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	4	,	PUNCT	$,		5	punct			pid:2.2.2.
-Doktorhut	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	5	Doktorhut	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	1	conj		SpaceAfter=No	pid:2.2.2.
-,	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	6	,	PUNCT	$,		9	punct			pid:2.2.2.
-eine	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	7	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:2.2.2.
-glänzende	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	8	glänzend	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	9	amod			pid:2.2.2.
-Karriere	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	9	Karrier	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	1	conj			pid:2.2.2.
-bahnte	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	10	bahnen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:2.2.2.
-sich	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	11	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	10	obj			pid:2.2.2.
-an	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	12	an	ADP	PTKVZ		10	compound:prt		SpaceAfter=No	pid:2.2.2.
-.	1	2	Schule, Studium, Doktorhut, eine glänzende Karriere bahnte sich an.	13	.	PUNCT	$.		10	punct			pid:2.2.2.
+Mein	1	2	Mein erster Partner war sehr ähnlich.	1	mein	DET	PPOSAT	Case=Nom|Gender=Masc|Number=Sing|Poss=Yes	3	det:poss			pid:2.1.2
+erster	1	2	Mein erster Partner war sehr ähnlich.	2	erst	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	3	amod			pid:2.1.2
+Partner	1	2	Mein erster Partner war sehr ähnlich.	3	Partner	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	6	nsubj			pid:2.1.2
+war	1	2	Mein erster Partner war sehr ähnlich.	4	sein	AUX	ADV		6	cop			pid:2.1.2
+sehr	1	2	Mein erster Partner war sehr ähnlich.	5	sehr	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	6	advmod			pid:2.1.2
+ähnlich	1	2	Mein erster Partner war sehr ähnlich.	6	ähnlich	ADJ	NN	Case=Acc|Gender=Neut|Number=Sing	0	root		SpaceAfter=No	pid:2.1.2
+.	1	2	Mein erster Partner war sehr ähnlich.	7	.	PUNCT	$.		6	punct			pid:2.1.2
 </s>													
 <s id="3">													
-Eine	1	3	Eine, mit der man viel Geld verdienen konnte.	1	ein	PRON	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	0	root		SpaceAfter=No	pid:3.2.2.
-,	1	3	Eine, mit der man viel Geld verdienen konnte.	2	,	PUNCT	$,		8	punct			pid:3.2.2.
-mit	1	3	Eine, mit der man viel Geld verdienen konnte.	3	mit	ADP	$(		4	case			pid:3.2.2.
-der	1	3	Eine, mit der man viel Geld verdienen konnte.	4	der	PRON	PRELS	Case=Dat|Gender=Fem|Number=Sing|PronType=Rel	8	obl			pid:3.2.2.
-man	1	3	Eine, mit der man viel Geld verdienen konnte.	5	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	8	nsubj			pid:3.2.2.
-viel	1	3	Eine, mit der man viel Geld verdienen konnte.	6	viel	DET	PIS	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	7	det			pid:3.2.2.
-Geld	1	3	Eine, mit der man viel Geld verdienen konnte.	7	Geld	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	8	obj			pid:3.2.2.
-verdienen	1	3	Eine, mit der man viel Geld verdienen konnte.	8	verdienen	VERB	VVINF	VerbForm=Inf	1	acl			pid:3.2.2.
-konnte	1	3	Eine, mit der man viel Geld verdienen konnte.	9	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux		SpaceAfter=No	pid:3.2.2.
-.	1	3	Eine, mit der man viel Geld verdienen konnte.	10	.	PUNCT	$.		1	punct			pid:3.2.2.
+Ich	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:2.1.3
+habe	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	4	aux			pid:2.1.3
+gerade	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	3	gerade	ADV	ADV		4	advmod			pid:2.1.3
+gelesen	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	4	lesen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:2.1.3
+,	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	5	,	PUNCT	$,		7	punct			pid:2.1.3
+du	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	6	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	7	nsubj			pid:2.1.3
+konntest	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	7	konntesen	VERB	ADJD		4	ccomp			pid:2.1.3
+diese	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	8	dies	PRON	PDAT	Case=Acc|Gender=Fem|Number=Sing|PronType=Dem	9	det			pid:2.1.3
+Beziehung	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	9	Beziehung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	7	obj			pid:2.1.3
+hinter	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	10	hinter	ADP	APPR		11	case			pid:2.1.3
+dir	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	11	du	PRON	PPER	Case=Dat|Number=Sing|Person=2|PronType=Prs	12	obl			pid:2.1.3
+lassen	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	12	lassen	VERB	VVINF	VerbForm=Inf	7	xcomp		SpaceAfter=No	pid:2.1.3
+.	1	3	Ich habe gerade gelesen, du konntest diese Beziehung hinter dir lassen.	13	.	PUNCT	$.		4	punct		SpacesAfter= \n\n\n	pid:2.1.3
 </s>													
 <s id="4">													
-Doch	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	1	doch	ADV	KON		6	advmod			pid:4.2.2.
-die	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	2	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	3	det			pid:4.2.2.
-Zeiten	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	3	Zeit	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	6	nsubj			pid:4.2.2.
-waren	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	4	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	6	cop			pid:4.2.2.
-nicht	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	5	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	advmod			pid:4.2.2.
-danach	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	6	danach	ADV	PAV		11	advmod		SpaceAfter=No	pid:4.2.2.
-,	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	7	,	PUNCT	$,		11	punct			pid:4.2.2.
-er	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	8	er	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	11	nsubj:pass			pid:4.2.2.
-wurde	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	9	werden	AUX	ADV		11	aux:pass			pid:4.2.2.
-anderswo	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	10	anderswo	ADV	ADV		11	advmod			pid:4.2.2.
-gebraucht	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	11	brauchen|gebrauchen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:4.2.2.
-.	1	4	Doch die Zeiten waren nicht danach, er wurde anderswo gebraucht.	12	.	PUNCT	$.		11	punct			pid:4.2.2.
+Für	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	1	für	ADP	APPR		2	case			pid:2.1.4
+mich	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	2	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	3	obl			pid:2.1.4
+ist	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:2.1.4
+es	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	8	nsubj			pid:2.1.4
+bereits	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	5	bereits	ADV	ADV		8	advmod			pid:2.1.4
+ein	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	6	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	8	det			pid:2.1.4
+paar	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	7	paar	PRON	PIAT	Definite=Ind|PronType=Ind	8	det			pid:2.1.4
+Jahrzehnte	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	8	Jahrzehnt	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	3	obl			pid:2.1.4
+her	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	9	her	ADV	PTKVZ		3	compound:prt		SpaceAfter=No	pid:2.1.4
+.	2	4	Für mich ist es bereits ein paar Jahrzehnte her.	10	.	PUNCT	$.		3	punct			pid:2.1.4
 </s>													
 <s id="5">													
-Ohne	1	5	Ohne Widerspruch folgte er.	1	ohne	ADP	NN	Case=Nom|Gender=Masc|Number=Sing	2	case			pid:5.2.2.
-Widerspruch	1	5	Ohne Widerspruch folgte er.	2	Widerspruch	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	3	obl			pid:5.2.2.
-folgte	1	5	Ohne Widerspruch folgte er.	3	folgen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:5.2.2.
-er	1	5	Ohne Widerspruch folgte er.	4	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	nsubj		SpaceAfter=No	pid:5.2.2.
-.	1	5	Ohne Widerspruch folgte er.	5	.	PUNCT	$.		3	punct			pid:5.2.2.
+Irgendwann	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	1	irgendwann	ADV	ADV		9	advmod			pid:2.1.5
+kann	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	2	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux			pid:2.1.5
+man	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	3	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	9	nsubj			pid:2.1.5
+wieder	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	4	wieder	ADV	NN	Case=Nom|Gender=Neut|Number=Plur	9	advmod			pid:2.1.5
+ganz	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	5	ganz	ADV	ADV		9	advmod			pid:2.1.5
+am	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	6-7									pid:2.1.5
+an	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	6	an	ADP	APPR		8	case			pid:2.1.5
+dem	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	8	det			pid:2.1.5
+Leben	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	8	Leben	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	9	obl			pid:2.1.5
+teilhaben	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	9	teilhaben	VERB	VVINF	VerbForm=Inf	0	root			pid:2.1.5
+und	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	10	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	18	cc			pid:2.1.5
+das	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	11	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	18	det			pid:2.1.5
+sind	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	12	sein	AUX	ADJD		18	cop			pid:2.1.5
+"	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	13	"	PUNCT	$(		16	punct		SpaceAfter=No	pid:2.1.5
+nur	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	14	nur	ADV	CARD	NumType=Card	16	advmod		SpaceAfter=No	pid:2.1.5
+"	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	15	"	PUNCT	$(		16	punct			pid:2.1.5
+noch	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	16	noch	ADV	CARD	NumType=Card	17	advmod			pid:2.1.5
+schmerzhafte	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	17	schmerzhaft	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	18	amod			pid:2.1.5
+Erinnerungen	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	18	Erinnerung	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	9	conj		SpaceAfter=No	pid:2.1.5
+.	2	5	Irgendwann kann man wieder ganz am Leben teilhaben und das sind "nur" noch schmerzhafte Erinnerungen.	19	.	PUNCT	$.		9	punct			pid:2.1.5
 </s>													
 <s id="6">													
-Wie	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	1	wie	ADV	ADJA	Case=Nom|Gender=Masc|Number=Plur	2	advmod			pid:6.2.2.
-aber	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	2	aber	ADV	ADV		5	advmod			pid:6.2.2.
-sollte	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	3	sollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	aux			pid:6.2.2.
-er	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	4	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	5	nsubj			pid:6.2.2.
-umgehen	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	5	umgehen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:6.2.2.
-mit	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	6	mit	ADP	CARD	NumType=Card	9	case			pid:6.2.2.
-den	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	9	det			pid:6.2.2.
-zwei	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	8	zwei	NUM	NN	Case=Dat|Gender=Masc|Number=Plur	9	nummod			pid:6.2.2.
-Seelen	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	9	Seel	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	5	obl			pid:6.2.2.
-in	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	10	in	ADP	APPR		12	case			pid:6.2.2.
-seiner	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	11	sein	DET	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	12	det:poss			pid:6.2.2.
-Brust	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	12	Brust	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	9	nmod		SpaceAfter=No	pid:6.2.2.
-?	1	6	Wie aber sollte er umgehen mit den zwei Seelen in seiner Brust?	13	?	PUNCT	$.		5	punct			pid:6.2.2.
-</s>													
-<s id="7">													
-Anfangs	1	7	Anfangs schien die eine prägend, doch das änderte sich.	1	anfangs	ADV	ADV		2	advmod			pid:7.2.2.
-schien	1	7	Anfangs schien die eine prägend, doch das änderte sich.	2	scheinen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:7.2.2.
-die	1	7	Anfangs schien die eine prägend, doch das änderte sich.	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:7.2.2.
-eine	1	7	Anfangs schien die eine prägend, doch das änderte sich.	4	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:7.2.2.
-prägend	1	7	Anfangs schien die eine prägend, doch das änderte sich.	5	prägend	ADJ	ADJD		2	advmod		SpaceAfter=No	pid:7.2.2.
-,	1	7	Anfangs schien die eine prägend, doch das änderte sich.	6	,	PUNCT	$,		9	punct			pid:7.2.2.
-doch	1	7	Anfangs schien die eine prägend, doch das änderte sich.	7	doch	CCONJ	KON		9	cc			pid:7.2.2.
-das	1	7	Anfangs schien die eine prägend, doch das änderte sich.	8	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	9	nsubj			pid:7.2.2.
-änderte	1	7	Anfangs schien die eine prägend, doch das änderte sich.	9	ändern	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	conj			pid:7.2.2.
-sich	1	7	Anfangs schien die eine prägend, doch das änderte sich.	10	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	9	obj		SpaceAfter=No	pid:7.2.2.
-.	1	7	Anfangs schien die eine prägend, doch das änderte sich.	11	.	PUNCT	$.		5	punct			pid:7.2.2.
-</s>													
-<s id="8">													
-Er	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:8.2.2.
-legte	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	2	legen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:8.2.2.
-sich	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obj			pid:8.2.2.
-mit	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	4	mit	ADP	$(		5	case			pid:8.2.2.
-jenen	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	5	jen	PRON	PDS	Case=Dat|Number=Plur|PronType=Dem	2	obl			pid:8.2.2.
-an	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	6	an	ADP	PTKVZ		2	compound:prt		SpaceAfter=No	pid:8.2.2.
-,	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	7	,	PUNCT	$,		11	punct			pid:8.2.2.
-die	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	8	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	11	nsubj			pid:8.2.2.
-ihm	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	9	er	PRON	PPER	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	11	iobj			pid:8.2.2.
-langsam	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	10	langsam	ADJ	ADJD		11	advmod			pid:8.2.2.
-misstrauten	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	11	misstrauten	VERB	NN	Case=Dat|Number=Plur	2	acl		SpaceAfter=No	pid:8.2.2.
-.	1	8	Er legte sich mit jenen an, die ihm langsam misstrauten.	12	.	PUNCT	$.		2	punct			pid:8.2.2.
-</s>													
-<s id="9">													
-Wagte	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	1	wagen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin	0	root			pid:9.2.2.
-einiges	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	2	einiges	PRON	PIS	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	1	nsubj			pid:9.2.2.
-nahe	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	3	nahe	ADP	NN	Case=Gen|Gender=Neut|Number=Plur	5	case			pid:9.2.2.
-einer	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	4	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:9.2.2.
-Stadt	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	5	Stadt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	1	obl		SpaceAfter=No	pid:9.2.2.
-,	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	6	,	PUNCT	$,		14	punct			pid:9.2.2.
-in	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	7	in	ADP	APPR		8	case			pid:9.2.2.
-der	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	8	der	PRON	PRELS	Case=Dat|Gender=Fem|Number=Sing|PronType=Rel	14	obl			pid:9.2.2.
-sich	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	9	er|es|sie	PRON	PRF	Case=Dat|Number=Plur|Person=3|PronType=Prs|Reflex=Yes	14	iobj			pid:9.2.2.
-viele	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	10	viel	PRON	NN	Case=Gen|Gender=Neut|Number=Plur	14	nsubj			pid:9.2.2.
-gegen	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	11	gegen	ADP	APPR		13	case			pid:9.2.2.
-ihren	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	12	ihr	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	13	det:poss			pid:9.2.2.
-Willen	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	13	Wille	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	14	obl			pid:9.2.2.
-versammeln	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	14	versammeln	VERB	FM	Foreign=Yes	5	acl			pid:9.2.2.
-mussten	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	15	müssen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	14	aux		SpaceAfter=No	pid:9.2.2.
-.	1	9	Wagte einiges nahe einer Stadt, in der sich viele gegen ihren Willen versammeln mussten.	16	.	PUNCT	$.		1	punct			pid:9.2.2.
-</s>													
-<s id="10">													
-Eine	1	10	Eine Finte nach der anderen dachte er sich aus.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:10.2.2.
-Finte	1	10	Eine Finte nach der anderen dachte er sich aus.	2	Finte	NOUN	ADJA	Case=Nom|Gender=Fem|Number=Sing	6	nsubj			pid:10.2.2.
-nach	1	10	Eine Finte nach der anderen dachte er sich aus.	3	nach	ADP	ADJA		5	case			pid:10.2.2.
-der	1	10	Eine Finte nach der anderen dachte er sich aus.	4	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:10.2.2.
-anderen	1	10	Eine Finte nach der anderen dachte er sich aus.	5	ander	ADJ	ADJA	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Ind	2	nmod			pid:10.2.2.
-dachte	1	10	Eine Finte nach der anderen dachte er sich aus.	6	denken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:10.2.2.
-er	1	10	Eine Finte nach der anderen dachte er sich aus.	7	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj			pid:10.2.2.
-sich	1	10	Eine Finte nach der anderen dachte er sich aus.	8	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	6	obj			pid:10.2.2.
-aus	1	10	Eine Finte nach der anderen dachte er sich aus.	9	aus	ADP	PTKVZ		6	compound:prt		SpaceAfter=No	pid:10.2.2.
-.	1	10	Eine Finte nach der anderen dachte er sich aus.	10	.	PUNCT	$.		6	punct			pid:10.2.2.
-</s>													
-<s id="11">													
-Seine	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	1	sein	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	2	det:poss			pid:11.2.2.
-Vorgesetzten	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	2	Vorgesetzte	NOUN	NN	Case=Gen|Number=Plur	6	nsubj			pid:11.2.2.
-in	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	3	in	ADP	APPR		5	case			pid:11.2.2.
-der	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	4	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:11.2.2.
-Ferne	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	5	Ferne	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	6	obl			pid:11.2.2.
-schäumten	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	6	schäumen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	0	root		SpaceAfter=No	pid:11.2.2.
-,	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	7	,	PUNCT	$,		9	punct			pid:11.2.2.
-doch	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	8	doch	ADV	ADV		9	advmod			pid:11.2.2.
-kam	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	9	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	conj			pid:11.2.2.
-er	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	10	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	9	nsubj			pid:11.2.2.
-ohne	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	11	ohne	ADP	NN	Case=Acc|Gender=Masc|Number=Sing	12	case			pid:11.2.2.
-Bestrafung	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	12	Bestrafung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	9	obl			pid:11.2.2.
-davon	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	13	davon	ADV	PTKVZ		9	advmod		SpaceAfter=No	pid:11.2.2.
-.	1	11	Seine Vorgesetzten in der Ferne schäumten, doch kam er ohne Bestrafung davon.	14	.	PUNCT	$.		6	punct			pid:11.2.2.
-</s>													
-<s id="12">													
-Als	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	1	als	SCONJ	KOUS		3	mark			pid:12.2.2.
-alles	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	2	alle	PRON	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	3	nsubj			pid:12.2.2.
-vorbei	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	3	vorbei	ADJ	NN	Case=Nom|Gender=Neut|Number=Plur	7	advcl			pid:12.2.2.
-war	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	4	sein	AUX	ADV		3	cop		SpaceAfter=No	pid:12.2.2.
-,	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	5	,	PUNCT	$,		3	punct			pid:12.2.2.
-wurde	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	6	werden	AUX	KON		7	aux:pass			pid:12.2.2.
-abgewogen	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	7	abgewiehen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:12.2.2.
-,	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	8	,	PUNCT	$,		12	punct			pid:12.2.2.
-wie	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	9	wie	SCONJ	NN	Case=Nom|Gender=Neut|Number=Sing	12	mark			pid:12.2.2.
-das	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	10	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	11	det			pid:12.2.2.
-nun	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	11	nun	ADV	ADV		12	advmod			pid:12.2.2.
-war	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	12	sein	AUX	ADV		7	advcl			pid:12.2.2.
-mit	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	13	mit	ADP	CARD	NumType=Card	16	case			pid:12.2.2.
-seinen	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	14	sein	DET	PPOSAT	Case=Dat|Gender=Masc|Number=Plur|Poss=Yes	16	det:poss			pid:12.2.2.
-zwei	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	15	zwei	NUM	NN	Case=Dat|Gender=Masc|Number=Plur	16	nummod			pid:12.2.2.
-Seelen	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	16	Seel	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	12	obl		SpaceAfter=No	pid:12.2.2.
-.	1	12	Als alles vorbei war, wurde abgewogen, wie das nun war mit seinen zwei Seelen.	17	.	PUNCT	$.		7	punct			pid:12.2.2.
-</s>													
-<s id="13">													
-Das	1	13	Das Ergebnis war niederschmetternd für ihn.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	2	det			pid:13.2.2.
-Ergebnis	1	13	Das Ergebnis war niederschmetternd für ihn.	2	Ergebnis	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	4	nsubj			pid:13.2.2.
-war	1	13	Das Ergebnis war niederschmetternd für ihn.	3	sein	AUX	ADV		4	cop			pid:13.2.2.
-niederschmetternd	1	13	Das Ergebnis war niederschmetternd für ihn.	4	niederschmetternd	ADJ	ADJD		0	root			pid:13.2.2.
-für	1	13	Das Ergebnis war niederschmetternd für ihn.	5	für	ADP	APPR		6	case			pid:13.2.2.
-ihn	1	13	Das Ergebnis war niederschmetternd für ihn.	6	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	4	nmod		SpaceAfter=No	pid:13.2.2.
-.	1	13	Das Ergebnis war niederschmetternd für ihn.	7	.	PUNCT	$.		4	punct			pid:13.2.2.
-</s>													
-<s id="14">													
-Seinen	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	1	sein	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	3	det:poss			pid:14.2.2.
-ersten	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	2	erst	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	3	amod			pid:14.2.2.
-Beruf	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	3	Beruf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	8	obj			pid:14.2.2.
-durfte	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	4	dürfen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux			pid:14.2.2.
-er	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	5	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	nsubj			pid:14.2.2.
-nicht	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	6	nicht	PART	CARD	NumType=Card	8	advmod			pid:14.2.2.
-mehr	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	7	mehr	ADV	ADV		6	advmod			pid:14.2.2.
-ausüben	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	8	ausüben	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:14.2.2.
-.	1	14	Seinen ersten Beruf durfte er nicht mehr ausüben.	9	.	PUNCT	$.		8	punct			pid:14.2.2.
-</s>													
-<s id="15">													
-In	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	1	in	ADP	APPR		4	case			pid:15.2.2.
-einem	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	2	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	4	det			pid:15.2.2.
-anderen	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	3	ander	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	4	amod			pid:15.2.2.
-Land	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	4	Land	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	9	obl			pid:15.2.2.
-konnten	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	5	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	9	aux			pid:15.2.2.
-sie	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	6	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	9	nsubj			pid:15.2.2.
-das	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	7	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	9	det			pid:15.2.2.
-nicht	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	8	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	advmod			pid:15.2.2.
-nachvollziehen	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	9	nachvollziehen	VERB	VVINF	VerbForm=Inf	0	root			pid:15.2.2.
-und	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	10	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	11	cc			pid:15.2.2.
-handelten	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	11	handeln	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	9	conj			pid:15.2.2.
-im	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	12-13									pid:15.2.2.
-in	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	12	in	ADP	APPR		14	case			pid:15.2.2.
-dem	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	13	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	14	det			pid:15.2.2.
-Grünen	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	14	Grüne	PROPN	NN	Case=Dat|Gender=Neut|Number=Sing	11	obl		SpaceAfter=No	pid:15.2.2.
-.	1	15	In einem anderen Land konnten sie das nicht nachvollziehen und handelten im Grünen.	15	.	PUNCT	$.		9	punct			pid:15.2.2.
-</s>													
-<s id="16">													
-Da	1	16	Da war er schon lange tot.	1	da	ADV	ADV		6	advmod			pid:16.2.2.
-war	1	16	Da war er schon lange tot.	2	sein	AUX	ADV		6	cop			pid:16.2.2.
-er	1	16	Da war er schon lange tot.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj			pid:16.2.2.
-schon	1	16	Da war er schon lange tot.	4	schon	ADV	ADV		5	advmod			pid:16.2.2.
-lange	1	16	Da war er schon lange tot.	5	lange	ADJ	ADV		6	advmod			pid:16.2.2.
-tot	1	16	Da war er schon lange tot.	6	tot	ADJ	ADJD		0	root		SpaceAfter=No	pid:16.2.2.
-.	1	16	Da war er schon lange tot.	7	.	PUNCT	$.		6	punct		SpacesAfter=\n	pid:16.2.2.
+Ich	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	1	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj			pid:2.1.6
+wünsche	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	2	wünschen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:2.1.6
+dir	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	3	du	PRON	PPER	Case=Dat|Number=Sing|Person=2|PronType=Prs	2	iobj			pid:2.1.6
+viel	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	4	viel	DET	NE	Foreign=Yes	5	det			pid:2.1.6
+Kraft	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	5	Kraft	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obj			pid:2.1.6
+und	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	6	und	CCONJ	NE	Foreign=Yes	8	cc			pid:2.1.6
+viel	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	7	viel	PRON	NE	Foreign=Yes	8	det			pid:2.1.6
+Unterstützung	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	8	Unterstützung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	conj			pid:2.1.6
+und	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	9	und	CCONJ	NE	Foreign=Yes	12	cc			pid:2.1.6
+viele	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	10	viel	DET	NE	Foreign=Yes	12	amod			pid:2.1.6
+glückliche	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	11	glücklich	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	12	amod			pid:2.1.6
+Momente	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	12	Moment	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	8	conj		SpaceAfter=No	pid:2.1.6
+.	2	6	Ich wünsche dir viel Kraft und viel Unterstützung und viele glückliche Momente.	13	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:2.1.6
 </s>													
 </text>													
 </doc>													

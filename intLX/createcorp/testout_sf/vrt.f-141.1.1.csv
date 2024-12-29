@@ -1,0 +1,131 @@
+<doc id="141.1.1">													
+<text id="141.1.1">													
+<s id="1">													
+Wenn	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	1	wenn	SCONJ	KOUS		8	mark			pid:1.141.1.1.
+ein	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	2	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	4	det			pid:1.141.1.1.
+breiter	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	3	breit	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	4	amod			pid:1.141.1.1.
+Teil	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	4	Teil	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	8	nsubj			pid:1.141.1.1.
+das	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	5	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	8	nsubj			pid:1.141.1.1.
+nicht	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	6	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	advmod			pid:1.141.1.1.
+richtig	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	7	richtig	ADJ	ADJD		8	advmod			pid:1.141.1.1.
+wahrnimmt	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	8	wahrnehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	advcl		SpaceAfter=No	pid:1.141.1.1.
+,	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	9	,	PUNCT	$,		8	punct			pid:1.141.1.1.
+dann	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	10	dann	ADV	ADV		13	advmod			pid:1.141.1.1.
+muss	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	11	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	aux			pid:1.141.1.1.
+hier	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	12	hier	ADV	ADV		13	advmod			pid:1.141.1.1.
+aufgeklärt	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	13	aufgeklären	VERB	VVPP	VerbForm=Part	0	root			pid:1.141.1.1.
+werden	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	14	werden	AUX	NE	Case=Acc|Number=Plur	13	aux:pass		SpaceAfter=No	pid:1.141.1.1.
+,	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	15	,	PUNCT	$,		19	punct			pid:1.141.1.1.
+damit	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	16	damit	SCONJ	KOUS		19	mark			pid:1.141.1.1.
+sich	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	17	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	19	nsubj			pid:1.141.1.1.
+das	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	18	der	DET	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	19	det			pid:1.141.1.1.
+ändert	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	19	ändert	NUM	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	obl		SpaceAfter=No	pid:1.141.1.1.
+.	1	1	Wenn ein breiter Teil das nicht richtig wahrnimmt, dann muss hier aufgeklärt werden, damit sich das ändert.	20	.	PUNCT	$.		19	punct			pid:1.141.1.1.
+</s>													
+<s id="2">													
+Es	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	5	nsubj			pid:2.141.1.1.
+weiterhin	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	2	weiterhin	ADV	ADV		5	advmod			pid:2.141.1.1.
+so	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	3	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	5	advmod			pid:2.141.1.1.
+zu	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	4	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	mark			pid:2.141.1.1.
+formulieren	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	5	formulieren	VERB	VVINF	VerbForm=Inf	0	root			pid:2.141.1.1.
+als	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	6	als	ADP	KOKOM		8	case			pid:2.141.1.1.
+wäre	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	7	wär	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	8	amod			pid:2.141.1.1.
+Alkohol	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	8	Alkohol	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	5	obl			pid:2.141.1.1.
+keine	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	9	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|Polarity=Neg|PronType=Neg	10	nmod			pid:2.141.1.1.
+Droge	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	10	Droge	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	5	obj		SpaceAfter=No	pid:2.141.1.1.
+,	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	11	,	PUNCT	$,		12	punct			pid:2.141.1.1.
+ist	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	12	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	cop			pid:2.141.1.1.
+unwissenschaftlich	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	13	unwissenschaftlich	ADJ	ADJD		5	conj		SpaceAfter=No	pid:2.141.1.1.
+.	1	2	Es weiterhin so zu formulieren als wäre Alkohol keine Droge, ist unwissenschaftlich.	14	.	PUNCT	$.		5	punct			pid:2.141.1.1.
+</s>													
+<s id="3">													
+Gerade	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	1	gerade	ADV	ADV		4	advmod			pid:3.141.1.1.
+mit	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	2	mit	ADP	ADJA	Case=Nom|Gender=Neut|Number=Plur	4	case			pid:3.141.1.1.
+dem	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	3	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det			pid:3.141.1.1.
+Blick	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	4	Blick	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	23	nmod		SpaceAfter=No	pid:3.141.1.1.
+,	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	5	,	PUNCT	$,		18	punct			pid:3.141.1.1.
+dass	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	6	dass	SCONJ	KOUS		18	mark			pid:3.141.1.1.
+Alkohol	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	7	Alkohol	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	18	nsubj			pid:3.141.1.1.
+noch	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	8	noch	ADV	NE	Case=Nom|Gender=Masc|Number=Sing	18	advmod			pid:3.141.1.1.
+vor	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	9	vor	ADP	NE	Case=Nom|Gender=Masc|Number=Sing	10	case			pid:3.141.1.1.
+Heroin	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	10	Heroin	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	18	obl			pid:3.141.1.1.
+und	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	11	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	12	cc			pid:3.141.1.1.
+Crack	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	12	Crack	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	10	conj			pid:3.141.1.1.
+auf	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	13	auf	ADP	APPR		14	case			pid:3.141.1.1.
+Platz	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	14	Platz	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	18	obl			pid:3.141.1.1.
+1	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	15	1	NUM	CARD	NumType=Card	14	appos			pid:3.141.1.1.
+der	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	16	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	17	det			pid:3.141.1.1.
+Schädlichkeit	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	17	Schädlichkeit	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	14	nmod			pid:3.141.1.1.
+steht	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	18	stehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	ccomp		SpaceAfter=No	pid:3.141.1.1.
+,	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	19	,	PUNCT	$,		4	punct			pid:3.141.1.1.
+ist	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	20	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	23	cop			pid:3.141.1.1.
+das	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	21	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	23	nsubj			pid:3.141.1.1.
+ein	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	22	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	23	det			pid:3.141.1.1.
+Armutszeugnis	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	23	Armutszeugnis	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	0	root		SpaceAfter=No	pid:3.141.1.1.
+.	1	3	Gerade mit dem Blick, dass Alkohol noch vor Heroin und Crack auf Platz 1 der Schädlichkeit steht, ist das ein Armutszeugnis.	24	.	PUNCT	$.		23	punct			pid:3.141.1.1.
+</s>													
+<s id="4">													
+Und	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	1	und	CCONJ	ADJD		14	cc			pid:4.141.1.1.
+auf	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	2	auf	ADP	APPR		5	case			pid:4.141.1.1.
+der	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	3	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det			pid:4.141.1.1.
+anderen	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	4	ander	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	5	amod			pid:4.141.1.1.
+Seite	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	5	Seite	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	14	nmod			pid:4.141.1.1.
+ist	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	6	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	cop			pid:4.141.1.1.
+für	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	7	für	ADP	APPR		9	case			pid:4.141.1.1.
+die	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	8	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:4.141.1.1.
+Allgemeinheit	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	9	Allgemeinheit	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	14	nmod			pid:4.141.1.1.
+dann	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	10	dann	ADV	ADV		14	advmod			pid:4.141.1.1.
+LSD	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	11	LSD	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	14	nsubj			pid:4.141.1.1.
+eine	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	12	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det			pid:4.141.1.1.
+harte	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	13	hart	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	14	amod			pid:4.141.1.1.
+Droge	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	14	Droge	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:4.141.1.1.
+,	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	15	,	PUNCT	$,		20	punct			pid:4.141.1.1.
+obwohl	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	16	obwohl	SCONJ	NN	Case=Nom|Gender=Masc|Number=Sing	20	mark			pid:4.141.1.1.
+diese	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	17	dies	PRON	PDAT	Case=Acc|Gender=Masc|Number=Plur|PronType=Dem	20	nsubj			pid:4.141.1.1.
+weder	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	18	weder	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	19	cc			pid:4.141.1.1.
+abhängig	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	19	abhängig	ADJ	ADJD		20	xcomp			pid:4.141.1.1.
+macht	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	20	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	advcl		SpaceAfter=No	pid:4.141.1.1.
+,	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	21	,	PUNCT	$,		27	punct			pid:4.141.1.1.
+noch	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	22	noch	CCONJ	CARD	NumType=Card	27	cc			pid:4.141.1.1.
+körperliche	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	23	körperlich	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	24	amod			pid:4.141.1.1.
+Probleme	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	24	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	27	obj			pid:4.141.1.1.
+mit	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	25	mit	ADP	$(		26	case			pid:4.141.1.1.
+sich	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	26	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	27	obl			pid:4.141.1.1.
+bringt	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	27	bringen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	20	conj		SpaceAfter=No	pid:4.141.1.1.
+.	1	4	Und auf der anderen Seite ist für die Allgemeinheit dann LSD eine harte Droge, obwohl diese weder abhängig macht, noch körperliche Probleme mit sich bringt.	28	.	PUNCT	$.		14	punct			pid:4.141.1.1.
+</s>													
+<s id="5">													
+Für	1	5	Für mich ist das einfach nur absurd.	1	für	ADP	APPR		2	case			pid:5.141.1.1.
+mich	1	5	Für mich ist das einfach nur absurd.	2	ich	PRON	PPER	Case=Acc|Number=Sing|Person=1|PronType=Prs	7	nmod			pid:5.141.1.1.
+ist	1	5	Für mich ist das einfach nur absurd.	3	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	cop			pid:5.141.1.1.
+das	1	5	Für mich ist das einfach nur absurd.	4	der	PRON	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	7	nsubj			pid:5.141.1.1.
+einfach	1	5	Für mich ist das einfach nur absurd.	5	einfach	ADV	ADV		6	advmod			pid:5.141.1.1.
+nur	1	5	Für mich ist das einfach nur absurd.	6	nur	ADV	CARD	NumType=Card	7	advmod			pid:5.141.1.1.
+absurd	1	5	Für mich ist das einfach nur absurd.	7	absurd	ADJ	NN	Case=Nom|Gender=Masc|Number=Sing	0	root		SpaceAfter=No	pid:5.141.1.1.
+.	1	5	Für mich ist das einfach nur absurd.	8	.	PUNCT	$.		7	punct		SpacesAfter=\n\n	pid:5.141.1.1.
+</s>													
+<s id="6">													
+Verstehe	2	6	Verstehe gerade das Problem der Downvoter nicht.	1	versteh	NOUN	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	4	nsubj			pid:6.141.1.1.
+gerade	2	6	Verstehe gerade das Problem der Downvoter nicht.	2	gerade	ADV	ADV		4	advmod			pid:6.141.1.1.
+das	2	6	Verstehe gerade das Problem der Downvoter nicht.	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	4	det			pid:6.141.1.1.
+Problem	2	6	Verstehe gerade das Problem der Downvoter nicht.	4	Problem	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	0	root			pid:6.141.1.1.
+der	2	6	Verstehe gerade das Problem der Downvoter nicht.	5	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:6.141.1.1.
+Downvoter	2	6	Verstehe gerade das Problem der Downvoter nicht.	6	Downvoter	NOUN	ADJA	Case=Nom|Gender=Masc|Number=Sing	4	nmod			pid:6.141.1.1.
+nicht	2	6	Verstehe gerade das Problem der Downvoter nicht.	7	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	advmod		SpaceAfter=No	pid:6.141.1.1.
+.	2	6	Verstehe gerade das Problem der Downvoter nicht.	8	.	PUNCT	$.		4	punct			pid:6.141.1.1.
+</s>													
+<s id="7">													
+Habt	2	7	Habt ihr ein Problem mit Fakten oder was is los?	1	haben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:7.141.1.1.
+ihr	2	7	Habt ihr ein Problem mit Fakten oder was is los?	2	ihr	PRON	PPER	Case=Dat|Gender=Fem|Number=Sing|Person=3|PronType=Prs	1	iobj			pid:7.141.1.1.
+ein	2	7	Habt ihr ein Problem mit Fakten oder was is los?	3	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	4	det			pid:7.141.1.1.
+Problem	2	7	Habt ihr ein Problem mit Fakten oder was is los?	4	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	1	obj			pid:7.141.1.1.
+mit	2	7	Habt ihr ein Problem mit Fakten oder was is los?	5	mit	ADP	$(		6	case			pid:7.141.1.1.
+Fakten	2	7	Habt ihr ein Problem mit Fakten oder was is los?	6	Faktum	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	4	nmod			pid:7.141.1.1.
+oder	2	7	Habt ihr ein Problem mit Fakten oder was is los?	7	oder	CCONJ	XY		9	cc			pid:7.141.1.1.
+was	2	7	Habt ihr ein Problem mit Fakten oder was is los?	8	was	PRON	NN	Case=Acc|Gender=Fem|Number=Sing	9	nsubj			pid:7.141.1.1.
+is	2	7	Habt ihr ein Problem mit Fakten oder was is los?	9	sein	AUX	VAFIN	Foreign=Yes	1	conj			pid:7.141.1.1.
+los	2	7	Habt ihr ein Problem mit Fakten oder was is los?	10	los	ADV	PTKVZ		9	compound:prt		SpaceAfter=No	pid:7.141.1.1.
+?	2	7	Habt ihr ein Problem mit Fakten oder was is los?	11	?	PUNCT	$.		1	punct		SpacesAfter=\n	pid:7.141.1.1.
+</s>													
+</text>													
+</doc>													

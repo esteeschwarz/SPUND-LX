@@ -1,0 +1,242 @@
+<doc id="85.1.1">													
+<text id="85.1.1">													
+<s id="1">													
+&gt	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	1	&gen	VERB	ADJD		6	advcl		SpaceAfter=No	pid:1.85.1.1.
+;'Da	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	2	;'Da	PART	NN	Case=Nom|Gender=Fem|Number=Sing	1	mark			pid:1.85.1.1.
+kannst	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	3	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	6	aux			pid:1.85.1.1.
+du	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	4	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	6	nsubj			pid:1.85.1.1.
+nichtmehr	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	5	nichtmehr	ADV	ADV		6	advmod			pid:1.85.1.1.
+folgen	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	6	folgen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:1.85.1.1.
+'	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	7	'	PUNCT	$(		6	punct			pid:1.85.1.1.
+zeigt	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	8	zeigen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	parataxis			pid:1.85.1.1.
+nur	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	9	nur	ADV	CARD	NumType=Card	8	advmod			pid:1.85.1.1.
+das	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	10	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	11	det			pid:1.85.1.1.
+du	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	11	du	PROPN	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	8	nsubj			pid:1.85.1.1.
+keine	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	12	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|Polarity=Neg|PronType=Neg	13	nmod			pid:1.85.1.1.
+Ahnung	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	13	Ahnung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	17	obj			pid:1.85.1.1.
+von	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	14	von	ADP	FM	Foreign=Yes	16	case			pid:1.85.1.1.
+dem	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	15	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	16	det			pid:1.85.1.1.
+Thema	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	16	Thema	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	17	obl			pid:1.85.1.1.
+hast	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	17	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	8	xcomp		SpaceAfter=No	pid:1.85.1.1.
+,	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	18	,	PUNCT	$,		22	punct			pid:1.85.1.1.
+anscheinend	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	19	anscheinend	ADV	ADV		22	advmod			pid:1.85.1.1.
+noch	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	20	noch	ADV	CARD	NumType=Card	21	advmod			pid:1.85.1.1.
+nie	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	21	nie	ADV	ADV		22	advmod			pid:1.85.1.1.
+ernsthaft	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	22	ernsthafen	VERB	ADJD		8	acl			pid:1.85.1.1.
+mit	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	23	mit	ADP	$(		28	case			pid:1.85.1.1.
+opfern	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	24	opfern	ADV	KOUS		28	advmod			pid:1.85.1.1.
+von	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	25	von	ADP	FM	Foreign=Yes	27	case			pid:1.85.1.1.
+missbräuchlichen	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	26	mißbräuchlich	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	27	amod			pid:1.85.1.1.
+Beziehungen	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	27	Beziehung	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	28	obl			pid:1.85.1.1.
+ernsthaft	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	28	ernsthafen	VERB	ADJD		29	obl			pid:1.85.1.1.
+gesprochen	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	29	sprechen	VERB	VVPP	VerbForm=Part	22	conj			pid:1.85.1.1.
+hast	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	30	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	29	aux			pid:1.85.1.1.
+und	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	31	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	40	cc			pid:1.85.1.1.
+dementsprechend	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	32	dementsprechend	DET	ADJD		40	det			pid:1.85.1.1.
+deine	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	33	dein	DET	ADJA	Case=Acc|Gender=Fem|Number=Plur	36	det			pid:1.85.1.1.
+uninformierte	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	34	uninformiert	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	35	advmod			pid:1.85.1.1.
+verletzende	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	35	verletzend	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	36	amod			pid:1.85.1.1.
+meinung	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	36	meinung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	40	obj			pid:1.85.1.1.
+einfach	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	37	einfach	ADV	ADJD		40	advmod			pid:1.85.1.1.
+für	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	38	für	ADP	APPR		39	case			pid:1.85.1.1.
+dich	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	39	du	PRON	PRF	Case=Acc|Number=Sing|Person=2|PronType=Prs|Reflex=Yes	40	obl			pid:1.85.1.1.
+behalten	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	40	behalten	VERB	VVINF	VerbForm=Inf	30	conj			pid:1.85.1.1.
+solltest	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	41	solltest	ADV	ADJD		40	compound:prt		SpaceAfter=No	pid:1.85.1.1.
+.	1	1	&gt;'Da kannst du nichtmehr folgen' zeigt nur das du keine Ahnung von dem Thema hast, anscheinend noch nie ernsthaft mit opfern von missbräuchlichen Beziehungen ernsthaft gesprochen hast und dementsprechend deine uninformierte verletzende meinung einfach für dich behalten solltest.	42	.	PUNCT	$.		6	punct		SpacesAfter=\n\n	pid:1.85.1.1.
+</s>													
+<s id="2">													
+Also	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	1	also	ADV	ADV		4	advmod			pid:2.85.1.1.
+wenn	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	2	wenn	SCONJ	VVFIN		4	mark			pid:2.85.1.1.
+ich	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	3	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj			pid:2.85.1.1.
+sage	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	4	sagen	VERB	NN	Case=Dat|Gender=Fem|Number=Sing	8	advcl			pid:2.85.1.1.
+"	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	5	"	PUNCT	$(		8	punct		SpaceAfter=No	pid:2.85.1.1.
+jo	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	6	jo	ADP	NN	Case=Acc|Gender=Masc|Number=Sing	7	case			pid:2.85.1.1.
+das	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	7	der	PRON	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	8	obl			pid:2.85.1.1.
+verstehe	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	8	verstehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root			pid:2.85.1.1.
+ich	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	9	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	8	nsubj			pid:2.85.1.1.
+nicht	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	10	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	advmod		SpaceAfter=No	pid:2.85.1.1.
+"	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	11	"	PUNCT	$(		15	punct			pid:2.85.1.1.
+hast	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	12	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	15	cop			pid:2.85.1.1.
+du	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	13	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	15	nsubj			pid:2.85.1.1.
+ein	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	14	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	15	det			pid:2.85.1.1.
+Problem	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	15	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	8	obj			pid:2.85.1.1.
+damit	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	16	damit	ADV	PAV		15	advmod		SpaceAfter=No	pid:2.85.1.1.
+?	2	2	Also wenn ich sage "jo das verstehe ich nicht" hast du ein Problem damit?	17	?	PUNCT	$.		8	punct			pid:2.85.1.1.
+</s>													
+<s id="3">													
+Coole	2	3	Coole Aussage von Dir.	1	Cool	ADJ	NE	Case=Nom|Gender=Masc|Number=Sing	2	amod			pid:3.85.1.1.
+Aussage	2	3	Coole Aussage von Dir.	2	Aussage	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:3.85.1.1.
+von	2	3	Coole Aussage von Dir.	3	von	ADP	FM	Foreign=Yes	4	case			pid:3.85.1.1.
+Dir	2	3	Coole Aussage von Dir.	4	Dir	PROPN	FM	Foreign=Yes	2	nmod		SpaceAfter=No	pid:3.85.1.1.
+.	2	3	Coole Aussage von Dir.	5	.	PUNCT	$.		2	punct			pid:3.85.1.1.
+</s>													
+<s id="4">													
+Leider	2	4	Leider darf man seine Meinung in DE halt sagen.	1	leider	ADV	ADV		9	advmod			pid:4.85.1.1.
+darf	2	4	Leider darf man seine Meinung in DE halt sagen.	2	dürfen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux			pid:4.85.1.1.
+man	2	4	Leider darf man seine Meinung in DE halt sagen.	3	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	9	nsubj			pid:4.85.1.1.
+seine	2	4	Leider darf man seine Meinung in DE halt sagen.	4	sein	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	5	det:poss			pid:4.85.1.1.
+Meinung	2	4	Leider darf man seine Meinung in DE halt sagen.	5	Meinung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	9	obj			pid:4.85.1.1.
+in	2	4	Leider darf man seine Meinung in DE halt sagen.	6	in	ADP	APPR		7	case			pid:4.85.1.1.
+DE	2	4	Leider darf man seine Meinung in DE halt sagen.	7	De	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	9	obl			pid:4.85.1.1.
+halt	2	4	Leider darf man seine Meinung in DE halt sagen.	8	halt	ADJ	ADV		9	advmod			pid:4.85.1.1.
+sagen	2	4	Leider darf man seine Meinung in DE halt sagen.	9	sagen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:4.85.1.1.
+.	2	4	Leider darf man seine Meinung in DE halt sagen.	10	.	PUNCT	$.		9	punct			pid:4.85.1.1.
+</s>													
+<s id="5">													
+Wenn	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	1	wenn	SCONJ	KOUS		6	mark			pid:5.85.1.1.
+du	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	2	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	6	nsubj			pid:5.85.1.1.
+damit	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	3	damit	ADV	PAV		6	advmod			pid:5.85.1.1.
+nicht	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	4	nicht	PART	TRUNC	NumType=Card	6	advmod			pid:5.85.1.1.
+klar	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	5	klar	ADJ	ADJD		6	advmod			pid:5.85.1.1.
+kommst	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	6	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	advcl		SpaceAfter=No	pid:5.85.1.1.
+,	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	7	,	PUNCT	$,		6	punct			pid:5.85.1.1.
+sollten	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	8	sollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	13	aux			pid:5.85.1.1.
+wir	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	9	wir	PRON	ADJD		13	nsubj			pid:5.85.1.1.
+einfach	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	10	einfach	ADV	ADV		13	advmod			pid:5.85.1.1.
+nicht	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	11	nicht	PART	CARD	NumType=Card	13	advmod			pid:5.85.1.1.
+miteinander	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	12	miteinander	ADV	ADV		13	advmod			pid:5.85.1.1.
+sprechen	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	13	sprechen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No	pid:5.85.1.1.
+.	2	5	Wenn du damit nicht klar kommst, sollten wir einfach nicht miteinander sprechen.	14	.	PUNCT	$.		13	punct		SpacesAfter=\n\n	pid:5.85.1.1.
+</s>													
+<s id="6">													
+&gt;Wieso	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	1	&gt;Wieso	ADV	ADV		26	advmod			pid:6.85.1.1.
+sind	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	2	sein	AUX	ADJD		26	cop			pid:6.85.1.1.
+Menschen	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	3	Mensch	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	26	nsubj			pid:6.85.1.1.
+'	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	4	'	PUNCT	$(		5	punct		SpaceAfter=No	pid:6.85.1.1.
+die	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	5	der	PRON	PRELS	Case=Acc|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	26	nmod			pid:6.85.1.1.
+es	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	6	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	26	nsubj			pid:6.85.1.1.
+ja	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	7	ja	ADV	ADV		9	advmod			pid:6.85.1.1.
+nur	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	8	nur	ADV	CARD		9	advmod			pid:6.85.1.1.
+gut	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	9	gut	ADJ	ADJD		26	advmod			pid:6.85.1.1.
+meinen	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	10	mein	PRON	PPOSAT	Case=Dat|Gender=Neut|Number=Plur|Poss=Yes	16	det:poss		SpaceAfter=No	pid:6.85.1.1.
+'	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	11	'	PUNCT	$(		10	punct			pid:6.85.1.1.
+so	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	12	so	ADV	NE	Case=Dat|Number=Plur	16	advmod			pid:6.85.1.1.
+ein	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	13	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	16	det			pid:6.85.1.1.
+unempathischer	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	14	unempathisch	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	16	amod			pid:6.85.1.1.
+uninformierter	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	15	uninformiert	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	16	amod			pid:6.85.1.1.
+Haufen	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	16	Haufen	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	26	obj			pid:6.85.1.1.
+die	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	17	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	26	nsubj			pid:6.85.1.1.
+dann	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	18	dann	ADV	ADV		22	advmod			pid:6.85.1.1.
+ihre	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	19	ihr	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	21	det:poss			pid:6.85.1.1.
+verletzende	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	20	verletzend	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	21	amod			pid:6.85.1.1.
+Meinung	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	21	Meinung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	22	obj			pid:6.85.1.1.
+selbstbewusst	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	22	selbstbewussen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	26	acl			pid:6.85.1.1.
+in	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	23	in	ADP	APPR		25	case			pid:6.85.1.1.
+den	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	24	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	25	det			pid:6.85.1.1.
+Äther	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	25	Äther	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	26	obl			pid:6.85.1.1.
+pusten	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	26	pusen	VERB	NN	Case=Acc|Gender=Masc|Number=Plur	0	root		SpaceAfter=No	pid:6.85.1.1.
+?	3	6	&gt;Wieso sind Menschen 'die es ja nur gut meinen' so ein unempathischer uninformierter Haufen die dann ihre verletzende Meinung selbstbewusst in den Äther pusten?	27	?	PUNCT	$.		26	punct		SpacesAfter=\n\n	pid:6.85.1.1.
+</s>													
+<s id="7">													
+Vielleicht	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	1	vielleicht	ADV	ADV		8	advmod			pid:7.85.1.1.
+weil	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	2	weil	SCONJ	KOUS		8	mark			pid:7.85.1.1.
+du	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	3	du	PRON	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	8	nsubj			pid:7.85.1.1.
+Dinge	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	4	Ding	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	8	nsubj			pid:7.85.1.1.
+in	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	5	in	ADP	APPR		7	case			pid:7.85.1.1.
+meine	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	6	mein	PRON	PPOSAT	Case=Nom|Gender=Masc|Number=Plur|Poss=Yes	7	det:poss			pid:7.85.1.1.
+Aussagen	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	7	Aussage	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	8	obl			pid:7.85.1.1.
+reinprojezierst	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	8	reinprojeziersen	VERB	ADV		0	root			pid:7.85.1.1.
+die	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	9	der	DET	PRELS	Case=Acc|Gender=Fem|Number=Sing|PronType=Rel	12	obj			pid:7.85.1.1.
+ich	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	10	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj			pid:7.85.1.1.
+nie	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	11	nie	ADV	ADV		12	advmod			pid:7.85.1.1.
+gesagt	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	12	gesagen	VERB	VVPP	VerbForm=Part	8	ccomp			pid:7.85.1.1.
+habe	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	13	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	aux		SpaceAfter=No	pid:7.85.1.1.
+?	4	7	Vielleicht weil du Dinge in meine Aussagen reinprojezierst die ich nie gesagt habe?	14	?	PUNCT	$.		8	punct			pid:7.85.1.1.
+</s>													
+<s id="8">													
+"	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	1	"	PUNCT	$(		4	punct		SpaceAfter=No	pid:8.85.1.1.
+Oh	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	2	Oh	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	3	nmod			pid:8.85.1.1.
+jemand	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	3	jemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	4	nsubj			pid:8.85.1.1.
+hinterfragt	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	4	hinterfragen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	26	nsubj			pid:8.85.1.1.
+warum	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	5	warum	ADV	ADJD		4	advmod			pid:8.85.1.1.
+es	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	6	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	obj			pid:8.85.1.1.
+häufig	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	7	häufig	ADJ	ADJD		4	advmod			pid:8.85.1.1.
+so	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	8	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	4	advmod			pid:8.85.1.1.
+ist	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	9	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	cop		SpaceAfter=No	pid:8.85.1.1.
+,	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	10	,	PUNCT	$,		12	punct			pid:8.85.1.1.
+das	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	11	der	PRON	PRELS	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	12	nsubj			pid:8.85.1.1.
+darf	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	12	darf	VERB	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	acl			pid:8.85.1.1.
+nicht	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	13	nicht	PART	TRUNC	NumType=Card	12	advmod			pid:8.85.1.1.
+sein	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	14	sein	AUX	VAINF	VerbForm=Inf	12	aux		SpaceAfter=No	pid:8.85.1.1.
+,	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	15	,	PUNCT	$,		20	punct			pid:8.85.1.1.
+der	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	16	der	PRON	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	20	nsubj			pid:8.85.1.1.
+soll	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	17	sollen	AUX	NN	Case=Nom|Gender=Masc|Number=Sing	20	aux			pid:8.85.1.1.
+die	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	18	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	19	det			pid:8.85.1.1.
+Klappe	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	19	Klappe	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	20	obj			pid:8.85.1.1.
+halten	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	20	halten	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	21	acl		SpaceAfter=No	pid:8.85.1.1.
+"	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	21	"	PUNCT	$(		4	punct			pid:8.85.1.1.
+ist	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	22	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	26	cop			pid:8.85.1.1.
+schon	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	23	schon	ADV	ADV		26	advmod			pid:8.85.1.1.
+eine	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	24	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	26	det			pid:8.85.1.1.
+komische	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	25	komisch	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	26	amod			pid:8.85.1.1.
+Reaktion	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	26	Reaktion	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:8.85.1.1.
+.	4	8	"Oh jemand hinterfragt warum es häufig so ist, das darf nicht sein, der soll die Klappe halten" ist schon eine komische Reaktion.	27	.	PUNCT	$.		26	punct		SpacesAfter=\n\n	pid:8.85.1.1.
+</s>													
+<s id="9">													
+&gt;Durch	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	1	&gt;Durch	ADP	NE	Case=Nom|Gender=Masc|Number=Sing	3	case			pid:9.85.1.1.
+deine	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	2	dein	DET	PPOSAT	Case=Nom|Gender=Neut|Number=Plur|Poss=Yes	3	amod			pid:9.85.1.1.
+takes	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	3	takes	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	4	obl			pid:9.85.1.1.
+fühlen	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	4	fühlen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:9.85.1.1.
+sich	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	5	er|es|sie	PRON	PRF	Case=Acc|Number=Plur|Person=3|PronType=Prs|Reflex=Yes	4	obj			pid:9.85.1.1.
+Opfer	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	6	Opfer	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	4	nsubj			pid:9.85.1.1.
+nämlich	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	7	nämlich	ADV	CARD	NumType=Card	4	advmod			pid:9.85.1.1.
+noch	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	8	noch	ADV	CARD	NumType=Card	4	advmod			pid:9.85.1.1.
+mehr	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	9	mehr	ADV	ADV		4	advmod			pid:9.85.1.1.
+als	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	10	als	CCONJ	KOKOM		14	cc			pid:9.85.1.1.
+wären	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	11	sein	AUX	ADJD		14	cop			pid:9.85.1.1.
+sie	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	12	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	14	nsubj			pid:9.85.1.1.
+'der	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	13	'der	ADV	NN	Case=Nom|Gender=Neut|Number=Plur	14	advmod			pid:9.85.1.1.
+dumme	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	14	dumm	ADJ	VVFIN	Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	conj		SpaceAfter=No	pid:9.85.1.1.
+'	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	15	'	PUNCT	$,		20	punct			pid:9.85.1.1.
+weil	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	16	weil	SCONJ	KOUS		20	mark			pid:9.85.1.1.
+sie	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	17	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	20	nsubj			pid:9.85.1.1.
+ja	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	18	ja	ADV	ADV		19	advmod			pid:9.85.1.1.
+freiwillig	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	19	freiwillig	ADJ	ADJD		20	xcomp			pid:9.85.1.1.
+geblieben	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	20	bleiben	VERB	VVPP	VerbForm=Part	14	advcl			pid:9.85.1.1.
+sind	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	21	sein	AUX	ADJD		20	aux		SpaceAfter=No	pid:9.85.1.1.
+.	5	9	&gt;Durch deine takes fühlen sich Opfer nämlich noch mehr als wären sie 'der dumme' weil sie ja freiwillig geblieben sind.	22	.	PUNCT	$.		4	punct		SpacesAfter=\s\n\n	pid:9.85.1.1.
+</s>													
+<s id="10">													
+Lol	6	10	Lol.	1	Lol	X	NE	Case=Acc|Gender=Neut|Number=Sing	0	root		SpaceAfter=No	pid:10.85.1.1.
+.	6	10	Lol.	2	.	PUNCT	$.		1	punct			pid:10.85.1.1.
+</s>													
+<s id="11">													
+Und	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	1	und	CCONJ	ADJD		10	cc			pid:11.85.1.1.
+durch	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	2	durch	ADP	APPR		4	case			pid:11.85.1.1.
+deinen	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	3	dein	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	4	det:poss			pid:11.85.1.1.
+Spruch	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	4	Spruch	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	10	obl			pid:11.85.1.1.
+hier	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	5	hier	ADV	ADV		10	advmod			pid:11.85.1.1.
+fühl	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	6	fühl	SCONJ	NN	Case=Acc|Gender=Neut|Number=Sing	10	mark			pid:11.85.1.1.
+ich	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	7	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	10	nsubj			pid:11.85.1.1.
+mich	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	8	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	10	obj			pid:11.85.1.1.
+jetzt	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	9	jetzt	ADV	ADV		10	advmod			pid:11.85.1.1.
+angegriffen	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	10	angreifen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:11.85.1.1.
+.	6	11	Und durch deinen Spruch hier fühl ich mich jetzt angegriffen.	11	.	PUNCT	$.		10	punct			pid:11.85.1.1.
+</s>													
+<s id="12">													
+Hättest	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	1	Hättest	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	6	nsubj			pid:12.85.1.1.
+du	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	2	du	PROPN	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	1	flat			pid:12.85.1.1.
+das	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	3	der	PRON	PDS	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	6	obj			pid:12.85.1.1.
+deshalb	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	4	deshalb	ADV	PAV		6	advmod			pid:12.85.1.1.
+nicht	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	5	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	advmod			pid:12.85.1.1.
+schreiben	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	6	schreiben	VERB	VVINF	VerbForm=Inf	0	root			pid:12.85.1.1.
+dürfen	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	7	dürfen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	6	aux		SpaceAfter=No	pid:12.85.1.1.
+,	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	8	,	PUNCT	$,		13	punct			pid:12.85.1.1.
+oder	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	9	oder	CCONJ	XY		13	cc			pid:12.85.1.1.
+ist	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	10	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	13	aux			pid:12.85.1.1.
+das	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	11	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	13	nsubj			pid:12.85.1.1.
+jetzt	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	12	jetzt	ADV	ADV		13	advmod			pid:12.85.1.1.
+halt	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	13	halen	VERB	ADV		6	conj			pid:12.85.1.1.
+einfach	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	14	einfach	ADV	ADV		13	advmod			pid:12.85.1.1.
+mein	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	15	mein	PRON	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	16	det:poss			pid:12.85.1.1.
+Problem	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	16	Problem	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	22	obj			pid:12.85.1.1.
+wenn	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	17	wenn	SCONJ	VVFIN		22	mark			pid:12.85.1.1.
+ich	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	18	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	22	nsubj			pid:12.85.1.1.
+mich	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	19	ich	PRON	PRF	Case=Acc|Number=Sing|Person=1|PronType=Prs|Reflex=Yes	22	obj			pid:12.85.1.1.
+dadurch	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	20	dadurch	ADV	PAV		21	advmod			pid:12.85.1.1.
+angegriffen	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	21	angreifen	VERB	ADJD		22	xcomp			pid:12.85.1.1.
+fühle	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	22	fühlen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	13	advcl		SpaceAfter=No	pid:12.85.1.1.
+?	6	12	Hättest du das deshalb nicht schreiben dürfen, oder ist das jetzt halt einfach mein Problem wenn ich mich dadurch angegriffen fühle?	23	?	PUNCT	$.		6	punct		SpacesAfter=\n	pid:12.85.1.1.
+</s>													
+</text>													
+</doc>													

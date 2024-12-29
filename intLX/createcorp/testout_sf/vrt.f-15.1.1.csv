@@ -1,0 +1,49 @@
+<doc id="15.1.1">													
+<text id="15.1.1">													
+<s id="1">													
+&gt	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	1	&gen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:1.15.1.1.
+;Russland	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	2	;Russland	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	1	nsubj		SpaceAfter=No	pid:1.15.1.1.
+,	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	3	,	PUNCT	$,		4	punct			pid:1.15.1.1.
+Iran	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	4	Iran	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	conj		SpaceAfter=No	pid:1.15.1.1.
+,	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	5	,	PUNCT	$,		6	punct			pid:1.15.1.1.
+China	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	6	China	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	2	conj			pid:1.15.1.1.
+und	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	7	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	8	cc			pid:1.15.1.1.
+Nordkorea	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	8	Nordkorea	PROPN	NE	Case=Acc|Gender=Neut|Number=Sing	2	conj			pid:1.15.1.1.
+machen	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	9	machen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	1	conj			pid:1.15.1.1.
+das	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	10	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	11	det			pid:1.15.1.1.
+Gleiche	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	11	gleichen	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	9	obj		SpaceAfter=No	pid:1.15.1.1.
+.	1	1	&gt;Russland, Iran, China und Nordkorea machen das Gleiche.	12	.	PUNCT	$.		1	punct			pid:1.15.1.1.
+</s>													
+<s id="2">													
+Ob	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	1	ob	SCONJ	NN	Case=Nom|Gender=Masc|Number=Sing	11	mark			pid:2.15.1.1.
+eine	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	2	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	4	det			pid:2.15.1.1.
+einzelne	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	3	einzeln	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Plur	4	amod			pid:2.15.1.1.
+Aktion	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	4	Aktion	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	11	nsubj:pass			pid:2.15.1.1.
+von	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	5	von	ADP	FM	Foreign=Yes	6	case			pid:2.15.1.1.
+Iran	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	6	Iran	PROPN	NE	Case=Dat|Gender=Masc|Number=Sing	4	nmod			pid:2.15.1.1.
+oder	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	7	oder	CCONJ	NE	Case=Dat|Gender=Masc|Number=Sing	8	cc			pid:2.15.1.1.
+Russland	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	8	Rußland	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	6	conj			pid:2.15.1.1.
+oder	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	9	oder	CCONJ	XY		10	cc			pid:2.15.1.1.
+Nordkorea	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	10	Nordkorea	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	6	conj			pid:2.15.1.1.
+durchgeführt	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	11	durchführen	VERB	VVPP	VerbForm=Part	16	advcl			pid:2.15.1.1.
+wurde	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	12	werden	AUX	KON		11	aux:pass		SpaceAfter=No	pid:2.15.1.1.
+,	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	13	,	PUNCT	$,		11	punct			pid:2.15.1.1.
+ist	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	14	sein	AUX	ADJD		16	cop			pid:2.15.1.1.
+kaum	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	15	kaum	ADV	ADV		16	advmod			pid:2.15.1.1.
+relevant	1	2	Ob eine einzelne Aktion von Iran oder Russland oder Nordkorea durchgeführt wurde, ist kaum relevant	16	relevant	ADJ	ADJD		0	root		SpacesAfter=\n\n	pid:2.15.1.1.
+</s>													
+<s id="3">													
+Aber	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	1	aber	CCONJ	KON		8	cc			pid:3.15.1.1.
+Krieg	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	2	Krieg	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	8	nsubj			pid:3.15.1.1.
+willst	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	3	willen	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	8	aux			pid:3.15.1.1.
+du	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	4	du	ADV	PPER	Case=Nom|Number=Sing|Person=2|PronType=Prs	8	nsubj			pid:3.15.1.1.
+nur	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	5	nur	ADV	CARD	NumType=Card	8	advmod			pid:3.15.1.1.
+gegen	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	6	gegen	ADP	APPR		7	case			pid:3.15.1.1.
+Russland	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	7	Rußland	PROPN	NE	Case=Acc|Gender=Neut|Number=Sing	8	obl			pid:3.15.1.1.
+führen	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	8	führen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:3.15.1.1.
+,	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	9	,	PUNCT	$,		11	punct			pid:3.15.1.1.
+ok	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	10	ok	ADJ	ADJD		11	advmod			pid:3.15.1.1.
+ok	2	3	Aber Krieg willst du nur gegen Russland führen, ok ok	11	ok	ADJ	ADJD		8	conj		SpacesAfter=\n	pid:3.15.1.1.
+</s>													
+</text>													
+</doc>													

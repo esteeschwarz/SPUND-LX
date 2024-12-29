@@ -1,0 +1,12 @@
+<doc id="4.1.1">													
+<text id="4.1.1">													
+<s id="1">													
+Oder	1	1	Oder es wird gesagt: DDoS	1	oder	CCONJ	NN	Case=Nom|Gender=Neut|Number=Plur	2	case			pid:1.4.1.1.
+es	1	1	Oder es wird gesagt: DDoS	2	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	expl			pid:1.4.1.1.
+wird	1	1	Oder es wird gesagt: DDoS	3	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	4	aux:pass			pid:1.4.1.1.
+gesagt	1	1	Oder es wird gesagt: DDoS	4	sagen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:1.4.1.1.
+:	1	1	Oder es wird gesagt: DDoS	5	:	PUNCT	$.		6	punct			pid:1.4.1.1.
+DDoS	1	1	Oder es wird gesagt: DDoS	6	DDoS	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	4	nsubj:pass		SpacesAfter=\n	pid:1.4.1.1.
+</s>													
+</text>													
+</doc>													

@@ -1,0 +1,30 @@
+<doc id="6.1.1">													
+<text id="6.1.1">													
+<s id="1">													
+&gt	1	1	&gt;	1	&gen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	pid:1.6.1.1.
+;	1	1	&gt;	2	;	PUNCT	$.		1	punct			pid:1.6.1.1.
+</s>													
+<s id="2">													
+das	1	2	das »Informations Technik Zentrum Bund«	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	3	det			pid:2.6.1.1.
+»	1	2	das »Informations Technik Zentrum Bund«	2	»	PUNCT	$(		1	punct		SpaceAfter=No	pid:2.6.1.1.
+Informations	1	2	das »Informations Technik Zentrum Bund«	3	Informations	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:2.6.1.1.
+Technik	1	2	das »Informations Technik Zentrum Bund«	4	Technik	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	3	appos			pid:2.6.1.1.
+Zentrum	1	2	das »Informations Technik Zentrum Bund«	5	Zentrum	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	4	flat			pid:2.6.1.1.
+Bund	1	2	das »Informations Technik Zentrum Bund«	6	Bund	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	4	flat		SpaceAfter=No	pid:2.6.1.1.
+«	1	2	das »Informations Technik Zentrum Bund«	7	«	PUNCT	$(		3	punct		SpacesAfter=\n\n	pid:2.6.1.1.
+</s>													
+<s id="3">													
+Die	2	3	Die heißen "Informationstechnikzentrum Bund".	1	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	4	det			pid:3.6.1.1.
+heißen	2	3	Die heißen "Informationstechnikzentrum Bund".	2	heiß	ADJ	NN	Case=Nom|Number=Plur	4	amod			pid:3.6.1.1.
+"	2	3	Die heißen "Informationstechnikzentrum Bund".	3	"	PUNCT	$(		4	punct		SpaceAfter=No	pid:3.6.1.1.
+Informationstechnikzentrum	2	3	Die heißen "Informationstechnikzentrum Bund".	4	Informationstechnikzentrum	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			pid:3.6.1.1.
+Bund	2	3	Die heißen "Informationstechnikzentrum Bund".	5	Bund	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	4	flat		SpaceAfter=No	pid:3.6.1.1.
+"	2	3	Die heißen "Informationstechnikzentrum Bund".	6	"	PUNCT	$(		4	punct		SpaceAfter=No	pid:3.6.1.1.
+.	2	3	Die heißen "Informationstechnikzentrum Bund".	7	.	PUNCT	$.		4	punct		SpacesAfter=\n\n	pid:3.6.1.1.
+</s>													
+<s id="4">													
+Doppeldeppenleerzeichen	3	4	Doppeldeppenleerzeichen.	1	Doppeldeppenleerzeichen	VERB	NE	Case=Nom|Gender=Masc|Number=Sing	0	root		SpaceAfter=No	pid:4.6.1.1.
+.	3	4	Doppeldeppenleerzeichen.	2	.	PUNCT	$.		1	punct		SpacesAfter=\n	pid:4.6.1.1.
+</s>													
+</text>													
+</doc>													
