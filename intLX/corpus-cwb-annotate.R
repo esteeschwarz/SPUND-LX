@@ -215,3 +215,28 @@ chunk
 ########################################################
 library(clipr)
 write_clip(colnames(head.doc))  
+
+### combine back vrt to single source file
+wd<-"~/boxHKW/21S/DH/local/SPUND/intLX"
+
+vrt.dir<-paste(wd,"vrt3",sep = "/")
+
+vrt.ns<-paste0(vrt.dir,"/com.vrt.single.vrt")
+vrt.ns
+dir.create(vrt.dir)
+f<-list.files(vrt.dir)
+fns<-paste(vrt.dir,f,sep = "/")
+get.vrt<-function(x){
+  t<-readLines(x)
+  t<-t[2:length(t)]
+  return(t)
+}
+vrtdoc<-pblapply(fns,get.vrt)
+head(vrtdoc[[1]])
+vrt.dir<-paste(wd,"vrtsingle",sep = "/")
+
+vrt.ns<-paste0(vrt.dir,"/source")
+vrt.ns
+dir.create(vrt.dir)
+vrtwrite<-abind(vrtdoc,along = 1)
+writeLines(vrtwrite,vrt.ns)

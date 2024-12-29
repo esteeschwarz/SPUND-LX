@@ -16,20 +16,20 @@ get.sent.div<-function(x,id,n){
   #m<-doc.u==p
   doc.here<-which(m)
   m
-  df.es<-df[m,c(6,2:length(df))]
+  df.es<-df[m,c(6,2:5,7:length(df))]
 
   s.id<-df.es$sentence_id[1]
   df.start<-df.es[1,]
   df.start[1,]<-""
   # s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'" upvotes="',x$upvotes,'">')
   #rownames raw: "doc_id" "paragraph_id" "sentence_id" "sentence" "token_id" "token" "lemma" "upos" "xpos" "feats" "head_token_id" "dep_rel" "deps" "misc"
-  s.tag<-paste0('<doc id="',n,'">')
+  s.tag<-paste0('<text id="',id,'">')
   t.u<-unique(s.tag)
   s.tag.s<-s.tag[1]
   s.tag.s
   df.start[,1]<-s.tag.s
   df.end<-df.start
-  df.end[,1]<-'</doc>'
+  df.end[,1]<-'</text>'
   df.out<-rbind(df.start,df.es,df.end)
   # write.table(df.out,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt-",n,".csv"),sep = "\t",quote = F,row.names = F)
   # 
@@ -44,9 +44,13 @@ fetch.pos<-function(file,fn){
   df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {
     get.sent.div(pos.df,doc.id.u[[i]], i)
   })
-  write.table(as.data.frame(abind(df.ex.l,along = 1)),paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F)
-  return(df.ex.l)
+  df.write<-as.data.frame(abind(df.ex.l,along = 1))
+  df.write<-rbind(c(paste0('<doc id="',fn,'">'),rep("",length(df.write)-1)),df.write,
+                  c('</doc>',rep("",length(df.write)-1)))
+  write.table(df.write,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F,na="")
+  return(abind(df.write,along = 1))
 }
+#?write.table
 #       return(pos.df)
 # }
 #?lapply
@@ -63,7 +67,8 @@ df.ex.l<-pblapply(seq_along(fns), function(i) {
 })
 df.ex<-abind::abind(df.ex.l,along = 1)
 df.ex<-data.frame(df.ex)
-
+write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/001",sep = "\t",quote = F,row.names = F,col.names = F,na="")
+### wks.
 
 
 

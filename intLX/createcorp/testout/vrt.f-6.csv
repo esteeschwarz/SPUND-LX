@@ -1,206 +1,208 @@
-<doc id="1">													
-Einer	1	1	Einer, der schnell genug hatte	1	Einer	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root	NA	SpaceAfter=No
-,	1	1	Einer, der schnell genug hatte	2	,	,	PUNCT	$,	NA	6	punct	NA	NA
-der	1	1	Einer, der schnell genug hatte	3	der	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	6	nsubj	NA	NA
-schnell	1	1	Einer, der schnell genug hatte	4	schnell	schnell	ADJ	ADV	NA	6	advmod	NA	NA
-genug	1	1	Einer, der schnell genug hatte	5	genug	genug	ADV	ADV	NA	6	advmod	NA	NA
-hatte	1	1	Einer, der schnell genug hatte	6	hatte	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	1	acl	NA	SpacesAfter=\n
-</doc>													
-<doc id="2">													
-In	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	1	In	in	ADP	APPR	NA	3	case	NA	NA
-einem	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	2	einem	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	3	det	NA	NA
-Land	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	3	Land	Land	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	15	obl	NA	SpaceAfter=No
-,	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	4	,	,	PUNCT	$,	NA	7	punct	NA	NA
-gut	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	5	gut	gut	ADJ	ADJD	NA	6	advmod	NA	NA
-zwölf	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	6	zwölf	zwölf	NUM	ADJD	NA	7	nummod	NA	NA
-Flugstunden	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	7	Flugstunden	Flugstunde	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	3	conj	NA	NA
-von	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	8	von	von	ADP	FM	Foreign=Yes	9	case	NA	NA
-hier	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	9	hier	hier	ADV	ADV	NA	7	advmod	NA	SpaceAfter=No
-,	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	10	,	,	PUNCT	$,	NA	7	punct	NA	NA
-konnten	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	11	konnten	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	15	aux	NA	NA
-die	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	12	die	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	13	det	NA	NA
-Menschen	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	13	Menschen	Mensch	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	15	nsubj	NA	NA
-nicht	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	14	nicht	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	15	advmod	NA	NA
-glauben	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	15	glauben	glauben	VERB	VVINF	VerbForm=Inf	0	root	NA	SpaceAfter=No
-,	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	16	,	,	PUNCT	$,	NA	19	punct	NA	NA
-was	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	17	was	was	PRON	NN	Case=Gen|Gender=Fem|Number=Plur	19	obj	NA	NA
-sie	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	18	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	19	nsubj	NA	NA
-sahen	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	19	sahen	sehen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	15	acl	NA	SpaceAfter=No
-.	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	20	.	.	PUNCT	$.	NA	15	punct	NA	NA
-Und	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	1	Und	und	CCONJ	ADJD	NA	7	cc	NA	NA
-für	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	2	für	für	ADP	APPR	NA	3	case	NA	NA
-Außergewöhnliches	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	3	Außergewöhnliches	Außergewöhnlich	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	7	nmod	NA	NA
-waren	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	4	waren	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	7	cop	NA	NA
-sie	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	5	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	7	nsubj	NA	NA
-ja	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	6	ja	ja	ADV	ADV	NA	7	advmod	NA	NA
-hergekommen	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	7	hergekommen	hergekommen	VERB	VVPP	VerbForm=Part	0	root	NA	NA
-in	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	8	in	in	ADP	APPR	NA	10	case	NA	NA
-jenem	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	9	jenem	jen	PRON	PDAT	Case=Dat|Gender=Masc|Number=Sing|PronType=Dem	10	det	NA	NA
-Herbst	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	10	Herbst	Herbst	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	7	obl	NA	SpaceAfter=No
-.	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	11	.	.	PUNCT	$.	NA	7	punct	NA	NA
-Aber	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	1	Aber	aber	CCONJ	KON	NA	5	cc	NA	NA
-das	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	2	das	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	3	nsubj	NA	NA
-war	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	3	war	sein	AUX	ADV	NA	5	cop	NA	NA
-zu	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	4	zu	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	mark	NA	NA
-verrückt	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	5	verrückt	verrückt	VERB	VVPP	VerbForm=Part	0	root	NA	SpaceAfter=No
-,	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	6	,	,	PUNCT	$,	NA	10	punct	NA	NA
-ganz	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	7	ganz	ganz	ADJ	ADV	NA	10	advmod	NA	NA
-und	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	8	und	und	CCONJ	NE	Foreign=Yes	10	cc	NA	NA
-gar	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	9	gar	gar	ADV	NE	Foreign=Yes	10	advmod	NA	NA
-verdreht	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	10	verdreht	verdrehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	conj	NA	SpaceAfter=No
-,	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	11	,	,	PUNCT	$,	NA	14	punct	NA	NA
-aber	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	12	aber	aber	CCONJ	KON	NA	14	cc	NA	NA
-nicht	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	13	nicht	nicht	PART	CARD	NumType=Card	14	advmod	NA	NA
-verwackelt	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	14	verwackelt	verwackeln	VERB	VVPP	VerbForm=Part	5	conj	NA	SpaceAfter=No
-.	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	15	.	.	PUNCT	$.	NA	5	punct	NA	NA
-Was	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	1	Was	was	PRON	FM	Foreign=Yes	2	det	NA	NA
-Jahrzehnte	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	2	Jahrzehnte	Jahrzehnt	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	3	nsubj	NA	NA
-funktioniert	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	3	funktioniert	funktionieren	VERB	VVPP	VerbForm=Part	6	ccomp	NA	NA
-hatte	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	4	hatte	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	3	aux	NA	SpaceAfter=No
-,	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	5	,	,	PUNCT	$,	NA	3	punct	NA	NA
-galt	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	6	galt	gelten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-nichts	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	7	nichts	nichts	PRON	CARD	NumType=Card	6	nsubj	NA	NA
-mehr	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	8	mehr	mehr	ADV	ADV	NA	6	advmod	NA	SpaceAfter=No
-.	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	9	.	.	PUNCT	$.	NA	6	punct	NA	NA
-Nur	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	1	Nur	nur	ADV	ADV	NA	8	advmod	NA	SpaceAfter=No
-,	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	2	,	,	PUNCT	$,	NA	8	punct	NA	NA
-weil	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	3	weil	weil	SCONJ	KOUS	NA	8	mark	NA	NA
-jemand	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	4	jemand	jemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	8	nsubj	NA	NA
-aus	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	5	aus	aus	ADP	APPR	NA	7	case	NA	NA
-einem	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	6	einem	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	7	det	NA	NA
-Küstenland	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	7	Küstenland	Küstenland	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	8	obl	NA	NA
-kam	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	8	kam	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-und	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	9	und	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	13	cc	NA	NA
-sein	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	10	sein	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	12	det:poss	NA	NA
-eigenes	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	11	eigenes	eigen	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	12	amod	NA	NA
-Ding	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	12	Ding	Ding	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	13	nsubj	NA	NA
-machte	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	13	machte	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	conj	NA	SpaceAfter=No
-.	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	14	.	.	PUNCT	$.	NA	8	punct	NA	NA
-Auch	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	1	Auch	auch	ADV	ADV	NA	4	advmod	NA	NA
-in	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	2	in	in	ADP	APPR	NA	4	case	NA	NA
-seiner	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	3	seiner	sein	DET	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	4	det:poss	NA	NA
-Heimat	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	4	Heimat	Heimat	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	5	obl	NA	NA
-hatte	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	5	hatte	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	aux	NA	NA
-man	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	6	man	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	5	nsubj	NA	NA
-den	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	7	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det	NA	NA
-Kopf	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	8	Kopf	Kopf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	9	obj	NA	NA
-geschüttelt	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	9	geschüttelt	schütteln	VERB	VVPP	VerbForm=Part	0	root	NA	SpaceAfter=No
-.	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	10	.	.	PUNCT	$.	NA	9	punct	NA	NA
-Er	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	1	Er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	NA	NA
-lief	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	2	lief	laufen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-Gefahr	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	3	Gefahr	Gefahr	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	5	obj	NA	SpaceAfter=No
-,	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	4	,	,	PUNCT	$,	NA	3	punct	NA	NA
-aussortiert	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	5	aussortiert	aussortieren	VERB	VVPP	VerbForm=Part	2	xcomp	NA	NA
-zu	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	6	zu	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	mark	NA	NA
-werden	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	7	werden	werden	AUX	NE	Case=Acc|Number=Plur	5	aux:pass	NA	SpaceAfter=No
-,	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	8	,	,	PUNCT	$,	NA	13	punct	NA	NA
-wurde	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	9	wurde	werden	AUX	KON	NA	13	aux:pass	NA	NA
-zu	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	10	zu	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	12	case	NA	NA
-den	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	11	den	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	12	det	NA	NA
-Clowns	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	12	Clowns	Clown	PROPN	NN	Case=Gen|Gender=Neut|Number=Sing	13	obl	NA	NA
-gewünscht	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	13	gewünscht	wünschen	VERB	VVPP	VerbForm=Part	2	conj	NA	SpaceAfter=No
-.	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	14	.	.	PUNCT	$.	NA	2	punct	NA	NA
-Ärzte	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	1	Ärzte	Ärzt	ADJ	NN	Case=Nom|Gender=Masc|Number=Plur	3	amod	NA	NA
-warnten	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	2	warnten	warnt	ADJ	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	3	amod	NA	NA
-Kinder	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	3	Kinder	Kind	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	0	root	NA	SpaceAfter=No
-,	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	4	,	,	PUNCT	$,	NA	7	punct	NA	NA
-derlei	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	5	derlei	derlei	PRON	PIAT	Definite=Ind|Polarity=Neg|PronType=Neg	7	obj	NA	NA
-Unsinn	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	6	Unsinn	Unsinn	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	7	nsubj	NA	NA
-nachzumachen	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	7	nachzumachen	nachzumachen	VERB	ADJA	Case=Dat|Gender=Neut|Number=Sing	3	acl	NA	SpaceAfter=No
-.	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	8	.	.	PUNCT	$.	NA	3	punct	NA	NA
-Zudem	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	1	Zudem	zudem	ADV	PAV	NA	7	advmod	NA	NA
-war	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	2	war	sein	AUX	ADV	NA	7	cop	NA	NA
-der	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	3	der	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det	NA	NA
-Gesuchte	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	4	Gesuchte	Gesuchte	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	7	nsubj	NA	NA
-schon	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	5	schon	schon	ADV	ADV	NA	7	advmod	NA	NA
-so	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	6	so	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	7	advmod	NA	NA
-lädiert	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	7	lädiert	lädieren	VERB	VVFIN	VerbForm=Part	0	root	NA	SpaceAfter=No
-,	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	8	,	,	PUNCT	$,	NA	15	punct	NA	NA
-dass	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	9	dass	dass	SCONJ	KOUS	NA	15	mark	NA	NA
-er	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	10	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	15	nsubj	NA	NA
-nicht	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	11	nicht	nicht	PART	CARD	NumType=Card	15	advmod	NA	NA
-in	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	12	in	in	ADP	APPR	NA	14	case	NA	NA
-den	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	13	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det	NA	NA
-Krieg	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	14	Krieg	Krieg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	15	obl	NA	NA
-ziehen	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	15	ziehen	ziehen	VERB	VVINF	VerbForm=Inf	7	ccomp	NA	NA
-konnte	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	16	konnte	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	15	aux	NA	SpaceAfter=No
-.	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	17	.	.	PUNCT	$.	NA	7	punct	NA	NA
-Experimente	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	1	Experimente	Experimenen	VERB	NN	Case=Nom|Gender=Neut|Number=Plur	12	nsubj	NA	NA
-im	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	2-3	im	NA	NA	NA	NA	NA	NA	NA	NA
-in	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	2	in	in	ADP	APPR	NA	4	case	NA	NA
-dem	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	3	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det	NA	NA
-Garten	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	4	Garten	Garten	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	1	nmod	NA	NA
-seiner	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	5	seiner	sein	DET	PPOSAT	Case=Gen|Number=Plur|Poss=Yes	6	det:poss	NA	NA
-Eltern	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	6	Eltern	Eltern	NOUN	NN	Case=Gen|Number=Plur	4	nmod	NA	NA
-sollen	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	7	sollen	sollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	12	aux	NA	NA
-ihn	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	8	ihn	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	12	obj	NA	NA
-auf	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	9	auf	auf	ADP	APPR	NA	11	case	NA	NA
-seine	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	10	seine	sein	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	11	det:poss	NA	NA
-Idee	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	11	Idee	Idee	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	12	obl	NA	NA
-gebracht	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	12	gebracht	bringen	VERB	VVPP	VerbForm=Part	0	root	NA	NA
-haben	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	13	haben	haben	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	12	aux	NA	SpaceAfter=No
-.	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	14	.	.	PUNCT	$.	NA	12	punct	NA	NA
-Dort	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	1	Dort	dort	ADV	ADV	NA	11	advmod	NA	SpaceAfter=No
-,	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	2	,	,	PUNCT	$,	NA	5	punct	NA	NA
-wo	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	3	wo	wo	ADV	NE	Case=Gen|Definite=Ind|Gender=Neut|Number=Plur|PronType=Ind	5	advmod	NA	NA
-er	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	4	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	5	nsubj:pass	NA	NA
-geboren	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	5	geboren	gebären	VERB	VVPP	VerbForm=Part	1	acl	NA	NA
-wurde	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	6	wurde	werden	AUX	KON	NA	5	aux:pass	NA	SpaceAfter=No
-,	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	7	,	,	PUNCT	$,	NA	5	punct	NA	NA
-ist	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	8	ist	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	cop	NA	NA
-man	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	9	man	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	11	nsubj	NA	NA
-stolz	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	10	stolz	stolz	ADJ	ADJD	NA	11	advmod	NA	NA
-darauf	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	11	darauf	darauf	ADV	PAV	NA	17	advmod	NA	SpaceAfter=No
-,	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	12	,	,	PUNCT	$,	NA	17	punct	NA	NA
-immer	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	13	immer	immer	ADV	ADV	NA	17	advmod	NA	NA
-eine	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	14	eine	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	15	det	NA	NA
-Lösung	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	15	Lösung	Lösung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	17	obj	NA	NA
-zu	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	16	zu	zu	PART	NN	Case=Acc|Gender=Masc|Number=Plur	17	mark	NA	NA
-finden	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	17	finden	finden	VERB	VVINF	VerbForm=Inf	0	root	NA	SpaceAfter=No
-.	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	18	.	.	PUNCT	$.	NA	17	punct	NA	NA
-Er	1	12	Er glaubte an sich und blieb eigensinnig.	1	Er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	NA	NA
-glaubte	1	12	Er glaubte an sich und blieb eigensinnig.	2	glaubte	glauben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-an	1	12	Er glaubte an sich und blieb eigensinnig.	3	an	an	ADP	APPR	NA	4	case	NA	NA
-sich	1	12	Er glaubte an sich und blieb eigensinnig.	4	sich	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obl	NA	NA
-und	1	12	Er glaubte an sich und blieb eigensinnig.	5	und	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	6	cc	NA	NA
-blieb	1	12	Er glaubte an sich und blieb eigensinnig.	6	blieb	bleiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj	NA	NA
-eigensinnig	1	12	Er glaubte an sich und blieb eigensinnig.	7	eigensinnig	eigensinnig	ADJ	ADJD	NA	6	xcomp	NA	SpaceAfter=No
-.	1	12	Er glaubte an sich und blieb eigensinnig.	8	.	.	PUNCT	$.	NA	2	punct	NA	NA
-Während	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	1	Während	während	SCONJ	KOUS	NA	8	mark	NA	NA
-andere	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	2	andere	ander	PRON	PIS	Case=Acc|Definite=Ind|Number=Plur|PronType=Ind	8	nsubj	NA	NA
-sich	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	3	sich	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	8	obj	NA	NA
-nach	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	4	nach	nach	ADP	ADJA	NA	5	case	NA	NA
-Erfolgen	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	5	Erfolgen	Erfolg	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	8	obl	NA	NA
-lange	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	6	lange	lang	ADJ	ADV	NA	7	amod	NA	NA
-feiern	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	7	feiern	feiern	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	8	obl	NA	NA
-ließen	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	8	ließen	lassen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	10	advcl	NA	SpaceAfter=No
-,	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	9	,	,	PUNCT	$,	NA	8	punct	NA	NA
-hatte	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	10	hatte	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-er	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	11	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	10	nsubj	NA	NA
-schnell	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	12	schnell	schnell	ADJ	ADV	NA	10	advmod	NA	NA
-genug	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	13	genug	genug	ADV	ADV	NA	10	advmod	NA	SpaceAfter=No
-.	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	14	.	.	PUNCT	$.	NA	10	punct	NA	NA
-Er	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	1	Er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	7	nsubj	NA	NA
-wollte	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	2	wollte	wollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	7	aux	NA	NA
-nicht	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	3	nicht	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	advmod	NA	NA
-im	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	4-5	im	NA	NA	NA	NA	NA	NA	NA	NA
-in	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	4	in	in	ADP	APPR	NA	6	case	NA	NA
-dem	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	5	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	NA	NA
-Mittelpunkt	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	6	Mittelpunkt	Mittelpunkt	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	7	obl	NA	NA
-stehen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	7	stehen	stehen	VERB	VVINF	VerbForm=Inf	0	root	NA	NA
-und	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	8	und	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	9	cc	NA	NA
-füllte	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	9	füllte	füllen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	7	conj	NA	NA
-seinen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	10	seinen	sein	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	11	det:poss	NA	NA
-klugen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	11	klugen	klug	NOUN	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	9	obj	NA	NA
-Kopf	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	12	Kopf	Kopf	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	11	nmod	NA	NA
-lieber	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	13	lieber	lieb	ADV	ADV	NA	9	advmod	NA	NA
-mit	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	14	mit	mit	ADP	ADJA	Case=Nom|Gender=Fem|Number=Plur	15	case	NA	NA
-Zahlen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	15	Zahlen	Zahl	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	9	obl	NA	SpaceAfter=No
-.	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	16	.	.	PUNCT	$.	NA	7	punct	NA	NA
-Er	1	15	Er wurde 76 Jahre alt.	1	Er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	NA	NA
-wurde	1	15	Er wurde 76 Jahre alt.	2	wurde	werden	AUX	ADV	NA	0	root	NA	NA
-76	1	15	Er wurde 76 Jahre alt.	3	76	76	NUM	CARD	NumType=Card	4	nummod	NA	NA
-Jahre	1	15	Er wurde 76 Jahre alt.	4	Jahre	Jahr	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	5	nmod	NA	NA
-alt	1	15	Er wurde 76 Jahre alt.	5	alt	alt	ADJ	ADJD	NA	2	xcomp	NA	SpaceAfter=No
-.	1	15	Er wurde 76 Jahre alt.	6	.	.	PUNCT	$.	NA	2	punct	NA	SpacesAfter=\n
-</doc>													
+<doc id="6">												
+<text id="url6.doc1">												
+Einer	1	1	Einer, der schnell genug hatte	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root		SpaceAfter=No
+,	1	1	Einer, der schnell genug hatte	2	,	PUNCT	$,		6	punct		
+der	1	1	Einer, der schnell genug hatte	3	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	6	nsubj		
+schnell	1	1	Einer, der schnell genug hatte	4	schnell	ADJ	ADV		6	advmod		
+genug	1	1	Einer, der schnell genug hatte	5	genug	ADV	ADV		6	advmod		
+hatte	1	1	Einer, der schnell genug hatte	6	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	1	acl		SpacesAfter=\n
+</text>												
+<text id="url6.doc2">												
+In	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	1	in	ADP	APPR		3	case		
+einem	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	2	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	3	det		
+Land	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	3	Land	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	15	obl		SpaceAfter=No
+,	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	4	,	PUNCT	$,		7	punct		
+gut	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	5	gut	ADJ	ADJD		6	advmod		
+zwölf	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	6	zwölf	NUM	ADJD		7	nummod		
+Flugstunden	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	7	Flugstunde	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	3	conj		
+von	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	8	von	ADP	FM	Foreign=Yes	9	case		
+hier	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	9	hier	ADV	ADV		7	advmod		SpaceAfter=No
+,	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	10	,	PUNCT	$,		7	punct		
+konnten	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	11	können	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	15	aux		
+die	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	12	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	13	det		
+Menschen	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	13	Mensch	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	15	nsubj		
+nicht	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	14	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	15	advmod		
+glauben	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	15	glauben	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No
+,	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	16	,	PUNCT	$,		19	punct		
+was	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	17	was	PRON	NN	Case=Gen|Gender=Fem|Number=Plur	19	obj		
+sie	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	18	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	19	nsubj		
+sahen	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	19	sehen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	15	acl		SpaceAfter=No
+.	1	1	In einem Land, gut zwölf Flugstunden von hier, konnten die Menschen nicht glauben, was sie sahen.	20	.	PUNCT	$.		15	punct		
+Und	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	1	und	CCONJ	ADJD		7	cc		
+für	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	2	für	ADP	APPR		3	case		
+Außergewöhnliches	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	3	Außergewöhnlich	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	7	nmod		
+waren	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	4	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	7	cop		
+sie	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	5	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	7	nsubj		
+ja	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	6	ja	ADV	ADV		7	advmod		
+hergekommen	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	7	hergekommen	VERB	VVPP	VerbForm=Part	0	root		
+in	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	8	in	ADP	APPR		10	case		
+jenem	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	9	jen	PRON	PDAT	Case=Dat|Gender=Masc|Number=Sing|PronType=Dem	10	det		
+Herbst	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	10	Herbst	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	7	obl		SpaceAfter=No
+.	1	2	Und für Außergewöhnliches waren sie ja hergekommen in jenem Herbst.	11	.	PUNCT	$.		7	punct		
+Aber	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	1	aber	CCONJ	KON		5	cc		
+das	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	2	der	PRON	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	3	nsubj		
+war	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	3	sein	AUX	ADV		5	cop		
+zu	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	4	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	mark		
+verrückt	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	5	verrückt	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
+,	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	6	,	PUNCT	$,		10	punct		
+ganz	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	7	ganz	ADJ	ADV		10	advmod		
+und	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	8	und	CCONJ	NE	Foreign=Yes	10	cc		
+gar	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	9	gar	ADV	NE	Foreign=Yes	10	advmod		
+verdreht	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	10	verdrehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	conj		SpaceAfter=No
+,	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	11	,	PUNCT	$,		14	punct		
+aber	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	12	aber	CCONJ	KON		14	cc		
+nicht	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	13	nicht	PART	CARD	NumType=Card	14	advmod		
+verwackelt	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	14	verwackeln	VERB	VVPP	VerbForm=Part	5	conj		SpaceAfter=No
+.	1	3	Aber das war zu verrückt, ganz und gar verdreht, aber nicht verwackelt.	15	.	PUNCT	$.		5	punct		
+Was	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	1	was	PRON	FM	Foreign=Yes	2	det		
+Jahrzehnte	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	2	Jahrzehnt	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	3	nsubj		
+funktioniert	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	3	funktionieren	VERB	VVPP	VerbForm=Part	6	ccomp		
+hatte	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	4	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	3	aux		SpaceAfter=No
+,	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	5	,	PUNCT	$,		3	punct		
+galt	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	6	gelten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+nichts	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	7	nichts	PRON	CARD	NumType=Card	6	nsubj		
+mehr	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	8	mehr	ADV	ADV		6	advmod		SpaceAfter=No
+.	1	4	Was Jahrzehnte funktioniert hatte, galt nichts mehr.	9	.	PUNCT	$.		6	punct		
+Nur	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	1	nur	ADV	ADV		8	advmod		SpaceAfter=No
+,	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	2	,	PUNCT	$,		8	punct		
+weil	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	3	weil	SCONJ	KOUS		8	mark		
+jemand	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	4	jemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	8	nsubj		
+aus	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	5	aus	ADP	APPR		7	case		
+einem	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	6	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	7	det		
+Küstenland	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	7	Küstenland	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	8	obl		
+kam	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	8	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+und	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	9	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	13	cc		
+sein	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	10	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	12	det:poss		
+eigenes	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	11	eigen	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	12	amod		
+Ding	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	12	Ding	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	13	nsubj		
+machte	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	13	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	conj		SpaceAfter=No
+.	1	5	Nur, weil jemand aus einem Küstenland kam und sein eigenes Ding machte.	14	.	PUNCT	$.		8	punct		
+Auch	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	1	auch	ADV	ADV		4	advmod		
+in	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	2	in	ADP	APPR		4	case		
+seiner	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	3	sein	DET	PPOSAT	Case=Dat|Gender=Fem|Number=Sing|Poss=Yes	4	det:poss		
+Heimat	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	4	Heimat	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	5	obl		
+hatte	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	5	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	aux		
+man	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	6	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	5	nsubj		
+den	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	7	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det		
+Kopf	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	8	Kopf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	9	obj		
+geschüttelt	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	9	schütteln	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
+.	1	6	Auch in seiner Heimat hatte man den Kopf geschüttelt.	10	.	PUNCT	$.		9	punct		
+Er	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
+lief	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	2	laufen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+Gefahr	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	3	Gefahr	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	5	obj		SpaceAfter=No
+,	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	4	,	PUNCT	$,		3	punct		
+aussortiert	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	5	aussortieren	VERB	VVPP	VerbForm=Part	2	xcomp		
+zu	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	6	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	5	mark		
+werden	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	7	werden	AUX	NE	Case=Acc|Number=Plur	5	aux:pass		SpaceAfter=No
+,	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	8	,	PUNCT	$,		13	punct		
+wurde	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	9	werden	AUX	KON		13	aux:pass		
+zu	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	10	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	12	case		
+den	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	11	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	12	det		
+Clowns	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	12	Clown	PROPN	NN	Case=Gen|Gender=Neut|Number=Sing	13	obl		
+gewünscht	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	13	wünschen	VERB	VVPP	VerbForm=Part	2	conj		SpaceAfter=No
+.	1	7	Er lief Gefahr, aussortiert zu werden, wurde zu den Clowns gewünscht.	14	.	PUNCT	$.		2	punct		
+Ärzte	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	1	Ärzt	ADJ	NN	Case=Nom|Gender=Masc|Number=Plur	3	amod		
+warnten	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	2	warnt	ADJ	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	3	amod		
+Kinder	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	3	Kind	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	0	root		SpaceAfter=No
+,	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	4	,	PUNCT	$,		7	punct		
+derlei	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	5	derlei	PRON	PIAT	Definite=Ind|Polarity=Neg|PronType=Neg	7	obj		
+Unsinn	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	6	Unsinn	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	7	nsubj		
+nachzumachen	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	7	nachzumachen	VERB	ADJA	Case=Dat|Gender=Neut|Number=Sing	3	acl		SpaceAfter=No
+.	1	8	Ärzte warnten Kinder, derlei Unsinn nachzumachen.	8	.	PUNCT	$.		3	punct		
+Zudem	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	1	zudem	ADV	PAV		7	advmod		
+war	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	2	sein	AUX	ADV		7	cop		
+der	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	3	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det		
+Gesuchte	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	4	Gesuchte	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	7	nsubj		
+schon	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	5	schon	ADV	ADV		7	advmod		
+so	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	6	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	7	advmod		
+lädiert	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	7	lädieren	VERB	VVFIN	VerbForm=Part	0	root		SpaceAfter=No
+,	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	8	,	PUNCT	$,		15	punct		
+dass	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	9	dass	SCONJ	KOUS		15	mark		
+er	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	10	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	15	nsubj		
+nicht	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	11	nicht	PART	CARD	NumType=Card	15	advmod		
+in	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	12	in	ADP	APPR		14	case		
+den	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	13	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det		
+Krieg	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	14	Krieg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	15	obl		
+ziehen	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	15	ziehen	VERB	VVINF	VerbForm=Inf	7	ccomp		
+konnte	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	16	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	15	aux		SpaceAfter=No
+.	1	9	Zudem war der Gesuchte schon so lädiert, dass er nicht in den Krieg ziehen konnte.	17	.	PUNCT	$.		7	punct		
+Experimente	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	1	Experimenen	VERB	NN	Case=Nom|Gender=Neut|Number=Plur	12	nsubj		
+im	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	2-3								
+in	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	2	in	ADP	APPR		4	case		
+dem	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	3	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det		
+Garten	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	4	Garten	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	1	nmod		
+seiner	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	5	sein	DET	PPOSAT	Case=Gen|Number=Plur|Poss=Yes	6	det:poss		
+Eltern	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	6	Eltern	NOUN	NN	Case=Gen|Number=Plur	4	nmod		
+sollen	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	7	sollen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	12	aux		
+ihn	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	8	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	12	obj		
+auf	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	9	auf	ADP	APPR		11	case		
+seine	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	10	sein	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	11	det:poss		
+Idee	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	11	Idee	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	12	obl		
+gebracht	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	12	bringen	VERB	VVPP	VerbForm=Part	0	root		
+haben	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	13	haben	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	12	aux		SpaceAfter=No
+.	1	10	Experimente im Garten seiner Eltern sollen ihn auf seine Idee gebracht haben.	14	.	PUNCT	$.		12	punct		
+Dort	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	1	dort	ADV	ADV		11	advmod		SpaceAfter=No
+,	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	2	,	PUNCT	$,		5	punct		
+wo	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	3	wo	ADV	NE	Case=Gen|Definite=Ind|Gender=Neut|Number=Plur|PronType=Ind	5	advmod		
+er	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	4	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	5	nsubj:pass		
+geboren	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	5	gebären	VERB	VVPP	VerbForm=Part	1	acl		
+wurde	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	6	werden	AUX	KON		5	aux:pass		SpaceAfter=No
+,	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	7	,	PUNCT	$,		5	punct		
+ist	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	8	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	11	cop		
+man	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	9	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	11	nsubj		
+stolz	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	10	stolz	ADJ	ADJD		11	advmod		
+darauf	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	11	darauf	ADV	PAV		17	advmod		SpaceAfter=No
+,	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	12	,	PUNCT	$,		17	punct		
+immer	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	13	immer	ADV	ADV		17	advmod		
+eine	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	14	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	15	det		
+Lösung	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	15	Lösung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	17	obj		
+zu	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	16	zu	PART	NN	Case=Acc|Gender=Masc|Number=Plur	17	mark		
+finden	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	17	finden	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No
+.	1	11	Dort, wo er geboren wurde, ist man stolz darauf, immer eine Lösung zu finden.	18	.	PUNCT	$.		17	punct		
+Er	1	12	Er glaubte an sich und blieb eigensinnig.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
+glaubte	1	12	Er glaubte an sich und blieb eigensinnig.	2	glauben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+an	1	12	Er glaubte an sich und blieb eigensinnig.	3	an	ADP	APPR		4	case		
+sich	1	12	Er glaubte an sich und blieb eigensinnig.	4	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obl		
+und	1	12	Er glaubte an sich und blieb eigensinnig.	5	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	6	cc		
+blieb	1	12	Er glaubte an sich und blieb eigensinnig.	6	bleiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj		
+eigensinnig	1	12	Er glaubte an sich und blieb eigensinnig.	7	eigensinnig	ADJ	ADJD		6	xcomp		SpaceAfter=No
+.	1	12	Er glaubte an sich und blieb eigensinnig.	8	.	PUNCT	$.		2	punct		
+Während	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	1	während	SCONJ	KOUS		8	mark		
+andere	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	2	ander	PRON	PIS	Case=Acc|Definite=Ind|Number=Plur|PronType=Ind	8	nsubj		
+sich	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	8	obj		
+nach	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	4	nach	ADP	ADJA		5	case		
+Erfolgen	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	5	Erfolg	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	8	obl		
+lange	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	6	lang	ADJ	ADV		7	amod		
+feiern	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	7	feiern	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	8	obl		
+ließen	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	8	lassen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	10	advcl		SpaceAfter=No
+,	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	9	,	PUNCT	$,		8	punct		
+hatte	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	10	haben	VERB	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+er	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	11	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	10	nsubj		
+schnell	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	12	schnell	ADJ	ADV		10	advmod		
+genug	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	13	genug	ADV	ADV		10	advmod		SpaceAfter=No
+.	1	13	Während andere sich nach Erfolgen lange feiern ließen, hatte er schnell genug.	14	.	PUNCT	$.		10	punct		
+Er	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	7	nsubj		
+wollte	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	2	wollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	7	aux		
+nicht	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	3	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	advmod		
+im	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	4-5								
+in	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	4	in	ADP	APPR		6	case		
+dem	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det		
+Mittelpunkt	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	6	Mittelpunkt	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	7	obl		
+stehen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	7	stehen	VERB	VVINF	VerbForm=Inf	0	root		
+und	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	8	und	CCONJ	NN	Case=Acc|Gender=Masc|Number=Sing	9	cc		
+füllte	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	9	füllen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	7	conj		
+seinen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	10	sein	DET	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Poss=Yes	11	det:poss		
+klugen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	11	klug	NOUN	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	9	obj		
+Kopf	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	12	Kopf	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	11	nmod		
+lieber	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	13	lieb	ADV	ADV		9	advmod		
+mit	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	14	mit	ADP	ADJA	Case=Nom|Gender=Fem|Number=Plur	15	case		
+Zahlen	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	15	Zahl	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	9	obl		SpaceAfter=No
+.	1	14	Er wollte nicht im Mittelpunkt stehen und füllte seinen klugen Kopf lieber mit Zahlen.	16	.	PUNCT	$.		7	punct		
+Er	1	15	Er wurde 76 Jahre alt.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
+wurde	1	15	Er wurde 76 Jahre alt.	2	werden	AUX	ADV		0	root		
+76	1	15	Er wurde 76 Jahre alt.	3	76	NUM	CARD	NumType=Card	4	nummod		
+Jahre	1	15	Er wurde 76 Jahre alt.	4	Jahr	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	5	nmod		
+alt	1	15	Er wurde 76 Jahre alt.	5	alt	ADJ	ADJD		2	xcomp		SpaceAfter=No
+.	1	15	Er wurde 76 Jahre alt.	6	.	PUNCT	$.		2	punct		SpacesAfter=\n
+</text>												
+</doc>												

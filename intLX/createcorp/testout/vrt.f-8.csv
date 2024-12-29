@@ -1,206 +1,208 @@
-<doc id="1">													
-Eine	1	1	Eine mit scharfer Zunge	1	Eine	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	4	det	NA	NA
-mit	1	1	Eine mit scharfer Zunge	2	mit	mit	ADP	ADJA	Case=Nom|Gender=Masc|Number=Plur	4	case	NA	NA
-scharfer	1	1	Eine mit scharfer Zunge	3	scharfer	scharf	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	4	amod	NA	NA
-Zunge	1	1	Eine mit scharfer Zunge	4	Zunge	Zunge	NOUN	ADJA	Case=Nom|Number=Plur	0	root	NA	SpacesAfter=\n
-</doc>													
-<doc id="2">													
-Ihre	1	1	Ihre politischen Fundraising-Partys waren legendär.	1	Ihre	Ihr|ihr	DET	PPOSAT	Case=Nom|Gender=Neut|Number=Plur|Poss=Yes	5	det:poss	NA	NA
-politischen	1	1	Ihre politischen Fundraising-Partys waren legendär.	2	politischen	politisch	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	5	amod	NA	NA
-Fundraising	1	1	Ihre politischen Fundraising-Partys waren legendär.	3	Fundraising	Fundraising	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	5	compound	NA	SpaceAfter=No
--	1	1	Ihre politischen Fundraising-Partys waren legendär.	4	-	-	PUNCT	$(	NA	3	punct	NA	SpaceAfter=No
-Partys	1	1	Ihre politischen Fundraising-Partys waren legendär.	5	Partys	Partys	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	7	nsubj	NA	NA
-waren	1	1	Ihre politischen Fundraising-Partys waren legendär.	6	waren	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	7	cop	NA	NA
-legendär	1	1	Ihre politischen Fundraising-Partys waren legendär.	7	legendär	legendär	ADJ	ADJD	NA	0	root	NA	SpaceAfter=No
-.	1	1	Ihre politischen Fundraising-Partys waren legendär.	8	.	.	PUNCT	$.	NA	7	punct	NA	NA
-Sogar	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	1	Sogar	sogar	ADV	ADV	NA	4	advmod	NA	NA
-für	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	2	für	für	ADP	APPR	NA	4	case	NA	NA
-den	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	3	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det	NA	NA
-Klobesuch	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	4	Klobesuch	Klobesuch	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	12	obl	NA	NA
-in	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	5	in	in	ADP	APPR	NA	7	case	NA	NA
-ihrem	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	6	ihrem	ihr	DET	PPOSAT	Case=Dat|Gender=Neut|Number=Sing|Poss=Yes	7	det:poss	NA	NA
-Haus	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	7	Haus	Haus	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	4	nmod	NA	NA
-mussten	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	8	mussten	müssen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	12	aux	NA	NA
-die	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	9	die	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	11	det	NA	NA
-linken	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	10	linken	link	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	11	amod	NA	NA
-Gäste	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	11	Gäste	Gäst	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	12	obj	NA	NA
-zahlen	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	12	zahlen	zahlen	VERB	VVINF	VerbForm=Inf	0	root	NA	SpaceAfter=No
-.	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	13	.	.	PUNCT	$.	NA	12	punct	NA	NA
-Als	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	1	Als	als	ADP	KOKOM	NA	2	case	NA	NA
-Tochter	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	2	Tochter	Tochter	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	obl	NA	NA
-aus	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	3	aus	aus	ADP	APPR	NA	5	case	NA	NA
-verarmtem	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	4	verarmtem	verarmt	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	5	amod	NA	NA
-Adel	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	5	Adel	Adel	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	2	nmod	NA	NA
-hatte	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	6	hatte	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	aux	NA	NA
-sie	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	7	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	12	nsubj	NA	NA
-von	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	8	von	von	ADP	FM	Foreign=Yes	10	case	NA	NA
-der	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	9	der	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det	NA	NA
-Mutter	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	10	Mutter	Mutter	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	12	obl	NA	NA
-sparen	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	11	sparen	sparen	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Plur	12	advmod	NA	NA
-gelernt	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	12	gelernt	lernen	VERB	VVPP	VerbForm=Part	0	root	NA	SpaceAfter=No
-.	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	13	.	.	PUNCT	$.	NA	12	punct	NA	NA
-Eine	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	1	Eine	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det	NA	NA
-Schule	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	2	Schule	Schule	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	nsubj	NA	NA
-hat	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	3	hat	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux	NA	NA
-sie	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	4	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	6	nsubj	NA	NA
-nie	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	5	nie	nie	ADV	ADV	NA	6	advmod	NA	NA
-besucht	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	6	besucht	besuchen	VERB	VVPP	VerbForm=Part	0	root	NA	SpaceAfter=No
-,	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	7	,	,	PUNCT	$,	NA	11	punct	NA	NA
-Schreiben	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	8	Schreiben	Schreiben	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	11	obj	NA	NA
-konnte	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	9	konnte	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	11	aux	NA	NA
-sie	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	10	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	11	nsubj	NA	NA
-trotzdem	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	11	trotzdem	trotzdem	ADV	ADJA	Case=Dat|Gender=Masc|Number=Sing	6	advmod	NA	SpaceAfter=No
-.	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	12	.	.	PUNCT	$.	NA	6	punct	NA	NA
-Und	1	5	Und wie!	1	Und	und	CCONJ	ADJD	NA	0	root	NA	NA
-wie	1	5	Und wie!	2	wie	wie	ADP	NN	Case=Nom|Gender=Fem|Number=Sing	1	case	NA	SpaceAfter=No
-!	1	5	Und wie!	3	!	!	PUNCT	$.	NA	1	punct	NA	NA
-Bestsellerautorin	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	1	Bestsellerautorin	Bestsellerautorin	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	10	nsubj	NA	NA
-und	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	2	und	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	3	cc	NA	NA
-Journalistin	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	3	Journalistin	Journalistin	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	conj	NA	NA
-ist	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	4	ist	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	cop	NA	NA
-sie	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	5	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	10	nsubj	NA	NA
-im	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	6-7	im	NA	NA	NA	NA	NA	NA	NA	NA
-in	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	6	in	in	ADP	APPR	NA	9	case	NA	NA
-dem	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	7	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	9	det	NA	NA
-fortgeschrittenen	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	8	fortgeschrittenen	fortgeschritten	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	9	amod	NA	NA
-Alter	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	9	Alter	Alter	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	10	obl	NA	NA
-geworden	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	10	geworden	werden	VERB	ADJA	Case=Acc|Gender=Fem|Number=Sing	0	root	NA	SpaceAfter=No
-,	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	11	,	,	PUNCT	$,	NA	13	punct	NA	NA
-eine	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	12	eine	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	13	det	NA	NA
-Miss	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	13	Miss	Miß	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	20	obj	NA	NA
-Marple	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	14	Marple	Marple	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	13	nsubj	NA	NA
-der	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	15	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	16	det	NA	NA
-Investigation	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	16	Investigation	Investigation	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	14	nmod	NA	NA
--	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	17	-	-	PUNCT	$(	NA	19	punct	NA	NA
-die	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	18	die	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	19	det	NA	NA
-Leute	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	19	Leute	Leute	NOUN	NN	Case=Nom|Number=Plur	16	nsubj	NA	NA
-unterschätzten	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	20	unterschätzten	unterschätzen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	10	parataxis	NA	NA
-sie	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	21	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	20	nsubj	NA	SpaceAfter=No
-.	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	22	.	.	PUNCT	$.	NA	10	punct	NA	NA
-Ihre	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	1	Ihre	Ihr|ihr	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	3	det:poss	NA	NA
-größte	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	2	größte	groß	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	3	amod	NA	NA
-Waffe	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	3	Waffe	Waffe	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root	NA	SpaceAfter=No
-:	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	4	:	:	PUNCT	$.	NA	7	punct	NA	NA
-ihre	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	5	ihre	ihr	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Plur|Poss=Yes	7	det:poss	NA	NA
-scharfe	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	6	scharfe	scharf	ADJ	ADJA	Case=Nom|Gender=Neut|Number=Sing	7	amod	NA	NA
-Zunge	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	7	Zunge	Zunge	NOUN	ADJA	Case=Nom|Gender=Fem|Number=Plur	3	appos	NA	NA
-und	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	8	und	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	10	cc	NA	NA
-ihr	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	9	ihr	ihr	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	10	det:poss	NA	NA
-Humor	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	10	Humor	Humor	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	7	conj	NA	SpaceAfter=No
-.	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	11	.	.	PUNCT	$.	NA	3	punct	NA	NA
-Beide	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	1	Beide	beide	PRON	PIS	Case=Nom|Definite=Ind|Number=Plur|PronType=Ind	10	nsubj	NA	NA
-hatte	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	2	hatte	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	aux	NA	NA
-sie	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	3	sie	sie	PRON	NN	Case=Acc|Gender=Fem|Number=Sing	10	nsubj	NA	NA
-im	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	4-5	im	NA	NA	NA	NA	NA	NA	NA	NA
-in	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	4	in	in	ADP	APPR	NA	6	case	NA	NA
-dem	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	5	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	NA	NA
-Wettstreit	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	6	Wettstreit	Wettstreit	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	10	obl	NA	NA
-mit	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	7	mit	mit	ADP	CARD	NumType=Card	9	case	NA	NA
-den	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	8	den	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	9	det	NA	NA
-Schwestern	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	9	Schwestern	Schwester	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	10	obl	NA	NA
-gewetzt	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	10	gewetzt	wetzen	VERB	ADV	NA	0	root	NA	SpaceAfter=No
-,	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	11	,	,	PUNCT	$,	NA	24	punct	NA	NA
-von	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	12	von	von	ADP	NE	Case=Nom|Gender=Neut|Number=Sing	13	case	NA	NA
-denen	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	13	denen	der	PRON	PRELS	Case=Dat|Number=Plur|PronType=Rel	24	obl	NA	NA
-einige	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	14	einige	einige	PRON	PIS	Case=Acc|Definite=Ind|Number=Plur|PronType=Ind	24	nsubj	NA	NA
-als	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	15	als	als	ADP	KOKOM	NA	16	case	NA	NA
-Erwachsene	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	16	Erwachsene	Erwachsene	NOUN	NN	Case=Acc|Number=Plur	24	obl	NA	NA
-ans	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	17-18	ans	NA	NA	NA	NA	NA	NA	NA	NA
-an	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	17	an	an	ADP	APPR	NA	20	case	NA	NA
-das	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	18	das	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	20	det	NA	NA
-andere	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	19	andere	ander	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Plur	20	amod	NA	NA
-Ende	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	20	Ende	Ende	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	24	obl	NA	NA
-des	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	21	des	der	DET	ART	Case=Gen|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	23	det	NA	NA
-politischen	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	22	politischen	politisch	ADJ	ADJA	Case=Gen|Gender=Neut|Number=Sing	23	amod	NA	NA
-Spektrums	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	23	Spektrums	Spektrum	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	20	nmod	NA	NA
-drifteten	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	24	drifteten	driften	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	10	acl	NA	SpaceAfter=No
-.	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	25	.	.	PUNCT	$.	NA	10	punct	NA	NA
-Sie	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	1	Sie	Sie|sie	PRON	PPER	Case=Nom|Gender=Fem|Number=Sing|Person=3|PronType=Prs	9	nsubj	NA	NA
-selbst	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	2	selbst	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	1	advmod	NA	NA
-hat	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	3	hat	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux	NA	NA
-sich	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	4	sich	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	9	obj	NA	NA
-vor	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	5	vor	vor	ADP	NE	Case=Acc|Gender=Fem|Number=Sing	6	case	NA	NA
-nichts	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	6	nichts	nichts	PRON	CARD	NumType=Card	9	obl	NA	NA
-und	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	7	und	und	CCONJ	NE	Foreign=Yes	8	cc	NA	NA
-niemand	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	8	niemand	niemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	6	conj	NA	NA
-gefürchtet	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	9	gefürchtet	fürchten	VERB	VVPP	VerbForm=Part	0	root	NA	SpaceAfter=No
-.	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	10	.	.	PUNCT	$.	NA	9	punct	NA	NA
-Schon	1	10	Schon gar nicht vor der amerikanischen Polizei.	1	Schon	schon	ADV	ADV	NA	7	advmod	NA	NA
-gar	1	10	Schon gar nicht vor der amerikanischen Polizei.	2	gar	gar	ADV	ADV	NA	3	advmod	NA	NA
-nicht	1	10	Schon gar nicht vor der amerikanischen Polizei.	3	nicht	nicht	PART	CARD	NumType=Card	7	advmod	NA	NA
-vor	1	10	Schon gar nicht vor der amerikanischen Polizei.	4	vor	vor	ADP	NN	Case=Nom|Gender=Neut|Number=Plur	7	case	NA	NA
-der	1	10	Schon gar nicht vor der amerikanischen Polizei.	5	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det	NA	NA
-amerikanischen	1	10	Schon gar nicht vor der amerikanischen Polizei.	6	amerikanischen	amerikanisch	ADJ	ADJA	Case=Gen|Gender=Fem|Number=Sing	7	amod	NA	NA
-Polizei	1	10	Schon gar nicht vor der amerikanischen Polizei.	7	Polizei	Polizei	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	0	root	NA	SpaceAfter=No
-.	1	10	Schon gar nicht vor der amerikanischen Polizei.	8	.	.	PUNCT	$.	NA	7	punct	NA	NA
-Das	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	1	Das	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	2	det	NA	NA
-Selbstbewusstsein	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	2	Selbstbewusstsein	Selbstbewußtsein	NOUN	PPOSAT	Case=Nom|Gender=Neut|Number=Sing|Poss=Yes	12	obl	NA	SpaceAfter=No
-,	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	3	,	,	PUNCT	$,	NA	9	punct	NA	NA
-mit	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	4	mit	mit	ADP	$(	NA	5	case	NA	NA
-dem	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	5	dem	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	9	obl	NA	NA
-die	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	6	die	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det	NA	NA
-Aristokratin	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	7	Aristokratin	Aristokratin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	9	nsubj	NA	NA
-groß	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	8	groß	groß	ADJ	ADJD	NA	9	xcomp	NA	NA
-geworden	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	9	geworden	werden	VERB	ADJA	Case=Acc|Gender=Fem|Number=Sing	2	acl	NA	NA
-war	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	10	war	sein	AUX	TRUNC	Case=Acc|Gender=Fem|Number=Sing	9	aux	NA	SpaceAfter=No
-,	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	11	,	,	PUNCT	$,	NA	9	punct	NA	NA
-setzte	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	12	setzte	setzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-sie	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	13	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	12	nsubj	NA	NA
-am	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	14-15	am	NA	NA	NA	NA	NA	NA	NA	NA
-an	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	14	an	an	ADP	APPR	NA	17	case	NA	NA
-dem	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	15	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	17	det	NA	NA
-anderen	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	16	anderen	ander	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	17	amod	NA	NA
-Ende	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	17	Ende	Ende	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	12	obl	NA	NA
-der	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	18	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	19	det	NA	NA
-Welt	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	19	Welt	Welt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	17	nmod	NA	NA
-mit	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	20	mit	mit	ADP	$(	NA	22	case	NA	NA
-größter	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	21	größter	groß	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	22	amod	NA	NA
-Selbstverständlichkeit	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	22	Selbstverständlichkeit	Selbstverständlichkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	12	obl	NA	NA
-als	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	23	als	als	ADP	KOKOM	NA	24	case	NA	NA
-Aktivistin	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	24	Aktivistin	Aktivistin	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	12	obl	NA	NA
-ein	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	25	ein	ein	ADV	PTKVZ	NA	12	compound:prt	NA	SpaceAfter=No
-.	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	26	.	.	PUNCT	$.	NA	12	punct	NA	NA
-Vor	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	1	Vor	vor	ADP	NN	Case=Nom|Gender=Masc|Number=Sing	3	case	NA	NA
-der	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	2	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	3	det	NA	NA
-Familie	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	3	Familie	Familie	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	6	nmod	NA	NA
-war	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	4	war	sein	AUX	ADV	NA	6	cop	NA	NA
-sie	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	5	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	6	nsubj	NA	NA
-weggerannt	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	6	weggerannt	weggerennen	VERB	VVPP	VerbForm=Part	0	root	NA	NA
-–	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	7	–	–	PUNCT	$.	NA	10	punct	NA	SpaceAfter=No
-ihrer	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	8	ihrer	ihr	DET	PPOSAT	Case=Gen|Gender=Fem|Number=Plur|Poss=Yes	9	det:poss	NA	NA
-Partei	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	9	Partei	Partei	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	xcomp	NA	NA
-blieb	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	10	blieb	bleiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	parataxis	NA	NA
-sie	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	11	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	10	nsubj	NA	NA
-treu	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	12	treu	treu	ADJ	ADJD	NA	10	xcomp	NA	SpaceAfter=No
-,	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	13	,	,	PUNCT	$,	NA	16	punct	NA	NA
-über	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	14	über	über	ADP	FM	Foreign=Yes	16	case	NA	NA
-alle	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	15	alle	alle	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	16	det	NA	NA
-Zweifel	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	16	Zweifel	Zweifel	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	12	conj	NA	NA
-hinaus	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	17	hinaus	hinaus	ADV	PTKVZ	NA	16	advmod	NA	SpaceAfter=No
-.	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	18	.	.	PUNCT	$.	NA	6	punct	NA	NA
-Ihre	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	1	Ihre	Ihr|ihr	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	2	det:poss	NA	NA
-Chuzpe	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	2	Chuzpe	Chuzpe	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	3	nsubj	NA	NA
-machte	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	3	machte	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-sie	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	4	sie	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	3	nsubj	NA	NA
-dann	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	5	dann	dann	ADV	ADV	NA	3	advmod	NA	NA
-zum	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	6-7	zum	NA	NA	NA	NA	NA	NA	NA	NA
-zu	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	6	zu	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	8	case	NA	NA
-dem	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	7	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det	NA	NA
-Star	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	8	Star	Star	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	3	obl	NA	NA
-der	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	9	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det	NA	NA
-Studentengeneration	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	10	Studentengeneration	Studentengeneration	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	8	nmod	NA	SpaceAfter=No
-.	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	11	.	.	PUNCT	$.	NA	3	punct	NA	NA
-Und	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	1	Und	und	CCONJ	ADJD	NA	4	cc	NA	NA
-zur	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	2-3	zur	NA	NA	NA	NA	NA	NA	NA	NA
-zu	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	2	zu	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	4	case	NA	NA
-der	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	3	der	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det	NA	NA
-Heldin	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	4	Heldin	Heldin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root	NA	NA
-von	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	5	von	von	ADP	FM	Foreign=Yes	6	case	NA	NA
-Harry	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	6	Harry	Harry	PROPN	NE	Case=Dat|Gender=Masc|Number=Sing	4	nmod	NA	NA
-Potter	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	7	Potter	Potter	PROPN	NE	Case=Dat|Gender=Masc|Number=Sing	6	flat	NA	SpaceAfter=No
--	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	8	-	-	PUNCT	$(	NA	9	punct	NA	SpaceAfter=No
-Autorin	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	9	Autorin	Autorin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	flat	NA	NA
-J.K.	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	10	J.K.	J.K.	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	6	flat	NA	NA
-Rowling	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	11	Rowling	Rowling	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	6	flat	NA	SpaceAfter=No
-.	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	12	.	.	PUNCT	$.	NA	4	punct	NA	SpacesAfter=\n
-</doc>													
+<doc id="8">												
+<text id="url8.doc1">												
+Eine	1	1	Eine mit scharfer Zunge	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	4	det		
+mit	1	1	Eine mit scharfer Zunge	2	mit	ADP	ADJA	Case=Nom|Gender=Masc|Number=Plur	4	case		
+scharfer	1	1	Eine mit scharfer Zunge	3	scharf	ADJ	ADJA	Case=Nom|Gender=Masc|Number=Sing	4	amod		
+Zunge	1	1	Eine mit scharfer Zunge	4	Zunge	NOUN	ADJA	Case=Nom|Number=Plur	0	root		SpacesAfter=\n
+</text>												
+<text id="url8.doc2">												
+Ihre	1	1	Ihre politischen Fundraising-Partys waren legendär.	1	Ihr|ihr	DET	PPOSAT	Case=Nom|Gender=Neut|Number=Plur|Poss=Yes	5	det:poss		
+politischen	1	1	Ihre politischen Fundraising-Partys waren legendär.	2	politisch	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	5	amod		
+Fundraising	1	1	Ihre politischen Fundraising-Partys waren legendär.	3	Fundraising	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	5	compound		SpaceAfter=No
+-	1	1	Ihre politischen Fundraising-Partys waren legendär.	4	-	PUNCT	$(		3	punct		SpaceAfter=No
+Partys	1	1	Ihre politischen Fundraising-Partys waren legendär.	5	Partys	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	7	nsubj		
+waren	1	1	Ihre politischen Fundraising-Partys waren legendär.	6	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	7	cop		
+legendär	1	1	Ihre politischen Fundraising-Partys waren legendär.	7	legendär	ADJ	ADJD		0	root		SpaceAfter=No
+.	1	1	Ihre politischen Fundraising-Partys waren legendär.	8	.	PUNCT	$.		7	punct		
+Sogar	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	1	sogar	ADV	ADV		4	advmod		
+für	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	2	für	ADP	APPR		4	case		
+den	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	3	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det		
+Klobesuch	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	4	Klobesuch	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	12	obl		
+in	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	5	in	ADP	APPR		7	case		
+ihrem	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	6	ihr	DET	PPOSAT	Case=Dat|Gender=Neut|Number=Sing|Poss=Yes	7	det:poss		
+Haus	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	7	Haus	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	4	nmod		
+mussten	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	8	müssen	AUX	VMFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	12	aux		
+die	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	9	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	11	det		
+linken	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	10	link	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	11	amod		
+Gäste	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	11	Gäst	NOUN	NN	Case=Nom|Gender=Masc|Number=Plur	12	obj		
+zahlen	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	12	zahlen	VERB	VVINF	VerbForm=Inf	0	root		SpaceAfter=No
+.	1	2	Sogar für den Klobesuch in ihrem Haus mussten die linken Gäste zahlen.	13	.	PUNCT	$.		12	punct		
+Als	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	1	als	ADP	KOKOM		2	case		
+Tochter	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	2	Tochter	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	obl		
+aus	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	3	aus	ADP	APPR		5	case		
+verarmtem	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	4	verarmt	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	5	amod		
+Adel	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	5	Adel	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	2	nmod		
+hatte	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	6	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	aux		
+sie	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	7	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	12	nsubj		
+von	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	8	von	ADP	FM	Foreign=Yes	10	case		
+der	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	9	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det		
+Mutter	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	10	Mutter	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	12	obl		
+sparen	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	11	sparen	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Plur	12	advmod		
+gelernt	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	12	lernen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
+.	1	3	Als Tochter aus verarmtem Adel hatte sie von der Mutter sparen gelernt.	13	.	PUNCT	$.		12	punct		
+Eine	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	2	det		
+Schule	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	2	Schule	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	nsubj		
+hat	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	3	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux		
+sie	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	4	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	6	nsubj		
+nie	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	5	nie	ADV	ADV		6	advmod		
+besucht	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	6	besuchen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
+,	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	7	,	PUNCT	$,		11	punct		
+Schreiben	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	8	Schreiben	NOUN	NN	Case=Acc|Gender=Fem|Number=Plur	11	obj		
+konnte	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	9	können	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	11	aux		
+sie	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	10	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	11	nsubj		
+trotzdem	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	11	trotzdem	ADV	ADJA	Case=Dat|Gender=Masc|Number=Sing	6	advmod		SpaceAfter=No
+.	1	4	Eine Schule hat sie nie besucht, Schreiben konnte sie trotzdem.	12	.	PUNCT	$.		6	punct		
+Und	1	5	Und wie!	1	und	CCONJ	ADJD		0	root		
+wie	1	5	Und wie!	2	wie	ADP	NN	Case=Nom|Gender=Fem|Number=Sing	1	case		SpaceAfter=No
+!	1	5	Und wie!	3	!	PUNCT	$.		1	punct		
+Bestsellerautorin	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	1	Bestsellerautorin	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	10	nsubj		
+und	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	2	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	3	cc		
+Journalistin	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	3	Journalistin	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	1	conj		
+ist	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	4	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	10	cop		
+sie	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	5	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	10	nsubj		
+im	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	6-7								
+in	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	6	in	ADP	APPR		9	case		
+dem	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	9	det		
+fortgeschrittenen	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	8	fortgeschritten	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	9	amod		
+Alter	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	9	Alter	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	10	obl		
+geworden	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	10	werden	VERB	ADJA	Case=Acc|Gender=Fem|Number=Sing	0	root		SpaceAfter=No
+,	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	11	,	PUNCT	$,		13	punct		
+eine	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	12	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	13	det		
+Miss	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	13	Miß	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	20	obj		
+Marple	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	14	Marple	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	13	nsubj		
+der	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	15	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	16	det		
+Investigation	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	16	Investigation	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	14	nmod		
+-	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	17	-	PUNCT	$(		19	punct		
+die	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	18	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	19	det		
+Leute	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	19	Leute	NOUN	NN	Case=Nom|Number=Plur	16	nsubj		
+unterschätzten	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	20	unterschätzen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	10	parataxis		
+sie	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	21	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	20	nsubj		SpaceAfter=No
+.	1	6	Bestsellerautorin und Journalistin ist sie im fortgeschrittenen Alter geworden, eine Miss Marple der Investigation - die Leute unterschätzten sie.	22	.	PUNCT	$.		10	punct		
+Ihre	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	1	Ihr|ihr	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	3	det:poss		
+größte	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	2	groß	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	3	amod		
+Waffe	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	3	Waffe	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No
+:	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	4	:	PUNCT	$.		7	punct		
+ihre	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	5	ihr	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Plur|Poss=Yes	7	det:poss		
+scharfe	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	6	scharf	ADJ	ADJA	Case=Nom|Gender=Neut|Number=Sing	7	amod		
+Zunge	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	7	Zunge	NOUN	ADJA	Case=Nom|Gender=Fem|Number=Plur	3	appos		
+und	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	8	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	10	cc		
+ihr	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	9	ihr	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	10	det:poss		
+Humor	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	10	Humor	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	7	conj		SpaceAfter=No
+.	1	7	Ihre größte Waffe: ihre scharfe Zunge und ihr Humor.	11	.	PUNCT	$.		3	punct		
+Beide	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	1	beide	PRON	PIS	Case=Nom|Definite=Ind|Number=Plur|PronType=Ind	10	nsubj		
+hatte	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	2	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	aux		
+sie	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	3	sie	PRON	NN	Case=Acc|Gender=Fem|Number=Sing	10	nsubj		
+im	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	4-5								
+in	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	4	in	ADP	APPR		6	case		
+dem	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det		
+Wettstreit	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	6	Wettstreit	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	10	obl		
+mit	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	7	mit	ADP	CARD	NumType=Card	9	case		
+den	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	9	det		
+Schwestern	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	9	Schwester	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	10	obl		
+gewetzt	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	10	wetzen	VERB	ADV		0	root		SpaceAfter=No
+,	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	11	,	PUNCT	$,		24	punct		
+von	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	12	von	ADP	NE	Case=Nom|Gender=Neut|Number=Sing	13	case		
+denen	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	13	der	PRON	PRELS	Case=Dat|Number=Plur|PronType=Rel	24	obl		
+einige	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	14	einige	PRON	PIS	Case=Acc|Definite=Ind|Number=Plur|PronType=Ind	24	nsubj		
+als	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	15	als	ADP	KOKOM		16	case		
+Erwachsene	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	16	Erwachsene	NOUN	NN	Case=Acc|Number=Plur	24	obl		
+ans	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	17-18								
+an	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	17	an	ADP	APPR		20	case		
+das	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	18	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	20	det		
+andere	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	19	ander	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Plur	20	amod		
+Ende	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	20	Ende	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	24	obl		
+des	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	21	der	DET	ART	Case=Gen|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	23	det		
+politischen	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	22	politisch	ADJ	ADJA	Case=Gen|Gender=Neut|Number=Sing	23	amod		
+Spektrums	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	23	Spektrum	NOUN	NN	Case=Gen|Gender=Neut|Number=Sing	20	nmod		
+drifteten	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	24	driften	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	10	acl		SpaceAfter=No
+.	1	8	Beide hatte sie im Wettstreit mit den Schwestern gewetzt, von denen einige als Erwachsene ans andere Ende des politischen Spektrums drifteten.	25	.	PUNCT	$.		10	punct		
+Sie	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	1	Sie|sie	PRON	PPER	Case=Nom|Gender=Fem|Number=Sing|Person=3|PronType=Prs	9	nsubj		
+selbst	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	2	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	1	advmod		
+hat	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	3	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	aux		
+sich	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	4	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	9	obj		
+vor	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	5	vor	ADP	NE	Case=Acc|Gender=Fem|Number=Sing	6	case		
+nichts	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	6	nichts	PRON	CARD	NumType=Card	9	obl		
+und	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	7	und	CCONJ	NE	Foreign=Yes	8	cc		
+niemand	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	8	niemand	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	6	conj		
+gefürchtet	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	9	fürchten	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No
+.	1	9	Sie selbst hat sich vor nichts und niemand gefürchtet.	10	.	PUNCT	$.		9	punct		
+Schon	1	10	Schon gar nicht vor der amerikanischen Polizei.	1	schon	ADV	ADV		7	advmod		
+gar	1	10	Schon gar nicht vor der amerikanischen Polizei.	2	gar	ADV	ADV		3	advmod		
+nicht	1	10	Schon gar nicht vor der amerikanischen Polizei.	3	nicht	PART	CARD	NumType=Card	7	advmod		
+vor	1	10	Schon gar nicht vor der amerikanischen Polizei.	4	vor	ADP	NN	Case=Nom|Gender=Neut|Number=Plur	7	case		
+der	1	10	Schon gar nicht vor der amerikanischen Polizei.	5	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det		
+amerikanischen	1	10	Schon gar nicht vor der amerikanischen Polizei.	6	amerikanisch	ADJ	ADJA	Case=Gen|Gender=Fem|Number=Sing	7	amod		
+Polizei	1	10	Schon gar nicht vor der amerikanischen Polizei.	7	Polizei	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	0	root		SpaceAfter=No
+.	1	10	Schon gar nicht vor der amerikanischen Polizei.	8	.	PUNCT	$.		7	punct		
+Das	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	2	det		
+Selbstbewusstsein	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	2	Selbstbewußtsein	NOUN	PPOSAT	Case=Nom|Gender=Neut|Number=Sing|Poss=Yes	12	obl		SpaceAfter=No
+,	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	3	,	PUNCT	$,		9	punct		
+mit	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	4	mit	ADP	$(		5	case		
+dem	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	5	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	9	obl		
+die	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	6	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det		
+Aristokratin	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	7	Aristokratin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	9	nsubj		
+groß	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	8	groß	ADJ	ADJD		9	xcomp		
+geworden	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	9	werden	VERB	ADJA	Case=Acc|Gender=Fem|Number=Sing	2	acl		
+war	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	10	sein	AUX	TRUNC	Case=Acc|Gender=Fem|Number=Sing	9	aux		SpaceAfter=No
+,	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	11	,	PUNCT	$,		9	punct		
+setzte	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	12	setzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+sie	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	13	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	12	nsubj		
+am	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	14-15								
+an	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	14	an	ADP	APPR		17	case		
+dem	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	15	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	17	det		
+anderen	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	16	ander	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	17	amod		
+Ende	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	17	Ende	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	12	obl		
+der	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	18	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	19	det		
+Welt	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	19	Welt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	17	nmod		
+mit	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	20	mit	ADP	$(		22	case		
+größter	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	21	groß	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	22	amod		
+Selbstverständlichkeit	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	22	Selbstverständlichkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	12	obl		
+als	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	23	als	ADP	KOKOM		24	case		
+Aktivistin	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	24	Aktivistin	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	12	obl		
+ein	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	25	ein	ADV	PTKVZ		12	compound:prt		SpaceAfter=No
+.	1	11	Das Selbstbewusstsein, mit dem die Aristokratin groß geworden war, setzte sie am anderen Ende der Welt mit größter Selbstverständlichkeit als Aktivistin ein.	26	.	PUNCT	$.		12	punct		
+Vor	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	1	vor	ADP	NN	Case=Nom|Gender=Masc|Number=Sing	3	case		
+der	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	2	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	3	det		
+Familie	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	3	Familie	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	6	nmod		
+war	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	4	sein	AUX	ADV		6	cop		
+sie	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	5	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	6	nsubj		
+weggerannt	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	6	weggerennen	VERB	VVPP	VerbForm=Part	0	root		
+–	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	7	–	PUNCT	$.		10	punct		SpaceAfter=No
+ihrer	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	8	ihr	DET	PPOSAT	Case=Gen|Gender=Fem|Number=Plur|Poss=Yes	9	det:poss		
+Partei	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	9	Partei	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	xcomp		
+blieb	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	10	bleiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	parataxis		
+sie	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	11	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	10	nsubj		
+treu	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	12	treu	ADJ	ADJD		10	xcomp		SpaceAfter=No
+,	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	13	,	PUNCT	$,		16	punct		
+über	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	14	über	ADP	FM	Foreign=Yes	16	case		
+alle	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	15	alle	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	16	det		
+Zweifel	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	16	Zweifel	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	12	conj		
+hinaus	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	17	hinaus	ADV	PTKVZ		16	advmod		SpaceAfter=No
+.	1	12	Vor der Familie war sie weggerannt –ihrer Partei blieb sie treu, über alle Zweifel hinaus.	18	.	PUNCT	$.		6	punct		
+Ihre	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	1	Ihr|ihr	DET	PPOSAT	Case=Nom|Gender=Fem|Number=Sing|Poss=Yes	2	det:poss		
+Chuzpe	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	2	Chuzpe	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	3	nsubj		
+machte	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	3	machen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+sie	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	4	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	3	nsubj		
+dann	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	5	dann	ADV	ADV		3	advmod		
+zum	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	6-7								
+zu	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	6	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	8	case		
+dem	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	8	det		
+Star	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	8	Star	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	3	obl		
+der	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	9	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det		
+Studentengeneration	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	10	Studentengeneration	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	8	nmod		SpaceAfter=No
+.	1	13	Ihre Chuzpe machte sie dann zum Star der Studentengeneration.	11	.	PUNCT	$.		3	punct		
+Und	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	1	und	CCONJ	ADJD		4	cc		
+zur	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	2-3								
+zu	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	2	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	4	case		
+der	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	3	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det		
+Heldin	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	4	Heldin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		
+von	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	5	von	ADP	FM	Foreign=Yes	6	case		
+Harry	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	6	Harry	PROPN	NE	Case=Dat|Gender=Masc|Number=Sing	4	nmod		
+Potter	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	7	Potter	PROPN	NE	Case=Dat|Gender=Masc|Number=Sing	6	flat		SpaceAfter=No
+-	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	8	-	PUNCT	$(		9	punct		SpaceAfter=No
+Autorin	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	9	Autorin	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	6	flat		
+J.K.	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	10	J.K.	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	6	flat		
+Rowling	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	11	Rowling	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	6	flat		SpaceAfter=No
+.	1	14	Und zur Heldin von Harry Potter-Autorin J.K. Rowling.	12	.	PUNCT	$.		4	punct		SpacesAfter=\n
+</text>												
+</doc>												

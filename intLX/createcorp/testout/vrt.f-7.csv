@@ -1,196 +1,198 @@
-<doc id="1">													
-Einer	1	1	Einer, der mit Akzent sprach	1	Einer	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root	NA	SpaceAfter=No
-,	1	1	Einer, der mit Akzent sprach	2	,	,	PUNCT	$,	NA	6	punct	NA	NA
-der	1	1	Einer, der mit Akzent sprach	3	der	der	PRON	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	nsubj	NA	NA
-mit	1	1	Einer, der mit Akzent sprach	4	mit	mit	ADP	ADJA	Case=Nom|Gender=Masc|Number=Plur	5	case	NA	NA
-Akzent	1	1	Einer, der mit Akzent sprach	5	Akzent	Akzent	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	6	obl	NA	NA
-sprach	1	1	Einer, der mit Akzent sprach	6	sprach	sprechen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	1	acl	NA	SpacesAfter=\n
-</doc>													
-<doc id="2">													
-Als	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	1	Als	als	SCONJ	KOUS	NA	7	mark	NA	NA
-er	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	2	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	7	nsubj	NA	NA
-das	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	3	das	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	4	det	NA	NA
-Licht	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	4	Licht	Licht	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	7	obj	NA	NA
-der	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	5	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det	NA	NA
-Welt	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	6	Welt	Welt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	4	nmod	NA	NA
-erblickte	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	7	erblickte	erblicken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	advcl	NA	SpaceAfter=No
-,	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	8	,	,	PUNCT	$,	NA	7	punct	NA	NA
-gab	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	9	gab	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-es	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	10	es	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	9	expl	NA	NA
-das	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	11	das	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	12	det	NA	NA
-Land	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	12	Land	Land	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	9	nsubj	NA	SpaceAfter=No
-,	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	13	,	,	PUNCT	$,	NA	19	punct	NA	NA
-in	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	14	in	in	ADP	APPR	NA	15	case	NA	NA
-dem	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	15	dem	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	19	obl	NA	NA
-sein	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	16	sein	sein	DET	PPOSAT	Case=Nom|Gender=Masc|Number=Sing|Poss=Yes	17	det:poss	NA	NA
-Geburtsort	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	17	Geburtsort	Geburtsort	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	19	nsubj	NA	NA
-heute	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	18	heute	heute	ADV	ADV	NA	19	advmod	NA	NA
-liegt	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	19	liegt	liegen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	acl	NA	SpaceAfter=No
-,	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	20	,	,	PUNCT	$,	NA	22	punct	NA	NA
-noch	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	21	noch	noch	CCONJ	NE	Case=Nom|Gender=Fem|Number=Sing	22	cc	NA	NA
-nicht	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	22	nicht	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	advmod	NA	SpaceAfter=No
-.	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	23	.	.	PUNCT	$.	NA	9	punct	NA	NA
-Auch	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	1	Auch	auch	ADV	ADV	NA	3	advmod	NA	NA
-den	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	2	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	NA	NA
-Namen	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	3	Namen	Name	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	11	obj	NA	SpaceAfter=No
-,	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	4	,	,	PUNCT	$,	NA	8	punct	NA	NA
-unter	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	5	unter	unter	ADP	ADJD	NA	6	case	NA	NA
-dem	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	6	dem	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	8	obl	NA	NA
-er	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	7	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	nsubj	NA	NA
-weltberühmt	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	8	weltberühmt	weltberühmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	acl	NA	NA
-wurde	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	9	wurde	werden	AUX	ADV	NA	8	aux:pass	NA	SpaceAfter=No
-,	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	10	,	,	PUNCT	$,	NA	3	punct	NA	NA
-sucht	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	11	sucht	suchen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	NA	NA
-man	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	12	man	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	11	nsubj	NA	NA
-in	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	13	in	in	ADP	APPR	NA	15	case	NA	NA
-den	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	14	den	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	15	det	NA	NA
-Taufregistern	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	15	Taufregistern	Taufregister	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	11	obl	NA	NA
-der	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	16	der	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	17	det	NA	NA
-Stadt	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	17	Stadt	Stadt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	15	nmod	NA	NA
-vergeblich	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	18	vergeblich	vergeblich	ADJ	ADJD	NA	11	advmod	NA	SpaceAfter=No
-.	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	19	.	.	PUNCT	$.	NA	11	punct	NA	NA
-Der	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	1	Der	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det	NA	NA
-ursprüngliche	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	2	ursprüngliche	ursprünglich	ADJ	NN	Case=Nom|Gender=Neut|Number=Sing	3	amod	NA	NA
-Familienname	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	3	Familienname	Familienname	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	10	nsubj	NA	NA
-wäre	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	4	wäre	sein	AUX	NN	Case=Acc|Gender=Masc|Number=Sing	10	aux	NA	NA
-für	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	5	für	für	ADP	APPR	NA	8	case	NA	NA
-sein	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	6	sein	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	8	det:poss	NA	NA
-neues	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	7	neues	neu	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	8	amod	NA	NA
-Heimatland	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	8	Heimatland	Heimatland	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	10	obl	NA	NA
-zu	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	9	zu	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	mark	NA	NA
-kompliziert	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	10	kompliziert	kompliziert	VERB	ADJD	NA	0	root	NA	NA
-gewesen	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	11	gewesen	sein	AUX	ADJA	Case=Nom|Gender=Masc|Number=Sing	10	aux	NA	SpaceAfter=No
-,	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	12	,	,	PUNCT	$,	NA	14	punct	NA	NA
-so	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	13	so	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	14	advmod	NA	NA
-blieb	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	14	blieb	bleiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	advcl	NA	NA
-er	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	15	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	14	nsubj	NA	NA
-nur	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	16	nur	nur	ADV	CARD	NumType=Card	18	advmod	NA	NA
-den	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	17	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	18	det	NA	NA
-Vornamen	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	18	Vornamen	Vorname	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	19	iobj	NA	NA
-treu	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	19	treu	treu	ADJ	ADJD	NA	14	xcomp	NA	SpaceAfter=No
-.	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	20	.	.	PUNCT	$.	NA	10	punct	NA	NA
-Ohnehin	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	1	Ohnehin	ohnehin	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	nsubj	NA	NA
-nahm	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	2	nahm	nehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-sein	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	3	sein	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	4	det:poss	NA	NA
-Leben	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	4	Leben	Leben	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obj	NA	NA
-einen	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	5	einen	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	6	det	NA	NA
-Weg	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	6	Weg	Weg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	2	obj	NA	SpaceAfter=No
-,	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	7	,	,	PUNCT	$,	NA	18	punct	NA	NA
-der	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	8	der	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	18	nsubj	NA	NA
-für	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	9	für	für	ADP	APPR	NA	10	case	NA	NA
-ihn	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	10	ihn	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	18	obl	NA	SpaceAfter=No
-,	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	11	,	,	PUNCT	$,	NA	14	punct	NA	NA
-eine	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	12	eine	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det	NA	NA
-geborene	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	13	geborene	geboren	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	14	amod	NA	NA
-Landratte	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	14	Landratte	Landratte	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	appos	NA	SpaceAfter=No
-,	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	15	,	,	PUNCT	$,	NA	18	punct	NA	NA
-nicht	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	16	nicht	nicht	PART	CARD	NumType=Card	18	advmod	NA	NA
-gerade	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	17	gerade	gerade	ADV	ADV	NA	18	advmod	NA	NA
-nahelag	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	18	nahelag	naheliegen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	acl	NA	SpaceAfter=No
-.	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	19	.	.	PUNCT	$.	NA	2	punct	NA	NA
-Wohl	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	1	Wohl	wohl	ADV	NN	Case=Nom|Gender=Masc|Number=Sing	2	advmod	NA	NA
-grenzte	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	2	grenzte	grenzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-die	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	3	die	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det	NA	NA
-alte	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	4	alte	alt	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	5	amod	NA	NA
-Heimat	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	5	Heimat	Heimat	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	nsubj	NA	NA
-an	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	6	an	an	ADP	APPR	NA	8	case	NA	NA
-ein	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	7	ein	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	8	det	NA	NA
-Meer	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	8	Meer	Meer	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obl	NA	SpaceAfter=No
-,	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	9	,	,	PUNCT	$,	NA	18	punct	NA	NA
-aber	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	10	aber	aber	CCONJ	KON	NA	18	cc	NA	NA
-zur	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	11-12	zur	NA	NA	NA	NA	NA	NA	NA	NA
-zu	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	11	zu	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	14	case	NA	NA
-der	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	12	der	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det	NA	NA
-ersten	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	13	ersten	erst	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	14	amod	NA	NA
-Station	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	14	Station	Station	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	18	nmod	NA	NA
-seiner	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	15	seiner	sein	DET	PPOSAT	Case=Gen|Gender=Masc|Number=Plur|Poss=Yes	17	det:poss	NA	NA
-maritimen	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	16	maritimen	maritim	ADJ	ADJA	Case=Gen|Gender=Masc|Number=Sing	17	amod	NA	NA
-Karriere	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	17	Karriere	Karriere	NOUN	NE	Case=Acc|Gender=Fem|Number=Sing	14	nmod	NA	NA
-wurde	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	18	wurde	werden	VERB	NN	Case=Acc|Gender=Fem|Number=Plur	2	conj	NA	NA
-es	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	19	es	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	18	nsubj	NA	NA
-nicht	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	20	nicht	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	advmod	NA	SpaceAfter=No
-.	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	21	.	.	PUNCT	$.	NA	2	punct	NA	NA
-Während	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	1	Während	während	SCONJ	KOUS	NA	3	mark	NA	NA
-derer	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	2	derer	d	PRON	PRELS	Case=Gen|Number=Plur|PronType=Rel	3	iobj	NA	NA
-brachte	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	3	brachte	bringen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-er	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	4	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	nsubj	NA	NA
-es	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	5	es	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	obj	NA	NA
-sogar	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	6	sogar	sogar	ADV	ADV	NA	3	advmod	NA	NA
-zum	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	7-8	zum	NA	NA	NA	NA	NA	NA	NA	NA
-zu	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	7	zu	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	9	case	NA	NA
-dem	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	8	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	9	det	NA	NA
-Kapitän	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	9	Kapitän	Kapitän	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	3	obl	NA	SpaceAfter=No
-,	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	10	,	,	PUNCT	$,	NA	23	punct	NA	NA
-obwohl	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	11	obwohl	obwohl	SCONJ	NN	Case=Dat|Gender=Neut|Number=Plur	23	mark	NA	NA
-er	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	12	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	23	nsubj	NA	NA
-sich	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	13	sich	er|es|sie	PRON	PRF	Case=Dat|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	23	iobj	NA	NA
-neben	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	14	neben	neben	ADP	NN	Case=Dat|Number=Plur	18	case	NA	NA
-all	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	15	all	all	PRON	PIAT	Definite=Ind|PronType=Ind	18	det	NA	NA
-dem	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	16	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	18	det	NA	NA
-nautischen	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	17	nautischen	nautisch	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	18	amod	NA	NA
-Wissen	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	18	Wissen	wissen	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	23	obl	NA	NA
-zugleich	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	19	zugleich	zugleich	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	23	advmod	NA	NA
-eine	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	20	eine	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	22	det	NA	NA
-neue	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	21	neue	neu	ADJ	NN	Case=Gen|Gender=Fem|Number=Sing	22	amod	NA	NA
-Sprache	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	22	Sprache	Sprache	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	23	obj	NA	NA
-aneignen	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	23	aneignen	aneignen	VERB	VVINF	VerbForm=Inf	3	advcl	NA	NA
-musste	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	24	musste	müssen	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	23	aux	NA	SpaceAfter=No
-.	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	25	.	.	PUNCT	$.	NA	3	punct	NA	NA
-Die	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	1	Die	der	DET	PDS	Case=Nom|Gender=Fem|Number=Sing|PronType=Dem	2	det	NA	NA
-sprach	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	2	sprach	sprechen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-er	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	3	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	NA	NA
-zeitlebens	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	4	zeitlebens	zeitlebens	ADV	ADJA	Case=Acc|Gender=Fem|Number=Plur	2	advmod	NA	NA
-mit	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	5	mit	mit	ADP	ADJA	Case=Nom|Gender=Neut|Number=Plur	6	case	NA	NA
-Akzent	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	6	Akzent	Akzent	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	2	obl	NA	SpaceAfter=No
-,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	7	,	,	PUNCT	$,	NA	9	punct	NA	NA
-schriftlich	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	8	schriftlich	schriftlich	ADJ	ADJD	NA	9	advmod	NA	NA
-wusste	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	9	wusste	wissen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj	NA	NA
-er	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	10	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	9	nsubj	NA	NA
-sich	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	11	sich	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	9	obj	NA	NA
-aber	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	12	aber	aber	ADV	ADV	NA	9	advmod	NA	NA
-bald	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	13	bald	bald	ADV	ADV	NA	9	advmod	NA	NA
-so	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	14	so	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	15	advmod	NA	NA
-gut	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	15	gut	gut	ADJ	ADJD	NA	9	advmod	NA	NA
-darin	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	16	darin	darin	ADV	PAV	NA	9	advmod	NA	NA
-auszudrücken	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	17	auszudrücken	auszudrück	ADJ	VVINF	VerbForm=Inf	9	xcomp	NA	SpaceAfter=No
-,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	18	,	,	PUNCT	$,	NA	26	punct	NA	NA
-dass	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	19	dass	dass	SCONJ	KOUS	NA	26	mark	NA	NA
-jeder	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	20	jeder	jed	PRON	PIAT	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	26	nsubj	NA	SpaceAfter=No
-,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	21	,	,	PUNCT	$,	NA	26	punct	NA	NA
-der	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	22	der	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	26	nsubj	NA	NA
-seine	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	23	seine	sein	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	24	det:poss	NA	NA
-Herkunft	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	24	Herkunft	Herkunft	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	26	obj	NA	NA
-nicht	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	25	nicht	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	26	advmod	NA	NA
-kannte	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	26	kannte	kennen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	ccomp	NA	SpaceAfter=No
-,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	27	,	,	PUNCT	$,	NA	32	punct	NA	NA
-ihn	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	28	ihn	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	32	obj	NA	NA
-für	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	29	für	für	ADP	APPR	NA	31	case	NA	NA
-einen	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	30	einen	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	31	det	NA	NA
-Muttersprachler	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	31	Muttersprachler	Muttersprachler	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	32	obl	NA	NA
-halten	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	32	halten	halten	VERB	VVINF	VerbForm=Inf	26	xcomp	NA	NA
-musste	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	33	musste	müssen	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	32	aux	NA	SpaceAfter=No
-.	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	34	.	.	PUNCT	$.	NA	2	punct	NA	NA
-Schließlich	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	1	Schließlich	schließlich	ADV	ADV	NA	2	advmod	NA	NA
-gab	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	2	gab	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	NA	NA
-er	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	3	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	NA	NA
-den	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	4	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det	NA	NA
-alten	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	5	alten	alt	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	6	amod	NA	NA
-Beruf	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	6	Beruf	Beruf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	2	obj	NA	NA
-zugunsten	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	7	zugunsten	zugunsten	ADP	NE	Case=Gen|Gender=Fem|Number=Sing	11	case	NA	NA
-seiner	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	8	seiner	sein	DET	PPOSAT	Case=Gen|Gender=Fem|Number=Plur|Poss=Yes	11	det:poss	NA	NA
-neu	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	9	neu	neu	ADJ	CARD	NumType=Card	10	advmod	NA	NA
-gefundenen	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	10	gefundenen	gefunden	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	11	amod	NA	NA
-Fähigkeiten	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	11	Fähigkeiten	Fähigkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	6	nmod	NA	NA
-ganz	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	12	ganz	ganz	ADV	ADV	NA	2	advmod	NA	NA
-auf	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	13	auf	auf	ADP	PTKVZ	NA	2	compound:prt	NA	SpaceAfter=No
-,	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	14	,	,	PUNCT	$,	NA	22	punct	NA	NA
-aus	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	15	aus	aus	ADP	APPR	NA	17	case	NA	NA
-dessen	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	16	dessen	der	DET	PDAT	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	17	det	NA	NA
-Erfahrungen	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	17	Erfahrungen	Erfahrung	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	22	obl	NA	NA
-er	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	18	er	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	22	nsubj	NA	NA
-aber	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	19	aber	aber	ADV	ADV	NA	22	advmod	NA	NA
-weiterhin	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	20	weiterhin	weiterhin	ADV	ADV	NA	22	advmod	NA	NA
-gern	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	21	gern	gern	ADV	ADV	NA	22	advmod	NA	NA
-schöpfte	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	22	schöpfte	schöpfen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj	NA	SpaceAfter=No
-.	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	23	.	.	PUNCT	$.	NA	2	punct	NA	SpacesAfter=\n
-</doc>													
+<doc id="7">												
+<text id="url7.doc1">												
+Einer	1	1	Einer, der mit Akzent sprach	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root		SpaceAfter=No
+,	1	1	Einer, der mit Akzent sprach	2	,	PUNCT	$,		6	punct		
+der	1	1	Einer, der mit Akzent sprach	3	der	PRON	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	nsubj		
+mit	1	1	Einer, der mit Akzent sprach	4	mit	ADP	ADJA	Case=Nom|Gender=Masc|Number=Plur	5	case		
+Akzent	1	1	Einer, der mit Akzent sprach	5	Akzent	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	6	obl		
+sprach	1	1	Einer, der mit Akzent sprach	6	sprechen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	1	acl		SpacesAfter=\n
+</text>												
+<text id="url7.doc2">												
+Als	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	1	als	SCONJ	KOUS		7	mark		
+er	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	2	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	7	nsubj		
+das	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	3	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	4	det		
+Licht	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	4	Licht	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	7	obj		
+der	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	5	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det		
+Welt	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	6	Welt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	4	nmod		
+erblickte	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	7	erblicken	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	advcl		SpaceAfter=No
+,	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	8	,	PUNCT	$,		7	punct		
+gab	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	9	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+es	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	10	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	9	expl		
+das	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	11	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	12	det		
+Land	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	12	Land	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	9	nsubj		SpaceAfter=No
+,	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	13	,	PUNCT	$,		19	punct		
+in	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	14	in	ADP	APPR		15	case		
+dem	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	15	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	19	obl		
+sein	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	16	sein	DET	PPOSAT	Case=Nom|Gender=Masc|Number=Sing|Poss=Yes	17	det:poss		
+Geburtsort	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	17	Geburtsort	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	19	nsubj		
+heute	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	18	heute	ADV	ADV		19	advmod		
+liegt	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	19	liegen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	acl		SpaceAfter=No
+,	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	20	,	PUNCT	$,		22	punct		
+noch	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	21	noch	CCONJ	NE	Case=Nom|Gender=Fem|Number=Sing	22	cc		
+nicht	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	22	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	advmod		SpaceAfter=No
+.	1	1	Als er das Licht der Welt erblickte, gab es das Land, in dem sein Geburtsort heute liegt, noch nicht.	23	.	PUNCT	$.		9	punct		
+Auch	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	1	auch	ADV	ADV		3	advmod		
+den	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	2	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det		
+Namen	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	3	Name	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	11	obj		SpaceAfter=No
+,	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	4	,	PUNCT	$,		8	punct		
+unter	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	5	unter	ADP	ADJD		6	case		
+dem	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	6	der	PRON	PRELS	Case=Dat|Gender=Masc|Number=Sing|PronType=Rel	8	obl		
+er	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	7	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	nsubj		
+weltberühmt	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	8	weltberühmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	acl		
+wurde	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	9	werden	AUX	ADV		8	aux:pass		SpaceAfter=No
+,	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	10	,	PUNCT	$,		3	punct		
+sucht	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	11	suchen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		
+man	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	12	man	PRON	PIS	Case=Nom|Definite=Ind|Number=Sing|PronType=Ind	11	nsubj		
+in	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	13	in	ADP	APPR		15	case		
+den	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	14	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Art	15	det		
+Taufregistern	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	15	Taufregister	NOUN	NN	Case=Dat|Gender=Neut|Number=Plur	11	obl		
+der	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	16	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	17	det		
+Stadt	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	17	Stadt	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	15	nmod		
+vergeblich	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	18	vergeblich	ADJ	ADJD		11	advmod		SpaceAfter=No
+.	1	2	Auch den Namen, unter dem er weltberühmt wurde, sucht man in den Taufregistern der Stadt vergeblich.	19	.	PUNCT	$.		11	punct		
+Der	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	3	det		
+ursprüngliche	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	2	ursprünglich	ADJ	NN	Case=Nom|Gender=Neut|Number=Sing	3	amod		
+Familienname	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	3	Familienname	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	10	nsubj		
+wäre	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	4	sein	AUX	NN	Case=Acc|Gender=Masc|Number=Sing	10	aux		
+für	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	5	für	ADP	APPR		8	case		
+sein	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	6	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	8	det:poss		
+neues	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	7	neu	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	8	amod		
+Heimatland	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	8	Heimatland	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	10	obl		
+zu	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	9	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	mark		
+kompliziert	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	10	kompliziert	VERB	ADJD		0	root		
+gewesen	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	11	sein	AUX	ADJA	Case=Nom|Gender=Masc|Number=Sing	10	aux		SpaceAfter=No
+,	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	12	,	PUNCT	$,		14	punct		
+so	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	13	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	14	advmod		
+blieb	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	14	bleiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	10	advcl		
+er	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	15	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	14	nsubj		
+nur	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	16	nur	ADV	CARD	NumType=Card	18	advmod		
+den	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	17	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	18	det		
+Vornamen	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	18	Vorname	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	19	iobj		
+treu	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	19	treu	ADJ	ADJD		14	xcomp		SpaceAfter=No
+.	1	3	Der ursprüngliche Familienname wäre für sein neues Heimatland zu kompliziert gewesen, so blieb er nur den Vornamen treu.	20	.	PUNCT	$.		10	punct		
+Ohnehin	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	1	ohnehin	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	nsubj		
+nahm	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	2	nehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+sein	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	3	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Sing|Poss=Yes	4	det:poss		
+Leben	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	4	Leben	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obj		
+einen	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	5	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	6	det		
+Weg	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	6	Weg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	2	obj		SpaceAfter=No
+,	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	7	,	PUNCT	$,		18	punct		
+der	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	8	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	18	nsubj		
+für	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	9	für	ADP	APPR		10	case		
+ihn	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	10	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	18	obl		SpaceAfter=No
+,	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	11	,	PUNCT	$,		14	punct		
+eine	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	12	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det		
+geborene	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	13	geboren	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	14	amod		
+Landratte	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	14	Landratte	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	10	appos		SpaceAfter=No
+,	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	15	,	PUNCT	$,		18	punct		
+nicht	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	16	nicht	PART	CARD	NumType=Card	18	advmod		
+gerade	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	17	gerade	ADV	ADV		18	advmod		
+nahelag	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	18	naheliegen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	acl		SpaceAfter=No
+.	1	4	Ohnehin nahm sein Leben einen Weg, der für ihn, eine geborene Landratte, nicht gerade nahelag.	19	.	PUNCT	$.		2	punct		
+Wohl	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	1	wohl	ADV	NN	Case=Nom|Gender=Masc|Number=Sing	2	advmod		
+grenzte	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	2	grenzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+die	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	3	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	5	det		
+alte	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	4	alt	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Sing	5	amod		
+Heimat	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	5	Heimat	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	nsubj		
+an	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	6	an	ADP	APPR		8	case		
+ein	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	7	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	8	det		
+Meer	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	8	Meer	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obl		SpaceAfter=No
+,	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	9	,	PUNCT	$,		18	punct		
+aber	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	10	aber	CCONJ	KON		18	cc		
+zur	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	11-12								
+zu	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	11	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	14	case		
+der	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	14	det		
+ersten	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	13	erst	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	14	amod		
+Station	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	14	Station	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	18	nmod		
+seiner	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	15	sein	DET	PPOSAT	Case=Gen|Gender=Masc|Number=Plur|Poss=Yes	17	det:poss		
+maritimen	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	16	maritim	ADJ	ADJA	Case=Gen|Gender=Masc|Number=Sing	17	amod		
+Karriere	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	17	Karriere	NOUN	NE	Case=Acc|Gender=Fem|Number=Sing	14	nmod		
+wurde	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	18	werden	VERB	NN	Case=Acc|Gender=Fem|Number=Plur	2	conj		
+es	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	19	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	18	nsubj		
+nicht	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	20	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	18	advmod		SpaceAfter=No
+.	1	5	Wohl grenzte die alte Heimat an ein Meer, aber zur ersten Station seiner maritimen Karriere wurde es nicht.	21	.	PUNCT	$.		2	punct		
+Während	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	1	während	SCONJ	KOUS		3	mark		
+derer	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	2	d	PRON	PRELS	Case=Gen|Number=Plur|PronType=Rel	3	iobj		
+brachte	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	3	bringen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+er	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	4	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	nsubj		
+es	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	5	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	obj		
+sogar	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	6	sogar	ADV	ADV		3	advmod		
+zum	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	7-8								
+zu	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	7	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	9	case		
+dem	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	8	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	9	det		
+Kapitän	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	9	Kapitän	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	3	obl		SpaceAfter=No
+,	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	10	,	PUNCT	$,		23	punct		
+obwohl	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	11	obwohl	SCONJ	NN	Case=Dat|Gender=Neut|Number=Plur	23	mark		
+er	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	12	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	23	nsubj		
+sich	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	13	er|es|sie	PRON	PRF	Case=Dat|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	23	iobj		
+neben	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	14	neben	ADP	NN	Case=Dat|Number=Plur	18	case		
+all	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	15	all	PRON	PIAT	Definite=Ind|PronType=Ind	18	det		
+dem	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	16	der	DET	ART	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	18	det		
+nautischen	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	17	nautisch	ADJ	ADJA	Case=Dat|Gender=Neut|Number=Sing	18	amod		
+Wissen	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	18	wissen	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	23	obl		
+zugleich	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	19	zugleich	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	23	advmod		
+eine	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	20	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	22	det		
+neue	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	21	neu	ADJ	NN	Case=Gen|Gender=Fem|Number=Sing	22	amod		
+Sprache	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	22	Sprache	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	23	obj		
+aneignen	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	23	aneignen	VERB	VVINF	VerbForm=Inf	3	advcl		
+musste	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	24	müssen	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	23	aux		SpaceAfter=No
+.	1	6	Während derer brachte er es sogar zum Kapitän, obwohl er sich neben all dem nautischen Wissen zugleich eine neue Sprache aneignen musste.	25	.	PUNCT	$.		3	punct		
+Die	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	1	der	DET	PDS	Case=Nom|Gender=Fem|Number=Sing|PronType=Dem	2	det		
+sprach	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	2	sprechen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+er	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
+zeitlebens	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	4	zeitlebens	ADV	ADJA	Case=Acc|Gender=Fem|Number=Plur	2	advmod		
+mit	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	5	mit	ADP	ADJA	Case=Nom|Gender=Neut|Number=Plur	6	case		
+Akzent	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	6	Akzent	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	2	obl		SpaceAfter=No
+,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	7	,	PUNCT	$,		9	punct		
+schriftlich	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	8	schriftlich	ADJ	ADJD		9	advmod		
+wusste	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	9	wissen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj		
+er	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	10	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	9	nsubj		
+sich	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	11	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	9	obj		
+aber	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	12	aber	ADV	ADV		9	advmod		
+bald	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	13	bald	ADV	ADV		9	advmod		
+so	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	14	so	ADV	NE	Case=Nom|Gender=Neut|Number=Plur	15	advmod		
+gut	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	15	gut	ADJ	ADJD		9	advmod		
+darin	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	16	darin	ADV	PAV		9	advmod		
+auszudrücken	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	17	auszudrück	ADJ	VVINF	VerbForm=Inf	9	xcomp		SpaceAfter=No
+,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	18	,	PUNCT	$,		26	punct		
+dass	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	19	dass	SCONJ	KOUS		26	mark		
+jeder	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	20	jed	PRON	PIAT	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	26	nsubj		SpaceAfter=No
+,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	21	,	PUNCT	$,		26	punct		
+der	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	22	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	26	nsubj		
+seine	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	23	sein	DET	PPOSAT	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes	24	det:poss		
+Herkunft	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	24	Herkunft	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	26	obj		
+nicht	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	25	nicht	PART	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	26	advmod		
+kannte	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	26	kennen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	ccomp		SpaceAfter=No
+,	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	27	,	PUNCT	$,		32	punct		
+ihn	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	28	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	32	obj		
+für	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	29	für	ADP	APPR		31	case		
+einen	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	30	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	31	det		
+Muttersprachler	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	31	Muttersprachler	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	32	obl		
+halten	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	32	halten	VERB	VVINF	VerbForm=Inf	26	xcomp		
+musste	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	33	müssen	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	32	aux		SpaceAfter=No
+.	1	7	Die sprach er zeitlebens mit Akzent, schriftlich wusste er sich aber bald so gut darin auszudrücken, dass jeder, der seine Herkunft nicht kannte, ihn für einen Muttersprachler halten musste.	34	.	PUNCT	$.		2	punct		
+Schließlich	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	1	schließlich	ADV	ADV		2	advmod		
+gab	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	2	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
+er	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	3	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
+den	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	4	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	6	det		
+alten	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	5	alt	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	6	amod		
+Beruf	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	6	Beruf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	2	obj		
+zugunsten	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	7	zugunsten	ADP	NE	Case=Gen|Gender=Fem|Number=Sing	11	case		
+seiner	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	8	sein	DET	PPOSAT	Case=Gen|Gender=Fem|Number=Plur|Poss=Yes	11	det:poss		
+neu	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	9	neu	ADJ	CARD	NumType=Card	10	advmod		
+gefundenen	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	10	gefunden	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Plur	11	amod		
+Fähigkeiten	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	11	Fähigkeit	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	6	nmod		
+ganz	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	12	ganz	ADV	ADV		2	advmod		
+auf	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	13	auf	ADP	PTKVZ		2	compound:prt		SpaceAfter=No
+,	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	14	,	PUNCT	$,		22	punct		
+aus	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	15	aus	ADP	APPR		17	case		
+dessen	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	16	der	DET	PDAT	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	17	det		
+Erfahrungen	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	17	Erfahrung	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	22	obl		
+er	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	18	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	22	nsubj		
+aber	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	19	aber	ADV	ADV		22	advmod		
+weiterhin	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	20	weiterhin	ADV	ADV		22	advmod		
+gern	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	21	gern	ADV	ADV		22	advmod		
+schöpfte	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	22	schöpfen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj		SpaceAfter=No
+.	1	8	Schließlich gab er den alten Beruf zugunsten seiner neu gefundenen Fähigkeiten ganz auf, aus dessen Erfahrungen er aber weiterhin gern schöpfte.	23	.	PUNCT	$.		2	punct		SpacesAfter=\n
+</text>												
+</doc>												
