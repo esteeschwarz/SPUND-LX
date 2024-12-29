@@ -999,3 +999,71 @@ kwic_df <- data.table(
 # Display the KWIC dataframe
 print(kwic_df)
 
+############################
+### new nosketch vrt essai
+
+text.dir<-"~/Documents/GitHub/SPUND-LX/play/data"
+f<-list.files(text.dir)
+fns<-paste(text.dir,f,sep = "/")
+library(tools)
+library(pbapply)
+library(abind)
+fns.e<-file_ext(fns)=="txt"
+fns<-fns[fns.e]
+get.sent.div<-function(id,n){
+  df<-pos.df
+  m<-df$doc_id==id
+  cat(id,".",n,"\n")
+  #m<-doc.u==p
+  doc.here<-which(m)
+  m
+  df.es<-df[m,]
+  s.id<-df.es$sentence_id[1]
+  df.start<-df.es[1,]
+  df.start[1,]<-""
+  # s.tag<-paste0('<s timestamp="',x$timestamp,'" sent_id ="',paste0(chunk,'.',x$comment_id),'.',s.id,'" author="',x$author,'" url="',x$url,'" url_id="',chunk,'" date="',x$date,'" upvotes="',x$upvotes,'">')
+  s.tag<-paste0('<doc id="',n,'">')
+  t.u<-unique(s.tag)
+  s.tag.s<-s.tag[1]
+  s.tag.s
+  df.start$token<-s.tag.s
+  df.end<-df.start
+  df.end$token<-'</doc>'
+  df.out<-rbind(df.start,df.es,df.end)
+  write.table(df.out,paste0("testout/vrt-",n,".csv"))
+  
+  return(data.frame(df.out))
+}
+  fetch.pos<-function(file,fn){
+  t<-readLines(file)
+  pos.l<-get.ann.df(model.dir = "~/Documents/GitHub/SPUND-LX/intLX/createcorp/modeldir",input = t,output = F)
+  pos.df$doc_id<-paste0("url",fn,".",pos.l$doc_id)
+  doc.id<-pos.df$doc_id
+  doc.id.u<-unique(doc.id)
+  df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {
+    get.sent.div(doc.id.u[[i]], i)
+  })
+  # write.table(as.data.frame(df.ex.l,paste0("testout-",fn,".csv")))
+  return(df.ex.l)
+  }
+#       return(pos.df)
+# }
+#?lapply
+# Use lapply() with an anonymous function to pass both the element and its index
+# my_function <- function(element, index) {
+#   return(paste("Element:", element, "Index:", index))
+# }
+# 
+# result <- lapply(seq_along(my_list), function(i) {
+#   my_function(my_list[[i]], i)
+# })
+df.ex.l<-pblapply(seq_along(fns), function(i) {
+    fetch.pos(fns[[i]], i)
+  })
+df.ex<-abind::abind(df.ex.l,along = 1)
+df.ex<-data.frame(df.ex)
+
+
+
+
+

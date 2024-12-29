@@ -208,6 +208,10 @@ xml<-readLines(vrt.ns)
 xml<-c('<?xml version="1.0" encoding="UTF-8"?>',paste0('<doc id="url#',url,'">'),xml,'</doc>')
 writeLines(xml,vrt.ns)
 chunk
-}
+   }
+  ?writeLines
+  ?library
 ########################################################
 ########################################################
+library(clipr)
+write_clip(colnames(head.doc))  
