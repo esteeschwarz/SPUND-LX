@@ -1,6 +1,29 @@
 ############################
 ### new nosketch vrt essai
-source("~/Documents/GitHub/SPUND-LX/intLX/createcorp/functions.R")
+#source("~/Documents/GitHub/SPUND-LX/intLX/createcorp/functions.R")
+### embed script function
+library(udpipe)
+get.ann.df<-function(model.dir,input,output){
+  t<-input
+  #t<-readLines(text)
+  #model.dir<-"./modeldir"
+  #dir.create(model.dir)
+  #udpipe::udpipe_download_model("german-gsd",model_dir = model.dir)
+  model<-list.files(model.dir)
+  model<-paste(model.dir,model[1],sep = "/")
+  #print(model)
+  model<-udpipe::udpipe_load_model(model)
+  pos1<-udpipe_annotate(model,t)
+  pos.df<-as.data.frame(pos1)
+#  pos.df$timestamp<-unique(meta$timestamp)
+  return(pos.df)
+}
+cat("function(model.dir,input(character),output(F))\n")
+#get.ann.df
+# library(readr)
+# write_tsv(pos.df,output)
+#?write_tsv
+#}
 text.dir<-"~/Documents/GitHub/SPUND-LX/play/data"
 f<-list.files(text.dir)
 fns<-paste(text.dir,f,sep = "/")
@@ -15,6 +38,8 @@ get.sent.div<-function(x,id,n){
   m<-df$sentence_id==id
   cat("\nsent:",id,".",n,"\n")
   df.es<-df[m,]
+  df.es$doc_id<-paste0("pid:",id,".",df.es$doc_id)
+  
   s.id<-id
   df.start<-df.es[1,]
   df.start[1,]<-""
@@ -40,6 +65,8 @@ get.doc.div<-function(x,id,n){
   doc.here<-which(m)
   m
   df.es<-df[m,c(6,2:5,7:length(df))]
+  df.es$doc_id<-paste0(id,".",df.es$doc_id)
+
   sent.id<-df.es$sentence_id
   sent.id.u<-unique(sent.id)
   sent.df<-pblapply(seq_along(sent.id.u), function(i) {
@@ -65,7 +92,7 @@ get.doc.div<-function(x,id,n){
 fetch.pos<-function(file,fn){
   t<-readLines(file)
   pos.df<-get.ann.df(model.dir = "~/Documents/GitHub/SPUND-LX/intLX/createcorp/modeldir",input = t,output = F)
-  pos.df$doc_id<-paste0("url",fn,".",pos.df$doc_id)
+  pos.df$doc_id<-paste0(fn,".",gsub("doc","",pos.df$doc_id))
   doc.id<-pos.df$doc_id
   doc.id.u<-unique(doc.id)
   df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {

@@ -1,233 +1,233 @@
-<doc id="4">												
-<text id="url4.doc1">												
-<s id="1">												
-Einer	1	1	Einer, der auf der Flucht war	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root		SpaceAfter=No
-,	1	1	Einer, der auf der Flucht war	2	,	PUNCT	$,		6	punct		
-der	1	1	Einer, der auf der Flucht war	3	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	6	nsubj		
-auf	1	1	Einer, der auf der Flucht war	4	auf	ADP	APPR		6	case		
-der	1	1	Einer, der auf der Flucht war	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det		
-Flucht	1	1	Einer, der auf der Flucht war	6	Flucht	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	1	nmod		
-war	1	1	Einer, der auf der Flucht war	7	sein	AUX	ADV		1	cop		SpacesAfter=\n
-</s>												
-</text>												
-<text id="url4.doc2">												
-<s id="1">												
-Schon	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	1	schon	ADV	ADV		3	advmod		
-in	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	2	in	ADP	APPR		3	case		
-Schulzeiten	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	3	Schulzeiten	PROPN	NN	Case=Dat|Gender=Fem|Number=Plur	4	obl		
-fielen	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	4	fallen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	0	root		
-seine	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	5	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Plur|Poss=Yes	6	det:poss		
-Gedichte	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	6	Gedicht	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	4	nsubj		
-den	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	8	det		
-Lehrern	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	8	Lehrer	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	4	iobj		
-auf	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	9	auf	ADP	PTKVZ		4	compound:prt		SpaceAfter=No
-.	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	10	.	PUNCT	$.		4	punct		
-</s>												
-<s id="2">												
-Es	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	nsubj		
-zog	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	2	ziehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
-ihn	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	3	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	obj		
-mit	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	4	mit	ADP	$,	NumType=Card	5	case		
-Macht	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	5	Macht	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obl		
-in	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	6	in	ADP	APPR		8	case		
-die	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	7	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	8	det		
-Hauptstadt	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	8	Hauptstadt	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obl		SpaceAfter=No
-,	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	9	,	PUNCT	$,		17	punct		
-und	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	10	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	17	cc		
-durch	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	11	durch	ADP	APPR		13	case		
-die	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	12	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det		
-Vermittlung	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	13	Vermittlung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	17	obl		
-eines	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	14	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	16	det		
-gemeinsamen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	15	gemeinsam	ADJ	ADJA	Case=Gen|Gender=Fem|Number=Sing	16	amod		
-Freundes	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	16	Freund	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	13	nmod		
-nahm	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	17	nehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj		
-er	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	18	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	17	nsubj		
-einen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	19	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	20	det		
-Briefkontakt	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	20	Briefkontakt	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	17	obj		
-mit	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	21	mit	ADP	$(		26	case		
-einem	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	22	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	26	det		
-um	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	23	um	ADP	NN	Case=Dat|Gender=Neut|Number=Sing	25	case		
-zehn	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	24	zehn	NUM	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	25	nummod		
-Jahre	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	25	Jahr	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	26	nmod		
-Älteren	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	26	Ältere	PROPN	ADJA	Case=Gen|Gender=Neut|Number=Sing	20	nmod		
-auf	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	27	auf	ADP	PTKVZ		17	compound:prt		SpaceAfter=No
-,	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	28	,	PUNCT	$,		39	punct		
-der	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	29	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	39	nsubj		
-sich	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	30	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	39	obj		
-dort	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	31	dort	ADV	ADV		39	advmod		
-bereits	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	32	bereits	ADV	ADV		39	advmod		
-einen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	33	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	34	det		
-Ruf	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	34	Ruf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	39	obj		
-in	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	35	in	ADP	APPR		38	case		
-der	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	36	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	38	det		
-literarischen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	37	literarisch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	38	amod		
-Welt	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	38	Welt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	34	nmod		
-erworben	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	39	erwerben	VERB	VVPP	VerbForm=Part	2	acl		
-hatte	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	40	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	39	aux		SpaceAfter=No
-.	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	41	.	PUNCT	$.		2	punct		
-</s>												
-<s id="3">												
-Die	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det		
-Verbindung	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	2	Verbindung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	14	nsubj		
-zwischen	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	3	zwischen	ADP	ADJA	Case=Acc|Gender=Masc|Number=Sing	4	case		
-beiden	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	4	beide	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	2	nmod		SpaceAfter=No
-,	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	5	,	PUNCT	$,		4	punct		
-die	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	6	der	PRON	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	8	nsubj		
-weit	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	7	weit	ADJ	NN	Case=Acc|Gender=Fem|Number=Plur	8	advmod		
-mehr	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	8	mehr	ADV	ADV		5	advmod		
-war	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	9	sein	AUX	ADV		14	cop		
-als	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	10	als	ADP	KOKOM		14	case		
-eine	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	11	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det		
-rein	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	12	rein	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	13	advmod		
-poetische	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	13	poetisch	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	14	amod		
-Symbiose	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	14	Symbiose	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No
-,	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	15	,	PUNCT	$,		16	punct		
-prägt	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	16	prägen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	parataxis		
-die	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	17	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	18	det		
-Literatur	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	18	Literatur	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	16	nsubj		
-bis	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	19	bis	ADP	APPR		20	case		
-heute	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	20	heute	ADV	ADV		16	advmod		SpaceAfter=No
-.	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	21	.	PUNCT	$.		14	punct		
-</s>												
-<s id="4">												
-Die	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	3	det		
-stürmische	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	2	stürmische	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	3	amod		
-Beziehung	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	3	Beziehung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	nsubj		
-zwischen	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	4	zwischen	ADP	ADJA	Case=Acc|Gender=Masc|Number=Sing	7	case		
-dem	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det		
-jungen	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	6	jung	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	7	amod		
-Enfant	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	7	Enfant	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	8	nmod		
-terrible	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	8	terribel	ADJ	NE	Foreign=Yes	11	amod		
-und	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	9	und	CCONJ	NE	Foreign=Yes	11	cc		
-dem	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	10	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det		
-Älteren	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	11	Ältere	PROPN	NN	Case=Dat|Gender=Masc|Number=Sing	3	nmod		
-führte	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	12	führen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
-zur	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	13-14								
-zu	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	13	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	15	case		
-der	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	14	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	15	det		
-Flucht	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	15	Flucht	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	12	obl		
-der	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	16	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	18	det		
-beiden	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	17	beide	PRON	PIAT	Case=Gen|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	18	amod		
-Dichter	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	18	Dichter	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	15	nmod		
-ins	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	19-20								
-in	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	19	in	ADP	APPR		21	case		
-das	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	20	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	21	det		
-Ausland	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	21	Ausland	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	12	obl		SpaceAfter=No
-,	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	22	,	PUNCT	$,		25	punct		
-doch	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	23	doch	ADV	KON		25	advmod		
-dort	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	24	dort	ADV	ADV		25	advmod		
-kam	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	25	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	conj		
-es	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	26	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	25	nsubj		
-zu	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	27	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	29	case		
-einer	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	28	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	29	det		
-Gewalttat	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	29	Gewalttat	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	25	obl		SpaceAfter=No
-.	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	30	.	PUNCT	$.		12	punct		
-</s>												
-<s id="5">												
-Als	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	1	als	SCONJ	KOUS		6	mark		
-er	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	2	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj		
-etwa	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	3	etwa	ADV	ADV		4	advmod		
-20	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	4	20	NUM	CARD	NumType=Card	5	nummod		
-Jahre	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	5	Jahr	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	6	nmod		
-alt	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	6	alt	ADJ	ADJD		9	advcl		
-war	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	7	sein	AUX	TRUNC	Case=Acc|Gender=Fem|Number=Sing	6	cop		SpaceAfter=No
-,	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	8	,	PUNCT	$,		6	punct		
-kehrte	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	9	kehren	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
-der	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	10	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det		
-Gesuchte	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	11	Gesuchte	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	9	nsubj		
-der	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	12	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det		
-Dichtkunst	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	13	Dichtkunst	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	11	nmod		
-abrupt	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	14	abrupen	VERB	ADV		9	acl		
-den	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	15	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	16	det		
-Rücken	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	16	Rücken	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	14	obj		SpaceAfter=No
-.	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	17	.	PUNCT	$.		9	punct		
-</s>												
-<s id="6">												
-So	1	6	So, als hätte sie ihm nichts bedeutet.	1	so	ADV	NN	Case=Nom|Gender=Fem|Number=Sing	2	advmod		SpaceAfter=No
-,	1	6	So, als hätte sie ihm nichts bedeutet.	2	,	PUNCT	$,		8	punct		
-als	1	6	So, als hätte sie ihm nichts bedeutet.	3	als	SCONJ	KOUS		8	mark		
-hätte	1	6	So, als hätte sie ihm nichts bedeutet.	4	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux		
-sie	1	6	So, als hätte sie ihm nichts bedeutet.	5	sie	PRON	VVINF	VerbForm=Inf	8	nsubj		
-ihm	1	6	So, als hätte sie ihm nichts bedeutet.	6	er	PRON	PPER	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	iobj		
-nichts	1	6	So, als hätte sie ihm nichts bedeutet.	7	nichts	PRON	NN	Case=Acc|Gender=Masc|Number=Plur	8	obj		
-bedeutet	1	6	So, als hätte sie ihm nichts bedeutet.	8	bedeuten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No
-.	1	6	So, als hätte sie ihm nichts bedeutet.	9	.	PUNCT	$.		8	punct		
-</s>												
-<s id="7">												
-Er	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
-begann	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	2	beginnen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
-ein	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	3	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	5	det		
-neues	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	4	neu	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	5	amod		
-Leben	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	5	Leben	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obj		
-als	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	6	als	ADP	KOKOM		7	case		
-Abenteurer	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	7	Abenteurer	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	2	obl		
-und	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	8	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	9	cc		
-Geschäftsmann	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	9	Geschäftsmann	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	7	conj		SpaceAfter=No
-.	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	10	.	PUNCT	$.		2	punct		
-</s>												
-<s id="8">												
-London	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	1	London	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	14	nsubj		
-und	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	2	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	3	cc		
-Stuttgart	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	3	Stuttgart	PROPN	NE	Case=Gen|Gender=Neut|Number=Sing	1	conj		SpaceAfter=No
-,	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	4	,	PUNCT	$,		8	punct		
-wo	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	5	wo	ADV	NE	Case=Gen|Definite=Ind|Gender=Neut|Number=Plur|PronType=Ind	8	advmod		
-er	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	6	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	nsubj		
-Deutsch	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	7	deutsch	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	8	obj		
-lernen	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	8	lernen	VERB	VVINF	VerbForm=Inf	1	acl		
-wollte	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	9	wollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux		SpaceAfter=No
-,	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	10	,	PUNCT	$,		1	punct		
-waren	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	11	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	14	cop		
-die	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	12	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	14	det		
-ersten	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	13	erst	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Plur	14	amod		
-Stationen	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	14	Station	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	0	root		
-einer	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	15	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	17	det		
-längeren	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	16	lang	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	17	amod		
-Odyssee	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	17	Odysse	NOUN	NE	Case=Gen|Gender=Neut|Number=Sing	14	nmod		SpaceAfter=No
-.	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	18	.	PUNCT	$.		14	punct		
-</s>												
-<s id="9">												
-Er	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj		
-verdingte	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	2	verdingen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
-sich	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obj		
-unter	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	4	unter	ADP	ADJD		5	case		
-anderem	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	5	ander	PRON	PIS	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	2	obl		
-als	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	6	als	ADP	KOKOM		7	case		
-Soldat	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	7	Soldat	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	2	obl		
-einer	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	8	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	9	det		
-Kolonialarmee	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	9	Kolonialarmee	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	7	nmod		
-und	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	10	und	CCONJ	NE	Case=Gen|Gender=Masc|Number=Sing	12	cc		
-als	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	11	als	ADP	KOKOM		12	case		
-Angestellter	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	12	Angestellte	NOUN	NN	Case=Gen|Gender=Masc|Number=Plur	2	conj		
-einer	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	13	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det		
-Handelsfirma	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	14	Handelsfirma	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	12	nmod		SpaceAfter=No
-.	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	15	.	PUNCT	$.		2	punct		
-</s>												
-<s id="10">												
-Ein	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	2	det		
-Tumor	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	2	Tumor	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	3	nsubj		
-zwang	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	3	zwingen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root		
-ihn	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	4	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	obj		
-zur	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	5-6								
-zu	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	5	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	7	case		
-der	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	6	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det		
-Rückkehr	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	7	Rückkehr	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	3	obl		
-in	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	8	in	ADP	APPR		10	case		
-die	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	9	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det		
-Heimat	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	10	Heimat	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	7	nmod		SpaceAfter=No
-.	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	11	.	PUNCT	$.		3	punct		
-</s>												
-<s id="11">												
-Doch	1	11	Doch da war es für eine Heilung schon zu spät.	1	doch	CCONJ	KON		10	cc		
-da	1	11	Doch da war es für eine Heilung schon zu spät.	2	da	ADV	ADV		10	advmod		
-war	1	11	Doch da war es für eine Heilung schon zu spät.	3	sein	AUX	ADV		10	cop		
-es	1	11	Doch da war es für eine Heilung schon zu spät.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	10	nsubj		
-für	1	11	Doch da war es für eine Heilung schon zu spät.	5	für	ADP	APPR		7	case		
-eine	1	11	Doch da war es für eine Heilung schon zu spät.	6	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	7	det		
-Heilung	1	11	Doch da war es für eine Heilung schon zu spät.	7	Heilung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	10	obl		
-schon	1	11	Doch da war es für eine Heilung schon zu spät.	8	schon	ADV	ADV		10	advmod		
-zu	1	11	Doch da war es für eine Heilung schon zu spät.	9	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	mark		
-spät	1	11	Doch da war es für eine Heilung schon zu spät.	10	spaten	VERB	FM	Foreign=Yes	0	root		SpaceAfter=No
-.	1	11	Doch da war es für eine Heilung schon zu spät.	11	.	PUNCT	$.		10	punct		SpacesAfter=\n
-</s>												
-</text>												
-</doc>												
+<doc id="4">													
+<text id="4.1">													
+<s id="1">													
+Einer	1	1	Einer, der auf der Flucht war	1	ein	PRON	PIS	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Ind	0	root		SpaceAfter=No	pid:1.4.1.
+,	1	1	Einer, der auf der Flucht war	2	,	PUNCT	$,		6	punct			pid:1.4.1.
+der	1	1	Einer, der auf der Flucht war	3	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	6	nsubj			pid:1.4.1.
+auf	1	1	Einer, der auf der Flucht war	4	auf	ADP	APPR		6	case			pid:1.4.1.
+der	1	1	Einer, der auf der Flucht war	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	6	det			pid:1.4.1.
+Flucht	1	1	Einer, der auf der Flucht war	6	Flucht	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	1	nmod			pid:1.4.1.
+war	1	1	Einer, der auf der Flucht war	7	sein	AUX	ADV		1	cop		SpacesAfter=\n	pid:1.4.1.
+</s>													
+</text>													
+<text id="4.2">													
+<s id="1">													
+Schon	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	1	schon	ADV	ADV		3	advmod			pid:1.4.2.
+in	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	2	in	ADP	APPR		3	case			pid:1.4.2.
+Schulzeiten	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	3	Schulzeiten	PROPN	NN	Case=Dat|Gender=Fem|Number=Plur	4	obl			pid:1.4.2.
+fielen	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	4	fallen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:1.4.2.
+seine	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	5	sein	DET	PPOSAT	Case=Acc|Gender=Neut|Number=Plur|Poss=Yes	6	det:poss			pid:1.4.2.
+Gedichte	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	6	Gedicht	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	4	nsubj			pid:1.4.2.
+den	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	7	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	8	det			pid:1.4.2.
+Lehrern	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	8	Lehrer	NOUN	NN	Case=Dat|Gender=Masc|Number=Plur	4	iobj			pid:1.4.2.
+auf	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	9	auf	ADP	PTKVZ		4	compound:prt		SpaceAfter=No	pid:1.4.2.
+.	1	1	Schon in Schulzeiten fielen seine Gedichte den Lehrern auf.	10	.	PUNCT	$.		4	punct			pid:1.4.2.
+</s>													
+<s id="2">													
+Es	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:2.4.2.
+zog	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	2	ziehen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:2.4.2.
+ihn	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	3	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	obj			pid:2.4.2.
+mit	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	4	mit	ADP	$,	NumType=Card	5	case			pid:2.4.2.
+Macht	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	5	Macht	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obl			pid:2.4.2.
+in	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	6	in	ADP	APPR		8	case			pid:2.4.2.
+die	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	7	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	8	det			pid:2.4.2.
+Hauptstadt	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	8	Hauptstadt	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	2	obl		SpaceAfter=No	pid:2.4.2.
+,	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	9	,	PUNCT	$,		17	punct			pid:2.4.2.
+und	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	10	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	17	cc			pid:2.4.2.
+durch	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	11	durch	ADP	APPR		13	case			pid:2.4.2.
+die	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	12	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det			pid:2.4.2.
+Vermittlung	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	13	Vermittlung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	17	obl			pid:2.4.2.
+eines	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	14	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	16	det			pid:2.4.2.
+gemeinsamen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	15	gemeinsam	ADJ	ADJA	Case=Gen|Gender=Fem|Number=Sing	16	amod			pid:2.4.2.
+Freundes	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	16	Freund	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	13	nmod			pid:2.4.2.
+nahm	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	17	nehmen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj			pid:2.4.2.
+er	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	18	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	17	nsubj			pid:2.4.2.
+einen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	19	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	20	det			pid:2.4.2.
+Briefkontakt	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	20	Briefkontakt	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	17	obj			pid:2.4.2.
+mit	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	21	mit	ADP	$(		26	case			pid:2.4.2.
+einem	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	22	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	26	det			pid:2.4.2.
+um	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	23	um	ADP	NN	Case=Dat|Gender=Neut|Number=Sing	25	case			pid:2.4.2.
+zehn	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	24	zehn	NUM	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	25	nummod			pid:2.4.2.
+Jahre	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	25	Jahr	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	26	nmod			pid:2.4.2.
+Älteren	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	26	Ältere	PROPN	ADJA	Case=Gen|Gender=Neut|Number=Sing	20	nmod			pid:2.4.2.
+auf	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	27	auf	ADP	PTKVZ		17	compound:prt		SpaceAfter=No	pid:2.4.2.
+,	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	28	,	PUNCT	$,		39	punct			pid:2.4.2.
+der	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	29	der	PRON	PRELS	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	39	nsubj			pid:2.4.2.
+sich	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	30	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	39	obj			pid:2.4.2.
+dort	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	31	dort	ADV	ADV		39	advmod			pid:2.4.2.
+bereits	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	32	bereits	ADV	ADV		39	advmod			pid:2.4.2.
+einen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	33	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	34	det			pid:2.4.2.
+Ruf	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	34	Ruf	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	39	obj			pid:2.4.2.
+in	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	35	in	ADP	APPR		38	case			pid:2.4.2.
+der	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	36	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	38	det			pid:2.4.2.
+literarischen	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	37	literarisch	ADJ	ADJA	Case=Dat|Gender=Fem|Number=Sing	38	amod			pid:2.4.2.
+Welt	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	38	Welt	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	34	nmod			pid:2.4.2.
+erworben	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	39	erwerben	VERB	VVPP	VerbForm=Part	2	acl			pid:2.4.2.
+hatte	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	40	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	39	aux		SpaceAfter=No	pid:2.4.2.
+.	1	2	Es zog ihn mit Macht in die Hauptstadt, und durch die Vermittlung eines gemeinsamen Freundes nahm er einen Briefkontakt mit einem um zehn Jahre Älteren auf, der sich dort bereits einen Ruf in der literarischen Welt erworben hatte.	41	.	PUNCT	$.		2	punct			pid:2.4.2.
+</s>													
+<s id="3">													
+Die	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	2	det			pid:3.4.2.
+Verbindung	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	2	Verbindung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	14	nsubj			pid:3.4.2.
+zwischen	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	3	zwischen	ADP	ADJA	Case=Acc|Gender=Masc|Number=Sing	4	case			pid:3.4.2.
+beiden	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	4	beide	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	2	nmod		SpaceAfter=No	pid:3.4.2.
+,	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	5	,	PUNCT	$,		4	punct			pid:3.4.2.
+die	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	6	der	PRON	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	8	nsubj			pid:3.4.2.
+weit	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	7	weit	ADJ	NN	Case=Acc|Gender=Fem|Number=Plur	8	advmod			pid:3.4.2.
+mehr	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	8	mehr	ADV	ADV		5	advmod			pid:3.4.2.
+war	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	9	sein	AUX	ADV		14	cop			pid:3.4.2.
+als	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	10	als	ADP	KOKOM		14	case			pid:3.4.2.
+eine	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	11	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det			pid:3.4.2.
+rein	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	12	rein	ADJ	ADJA	Case=Acc|Gender=Fem|Number=Plur	13	advmod			pid:3.4.2.
+poetische	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	13	poetisch	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	14	amod			pid:3.4.2.
+Symbiose	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	14	Symbiose	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	0	root		SpaceAfter=No	pid:3.4.2.
+,	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	15	,	PUNCT	$,		16	punct			pid:3.4.2.
+prägt	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	16	prägen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	14	parataxis			pid:3.4.2.
+die	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	17	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	18	det			pid:3.4.2.
+Literatur	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	18	Literatur	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	16	nsubj			pid:3.4.2.
+bis	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	19	bis	ADP	APPR		20	case			pid:3.4.2.
+heute	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	20	heute	ADV	ADV		16	advmod		SpaceAfter=No	pid:3.4.2.
+.	1	3	Die Verbindung zwischen beiden, die weit mehr war als eine rein poetische Symbiose, prägt die Literatur bis heute.	21	.	PUNCT	$.		14	punct			pid:3.4.2.
+</s>													
+<s id="4">													
+Die	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	3	det			pid:4.4.2.
+stürmische	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	2	stürmische	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	3	amod			pid:4.4.2.
+Beziehung	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	3	Beziehung	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	nsubj			pid:4.4.2.
+zwischen	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	4	zwischen	ADP	ADJA	Case=Acc|Gender=Masc|Number=Sing	7	case			pid:4.4.2.
+dem	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	5	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det			pid:4.4.2.
+jungen	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	6	jung	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	7	amod			pid:4.4.2.
+Enfant	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	7	Enfant	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	8	nmod			pid:4.4.2.
+terrible	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	8	terribel	ADJ	NE	Foreign=Yes	11	amod			pid:4.4.2.
+und	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	9	und	CCONJ	NE	Foreign=Yes	11	cc			pid:4.4.2.
+dem	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	10	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det			pid:4.4.2.
+Älteren	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	11	Ältere	PROPN	NN	Case=Dat|Gender=Masc|Number=Sing	3	nmod			pid:4.4.2.
+führte	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	12	führen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:4.4.2.
+zur	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	13-14									pid:4.4.2.
+zu	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	13	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	15	case			pid:4.4.2.
+der	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	14	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	15	det			pid:4.4.2.
+Flucht	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	15	Flucht	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	12	obl			pid:4.4.2.
+der	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	16	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Plur|PronType=Art	18	det			pid:4.4.2.
+beiden	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	17	beide	PRON	PIAT	Case=Gen|Definite=Ind|Gender=Masc|Number=Plur|PronType=Ind	18	amod			pid:4.4.2.
+Dichter	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	18	Dichter	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	15	nmod			pid:4.4.2.
+ins	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	19-20									pid:4.4.2.
+in	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	19	in	ADP	APPR		21	case			pid:4.4.2.
+das	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	20	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	21	det			pid:4.4.2.
+Ausland	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	21	Ausland	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	12	obl		SpaceAfter=No	pid:4.4.2.
+,	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	22	,	PUNCT	$,		25	punct			pid:4.4.2.
+doch	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	23	doch	ADV	KON		25	advmod			pid:4.4.2.
+dort	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	24	dort	ADV	ADV		25	advmod			pid:4.4.2.
+kam	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	25	kommen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	conj			pid:4.4.2.
+es	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	26	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	25	nsubj			pid:4.4.2.
+zu	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	27	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	29	case			pid:4.4.2.
+einer	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	28	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	29	det			pid:4.4.2.
+Gewalttat	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	29	Gewalttat	NOUN	NN	Case=Dat|Gender=Neut|Number=Sing	25	obl		SpaceAfter=No	pid:4.4.2.
+.	1	4	Die stürmische Beziehung zwischen dem jungen Enfant terrible und dem Älteren führte zur Flucht der beiden Dichter ins Ausland, doch dort kam es zu einer Gewalttat.	30	.	PUNCT	$.		12	punct			pid:4.4.2.
+</s>													
+<s id="5">													
+Als	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	1	als	SCONJ	KOUS		6	mark			pid:5.4.2.
+er	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	2	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj			pid:5.4.2.
+etwa	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	3	etwa	ADV	ADV		4	advmod			pid:5.4.2.
+20	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	4	20	NUM	CARD	NumType=Card	5	nummod			pid:5.4.2.
+Jahre	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	5	Jahr	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	6	nmod			pid:5.4.2.
+alt	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	6	alt	ADJ	ADJD		9	advcl			pid:5.4.2.
+war	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	7	sein	AUX	TRUNC	Case=Acc|Gender=Fem|Number=Sing	6	cop		SpaceAfter=No	pid:5.4.2.
+,	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	8	,	PUNCT	$,		6	punct			pid:5.4.2.
+kehrte	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	9	kehren	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:5.4.2.
+der	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	10	der	DET	ART	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det			pid:5.4.2.
+Gesuchte	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	11	Gesuchte	NOUN	NN	Case=Nom|Gender=Neut|Number=Plur	9	nsubj			pid:5.4.2.
+der	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	12	der	DET	ART	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	13	det			pid:5.4.2.
+Dichtkunst	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	13	Dichtkunst	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	11	nmod			pid:5.4.2.
+abrupt	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	14	abrupen	VERB	ADV		9	acl			pid:5.4.2.
+den	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	15	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	16	det			pid:5.4.2.
+Rücken	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	16	Rücken	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	14	obj		SpaceAfter=No	pid:5.4.2.
+.	1	5	Als er etwa 20 Jahre alt war, kehrte der Gesuchte der Dichtkunst abrupt den Rücken.	17	.	PUNCT	$.		9	punct			pid:5.4.2.
+</s>													
+<s id="6">													
+So	1	6	So, als hätte sie ihm nichts bedeutet.	1	so	ADV	NN	Case=Nom|Gender=Fem|Number=Sing	2	advmod		SpaceAfter=No	pid:6.4.2.
+,	1	6	So, als hätte sie ihm nichts bedeutet.	2	,	PUNCT	$,		8	punct			pid:6.4.2.
+als	1	6	So, als hätte sie ihm nichts bedeutet.	3	als	SCONJ	KOUS		8	mark			pid:6.4.2.
+hätte	1	6	So, als hätte sie ihm nichts bedeutet.	4	haben	AUX	VAFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux			pid:6.4.2.
+sie	1	6	So, als hätte sie ihm nichts bedeutet.	5	sie	PRON	VVINF	VerbForm=Inf	8	nsubj			pid:6.4.2.
+ihm	1	6	So, als hätte sie ihm nichts bedeutet.	6	er	PRON	PPER	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	iobj			pid:6.4.2.
+nichts	1	6	So, als hätte sie ihm nichts bedeutet.	7	nichts	PRON	NN	Case=Acc|Gender=Masc|Number=Plur	8	obj			pid:6.4.2.
+bedeutet	1	6	So, als hätte sie ihm nichts bedeutet.	8	bedeuten	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root		SpaceAfter=No	pid:6.4.2.
+.	1	6	So, als hätte sie ihm nichts bedeutet.	9	.	PUNCT	$.		8	punct			pid:6.4.2.
+</s>													
+<s id="7">													
+Er	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:7.4.2.
+begann	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	2	beginnen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:7.4.2.
+ein	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	3	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	5	det			pid:7.4.2.
+neues	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	4	neu	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	5	amod			pid:7.4.2.
+Leben	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	5	Leben	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	2	obj			pid:7.4.2.
+als	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	6	als	ADP	KOKOM		7	case			pid:7.4.2.
+Abenteurer	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	7	Abenteurer	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	2	obl			pid:7.4.2.
+und	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	8	und	CCONJ	NE	Case=Nom|Gender=Masc|Number=Sing	9	cc			pid:7.4.2.
+Geschäftsmann	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	9	Geschäftsmann	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	7	conj		SpaceAfter=No	pid:7.4.2.
+.	1	7	Er begann ein neues Leben als Abenteurer und Geschäftsmann.	10	.	PUNCT	$.		2	punct			pid:7.4.2.
+</s>													
+<s id="8">													
+London	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	1	London	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	14	nsubj			pid:8.4.2.
+und	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	2	und	CCONJ	NN	Case=Acc|Gender=Neut|Number=Plur	3	cc			pid:8.4.2.
+Stuttgart	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	3	Stuttgart	PROPN	NE	Case=Gen|Gender=Neut|Number=Sing	1	conj		SpaceAfter=No	pid:8.4.2.
+,	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	4	,	PUNCT	$,		8	punct			pid:8.4.2.
+wo	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	5	wo	ADV	NE	Case=Gen|Definite=Ind|Gender=Neut|Number=Plur|PronType=Ind	8	advmod			pid:8.4.2.
+er	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	6	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	8	nsubj			pid:8.4.2.
+Deutsch	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	7	deutsch	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	8	obj			pid:8.4.2.
+lernen	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	8	lernen	VERB	VVINF	VerbForm=Inf	1	acl			pid:8.4.2.
+wollte	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	9	wollen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	8	aux		SpaceAfter=No	pid:8.4.2.
+,	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	10	,	PUNCT	$,		1	punct			pid:8.4.2.
+waren	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	11	sein	AUX	VAFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	14	cop			pid:8.4.2.
+die	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	12	der	DET	ART	Case=Nom|Definite=Def|Gender=Fem|Number=Plur|PronType=Art	14	det			pid:8.4.2.
+ersten	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	13	erst	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Plur	14	amod			pid:8.4.2.
+Stationen	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	14	Station	NOUN	NN	Case=Nom|Gender=Fem|Number=Plur	0	root			pid:8.4.2.
+einer	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	15	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	17	det			pid:8.4.2.
+längeren	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	16	lang	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	17	amod			pid:8.4.2.
+Odyssee	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	17	Odysse	NOUN	NE	Case=Gen|Gender=Neut|Number=Sing	14	nmod		SpaceAfter=No	pid:8.4.2.
+.	1	8	London und Stuttgart, wo er Deutsch lernen wollte, waren die ersten Stationen einer längeren Odyssee.	18	.	PUNCT	$.		14	punct			pid:8.4.2.
+</s>													
+<s id="9">													
+Er	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	1	er	PRON	PPER	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj			pid:9.4.2.
+verdingte	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	2	verdingen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:9.4.2.
+sich	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obj			pid:9.4.2.
+unter	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	4	unter	ADP	ADJD		5	case			pid:9.4.2.
+anderem	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	5	ander	PRON	PIS	Case=Dat|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	2	obl			pid:9.4.2.
+als	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	6	als	ADP	KOKOM		7	case			pid:9.4.2.
+Soldat	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	7	Soldat	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	2	obl			pid:9.4.2.
+einer	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	8	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	9	det			pid:9.4.2.
+Kolonialarmee	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	9	Kolonialarmee	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	7	nmod			pid:9.4.2.
+und	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	10	und	CCONJ	NE	Case=Gen|Gender=Masc|Number=Sing	12	cc			pid:9.4.2.
+als	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	11	als	ADP	KOKOM		12	case			pid:9.4.2.
+Angestellter	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	12	Angestellte	NOUN	NN	Case=Gen|Gender=Masc|Number=Plur	2	conj			pid:9.4.2.
+einer	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	13	ein	DET	ART	Case=Gen|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	14	det			pid:9.4.2.
+Handelsfirma	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	14	Handelsfirma	NOUN	NN	Case=Gen|Gender=Fem|Number=Sing	12	nmod		SpaceAfter=No	pid:9.4.2.
+.	1	9	Er verdingte sich unter anderem als Soldat einer Kolonialarmee und als Angestellter einer Handelsfirma.	15	.	PUNCT	$.		2	punct			pid:9.4.2.
+</s>													
+<s id="10">													
+Ein	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	1	ein	DET	ART	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	2	det			pid:10.4.2.
+Tumor	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	2	Tumor	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	3	nsubj			pid:10.4.2.
+zwang	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	3	zwingen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root			pid:10.4.2.
+ihn	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	4	er	PRON	PPER	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	obj			pid:10.4.2.
+zur	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	5-6									pid:10.4.2.
+zu	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	5	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	7	case			pid:10.4.2.
+der	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	6	der	DET	ART	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	7	det			pid:10.4.2.
+Rückkehr	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	7	Rückkehr	NOUN	NN	Case=Dat|Gender=Fem|Number=Sing	3	obl			pid:10.4.2.
+in	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	8	in	ADP	APPR		10	case			pid:10.4.2.
+die	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	9	der	DET	ART	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det			pid:10.4.2.
+Heimat	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	10	Heimat	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	7	nmod		SpaceAfter=No	pid:10.4.2.
+.	1	10	Ein Tumor zwang ihn zur Rückkehr in die Heimat.	11	.	PUNCT	$.		3	punct			pid:10.4.2.
+</s>													
+<s id="11">													
+Doch	1	11	Doch da war es für eine Heilung schon zu spät.	1	doch	CCONJ	KON		10	cc			pid:11.4.2.
+da	1	11	Doch da war es für eine Heilung schon zu spät.	2	da	ADV	ADV		10	advmod			pid:11.4.2.
+war	1	11	Doch da war es für eine Heilung schon zu spät.	3	sein	AUX	ADV		10	cop			pid:11.4.2.
+es	1	11	Doch da war es für eine Heilung schon zu spät.	4	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	10	nsubj			pid:11.4.2.
+für	1	11	Doch da war es für eine Heilung schon zu spät.	5	für	ADP	APPR		7	case			pid:11.4.2.
+eine	1	11	Doch da war es für eine Heilung schon zu spät.	6	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	7	det			pid:11.4.2.
+Heilung	1	11	Doch da war es für eine Heilung schon zu spät.	7	Heilung	NOUN	NN	Case=Acc|Gender=Fem|Number=Sing	10	obl			pid:11.4.2.
+schon	1	11	Doch da war es für eine Heilung schon zu spät.	8	schon	ADV	ADV		10	advmod			pid:11.4.2.
+zu	1	11	Doch da war es für eine Heilung schon zu spät.	9	zu	PART	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	10	mark			pid:11.4.2.
+spät	1	11	Doch da war es für eine Heilung schon zu spät.	10	spaten	VERB	FM	Foreign=Yes	0	root		SpaceAfter=No	pid:11.4.2.
+.	1	11	Doch da war es für eine Heilung schon zu spät.	11	.	PUNCT	$.		10	punct		SpacesAfter=\n	pid:11.4.2.
+</s>													
+</text>													
+</doc>													
