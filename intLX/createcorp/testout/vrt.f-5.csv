@@ -1,7 +1,25 @@
-<doc id="5">													
-<text id="5.1">													
-<s id="1">													
-NA	1	1	NA	1	na	PROPN	XY	NumType=Card	0	root		SpacesAfter=\n	pid:5.1.1
-</s>													
-</text>													
-</doc>													
+<doc id="5">														
+<text id="5.1">														
+<s id="1">														
+Klapp	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	1	Klapp	PROPN	ADJD		4	nmod		SpaceAfter=No	ClausKlebot	pid:5.1.1
+'	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	2	'	PUNCT	$(		1	punct			ClausKlebot	pid:5.1.1
+die	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	3	der	DET	PDS	Case=Nom|Number=Plur|PronType=Dem	4	det			ClausKlebot	pid:5.1.1
+Antworten	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	4	antworten	NOUN	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	0	root			ClausKlebot	pid:5.1.1
+auf	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	5	auf	ADP	APPR		7	case			ClausKlebot	pid:5.1.1
+diesen	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	6	dies	PRON	PDAT	Case=Acc|Gender=Masc|Number=Sing|PronType=Dem	7	det			ClausKlebot	pid:5.1.1
+Kommentar	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	7	Kommentar	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	4	obl			ClausKlebot	pid:5.1.1
+auf	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	8	auf	ADP	PTKVZ		4	compound:prt		SpaceAfter=No	ClausKlebot	pid:5.1.1
+,	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	9	,	PUNCT	$,		17	punct			ClausKlebot	pid:5.1.1
+um	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	10	um	ADP	KOUI		17	mark			ClausKlebot	pid:5.1.1
+zum	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	11-12									ClausKlebot	pid:5.1.1
+zu	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	11	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	13	case			ClausKlebot	pid:5.1.1
+dem	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det			ClausKlebot	pid:5.1.1
+Text	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	13	Text	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	17	obl			ClausKlebot	pid:5.1.1
+des	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	14	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	15	det			ClausKlebot	pid:5.1.1
+Artikels	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	15	Artikel	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	13	nmod			ClausKlebot	pid:5.1.1
+zu	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	16	zu	PART	NE	Case=Gen|Gender=Masc|Number=Sing	17	mark			ClausKlebot	pid:5.1.1
+kommen	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	17	kommen	VERB	VVINF	VerbForm=Inf	4	advcl		SpaceAfter=No	ClausKlebot	pid:5.1.1
+.	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	18	.	PUNCT	$.		4	punct		SpacesAfter=\n	ClausKlebot	pid:5.1.1
+</s>														
+</text>														
+</doc>														

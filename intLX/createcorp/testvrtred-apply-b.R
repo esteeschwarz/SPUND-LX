@@ -94,11 +94,19 @@ fetch.pos<-function(file,i,data){
   t<-file
   fn<-i
   pos.df<-get.ann.df(model.dir = "~/Documents/GitHub/SPUND-LX/intLX/createcorp/modeldir",input = t,output = F)
-  author<-data$author[i]
-  timestamp<-data$timestamp[i]
+  author<-data[[1]]
+  cat("\ndata:",fn,"author:",author,"timestamp:",data[[2]],"\n")
+  #print(author)
+  print(data)
+  print(timestamp<-data[[2]])
   pos.df$doc_id<-paste0(i,".",gsub("doc","",pos.df$doc_id))
   pos.df$author<-author
   pos.df$timestamp<-timestamp
+  pos.df$date<-data$date
+  pos.df$url<-data$url
+  pos.df$score<-data$score
+  pos.df$com_id<-data$com_id
+  
   doc.id<-pos.df$doc_id
   doc.id.u<-unique(doc.id)
   df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {
@@ -135,14 +143,39 @@ url.sub.df<-com.df[com.df$url%in%url.sub,]
 # df.ex.l<-pblapply(seq_along(fns), function(i) {
 #   fetch.pos(fns[[i]], i)
 # })
-df.ex.l<-pblapply(seq_along(url.sub.df[1:5]), function(i) {
-  comments<-url.sub.df$comment[url.sub.df$url==url.sub[i]]
-  author<-url.sub.df$author[url.sub.df$url==url.sub[i]]
-  timestamp<-url.sub.df$timestamp[url.sub.df$url==url.sub[i]]
-  print(author)
-  print(timestamp)
-  fetch.pos(comments[[i]], i,data=list(author,timestamp))
+df.ex.l<-pblapply(seq_along(url.sub.df[1:2]), function(i) {
+  #comments<-url.sub.df$comment[url.sub.df$url==url.sub[i]]
+  comments<-url.sub.df[i,]
+  print(length(comments))
+#  author<-url.sub.df$author[url.sub.df$url==url.sub[i]]
+ # timestamp<-url.sub.df$timestamp[url.sub.df$url==url.sub[i]]
+  print(author<-comments$author)
+  print(timestamp<-comments$timestamp)
+  print(score<-comments$score)
+  print(com_id<-comments$comment_id)
+  print(url<-comments$url)
+  print(date<-comments$date)
+  
+  print(comment<-comments$comment)
+ # com.ex<-pblapply(seq_along(1:5),function(c){
+    # author<-url.sub.df$author[url.sub.df$url==url.sub[c]]
+    # timestamp<-url.sub.df$timestamp[url.sub.df$url==url.sub[c]]
+   # author<-comments[[c]]$author
+    #author<-"sample1"
+    #timestamp<-"sampletime"
+    print(i)
+    #print(comments[c,])
+    print(comment)
+   # timestamp<-comment$timestamp[c]
+    #author<-comment$author[c]
+    # com.x<-fetch.pos(comments[[c]], c,data=list(author,timestamp))
+    com.x<-fetch.pos(comment, i,data=list(author=author,timestamp=timestamp,date=date,url=url,score=score,com_id=com_id))
+    
+#  })
+#  fetch.pos(comments[[i]], i,data=list(author,timestamp))
+  return(com.x)
 })
+#df.ex<-abind::abind(df.ex.l[[1]],along = 1)
 df.ex<-abind::abind(df.ex.l,along = 1)
 df.ex<-data.frame(df.ex)
 write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/003.csv",sep = "\t",quote = F,row.names = F,col.names = F,na="")
