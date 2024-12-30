@@ -100,10 +100,10 @@ fetch.pos<-function(file,i,data){
   print(data)
   print(timestamp<-data[[2]])
   pos.df$doc_id<-paste0(i,".",gsub("doc","",pos.df$doc_id))
-  pos.df$author<-author
+  #pos.df$author<-author
   pos.df$timestamp<-timestamp
   pos.df$date<-data$date
-  pos.df$url<-data$url
+  url<-data$url
   pos.df$score<-data$score
   pos.df$com_id<-data$com_id
   
@@ -115,9 +115,11 @@ fetch.pos<-function(file,i,data){
   df.write<-as.data.frame(abind(df.ex.l,along = 1))
   # mna<-is.na(df.write$sentence)
   # df.ex.l<-df.write[!mna,]
-  df.write<-rbind(c(paste0('<doc id="',fn,'">'),rep("",length(df.write)-1)),df.write,
+  df.write<-rbind(c(paste0('<doc id="',fn,'" url="',url,'" author="',author,'">'),
+                    rep("",length(df.write)-1)),df.write,
                   c('</doc>',rep("",length(df.write)-1)))
-  write.table(df.write,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F,na="")
+### > this to write vrt for each url
+    # write.table(df.write,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F,na="")
   return(abind(df.write,along = 1))
 }
 #?write.table
@@ -137,14 +139,19 @@ wd<-"~/boxHKW/21S/DH/local/SPUND/intLX"
 load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 urls<-com.df$url
 url.u<-unique(urls)
-url.sub<-url.u[1:3]
+url.sub<-url.u[1:400] # 1:10:411 obs
 url.sub.df<-com.df[com.df$url%in%url.sub,]
 
 # df.ex.l<-pblapply(seq_along(fns), function(i) {
 #   fetch.pos(fns[[i]], i)
 # })
-df.ex.l<-pblapply(seq_along(url.sub.df[1:2]), function(i) {
-  #comments<-url.sub.df$comment[url.sub.df$url==url.sub[i]]
+##################################################################
+### > here adapt change to length of url.sub.df to get all url pos
+# df.ex.url<-pblapply(seq_along(1:2),function(url){
+#   cat("url:",url,"\n")
+#df.ex.l<-pblapply(seq_along(url.sub.df[url]), function(i) {
+  df.ex.l<-pblapply(seq_along(1:length(url.sub)), function(i) {
+    #comments<-url.sub.df$comment[url.sub.df$url==url.sub[i]]
   comments<-url.sub.df[i,]
   print(length(comments))
 #  author<-url.sub.df$author[url.sub.df$url==url.sub[i]]
@@ -157,30 +164,18 @@ df.ex.l<-pblapply(seq_along(url.sub.df[1:2]), function(i) {
   print(date<-comments$date)
   
   print(comment<-comments$comment)
- # com.ex<-pblapply(seq_along(1:5),function(c){
-    # author<-url.sub.df$author[url.sub.df$url==url.sub[c]]
-    # timestamp<-url.sub.df$timestamp[url.sub.df$url==url.sub[c]]
-   # author<-comments[[c]]$author
-    #author<-"sample1"
-    #timestamp<-"sampletime"
     print(i)
-    #print(comments[c,])
     print(comment)
-   # timestamp<-comment$timestamp[c]
-    #author<-comment$author[c]
-    # com.x<-fetch.pos(comments[[c]], c,data=list(author,timestamp))
     com.x<-fetch.pos(comment, i,data=list(author=author,timestamp=timestamp,date=date,url=url,score=score,com_id=com_id))
-    
-#  })
-#  fetch.pos(comments[[i]], i,data=list(author,timestamp))
   return(com.x)
 })
+#})
 #df.ex<-abind::abind(df.ex.l[[1]],along = 1)
 df.ex<-abind::abind(df.ex.l,along = 1)
 df.ex<-data.frame(df.ex)
-write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/003.csv",sep = "\t",quote = F,row.names = F,col.names = F,na="")
+write.table(df.ex,"~/Documents/GitHub/SPUND-LX/intLX/createcorp/vertical/source/004-url-100.csv",sep = "\t",quote = F,row.names = F,col.names = F,na="")
 ### wks.
-
+#}) #end url lapply
 
 
 

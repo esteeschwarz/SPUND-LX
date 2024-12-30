@@ -1,25 +1,0 @@
-<doc id="14.1.1">													
-<text id="14.1.1">													
-<s id="1">													
-DDoS	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	1	DDoS	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	nsubj			pid:1.14.1.1.
-nutzt	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	2	nutzen	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			pid:1.14.1.1.
-man	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	3	man	NOUN	NE	Case=Nom|Gender=Masc|Number=Sing	2	obj			pid:1.14.1.1.
-ausschließlich	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	4	ausschließlich	ADJ	ADV		2	advmod			pid:1.14.1.1.
-alleine	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	5	alleine	ADV	ADV		2	advmod		SpaceAfter=No	pid:1.14.1.1.
-,	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	6	,	PUNCT	$,		17	punct			pid:1.14.1.1.
-Botnetze	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	7	Botnetz	NOUN	NN	Case=Acc|Gender=Neut|Number=Plur	17	nsubj:pass			pid:1.14.1.1.
-werden	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	8	werden	AUX	NE	Case=Acc|Number=Plur	17	aux:pass			pid:1.14.1.1.
-schließlich	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	9	schließlich	ADV	ADV		17	advmod			pid:1.14.1.1.
-im	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	10-11									pid:1.14.1.1.
-in	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	10	in	ADP	APPR		13	case			pid:1.14.1.1.
-dem	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	11	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det			pid:1.14.1.1.
-10.000er	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	12	10.000er	ADJ	ADJA		13	amod			pid:1.14.1.1.
-Bündel	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	13	Bündel	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	17	obl			pid:1.14.1.1.
-über	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	14	über	ADP	FM	Foreign=Yes	16	case			pid:1.14.1.1.
-einen	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	15	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	16	det			pid:1.14.1.1.
-Account	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	16	Account	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	17	obl			pid:1.14.1.1.
-gebucht	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	17	brauchen|gebuchen	VERB	VVPP	VerbForm=Part	2	conj		SpaceAfter=No	pid:1.14.1.1.
-.	1	1	DDoS nutzt man ausschließlich alleine, Botnetze werden schließlich im 10.000er Bündel über einen Account gebucht.	18	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:1.14.1.1.
-</s>													
-</text>													
-</doc>													

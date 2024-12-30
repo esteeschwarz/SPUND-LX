@@ -1,9 +1,0 @@
-<doc id="49.1.1">													
-<text id="49.1.1">													
-<s id="1">													
-Haarscharf	1	1	Haarscharf daneben.	1	Haarscharf	PROPN	ADJD		2	nsubj			pid:1.49.1.1.
-daneben	1	1	Haarscharf daneben.	2	daneben	VERB	PAV		0	root		SpaceAfter=No	pid:1.49.1.1.
-.	1	1	Haarscharf daneben.	3	.	PUNCT	$.		2	punct		SpacesAfter=\n	pid:1.49.1.1.
-</s>													
-</text>													
-</doc>													

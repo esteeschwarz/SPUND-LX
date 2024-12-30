@@ -1,0 +1,242 @@
+<doc id="1" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="ClausKlebot">																	
+<text id="1.1">																	
+<s id="1">																	
+Klapp	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	1	Klapp	PROPN	ADJD		4	nmod		SpaceAfter=No	1732276154	2024-11-22	1	1	pid:1.1.1
+'	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	2	'	PUNCT	$(		1	punct			1732276154	2024-11-22	1	1	pid:1.1.1
+die	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	3	der	DET	PDS	Case=Nom|Number=Plur|PronType=Dem	4	det			1732276154	2024-11-22	1	1	pid:1.1.1
+Antworten	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	4	antworten	NOUN	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	0	root			1732276154	2024-11-22	1	1	pid:1.1.1
+auf	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	5	auf	ADP	APPR		7	case			1732276154	2024-11-22	1	1	pid:1.1.1
+diesen	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	6	dies	PRON	PDAT	Case=Acc|Gender=Masc|Number=Sing|PronType=Dem	7	det			1732276154	2024-11-22	1	1	pid:1.1.1
+Kommentar	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	7	Kommentar	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	4	obl			1732276154	2024-11-22	1	1	pid:1.1.1
+auf	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	8	auf	ADP	PTKVZ		4	compound:prt		SpaceAfter=No	1732276154	2024-11-22	1	1	pid:1.1.1
+,	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	9	,	PUNCT	$,		17	punct			1732276154	2024-11-22	1	1	pid:1.1.1
+um	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	10	um	ADP	KOUI		17	mark			1732276154	2024-11-22	1	1	pid:1.1.1
+zum	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	11-12									1732276154	2024-11-22	1	1	pid:1.1.1
+zu	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	11	zu	ADP	PIS	Case=Nom|Definite=Ind|Gender=Neut|Number=Sing|PronType=Ind	13	case			1732276154	2024-11-22	1	1	pid:1.1.1
+dem	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	12	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	13	det			1732276154	2024-11-22	1	1	pid:1.1.1
+Text	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	13	Text	NOUN	NN	Case=Dat|Gender=Masc|Number=Sing	17	obl			1732276154	2024-11-22	1	1	pid:1.1.1
+des	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	14	der	DET	ART	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	15	det			1732276154	2024-11-22	1	1	pid:1.1.1
+Artikels	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	15	Artikel	NOUN	NN	Case=Gen|Gender=Masc|Number=Sing	13	nmod			1732276154	2024-11-22	1	1	pid:1.1.1
+zu	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	16	zu	PART	NE	Case=Gen|Gender=Masc|Number=Sing	17	mark			1732276154	2024-11-22	1	1	pid:1.1.1
+kommen	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	17	kommen	VERB	VVINF	VerbForm=Inf	4	advcl		SpaceAfter=No	1732276154	2024-11-22	1	1	pid:1.1.1
+.	1	1	Klapp' die Antworten auf diesen Kommentar auf, um zum Text des Artikels zu kommen.	18	.	PUNCT	$.		4	punct		SpacesAfter=\n	1732276154	2024-11-22	1	1	pid:1.1.1
+</s>																	
+</text>																	
+</doc>																	
+<doc id="2" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="JimJimmington">																	
+<text id="2.1">																	
+<s id="1">																	
+Tldr.	1	1	Tldr.:	1	Tldr.	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	0	root		SpaceAfter=No	1732276138	2024-11-22	85	2	pid:2.1.1
+:	1	1	Tldr.:	2	:	PUNCT	$.		1	punct			1732276138	2024-11-22	85	2	pid:2.1.1
+</s>																	
+<s id="2">																	
+DDoS	1	2	DDoS	1	DDoS	PROPN	NN	Case=Nom|Gender=Neut|Number=Plur	0	root		SpacesAfter= \n	1732276138	2024-11-22	85	2	pid:2.1.2
+</s>																	
+</text>																	
+</doc>																	
+<doc id="3" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="TGX03">																	
+<text id="3.1">																	
+<s id="1">																	
+Joa	1	1	Joa was auch sonst.	1	Joa	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			1732280279	2024-11-22	37	2_1	pid:3.1.1
+was	1	1	Joa was auch sonst.	2	was	PRON	NE	Case=Nom|Gender=Masc|Number=Sing	4	nsubj			1732280279	2024-11-22	37	2_1	pid:3.1.1
+auch	1	1	Joa was auch sonst.	3	auch	ADV	ADV		4	advmod			1732280279	2024-11-22	37	2_1	pid:3.1.1
+sonst	1	1	Joa was auch sonst.	4	sonst	ADV	ADJA	Case=Nom|Gender=Neut|Number=Sing	1	advmod		SpaceAfter=No	1732280279	2024-11-22	37	2_1	pid:3.1.1
+.	1	1	Joa was auch sonst.	5	.	PUNCT	$.		1	punct		SpacesAfter=\n\n	1732280279	2024-11-22	37	2_1	pid:3.1.1
+</s>																	
+<s id="2">																	
+Wenn	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	1	wenn	SCONJ	KOUS		5	mark			1732280279	2024-11-22	37	2_1	pid:3.1.2
+das	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	2	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	5	det			1732280279	2024-11-22	37	2_1	pid:3.1.2
+ne	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	3	n	ADJ	ART	Case=Nom|Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	5	amod			1732280279	2024-11-22	37	2_1	pid:3.1.2
+ernsthafte	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	4	ernsthaft	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	5	amod			1732280279	2024-11-22	37	2_1	pid:3.1.2
+Sicherheitslücke	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	5	Sicherheitslücke	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	12	advcl			1732280279	2024-11-22	37	2_1	pid:3.1.2
+wäre	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	6	sein	AUX	ADJA	Case=Acc|Gender=Fem|Number=Sing	5	cop		SpaceAfter=No	1732280279	2024-11-22	37	2_1	pid:3.1.2
+,	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	7	,	PUNCT	$,		5	punct			1732280279	2024-11-22	37	2_1	pid:3.1.2
+hätten	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	8	haben	AUX	VAFIN	Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin	12	aux			1732280279	2024-11-22	37	2_1	pid:3.1.2
+wir	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	9	wir	PRON	ADJD		12	nsubj			1732280279	2024-11-22	37	2_1	pid:3.1.2
+davon	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	10	davon	ADV	PAV		12	advmod			1732280279	2024-11-22	37	2_1	pid:3.1.2
+nie	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	11	nie	ADV	ADV		12	advmod			1732280279	2024-11-22	37	2_1	pid:3.1.2
+erfahren	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	12	erfahren	VERB	VVINF	VerbForm=Inf	0	root			1732280279	2024-11-22	37	2_1	pid:3.1.2
+oder	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	13	oder	CCONJ	XY		15	cc			1732280279	2024-11-22	37	2_1	pid:3.1.2
+es	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	14	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	15	expl			1732280279	2024-11-22	37	2_1	pid:3.1.2
+gäbe	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	15	geben	VERB	VVFIN	Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	12	conj			1732280279	2024-11-22	37	2_1	pid:3.1.2
+*interessantere	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	16	*interessant	ADJ	ADJA	Case=Nom|Gender=Fem|Number=Sing	21	amod		SpaceAfter=No	1732280279	2024-11-22	37	2_1	pid:3.1.2
+*	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	17	*	SYM	$(		18	cc			1732280279	2024-11-22	37	2_1	pid:3.1.2
+Konsequenzen	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	18	Konsequenz	NOUN	NN	Case=Dat|Gender=Fem|Number=Plur	16	conj			1732280279	2024-11-22	37	2_1	pid:3.1.2
+als	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	19	als	ADP	KOKOM		21	case			1732280279	2024-11-22	37	2_1	pid:3.1.2
+"	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	20	"	PUNCT	$(		21	punct		SpaceAfter=No	1732280279	2024-11-22	37	2_1	pid:3.1.2
+Website	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	21	Website	NOUN	NN	Case=Nom|Gender=Fem|Number=Sing	15	obl			1732280279	2024-11-22	37	2_1	pid:3.1.2
+weg	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	22	weg	ADV	PTKVZ		15	compound:prt		SpaceAfter=No	1732280279	2024-11-22	37	2_1	pid:3.1.2
+"	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	23	"	PUNCT	$(		22	punct		SpaceAfter=No	1732280279	2024-11-22	37	2_1	pid:3.1.2
+.	2	2	Wenn das ne ernsthafte Sicherheitslücke wäre, hätten wir davon nie erfahren oder es gäbe *interessantere* Konsequenzen als "Website weg".	24	.	PUNCT	$.		12	punct		SpacesAfter=\n	1732280279	2024-11-22	37	2_1	pid:3.1.2
+</s>																	
+</text>																	
+</doc>																	
+<doc id="4" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="Theend92m">																	
+<text id="4.1">																	
+<s id="1">																	
+Oder	1	1	Oder es wird gesagt: DDoS	1	oder	CCONJ	NN	Case=Nom|Gender=Neut|Number=Plur	2	case			1732405494	2024-11-23	2	2_1_1	pid:4.1.1
+es	1	1	Oder es wird gesagt: DDoS	2	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	expl			1732405494	2024-11-23	2	2_1_1	pid:4.1.1
+wird	1	1	Oder es wird gesagt: DDoS	3	werden	AUX	VAFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	4	aux:pass			1732405494	2024-11-23	2	2_1_1	pid:4.1.1
+gesagt	1	1	Oder es wird gesagt: DDoS	4	sagen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	1732405494	2024-11-23	2	2_1_1	pid:4.1.1
+:	1	1	Oder es wird gesagt: DDoS	5	:	PUNCT	$.		6	punct			1732405494	2024-11-23	2	2_1_1	pid:4.1.1
+DDoS	1	1	Oder es wird gesagt: DDoS	6	DDoS	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	4	nsubj:pass		SpacesAfter=\n	1732405494	2024-11-23	2	2_1_1	pid:4.1.1
+</s>																	
+</text>																	
+</doc>																	
+<doc id="5" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="fprof">																	
+<text id="5.1">																	
+<s id="1">																	
+wie	1	1	wie langweilig	1	wie	ADP	NN	Case=Nom|Gender=Neut|Number=Sing	2	case			1732292833	2024-11-22	2	2_2	pid:5.1.1
+langweilig	1	1	wie langweilig	2	langweilig	ADJ	ADJD		0	root		SpacesAfter=\n	1732292833	2024-11-22	2	2_2	pid:5.1.1
+</s>																	
+</text>																	
+</doc>																	
+<doc id="6" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="Lurchi1">																	
+<text id="6.1">																	
+<s id="1">																	
+&gt	1	1	&gt;	1	&gen	VERB	VVPP	VerbForm=Part	0	root		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.1
+;	1	1	&gt;	2	;	PUNCT	$.		1	punct			1732276315	2024-11-22	47	3	pid:6.1.1
+</s>																	
+<s id="2">																	
+das	1	2	das »Informations Technik Zentrum Bund«	1	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	3	det			1732276315	2024-11-22	47	3	pid:6.1.2
+»	1	2	das »Informations Technik Zentrum Bund«	2	»	PUNCT	$(		1	punct		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.2
+Informations	1	2	das »Informations Technik Zentrum Bund«	3	Informations	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	0	root			1732276315	2024-11-22	47	3	pid:6.1.2
+Technik	1	2	das »Informations Technik Zentrum Bund«	4	Technik	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	3	appos			1732276315	2024-11-22	47	3	pid:6.1.2
+Zentrum	1	2	das »Informations Technik Zentrum Bund«	5	Zentrum	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	4	flat			1732276315	2024-11-22	47	3	pid:6.1.2
+Bund	1	2	das »Informations Technik Zentrum Bund«	6	Bund	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	4	flat		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.2
+«	1	2	das »Informations Technik Zentrum Bund«	7	«	PUNCT	$(		3	punct		SpacesAfter=\n\n	1732276315	2024-11-22	47	3	pid:6.1.2
+</s>																	
+<s id="3">																	
+Die	2	3	Die heißen "Informationstechnikzentrum Bund".	1	der	DET	ART	Case=Nom|Number=Plur|PronType=Art	4	det			1732276315	2024-11-22	47	3	pid:6.1.3
+heißen	2	3	Die heißen "Informationstechnikzentrum Bund".	2	heiß	ADJ	NN	Case=Nom|Number=Plur	4	amod			1732276315	2024-11-22	47	3	pid:6.1.3
+"	2	3	Die heißen "Informationstechnikzentrum Bund".	3	"	PUNCT	$(		4	punct		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.3
+Informationstechnikzentrum	2	3	Die heißen "Informationstechnikzentrum Bund".	4	Informationstechnikzentrum	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	0	root			1732276315	2024-11-22	47	3	pid:6.1.3
+Bund	2	3	Die heißen "Informationstechnikzentrum Bund".	5	Bund	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	4	flat		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.3
+"	2	3	Die heißen "Informationstechnikzentrum Bund".	6	"	PUNCT	$(		4	punct		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.3
+.	2	3	Die heißen "Informationstechnikzentrum Bund".	7	.	PUNCT	$.		4	punct		SpacesAfter=\n\n	1732276315	2024-11-22	47	3	pid:6.1.3
+</s>																	
+<s id="4">																	
+Doppeldeppenleerzeichen	3	4	Doppeldeppenleerzeichen.	1	Doppeldeppenleerzeichen	VERB	NE	Case=Nom|Gender=Masc|Number=Sing	0	root		SpaceAfter=No	1732276315	2024-11-22	47	3	pid:6.1.4
+.	3	4	Doppeldeppenleerzeichen.	2	.	PUNCT	$.		1	punct		SpacesAfter=\n	1732276315	2024-11-22	47	3	pid:6.1.4
+</s>																	
+</text>																	
+</doc>																	
+<doc id="7" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="TravellerSeven">																	
+<text id="7.1">																	
+<s id="1">																	
+Furchtbar	1	1	Furchtbar.	1	furchtbar	ADJ	ADJD		0	root		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.1
+.	1	1	Furchtbar.	2	.	PUNCT	$.		1	punct		SpacesAfter=\n\n	1732278097	2024-11-22	12	3_1	pid:7.1.1
+</s>																	
+<s id="2">																	
+Leider	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	1	leider	ADV	ADV		2	advmod			1732278097	2024-11-22	12	3_1	pid:7.1.2
+schreibt	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	2	schreiben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			1732278097	2024-11-22	12	3_1	pid:7.1.2
+sich	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	3	er|es|sie	PRON	PRF	Case=Acc|Number=Sing|Person=3|PronType=Prs|Reflex=Yes	2	obj			1732278097	2024-11-22	12	3_1	pid:7.1.2
+das	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	4	der	DET	ART	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	5	det			1732278097	2024-11-22	12	3_1	pid:7.1.2
+ITZBund	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	5	ITZBund	NOUN	NN	Case=Nom|Gender=Masc|Number=Sing	2	nsubj			1732278097	2024-11-22	12	3_1	pid:7.1.2
+in	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	6	in	ADP	APPR		8	case			1732278097	2024-11-22	12	3_1	pid:7.1.2
+seinem	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	7	sein	DET	PPOSAT	Case=Dat|Gender=Neut|Number=Sing|Poss=Yes	8	det:poss			1732278097	2024-11-22	12	3_1	pid:7.1.2
+Logo	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	8	Logo	NOUN	NE	Case=Dat|Gender=Neut|Number=Sing	2	obl			1732278097	2024-11-22	12	3_1	pid:7.1.2
+selbst	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	9	selbst	ADV	VVFIN	Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	2	advmod			1732278097	2024-11-22	12	3_1	pid:7.1.2
+ebenfalls	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	10	ebenfalls	ADV	ADV		2	advmod			1732278097	2024-11-22	12	3_1	pid:7.1.2
+so	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	11	so	ADV	NE	Case=Dat|Number=Plur	2	advmod		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+:	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	12	:	PUNCT	$.		14	punct			1732278097	2024-11-22	12	3_1	pid:7.1.2
+[	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	13	[	PUNCT	$(		14	punct		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+https://de.wikipedia.org/wiki/Informationstechnikzentrum	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	14	https://de.wikipedia.org/wiki/Informationstechnikzentrum	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	appos		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+\_Bund	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	15	\_Bund	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	14	flat		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+]	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	16	]	PUNCT	$(		18	punct		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+(	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	17	(	PUNCT	$(		18	punct		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	18	https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund	PROPN	NN	Case=Nom|Gender=Masc|Number=Sing	14	appos		SpaceAfter=No	1732278097	2024-11-22	12	3_1	pid:7.1.2
+)	2	2	Leider schreibt sich das ITZBund in seinem Logo selbst ebenfalls so: [https://de.wikipedia.org/wiki/Informationstechnikzentrum\_Bund](https://de.wikipedia.org/wiki/Informationstechnikzentrum_Bund)	19	)	PUNCT	$(		18	punct		SpacesAfter=\n	1732278097	2024-11-22	12	3_1	pid:7.1.2
+</s>																	
+</text>																	
+</doc>																	
+<doc id="8" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="user_bw">																	
+<text id="8.1">																	
+<s id="1">																	
+Informationstechnikzentrum	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	1	Informationstechnikzentrum	NOUN	NN	Case=Nom|Gender=Neut|Number=Sing	3	nsubj			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+ist	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	cop			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+halt	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	3	halt	ADV	ADV		4	advmod			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+auch	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	4	auch	ADV	ADV		5	advmod			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+einfach	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	5	einfach	ADJ	ADV		7	advmod			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+zu	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	6	zu	PART	NN	Case=Nom|Number=Plur	7	mark			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+lane	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	7	lanen	VERB	NE	Case=Acc|Gender=Fem|Number=Sing	0	root			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+für	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	8	für	ADP	APPR		12	case			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+ein	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	9	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	12	det			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+annähernd	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	10	annähernd	ADJ	ADJD		11	advmod			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+quadratisches	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	11	quadratisch	ADJ	ADJA	Case=Acc|Gender=Neut|Number=Sing	12	amod			1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+Logo	1	1	Informationstechnikzentrum ist halt auch einfach zu lane für ein annähernd quadratisches Logo	12	Logo	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	7	obl		SpacesAfter=\n	1732292829	2024-11-22	2	3_1_1	pid:8.1.1
+</s>																	
+</text>																	
+</doc>																	
+<doc id="9" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="SenatorSeidelbast">																	
+<text id="9.1">																	
+<s id="1">																	
+Heimtückische	1	1	Heimtückische Hacker fügen Deppenleerzeichen ein!	1	Heimtückisch	PROPN	ADJA	Case=Nom|Gender=Masc|Number=Plur	3	nsubj			1732276589	2024-11-22	17	3_2	pid:9.1.1
+Hacker	1	1	Heimtückische Hacker fügen Deppenleerzeichen ein!	2	Hacker	PROPN	NN	Case=Nom|Gender=Masc|Number=Plur	1	flat			1732276589	2024-11-22	17	3_2	pid:9.1.1
+fügen	1	1	Heimtückische Hacker fügen Deppenleerzeichen ein!	3	fügen	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root			1732276589	2024-11-22	17	3_2	pid:9.1.1
+Deppenleerzeichen	1	1	Heimtückische Hacker fügen Deppenleerzeichen ein!	4	Deppenleerzeich	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	3	obj			1732276589	2024-11-22	17	3_2	pid:9.1.1
+ein	1	1	Heimtückische Hacker fügen Deppenleerzeichen ein!	5	ein	DET	PTKVZ		3	compound:prt		SpaceAfter=No	1732276589	2024-11-22	17	3_2	pid:9.1.1
+!	1	1	Heimtückische Hacker fügen Deppenleerzeichen ein!	6	!	PUNCT	$.		3	punct		SpacesAfter=\n	1732276589	2024-11-22	17	3_2	pid:9.1.1
+</s>																	
+</text>																	
+</doc>																	
+<doc id="10" url="https://www.reddit.com/r/de/comments/1gx5zdm/cyberattacke_auf_bundesbehörden_bndinternetseite/" author="ThirstyBeaver73">																	
+<text id="10.1">																	
+<s id="1">																	
+Will	1	1	Will Russland wirklich einen Krieg?	1	wollen	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	5	nsubj			1732281638	2024-11-22	1	4	pid:10.1.1
+Russland	1	1	Will Russland wirklich einen Krieg?	2	Rußland	PROPN	NE	Case=Nom|Gender=Neut|Number=Sing	1	flat			1732281638	2024-11-22	1	4	pid:10.1.1
+wirklich	1	1	Will Russland wirklich einen Krieg?	3	wirklich	ADV	ADV		5	advmod			1732281638	2024-11-22	1	4	pid:10.1.1
+einen	1	1	Will Russland wirklich einen Krieg?	4	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	5	det			1732281638	2024-11-22	1	4	pid:10.1.1
+Krieg	1	1	Will Russland wirklich einen Krieg?	5	Krieg	NOUN	NN	Case=Acc|Gender=Masc|Number=Sing	0	root		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.1
+?	1	1	Will Russland wirklich einen Krieg?	6	?	PUNCT	$.		5	punct			1732281638	2024-11-22	1	4	pid:10.1.1
+</s>																	
+<s id="2">																	
+Es	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	6	nsubj			1732281638	2024-11-22	1	4	pid:10.1.2
+ist	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	2	sein	AUX	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	cop			1732281638	2024-11-22	1	4	pid:10.1.2
+schon	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	3	schon	ADV	ADV		6	advmod			1732281638	2024-11-22	1	4	pid:10.1.2
+ein	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	4	ein	DET	ART	Case=Acc|Definite=Ind|Gender=Neut|Number=Sing|PronType=Art	5	det			1732281638	2024-11-22	1	4	pid:10.1.2
+bisschen	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	5	bißchen	PRON	PIS	Definite=Ind|PronType=Ind	6	nmod			1732281638	2024-11-22	1	4	pid:10.1.2
+peinlich	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	6	peinlich	ADJ	ADJD		0	root		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.2
+,	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	7	,	PUNCT	$,		12	punct			1732281638	2024-11-22	1	4	pid:10.1.2
+wie	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	8	wie	ADV	NN	Case=Nom|Gender=Neut|Number=Sing	12	advmod			1732281638	2024-11-22	1	4	pid:10.1.2
+sehr	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	9	sehr	ADV	NN	Case=Acc|Gender=Neut|Number=Sing	12	advmod			1732281638	2024-11-22	1	4	pid:10.1.2
+sie	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	10	sie	PRON	VVINF	VerbForm=Inf	12	nsubj			1732281638	2024-11-22	1	4	pid:10.1.2
+es	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	11	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	12	nsubj			1732281638	2024-11-22	1	4	pid:10.1.2
+versuchen	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	12	versuchen	VERB	VVFIN	VerbForm=Inf	6	advcl			1732281638	2024-11-22	1	4	pid:10.1.2
+und	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	13	und	CCONJ	NN	Case=Acc|Gender=Fem|Number=Sing	17	cc			1732281638	2024-11-22	1	4	pid:10.1.2
+wir	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	14	wir	PRON	ADJD		17	nsubj			1732281638	2024-11-22	1	4	pid:10.1.2
+es	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	15	es	PRON	PPER	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	17	obj			1732281638	2024-11-22	1	4	pid:10.1.2
+einfach	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	16	einfach	ADJ	ADV		17	advmod			1732281638	2024-11-22	1	4	pid:10.1.2
+ignorieren	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	17	ignorieren	VERB	VVINF	VerbForm=Inf	12	conj		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.2
+.	1	2	Es ist schon ein bisschen peinlich, wie sehr sie es versuchen und wir es einfach ignorieren.	18	.	PUNCT	$.		6	punct			1732281638	2024-11-22	1	4	pid:10.1.2
+</s>																	
+<s id="3">																	
+Das	1	3	Das muss ärgerlich für sie sein.	1	der	DET	PDS	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	3	nsubj			1732281638	2024-11-22	1	4	pid:10.1.3
+muss	1	3	Das muss ärgerlich für sie sein.	2	müssen	AUX	VMFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	aux			1732281638	2024-11-22	1	4	pid:10.1.3
+ärgerlich	1	3	Das muss ärgerlich für sie sein.	3	ärgerlich	ADJ	ADJD		0	root			1732281638	2024-11-22	1	4	pid:10.1.3
+für	1	3	Das muss ärgerlich für sie sein.	4	für	ADP	APPR		5	case			1732281638	2024-11-22	1	4	pid:10.1.3
+sie	1	3	Das muss ärgerlich für sie sein.	5	sie	PRON	ADJA	Case=Nom|Gender=Fem|Number=Plur	6	obl			1732281638	2024-11-22	1	4	pid:10.1.3
+sein	1	3	Das muss ärgerlich für sie sein.	6	sein	AUX	VAINF	VerbForm=Inf	3	cop		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.3
+.	1	3	Das muss ärgerlich für sie sein.	7	.	PUNCT	$.		3	punct		SpacesAfter=\n\n	1732281638	2024-11-22	1	4	pid:10.1.3
+</s>																	
+<s id="4">																	
+Es	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	1	es	PRON	PPER	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	expl			1732281638	2024-11-22	1	4	pid:10.1.4
+gibt	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	2	geben	VERB	VVFIN	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root			1732281638	2024-11-22	1	4	pid:10.1.4
+keine	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	3	kein	PRON	PIAT	Case=Acc|Definite=Ind|Gender=Masc|Number=Plur|Polarity=Neg|PronType=Neg	5	nmod			1732281638	2024-11-22	1	4	pid:10.1.4
+schwächeren	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	4	schwäch	ADJ	ADJA	Case=Acc|Gender=Masc|Number=Sing	5	amod			1732281638	2024-11-22	1	4	pid:10.1.4
+Menschen	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	5	Mensch	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	2	nsubj			1732281638	2024-11-22	1	4	pid:10.1.4
+als	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	6	als	ADP	KOKOM		7	case			1732281638	2024-11-22	1	4	pid:10.1.4
+diejenigen	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	7	diejenigen	PRON	PDS	Case=Acc|Number=Plur|PronType=Dem	2	obl		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.4
+,	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	8	,	PUNCT	$,		16	punct			1732281638	2024-11-22	1	4	pid:10.1.4
+die	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	9	der	PRON	PRELS	Case=Nom|Number=Plur|PronType=Rel	16	nsubj			1732281638	2024-11-22	1	4	pid:10.1.4
+unter	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	10	unter	ADP	ADJD		15	case			1732281638	2024-11-22	1	4	pid:10.1.4
+einem	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	11	ein	DET	ART	Case=Dat|Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	15	det			1732281638	2024-11-22	1	4	pid:10.1.4
+"	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	12	"	PUNCT	$(		13	punct		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.4
+starken	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	13	stark	ADJ	ADJA	Case=Dat|Gender=Masc|Number=Sing	15	amod		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.4
+"	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	14	"	PUNCT	$(		13	punct			1732281638	2024-11-22	1	4	pid:10.1.4
+Führer	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	15	Führer	NOUN	NN	Case=Acc|Gender=Masc|Number=Plur	16	obl			1732281638	2024-11-22	1	4	pid:10.1.4
+leben	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	16	leben	VERB	VVFIN	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	7	acl		SpaceAfter=No	1732281638	2024-11-22	1	4	pid:10.1.4
+.	2	4	Es gibt keine schwächeren Menschen als diejenigen, die unter einem "starken" Führer leben.	17	.	PUNCT	$.		2	punct		SpacesAfter=\n	1732281638	2024-11-22	1	4	pid:10.1.4
+</s>																	
+</text>																	
+</doc>																	

@@ -1,9 +1,0 @@
-<doc id="20.1.1">													
-<text id="20.1.1">													
-<s id="1">													
-Guter	1	1	Guter USA Bot	1	gut	ADJ	NN	Case=Nom|Gender=Masc|Number=Sing	2	amod			pid:1.20.1.1.
-USA	1	1	Guter USA Bot	2	USA	PROPN	NE	Case=Dat|Gender=Masc|Number=Plur	0	root			pid:1.20.1.1.
-Bot	1	1	Guter USA Bot	3	bot	PROPN	NE	Case=Nom|Gender=Masc|Number=Sing	2	flat		SpacesAfter=\n	pid:1.20.1.1.
-</s>													
-</text>													
-</doc>													
