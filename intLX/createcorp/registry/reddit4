@@ -1,0 +1,79 @@
+MAINTAINER "your@yourdomain.com"
+INFO "reddit4"
+NAME "REDDIT 4"
+PATH reddit4
+ENCODING "UTF-8"
+LANGUAGE "Deutsch"
+
+PATH   '/corpora/reddit/indexed/index1'
+VERTICAL  '/corpora/reddit/vertical/vrt6/source'
+
+
+INFOHREF "https://github.com/esteeschwarz/SPUND-LX/tree/main/intLX"
+TAGSETDOC "https://bnosac.github.io/udpipe/en/index.html"
+
+
+
+
+
+
+# n=14
+ATTRIBUTE	word
+ATTRIBUTE	paragraph_id
+ATTRIBUTE	sentence_id
+#ATTRIBUTE	sentence
+ATTRIBUTE	token_id
+ATTRIBUTE	lemma
+ATTRIBUTE	upos
+ATTRIBUTE	xpos
+ATTRIBUTE	feats
+ATTRIBUTE	head_token_id
+ATTRIBUTE	dep_rel
+ATTRIBUTE	timestamp
+ATTRIBUTE	date
+ATTRIBUTE	x1
+ATTRIBUTE	x2
+ATTRIBUTE	pid
+#ATTRIBUTE	deps
+#ATTRIBUTE	misc
+# ATTRIBUTE	df_id
+# ATTRIBUTE	date
+# ATTRIBUTE	author
+# ATTRIBUTE	com_id
+# ATTRIBUTE	url
+
+ATTRIBUTE   lc {
+	LABEL	"word (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR word
+	TYPE     index
+	TRANSQUERY	yes
+}
+ATTRIBUTE   lemma_lc {
+	LABEL	"lemma (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR lemma
+	TYPE     index
+	TRANSQUERY	yes
+}
+
+    STRUCTURE doc  {
+		ATTRIBUTE	id
+		ATTRIBUTE	url
+		ATTRIBUTE	author
+	}
+
+#     STRUCTURE text {
+# 	ATTRIBUTE id
+# }
+    STRUCTURE s {
+	ATTRIBUTE id
+}
+
+# "doc_id" "paragraph_id" "sentence_id" "sentence" "token_id" "token" "lemma" "upos" "xpos" "feats" "head_token_id" "dep_rel" "deps" "misc"
