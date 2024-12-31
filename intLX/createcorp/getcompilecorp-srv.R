@@ -4,6 +4,7 @@
 ### embed script function
 library(udpipe)
 model.dir<-"./modeldir"
+source("rlog.R")
 get.ann.df<-function(model.dir,input,output){
   t<-input
   #t<-readLines(text)
@@ -149,7 +150,7 @@ fetch.pos<-function(file,i,data){
 #   my_function(my_list[[i]], i)
 # })
 ### now with reddit dataframe
-wd<-getwd()
+wd<-"~/docker/ske"
 load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 urls<-com.df$url
 url.u<-unique(urls)
@@ -158,8 +159,12 @@ out.ns<-paste(out.dir,"source",sep="/")
 #file.create(out.ns)
 # url.sub<-url.u[1:200] # 1:10:411 obs
 # url.sub.df<-com.df[com.df$url%in%url.sub,]
-run<-23 # killed on server. at 63 (last comment)
-for (run in 11:50){
+# stopped after finishing 23, new start from 24!
+# next,start from: 
+# 30:74
+# wt log: 89. wks.
+# 101:120
+for (run in 115:125){
   
   #for (run in 1:length(url.u)){
   url.sub<-url.u[run] # 1:10:411 obs
@@ -202,18 +207,23 @@ for (run in 11:50){
   df.ex<-df.ex[,m3]
   # out.dir<-paste(getwd(),"corpora/reddit/vertical/vrt6",sep="/")
   # out.ns<-paste(out.dir,"source",sep="/")
-  print(size<-file.size(out.ns)/1000/100)
+  
   write.table(df.ex,out.ns,sep = "\t",quote = F,
               row.names = F,col.names = F,na="",append=T)
   ### wks.
   #}) #end url lapply
-  save(df.ex.l,file=paste(wd,"red_df.ex.el.RData",sep="/"))
+  # save to http:
+  cloud<-"~/box.dh-index.org/httpdocs/cloud"
+  #save(df.ex.l,file=paste(cloud,"red_df.ex.el.RData",sep="/"))
+  # write to logfile
+  writelog(c(run,"url"),"rlog.csv")
 } # end url/run loop
 ################################################
 # command: make execute CMD="compilecorp --no-ske testvrt"
 call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit4"'
-system(call.noske)
+#system(call.noske)
 print("process finished.")
 
+# shellstart: nohup Rscript getcompilecorp.R &> rscript.log &
 
 
