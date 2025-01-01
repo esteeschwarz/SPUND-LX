@@ -1065,7 +1065,7 @@ df.ex<-data.frame(df.ex)
 
 ### nosketch corpus created in devbox
 # read in corpus
-red.vrt<-read.csv("https://box.dh-index.org/estee/cloud/reddit4.vrt.csv")
+red.vrt<-read.csv("https://box.dh-index.org/estee/cloud/reddit4.vrt.csv",sep = "\t",col.names = 1:16)
 t<-readLines("https://box.dh-index.org/estee/test.txt")
 t<-readLines("~/downloads/reddit4.sandbox.source.vrt")
 teihead<-'<?xml version="1.0" encoding="UTF-8"?>'
@@ -1094,3 +1094,17 @@ tdf<-read.csv("~/downloads/reddit4.sandbox.source.vrt",sep = "\t",col.names = 1:
 rm(tdf)
 reddit.pos.df<-read.csv("~/downloads/reddit4.sandbox.source.vrt",sep = "\t",col.names = 1:16)
 save(reddit.pos.df,file="reddit.pos.df.RData")
+rdns<-"/volumes/ext/boxhkw/21s/dh/local/spund/intlx/data/reddit.pos.df.RData"
+load(rdns)
+file.size(rdns)/1000/1000
+rdf<-reddit.pos.df
+rm(reddit.pos.df)
+rdf[1,]
+head(rdf)
+file.size()
+rdf2<-rdf(,c(1:10,12:16))
+library(utils)
+object.size(rdf2)/1000/1000
+rdf2<-rdf[,c(1:10,12:16)]
+library(readr)
+write.table(rdf2,"/volumes/ext/boxhkw/21s/dh/local/spund/intlx/data/reddit4.df.csv",sep = "\t",col.names = F,row.names = F,quote = F)
