@@ -1063,7 +1063,34 @@ df.ex.l<-pblapply(seq_along(fns), function(i) {
 df.ex<-abind::abind(df.ex.l,along = 1)
 df.ex<-data.frame(df.ex)
 
+### nosketch corpus created in devbox
+# read in corpus
+red.vrt<-read.csv("https://box.dh-index.org/estee/cloud/reddit4.vrt.csv")
+t<-readLines("https://box.dh-index.org/estee/test.txt")
+t<-readLines("~/downloads/reddit4.sandbox.source.vrt")
+teihead<-'<?xml version="1.0" encoding="UTF-8"?>'
+t<-c(teihead,'<TEI>',t,'</TEI>')
+t[86:95]
+tg<-t[86:95]
+tg
+#gsub("(^&gt;?)|(^.&gt;?).*","",tg)
+m<-grepl("(^&gt;?)|(^.&gt;?)",tg)
+m<-grepl("&gt",tg)
+m<-grepl("&gt",t)
+sum(m)
+t[!m]
+#t2<-gsub("^&gt;?.*","",t)
+t2<-t[!m]
+t2<-gsub("\u001E","",t2)
 
-
-
-
+#library(xml2)
+#temp.xml<-tempfile("temp.xml")
+writeLines(t2,temp.xml)
+tei<-read_xml(temp.xml)
+writeLines(t2,"~/boxHKW/21S/DH/local/SPUND/intLX/data/reddit4.vrt.xml")
+tei<-read_xml("~/boxHKW/21S/DH/local/SPUND/intLX/data/reddit4.vrt.xml")
+### too many xml mistakes, not possible...
+tdf<-read.csv("~/downloads/reddit4.sandbox.source.vrt",sep = "\t",col.names = 1:16)
+rm(tdf)
+reddit.pos.df<-read.csv("~/downloads/reddit4.sandbox.source.vrt",sep = "\t",col.names = 1:16)
+save(reddit.pos.df,file="reddit.pos.df.RData")
