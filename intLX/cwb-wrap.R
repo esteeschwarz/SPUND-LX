@@ -177,19 +177,47 @@ cwb_encode(
   xml = T,
   quietly = F
 )
+pregdir<-"/Users/guhl/pro/cwb/registry"
+demodata = "~/pro/cwb/indexed/reddit4b"
+vrt_dir<-"/Users/guhl/pro/ske/corpora/reddit/vertical/"
+list.files(vrt_dir)
+list.files(demodata)
+dir.create(demodata)
 cwb_makeall(corpus = "REDDIT", p_attribute = c("word"), registry = pregdir)
-
-cqp_load_corpus("REDDIT",pregdir)
-query = '[word=".*"&pos="N.*"];'
+library(RcppCWB)
+#cwb_makeall(corpus = "reddit4", p_attribute = c("word"), registry = pregdir)
+p.reddit<-read.csv("~/documents/github/spund-lx/intlx/createcorp/reddit4.sample.csv",sep = "\t",col.names = 1:16)
+rns<-p_attributes
+rns
+p.reddit[2,]
+cwb_encode(
+  corpus = "REDDIT4",
+  registry = pregdir,
+  vrt_dir = vrt_dir,
+  data_dir = demodata,
+  p_attributes = c("word","paragraph_id","sentence_id",
+                   "token_id","lemma","upos","xpos","feats","head_token_id",
+                   "dep_rel","url","timestamp","date","x1","_com_id","pid")
+  ,
+  s_attributes = list(
+    doc = c("id","url","author"),
+    s = c("id")
+  ),
+  xml = T,
+  quietly = F
+)
+cwb_makeall(corpus = "REDDIT4", p_attribute = c("word"), registry = pregdir)
+cqp_load_corpus("REDDIT4",pregdir)
+query = '[word="N.*"&upos=".*"];'
 query<-'[word="fre.*"];'
 query = '[word=".*"&lemma="fr."][word=".*"&pos="PRON.*"];'
 #query = '[word=".*"&lemma="fr.*"][pos="PRON.*"];'
-#cqp_query("REDDIT",pregdir,'show -pos;')
-query = '[word=".*"&lemma="frau.*"];'
+cqp_query("REDDIT4",pregdir,'show +pos;')
+query = '[lemma="Fr.*"];'
 query = '[word=".*"&lemma="frau.*"][word=".*"&lemma="hab.*"];'
 query = '[word=".*"&lemma="mann.*"][word=".*"&lemma="hab.*"];'
 
-cqp_query("REDDIT",pregdir,query)
+cqp_query("REDDIT4",pregdir,query)
 # Get the number of matches
 num_matches <- cqp_subcorpus_size("REDDIT","QUERY")
 cqp_subcorpus_size("REDDIT",subcorpus = "QUERY")
