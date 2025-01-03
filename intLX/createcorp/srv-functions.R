@@ -27,6 +27,10 @@ get.ann.df<-function(model.dir,input,output){
   # model<-paste(model.dir,model[1],sep = "/")
   # #print(model)
   # model<-udpipe::udpipe_load_model(model)
+  ### check comment text:
+  # critical TODO: 
+  #ifelse(!is.null(t),pos1<-udpipe_annotate(model,t),return("_NO_ANN"))
+  ####################################################################
   pos1<-udpipe_annotate(model,t)
   pos.df<-as.data.frame(pos1)
   #  pos.df$timestamp<-unique(meta$timestamp)
@@ -85,7 +89,8 @@ get.doc.div<-function(x,run,id,n){
 fetch.pos<-function(file,run,i,data){
   t<-file
   fn<-i
-  pos.df<-get.ann.df(model.dir = model.dir,input = t,output = F)
+  ifelse(!is.null(t),pos.df<-get.ann.df(model.dir = model.dir,input = t,output = F),
+         return("_NO_ANN_"))
   author<-data[[1]]
   cat("\ndata:",fn,"author:",author,"timestamp:",data[[2]],"\n")
   print(data)
@@ -97,7 +102,8 @@ fetch.pos<-function(file,run,i,data){
   url<-data$url
   pos.df$score<-data$score
   pos.df$com_id<-data$com_id
-  doc.id<-pos.df$doc_id
+  #doc.id<-pos.df$doc_id
+  doc.id<-i
   doc.id.u<-unique(doc.id)
   df.ex.l<-pblapply(seq_along(doc.id.u), function(i) {
     get.doc.div(pos.df,run,doc.id.u[[i]], i) # -[[i]]
