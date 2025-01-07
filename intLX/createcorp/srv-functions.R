@@ -6,6 +6,12 @@
 # model.dir<-"./modeldir"
 # #source("rlog.R")
 # library(readr)
+library(RedditExtractoR)
+library(udpipe)
+library(readr)
+library(pbapply)
+library(abind)
+
 model<-list.files(model.dir)
 model<-paste(model.dir,model[1],sep = "/")
 #print(model)
@@ -17,6 +23,45 @@ writelog<-function(msg,logfile){
   write.table(log.df,logfile,sep = "\t",quote = F,
               row.names = F,col.names = F,na="",append=T)
 }
+
+get.url.load<-function(url){
+  url.temp<-tempfile("urldf.RData")
+  download.file(url,url.temp)
+  load(url.temp)
+  return(url.df.x)
+}
+url<-F
+url==F
+get.urls<-function(url=F){
+  ifelse(url==F,
+         return(find_thread_urls(subreddit = "de")),
+         return(get.url.load(url)))
+}
+  #save(url.df,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_url.df.RData")
+  # max(url.df.x$date_utc)
+  # min(url.df.x$date_utc)
+  # #url.df.2<-url.df
+  # old datasets max date 02-12-2024
+  #load("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_url.df.RData")
+  #load("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15494.df.RData")
+  #tail(url.df)
+  # url.df<-url.df[2:length(url.df$date_utc),]
+  # max(url.df$date_utc)
+  # min(url.df$date_utc)
+  # l.com<-array()
+  # k<-1
+  # for (k in 1:length(url.df.x$date_utc)){
+  # lc<-url.df.x$comments[k]
+  # m<-grep(url.df.x$url[k],url.df$url)
+  # lc1<-url.df$comments[m]
+  # if(length(lc1)>0)
+  #   l.com[k]<-lc1
+  # }
+  # m<-url.df.x$url%in%url.df$url
+  # sum(m)
+#  return(url.df.x)
+#}
+
 get.ann.df<-function(model.dir,input,output){
   t<-input
   #t<-readLines(text)
@@ -192,7 +237,7 @@ fetch.pos<-function(file,run,i,data){
 # command: make execute CMD="compilecorp --no-ske testvrt"
 call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit4"'
 #system(call.noske)
-print("process finished.")
+print("script sourced...")
 
 # shellstart: nohup Rscript getcompilecorp.R &> rscript.log &
 

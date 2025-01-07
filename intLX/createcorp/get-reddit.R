@@ -1,60 +1,47 @@
-library(RedditExtractoR)
-#library(dplyr)
-library(udpipe)
-library(readr)
-library(pbapply)
-library(abind)
+# library(RedditExtractoR)
+# #library(dplyr)
+# library(udpipe)
+# library(readr)
+# library(pbapply)
+# library(abind)
 #####################
-get.urls<-function(){
-url.df.x<-find_thread_urls(subreddit = "de")
-#save(url.df,file = "/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_url.df.RData")
-max(url.df.x$date_utc)
-min(url.df.x$date_utc)
-#url.df.2<-url.df
-# old datasets max date 02-12-2024
-#load("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_url.df.RData")
-#load("/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/reddit_15494.df.RData")
-#tail(url.df)
-# url.df<-url.df[2:length(url.df$date_utc),]
-# max(url.df$date_utc)
-# min(url.df$date_utc)
-# l.com<-array()
-# k<-1
-# for (k in 1:length(url.df.x$date_utc)){
-# lc<-url.df.x$comments[k]
-# m<-grep(url.df.x$url[k],url.df$url)
-# lc1<-url.df$comments[m]
-# if(length(lc1)>0)
-#   l.com[k]<-lc1
-# }
-# m<-url.df.x$url%in%url.df$url
-# sum(m)
-return(url.df.x)
-}
 
 # no matching urls: all new comments
 ####################################
 ### extract workflow from <getcompilecorp-srv.R>
 # get old dataframe to only check new comments
 # global VARS
-source(paste(getwd(),"srv-functions.R",sep="/"))
 wd<-"~/docker/ske"
+getwd()
+check.dir<-"/var/www/apps/docker/ske/corpora/reddit/vertical"
+list.files(check.dir)
+ske.dir<-"/var/www/apps/docker/ske"
+list.files(ske.dir)
 out.dir<-paste(getwd(),"corpora/reddit/vertical/vrt6",sep="/")
 out.dir<-"/Users/guhl/temp/ske/corpora/reddit/auto/vertical"
+out.dir<-paste(ske.dir,"corpora/reddit/vertical",sep="/")
 dir.create(out.dir)
-out.ns<-paste(out.dir,"source",sep="/")
+ns.timestamp<-15024
+out.ns<-paste0(out.dir,"/source12.",ns.timestamp,".vrt")
 out.ns
+### uncomment to start with new table, since data is appended >
+file.create(out.ns)
+###################
 log.ns<-"~/Documents/GitHub/SPUND-LX/intLX/createcorp/createcorp.log.csv"
+log.ns<-"~/createcorp.log.csv"
+file.create(log.ns)
 model.dir<-"./modeldir"
-#load(paste(wd,"reddit_15494.df.RData",sep = "/"))
+source(paste(getwd(),"srv-functions.R",sep="/"))
+
 # get url dataframe
-url.df.x<-get.urls()
+# local:
+#load(paste(wd,"reddit_15494.df.RData",sep = "/"))
+# cloud:
+url.df.x<-get.urls(url = "https://box.dh-index.org/estee/cloud/reddit_url.df.15024.RData")
+#url.df.x<-get.urls(F)
 ####################
 urls<-url.df.x$url
 url.u<-unique(urls)
-### uncomment to start with new table, since data is appended >
-file.create(out.ns)
-file.create(log.ns)
 ####################
 # url.sub<-url.u[1:200] # 1:10:411 obs
 # url.sub.df<-com.df[com.df$url%in%url.sub,]
