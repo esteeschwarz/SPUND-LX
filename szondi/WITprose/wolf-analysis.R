@@ -1,57 +1,27 @@
-# reference corpus compare frequencies
-Q<-"https://www.ids-mannheim.de/digspra/kl/projekte/methoden/derewo/"
+# 2025011(17.08)
+# 15031.false-friends.essai
+###########################
+# Q reference corpus frequencies: <https://www.ids-mannheim.de/digspra/kl/projekte/methoden/derewo/>
+# load into workspace:
+fr.ref<-load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
+k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
+k2<-k2$content[k2$book=="FF"]  
 
-library(readr)
-rm(t1)
-t1<-read.csv("~/Documents/lade/1-gram-token-lemma-pos-freqs-with-punctuation.01.tsv",sep = "\t",col.names = c("token","lemma","pos","freq"))
-f<-list.files("downloads")
-f
-rm(t1)
-k1<-read.csv("~/documents/lade/token_keys.01.tsv")
-k1<-read.csv("~/Documents/lade/token_keys.01.tsv",sep = "\t",col.names = c("token","key"))
-t1<-readLines("~/Downloads/DeReKo-2014-II-MainArchive-STT.100000.freq/DeReKo-2014-II-MainArchive-STT.100000.freq")
-t1<-readLines("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo-2014-II-MainArchive-STT.100000.csv")
-m<-grepl('"',t1)
-t1<-t1[!m]
-m<-grepl("['|]",t1)
-t1<-t1[!m]
-t1[78284]
-sum(m)
-ttemp<-tempfile("t1.csv")
-writeLines(t1,ttemp)
-k1<-read.table(ttemp,col.names = c("token","lemma","pos","freq"),sep = "\t")
-write.csv(k1,"/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.csv")
-save(k1,file="/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
-t1<-readLines("~/Documents/GitHub/benjaminfeldkraft/corpus/benjaminfeldkraft.vert")
+table(names(k1$token))
+length(k1$token)
+length(unique(k1$token))
+head(k1$token,30)
+k1.d<-duplicated(k1$token)
+k1<-k1[!k1.d,]
+length(k1$token)
+length(unique(k1$token))
+d1<-which(k1.d)
+k1$token[31:33]
 
-m<-grepl('"',t1)
-t1<-t1[!m]
-m<-grepl("['|]",t1)
-t1<-t1[!m]
-m<-grepl("(<s>|</s>|<g/>)",t1)
-t1<-t1[!m]
-t1[41671]
-sum(m)
-ttemp<-tempfile("t1.csv")
-writeLines(t1,ttemp)
-k2<-read.csv(ttemp,col.names = c("token","lemma","pos"),sep = "\t")
-t1[1:10]
-#k1<-read.table("~/Downloads/DeReKo-2014-II-MainArchive-STT.100000.freq/DeReKo-2014-II-MainArchive-STT.100000.freq",col.names = 1:4,sep = "\t")
-head(t1)
-head(k1)
-toktext<-"~/temp/refcorpus.txt"
-# for (k in 4:50){
-#   key<-k1$key[k]
-#   token<-k1$token[k]
-#   f<-t1$freq[k]
-#   tline<-rep(token)
-#   
-# }
-install.packages("tm")
-install.packages("dplyr")
-
+sum(k1.d)
 library(tm)
 library(dplyr)
+
 get.keys<-function(){
   # Sample given text
   given_text <- "This is a sample text. This text is for keyword analysis. We do not change anything important in the text but only ugly words."
@@ -86,7 +56,7 @@ get.keys<-function(){
   #reference_dtm <- DocumentTermMatrix(reference_corpus)
   
   # Convert to data frames
-  given_freq <- as.data.frame(as.matrix(given_dtm))
+  #given_freq <- as.data.frame(as.matrix(given_dtm))
   # no
   library(collostructions)
   given_freq<-freq.list(k2$token)
@@ -129,8 +99,3 @@ get.keys<-function(){
 }
 get.keys()
 
-ben.vrt<-read.table("~/Documents/GitHub/benjaminfeldkraft/corpus/benjaminfeldkraft.vert",sep = "\t")
-ben.vrt<-readLines("~/Documents/GitHub/benjaminfeldkraft/corpus/benjaminfeldkraft.vert")
-
-save(reference_freq,file="~/Documents/GitHub/SPUND-LX/corpusLX/data/DEREKO-referenceFreqList.RData")
-save(given_freq,file="~/Documents/GitHub/SPUND-LX/corpusLX/data/benjamintest-referenceFreqList.RData")
