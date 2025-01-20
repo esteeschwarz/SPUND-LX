@@ -252,6 +252,8 @@ ngdf<-data.frame(ngt)
 # wks.
 # now for pos
 ?tibble
+get.ann.df<-function(x){
+tdf<-x  
 d <- tibble(txt = paste0(tdf$pos,collapse = " "))
 ng<-d%>% unnest_tokens(output=ngram,input=txt,to_lower = F,token="ngrams",n=4)
 ng.u<-unique(ng$ngram)
@@ -259,7 +261,12 @@ ngt<-table(ng$ngram)
 #ngt[max(ngt)]
 #ng.df<-data.frame(ngram=names(ngt),count=ngt)
 ngdf<-data.frame(ngt)
-
-
-
+}
+k<-1
+loaddata<-function(k){
+load(paste0("~/boxHKW/21S/DH/local/AVL/2024/WIT/wolf/ldf",k,".RData"))
+ngdf<-get.ann.df(ldf)
+}
+ng1<-loaddata(1)  
+  
 

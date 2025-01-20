@@ -1108,3 +1108,65 @@ object.size(rdf2)/1000/1000
 rdf2<-rdf[,c(1:10,12:16)]
 library(readr)
 write.table(rdf2,"/volumes/ext/boxhkw/21s/dh/local/spund/intlx/data/reddit4.df.csv",sep = "\t",col.names = F,row.names = F,quote = F)
+
+### corpus linguistic patterns (pos)
+
+library(dplyr)
+library(tidytext)
+library(janeaustenr)
+library(tibble)
+d <- tibble(txt = prideprejudice)
+
+ng<-d %>%
+  unnest_ngrams(word, txt, n = 4)
+
+ng<-d %>%
+  unnest_skip_ngrams(word, txt, n = 4, k = 1)
+ng<-d %>%
+  unnest_skip_ngrams(word, txt, n = 3, k = 1)
+
+ng<-d%>% unnest_tokens(output=ngram,input=txt,to_lower = T,token="ngrams",n=4)
+ng.u<-unique(ng$ngram)
+ngt<-table(ng$ngram)
+ngt[max(ngt)]
+#ng.df<-data.frame(ngram=names(ngt),count=ngt)
+ngdf<-data.frame(ngt)
+# wks.
+# now for pos
+?tibble
+get.ann.df<-function(x,pos,stop){
+  tdf<-x
+  m<-tdf%in%stop
+  tdf<-tdf[!m]
+  d <- tibble(txt = paste0(tdf[pos],collapse = " "))
+  
+  m<-d
+  ng<-d%>% unnest_tokens(output=ngram,input=txt,to_lower = F,token="ngrams",n=4)
+  ng.u<-unique(ng$ngram)
+  ngt<-table(ng$ngram)
+  #ngt[max(ngt)]
+  #ng.df<-data.frame(ngram=names(ngt),count=ngt)
+  ngdf<-data.frame(ngt)
+}
+k<-1
+loaddata<-function(k){
+  load(paste0("~/boxHKW/21S/DH/local/AVL/2024/WIT/wolf/ldf",k,".RData"))
+  ngdf<-get.ann.df(ldf)
+}
+ng1<-loaddata(1)  
+
+### with reddit corpus
+load("~/boxhkw/21s/dh/local/spund/intlx/data/reddit.pos.df.RData")
+colnames(reddit.pos.df)
+head(reddit.pos.df)
+
+ng2<-get.ann.df(reddit.pos.df,"X1",st1)
+ng2<-ng2[order(ng2$Freq,decreasing = T),]
+head(ng2,20)
+
+st1<-unlist(strsplit(as.character(ng2$Var1[1:3])," "))
+length(stopwords)
+st2<-strsplit(st1," ")
+factor(ng2$Var1[1:3])
+as.character(ng2$Var1[1:3])
+unlist(st1)
