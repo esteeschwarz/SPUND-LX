@@ -228,6 +228,8 @@ ngrams_df <- text_df %>%
 print(ngrams_df)
 
 library(dplyr)
+library(tidytext)
+
 #install.packages("janeaustenr")
 #install.packages("tibble")
 library(janeaustenr)
@@ -268,5 +270,4 @@ load(paste0("~/boxHKW/21S/DH/local/AVL/2024/WIT/wolf/ldf",k,".RData"))
 ngdf<-get.ann.df(ldf)
 }
 ng1<-loaddata(1)  
-  
 
