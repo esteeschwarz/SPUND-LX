@@ -143,3 +143,67 @@ x<-fromJSON(readLines(f.ns[1]),simplifyDataFrame = T,flatten = T)
 #jsonlite::
 x1<-abind(unlist(x$dta.poem.1$poem),along = 0)
 x1<-lapply(x$dta.poem.1$poem, data_frame)
+### no.
+
+library(jsonlite)
+library(dplyr)
+library(tidyjson)
+library(pbapply)
+# Read the JSON file
+
+get.pos.df<-function(fns,i,run){
+  
+json_data <- fromJSON(fns)
+
+j2<-json_structure(json_data$dta.poem.1$poem)
+j2
+mt<-j2$name=="tokens"
+mp<-j2$name=="pos"
+token<-unlist(j2$..JSON[mt])
+token[1:10]
+non.c<-"[^a-zA-ZüöäÜÖÄß,.?!;]"
+m<-grep(non.c,token)
+token<-gsub(non.c,"",token)
+pos=unlist(j2$..JSON[mp])
+if(length(token)==length(pos))
+  tdf<-data.frame(token,pos)
+tdf$id<-paste0(run,".",i)
+cat("processing",run,".",i,"\n")
+return(tdf)
+}
+# result <- lapply(seq_along(my_list), function(i) {
+#   my_function(my_list[[i]], i)
+# })
+
+#t1<-get.pos.df(f.ns[1])
+# chunks
+l.df<-length(f.ns)
+chunks<-ceiling(l.df/1000)
+# Create the vector
+vector <- 1:l.df
+
+# Define the chunk size
+chunk_size <- 1000  # Example chunk size
+
+# Function to split the vector into chunks of equal length
+split_into_chunks <- function(vec, chunk_size) {
+  split(vec, ceiling(seq_along(vec) / chunk_size))
+}
+
+# Split the vector into chunks
+chunks <- split_into_chunks(vector, chunk_size)
+chunks[1]
+length(f.ns)
+run<-1
+for(run in 1:20){
+  range=chunks[[run]]
+t.x<-pblapply(seq_along(range),function(i){
+  get.pos.df(f.ns[[i]],i,run)
+})
+#ldf$token<-gsub(non.c,"",ldf$token)
+ldf<-data.frame(abind(t.x,along = 1))
+ldf.ns<-paste0("~/boxHKW/21S/DH/local/AVL/2024/WIT/wolf/ldf",run,".RData")
+save(ldf,file = ldf.ns)
+
+}
+
