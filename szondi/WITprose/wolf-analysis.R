@@ -206,4 +206,60 @@ ldf.ns<-paste0("~/boxHKW/21S/DH/local/AVL/2024/WIT/wolf/ldf",run,".RData")
 save(ldf,file = ldf.ns)
 
 }
+### ngrams of pos
+library(tidytext)
+library(dplyr)
+# Sample text
+text <- c("mein Trieb, der waget warlich",
+          "Da ich mich untersteh der Andacht Saiten-",
+          "Das meine Einfalt rührt, mit dem verstimm-",
+          "Für dein bemerkend Ohr, in matten Thon",
+          "Die Schuldigkeit befahl, die arme Schüch-",
+          "Die wiederrieth es mir: in diesem Wette",
+          "Frug mein bewegt Gemüth: Ob ich auch werth")
+
+# Convert the text to a dataframe
+text_df <- data.frame(line = 1:length(text), text = text, stringsAsFactors = FALSE)
+
+# Tokenize the text into n-grams (2-5 grams)
+ngrams_df <- text_df %>%
+  unnest_tokens(ngram, text, token = "ngrams", n = 2:5)
+# no.
+print(ngrams_df)
+
+library(dplyr)
+#install.packages("janeaustenr")
+#install.packages("tibble")
+library(janeaustenr)
+library(tibble)
+??tibble
+d <- tibble(txt = prideprejudice)
+
+ng<-d %>%
+  unnest_ngrams(word, txt, n = 4)
+
+ng<-d %>%
+  unnest_skip_ngrams(word, txt, n = 4, k = 1)
+ng<-d %>%
+  unnest_skip_ngrams(word, txt, n = 3, k = 1)
+
+ng<-d%>% unnest_tokens(output=ngram,input=txt,to_lower = T,token="ngrams",n=4)
+ng.u<-unique(ng$ngram)
+ngt<-table(ng$ngram)
+ngt[max(ngt)]
+#ng.df<-data.frame(ngram=names(ngt),count=ngt)
+ngdf<-data.frame(ngt)
+# wks.
+# now for pos
+?tibble
+d <- tibble(txt = paste0(tdf$pos,collapse = " "))
+ng<-d%>% unnest_tokens(output=ngram,input=txt,to_lower = F,token="ngrams",n=4)
+ng.u<-unique(ng$ngram)
+ngt<-table(ng$ngram)
+#ngt[max(ngt)]
+#ng.df<-data.frame(ngram=names(ngt),count=ngt)
+ngdf<-data.frame(ngt)
+
+
+
 
