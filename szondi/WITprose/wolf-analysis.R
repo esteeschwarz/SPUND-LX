@@ -6,6 +6,7 @@
 fr.ref<-load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
 k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
 k2<-k2$content[k2$book=="FF"]  
+writeLines(k2,"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt")
 #k2
 k2
 table(names(k1$token))
@@ -270,4 +271,26 @@ load(paste0("~/boxHKW/21S/DH/local/AVL/2024/WIT/wolf/ldf",k,".RData"))
 ngdf<-get.ann.df(ldf)
 }
 ng1<-loaddata(1)  
+
+### create wiki env
+source("~/Documents/GitHub/ETCRA5_dd23/bgltr/postwikipage.R")
+wikidir<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/wiki"
+t1<-readLines(paste(wikidir,"ff.md",sep = "/"))
+page.x<-list()
+##########################
+t1<-readLines(paste(wikidir,"ff.md",sep = "/"))
+page.x$ns<-"Folio/FF/Main"
+page.x$content<-paste0(t1,collapse = "\n\n")
+credit<-c(admin=F,ws=F)
+post.page(page.x,inuse=F,credit)
+t1<-readLines(paste(wikidir,"beguine.md",sep = "/"))
+page.x$ns<-"Folio/FF/beguine"
+page.x$content<-paste0(t1,collapse = "\n\n")
+credit<-c(admin=F,ws=F)
+post.page(page.x,inuse=F,credit)
+t1<-readLines(paste(wikidir,"falling_auseinander.md",sep = "/"))
+page.x$ns<-"Folio/FF/falling_auseinander"
+page.x$content<-paste0(t1,collapse = "\n\n")
+credit<-c(admin=F,ws=F)
+post.page(page.x,inuse=F,credit)
 

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><ANNOTATION_DOCUMENT DATE="" AUTHOR="" VERSION="2.1" FORMAT="2.1">
+<HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
+<MEDIA_DESCRIPTOR MEDIA_URL="file:///" MIME_TYPE=""/>
+</HEADER>
+<TIME_ORDER>
+<TIME_SLOT TIME_SLOT_ID="T0" TIME_VALUE="0"/>
+<TIME_SLOT TIME_SLOT_ID="T7" TIME_VALUE="1000"/>
+<TIME_SLOT TIME_SLOT_ID="T9" TIME_VALUE="2000"/>
+<TIME_SLOT TIME_SLOT_ID="T8" TIME_VALUE="3000"/>
+<TIME_SLOT TIME_SLOT_ID="T10" TIME_VALUE="4000"/>
+<TIME_SLOT TIME_SLOT_ID="T11" TIME_VALUE="5000"/>
+<TIME_SLOT TIME_SLOT_ID="T1" TIME_VALUE="6000"/>
+<TIME_SLOT TIME_SLOT_ID="T12" TIME_VALUE="7000"/>
+<TIME_SLOT TIME_SLOT_ID="T13" TIME_VALUE="8000"/>
+<TIME_SLOT TIME_SLOT_ID="T14" TIME_VALUE="9000"/>
+<TIME_SLOT TIME_SLOT_ID="T16" TIME_VALUE="10000"/>
+<TIME_SLOT TIME_SLOT_ID="T15" TIME_VALUE="11000"/>
+<TIME_SLOT TIME_SLOT_ID="T17" TIME_VALUE="12000"/>
+<TIME_SLOT TIME_SLOT_ID="T18" TIME_VALUE="13000"/>
+<TIME_SLOT TIME_SLOT_ID="T2" TIME_VALUE="14000"/>
+<TIME_SLOT TIME_SLOT_ID="T3" TIME_VALUE="15000"/>
+<TIME_SLOT TIME_SLOT_ID="T4" TIME_VALUE="16000"/>
+<TIME_SLOT TIME_SLOT_ID="T5" TIME_VALUE="17000"/>
+<TIME_SLOT TIME_SLOT_ID="T6" TIME_VALUE="18000"/>
+</TIME_ORDER>
+<TIER TIER_ID="TXT (TIE0)" PARTICIPANT="SPK0" LINGUISTIC_TYPE_REF="txt" DEFAULT_LOCALE="en">
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_1" TIME_SLOT_REF1="T0" TIME_SLOT_REF2="T7">
+<ANNOTATION_VALUE>am anfang war, oder zu beginn, welche art laut, oder leise: listen, when they </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_2" TIME_SLOT_REF1="T7" TIME_SLOT_REF2="T9">
+<ANNOTATION_VALUE>begin the beguine, </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_3" TIME_SLOT_REF1="T9" TIME_SLOT_REF2="T8">
+<ANNOTATION_VALUE>und wann ist das. und muss, wer a sagt, gar nichts, wer b sagt, der lippen sich </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_4" TIME_SLOT_REF1="T8" TIME_SLOT_REF2="T10">
+<ANNOTATION_VALUE>gewiss (gebiss erst etwas später) und sein: sei sprechen dann </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_5" TIME_SLOT_REF1="T10" TIME_SLOT_REF2="T11">
+<ANNOTATION_VALUE>die art of falling auseinander, </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_6" TIME_SLOT_REF1="T11" TIME_SLOT_REF2="T1">
+<ANNOTATION_VALUE>der stille, dem rahmen, immer apart, so ausgefallen wie nur eben ein.</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_7" TIME_SLOT_REF1="T1" TIME_SLOT_REF2="T12">
+<ANNOTATION_VALUE>am anfang bald, und bald am ende wieder: unsere haare, und dazwischen sind sie nicht zu fassen, nicht in sich und nicht in griff zu kriegen, </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_8" TIME_SLOT_REF1="T12" TIME_SLOT_REF2="T13">
+<ANNOTATION_VALUE>weder im guten noch im bad.</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_9" TIME_SLOT_REF1="T13" TIME_SLOT_REF2="T14">
+<ANNOTATION_VALUE> stattdessen morgens zu berg (take a bet?) und nachts out of bed (siehe ad). am besten</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_10" TIME_SLOT_REF1="T14" TIME_SLOT_REF2="T16">
+<ANNOTATION_VALUE> hältst du sie als igel, der hat noch jeden hare </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_11" TIME_SLOT_REF1="T16" TIME_SLOT_REF2="T15">
+<ANNOTATION_VALUE>besiegt. </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_12" TIME_SLOT_REF1="T15" TIME_SLOT_REF2="T17">
+<ANNOTATION_VALUE>liegt aber eine </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_13" TIME_SLOT_REF1="T17" TIME_SLOT_REF2="T18">
+<ANNOTATION_VALUE>strähne </ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_14" TIME_SLOT_REF1="T18" TIME_SLOT_REF2="T2">
+<ANNOTATION_VALUE>im brief, gar eine lange, halte sie unverfänglich an die wange.</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_15" TIME_SLOT_REF1="T2" TIME_SLOT_REF2="T3">
+<ANNOTATION_VALUE>als boss ein falscher freund, als kitchen man in bessies tross: ein loch, love, ist alles, was blieb. liebe hier gemeint als donut, also known as: du not go. or i'll go nuts. or so it goes. die lieder, durch mägen, küchen. klamme hände kamen darin nicht vor. die männer hießen sam, and lord, how they could open clam. von ihren anderen kooky künsten wollen wir lieber schweigen, oder summen, mit zuckrig vollem mund.</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_16" TIME_SLOT_REF1="T3" TIME_SLOT_REF2="T4">
+<ANNOTATION_VALUE>fluch, gar ein gesuch: wer hat owen taylor umgebracht, und womit. damit. aha. wir rufen harry, dick, and tom: die forschen gern in gürtelweiten, gründlich im dickicht darunter, bleiben dann, wie alle detektive, lange dran. zuweilen auch drum rum. der löst bei manchen zungen, bei anderen großen schlaf aus, selten jedoch das fragliche rätsel. trommelwirbel, endlich mister chandlers telegramm: i didn't know it either. (damn.)</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_17" TIME_SLOT_REF1="T4" TIME_SLOT_REF2="T5">
+<ANNOTATION_VALUE>ich habe, wenn ich ehrlich bin, einen elften finger, und wenn ich lüge auch. es ist ein knubbelfinger, der elfte, mit knarzenden knöcheln, so sähe das wort kobold aus, käme es als finger auf die erde, oder unter. an den zähen gelenken hängen sonntags meine enkel und schaukeln. all das kommt plötzlich, trotzdem wahr, wenn wind geht, kannst dus in den angeln quietschen hören.</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE0_18" TIME_SLOT_REF1="T5" TIME_SLOT_REF2="T6">
+<ANNOTATION_VALUE>to flog a dead horse? mein lieber, ich sag dir: vergeblicher sport. stell dir stattdessen vor, wir könntens wieder fliegen sehen, später striemenlos im stall, im herbst, in jedem fall before it fell: gestriegelt und lebendig. und falls wendig, fast wie wasser, über vers und hügel, maß und tal, dass keiner einen riegel schöbe vor den quell, eine regel, strenge ruten, oder was man sonst so schindend pflog.</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+</TIER>
+<TIER TIER_ID="expliq [v] (TIE2)" PARTICIPANT="SPK3" LINGUISTIC_TYPE_REF="v" DEFAULT_LOCALE="en">
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE2_1" TIME_SLOT_REF1="T7" TIME_SLOT_REF2="T9">
+<ANNOTATION_VALUE>4/4 gesellschaftstanz, karibik frankreich 19jh</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE2_2" TIME_SLOT_REF1="T17" TIME_SLOT_REF2="T18">
+<ANNOTATION_VALUE>streak</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+</TIER>
+<TIER TIER_ID="mix [v] (TIE3)" PARTICIPANT="SPK2" LINGUISTIC_TYPE_REF="v" DEFAULT_LOCALE="en">
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE3_1" TIME_SLOT_REF1="T10" TIME_SLOT_REF2="T11">
+<ANNOTATION_VALUE>falling auseinander</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+</TIER>
+<TIER TIER_ID="phon [v] (TIE1)" PARTICIPANT="SPK0" LINGUISTIC_TYPE_REF="v" DEFAULT_LOCALE="en">
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE1_1" TIME_SLOT_REF1="T12" TIME_SLOT_REF2="T13">
+<ANNOTATION_VALUE>bad</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+<ANNOTATION>
+<ALIGNABLE_ANNOTATION ANNOTATION_ID="TIE1_2" TIME_SLOT_REF1="T15" TIME_SLOT_REF2="T2">
+<ANNOTATION_VALUE>liegt &gt; streak &gt; brief / lange &gt; unverfangen  &gt; wange (cheek)</ANNOTATION_VALUE>
+</ALIGNABLE_ANNOTATION>
+</ANNOTATION>
+</TIER>
+<LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="txt" TIME_ALIGNABLE="true"/>
+<LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="v" TIME_ALIGNABLE="true"/>
+<LOCALE LANGUAGE_CODE="en" COUNTRY_CODE="EN"/>
+<CONSTRAINT STEREOTYPE="Time_Subdivision" DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval"/>
+<CONSTRAINT STEREOTYPE="Symbolic_Subdivision" DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered"/>
+<CONSTRAINT STEREOTYPE="Symbolic_Association" DESCRIPTION="1-1 association with a parent annotation"/>
+</ANNOTATION_DOCUMENT>
