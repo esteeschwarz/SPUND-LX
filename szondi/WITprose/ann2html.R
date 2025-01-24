@@ -17,6 +17,10 @@ highlights
 txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
 t<-readLines(txtsrc)
 t
+library(readxl)
+d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
+d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
+
 #library(stringi)
 # tw<-strsplit(t," ")
 # tw<-unlist(tw)
@@ -191,3 +195,116 @@ i<-2
 lapply(seq_along(1:7), function(x){
   get.ann(tags,chunks)
 })
+
+### new from MAXQDA coded segments
+library(stringdist)
+k<-1
+i<-1
+rm(i)
+target.l<-strsplit(d1$Segment," ")
+d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
+m<-is.na(d1$Kommentar)
+m
+for (k in 1:length(d2$Segment)){
+  source<-d2$Segment[k]
+  
+  str.array<-strsplit(source," ")
+  print(str.array)
+  # tm<-lapply(target.l, function(i){
+  #   strings<-unlist(str.array)
+  #   #match(target.l[i],unlist(str.array))
+  #   distances<-stringdist(target.l[i],strings)
+  #   most_matching_string <- strings[most_matching_index]
+  #   return(distances)
+  # })
+#  tm
+  # m<-grep(d2$Segment[k],d1$Segment)
+  strings<-d1$Segment
+  strings.un<-lapply(strings,function(x){
+    strsplit(x," ")})
+  strings.un[[1]]
+  strings.un
+#  rm(x)
+mmstring <- lapply(seq_along(1:length(strings.un)),function(i){
+  strings.m<-strings.un[[i]][[1]]
+  print(strings.m)
+  distances<-stringdist(strings.m,d2$Segment[k] , method = "jw")
+   # Jaro-Winkler method
+#print(i)
+  print(distances)
+most_matching_index <- which.min(distances)
+#print(most_matching_index)
+most_matching_string <- strings.m[most_matching_index]
+dist.min<-lapply(distances, min)
+return(distances)
+})
+#x
+mmstring
+most_matching_index<-which.min(lapply(mmstring, min))
+mmin<-min(unlist((lapply(mmstring, min))))
+cat("d2:",k,"\n")
+cat("match:",most_matching_index,"with",mmin,"\n")
+#com<-""
+if(length(most_matching_index)>0){
+  if(is.na(d1$Kommentar[most_matching_index])&mmin<0.28)
+    d1$Kommentar[most_matching_index]<-d2$Kommentar[k]
+}
+
+}
+### wks.
+t2
+t
+text<-t
+split_at_n_words <- function(text, n) {
+  # Split the text into words
+  words <- unlist(strsplit(text, " "))
+  
+  # Initialize an empty list to store the result
+  result <- list()
+  
+  # Loop through the words and group them into chunks of n words
+  for (i in seq(1, length(words), by = n)) {
+    chunk <- paste(words[i:min(i + n - 1, length(words))], collapse = " ")
+    result <- c(result, chunk)
+  }
+  
+  return(result)
+}
+
+# Split the text every 5 words
+split_text <- split_at_n_words(text, 20)
+
+print(split_text)
+t3<-split_text
+tx<-t3[[1]]
+rm(ann)
+get.ann.tx<-function(tx){
+ # t<-unlist(strsplit(tx," "))
+  ann<-strsplit(d1$Segment," ")
+  ann<-d1$Segment
+  t<-tx
+  ann
+  ma<-lapply(ann,function(x)grepl(x,t))
+ ma==1
+ ma<-unlist(ma)
+  #   print(ann[i])
+    #print(i)
+#    print(m)
+    #print(t[m])
+   # print(m)
+   # print(length(m))
+  #  print(sum(m))
+#     if(sum(m)>=length(m)-1)
+#       print(unlist(ann[[a]][m]))
+  #})
+ print(ann[ma])
+ if(length(ann[ma])>0)
+   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
+  return(msub)
+}
+for(k in 1:length(t3)){
+print(get.ann.tx(t3[[k]]))
+}
+t3[[1]]
+
+
