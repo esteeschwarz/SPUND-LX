@@ -254,7 +254,10 @@ if(length(most_matching_index)>0){
 ### wks.
 t2
 t
+txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
+t<-readLines(txtsrc)
 text<-t
+
 split_at_n_words <- function(text, n) {
   # Split the text into words
   words <- unlist(strsplit(text, " "))
@@ -277,10 +280,26 @@ split_text <- split_at_n_words(text, 20)
 print(split_text)
 t3<-split_text
 tx<-t3[[1]]
+tx
+
+
+
+
+
+
+
+
+
+
+
 rm(ann)
-get.ann.tx<-function(tx){
- # t<-unlist(strsplit(tx," "))
-  ann<-strsplit(d1$Segment," ")
+ann.df<-data.frame(line="",text="")
+rdf<-ann.df
+get.ann.tx<-function(t3){
+  for(k in 1:length(t3)){
+    tx<-t3[[k]]
+   # t<-unlist(strsplit(tx," "))
+#  ann<-strsplit(d1$Segment," ")
   ann<-d1$Segment
   t<-tx
   ann
@@ -297,14 +316,32 @@ get.ann.tx<-function(tx){
 #     if(sum(m)>=length(m)-1)
 #       print(unlist(ann[[a]][m]))
   #})
- print(ann[ma])
- if(length(ann[ma])>0)
+# print(ann[ma])
+ rdf<-data.frame(line=k,text=t)
+ ann.com<-d1$Kommentar
+ post.ann<-function(){
    msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
-  return(msub)
+   mcom<-ann.com[ma]
+   mdf<-data.frame(line=k,text=msub)
+   mdf<-rbind(mdf,c(line=k,text=mcom))
+   ann.df<-rbind(ann.df,mdf)
+  # return(ann.df)
+ }
+ msub<-"no ann"
+ ifelse(length(ann[ma])>0,rdf<-post.ann(),rdf<-rbind(ann.df,rdf))
+ rdf<-rbind(rdf,rdf)
+ 
+ return(rdf)
+  }
 }
+ann.p<-get.ann.tx(t3)
+ann.df<-data.frame(line=k,text=t)
 for(k in 1:length(t3)){
 print(get.ann.tx(t3[[k]]))
 }
 t3[[1]]
+
+
+
 
 
