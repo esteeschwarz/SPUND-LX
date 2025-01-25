@@ -295,7 +295,30 @@ t3<-split_text
 
 
 #rm(ann)
-k<-5
+#########################
+library(tidytext)
+#library(dplyr)
+i<-13
+get.ngrams<-function(ann,i,out){
+   text<-ann
+   print(text)
+   text_df <- data.frame(line = 1:length(text), text = text, stringsAsFactors = FALSE)
+  
+  # Tokenize the text into n-grams (2-5 grams)
+   ngrams_df.1 <- text_df %>%
+     unnest_tokens(ngram, text, token = "ngrams", n = 1)
+   ngrams_df.2 <- text_df %>%
+     unnest_tokens(ngram, text, token = "ngrams", n = 2)
+   ngrams_df.3 <- text_df %>%
+     unnest_tokens(ngram, text, token = "ngrams", n = 3)
+   # no.
+#   ngrams_df<-rbind(ngrams_df.1,ngrams_df.2,ngrams_df.3)
+   ngrams_df<-rbind(ngrams_df.2,ngrams_df.3)
+   ifelse(out==1,return(ngrams_df.1),return(ngrams_df))
+   
+}
+k<-17
+
 #########################
 get.ann.tx<-function(t3){
   ann.df<-data.frame(line="",text="")
@@ -306,21 +329,53 @@ get.ann.tx<-function(t3){
 #  ann<-strsplit(d1$Segment," ")
   ann<-d1$Segment
   t<-tx
+  t
   ann
-  ma<-lapply(ann,function(x)grepl(x,t))
- ma==1
- ma<-unlist(ma)
+########################################
+    # TODO: get 3-grams to match in line
+  ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
+  ann.g.1<-lapply(seq_along(1),function(x){get.ngrams(ann,i,1)})
+  
+  ann.g[[1]]
+  ann.g.1[[1]]
+  ##
+########################################
+  t
+#  x<-ann.g[[1]]$ngram[19]
+    #ma<-lapply(ann,function(x)grepl(x,t))
+    ma.l<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grepl(x[2],t))
+    ma.p<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grep(x[2],t))
+    t
+    #ma==1
+ ma<-unlist(ma.l)
+ ma[is.na(ma)]<-F
+ ann.g[[1]][ma,]
+ k
+ ann.row<-ann.g[[1]]$line[ma]
+ ann.row
+ #ann.g[[1]]
+ ann.ng<-ann.g[[1]]$ngram[ma]
+ #line
+ ann.ng.df<-data.frame(ann=ann.ng)
+ #?apply
+ #ma.p<-unlist(ma.p)
+ #ma.p
  rdf<-data.frame(line=k,text=t)
  ann.com<-d1$Kommentar
  post.ann<-function(){
    #for (ma==T)
-   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
-   msub<-gsub(ann[ma],paste0('<span style="background-color:#ff0;">',ann[ma],'</span>'),t)
-   mcom<-ann.com[ma]
+#   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
+   ann.gsub<-paste0("(",paste0(ann.ng,collapse = "|"),")")
+   #msub<-gsub(ann[ma],paste0('<span style="background-color:#ff0;">',ann[ma],'</span>'),t)
+   msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t)
+   # msub<-apply(ann.ng.df,MARGIN=1,FUN=function(x)gsub(x,paste0('<span style="background-color:#ff0;">',x,'</span>'),t))
+   msub
+   #dim(ann.ng.df)
+   mcom<-ann.com[ann.row]
    mcom[is.na(mcom)]<-""
   # mcom<-paste0('<span style="background-color:#fbb;">',mcom,'</span>')
    mcom<-paste0('<span style="font-style:oblique;color:red;">',mcom,'</span>')
-   mtag<-d1$Code[ma]
+   mtag<-d1$Code[ann.row]
    mdf<-data.frame(line=k,text=msub)
    for(t in 1:length(mtag)){
    code<-paste0('<b><i>',mtag[t],'</i></b>')

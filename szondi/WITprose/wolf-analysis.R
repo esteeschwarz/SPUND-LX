@@ -223,9 +223,13 @@ text <- c("mein Trieb, der waget warlich",
 text_df <- data.frame(line = 1:length(text), text = text, stringsAsFactors = FALSE)
 
 # Tokenize the text into n-grams (2-5 grams)
-ngrams_df <- text_df %>%
-  unnest_tokens(ngram, text, token = "ngrams", n = 2:5)
+ngrams_df.2 <- text_df %>%
+  unnest_tokens(ngram, text, token = "ngrams", n = 2)
+ngrams_df.3 <- text_df %>%
+  unnest_tokens(ngram, text, token = "ngrams", n = 3)
 # no.
+ngrams_df<-rbind(ngrams_df.2,ngrams_df.3)
+?unnest_tokens
 print(ngrams_df)
 
 library(dplyr)
