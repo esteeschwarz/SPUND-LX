@@ -202,9 +202,11 @@ k<-1
 i<-1
 rm(i)
 target.l<-strsplit(d1$Segment," ")
+library(readxl)
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
-m<-is.na(d1$Kommentar)
-m
+d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
+#m<-is.na(d1$Kommentar)
+#m
 for (k in 1:length(d2$Segment)){
   source<-d2$Segment[k]
   
@@ -252,8 +254,8 @@ if(length(most_matching_index)>0){
 
 }
 ### wks.
-t2
-t
+#t2
+#t
 txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
 t<-readLines(txtsrc)
 text<-t
@@ -277,10 +279,10 @@ split_at_n_words <- function(text, n) {
 # Split the text every 5 words
 split_text <- split_at_n_words(text, 20)
 
-print(split_text)
+#print(split_text)
 t3<-split_text
-tx<-t3[[1]]
-tx
+#tx<-t3[[1]]
+#tx
 
 
 
@@ -292,10 +294,12 @@ tx
 
 
 
-rm(ann)
-ann.df<-data.frame(line="",text="")
-rdf<-ann.df
+#rm(ann)
+k<-5
+#########################
 get.ann.tx<-function(t3){
+  ann.df<-data.frame(line="",text="")
+  rdf<-ann.df
   for(k in 1:length(t3)){
     tx<-t3[[k]]
    # t<-unlist(strsplit(tx," "))
@@ -306,42 +310,39 @@ get.ann.tx<-function(t3){
   ma<-lapply(ann,function(x)grepl(x,t))
  ma==1
  ma<-unlist(ma)
-  #   print(ann[i])
-    #print(i)
-#    print(m)
-    #print(t[m])
-   # print(m)
-   # print(length(m))
-  #  print(sum(m))
-#     if(sum(m)>=length(m)-1)
-#       print(unlist(ann[[a]][m]))
-  #})
-# print(ann[ma])
  rdf<-data.frame(line=k,text=t)
  ann.com<-d1$Kommentar
  post.ann<-function(){
+   #for (ma==T)
    msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
+   msub<-gsub(ann[ma],paste0('<span style="background-color:#ff0;">',ann[ma],'</span>'),t)
    mcom<-ann.com[ma]
+   mcom[is.na(mcom)]<-""
+  # mcom<-paste0('<span style="background-color:#fbb;">',mcom,'</span>')
+   mcom<-paste0('<span style="font-style:oblique;color:red;">',mcom,'</span>')
+   mtag<-d1$Code[ma]
    mdf<-data.frame(line=k,text=msub)
-   mdf<-rbind(mdf,c(line=k,text=mcom))
-   ann.df<-rbind(ann.df,mdf)
-  # return(ann.df)
+   for(t in 1:length(mtag)){
+   code<-paste0('<b><i>',mtag[t],'</i></b>')
+   mdf<-rbind(mdf,c(line=code,text=mcom[t]))
+   }
+   mdf
+  # mdf$line<-d1$Code[ma]
  }
  msub<-"no ann"
- ifelse(length(ann[ma])>0,rdf<-post.ann(),rdf<-rbind(ann.df,rdf))
- rdf<-rbind(rdf,rdf)
- 
- return(rdf)
+ #ifelse(length(ann[ma])>0,rdf<-rbind(ann.df,post.ann()),rdf<-rbind(ann.df,rdf))
+ ifelse(length(ann[ma])>0,rdf<-post.ann(),rdf)
+ #rdf<-rbind(rdf,rdf)
+ ann.df<-rbind(ann.df,rdf)
+# ann.df2<-rbind(ann.df[,1:2],rdf[,1:2],after = length(ann.df$line))
   }
-}
+  return(ann.df)
+  
+  }
 ann.p<-get.ann.tx(t3)
-ann.df<-data.frame(line=k,text=t)
-for(k in 1:length(t3)){
-print(get.ann.tx(t3[[k]]))
-}
-t3[[1]]
 
-
+library(knitr)
+writeLines(knitr::kable(ann.p),"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann.output.md")
 
 
 
