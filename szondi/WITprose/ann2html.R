@@ -1,3 +1,5 @@
+
+tempfun<-function(){
 library(RSQLite)
 d<-dbDriver("SQLite")
 d
@@ -14,8 +16,6 @@ dbGetQuery(con, "SELECT name FROM sqlite_master WHERE type='table';")
 # SELECT name FROM sqlite_master WHERE type='table';
 tags<-dbGetQuery(con, "SELECT * FROM tags")
 highlights
-txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
-t<-readLines(txtsrc)
 t
 library(readxl)
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
@@ -41,10 +41,10 @@ d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 C
 #tag<-tags$id[1]
 #ann<-highlight_tags$highlight_id[1]
 #####################################
-i<-7
-highlight<-highlights[i,]
-highlight
-
+# i<-7
+# highlight<-highlights[i,]
+# highlight
+# 
 get.ann<-function(i){
   highlight<-highlights[i,]
   print(highlight)
@@ -90,14 +90,14 @@ ann<-get.ext(tw.ex,chunk)#,tag.range.s:tag.range.e)
 ann
 }
 #########################
-i<-2
-rm(i)
-?apply
+#i<-2
+#rm(i)
+#?apply
 #apply.ann.df<-function(){
-ann.l<-lapply(seq_along(1:length(highlights$id)),function(i){
-  get.ann(i)
-  })
-ann.l
+# ann.l<-lapply(seq_along(1:length(highlights$id)),function(i){
+#   get.ann(i)
+#   })
+# ann.l
 #ann.df[[2]]
 # tw.df<-get.ext(1)
 # tw.list<-lapply(seq_along(1:10), function(i){
@@ -202,6 +202,12 @@ k<-1
 i<-1
 rm(i)
 target.l<-strsplit(d1$Segment," ")
+}
+
+##################################
+txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
+t<-readLines(txtsrc)
+
 library(readxl)
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
 d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
@@ -258,16 +264,19 @@ if(length(most_matching_index)>0){
 #t
 txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
 t<-readLines(txtsrc)
+#tt<-readtext(txtsrc)$text
 text<-t
 
 split_at_n_words <- function(text, n) {
   # Split the text into words
   words <- unlist(strsplit(text, " "))
+ # words<-strsplit(text, " ")
   
   # Initialize an empty list to store the result
   result <- list()
   
   # Loop through the words and group them into chunks of n words
+#get.chunks<-function(words){  
   for (i in seq(1, length(words), by = n)) {
     chunk <- paste(words[i:min(i + n - 1, length(words))], collapse = " ")
     result <- c(result, chunk)
@@ -277,28 +286,19 @@ split_at_n_words <- function(text, n) {
 }
 
 # Split the text every 5 words
-split_text <- split_at_n_words(text, 20)
+# split_text <- split_at_n_words(text, 20)
+# split_text[[2]]
+# split_text.l <- lapply(t,function(x)split_at_n_words(x, 20))
 
 #print(split_text)
-t3<-split_text
+#t3<-split_text
 #tx<-t3[[1]]
 #tx
-
-
-
-
-
-
-
-
-
-
-
 #rm(ann)
 #########################
 library(tidytext)
 #library(dplyr)
-i<-13
+#i<-13
 get.ngrams<-function(ann,i,out){
    text<-ann
    print(text)
@@ -317,79 +317,168 @@ get.ngrams<-function(ann,i,out){
    ifelse(out==1,return(ngrams_df.1),return(ngrams_df))
    
 }
-k<-17
+#k<-17
 
 #########################
-get.ann.tx<-function(t3){
-  ann.df<-data.frame(line="",text="")
+get.ann.tx<-function(t){
+  ann.df<-data.frame(text.nr="",line="",text="")
   rdf<-ann.df
+  split_text.l <- lapply(t,function(x)split_at_n_words(x, 20))
+  t.annotated<-lapply(seq_along(1:length(t)), function(i){
+  t3<-split_at_n_words(t[i],20)
+  print(i)
+  t4<-data.frame(id=i,text=unlist(t3))
+  print(t4)
+  return(t3)
+  })
+  t.annotated[[2]]
+  k<-1
+  t3<-t.annotated
+  
+  #########################
+  ### loop over texts
+  k<-1
+  #t3[[5]]
+  d1$Anfang<-d1$Anfang-1
+  d1$Ende<-d1$Ende-1
   for(k in 1:length(t3)){
     tx<-t3[[k]]
+    tx<-unlist(tx)
+   # m<-grep(tx,text)
    # t<-unlist(strsplit(tx," "))
 #  ann<-strsplit(d1$Segment," ")
-  ann<-d1$Segment
-  t<-tx
-  t
+  ann<-d1$Segment[d1$Anfang==k]
+  ann.coded<-ann
+  code<-d1$Code[d1$Anfang==k]
+  #t<-tx
+  #t
   ann
 ########################################
     # TODO: get 3-grams to match in line
+  i
+
   ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
   ann.g.1<-lapply(seq_along(1),function(x){get.ngrams(ann,i,1)})
-  
+ ann.g 
   ann.g[[1]]
+  ann.gna<-ann.g[[1]][!is.na(ann.g[[1]]$ngram),]
   ann.g.1[[1]]
   ##
 ########################################
-  t
+  #t
 #  x<-ann.g[[1]]$ngram[19]
     #ma<-lapply(ann,function(x)grepl(x,t))
-    ma.l<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grepl(x[2],t))
-    ma.p<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grep(x[2],t))
-    t
+  #rm(x)
+  ####################################
+  tx<-t.line
+  get.ann.match<-function(tx){
+    ma.l<-apply(ann.gna,MARGIN=1,FUN=function(x)grepl(x[2],tx))
+    #ma.p<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grep(x[2],t))
+    tx
+    ma.l
     #ma==1
- ma<-unlist(ma.l)
+ ma<-data.frame(match=unlist(ma.l))
+ ma$ngram<-ann.gna$ngram
+ ma$text<-k
+ ma
+ #sum(ma[,1:4])
+ #ma$
  ma[is.na(ma)]<-F
- ann.g[[1]][ma,]
+ ma
+ ann.gna
+ ann.gna.m<-data.frame(ann.gna[ma$match,])
+ ann.gna.m
+ ann.gna[ma[,1],2]
  k
- ann.row<-ann.g[[1]]$line[ma]
- ann.row
+#  row.df<-data.frame(row=1:length(code))
+#  row.df$row<-F
+#  #c<-2
+#  for (c in 1:4){
+# row<-unique(ann.gna$line[ma[,c]])
+# if(length(row)>0)
+#   row.df$row[row]<-T
+#  }
+#  row.df
+#  #row.array<-row.array[!is.na(row.array)]
+#  m.row<-as.double(row.names(row.df)[row.df$row])
+ ann.row<-ann.gna.m$line
+ ann.row<-unique(ann.row)
  #ann.g[[1]]
- ann.ng<-ann.g[[1]]$ngram[ma]
+ # get ann in text:
+ 
+ ann.ng<-ann.gna.m$ngram
  #line
  ann.ng.df<-data.frame(ann=ann.ng)
  #?apply
  #ma.p<-unlist(ma.p)
  #ma.p
- rdf<-data.frame(line=k,text=t)
- ann.com<-d1$Kommentar
- post.ann<-function(){
+ #s<-1
+ 
+ return(list(ann.ng=ann.ng,ann.row=ann.row))
+  }
+##########################
+ post.ann<-function(t.line){
+   ann.match<-get.ann.match(t.line)
+   ann.row<-ann.match$ann.row
+   ann.ng<-ann.match$ann.ng
    #for (ma==T)
-#   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
+   #   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
    ann.gsub<-paste0("(",paste0(ann.ng,collapse = "|"),")")
+   ann.gsub
+   ann.row
+   ann.coded<-d1$Segment[ann.row]
    #msub<-gsub(ann[ma],paste0('<span style="background-color:#ff0;">',ann[ma],'</span>'),t)
+   m<-grep(ann.coded,t)
    msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t)
+   if(length(m)>0)
+     msub<-gsub(ann.coded,paste0('<span style="background-color:#ff0;">',ann.coded,'</span>'),t)
    # msub<-apply(ann.ng.df,MARGIN=1,FUN=function(x)gsub(x,paste0('<span style="background-color:#ff0;">',x,'</span>'),t))
    msub
    #dim(ann.ng.df)
    mcom<-ann.com[ann.row]
+   mcom<-unique(mcom)
    mcom[is.na(mcom)]<-""
-  # mcom<-paste0('<span style="background-color:#fbb;">',mcom,'</span>')
+   mcom
+   # mcom<-paste0('<span style="background-color:#fbb;">',mcom,'</span>')
    mcom<-paste0('<span style="font-style:oblique;color:red;">',mcom,'</span>')
    mtag<-d1$Code[ann.row]
-   mdf<-data.frame(line=k,text=msub)
+   mtag<-unique(mtag)
+   mdf<-data.frame(text.nr=k,line=s,text=msub)
    for(t in 1:length(mtag)){
-   code<-paste0('<b><i>',mtag[t],'</i></b>')
-   mdf<-rbind(mdf,c(line=code,text=mcom[t]))
+     code<-paste0('<b><i>',mtag[t],'</i></b>')
+     mdf<-rbind(mdf,c(text.nr=k,line=code,text=mcom[t]))
    }
-   mdf
-  # mdf$line<-d1$Code[ma]
- }
+   return(list(df=mdf,ann.row=ann.row))
+   # mdf$line<-d1$Code[ma]
+ } # post.ann()
+########################
+ s<-1
+ t.line<-tx[s]
+  #######################
+ ### loop over textlines
+ rdf.top<-data.frame(text.nr=k,line="",text="")
+ for(s in 1:length(tx)){
+ line.ns<-paste0(k,".",s)
+ t.line<-tx[s]
+ rdf<-data.frame(text.nr=k,line=s,text=t.line)
+ rdf
+ # ann.row<-unique(ann.row)
+ # ann.com<-d1$Kommentar[ann.row]
+ # ann.coded<-d1$Segment[ann.row]
+ # ann.coded<-unique(ann.coded)
+ 
  msub<-"no ann"
+ ann.ng.df
  #ifelse(length(ann[ma])>0,rdf<-rbind(ann.df,post.ann()),rdf<-rbind(ann.df,rdf))
- ifelse(length(ann[ma])>0,rdf<-post.ann(),rdf)
- #rdf<-rbind(rdf,rdf)
- ann.df<-rbind(ann.df,rdf)
+ ifelse(length(ann.ng)>0,rdf<-post.ann(t.line)$df,rdf)
+ rdf
+ rdf.top<-rbind(rdf.top,rdf)
+ }
+rdf.top 
+# ann.df
+  ann.df<-rbind(ann.df,rdf.top)
 # ann.df2<-rbind(ann.df[,1:2],rdf[,1:2],after = length(ann.df$line))
+ ann.df
   }
   return(ann.df)
   
