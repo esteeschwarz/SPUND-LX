@@ -341,41 +341,50 @@ get.ann.match<-function(t.line,ann.gna.l,k){
    t.line
    #ma.l<-apply(ann.gna,MARGIN=1,FUN=function(x)grepl(x[2],t.line))
   #ma.p<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grep(x[2],t))
+   x<-ann.gna.l
+   i<-3
+   x
    ma.l<-lapply(seq_along(1:length(ann.gna.l)),function(i){
-     ma.l<-apply(ann.gna.l[[i]],MARGIN=1,FUN=function(x)grepl(x[2],t.line))
-     m<-which(ma.l)
-     m<-ma.l==T
+     ann.i<-ann.gna.l[[i]]
+     ma.l<-apply(ann.i,MARGIN=1,FUN=function(x)grepl(x[2],t.line))
+     mw<-which(ma.l)
+     print(ann.i[mw,])
+     #m<-ma.l==T
+     return(data.frame(m=mw,ann=ann.i[mw,]))
      })   
-  ma.length<-unlist(lapply(ma.l,sum))>0
-  ma.t<-ma.l[ma.length]
-  ma.t
+  ma.length<-lapply(ma.l,unlist)
+  ma.len<-lapply(ma.length,length)
+  ma.len<-which(ma.len>0)
+  ma.len
+  ma.t<-ma.l[ma.len]
+  #ma.t<-ma.len
   ### TODO 15052.1
   #ma==1
-  ma.l<-ma.t
+  #ma.l<-ma.t
   #m
-  ma<-data.frame(match=unlist(ma.l))
-  ma<-data.frame(match=unlist(ma.t))
+  ma<-data.frame(ma.t)
+  #ma<-data.frame(match=unlist(ma.t))
   ma
-  ann.gna<-data.frame(abind(ann.gna.l,along = 1))
+  #ann.gna.m<-data.frame(abind(ann.gna.l,along = 1))
 #  ma$ngram<-ann.gna$ngram
-  ma$ngram<-ann.gna$ngram[as.double(row.names(ma))]
+  #ma$ngram<-ann.gna$ngram[as.double(row.names(ma))]
   ma$text<-k
   ma
   #sum(ma[,1:4])
   #ma$
   ma[is.na(ma)]<-F
   ma
-  ann.gna
-  sum(ma$match)
-  b<-c(1:length(ann.gna$line))
-  length(b[as.double(row.names(ma))])
-  length(ann.gna$line[as.double(row.names(ma))])
-  ann.gna.m<-data.frame(ann.gna[as.double(row.names(ma)),])
-  ann.gna.m<-ann.gna.m[ma$match,]
-  
-  ann.gna.m
-  ann.gna[ma[,1],2]
-  k
+  #ann.gna.m
+  #sum(ma$match)
+  #b<-c(1:length(ann.gna.m$line))
+  #length(b[as.double(row.names(ma))])
+  #length(ann.gna.m$line[as.double(row.names(ma))[ma$match]])
+  #ann.gna.lm<-data.frame(ann.gna.m[as.double(row.names(ma))[ma$match],])
+#  ann.gna.lm<-ann.gna.lm[ma$match,]
+  ann.gna.lm<-ma
+#  ann.gna.lm
+  #ann.gna[ma[,1],2]
+  #k
   #  row.df<-data.frame(row=1:length(code))
   #  row.df$row<-F
   #  #c<-2
@@ -387,22 +396,22 @@ get.ann.match<-function(t.line,ann.gna.l,k){
   #  row.df
   #  #row.array<-row.array[!is.na(row.array)]
   #  m.row<-as.double(row.names(row.df)[row.df$row])
-  ann.row<-ann.gna.m$line
-  ann.row<-unique(ann.row)
-  ann.row<-as.double(ann.row)
+  #ann.row<-ann.gna.lm$ann.line
+  #ann.row<-unique(ann.row)
+  #ann.row<-as.double(ann.row)
   #ann.g[[1]]
   # get ann in text:
   
-  ann.ng<-ann.gna.m$ngram
+  ann.ng<-ann.gna.lm$ann.ngram
   ann.ng
   #line
-  ann.ng.df<-data.frame(ann=ann.ng)
+  #ann.ng.df<-data.frame(ann=ann.ng)
   #?apply
   #ma.p<-unlist(ma.p)
   #ma.p
   #s<-1
   
-  return(list(ann.ng=ann.ng,ann.row=ann.row))
+  return(list(ann.ng=ann.gna.lm))
 }
 post.ann<-function(t.line,ann.gna,s,k){
   t.line
@@ -418,7 +427,8 @@ post.ann<-function(t.line,ann.gna,s,k){
   ann.match<-get.ann.match(t.line,ann.gna.l,k)
   ann.match
   #d1$Segment[ann.match$ann.row] #chk
-  ann.row<-ann.match$ann.row
+  ### NO >
+  ann.row<-ann.match$ann.ng$ann.line
   d1$Segment[ann.match$ann.row] #chk
   ann.ng<-ann.match$ann.ng
   #for (ma==T)
