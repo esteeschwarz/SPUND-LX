@@ -327,20 +327,18 @@ get.ngrams<-function(ann,i,out){
    # no.
 #   ngrams_df<-rbind(ngrams_df.1,ngrams_df.2,ngrams_df.3)
    ngrams_df<-rbind(ngrams_df.2,ngrams_df.3)
-   ngrams_df
+  # ngrams_df$d1.ann<-ann.which[i]
    ifelse(out==1,return(ngrams_df.1),return(ngrams_df))
    
 }
 #k<-17
-ann.gna
-ann.gna.l
-ann.gna<-ann.gna.l
+#ann.gna
+#ann.gna.l
+#ann.gna<-ann.gna.l
 #########################
 get.ann.match<-function(t.line,ann.gna.l,k){
   ann.gna.l
    t.line
-   #ma.l<-apply(ann.gna,MARGIN=1,FUN=function(x)grepl(x[2],t.line))
-  #ma.p<-apply(ann.g[[1]],MARGIN=1,FUN=function(x)grep(x[2],t))
    x<-ann.gna.l
    i<-3
    x
@@ -359,78 +357,44 @@ get.ann.match<-function(t.line,ann.gna.l,k){
   ma.t<-ma.l[ma.len]
   #ma.t<-ma.len
   ### TODO 15052.1
-  #ma==1
-  #ma.l<-ma.t
-  #m
   ma<-data.frame(ma.t)
-  #ma<-data.frame(match=unlist(ma.t))
   ma
-  #ann.gna.m<-data.frame(abind(ann.gna.l,along = 1))
-#  ma$ngram<-ann.gna$ngram
-  #ma$ngram<-ann.gna$ngram[as.double(row.names(ma))]
   ma$text<-k
   ma
-  #sum(ma[,1:4])
-  #ma$
   ma[is.na(ma)]<-F
   ma
-  #ann.gna.m
-  #sum(ma$match)
-  #b<-c(1:length(ann.gna.m$line))
-  #length(b[as.double(row.names(ma))])
-  #length(ann.gna.m$line[as.double(row.names(ma))[ma$match]])
-  #ann.gna.lm<-data.frame(ann.gna.m[as.double(row.names(ma))[ma$match],])
-#  ann.gna.lm<-ann.gna.lm[ma$match,]
   ann.gna.lm<-ma
-#  ann.gna.lm
-  #ann.gna[ma[,1],2]
-  #k
-  #  row.df<-data.frame(row=1:length(code))
-  #  row.df$row<-F
-  #  #c<-2
-  #  for (c in 1:4){
-  # row<-unique(ann.gna$line[ma[,c]])
-  # if(length(row)>0)
-  #   row.df$row[row]<-T
-  #  }
-  #  row.df
-  #  #row.array<-row.array[!is.na(row.array)]
-  #  m.row<-as.double(row.names(row.df)[row.df$row])
-  #ann.row<-ann.gna.lm$ann.line
-  #ann.row<-unique(ann.row)
-  #ann.row<-as.double(ann.row)
-  #ann.g[[1]]
-  # get ann in text:
-  
   ann.ng<-ann.gna.lm$ann.ngram
   ann.ng
-  #line
-  #ann.ng.df<-data.frame(ann=ann.ng)
-  #?apply
-  #ma.p<-unlist(ma.p)
-  #ma.p
-  #s<-1
-  
   return(list(ann.ng=ann.gna.lm))
+}
+get.ann.gna.l<-function(ann.gna){
+  ann.gna.l<-lapply(seq_along(1:length(unique(ann.gna$line))),function(i){
+    l<-ann.gna[ann.gna$line==i,]
+  })
+return(ann.gna.l)  
 }
 post.ann<-function(t.line,ann.gna,s,k){
   t.line
   ann.gna
+  ann.gna.l<-get.ann.gna.l(ann.gna)
   s
   k
   #ann.gna.l<-list()
-  ann.gna.l<-lapply(seq_along(1:length(unique(ann.gna$line))),function(i){
-    l<-ann.gna[ann.gna$line==i,]
-  })
-  ann.gna.l
+  # ann.gna.l<-lapply(seq_along(1:length(ann.gna$line))),function(i){
+  #   l<-ann.gna[ann.gna$line==i,]
+  # })
+  # ann.gna.l
   ### critical #############################
   ann.match<-get.ann.match(t.line,ann.gna.l,k)
   ann.match
   #d1$Segment[ann.match$ann.row] #chk
   ### NO >
-  ann.row<-ann.match$ann.ng$ann.line
-  d1$Segment[ann.match$ann.row] #chk
-  ann.ng<-ann.match$ann.ng
+  ann.row<-ann.match$ann.ng$ann.d1.line
+  ann.row<-unique(ann.row)
+  d1$Segment[ann.row] #chk
+  ann.ng<-ann.match$ann.ng$ann.ngram
+  ann.ng
   #for (ma==T)
   #   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
   ann.gsub<-paste0("(",paste0(ann.ng,collapse = "|"),")")
@@ -438,15 +402,16 @@ post.ann<-function(t.line,ann.gna,s,k){
   ann.row
   ann.coded<-d1$Segment[ann.row]
   ann.coded
+  t.line
   #msub<-gsub(ann[ma],paste0('<span style="background-color:#ff0;">',ann[ma],'</span>'),t)
-  m<-grep(ann.coded,t)
-  msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t)
+  m<-grep(ann.coded,t.line)
+  msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t.line)
   if(length(m)>0)
-    msub<-gsub(ann.coded,paste0('<span style="background-color:#ff0;">',ann.coded,'</span>'),t)
+    msub<-gsub(ann.coded,paste0('<span style="background-color:#ff0;">',ann.coded,'</span>'),t.line)
   # msub<-apply(ann.ng.df,MARGIN=1,FUN=function(x)gsub(x,paste0('<span style="background-color:#ff0;">',x,'</span>'),t))
   msub
   #dim(ann.ng.df)
-  ann.com<-d1$Kommentar[ann.row]
+  ann.com<-d1$Kommentar
   
   mcom<-ann.com[ann.row]
   mcom<-unique(mcom)
@@ -484,7 +449,7 @@ get.ann.tx<-function(t){
   t3
   #########################
   ### loop over texts
-  k<-2
+  k<-1
   #t3[[5]]
   d1$Anfang
   # d1$Anfang<-d1$Anfang-1
@@ -496,24 +461,37 @@ get.ann.tx<-function(t){
    # m<-grep(tx,text)
    # t<-unlist(strsplit(tx," "))
 #  ann<-strsplit(d1$Segment," ")
+  ann.all<-d1$Segment
+  ann.all
   ann<-d1$Segment[d1$Anfang==k]
   ann.coded<-ann # all coded segments content in text
   code<-d1$Code[d1$Anfang==k] # all codes assigned in text
   #t<-tx
   #t
-  ann
+  ### if there is annotation:
+  if(length(ann)>0){
+  ann.which<-data.frame(ann=1:length(ann),ann.which=which(ann.all%in%ann))
+  ann.which<-data.frame(ann=1:length(ann),ann.which=which(ann.all%in%ann))
+  ann.which
 ########################################
     # TODO: get 3-grams to match in line
   #i
   # get 3&2grams of segments
+  ann
   ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
   ann.g.1<-lapply(seq_along(1),function(x){get.ngrams(ann,i,1)})
  ann.g 
   ann.g[[1]]
   ann.gna<-ann.g[[1]][!is.na(ann.g[[1]]$ngram),]
   ann.g.1[[1]]
-  ann.gna
+  ann.which
+  ann.gna$d1.line<-apply(ann.gna,MARGIN = 1,FUN = function(x){
+    m<-grep(x,ann.which$ann)
+   # print(m)
+    return(ann.which$ann.which[m])
+  })
   ##
+  ann.gna
 ########################################
   #t
 #  x<-ann.g[[1]]$ngram[19]
@@ -523,10 +501,11 @@ get.ann.tx<-function(t){
   #tx<-t.line
 ##########################
 ########################
- s<-1
  #t.line<-tx[s]
   #######################
- ### loop over textlines
+  } #end if annotation
+  s<-2
+  ### loop over textlines
  rdf.top<-data.frame(text.nr=k,line="",text="")
  for(s in 1:length(tx)){
  line.ns<-paste0(k,".",s)
@@ -541,10 +520,15 @@ get.ann.tx<-function(t){
  
  msub<-"no ann"
  #ann.ng.df
+ ann.ng<-NULL
+ if(length(ann)>0){
+ ann.gna.l<-get.ann.gna.l(ann.gna)
+   
  ann.match<-get.ann.match(t.line,ann.gna.l,k)
  ann.match
  ann.ng<-ann.match$ann.ng
  ann.ng
+ }
  #ifelse(length(ann[ma])>0,rdf<-rbind(ann.df,post.ann()),rdf<-rbind(ann.df,rdf))
  ifelse(length(ann.ng)>0,rdf<-post.ann(t.line,ann.gna,s,k)$df,rdf)
  rdf
