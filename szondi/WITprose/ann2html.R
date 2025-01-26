@@ -325,9 +325,11 @@ get.ngrams<-function(ann,i,out){
      unnest_tokens(ngram, text, token = "ngrams", n = 2)
    ngrams_df.3 <- text_df %>%
      unnest_tokens(ngram, text, token = "ngrams", n = 3)
+   ngrams_df.4 <- text_df %>%
+     unnest_tokens(ngram, text, token = "ngrams", n = 4)
    # no.
 #   ngrams_df<-rbind(ngrams_df.1,ngrams_df.2,ngrams_df.3)
-   ngrams_df<-rbind(ngrams_df.2,ngrams_df.3)
+   ngrams_df<-rbind(ngrams_df.2,ngrams_df.3,ngrams_df.4)
   # ngrams_df$d1.ann<-ann.which[i]
    print("finished...")
    ifelse(out==1,return(ngrams_df.1),return(ngrams_df))
@@ -394,11 +396,14 @@ get.ann.gna.l<-function(ann.gna){
 return(ann.gna.l)  
 }
 #######################################
-post.ann<-function(t.line,ann.gna,s,k){
+single=T
+#ann.gna<-ann.gna.t
+post.ann<-function(t.line,ann.gna,s,k,single){
   print("post.ann...")
   t.line
   ann.gna
   ann.gna.l<-get.ann.gna.l(ann.gna)
+  ann.gna.l
   s
   k
   #ann.gna.l<-list()
@@ -472,7 +477,7 @@ get.ann.tx<-function(t){
   t3
   #########################
   ### loop over texts
-  k<-1
+  k<-4
   #t3[[5]]
   d1$Anfang
   # d1$Anfang<-d1$Anfang-1
@@ -501,8 +506,26 @@ get.ann.tx<-function(t){
     # TODO: get 3-grams to match in line
   #i
   # get 3&2grams of segments
+  find.single.ann<-function(ann){
+    ts<-stri_split(ann,regex=" ")
+    ts.1<-ts[lapply(ts,length)==1]
+    ts.1<-unlist(ts.1)
+    ts.2<-ts[ts.1]
+    return(unlist(ts.2))
+  }
   ann
+  ann.single<-find.single.ann(ann)
   ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
+  ann.g
+  ann.g1<-ann.g[[1]]
+  x<-ann.g1
+  if(length(ann)>1){
+    m<-apply(ann.g1, MARGIN=1,FUN=function(x){
+      m<-is.na(x[2])
+      ann.g1$ngram[m]<-ann[2]
+    })
+  }
+ # ann.g1
   ann.g.1<-lapply(seq_along(1),function(x){get.ngrams(ann,i,1)})
  ann.g 
   ann.g[[1]]
@@ -528,7 +551,7 @@ get.ann.tx<-function(t){
  #t.line<-tx[s]
   #######################
   } #end if annotation
-  s<-1
+  s<-3
   ### loop over textlines
  rdf.top<-data.frame(text.nr=k,line="",text="")
  for(s in 1:length(tx)){
@@ -546,16 +569,31 @@ get.ann.tx<-function(t){
  msub<-"no ann"
  #ann.ng.df
  ann.ng<-NULL
+ ann
  if(length(ann)>0){
  ann.gna.l<-get.ann.gna.l(ann.gna)
-   
+ ann.gna.l  
  ann.match<-get.ann.match(t.line,ann.gna.l,k)
  ann.match
  ann.ng<-ann.match$ann.ng
  ann.ng
  }
- #ifelse(length(ann[ma])>0,rdf<-rbind(ann.df,post.ann()),rdf<-rbind(ann.df,rdf))
- ifelse(length(ann.ng)>0,rdf<-post.ann(t.line,ann.gna,s,k)$df,rdf)
+ #token<-ann[2]
+ replace.single<-function(ann){
+ ts<-stri_split(ann,regex=" ")
+ ts.1<-ts[lapply(ts,length)==1]
+ ts.1<-unlist(ts.1)
+ ann.gna.t<-ann.gna
+ ann.gna.t<-rbind(ann.gna.t,ann.gna.t[length(ann.gna.t$line),])
+ ann.gna.t$ngram[length(ann.gna.t$line)]<-ts.1
+ return(ann.gna.t)
+ }
+ ann.gna.t<-replace.single(ann)
+ ann.gna.t
+ ifelse(length(ann)>0&length(ann.ng)==0,
+        rdf<-post.ann(t.line,ann.gna.t,s,k,single=T)$df,rdf<-rbind(ann.df,rdf))
+ ifelse(length(ann.ng)>0,
+        rdf<-post.ann(t.line,ann.gna,s,k,single=F)$df,rdf)
  rdf
  rdf.top<-rbind(rdf.top,rdf)
  }
