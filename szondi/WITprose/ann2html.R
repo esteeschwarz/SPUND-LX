@@ -435,10 +435,10 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   mtag<-d1$Code[ann.row]
   mtag[is.na(mtag)]<-""
 #  mtag<-unique(mtag)
-  mdf<-data.frame(text.nr=k,line=s,text=msub)
+  mdf<-data.frame(TNr=k,line=s,text=msub)
   for(t in 1:length(mtag)){
     code<-paste0('<b><i>',mtag[t],'</i></b>')
-    mdf<-rbind(mdf,c(text.nr=k,line=code,text=mcom[t]))
+    mdf<-rbind(mdf,c(TNr=k,line=code,text=mcom[t]))
   }
   print("finished post")
   return(list(df=mdf,ann.row=ann.row))
@@ -454,7 +454,7 @@ find.single.ann<-function(ann){
 }
 #window<-20
 get.ann.tx<-function(t){
-  ann.df<-data.frame(text.nr="",line="",text="")
+  ann.df<-data.frame(TNr="",line="",text="")
   rdf<-ann.df
   t.annotated<-lapply(seq_along(1:length(t)), function(i){
   t3<-split_at_n_words(t[i],window)
@@ -472,7 +472,10 @@ get.ann.tx<-function(t){
   ### loop over texts
   k<-2
   d1$Anfang
-  for(k in 1:length(t3)){
+  ### which texts are annotated?
+  wk<-unique(d1$Anfang)
+  for(k in wk){
+    #for(k in 1:length(t3)){
     cat("run k=",k,"\n")
     tx<-t3[[k]]
     tx<-unlist(tx)
@@ -516,13 +519,13 @@ get.ann.tx<-function(t){
   } #end if annotation
   s<-2
   ### loop over textlines
- rdf.top<-data.frame(text.nr=k,line="",text="")
+ rdf.top<-data.frame(TNr=k,line="",text="")
  for(s in 1:length(tx)){
  line.ns<-paste0(k,".",s)
  cat("run s=",line.ns,"\n")
  t.line<-tx[s]
  t.line
- rdf<-data.frame(text.nr=k,line=s,text=t.line)
+ rdf<-data.frame(TNr=k,line=s,text=t.line)
  rdf
  msub<-"no ann"
  ann.ng<-NULL
@@ -544,11 +547,24 @@ rdf.top
   ann.df<-rbind(ann.df,rdf.top)
  ann.df
   }
+  colnames(ann.df)<-c("n  ","line","text")
+  m1<-ann.df$text==""
+  ann.df<-ann.df[!m1,]
+  m2<-grep("[0-9]",ann.df$line)
+  ann.df[m2,1]<-paste0(ann.df[m2,1],"-")
+  rownames(ann.df)<-paste0("L:",1:length(ann.df$line))
+  ann.df<-cbind(id="\t",ann.df[,1:length(ann.df)])
+    
   return(ann.df)
   }
 ####################
 ### RUN
 ann.p<-get.ann.tx(t)
+# m1<-ann.p$text==""
+# sum(m1)
+# ann.p<-ann.p[!m1,]
+# m2<-grep("[0-9]",ann.p$line)
+# ann.p[m2,1]<-paste0(ann.p[m2,1],"---")
 ####################
 library(knitr)
 writeLines(knitr::kable(ann.p),"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann.output.md")

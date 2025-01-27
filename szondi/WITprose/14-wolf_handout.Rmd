@@ -1,0 +1,71 @@
+---
+#--- official ---#
+# class handout WS24/25, uljana wolf/ falsche freunde
+
+title: "handout: uljana wolf - falsche freunde"
+author: "St. Schwarz"
+date: "`r Sys.Date()`"
+zotero: AVL_dyn
+output: 
+  bookdown::html_document2:
+    global_numbering: TRUE
+    number_sections: TRUE
+    code_download: yes
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+    self_contained: FALSE #TRUE for standalone html page knit
+    #css: ../style_HA.css
+#swap / decomment ff .bib/.css references for self compile .Rmd to html
+#bibliography: https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/sections/DYN/DYN_HA/DYN_HA.bib
+    css: https://ada-sub.dh-index.org/school/papers/011/style_HA.css
+bibliography: DYN_HA.bib
+---
+# A. head
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#mini critical: dont find relative files in path
+#knitr::opts_knit$set(root.dir="~/boxHKW/21S/DH")
+#knitr::opts_knit$set(base.dir = "~/boxHKW/21S/DH/gith/DH_essais/sections/DYN/DYN_HA")
+#EWA, lapsi
+#knitr::opts_knit$set(root.dir="~/boxHKW/UNI/21S/DH")
+#knitr::opts_knit$set(base.dir = "~/boxHKW/UNI/21S/DH/gith/DH_essais/sections/DYN/DYN_HA")
+
+```
+
+```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+library(httr)
+#fetch zotero .bib online
+x<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
+bib<-content(x,"text")
+y<-tempfile("ref",fileext = ".bib")
+writeLines(bib,y)
+```
+---
+bibliography: "`r y`"
+---
+```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+library(rmarkdown)
+src<-"../../../../../local/R/cred_gener.csv"
+ # cred<-read.csv(src)
+    src<-"../../../../../local/DYN/db/wolfdb003.csv"
+    src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
+```
+
+---
+
+# einleitung
+
+# zur autorin
+Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt *kochanie ich habe brot gekauft* (kookbooks 2005) mit dem Peter-Huchel-Preis geehrt und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften zwei weitere Gedichtbände, ebenfalls bei *kookbooks*. Dort ist sie in ein enges Netzwerk junger deutschsprachiger Autor:innen eingebunden, die sich auch (hier zum Aspekt *postdeutsch*) mehrheitlich durch ihre Affinität zu mehr- oder polylingualer Dichtung auszeichnen. Es gibt bei kook kaum Dichter:innen, deren Werk nicht irgendwie Mehrsprachigkeit künstlerisch umsetzt, damit arbeitet. 
+
+# work
+
+## basic statistics
+```{r echo = FALSE,warning=FALSE}
+```
+
+---
+
+# B. REF:
