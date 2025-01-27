@@ -10,7 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="St. Schwarz" />
+<meta name="author" content="st. Schwarz" />
 
 
 <title>handout: uljana wolf - falsche freunde</title>
@@ -112,8 +112,8 @@ margin-left: 2em;
 
 
 <h1 class="title toc-ignore">handout: uljana wolf - falsche freunde</h1>
-<h4 class="author">St. Schwarz</h4>
-<h4 class="date">2025-01-27 16:47:10</h4>
+<h4 class="author">st. Schwarz</h4>
+<h4 class="date">2025-01-27 19:58:08</h4>
 
 
 
@@ -137,17 +137,37 @@ Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea 
 <h1>die falschen freunde</h1>
 <div id="ground-truth" class="section level2">
 <h2>ground truth</h2>
-<p>Die 26 Texte haben einen Umfang von 1610 Wörtern (tokens), die sich in 933 distinct types einteilen lassen, die type/token ratio, ein Indikator für <em>lexical diversity</em>, beträgt demnach 0.5795031. Die durchschnittliche Textlänge (median) sind 68.5 Wörter.</p>
+<p>Die 26 Texte haben einen Umfang von 1610 Wörtern (tokens), die sich in 933 distinct types einteilen lassen, die type/token ratio, ein Indikator für <em>lexical diversity</em>, beträgt demnach 0.58. Die durchschnittliche Textlänge (median) sind 68.5 Wörter, die Abweichung beträgt nur 5.38 Wörter, dh. die Texte sind ungefähr von gleicher Länge.</p>
+</div>
+<div id="few-stats" class="section level2">
+<h2>few stats</h2>
+<pre><code>##            WORD FREQ
+## 1     sagen wir    4
+## 2        a vase    3
+## 3       auf dem    3
+## 4       dass es    3
+## 5        in der    3
+## 6       und das    3
+## 7      wenn ich    3
+## 8  zum beispiel    3
+## 9     am anfang    2
+## 10      am ende    2</code></pre>
+<pre><code>## tab 1: word 2-grams in corpus</code></pre>
+<pre><code>##              WORD FREQ               bsp
+## 1     adp det adj   31    in, dem, lange
+## 2    adp det noun   22    in, dem, spiel
+## 3   det noun verb   22 dem, spiel, sagen
+## 4    det adj noun   17 dem, lange, spiel
+## 5     adv det adj   15  auch, dem, lange
+## 6   verb pron adv   15  sagen, ich, auch
+## 7     adv adp det   14     auch, in, dem
+## 8   pron verb adv   14  ich, sagen, auch
+## 9  pron verb pron   14   ich, sagen, ich
+## 10 verb pron pron   14   sagen, ich, ich</code></pre>
+<pre><code>## tab 2: part-of-speech 3-grams in corpus</code></pre>
 </div>
 <div id="content-analysis" class="section level2">
 <h2>content analysis</h2>
-<p>output:
-<!--<iframe src="frameout.html" width="100%" height="500px"></iframe>--></p>
-</div>
-<div id="further" class="section level2">
-<h2>further</h2>
-<p>as kable</p>
-<pre class="r"><code>knitr::kable(ann.p)</code></pre>
 <table>
 <colgroup>
 <col width="1%" />

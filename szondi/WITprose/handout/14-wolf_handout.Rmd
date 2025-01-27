@@ -2,7 +2,7 @@
 title: "handout: uljana wolf - falsche freunde"
 runningheader: "handout: uljana wolf - falsche freunde" # only for pdf output
 #subtitle: "An implementation in R Markdown" # only for html output
-author: "St. Schwarz"
+author: "st. Schwarz"
 date: "`r Sys.time()`"
 output:
   tufte::tufte_html: default
@@ -57,8 +57,10 @@ src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
 # tp<-readLines(src.t)
 
    # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
-script<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R"
-source(script)
+script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R"
+script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R"
+source(script1)
+source(script2)
 ```
 
 ---
@@ -112,12 +114,25 @@ Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea 
   lm<-unlist(lm)
   #lto<-sum(lm)
   md_t<-median(lm)
+  std<-sd(lm)
+  std<-round(std,2)
+  #print(std)
 
 ```
 
 ## ground truth
-Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r lty/lto`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter.   
+Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ungefähr von gleicher Länge.      
 
+## few stats
+```{r, echo=F,grams,fig.margin=T,fig.cap="word 2-grams in corpus"}
+print(handlist$grams)
+cat("tab 1: word 2-grams in corpus")
+```
+
+```{r, posgrams,echo=F,fig.margin=T,fig.cap="PoS 3-grams in corpus"}
+print(handlist$posgrams)
+cat("tab 2: part-of-speech 3-grams in corpus")
+```
 
 ## content analysis
 ```{r analysis, results=F,eval=F,echo = FALSE,warning=FALSE}
@@ -134,15 +149,9 @@ writeLines(mdstyle,tempmd)
 #htmout<-readLines(temphtm)
 
 ```
-output:
-<!--<iframe src="frameout.html" width="100%" height="500px"></iframe>-->
 
 
-
-
-## further
-as kable
-```{r kable}
+```{r eval=T,echo=F,kable,fig.cap="few annotations"}
 knitr::kable(ann.p)
 ```
 
