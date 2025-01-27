@@ -207,7 +207,7 @@ target.l<-strsplit(d1$Segment," ")
 ######################################################################
 txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
 t<-readLines(txtsrc)
-
+window<-18
 library(readxl)
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
 d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
@@ -293,59 +293,51 @@ split_at_n_words <- function(text, n) {
   return(result)
 }
 
-# Split the text every 5 words
-# split_text <- split_at_n_words(text, 20)
-# split_text[[2]]
-# split_text.l <- lapply(t,function(x)split_at_n_words(x, 20))
-
-#print(split_text)
-#t3<-split_text
-#tx<-t3[[1]]
-#tx
-#rm(ann)
 #########################
 library(tidytext)
-#library(dplyr)
-#i<-13
 get.ngrams<-function(ann,i,out){
- # ann<-unique(ann)
    text<-ann
    ann
-   print(text)
+ann.single<-find.single.ann(ann)
+out<-3
+      print(text)
    print(length(text))
    print("get.ngrams...")
    text_df <- data.frame(line = 1, text = "#NO TEXT#", stringsAsFactors = FALSE)
-   if(length(text)>0)
      text_df <- data.frame(line = 1:length(text), text = text, stringsAsFactors = FALSE)
   
   # Tokenize the text into n-grams (2-5 grams)
-   ngrams_df.1 <- text_df %>%
-     unnest_tokens(ngram, text, token = "ngrams", n = 1)
+     ngrams_df.1 <- text_df %>%
+       unnest_tokens(ngram, text, token = "ngrams", n = 1)
+     if(length(ann.single)>0){
+       out<-1
+   m<-grepl(ann.single,ngrams_df.1$ngram)
+   ngrams_df.1
+   ngrams_df.1<-ngrams_df.1[m,]
+}
    ngrams_df.2 <- text_df %>%
      unnest_tokens(ngram, text, token = "ngrams", n = 2)
    ngrams_df.3 <- text_df %>%
      unnest_tokens(ngram, text, token = "ngrams", n = 3)
    ngrams_df.4 <- text_df %>%
      unnest_tokens(ngram, text, token = "ngrams", n = 4)
+   ngrams_df.5 <- text_df %>%
+     unnest_tokens(ngram, text, token = "ngrams", n = 5)
+   ngrams_df.6 <- text_df %>%
+     unnest_tokens(ngram, text, token = "ngrams", n = 6)
    # no.
-#   ngrams_df<-rbind(ngrams_df.1,ngrams_df.2,ngrams_df.3)
-   ngrams_df<-rbind(ngrams_df.2,ngrams_df.3,ngrams_df.4)
-  # ngrams_df$d1.ann<-ann.which[i]
-   print("finished...")
-   ifelse(out==1,return(ngrams_df.1),return(ngrams_df))
+   ifelse(out==1,ngrams_df<-rbind(ngrams_df.1,ngrams_df.2,ngrams_df.3,ngrams_df.4,ngrams_df.5,ngrams_df.6),
+          ngrams_df<-rbind(ngrams_df.2,ngrams_df.3,ngrams_df.4,ngrams_df.5,ngrams_df.6))
+   mn<-is.na(ngrams_df$ngram)
+   ngrams_df.out<-ngrams_df[!mn,]
    
+   print("finished...")
+   return(ngrams_df.out)
 }
-#k<-17
-#ann.gna
-#ann.gna.l
-#ann.gna<-ann.gna.l
 #########################
 get.ann.match<-function(t.line,ann.gna.l,k){
   ann.gna.l
    t.line
-   #x<-ann.gna.l
-   #i<-3
-   #x
    print("get.ann.match...")
    print("ann.gna.l:")
    print(ann.gna.l)
@@ -396,8 +388,6 @@ get.ann.gna.l<-function(ann.gna){
 return(ann.gna.l)  
 }
 #######################################
-single=T
-#ann.gna<-ann.gna.t
 post.ann<-function(t.line,ann.gna,s,k,single){
   print("post.ann...")
   t.line
@@ -406,48 +396,45 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   ann.gna.l
   s
   k
-  #ann.gna.l<-list()
-  # ann.gna.l<-lapply(seq_along(1:length(ann.gna$line))),function(i){
-  #   l<-ann.gna[ann.gna$line==i,]
-  # })
-  # ann.gna.l
   ### critical #############################
   ann.match<-get.ann.match(t.line,ann.gna.l,k)
   ann.match
-  #d1$Segment[ann.match$ann.row] #chk
   ### NO >
   ann.row<-ann.match$ann.ng$ann.d1.line
   ann.row<-as.double(unique(ann.row))
   d1$Segment[ann.row] #chk
   ann.ng<-ann.match$ann.ng$ann.ngram
   ann.ng
-  #for (ma==T)
-  #   msub<-gsub(ann[ma],paste0("<ann>",ann[ma],"</ann>"),t)
   ann.gsub<-paste0("(",paste0(ann.ng,collapse = "|"),")")
   ann.gsub
   ann.row
   ann.coded<-d1$Segment[ann.row]
-  ann.coded
+  ############################
+  ann.coded<-unique(ann.coded)
+  ############################
   t.line
-  #msub<-gsub(ann[ma],paste0('<span style="background-color:#ff0;">',ann[ma],'</span>'),t)
-  m<-grep(ann.coded,t.line)
+  ### replace ngrams
   msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t.line)
   msub
-  if(length(m)>0)
-    msub<-gsub(ann.coded,paste0('<span style="background-color:#ff0;">',ann.coded,'</span>'),t.line)
-  # msub<-apply(ann.ng.df,MARGIN=1,FUN=function(x)gsub(x,paste0('<span style="background-color:#ff0;">',x,'</span>'),t))
-  msub
-  #dim(ann.ng.df)
-  ann.com<-d1$Kommentar
+  ### replace whole annotation
+  for(ac in ann.coded){
+    
+    m<-grep(ac,t.line)
   
+  if(length(m)>0)
+    msub<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),t.line)
+  
+}
+  msub
+  ann.com<-d1$Kommentar
   mcom<-ann.com[ann.row]
-  mcom<-unique(mcom)
   mcom[is.na(mcom)]<-""
+  #mcom<-unique(mcom)
   mcom
-  # mcom<-paste0('<span style="background-color:#fbb;">',mcom,'</span>')
   mcom<-paste0('<span style="font-style:oblique;color:red;">',mcom,'</span>')
   mtag<-d1$Code[ann.row]
-  mtag<-unique(mtag)
+  mtag[is.na(mtag)]<-""
+#  mtag<-unique(mtag)
   mdf<-data.frame(text.nr=k,line=s,text=msub)
   for(t in 1:length(mtag)){
     code<-paste0('<b><i>',mtag[t],'</i></b>')
@@ -458,45 +445,43 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   # mdf$line<-d1$Code[ma]
 } # post.ann()
 
+find.single.ann<-function(ann){
+  ts<-stri_split(ann,regex=" ")
+  ts.1<-ts[lapply(ts,length)==1]
+  ts.1<-unlist(ts.1)
+  ts.2<-ts[ts.1]
+  return(ts.1)
+}
+#window<-20
 get.ann.tx<-function(t){
   ann.df<-data.frame(text.nr="",line="",text="")
   rdf<-ann.df
-  #split_text.l <- lapply(t,function(x)split_at_n_words(x, 20))
   t.annotated<-lapply(seq_along(1:length(t)), function(i){
-  t3<-split_at_n_words(t[i],20)
+  t3<-split_at_n_words(t[i],window)
   print(i)
   t4<-data.frame(id=i,text=unlist(t3))
   print(t4)
   return(t3)
   })
   t.annotated[[2]]
-  #k<-1
   t3<-t.annotated
   length(t3) # 6 texts
   length(unlist(t3)) # 24 lines
   t3
   #########################
   ### loop over texts
-  k<-4
-  #t3[[5]]
+  k<-2
   d1$Anfang
-  # d1$Anfang<-d1$Anfang-1
-  # d1$Ende<-d1$Ende-1
   for(k in 1:length(t3)){
     cat("run k=",k,"\n")
     tx<-t3[[k]]
     tx<-unlist(tx)
     tx
-   # m<-grep(tx,text)
-   # t<-unlist(strsplit(tx," "))
-#  ann<-strsplit(d1$Segment," ")
   ann.all<-d1$Segment
   ann.all
   ann<-d1$Segment[d1$Anfang==k]
   ann.coded<-ann # all coded segments content in text
   code<-d1$Code[d1$Anfang==k] # all codes assigned in text
-  #t<-tx
-  #t
   ### if there is annotation:
   if(length(ann)>0){
   ann.which<-data.frame(ann=1:length(ann),ann.which=which(ann.all%in%ann))
@@ -504,33 +489,20 @@ get.ann.tx<-function(t){
   ann.which
 ########################################
     # TODO: get 3-grams to match in line
-  #i
   # get 3&2grams of segments
-  find.single.ann<-function(ann){
-    ts<-stri_split(ann,regex=" ")
-    ts.1<-ts[lapply(ts,length)==1]
-    ts.1<-unlist(ts.1)
-    ts.2<-ts[ts.1]
-    return(unlist(ts.2))
-  }
   ann
-  ann.single<-find.single.ann(ann)
   ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
   ann.g
   ann.g1<-ann.g[[1]]
-  x<-ann.g1
   if(length(ann)>1){
     m<-apply(ann.g1, MARGIN=1,FUN=function(x){
       m<-is.na(x[2])
       ann.g1$ngram[m]<-ann[2]
     })
   }
- # ann.g1
-  ann.g.1<-lapply(seq_along(1),function(x){get.ngrams(ann,i,1)})
  ann.g 
   ann.g[[1]]
   ann.gna<-ann.g[[1]][!is.na(ann.g[[1]]$ngram),]
-  ann.g.1[[1]]
   ann.which
   ann.gna$d1.line<-apply(ann.gna,MARGIN = 1,FUN = function(x){
     m<-grep(x,ann.which$ann)
@@ -540,18 +512,9 @@ get.ann.tx<-function(t){
   ##
   ann.gna
 ########################################
-  #t
-#  x<-ann.g[[1]]$ngram[19]
-    #ma<-lapply(ann,function(x)grepl(x,t))
-  #rm(x)
-  ####################################
-  #tx<-t.line
-##########################
-########################
- #t.line<-tx[s]
   #######################
   } #end if annotation
-  s<-3
+  s<-2
   ### loop over textlines
  rdf.top<-data.frame(text.nr=k,line="",text="")
  for(s in 1:length(tx)){
@@ -561,13 +524,7 @@ get.ann.tx<-function(t){
  t.line
  rdf<-data.frame(text.nr=k,line=s,text=t.line)
  rdf
- # ann.row<-unique(ann.row)
- # ann.com<-d1$Kommentar[ann.row]
- # ann.coded<-d1$Segment[ann.row]
- # ann.coded<-unique(ann.coded)
- 
  msub<-"no ann"
- #ann.ng.df
  ann.ng<-NULL
  ann
  if(length(ann)>0){
@@ -578,36 +535,21 @@ get.ann.tx<-function(t){
  ann.ng<-ann.match$ann.ng
  ann.ng
  }
- #token<-ann[2]
- replace.single<-function(ann){
- ts<-stri_split(ann,regex=" ")
- ts.1<-ts[lapply(ts,length)==1]
- ts.1<-unlist(ts.1)
- ann.gna.t<-ann.gna
- ann.gna.t<-rbind(ann.gna.t,ann.gna.t[length(ann.gna.t$line),])
- ann.gna.t$ngram[length(ann.gna.t$line)]<-ts.1
- return(ann.gna.t)
- }
- ann.gna.t<-replace.single(ann)
- ann.gna.t
- ifelse(length(ann)>0&length(ann.ng)==0,
-        rdf<-post.ann(t.line,ann.gna.t,s,k,single=T)$df,rdf<-rbind(ann.df,rdf))
  ifelse(length(ann.ng)>0,
         rdf<-post.ann(t.line,ann.gna,s,k,single=F)$df,rdf)
  rdf
  rdf.top<-rbind(rdf.top,rdf)
  }
 rdf.top 
-# ann.df
   ann.df<-rbind(ann.df,rdf.top)
-# ann.df2<-rbind(ann.df[,1:2],rdf[,1:2],after = length(ann.df$line))
  ann.df
   }
   return(ann.df)
-  
   }
+####################
+### RUN
 ann.p<-get.ann.tx(t)
-
+####################
 library(knitr)
 writeLines(knitr::kable(ann.p),"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann.output.md")
 
