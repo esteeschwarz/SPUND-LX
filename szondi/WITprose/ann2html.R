@@ -197,7 +197,6 @@ lapply(seq_along(1:7), function(x){
 })
 
 ### new from MAXQDA coded segments
-library(stringdist)
 k<-1
 i<-1
 rm(i)
@@ -209,6 +208,10 @@ txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
 t<-readLines(txtsrc)
 window<-18
 library(readxl)
+library(stringdist)
+library(purrr)
+library(abind)
+
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
 d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
 #m<-is.na(d1$Kommentar)
@@ -446,7 +449,7 @@ post.ann<-function(t.line,ann.gna,s,k,single){
 } # post.ann()
 
 find.single.ann<-function(ann){
-  ts<-stri_split(ann,regex=" ")
+  ts<-strsplit(ann," ")
   ts.1<-ts[lapply(ts,length)==1]
   ts.1<-unlist(ts.1)
   ts.2<-ts[ts.1]

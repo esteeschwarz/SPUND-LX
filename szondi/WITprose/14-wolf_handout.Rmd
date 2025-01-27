@@ -1,5 +1,4 @@
 ---
-######################################################
 # class handout wittler, prosepoem, WS24/25, uljana wolf/ falsche freunde
 ######################################################
 # TODO: wordcount, lexical diversity compared to lyrik, embed analysis, pdf export
@@ -7,53 +6,97 @@
 ######################################################
 title: "handout: uljana wolf - falsche freunde"
 author: "St. Schwarz"
-date: "`r Sys.Date()`"
+date: "`r Sys.time()`"
 zotero: AVL_dyn
-output: 
+output:
   bookdown::html_document2:
     global_numbering: TRUE
     number_sections: TRUE
     code_download: yes
     toc: yes
+    toc_depth: 4
     toc_float:
       collapsed: no
       smooth_scroll: no
+      #toc-depth: 4
     self_contained: FALSE #TRUE for standalone html page knit
-    #css: ../style_HA.css
+    css: https://ada-sub.dh-index.org/school/papers/011/style_HA.css
+  bookdown::pdf_document2:
+     extra_dependencies: ["float"]
+#css: ../style_HA.css
 #swap / decomment ff .bib/.css references for self compile .Rmd to html
 #bibliography: https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/sections/DYN/DYN_HA/DYN_HA.bib
-    css: https://ada-sub.dh-index.org/school/papers/011/style_HA.css
-bibliography: DYN_HA.bib
----
-# A. head
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-#mini critical: dont find relative files in path
-#knitr::opts_knit$set(root.dir="~/boxHKW/21S/DH")
-#knitr::opts_knit$set(base.dir = "~/boxHKW/21S/DH/gith/DH_essais/sections/DYN/DYN_HA")
-#EWA, lapsi
-#knitr::opts_knit$set(root.dir="~/boxHKW/UNI/21S/DH")
-#knitr::opts_knit$set(base.dir = "~/boxHKW/UNI/21S/DH/gith/DH_essais/sections/DYN/DYN_HA")
+# output:
+#   pdf_document:
+#     mainfont: Arial
+#     latex_engine: pdflatex
+#     global_numbering: TRUE
+#     number_sections: TRUE
+#     extra_dependencies: ["float"]
+# output:
+#   pdf_document:
+#   
+# documentclass: article
+# papersize: a4
+# linestretch: 1.5
+# links-as-notes: false
+# fontfamily: iwona
+# fontsize: 16pt
+# --number-sections: true
+# 
+# documentclass: book    
+#     papersize: a4
+#     linestretch: 1.5
+#     fontsize: 16pt
+#     fontfamily: Arial
+#     linkcolor: blue
+#     links-as-notes: false
+number_sections: yes
+global_numbering: yes
+linkcolor: blue  ##leftleft
+toc-depth: 4  ##leftleft
 
+
+bibliography: DYN_HA.bib
+
+---
+
+# A. head
+handout:   
+Seminar: "Das Prosagedicht"    
+Dozentin: Kathrin Wittler   
+WS24/25     
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 ```
 
-```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+```{r bib, eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
 library(httr)
 #fetch zotero .bib online
-x<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
-bib<-content(x,"text")
+#share <- runif(1)
+response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
+bib<-httr::content(response,"text")
 y<-tempfile("ref",fileext = ".bib")
 writeLines(bib,y)
+t<-Sys.time()
+#tf<-format(t,"%a %b %d %Y (%H.%M)")
+tf<-format(t,"%Y%m%d(%H.%M)")
 ```
+
 ---
 bibliography: "`r y`"
 ---
-```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+
+```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
 library(rmarkdown)
 src<-"../../../../../local/R/cred_gener.csv"
  # cred<-read.csv(src)
     src<-"../../../../../local/DYN/db/wolfdb003.csv"
     src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
+script<-"ann2html.R"
+source(script)
 ```
 
 ---
@@ -72,6 +115,44 @@ Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea 
 ```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
 # TODO: wordcount, lexical diversity
 ```
+
+## basic statistics
+```
+{ basic, eval=F,echo = FALSE,warning=FALSE}
+md_t<-median(dta_t$tokens) #durchschnittliche textlänge
+min_t<-min(dta_t$tokens[2:length(dta_t$tokens)])
+mlx<-subset(lxtable,lxtable$multi=="multiLX")
+lmlx<-length(mlx$lxtok)
+mlx_u<-unique(mlx$lxtok[1:lmlx])
+tokenarray<-get_tarray()
+token_na<-tokenarray[!is.na(tokenarray)]
+lto<-length(token_na)
+lty<-length(unique(token_na))
+```
+
+### ground truth
+<!--Die ` lc` Texte (Lyrik und lyrische oder experimentelle Prosa) haben einen Umfang von ` lto` Wörtern (tokens), die sich in ` lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach ` lty/lto`. Die durchschnittliche Textlänge (median) beträgt ` md_t` Wörter. Wir haben noch keine Vergleichswerte, die sinnvoll wären...
+-->
+
+## content analysis
+```{r analysis, results=F,eval=T,echo = FALSE,warning=FALSE}
+library(rmarkdown)
+tempmd<-tempfile("frame.md")
+writeLines(knitr::kable(ann.p),tempmd)
+mdin<-readLines(tempmd)
+mdstyle<-readLines("frame.css")
+stylediv<-paste0('<style>',paste0(mdstyle,collapse = ""),'</style')
+mdstyle<-c(stylediv,mdin)
+writeLines(mdstyle,tempmd)
+render(tempmd,output_format="bookdown::html_document2",output_file = "~/Documents/GitHub/SPUND-LX/szondi/WITprose/frameout.html")
+#htmout<-readLines(temphtm)
+
+```
+output:
+<iframe src="frameout.html" width="100%" height="700px"></iframe>
+
+## further
+no further
 ---
 
 # B. REF:
