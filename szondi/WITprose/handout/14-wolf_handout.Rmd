@@ -1,78 +1,41 @@
 ---
-# class handout wittler, prosepoem, WS24/25, uljana wolf/ falsche freunde
-######################################################
-# TODO: wordcount, lexical diversity compared to lyrik, embed analysis, pdf export
-
-######################################################
 title: "handout: uljana wolf - falsche freunde"
+runningheader: "handout: uljana wolf - falsche freunde" # only for pdf output
+#subtitle: "An implementation in R Markdown" # only for html output
 author: "St. Schwarz"
 date: "`r Sys.time()`"
-zotero: AVL_dyn
 output:
-  bookdown::html_document2:
-    global_numbering: TRUE
-    number_sections: TRUE
-    code_download: yes
-    toc: yes
-    toc_depth: 4
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
-      #toc-depth: 4
-    self_contained: FALSE #TRUE for standalone html page knit
-    css: https://ada-sub.dh-index.org/school/papers/011/style_HA.css
-  bookdown::pdf_document2:
-     extra_dependencies: ["float"]
-#css: ../style_HA.css
-#swap / decomment ff .bib/.css references for self compile .Rmd to html
-#bibliography: https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/sections/DYN/DYN_HA/DYN_HA.bib
-# output:
-#   pdf_document:
-#     mainfont: Arial
-#     latex_engine: pdflatex
-#     global_numbering: TRUE
-#     number_sections: TRUE
-#     extra_dependencies: ["float"]
-# output:
-#   pdf_document:
-#   
-# documentclass: article
-# papersize: a4
-# linestretch: 1.5
-# links-as-notes: false
-# fontfamily: iwona
-# fontsize: 16pt
-# --number-sections: true
-# 
-# documentclass: book    
-#     papersize: a4
-#     linestretch: 1.5
-#     fontsize: 16pt
-#     fontfamily: Arial
-#     linkcolor: blue
-#     links-as-notes: false
-number_sections: yes
-global_numbering: yes
-linkcolor: blue  ##leftleft
-toc-depth: 4  ##leftleft
-
-
-bibliography: DYN_HA.bib
-
+  tufte::tufte_html: default
+  tufte::tufte_handout:
+    citation_package: natbib
+    latex_engine: xelatex
+  tufte::tufte_book:
+    citation_package: natbib
+    latex_engine: xelatex
+bibliography: 'DYN_HA.bib'
+link-citations: yes
+header-includes:
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[T1]{fontenc}
+  - \usepackage{ragged2e}
+  - \usepackage[ngerman]{babel}
+  - \usepackage{hyphenat}
+  - \hyphenation{R-Markdown}
 ---
 
 # A. head
-handout:   
 Seminar: "Das Prosagedicht"    
 Dozentin: Kathrin Wittler   
 WS24/25     
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(tufte)
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
 ```
 
-```{r bib, eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+```{r bibmy, eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
 library(httr)
 #fetch zotero .bib online
 #share <- runif(1)
@@ -95,14 +58,18 @@ src<-"../../../../../local/R/cred_gener.csv"
  # cred<-read.csv(src)
     src<-"../../../../../local/DYN/db/wolfdb003.csv"
     src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
-script<-"ann2html.R"
+script<-"../ann2html.R"
 source(script)
 ```
 
 ---
 
 # zur autorin
+\begin{marginfigure}
+content to the right
+\end{marginfigure}
 
+<!--\begin{justify}-->
 Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt *kochanie ich habe brot gekauft* [@wolf_kochanie_2005] mit dem Peter-Huchel-Preis geehrt und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften drei weitere Gedichtbände, zuletzt *Muttertask* [@wolf_muttertask_2023] ebenfalls bei *kookbooks*.  
 Dort ist sie in ein enges Netzwerk junger deutschsprachiger Autor:innen eingebunden, die sich mehrheitlich durch ihre Affinität zu mehr- oder polylingualer Dichtung auszeichnen und vielleicht mit dem Label *postdeutsch* assoziiert werden können. Es gibt bei kook kaum Dichter:innen, deren Werk nicht irgendwie Mehrsprachigkeit künstlerisch umsetzt, damit arbeitet.  
 Zum kook corpus bzw. Uljana Wolf ist literaturwissenschaftlich noch nicht immens viel gearbeitet worden, ein gern zitierter Aufsatz ist von Frieder von Ammon, *Tertium quid. Uljana Wolfs Translinguale Sendung* erschienen 2018 in der  *Zeitschrift für Germanistik*. [@von_ammon_tertium_2018]   
@@ -110,6 +77,7 @@ Ammon unternimmt dort den Versuch, zwei aktuelle Tendenzen der Gegenwartslyrik i
 Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea stammenden Amerikanerin, geb. 1951) sowie Kurt M. Stein (einem nach Amerika ausgewanderten Deutschen, geb. 1884) hergestellt. In beiden sieht er Vorläufer der translingualen :Programmatik: [cf. @von_ammon_tertium_2018, p.282] der Texte Uljana Wolfs, beide thematisieren, thematisierten… sprachliche Phänomene, mit denen Dichter umgehen, wenn sie sich zwischen nationalen Sprachräumen bewegen.   
 
 *falsche freunde* [@wolf_falsche_2009], der Gedichtband, mit dem wir es hier zu tun haben, trage das (so genannte Phänomen) z.B.. orthographisch und/oder phonetisch ähnlicher, aber semantisch verschiedener "Worte" [cf. @von_ammon_tertium_2018, p.282] – welches vom :Transit: dieser von einer in die andere Sprache auftritt, schon im Titel. 
+<!--\end{justify}-->
 
 # die falschen freunde
 ```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
@@ -140,7 +108,7 @@ library(rmarkdown)
 tempmd<-tempfile("frame.md")
 writeLines(knitr::kable(ann.p),tempmd)
 mdin<-readLines(tempmd)
-mdstyle<-readLines("frame.css")
+mdstyle<-readLines("../frame.css")
 stylediv<-paste0('<style>',paste0(mdstyle,collapse = ""),'</style>')
 mdstyle<-c(stylediv,mdin)
 writeLines(mdstyle,"testmd.md")
@@ -150,7 +118,7 @@ render(tempmd,output_format="bookdown::html_document2",output_file = "~/Document
 
 ```
 output:
-<iframe src="frameout.html" width="100%" height="500px"></iframe>
+<!--<iframe src="frameout.html" width="100%" height="500px"></iframe>-->
 
 
 
@@ -164,4 +132,4 @@ knitr::kable(ann.p)
 no further
 ---
 
-# B. REF:
+<!--# B. REF:-->

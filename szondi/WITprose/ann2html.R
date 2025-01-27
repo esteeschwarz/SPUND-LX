@@ -572,5 +572,5 @@ ann.p<-get.ann.tx(t)
 library(knitr)
 writeLines(knitr::kable(ann.p),"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann.output.md")
 
-
+#?render
 
