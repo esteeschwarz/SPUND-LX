@@ -113,7 +113,7 @@ margin-left: 2em;
 
 <h1 class="title toc-ignore">handout: uljana wolf - falsche freunde</h1>
 <h4 class="author">St. Schwarz</h4>
-<h4 class="date">2025-01-27 15:02:40</h4>
+<h4 class="date">2025-01-27 16:47:10</h4>
 
 
 
@@ -135,23 +135,9 @@ Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea 
 </div>
 <div id="die-falschen-freunde" class="section level1">
 <h1>die falschen freunde</h1>
-<div id="basic-statistics" class="section level2">
-<h2>basic statistics</h2>
-<pre><code>{ basic, eval=F,echo = FALSE,warning=FALSE}
-md_t&lt;-median(dta_t$tokens) #durchschnittliche textlänge
-min_t&lt;-min(dta_t$tokens[2:length(dta_t$tokens)])
-mlx&lt;-subset(lxtable,lxtable$multi==&quot;multiLX&quot;)
-lmlx&lt;-length(mlx$lxtok)
-mlx_u&lt;-unique(mlx$lxtok[1:lmlx])
-tokenarray&lt;-get_tarray()
-token_na&lt;-tokenarray[!is.na(tokenarray)]
-lto&lt;-length(token_na)
-lty&lt;-length(unique(token_na))</code></pre>
-</div>
 <div id="ground-truth" class="section level2">
 <h2>ground truth</h2>
-<!--Die ` lc` Texte (Lyrik und lyrische oder experimentelle Prosa) haben einen Umfang von ` lto` Wörtern (tokens), die sich in ` lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach ` lty/lto`. Die durchschnittliche Textlänge (median) beträgt ` md_t` Wörter. Wir haben noch keine Vergleichswerte, die sinnvoll wären...
--->
+<p>Die 26 Texte haben einen Umfang von 1610 Wörtern (tokens), die sich in 933 distinct types einteilen lassen, die type/token ratio, ein Indikator für <em>lexical diversity</em>, beträgt demnach 0.5795031. Die durchschnittliche Textlänge (median) sind 68.5 Wörter.</p>
 </div>
 <div id="content-analysis" class="section level2">
 <h2>content analysis</h2>

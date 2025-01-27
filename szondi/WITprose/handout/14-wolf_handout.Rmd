@@ -21,34 +21,43 @@ Seminar: "Das Prosagedicht"
 Dozentin: Kathrin Wittler   
 WS24/25     
 
-```{r setup, include=FALSE}
-library(tufte)
-# invalidate cache when the tufte version changes
+```{r setup,results=F, include=FALSE}
+#library(tufte)
+library(tm)
+#library(dplyr)
+library(rmarkdown)
+#library(httr)
+library(purrr)
+ # invalidate cache when the tufte version changes
 knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
 
-```{r bibmy, eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
-library(httr)
+```{r bibmy, eval=F, echo=FALSE, warning=FALSE,message=FALSE}
 #fetch zotero .bib online
 #share <- runif(1)
-response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
-bib<-httr::content(response,"text")
-y<-tempfile("ref",fileext = ".bib")
-writeLines(bib,y)
-t<-Sys.time()
-#tf<-format(t,"%a %b %d %Y (%H.%M)")
-tf<-format(t,"%Y%m%d(%H.%M)")
+# response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
+# bib<-httr::content(response,"text")
+# y<-tempfile("ref",fileext = ".bib")
+# writeLines(bib,y)
+# t<-Sys.time()
+# #tf<-format(t,"%a %b %d %Y (%H.%M)")
+# tf<-format(t,"%Y%m%d(%H.%M)")
 ```
 
 
 ```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
-library(rmarkdown)
-src<-"../../../../../local/R/cred_gener.csv"
+#src<-"../../../../../local/R/cred_gener.csv"
  # cred<-read.csv(src)
-    src<-"../../../../../local/DYN/db/wolfdb003.csv"
-    src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
-script<-"../ann2html.R"
+  #  src.d<-"~/boxHKW/21S/DH/local/DYN/db/wolfdb003.csv"
+# k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
+# k2<-k2$content[k2$book=="FF"]  
+src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
+#writeLines(k2,"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt")
+# tp<-readLines(src.t)
+
+   # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
+script<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R"
 source(script)
 ```
 
@@ -68,30 +77,50 @@ Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea 
 *falsche freunde* [@wolf_falsche_2009], der Gedichtband, mit dem wir es hier zu tun haben, trage das (so genannte Phänomen) z.B.. orthographisch und/oder phonetisch ähnlicher, aber semantisch verschiedener "Worte" [cf. @von_ammon_tertium_2018, p.282] – welches vom :Transit: dieser von einer in die andere Sprache auftritt, schon im Titel. 
 
 # die falschen freunde
-```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+```{r eval=F, echo=FALSE, warning=FALSE,message=FALSE}
 # TODO: wordcount, lexical diversity
 ```
 
-## basic statistics
-```
-{ basic, eval=F,echo = FALSE,warning=FALSE}
-md_t<-median(dta_t$tokens) #durchschnittliche textlänge
-min_t<-min(dta_t$tokens[2:length(dta_t$tokens)])
-mlx<-subset(lxtable,lxtable$multi=="multiLX")
-lmlx<-length(mlx$lxtok)
-mlx_u<-unique(mlx$lxtok[1:lmlx])
-tokenarray<-get_tarray()
-token_na<-tokenarray[!is.na(tokenarray)]
-lto<-length(token_na)
-lty<-length(unique(token_na))
+```{r basics, eval=T,echo = FALSE,warning=FALSE}
+  tp<-readLines(src.tp)
+
+  g2<-Corpus(VectorSource(tp))
+  given_corpus<-g2
+  clean_corpus <- function(corpus) {
+    corpus <- tm_map(corpus, removePunctuation)
+    corpus <- tm_map(corpus, removeNumbers)
+   # corpus <- tm_map(corpus, removeWords, stopwords("en"))
+    corpus <- tm_map(corpus, stripWhitespace)
+    return(corpus)
+  }
+  given_corpus <- clean_corpus(given_corpus)
+  given_dtm <- DocumentTermMatrix(given_corpus)
+  given_freq <- as.data.frame(as.matrix(given_dtm))
+  given_freq <- colSums(given_freq)
+ # length(unlist(given_corpus))
+  #t.unique<-unique(tokens)
+  lto<-sum(given_freq)
+  lty<-length(given_freq)
+  #x<-t[1]
+  tp<-tp[2:length(tp)]
+  lc<-length(tp)
+
+  lm<-lapply(seq_along(1:length(tp)), function(i){
+    length(unlist(strsplit(tp[i]," ")))
+#    x%>%strsplit(" ")%>%length()
+  })
+  lm<-unlist(lm)
+  #lto<-sum(lm)
+  md_t<-median(lm)
+
 ```
 
 ## ground truth
-<!--Die ` lc` Texte (Lyrik und lyrische oder experimentelle Prosa) haben einen Umfang von ` lto` Wörtern (tokens), die sich in ` lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach ` lty/lto`. Die durchschnittliche Textlänge (median) beträgt ` md_t` Wörter. Wir haben noch keine Vergleichswerte, die sinnvoll wären...
--->
+Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r lty/lto`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter.   
+
 
 ## content analysis
-```{r analysis, results=F,eval=T,echo = FALSE,warning=FALSE}
+```{r analysis, results=F,eval=F,echo = FALSE,warning=FALSE}
 library(rmarkdown)
 tempmd<-tempfile("frame.md")
 writeLines(knitr::kable(ann.p),tempmd)

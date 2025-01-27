@@ -145,6 +145,14 @@ x<-fromJSON(readLines(f.ns[1]),simplifyDataFrame = T,flatten = T)
 x1<-abind(unlist(x$dta.poem.1$poem),along = 0)
 x1<-lapply(x$dta.poem.1$poem, data_frame)
 ### no.
+ldf<-lapply(seq_along(1:length(f.ns)), function(i){
+x1<-fromJSON(readLines(f.ns[i]),simplifyDataFrame = T,flatten = T)
+
+})
+
+
+
+
 
 library(jsonlite)
 library(dplyr)

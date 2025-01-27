@@ -573,4 +573,6 @@ library(knitr)
 writeLines(knitr::kable(ann.p),"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann.output.md")
 
 #?render
-
+# library(rmarkdown)
+# render("14-wolf_handout.Rmd",output_format = "tufte::tufte_handout")
+# render("tuftesample.Rmd",output_format = "tufte::tufte_handout")
