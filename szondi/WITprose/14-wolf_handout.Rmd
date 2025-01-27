@@ -1,7 +1,10 @@
 ---
-#--- official ---#
-# class handout WS24/25, uljana wolf/ falsche freunde
+######################################################
+# class handout wittler, prosepoem, WS24/25, uljana wolf/ falsche freunde
+######################################################
+# TODO: wordcount, lexical diversity compared to lyrik, embed analysis, pdf export
 
+######################################################
 title: "handout: uljana wolf - falsche freunde"
 author: "St. Schwarz"
 date: "`r Sys.Date()`"
@@ -55,17 +58,20 @@ src<-"../../../../../local/R/cred_gener.csv"
 
 ---
 
-# einleitung
-
 # zur autorin
-Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt *kochanie ich habe brot gekauft* (kookbooks 2005) mit dem Peter-Huchel-Preis geehrt und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften zwei weitere Gedichtbände, ebenfalls bei *kookbooks*. Dort ist sie in ein enges Netzwerk junger deutschsprachiger Autor:innen eingebunden, die sich auch (hier zum Aspekt *postdeutsch*) mehrheitlich durch ihre Affinität zu mehr- oder polylingualer Dichtung auszeichnen. Es gibt bei kook kaum Dichter:innen, deren Werk nicht irgendwie Mehrsprachigkeit künstlerisch umsetzt, damit arbeitet. 
 
-# work
+Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt *kochanie ich habe brot gekauft* [@wolf_kochanie_2005] mit dem Peter-Huchel-Preis geehrt und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften drei weitere Gedichtbände, zuletzt *Muttertask* [@wolf_muttertask_2023] ebenfalls bei *kookbooks*.  
+Dort ist sie in ein enges Netzwerk junger deutschsprachiger Autor:innen eingebunden, die sich mehrheitlich durch ihre Affinität zu mehr- oder polylingualer Dichtung auszeichnen und vielleicht mit dem Label *postdeutsch* assoziiert werden können. Es gibt bei kook kaum Dichter:innen, deren Werk nicht irgendwie Mehrsprachigkeit künstlerisch umsetzt, damit arbeitet.  
+Zum kook corpus bzw. Uljana Wolf ist literaturwissenschaftlich noch nicht immens viel gearbeitet worden, ein gern zitierter Aufsatz ist von Frieder von Ammon, *Tertium quid. Uljana Wolfs Translinguale Sendung* erschienen 2018 in der  *Zeitschrift für Germanistik*. [@von_ammon_tertium_2018]   
+Ammon unternimmt dort den Versuch, zwei aktuelle Tendenzen der Gegenwartslyrik im Werk Uljana Wolfs exemplarisch zu studieren. Er beobachtet (mit Verweis auf Thomas Kling, Marcel Beyer und Jan Wagner) erstens eine „Konjunktur poetologischer Reflexion im Bereich der Lyrik“ [cf. @von_ammon_tertium_2018, p.276] und zweitens die Tendenz zur „Internationalisierung“, womit er auf die Tatsache anspielt, dasz „Lyriker bei der Modellierung ihrer Poetik nicht mehr vorrangig auf Vorbildfiguren aus ihren eigenen Herkunftsländern Bezug nehmen, sondern auf eine […] Auswahl von Autoren, die potenziell aus der ganzen Welt stammen können“ [@von_ammon_tertium_2018, ebd.].  
+Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea stammenden Amerikanerin, geb. 1951) sowie Kurt M. Stein (einem nach Amerika ausgewanderten Deutschen, geb. 1884) hergestellt. In beiden sieht er Vorläufer der translingualen :Programmatik: [cf. @von_ammon_tertium_2018, p.282] der Texte Uljana Wolfs, beide thematisieren, thematisierten… sprachliche Phänomene, mit denen Dichter umgehen, wenn sie sich zwischen nationalen Sprachräumen bewegen.   
 
-## basic statistics
-```{r echo = FALSE,warning=FALSE}
+*falsche freunde* [@wolf_falsche_2009], der Gedichtband, mit dem wir es hier zu tun haben, trage das (so genannte Phänomen) z.B.. orthographisch und/oder phonetisch ähnlicher, aber semantisch verschiedener "Worte" [cf. @von_ammon_tertium_2018, p.282] – welches vom :Transit: dieser von einer in die andere Sprache auftritt, schon im Titel. 
+
+# die falschen freunde
+```{r eval=TRUE, echo=FALSE, warning=FALSE,message=FALSE}
+# TODO: wordcount, lexical diversity
 ```
-
 ---
 
 # B. REF:

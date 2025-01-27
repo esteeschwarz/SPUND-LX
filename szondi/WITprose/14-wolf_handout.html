@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="St. Schwarz" />
+
+<meta name="date" content="2025-01-27" />
+
+<title>handout: uljana wolf - falsche freunde</title>
+
+<script src="14-wolf_handout_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="14-wolf_handout_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="14-wolf_handout_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="14-wolf_handout_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="14-wolf_handout_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="14-wolf_handout_files/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="14-wolf_handout_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="14-wolf_handout_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="14-wolf_handout_files/navigation-1.1/tabsets.js"></script>
+<script src="14-wolf_handout_files/navigation-1.1/codefolding.js"></script>
+<script src="14-wolf_handout_files/navigation-1.1/sourceembed.js"></script>
+<link href="14-wolf_handout_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="14-wolf_handout_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="https://ada-sub.dh-index.org/school/papers/011/style_HA.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">handout: uljana wolf - falsche freunde</h1>
+<h4 class="author">St. Schwarz</h4>
+<h4 class="date">2025-01-27</h4>
+
+</div>
+
+
+<div id="a.-head" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> A. head</h1>
+<hr />
+</div>
+<div id="zur-autorin" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> zur autorin</h1>
+<p>Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt <em>kochanie ich habe brot gekauft</em> <span class="citation">(Wolf 2005)</span> mit dem Peter-Huchel-Preis geehrt und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften drei weitere Gedichtbände, zuletzt <em>Muttertask</em> <span class="citation">(Wolf 2023)</span> ebenfalls bei <em>kookbooks</em>.<br />
+Dort ist sie in ein enges Netzwerk junger deutschsprachiger Autor:innen eingebunden, die sich mehrheitlich durch ihre Affinität zu mehr- oder polylingualer Dichtung auszeichnen und vielleicht mit dem Label <em>postdeutsch</em> assoziiert werden können. Es gibt bei kook kaum Dichter:innen, deren Werk nicht irgendwie Mehrsprachigkeit künstlerisch umsetzt, damit arbeitet.<br />
+Zum kook corpus bzw. Uljana Wolf ist literaturwissenschaftlich noch nicht immens viel gearbeitet worden, ein gern zitierter Aufsatz ist von Frieder von Ammon, <em>Tertium quid. Uljana Wolfs Translinguale Sendung</em> erschienen 2018 in der <em>Zeitschrift für Germanistik</em>. <span class="citation">(Ammon 2018)</span><br />
+Ammon unternimmt dort den Versuch, zwei aktuelle Tendenzen der Gegenwartslyrik im Werk Uljana Wolfs exemplarisch zu studieren. Er beobachtet (mit Verweis auf Thomas Kling, Marcel Beyer und Jan Wagner) erstens eine „Konjunktur poetologischer Reflexion im Bereich der Lyrik“ <span class="citation">(cf. Ammon 2018, 276)</span> und zweitens die Tendenz zur „Internationalisierung“, womit er auf die Tatsache anspielt, dasz „Lyriker bei der Modellierung ihrer Poetik nicht mehr vorrangig auf Vorbildfiguren aus ihren eigenen Herkunftsländern Bezug nehmen, sondern auf eine […] Auswahl von Autoren, die potenziell aus der ganzen Welt stammen können“ <span class="citation">(Ammon 2018, ebd.)</span>.<br />
+Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea stammenden Amerikanerin, geb. 1951) sowie Kurt M. Stein (einem nach Amerika ausgewanderten Deutschen, geb. 1884) hergestellt. In beiden sieht er Vorläufer der translingualen :Programmatik: <span class="citation">(cf. Ammon 2018, 282)</span> der Texte Uljana Wolfs, beide thematisieren, thematisierten… sprachliche Phänomene, mit denen Dichter umgehen, wenn sie sich zwischen nationalen Sprachräumen bewegen.</p>
+<p><em>falsche freunde</em> <span class="citation">(Wolf 2009)</span>, der Gedichtband, mit dem wir es hier zu tun haben, trage das (so genannte Phänomen) z.B.. orthographisch und/oder phonetisch ähnlicher, aber semantisch verschiedener “Worte” <span class="citation">(cf. Ammon 2018, 282)</span> – welches vom :Transit: dieser von einer in die andere Sprache auftritt, schon im Titel.</p>
+</div>
+<div id="die-falschen-freunde" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> die falschen freunde</h1>
+<hr />
+</div>
+<div id="b.-ref" class="section level1 unnumbered">
+<h1>B. REF:</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-von_ammon_tertium_2018" class="csl-entry">
+Ammon, Frieder von. 2018. <span>“Tertium Quid. <span>Uljana</span> <span>Wolfs</span> Translinguale <span>Sendung</span>.”</span> <em>Zeitschrift Für Germanistik</em> 28 (2): 275–89. <a href="https://www.jstor.org/stable/26583303">https://www.jstor.org/stable/26583303</a>.
+</div>
+<div id="ref-wolf_kochanie_2005" class="csl-entry">
+Wolf, Uljana. 2005. <em>Kochanie Ich Habe Brot Gekauft: <span>Gedichte</span> / <span>Uljana</span> <span>Wolf</span>.</em> 1. Aufl. Reihe <span>Lyrik</span> 5. Idstein: Kookbooks.
+</div>
+<div id="ref-wolf_falsche_2009" class="csl-entry">
+———. 2009. <em>Falsche <span>Freunde</span>: <span>Gedichte</span> / <span>Uljana</span> <span>Wolf</span>.</em> 1. Aufl. Kookbooks : <span>Reihe</span> <span>Lyrik</span> 15. Idstein: kookbooks.
+</div>
+<div id="ref-wolf_muttertask_2023" class="csl-entry">
+———. 2023. <em>Muttertask: <span>Gedichte</span> / <span>Uljana</span> <span>Wolf</span>.</em> 1. Auflage. Reihe <span>Lyrik</span> <span>Band</span> 85. Berlin: kookbooks.
+</div>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tCiMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIwojIGNsYXNzIGhhbmRvdXQgd2l0dGxlciwgcHJvc2Vwb2VtLCBXUzI0LzI1LCB1bGphbmEgd29sZi8gZmFsc2NoZSBmcmV1bmRlCiMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIwojIFRPRE86IHdvcmRjb3VudCwgbGV4aWNhbCBkaXZlcnNpdHkgY29tcGFyZWQgdG8gbHlyaWssIGVtYmVkIGFuYWx5c2lzLCBwZGYgZXhwb3J0CgojIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMKdGl0bGU6ICJoYW5kb3V0OiB1bGphbmEgd29sZiAtIGZhbHNjaGUgZnJldW5kZSIKYXV0aG9yOiAiU3QuIFNjaHdhcnoiCmRhdGU6ICJgciBTeXMuRGF0ZSgpYCIKem90ZXJvOiBBVkxfZHluCm91dHB1dDogCiAgYm9va2Rvd246Omh0bWxfZG9jdW1lbnQyOgogICAgZ2xvYmFsX251bWJlcmluZzogVFJVRQogICAgbnVtYmVyX3NlY3Rpb25zOiBUUlVFCiAgICBjb2RlX2Rvd25sb2FkOiB5ZXMKICAgIHRvYzogeWVzCiAgICB0b2NfZmxvYXQ6CiAgICAgIGNvbGxhcHNlZDogbm8KICAgICAgc21vb3RoX3Njcm9sbDogbm8KICAgIHNlbGZfY29udGFpbmVkOiBGQUxTRSAjVFJVRSBmb3Igc3RhbmRhbG9uZSBodG1sIHBhZ2Uga25pdAogICAgI2NzczogLi4vc3R5bGVfSEEuY3NzCiNzd2FwIC8gZGVjb21tZW50IGZmIC5iaWIvLmNzcyByZWZlcmVuY2VzIGZvciBzZWxmIGNvbXBpbGUgLlJtZCB0byBodG1sCiNiaWJsaW9ncmFwaHk6IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9lc3RlZXNjaHdhcnovREhfZXNzYWlzL21haW4vc2VjdGlvbnMvRFlOL0RZTl9IQS9EWU5fSEEuYmliCiAgICBjc3M6IGh0dHBzOi8vYWRhLXN1Yi5kaC1pbmRleC5vcmcvc2Nob29sL3BhcGVycy8wMTEvc3R5bGVfSEEuY3NzCmJpYmxpb2dyYXBoeTogRFlOX0hBLmJpYgotLS0KIyBBLiBoZWFkCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCiNtaW5pIGNyaXRpY2FsOiBkb250IGZpbmQgcmVsYXRpdmUgZmlsZXMgaW4gcGF0aAoja25pdHI6Om9wdHNfa25pdCRzZXQocm9vdC5kaXI9In4vYm94SEtXLzIxUy9ESCIpCiNrbml0cjo6b3B0c19rbml0JHNldChiYXNlLmRpciA9ICJ+L2JveEhLVy8yMVMvREgvZ2l0aC9ESF9lc3NhaXMvc2VjdGlvbnMvRFlOL0RZTl9IQSIpCiNFV0EsIGxhcHNpCiNrbml0cjo6b3B0c19rbml0JHNldChyb290LmRpcj0ifi9ib3hIS1cvVU5JLzIxUy9ESCIpCiNrbml0cjo6b3B0c19rbml0JHNldChiYXNlLmRpciA9ICJ+L2JveEhLVy9VTkkvMjFTL0RIL2dpdGgvREhfZXNzYWlzL3NlY3Rpb25zL0RZTi9EWU5fSEEiKQoKYGBgCgpgYGB7ciBldmFsPVRSVUUsIGVjaG89RkFMU0UsIHdhcm5pbmc9RkFMU0UsbWVzc2FnZT1GQUxTRX0KbGlicmFyeShodHRyKQojZmV0Y2ggem90ZXJvIC5iaWIgb25saW5lCng8LUdFVCgiaHR0cHM6Ly9hcGkuem90ZXJvLm9yZy9ncm91cHMvNDcxMzI0Ni9jb2xsZWN0aW9ucy85TE5SUkpRTi9pdGVtcy90b3A/Zm9ybWF0PWJpYnRleCIpCmJpYjwtY29udGVudCh4LCJ0ZXh0IikKeTwtdGVtcGZpbGUoInJlZiIsZmlsZWV4dCA9ICIuYmliIikKd3JpdGVMaW5lcyhiaWIseSkKYGBgCi0tLQpiaWJsaW9ncmFwaHk6ICJgciB5YCIKLS0tCmBgYHtyIGV2YWw9VFJVRSwgZWNobz1GQUxTRSwgd2FybmluZz1GQUxTRSxtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KHJtYXJrZG93bikKc3JjPC0iLi4vLi4vLi4vLi4vLi4vbG9jYWwvUi9jcmVkX2dlbmVyLmNzdiIKICMgY3JlZDwtcmVhZC5jc3Yoc3JjKQogICAgc3JjPC0iLi4vLi4vLi4vLi4vLi4vbG9jYWwvRFlOL2RiL3dvbGZkYjAwMy5jc3YiCiAgICBzcmNfbHg8LSIuLi8uLi8uLi8uLi8uLi9sb2NhbC9EWU4vZGIvdG9rZW5zTXVsdGlMWF9tLmNzdiIKYGBgCgotLS0KCiMgenVyIGF1dG9yaW4KClVsamFuYSBXb2xmLCBkZXIgw5ZmZmVudGxpY2hrZWl0IHNlaXQgMjAwNSBkdXJjaCBpaHJlIEdlZGljaHRlIGJla2FubnQsIHd1cmRlIDIwMDYgZsO8ciBpaHIgRGViw7x0ICprb2NoYW5pZSBpY2ggaGFiZSBicm90IGdla2F1ZnQqIFtAd29sZl9rb2NoYW5pZV8yMDA1XSBtaXQgZGVtIFBldGVyLUh1Y2hlbC1QcmVpcyBnZWVocnQgdW5kIHZlcsO2ZmZlbnRsaWNodGUgc2VpdGRlbSBuZWJlbiDDnGJlcnNldHp1bmdlbiB1bmQgZXNzYXlpc3Rpc2NoZW4gU2NocmlmdGVuIGRyZWkgd2VpdGVyZSBHZWRpY2h0YsOkbmRlLCB6dWxldHp0ICpNdXR0ZXJ0YXNrKiBbQHdvbGZfbXV0dGVydGFza18yMDIzXSBlYmVuZmFsbHMgYmVpICprb29rYm9va3MqLiAgCkRvcnQgaXN0IHNpZSBpbiBlaW4gZW5nZXMgTmV0endlcmsganVuZ2VyIGRldXRzY2hzcHJhY2hpZ2VyIEF1dG9yOmlubmVuIGVpbmdlYnVuZGVuLCBkaWUgc2ljaCBtZWhyaGVpdGxpY2ggZHVyY2ggaWhyZSBBZmZpbml0w6R0IHp1IG1laHItIG9kZXIgcG9seWxpbmd1YWxlciBEaWNodHVuZyBhdXN6ZWljaG5lbiB1bmQgdmllbGxlaWNodCBtaXQgZGVtIExhYmVsICpwb3N0ZGV1dHNjaCogYXNzb3ppaWVydCB3ZXJkZW4ga8O2bm5lbi4gRXMgZ2lidCBiZWkga29vayBrYXVtIERpY2h0ZXI6aW5uZW4sIGRlcmVuIFdlcmsgbmljaHQgaXJnZW5kd2llIE1laHJzcHJhY2hpZ2tlaXQga8O8bnN0bGVyaXNjaCB1bXNldHp0LCBkYW1pdCBhcmJlaXRldC4gIApadW0ga29vayBjb3JwdXMgYnp3LiBVbGphbmEgV29sZiBpc3QgbGl0ZXJhdHVyd2lzc2Vuc2NoYWZ0bGljaCBub2NoIG5pY2h0IGltbWVucyB2aWVsIGdlYXJiZWl0ZXQgd29yZGVuLCBlaW4gZ2VybiB6aXRpZXJ0ZXIgQXVmc2F0eiBpc3Qgdm9uIEZyaWVkZXIgdm9uIEFtbW9uLCAqVGVydGl1bSBxdWlkLiBVbGphbmEgV29sZnMgVHJhbnNsaW5ndWFsZSBTZW5kdW5nKiBlcnNjaGllbmVuIDIwMTggaW4gZGVyICAqWmVpdHNjaHJpZnQgZsO8ciBHZXJtYW5pc3RpayouIFtAdm9uX2FtbW9uX3RlcnRpdW1fMjAxOF0gICAKQW1tb24gdW50ZXJuaW1tdCBkb3J0IGRlbiBWZXJzdWNoLCB6d2VpIGFrdHVlbGxlIFRlbmRlbnplbiBkZXIgR2VnZW53YXJ0c2x5cmlrIGltIFdlcmsgVWxqYW5hIFdvbGZzIGV4ZW1wbGFyaXNjaCB6dSBzdHVkaWVyZW4uIEVyIGJlb2JhY2h0ZXQgKG1pdCBWZXJ3ZWlzIGF1ZiBUaG9tYXMgS2xpbmcsIE1hcmNlbCBCZXllciB1bmQgSmFuIFdhZ25lcikgZXJzdGVucyBlaW5lIOKAnktvbmp1bmt0dXIgcG9ldG9sb2dpc2NoZXIgUmVmbGV4aW9uIGltIEJlcmVpY2ggZGVyIEx5cmlr4oCcIFtjZi4gQHZvbl9hbW1vbl90ZXJ0aXVtXzIwMTgsIHAuMjc2XSB1bmQgendlaXRlbnMgZGllIFRlbmRlbnogenVyIOKAnkludGVybmF0aW9uYWxpc2llcnVuZ+KAnCwgd29taXQgZXIgYXVmIGRpZSBUYXRzYWNoZSBhbnNwaWVsdCwgZGFzeiDigJ5MeXJpa2VyIGJlaSBkZXIgTW9kZWxsaWVydW5nIGlocmVyIFBvZXRpayBuaWNodCBtZWhyIHZvcnJhbmdpZyBhdWYgVm9yYmlsZGZpZ3VyZW4gYXVzIGlocmVuIGVpZ2VuZW4gSGVya3VuZnRzbMOkbmRlcm4gQmV6dWcgbmVobWVuLCBzb25kZXJuIGF1ZiBlaW5lIFvigKZdIEF1c3dhaGwgdm9uIEF1dG9yZW4sIGRpZSBwb3RlbnppZWxsIGF1cyBkZXIgZ2FuemVuIFdlbHQgc3RhbW1lbiBrw7ZubmVu4oCcIFtAdm9uX2FtbW9uX3RlcnRpdW1fMjAxOCwgZWJkLl0uICAKSW0gRm9sZ2VuZGVuIHdlcmRlbiB2b24gQW1tb24gQmV6w7xnZSB6dSBUaGVyZXNhIEhhayBLeXVuZyBDaGEgKGVpbmVyIGF1cyBLb3JlYSBzdGFtbWVuZGVuIEFtZXJpa2FuZXJpbiwgZ2ViLiAxOTUxKSBzb3dpZSBLdXJ0IE0uIFN0ZWluIChlaW5lbSBuYWNoIEFtZXJpa2EgYXVzZ2V3YW5kZXJ0ZW4gRGV1dHNjaGVuLCBnZWIuIDE4ODQpIGhlcmdlc3RlbGx0LiBJbiBiZWlkZW4gc2llaHQgZXIgVm9ybMOkdWZlciBkZXIgdHJhbnNsaW5ndWFsZW4gOlByb2dyYW1tYXRpazogW2NmLiBAdm9uX2FtbW9uX3RlcnRpdW1fMjAxOCwgcC4yODJdIGRlciBUZXh0ZSBVbGphbmEgV29sZnMsIGJlaWRlIHRoZW1hdGlzaWVyZW4sIHRoZW1hdGlzaWVydGVu4oCmIHNwcmFjaGxpY2hlIFBow6Rub21lbmUsIG1pdCBkZW5lbiBEaWNodGVyIHVtZ2VoZW4sIHdlbm4gc2llIHNpY2ggendpc2NoZW4gbmF0aW9uYWxlbiBTcHJhY2hyw6R1bWVuIGJld2VnZW4uICAgCgoqZmFsc2NoZSBmcmV1bmRlKiBbQHdvbGZfZmFsc2NoZV8yMDA5XSwgZGVyIEdlZGljaHRiYW5kLCBtaXQgZGVtIHdpciBlcyBoaWVyIHp1IHR1biBoYWJlbiwgdHJhZ2UgZGFzIChzbyBnZW5hbm50ZSBQaMOkbm9tZW4pIHouQi4uIG9ydGhvZ3JhcGhpc2NoIHVuZC9vZGVyIHBob25ldGlzY2ggw6RobmxpY2hlciwgYWJlciBzZW1hbnRpc2NoIHZlcnNjaGllZGVuZXIgIldvcnRlIiBbY2YuIEB2b25fYW1tb25fdGVydGl1bV8yMDE4LCBwLjI4Ml0g4oCTIHdlbGNoZXMgdm9tIDpUcmFuc2l0OiBkaWVzZXIgdm9uIGVpbmVyIGluIGRpZSBhbmRlcmUgU3ByYWNoZSBhdWZ0cml0dCwgc2Nob24gaW0gVGl0ZWwuIAoKIyBkaWUgZmFsc2NoZW4gZnJldW5kZQpgYGB7ciBldmFsPVRSVUUsIGVjaG89RkFMU0UsIHdhcm5pbmc9RkFMU0UsbWVzc2FnZT1GQUxTRX0KIyBUT0RPOiB3b3JkY291bnQsIGxleGljYWwgZGl2ZXJzaXR5CmBgYAotLS0KCiMgQi4gUkVGOgo=</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("14-wolf_handout.Rmd");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
