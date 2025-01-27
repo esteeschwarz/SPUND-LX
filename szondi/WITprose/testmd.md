@@ -1,9 +1,4 @@
-<style>
-table, th, td {  
-border:1px solid black;
-}
-</style
-
+<style>th, td {  border:1px solid black;  padding: 5px;}</style>
 |     |id |n   |line                   |text                                                                                                                                                                                                                                                                                                                             |
 |:----|:--|:---|:----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |L:1  |   |1-  |1                      |am anfang war, oder zu beginn, welche art laut, oder leise: listen, when they <span style="background-color:#ff0;">begin the beguine</span>, und                                                                                                                                                                                 |
