@@ -72,6 +72,7 @@ nf.p4<-freq.list(posg4$ngram)
 posg5<-get.ngrams(ann,n=5)
 nf.p5<-freq.list(posg5$ngram)
 nf3.e<-head(nf.p3,10)
+nf3.e
 nf3.sam<-strsplit(as.character(nf3.e$WORD),split = " ")
 nf3.2<-lapply(nf3.sam,toupper)
 nf3.2
@@ -102,7 +103,12 @@ ps2<-lapply(seq_along(1:length(nf3.2)), function(i){
 })
 ps2
 #sam
-nf3.e$bsp<-ps2
+nf3.e$BEISPIEL<-ps2
+nf3.e<-nf3.e[,c(1,3,2)]
+nf3.e
+colnames(nf3.e)<-c("POS-gram","BEISPIEL","FREQ")
+colnames(nf2)<-c("2-gram","FREQ")
+
 handlist<-list(grams=head(nf2,10),posgrams=head(nf3.e,10))
 handlist
 #?stderr

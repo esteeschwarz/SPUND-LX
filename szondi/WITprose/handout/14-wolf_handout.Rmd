@@ -2,7 +2,7 @@
 title: "handout: uljana wolf - falsche freunde"
 runningheader: "handout: uljana wolf - falsche freunde" # only for pdf output
 #subtitle: "An implementation in R Markdown" # only for html output
-author: "st. Schwarz"
+author: "st. schwarz"
 date: "`r Sys.time()`"
 output:
   tufte::tufte_html: default
@@ -19,7 +19,8 @@ link-citations: yes
 # A. head
 Seminar: "Das Prosagedicht"    
 Dozentin: Kathrin Wittler   
-WS24/25     
+WS24/25    
+download pdf <a href="14-wolf_handout.pdf">here</a>.
 
 ```{r setup,results=F, include=FALSE}
 #library(tufte)
@@ -75,10 +76,15 @@ Dort ist sie in ein enges Netzwerk junger deutschsprachiger Autor:innen eingebun
 Zum kook corpus bzw. Uljana Wolf ist literaturwissenschaftlich noch nicht immens viel gearbeitet worden, ein gern zitierter Aufsatz ist von Frieder von Ammon, *Tertium quid. Uljana Wolfs Translinguale Sendung* erschienen 2018 in der  *Zeitschrift für Germanistik*. [@von_ammon_tertium_2018]   
 Ammon unternimmt dort den Versuch, zwei aktuelle Tendenzen der Gegenwartslyrik im Werk Uljana Wolfs exemplarisch zu studieren. Er beobachtet (mit Verweis auf Thomas Kling, Marcel Beyer und Jan Wagner) erstens eine „Konjunktur poetologischer Reflexion im Bereich der Lyrik“ [cf. @von_ammon_tertium_2018, p.276] und zweitens die Tendenz zur „Internationalisierung“, womit er auf die Tatsache anspielt, dasz „Lyriker bei der Modellierung ihrer Poetik nicht mehr vorrangig auf Vorbildfiguren aus ihren eigenen Herkunftsländern Bezug nehmen, sondern auf eine […] Auswahl von Autoren, die potenziell aus der ganzen Welt stammen können“ [@von_ammon_tertium_2018, ebd.].  
 Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea stammenden Amerikanerin, geb. 1951) sowie Kurt M. Stein (einem nach Amerika ausgewanderten Deutschen, geb. 1884) hergestellt. In beiden sieht er Vorläufer der translingualen :Programmatik: [cf. @von_ammon_tertium_2018, p.282] der Texte Uljana Wolfs, beide thematisieren, thematisierten… sprachliche Phänomene, mit denen Dichter umgehen, wenn sie sich zwischen nationalen Sprachräumen bewegen.   
-
 *falsche freunde* [@wolf_falsche_2009], der Gedichtband, mit dem wir es hier zu tun haben, trage das (so genannte Phänomen) z.B.. orthographisch und/oder phonetisch ähnlicher, aber semantisch verschiedener "Worte" [cf. @von_ammon_tertium_2018, p.282] – welches vom :Transit: dieser von einer in die andere Sprache auftritt, schon im Titel. 
 
+U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das eigene Schreiben, gerade unter dem Aspekt der hier angedeuteten *Translingualität*. Zuletzt wurden gesammelte Aufsätze aus den Jahren 2007-2020 im Essayband *Etymologischer Gossip* veröffentlicht.[@wolf_etymologischer_2021]  
+
 # die falschen freunde
+Als :falsche freunde: werden in der Linguistik Phrasen betrachtet, die als direkte Übersetzung eines Idioms oder eines Wortes von einer in eine andere Sprache auftauchen, ohne dabei die semantische-idiomatische Bedeutung des Ausgangsidioms zu erhalten. Dabei entstehen dann oft (auch gewollt humoristische) Zielphrasen, die in dieser Form keinen Sinn mehr ergeben. Als populär gewordenes (älteres) Beispiel dürfte das 'english-for-runaways'-Lied von Otto Waalkes gelten, in dem er unzählige solcher (falschen freunde) aneinanderreiht und die englische Übersetzung dieser festen deutschen Phrasen ad absurdum führt.   
+Im weiteren lyrischen Werk von U. Wolf tauchen solche Wortspielereien öfter und eher beiläufig auf und können aber auch leicht überlesen werden, da ihre Herleitung bzw. Erkennung, wenn sie nicht, wie in diesem Band, thematisiert wird, ein gewisses Vokabular in source und target language voraussetzt. [zb.: Mr. Veilmaker = Fr. Schleiermacher in @wolf_meine_2013]   
+
+
 ```{r eval=F, echo=FALSE, warning=FALSE,message=FALSE}
 # TODO: wordcount, lexical diversity
 ```
@@ -124,14 +130,17 @@ Im Folgenden werden von Ammon Bezüge zu Theresa Hak Kyung Cha (einer aus Korea 
 Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ungefähr von gleicher Länge.      
 
 ## few stats
-```{r, echo=F,grams,fig.margin=T,fig.cap="word 2-grams in corpus"}
-print(handlist$grams)
-cat("tab 1: word 2-grams in corpus")
+```{r grams, echo=F,results=T}
+#print(handlist$grams)
+kable(handlist$grams,caption = "word 2-grams in corpus / INFO: es gibt keine 3-gram cluster, die mehr als einmal vorhanden sind, deshalb werden diese hier nicht gezeigt. dies ist sehr bezeichnend, denn es heiszt, dasz phrasen udgl. überhaupt nicht vorkommen bzw. sich nicht wiederholen.")
+
+#cat("tab 1: word 2-grams in corpus")
 ```
 
-```{r, posgrams,echo=F,fig.margin=T,fig.cap="PoS 3-grams in corpus"}
-print(handlist$posgrams)
-cat("tab 2: part-of-speech 3-grams in corpus")
+```{r posgrams,echo=F,fig.margin=T,fig.cap="PoS 3-grams in corpus"}
+#print(handlist$posgrams)
+kable(handlist$posgrams,caption = "part-of-speech 3-grams in corpus with examples")
+#cat("tab 2: part-of-speech 3-grams in corpus")
 ```
 
 ## content analysis
@@ -147,15 +156,43 @@ writeLines(mdstyle,"testmd.md")
 writeLines(mdstyle,tempmd)
 #render(tempmd,output_format="bookdown::html_document2",output_file = "~/Documents/GitHub/SPUND-LX/szondi/WITprose/frameout.html")
 #htmout<-readLines(temphtm)
-
 ```
 
 
 ```{r eval=T,echo=F,kable,fig.cap="few annotations"}
-knitr::kable(ann.p)
+knitr::kable(ann.p,caption="few text annotations" )
 ```
 
-no further
+# theses
+1. Die formelle Befreiung der Texte von der lyrischen Form (Strophe, Vers) trägt dazu bei, sich bei dem Versuch, die Bezüge zu englischen Phrasen herzustellen, weitgehend auf den Inhalt konzentrieren zu können ohne störende Ablenkungen oder Interruptionen durch Zeilenumbrüche udgl. den Lesefluss lenkende Gestaltung.
+2. Die Fassung in weniger komplexem Satzbau vereinfacht die Übertragung des gelesenen auf die englische Syntax, um weiterhin Herleitungen vornehmen zu können.
+3. Die Verwendung von Reimen hingegen lenkt die Aufmerksamkeit auf die jeweilige Stelle und erleichtert dergestalt die Erkennung der (falschen freunde), die an diesen Positionen gehäuft auftreten.
+
+# questions
+1. Sind diese Dichtungen mehr als nur die Vorführung oder Ausartikulierung des Phänomens? Wie ist ihr literarischer Wert zu beurteilen, wenn man die linguistische Spielerei beiseitelässt?
+2. Haben wir es (anhand der im Seminar gefunden Merkmale des Prosagedichts) hier mit typischen Vertretern der Gattung zu tun bzw. was zeichnet sie darüberhinaus als Prosagedicht aus?
+3. Finden wir auch genreübergreifende Merkmale (zb. des Essais, der Anekdote, der Fabel, des Witzes) in den Texten?
+
+```{r msg,echo=F}
+t.ngrams.5<-lapply(seq_along(1:length(t1)),function(i,n){
+  t<-t1[i]
+#  print(head(t))
+  ng<-get.ngrams(t,n=5)
+})
+ng5<-data.frame(abind(t.ngrams.5,along = 1))
+#print(sample(ng5$ngram,1))
+ng5s<-sample(ng5$ngram,1)
+
+#print("thanks for your p")
+```
+
+# fin
+thanks for your patience oder wie fr. wolf sagen würde... 
+```{r sample} 
+ng5<-data.frame(abind(t.ngrams.5,along = 1))
+print(sample(ng5$ngram,1))
+```
+
 ---
 
-<!--# B. REF:-->
+# B. REF:
