@@ -301,10 +301,13 @@ split_at_n_words <- function(text, n) {
 
 #########################
 library(tidytext)
+i<-1
+out<-3
 get.ngrams<-function(ann,i,out){
    text<-ann
    ann
 ann.single<-find.single.ann(ann)
+ann.single
 out<-3
       print(text)
    print(length(text))
@@ -317,7 +320,8 @@ out<-3
        unnest_tokens(ngram, text, token = "ngrams", n = 1)
      if(length(ann.single)>0){
        out<-1
-   m<-grepl(ann.single,ngrams_df.1$ngram)
+   #m<-grepl(ann.single,ngrams_df.1$ngram)
+   m<-ngrams_df.1$ngram%in%ann.single
    ngrams_df.1
    ngrams_df.1<-ngrams_df.1[m,]
 }
@@ -336,7 +340,7 @@ out<-3
           ngrams_df<-rbind(ngrams_df.2,ngrams_df.3,ngrams_df.4,ngrams_df.5,ngrams_df.6))
    mn<-is.na(ngrams_df$ngram)
    ngrams_df.out<-ngrams_df[!mn,]
-   
+   ngrams_df.out
    print("finished...")
    return(ngrams_df.out)
 }
@@ -385,6 +389,7 @@ get.ann.match<-function(t.line,ann.gna.l,k){
   print("finished...")
   return(list(ann.ng=ann.gna.lm))
 }
+#ann.gna
 get.ann.gna.l<-function(ann.gna){
   print("get.ann.gna.l...")
   ann.gna.l<-lapply(seq_along(1:length(unique(ann.gna$line))),function(i){
@@ -425,17 +430,22 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   
   msub
   ### replace whole annotation
+  msub2<-t.line
   for(ac in ann.coded){
     
-    m<-grep(ac,t.line)
+    mac<-ac==msub2
  # ac<-"test"
-  if(length(m)>0)
+  if(mac){
     ifelse(output.rmd=="html",
-           msub<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),t.line)
-           ,msub<-gsub(ac,paste0('\\\\colorbox{yellow}{',ac,'}'),t.line))
+           msub2<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),msub2)
+           ,msub2<-gsub(ac,paste0('\\\\colorbox{yellow}{',ac,'}'),msub2))
 #    msub<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),t.line)
   
-}
+  msub<-msub2  
+  }
+  
+  }
+  msub2
   msub
   ann.com<-d1$Kommentar
   mcom<-ann.com[ann.row]
@@ -479,14 +489,14 @@ get.ann.tx<-function(t){
   print(t4)
   return(t3)
   })
-  t.annotated[[2]]
+  #t.annotated[[2]]
   t3<-t.annotated
   length(t3) # 6 texts
   length(unlist(t3)) # 24 lines
   t3
   #########################
   ### loop over texts
-  k<-2
+  k<-6
   d1$Anfang
   ### which texts are annotated?
   wk<-unique(d1$Anfang)
@@ -501,6 +511,7 @@ get.ann.tx<-function(t){
   ann<-d1$Segment[d1$Anfang==k]
   ann.coded<-ann # all coded segments content in text
   code<-d1$Code[d1$Anfang==k] # all codes assigned in text
+  code
   ### if there is annotation:
   if(length(ann)>0){
   ann.which<-data.frame(ann=1:length(ann),ann.which=which(ann.all%in%ann))
@@ -513,15 +524,19 @@ get.ann.tx<-function(t){
   ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
   ann.g
   ann.g1<-ann.g[[1]]
-  if(length(ann)>1){
-    m<-apply(ann.g1, MARGIN=1,FUN=function(x){
-      m<-is.na(x[2])
-      ann.g1$ngram[m]<-ann[2]
-    })
-  }
- ann.g 
+ #  x<-ann.g1
+ #  if(length(ann)>1){
+ #    mx<-apply(ann.g1, MARGIN=1,FUN=function(x){
+ #      m<-is.na(x[2])
+ #      ann.g1$ngram[m]<-ann[2]
+ #      return()
+ #    })
+ #  }
+ # mx
+  ann.g1 
   ann.g[[1]]
   ann.gna<-ann.g[[1]][!is.na(ann.g[[1]]$ngram),]
+  ann.gna
   ann.which
   ann.gna$d1.line<-apply(ann.gna,MARGIN = 1,FUN = function(x){
     m<-grep(x,ann.which$ann)
@@ -533,7 +548,7 @@ get.ann.tx<-function(t){
 ########################################
   #######################
   } #end if annotation
-  s<-2
+  s<-1
   ### loop over textlines
  rdf.top<-data.frame(TNr=k,line="",text="")
  for(s in 1:length(tx)){
@@ -546,6 +561,8 @@ get.ann.tx<-function(t){
  msub<-"no ann"
  ann.ng<-NULL
  ann
+ ann.gna
+ ### critical
  if(length(ann)>0){
  ann.gna.l<-get.ann.gna.l(ann.gna)
  ann.gna.l  
@@ -554,6 +571,7 @@ get.ann.tx<-function(t){
  ann.ng<-ann.match$ann.ng
  ann.ng
  }
+ ann.ng
  ifelse(length(ann.ng)>0,
         rdf<-post.ann(t.line,ann.gna,s,k,single=F)$df,rdf)
  rdf
