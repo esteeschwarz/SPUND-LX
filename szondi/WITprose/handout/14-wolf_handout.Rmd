@@ -20,7 +20,7 @@ link-citations: yes
 Seminar: "Das Prosagedicht"    
 Dozentin: Kathrin Wittler   
 WS24/25    
-download pdf <a href="14-wolf_handout.pdf">here</a>.
+download pdf <a href="https://github.com/esteeschwarz/SPUND-LX/raw/main/szondi/WITprose/handout/14-wolf_handout.pdf">here</a>.
 
 ```{r setup,results=F, include=FALSE}
 #library(tufte)
@@ -159,8 +159,8 @@ writeLines(mdstyle,tempmd)
 ```
 
 
-```{r eval=T,echo=F,kable,fig.cap="few annotations"}
-knitr::kable(ann.p,caption="few text annotations" )
+```{r kableann,eval=T,echo=F,fig.cap="few annotations"}
+knitr::kable(ann.p,caption="few text annotations",escape = F )
 ```
 
 # theses
