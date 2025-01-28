@@ -213,6 +213,9 @@ library(purrr)
 library(abind)
 
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
+### set 15054
+d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_2.xlsx")
+# alte pdf annotations, will be merged in script
 d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
 #m<-is.na(d1$Kommentar)
 #m
