@@ -5,7 +5,9 @@ runningheader: "handout: uljana wolf - falsche freunde" # only for pdf output
 author: "st. schwarz"
 date: "`r Sys.time()`"
 output:
-  tufte::tufte_html: default
+  bookdown::html_document2:
+    base_format: tufte::tufte_html
+  #tufte::tufte_html: default
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
@@ -170,6 +172,7 @@ knitr::kable(ann.p,caption="few text annotations",escape = F )
 
 # questions
 1. Sind diese Dichtungen mehr als nur die Vorführung oder Ausartikulierung des Phänomens? Wie ist ihr literarischer Wert zu beurteilen, wenn man die linguistische Spielerei beiseitelässt?
+  1. dazu: wenn man davon ausgeht, dasz zuerst das deutsche Idion da war, dann eine wörtliche Übersetzung und dann eine Einbindung einer Rückübersetzung ins Deutsche (was dann das dt. Idiom verfremdet, cf. Table \@ref(tab:kableann),L29) - wie notwendig steht dann das betreffende Wort dort, wo es steht? Herrscht hier der spielerische Ansatz über das (lyrische) Moment? 
 2. Haben wir es (anhand der im Seminar gefunden Merkmale des Prosagedichts) hier mit typischen Vertretern der Gattung zu tun bzw. was zeichnet sie darüberhinaus als Prosagedicht aus?
 3. Finden wir auch genreübergreifende Merkmale (zb. des Essais, der Anekdote, der Fabel, des Witzes) in den Texten?
 
