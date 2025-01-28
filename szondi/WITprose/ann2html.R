@@ -417,15 +417,20 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   ############################
   t.line
   ### replace ngrams
-  msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t.line)
+  ifelse(output.rmd=="html",
+  msub<-gsub(ann.gsub,paste0('<span style="background-color:#ff0;">','\\1','</span>'),t.line),msub<-gsub(ann.gsub,'\\\\colorbox{yellow}{\\1}',t.line))
+  
   msub
   ### replace whole annotation
   for(ac in ann.coded){
     
     m<-grep(ac,t.line)
-  
+ # ac<-"test"
   if(length(m)>0)
-    msub<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),t.line)
+    ifelse(output.rmd=="html",
+           msub<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),t.line)
+           ,msub<-gsub(ac,paste0('\\\\colorbox{yellow}{',ac,'}'),t.line))
+#    msub<-gsub(ac,paste0('<span style="background-color:#ff0;">',ac,'</span>'),t.line)
   
 }
   msub
@@ -434,7 +439,12 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   mcom[is.na(mcom)]<-""
   #mcom<-unique(mcom)
   mcom
-  mcom<-paste0('<span style="font-style:oblique;color:red;">',mcom,'</span>')
+  Column1 = c('Text with \\textcolor{red}{ red}',
+              'Text in \\textbf{boldit}',
+              'Text on \\textit{\\colorbox{yellow}{yellow background}}')
+#  mcom<-paste0('<span style="font-style:oblique;color:',obliq.color,';">',mcom,'</span>')
+  ifelse(output.rmd=="pdf",mcom<-paste0('\\textcolor{red}{\\textit{',mcom,'}}'),
+         mcom<-paste0('<span style="font-style:oblique;color:red;">',mcom,'</span>'))
   mtag<-d1$Code[ann.row]
   mtag[is.na(mtag)]<-""
 #  mtag<-unique(mtag)

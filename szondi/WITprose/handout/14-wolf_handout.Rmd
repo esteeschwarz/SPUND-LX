@@ -16,6 +16,7 @@ output:
     latex_engine: xelatex
 bibliography: 'wolf.bib'
 link-citations: yes
+keep_tex: yes
 ---
 
 # A. head
@@ -31,6 +32,8 @@ library(tm)
 library(rmarkdown)
 #library(httr)
 library(purrr)
+library(knitr)
+
  # invalidate cache when the tufte version changes
 knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
@@ -58,7 +61,14 @@ options(htmltools.dir.version = FALSE)
 src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
 #writeLines(k2,"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt")
 # tp<-readLines(src.t)
-
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+} else if (is_latex_output()) {
+  #output_format <- "PDF"
+  print("pdf")
+  output.rmd<-"pdf"
+}
    # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
 script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R"
 script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R"
@@ -162,7 +172,7 @@ writeLines(mdstyle,tempmd)
 
 
 ```{r kableann,eval=T,echo=F,fig.cap="few annotations"}
-knitr::kable(ann.p,caption="few text annotations",escape = F )
+  knitr::kable(ann.p,caption="few text annotations",escape = F )
 ```
 
 # theses
