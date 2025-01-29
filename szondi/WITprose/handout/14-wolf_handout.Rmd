@@ -94,7 +94,7 @@ U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das 
 # TODO: wordcount, lexical diversity
 ```
 
-```{r basics, eval=T,echo = FALSE,warning=FALSE}
+```{r basics, results=F,eval=T,echo = FALSE,warning=FALSE}
   tp<-readLines(src.tp)
 
   g2<-Corpus(VectorSource(tp))
@@ -128,6 +128,8 @@ U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das 
   std<-sd(lm)
   std<-round(std,2)
   #print(std)
+  ifelse(output.rmd=="html",tabref<-"\\@ref(tab:kableann),L33",
+       tabref<-"Table 3, L33")
 
 ```
 
@@ -164,11 +166,15 @@ writeLines(mdstyle,"testmd.md")
 writeLines(mdstyle,tempmd)
 #render(tempmd,output_format="bookdown::html_document2",output_file = "~/Documents/GitHub/SPUND-LX/szondi/WITprose/frameout.html")
 #htmout<-readLines(temphtm)
+
+# ifelse(output.rmd=="html",tabref<-"\@ref(tab:kableann),L33",
+#        tabref<-"Table 3, L33")
 ```
 
 
 ```{r kableann,eval=T,echo=F,fig.cap="few annotations"}
   knitr::kable(ann.p,caption="few text annotations",escape = F )
+
 ```
 
 # theses
@@ -178,7 +184,7 @@ writeLines(mdstyle,tempmd)
 
 # questions
 1. Sind diese Dichtungen mehr als nur die Vorführung oder Ausartikulierung des Phänomens? Wie ist ihr literarischer Wert zu beurteilen, wenn man die linguistische Spielerei beiseitelässt?
-  1. dazu: wenn man davon ausgeht, dasz zuerst das deutsche Idiom da war, dann eine wörtliche Übersetzung und dann eine Einbindung einer Rückübersetzung ins Deutsche (was dann das dt. Idiom verfremdet, cf. Table \@ref(tab:kableann),L29) - wie notwendig steht dann das betreffende Wort dort, wo es steht? Herrscht hier der spielerische Ansatz über das (lyrische) Moment? 
+  1. dazu: wenn man davon ausgeht, dasz zuerst das deutsche Idiom da war, dann eine wörtliche Übersetzung und dann eine Einbindung einer Rückübersetzung ins Deutsche (was dann das dt. Idiom verfremdet, cf. Table `r tabref`) - wie notwendig steht dann das betreffende Wort dort, wo es steht? Herrscht hier der spielerische Ansatz über das (lyrische) Moment? 
 2. Haben wir es (anhand der im Seminar gefunden Merkmale des Prosagedichts) hier mit typischen Vertretern der Gattung zu tun bzw. was zeichnet sie darüberhinaus als Prosagedicht aus?
 3. Finden wir auch genreübergreifende Merkmale (zb. des Essais, der Anekdote, der Fabel, des Witzes) in den Texten?
 
