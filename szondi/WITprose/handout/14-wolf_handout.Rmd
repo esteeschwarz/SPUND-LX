@@ -151,6 +151,11 @@ kable(handlist$grams,caption = "word 2-grams in corpus / INFO: es gibt keine 3-g
 #print(handlist$posgrams)
 kable(handlist$posgrams,caption = "part-of-speech 3-grams in corpus with examples")
 #cat("tab 2: part-of-speech 3-grams in corpus")
+# knitr::kable(
+#   list(handlist$grams, handlist$posgrams),
+#   caption = '1. word 2-grams in corpus / 2. part-of-speech 3-grams in corpus with examples',
+#   booktabs = TRUE, valign = 't'
+# )
 ```
 
 ## content analysis
@@ -171,8 +176,7 @@ writeLines(mdstyle,tempmd)
 #        tabref<-"Table 3, L33")
 ```
 
-
-```{r kableann,eval=T,echo=F,fig.cap="few annotations"}
+```{r kableann,eval=T,echo=F,fig.cap="few annotations",fig.fullwidth="T"}
   knitr::kable(ann.p,caption="few text annotations",escape = F )
 
 ```
