@@ -137,7 +137,7 @@ U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das 
 Als :falsche freunde: werden in der Linguistik Phrasen betrachtet, die als direkte Übersetzung eines Idioms oder Wortes von einer in eine andere Sprache auftauchen, ohne dabei die semantisch-idiomatische Bedeutung des Ausgangsidioms zu erhalten.^[Dabei entstehen dann oft (auch gewollt humoristische) Zielphrasen, die in dieser Form keinen Sinn mehr ergeben. Als populär gewordenes (älteres) Beispiel dürfte das 'english-for-runaways'-Lied von Otto Waalkes gelten, in dem er unzählige solcher (falschen freunde) aneinanderreiht und die englische Übersetzung einiger deutschen Phrasen ad absurdum führt. Im weiteren lyrischen Werk von U. Wolf tauchen solche Wortspielereien öfter und eher beiläufig auf und können aber auch leicht überlesen werden, da ihre Herleitung bzw. Erkennung, wenn sie nicht, wie in diesem Band, thematisiert wird, ein gewisses Vokabular in source und target language voraussetzt. (zb: Mr. Veilmaker = Fr. Schleiermacher in @wolf_meine_2013)]
 
 ## ground truth
-Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ungefähr von gleicher Länge.      
+Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ungefähr von gleicher Länge. ^[Berechnungen siehe: @schwarz_wolf-handout_2025]
 
 ## few stats
 ```{r grams, echo=F,results=T}
@@ -184,7 +184,7 @@ writeLines(mdstyle,tempmd)
 
 # questions
 1. Sind diese Dichtungen mehr als nur die Vorführung oder Ausartikulierung des Phänomens? Wie ist ihr literarischer Wert zu beurteilen, wenn man die linguistische Spielerei beiseitelässt?
-  1. dazu: wenn man davon ausgeht, dasz zuerst das deutsche Idiom da war, dann eine wörtliche Übersetzung und dann eine Einbindung einer Rückübersetzung ins Deutsche (was dann das dt. Idiom verfremdet, cf. Table `r tabref`) - wie notwendig steht dann das betreffende Wort dort, wo es steht? Herrscht hier der spielerische Ansatz über das (lyrische) Moment? 
+  1. dazu: wenn man davon ausgeht, dasz zuerst das deutsche Idiom da war, dann eine wörtliche Übersetzung und dann eine Einbindung einer Rückübersetzung ins Deutsche (was dann das dt. Idiom verfremdet, cf. Table `r tabref`) - wie notwendig steht dann das betreffende Wort dort, wo es steht? Herrscht hier der spielerische Ansatz über das (lyrische) Moment?^[über diese Zeile speziell würde ich mir eine Diskussion wünschen...]
 2. Haben wir es (anhand der im Seminar gefunden Merkmale des Prosagedichts) hier mit typischen Vertretern der Gattung zu tun bzw. was zeichnet sie darüberhinaus als Prosagedicht aus?
 3. Finden wir auch genreübergreifende Merkmale (zb. des Essais, der Anekdote, der Fabel, des Witzes) in den Texten?
 
