@@ -307,5 +307,5 @@ credit<-c(admin=F,ws=F)
 post.page(page.x,inuse=F,credit)
 
 ###
-
-
+keywords<-get.keys(run = T)
+keywords$freq_comparison
