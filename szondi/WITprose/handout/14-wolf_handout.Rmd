@@ -66,8 +66,8 @@ if (is_html_output()) {
   dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
 }
    # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
-script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R"
-script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R"
+script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R" # for rendering annotations
+script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R" # for stats
 source(script1)
 source(script2)
 ```
@@ -96,7 +96,8 @@ U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das 
 ```
 
 ```{r basics, results=F,eval=T,echo = FALSE,warning=FALSE}
-  tp<-readLines(src.tp)
+# here is where the basic statistics are calculated. the posgram stats are calculated in the script "handout-functions.R"
+tp<-readLines(src.tp)
 
   g2<-Corpus(VectorSource(tp))
   given_corpus<-g2

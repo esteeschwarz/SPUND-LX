@@ -1,11 +1,14 @@
 # 20250127(17.11)
 # 15053.wolf.handout.functions
 ##############################
+# calculates posgram statistics of textcorpus
+############################################
 src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
 t1<-readLines(src.tp)
 library(quanteda)
 library(udpipe)
 library(collostructions)
+library(tidytext)
 ###############
 
 ### create vertical corpus
@@ -25,7 +28,6 @@ df<-as.data.frame(com.vrt.t)
 tdf2<-data.frame(abind(tdf,along = 1))
 # wks.
 ##########################
-library(tidytext)
 get.ngrams<-function(text,n){
   #text<-tdf2$token
   #text<-t1[1]

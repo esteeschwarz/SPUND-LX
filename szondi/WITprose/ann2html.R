@@ -4,7 +4,7 @@
 # what the script does:
 # 1. merges MAXQDA annotations from 2 different, 1 pdf and 1 text base to one annotation dataframe
 # 2. builds markdown base of that dataframe for rendering the annotations table to html and pdf output
-# 3. statistics are calculated in the final rmarkdown script itself in the chunk "basics"
+# 3. posgram statistics are calculated in the script "handout-functions.R" , other small stats are calculated in the final rmarkdown script itself in the chunk "basics"
 ##########
 # note: this first function is deprecated and only kept for archive reasons and is not executed
 tempfun<-function(){
@@ -224,7 +224,7 @@ library(abind)
 ### set 15054
 d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_2_text.xlsx")
 # alte pdf annotations, will be merged in script
-d2<-read.csv("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_1_pdf.csv",sep = ";")
+d2<-read.csv("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_1_pdf.csv",sep = ",")
 ### get annotations from 2nd essai to 1st table
 put.ann<-function(){
 for (k in 1:length(d2$Segment)){
