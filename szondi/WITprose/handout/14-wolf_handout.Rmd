@@ -19,12 +19,6 @@ link-citations: yes
 keep_tex: yes
 ---
 
-# A. head
-Seminar: "Das Prosagedicht"    
-Dozentin: Kathrin Wittler   
-WS24/25    
-download pdf <a href="https://github.com/esteeschwarz/SPUND-LX/raw/main/szondi/WITprose/handout/14-wolf_handout.pdf">here</a>.
-
 ```{r setup,results=F, include=FALSE}
 #library(tufte)
 library(tm)
@@ -64,10 +58,12 @@ src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
 if (is_html_output()) {
   print("html output")
   output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://github.com/esteeschwarz/SPUND-LX/raw/main/szondi/WITprose/handout/14-wolf_handout.pdf">here</a>.')
 } else if (is_latex_output()) {
   #output_format <- "PDF"
   print("pdf")
   output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
 }
    # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
 script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R"
@@ -76,11 +72,16 @@ source(script1)
 source(script2)
 ```
 
+# A. head
+Seminar "Das Prosagedicht" / Kathrin Wittler / FUB WS24/25   
+
+`r dlmsg`
+
 ---
 
 # zur autorin
 \begin{marginfigure}
-content to the right
+`r print("testmsg")`
 \end{marginfigure}
 
 Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt *kochanie ich habe brot gekauft* [@wolf_kochanie_2005] mit dem Peter-Huchel-Preis ausgezeichnet und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften drei weitere Gedichtbände, zuletzt *Muttertask* [@wolf_muttertask_2023] ebenfalls bei *kookbooks*.  
@@ -137,7 +138,7 @@ U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das 
 Als :falsche freunde: werden in der Linguistik Phrasen betrachtet, die als direkte Übersetzung eines Idioms oder Wortes von einer in eine andere Sprache auftauchen, ohne dabei die semantisch-idiomatische Bedeutung des Ausgangsidioms zu erhalten.^[Dabei entstehen dann oft (auch gewollt humoristische) Zielphrasen, die in dieser Form keinen Sinn mehr ergeben. Als populär gewordenes (älteres) Beispiel dürfte das 'english-for-runaways'-Lied von Otto Waalkes gelten, in dem er unzählige solcher (falschen freunde) aneinanderreiht und die englische Übersetzung einiger deutschen Phrasen ad absurdum führt. Im weiteren lyrischen Werk von U. Wolf tauchen solche Wortspielereien öfter und eher beiläufig auf und können aber auch leicht überlesen werden, da ihre Herleitung bzw. Erkennung, wenn sie nicht, wie in diesem Band, thematisiert wird, ein gewisses Vokabular in source und target language voraussetzt. (zb: Mr. Veilmaker = Fr. Schleiermacher in @wolf_meine_2013)]
 
 ## ground truth
-Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ungefähr von gleicher Länge. ^[Berechnungen siehe: @schwarz_wolf-handout_2025]
+Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt demnach `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ungefähr von gleicher Länge.^[Berechnungen siehe: @schwarz_wolf-handout_2025]
 
 ## few stats
 ```{r grams, echo=F,results=T}
