@@ -1,1 +1,3 @@
 testupload snc
+hook wks wo deploy action
+manual pulldeploy wks.
