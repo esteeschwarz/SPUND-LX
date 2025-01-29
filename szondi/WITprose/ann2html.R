@@ -1,4 +1,12 @@
-
+#20250123
+#15055.WITprose.wolf-handout.functions
+######################################
+# what the script does:
+# 1. merges MAXQDA annotations from 2 different, 1 pdf and 1 text base to one annotation dataframe
+# 2. builds markdown base of that dataframe for rendering the annotations table to html and pdf output
+# 3. statistics are calculated in the final rmarkdown script itself in the chunk "basics"
+##########
+# note: this first function is deprecated and only kept for archive reasons and is not executed
 tempfun<-function(){
 library(RSQLite)
 d<-dbDriver("SQLite")
@@ -201,7 +209,8 @@ k<-1
 i<-1
 rm(i)
 target.l<-strsplit(d1$Segment," ")
-}
+} # end deprecated function
+###########################
 ### from here
 ######################################################################
 txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
@@ -212,57 +221,39 @@ library(stringdist)
 library(purrr)
 library(abind)
 
-d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff_Codierte Segmente.xlsx")
 ### set 15054
-d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_2.xlsx")
+d1<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_2_text.xlsx")
 # alte pdf annotations, will be merged in script
-d2<-read_xlsx("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/MAXQDA 24 Codierte Segmente.xlsx")
-#m<-is.na(d1$Kommentar)
-#m
+d2<-read.csv("/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/ff-codes_1_pdf.csv",sep = ";")
 ### get annotations from 2nd essai to 1st table
 put.ann<-function(){
 for (k in 1:length(d2$Segment)){
   source<-d2$Segment[k]
-  
   str.array<-strsplit(source," ")
   print(str.array)
-  # tm<-lapply(target.l, function(i){
-  #   strings<-unlist(str.array)
-  #   #match(target.l[i],unlist(str.array))
-  #   distances<-stringdist(target.l[i],strings)
-  #   most_matching_string <- strings[most_matching_index]
-  #   return(distances)
-  # })
-#  tm
-  # m<-grep(d2$Segment[k],d1$Segment)
   strings<-d1$Segment
   strings.un<-lapply(strings,function(x){
     strsplit(x," ")})
   strings.un[[1]]
   strings.un
-#  rm(x)
 mmstring <- lapply(seq_along(1:length(strings.un)),function(i){
   strings.m<-strings.un[[i]][[1]]
   print(strings.m)
   distances<-stringdist(strings.m,d2$Segment[k] , method = "jw")
    # Jaro-Winkler method
-#print(i)
   print(distances)
 most_matching_index <- which.min(distances)
-#print(most_matching_index)
 most_matching_string <- strings.m[most_matching_index]
 dist.min<-lapply(distances, min)
 return(distances)
 })
-#x
 mmstring
 most_matching_index<-which.min(lapply(mmstring, min))
 mmin<-min(unlist((lapply(mmstring, min))))
 cat("d2:",k,"\n")
 cat("match:",most_matching_index,"with",mmin,"\n")
-#com<-""
 if(length(most_matching_index)>0){
-  if(is.na(d1$Kommentar[most_matching_index])&mmin<0.28)
+  if(is.na(d1$Kommentar[most_matching_index])&mmin<0.25)
     d1$Kommentar[most_matching_index]<-d2$Kommentar[k]
 }
 
@@ -274,11 +265,6 @@ if(length(most_matching_index)>0){
 }
 d1<-put.ann()
 ### wks.
-#t2
-#t
-#txtsrc<-"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/wiki/ff.exb.txt"
-#t<-readLines(txtsrc)
-#tt<-readtext(txtsrc)$text
 text<-t
 
 split_at_n_words <- function(text, n) {
@@ -320,7 +306,6 @@ out<-3
        unnest_tokens(ngram, text, token = "ngrams", n = 1)
      if(length(ann.single)>0){
        out<-1
-   #m<-grepl(ann.single,ngrams_df.1$ngram)
    m<-ngrams_df.1$ngram%in%ann.single
    ngrams_df.1
    ngrams_df.1<-ngrams_df.1[m,]
@@ -375,7 +360,6 @@ get.ann.match<-function(t.line,ann.gna.l,k){
   ma.b
   ### TODO 15052.1
   ma<-ma.b
-#  ma<-data.frame(ma.t)
   print("ma...")
   print(ma)
   if(print(length(ma)>0))
@@ -452,7 +436,8 @@ post.ann<-function(t.line,ann.gna,s,k,single){
   mcom[is.na(mcom)]<-""
   #mcom<-unique(mcom)
   mcom
-  Column1 = c('Text with \\textcolor{red}{ red}',
+# replacement for either html or pdf rendering
+    Column1 = c('Text with \\textcolor{red}{ red}',
               'Text in \\textbf{boldit}',
               'Text on \\textit{\\colorbox{yellow}{yellow background}}')
 #  mcom<-paste0('<span style="font-style:oblique;color:',obliq.color,';">',mcom,'</span>')
@@ -524,15 +509,6 @@ get.ann.tx<-function(t){
   ann.g<-lapply(seq_along(1),function(x){get.ngrams(ann,i,3)})
   ann.g
   ann.g1<-ann.g[[1]]
- #  x<-ann.g1
- #  if(length(ann)>1){
- #    mx<-apply(ann.g1, MARGIN=1,FUN=function(x){
- #      m<-is.na(x[2])
- #      ann.g1$ngram[m]<-ann[2]
- #      return()
- #    })
- #  }
- # mx
   ann.g1 
   ann.g[[1]]
   ann.gna<-ann.g[[1]][!is.na(ann.g[[1]]$ngram),]
@@ -594,15 +570,10 @@ rdf.top
 ####################
 ### RUN
 ann.p<-get.ann.tx(t)
-# m1<-ann.p$text==""
-# sum(m1)
-# ann.p<-ann.p[!m1,]
-# m2<-grep("[0-9]",ann.p$line)
-# ann.p[m2,1]<-paste0(ann.p[m2,1],"---")
 ####################
 library(knitr)
 writeLines(knitr::kable(ann.p),"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann.output.md")
-
+write.csv(d1,"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout/MAXQDA-FF-annotations.csv")
 #?render
 # library(rmarkdown)
 # render("14-wolf_handout.Rmd",output_format = "tufte::tufte_handout")
