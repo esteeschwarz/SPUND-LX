@@ -58,7 +58,7 @@ src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
 if (is_html_output()) {
   print("html output")
   output.rmd<-"html"
-  dlmsg<-paste0('download pdf <a href="https://github.com/esteeschwarz/SPUND-LX/raw/main/szondi/WITprose/handout/14-wolf_handout.pdf">here</a>.')
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
 } else if (is_latex_output()) {
   #output_format <- "PDF"
   print("pdf")
