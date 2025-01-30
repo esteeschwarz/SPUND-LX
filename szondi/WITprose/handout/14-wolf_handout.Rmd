@@ -2,7 +2,7 @@
 title: "handout: uljana wolf - falsche freunde"
 runningheader: "handout: uljana wolf - falsche freunde" # only for pdf output
 #subtitle: "An implementation in R Markdown" # only for html output
-author: "st. schwarz"
+author: '`r putaut<-function(out){ifelse(out,"st. schwarz","st. schwarz / franziska schmidt")};putaut(knitr::is_html_output())`'
 date: "`r Sys.time()`"
 output:
   bookdown::html_document2:
@@ -19,7 +19,7 @@ link-citations: yes
 keep_tex: yes
 ---
 
-```{r setup,results=F, include=FALSE}
+```{r setup,results=F, include=F}
 #library(tufte)
 library(tm)
 #library(dplyr)
@@ -27,10 +27,26 @@ library(rmarkdown)
 #library(httr)
 library(purrr)
 library(knitr)
+author<-"st. schwarz / franziska schmidt"
 
  # invalidate cache when the tufte version changes
 knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
+} else if (is_latex_output()) {
+  #output_format <- "PDF"
+  print("pdf")
+  output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
+}
+# author<-"st. schwarz / franziska schmidt"
+# if(output.rmd=="html")
+#   author<-"st. schwarz"
+
+
 ```
 
 ```{r bibmy, eval=F, echo=FALSE, warning=FALSE,message=FALSE}
@@ -70,6 +86,9 @@ script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R" # for renderin
 script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R" # for stats
 source(script1)
 source(script2)
+author<-"st. schwarz / franziska schmidt"
+if(output.rmd=="html")
+  author<-"st. schwarz"
 ```
 
 # A. head
@@ -81,7 +100,6 @@ Seminar "Das Prosagedicht" / Kathrin Wittler / FUB WS24/25
 
 # zur autorin
 \begin{marginfigure}
-content to the right
 \end{marginfigure}
 
 Uljana Wolf, der Öffentlichkeit seit 2005 durch ihre Gedichte bekannt, wurde 2006 für ihr Debüt *kochanie ich habe brot gekauft* [@wolf_kochanie_2005] mit dem Peter-Huchel-Preis ausgezeichnet und veröffentlichte seitdem neben Übersetzungen und essayistischen Schriften drei weitere Gedichtbände, zuletzt *Muttertask* [@wolf_muttertask_2023], ebenfalls beim Verlag *kookbooks* -- den sie 2003 mitgegründet hat und der eine wichtige Institution für die dt. Verlagslandschaft darstellt. 
@@ -150,7 +168,7 @@ tp<-readLines(src.tp)
 Als :falsche freunde: werden in der Linguistik Phrasen betrachtet, die als direkte Übersetzung eines Idioms oder Wortes von einer in eine andere Sprache auftreten, ohne dabei die semantisch-idiomatische Bedeutung des Ausgangsidioms zu erhalten.^[Dabei entstehen dann oft (auch gewollt humoristische) Zielphrasen, die in dieser Form keinen Sinn mehr ergeben. Als populär gewordenes (älteres) Beispiel dürfte das 'english-for-runaways'-Lied von Otto Waalkes gelten, in dem er unzählige solcher (falschen freunde) aneinanderreiht und die englische Übersetzung einiger deutsche Phrasen ad absurdum führt. Im weiteren lyrischen Werk von U. Wolf tauchen derartige Wortspielereien öfter und eher beiläufig auf, können aber auch leicht überlesen werden, da ihre Herleitung bzw. Erkennung, wenn sie nicht, wie in diesem Band, thematisiert werden, ein gewisses Vokabular in source und target language voraussetzt. (zb: Mr. Veilmaker = Fr. Schleiermacher in @wolf_meine_2013)]
 
 ## ground truth
-Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt also `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ca. von gleicher Länge. Das Korpus enthält `r tnlast` für es eigentümliche Lemmata.^[die häufigsten `r length(tnhead)`, noch im Referenzkorpus Deutsche Sprache [@ids_dereko-2014-ii-mainarchive-stt100000_2014] vorhandenen, sind "`r thead`"]
+Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt also `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ca. von gleicher Länge. Das Korpus enthält `r tnlast` für es eigentümliche Wortformen.^[die häufigsten `r length(tnhead)`, noch im Referenzkorpus Deutsche Sprache [@ids_dereko-2014-ii-mainarchive-stt100000_2014] vorhandenen Lemmata (also die *keywords* ), sind "`r thead`"].
 ^[Berechnungen siehe: @schwarz_wolf-handout_2025]
 
 ## few stats

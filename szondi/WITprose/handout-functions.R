@@ -247,43 +247,114 @@ get.keys<-function(run){
 
 get.m.dif<-function(){
 ###15056.apps.2-3pgs
-
+#  library(tools)
+  
 witfolder<-"/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/wittlerProsePoem"
+tm<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout/14-wolf_handout.pdf"
 f<-list.files(witfolder)
 fns<-paste(witfolder,f,sep = "/")
-m<-grep("Handout",f)
+fns<-c(fns,tm)
+m<-grep("Handout|handout",fns)
 #sum(m)
 #library(pdftools)
-t1<-pdf_text(fns[m][1])
-t1
-fns[1]
+#t1<-pdf_text(fns[m][1])
+#t1
+#fns[1]
+fns
+m<-grep("Handout|handout|Hand-Out",fns)
+fns[m]
 th<-lapply(seq_along(1:length(fns[m])), function(i){
   t1<-pdf_text(fns[m][i])
   #  tl<-unlist(strsplit(t1," "))
   # to<-list(text=t1,lengt=length(tl))
 })
+i<-1
+library(collostructions)
+#library(dplyr)
+
+
 tl<-lapply(seq_along(1:length(th)), function(i){
   #t1<-pdf_text(fns[i])
-  tl<-unlist(strsplit(th[[i]]," "))
-  to<-list(lengt=length(tl))
-})
+  #ohne cor: 1801
+  tx<-th[[i]]
+  tx
+  tl1<-length(unlist(strsplit(tx," ")))
+  d <- tibble(txt = tx)
+  #d<-tx
+  #  d %>%
+  #    unnest_characters(word, txt)
+  # # 
+  d2<-d %>%
+    unnest_character_shingles(word, txt, n = 30,strip_non_alphanum = F,to_lower = F)
+   # d2<-d %>%
+   #   unnest_regex(word, txt, pattern = " ")
+  dfr<-freq.list(d2$word,convert = F)
+  head(dfr,30)
+  dup<-dfr[dfr$FREQ>1,]
+  #d$txt[1]
+  #wks.
+  library(stringi)
+  d3<-tx
+  d3
+  dup$WORD<-as.character(dup$WORD)
+  rx<-strsplit(dup$WORD[8],"")[1]
+  rxint<-utf8ToInt(dup$WORD[8])[1]
+  rxuc<- paste0("\\u", sprintf("%04X", rxint))
+  rxuc
 
-tm<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout/14-wolf_handout.pdf"
-tmt<-pdf_text(tm)
-tml<-unlist(strsplit(tmt[[1]]," "))
-tml<-length(tml)
+  # #utf8ToInt(rx[1])
+  # utf8ToInt(dup$WORD[8])
+  # #length(dup$WORD[8])
+  for(k in 1:length(dup$WORD)){
+  regx<-dup$WORD[k]
+  regx.cl<-gsub(paste0("[^a-zA-ZäöüÄÖÜß0-9_ ]|(^-)|(^\t)|(^\n)|(^",rxuc,")"),".",regx)
+  #regx.cl<-gsub("[)(]",".",regx)
+  
+  #d3<-stri_replace_all(d3," ",regex = regx.cl)
+  d3<-gsub(regx.cl," ",d3)
+  print(regx.cl)
+  }
+  tl2<-length(unlist(strsplit(d3," ")))
+  #writeLines(d3,"~/Documents/GitHub/SPUND-LX/szondi/WITprose/arkived/cwtemp.txt")
+  # head(dfr)  tl<-unlist(strsplit(tx," "))
+  # tng<-get.ngrams(tx,)
+  # ngf<-freq.list(tng$ngram)
+  # fd<-ngf[ngf$FREQ>1,]
+  # length(fd$WORD)
+  # fd
+  # tgs<-tx
+  # i<-1
+  # tx
+  # tnc<-strsplit(tx,"")
+  # tng<-get.ngrams(unlist(tnc),40)
+  # tng
+  # ngf<-freq.list(tng$ngram)
+  # tfd<-lapply(seq_along(fd$WORD),function(i){
+  #   regx<-paste0(fd$WORD[i],collapse = " ")
+  #   tgs<-gsub(regx,"",tgs)
+  # })
+  # tlgs<-unlist(strsplit(unlist(tfd[[1]])," "))
+#  to<-list(length=length(tl))
+  
+  #####################################
+  })
+m
+# tmt<-pdf_text(tm)
+# tml<-unlist(strsplit(tmt[[1]]," "))
+# tml<-length(tml)
 thl<-unlist(tl)
-hons<-pdf_info(fns[m][1])
-library(tools)
-mbase<-basename(tm)
-thdf<-data.frame(ho=c(f[m],mbase),length=c(thl,tml))
-thdf$ho<-gsub("Handout|.pdf","",thdf$ho)
-#par(las=3,pty="m")
-barplot_heights <- barplot(thdf$length, names.arg = NULL, col = "grey", ylim = c(0, max(thdf$length) + 2))
+thl
+#hons<-pdf_info(fns[m][1])
+fbase<-basename(fns)[m]
+thdf<-data.frame(ho=fbase,length=thl)
+thdf$ho<-gsub("Handout|handout|Hand-Out|.pdf","",thdf$ho)
+par(las=3)
+barplot_heights <- barplot(thdf$length, names.arg = as.character(thdf$length), col = "grey", ylim = c(0, max(thdf$length) + 2))
 # text(x = barplot_heights, y = thdf$length - 0.5, labels = thdf$ho, srt = 90, adj = 1, col = 1)
 text(x = barplot_heights, y = 1, labels = thdf$ho, adj=c(0,1),srt = 90, col = 1)
 #barplot(thdf$length~thdf$ho,ylab = "wds",xlab = "")
-hom<-mean(c(thl,tml))
-dif<-tml-hom
+hom<-mean(thl)
+dif<-thdf$length[length(thdf$length)]-hom
+
 return(list(thdf,dif))
 }
