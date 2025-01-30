@@ -309,3 +309,42 @@ post.page(page.x,inuse=F,credit)
 ###
 keywords<-get.keys(run = T)
 keywords$freq_comparison
+
+###15056.apps.wit.2-3pgs
+
+witfolder<-"/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/wittlerProsePoem"
+f<-list.files(witfolder)
+fns<-paste(witfolder,f,sep = "/")
+m<-grep("Handout",f)
+#sum(m)
+#library(pdftools)
+t1<-pdf_text(fns[m][1])
+t1
+fns[1]
+th<-lapply(seq_along(1:length(fns[m])), function(i){
+  t1<-pdf_text(fns[m][i])
+#  tl<-unlist(strsplit(t1," "))
+ # to<-list(text=t1,lengt=length(tl))
+})
+tl<-lapply(seq_along(1:length(th)), function(i){
+  #t1<-pdf_text(fns[i])
+  tl<-unlist(strsplit(th[[i]]," "))
+  to<-list(lengt=length(tl))
+})
+
+tm<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout/14-wolf_handout.pdf"
+tmt<-pdf_text(tm)
+tml<-unlist(strsplit(tmt[[1]]," "))
+tml<-length(tml)
+thl<-unlist(tl)
+hons<-pdf_info(fns[m][1])
+library(tools)
+mbase<-basename(tm)
+thdf<-data.frame(ho=c(f[m],mbase),length=c(thl,tml))
+barplot(thdf$length)
+hom<-mean(c(thl,tml))
+dif<-tml-hom
+
+
+
+
