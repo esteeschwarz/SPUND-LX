@@ -122,34 +122,47 @@ handlist
 # load into workspace:
 # fr.ref<-load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
 lemmalist<-tdf2$lemma
+mlna<-is.na(lemmalist)
+sum(mlna)
+lemmalist<-lemmalist[!m]
+sum(lemmalist=="ill",na.rm = T)
 get.key.data<-function(){
   library(tm)
   library(dplyr)
+  
 
   # corpus to analyse as text vector
   # k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
   # k2<-k2$content[k2$book=="FF"]  
   k2<-paste0(lemmalist,collapse = " ")
-  
-#####
+  k2u<-unique(tdf2$sentence)
+  k3<-paste0(k2u,collapse = "\n")
+
+  #####
 # k1 (reference corpus loaded from saved dataframe)
 load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
-  return(list(k1=k1,k2=k2))
+  return(list(k1=k1,k2=k2,k3=k3))
+}
+l.cor<-read.csv("~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.csv")
+cor.lemma<-function(l.cor){
+  lemma.l.cor<-lemmalist
+  k<-1
+  for(k in 1:length(l.cor$lemma.o)){
+    m<-l.cor$lemma.o[k]==lemma.l.cor
+    m[is.na(m)]<-F
+    which(m)
+    lemma.l.cor[m]<-l.cor$lemma.c[k]
+  }
+  return(lemma.l.cor)
+  
 }
 get.keys<-function(run){
   if(run)
     corpora<-get.key.data()
-  # Sample given text
-  given_text <- "This is a sample text. This text is for keyword analysis. We do not change anything important in the text but only ugly words."
-  #library(readtext)
-  #text<-readtext()
-  # Sample reference corpus
-  #reference_corpus <- "This is a reference corpus. It contains many words. This corpus is used for comparison."
-  
-  # Create a Corpus object for both texts
-  # given_corpus <- Corpus(VectorSource(given_text))
-  #reference_corpus <- Corpus(VectorSource(reference_corpus))
-  k1<-corpora$k1
+  lemmalist<-corpora$k2
+  lc.l<-cor.lemma(l.cor)
+  lemmalist<-lc.l
+  k1<-corpora$k3
   #g2<-Corpus(VectorSource(k2$token))
   g2<-Corpus(VectorSource(corpora$k2))
   given_corpus<-g2
@@ -158,7 +171,7 @@ get.keys<-function(run){
     # corpus <- tm_map(corpus, content_transformer(tolower)) # no difference: wolf text wo capital letters
     corpus <- tm_map(corpus, removePunctuation)
     corpus <- tm_map(corpus, removeNumbers)
-    corpus <- tm_map(corpus, removeWords, stopwords("en"))
+    corpus <- tm_map(corpus, removeWords, stopwords("de"))
     corpus <- tm_map(corpus, stripWhitespace)
     return(corpus)
   }
@@ -184,23 +197,26 @@ get.keys<-function(run){
   given_freq <- colSums(given_freq)
   #reference_freq <- colSums(reference_freq)
   #reference_freq<-k1
+  gf2<-table(lemmalist)
+  gf2
+  given_freq<-gf2
   reference_freq<-k1[,c(1,4)]
   ### tolower tokens:
   lowcaps<-lapply(reference_freq$token, tolower)
-  reference_freq$token_lc<-lowcaps
+  reference_freq$token_lc<-unlist(lowcaps)
   reference_freq.dp<-duplicated(lowcaps)
   sum(reference_freq.dp)
   # Sample dataframe
-  df <- data.frame(
-    token = c("a", "b", "a", "c", "b", "d"),
-    frequency = c(1, 2, 3, 4, 5, 6)
-  )
-  
-  # Merge duplicated tokens by summing their frequencies
-  merged_df <- df %>%
-    group_by(token) %>%
-    summarise(frequency = sum(frequency))
-  
+  # df <- data.frame(
+  #   token = c("a", "b", "a", "c", "b", "d"),
+  #   frequency = c(1, 2, 3, 4, 5, 6)
+  # )
+  # 
+  # # Merge duplicated tokens by summing their frequencies
+  # merged_df <- df %>%
+  #   group_by(token) %>%
+  #   summarise(frequency = sum(frequency))
+  # 
   #print(merged_df)
   ref_freq_merged<- reference_freq %>%
     group_by(token_lc) %>%
@@ -213,7 +229,35 @@ get.keys<-function(run){
   given_freq <- data.frame(token = names(given_freq), freq = given_freq)
   m<-given_freq$token%in%ref_freq_merged$token
   sum(m)
+  t.cr<-given_freq$token[!m]
+  t.cr
+  get.lemma.to.correct.dep<-function(){
+  s.all<-unique(tdf2$sentence)
+  lemma.u<-unique(lemmalist)
+  lemma.u
+  sent.cr<-lapply(seq_along(1:length(t.cr)), function(i){
+    g.cr<-t.cr[i]
+    
+    g<-g.cr==tdf2$lemma
+#    gu<-unique(g)
+    g.sent<-paste0(which(g),tdf2$sentence[which(g)],collapse =  "\t")
+    sent<-unique(tdf2$lemma[which(g)])
+    sent.n<-unique(g.sent)
+    gl<-list()
+   # gl[1]<-g.cr
+    if(length(sent)>0)
+      gl[g.cr]<-sent.n
+    return(gl)
+  })
+  unlist(sent.cr)
+  sent.cr
+  }
   tok.out<-given_freq$token[!m]
+  g
+################################  
+  #giv+ref frequencies combined
+  freq_giv_ref <- merge(given_freq, ref_freq_merged, by = "token", all = T)
+  
   tok.out.df<-data.frame(token=tok.out,freq=1)
   colnames(tok.out.df)==colnames(ref_freq_merged)
   ref_freq_plus<-rbind(ref_freq_merged,tok.out.df)
@@ -224,15 +268,34 @@ get.keys<-function(run){
   #reference_freq <- data.frame(token = names(reference_freq), freq = reference_freq)
   # Merge the frequency data frames
   #  freq_comparison <- merge(given_freq, reference_freq, by = "token", all = F)
-  freq_comparison <- merge(given_freq, ref_freq_plus, by = "token", all = F)
-  colnames(freq_comparison) <- c("token", "given_freq", "reference_freq")
-  freq_comparison$token[52]==freq_comparison$token[75]
+  given_freq$freq<-given_freq$freq.Freq
+  given_freq<-given_freq[,c(1,4)]
+  freq_giv_ref<-freq_giv_ref[,c(1,4)]
+  #freq_comparison <- merge(given_freq, ref_freq_plus, by = "token", all = F)
+  freq_comparison <- merge(given_freq, freq_giv_ref, by = "token", all = T)
+  #colnames(freq_comparison) <- c("token", "given_freq", "reference_freq")
+  #freq_comparison$token[52]==freq_comparison$token[75]
   # Replace NA values with 0
-  freq_comparison[is.na(freq_comparison[,2:3]),2:3] <- 0
+  mnax<-is.na(freq_comparison[,2])
+  mnax
+  freq_comparison[mnax,2]<-0
+  
+  mnax<-is.na(freq_comparison[,3])
+  mnax
+  freq_comparison[mnax,3]<-0
+  
+  mnax<-is.na(freq_comparison[,1])
+  mnax
+  freq_comparison[mnax,1]<-"NA"
+  
+  mnax<-freq_comparison[,1]==""
+  mnax
+  freq_comparison[mnax,1]<-"NA"
+  # freq_comparison[freq_comparison[,1:3]=="",1:3] <- 0
   
   # Calculate the keyword score (e.g., log-likelihood ratio)
   freq_comparison <- freq_comparison %>%
-    mutate(keyword_score = (given_freq + 1) / (reference_freq + 1))
+    mutate(keyword_score = (given_freq + 1) / (freq_giv_ref + 1))
   
   # Sort by keyword score
   freq_comparison <- freq_comparison %>%
@@ -247,7 +310,7 @@ get.keys<-function(run){
 
 get.m.dif<-function(){
 ###15056.apps.2-3pgs
-#  library(tools)
+  library(pdftools)
   
 witfolder<-"/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/wittlerProsePoem"
 tm<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout/14-wolf_handout.pdf"
@@ -278,7 +341,7 @@ tl<-lapply(seq_along(1:length(th)), function(i){
   #ohne cor: 1801
   tx<-th[[i]]
   tx
-  tl1<-length(unlist(strsplit(tx," ")))
+  tl1<-length(unlist(strsplit(tx,"\\w+")))
   d <- tibble(txt = tx)
   #d<-tx
   #  d %>%
@@ -314,7 +377,7 @@ tl<-lapply(seq_along(1:length(th)), function(i){
   d3<-gsub(regx.cl," ",d3)
   print(regx.cl)
   }
-  tl2<-length(unlist(strsplit(d3," ")))
+  tl2<-length(unlist(strsplit(d3,"\\w+")))
   #writeLines(d3,"~/Documents/GitHub/SPUND-LX/szondi/WITprose/arkived/cwtemp.txt")
   # head(dfr)  tl<-unlist(strsplit(tx," "))
   # tng<-get.ngrams(tx,)
@@ -335,26 +398,28 @@ tl<-lapply(seq_along(1:length(th)), function(i){
   # })
   # tlgs<-unlist(strsplit(unlist(tfd[[1]])," "))
 #  to<-list(length=length(tl))
-  
+ # return(list(tl1,tl2))
   #####################################
   })
 m
 # tmt<-pdf_text(tm)
 # tml<-unlist(strsplit(tmt[[1]]," "))
 # tml<-length(tml)
+#thl<-unlist(tl[[2]])
 thl<-unlist(tl)
 thl
 #hons<-pdf_info(fns[m][1])
 fbase<-basename(fns)[m]
 thdf<-data.frame(ho=fbase,length=thl)
 thdf$ho<-gsub("Handout|handout|Hand-Out|.pdf","",thdf$ho)
+hom<-mean(thl)
 par(las=3)
-barplot_heights <- barplot(thdf$length, names.arg = as.character(thdf$length), col = "grey", ylim = c(0, max(thdf$length) + 2))
+barplot_heights <- barplot(thdf$length,xlab=paste0("mean: ",round(hom,2)),ylab="words", names.arg = as.character(thdf$length), col = "grey", ylim = c(0, max(thdf$length) + 2))
 # text(x = barplot_heights, y = thdf$length - 0.5, labels = thdf$ho, srt = 90, adj = 1, col = 1)
 text(x = barplot_heights, y = 1, labels = thdf$ho, adj=c(0,1),srt = 90, col = 1)
 #barplot(thdf$length~thdf$ho,ylab = "wds",xlab = "")
-hom<-mean(thl)
 dif<-thdf$length[length(thdf$length)]-hom
 
 return(list(thdf,dif))
 }
+#get.m.dif()
