@@ -121,31 +121,42 @@ handlist
 # Q reference corpus frequencies: <https://www.ids-mannheim.de/digspra/kl/projekte/methoden/derewo/>
 # load into workspace:
 # fr.ref<-load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
-lemmalist<-tdf2$lemma
-mlna<-is.na(lemmalist)
-sum(mlna)
-lemmalist<-lemmalist[!m]
-sum(lemmalist=="ill",na.rm = T)
+# lemmalist<-tdf2$lemma
+# mlna<-is.na(lemmalist)
+# sum(mlna)
+# lemmalist<-lemmalist[!m]
+# sum(lemmalist=="ill",na.rm = T)
 get.key.data<-function(){
   library(tm)
   library(dplyr)
   
-
+  # lemmalist<-tdf2$lemma
+  # mlna<-is.na(lemmalist)
+  # sum(mlna)
+  # lemmalist<-lemmalist[!m]
+  # sum(lemmalist=="ill",na.rm = T)
+  # 
   # corpus to analyse as text vector
   # k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
   # k2<-k2$content[k2$book=="FF"]  
-  k2<-paste0(lemmalist,collapse = " ")
-  k2u<-unique(tdf2$sentence)
-  k3<-paste0(k2u,collapse = "\n")
+#  k2<-paste0(lemmalist,collapse = " ")
+#  k2u<-unique(tdf2$sentence)
+ # k3<-paste0(k2u,collapse = "\n")
 
   #####
 # k1 (reference corpus loaded from saved dataframe)
 load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
-  return(list(k1=k1,k2=k2,k3=k3))
+  return(list(k1=k1))
 }
-l.cor<-read.csv("~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.csv")
 cor.lemma<-function(l.cor){
+  l.cor<-read.csv("~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.csv")
+  lemmalist<-tdf2$lemma
+  mlna<-is.na(lemmalist)
+  sum(mlna)
+  lemmalist<-lemmalist[!m]
+  sum(lemmalist=="ill",na.rm = T)
   lemma.l.cor<-lemmalist
+  lemma.l.cor<-unique(lemmalist)
   k<-1
   for(k in 1:length(l.cor$lemma.o)){
     m<-l.cor$lemma.o[k]==lemma.l.cor
@@ -157,14 +168,17 @@ cor.lemma<-function(l.cor){
   
 }
 get.keys<-function(run){
+  
   if(run)
     corpora<-get.key.data()
-  lemmalist<-corpora$k2
+  #lemmalist<-corpora$k3
   lc.l<-cor.lemma(l.cor)
+#  lemmalist<-paste0(lc.l,collapse = " ")
   lemmalist<-lc.l
-  k1<-corpora$k3
+  k1<-corpora$k1
   #g2<-Corpus(VectorSource(k2$token))
-  g2<-Corpus(VectorSource(corpora$k2))
+#  g2<-Corpus(VectorSource(corpora$k2))
+  g2<-Corpus(VectorSource(lemmalist))
   given_corpus<-g2
   # Tokenize and clean the text
   clean_corpus <- function(corpus) {
@@ -197,9 +211,9 @@ get.keys<-function(run){
   given_freq <- colSums(given_freq)
   #reference_freq <- colSums(reference_freq)
   #reference_freq<-k1
-  gf2<-table(lemmalist)
-  gf2
-  given_freq<-gf2
+  #gf2<-table(lemmalist)
+  #gf2
+  #given_freq<-gf2
   reference_freq<-k1[,c(1,4)]
   ### tolower tokens:
   lowcaps<-lapply(reference_freq$token, tolower)
@@ -227,10 +241,12 @@ get.keys<-function(run){
   colnames(ref_freq_merged)<-c("token","freq")
   #colnames(reference_freq)<-c("token","freq")
   given_freq <- data.frame(token = names(given_freq), freq = given_freq)
-  m<-given_freq$token%in%ref_freq_merged$token
-  sum(m)
-  t.cr<-given_freq$token[!m]
-  t.cr
+  #given_freq <- data.frame(given_freq
+  #m<-gf2%in%ref_freq_merged$token
+  #sum(m)
+  #t.cr<-given_freq$token[!m]
+  #t.cr
+  #####################################
   get.lemma.to.correct.dep<-function(){
   s.all<-unique(tdf2$sentence)
   lemma.u<-unique(lemmalist)
@@ -252,15 +268,17 @@ get.keys<-function(run){
   unlist(sent.cr)
   sent.cr
   }
-  tok.out<-given_freq$token[!m]
-  g
+  #tok.out<-given_freq$token[!m]
+  #g
 ################################  
   #giv+ref frequencies combined
+  #reference_freq<-reference_freq[c(2,3)]
+  #colnames(reference_freq)<-c("freq","token")
   freq_giv_ref <- merge(given_freq, ref_freq_merged, by = "token", all = T)
   
-  tok.out.df<-data.frame(token=tok.out,freq=1)
-  colnames(tok.out.df)==colnames(ref_freq_merged)
-  ref_freq_plus<-rbind(ref_freq_merged,tok.out.df)
+  #tok.out.df<-data.frame(token=tok.out,freq=1)
+  #colnames(tok.out.df)==colnames(ref_freq_merged)
+  #ref_freq_plus<-rbind(ref_freq_merged,tok.out.df)
   #jfreq<-join.freqs(given_freq,reference_freq,all = T)
   #c1<-collex.dist(jfreq)
   #c1%>%arrange(desc(COLL.STR.LOGL))
@@ -268,35 +286,37 @@ get.keys<-function(run){
   #reference_freq <- data.frame(token = names(reference_freq), freq = reference_freq)
   # Merge the frequency data frames
   #  freq_comparison <- merge(given_freq, reference_freq, by = "token", all = F)
-  given_freq$freq<-given_freq$freq.Freq
-  given_freq<-given_freq[,c(1,4)]
-  freq_giv_ref<-freq_giv_ref[,c(1,4)]
+  #given_freq$freq<-given_freq$freq.Freq
+  #given_freq<-given_freq[,c(1,4)]
+  #freq_giv_ref<-freq_giv_ref[,c(1,4)]
   #freq_comparison <- merge(given_freq, ref_freq_plus, by = "token", all = F)
   freq_comparison <- merge(given_freq, freq_giv_ref, by = "token", all = T)
   #colnames(freq_comparison) <- c("token", "given_freq", "reference_freq")
   #freq_comparison$token[52]==freq_comparison$token[75]
   # Replace NA values with 0
-  mnax<-is.na(freq_comparison[,2])
-  mnax
-  freq_comparison[mnax,2]<-0
+  mnax<-is.na(freq_comparison$freq.x)
+  sum(mnax)
+  freq_comparison$freq.x[mnax]<-0
   
-  mnax<-is.na(freq_comparison[,3])
-  mnax
-  freq_comparison[mnax,3]<-0
+  mnax<-is.na(freq_comparison$freq.y)
+  sum(mnax)
+  freq_comparison$freq.y[mnax]<-0
   
-  mnax<-is.na(freq_comparison[,1])
-  mnax
-  freq_comparison[mnax,1]<-"NA"
-  
-  mnax<-freq_comparison[,1]==""
-  mnax
-  freq_comparison[mnax,1]<-"NA"
+  # mnax<-is.na(freq_comparison[,1])
+  # mnax
+  # freq_comparison[mnax,1]<-0
+  # 
+  # mnax<-freq_comparison[,1]==""
+  # sum(mnax)
+  # freq_comparison[mnax,1]<-"NA"
   # freq_comparison[freq_comparison[,1:3]=="",1:3] <- 0
   
   # Calculate the keyword score (e.g., log-likelihood ratio)
+  # freq_comparison <- freq_comparison %>%
+  #   mutate(keyword_score = (given_freq + 1) / (freq_giv_ref + 1))
   freq_comparison <- freq_comparison %>%
-    mutate(keyword_score = (given_freq + 1) / (freq_giv_ref + 1))
-  
+    mutate(keyword_score = (freq.x + 1) / (freq.y + 1))
+  #?mutate
   # Sort by keyword score
   freq_comparison <- freq_comparison %>%
     arrange(desc(keyword_score))
@@ -305,7 +325,12 @@ get.keys<-function(run){
   
   # Print the top keywords
   print(freq_comparison)
-  return(list(freq_comparison=freq_comparison,ntypes=c(lq=length(given_freq$freq),lref=length(reference_freq$freq))))
+  mna<-is.na(freq_comparison$keyword_score)
+  sum(mna)
+  freq_comparison[freq_comparison$freq.y==freq_comparison$freq.x,]
+  lq<-length(freq_comparison$freq.x[freq_comparison$freq.y==0])
+  lref<-length(freq_comparison$freq.y)
+  return(list(freq_comparison=freq_comparison,ntypes=c(lq=lq,lref=lref)))
 }
 
 get.m.dif<-function(){
@@ -423,3 +448,4 @@ dif<-thdf$length[length(thdf$length)]-hom
 return(list(thdf,dif))
 }
 #get.m.dif()
+keywords<-get.keys(T)
