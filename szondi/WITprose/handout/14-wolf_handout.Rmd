@@ -113,7 +113,7 @@ U. Wolf selbst reflektiert in ihren essayistischen Texten immer wieder auch das 
 # TODO: wordcount, lexical diversity
 keywords<-get.keys(T)
 ntypes<-keywords$ntypes
-mnull<-keywords$freq_comparison$reference_freq==1
+mnull<-keywords$freq_comparison$freq.x==keywords$freq_comparison$freq.y
 tnull<-keywords$freq_comparison$token[mnull]
 tnlast<-tail(which(mnull))[6]
 tnhead<-unlist(lapply(seq_along(0:7),function(i){tnlast+i}))
@@ -168,7 +168,7 @@ tp<-readLines(src.tp)
 Als :falsche freunde: werden in der Linguistik Phrasen betrachtet, die als direkte Übersetzung eines Idioms oder Wortes von einer in eine andere Sprache auftreten, ohne dabei die semantisch-idiomatische Bedeutung des Ausgangsidioms zu erhalten.^[Dabei entstehen dann oft (auch gewollt humoristische) Zielphrasen, die in dieser Form keinen Sinn mehr ergeben. Als populär gewordenes (älteres) Beispiel dürfte das 'english-for-runaways'-Lied von Otto Waalkes gelten, in dem er unzählige solcher (falschen freunde) aneinanderreiht und die englische Übersetzung einiger deutsche Phrasen ad absurdum führt. Im weiteren lyrischen Werk von U. Wolf tauchen derartige Wortspielereien öfter und eher beiläufig auf, können aber auch leicht überlesen werden, da ihre Herleitung bzw. Erkennung, wenn sie nicht, wie in diesem Band, thematisiert werden, ein gewisses Vokabular in source und target language voraussetzt. (zb: Mr. Veilmaker = Fr. Schleiermacher in @wolf_meine_2013)]
 
 ## ground truth
-Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt also `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ca. von gleicher Länge. Das Korpus enthält `r tnlast` für es eigentümliche Wortformen.^[die häufigsten `r length(tnhead)`, noch im Referenzkorpus Deutsche Sprache [@ids_dereko-2014-ii-mainarchive-stt100000_2014] vorhandenen Lemmata (also die *keywords* ), sind "`r thead`"].
+Die `r lc` Texte haben einen Umfang von `r lto` Wörtern (tokens), die sich in `r lty` distinct types einteilen lassen, die type/token ratio, ein Indikator für *lexical diversity*, beträgt also `r round(lty/lto,2)`. Die durchschnittliche Textlänge (median) sind `r md_t` Wörter, die Abweichung beträgt nur `r std` Wörter, dh. die Texte sind ca. von gleicher Länge. Das Korpus enthält `r tnlast` für es eigentümliche Wortformen.^[die, gemessen am Referenzkorpus Deutsche Sprache [@ids_dereko-2014-ii-mainarchive-stt100000_2014], relevantesten `r length(tnhead)` Lemmata (also die *keywords* ), sind "`r thead`"].
 ^[Berechnungen siehe: @schwarz_wolf-handout_2025]
 
 ## few stats

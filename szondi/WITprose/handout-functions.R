@@ -149,14 +149,15 @@ load("/Users/guhl/boxHKW/21S/DH/local/SPUND/corpuslx/DeReKo.freq.ref.RData")
   return(list(k1=k1))
 }
 cor.lemma<-function(l.cor){
-  l.cor<-read.csv("~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.csv")
+#  l.cor<-read.csv("~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.csv")
+  l.cor<-read.csv("~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.cpt.csv")
   lemmalist<-tdf2$lemma
   mlna<-is.na(lemmalist)
   sum(mlna)
   lemmalist<-lemmalist[!m]
   sum(lemmalist=="ill",na.rm = T)
   lemma.l.cor<-lemmalist
-  lemma.l.cor<-unique(lemmalist)
+ # lemma.l.cor<-unique(lemmalist)
   k<-1
   for(k in 1:length(l.cor$lemma.o)){
     m<-l.cor$lemma.o[k]==lemma.l.cor
@@ -276,7 +277,7 @@ get.keys<-function(run){
   colnames(lem.c.m)
   cns<-c(1,3,5,2,4)
   lem.c.m<-lem.c.m[,cns]
-  write.csv(lem.c.m,"~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.cpt.csv",na="")
+  #write.csv(lem.c.m,"~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.cpt.csv",na="")
   
   }
   
@@ -287,6 +288,9 @@ get.keys<-function(run){
   #reference_freq<-reference_freq[c(2,3)]
   #colnames(reference_freq)<-c("freq","token")
   freq_giv_ref <- merge(given_freq, ref_freq_merged, by = "token", all = T)
+  freq_giv_ref_sum<- freq_giv_ref %>%
+    group_by(token) %>%
+    summarise(freq =sum(freq.x,freq.y,na.rm = T))
   
   #tok.out.df<-data.frame(token=tok.out,freq=1)
   #colnames(tok.out.df)==colnames(ref_freq_merged)
@@ -302,19 +306,19 @@ get.keys<-function(run){
   #given_freq<-given_freq[,c(1,4)]
   #freq_giv_ref<-freq_giv_ref[,c(1,4)]
   #freq_comparison <- merge(given_freq, ref_freq_plus, by = "token", all = F)
-  freq_comparison <- merge(given_freq, freq_giv_ref, by = "token", all = T)
+  freq_comparison <- merge(given_freq, freq_giv_ref_sum, by = "token", all = T)
   #colnames(freq_comparison) <- c("token", "given_freq", "reference_freq")
   #freq_comparison$token[52]==freq_comparison$token[75]
   # Replace NA values with 0
   mnax<-is.na(freq_comparison$freq.x)
-  sum(mnax)
-  freq_comparison$freq.x[mnax]<-0
+  if(sum(mnax)>0)
+    freq_comparison$freq.x[mnax]<-0
   
   mnax<-is.na(freq_comparison$freq.y)
-  sum(mnax)
-  freq_comparison$freq.y[mnax]<-0
-  t.cr<-freq_comparison$token[freq_comparison$freq.y==0]
-    
+  if(sum(mnax)>0)
+    freq_comparison$freq.y[mnax]<-0
+  t.cr<-freq_comparison$token[freq_comparison$freq.y==freq_comparison$freq.x]
+  t.cr  
   # mnax<-is.na(freq_comparison[,1])
   # mnax
   # freq_comparison[mnax,1]<-0
@@ -333,6 +337,8 @@ get.keys<-function(run){
   # Sort by keyword score
   freq_comparison <- freq_comparison %>%
     arrange(desc(keyword_score))
+  colnames(freq_comparison)
+  #freq_comparison<-freq_comparison
   length(freq_comparison$token)
   length(unique(freq_comparison$token))
   
@@ -341,7 +347,7 @@ get.keys<-function(run){
   mna<-is.na(freq_comparison$keyword_score)
   sum(mna)
   freq_comparison[freq_comparison$freq.y==freq_comparison$freq.x,]
-  lq<-length(freq_comparison$freq.x[freq_comparison$freq.y==0])
+  lq<-length(freq_comparison$token[freq_comparison$freq.y==freq_comparison$freq.x])
   lref<-length(freq_comparison$freq.y)
   return(list(freq_comparison=freq_comparison,ntypes=c(lq=lq,lref=lref)))
 }
