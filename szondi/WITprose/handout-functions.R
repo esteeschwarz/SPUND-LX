@@ -235,7 +235,7 @@ get.keys<-function(run){
   ref_freq_merged<- reference_freq %>%
     group_by(token_lc) %>%
     summarise(frequency =sum(freq))
-  
+  #ref_freq_merged[ref_freq_merged$token=="sie",]
   head(given_freq)
   head(ref_freq_merged)
   colnames(ref_freq_merged)<-c("token","freq")
@@ -248,9 +248,9 @@ get.keys<-function(run){
   #t.cr
   #####################################
   get.lemma.to.correct.dep<-function(){
-  s.all<-unique(tdf2$sentence)
-  lemma.u<-unique(lemmalist)
-  lemma.u
+  #s.all<-unique(tdf2$sentence)
+  #lemma.u<-unique(lemmalist)
+  #lemma.u
   sent.cr<-lapply(seq_along(1:length(t.cr)), function(i){
     g.cr<-t.cr[i]
     
@@ -267,7 +267,19 @@ get.keys<-function(run){
   })
   unlist(sent.cr)
   sent.cr
+  lem.cor.df<-data.frame(unlist(sent.cr))
+  #lem.cor.df$cor<-""
+  lem.cor.df$lemma.o<-rownames(lem.cor.df)
+  lem.cor.df$lemma.c<-"" 
+  lem.c.m<-merge(lem.cor.df,l.cor,by="lemma.o",all = T)
+  ?write.csv
+  colnames(lem.c.m)
+  cns<-c(1,3,5,2,4)
+  lem.c.m<-lem.c.m[,cns]
+  write.csv(lem.c.m,"~/Documents/GitHub/SPUND-LX/szondi/WITprose/lemmacor.cpt.csv",na="")
+  
   }
+  
   #tok.out<-given_freq$token[!m]
   #g
 ################################  
@@ -301,7 +313,8 @@ get.keys<-function(run){
   mnax<-is.na(freq_comparison$freq.y)
   sum(mnax)
   freq_comparison$freq.y[mnax]<-0
-  
+  t.cr<-freq_comparison$token[freq_comparison$freq.y==0]
+    
   # mnax<-is.na(freq_comparison[,1])
   # mnax
   # freq_comparison[mnax,1]<-0
