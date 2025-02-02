@@ -109,7 +109,8 @@ fetch.pos<-function(file,run,i,data){
     get.doc.div(pos.df,run,doc.id.u[[i]], i) # -[[i]]
   })
   df.write<-as.data.frame(abind(df.ex.l,along = 1))
-  df.write<-rbind(c(paste0('<doc id="',run,'-',fn,'" url="',url,'" author="',author,'">'),
+  # doc.id.act<-3
+  df.write<-rbind(c(paste0('<doc id="',doc.id.act,'-',run,'-',fn,'" url="',url,'" author="',author,'">'),
                     rep("",length(df.write)-1)),df.write,
                   c('</doc>',rep("",length(df.write)-1)))
   ### > this to write vrt for each url

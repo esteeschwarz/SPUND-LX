@@ -37,6 +37,8 @@ return(url.df.x)
 ### extract workflow from <getcompilecorp-srv.R>
 # get old dataframe to only check new comments
 # global VARS
+model.dir<-"./modeldir"
+doc.id.act<-3
 source(paste(getwd(),"srv-functions.R",sep="/"))
 wd<-"~/docker/ske"
 out.dir<-paste(getwd(),"corpora/reddit/vertical/vrt6",sep="/")
@@ -45,7 +47,6 @@ dir.create(out.dir)
 out.ns<-paste(out.dir,"source",sep="/")
 out.ns
 log.ns<-"~/Documents/GitHub/SPUND-LX/intLX/createcorp/createcorp.log.csv"
-model.dir<-"./modeldir"
 #load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 # get url dataframe
 url.df.x<-get.urls()
@@ -109,7 +110,7 @@ rm(run)
   write.table(df.ex,out.ns,sep = "\t",quote = F,
               row.names = F,col.names = F,na="",append=T)
 # save to list:
-  save(com.df.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/data/com.df.list.15015.RData")
+ # save(com.df.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/data/com.df.list.15015.RData")
     # save to http:
   cloud<-"~/box.dh-index.org/httpdocs/cloud"
   #save(df.ex.l,file=paste(cloud,"red_df.ex.el.RData",sep="/"))
