@@ -54,7 +54,7 @@ url.df.x<-get.urls()
 urls<-url.df.x$url
 url.u<-unique(urls)
 ### uncomment to start with new table, since data is appended >
-file.create(out.ns)
+#file.create(out.ns)
 file.create(log.ns)
 ####################
 # url.sub<-url.u[1:200] # 1:10:411 obs
