@@ -76,7 +76,41 @@ rm(run)
 #for (run in 115:125){
 ######################
 ### start here:
- pblapply(seq_along(1:length(url.u)),function(run){
+### only url df + text
+url.sub.df<-pblapply(seq_along(1:length(url.u)),function(run){
+ # url.sub.df<-pblapply(seq_along(1:10),function(run){
+    url.sub.df<-get.url.comments(run)
+  
+  url.df<-as.data.frame(url.sub.df$comments)
+#  print(url.df[1,])
+  cat(run,"finished\n")
+  return(url.df)
+})
+#?matrix
+#url.comment.df.1<-matrix(unlist(url.sub.df),ncol = 10,byrow = T)
+#url.comment.df<-data.frame(url.comment.df.1)
+?abind
+url.sub.df[[1]]<-url.sub.df[[2]][1,]
+url.sub.na<-lapply(seq_along(url.sub.df), function(d){
+  if(length(url.sub.df[[d]])<1)
+    return(NA)
+  return(url.sub.df[[d]])
+})
+una<-is.na(url.sub.na)
+una
+url.comment.df.1<-abind(url.sub.na[!una],along = 1,force.array = T)
+url.comment.df<-data.frame(url.comment.df.1)
+save(url.comment.df,file = "~/boxHKW/21S/DH/local/SPUND/intLX/url.comment.df.15086.RData")
+t<-url.comment.df$comment
+df.sub<-url.comment.df[1:ceiling(length(url.comment.df$url)/2),]
+writeLines(t,"~/Documents/GitHub/SPUND-LX/intLX/data/url.comments.15086.txt")
+library(readxl)
+library(writexl)
+write_xlsx(df.sub,"url.com.15086.sub1.xlsx")
+write
+  #colnames(url.comment.df)<-colnames(url.sub.df[[2]])
+#######################
+  pblapply(seq_along(1:length(url.u)),function(run){
    url.sub.df<-get.url.comments(run)
    
    url.df<-as.data.frame(url.sub.df$comments)
