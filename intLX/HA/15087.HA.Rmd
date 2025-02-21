@@ -1,0 +1,27 @@
+---
+title: "15087.intLX.HA"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# A.head
+# Einleitung
+Wir möchten in dieser Arbeit versuchen, einen Zusammenhang herzustellen zwischen der Verwendung figurativer Elemente in **internet speech** und vorhandenen nicht-standardsprachlichen Weisen, schriftlich zu kommunizieren. Dabei geht es uns vor allem darum, den ersten Eindruck von der Art und Weise, wie auf **reddit** kommuniziert wird, zu evaluieren und mithilfe statistischer Methoden o.a. Korrelationen zu prüfen. 
+Hergang: Wenn man in einem von uns erstellten reddit Korpus auf der Suche nach einem Phänomen etwas umherliest, stellt man fest, dasz hier scheinbar - im Gegensatz zu zB. Kommunikation in youtube-Kanälen - eine sehr (saubere) Umgangsform herrschte und die User bemüht sind, korrektes (standard) Deutsch zu benutzen, durch sehr wenig Schreib/Rechtschreib und sonstige Fehler auffallen und emojis zB. nur sparsam einsetzen. Diesen Eindruck (also hier schon: Die 1. Hypothese) wollen wir genauer prüfen und nach Ursachen dafür forschen. Wir nehmen an, dasz die gehäufte Verwendung figurativer sprachlicher Elemente (Metaphern, Idiome, Redewendungen) 1. einhergeht mit einem höhren Bewusztsein für den eigenen Ausdruck was möglicherweise dazu anhält, sich bei der Verfassung schriftlicher Beiträge mehr Mühe zu geben und 2. die generelle Tendenz zu figurativer Sprache Zeichen eines höheren Bildungsgrades und/oder Ausdruck höherer Ansprüche an sprachliche Kommunikation ist. Dies wird zu beweisen sein.
+
+# stand
+- literatur reddit
+- lit orth, bildung in internet speech
+# Methoden
+- corpus 11/2024-03/2025 ca. 11Mio token
+- AI coding of figurative language (MAXQDA)
+- coding of nonstandard features (IDS reference corpus)
+- correlate passages wt / wo code vs. standard-nonstandard
+- complexity factor of coded passages (pos-grams, type/token ratio)
+- 
+

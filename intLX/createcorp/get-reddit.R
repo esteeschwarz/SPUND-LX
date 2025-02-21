@@ -103,7 +103,8 @@ url.comment.df<-data.frame(url.comment.df.1)
 save(url.comment.df,file = "~/boxHKW/21S/DH/local/SPUND/intLX/url.comment.df.15086.RData")
 t<-url.comment.df$comment
 df.sub<-url.comment.df[1:ceiling(length(url.comment.df$url)/2),]
-writeLines(t,"~/Documents/GitHub/SPUND-LX/intLX/data/url.comments.15086.txt")
+t<-df.sub$comment
+writeLines(t,"~/Documents/GitHub/SPUND-LX/intLX/data/url.comments.15086.sub.txt")
 library(readxl)
 library(writexl)
 write_xlsx(df.sub,"url.com.15086.sub1.xlsx")

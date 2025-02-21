@@ -1,9 +1,10 @@
 */.DS_Store
-*/.Rproj.user
-*/.RData
+**/.Rproj.user
+**/.RData
 /.DS_Store
-/.Rhistory
-*/.Rhistory
+**/.Rhistory
+**/.Rhistory
 .Rproj.user
 **/*.log
 */*/*/*/*.log
+**/.DS_Store
