@@ -6,6 +6,7 @@
 # correlate?
 ############
 # Q: r/de
+fun.out<-function(){
 load("~/boxHKW/21S/DH/local/SPUND/intLX/url.comment.df.15086.RData")
 
 # chunk df in subsets of containing not more than 120.000 chars in df$comments for further analysing in MAXQDA
@@ -73,6 +74,7 @@ for(k in 1:length(chunks)){
   writeLines(t,tns)
   
 }
+}
 ########
 # 15102.
 # B: logbooks in the digital age
@@ -130,6 +132,7 @@ t2
 m7<-t2==""
 t2<-t2[!m7]
 t2
+return(list(df=data.frame(date=titx,text=paste0(t2,collapse = "\n"))))
 }
 ############
 #wks.
@@ -139,5 +142,13 @@ t3<-get.content(fns,3)
 t4<-get.content(fns,4)
 t5<-get.content(fns,5)
 
-
-
+library(quanteda)
+c1<-corpus(data.frame(t1$df,t2$df,t3$df,t4$df,t5$df))
+summary(c1)
+?keywords_collocation
+toks<-tokens(c1)
+ng4<-tokens_ngrams(toks,n=4,concatenator = " ")
+tng<-table(ng4)
+m<-grepl("[^a-zA-Z,;.?!]",tng)
+tng<-tng[!m]
+table(toks)
