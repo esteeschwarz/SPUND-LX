@@ -1,7 +1,7 @@
 # 20250221(10.30)
 # 15087.SPUND.intLX.HA
-# figurative language and style correlation
-###########################################
+# A:figurative language and style correlation
+#############################################
 # RQ: how do the use of figurative language in internet speech and style/register
 # correlate?
 ############
@@ -73,6 +73,71 @@ for(k in 1:length(chunks)){
   writeLines(t,tns)
   
 }
+########
+# 15102.
+# B: logbooks in the digital age
+################################
+# RQ: speech in logbook entries, diachrone betrachtung
+# Q: weblogs
+######################################################
+library(httr)
+library(xml2)
+q1<-"https://sailing-mahananda.com" #/2025/01/dd"
+y<-2025
+m<-01
+d<-28
+url<-paste(q1,y,m,d,sep = "/")
+r<-GET(url)
+x<-content(r,"text")
+thtm<-read_html(x)
+xml_text(thtm)
+
+logfolder<-"/Users/guhl/boxHKW/21S/DH/local/SPUND/intLX/HA/scrape"
+fl<-list.files(logfolder)
+fns<-paste(logfolder,fl,sep="/")
+n<-3
+#############################
+get.content<-function(fns,n){
+t<-read_html(fns[n])
+main<-xml_find_all(t,'//*[@id="main"]')
+t1<-xml_text(main)
+ttemp<-tempfile("temptx.txt")
+writeLines(t1,ttemp)
+t2<-readLines(ttemp)
+t2
+m1<-grep("ATA.cmd.push",t2)
+m2<-grep("\t.+sagt:",t2)
+m3<-m2[m2>m1][1]
+m4<-m3-1
+m5<-grep("document.getElementById",t2)
+m6<-m5[length(m5)]
+if(is.na(m4))
+  m4<-m6
+m.out<-c(m1:m4,m6:length(t2))
+m.out<-1:length(t2)%in%m.out
+sum(m.out)
+t2<-t2[!m.out]
+t2
+txml<-xml_find_all(t,'//*[@id="primary-header"]/div[2]')
+xml_text(txml)
+txml
+tth1<-xml_find_all(txml,".//h1")
+ttx<-xml_text(tth1)
+tttime<-xml_find_all(txml,".//time")
+titx<-xml_text(tttime)
+t2<-c(ttx,titx,t2)
+t2
+m7<-t2==""
+t2<-t2[!m7]
+t2
+}
+############
+#wks.
+t1<-get.content(fns,1)
+t2<-get.content(fns,2)
+t3<-get.content(fns,3)
+t4<-get.content(fns,4)
+t5<-get.content(fns,5)
 
 
 
