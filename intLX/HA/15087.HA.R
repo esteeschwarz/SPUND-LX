@@ -152,3 +152,109 @@ tng<-table(ng4)
 m<-grepl("[^a-zA-Z,;.?!]",tng)
 tng<-tng[!m]
 table(toks)
+################################################
+# back to reddit, corpus 11/24-03/25
+library(utils)
+dest<-"~/boxHKW/21S/DH/local/SPUND/intLX/reddit.com.df.cpt.15102.RData"
+download.file("https://box.dh-index.org/estee/cloud/reddit.com.df-20250302(18.03).RData",dest)
+load(dest)
+# 1st scrape
+load("~/boxHKW/21S/DH/local/SPUND/intLX/reddit_15494.df.RData")
+url.com.df<-rbind(com.df,url.comment.df)
+url.time.d<-duplicated(url.com.df$timestamp)
+sum(unlist(url.time.d))
+url.com.u<-url.com.df[!url.time.d,]
+min(url.com.u$date)
+max(url.com.u$date)
+#t1<-url.com.df$comment
+#t1c<-strsplit(t1,"")
+tc<-length(unlist(strsplit(url.com.u$comment,""))) # 13.445.500 #15103:17.317.356 chars #
+rm(url.com.df)
+url.comment.df<-url.com.u
+rm(url.com.u)
+margin<-116000
+########
+# chunks
+l.df<-tc
+# Create the vector
+vector <- 1:l.df
+
+# Define the chunk size
+chunk_size <- margin  # Example chunk size
+
+# Function to split the vector into chunks of equal length
+split_into_chunks <- function(vec, chunk_size) {
+  split(vec, ceiling(seq_along(vec) / chunk_size))
+}
+
+# Split the vector into chunks
+chunks <- split_into_chunks(vector, chunk_size)
+k<-2
+check.length<-function(tx){
+  ltx<-length(unlist(strsplit(tx,"")))
+}
+# com<-url.comment.df$comment
+# author<-url.comment.df$author
+# date<-url.comment.df$date
+# rm(com)
+# rm(date)
+# rm(author)
+e.ns<-colnames(url.comment.df)%in%c("date","author","comment")
+tx.e<-url.comment.df[,e.ns]
+tx.e.s<-tx.e[order(tx.e$date,decreasing = F),]
+tx.s<-tx.e.s[1,]
+tx.s[1,]<-"startdf"
+tx.s
+k<-1
+c.act<-1
+c<-1
+c
+c.act
+tx.list<-list()
+k
+for(k in 1:length(chunks)){
+  limit<-chunks[[k]][length(chunks[[k]])]
+  tx.list[[k]]<-tx.s
+  #print(length(unlist(strsplit(tx.list[[k]]$comment,""))))
+  print(c.act<-c-1)
+  for(c in c.act:margin){
+  tx.list[[k]]<-rbind(tx.list[[k]],tx.e[c,])
+  #print(length(unlist(strsplit(tx.list[[k]]$comment,""))))
+  l.act<-length(unlist(strsplit(tx.list[[k]]$comment,"")))
+  l.df<-length(tx.list[[k]]$author)
+  l.df1<-l.df-1
+  if(l.act>=margin){
+    tx.list[[k]]<-tx.list[[k]][1:l.df1,]
+    l.lim<-length(unlist(strsplit(tx.list[[k]]$comment,"")))
+    cat("k= ",k,"/ c= ",c,"/ l= ",l.lim,"\n")
+    break()
+  }
+#  cat("k= ",k,"/ c= ",c,"/ l= ",l.lim,"\n")
+  
+}
+}
+ex<-tx.list[[1]]
+l.x<-length(unlist(strsplit(ex$comment,"")))
+save(tx.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/txlist118k.RData")
+# 334 comment dataframes of < 120k chars 
+library(writexl)
+load("~/boxHKW/21S/DH/local/SPUND/intLX/txlist120k.RData")
+i<-1
+txdf<-df
+txdf$docname<-1
+txdf$group<-1
+txdf<-lapply(seq_along(1:length(tx.list)), function(i){
+  df<-tx.list[[i]]
+  df$group<-paste0("reddit-txel")
+  df$docname<-i
+  df$id<-1:length(df$author)
+  com<-c("@group: reddit-docs",paste0(df$docname,".",df$id,"\t",df$comment,collapse = "\n"))
+  writeLines(com,paste0("~/boxHKW/21S/DH/local/SPUND/intLX/HA/txdoc/reddit.tx-",i,".txt"))
+  
+#  doc<-data.frame(group="reddit-txel",docname=i,doc=com)
+ # txdf<-rbind(txdf,df)
+ # write_xlsx(doc,paste0("~/boxHKW/21S/DH/local/SPUND/intLX/HA/txel/reddit.txdf-",i,".xlsx"))
+  return(com)
+})
+txdf.a<-data.frame(abind(txdf,along = 1))
+write_xlsx(txdf.a,paste0("~/boxHKW/21S/DH/local/SPUND/intLX/HA/txel/reddit.txdf.xlsx"))
