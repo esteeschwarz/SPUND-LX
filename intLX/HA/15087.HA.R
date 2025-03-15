@@ -235,7 +235,7 @@ for(k in 1:length(chunks)){
 }
 ex<-tx.list[[1]]
 l.x<-length(unlist(strsplit(ex$comment,"")))
-save(tx.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/txlist118k.RData")
+save(tx.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/txlist116k.RData")
 # 334 comment dataframes of < 120k chars 
 library(writexl)
 load("~/boxHKW/21S/DH/local/SPUND/intLX/txlist120k.RData")
