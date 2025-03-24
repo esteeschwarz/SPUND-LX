@@ -20,9 +20,8 @@ with open(credit_path, 'r') as csvfile:
             api_key = row['key']
             break
 
-# Check if the API key was found
 if api_key is None:
-    raise ValueError(f"API key not found for purpose='{search_purpose}'")
+    raise ValueError(f"key not found for q='{q}'")
 
 # Insert the extracted API key into the environment variable
 os.environ["GROQ_API_KEY"] = api_key
