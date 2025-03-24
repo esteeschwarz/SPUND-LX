@@ -113,3 +113,8 @@ df <- do.call(rbind, dlist)
 df <- as.data.frame(df)
 df$de[465]
 save(df,file = "~/boxHKW/21S/DH/local/SPUND/intLX/data/idiomsdf.RData")
+#######################################################################
+load("~/boxHKW/21S/DH/local/SPUND/intLX/data/reddit.com.df.cpt.15102.RData")
+write_csv(url.comment.df,"~/boxHKW/21S/DH/local/SPUND/intLX/data/reddit.com.df.cpt.15102.csv")
+
+
