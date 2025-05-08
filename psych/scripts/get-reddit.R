@@ -48,7 +48,7 @@ model.dir<-"./modeldir"
 model.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/modeldir")
 doc.id.act<-3
 ###
-# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
+ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
 wd<-"~/docker/ske"
 out.dir<-paste0("~/temp/ske/corpora/reddit/auto/",thread,"/vertical/",tstamp)
 #out.dir<-"/Users/guhl/temp/ske/corpora/reddit/auto/vertical"
