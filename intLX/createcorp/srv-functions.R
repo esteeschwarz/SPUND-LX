@@ -7,9 +7,15 @@
 # #source("rlog.R")
 # library(readr)
 model<-list.files(model.dir)
-model<-paste(model.dir,model[1],sep = "/")
+
+model<-paste(model.dir,model[grep(model.l,model)],sep = "/")
 #print(model)
 model<-udpipe::udpipe_load_model(model)
+
+get.model<-function(){
+  udpipe_download_model("english")
+}
+
 writelog<-function(msg,logfile){
   t<-format(Sys.time(),"%Y%m%d(%H.%M)")
   log.df<-matrix(NA,ncol=4)
@@ -110,7 +116,10 @@ fetch.pos<-function(file,run,i,data){
   })
   df.write<-as.data.frame(abind(df.ex.l,along = 1))
   # doc.id.act<-3
-  df.write<-rbind(c(paste0('<doc id="',doc.id.act,'-',run,'-',fn,'" url="',url,'" author="',author,'">'),
+  # df.write<-rbind(c(paste0('<doc id="',doc.id.act,'-',run,'-',fn,'" url="',url,'" author="',author,'">'),
+  #                   rep("",length(df.write)-1)),df.write,
+  #                 c('</doc>',rep("",length(df.write)-1)))
+  df.write<-rbind(c(paste0('<doc id="',doc.id.act,'-',fn,'" url="',url,'" author="',author,'">'),
                     rep("",length(df.write)-1)),df.write,
                   c('</doc>',rep("",length(df.write)-1)))
   ### > this to write vrt for each url
@@ -191,7 +200,8 @@ fetch.pos<-function(file,run,i,data){
 # } # end url/run loop
 # ################################################
 # command: make execute CMD="compilecorp --no-ske testvrt"
-call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit4"'
+call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit-psych"'
+call.noske<-'sh ~/ske-compile.sh'
 #system(call.noske)
 print("process finished.")
 
