@@ -7,10 +7,32 @@
 # #source("rlog.R")
 # library(readr)
 model<-list.files(model.dir)
+print(model)
+print(model.l)
+model.g<-paste(model.dir,model[grep(model.l,model)],sep = "/")
+print(model.g)
+model<-udpipe::udpipe_load_model(model.g)
 
-model<-paste(model.dir,model[grep(model.l,model)],sep = "/")
-#print(model)
-model<-udpipe::udpipe_load_model(model)
+library(digest)
+aut.anonymise<-function(df){
+  url.comment.df<-df
+  authors<-unique(url.comment.df$author)
+  authors<-authors[!grepl("initialAuth",authors)]
+  url.comment.df$auth_anon<-comment.df$author
+  #aut<-2
+  for (aut in authors){
+    m<-url.comment.df$author==aut
+    sum(m)
+    # author_anon<-stri_rand_strings(1, 15, pattern = "[A-Za-z0-9]")
+    aut_anon <- digest(aut, algo = "md5", serialize = FALSE)
+    aut_anon <- substr(aut_anon, 1, 15) # Take the first 15 characters of the hash
+    
+    url.comment.df$auth_anon[m]<-aut_anon
+    
+  }
+  return(url.comment.df)
+}
+
 
 get.model<-function(){
   udpipe_download_model("english")
@@ -119,7 +141,7 @@ fetch.pos<-function(file,run,i,data){
   # df.write<-rbind(c(paste0('<doc id="',doc.id.act,'-',run,'-',fn,'" url="',url,'" author="',author,'">'),
   #                   rep("",length(df.write)-1)),df.write,
   #                 c('</doc>',rep("",length(df.write)-1)))
-  df.write<-rbind(c(paste0('<doc id="',doc.id.act,'-',fn,'" url="',url,'" author="',author,'">'),
+  df.write<-rbind(c(paste0('<doc id="',tstamp,'-',fn,'" url="',url,'" author="',author,'">'),
                     rep("",length(df.write)-1)),df.write,
                   c('</doc>',rep("",length(df.write)-1)))
   ### > this to write vrt for each url
