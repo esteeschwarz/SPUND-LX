@@ -5,7 +5,7 @@ library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15201
+tstamp<-15202
 #thread<- "de"
 thread<-"schizophrenia"
 corpus<-"stef_psych_schiz"
@@ -62,6 +62,7 @@ log.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/createcorp.log.
 #load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 # get url dataframe
 url.df.x<-get.urls()
+####################
 url.tm<-url.df.x$timestamp%in%url.comment.df.cpt$timestamp
 #tm<-url.comment.df.cpt$timestamp==urlt
 sum(url.tm)
