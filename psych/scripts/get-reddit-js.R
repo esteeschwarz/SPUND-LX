@@ -51,8 +51,8 @@ url.com.df<-list()
 #save(url.com.df,file = out.com.df.ns)
 #url.com.df<-pblapply(seq_along(1:length(jdf$url)),function(i){
 length(unique(jdf$timestamp))==length(jdf$timestamp)
-start.i<-4
-i<-1
+start.i<-104 # end
+i<-106
 e<-3
 e<-length(jdf$url)
 for(i in start.i:e){
@@ -76,18 +76,19 @@ for(i in start.i:e){
   # t<-content(r,"text")
   # t
   #cat("sleep 10s...")
-  wait<-2
+  wait<-5 #3 zu wenig, blocked...
   length(jdf$url)*wait/60
   # js<-fromJSON(t)
   ifelse(length(df)>0,"fetched...",break)
 #  ifelse(length(js)>0,"fetched...",break)
   # ifelse(length(jdf.1$data)>0,Sys.sleep(wait),break)
   com.df.meta<-data.frame(df$threads)
+  
   com.df.meta$tstamp<-tstamp
   com.df.comments<-data.frame(df$comments)
   # dbWriteTable(con, name = table_name, value = df_list[[i]], overwrite = TRUE)
-  #dbWriteTable(con, name = "meta", value = com.df.meta, overwrite = TRUE)
-  #dbWriteTable(con, name = "comments", value = com.df.comments, overwrite = TRUE)
+#  dbWriteTable(con, name = "meta", value = com.df.meta, overwrite = TRUE)
+ # dbWriteTable(con, name = "comments", value = com.df.comments, overwrite = TRUE)
   dbAppendTable(con, name = "meta", value = com.df.meta)
   if(com.df.meta$comments>0){
     com.df.comments$tstamp<-tstamp
