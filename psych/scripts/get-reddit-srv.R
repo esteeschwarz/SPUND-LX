@@ -5,7 +5,10 @@ library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15202
+tstamp<-15203
+dt<-1
+tstamp<-paste0(format(Sys.Date(),"%y-%m-%d"),".",dt)
+tstamp
 #thread<- "de"
 thread<-"schizophrenia"
 corpus<-"stef_psych_schiz"

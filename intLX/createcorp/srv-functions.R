@@ -18,7 +18,7 @@ aut.anonymise<-function(df){
   url.comment.df<-df
   authors<-unique(url.comment.df$author)
   authors<-authors[!grepl("initialAuth",authors)]
-  url.comment.df$auth_anon<-comment.df$author
+  url.comment.df$auth_anon<-url.comment.df$author
   #aut<-2
   for (aut in authors){
     m<-url.comment.df$author==aut
@@ -148,7 +148,7 @@ fetch.pos<-function(file,run,i,data){
   # write.table(df.write,paste0("~/Documents/GitHub/SPUND-LX/intLX/createcorp/testout/vrt.f-",fn,".csv"),sep = "\t",quote = F,row.names = F,col.names = F,na="")
   ###
   df.out<-abind(df.write,along = 1)
-  com.df.list[[run]]<-df.out
+ # com.df.list[[run]]<-df.out
   
   return(df.out)
 }

@@ -1,20 +1,23 @@
 library(RedditExtractoR)
-#library(dplyr)
+library(dplyr)
 library(udpipe)
 library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15196
+tstamp<-15203
+dt<-1
+tstamp<-paste0(format(Sys.Date(),"%y-%m-%d"),".",dt)
+tstamp
 #thread<- "de"
 thread<-"schizophrenia"
 corpus<-"stef_psych_schiz"
-subject.dir<-"SPUND/2025/stef_psych"
+subject.dir<-"SPUND-LX/psych/data"
 cloud<-"~/box.dh-index.org/httpdocs/cloud"
-cloud<-paste0(Sys.getenv("HKW_TOP"),"/SRV/mini/corpora")
+cloud<-paste0(Sys.getenv("WWW_TOP"),"/cloud")
 get.urls<-function(){
 url.df.x<-find_thread_urls(subreddit = thread)
-save(url.df.x,file = paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/reddit_url.df.",tstamp,".RData"))
+save(url.df.x,file = paste0(Sys.getenv("GIT_TOP"),"/",subject.dir,"/reddit_url.df.",tstamp,".RData"))
 max(url.df.x$date_utc)
 min(url.df.x$date_utc)
 #url.df.2<-url.df
@@ -46,20 +49,34 @@ return(url.df.x)
 # global VARS
 model.dir<-"./modeldir"
 model.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/modeldir")
-doc.id.act<-3
+model.l<-"eng"
+#model.l<-"ger"
+doc.id.act<-tstamp
 ###
- source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
-wd<-"~/docker/ske"
-out.dir<-paste0("~/temp/ske/corpora/reddit/auto/",thread,"/vertical/",tstamp)
-#out.dir<-"/Users/guhl/temp/ske/corpora/reddit/auto/vertical"
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
+wd<-"~/dl/ske"
+out.dir<-paste0("~/temp/ske/corpora/reddit/auto/",thread,"/data")
+out.dir<-"/Users/guhl/temp/ske/corpora/reddit/auto/vertical"
 dir.create(out.dir,recursive = T)
 #?dir.create
-out.ns<-paste(out.dir,"source",sep="/")
-out.ns
-log.ns<-"~/Documents/GitHub/SPUND-LX/intLX/createcorp/createcorp.log.csv"
+out.com.df.ns<-paste0(out.dir,"/comment.df.",tstamp,".RData")
+out.com.df.ns
+log.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/createcorp.log.csv")
 #load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 # get url dataframe
 url.df.x<-get.urls()
+####################
+url.tm<-url.df.x$timestamp%in%url.comment.df.cpt$timestamp
+#tm<-url.comment.df.cpt$timestamp==urlt
+sum(url.tm)
+url.df.x$text[url.tm]
+url.df.x$timestamp[url.tm]
+url.comment.df.cpt$timestamp[url.comment.df.cpt$timestamp%in%url.df.x$timestamp]
+# merge urls
+url.dfs<-list.files(paste0(Sys.getenv("GIT_TOP"),"/",subject.dir))
+url.dfs<-paste0(Sys.getenv("GIT_TOP"),"/",subject.dir,"/",url.dfs[grep("url.df",url.dfs)])
+#url.df.cpt<-url.df.x
+#save(url.df.cpt,file = paste0(Sys.getenv("GIT_TOP"),"/",subject.dir,"/reddit_url.df.",tstamp,".RData"))
 ####################
 urls<-url.df.x$url
 url.u<-unique(urls)
@@ -75,28 +92,72 @@ file.create(log.ns)
 # wt log: 89. wks.
 # 101:120
 ###################################
+# wt sqlite db:
+library(DBI)
+library(RSQLite)
+# To save to a file:
+# con <- dbConnect(RSQLite::SQLite(),paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/reddit_com.df.",tstamp,".sqlite"))
+con <- dbConnect(RSQLite::SQLite(),"testqlite.reddit_com.df.15202.sqlite")
+url.com.df<-data.frame(dbGetQuery(con,"select * from comments")) #wks.
+
+
+
+
 # get annotated comments, function instead of loop:
 get.url.comments<-function(url){
   com.df<-get_thread_content(url.df.x$url[url])
 }
 com.df.list<-list()
 
-run<-130
-rm(run)
+#run<-130
+#rm(run)
 #for (run in 115:125){
 ######################
 ### start here:
 ### only url df + text
-url.df.ns<-paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/url.sub.df.",tstamp,".csv")
-file.create(url.df.ns)
-
+# url.df.ns<-paste0(cloud,"/url.sub.df.",tstamp,".csv")
+# url.df.ns
+# file.create(url.df.ns)
+#url.id<-1
 url.temp<-tempfile("urltemp.csv")
-url.sub.df<-pblapply(seq_along(1:length(url.u)),function(run){
+#library(dplyr)
+#i<-1
+test.text<-function(i){
+  t1<-url.df.x$text[i]
+  print(t1)
+  t2<-url.comment.df$comment[grep(t1,url.comment.df.cpt$comment)]
+print(t2)
+
+  
+}
+# url.comment.df$comment[grep("thinkharderrunfaster",url.comment.df.cpt.3$author)]
+# test.text(2)
+url.u<-unique(url.com.df$url)
+url.df.x<-dbGetQuery(con,"select * from meta")
+meta<-c(grep("author|text|timestamp|date|url",colnames(url.df.x)))
+url.df.cpt<-url.df.x
+#################################################################
+url.id<-1
+url.sub.df<-pblapply(seq_along(1:length(url.u)),function(url.id){
  #url.sub.df<-pblapply(seq_along(1:10),function(run){
 #for(run in 1:length(url.u)){
-    url.sub.df<-get.url.comments(run)
+   # url.sub.df<-get.url.comments(run)
+#    com.df<-get_thread_content(url.df.x$url[url.id])
+    url<-url.u[url.id]
+    com.df<-url.com.df[url.com.df$url==url,]
+    #url.sub.df<-com.df
+    com.meta<-url.df.cpt[url.df.cpt$url==url,meta]
+    
+#    com.meta$author<-"initialAuth"
+    com.meta$comment<-com.meta$text
+    com.meta$comment_id<-0
+    com.meta$tstamp<-unique(com.df$tstamp)
+    com.meta<-com.meta[!is.na(com.meta$url),]
+    mode(com.meta$comment_id)<-"character"
+    colnames(com.meta)[grep("date",colnames(com.meta))]<-"date"
+    url.sub.df<-bind_rows(com.df,com.meta)
   
-  url.df<-as.data.frame(url.sub.df$comments)
+#  url.df<-as.data.frame(url.sub.df$comments)
   # # write.table(url.df,url.temp,
   #             row.names = F,col.names = F,na="",append=T)
 #  print(url.df[1,])
@@ -108,11 +169,10 @@ url.sub.df<-pblapply(seq_along(1:length(url.u)),function(run){
   # }
   # ?close
   # closeAllConnections()
-  cat(run,"finished\n")
+  cat(url.id,"finished\n")
 #}
-   return(url.df)
+   return(url.sub.df)
  })
-
 
 #writeLines(url.temp,"~/boxHKW/21S/DH/local/SPUND/2025/stef_psych/urltemp.csv")
 # open_cons <- showConnections(all = TRUE)
@@ -123,75 +183,151 @@ url.sub.df<-pblapply(seq_along(1:length(url.u)),function(run){
 # }
 # ?close
 # closeAllConnections()
- #save(url.sub.df,file = paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/url.sub.df.",tstamp,".RData"))
+#save(url.sub.df,file = out.com.df.ns)
+#length(unique(url.comment.df$timestamp))==length(url.comment.df$timestamp)
 
 #?matrix
 #url.comment.df.1<-matrix(unlist(url.sub.df),ncol = 10,byrow = T)
 #url.comment.df<-data.frame(url.comment.df.1)
 #?abind
-url.sub.df[[1]]<-url.sub.df[[2]][1,]
+is.na(url.sub.df[[1]])
+# if(length(url.sub.df[[1]])==0)
+  # url.sub.df[[1]]<-url.sub.df[[2]][1,]
 url.sub.na<-lapply(seq_along(url.sub.df), function(d){
   if(length(url.sub.df[[d]])<1)
     return(NA)
   return(url.sub.df[[d]])
 })
 una<-is.na(url.sub.na)
-una
+#una
+library(abind)
 url.comment.df.1<-abind(url.sub.na[!una],along = 1,force.array = T)
-url.comment.df<-data.frame(url.comment.df.1)
+url.comment.df.2<-data.frame(url.comment.df.1)
+#url.com.df.2<-url.sub.na
+url.comment.df<-aut.anonymise(url.comment.df.2)
+url.comment.df.cpt<-url.comment.df
+##################################
+# wks
+##################################
 
-write.csv(url.comment.df,"~/temp/ske/corpora/reddit/auto/schizophrenia/vertical/15195/urltemp.df.csv")
-t<-url.comment.df$comment
-df.sub<-url.comment.df[1:ceiling(length(url.comment.df$url)/2),]
-t<-df.sub$comment
-writeLines("testwrite",paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/url.comments.",tstamp,".sub.txt"))
-writeLines("testwrite",paste0("~/temp/R/gzissue.",tstamp,".txt"))
-library(readxl)
-library(writexl)
-write_xlsx(df.sub,paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/url.com.",tstamp,"/.sub1.xlsx"))
-# save(url.comment.df,file = paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/url.comment.df.",tstamp,".RData"))
+###
+#library(stringi)
+###
+df.f<-list.files(out.dir)
+df.f<-df.f[grep("comment.df",df.f)]
+df.f
+# url.comment.df.cpt<-aut.anonymise(url.comment.df.cpt)
+# save(url.comment.df.cpt,file=df.f[2])
+# load(paste(out.dir,df.f[1],sep = "/"))
+# if(length(df.f)>1)
+#   df.f<-df.f[2:length(df.f)]
+# url.comment.df.3<-url.comment.df.cpt
+# for (f in df.f){
+#   load(paste(out.dir,f,sep = "/"))
+#   url.comment.df.3<-rbind(url.comment.df.3,url.comment.df.cpt,url.comment.df)
+#   mtu.dup<-duplicated(url.comment.df.3$comment)
+#   sum(mtu.dup)
+#   url.comment.df.3<-url.comment.df.3[!mtu.dup,]
+# 
+# 
+# }
+#url.comment.df.cpt<-url.comment.df.3
+#########################################################
+# library(stringi)
+# authors<-unique(url.comment.df$author)
+# url.comment.df$auth_anon<-NA
+# #aut<-2
+# for (aut in 1:length(authors)){
+#   m<-url.comment.df$author==authors[aut]
+#   sum(m)
+#   author_anon<-stri_rand_strings(1, 15, pattern = "[A-Za-z0-9]")
+#   url.comment.df$auth_anon[m]<-author_anon
+#   
+# }
+# m.tu<-unique(url.comment.df.cpt$timestamp)
+# length(m.tu)
+# mtu.dup<-duplicated(url.comment.df.cpt$timestamp)
+# url.comment.df.cpt$comment[mtu.dup]
+#url.comment.df.cpt.2<-url.comment.df.cpt[!mtu.dup,]
+#length(m.tu)
+#url.comment.df.cpt.2<-url.comment.df.cpt[,!grepl("aut_anon",colnames(url.comment.df.cpt))]
+#url.comment.df.cpt<-url.comment.df.cpt.2
+#url.comment.df.cpt<-rbind(url.comment.df.cpt,url.comment.df)
+# save(url.comment.df.cpt,file=out.com.df.ns) # saves new dataframe after removing duplicate timestamps
+#######################################
+# tstamp.d<-format(Sys.Date(),"%y-%m-%d")
+# tstamp<-tstamp.d
+doc.id.act
+#i<-1
+#run<-1
+print(model)
+url.comment.df.cpt.2<-url.comment.df.cpt
+sum(is.na(url.comment.df.2$comment))
+i<-165
+    df.ex.l<-pblapply(seq_along(1:length(url.comment.df.cpt.2$url)), function(i) {
+      comments<-url.comment.df.cpt.2[i,]
 
-  #colnames(url.comment.df)<-colnames(url.sub.df[[2]])
-#######################
-  pblapply(seq_along(1:length(url.u)),function(run){
-   url.sub.df<-get.url.comments(run)
-   
-   url.df<-as.data.frame(url.sub.df$comments)
-   url.sub.df<-url.df
-   print(url.sub.df[1,])
-   
-   ##################################################################
-  ### > here adapt change to length of url.sub.df to get all url pos
-  # df.ex.url<-pblapply(seq_along(1:2),function(i){
-  #   cat("url:",url,"\n")
-  df.ex.l<-pblapply(seq_along(url.sub.df$url), function(i) {
-    comments<-url.sub.df[i,]
-    print(author<-comments$author)
+    print(author<-comments$auth_anon)
+#    print(author<-comments$author)
     print(timestamp<-comments$timestamp)
     print(score<-comments$score)
     print(com_id<-comments$comment_id)
     print(url<-comments$url)
     print(date<-comments$date)
     print(comment<-comments$comment)
+    if(comment==""|is.na(comment))
+      return(NA)
     com.x<-fetch.pos(comment, run,i,data=list(author=author,timestamp=timestamp,date=date,url=url,score=score,com_id=com_id))
     return(com.x)
   })
-  df.ex<-abind::abind(df.ex.l,along = 1)
-  df.ex<-data.frame(df.ex)
+  ###############
+  # wks
+    #############
+  save(df.ex.l,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/reddit_com.ann.list.",tstamp,".RData"))
+  ### 15203: this is now a list containing the xml <doc> entries per index
+  out.dir
+  out.com.doc.ns<-paste0(out.dir,"/source")
+  out.com.doc.ns
+  writeLines("<xml>",out.com.doc.ns)
+  pblapply(seq_along(df.ex.l), function(i){
+    write.table(df.ex.l[[i]],out.com.doc.ns,append = T,col.names = F,row.names = F,quote = F)
+  })
+  ### wks.
+  ### TODO: clean characters :PRINT:
+  #df.ex<-abind::abind(df.ex.l,along = 1)
+  df.ex<-data.frame(unlist(df.ex.l))
+  t1<-data.frame(df.ex.l[[1]])
   m2<-colnames(df.ex)=="misc"|colnames(df.ex)=="deps"|colnames(df.ex)=="sentence"
   m3<-c(1:length(m2))[!m2]
   m3
   df.ex<-df.ex[,m3]
+  df.ex$token<-gsub("[^[:print:]]","_",df.ex$token)
+  df.ex$lemma<-gsub("[^[:print:]]","_",df.ex$lemma)
   # com.df.list[[run]]<-df.ex
-  
+  out.ns
+  length(unique(url.comment.df.cpt$timestamp))
   write.table(df.ex,out.ns,sep = "\t",quote = F,
               row.names = F,col.names = F,na="",append=T)
-# save to list:
+  # save to vrt dir:
+  out.vrt.top<-"~/dl/ske/corpora"
+  out.vrt.ns<-paste0(out.vrt.top,"/reddit/vertical/psych/vrt01a/source")
+  write.table(df.ex,out.vrt.ns,sep = "\t",quote = F,
+              row.names = F,col.names = F,na="",append=F)
+  colnames(df.ex)
+  # save to list:
  # save(com.df.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/data/com.df.list.15015.RData")
     # save to http:
 #  cloud<-"~/box.dh-index.org/httpdocs/cloud"
   #save(df.ex.l,file=paste(cloud,"red_df.ex.el.RData",sep="/"))
   # write to logfile
   writelog(c(run,"url"),log.ns)
-}) # end url/run loop
+#}) # end url/run loop
 unique(com.df.list[[1]]$pid)
+
+# command: make execute CMD="compilecorp --no-ske testvrt"
+call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit-psych"'
+call.noske<-'sh ~/ske-compile.sh'
+system(call.noske)
+
+
+
