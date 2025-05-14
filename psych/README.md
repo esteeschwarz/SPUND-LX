@@ -25,3 +25,9 @@
 | SYM     | symbol                    |     |
 | VERB    | verb                      |     |
 | X       | other                     |     |
+
+#### nosketchengine API
+
+```bash
+curl -X GET "https://corp.dh-index.org/ske/concordance?corpname=reddit-psych&format=json&q=q%5Bword%3D%22language%22%5D+within+%3Cdoc+author%3D%22%28.%2A%29%22+%2F%3E"
+```
