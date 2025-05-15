@@ -38,5 +38,6 @@ the following query fetches a complete concordance similar to the web interface 
 curl -X GET "https://corp.dh-index.org/ske/concordance?corpname=reddit-psych&q=q%5Blemma%3D%22language%22%5D&attrs=word,upos,lemma&structs=s,doc&refs=doc.id,doc.author&ctxattrs=word,upos,lemma&context=10+10&viewMode=json"
 ```
 
+[> view query results in browser](https://corp.dh-index.org/ske/concordance?corpname=reddit-psych&q=q%5Blemma%3D%22language%22%5D&attrs=word,upos,lemma&structs=s,doc&refs=doc.id,doc.author&ctxattrs=word,upos,lemma&context=10+10&viewMode=json)
 
 
