@@ -18,6 +18,8 @@ endpoint<-"/concordance?"
   skurl
   window<-10
   cql<-'[lemma="language"]'
+  cql<-'[word="mother"] [word="tongue"]'
+ # cql<-'[word="I"] [word="have"]'
   query<-list(
     #corpname='user/st.schwarz/benjamin13',
    # corpname="preloaded/detenten20_rft3",
@@ -84,7 +86,21 @@ xdf.l$author<-aut.e
 #xdf$keywords
 #unlist(xdf.l["Left"])
 # getq<-function(x)paste(unlist(x[,1]),collapse = " ")
-getk<-function(x)unlist(x)[2]
+#x<-xdf.l$Kwic
+getk<-function(x){
+  k<-unlist(x[[2]])
+  k<-gsub(" ","",k)
+
+  
+  #k[,2]
+  u<-k[[2]]
+  u
+  k
+  u
+  u<-paste0(unlist(k),collapse = " ")
+  #u2<-u
+}
+unlist(lapply(xdf.l$Kwic, getk))
 # xdf.e<-data.frame(left=lapply(xdf.l$Left, getq),kwic=lapply(xdf.l$Kwic, getk),right=lapply(xdf.l$Right, getq))
 getq<-function(x){
   # 15213.messed up func, REDO, TODO: NA insert around target left-right; as of now right context NA+context (like left) instead context+NA / fiddle lapply to pass context dir
@@ -108,7 +124,7 @@ getq<-function(x){
     l<-l[(ld+1):le.l]
   return(l)
 }
-xdf.e<-data.frame(left=paste(unlist(xdf.l$Left),collapse = " "),kwic=xdf.l$Kwic[1],right=paste(unlist(xdf.l$Right),collapse = " "))
+xdf.e<-data.frame(left=paste(unlist(xdf.l$Left),collapse = " "),kwic=paste0(xdf.l$Kwic$str,collapse = " "),right=paste(unlist(xdf.l$Right),collapse = " "))
 #xdf.e<-list()
 xdf.e.m<-matrix(NA,nrow = length(xdf.l$toknum),ncol = (window*2+1))
 xdf.e.df<-data.frame(xdf.e.m,id=1:length(xdf.l$toknum))
@@ -142,10 +158,10 @@ xdf.e.df[,1:window]<-mldf
 mr<-lapply(xdf.l$Reft, getq)
 #library(abind)
 mrdf<-t(data.frame(lapply(xdf.l$Right, getq)))
-xdf.e.df[,(window+2):(length(xdf.e.df)-1)]<-mrdf
-xdf.e.df[,(window+1)]<-unlist(lapply(xdf.l$Kwic, getk))
-xdf.e.df$author<-xdf.l$author[,2]
 kwic.p<-window+1
+xdf.e.df[,(window+2):(length(xdf.e.df)-1)]<-mrdf
+xdf.e.df[,(kwic.p)]<-unlist(lapply(xdf.l$Kwic, getk))
+xdf.e.df$author<-xdf.l$author[,2]
 colnames(xdf.e.df)<-c(paste0("t-",window:1),"kwic",paste0("t+",1:window),"id","author")
 xdf.e.df.2<-xdf.e.df
 x.ns<-colnames(xdf.e.df)
