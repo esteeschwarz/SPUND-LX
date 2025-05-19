@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBook xmlns="urn:QDA-XML:codebook:0:4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:QDA-XML:codebook:0:4 Codebook.xsd" origin="MAXQDA 24 (Release 24.9.1, Build 250505)">
+	<Codes>
+		<Code guid="{aae6946a-bc1e-4333-b277-0d4e4c1c9b29}" name="LXmarker" color="#32bd59" isCodable="true">
+			<Code guid="{9c2ccc9a-b5ad-43dc-97a6-a0e96a920db8}" name="x-PPr" color="#32bd59" isCodable="true"/>
+			<Code guid="{0766a3f6-e889-4c3a-8929-1821e7756dde}" name="1st-PPrPl" color="#c5e157" isCodable="true"/>
+			<Code guid="{191631c6-21e7-488d-9e94-2d80f0f8b826}" name="1st-PPrSg" color="#32bd59" isCodable="true">
+				<Description>27.04.25 16:58
+Textsuche &amp; Autocodieren - ANY: ich mich mein meine mir meinen meinem 
+Innerhalb von: Dokument
+Nur ganze Wörter
+Nur in aktivierten Dokumenten</Description>
+			</Code>
+		</Code>
+		<Code guid="{9ee3e12d-0436-4ff5-bba8-6109d7806bb5}" name="Bewertung" isCodable="true">
+			<Code guid="{381336e2-3818-451e-8163-866aa12f1774}" name="positiv" isCodable="true"/>
+			<Code guid="{d159a399-dd44-4903-b077-4ade5d9a7a5d}" name="negativ" isCodable="true"/>
+		</Code>
+		<Code guid="{6f983349-1c93-426c-8861-343194bd6a55}" name="Primäaffekt" color="#ef5350" isCodable="true">
+			<Code guid="{32db9a38-29ab-4dda-afc5-35735923d97a}" name="Angst" color="#ef5350" isCodable="true"/>
+			<Code guid="{96cf6eed-179b-4264-9f11-3f2891e6f9df}" name="Traurigkeit" color="#ef5350" isCodable="true"/>
+			<Code guid="{6abb748f-7b67-4348-a64d-ab3f8a7246df}" name="Wut" color="#ef5350" isCodable="true"/>
+			<Code guid="{788f90e2-2c11-4c21-a28c-a56c849bcbb4}" name="Ekel" color="#ef5350" isCodable="true"/>
+			<Code guid="{4619ebc9-cc60-41d0-8371-09cc42e34540}" name="Überraschung" color="#ef5350" isCodable="true"/>
+			<Code guid="{8713e182-c022-4cf8-9e17-c8a85c1633c6}" name="Freude" color="#ef5350" isCodable="true"/>
+		</Code>
+	</Codes>
+</CodeBook>
