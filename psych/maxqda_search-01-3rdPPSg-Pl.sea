@@ -1,9 +1,9 @@
 ﻿<MAXQDA>
  <PROPERTY id="2">0</PROPERTY>
  <PROPERTY id="4">1</PROPERTY>
- <PROPERTY id="5">0</PROPERTY>
- <PROPERTY id="0">sie|ihre|ihr|er|sein|seine|seiner|ihrer</PROPERTY>
- <PROPERTY id="34">0|0|0|0|0|0|0|0</PROPERTY>
+ <PROPERTY id="5">1</PROPERTY>
+ <PROPERTY id="0">sie|ihre|ihr|er|sein|seine|seiner|ihrer|ihrem|ihren|seinem|seinen</PROPERTY>
+ <PROPERTY id="34">0|0|0|0|0|0|0|0|0|0|0|0</PROPERTY>
  <PROPERTY id="20">1</PROPERTY>
  <PROPERTY id="1">0</PROPERTY>
  <PROPERTY id="21">0</PROPERTY>
@@ -17,5 +17,5 @@
  <PROPERTY id="32">/Applications/MAXQDA24.app/Contents/Resources/Lemmatization/de.txt</PROPERTY>
  <PROPERTY id="33">false</PROPERTY>
  <PROPERTY id="10">1</PROPERTY>
- <PROPERTY id="50">|||||||</PROPERTY>
+ <PROPERTY id="50">|||||||||||</PROPERTY>
 </MAXQDA>
