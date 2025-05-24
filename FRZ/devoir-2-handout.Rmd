@@ -1,0 +1,116 @@
+---
+title: "handout devoir (2): elon musk a acquire twitter"
+runningheader: "elon musk a acquire twitter" # only for pdf output
+#subtitle: "An implementation in R Markdown" # only for html output
+# author: '`r putaut<-function(out){ifelse(out,"st. schwarz","st. schwarz / franziska schmidt")};putaut(knitr::is_html_output())`'
+author: "st. schwarz"
+date: "`r Sys.time()`"
+output:
+  bookdown::html_document2:
+    base_format: tufte::tufte_html
+  #tufte::tufte_html: default
+  tufte::tufte_handout:
+    citation_package: natbib
+    latex_engine: xelatex
+  tufte::tufte_book:
+    citation_package: natbib
+    latex_engine: xelatex
+bibliography: 'wolf.bib'
+link-citations: yes
+keep_tex: yes
+---
+
+```{r setup,results=F, include=F}
+#library(tufte)
+library(tm)
+#library(dplyr)
+library(rmarkdown)
+#library(httr)
+library(purrr)
+library(knitr)
+author<-"st. schwarz"
+
+ # invalidate cache when the tufte version changes
+knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
+} else if (is_latex_output()) {
+  #output_format <- "PDF"
+  print("pdf")
+  output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
+}
+# author<-"st. schwarz / franziska schmidt"
+# if(output.rmd=="html")
+#   author<-"st. schwarz"
+
+
+```
+
+```{r bibmy, eval=F, echo=FALSE, warning=FALSE,message=FALSE}
+#fetch zotero .bib online
+#share <- runif(1)
+# response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
+# bib<-httr::content(response,"text")
+# y<-tempfile("ref",fileext = ".bib")
+# writeLines(bib,y)
+# t<-Sys.time()
+# #tf<-format(t,"%a %b %d %Y (%H.%M)")
+# tf<-format(t,"%Y%m%d(%H.%M)")
+```
+
+
+```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
+#src<-"../../../../../local/R/cred_gener.csv"
+ # cred<-read.csv(src)
+  #  src.d<-"~/boxHKW/21S/DH/local/DYN/db/wolfdb003.csv"
+# k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
+# k2<-k2$content[k2$book=="FF"]  
+src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
+#writeLines(k2,"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt")
+# tp<-readLines(src.t)
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
+} else if (is_latex_output()) {
+  #output_format <- "PDF"
+  print("pdf")
+  output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
+}
+   # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
+script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R" # for rendering annotations
+script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R" # for stats
+source(script1)
+source(script2)
+author<-"st. schwarz / franziska schmidt"
+if(output.rmd=="html")
+  author<-"st. schwarz"
+```
+
+# A. head
+Französisch GM3 / Roman Aubry / FUB SoSe25   
+
+`r dlmsg`
+
+---
+
+# TOP
+\begin{marginfigure}
+\end{marginfigure}
+
+
+
+# fin
+thanks for your patience oder wie fr. wolf sagen würde... 
+```{r sample} 
+zeig.doch.einfach.mal.ein.zufaelliges.beispiel()
+```
+
+---
+\newpage
+# B. REF:
