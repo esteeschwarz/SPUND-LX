@@ -6,12 +6,12 @@ runningheader: "elon musk a acquire twitter" # only for pdf output
 author: "st. schwarz"
 date: "`r Sys.time()`"
 output:
-  bookdown::html_document2:
-    base_format: tufte::tufte_html
-  #tufte::tufte_html: default
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
+  #tufte::tufte_html: default
+  bookdown::html_document2:
+    base_format: tufte::tufte_html
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
@@ -39,12 +39,12 @@ options(htmltools.dir.version = FALSE)
 if (is_html_output()) {
   print("html output")
   output.rmd<-"html"
-  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
 } else if (is_latex_output()) {
   #output_format <- "PDF"
   print("pdf")
   output.rmd<-"pdf"
-  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
 }
 # author<-"st. schwarz / franziska schmidt"
 # if(output.rmd=="html")
