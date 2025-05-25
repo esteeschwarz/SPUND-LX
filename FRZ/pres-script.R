@@ -124,7 +124,7 @@ m.af.corpus.kwic<-lapply(seq_along(text.list.year), function(i){
 })
 #i<-1
 m.af.corpus.corp<-lapply(seq_along(text.list.year), function(i){
-  grep.af.c.corp(text.list.year[[i]],keywords=c("Musk","Elon","Twitter","Übernahme"),connect=T,35,date = names(text.list.year)[[i]])
+  grep.af.c.corp(text.list.year[[i]],keywords=c("Musk","Elon","Twitter","Übernahme|Kauf"),connect=T,35,date = names(text.list.year)[[i]])
 })
 #m.af.corpus.extract$`2014-05-08`
 # make csv
@@ -141,8 +141,8 @@ m.af.corpus.corp<-lapply(seq_along(text.list.year), function(i){
 library(abind)
 df3<-data.frame(abind(m.af.corpus.kwic,along = 1))
 #df4<-cbind(date=NA,df3)
-df5<-data.frame(article=abind(m.af.corpus.corp,along = 1))
-mnull<-df5$article
+# df5<-data.frame(article=abind(m.af.corpus.corp,along = 1))
+# mnull<-df5$article
 lc<-unlist(lapply(m.af.corpus.corp,length))
 lcm<-lc>0
 sum(lcm)
@@ -150,87 +150,74 @@ df4<-m.af.corpus.corp[lcm]
 df5<-data.frame(abind(df4,along = 1))
 rownames(df5)<-1:length(df5$date)
 x<-df4[[1]]
-lapply(seq_along(df4), function(x){
-  writeLines(x[[i]],"")
-})
+# lapply(seq_along(df4), function(x){
+#   writeLines(x[[i]],"")
+# })
 writeLines(unlist(df4),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/FRZ/devoir-02.txt"))
-#df5$article[1]
-df6<-df5[,1:2]
-df5js<-list(df5$date)
-#df1<-df1[2:length(df1$date),]
-#df4$docname<-gsub(".+/(.+\\.xhtml)","\\1",df4$docname)
-#write.csv(df1,"data/af_corpus-kwic.csv")
-head(df1)
 
-af.art.id<-unique(df1$docname) #191 articles
-af.art.id
-# get.af.texts
-x<-text.list.cpt
-#x$content[[1]]
-#get.af.text<-function(x){
-#x.t<-x$`2012-08-16`$content[[1]]
-# library(tools)
-# af.art.list<-list()
-# for(k in 1:length(af.art.id)){
-# m.grep<-af.art.id[k]
-# m.out<-stri_split(m.grep,regex="_")
-# #file_ext(f)
-# 
-# m.out.char<-grep("[a-zA-Z]",file_path_sans_ext(m.out[[1]][2]))
-# if(!sum(m.out.char)>0){
-# m<-grep(m.grep,text.list.cpt)
-# #if(length(m)==1){
-# m.date<-names(text.list.cpt[m])
-# x.t<-text.list.cpt[[m]]$content[[1]]
-# m2<-grep(gsub("[^0-9]","",m.grep),x.t$section)
-# m.text<-x.t$text[m2]
-# temp.text<-tempfile("m.text")
-# writeLines(m.text,temp.text)
-# m.text.lines<-readLines(temp.text)
-# m.text.lines
-# af.art.list[[m.date]]<-m.text.lines
-# print(k)
-# }
-# }
-#save(m.af.corpus.extract,file=paste(ha_dir,paste0("af.corpus.extract-","12-13-14",".Rdata"),sep = "/"))
+# 15222.twtr shares
+library(xml2)
+url<-"https://www.digrin.com/stocks/detail/TWTR/price"
+library(httr)
+r<-GET(url)
+htm<-content(r,"text")
+xhtm<-read_html(htm)
+xp<-'/html/body/div[1]/div[2]/div[1]/div[3]/table'
+table<-xml_find_all(xhtm,xp)
+xt<-read_html("twtr-shares.html")
+td<-xml_find_all(table,"//td")
+tx<-xml_text(td)
+tr<-xml_find_all(table,"//tr")
+trx<-xml_text(tr)
+#m<-grep("\\$",tx)
+td<-strsplit(trx,"\n")
+td[[2]]
+mo<-unlist(lapply(td,function(x){
+  mo<-strsplit(x[1]," ")
+  mo<-lapply(mo, function(x){paste(x[1:2],collapse = " ")})
+  
+  
+  }))
+mo
+mo<-mo[2:length(mo)]
+tdn<-lapply(td,function(x){gsub(" ","",x[2:4])})
+tdn<-data.frame(td)
+tdn<-data.frame(t(tdn),row.names = 1:length(tr))
+tdn<-tdn[grep("[0-9]",tdn$X1),1:2]
+colnames(tdn)<-c("date","price")
 
-#df1<-data.frame(m.af.corpus.extract[[1]])
-#df1[1,1:length(df1)]<-NA
-#df1<-cbind(date=NA,df1)
-colnames(df1)<-c("date","text")
-
-k<-41
-for (k in 1:length(m.af.corpus.extract)){
-  df2<-data.frame(text=m.af.corpus.extract[[k]])
-  if(dim(df2)[1]!=0){
-    #colnames(df2)<-c("date","text")
-    
-    df2<-cbind(date=names(m.af.corpus.extract[k]),df2)
-    df1<-rbind(df1,df2)
-  }
-}
-df1$text[41]
-df1<-df1[2:length(df1$date),]
-#df1$docname<-gsub(".+/(.+\\.xhtml)","\\1",df1$docname)
-write.csv(df1,paste(ha_dir,paste0("af.corpus.extract-","12-13-14",".csv"),sep = "/"))
-head(df1)
-
-# get stopwords
-c.af<-corpus(df1$text)
-c.af.t<-tokens(c.af)
-library(collostructions)
-c.fr<-freq.list(unlist(c.af.t))
-c.fr
-# m.true<-function(x)x$keyword!=""
-# af.corpus.kwic.t<-lapply(m.af.corpus.kwic, m.true)
-# af.corpus.exc<-m.af.corpus.kwic[unlist(af.corpus.kwic.t)]
-#save(m.af.corpus.kwic,file="../af.corpus.kwic.Rdata")
-#save(m.af.corpus.kwic,file="~/documents/github/spund-lx/DA/14363-HA/data/af.corpus.kwic.Rdata")
-# outputs list with texts including keyword-in-25tokens-window-context
-
-# library(clipr)
-# library(knitr)
-# output<-lapply(m.af.corpus.kwic,kable)
-# write_clip(unlist(output))
-# output<-lapply(m.af.corpus.kwic,unlist(kable))
-
+tdn$price<-gsub("\\$","",tdn$price)
+tdn<-tdn[length(tdn$date):1,1:2]
+mode(tdn$price)<-"double"
+rownames(tdn)<-tdn$date
+tdn2<-tdn[,2]
+#plot(tdn2,type = "h",names.arg=tdn$date)
+tdn.s<-tdn[grep("2021|2022|2023",tdn$date),]
+shift<-30
+barplot(
+  height = as.numeric(tdn.s$price-shift),
+  offset = shift,
+  names.arg = tdn.s$date,
+  las = 2,                # make labels perpendicular to axis
+  cex.names = 0.7,  # adjust label size if needed
+  main = "share value",
+  ylab = "price / USD",
+)
+?barplot
+# months.Date(mo,"%B")
+# format(month,"%b %Y ")
+# ?Date
+# (today <- Sys.Date())
+# format(today, "%B %Y")  # with month as a word
+# (tenweeks <- seq(today, length.out=10, by="1 week")) # next ten weeks
+# weekdays(today)
+# months(tenweeks)
+# mo
+# as.Date(mo,"%B %Y")
+# format(mo,"%B %Y")
+# mo
+# ?as.Date
+# x <- c("jan1960", "2jan1960", "31 mar1960", "30 jul1960")
+# z <- as.Date(x, "%d%b%Y")
+# z
+# format(Sys.Date(), "%b %d")

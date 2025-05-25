@@ -15,7 +15,7 @@ output:
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
-bibliography: 'wolf.bib'
+bibliography: 'FRZ.bib'
 link-citations: yes
 keep_tex: yes
 ---
@@ -28,6 +28,9 @@ library(rmarkdown)
 #library(httr)
 library(purrr)
 library(knitr)
+library(xml2)
+url<-"https://www.digrin.com/stocks/detail/TWTR/price"
+library(httr)
 author<-"st. schwarz"
 
  # invalidate cache when the tufte version changes
@@ -64,29 +67,16 @@ if (is_html_output()) {
 
 
 ```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
-#src<-"../../../../../local/R/cred_gener.csv"
- # cred<-read.csv(src)
-  #  src.d<-"~/boxHKW/21S/DH/local/DYN/db/wolfdb003.csv"
-# k2<-read.csv("~/Documents/static/server/ada/es/r/knitessai/db/wolfdb003.csv")
-# k2<-k2$content[k2$book=="FF"]  
-src.tp<-"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt"
-#writeLines(k2,"~/boxHKW/21S/DH/local/AVL/2024/WIT/ff.txt")
-# tp<-readLines(src.t)
+
 if (is_html_output()) {
   print("html output")
   output.rmd<-"html"
   dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
 } else if (is_latex_output()) {
-  #output_format <- "PDF"
   print("pdf")
   output.rmd<-"pdf"
   dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
 }
-   # src_lx<-"../../../../../local/DYN/db/tokensMultiLX_m.csv"
-script1<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/ann2html.R" # for rendering annotations
-script2<-"~/Documents/GitHub/SPUND-LX/szondi/WITprose/handout-functions.R" # for stats
-source(script1)
-source(script2)
 author<-"st. schwarz / franziska schmidt"
 if(output.rmd=="html")
   author<-"st. schwarz"
@@ -99,18 +89,73 @@ Französisch GM3 / Roman Aubry / FUB SoSe25
 
 ---
 
-# TOP
-\begin{marginfigure}
-\end{marginfigure}
+# timeline
+## 1
+Le PDG[^1] de Tesla et de SpaceX, Elon Musk, est désormais le premier actionnaire du réseau social Twitter. Des documents publiés le 4 avril par le régulateur de la Bourse américaine montrent que M. Musk a acquis  **9,2 % des actions du réseau social **, pour une  **valeur d’environ 2,9 milliards de dollars (2,62 milliards d’euros) **. Ce rachat, effectué le 14 mars en toute discrétion par le multimilliardaire, a créé la surprise – la valeur de  **l’action Twitter a grimpé de 27 % lundi **, à la Bourse de New York.  
+Le 25 mars, l’entrepreneur polémiste a lancé un sondage : « La liberté d’expression est essentielle au fonctionnement de la démocratie. Croyez-vous que Twitter adhère rigoureusement à ce principe ? » Dans cette consultation sans valeur scientifique, le non l’a emporté à plus de 70 %. Dans la foulée, le fondateur de Tesla a demandé à ses fans ce qu’il convenait de tirer comme conséquences, voire s’il fallait « créer un nouveau réseau social ». [Q: @le_monde_elon_2022]
 
+## 2
+Le multimilliardaire Elon Musk propose de racheter Twitter, dont il est déjà le premier actionnaire, pour  **41,39 milliards de dollars (37,9 milliards d’euros) **, comme le montre un document transmis mercredi au gendarme de la Bourse américaine et révélé jeudi 14 avril. Après cette annonce, le réseau social a annoncé qu’il allait « examiner avec attention » l’offre d’Elon Musk.
+M. Musk se dit prêt à débourser 54,20 dollars par action Twitter (49,70 euros). Cela représente un « premium », c’est-à-dire une bonification, de 21 % par rapport au cours d’ouverture du titre ce jeudi et de 54 % par rapport à celui du 28 janvier, date à laquelle M. Musk a commencé à investir dans Twitter.
+Le milliardaire a fait son entrée au capital du réseau social à hauteur de 9,2 %, comme l’ont montré des documents publiés le 4 avril par le régulateur de la Bourse américaine, la Securities and Exchange Commission. Twitter lui avait ensuite proposé d’entrer au conseil d’administration, ce qu’il avait refusé. [Q: @le_monde_elon_2022-1]  
 
+## 3
+Twitter est désormais officiellement entre les mains d’Elon Musk, le patron de Tesla et de SpaceX, qui a conclu,  **jeudi 27 octobre, l’acquisition du réseau social pour 44 milliards de dollars (44 milliards d’euros) **. « L’oiseau est libéré », a tweeté le milliardaire pour officialiser l’opération, ouvrant un nouveau chapitre incertain pour la plate-forme au cœur de la vie politique et médiatique des Etats-Unis et de nombreux pays. [Q: @le_monde_elon_2022-2]   
 
-# fin
-thanks for your patience oder wie fr. wolf sagen würde... 
-```{r sample} 
-zeig.doch.einfach.mal.ein.zufaelliges.beispiel()
+# viz
+```{r vis1,warning=F,message=F,echo=FALSE,fig.cap="twitter shares development"}
+# 15222.twtr shares
+# library(xml2)
+# url<-"https://www.digrin.com/stocks/detail/TWTR/price"
+# library(httr)
+r<-GET(url)
+htm<-content(r,"text")
+xhtm<-read_html(htm)
+xp<-'/html/body/div[1]/div[2]/div[1]/div[3]/table'
+table<-xml_find_all(xhtm,xp)
+xt<-read_html("twtr-shares.html")
+td<-xml_find_all(table,"//td")
+tx<-xml_text(td)
+tr<-xml_find_all(table,"//tr")
+trx<-xml_text(tr)
+#m<-grep("\\$",tx)
+td<-strsplit(trx,"\n")
+#td[[2]]
+mo<-unlist(lapply(td,function(x){
+  mo<-strsplit(x[1]," ")
+  mo<-lapply(mo, function(x){paste(x[1:2],collapse = " ")})
+  
+  
+  }))
+#mo
+mo<-mo[2:length(mo)]
+tdn<-lapply(td,function(x){gsub(" ","",x[2:4])})
+tdn<-data.frame(td)
+tdn<-data.frame(t(tdn),row.names = 1:length(tr))
+tdn<-tdn[grep("[0-9]",tdn$X1),1:2]
+colnames(tdn)<-c("date","price")
+tdn$price<-gsub("\\$","",tdn$price)
+tdn<-tdn[length(tdn$date):1,1:2]
+mode(tdn$price)<-"double"
+rownames(tdn)<-tdn$date
+tdn2<-tdn[,2]
+#plot(tdn2,type = "h",names.arg=tdn$date)
+tdn.s<-tdn[grep("2021|2022|2023",tdn$date),]
+shift<-30
+barplot(
+  height = as.numeric(tdn.s$price-shift),
+  offset = shift,
+  names.arg = tdn.s$date,
+  las = 2,                # make labels perpendicular to axis
+  cex.names = 0.7,  # adjust label size if needed
+  main = "share value",
+  ylab = "price / USD",
+)
+
 ```
+[Q: @digrin_twitter_2025]
 
 ---
 \newpage
 # B. REF:
+[^1]:PDG=President Directeur Generale=CEO
