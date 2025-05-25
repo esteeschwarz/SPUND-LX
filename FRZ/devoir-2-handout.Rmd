@@ -36,16 +36,16 @@ author<-"st. schwarz"
  # invalidate cache when the tufte version changes
 knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
-if (is_html_output()) {
-  print("html output")
-  output.rmd<-"html"
-  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
-} else if (is_latex_output()) {
-  #output_format <- "PDF"
-  print("pdf")
-  output.rmd<-"pdf"
-  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
-}
+# if (is_html_output()) {
+#   print("html output")
+#   output.rmd<-"html"
+#   dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
+# } else if (is_latex_output()) {
+#   #output_format <- "PDF"
+#   print("pdf")
+#   output.rmd<-"pdf"
+#   dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
+# }
 # author<-"st. schwarz / franziska schmidt"
 # if(output.rmd=="html")
 #   author<-"st. schwarz"
@@ -71,11 +71,11 @@ if (is_html_output()) {
 if (is_html_output()) {
   print("html output")
   output.rmd<-"html"
-  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/016/14-wolf_handout.pdf">here</a>.')
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
 } else if (is_latex_output()) {
   print("pdf")
   output.rmd<-"pdf"
-  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/016/).'
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
 }
 author<-"st. schwarz / franziska schmidt"
 if(output.rmd=="html")
