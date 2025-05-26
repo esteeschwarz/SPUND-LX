@@ -6,12 +6,12 @@ runningheader: "elon musk a acquis twitter" # only for pdf output
 author: "st. schwarz"
 date: "`r Sys.time()`"
 output:
+  bookdown::html_document2:
+    base_format: tufte::tufte_html
+  #tufte::tufte_html: default
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
-  #tufte::tufte_html: default
-  bookdown::html_document2:
-    base_format: tufte::tufte_html
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
@@ -91,7 +91,7 @@ Französisch GM3 / Roman Aubry / FUB SoSe25
 
 # timeline
 ## 1
-Le PDG[^1] de Tesla et de SpaceX, Elon Musk, est désormais le premier actionnaire du réseau social Twitter. Des documents publiés le 4 avril par le régulateur de la Bourse américaine montrent que M. Musk a acquis  **9,2 % des actions du réseau social **, pour une  **valeur d’environ 2,9 milliards de dollars (2,62 milliards d’euros) **. Ce rachat[^2], effectué le 14 mars en toute discrétion par le multimilliardaire, a créé la surprise – la valeur de  **l’action Twitter a grimpé**[^3] **de 27 % lundi **, à la Bourse de New York.  
+Le PDG[^1] de Tesla et de SpaceX, Elon Musk, est désormais le premier actionnaire du réseau social Twitter. Des documents publiés le 4 avril par le régulateur de la Bourse américaine montrent que M. Musk a acquis  **9,2 % des actions du réseau social **, pour une  **valeur d’environ 2,9 milliards de dollars (2,62 milliards d’euros)**.[@noauthor_schedule_2022] Ce rachat[^2], effectué le 14 mars en toute discrétion par le multimilliardaire, a créé la surprise – la valeur de  **l’action Twitter a grimpé**[^3] **de 27 % lundi **, à la Bourse de New York.  
 Le 25 mars, l’entrepreneur polémiste a lancé un sondage : « La liberté d’expression est essentielle au fonctionnement de la démocratie. Croyez-vous que Twitter adhère rigoureusement à ce principe ? » Dans cette consultation sans valeur scientifique, le non l’a emporté à plus de 70 %. Dans la foulée, le fondateur de Tesla a demandé à ses fans ce qu’il convenait de tirer comme conséquences, voire s’il fallait « créer un nouveau réseau social ». [Q: @le_monde_elon_2022]
 
 ## 2
@@ -160,6 +160,7 @@ barplot(
 - est-ce que votre vie en generale est affecte par cet evenement?
 - est-ce que vous avez faites des observations importants dans les reseaux sociales associé avec cet evenement?
 - dans quelle sense a change la sphere societal politique a cause du cet evenement?
+- survolez le premier paragraphe du [Q: @schenker_elon_2022] et évaluez la question concernant les responsables du rachat au fin
 
 \newpage
 # B. REF:
