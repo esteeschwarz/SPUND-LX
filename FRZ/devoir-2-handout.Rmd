@@ -6,12 +6,12 @@ runningheader: "elon musk a acquis twitter" # only for pdf output
 author: "st. schwarz"
 date: "`r Sys.time()`"
 output:
-  bookdown::html_document2:
-    base_format: tufte::tufte_html
-  #tufte::tufte_html: default
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
+  #tufte::tufte_html: default
+  bookdown::html_document2:
+    base_format: tufte::tufte_html
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
@@ -163,6 +163,8 @@ barplot(
 - survolez le premier paragraphe du [Q: @schenker_elon_2022] et évaluez la question concernant les responsables du rachat au fin
 
 ----
+# impression personel
+![](https://ada-sub.dh-index.org/school/papers/017/twitter-x.jpg)
 
 # votre notes:
 
