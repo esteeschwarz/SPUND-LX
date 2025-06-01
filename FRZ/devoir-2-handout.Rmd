@@ -9,9 +9,9 @@ output:
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
-  #tufte::tufte_html: default
   bookdown::html_document2:
     base_format: tufte::tufte_html
+  #tufte::tufte_html: default
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
@@ -155,6 +155,14 @@ barplot(
 ```
 [Q: @digrin_twitter_2025]
 
+# impression personel
+
+```{r,twtr-pic,message=F,warning=F,echo=FALSE}
+knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+```
+
+----
+
 # questions a course
 - est-ce que votre utilisation du reseaux sociales a change apres cet evenement?
 - est-ce que votre vie en generale est affecte par cet evenement?
@@ -163,10 +171,9 @@ barplot(
 - survolez le premier paragraphe du [Q: @schenker_elon_2022] et évaluez la question concernant les responsables du rachat au fin
 
 ----
-# impression personel
 
-![](https://ada-sub.dh-index.org/school/papers/017/twitter-x.jpg)
-
+<!--![](https://ada-sub.dh-index.org/school/papers/017/twitter-x.jpg)
+-->
 
 # votre notes:
 
