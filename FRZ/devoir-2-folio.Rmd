@@ -1,0 +1,106 @@
+---
+title: "Elon Musk a acquis Twitter"
+subtitle: "Französisch GM3 / Roman Aubry / FUB SoSe25"
+author: "st. schwarz"
+date: "`r Sys.time()`"
+output: 
+  revealjs::revealjs_presentation:
+      css: '/Users/guhl/Documents/GitHub/SPUND-LX/FRZ/reveal.css'
+
+bibliography: '/Users/guhl/Documents/GitHub/SPUND-LX/FRZ/FRZ.bib'
+---
+
+# TIMELINE
+## avril 4, 2022 (deux mille vingt deux)
+- Musk acquis 9.2% des actions de resau social
+	-  pour 2.6 mill euro
+- ce moment 80mio follower, plus influent
+- 27% ascende valeur de l'action twitter
+
+
+## viz
+```{r vis1,warning=F,message=F,echo=FALSE,fig.cap="twitter shares development"}
+library(httr)
+library(xml2)
+url<-"https://www.digrin.com/stocks/detail/TWTR/price"
+
+r<-GET(url)
+htm<-content(r,"text")
+xhtm<-read_html(htm)
+xp<-'/html/body/div[1]/div[2]/div[1]/div[3]/table'
+table<-xml_find_all(xhtm,xp)
+xt<-read_html("twtr-shares.html")
+td<-xml_find_all(table,"//td")
+tx<-xml_text(td)
+tr<-xml_find_all(table,"//tr")
+trx<-xml_text(tr)
+#m<-grep("\\$",tx)
+td<-strsplit(trx,"\n")
+#td[[2]]
+mo<-unlist(lapply(td,function(x){
+  mo<-strsplit(x[1]," ")
+  mo<-lapply(mo, function(x){paste(x[1:2],collapse = " ")})
+  
+  
+  }))
+#mo
+mo<-mo[2:length(mo)]
+tdn<-lapply(td,function(x){gsub(" ","",x[2:4])})
+tdn<-data.frame(td)
+tdn<-data.frame(t(tdn),row.names = 1:length(tr))
+tdn<-tdn[grep("[0-9]",tdn$X1),1:2]
+colnames(tdn)<-c("date","price")
+tdn$price<-gsub("\\$","",tdn$price)
+tdn<-tdn[length(tdn$date):1,1:2]
+mode(tdn$price)<-"double"
+rownames(tdn)<-tdn$date
+tdn2<-tdn[,2]
+#plot(tdn2,type = "h",names.arg=tdn$date)
+tdn.s<-tdn[grep("2021|2022|2023",tdn$date),]
+shift<-30
+barplot(
+  height = as.numeric(tdn.s$price-shift),
+  offset = shift,
+  names.arg = tdn.s$date,
+  las = 2,                # make labels perpendicular to axis
+  cex.names = 0.7,  # adjust label size if needed
+  main = "share value",
+  ylab = "price / USD",
+)
+
+```
+
+## avril 14, 2022
+- propose de racheter pour 38 mrd
+	- Offre Publique d'Achat (OPA) hostile
+		- 15% des action crtitical
+		- poison pill
+	- L’action Twitter gagnait 13,6 % dans les échanges en avant-Bourse après l’annonce de sa proposition. (pas du source info)
+
+# au plane derriere
+## extrait
+<!-- L’opération traîne en effet depuis l’annonce-->
+- à la fin d’avril, d’une offre d’acquisition acceptée alors à contrecœur par Twitter
+- L’entrepreneur ***a cherché à s’en extraire*** unilatéralement au début de juillet, ***accusant l’entreprise de lui avoir menti***
+  - a cause du donnees faux concernant spam bots et accounts faux du (dans) reseau
+  - le conseil d’administration de la société a saisi la justice.
+  - passer aux tribunaux
+
+# impression personnel
+
+![](https://ada-sub.dh-index.org/school/papers/017/twitter-x.jpg){.scaled-img}
+
+```{r,twtr-pic,message=F,warning=F,echo=FALSE}
+#knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 90)
+```
+
+# questions a course
+- est-ce que votre utilisation du reseaux sociales a change apres cet evenement?
+- est-ce que votre vie en generale est affecte par cet evenement?
+- est-ce que vous avez faites des observations importants dans les reseaux sociales associé avec cet evenement?
+- dans quelle sense a change la sphere societal politique a cause du cet evenement?
+- survolez le premier paragraphe du [Q: @schenker_elon_2022] et évaluez la question concernant les responsables du rachat au fin
+
+# REF {.refs}
+[stats: @digrin_twitter_2025]
+[journal: @le_monde_elon_2022,@le_monde_elon_2022-1,@le_monde_elon_2022-2]

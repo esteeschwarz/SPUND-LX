@@ -1,0 +1,26 @@
+.reveal .refs {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*.reveal .refs p, ul, li {
+  font-size: 0.6em;
+  text-align: justify;
+}*/
+.reveal .refs h1 {
+  text-align: left;
+}
+
+#ref {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.5em;
+  /*text-align: justify;*/
+}
+
+.scaled-img {
+  width: 50%;
+  height: auto;
+}
