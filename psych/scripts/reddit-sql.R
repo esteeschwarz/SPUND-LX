@@ -5,7 +5,11 @@ library(DBI)
 library(RSQLite)
 # To save to a file:
 # con <- dbConnect(RSQLite::SQLite(),paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/reddit_com.df.",tstamp,".sqlite"))
-con <- dbConnect(RSQLite::SQLite(),"testqlite.reddit_com.df.15202.sqlite")
+con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
+dbListTables(con)
+dbGetQuery(con,"SELECT * FROM redditpsych")
+### initiate:
+#dbWriteTable(con, "redditpsych", url.sub.df[0, ], overwrite = TRUE, row.names = FALSE)
 
 # Or, for an in-memory database (not persistent):
 # con <- dbConnect(RSQLite::SQLite(), ":memory:")
@@ -19,5 +23,5 @@ con <- dbConnect(RSQLite::SQLite(),"testqlite.reddit_com.df.15202.sqlite")
 #   dbWriteTable(con, name = table_name, value = df_list[[i]], overwrite = TRUE)
 # }
 # dbGetQuery(con,"select * from meta")
-# dbHasCompleted()
-# dbDisconnect(con)
+ #dbHasCompleted()
+ dbDisconnect(con)
