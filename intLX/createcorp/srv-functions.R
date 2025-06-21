@@ -84,7 +84,7 @@ get.sent.div<-function(x,id,n){
   m<-df$sentence_id==id
   cat("\nsent:",id,".",n,"\n")
   df.es<-df[m,]
-  df.es$pid<-paste0("pid:",df.es$uid,".",id,".",n)
+  df.es$pid<-paste0("pid:",df.es$uid,".",id)
   s.id<-id
   df.start<-df.es[1,]
   df.start[1,]<-""
@@ -103,7 +103,7 @@ get.sent.div<-function(x,id,n){
 get.doc.div<-function(x,run,id,n){
   df<-x
   m<-df$doc_id==id
-  cat("\nrundoc:",run,n,".",id,"of",length(df$doc_id),"docs/url elements\n")
+  cat("\n---- rundoc: dfurl",run,". com",id,"with",sum(m),"docs/url elements\n")
   df.es<-df[m,c(6,2:5,7:length(df))]
   sent.id<-df.es$sentence_id
   sent.id.u<-unique(sent.id)
@@ -116,14 +116,14 @@ get.doc.div<-function(x,run,id,n){
 }
 fetch.pos<-function(file,run,i,data){
   t<-file
-  fn<-i
+  fn<-paste0(run,".",i)
   ifelse(!is.null(t),pos.df<-get.ann.df(model.dir = model.dir,input = t,output = F),
          return("_NO_ANN_"))
   author<-data[[1]]
   cat("\ndata:",fn,"author:",author,"timestamp:",data[[2]],"\n")
   print(data)
   print(timestamp<-data[[2]])
-  pos.df$uid<-paste0("run",run,"-url",i)
+  pos.df$uid<-paste0("dfurl",run,"-com",i)
   pos.df$doc_id<-i
   pos.df$timestamp<-timestamp
   pos.df$date<-data$date
