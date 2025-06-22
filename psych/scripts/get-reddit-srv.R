@@ -66,7 +66,7 @@ out.com.df.ns
 log.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/createcorp.log.csv")
 #load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 # get url dataframe
-url.df.x<-get.urls()
+#url.df.x<-get.urls()
 # saved in function!
 #save(url.df.x,file = paste0(Sys.getenv("GIT_TOP"),"/",subject.dir,"/reddit_url.df.",tstamp,".RData"))
 ####################
@@ -164,7 +164,9 @@ post.sql<-function(df){
   dbq<-dbGetQuery(con,paste0("SELECT * FROM redditpsych WHERE timestamp IN (",dfstamp,")"))
   dfstamp.out<-dbq$timestamp
   m.out<-url.sub.df$timestamp%in%dfstamp.out
+  ############################### debug
   url.sub.df<-url.sub.df[!m.out,]
+  ###############################
   wait.rnd<-sample(5:10,1)
   #wait.rnd<-wait.rnd[wait.rnd>5]
   #wait.rnd<-sample()
@@ -178,8 +180,8 @@ post.sql<-function(df){
   Sys.sleep(wait.t)
   return(url.sub.df)
 }
-start.url<-252
-end.url<-260
+start.url<-501
+end.url<-800
 range<-c(start.url:194,196:end.url)
 range<-start.url:end.url
 # end.url<-length(url.u)
@@ -189,9 +191,9 @@ wait<-6
 #e:34+
 seq<-50:50
 seq<-1:length(range)
-i<-1
+i<-8
 range[seq[i]]
-m<-which(range==251)
+m<-which(range==268)
 #rm(i)
 seq
 #url.sub.safe.36<-url.sub.df
@@ -352,15 +354,18 @@ sum(mtu.dup)
 ##########
 # tstamp.d<-format(Sys.Date(),"%y-%m-%d")
 # tstamp<-tstamp.d
-#i<-1
+i<-1
 #run<-12
 run<-url.id
 print(model)
 url.comment.df.cpt.2<-url.comment.df.cpt
     df.ex.l<-pblapply(seq_along(1:length(url.comment.df.cpt.2$url)), function(i) {
       comments<-url.comment.df.cpt.2[i,]
-#      comments<-gsub("[^[:print:]]","_",)
       
+      #gsub("[^[:print:]]","_",comments)
+      # x_clean <- iconv(comments, from = "", to = "UTF-8", sub = "_")
+      # gsub("","e",comments)
+    #  comments[6]
 
     print(author<-comments$auth_anon)
 #    print(author<-comments$author)
@@ -370,10 +375,14 @@ url.comment.df.cpt.2<-url.comment.df.cpt
     print(url<-comments$url)
     print(date<-comments$date)
     comment<-comments$comment
-    if(length(comment)>0)
-      comment<-gsub("[^[:print:]]","'",comment)
+    if(length(comment)>0){
+      x_clean <- iconv(comment, from = "", to = "UTF-8", sub = "_")
+      x_clean
+      comment[1]
+      comment<-gsub("[^[:print:]]","'",x_clean)
+    }
    # print(comment<-comments$comment)
-    if(comment=="")
+    if(comment==""|is.na(comment))
       return(NA)
     com.x<-fetch.pos(comment, run,i,data=list(author=author,timestamp=timestamp,date=date,url=url,score=score,com_id=com_id))
     return(com.x)
@@ -395,6 +404,7 @@ url.comment.df.cpt.2<-url.comment.df.cpt
   df.ex<-df.ex[,m3]
   if(length(df.ex)==16)
     dbWriteTable(con,"reddit_com_pos",df.ex,append = TRUE, row.names = FALSE)
+  
   })
 #  df.ex$token<-gsub("[^[:print:]]","_",df.ex$token)
  # df.ex$lemma<-gsub("[^[:print:]]","_",df.ex$lemma)
