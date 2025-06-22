@@ -5,13 +5,17 @@ library(DBI)
 library(RSQLite)
 con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
 dbListTables(con)
-tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
+#tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
+tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
+tdb<-tdb.pos
 #tdb.com<-dbGetQuery(con,"SELECT * FROM redditpsych")
 ###
 # task: devise referrer distance of demonstratives
 # build query interface
-q<-list(token=c("this","that","these","those","the")) # mean distance: 76
-q<-list(token=c("the")) # mean distance: 81
+q1<-list(token=c("this","that","these","those","the")) # mean distance: 76
+get.mean(q1,tdb) # ref: 124
+q2<-list(token=c("the")) # mean distance: 81
+get.mean(q2,tdb) # ref: 131
 ###########################################
 ### notes
 # the script reads the postagged reddit corpus (NO control!) from sqlite db and
@@ -20,11 +24,39 @@ q<-list(token=c("the")) # mean distance: 81
 # this shall give us an index of reference stability (coherence) within that comment.
 # assumption is, that for q(indefinite article) the index is higher
 # test:
-q<-list(token=c("a","an","some","any")) # mean distance: 63, lower
-# q<-list(token=c("my")) # mean distance: 55, lower
+q3<-list(token=c("a","an","some","any")) # mean distance: 63, lower
+get.mean(q3,tdb) # ref: 83
+q4<-list(token=c("my")) # mean distance: 55, lower
+get.mean(q4,tdb) # ref: 70
 
-q<-list(token=c("your","their","his","her")) # mean distance: 100, higher
-
+q5<-list(token=c("your","their","his","her")) # mean distance: 100, higher
+get.mean(q5,tdb) # ref: 103
+qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
+                d=c(76,81,63,55,70,124,131,83,70,103),
+                corp=c(rep("obs",5),rep("ref",5)))
+qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
+                d=c(76,81,63,55,70,124,131,83,70,103),
+                corp=c(rep(1,5),rep(0,5)))
+qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
+                d=c(76,81,63,55,70,124,131,83,70,103),
+                corp=c(rep(0,5),rep(1,5)))
+mode(qdf1[,2])<-"double"
+mode(qdf1[,3])<-"double"
+library(lme4)
+qdf
+lm1<-lmer(d~corp+(1|q),qdf)
+summary(lm1)
+lm2<-lmer(d~q+(1|corp),qdf)
+s2<-summary(lm2)
+s2
+print(lm2,signif.stars=T)
+lm2<-glmer(d~q+(1|corp),qdf)
+summary(lm2)
+library(lattice)
+anova(lm2)
+library(stats)
+qdf.c<-qdf[,c(2,3)]
+cor.test(qdf1[,2],qdf1[,3])
 df<-tdb
 get.q<-function(q,df){
   i<-1
@@ -35,6 +67,8 @@ get.q<-function(q,df){
     #rq<-grepl(q[i],df[,names(q[i])])
   })
 }
+
+get.mean<-function(q,tdb){
 re1<-get.q(q,tdb)
 re1<-unlist(re1)
 sum(re1)
@@ -78,4 +112,5 @@ p.d<-lapply(seq_along(dem.ref),function(i){
 })
 unlist(p.d)
 p.d
-mean(unlist(p.d))
+print(m<-mean(unlist(p.d)))
+}
