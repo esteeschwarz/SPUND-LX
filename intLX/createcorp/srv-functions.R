@@ -13,25 +13,7 @@ model.g<-paste(model.dir,model[grep(model.l,model)],sep = "/")
 print(model.g)
 model<-udpipe::udpipe_load_model(model.g)
 
-library(digest)
-aut.anonymise<-function(df){
-  url.comment.df<-df
-  authors<-unique(url.comment.df$author)
-  authors<-authors[!grepl("initialAuth",authors)]
-  url.comment.df$auth_anon<-url.comment.df$author
-  #aut<-2
-  for (aut in authors){
-    m<-url.comment.df$author==aut
-    sum(m)
-    # author_anon<-stri_rand_strings(1, 15, pattern = "[A-Za-z0-9]")
-    aut_anon <- digest(aut, algo = "md5", serialize = FALSE)
-    aut_anon <- substr(aut_anon, 1, 15) # Take the first 15 characters of the hash
-    
-    url.comment.df$auth_anon[m]<-aut_anon
-    
-  }
-  return(url.comment.df)
-}
+
 
 
 get.model<-function(){

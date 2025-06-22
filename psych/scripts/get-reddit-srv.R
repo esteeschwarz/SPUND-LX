@@ -54,6 +54,8 @@ model.l<-"eng"
 doc.id.act<-tstamp
 ###
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
+source("~/rwd/auth_anon.R")
+
 wd<-"~/dl/ske"
 out.dir<-paste0("~/temp/ske/corpora/reddit/auto/",thread,"/data")
 #out.dir<-"/Users/guhl/temp/ske/corpora/reddit/auto/vertical"
@@ -160,13 +162,14 @@ post.sql<-function(df){
   Sys.sleep(wait.t)
   return(url.sub.df)
 }
-start.url<-52
-end.url<-300
+start.url<-219
+end.url<-250
 range<-c(start.url:194,196:end.url)
+range<-start.url:end.url
 # end.url<-length(url.u)
 #url.id<-5
 rm(url.id)
-wait<-8
+wait<-6
 #e:34+
 seq<-50:50
 seq<-1:length(range)
@@ -175,7 +178,7 @@ range[seq[i]]
 m<-which(range==195)
 rm(i)
 seq
-url.sub.safe.36<-url.sub.df
+#url.sub.safe.36<-url.sub.df
 url.sub.df<-pblapply(seq_along(seq),function(i){
  #url.sub.df<-pblapply(seq_along(1:10),function(run){
 #for(run in 1:length(url.u)){
@@ -184,10 +187,10 @@ url.sub.df<-pblapply(seq_along(seq),function(i){
     e<-simpleError("testerror")
     com.df<-tryCatch(get_thread_content(url.df.x$url[url.id]),error=function(e){
       wait<-wait+1
-      cat("http error, waiting -",wait+20,"- and moving forth\n")
+      cat("\nhttp error, waiting -",wait+20,"- and moving forth\n")
       Sys.sleep(wait+20)
       return()
-      },finally = print("url resolved successful, continuing..."))
+      },finally = print("\nurl resolved successful, continuing...\n"))
     
     # com.df<-get_thread_content(url.df.x$url[url.id])
     
@@ -206,9 +209,9 @@ url.sub.df<-pblapply(seq_along(seq),function(i){
     url.sub.df<-bind_rows(com.df.df,com.meta)
     url.sub.df$url_df_id<-paste0(tstamp,".",url.id)
     url.sub.df$subreddit<-com.df.df$subreddit[1]
-    
+    #######
     ifelse(length(unique(url.sub.df$timestamp))>1,url.sub.df<-post.sql(url.sub.df),return())
-    
+    #######
   
   #url.sub.df<-as.data.frame(url.sub.df)
   # # write.table(url.df,url.temp,
@@ -273,8 +276,9 @@ url.sub.df<-pblapply(seq_along(seq),function(i){
 # library(abind)
 # url.comment.df.1<-abind(url.sub.na[!una],along = 1,force.array = T)
 # url.comment.df.2<-data.frame(url.comment.df.1)
-url.comment.df<-aut.anonymise(url.sub.df)
-###
+#############################################
+    url.comment.df<-aut.anonymise(url.sub.df)
+#############################################
 
 ###
 #library(stringi)
@@ -353,7 +357,7 @@ url.comment.df.cpt.2<-url.comment.df.cpt
     com.x<-fetch.pos(comment, run,i,data=list(author=author,timestamp=timestamp,date=date,url=url,score=score,com_id=com_id))
     return(com.x)
   })
-    d<-1
+    #d<-1
     url.sub.na<-lapply(seq_along(df.ex.l), function(d){
       if(is.na(df.ex.l[d]))
         return(F)
@@ -375,29 +379,29 @@ url.comment.df.cpt.2<-url.comment.df.cpt
  # df.ex$lemma<-gsub("[^[:print:]]","_",df.ex$lemma)
   # com.df.list[[run]]<-df.ex
   #out.ns
-  length(unique(url.comment.df.cpt$timestamp))
-  # write.table(df.ex,out.ns,sep = "\t",quote = F,
-  #             row.names = F,col.names = F,na="",append=T)
-  # save to vrt dir:
-  out.vrt.top<-"~/dl/ske/corpora"
-  out.vrt.ns<-paste0(out.vrt.top,"/reddit/vertical/psych/vrt01a/source")
-  write.table(df.ex,out.vrt.ns,sep = "\t",quote = F,
-              row.names = F,col.names = F,na="",append=F)
-  colnames(df.ex)
-  # save to list:
- # save(com.df.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/data/com.df.list.15015.RData")
-    # save to http:
-#  cloud<-"~/box.dh-index.org/httpdocs/cloud"
-  #save(df.ex.l,file=paste(cloud,"red_df.ex.el.RData",sep="/"))
-  # write to logfile
-  writelog(c(run,"url"),log.ns)
-#}) # end url/run loop
-unique(com.df.list[[1]]$pid)
-
-# command: make execute CMD="compilecorp --no-ske testvrt"
-call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit-psych"'
-call.noske<-'sh ~/ske-compile.sh'
-system(call.noske)
-
-gsub("[^[:print:]]","sub","fianc<e9>")
-
+#   length(unique(url.comment.df.cpt$timestamp))
+#   # write.table(df.ex,out.ns,sep = "\t",quote = F,
+#   #             row.names = F,col.names = F,na="",append=T)
+#   # save to vrt dir:
+#   out.vrt.top<-"~/dl/ske/corpora"
+#   out.vrt.ns<-paste0(out.vrt.top,"/reddit/vertical/psych/vrt01a/source")
+#   write.table(df.ex,out.vrt.ns,sep = "\t",quote = F,
+#               row.names = F,col.names = F,na="",append=F)
+#   colnames(df.ex)
+#   # save to list:
+#  # save(com.df.list,file = "~/boxHKW/21S/DH/local/SPUND/intLX/data/com.df.list.15015.RData")
+#     # save to http:
+# #  cloud<-"~/box.dh-index.org/httpdocs/cloud"
+#   #save(df.ex.l,file=paste(cloud,"red_df.ex.el.RData",sep="/"))
+#   # write to logfile
+#   writelog(c(run,"url"),log.ns)
+# #}) # end url/run loop
+# unique(com.df.list[[1]]$pid)
+# 
+# # command: make execute CMD="compilecorp --no-ske testvrt"
+# call.noske<-'make execute CMD="compilecorp --no-ske --recompile-corpus reddit-psych"'
+# call.noske<-'sh ~/ske-compile.sh'
+# system(call.noske)
+# 
+# gsub("[^[:print:]]","sub","fianc<e9>")
+# 
