@@ -142,28 +142,44 @@ df.f
 #########
 post.sql<-function(df){
   url.sub.df<-df
+  auth.in<-(url.sub.df$comment_id==0)
+  auth.p<-which(auth.in)
+  auth.in[is.na(auth.in)]<-F
+  url.sub.df$comment[auth.in]<-url.sub.df$text[auth.in]
   m<-url.sub.df$comment%in%url.sub.df$comment[url.sub.df$author=="initialAuth"]
   mw<-which(m)
   print(mw)
   url.sub.df$initialAuth<-F
-  url.sub.df$initialAuth[mw]<-T
+  url.sub.df$initialAuth[auth.in]<-T
   url.sub.df<-url.sub.df[url.sub.df$author!="initialAuth",]
   if(url.sub.df$text[url.sub.df$initialAuth]=="")
     url.sub.df$comment[url.sub.df$initialAuth]<-url.sub.df$title[url.sub.df$initialAuth]
-  url.sub.df$comment[url.sub.df$initialAuth==T]<-url.sub.df$text[url.sub.df$initialAuth==T]
+  #url.sub.df$comment[url.sub.df$initialAuth==T]<-url.sub.df$text[url.sub.df$initialAuth==T]
   if(dim(url.sub.df)[2]<19|length(url.sub.df[,1])<1)
     url.sub.df<-NA
+  dfstamp<-url.sub.df$timestamp
+#  dfstamp<-tdb$timestamp
+  dfstamp<-dfstamp[dfstamp!=""]
+  dfstamp<-paste0(dfstamp,collapse = ",")
+  dbq<-dbGetQuery(con,paste0("SELECT * FROM redditpsych WHERE timestamp IN (",dfstamp,")"))
+  dfstamp.out<-dbq$timestamp
+  m.out<-url.sub.df$timestamp%in%dfstamp.out
+  url.sub.df<-url.sub.df[!m.out,]
   wait.rnd<-sample(5:10,1)
   #wait.rnd<-wait.rnd[wait.rnd>5]
   #wait.rnd<-sample()
   wait.t<-wait+wait.rnd
-  # if(!is.na(url.sub.df)){
+  if(length(url.sub.df$url)>0){
   dbWriteTable(con, "redditpsych", url.sub.df, append = TRUE, row.names = FALSE)
+    Sys.sleep(wait.t)
+    return(url.sub.df)
+  }
+  cat("\ntimestamp already in DB, skipping. wait",wait.t,"\n")
   Sys.sleep(wait.t)
   return(url.sub.df)
 }
-start.url<-219
-end.url<-250
+start.url<-252
+end.url<-260
 range<-c(start.url:194,196:end.url)
 range<-start.url:end.url
 # end.url<-length(url.u)
@@ -175,8 +191,8 @@ seq<-50:50
 seq<-1:length(range)
 i<-1
 range[seq[i]]
-m<-which(range==195)
-rm(i)
+m<-which(range==251)
+#rm(i)
 seq
 #url.sub.safe.36<-url.sub.df
 url.sub.df<-pblapply(seq_along(seq),function(i){
@@ -277,7 +293,12 @@ url.sub.df<-pblapply(seq_along(seq),function(i){
 # url.comment.df.1<-abind(url.sub.na[!una],along = 1,force.array = T)
 # url.comment.df.2<-data.frame(url.comment.df.1)
 #############################################
+    mna<-is.na(url.sub.df)
+    mna.l<-length(mna)
+    if(mna.l==1&sum(mna)==1)
+      return(NA)
     url.comment.df<-aut.anonymise(url.sub.df)
+    unique(url.comment.df$author)
 #############################################
 
 ###
