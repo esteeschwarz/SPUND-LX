@@ -131,28 +131,65 @@ print(t2)
 df.f<-list.files(out.dir)
 df.f<-df.f[grep("comment.df",df.f)]
 df.f
-load(paste(out.dir,df.f[1],sep = "/"))
-url.id<-1
+#load(paste(out.dir,df.f[1],sep = "/"))
+#url.id<-1
 #########
 ### WAIT!
 #########
 
 #########
-start.url<-1
-end.url<-50
+post.sql<-function(df){
+  url.sub.df<-df
+  m<-url.sub.df$comment%in%url.sub.df$comment[url.sub.df$author=="initialAuth"]
+  mw<-which(m)
+  print(mw)
+  url.sub.df$initialAuth<-F
+  url.sub.df$initialAuth[mw]<-T
+  url.sub.df<-url.sub.df[url.sub.df$author!="initialAuth",]
+  if(url.sub.df$text[url.sub.df$initialAuth]=="")
+    url.sub.df$comment[url.sub.df$initialAuth]<-url.sub.df$title[url.sub.df$initialAuth]
+  url.sub.df$comment[url.sub.df$initialAuth==T]<-url.sub.df$text[url.sub.df$initialAuth==T]
+  if(dim(url.sub.df)[2]<19|length(url.sub.df[,1])<1)
+    url.sub.df<-NA
+  wait.rnd<-sample(5:10,1)
+  #wait.rnd<-wait.rnd[wait.rnd>5]
+  #wait.rnd<-sample()
+  wait.t<-wait+wait.rnd
+  # if(!is.na(url.sub.df)){
+  dbWriteTable(con, "redditpsych", url.sub.df, append = TRUE, row.names = FALSE)
+  Sys.sleep(wait.t)
+  return(url.sub.df)
+}
+start.url<-52
+end.url<-300
+range<-c(start.url:194,196:end.url)
 # end.url<-length(url.u)
 #url.id<-5
 rm(url.id)
-wait<-19
-i<-2
+wait<-8
+#e:34+
+seq<-50:50
+seq<-1:length(range)
+i<-1
+range[seq[i]]
+m<-which(range==195)
 rm(i)
-range<-sample(start.url:end.url,length(start.url:end.url))
-url.sub.df<-pblapply(seq_along(range),function(i){
+seq
+url.sub.safe.36<-url.sub.df
+url.sub.df<-pblapply(seq_along(seq),function(i){
  #url.sub.df<-pblapply(seq_along(1:10),function(run){
 #for(run in 1:length(url.u)){
    # url.sub.df<-get.url.comments(run)
-    url.id<-range[i]
-    com.df<-get_thread_content(url.df.x$url[url.id])
+    url.id<-range[seq[i]]
+    e<-simpleError("testerror")
+    com.df<-tryCatch(get_thread_content(url.df.x$url[url.id]),error=function(e){
+      wait<-wait+1
+      cat("http error, waiting -",wait+20,"- and moving forth\n")
+      Sys.sleep(wait+20)
+      return()
+      },finally = print("url resolved successful, continuing..."))
+    
+    # com.df<-get_thread_content(url.df.x$url[url.id])
     
     meta<-c(grep("text|timestamp|date|url",colnames(url.df.x)))
     com.df.df<-bind_rows(com.df)
@@ -161,6 +198,7 @@ url.sub.df<-pblapply(seq_along(range),function(i){
  
     
     com.meta<-url.df.cpt[url.id,meta]
+    print(com.meta)
     #com.meta
     com.meta$author<-"initialAuth"
 #    com.meta$url_df_id<-paste0(tstamp,".",url.id)
@@ -168,21 +206,8 @@ url.sub.df<-pblapply(seq_along(range),function(i){
     url.sub.df<-bind_rows(com.df.df,com.meta)
     url.sub.df$url_df_id<-paste0(tstamp,".",url.id)
     url.sub.df$subreddit<-com.df.df$subreddit[1]
-    m<-url.sub.df$comment%in%url.sub.df$comment[url.sub.df$author=="initialAuth"]
-    mw<-which(m)
-    print(mw)
-    url.sub.df$initialAuth<-F
-    url.sub.df$initialAuth[mw]<-T
-    url.sub.df<-url.sub.df[url.sub.df$author!="initialAuth",]
-    url.sub.df$comment[url.sub.df$initialAuth==T]<-url.sub.df$text[url.sub.df$initialAuth==T]
-    if(dim(url.sub.df)[2]<19)
-      url.sub.df<-NA
-    wait.rnd<-sample(25:40,1)
-    #wait.rnd<-wait.rnd[wait.rnd>5]
-    #wait.rnd<-sample()
-    wait.t<-wait+wait.rnd
-    Sys.sleep(wait.t)
-    dbWriteTable(con, "redditpsych", url.sub.df, append = TRUE, row.names = FALSE)
+    
+    ifelse(length(unique(url.sub.df$timestamp))>1,url.sub.df<-post.sql(url.sub.df),return())
     
   
   #url.sub.df<-as.data.frame(url.sub.df)
@@ -323,10 +348,20 @@ url.comment.df.cpt.2<-url.comment.df.cpt
     if(length(comment)>0)
       comment<-gsub("[^[:print:]]","'",comment)
    # print(comment<-comments$comment)
+    if(comment=="")
+      return(NA)
     com.x<-fetch.pos(comment, run,i,data=list(author=author,timestamp=timestamp,date=date,url=url,score=score,com_id=com_id))
     return(com.x)
   })
-  df.ex<-abind::abind(df.ex.l,along = 1)
+    d<-1
+    url.sub.na<-lapply(seq_along(df.ex.l), function(d){
+      if(is.na(df.ex.l[d]))
+        return(F)
+      return(T)
+    })
+    url.sub.na<-unlist(url.sub.na)
+  df.ex.l.na<-df.ex.l[url.sub.na]
+  df.ex<-abind::abind(df.ex.l.na,along = 1)
   df.ex<-data.frame(df.ex)
   m2<-colnames(df.ex)=="misc"|colnames(df.ex)=="deps"|colnames(df.ex)=="sentence"
   m3<-c(1:length(m2))[!m2]
