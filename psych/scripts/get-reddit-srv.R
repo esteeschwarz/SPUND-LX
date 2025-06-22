@@ -5,13 +5,18 @@ library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15261
+tstamp<-15262
 dt<-1
 tstamp<-paste0(format(Sys.Date(),"%y-%m-%d"),".",dt)
 tstamp
 #thread<- "de"
 thread<-"schizophrenia"
+thread<-"unpopularopinion"
 corpus<-"stef_psych_schiz"
+dbcorpus<-"redditpsych"
+dbcorpus_pos<-"reddit_com_pos"
+dbcorpus<-"reddit_ref"
+dbcorpus_pos<-"reddit_pos_ref"
 subject.dir<-"SPUND-LX/psych/data"
 cloud<-"~/box.dh-index.org/httpdocs/cloud"
 cloud<-paste0(Sys.getenv("WWW_TOP"),"/cloud")
@@ -66,7 +71,7 @@ out.com.df.ns
 log.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/createcorp.log.csv")
 #load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 # get url dataframe
-#url.df.x<-get.urls()
+url.df.x<-get.urls()
 # saved in function!
 #save(url.df.x,file = paste0(Sys.getenv("GIT_TOP"),"/",subject.dir,"/reddit_url.df.",tstamp,".RData"))
 ####################
@@ -161,9 +166,10 @@ post.sql<-function(df){
 #  dfstamp<-tdb$timestamp
   dfstamp<-dfstamp[dfstamp!=""]
   dfstamp<-paste0(dfstamp,collapse = ",")
-  dbq<-dbGetQuery(con,paste0("SELECT * FROM redditpsych WHERE timestamp IN (",dfstamp,")"))
+  dbq<-dbGetQuery(con,paste0("SELECT * FROM ",dbcorpus," WHERE timestamp IN (",dfstamp,")"))
   dfstamp.out<-dbq$timestamp
   m.out<-url.sub.df$timestamp%in%dfstamp.out
+  sum(m.out)
   ############################### debug
   url.sub.df<-url.sub.df[!m.out,]
   ###############################
@@ -172,7 +178,7 @@ post.sql<-function(df){
   #wait.rnd<-sample()
   wait.t<-wait+wait.rnd
   if(length(url.sub.df$url)>0){
-  dbWriteTable(con, "redditpsych", url.sub.df, append = TRUE, row.names = FALSE)
+  dbWriteTable(con, dbcorpus, url.sub.df, append = TRUE, row.names = FALSE)
     Sys.sleep(wait.t)
     return(url.sub.df)
   }
@@ -180,18 +186,19 @@ post.sql<-function(df){
   Sys.sleep(wait.t)
   return(url.sub.df)
 }
-start.url<-501
-end.url<-800
+start.url<-1
+end.url<-length(url.df.x$date_utc)
+end.url<-200
 range<-c(start.url:194,196:end.url)
-range<-start.url:end.url
+range<-1:100
 # end.url<-length(url.u)
 #url.id<-5
 rm(url.id)
-wait<-6
+wait<-5
 #e:34+
-seq<-50:50
+seq<-1:100
 seq<-1:length(range)
-i<-8
+i<-1
 range[seq[i]]
 m<-which(range==268)
 #rm(i)
@@ -403,7 +410,7 @@ url.comment.df.cpt.2<-url.comment.df.cpt
   m3
   df.ex<-df.ex[,m3]
   if(length(df.ex)==16)
-    dbWriteTable(con,"reddit_com_pos",df.ex,append = TRUE, row.names = FALSE)
+    dbWriteTable(con,dbcorpus_pos,df.ex,append = TRUE, row.names = FALSE)
   
   })
 #  df.ex$token<-gsub("[^[:print:]]","_",df.ex$token)
