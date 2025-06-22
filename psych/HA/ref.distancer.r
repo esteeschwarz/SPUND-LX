@@ -114,3 +114,6 @@ unlist(p.d)
 p.d
 print(m<-mean(unlist(p.d)))
 }
+write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
+library(jsonlite)
+write_json(list(a=q1,b=q2,c=q3,d=q4,e=q5),"~/gith/SPUND-LX/psych/HA/eval-qs.json")
