@@ -28,6 +28,7 @@ get.mean<-function(q,tdb){
   column<-names(q)
   re1<-get.q(q,tdb)
   re1<-unlist(re1)
+  re1w<-which(re1)
   head(re1,1000)
   sum(re1)
   tdb[re1,column]
@@ -48,10 +49,13 @@ get.mean<-function(q,tdb){
   rm(i)
   rm(b)
   rm(ii)
-  x<-tok.dem.u[2]
-  lt<-lapply(tok.dem.u, function(x,i){
-   #strsplit(x,"a")
-    print(x)
+  te<-2
+  x<-tok.dem.u[te]
+  tok.test<-tok.dem.u[1:5]
+  lt<-lapply(tok.dem.u, function(x){
+    # lt<-lapply(tok.test, function(x){
+      #strsplit(x,"a")
+   # print(x)
    mn<-tdb[,column]==x
     #noun<-x
     #cat(noun,"\n")
@@ -64,43 +68,85 @@ get.mean<-function(q,tdb){
     #mn<-grepl(noun,tdb$token)
     # sum(mn)
     #mn<-tdb[,column]==noun
-    cat(sum(mn),"\n")
+   # cat(sum(mn),"\n")
     mnw<-which(mn)
+    lemma<-tdb$lemma[mnw[1]]
+    mn2<-tdb$lemma==lemma
+    mnw<-which(mn2)
+    #mnw<-mnw[te:length(mnw)]
+    mnw1<-mnw-1
+    mnwq<-mnw1%in%re1w
+    sum(mnwq)
+    mnwqw<-which(mnwq)
     tdb[mnw,column]
-    p1<-lapply(seq_along(1:length(mnw)),function(b){
+    tdb[mnw1,column]
+    tdb[mnw1[mnwqw],column]
+    mnw<-mnw1[mnwqw] # this reduces to nouns with respective token (q) preceding
+    
+    #p1<-lapply(seq_along(1:length(mnw)),function(b){
+    mnw.sub<-mnw[te:length(mnw)]
+    c<-mnw[1]
     m1<-lapply(mnw, function(c){
-      print(c)
+     # print(c)
+      uid<-tdb$uid[c]
+      range<-tdb$uid==uid
+      range.w<-which(range)
     #})  
     #cat("\r",b,":\t")
-    npos<-noun1.in.p[c]
-    })
-    m1<-unlist(m1)
-    m1<-m1[!is.na(m1)]
-    m1
-    npos<-m1
+    #npos<-noun1.in.p[c]
+#    })
+ #   m1<-unlist(m1)
+  #  m1<-m1[!is.na(m1)]
+   # m1
+  #  npos<-m1
    # cat(npos,"\n")
-    tdb[npos,column]
-    uid<-tdb$uid[npos]
-    range<-which(tdb$uid==uid)
-    range
-    p.before<-npos
-    px<-sum(mnw%in%range)
-    p.before<-mnw[mnw%in%range]
-    if(px>1){
-      p.b<-p.before[p.before<npos]
-      #p.a<-p.before[p.before>npos]
-      #p.b.p<-p.b.p<
-      return(list(pos=npos,before=p.b))
-      
-    }
+    tdb[range.w,column]
+    #uid<-tdb$uid[npos]
+    #range<-which(tdb$uid==uid)
+    #range
+    #p.before<-npos
+    px<-sum(mnw%in%range.w)
+    p.before<-mnw[mnw%in%range.w] # this all positions within comment
+    tdb[p.before,column]
+    ### define distance between tokens
+    ### task: i have 3 numbers and want for each the distance?
+    dist<-diff(p.before)
+    # easy
+    # but now i have for each occurence (e.g. 3 numbers) here the distance, so tripled in return.
+    # shall i devise the mean here yet to have a singled mean distance in the return instead of 3x the same distances?
+    return(dist)
+    # if(px>1){
+    #   p.b<-p.before[p.before<c]
+    #   #p.a<-p.before[p.before>npos]
+    #   #p.b.p<-p.b.p<
+    #   return(list(pos=npos,before=p.b))
+    #   
+    # }
 #    return(p1)
     })
+    m1u<-unique(m1)
+   # mean(unlist(m1)) #107
+  #  mean(unlist(m1u)) #115
+   # median(unlist(m1)) #56
+    return(unlist(m1))
+    return(median(unlist(m1u))) #56
+    
    # return(p1)
   })
-  tdb[368,column]
-  
-    unlist(p1)
- # # mean(unlist(dem.ref))
+  lt2<-lt[!is.na(lt)]
+  unlist(lt2)
+  mlt2<-median(unlist(lt2))
+  print(mlt2)
+  return(mlt2) #1.q5.40.5 (with return median distances) / 43 with return unlist(m1)[all distances]
+}
+  # tdb[368,column]
+  # m1
+  # m1u<-unique(m1)
+  #   mean(unlist(m1)) #107
+  #   mean(unlist(m1u)) #115
+  #   median(unlist(m1)) #56
+  #   median(unlist(m1u)) #56
+    # # mean(unlist(dem.ref))
  #    uid<-tok.uid[[i]]
  #    range<-which(tdb$uid==uid)
  #    print(noun)
@@ -119,20 +165,20 @@ get.mean<-function(q,tdb){
  # dem.ref
  # unlist(dem.ref)>0
   #tdb$token[1216]%in%tok.dem
-  i<-298
-  #dem.ref[[287]]
-  #tdb$token[noun1.in.p[[287]]]
-  p.d<-lapply(seq_along(dem.ref),function(i){
-    t<-dem.ref[[i]]$before>0
-    ifelse(t,
-           td<-dem.ref[[i]]$pos-dem.ref[[i]]$before,return(NA))
-  })
-  unlist(dem.ref)
-  unlist(p.d)
-  p.d
-  print(m<-mean(unlist(p.d)))
-}
-mean(unlist(p1))
+#   i<-298
+#   #dem.ref[[287]]
+#   #tdb$token[noun1.in.p[[287]]]
+#   p.d<-lapply(seq_along(dem.ref),function(i){
+#     t<-dem.ref[[i]]$before>0
+#     ifelse(t,
+#            td<-dem.ref[[i]]$pos-dem.ref[[i]]$before,return(NA))
+#   })
+#   unlist(dem.ref)
+#   unlist(p.d)
+#   p.d
+#   print(m<-mean(unlist(p.d)))
+# }
+# mean(unlist(p1))
 q1<-list(token=c("this","that","these","those","the")) # mean distance: 76
 q2<-list(token=c("the")) # mean distance: 81
 q3<-list(token=c("a","an","some","any")) # mean distance: 63, lower
@@ -162,7 +208,7 @@ q4c<-get.mean(q4,tdbcorp) # ref: 124
 
 q5r<-get.mean(q5,tdbref) # ref: 103
 q5c<-get.mean(q5,tdbcorp) # ref: 124
-
+#system.time(get.mean(q5,tdbcorp)) #45s
 qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
                 d=c(76,81,63,55,70,124,131,83,70,103),
                 corp=c(rep("obs",5),rep("ref",5)))
@@ -181,7 +227,7 @@ qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
 mode(qdf1[,2])<-"double"
 mode(qdf1[,3])<-"double"
 library(lme4)
-install.packages("lme4",type = "source")
+#install.packages("lme4",type = "source")
 qdf
 lm1<-lmer(d~corp+(1|q),qdf)
 summary(lm1)
@@ -254,6 +300,7 @@ df<-tdb
 # print(m<-mean(unlist(p.d)))
 # }
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
+#write_csv(qdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
 # library(jsonlite)
 # write_json(list(a=q1,b=q2,c=q3,d=q4,e=q5),"~/gith/SPUND-LX/psych/HA/eval-qs.json")
 
