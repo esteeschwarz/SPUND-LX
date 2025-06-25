@@ -370,6 +370,88 @@ summary(model2) #p=0.00024
 # q=query,m=matches,d=distance,corp=obs/ref
 #wks. p=0.043 for corpA (obs)
 #############################
+### gpt manually:
+data <- read.csv("eval-001.csv")
+data<-df
+# Center covariates
+data$range_c    <- data$range    - mean(data$range)
+#data$corpsize_c <- data$corp_size - mean(data$corp_size)
+data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
+data$m_rel_c    <- data$m_rel
+
+# Corpus dummy
+data$corpusB <- ifelse(data$corp == 'B', 1, 0)
+
+# Dummy code condition (a-e) into 4 dummy vars (base = 'a')
+data$cond_b <- ifelse(data$q == 'b', 1, 0)
+data$cond_c <- ifelse(data$q == 'c', 1, 0)
+data$cond_d <- ifelse(data$q == 'd', 1, 0)
+data$cond_e <- ifelse(data$q == 'e', 1, 0)
+
+# table(data$q)
+# dummy_matrix <- as.matrix(cbind(
+#   data$cond_b,
+#   data$cond_c,
+#   data$cond_d,
+#   data$cond_e
+# ))
+
+# qr(dummy_matrix)$rank
+# cor(data$corpusB, data$cond_b)
+# cor(data$corpusB, data$cond_c)
+# cor(data$corpusB, data$cond_d)
+# cor(data$corpusB, data$cond_e)
+
+X <- as.matrix(cbind(
+  1,
+  data$corpusB,
+  data$range_c,
+  #data$corpsize_c,
+  data$m_rel_c,
+  data$cond_b,
+  data$cond_c,
+  data$cond_d,
+  data$cond_e
+))
+# X <- as.matrix(cbind(
+#   1,
+#   data$corpusB,
+#   data$range_c,
+#   data$corpsize_c,
+#   data$m_rel_c,
+#   data$cond_b,
+#   data$cond_c,
+#   data$cond_d,
+#   data$cond_e
+# ))
+qr(X)$rank  # should equal ncol(X)
+
+Y <- data$dist
+
+XtX <- t(X) %*% X
+XtY <- t(X) %*% Y
+beta_hat <- solve(XtX) %*% XtY
+#?solve
+# m<-matrix(c(1,0,2,1,1,1,1,1,3),ncol = 3)
+# m
+# solve(m)
+# 2^-1
+residuals <- Y - X %*% beta_hat
+n <- nrow(X)
+k <- ncol(X)
+sigma2_hat <- sum(residuals^2) / (n - k)
+
+cov_beta <- sigma2_hat * solve(XtX)
+std_errors <- sqrt(diag(cov_beta))
+
+t_value <- beta_hat[2] / std_errors[2]
+df <- n - k
+p_value <- 2 * pt(-abs(t_value), df)
+# 1st: 0.352
+
+coeff<-solve(t(X) %*% X) %*% t(X) %*% data$dist
+coeff<-round(coeff,3)
+coeff
 # # Fit reduced model without the term of interest
 # reduced_model <- lmer(d ~ q + (1|corp_size), data = df) 
 # full_model <- lmer(d ~ corp*m + (1|corp_size), data = df)
@@ -437,7 +519,7 @@ summary(model2) #p=0.00024
 # print(m<-mean(unlist(p.d)))
 # }
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
-write_csv(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
- library(jsonlite)
- write_json(list(a=q1,b=q2,c=q3,d=q4,e=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
+# write_csv(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+#  library(jsonlite)
+#  write_json(list(a=q1,b=q2,c=q3,d=q4,e=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 
