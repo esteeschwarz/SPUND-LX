@@ -21,9 +21,24 @@ get.q<-function(q,df){
     rq<-df[,column]%in%q[[i]]
     #rq<-grepl(q[i],df[,names(q[i])])
   })
+  print(sum(unlist(re)))
+  return(re)
 }
 q<-q5
 tdb<-tdbcorp
+get.matches<-function(q,tdb){
+  re1<-get.q(q,tdb)
+  re1<-unlist(re1)
+  re1w<-which(re1)
+#  head(re1,1000)
+ # sum(re1)
+  #tdb[re1,column]
+  noun1<-which(re1)+1
+  #noun1
+  noun1.p<-which(tdb$upos=="NOUN")
+  noun1.in<-noun1.p%in%noun1
+}
+#q1mc<-get.matches(q,tdb)
 get.mean<-function(q,tdb){
   column<-names(q)
   re1<-get.q(q,tdb)
@@ -243,6 +258,59 @@ library(stats)
 qdf.c<-qdf[,c(2,3)]
 cor.test(qdf1[,2],qdf1[,3])
 df<-tdb
+
+### eval
+qdf<-read_csv("eval-001.csv")
+df<-qdf
+n_obs<-length(tdbcorp$token)
+n_ref<-length(tdbref$token)
+
+# Example if you have size data
+df$corp_size <- ifelse(df$corp == "obs", n_obs, n_ref)
+q1mc<-get.matches(q1,tdbcorp)
+q1mr<-get.matches(q1,tdbref)
+q2mc<-get.matches(q2,tdbcorp)
+q2mr<-get.matches(q2,tdbref)
+q3mr<-get.matches(q3,tdbref)
+q3mc<-get.matches(q3,tdbcorp)
+q4mr<-get.matches(q4,tdbref)
+q4mc<-get.matches(q4,tdbcorp)
+q5mr<-get.matches(q5,tdbref)
+q5mc<-get.matches(q5,tdbcorp)
+
+df$m<-unlist(lapply(list(q1mc,q2mc,q3mc,q4mc,q5mc,q1mr,q2mr,q3mr,q4mr,q5mr),sum))
+df
+sum(q1mc)
+model <- lm(d ~ corp * q + corp_size + m, data = df)
+
+anova(model)
+lmer(d~corp*q+corp_size,df)
+
+anova(model)
+#################
+library(lmerTest)
+df$corp<-c(rep("A",5),rep("B",5))
+df
+df$m_rel<-df$m/df$corp_size
+model1<-lmer(d~corp*m+(1|q)+(1|corp_size),df)
+model2 <- lmer(d ~ corp*m_rel + (1|q), data = df) # with relative match frequencies
+
+summary(model1) #p=0.043 for corpA (obs)
+summary(model2) #p=0.00024
+############################################
+# q=query,m=matches,d=distance,corp=obs/ref
+#wks. p=0.043 for corpA (obs)
+#############################
+# Fit reduced model without the term of interest
+reduced_model <- lmer(d ~ q + (1|corp_size), data = df) 
+full_model <- lmer(d ~ corp*m + (1|corp_size), data = df)
+
+# Compare models
+anova(reduced_model, full_model) # Gives chi-square test and p-value
+
+
+
+
 # get.q<-function(q,df){
 #   i<-1
 #   re<-lapply(seq_along(q),function(i){
@@ -300,7 +368,7 @@ df<-tdb
 # print(m<-mean(unlist(p.d)))
 # }
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
-#write_csv(qdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+write_csv(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
 # library(jsonlite)
 # write_json(list(a=q1,b=q2,c=q3,d=q4,e=q5),"~/gith/SPUND-LX/psych/HA/eval-qs.json")
 
