@@ -25,7 +25,9 @@ get.q<-function(q,df){
   return(re)
 }
 q<-q5
+q5
 tdb<-tdbcorp
+system.time(get.q(q,tdb))
 get.matches<-function(q,tdb){
   re1<-get.q(q,tdb)
   re1<-unlist(re1)
@@ -39,7 +41,19 @@ get.matches<-function(q,tdb){
   noun1.in<-noun1.p%in%noun1
 }
 #q1mc<-get.matches(q,tdb)
+#preliminaries
+uid<-tdb$uid
+head(uid)
+uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+head(uid2)
+tdb$url<-uid2
 get.mean<-function(q,tdb){
+  uid<-tdb$uid
+  head(uid)
+  uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+  head(uid2)
+  tdb$url<-uid2
+  
   column<-names(q)
   re1<-get.q(q,tdb)
   re1<-unlist(re1)
@@ -49,21 +63,23 @@ get.mean<-function(q,tdb){
   tdb[re1,column]
   noun1<-which(re1)+1
   noun1
-  noun1.p<-which(tdb$upos=="NOUN")
-  noun1.in<-noun1.p%in%noun1
-  noun1.in.p<-which(noun1.in)
+  noun.p<-which(tdb$upos=="NOUN")
+  noun1.in.p<-noun.p%in%noun1
+  sum(noun1.in.p)
+  noun1.in.p<-which(noun1.in.p)
   noun1.in.p<-noun1.p[noun1.in.p]
-  tok.dem<-tdb[noun1.p,column][noun1.in]
+  head(tdb[noun1.in.p,column])
+  tok.dem<-tdb[noun1.in.p,"lemma"]
   #which(tok.dem=="life")
-  tok.uid<-tdb$uid[noun1.p][noun1.in]
-  tok.uid.u<-unique(tok.uid)
+  tok.uid<-tdb$url[noun1.in.p]
+  #tok.uid.u<-unique(tok.uid)
   tok.dem.u<-unique(tok.dem)
   
   i<-1
   b<-1
   rm(i)
   rm(b)
-  rm(ii)
+  #rm(ii)
   te<-2
   x<-tok.dem.u[te]
   tok.test<-tok.dem.u[1:5]
@@ -71,7 +87,7 @@ get.mean<-function(q,tdb){
     # lt<-lapply(tok.test, function(x){
       #strsplit(x,"a")
    # print(x)
-   mn<-tdb[,column]==x
+   mn<-tdb$lemma==x
     #noun<-x
     #cat(noun,"\n")
   # })
@@ -85,26 +101,34 @@ get.mean<-function(q,tdb){
     #mn<-tdb[,column]==noun
    # cat(sum(mn),"\n")
     mnw<-which(mn)
-    lemma<-tdb$lemma[mnw[1]]
-    mn2<-tdb$lemma==lemma
-    mnw<-which(mn2)
+    #lemma.x<-tdb$lemma[mnw[1]]
+    #lemma.x
+    #mn2<-tdb$lemma==lemma.x # postags not reliable: e.g. caring(VERB) has lemma=car
+    #mnw<-which(mn2)
     #mnw<-mnw[te:length(mnw)]
-    mnw1<-mnw-1
-    mnwq<-mnw1%in%re1w
-    sum(mnwq)
-    mnwqw<-which(mnwq)
+    mnw1<-mnw-1 # query position
+    mnw2<-mnw1%in%re1w # lemma position matches query
+     #mnw1q<-mnw1%in%re1w
+    sum(mnw2)
+    mnw3<-which(mnw2)
+    #mnwqw<-which(mnwq)
+    #mnwqw<-mnwqw[mnwqw%in%noun1.in.p]
     tdb[mnw,column]
-    tdb[mnw1,column]
-    tdb[mnw1[mnwqw],column]
-    mnw<-mnw1[mnwqw] # this reduces to nouns with respective token (q) preceding
+    tdb[mnw1[mnw3],column]
+    #tdb[mnw1[mnwqw],column]
+    mnwn<-mnw1[mnw3] # this reduces to nouns with respective token (q) preceding
+    tdb[mnwn,column]
     
     #p1<-lapply(seq_along(1:length(mnw)),function(b){
     mnw.sub<-mnw[te:length(mnw)]
     c<-mnw[1]
-    m1<-lapply(mnw, function(c){
+    c<-mnwn[1]
+    m1<-lapply(mnwn, function(c){
      # print(c)
-      uid<-tdb$uid[c]
-      range<-tdb$uid==uid
+      uid<-tdb$url[c]
+      #uid<-strsplit(uid,"url|-")
+      #uid<-uid[2]
+      range<-tdb$url==uid
       range.w<-which(range)
     #})  
     #cat("\r",b,":\t")
@@ -129,7 +153,7 @@ get.mean<-function(q,tdb){
     # easy
     # but now i have for each occurence (e.g. 3 numbers) here the distance, so tripled in return.
     # shall i devise the mean here yet to have a singled mean distance in the return instead of 3x the same distances?
-    return(dist)
+    ifelse(length(dist)>0,return(list(dist=dist,range=length(range.w))),NA)
     # if(px>1){
     #   p.b<-p.before[p.before<c]
     #   #p.a<-p.before[p.before>npos]
@@ -139,20 +163,40 @@ get.mean<-function(q,tdb){
     # }
 #    return(p1)
     })
-    m1u<-unique(m1)
-   # mean(unlist(m1)) #107
-  #  mean(unlist(m1u)) #115
-   # median(unlist(m1)) #56
-    return(unlist(m1))
+    unlist(m1)
+    m1<-m1[!is.na(m1)]
+    m1
+    # m1u<-unique(m1)
+    # mean(unlist(m1)) #107
+    # mean(unlist(m1u)) #115
+    # median(unlist(m1)) #56
+    # median(unlist(m1u)) #56
+    return(m1)
     return(median(unlist(m1u))) #56
     
    # return(p1)
   })
-  lt2<-lt[!is.na(lt)]
-  unlist(lt2)
-  mlt2<-median(unlist(lt2))
-  print(mlt2)
-  return(mlt2) #1.q5.40.5 (with return median distances) / 43 with return unlist(m1)[all distances]
+  lt2<-lapply(lt, function(x){
+    l<-length(x)
+    ifelse(length(x)!=0,x,NA)
+  })
+  lt2<-lt2[!is.na(lt2)]
+  lt3.d<-lapply(lt2, function(x){
+    return(x[[1]]$dist)
+  })
+  
+  median(unlist(lt3.d))
+  lt3.r<-lapply(lt2, function(x){
+    return(x[[1]]$range)
+  })
+  head(lt3.d)
+  head(lt3.r)
+  #unlist(lt2)
+  mlt2.d<-median(unlist(lt3.d))
+  mlt2.r<-median(unlist(lt3.r))
+  print(mlt2.d)
+  print(mlt2.r)
+  return(list(dist=lt3.d,range=lt3.r)) #1.q5.40.5 (with return median distances) / 43 with return unlist(m1)[all distances]
 }
   # tdb[368,column]
   # m1
@@ -194,18 +238,13 @@ get.mean<-function(q,tdb){
 #   print(m<-mean(unlist(p.d)))
 # }
 # mean(unlist(p1))
-q1<-list(token=c("this","that","these","those","the")) # mean distance: 76
+q1<-list(token=c("this","that","these","those")) # mean distance: 76
 q2<-list(token=c("the")) # mean distance: 81
 q3<-list(token=c("a","an","some","any")) # mean distance: 63, lower
 q4<-list(token=c("my")) # mean distance: 55, lower
 q5<-list(token=c("your","their","his","her")) # mean distance: 100, higher
 
 
-q1r<-get.mean(q1,tdbref) # ref: 124
-q1c<-get.mean(q1,tdbcorp) # ref: 124
-
-q2r<-get.mean(q2,tdbref) # ref: 131
-q2c<-get.mean(q2,tdbcorp) # ref: 124
 
 ###########################################
 ### notes
@@ -215,6 +254,13 @@ q2c<-get.mean(q2,tdbcorp) # ref: 124
 # this shall give us an index of reference stability (coherence) within that comment.
 # assumption is, that for q(indefinite article) the index is higher
 # test:
+
+q1r<-get.mean(q1,tdbref) # ref: 124
+q1c<-get.mean(q1,tdbcorp) # ref: 124
+
+q2r<-get.mean(q2,tdbref) # ref: 131
+q2c<-get.mean(q2,tdbcorp) # ref: 124
+
 q3r<-get.mean(q3,tdbref) # ref: 83
 q3c<-get.mean(q3,tdbcorp) # ref: 124
 
@@ -223,44 +269,66 @@ q4c<-get.mean(q4,tdbcorp) # ref: 124
 
 q5r<-get.mean(q5,tdbref) # ref: 103
 q5c<-get.mean(q5,tdbcorp) # ref: 124
+mq5r<-median(unlist(q5r$dist))
+mq5c<-median(unlist(q5c$dist))
+mq4r<-median(unlist(q4r$dist))
+mq4c<-median(unlist(q4c$dist))
+mq3r<-median(unlist(q3r$dist))
+mq3c<-median(unlist(q3c$dist))
+mq2r<-median(unlist(q2r$dist))
+mq2c<-median(unlist(q2c$dist))
+mq1r<-median(unlist(q1r$dist))
+mq1c<-median(unlist(q1c$dist))
+
+mq5rl<-median(unlist(q5r$range))
+mq5cl<-median(unlist(q5c$range))
+mq4rl<-median(unlist(q4r$range))
+mq4cl<-median(unlist(q4c$range))
+mq3rl<-median(unlist(q3r$range))
+mq3cl<-median(unlist(q3c$range))
+mq2rl<-median(unlist(q2r$range))
+mq2cl<-median(unlist(q2c$range))
+mq1rl<-median(unlist(q1r$range))
+mq1cl<-median(unlist(q1c$range))
 #system.time(get.mean(q5,tdbcorp)) #45s
+# qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
+#                 d=c(76,81,63,55,70,124,131,83,70,103),
+#                 corp=c(rep("obs",5),rep("ref",5)))
+# qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
+#                 d=c(76,81,63,55,70,124,131,83,70,103),
+#                 corp=c(rep(1,5),rep(0,5)))
+# qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
+#                 d=c(76,81,63,55,70,124,131,83,70,103),
+#                 corp=c(rep(0,5),rep(1,5)))
 qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
-                d=c(76,81,63,55,70,124,131,83,70,103),
+                dist=c(mq1c,mq2c,mq3c,mq4c,mq5c,mq1r,mq2r,mq3r,mq4r,mq5r),
+                range=c(mq1cl,mq2cl,mq3cl,mq4cl,mq5cl,mq1rl,mq2rl,mq3rl,mq4rl,mq5rl),
                 corp=c(rep("obs",5),rep("ref",5)))
-qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
-                d=c(76,81,63,55,70,124,131,83,70,103),
-                corp=c(rep(1,5),rep(0,5)))
-qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
-                d=c(76,81,63,55,70,124,131,83,70,103),
-                corp=c(rep(0,5),rep(1,5)))
-qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
-                d=c(q1c,q2c,q3c,q4c,q5c,q1r,q2r,q3r,q4r,q5r),
-                corp=c(rep("obs",5),rep("ref",5)))
-qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
-                d=c(q1c,q2c,q3c,q4c,q5c,q1r,q2r,q3r,q4r,q5r),
-                corp=c(rep(0,5),rep(1,5)))
-mode(qdf1[,2])<-"double"
-mode(qdf1[,3])<-"double"
-library(lme4)
-#install.packages("lme4",type = "source")
-qdf
-lm1<-lmer(d~corp+(1|q),qdf)
-summary(lm1)
-lm2<-lmer(d~q+(1|corp),qdf)
-s2<-summary(lm2)
-s2
-print(lm2,signif.stars=T)
-lm2<-glmer(d~q+(1|corp),qdf)
-summary(lm2)
-library(lattice)
-anova(lm2)
-library(stats)
-qdf.c<-qdf[,c(2,3)]
-cor.test(qdf1[,2],qdf1[,3])
-df<-tdb
+# qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
+#                 d=c(q1c,q2c,q3c,q4c,q5c,q1r,q2r,q3r,q4r,q5r),
+#                 corp=c(rep(0,5),rep(1,5)))
+# mode(qdf1[,2])<-"double"
+# mode(qdf1[,3])<-"double"
+# library(lme4)
+# #install.packages("lme4",type = "source")
+# qdf
+# lm1<-lmer(d~corp+(1|q),qdf)
+# summary(lm1)
+# lm2<-lmer(d~q+(1|corp),qdf)
+# s2<-summary(lm2)
+# s2
+# print(lm2,signif.stars=T)
+# lm2<-glmer(d~q+(1|corp),qdf)
+# summary(lm2)
+# library(lattice)
+# anova(lm2)
+# library(stats)
+# qdf.c<-qdf[,c(2,3)]
+# cor.test(qdf1[,2],qdf1[,3])
+# df<-tdb
 
 ### eval
-qdf<-read_csv("eval-001.csv")
+#qdf<-read_csv("eval-001.csv")
 df<-qdf
 n_obs<-length(tdbcorp$token)
 n_ref<-length(tdbref$token)
@@ -279,34 +347,35 @@ q5mr<-get.matches(q5,tdbref)
 q5mc<-get.matches(q5,tdbcorp)
 
 df$m<-unlist(lapply(list(q1mc,q2mc,q3mc,q4mc,q5mc,q1mr,q2mr,q3mr,q4mr,q5mr),sum))
-df
-sum(q1mc)
-model <- lm(d ~ corp * q + corp_size + m, data = df)
-
-anova(model)
-lmer(d~corp*q+corp_size,df)
-
-anova(model)
-#################
+# df
+# sum(q1mc)
+# model <- lm(d ~ corp * q + corp_size + m, data = df)
+# 
+# anova(model)
+# lmer(d~corp*q+corp_size,df)
+# 
+# anova(model)
+############################################
 library(lmerTest)
 df$corp<-c(rep("A",5),rep("B",5))
 df
 df$m_rel<-df$m/df$corp_size
-model1<-lmer(d~corp*m+(1|q)+(1|corp_size),df)
-model2 <- lmer(d ~ corp*m_rel + (1|q), data = df) # with relative match frequencies
+model1<-lmer(dist~corp*m+(1|q)+(1|corp_size)+(1|range),df)
+model2 <- lmer(dist ~ corp*m_rel + (1|q)+(1|range), data = df) # with relative match frequencies
 
 summary(model1) #p=0.043 for corpA (obs)
 summary(model2) #p=0.00024
+# TODO: comment range (mean length of observed range) as var, influences overall token distance
 ############################################
 # q=query,m=matches,d=distance,corp=obs/ref
 #wks. p=0.043 for corpA (obs)
 #############################
-# Fit reduced model without the term of interest
-reduced_model <- lmer(d ~ q + (1|corp_size), data = df) 
-full_model <- lmer(d ~ corp*m + (1|corp_size), data = df)
-
-# Compare models
-anova(reduced_model, full_model) # Gives chi-square test and p-value
+# # Fit reduced model without the term of interest
+# reduced_model <- lmer(d ~ q + (1|corp_size), data = df) 
+# full_model <- lmer(d ~ corp*m + (1|corp_size), data = df)
+# 
+# # Compare models
+# anova(reduced_model, full_model) # Gives chi-square test and p-value
 
 
 
