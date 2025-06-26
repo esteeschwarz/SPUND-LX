@@ -8,28 +8,43 @@ dbListTables(con)
 #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
 tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
 tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
-tdb<-tdbcorp
+#tdb<-tdbcorp
 #tdb.com<-dbGetQuery(con,"SELECT * FROM redditpsych")
 ###
 # task: devise referrer distance of demonstratives
 # build query interface
+q1<-list(token=c("this","that","these","those")) # mean distance: 76
+q2<-list(token=c("the")) # mean distance: 81
+q3<-list(token=c("a","an","some","any")) # mean distance: 63, lower
+q4<-list(token=c("my")) # mean distance: 55, lower
+q5<-list(token=c("your","their","his","her")) # mean distance: 100, higher
+### intercept!
+q0<-list(token="#intercept")
+q<-q1
+df<-tdbref
 get.q<-function(q,df){
   i<-1
-  re<-lapply(seq_along(q),function(i){
-    print(names(q[i]))
-    column<-names(q[i])
-    rq<-df[,column]%in%q[[i]]
+  qt<-q[[1]]
+  qt
+ # print(names(q))
+  column<-names(q)
+#re<-lapply(qt,function(x){
+    rq<-df[,column]%in%qt
+    if("#intercept"%in%qt)
+      rq<-rep(T,length(df$token))
     #rq<-grepl(q[i],df[,names(q[i])])
-  })
-  print(sum(unlist(re)))
-  return(re)
+  #})
+  print(sum(unlist(rq)))
+  return(rq)
 }
+sum(get.q(q2,tdbref))
 q<-q5
 q5
-tdb<-tdbcorp
+tdb<-tdbref
 system.time(get.q(q,tdb))
 get.matches<-function(q,tdb){
   re1<-get.q(q,tdb)
+  
   re1<-unlist(re1)
   re1w<-which(re1)
 #  head(re1,1000)
@@ -47,6 +62,101 @@ head(uid)
 uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
 head(uid2)
 tdb$url<-uid2
+### this is schwachsinn. i dont need to define distance for each unique noun but for every similar noun egal what it is.
+q<-q1
+tdb<-tdbref
+get.mean.gl<-function(q,tdb){
+  uid<-tdb$uid
+  length(unique(uid))
+  head(uid)
+  uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+  #uid2<-gsub("-.*","",uid)
+  head(uid2)
+  length(unique(uid2))
+  tdb$url<-uid2
+  
+  column<-names(q)
+  column
+  re1<-get.q(q,tdb)
+  re1<-unlist(re1)
+  re1w<-which(re1)
+  #head(re1,1000)
+  sum(re1)
+  #tdb[re1,column]
+  
+  ifelse(sum(re1)==length(tdb$token),noun1<-re1w,noun1<-which(re1)+1)
+  #sum(noun1)
+  #noun.p<-which(tdb$upos=="NOUN")
+  #noun1.in.p<-noun.p%in%noun1
+  #sum(noun1.in.p)
+  #noun1.in.p<-which(noun1.in.p)
+  #noun1.in.p<-noun1.p[noun1.in.p]
+  #head(tdb[noun1.in.p,column])
+  uid4<-tdb$url
+  head(uid4)
+  uid4
+  uid5<-unique(uid4)
+  head(uid5)
+  uid5<-uid5[uid5!=""]
+  x<-uid5[1]
+  rm(x)
+  lt1<-lapply(uid5, function(x){
+    tdb.s<-tdb[tdb$url==x,]
+    tdb.n<-tdb.s$upos=="NOUN"
+    sum(tdb.n)
+    tdb.nw<-which(tdb.n)
+    range.l<-tdb.s$lemma
+    range.t<-tdb.s$token
+    
+    m<-grepl("<s|</s|<doc|</doc",range.t)
+    sum(m)
+    range.l<-range.l[!m]
+    l.dup<-duplicated(range.l)
+    l.dup<-which(l.dup)
+    l.dup.n<-l.dup[l.dup%in%tdb.nw]
+    l.dup.n<-l.dup.n[l.dup.n%in%re1w]
+    #sum(l.dup.n)
+    ld.l<-tdb.s$lemma[l.dup.n]
+    l<-ld.l[1]
+    m2<-lapply(ld.l, function(l){
+      m3<-tdb.s$lemma==l
+      sum(m3)
+      m3<-which(m3)
+      #tdb.s$token[(m3-m3):(m3+30)]
+      dist<-diff(m3)
+      median(dist)
+      ifelse(length(dist)>0,return(list(dist=dist,range=length(range.l))),return(NA))
+      
+    })
+    
+    #return(list(dist=m2,range=length(range.l)))
+       # l.dist<-diff(l.dup)
+  })
+  #x<-lt1[[1]]
+  lt2<-lapply(lt1, function(x){
+    l<-length(x)
+    return(ifelse(l!=0,x,NA))
+  })
+  lt2<-lt2[!is.na(lt2)]
+  lt3.d<-lapply(lt2, function(x){
+    return(x[[1]]$dist)
+  })
+  
+  median(unlist(lt3.d))
+  lt3.r<-lapply(lt2, function(x){
+    return(x[[1]]$range)
+  })
+  median(unlist(lt3.r))
+  head(lt3.d)
+  head(lt3.r)
+  #unlist(lt2)
+  mlt2.d<-median(unlist(lt3.d))
+  mlt2.r<-median(unlist(lt3.r))
+  print(mlt2.d)
+  print(mlt2.r)
+  return(list(dist=lt3.d,range=lt3.r)) #1.q5.40.5 (with return median distances) / 43 with return 
+}
+#q0rt<-get.mean.gl(q3,tdbref)
 get.mean<-function(q,tdb){
   uid<-tdb$uid
   head(uid)
@@ -60,8 +170,9 @@ get.mean<-function(q,tdb){
   re1w<-which(re1)
   head(re1,1000)
   sum(re1)
-  tdb[re1,column]
-  noun1<-which(re1)+1
+  #tdb[re1,column]
+  
+  ifelse(sum(re1)==length(tdb$token),noun1<-which(re1),noun1<-which(re1)+1)
   noun1
   noun.p<-which(tdb$upos=="NOUN")
   noun1.in.p<-noun.p%in%noun1
@@ -84,7 +195,7 @@ get.mean<-function(q,tdb){
   x<-tok.dem.u[te]
   tok.test<-tok.dem.u[1:5]
   lt<-lapply(tok.dem.u, function(x){
-    # lt<-lapply(tok.test, function(x){
+  #   lt<-lapply(tok.test, function(x){
       #strsplit(x,"a")
    # print(x)
    mn<-tdb$lemma==x
@@ -106,7 +217,9 @@ get.mean<-function(q,tdb){
     #mn2<-tdb$lemma==lemma.x # postags not reliable: e.g. caring(VERB) has lemma=car
     #mnw<-which(mn2)
     #mnw<-mnw[te:length(mnw)]
-    mnw1<-mnw-1 # query position
+    ifelse(sum(re1)==length(tdb$token),mnw1<-mnw,mnw1<-mnw-1) # if intercept
+    
+   # mnw1<-mnw-1 # query position
     mnw2<-mnw1%in%re1w # lemma position matches query
      #mnw1q<-mnw1%in%re1w
     sum(mnw2)
@@ -238,12 +351,13 @@ get.mean<-function(q,tdb){
 #   print(m<-mean(unlist(p.d)))
 # }
 # mean(unlist(p1))
-q1<-list(token=c("this","that","these","those")) # mean distance: 76
-q2<-list(token=c("the")) # mean distance: 81
-q3<-list(token=c("a","an","some","any")) # mean distance: 63, lower
-q4<-list(token=c("my")) # mean distance: 55, lower
-q5<-list(token=c("your","their","his","her")) # mean distance: 100, higher
-
+# q1<-list(token=c("this","that","these","those")) # mean distance: 76
+# q2<-list(token=c("the")) # mean distance: 81
+# q3<-list(token=c("a","an","some","any")) # mean distance: 63, lower
+# q4<-list(token=c("my")) # mean distance: 55, lower
+# q5<-list(token=c("your","their","his","her")) # mean distance: 100, higher
+# ### intercept!
+# q0<-list(token="#intercept")
 
 
 ###########################################
@@ -255,20 +369,35 @@ q5<-list(token=c("your","their","his","her")) # mean distance: 100, higher
 # assumption is, that for q(indefinite article) the index is higher
 # test:
 
-q1r<-get.mean(q1,tdbref) # ref: 124
-q1c<-get.mean(q1,tdbcorp) # ref: 124
+# q1r<-get.mean(q1,tdbref) # ref: 124
+# q1c<-get.mean(q1,tdbcorp) # ref: 124
+# 
+# q2r<-get.mean(q2,tdbref) # ref: 131
+# q2c<-get.mean(q2,tdbcorp) # ref: 124
+# 
+# q3r<-get.mean(q3,tdbref) # ref: 83
+# q3c<-get.mean(q3,tdbcorp) # ref: 124
+# 
+# q4r<-get.mean(q4,tdbref) # ref: 70
+# q4c<-get.mean(q4,tdbcorp) # ref: 124
+# 
+# q5r<-get.mean(q5,tdbref) # ref: 103
+# q5c<-get.mean(q5,tdbcorp) # ref: 124
 
-q2r<-get.mean(q2,tdbref) # ref: 131
-q2c<-get.mean(q2,tdbcorp) # ref: 124
+q1r<-get.mean.gl(q1,tdbref) # ref: 124
+q1c<-get.mean.gl(q1,tdbcorp) # ref: 124
+q2r<-get.mean.gl(q2,tdbref) # ref: 131
+q2c<-get.mean.gl(q2,tdbcorp) # ref: 124
+q3r<-get.mean.gl(q3,tdbref) # ref: 83
+q3c<-get.mean.gl(q3,tdbcorp) # ref: 124
+q4r<-get.mean.gl(q4,tdbref) # ref: 70
+q4c<-get.mean.gl(q4,tdbcorp) # ref: 124
+q5r<-get.mean.gl(q5,tdbref) # ref: 103
+q5c<-get.mean.gl(q5,tdbcorp) # ref: 124
 
-q3r<-get.mean(q3,tdbref) # ref: 83
-q3c<-get.mean(q3,tdbcorp) # ref: 124
+q0r<-get.mean.gl(q0,tdbref) # ref: 124
+q0c<-get.mean.gl(q0,tdbcorp) # ref: 124
 
-q4r<-get.mean(q4,tdbref) # ref: 70
-q4c<-get.mean(q4,tdbcorp) # ref: 124
-
-q5r<-get.mean(q5,tdbref) # ref: 103
-q5c<-get.mean(q5,tdbcorp) # ref: 124
 mq5r<-median(unlist(q5r$dist))
 mq5c<-median(unlist(q5c$dist))
 mq4r<-median(unlist(q4r$dist))
@@ -279,6 +408,8 @@ mq2r<-median(unlist(q2r$dist))
 mq2c<-median(unlist(q2c$dist))
 mq1r<-median(unlist(q1r$dist))
 mq1c<-median(unlist(q1c$dist))
+mq0r<-median(unlist(q0r$dist))
+mq0c<-median(unlist(q0c$dist))
 
 mq5rl<-median(unlist(q5r$range))
 mq5cl<-median(unlist(q5c$range))
@@ -290,6 +421,8 @@ mq2rl<-median(unlist(q2r$range))
 mq2cl<-median(unlist(q2c$range))
 mq1rl<-median(unlist(q1r$range))
 mq1cl<-median(unlist(q1c$range))
+mq0rl<-median(unlist(q0r$range))
+mq0cl<-median(unlist(q0c$range))
 #system.time(get.mean(q5,tdbcorp)) #45s
 # qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
 #                 d=c(76,81,63,55,70,124,131,83,70,103),
@@ -300,10 +433,10 @@ mq1cl<-median(unlist(q1c$range))
 # qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
 #                 d=c(76,81,63,55,70,124,131,83,70,103),
 #                 corp=c(rep(0,5),rep(1,5)))
-qdf<-data.frame(q=c(letters[1:5],letters[1:5]),
-                dist=c(mq1c,mq2c,mq3c,mq4c,mq5c,mq1r,mq2r,mq3r,mq4r,mq5r),
-                range=c(mq1cl,mq2cl,mq3cl,mq4cl,mq5cl,mq1rl,mq2rl,mq3rl,mq4rl,mq5rl),
-                corp=c(rep("obs",5),rep("ref",5)))
+qdf<-data.frame(q=c(letters[1:6],letters[1:6]),
+                dist=c(mq0c,mq1c,mq2c,mq3c,mq4c,mq5c,mq0r,mq1r,mq2r,mq3r,mq4r,mq5r),
+                range=c(mq0cl,mq1cl,mq2cl,mq3cl,mq4cl,mq5cl,mq0rl,mq1rl,mq2rl,mq3rl,mq4rl,mq5rl),
+                corp=c(rep("obs",6),rep("ref",6)))
 # qdf1<-data.frame(q=c(letters[1:5],letters[1:5]),
 #                 d=c(q1c,q2c,q3c,q4c,q5c,q1r,q2r,q3r,q4r,q5r),
 #                 corp=c(rep(0,5),rep(1,5)))
@@ -335,18 +468,30 @@ n_ref<-length(tdbref$token)
 
 # Example if you have size data
 df$corp_size <- ifelse(df$corp == "obs", n_obs, n_ref)
-q1mc<-get.matches(q1,tdbcorp)
-q1mr<-get.matches(q1,tdbref)
-q2mc<-get.matches(q2,tdbcorp)
-q2mr<-get.matches(q2,tdbref)
-q3mr<-get.matches(q3,tdbref)
-q3mc<-get.matches(q3,tdbcorp)
-q4mr<-get.matches(q4,tdbref)
-q4mc<-get.matches(q4,tdbcorp)
-q5mr<-get.matches(q5,tdbref)
-q5mc<-get.matches(q5,tdbcorp)
+q0mc<-get.q(q0,tdbcorp)
+q0mr<-get.q(q0,tdbref)
+q1mc<-get.q(q1,tdbcorp)
+q1mr<-get.q(q1,tdbref)
+q2mc<-get.q(q2,tdbcorp)
+q2mr<-get.q(q2,tdbref)
+q3mc<-get.q(q3,tdbcorp)
+q3mr<-get.q(q3,tdbref)
+q4mc<-get.q(q4,tdbcorp)
+q4mr<-get.q(q4,tdbref)
+q5mc<-get.q(q5,tdbcorp)
+q5mr<-get.q(q5,tdbref)
+# q1mc<-get.matches(q1,tdbcorp)
+# q1mr<-get.matches(q1,tdbref)
+# q2mc<-get.matches(q2,tdbcorp)
+# q2mr<-get.matches(q2,tdbref)
+# q3mr<-get.matches(q3,tdbref)
+# q3mc<-get.matches(q3,tdbcorp)
+# q4mr<-get.matches(q4,tdbref)
+# q4mc<-get.matches(q4,tdbcorp)
+# q5mr<-get.matches(q5,tdbref)
+# q5mc<-get.matches(q5,tdbcorp)
 
-df$m<-unlist(lapply(list(q1mc,q2mc,q3mc,q4mc,q5mc,q1mr,q2mr,q3mr,q4mr,q5mr),sum))
+df$m<-unlist(lapply(list(q0mc,q1mc,q2mc,q3mc,q4mc,q5mc,q0mr,q1mr,q2mr,q3mr,q4mr,q5mr),sum))
 # df
 # sum(q1mc)
 # model <- lm(d ~ corp * q + corp_size + m, data = df)
@@ -356,11 +501,13 @@ df$m<-unlist(lapply(list(q1mc,q2mc,q3mc,q4mc,q5mc,q1mr,q2mr,q3mr,q4mr,q5mr),sum)
 # 
 # anova(model)
 ############################################
+library(lme4)
 library(lmerTest)
-df$corp<-c(rep("A",5),rep("B",5))
+df$corp<-c(rep("A",6),rep("B",6))
 df
 df$m_rel<-df$m/df$corp_size
-model1<-lmer(dist~corp*m+(1|q)+(1|corp_size)+(1|range),df)
+df
+model1<-lmer(dist~corp*m_rel*range+(1|q),df)
 model2 <- lmer(dist ~ corp*m_rel + (1|q)+(1|range), data = df) # with relative match frequencies
 
 summary(model1) #p=0.043 for corpA (obs)
@@ -376,13 +523,14 @@ data<-df
 # Center covariates
 data$range_c    <- data$range    - mean(data$range)
 #data$corpsize_c <- data$corp_size - mean(data$corp_size)
-data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
+#data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
 data$m_rel_c    <- data$m_rel
 
 # Corpus dummy
 data$corpusB <- ifelse(data$corp == 'B', 1, 0)
 
 # Dummy code condition (a-e) into 4 dummy vars (base = 'a')
+data$cond_a <- ifelse(data$q == 'a', 1, 0)
 data$cond_b <- ifelse(data$q == 'b', 1, 0)
 data$cond_c <- ifelse(data$q == 'c', 1, 0)
 data$cond_d <- ifelse(data$q == 'd', 1, 0)
@@ -519,7 +667,7 @@ coeff
 # print(m<-mean(unlist(p.d)))
 # }
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
-# write_csv(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+ write_csv(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
 #  library(jsonlite)
-#  write_json(list(a=q1,b=q2,c=q3,d=q4,e=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
+write_json(list(a=q0,b=q1,c=q2,d=q3,e=q4,f=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 
