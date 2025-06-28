@@ -462,24 +462,24 @@ qdf<-data.frame(q=c(letters[1:6],letters[1:6]),
 
 ### eval
 #qdf<-read_csv("eval-001.csv")
-df<-qdf
+df1<-qdf
 n_obs<-length(tdbcorp$token)
 n_ref<-length(tdbref$token)
 
 # Example if you have size data
-df$corp_size <- ifelse(df$corp == "obs", n_obs, n_ref)
-q0mc<-get.q(q0,tdbcorp)
-q0mr<-get.q(q0,tdbref)
-q1mc<-get.q(q1,tdbcorp)
-q1mr<-get.q(q1,tdbref)
-q2mc<-get.q(q2,tdbcorp)
-q2mr<-get.q(q2,tdbref)
-q3mc<-get.q(q3,tdbcorp)
-q3mr<-get.q(q3,tdbref)
-q4mc<-get.q(q4,tdbcorp)
-q4mr<-get.q(q4,tdbref)
-q5mc<-get.q(q5,tdbcorp)
-q5mr<-get.q(q5,tdbref)
+df1$corp_size <- ifelse(df1$corp == "obs", n_obs, n_ref)
+# q0mc<-get.q(q0,tdbcorp)
+# q0mr<-get.q(q0,tdbref)
+# q1mc<-get.q(q1,tdbcorp)
+# q1mr<-get.q(q1,tdbref)
+# q2mc<-get.q(q2,tdbcorp)
+# q2mr<-get.q(q2,tdbref)
+# q3mc<-get.q(q3,tdbcorp)
+# q3mr<-get.q(q3,tdbref)
+# q4mc<-get.q(q4,tdbcorp)
+# q4mr<-get.q(q4,tdbref)
+# q5mc<-get.q(q5,tdbcorp)
+# q5mr<-get.q(q5,tdbref)
 # q1mc<-get.matches(q1,tdbcorp)
 # q1mr<-get.matches(q1,tdbref)
 # q2mc<-get.matches(q2,tdbcorp)
@@ -491,7 +491,7 @@ q5mr<-get.q(q5,tdbref)
 # q5mr<-get.matches(q5,tdbref)
 # q5mc<-get.matches(q5,tdbcorp)
 
-df$m<-unlist(lapply(list(q0mc,q1mc,q2mc,q3mc,q4mc,q5mc,q0mr,q1mr,q2mr,q3mr,q4mr,q5mr),sum))
+df1$m<-unlist(lapply(list(q0mc,q1mc,q2mc,q3mc,q4mc,q5mc,q0mr,q1mr,q2mr,q3mr,q4mr,q5mr),sum))
 # df
 # sum(q1mc)
 # model <- lm(d ~ corp * q + corp_size + m, data = df)
@@ -501,33 +501,37 @@ df$m<-unlist(lapply(list(q0mc,q1mc,q2mc,q3mc,q4mc,q5mc,q0mr,q1mr,q2mr,q3mr,q4mr,
 # 
 # anova(model)
 ############################################
-library(lme4)
-library(lmerTest)
-df$corp<-c(rep("A",6),rep("B",6))
-df
-df$m_rel<-df$m/df$corp_size
-df
-model1<-lmer(dist~corp*m_rel*range+(1|q),df)
-model2 <- lmer(dist ~ corp*m_rel + (1|q)+(1|range), data = df) # with relative match frequencies
-
-summary(model1) #p=0.043 for corpA (obs)
-summary(model2) #p=0.00024
+# library(lme4)
+# library(lmerTest)
+# df$corp<-c(rep("A",6),rep("B",6))
+# df
+# df$m_rel<-df$m/df$corp_size
+# df
+# model1<-lmer(dist~corp*m_rel*range+(1|q),df)
+# model2 <- lmer(dist ~ corp*m_rel + (1|q)+(1|range), data = df) # with relative match frequencies
+# 
+# summary(model1) #p=0.043 for corpA (obs)
+# summary(model2) #p=0.00024
 # TODO: comment range (mean length of observed range) as var, influences overall token distance
 ############################################
 # q=query,m=matches,d=distance,corp=obs/ref
 #wks. p=0.043 for corpA (obs)
 #############################
 ### gpt manually:
-data <- read.csv("eval-001.csv")
-data<-df
+#df1 <- read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+df1$m_rel<-df1$m/df1$corp_size
+
+data<-df1
+
 # Center covariates
-data$range_c    <- data$range    - mean(data$range)
+data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
 #data$corpsize_c <- data$corp_size - mean(data$corp_size)
 #data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
-data$m_rel_c    <- data$m_rel
+data$m_rel_c    <- data$m_rel - mean(data$m_rel[data$q=="a"])
 
 # Corpus dummy
-data$corpusB <- ifelse(data$corp == 'B', 1, 0)
+data$corpusB <- ifelse(data$corp == 'ref', 1, 0)
+data$corpusA <- ifelse(data$corp == 'obs', 1, 0)
 
 # Dummy code condition (a-e) into 4 dummy vars (base = 'a')
 data$cond_a <- ifelse(data$q == 'a', 1, 0)
@@ -535,6 +539,7 @@ data$cond_b <- ifelse(data$q == 'b', 1, 0)
 data$cond_c <- ifelse(data$q == 'c', 1, 0)
 data$cond_d <- ifelse(data$q == 'd', 1, 0)
 data$cond_e <- ifelse(data$q == 'e', 1, 0)
+data$cond_f <- ifelse(data$q == 'f', 1, 0)
 
 # table(data$q)
 # dummy_matrix <- as.matrix(cbind(
@@ -552,14 +557,16 @@ data$cond_e <- ifelse(data$q == 'e', 1, 0)
 
 X <- as.matrix(cbind(
   1,
-  data$corpusB,
+  data$corpusA,
   data$range_c,
   #data$corpsize_c,
   data$m_rel_c,
+#  data$cond_a,
   data$cond_b,
   data$cond_c,
   data$cond_d,
-  data$cond_e
+  data$cond_e,
+  data$cond_f
 ))
 # X <- as.matrix(cbind(
 #   1,
@@ -572,7 +579,7 @@ X <- as.matrix(cbind(
 #   data$cond_d,
 #   data$cond_e
 # ))
-qr(X)$rank  # should equal ncol(X)
+qr(X)$rank  # should equal ncol(X) = 8
 
 Y <- data$dist
 
@@ -596,10 +603,12 @@ t_value <- beta_hat[2] / std_errors[2]
 df <- n - k
 p_value <- 2 * pt(-abs(t_value), df)
 # 1st: 0.352
-
+# 2nd, wt intercept = query(0) : 0.07
 coeff<-solve(t(X) %*% X) %*% t(X) %*% data$dist
 coeff<-round(coeff,3)
 coeff
+co.df<-data.frame(coeff,row.names = c("intercept",colnames(data)[c(11,3,7,13,14,15,16,17)]))
+co.df
 # # Fit reduced model without the term of interest
 # reduced_model <- lmer(d ~ q + (1|corp_size), data = df) 
 # full_model <- lmer(d ~ corp*m + (1|corp_size), data = df)
@@ -667,7 +676,7 @@ coeff
 # print(m<-mean(unlist(p.d)))
 # }
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
- write_csv(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
-#  library(jsonlite)
-write_json(list(a=q0,b=q1,c=q2,d=q3,e=q4,f=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
+#  write_csv(df1,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+# #  library(jsonlite)
+# write_json(list(a=q0,b=q1,c=q2,d=q3,e=q4,f=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 
