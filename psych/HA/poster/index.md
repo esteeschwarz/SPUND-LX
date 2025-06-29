@@ -2,7 +2,7 @@
 title: "xtitle: proposition & coherence observations in :schizophrenia: threads"
 runningheader: "xtitle" # only for pdf output
 author: "st. schwarz"
-date: "2025-06-29 17:42:26"
+date: "2025-06-29 19:47:56"
 output:
   tufte::tufte_handout:
     citation_package: natbib
@@ -35,25 +35,56 @@ link-citations: yes
 
 
 
+
+```
+## [1] 9
+```
+
+```
+##           [,1]
+##  [1,]   13.751
+##  [2,]   48.497
+##  [3,]    0.035
+##  [4,] 1965.243
+##  [5,] 1925.276
+##  [6,] 1925.980
+##  [7,] 1922.718
+##  [8,] 1941.924
+##  [9,] 1940.450
+```
+
+```
+##              coeff
+## intercept   13.751
+## corpusA     48.497
+## range        0.035
+## m_rel     1965.243
+## cond_b    1925.276
+## cond_c    1925.980
+## cond_d    1922.718
+## cond_e    1941.924
+## cond_f    1940.450
+```
+
 ---
 
 # xTitle
 # proposition & coherence in :schizophrenia: threads
 ### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
 ## thema
-Le PDG[^1] de Tesla et de SpaceX, Elon Musk, est désormais le premier actionnaire du réseau social Twitter. Ce rachat[^2], effectué le 14 mars en toute discrétion par le multimilliardaire, a créé la surprise – la valeur de  **l’action Twitter a grimpé**[^3] **de 27 % lundi **, à la Bourse de New York.  
+Reference marking, coherence and information structure in schizophrenia language.[^1]
 ## hintergrund
-Le 25 mars, l’entrepreneur polémiste a lancé un sondage : « La liberté d’expression est essentielle au fonctionnement de la démocratie. Croyez-vous que Twitter adhère rigoureusement à ce principe ? » Dans cette consultation sans valeur scientifique, le non l’a emporté à plus de 70 %. 
+Inspired by Zimmerer et alii (#REF) we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 ## methode
-Le multimilliardaire Elon Musk propose de racheter Twitter, dont il est déjà le premier actionnaire, pour  **41,39 milliards de dollars (37,9 milliards d’euros) **, comme le montre un document transmis mercredi au gendarme de la Bourse américaine et révélé jeudi 14 avril. Après cette annonce, le réseau social a annoncé qu’il allait « examiner avec attention » l’offre d’Elon Musk.[^5]
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** Prince (1981#REF).
 ----
 ## fragestellung
-M. Musk se dit prêt à débourser[^4] 54,20 dollars par action Twitter (49,70 euros). Cela représente un « premium », c’est-à-dire une bonification, de 21 % par rapport au cours d’ouverture du titre ce jeudi et de 54 % par rapport à celui du 28 janvier, date à laquelle M. Musk a commencé à investir dans Twitter.
+Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language.
 ## daten
-Le milliardaire a fait son entrée au capital du réseau social à hauteur de 9,2 %, comme l’ont montré des documents publiés le 4 avril par le régulateur de la Bourse américaine, la Securities and Exchange Commission. Twitter lui avait ensuite proposé d’entrer au conseil d’administration, ce qu’il avait refusé. 
+We built a corpus of the reddit r/schizophrenia thread (```n= 747089 ``` tokens) and a reference corpus of r/unpopularopinion (```n= 265670 ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the 747089 tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.
 ----
 ## ergebnisse
-Twitter est désormais officiellement entre les mains d’Elon Musk, le patron de Tesla et de SpaceX, qui a conclu,  **jeudi 27 octobre, l’acquisition du réseau social pour 44 milliards de dollars (44 milliards d’euros) **. « L’oiseau est libéré », a tweeté le milliardaire pour officialiser l’opération, ouvrant un nouveau chapitre incertain pour la plate-forme au cœur de la vie politique et médiatique des Etats-Unis et de nombreux pays. [Q: @le_monde_elon_2022-2]   
+
 
 
 [Q: @digrin_twitter_2025]
@@ -61,16 +92,25 @@ Twitter est désormais officiellement entre les mains d’Elon Musk, le patron d
 ## ergebnisse 2
 
 
+|q  | dist|  range|corp | corp_size|      m|   m_rel|
+|:--|----:|------:|:----|---------:|------:|-------:|
+|a  |   36|  446.0|obs  |    747089| 747089| 1.00000|
+|b  |   70| 1451.0|obs  |    747089|  11415| 0.01528|
+|c  |   49|  807.0|obs  |    747089|  12516| 0.01675|
+|d  |   49|  834.0|obs  |    747089|  15141| 0.02027|
+|e  |   53|  917.0|obs  |    747089|   6983| 0.00935|
+|f  |   57| 1119.0|obs  |    747089|   4236| 0.00567|
+|a  |   40| 1619.5|ref  |    265670| 265670| 1.00000|
+|b  |   41| 2140.0|ref  |    265670|   4213| 0.01586|
+|c  |   60| 2116.5|ref  |    265670|   6542| 0.02462|
+|d  |   51| 1863.0|ref  |    265670|   6349| 0.02390|
+|e  |   63| 2947.5|ref  |    265670|    662| 0.00249|
+|f  |   46| 2473.5|ref  |    265670|   1576| 0.00593|
+
+
 ----
 ## ergebnisse 3
-- est-ce que votre utilisation du reseaux sociales a change apres cet evenement?
-- est-ce que votre vie en generale est affecte par cet evenement?
-- est-ce que vous avez faites des observations importants dans les reseaux sociales associé avec cet evenement?
-- dans quelle sense a change la sphere societal politique a cause du cet evenement?
+<img src="index_files/figure-html/df1-vis-1.png"  />
 
 # B. REF:
-[^1]:PDG=President Directeur Generale=CEO
-[^2]:Übernahme
-[^3]:geklettert
-[^4]:auszahlen
-[^5]:snc.1:h2.pb
+[^1]:snc.1:h2.pb.1000char/pg

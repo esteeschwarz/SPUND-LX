@@ -28,93 +28,164 @@ if(output.rmd=="html")
   author<-"st. schwarz"
 ```
 
+```{r eval,echo=F,warning=F,message=FALSE}
+options(scipen = 999)
+
+df1<-read_csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+df1$m_rel<-df1$m/df1$corp_size
+df1$m_rel<-round(df1$m_rel,5)
+n_obs<-df1$corp_size[df1$corp=="obs"&df1$q=="a"]
+n_ref<-df1$corp_size[df1$corp=="ref"&df1$q=="a"]
+data<-df1
+
+# Center covariates
+ t1<-data$range[data$q=="a"]
+ t2<-diff(t1)
+# t3<-
+data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
+data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
+#data$corpsize_c <- data$corp_size - mean(data$corp_size)
+#data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
+data$m_rel_c    <- data$m_rel - mean(data$m_rel[data$q=="a"])
+t1<-c(1200,500)
+t2<-abs(t1[1]-t1[2])-abs(t1[1]-t1[2])
+# Corpus dummy
+data$corpusB <- ifelse(data$corp == 'ref', 1, 0)
+data$corpusA <- ifelse(data$corp == 'obs', 1, 0)
+
+# Dummy code condition (a-e) into 4 dummy vars (base = 'a')
+data$cond_a <- ifelse(data$q == 'a', 1, 0)
+data$cond_b <- ifelse(data$q == 'b', 1, 0)
+data$cond_c <- ifelse(data$q == 'c', 1, 0)
+data$cond_d <- ifelse(data$q == 'd', 1, 0)
+data$cond_e <- ifelse(data$q == 'e', 1, 0)
+data$cond_f <- ifelse(data$q == 'f', 1, 0)
+
+# table(data$q)
+# dummy_matrix <- as.matrix(cbind(
+#   data$cond_b,
+#   data$cond_c,
+#   data$cond_d,
+#   data$cond_e
+# ))
+
+# qr(dummy_matrix)$rank
+# cor(data$corpusB, data$cond_b)
+# cor(data$corpusB, data$cond_c)
+# cor(data$corpusB, data$cond_d)
+# cor(data$corpusB, data$cond_e)
+
+X <- as.matrix(cbind(
+  1,
+  data$corpusA,
+  data$range_c,
+  #data$corpsize_c,
+  data$m_rel_c,
+#  data$cond_a,
+  data$cond_b,
+  data$cond_c,
+  data$cond_d,
+  data$cond_e,
+  data$cond_f
+))
+# X <- as.matrix(cbind(
+#   1,
+#   data$corpusB,
+#   data$range_c,
+#   data$corpsize_c,
+#   data$m_rel_c,
+#   data$cond_b,
+#   data$cond_c,
+#   data$cond_d,
+#   data$cond_e
+# ))
+qr(X)$rank  # should equal ncol(X) = 8
+
+Y <- data$dist
+
+XtX <- t(X) %*% X
+XtY <- t(X) %*% Y
+beta_hat <- solve(XtX) %*% XtY
+#?solve
+# m<-matrix(c(1,0,2,1,1,1,1,1,3),ncol = 3)
+# m
+# solve(m)
+# 2^-1
+residuals <- Y - X %*% beta_hat
+n <- nrow(X)
+k <- ncol(X)
+sigma2_hat <- sum(residuals^2) / (n - k)
+
+cov_beta <- sigma2_hat * solve(XtX)
+std_errors <- sqrt(diag(cov_beta))
+
+t_value <- beta_hat[2] / std_errors[2]
+df <- n - k
+p_value <- 2 * pt(-abs(t_value), df)
+# 1st: 0.352
+# 2nd, wt intercept = query(0) : 0.07
+coeff<-solve(t(X) %*% X) %*% t(X) %*% data$dist
+coeff<-round(coeff,3)
+coeff
+co.df<-data.frame(coeff,row.names = c("intercept",colnames(data)[c(11,3,7,13,14,15,16,17)]))
+co.df
+
+```
+
 ---
 
 # xTitle
 # proposition & coherence in :schizophrenia: threads
 ### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
 ## thema
-Le PDG[^1] de Tesla et de SpaceX, Elon Musk, est désormais le premier actionnaire du réseau social Twitter. Ce rachat[^2], effectué le 14 mars en toute discrétion par le multimilliardaire, a créé la surprise – la valeur de  **l’action Twitter a grimpé**[^3] **de 27 % lundi **, à la Bourse de New York.  
+Reference marking, coherence and information structure in schizophrenia language.[^1]
 ## hintergrund
-Le 25 mars, l’entrepreneur polémiste a lancé un sondage : « La liberté d’expression est essentielle au fonctionnement de la démocratie. Croyez-vous que Twitter adhère rigoureusement à ce principe ? » Dans cette consultation sans valeur scientifique, le non l’a emporté à plus de 70 %. 
+Inspired by Zimmerer et alii (#REF) we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 ## methode
-Le multimilliardaire Elon Musk propose de racheter Twitter, dont il est déjà le premier actionnaire, pour  **41,39 milliards de dollars (37,9 milliards d’euros) **, comme le montre un document transmis mercredi au gendarme de la Bourse américaine et révélé jeudi 14 avril. Après cette annonce, le réseau social a annoncé qu’il allait « examiner avec attention » l’offre d’Elon Musk.[^5]
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** Prince (1981#REF).
 ----
 ## fragestellung
-M. Musk se dit prêt à débourser[^4] 54,20 dollars par action Twitter (49,70 euros). Cela représente un « premium », c’est-à-dire une bonification, de 21 % par rapport au cours d’ouverture du titre ce jeudi et de 54 % par rapport à celui du 28 janvier, date à laquelle M. Musk a commencé à investir dans Twitter.
+Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language.
 ## daten
-Le milliardaire a fait son entrée au capital du réseau social à hauteur de 9,2 %, comme l’ont montré des documents publiés le 4 avril par le régulateur de la Bourse américaine, la Securities and Exchange Commission. Twitter lui avait ensuite proposé d’entrer au conseil d’administration, ce qu’il avait refusé. 
+We built a corpus of the reddit r/schizophrenia thread (```n= `r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n= `r n_ref` ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the `r n_obs` tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.
 ----
-## ergebnisse
-Twitter est désormais officiellement entre les mains d’Elon Musk, le patron de Tesla et de SpaceX, qui a conclu,  **jeudi 27 octobre, l’acquisition du réseau social pour 44 milliards de dollars (44 milliards d’euros) **. « L’oiseau est libéré », a tweeté le milliardaire pour officialiser l’opération, ouvrant un nouveau chapitre incertain pour la plate-forme au cœur de la vie politique et médiatique des Etats-Unis et de nombreux pays. [Q: @le_monde_elon_2022-2]   
 
 ```{r vis1,warning=F,message=F,echo=FALSE,fig.cap="twitter shares development",eval=FALSE}
-# 15222.twtr shares
-# library(xml2)
-# url<-"https://www.digrin.com/stocks/detail/TWTR/price"
-# library(httr)
-r<-GET(url)
-htm<-content(r,"text")
-xhtm<-read_html(htm)
-xp<-'/html/body/div[1]/div[2]/div[1]/div[3]/table'
-table<-xml_find_all(xhtm,xp)
-#xt<-read_html("twtr-shares.html")
-td<-xml_find_all(table,"//td")
-tx<-xml_text(td)
-tr<-xml_find_all(table,"//tr")
-trx<-xml_text(tr)
-#m<-grep("\\$",tx)
-td<-strsplit(trx,"\n")
-#td[[2]]
-mo<-unlist(lapply(td,function(x){
-  mo<-strsplit(x[1]," ")
-  mo<-lapply(mo, function(x){paste(x[1:2],collapse = " ")})
-  
-  
-  }))
-#mo
-mo<-mo[2:length(mo)]
-tdn<-lapply(td,function(x){gsub(" ","",x[2:4])})
-tdn<-data.frame(td)
-tdn<-data.frame(t(tdn),row.names = 1:length(tr))
-tdn<-tdn[grep("[0-9]",tdn$X1),1:2]
-colnames(tdn)<-c("date","price")
-tdn$price<-gsub("\\$","",tdn$price)
-tdn<-tdn[length(tdn$date):1,1:2]
-mode(tdn$price)<-"double"
-rownames(tdn)<-tdn$date
-tdn2<-tdn[,2]
-#plot(tdn2,type = "h",names.arg=tdn$date)
-tdn.s<-tdn[grep("2021|2022|2023",tdn$date),]
-shift<-30
-barplot(
-  height = as.numeric(tdn.s$price-shift),
-  offset = shift,
-  names.arg = tdn.s$date,
-  las = 2,                # make labels perpendicular to axis
-  cex.names = 0.7,  # adjust label size if needed
-  main = "share value",
-  ylab = "price / USD",
-)
 
 ```
-[Q: @digrin_twitter_2025]
-
 ## ergebnisse 2
-
-```{r,twtr-pic,message=F,warning=F,echo=FALSE,eval=FALSE}
-knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+```{r,df1-kable,message=F,warning=F,echo=FALSE,eval=T}
+#knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+kable(df1)
 ```
 ----
 ## ergebnisse 3
-- est-ce que votre utilisation du reseaux sociales a change apres cet evenement?
-- est-ce que votre vie en generale est affecte par cet evenement?
-- est-ce que vous avez faites des observations importants dans les reseaux sociales associé avec cet evenement?
-- dans quelle sense a change la sphere societal politique a cause du cet evenement?
+```{r,df1-vis,message=F,warning=F,echo=FALSE,eval=T}
+#knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+# Reshape data for grouped barplot
+library(reshape2)
+df1_wide <- dcast(df1, q ~ corp, value.var = "dist")
 
+# Ensure the order of conditions a-f
+df1_wide$q <- factor(df1_wide$q, levels = c("a", "b", "c", "d", "e", "f"))
+df1_wide <- df1_wide[order(df1_wide$q), ]
+
+# Create the matrix for barplot
+bar_matrix <- t(as.matrix(df1_wide[, c("obs", "ref")]))
+
+# Plot grouped barplot
+barplot(
+  bar_matrix,
+  beside = TRUE,
+  names.arg = c("0",levels(df1_wide$q)[2:6]),
+  col = c("black", "red"),
+  las = 1,
+  cex.names = 0.7,
+  main = "Distances distribution over conditions",
+  ylab = "same-noun distance"
+)
+legend("topright", legend = c("obs", "ref"), fill = c("black", "red"))
+```
+----
 # B. REF:
-[^1]:PDG=President Directeur Generale=CEO
-[^2]:Übernahme
-[^3]:geklettert
-[^4]:auszahlen
-[^5]:snc.1:h2.pb
+[^1]:snc.1:h2.pb.1000char/pg
