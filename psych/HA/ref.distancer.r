@@ -524,11 +524,16 @@ df1$m_rel<-df1$m/df1$corp_size
 data<-df1
 
 # Center covariates
+ t1<-data$range[data$q=="a"]
+ t2<-diff(t1)
+# t3<-
+data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
 data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
 #data$corpsize_c <- data$corp_size - mean(data$corp_size)
 #data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
 data$m_rel_c    <- data$m_rel - mean(data$m_rel[data$q=="a"])
-
+t1<-c(1200,500)
+t2<-abs(t1[1]-t1[2])-abs(t1[1]-t1[2])
 # Corpus dummy
 data$corpusB <- ifelse(data$corp == 'ref', 1, 0)
 data$corpusA <- ifelse(data$corp == 'obs', 1, 0)

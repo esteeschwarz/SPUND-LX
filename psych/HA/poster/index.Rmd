@@ -1,0 +1,78 @@
+---
+title: "xtitle: proposition & coherence observations in :schizophrenia: threads"
+runningheader: "xtitle" # only for pdf output
+author: "st. schwarz"
+date: "`r Sys.time()`"
+output:
+  tufte::tufte_handout:
+    citation_package: natbib
+    latex_engine: xelatex
+    keep_tex: yes
+    keep_md: yes
+   #fontsize: 12pt
+  bookdown::html_document2:
+    base_format: tufte::tufte_html
+    keep_md: yes
+  #tufte::tufte_html: default
+  tufte::tufte_book:
+    citation_package: natbib
+    latex_engine: xelatex
+bibliography: 'FRZ.bib' #isnt in .md keep
+link-citations: yes
+
+---
+
+```{r setup,results=F, include=F}
+#library(tufte)
+library(tm)
+#library(dplyr)
+library(rmarkdown)
+#library(httr)
+#library(purrr)
+library(knitr)
+library(xml2)
+url<-"https://www.digrin.com/stocks/detail/TWTR/price"
+library(httr)
+author<-"st. schwarz"
+
+ # invalidate cache when the tufte version changes
+knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+# if (is_html_output()) {
+#   print("html output")
+#   output.rmd<-"html"
+#   dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
+# } else if (is_latex_output()) {
+#   #output_format <- "PDF"
+#   print("pdf")
+#   output.rmd<-"pdf"
+#   dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
+# }
+# author<-"st. schwarz / franziska schmidt"
+# if(output.rmd=="html")
+#   author<-"st. schwarz"
+
+
+```
+
+
+```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
+
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
+} else if (is_latex_output()) {
+  print("pdf")
+  output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
+}
+author<-"st. schwarz"
+if(output.rmd=="html")
+  author<-"st. schwarz"
+```
+
+
+```{r child="p01.Rmd"}
+
+```

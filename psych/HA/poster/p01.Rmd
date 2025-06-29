@@ -1,0 +1,120 @@
+
+```{r bibmy, eval=F, echo=FALSE, warning=FALSE,message=FALSE}
+#fetch zotero .bib online
+#share <- runif(1)
+# response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
+# bib<-httr::content(response,"text")
+# y<-tempfile("ref",fileext = ".bib")
+# writeLines(bib,y)
+# t<-Sys.time()
+# #tf<-format(t,"%a %b %d %Y (%H.%M)")
+# tf<-format(t,"%Y%m%d(%H.%M)")
+```
+
+
+```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
+
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
+} else if (is_latex_output()) {
+  print("pdf")
+  output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
+}
+author<-"st. schwarz"
+if(output.rmd=="html")
+  author<-"st. schwarz"
+```
+
+---
+
+# xTitle
+# proposition & coherence in :schizophrenia: threads
+### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
+## thema
+Le PDG[^1] de Tesla et de SpaceX, Elon Musk, est désormais le premier actionnaire du réseau social Twitter. Ce rachat[^2], effectué le 14 mars en toute discrétion par le multimilliardaire, a créé la surprise – la valeur de  **l’action Twitter a grimpé**[^3] **de 27 % lundi **, à la Bourse de New York.  
+## hintergrund
+Le 25 mars, l’entrepreneur polémiste a lancé un sondage : « La liberté d’expression est essentielle au fonctionnement de la démocratie. Croyez-vous que Twitter adhère rigoureusement à ce principe ? » Dans cette consultation sans valeur scientifique, le non l’a emporté à plus de 70 %. 
+## methode
+Le multimilliardaire Elon Musk propose de racheter Twitter, dont il est déjà le premier actionnaire, pour  **41,39 milliards de dollars (37,9 milliards d’euros) **, comme le montre un document transmis mercredi au gendarme de la Bourse américaine et révélé jeudi 14 avril. Après cette annonce, le réseau social a annoncé qu’il allait « examiner avec attention » l’offre d’Elon Musk.[^5]
+----
+## fragestellung
+M. Musk se dit prêt à débourser[^4] 54,20 dollars par action Twitter (49,70 euros). Cela représente un « premium », c’est-à-dire une bonification, de 21 % par rapport au cours d’ouverture du titre ce jeudi et de 54 % par rapport à celui du 28 janvier, date à laquelle M. Musk a commencé à investir dans Twitter.
+## daten
+Le milliardaire a fait son entrée au capital du réseau social à hauteur de 9,2 %, comme l’ont montré des documents publiés le 4 avril par le régulateur de la Bourse américaine, la Securities and Exchange Commission. Twitter lui avait ensuite proposé d’entrer au conseil d’administration, ce qu’il avait refusé. 
+----
+## ergebnisse
+Twitter est désormais officiellement entre les mains d’Elon Musk, le patron de Tesla et de SpaceX, qui a conclu,  **jeudi 27 octobre, l’acquisition du réseau social pour 44 milliards de dollars (44 milliards d’euros) **. « L’oiseau est libéré », a tweeté le milliardaire pour officialiser l’opération, ouvrant un nouveau chapitre incertain pour la plate-forme au cœur de la vie politique et médiatique des Etats-Unis et de nombreux pays. [Q: @le_monde_elon_2022-2]   
+
+```{r vis1,warning=F,message=F,echo=FALSE,fig.cap="twitter shares development",eval=FALSE}
+# 15222.twtr shares
+# library(xml2)
+# url<-"https://www.digrin.com/stocks/detail/TWTR/price"
+# library(httr)
+r<-GET(url)
+htm<-content(r,"text")
+xhtm<-read_html(htm)
+xp<-'/html/body/div[1]/div[2]/div[1]/div[3]/table'
+table<-xml_find_all(xhtm,xp)
+#xt<-read_html("twtr-shares.html")
+td<-xml_find_all(table,"//td")
+tx<-xml_text(td)
+tr<-xml_find_all(table,"//tr")
+trx<-xml_text(tr)
+#m<-grep("\\$",tx)
+td<-strsplit(trx,"\n")
+#td[[2]]
+mo<-unlist(lapply(td,function(x){
+  mo<-strsplit(x[1]," ")
+  mo<-lapply(mo, function(x){paste(x[1:2],collapse = " ")})
+  
+  
+  }))
+#mo
+mo<-mo[2:length(mo)]
+tdn<-lapply(td,function(x){gsub(" ","",x[2:4])})
+tdn<-data.frame(td)
+tdn<-data.frame(t(tdn),row.names = 1:length(tr))
+tdn<-tdn[grep("[0-9]",tdn$X1),1:2]
+colnames(tdn)<-c("date","price")
+tdn$price<-gsub("\\$","",tdn$price)
+tdn<-tdn[length(tdn$date):1,1:2]
+mode(tdn$price)<-"double"
+rownames(tdn)<-tdn$date
+tdn2<-tdn[,2]
+#plot(tdn2,type = "h",names.arg=tdn$date)
+tdn.s<-tdn[grep("2021|2022|2023",tdn$date),]
+shift<-30
+barplot(
+  height = as.numeric(tdn.s$price-shift),
+  offset = shift,
+  names.arg = tdn.s$date,
+  las = 2,                # make labels perpendicular to axis
+  cex.names = 0.7,  # adjust label size if needed
+  main = "share value",
+  ylab = "price / USD",
+)
+
+```
+[Q: @digrin_twitter_2025]
+
+## ergebnisse 2
+
+```{r,twtr-pic,message=F,warning=F,echo=FALSE,eval=FALSE}
+knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+```
+----
+## ergebnisse 3
+- est-ce que votre utilisation du reseaux sociales a change apres cet evenement?
+- est-ce que votre vie en generale est affecte par cet evenement?
+- est-ce que vous avez faites des observations importants dans les reseaux sociales associé avec cet evenement?
+- dans quelle sense a change la sphere societal politique a cause du cet evenement?
+
+# B. REF:
+[^1]:PDG=President Directeur Generale=CEO
+[^2]:Übernahme
+[^3]:geklettert
+[^4]:auszahlen
+[^5]:snc.1:h2.pb
