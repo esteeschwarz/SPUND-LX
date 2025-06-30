@@ -457,7 +457,7 @@ qdf<-data.frame(q=c(letters[1:6],letters[1:6]),
 # anova(lm2)
 # library(stats)
 # qdf.c<-qdf[,c(2,3)]
-# cor.test(qdf1[,2],qdf1[,3])
+cor.test(qdf1[,2],qdf1[,3])
 # df<-tdb
 
 ### eval
@@ -465,7 +465,13 @@ qdf<-data.frame(q=c(letters[1:6],letters[1:6]),
 df1<-qdf
 n_obs<-length(tdbcorp$token)
 n_ref<-length(tdbref$token)
+tu_obs<-length(unique(tdbcorp$token))
+tu_ref<-length(unique(tdbref$token))
+ld_obs<-tu_obs/n_obs
+ld_ref<-tu_ref/n_ref
 
+df1$ld[df1$corp=="obs"]<-ld_obs
+df1$ld[df1$corp=="ref"]<-ld_ref
 # Example if you have size data
 df1$corp_size <- ifelse(df1$corp == "obs", n_obs, n_ref)
 # q0mc<-get.q(q0,tdbcorp)
@@ -681,7 +687,8 @@ co.df
 # print(m<-mean(unlist(p.d)))
 # }
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
-#  write_csv(df1,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
+library(readr)
+ write_csv(df1,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
 # #  library(jsonlite)
 # write_json(list(a=q0,b=q1,c=q2,d=q3,e=q4,f=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 
