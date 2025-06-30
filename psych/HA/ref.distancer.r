@@ -63,8 +63,12 @@ uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
 head(uid2)
 tdb$url<-uid2
 ### this is schwachsinn. i dont need to define distance for each unique noun but for every similar noun egal what it is.
+tdbcorp$target<-"obs"
+tdbref$target<-"ref"
 q<-q1
-tdb<-tdbref
+q
+tdb<-tdbcorp
+#names(tdb)
 get.mean.gl<-function(q,tdb){
   uid<-tdb$uid
   length(unique(uid))
@@ -83,7 +87,7 @@ get.mean.gl<-function(q,tdb){
   #head(re1,1000)
   sum(re1)
   #tdb[re1,column]
-  
+  target<-tdb$target[1]
   ifelse(sum(re1)==length(tdb$token),noun1<-re1w,noun1<-which(re1)+1)
   #sum(noun1)
   #noun.p<-which(tdb$upos=="NOUN")
@@ -107,7 +111,7 @@ get.mean.gl<-function(q,tdb){
     tdb.nw<-which(tdb.n)
     range.l<-tdb.s$lemma
     range.t<-tdb.s$token
-    
+      
     m<-grepl("<s|</s|<doc|</doc",range.t)
     sum(m)
     range.l<-range.l[!m]
@@ -118,14 +122,26 @@ get.mean.gl<-function(q,tdb){
     #sum(l.dup.n)
     ld.l<-tdb.s$lemma[l.dup.n]
     l<-ld.l[1]
+    ### 15273.class:
+    ### another task: determine type/token ration in range AND function to return list of ALL noun distances to perform anova p eval on overall df, not only the yet calculated mean!!
+    #so:
+    # type/token-ratio
+    n.token<-length(range.l)
+    n.type<-length(unique(tdb.s$token))
+    tt.r<-n.type/n.token
+#    ifelse(length(dist)>0,return(list(dist=dist,range=length(range.w),ld=ld)),NA)
+    
     m2<-lapply(ld.l, function(l){
       m3<-tdb.s$lemma==l
       sum(m3)
       m3<-which(m3)
+      mf_rel<-length(m3)/n.token
       #tdb.s$token[(m3-m3):(m3+30)]
       dist<-diff(m3)
       median(dist)
-      ifelse(length(dist)>0,return(list(dist=dist,range=length(range.l))),return(NA))
+      condition<-paste0(unlist(q),collapse = ",")
+      ifelse(length(dist)>0,return(list(dist=dist,q=condition,range=length(range.l),mf_rel=mf_rel,
+                                        ld=tt.r,lemma=l,url=x,target=target)),return(NA))
       
     })
     
@@ -138,10 +154,26 @@ get.mean.gl<-function(q,tdb){
     return(ifelse(l!=0,x,NA))
   })
   lt2<-lt2[!is.na(lt2)]
-  lt3.d<-lapply(lt2, function(x){
+  lt3.df<-lapply(lt2, function(x){
+    df3<-data.frame(x[[1]]$dist)
+    df3$q<-x[[1]]$q
+    df3$target<-x[[1]]$target
+    df3$url<-x[[1]]$url
+    df3$lemma<-x[[1]]$lemma
+    df3$range<-x[[1]]$range
+    df3$mf_rel<-x[[1]]$mf_rel
+    df3$ld<-x[[1]]$ld
+    return(df3)
     return(x[[1]]$dist)
   })
-  
+  lt4.df<-abind(lt3.df,along = 1)
+  colnames(lt4.df)[1]<-"dist"
+  ### okay this wks., now have a dataframe with all single distances on range and lemma
+  ### we stop here the old execution and return df
+  return(lt4.df)
+  lt3.ld<-lapply(lt2, function(x){
+    return(x[[1]]$ld)
+  })
   median(unlist(lt3.d))
   lt3.r<-lapply(lt2, function(x){
     return(x[[1]]$range)
@@ -152,11 +184,15 @@ get.mean.gl<-function(q,tdb){
   #unlist(lt2)
   mlt2.d<-median(unlist(lt3.d))
   mlt2.r<-median(unlist(lt3.r))
+  mlt2.ld<-median(unlist(lt3.ld))
   print(mlt2.d)
   print(mlt2.r)
-  return(list(dist=lt3.d,range=lt3.r)) #1.q5.40.5 (with return median distances) / 43 with return 
+  print(mlt2.ld)
+  ### return ALL dist elements for anova perform:
+  return(list(dist=lt3.d,range=lt3.r,ld=lt3.ld)) #1.q5.40.5 (with return median distances) / 43 with return 
 }
-#q0rt<-get.mean.gl(q3,tdbref)
+qtest<-get.mean.gl(q3,tdbref)
+
 get.mean<-function(q,tdb){
   uid<-tdb$uid
   head(uid)
@@ -267,14 +303,14 @@ get.mean<-function(q,tdb){
     # but now i have for each occurence (e.g. 3 numbers) here the distance, so tripled in return.
     # shall i devise the mean here yet to have a singled mean distance in the return instead of 3x the same distances?
     ifelse(length(dist)>0,return(list(dist=dist,range=length(range.w))),NA)
-    # if(px>1){
-    #   p.b<-p.before[p.before<c]
-    #   #p.a<-p.before[p.before>npos]
-    #   #p.b.p<-p.b.p<
-    #   return(list(pos=npos,before=p.b))
-    #   
-    # }
-#    return(p1)
+# ### 15273.class:
+# ### another task: determine type/token ration in range AND function to return list of ALL noun distances to perform anova p eval on overall df, not only the yet calculated mean!!
+#     #so:
+#     # type/token-ratio
+#     n.token<-length(range.w)
+#     n.type<-length(unique(tdb$token[range.w]))
+#     ld<-n.type/n.token
+#     ifelse(length(dist)>0,return(list(dist=dist,range=length(range.w),ld=ld)),NA)
     })
     unlist(m1)
     m1<-m1[!is.na(m1)]
@@ -397,6 +433,41 @@ q5c<-get.mean.gl(q5,tdbcorp) # ref: 124
 
 q0r<-get.mean.gl(q0,tdbref) # ref: 124
 q0c<-get.mean.gl(q0,tdbcorp) # ref: 124
+###
+q.all.cr<-rbind(q0c,q0r,q1c,q1r,q2c,q2r,q3c,q3r,q4c,q4r,q5c,q5r)
+q.all.df<-as.data.frame(q.all.cr)
+mode(q.all.df$dist)<-"double"
+mode(q.all.df$range)<-"double"
+mode(q.all.df$mf_rel)<-"double"
+mode(q.all.df$ld)<-"double"
+###########################
+### run from beginnin to here
+#############################
+median(q.all.df$dist[q.all.df$target=="obs"])
+median(q.all.df$dist[q.all.df$target=="ref"])
+mean(q.all.df$dist[q.all.df$target=="obs"])
+mean(q.all.df$dist[q.all.df$target=="ref"])
+boxplot(dist ~ target, data = q.all.df,
+        col = c("lightblue", "pink"),
+        main = "Boxplot grouped by binary variable",
+        xlab = "Group",
+        ylab = "Value"
+        )
+
+# Remove outliers within each group (q, corp) using the IQR rule
+df1_no_outliers <- q.all.df %>%
+  group_by(target) %>%
+  filter(
+    dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+    dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+  ) %>%
+  ungroup()
+boxplot(dist~target,df1_no_outliers)
+### bind all observations to df
+length(q0c$dist)
+q0c.d<-abind(q0r$dist,along = 1)
+q0c.r<-abind(q0r$range,along=1)
+q0c.ld<-abind(q0r$ld,along = 1)
 
 mq5r<-median(unlist(q5r$dist))
 mq5c<-median(unlist(q5c$dist))
@@ -689,6 +760,7 @@ co.df
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
 library(readr)
  write_csv(df1,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
-# #  library(jsonlite)
+ write_csv(q.all.df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.csv"))
+ # #  library(jsonlite)
 # write_json(list(a=q0,b=q1,c=q2,d=q3,e=q4,f=q5),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 
