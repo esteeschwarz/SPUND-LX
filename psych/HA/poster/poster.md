@@ -38,6 +38,32 @@ We built a corpus of the reddit r/schizophrenia thread (```n=747089 ``` tokens) 
 ```
 ## {"a":{"token":["#intercept"]},"b":{"token":["this","that","these","those"]},"c":{"token":["the"]},"d":{"token":["a","an","some","any"]},"e":{"token":["my"]},"f":{"token":["your","their","his","her"]}}
 ```
+
+
+```
+##   dist q target url lemma range      mf_rel        ld
+## 1   20 a    obs  38 chemo   606 0.003300330 0.5016502
+## 2   20 a    obs  45 angel   663 0.006033183 0.4374057
+## 3  186 a    obs  45 angel   663 0.006033183 0.4374057
+## 4  424 a    obs  45 angel   663 0.006033183 0.4374057
+## 5   21 a    obs  16 dream   101 0.019801980 0.6633663
+## 6   13 a    obs  15 world   624 0.006410256 0.4679487
+```
+
+```
+## [1] "anova_model <- aov(dist ~ target*q, data = df)"
+```
+
+```
+## Type III Analysis of Variance Table with Satterthwaite's method
+##           Sum Sq Mean Sq NumDF DenDF F value       Pr(>F)    
+## target   1066004 1066004     1   731 27.2101 0.0000002379 ***
+## q         768164  153633     5 10766  3.9215      0.00149 ** 
+## target:q  512129  102426     5 10744  2.6145      0.02277 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
 ----
 ## conclusion
 In condition **B** (``` this, that, these, those ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. The overall p-value of p=0.0672215 for our distances distribution is still to be tested for dependency on a general lexical diversity (type/token-ratio) within the corresponding observed range.

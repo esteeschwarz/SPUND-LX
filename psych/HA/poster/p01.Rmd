@@ -166,6 +166,8 @@ library(jsonlite)
 library(abind)
 qs<-readLines(paste0(wd,"eval-qs.json"))
 qjs<-fromJSON((paste0(wd,"eval-qs.json")))
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
+
 #qsdf<-data.frame(matrix(unlist(qs),ncol = 6))
 #qsdf<-abind(qs,along=0)
 
@@ -177,6 +179,7 @@ qjs<-fromJSON((paste0(wd,"eval-qs.json")))
 #print("queries/ conditions")
 #print(qs)
 #cat(qs)
+print(head(dfa))
 ```
 ----
 ## results
@@ -184,28 +187,40 @@ qjs<-fromJSON((paste0(wd,"eval-qs.json")))
 #knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
 #kable(df1)
 ```
+
 ```{r,df1-print,message=F,warning=F,echo=FALSE,eval=T}
 #knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
-df1
+#df1
 ```
+
 ```{r,df1-vis,message=F,warning=F,echo=FALSE,eval=T}
 #knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
 # Reshape data for grouped barplot
 library(reshape2)
-df1_wide <- dcast(df1, q ~ corp, value.var = "dist")
+df1<-dfa
+df1_no_outliers <- df1 %>%
+  group_by(target) %>%
+  filter(
+    dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+    dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+  ) %>%
+  ungroup()
+#boxplot(dist~target,df1_no_outliers)
 
+df1_wide <- dcast(df1_no_outliers, q ~ target, value.var = "dist")
+#df1_wide <- dcast(df1_no_outliers,q+target~dist,median)
 # Ensure the order of conditions a-f
 df1_wide$q <- factor(df1_wide$q, levels = c("a", "b", "c", "d", "e", "f"))
 df1_wide <- df1_wide[order(df1_wide$q), ]
 
 # Create the matrix for barplot
 bar_matrix <- t(as.matrix(df1_wide[, c("obs", "ref")]))
-
+#bar_matrix <- t(as.matrix(df1_wide[, 3:length(df1_wide)]))
 # Plot grouped barplot
 barplot(
   bar_matrix,
   beside = TRUE,
-  names.arg = c("0",levels(df1_wide$q)[2:6]),
+#  names.arg = c("0",levels(df1_wide$q)[2:6]),
   col = c("black", "red"),
   las = 1,
   cex.names = 0.7,
@@ -218,6 +233,14 @@ legend("topright", legend = c("obs", "ref"), fill = c("black", "red"))
 #qjs$b
 cat(qs)
 ```
+
+```{r lme, message=F,warning=F,echo=FALSE,eval=T}
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
+print(head(df))
+print("anova_model <- aov(dist ~ target*q, data = df)")
+print(an.summ)
+```
+
 ----
 ## conclusion
 In condition **B** (``` `r unlist(qjs$b)` ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. The overall p-value of p=`r p_value` for our distances distribution is still to be tested for dependency on a general lexical diversity (type/token-ratio) within the corresponding observed range.
