@@ -433,7 +433,8 @@ q5c<-get.mean.gl(q5,tdbcorp) # ref: 124
 
 q0r<-get.mean.gl(q0,tdbref) # ref: 124
 q0c<-get.mean.gl(q0,tdbcorp) # ref: 124
-###
+################################################################
+### this 15275.
 q.all.cr<-rbind(q0c,q0r,q1c,q1r,q2c,q2r,q3c,q3r,q4c,q4r,q5c,q5r)
 q.all.df<-as.data.frame(q.all.cr)
 mode(q.all.df$dist)<-"double"
@@ -444,6 +445,46 @@ mode(q.all.df$ld)<-"double"
 ### run from beginnin to here
 #############################
 median(q.all.df$dist[q.all.df$target=="obs"])
+median(q.all.df$dist[q.all.df$target=="ref"])
+mean(q.all.df$dist[q.all.df$target=="obs"])
+mean(q.all.df$dist[q.all.df$target=="ref"])
+# get.m.df<-function(df){
+#   q.u<-unique(df$q)
+#   df.m<-data.frame(target=NA,q=)
+# }
+
+mac<-median(dfa$dist[dfa$target=="obs"&dfa$q=="a"])
+mar<-median(dfa$dist[dfa$target=="ref"&dfa$q=="a"])
+mbc<-median(dfa$dist[dfa$target=="obs"&dfa$q=="b"])
+mbr<-median(dfa$dist[dfa$target=="ref"&dfa$q=="b"])
+mcc<-median(dfa$dist[dfa$target=="obs"&dfa$q=="c"])
+mcr<-median(dfa$dist[dfa$target=="ref"&dfa$q=="c"])
+mdc<-median(dfa$dist[dfa$target=="obs"&dfa$q=="d"])
+mdr<-median(dfa$dist[dfa$target=="ref"&dfa$q=="d"])
+mec<-median(dfa$dist[dfa$target=="obs"&dfa$q=="e"])
+mer<-median(dfa$dist[dfa$target=="ref"&dfa$q=="e"])
+mfc<-median(dfa$dist[dfa$target=="obs"&dfa$q=="f"])
+mfr<-median(dfa$dist[dfa$target=="ref"&dfa$q=="f"])
+
+### vorsicht falschrum!
+
+mdac<-mean(dfa$dist[dfa$target=="obs"&dfa$q=="a"])
+mdar<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="a"])
+mdbc<-mean(dfa$dist[dfa$target=="obs"&dfa$q=="b"])
+mdbr<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="b"])
+mdcc<-mean(dfa$dist[dfa$target=="obs"&dfa$q=="c"])
+mdcr<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="c"])
+mddc<-mean(dfa$dist[dfa$target=="obs"&dfa$q=="d"])
+mddr<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="d"])
+mdec<-mean(dfa$dist[dfa$target=="obs"&dfa$q=="e"])
+mder<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="e"])
+mdfc<-mean(dfa$dist[dfa$target=="obs"&dfa$q=="f"])
+mdfr<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="f"])
+
+
+mdf<-data.frame(median=c(mac,mar,mbc,mbr,mcc,mcr,mdc,mdr,mec,mer,mfc,mfr),
+                mean=c(mdac,mdar,mdbc,mdbr,mdcc,mdcr,mddc,mddr,mdec,mder,mdfc,mdfr))
+
 median(q.all.df$dist[q.all.df$target=="ref"])
 mean(q.all.df$dist[q.all.df$target=="obs"])
 mean(q.all.df$dist[q.all.df$target=="ref"])

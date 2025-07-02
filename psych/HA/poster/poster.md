@@ -11,61 +11,56 @@ To compute distances we queried a corpus for matching conditions where certain (
 ## questions
 Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language. Premising that a large noun distance indicates a low reference-referent association we hypothesise that in a language/TOM setting where the speakers estimation of the audiences context understanding capacities is disturbed we will find higer medium scores for the distance under matching conditions.
 ## daten
-We built a corpus of the reddit r/schizophrenia thread (```n=747089 ``` tokens) and a reference corpus of r/unpopularopinion (```n=265670 ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the 747089 tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.
+We built a corpus of the reddit r/schizophrenia thread (```n=747089 ``` tokens) and a reference corpus of r/unpopularopinion (```n=265670 ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the 747089 tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.   
+The dataframe used for modeling consists of ``` 17794 ``` distance datapoints derived from the postagged corpus.
 
 
+```
+##       dist q target url         lemma range mf_rel     ld
+## 107     31 a    obs   3      Disorder   566 0.0035 0.4311
+## 7010   445 b    ref  18        people  2941 0.0071 0.3230
+## 11715   36 d    obs 464      director  1104 0.0063 0.3958
+## 14860   21 e    obs 498       country  5112 0.0100 0.2344
+## 1617    23 a    obs 532      disorder  2149 0.0088 0.2694
+## 12153   64 d    obs 650            mg  1975 0.0197 0.3058
+## 16886   14 f    ref  11        dialog  3469 0.0026 0.2730
+## 3128    15 a    obs 829         voice  1795 0.0117 0.3142
+## 1530    16 a    obs 514         voice   300 0.0400 0.4900
+## 4933    92 a    ref  53          game  8169 0.0191 0.1893
+## 17208    3 f    ref  34            ad  1519 0.0237 0.3726
+## 15081  125 e    obs 611 antipsychotic  1815 0.0066 0.3548
+## 10021  680 c    ref   1          case  1846 0.0011 0.3380
+## 16305   70 f    obs 140          life   447 0.0112 0.4765
+## 3010    34 a    obs 805            iq  5703 0.0126 0.2465
+```
 ----
 ## results
 
 
-```
-##    q dist  range corp corp_size      m   m_rel    ld
-## 1  a   36  446.0  obs    747089 747089 1.00000 0.045
-## 2  b   70 1451.0  obs    747089  11415 0.01528 0.045
-## 3  c   49  807.0  obs    747089  12516 0.01675 0.045
-## 4  d   49  834.0  obs    747089  15141 0.02027 0.045
-## 5  e   53  917.0  obs    747089   6983 0.00935 0.045
-## 6  f   57 1119.0  obs    747089   4236 0.00567 0.045
-## 7  a   40 1619.5  ref    265670 265670 1.00000 0.076
-## 8  b   41 2140.0  ref    265670   4213 0.01586 0.076
-## 9  c   60 2116.5  ref    265670   6542 0.02462 0.076
-## 10 d   51 1863.0  ref    265670   6349 0.02390 0.076
-## 11 e   63 2947.5  ref    265670    662 0.00249 0.076
-## 12 f   46 2473.5  ref    265670   1576 0.00593 0.076
-```
+
+
 ![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/index_files/figure-html/df1-vis-1.png)
 
 ```
-## {"a":{"token":["#intercept"]},"b":{"token":["this","that","these","those"]},"c":{"token":["the"]},"d":{"token":["a","an","some","any"]},"e":{"token":["my"]},"f":{"token":["your","their","his","her"]}}
+## ## conditions:
 ```
 
 
-```
-##   dist q target url lemma range      mf_rel        ld
-## 1   20 a    obs  38 chemo   606 0.003300330 0.5016502
-## 2   20 a    obs  45 angel   663 0.006033183 0.4374057
-## 3  186 a    obs  45 angel   663 0.006033183 0.4374057
-## 4  424 a    obs  45 angel   663 0.006033183 0.4374057
-## 5   21 a    obs  16 dream   101 0.019801980 0.6633663
-## 6   13 a    obs  15 world   624 0.006410256 0.4679487
-```
 
-```
-## [1] "anova_model <- aov(dist ~ target*q, data = df)"
-```
+|q  |precedent             |pos  |
+|:--|:---------------------|:----|
+|a  |ALL (.*)              |NOUN |
+|b  |this,that,these,those |NOUN |
+|c  |the                   |NOUN |
+|d  |a,an,some,any         |NOUN |
+|e  |my                    |NOUN |
+|f  |your,their,his,her    |NOUN |
 
-```
-## Type III Analysis of Variance Table with Satterthwaite's method
-##           Sum Sq Mean Sq NumDF DenDF F value       Pr(>F)    
-## target   1066004 1066004     1   731 27.2101 0.0000002379 ***
-## q         768164  153633     5 10766  3.9215      0.00149 ** 
-## target:q  512129  102426     5 10744  2.6145      0.02277 *  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-```
+
 
 ----
 ## conclusion
-In condition **B** (``` this, that, these, those ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. The overall p-value of p=0.0672215 for our distances distribution is still to be tested for dependency on a general lexical diversity (type/token-ratio) within the corresponding observed range.
+In condition **B** (``` this, that, these, those ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model which posited a main effect of corpus\*q and random effects of url range width, match frequency of the query and type/token-ratio within the range (`lme4::lmer(dist ~ corp*q +(1|range) + (1|mf_rel) + (1|ld))`) gets a p-value of p=0.02277 for targetcorp:q.   
+So even if the median distance of nouns, preceded by one of our queries, is just ``` 47 ``` tokens wide for the target corpus and ``` 46 ``` in the reference corpus, it's still with respect to the covariates significantly (p<0.05) higher and yet to be tested on a larger corpus.
 ## B. REF:
 [^1]:snc.1:h2.pb.1000char/pg.queries

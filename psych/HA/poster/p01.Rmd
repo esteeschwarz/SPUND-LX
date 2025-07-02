@@ -28,7 +28,7 @@ if(output.rmd=="html")
   author<-"st. schwarz"
 ```
 
-```{r eval,echo=F,warning=F,message=FALSE}
+```{r eval,echo=F,warning=F,message=FALSE,eval=FALSE}
 options(scipen = 999)
 wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/")
 wd
@@ -140,7 +140,7 @@ return(list(p=p_value,coeff=co.df))
 }
 co.list<-get.co(df1,F)
 co.df<-co.list$coeff
-p_value<-co.list$p
+p_value<-round(co.list$p,5)
 co.df
 ```
 
@@ -159,13 +159,14 @@ To compute distances we queried a corpus for matching conditions where certain (
 ## questions
 Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language. Premising that a large noun distance indicates a low reference-referent association we hypothesise that in a language/TOM setting where the speakers estimation of the audiences context understanding capacities is disturbed we will find higer medium scores for the distance under matching conditions.
 ## daten
-We built a corpus of the reddit r/schizophrenia thread (```n=`r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n=`r n_ref` ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the `r n_obs` tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.
+We built a corpus of the reddit r/schizophrenia thread (```n=`r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n=`r n_ref` ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the `r n_obs` tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.   
+The dataframe used for modeling consists of ``` `r length(dfa$q)` ``` distance datapoints derived from the postagged corpus.
 
 ```{r queries,warning=F,message=F,echo=F,eval=T}
-library(jsonlite)
-library(abind)
-qs<-readLines(paste0(wd,"eval-qs.json"))
-qjs<-fromJSON((paste0(wd,"eval-qs.json")))
+# library(jsonlite)
+# library(abind)
+# qs<-readLines(paste0(wd,"eval-qs.json"))
+# qjs<-fromJSON((paste0(wd,"eval-qs.json")))
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
 
 #qsdf<-data.frame(matrix(unlist(qs),ncol = 6))
@@ -179,7 +180,10 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
 #print("queries/ conditions")
 #print(qs)
 #cat(qs)
-print(head(dfa))
+sample.df<-dfa[sample(1:length(dfa$dist),15),]
+sample.df$mf_rel<-round(sample.df$mf_rel,4)
+sample.df$ld<-round(sample.df$ld,4)
+print(sample.df)
 ```
 ----
 ## results
@@ -188,7 +192,7 @@ print(head(dfa))
 #kable(df1)
 ```
 
-```{r,df1-print,message=F,warning=F,echo=FALSE,eval=T}
+```{r,df1-print,message=F,warning=F,echo=FALSE,eval=F}
 #knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
 #df1
 ```
@@ -196,53 +200,85 @@ print(head(dfa))
 ```{r,df1-vis,message=F,warning=F,echo=FALSE,eval=T}
 #knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
 # Reshape data for grouped barplot
-library(reshape2)
-df1<-dfa
-df1_no_outliers <- df1 %>%
-  group_by(target) %>%
-  filter(
-    dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
-    dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
-  ) %>%
-  ungroup()
-#boxplot(dist~target,df1_no_outliers)
-
-df1_wide <- dcast(df1_no_outliers, q ~ target, value.var = "dist")
-#df1_wide <- dcast(df1_no_outliers,q+target~dist,median)
-# Ensure the order of conditions a-f
-df1_wide$q <- factor(df1_wide$q, levels = c("a", "b", "c", "d", "e", "f"))
-df1_wide <- df1_wide[order(df1_wide$q), ]
-
-# Create the matrix for barplot
-bar_matrix <- t(as.matrix(df1_wide[, c("obs", "ref")]))
-#bar_matrix <- t(as.matrix(df1_wide[, 3:length(df1_wide)]))
+# library(reshape2)
+# df1<-dfa
+# df1_no_outliers <- df1 %>%
+#   group_by(target) %>%
+#   filter(
+#     dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+#     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+#   ) %>%
+#   ungroup()
+# #boxplot(dist~target,df1_no_outliers)
+# 
+# df1_wide <- dcast(df1_no_outliers, q ~ target, value.var = "dist")
+# df1_wide <- dcast(df1_no_outliers,q+target~dist,median)
+# df1_wide <- dcast(dfa,q+target~dist,median)
+# df1_wide <- acast(dfa,q+target~dist,median)
+# 
+# # Ensure the order of conditions a-f
+# df1_wide$q <- factor(df1_wide$q, levels = c("a", "b", "c", "d", "e", "f"))
+# df1_wide <- df1_wide[order(df1_wide$q), ]
+# #rowSum(df1_wide)
+# # Create the matrix for barplot
+# #bar_matrix <- t(as.matrix(df1_wide[, c("obs", "ref")]))
+# t.sum<-rowSums(df1_wide[,3:length(df1_wide)],na.rm = T)
+# t.sum<-rowSums(df1_wide,na.rm = T)
+#t.sum
+#bar_matrix <- t.sum
 # Plot grouped barplot
-barplot(
-  bar_matrix,
-  beside = TRUE,
-#  names.arg = c("0",levels(df1_wide$q)[2:6]),
-  col = c("black", "red"),
-  las = 1,
-  cex.names = 0.7,
-  main = "Distances distribution over conditions",
-  ylab = "same-noun distance"
-)
-legend("topright", legend = c("obs", "ref"), fill = c("black", "red"))
-#cat("## conditions:\n")
+# barplot(
+#   bar_matrix,
+#   beside = TRUE,
+# #  names.arg = c("0",levels(df1_wide$q)[2:6]),
+#   col = c("black", "red"),
+#   las = 1,
+#   cex.names = 0.7,
+#   main = "Distances distribution over conditions",
+#   ylab = "same-noun distance"
+# )
+# legend("topright", legend = c("obs", "ref"), fill = c("black", "red"))
+bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
+bar_mat <- t(bar_mat)  # barplot expects groups in columns
+
+# Make grouped barplot
+df.plot<-barplot(bar_mat,
+        beside = TRUE,
+        col = c("black", "red"),
+        names.arg = levels(dfe$q),
+        legend.text = rownames(bar_mat),
+        args.legend = list(x = "right"),
+        ylab = "median distance",
+        main = "Grouped barplot of distance by query and corp")
+
+
+cat("## conditions:\n")
 #print(unlist(qjs))
 #qjs$b
-cat(qs)
+#names(queries)<-letters[1:6]
+queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="NOUN")
+kable(queries.df)
 ```
 
 ```{r lme, message=F,warning=F,echo=FALSE,eval=T}
 # source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
-print(head(df))
-print("anova_model <- aov(dist ~ target*q, data = df)")
-print(an.summ)
+#print(head(df))
+#print("anova_model <- aov(dist ~ target*q, data = df)")
+#print(an.summ)
+p.an<-an.summ$`Pr(>F)`
+p.corp.q<-round(p.an[3],5)
+#kable(an.summ)
+#get mean:
+# m.target<-median(dfa$dist[dfa$target=="obs"])
+# m.ref<-median(dfa$dist[dfa$target=="ref"])
+
+#plot:
+
 ```
 
 ----
 ## conclusion
-In condition **B** (``` `r unlist(qjs$b)` ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. The overall p-value of p=`r p_value` for our distances distribution is still to be tested for dependency on a general lexical diversity (type/token-ratio) within the corresponding observed range.
+In condition **B** (``` `r unlist(qjs$b)` ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model which posited a main effect of corpus\*q and random effects of url range width, match frequency of the query and type/token-ratio within the range (`lme4::lmer(dist ~ corp*q +(1|range) + (1|mf_rel) + (1|ld))`) gets a p-value of p=`r p.corp.q` for targetcorp:q.   
+So even if the median distance of nouns, preceded by one of our queries, is just ``` `r m.target` ``` tokens wide for the target corpus and ``` `r m.ref` ``` in the reference corpus, it's still with respect to the covariates significantly (p<0.05) higher and yet to be tested on a larger corpus.
 ## B. REF:
 [^1]:snc.1:h2.pb.1000char/pg.queries
