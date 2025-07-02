@@ -2,7 +2,7 @@
 title: "xtitle: proposition & coherence observations in :schizophrenia: threads"
 runningheader: "xtitle" # only for pdf output
 author: "st. schwarz"
-date: "2025-07-02 19:21:57"
+date: "2025-07-02 19:29:25"
 output:
   tufte::tufte_handout:
     citation_package: natbib
@@ -57,22 +57,22 @@ The dataframe used for modeling consists of ``` 17794 ``` distance datapoints de
 
 
 ```
-##       dist q target url         lemma range mf_rel     ld
-## 107     31 a    obs   3      Disorder   566 0.0035 0.4311
-## 7010   445 b    ref  18        people  2941 0.0071 0.3230
-## 11715   36 d    obs 464      director  1104 0.0063 0.3958
-## 14860   21 e    obs 498       country  5112 0.0100 0.2344
-## 1617    23 a    obs 532      disorder  2149 0.0088 0.2694
-## 12153   64 d    obs 650            mg  1975 0.0197 0.3058
-## 16886   14 f    ref  11        dialog  3469 0.0026 0.2730
-## 3128    15 a    obs 829         voice  1795 0.0117 0.3142
-## 1530    16 a    obs 514         voice   300 0.0400 0.4900
-## 4933    92 a    ref  53          game  8169 0.0191 0.1893
-## 17208    3 f    ref  34            ad  1519 0.0237 0.3726
-## 15081  125 e    obs 611 antipsychotic  1815 0.0066 0.3548
-## 10021  680 c    ref   1          case  1846 0.0011 0.3380
-## 16305   70 f    obs 140          life   447 0.0112 0.4765
-## 3010    34 a    obs 805            iq  5703 0.0126 0.2465
+##       dist q target url   lemma range mf_rel     ld
+## 42      48 a    obs  17  friend   287 0.0348 0.5192
+## 10919   26 c    ref  75     fun   731 0.0027 0.4555
+## 6303    12 b    obs 699  people  1052 0.0124 0.4059
+## 6160   213 b    obs 633     day  2442 0.0061 0.3071
+## 13172   52 d    ref   5   world  2415 0.0037 0.3097
+## 14373   12 d    ref  97  burger  2515 0.0179 0.2831
+## 579     51 a    obs 232    face   258 0.0233 0.5659
+## 13180  177 d    ref   7 opinion   928 0.0075 0.4655
+## 8470   213 c    obs 364    time   753 0.0027 0.4648
+## 8100    20 c    obs  58     med   146 0.0342 0.6301
+## 899      4 a    obs 353  moment   396 0.0051 0.5177
+## 11461   26 d    obs 320 symptom   603 0.0265 0.4544
+## 12695  203 d    obs 874   thing   992 0.0071 0.3861
+## 11249   74 d    obs 155 emotion  1103 0.0100 0.3545
+## 13330   33 d    ref  19 morning  5000 0.0056 0.2480
 ```
 ----
 ## results

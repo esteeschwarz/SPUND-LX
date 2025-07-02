@@ -249,7 +249,7 @@ df.plot<-barplot(bar_mat,
         legend.text = rownames(bar_mat),
         args.legend = list(x = "right"),
         ylab = "median distance",
-        main = "Grouped barplot of distance by query and corp")
+        main = "distance distribution by query")
 
 
 cat("## conditions:\n")
