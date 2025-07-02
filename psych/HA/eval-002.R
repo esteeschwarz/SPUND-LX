@@ -20,9 +20,16 @@ table(group)
 
 anova_model <- aov(Y ~ group, data = dfa)
 anova_model <- aov(Y ~ group*q, data = dfa)
+#anova_model <- aov(Y ~ group*q, data = dfa)
 summary(anova_model)
 library(lmerTest)
 lm1<-lmer(dist~target*q+(1|mf_rel)+(1|range)+(1|ld),dfa)
+lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
+summary(lm2)
+lm2.summ<-summary(lm2)
+
+an2.summ<-anova(lm2)
+an2.summ
 lm.summ<-summary(lm1)
 an.summ<-anova(lm1)
 lm.summ

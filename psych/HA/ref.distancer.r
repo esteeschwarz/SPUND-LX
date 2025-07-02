@@ -105,7 +105,7 @@ get.mean.gl<-function(q,tdb){
   x<-uid5[1]
   rm(x)
   lt1<-lapply(uid5, function(x){
-    tdb.s<-tdb[tdb$url==x,]
+    tdb.s<-tdb[tdb$url==x,] # subset of url
     tdb.n<-tdb.s$upos=="NOUN"
     sum(tdb.n)
     tdb.nw<-which(tdb.n)
@@ -135,7 +135,13 @@ get.mean.gl<-function(q,tdb){
       m3<-tdb.s$lemma==l
       sum(m3)
       m3<-which(m3)
+      ##########################
+      ### NOTE> this relative match frequency affects heavily the anova lmer analysis in the 
+      # evaluation if included there. so have to think thoroughly how its derived.
+      # here we divide the n nouns which match the query within the url range by the total
+      # token n of that range.
       mf_rel<-length(m3)/n.token
+      ###################################################################################
       #tdb.s$token[(m3-m3):(m3+30)]
       dist<-diff(m3)
       median(dist)
