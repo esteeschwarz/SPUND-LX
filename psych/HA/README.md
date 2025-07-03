@@ -13,3 +13,6 @@
   - within thread
   - compare definite/demontrative freq - distance to reference corpus
   - is the distance larger? 
+
+  #### caveats
+  looking into eval-002.csv which assembles all distances over target over query and including lemma and url we find that e.g. for 'dog' there is not more than 1 condition matching per url which is strange and maybe not possible as dog with lot of matches without query should not match only for condition b in url 1 for example but also with other noun precedents i.e. conditions. so that seems a flaw in the distance assembling function or in the part returning the q value...
