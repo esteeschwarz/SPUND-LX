@@ -7,7 +7,7 @@ library(RSQLite)
 # con <- dbConnect(RSQLite::SQLite(),paste0(Sys.getenv("HKW_TOP"),"/",subject.dir,"/reddit_com.df.",tstamp,".sqlite"))
 con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
 dbListTables(con)
-tdb.pos<-dbGetQuery(con,paste0("SELECT * FROM ",dbcorpus_pos))
+tdb.pos<-dbGetQuery(con,paste0("SELECT * FROM reddit_com_pos"))
 tdb.com<-dbGetQuery(con,paste0("SELECT * FROM ",dbcorpus))
 ### initiate:
 #dbWriteTable(con, "redditpsych", url.sub.df[0, ], overwrite = TRUE, row.names = FALSE)

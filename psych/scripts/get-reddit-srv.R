@@ -5,18 +5,18 @@ library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15262
+tstamp<-15276
 dt<-1
 tstamp<-paste0(format(Sys.Date(),"%y-%m-%d"),".",dt)
 tstamp
 #thread<- "de"
 thread<-"schizophrenia"
-thread<-"unpopularopinion"
+#thread<-"unpopularopinion"
 corpus<-"stef_psych_schiz"
 dbcorpus<-"redditpsych"
 dbcorpus_pos<-"reddit_com_pos"
-dbcorpus<-"reddit_ref"
-dbcorpus_pos<-"reddit_pos_ref"
+#dbcorpus<-"reddit_ref"
+#dbcorpus_pos<-"reddit_pos_ref"
 subject.dir<-"SPUND-LX/psych/data"
 cloud<-"~/box.dh-index.org/httpdocs/cloud"
 cloud<-paste0(Sys.getenv("WWW_TOP"),"/cloud")
@@ -58,7 +58,8 @@ model.l<-"eng"
 #model.l<-"ger"
 doc.id.act<-tstamp
 ###
-source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
+#source(paste0(Sys.getenv("HKW_TOP"),"/rwd/auth_anon.R"))
 source("~/rwd/auth_anon.R")
 
 wd<-"~/dl/ske"
