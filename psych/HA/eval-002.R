@@ -24,7 +24,7 @@ anova_model <- aov(Y ~ group*q, data = dfa)
 summary(anova_model)
 library(lmerTest)
 lm1<-lmer(dist~target*q+(1|mf_rel)+(1|range)+(1|ld),dfa)
-lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
+lm2<-lmer(dist~target+range+(1|lemma),dfa)
 summary(lm2)
 lm2.summ<-summary(lm2)
 
@@ -130,6 +130,41 @@ dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 #summary(anova_model)
 #not. wks
 
+#15276.caveats
+#general test
 
-
-
+m<-tdbcorp$upos=="NOUN"
+m2<-tdbcorp$token%in%c("this","that","those","these")
+m1w<-which(m)
+m2w<-which(m2)
+m5<-tdbcorp$upos=="DET"
+m5w<-which(m5)
+m6<-m2w%in%m5w
+m2w<-m2w[m6]
+sum(m6)
+q1<-head(tdbcorp$token[(m2w)],20)
+t1<-head(tdbcorp$token[(m2w+1)],20)
+u1<-head(tdbcorp$upos[(m2w)],20)
+paste(q1,t1,u1,sep = " ")
+m3<-m1w%in%(m2w+1)
+m4<-(m2w+1)%in%m1w
+m4w<-which(m4)
+sum(m3)
+m3w<-which(m3)
+head(m3w,20)
+show.tok<-function(k){
+q1<-tdbcorp$token[m2w[m4w]][k]
+t1<-tdb$token[m1w[m3w]][k]
+u1<-tdb$upos[m2w[m4w]][k]
+print(paste(q1,t1,u1,sep = " "))
+u1<-tdb$uid[m1w[m3w]][k]
+print(u1)
+#u1<-tdb[m1w[m3w[1:20]],]$uid[1]
+#tdb[m2w[m4w[1:20]],]
+#uid<-tdb$uid[m1w][m3w]
+r1<-tdb$uid==u1
+sum(r1)
+print(tdb$token[r1])
+print(tdb$upos[r1])
+}
+show.tok(2)

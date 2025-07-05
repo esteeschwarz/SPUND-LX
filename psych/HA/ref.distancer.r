@@ -645,7 +645,7 @@ df1$m<-unlist(lapply(list(q0mc,q1mc,q2mc,q3mc,q4mc,q5mc,q0mr,q1mr,q2mr,q3mr,q4mr
 #df1 <- read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
 df1$m_rel<-df1$m/df1$corp_size
 
-data<-df1
+data<-dfa
 
 # Center covariates
  t1<-data$range[data$q=="a"]
@@ -655,12 +655,12 @@ data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level interce
 data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
 #data$corpsize_c <- data$corp_size - mean(data$corp_size)
 #data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
-data$m_rel_c    <- data$m_rel - mean(data$m_rel[data$q=="a"])
+data$m_rel_c    <- data$mf_rel - mean(data$mf_rel[data$q=="a"])
 t1<-c(1200,500)
 t2<-abs(t1[1]-t1[2])-abs(t1[1]-t1[2])
 # Corpus dummy
-data$corpusB <- ifelse(data$corp == 'ref', 1, 0)
-data$corpusA <- ifelse(data$corp == 'obs', 1, 0)
+data$corpusB <- ifelse(data$target == 'ref', 1, 0)
+data$corpusA <- ifelse(data$target == 'obs', 1, 0)
 
 # Dummy code condition (a-e) into 4 dummy vars (base = 'a')
 data$cond_a <- ifelse(data$q == 'a', 1, 0)
@@ -686,10 +686,10 @@ data$cond_f <- ifelse(data$q == 'f', 1, 0)
 
 X <- as.matrix(cbind(
   1,
-  data$corpusA,
-  data$range_c,
+  data$corpusB,
+ # data$range_c,
   #data$corpsize_c,
-  data$m_rel_c,
+  #data$m_rel_c,
 #  data$cond_a,
   data$cond_b,
   data$cond_c,
@@ -737,7 +737,9 @@ coeff<-solve(t(X) %*% X) %*% t(X) %*% data$dist
 coeff<-round(coeff,3)
 coeff
 co.df<-data.frame(coeff,row.names = c("intercept",colnames(data)[c(11,3,7,13,14,15,16,17)]))
+co.df<-data.frame(coeff,row.names = c("intercept","targetRef","b","c","d","e","f"))
 co.df
+p_v<-round(p_value,5)
 # # Fit reduced model without the term of interest
 # reduced_model <- lmer(d ~ q + (1|corp_size), data = df) 
 # full_model <- lmer(d ~ corp*m + (1|corp_size), data = df)
