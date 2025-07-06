@@ -145,6 +145,9 @@ sum(m6)
 q1<-head(tdbcorp$token[(m2w)],20)
 t1<-head(tdbcorp$token[(m2w+1)],20)
 u1<-head(tdbcorp$upos[(m2w)],20)
+nouns.det<-unique(tdbcorp$lemma[m1w[m3w]])
+write_csv(nouns.det,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/nouns-001.csv"))
+
 paste(q1,t1,u1,sep = " ")
 m3<-m1w%in%(m2w+1)
 m4<-(m2w+1)%in%m1w

@@ -3,7 +3,8 @@
 ###############
 library(DBI)
 library(RSQLite)
-con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
+#con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
+con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
 dbListTables(con)
 #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
 tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
@@ -806,6 +807,18 @@ p_v<-round(p_value,5)
 # p.d
 # print(m<-mean(unlist(p.d)))
 # }
+
+### 15281.new essai
+# finding too many q-noun relations which made no sense in our noun distance measure. try new...
+m1<-tdbcorp$upos=="NOUN"
+sum(m1)
+nouns<-unique(tdbcorp$lemma[m1])
+nouns.df<-data.frame(lemma=nouns,include=1)
+#write_csv(nouns.df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/nouns-001.csv"))
+
+
+
+
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
 library(readr)
  write_csv(df1,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-001.csv"))
