@@ -165,10 +165,13 @@ The dataframe used for modeling consists of ``` `r length(dfa$q)` ``` distance d
 ```{r queries,warning=F,message=F,echo=F,eval=T}
 # library(jsonlite)
 # library(abind)
-# qs<-readLines(paste0(wd,"eval-qs.json"))
-# qjs<-fromJSON((paste0(wd,"eval-qs.json")))
+ #qs<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
+ qjs<-fromJSON(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
-
+n_obs<-dfa$corpsize[dfa$target=="obs"][1]
+n_ref<-dfa$corpsize[dfa$target=="ref"][1]
+md_target<-median(dfa$dist[dfa$target=="obs"])
+md_ref<-median(dfa$dist[dfa$target=="ref"])
 #qsdf<-data.frame(matrix(unlist(qs),ncol = 6))
 #qsdf<-abind(qs,along=0)
 
@@ -180,11 +183,12 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
 #print("queries/ conditions")
 #print(qs)
 #cat(qs)
-sample.df<-dfa[sample(1:length(dfa$dist),15),]
-sample.df$mf_rel<-round(sample.df$mf_rel,4)
-sample.df$ld<-round(sample.df$ld,4)
-print(sample.df)
+sample.df<-dfa[sample(1:length(dfa$dist),10),colnames(dfa)!="query_long"]
+#sample.df$mf_rel<-round(sample.df$mf_rel,4)
+#sample.df$ld<-round(sample.df$ld,4)
+kable(sample.df)
 ```
+
 ----
 ## results
 ```{r,df1-kable,message=F,warning=F,echo=FALSE,eval=F}
@@ -255,7 +259,7 @@ df.plot<-barplot(bar_mat,
 cat("## conditions:\n")
 #print(unlist(qjs))
 #qjs$b
-#names(queries)<-letters[1:6]
+#queries<-qjs
 queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="NOUN")
 kable(queries.df)
 ```
@@ -265,20 +269,27 @@ kable(queries.df)
 #print(head(df))
 #print("anova_model <- aov(dist ~ target*q, data = df)")
 #print(an.summ)
-p.an<-an.summ$`Pr(>F)`
-p.corp.q<-round(p.an[3],5)
-#kable(an.summ)
+p.target<-anlm.summ["target",length(anlm.summ)]
+p.target.q<-anlm.summ["target:q",length(anlm.summ)]
+sig.array<-c(0,0.001,0.01,0.05,0.1,1)
+p.sig<-p.target<sig.array
+p.sig<-which(p.sig)[1]
+p.sig.ex<-paste0("p<",sig.array[p.sig])
+#kable(anlm.summ)
+dist.target<-lm2.summ$coefficients["targetref",1]
+dist.target<-round(dist.target,0)
+#p.target.q
 #get mean:
 # m.target<-median(dfa$dist[dfa$target=="obs"])
 # m.ref<-median(dfa$dist[dfa$target=="ref"])
 
 #plot:
-
+#unlist(qjs$b)
 ```
 
 ----
 ## conclusion
-In condition **B** (``` `r unlist(qjs$b)` ```) which we hold for the most speaking determinants illustrating the speakers idea, that the information about a reference is already **given** we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model which posited a main effect of corpus\*q and random effects of url range width, match frequency of the query and type/token-ratio within the range (`lme4::lmer(dist ~ corp*q +(1|range) + (1|mf_rel) + (1|ld))`) gets a p-value of p=`r p.corp.q` for targetcorp:q.   
-So even if the median distance of nouns, preceded by one of our queries, is just ``` `r m.target` ``` tokens wide for the target corpus and ``` `r m.ref` ``` in the reference corpus, it's still with respect to the covariates significantly (p<0.05) higher and yet to be tested on a larger corpus.
+Over all conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist ~ corp*q+range + (1|lemma`) gets a p-value of ```p=`r p.target` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
+So the median distance of nouns, preceded by one of our queries, with ``` `r md_target` ``` tokens width for the target corpus and ``` `r md_ref` ``` in the reference corpus, is also with respect to the covariates significantly (```r p.sig.ex```) higher but still to be tested on a larger corpus.
 ## B. REF:
 [^1]:snc.1:h2.pb.1000char/pg.queries

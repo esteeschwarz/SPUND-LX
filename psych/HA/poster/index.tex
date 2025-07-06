@@ -49,6 +49,16 @@
 % pandoc syntax highlighting
 
 % table with pandoc
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 
 % multiplecol
 \usepackage{multicol}
@@ -68,7 +78,7 @@
 \title[xtitle]{xtitle: proposition \& coherence observations in
 :schizophrenia: threads}
 \author{st. schwarz}
-\date{2025-06-30 07:59:58.299343}
+\date{2025-07-06 19:12:21}
 
 
 \begin{document}
@@ -77,14 +87,6 @@
 
 
 
-
-\begin{verbatim}
-## [1] "/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/"
-\end{verbatim}
-
-\begin{verbatim}
-## [1] 9
-\end{verbatim}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -98,56 +100,109 @@ psychose}\label{stephan-schwarz-a.-stefanowitsch16827_25ssprache-und-psychose}
 
 \subsection{subject}\label{subject}
 
-Reference marking, coherence and information structure in schizophrenia
-language.\footnote{snc.1:h2.pb.1000char/pg.queries} \#\# background
-Inspired by Zimmerer et alii (\#REF) we are interested in observations
-concerning coherence and propositional conditions in schizophrenia
-language, as these linguistic markers appear underinvestigated in
-research while they seem to play a crucial role within target group
-language. (As such seen as asset of thinking or world building capacity
-which might suffer from linguistic deficits within the range of positive
-symptoms.) \#\# method To compute distances we queried a corpus for
-matching conditions where certain (assumed) determiners appear before
-similar nouns. This distance should give us information structural
-evidence of how strong these noun occurences are connected, i.e.~if a
-noun appears out of the blue mostly or if it somewhere before has been
-introduced to the audience. In information structure definitions this
-would be termed with \textbf{given and new information} Prince
-(1981\#REF). ---- \#\# questions Measuring the referent-reference
-distance which we here assume as indicator of coherence we hope to find
-empirical evidence for disturbed or not world building capabilities
-within schizophrenia language. \#\# daten We built a corpus of the
-reddit r/schizophrenia thread (\texttt{n=747089} tokens) and a reference
-corpus of r/unpopularopinion (\texttt{n=265670}). The corpus has been
-pos-tagged using the R udpipe:: package \#REF which tags according to
-the universal dependencies tagset maintained by \#REF. Still the 747089
-tokens can only, with the workflow of growing the corpus and devising
-the noun distances developed be just a starting point from where with
-more datapoints statistical evaluation becomes relevant first. ----
+Investigate reference marking, coherence and information structure in
+schizophrenia language by measuring distance of similar nouns within
+range of comment thread preceded by certain determinants.{[}\^{}1{]}
+\#\# background Inspired by Zimmerer et alii (\#REF) we are interested
+in observations concerning coherence and propositional conditions in
+schizophrenia language, as these linguistic markers appear
+underinvestigated in research while they seem to play a crucial role
+within target group language. (As such seen as asset of thinking or
+world building capacity which might suffer from linguistic deficits
+within the range of positive symptoms.) \#\# method To compute distances
+we queried a corpus for matching conditions where certain (assumed)
+determiners appear before similar nouns. This distance should give us
+information structural evidence of how strong these noun occurences are
+connected, i.e.~if a noun appears out of the blue mostly or if it
+somewhere before has been introduced to the audience. In information
+structure definitions this would be termed with \textbf{given and new
+information} Prince (1981\#REF). ---- \#\# questions Measuring the
+referent-reference distance which we here assume as indicator of
+coherence we hope to find empirical evidence for disturbed or not world
+building capabilities within schizophrenia language. Premising that a
+large noun distance indicates a low reference-referent association we
+hypothesise that in a language/TOM setting where the speakers estimation
+of the audiences context understanding capacities is disturbed we will
+find higer medium scores for the distance under matching conditions.
+\#\# daten We built a corpus of the reddit r/schizophrenia thread
+(\texttt{n=755074} tokens) and a reference corpus of r/unpopularopinion
+(\texttt{n=271563}). The corpus has been pos-tagged using the R udpipe::
+package \#REF which tags according to the universal dependencies tagset
+maintained by \#REF. Still the 755074 tokens can only, with the workflow
+of growing the corpus and devising the noun distances developed be just
+a starting point from where with more datapoints statistical evaluation
+becomes relevant first.\\
+The dataframe used for modeling consists of \texttt{87145} distance
+datapoints derived from the postagged corpus.
 
-\subsection{results}\label{results}
+\begin{longtable}[]{@{}lrllrlrrl@{}}
+\toprule\noalign{}
+& dist & q & target & url & lemma & range & corpsize & det \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+9650 & 10 & a & obs & 805 & test & 5703 & 755074 & TRUE \\
+84918 & 12 & f & ref & 4 & dog & 4922 & 271563 & FALSE \\
+40647 & 9 & a & ref & 36 & product & 8785 & 271563 & TRUE \\
+68727 & 9 & c & ref & 52 & sex & 3469 & 271563 & TRUE \\
+43421 & 1894 & a & ref & 40 & autotune & 5266 & 271563 & TRUE \\
+60555 & 19 & b & ref & 8 & day & 3119 & 271563 & TRUE \\
+2063 & 14 & a & obs & 337 & security & 1570 & 755074 & TRUE \\
+11212 & 583 & a & obs & 887 & stress & 8308 & 755074 & TRUE \\
+78635 & 8 & d & ref & 44 & burger & 6207 & 271563 & TRUE \\
+37248 & 18 & a & ref & 19 & people & 5000 & 271563 & TRUE \\
+65138 & 132 & c & ref & 33 & game & 3312 & 271563 & TRUE \\
+28621 & 195 & e & obs & 376 & prolactin & 706 & 755074 & FALSE \\
+5519 & 139 & a & obs & 606 & effect & 1281 & 755074 & TRUE \\
+81530 & 44 & d & ref & 65 & system & 2214 & 271563 & TRUE \\
+53129 & 36 & a & ref & 69 & trigger & 6358 & 271563 & TRUE \\
+\end{longtable}
 
-\begin{verbatim}
-##    q dist  range corp corp_size      m   m_rel
-## 1  a   36  446.0  obs    747089 747089 1.00000
-## 2  b   70 1451.0  obs    747089  11415 0.01528
-## 3  c   49  807.0  obs    747089  12516 0.01675
-## 4  d   49  834.0  obs    747089  15141 0.02027
-## 5  e   53  917.0  obs    747089   6983 0.00935
-## 6  f   57 1119.0  obs    747089   4236 0.00567
-## 7  a   40 1619.5  ref    265670 265670 1.00000
-## 8  b   41 2140.0  ref    265670   4213 0.01586
-## 9  c   60 2116.5  ref    265670   6542 0.02462
-## 10 d   51 1863.0  ref    265670   6349 0.02390
-## 11 e   63 2947.5  ref    265670    662 0.00249
-## 12 f   46 2473.5  ref    265670   1576 0.00593
-\end{verbatim}
-
-\subsection{}\label{section}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 0\tabcolsep) * \real{0.0694}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\#\# results \\
+ \\
+\texttt{\#\#\ \#\#\ conditions:} \\
+\textbar q \textbar precedent \textbar pos \textbar{}
+\textbar:--\textbar:---------------------\textbar:----\textbar{}
+\textbar a \textbar ALL (.*) \textbar NOUN \textbar{} \textbar b
+\textbar this,that,these,those \textbar NOUN \textbar{} \textbar c
+\textbar the \textbar NOUN \textbar{} \textbar d \textbar a,an,some,any
+\textbar NOUN \textbar{} \textbar e \textbar my \textbar NOUN \textbar{}
+\textbar f \textbar your,their,his,her \textbar NOUN \textbar{} \\
+\textbar{} \textbar{} Sum Sq\textbar{} Mean Sq\textbar{} NumDF\textbar{}
+DenDF\textbar{} F value\textbar{} Pr(\textgreater F)\textbar{}
+\textbar:--------\textbar-----------:\textbar------------:\textbar-----:\textbar--------:\textbar------------:\textbar---------:\textbar{}
+\textbar target \textbar{} 1923919.3\textbar{} 1923919.28\textbar{}
+1\textbar{} 87086.01\textbar{} 20.3109230\textbar{} 0.0000066\textbar{}
+\textbar q \textbar{} 852290.6\textbar{} 170458.13\textbar{} 5\textbar{}
+86210.08\textbar{} 1.7995359\textbar{} 0.1091692\textbar{}
+\textbar range \textbar{} 185258459.2\textbar{} 185258459.22\textbar{}
+1\textbar{} 86756.91\textbar{} 1955.7838768\textbar{}
+0.0000000\textbar{} \textbar target:q \textbar{} 459392.1\textbar{}
+91878.42\textbar{} 5\textbar{} 86207.41\textbar{} 0.9699656\textbar{}
+0.4344877\textbar{} \\
+\end{longtable}
 
 \subsection{conclusion}\label{conclusion}
 
-\subsection{B. REF:}\label{b.-ref}
+Over all conditions we find significantly higher distance scores in the
+target corpus which proves our hypothesis. An ANOVA analysis of the
+linear regression model which posited a main effect of corpus*q+range
+and random effects of lemma
+(\texttt{lme4::lmer(dist\ \textasciitilde{}\ corp*q+range\ +\ (1\textbar{}lemma})
+gets a p-value of \texttt{p=0.0000066} for the mean difference of
+\texttt{-25} tokens (targetref) compared to the target.\\
+So the median distance of nouns, preceded by one of our queries, with
+\texttt{60} tokens width for the target corpus and \texttt{50} in the
+reference corpus, is also with respect to the covariates significantly
+(\texttt{p\textless{}0.001}) higher but still to be tested on a larger
+corpus. \#\# B. REF: {[}\^{}1{]}:snc.1:h2.pb.1000char/pg.queries
 
 \bibliography{FRZ.bib}
 

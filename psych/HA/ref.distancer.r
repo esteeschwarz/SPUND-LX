@@ -827,8 +827,6 @@ nouns.df<-data.frame(lemma=nouns,include=1)
 
 #15276.caveats, new essai
 #general test
-get.dist.df<-function(){
-
 # build query interface
 build.q<-function(){
   q0<-list(a=list(q=".*",det="DET"))
@@ -841,6 +839,8 @@ build.q<-function(){
   return(list(q0,q1,q2,q3,q4,q5))
 }
 qs<-build.q()
+get.dist.list<-function(){
+
 qs[[2]]
 names(qs)
 qs
@@ -922,10 +922,14 @@ qdcr<-get.dist(3,"ref","DET")
 qddr<-get.dist(4,"ref","DET")
 qder<-get.dist(5,"ref",F)
 qdfr<-get.dist(6,"ref",F)
+
+return(list(qda,qdb,qdc,qdd,qde,qdf,qdar,qdbr,qdcr,qddr,qder,qdfr))
+}
 #########################
+qdf<-get.dist.list()
 get.lt.df<-function(ql){
   
-  lt1<-ql
+  lt1<-qdf[[ql]]
   #length(lt1[[1]])
   # lt2<-lapply(lt1, function(x){
   #   l<-length(x)
@@ -939,6 +943,8 @@ get.lt.df<-function(ql){
     df3$url<-x$url
     df3$lemma<-x$lemma
     df3$range<-x$range
+    corpsize<-ifelse(x$target=="obs",length(tdbcorp$token),length(tdbref$token))
+    df3$corpsize<-corpsize
     df3$det<-x$det
     #  df3$mf_rel<-x[[1]]$mf_rel
     # df3$ld<-x[[1]]$ld
@@ -955,13 +961,13 @@ get.lt.df<-function(ql){
   return(lt4.df)
 }
 
-qltdf<-rbind(get.lt.df(qda),get.lt.df(qdb),get.lt.df(qdc),get.lt.df(qdd),get.lt.df(qde),get.lt.df(qdf),
-             get.lt.df(qdar),get.lt.df(qdbr),get.lt.df(qdcr),get.lt.df(qddr),get.lt.df(qder),get.lt.df(qdfr))
+qltdf<-rbind(get.lt.df(1),get.lt.df(2),get.lt.df(3),get.lt.df(4),get.lt.df(5),get.lt.df(6),
+             get.lt.df(7),get.lt.df(8),get.lt.df(9),get.lt.df(10),get.lt.df(11),get.lt.df(12))
 write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
-return(qltdf)
-}
-dfa<-get.dist.df()
-
+#return(qltdf)
+#}
+dfa<-qltdf # to pass to eval-002.R, intercept (cond a) mean: 182
+dfa.save<-dfa
 
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
 library(readr)

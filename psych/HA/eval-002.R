@@ -1,12 +1,14 @@
 #20250730(19.09)
 #15273.reddit.stats.analysis
 ############################
-dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.csv"))
+#dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.csv"))
 dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
+mx<-colnames(dfa)!="X"
+dfa<-dfa[,mx]
 #dfa<-qltdf
-queries<-unique(dfa$q)
+queries<-unique(dfa$query_long)
 #df<-q.all.df
-qn<-unique(dfa$q)
+#qn<-unique(dfa$q)
 c<-letters[1:length(qn)]
 # for(k in 1:length(qn)){
 #   m<-dfa$q==qn[k]
@@ -39,9 +41,9 @@ lm2.summ<-summary(lm2)
 lm2.summ
 anlm.summ<-anova(lm2)
 anlm.summ
-lm.summ<-summary(lm1)
+#lm.summ<-summary(lm1)
 #an.summ<-anova(lm1)
-#lm.summ
+lm2.summ
 anlm.summ
 
 #wks.
@@ -86,7 +88,7 @@ dfe<-df.eval
 dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 
 
-rest.fun<-function(){
+gpt.manual.fun<-function(){
 #gpt manual p
   data<-dfa
   
@@ -148,7 +150,11 @@ rest.fun<-function(){
   #co.df<-data.frame(coeff,row.names = c("intercept","targetRef","b","c","d","e","f"))
   co.df
   p_v<-round(p_value,14)
-  
+  return(co.df)
+}
+co.df<-gpt.manual.fun()
+co.df
+plot.dist<-function(){
 # Reshape data: rows = q, columns = corp, values = dist
 bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
 bar_mat <- t(bar_mat)  # barplot expects groups in columns
@@ -162,6 +168,10 @@ df.plot<-barplot(bar_mat,
         args.legend = list(x = "right"),
         ylab = "median distance",
         main = "distance by query and corpus")
+
+}
+#plot.dist()
+rest.fun<-function(){
 # df.eval$mean==mdf$mean
 # df.eval$median==mdf$median
 # df.eval$mean<-mdf$mean

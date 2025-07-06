@@ -1,1 +1,1 @@
-{"a":{"token":["#intercept"]},"b":{"token":["this","that","these","those"]},"c":{"token":["the"]},"d":{"token":["a","an","some","any"]},"e":{"token":["my"]},"f":{"token":["your","their","his","her"]}}
+[{"a":{"q":[".*"],"det":["DET"]}},{"b":{"q":["this","that","these","those"],"det":["DET"]}},{"c":{"q":["the"],"det":["DET"]}},{"d":{"q":["a","an","some","any"],"det":["DET"]}},{"e":{"q":["my"],"det":[false]}},{"f":{"q":["your","their","his","her"],"det":[false]}}]
