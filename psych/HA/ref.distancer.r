@@ -905,6 +905,7 @@ get.dist<-function(qk,tdbw,det="notset"){
     return(data.frame(url=u2,lemma=l2,range=r1w,dist=d1))
     return(list(url=u2,lemma=l2,range=r1w,dist=d1))
   })
+  cat("finished query:-,",qk,tdbw,"-\n")
   
   return(d1)
 }
@@ -957,9 +958,9 @@ get.lt.df<-function(ql){
 qltdf<-rbind(get.lt.df(qda),get.lt.df(qdb),get.lt.df(qdc),get.lt.df(qdd),get.lt.df(qde),get.lt.df(qdf),
              get.lt.df(qdar),get.lt.df(qdbr),get.lt.df(qdcr),get.lt.df(qddr),get.lt.df(qder),get.lt.df(qdfr))
 write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
-
+return(qltdf)
 }
-#get.dist.df()
+dfa<-get.dist.df()
 
 
 # write_csv(qdf,"~/gith/SPUND-LX/psych/HA/eval-001.csv")
