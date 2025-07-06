@@ -34,3 +34,6 @@ chars<-lapply(seq_along(m2), function(i){
 })
 chars
 n_obs
+system("pandoc index.md --from markdown --to markdown --bibliography=psych.bib --natbib -o index-cited.md")
+
+

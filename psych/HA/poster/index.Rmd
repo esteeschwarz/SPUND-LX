@@ -17,7 +17,7 @@ output:
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
-bibliography: 'FRZ.bib' #isnt in .md keep
+bibliography: 'psych.bib' #isnt in .md keep
 link-citations: yes
 
 ---

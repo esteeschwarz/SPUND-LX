@@ -63,6 +63,29 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+
+div.csl-bib-body { }
+div.csl-entry {
+clear: both;
+margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+margin-left:2em;
+text-indent:-2em;
+}
+div.csl-left-margin {
+min-width:2em;
+float:left;
+}
+div.csl-right-inline {
+margin-left:2em;
+padding-left:1em;
+}
+div.csl-indent {
+margin-left: 2em;
+}
+</style>
 
 
 
@@ -77,7 +100,7 @@ if (window.hljs) {
 
 <h1 class="title toc-ignore">xtitle: proposition &amp; coherence observations in :schizophrenia: threads</h1>
 <h4 class="author">st. schwarz</h4>
-<h4 class="date">2025-07-06 19:19:38</h4>
+<h4 class="date">2025-07-06 19:57:45</h4>
 
 
 
@@ -94,7 +117,7 @@ if (window.hljs) {
 <h2><span class="header-section-number">2.1</span> subject</h2>
 <p>Investigate reference marking, coherence and information structure in schizophrenia language by measuring distance of similar nouns within range of comment thread preceded by certain determinants.[^1]
 ## background
-Inspired by Zimmerer et alii (#REF) we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
+Inspired by <span class="citation">(<label for="tufte-mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle">Zimmerer et al. 2017<span class="marginnote">Zimmerer, Vitor C., Stuart Watson, Douglas Turkington, I. Nicol Ferrier, and Wolfram Hinzen. 2017. <span>“Deictic and <span>Propositional</span> <span>Meaning</span>—<span>New</span> <span>Perspectives</span> on <span>Language</span> in <span>Schizophrenia</span>.”</span> <em>Frontiers in Psychiatry</em> 8 (February). <a href="https://doi.org/10.3389/fpsyt.2017.00017">https://doi.org/10.3389/fpsyt.2017.00017</a>.</span>)</span> we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 ## method
 To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with <strong>given and new information</strong> Prince (1981#REF).
 —-
@@ -119,112 +142,112 @@ The dataframe used for modeling consists of <code>87145</code> distance datapoin
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">24812</td>
-<td align="right">854</td>
+<td align="left">23608</td>
+<td align="right">35</td>
 <td align="left">d</td>
 <td align="left">obs</td>
-<td align="right">723</td>
-<td align="left">drug</td>
-<td align="right">5636</td>
+<td align="right">607</td>
+<td align="left">people</td>
+<td align="right">6036</td>
 <td align="right">755074</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="even">
-<td align="left">22571</td>
-<td align="right">65</td>
-<td align="left">d</td>
-<td align="left">obs</td>
-<td align="right">412</td>
-<td align="left">psychiatrist</td>
-<td align="right">2917</td>
-<td align="right">755074</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="left">25287</td>
-<td align="right">83</td>
-<td align="left">d</td>
-<td align="left">obs</td>
-<td align="right">805</td>
-<td align="left">test</td>
-<td align="right">5703</td>
-<td align="right">755074</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="left">17671</td>
-<td align="right">75</td>
-<td align="left">c</td>
-<td align="left">obs</td>
-<td align="right">455</td>
-<td align="left">weight</td>
-<td align="right">2637</td>
-<td align="right">755074</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="left">44012</td>
-<td align="right">33</td>
+<td align="left">12545</td>
+<td align="right">118</td>
 <td align="left">a</td>
-<td align="left">ref</td>
-<td align="right">44</td>
-<td align="left">burger</td>
-<td align="right">6207</td>
-<td align="right">271563</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="left">67066</td>
-<td align="right">5</td>
-<td align="left">c</td>
-<td align="left">ref</td>
-<td align="right">44</td>
-<td align="left">burger</td>
-<td align="right">6207</td>
-<td align="right">271563</td>
+<td align="left">obs</td>
+<td align="right">898</td>
+<td align="left">fuck</td>
+<td align="right">2974</td>
+<td align="right">755074</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="odd">
-<td align="left">75815</td>
-<td align="right">22</td>
-<td align="left">d</td>
-<td align="left">ref</td>
-<td align="right">24</td>
-<td align="left">movie</td>
-<td align="right">2885</td>
-<td align="right">271563</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="even">
-<td align="left">78384</td>
-<td align="right">15</td>
-<td align="left">d</td>
-<td align="left">ref</td>
-<td align="right">44</td>
-<td align="left">burger</td>
-<td align="right">6207</td>
-<td align="right">271563</td>
-<td align="left">TRUE</td>
-</tr>
-<tr class="odd">
-<td align="left">85166</td>
-<td align="right">99</td>
+<td align="left">87056</td>
+<td align="right">95</td>
 <td align="left">f</td>
 <td align="left">ref</td>
-<td align="right">35</td>
-<td align="left">city</td>
-<td align="right">2876</td>
+<td align="right">100</td>
+<td align="left">show</td>
+<td align="right">1110</td>
 <td align="right">271563</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
-<td align="left">10176</td>
-<td align="right">487</td>
-<td align="left">a</td>
+<td align="left">16057</td>
+<td align="right">20</td>
+<td align="left">b</td>
 <td align="left">obs</td>
 <td align="right">805</td>
-<td align="left">intelligence</td>
+<td align="left">iq</td>
 <td align="right">5703</td>
+<td align="right">755074</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">77582</td>
+<td align="right">75</td>
+<td align="left">d</td>
+<td align="left">ref</td>
+<td align="right">36</td>
+<td align="left">money</td>
+<td align="right">8785</td>
+<td align="right">271563</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">32840</td>
+<td align="right">88</td>
+<td align="left">a</td>
+<td align="left">ref</td>
+<td align="right">2</td>
+<td align="left">grill</td>
+<td align="right">5138</td>
+<td align="right">271563</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">13659</td>
+<td align="right">80</td>
+<td align="left">a</td>
+<td align="left">obs</td>
+<td align="right">903</td>
+<td align="left">schizophrenia</td>
+<td align="right">5381</td>
+<td align="right">755074</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">1727</td>
+<td align="right">270</td>
+<td align="left">a</td>
+<td align="left">obs</td>
+<td align="right">300</td>
+<td align="left">anecdote</td>
+<td align="right">2158</td>
+<td align="right">755074</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">69771</td>
+<td align="right">454</td>
+<td align="left">c</td>
+<td align="left">ref</td>
+<td align="right">53</td>
+<td align="left">money</td>
+<td align="right">8169</td>
+<td align="right">271563</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">25230</td>
+<td align="right">11</td>
+<td align="left">d</td>
+<td align="left">obs</td>
+<td align="right">804</td>
+<td align="left">post</td>
+<td align="right">1730</td>
 <td align="right">755074</td>
 <td align="left">TRUE</td>
 </tr>
