@@ -132,7 +132,14 @@ dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 
 #15276.caveats
 #general test
-
+uid<-tdbcorp$uid
+length(unique(uid))
+head(uid)
+uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+#uid2<-gsub("-.*","",uid)
+head(uid2)
+length(unique(uid2))
+tdbcorp$url<-uid2
 m<-tdbcorp$upos=="NOUN"
 m2<-tdbcorp$token%in%c("this","that","those","these")
 m1w<-which(m)
@@ -145,8 +152,32 @@ sum(m6)
 q1<-head(tdbcorp$token[(m2w)],20)
 t1<-head(tdbcorp$token[(m2w+1)],20)
 u1<-head(tdbcorp$upos[(m2w)],20)
-nouns.det<-unique(tdbcorp$lemma[m1w[m3w]])
-write_csv(nouns.det,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/nouns-001.csv"))
+
+p1<-m1w[m3w]
+l1<-tdbcorp$lemma[p1]
+uid1<-tdbcorp$url[p1]
+nouns.det<-unique(l1)
+nouns.det<-data.frame(lemma=nouns.det,include=1)
+#write_csv(nouns.det,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/nouns-002.csv"))
+
+d1<-lapply(p1, function(x){
+l2<-tdbcorp$lemma[x]
+u2<-tdbcorp$url[x]
+r1<-tdbcorp$url==u2
+r1w<-which(r1)
+l3<-tdbcorp$lemma[r1w]==l2
+l3w<-which(l3)
+d1<-diff(l3w)
+ifelse(length(d1)>0,
+  df<-data.frame(url=u2,lemma=l2,range=sum(r1),dist=d1),
+  df<-NA)
+#df$url<-u2
+#df$range<-length(r1w)
+return(df)
+return(data.frame(url=u2,lemma=l2,range=r1w,dist=d1))
+return(list(url=u2,lemma=l2,range=r1w,dist=d1))
+})
+
 
 paste(q1,t1,u1,sep = " ")
 m3<-m1w%in%(m2w+1)
