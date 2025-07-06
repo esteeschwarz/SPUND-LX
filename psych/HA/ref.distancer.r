@@ -492,6 +492,8 @@ mdfr<-mean(dfa$dist[dfa$target=="ref"&dfa$q=="f"])
 mdf<-data.frame(median=c(mac,mar,mbc,mbr,mcc,mcr,mdc,mdr,mec,mer,mfc,mfr),
                 mean=c(mdac,mdar,mdbc,mdbr,mdcc,mdcr,mddc,mddr,mdec,mder,mdfc,mdfr))
 
+q.all.df<-dfa
+median(q.all.df$dist[q.all.df$target=="obs"])
 median(q.all.df$dist[q.all.df$target=="ref"])
 mean(q.all.df$dist[q.all.df$target=="obs"])
 mean(q.all.df$dist[q.all.df$target=="ref"])
@@ -503,6 +505,9 @@ boxplot(dist ~ target, data = q.all.df,
         )
 
 # Remove outliers within each group (q, corp) using the IQR rule
+library(purrr)
+library(reshape2)
+
 df1_no_outliers <- q.all.df %>%
   group_by(target) %>%
   filter(
@@ -656,9 +661,9 @@ data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level interce
 data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
 #data$corpsize_c <- data$corp_size - mean(data$corp_size)
 #data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
-data$m_rel_c    <- data$mf_rel - mean(data$mf_rel[data$q=="a"])
-t1<-c(1200,500)
-t2<-abs(t1[1]-t1[2])-abs(t1[1]-t1[2])
+#data$m_rel_c    <- data$mf_rel - mean(data$mf_rel[data$q=="a"])
+#t1<-c(1200,500)
+#t2<-abs(t1[1]-t1[2])-abs(t1[1]-t1[2])
 # Corpus dummy
 data$corpusB <- ifelse(data$target == 'ref', 1, 0)
 data$corpusA <- ifelse(data$target == 'obs', 1, 0)
