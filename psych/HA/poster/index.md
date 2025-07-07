@@ -27,18 +27,18 @@ Measuring the referent-reference distance which we here assume as indicator of c
 We built a corpus of the reddit r/schizophrenia thread (`n=755074` tokens) and a reference corpus of r/unpopularopinion (`n=271563`). The corpus has been pos-tagged using the R udpipe:: package ([Wijffels 2023](#ref-wijffels_udpipe_2023)) which tags according to the universal dependencies tagset maintained by ([De Marneffe et al. 2021](#ref-de_marneffe_universal_2021)). Still the 755074 tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.  
 The dataframe used for modeling consists of `87145` distance datapoints derived from the postagged corpus.
 
-|       | dist | q   | target | url | lemma   | range | corpsize | det   |
-|:------|-----:|:----|:-------|----:|:--------|------:|---------:|:------|
-| 28265 |    7 | e   | obs    |  69 | one     |  1028 |   755074 | FALSE |
-| 50703 |   51 | a   | ref    |  53 | game    |  8169 |   271563 | TRUE  |
-| 39825 |  129 | a   | ref    |  35 | idea    |  2876 |   271563 | TRUE  |
-| 86641 |  162 | f   | ref    |  73 | student |  6064 |   271563 | FALSE |
-| 74761 |   48 | d   | ref    |  10 | movie   |  4885 |   271563 | TRUE  |
-| 33364 |    6 | a   | ref    |   4 | dog     |  4922 |   271563 | TRUE  |
-| 68165 |   51 | c   | ref    |  50 | country |  4210 |   271563 | TRUE  |
-| 41247 |  159 | a   | ref    |  36 | people  |  8785 |   271563 | TRUE  |
-| 49182 |   87 | a   | ref    |  53 | price   |  8169 |   271563 | TRUE  |
-| 84880 |   14 | f   | ref    |   4 | dog     |  4922 |   271563 | FALSE |
+|       | dist | q   | target | url | lemma  | range | corpsize | det   |
+|:------|-----:|:----|:-------|----:|:-------|------:|---------:|:------|
+| 70792 |    8 | c   | ref    |  69 | rating |  6358 |   271563 | TRUE  |
+| 48032 |   12 | a   | ref    |  50 | speed  |  4210 |   271563 | TRUE  |
+| 70225 |  460 | c   | ref    |  63 | take   |  1046 |   271563 | TRUE  |
+| 2416  |   71 | a   | obs    | 395 | voice  |  1523 |   755074 | TRUE  |
+| 69134 |   48 | c   | ref    |  53 | price  |  8169 |   271563 | TRUE  |
+| 30972 |   30 | f   | obs    | 292 | dose   |   387 |   755074 | FALSE |
+| 85303 |    4 | f   | ref    |  36 | people |  8785 |   271563 | FALSE |
+| 18636 |  812 | c   | obs    | 607 | chance |  6036 |   755074 | TRUE  |
+| 69045 |   63 | c   | ref    |  53 | price  |  8169 |   271563 | TRUE  |
+| 80556 |  181 | d   | ref    |  53 | price  |  8169 |   271563 | TRUE  |
 
 ------------------------------------------------------------------------
 
