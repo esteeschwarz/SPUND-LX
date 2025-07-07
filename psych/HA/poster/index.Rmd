@@ -9,16 +9,31 @@ output:
     latex_engine: xelatex
     keep_tex: yes
     keep_md: yes
+    pandoc_args: ["--citeproc"]
    #fontsize: 12pt
+  html_document:
+#    base_format: tufte::tufte_html
+    keep_md: true
+    pandoc_args: ["--citeproc"]
+  md_document:
+    variant: markdown_github
+    pandoc_args: ["--wrap=none"]
   bookdown::html_document2:
     base_format: tufte::tufte_html
     keep_md: yes
+    pandoc_args: ["--citeproc"]
+  bookdown::markdown_document2:
+    keep_md: yes
+    pandoc_args: ["--citeproc"]
   #tufte::tufte_html: default
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
 bibliography: 'psych.bib' #isnt in .md keep
 link-citations: yes
+#reference-section-title: "REF"
+#suppress-bibliography: true
+
 
 ---
 

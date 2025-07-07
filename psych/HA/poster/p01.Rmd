@@ -144,22 +144,25 @@ p_value<-round(co.list$p,5)
 co.df
 ```
 
----
-
 # xTitle
 # proposition & coherence in :schizophrenia: threads
 ### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
 ## subject
 Investigate reference marking, coherence and information structure in schizophrenia language by measuring distance of similar nouns within range of comment thread preceded by certain determinants.[^1]
+
 ## background
-Inspired by [@zimmerer_deictic_2017] we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
+Inspired by @zimmerer_deictic_2017 we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
+
 ## method
-To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** Prince (1981#REF).
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+
 ----
+
 ## questions
-Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language. Premising that a large noun distance indicates a low reference-referent association we hypothesise that in a language/TOM setting where the speakers estimation of the audiences context understanding capacities is disturbed we will find higer medium scores for the distance under matching conditions.
+Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language. Premising that a large noun distance indicates a low reference-referent association we hypothesise that in a language/ToM setting where the speakers estimation of the audiences context understanding capacities is disturbed we will find higer medium scores for the distance under matching conditions.
+
 ## daten
-We built a corpus of the reddit r/schizophrenia thread (```n=`r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n=`r n_ref` ```). The corpus has been pos-tagged using the R udpipe:: package #REF which tags according to the universal dependencies tagset maintained by #REF. Still the `r n_obs` tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.   
+We built a corpus of the reddit r/schizophrenia thread (```n=`r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n=`r n_ref` ```). The corpus has been pos-tagged using the R udpipe:: package [@wijffels_udpipe_2023] which tags according to the universal dependencies tagset maintained by [@de_marneffe_universal_2021]. Still the `r n_obs` tokens can only, with the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.   
 The dataframe used for modeling consists of ``` `r length(dfa$q)` ``` distance datapoints derived from the postagged corpus.
 
 ```{r queries,warning=F,message=F,echo=F,eval=T}
@@ -190,6 +193,7 @@ kable(sample.df)
 ```
 
 ----
+
 ## results
 ```{r,df1-kable,message=F,warning=F,echo=FALSE,eval=F}
 #knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
@@ -288,8 +292,10 @@ dist.target<-round(dist.target,0)
 ```
 
 ----
+
 ## conclusion
-Over all conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist ~ corp*q+range + (1|lemma`) gets a p-value of ```p=`r p.target` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
+Over all conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist ~ corp*q+range + (1|lemma`) gets a p-value of ```p=`r p.target` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
 So the median distance of nouns, preceded by one of our queries, with ``` `r md_target` ``` tokens width for the target corpus and ``` `r md_ref` ``` in the reference corpus, is also with respect to the covariates significantly (```r p.sig.ex```) higher but still to be tested on a larger corpus.
-## B. REF:
+
+## B. REF
 [^1]:snc.1:h2.pb.1000char/pg.queries
