@@ -9,7 +9,7 @@ dfa<-dfa[,mx]
 queries<-unique(dfa$query_long)
 #df<-q.all.df
 #qn<-unique(dfa$q)
-c<-letters[1:length(qn)]
+#c<-letters[1:length(qn)]
 # for(k in 1:length(qn)){
 #   m<-dfa$q==qn[k]
 #   dfa$q[m]<-c[k]
@@ -23,9 +23,13 @@ target <- dfa$target       # Assuming the second column is the grouping variable
 
 target <- as.factor(target)
 table(target)
-
+dfsa<-dfa[dfa$q%in%c("b","c","d"),]
+dfsb<-dfa[dfa$q%in%c("e","f"),]
+length(dfsa$dist)
+#Y<-dfsb$dist
 #anova_model <- aov(Y ~ target, data = dfa)
 anova_model <- aov(Y ~ target*q, data = dfa)
+#anova_model <- aov(Y ~ target, data = dfsb)
 #anova_model <- aov(Y ~ group*q, data = dfa)
 anova.sum<-summary(anova_model)
 anova.sum
@@ -45,7 +49,20 @@ anlm.summ
 #an.summ<-anova(lm1)
 lm2.summ
 anlm.summ
-
+mean(dfa$dist[dfa$target=="obs"])
+mean(dfa$dist[dfa$target=="ref"])
+mean(dfa$dist[dfa$target=="obs"&dfa$q=="a"])
+mean(dfa$dist[dfa$target=="ref"&dfa$q=="a"])
+mean(dfa$dist[dfa$target=="obs"&dfa$q=="b"])
+mean(dfa$dist[dfa$target=="ref"&dfa$q=="b"])
+mean(dfa$dist[dfa$target=="obs"&dfa$q=="c"])
+mean(dfa$dist[dfa$target=="ref"&dfa$q=="c"])
+mean(dfa$dist[dfa$target=="obs"&dfa$q=="d"])
+mean(dfa$dist[dfa$target=="ref"&dfa$q=="d"])
+mean(dfa$dist[dfa$target=="obs"&dfa$q=="e"])
+mean(dfa$dist[dfa$target=="ref"&dfa$q=="e"])
+mean(dfa$dist[dfa$target=="obs"&dfa$q=="f"])
+mean(dfa$dist[dfa$target=="ref"&dfa$q=="f"])
 #wks.
 # #get mean:
 # m.target<-median(dfa$dist[dfa$target=="obs"])

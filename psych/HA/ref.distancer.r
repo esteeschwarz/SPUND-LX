@@ -861,15 +861,16 @@ get.dist<-function(qk,tdbw,det="notset"){
   tdb$url<-uid2
   m<-tdb$upos=="NOUN"
   m1w<-which(m)
-  
   qs[[qk]][[1]]$q
+  cat(length(m1w),"NOUN matches in",tdbw,"corpus \n")
   # m2<-tdbcorp$token%in%c("this","that","those","these")
   query<-unlist(qs[[qk]][[1]]$q)
+  cat("query: [",query,"]\n")
   m2<-m
   #ifelse(qk!=1,m2<-tdb$token%in%query,m2<-!is.na(tdb$token)) # if condition A, match all tokens
   ifelse(qk!=1,m2<-tdb$token%in%query,m2<-m) # if condition A, match all NOUN tokens
   m2w<-which(m2)
-  
+  cat(length(m2w),"precedent matches for query\n")
   det.q<-qs[[qk]][[1]]$det
   det.y<-F
   #det<-F
@@ -878,20 +879,22 @@ get.dist<-function(qk,tdbw,det="notset"){
   det.y
   ifelse(det!="notset"&det.y,det.q<-det,det.y<-F)
   # det<-F
-  ifelse(det.y,1,2)
-  det.q
-  ifelse(det.y,m5<-tdb$upos==det.q,m5<-m2)
+  ifelse(det.y,cat<-paste0("match precedent of type postag=",det.q,"\n"),cat<-"no upos DET to match\n")
+  cat(cat)
+  ifelse(det.y,m5<-tdb$upos[m2]==det.q,m5<-m2)
   
   # m5<-tdb$upos=="DET"
-  m5w<-which(m5)
-  m6<-m2w%in%m5w
-  sum(m6)
-  m2w<-m2w[m6]
+  #m5w<-which(m2[m5])
+  m6w<-m2w[m5]
+  cat(length(m6w),"matches for precedent postag =",det.q,"\n")
+  #m6w<-which(m6)
+  tdb[m6w,c("token")]
+  #m2w<-m2w[m6]
   if(qk==1)
     m2w<-m2w-1# q1<-head(tdbcorp$token[(m2w)],20)
   # t1<-head(tdbcorp$token[(m2w+1)],20)
   # u1<-head(tdbcorp$upos[(m2w)],20)
-  m7w<-m2w+1
+  m7w<-m6w+1
   p1<-m1w[m1w%in%m7w]
   sum(is.na(m1w))
   #cat(sum(m6),"matches\n")
