@@ -839,12 +839,16 @@ build.q<-function(){
   return(list(q0,q1,q2,q3,q4,q5))
 }
 qs<-build.q()
+library(jsonlite)
+#write_json(qs,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
 get.dist.list<-function(){
 
 qs[[2]]
 names(qs)
 qs
-qk<-2
+qk<-1
+tdbw<-"obs"
+det<-F
 get.dist<-function(qk,tdbw,det="notset"){
   ifelse(tdbw=="obs",tdb<-tdbcorp,tdb<-tdbref)
   uid<-tdb$uid
@@ -856,32 +860,43 @@ get.dist<-function(qk,tdbw,det="notset"){
   length(unique(uid2))
   tdb$url<-uid2
   m<-tdb$upos=="NOUN"
+  m1w<-which(m)
+  
   qs[[qk]][[1]]$q
   # m2<-tdbcorp$token%in%c("this","that","those","these")
   query<-unlist(qs[[qk]][[1]]$q)
-  ifelse(qk!=1,m2<-tdb$token%in%query,m2<-!is.na(tdb$token)) # if condition A, match all tokens
-  m1w<-which(m)
+  m2<-m
+  #ifelse(qk!=1,m2<-tdb$token%in%query,m2<-!is.na(tdb$token)) # if condition A, match all tokens
+  ifelse(qk!=1,m2<-tdb$token%in%query,m2<-m) # if condition A, match all NOUN tokens
   m2w<-which(m2)
+  
   det.q<-qs[[qk]][[1]]$det
   det.y<-F
   #det<-F
   if(mode(det)=="character")
     det.y<-T
+  det.y
   ifelse(det!="notset"&det.y,det.q<-det,det.y<-F)
   # det<-F
   ifelse(det.y,1,2)
+  det.q
   ifelse(det.y,m5<-tdb$upos==det.q,m5<-m2)
   
   # m5<-tdb$upos=="DET"
   m5w<-which(m5)
   m6<-m2w%in%m5w
-  m2w<-m2w[m6]
   sum(m6)
-  # q1<-head(tdbcorp$token[(m2w)],20)
+  m2w<-m2w[m6]
+  if(qk==1)
+    m2w<-m2w-1# q1<-head(tdbcorp$token[(m2w)],20)
   # t1<-head(tdbcorp$token[(m2w+1)],20)
   # u1<-head(tdbcorp$upos[(m2w)],20)
-  
-  p1<-m1w[m2w]
+  m7w<-m2w+1
+  p1<-m1w[m1w%in%m7w]
+  sum(is.na(m1w))
+  #cat(sum(m6),"matches\n")
+  length(p1)
+  cat(length(p1),"lemma distances to compute...\n")
   # l1<-tdbcorp$lemma[p1]
   # uid1<-tdbcorp$url[p1]
   # nouns.det<-unique(l1)
@@ -889,6 +904,7 @@ get.dist<-function(qk,tdbw,det="notset"){
   #write_csv(nouns.det,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/nouns-002.csv"))
   
   d1<-lapply(p1, function(x){
+    cat("\rposition",x,"of",length(tdb$token),"in corpus")
     l2<-tdb$lemma[x]
     u2<-tdb$url[x]
     r1<-tdb$url==u2
@@ -905,11 +921,12 @@ get.dist<-function(qk,tdbw,det="notset"){
     return(data.frame(url=u2,lemma=l2,range=r1w,dist=d1))
     return(list(url=u2,lemma=l2,range=r1w,dist=d1))
   })
-  cat("finished query:-,",qk,tdbw,"-\n")
+  cat("\nfinished query:-,",qk,tdbw,"-\n")
   
   return(d1)
 }
 qda<-get.dist(1,"obs","DET")
+qdaf<-get.dist(1,"obs",F) # intercept of all tokens, not only "DET"
 qdb<-get.dist(2,"obs","DET")
 qdc<-get.dist(3,"obs","DET")
 qdd<-get.dist(4,"obs","DET")
@@ -917,16 +934,20 @@ qde<-get.dist(5,"obs",F)
 qdf<-get.dist(6,"obs",F)
 #qdb<-get.dist(qk,"obs")
 qdar<-get.dist(1,"ref","DET")
+qdarf<-get.dist(1,"ref",F)
 qdbr<-get.dist(2,"ref","DET")
 qdcr<-get.dist(3,"ref","DET")
 qddr<-get.dist(4,"ref","DET")
 qder<-get.dist(5,"ref",F)
 qdfr<-get.dist(6,"ref",F)
 
-return(list(qda,qdb,qdc,qdd,qde,qdf,qdar,qdbr,qdcr,qddr,qder,qdfr))
+return(list(qdaf,qdb,qdc,qdd,qde,qdf,qdarf,qdbr,qdcr,qddr,qder,qdfr))
 }
+#qdf<-list(qdaf,qdb,qdc,qdd,qde,qdf,qdarf,qdbr,qdcr,qddr,qder,qdfr)
 #########################
 qdf<-get.dist.list()
+#save(qdf,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-004.RData"))
+ql<-2
 get.lt.df<-function(ql){
   
   lt1<-qdf[[ql]]
@@ -956,6 +977,19 @@ get.lt.df<-function(ql){
   colnames(lt4.df)[1]<-"dist"
   mode(lt4.df$dist)<-"double"
   mode(lt4.df$range)<-"double"
+  queries.l<-lapply(qs, function(x){
+    x[[1]]
+  })
+  names(queries.l)<-letters[1:6]
+  qs
+  qns<-names(qs)
+  lt4.df$query_long<-NA
+  #l<-1
+  for(l in letters[1:6]){
+    m<-lt4.df$q==l
+    q1<-queries.l[[l]]$q
+    lt4.df$query_long[m]<-paste0(q1,collapse = ",")
+  }
   print(mean(lt4.df$dist))
   print(median(lt4.df$dist))
   return(lt4.df)
