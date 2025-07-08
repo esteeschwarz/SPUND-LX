@@ -2,7 +2,8 @@
 #15273.reddit.stats.analysis
 ############################
 #dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.csv"))
-dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
+#dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
+# dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
 mx<-colnames(dfa)!="X"
 dfa<-dfa[,mx]
 #dfa<-qltdf
