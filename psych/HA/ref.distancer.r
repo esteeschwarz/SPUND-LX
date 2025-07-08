@@ -982,7 +982,7 @@ return(list(qdaf,qdb,qdc,qdd,qde,qdf,qdarf,qdbr,qdcr,qddr,qder,qdfr))
 #########################
 ### care: this runs over all queries and takes while...
 qdf<-get.dist.list()
-save(qdf,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-004.RData"))
+save(qdf,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-005.RData"))
 ####################
 ql<-2
 ### this apply to qdf to extract distances to dataframe
@@ -1035,7 +1035,7 @@ get.lt.df<-function(ql){
 
 qltdf<-rbind(get.lt.df(1),get.lt.df(2),get.lt.df(3),get.lt.df(4),get.lt.df(5),get.lt.df(6),
              get.lt.df(7),get.lt.df(8),get.lt.df(9),get.lt.df(10),get.lt.df(11),get.lt.df(12))
-write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
+write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.csv"))
 #return(qltdf)
 #}
 dfa<-qltdf # to pass to eval-002.R, intercept (cond a) mean: 182
