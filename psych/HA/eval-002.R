@@ -2,8 +2,8 @@
 #15273.reddit.stats.analysis
 ############################
 #dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.csv"))
-#dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
-# dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
+dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
+#dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
 mx<-colnames(dfa)!="X"
 dfa<-dfa[,mx]
 #dfa<-qltdf
@@ -389,3 +389,22 @@ print(tdb$upos[r1])
 }
 show.tok(2)
 }
+sumtx<-data.frame(anlm.summ)
+sumtx<-cbind(anova.plain=rownames(sumtx),sumtx)
+#umtx$dun<-NA
+lmco<-lm2.summ$coefficients
+lmco<-cbind(anova.lme=rownames(lmco),lmco,"---")
+
+empty<-(rep("---",6))
+ns.an<-colnames(sumtx)
+ns.lm<-c(colnames(lmco))
+colnames(sumtx)<-rep("X",7)
+colnames(lmco)<-rep("X",7)
+sumtxdf<-rbind(ns.an,sumtx,ns.lm,lmco,empty)
+
+
+
+
+write.table(sumtxdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"),append = T,sep=",",row.names = F)
+
+anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
