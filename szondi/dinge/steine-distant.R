@@ -181,3 +181,24 @@ qmin2<-qmineral
 qmin2$mineral<-1
 write_csv(qmineral,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/cal-minerals.csv"))
 qmin3<-fix(qmin2)
+qmin3$uxpos<-gsub("ü","ue",qmin3$uxpos)
+qmin3$uxpos<-gsub("ä","ae",qmin3$uxpos)
+qmin3$uxpos<-gsub("ö","oe",qmin3$uxpos)
+qmin3$uxpos<-gsub("Ü","Ue",qmin3$uxpos)
+qmin3$uxpos<-gsub("Ä","Ae",qmin3$uxpos)
+qmin3$uxpos<-gsub("Ö","Oe",qmin3$uxpos)
+qmin3$uxpos<-gsub("ß","sz",qmin3$uxpos)
+
+qmin3$qpos<-gsub("ü","ue",qmin3$qpos)
+qmin3$qpos<-gsub("ä","ae",qmin3$qpos)
+qmin3$qpos<-gsub("ö","oe",qmin3$qpos)
+qmin3$qpos<-gsub("Ü","Ue",qmin3$qpos)
+qmin3$qpos<-gsub("Ä","Ae",qmin3$qpos)
+qmin3$qpos<-gsub("Ö","Oe",qmin3$qpos)
+qmin3$qpos<-gsub("ß","sz",qmin3$qpos)
+
+qmin4<-qmin3[,c(1,2)]
+colnames(qmin4)<-c("adj","noun")
+qmin4<-qmin4[order(qmin4$noun,decreasing = F),]
+write_csv(qmin4,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/cal-minerals.csv"))
+
