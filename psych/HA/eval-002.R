@@ -2,8 +2,12 @@
 #15273.reddit.stats.analysis
 ############################
 #dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.csv"))
-dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
+#dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.csv"))
 #dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
+### df 005 to big for git as .csv
+#load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.RData")) # qltdf
+dfa<-qltdf
+###
 mx<-colnames(dfa)!="X"
 dfa<-dfa[,mx]
 #dfa<-qltdf
@@ -408,3 +412,64 @@ sumtxdf<-rbind(ns.an,sumtx,ns.lm,lmco,empty)
 write.table(sumtxdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"),append = T,sep=",",row.names = F)
 
 anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
+
+plot.lme<-function(anovas){
+  plot.dist<-function(dfe){
+    # Reshape data: rows = q, columns = corp, values = dist
+    # bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
+    # bar_mat <- t(bar_mat)  # barplot expects groups in columns
+    bar_mat<-dfe$X.1
+    print(bar_mat)
+    # Make grouped barplot
+    df.plot<-barplot(bar_mat,
+                     beside = TRUE,
+#                     col = c("black", "red"),
+                     names.arg = levels(rownames(dfe)),
+#                     legend.text = rownames(bar_mat),
+ #                    args.legend = list(x = "right"),
+                     ylab = "median distance",
+                     main = "distance by query and corpus")
+    
+  }
+  m<-anovas$X=="anova.lme"
+  sum(m)
+  m2<-anovas$X=="---"
+  m2w<-which(m2)
+  m1w<-which(m)
+  x<-m1w[1]
+  lapply(m1w, function(x){
+    range<-(x+1):(x+13)
+    subdf<-anovas[range,]
+    mode(subdf$X.1)<-"double"
+    subdf$plot<-subdf$X.1[1]-subdf$X.1
+    subdf$plot<-subdf$X.1
+    subdf$plot[1]<-0
+    # barplot(subdf$X.1~subdf$X,xlab = "",ylab="mean distance",main="lmer estimates")
+    par(las=2)
+    # After your barplot call
+    bp <- barplot(subdf$plot~subdf$X,xlab = "",ylab="mean distance",main="lmer estimate relations")
+    # bp <- barplot(bar_mat, beside = TRUE, col = c("black", "red"), names.arg = levels(dfe$q), legend.text = rownames(bar_mat), args.legend = list(x = "right"), ylab = "median distance", main = "distance by query and corpus")
+    
+    # Get the y-value for the line (e.g., first bar's height)
+    y_intercept <- subdf$plot[1]
+    
+    # Get x-limits from the barplot (bp gives midpoints of bars)
+    x_min <- min(bp)
+    x_max <- max(bp)
+    
+    # Draw the horizontal line only within the barplot area
+  #  segments(x0 = x_min, y0 = y_intercept, x1 = x_max, y1 = y_intercept, col = "red", lwd = 1)
+    tx<-x_max+1
+    ty<-2
+    # Add label "intercept" near the line (adjust x/y as needed)
+   # text(x = tx, y = ty, labels = "intercept", pos = 3, col = "red", cex = 0.8)
+    text(x = tx-4, y = ty+10, labels = paste0("Intercept (targetobs) = ",round(subdf$X.1[1],0)), pos = 3, col = "black", cex = 0.8)
+    #  abline(h = subdf$X.1[1], col = "red", lwd = 1)
+    
+    
+
+})
+  
+}
+plot.lme(anovas)
+
