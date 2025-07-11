@@ -91,8 +91,13 @@ library(udpipe)
 # #source("rlog.R")
 # library(readr)
 head(t1,100)
+}
 library(readtext)
+### from here with corrections in .txt
 t2<-readtext(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/schrift-der-steine.txt"))$text
+get.posdf<-function(t2){
+t2<-readtext(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/schrift-der-steine.txt"))$text
+  
 t2<-gsub("-\n","",t2)
 model.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/modeldir")
 model<-list.files(model.dir)
@@ -106,8 +111,12 @@ pos1<-udpipe_annotate(model,t2)
 pos.df<-as.data.frame(pos1)
 
 save(pos.df,file = paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/steine01.pos.2.RData"))
+return(pos.df)
 }
-load(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/steine01.pos.2.RData"))
+pos.df<-get.posdf(t2)
+#load(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/steine01.pos.2.RData"))
+###########################
+main.fun<-function(pos.df){
 upos<-"ADJ"
 xpos<-"ADJA"
 qpos<-"NOUN"
@@ -137,8 +146,11 @@ range<-lapply(m,function(x){
 #  return(r1:r2)
 })
 }
+#get.adj.df<-function(pos.df){
 m.adj<-get.posx(pos.df,"ADJ","ADJA","NOUN",6)
 m.adj[2]
+m.ad.u<-unique(unlist(m.adj))
+m.ad.u[grep("iew",m.ad.u)]
 library(abind)
 qmdf.l<-lapply(m.adj, function(x){
   return(x$qdf)
@@ -146,10 +158,15 @@ qmdf.l<-lapply(m.adj, function(x){
 qmdf<-abind(qmdf.l,along = 1)
 qmdf<-qmdf[order(qmdf[,2],decreasing = F),c(2,1)]
 qmdf<-data.frame(qmdf)
+qmdf$uxpos<-gsub("[^a-zA-ZäöüÄÖÜß]","",qmdf$uxpos)
 qmdf.p<-cbind(qmdf,0)
+#qmdf.p$adj<-gsub("[^a-zA-zäöüÄÖÜß]","",qmdf.p$adj)
 colnames(qmdf.p)<-c("adj","noun","mineral")
-write_csv(qmdf.p,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/distant-001-adjectives.csv"))
+write_csv(qmdf.p,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/distant-001-adj-noun.df.csv"))
 
+#}
+
+#eval.1.dep<-function(qmdf){
 library(dplyr)
 
 # Example data
@@ -164,19 +181,34 @@ fdf<-data.frame(result[order(result$freq,decreasing = T),])
 
 #print(fdf)
 head(fdf,50)
+t.qpos<-table(df$qpos)
+t.xpos<-table(df$uxpos)
+tq<-t.qpos[order(t.qpos,decreasing = T)]
+tu<-t.xpos[order(t.xpos,decreasing = T)]
 
 qmdf$uxpos[qmdf$qpos=="Achat"]
+qmdf$uxpos[qmdf$qpos%in%qmin4$noun]
 
 noun.u<-unique(qmdf.p$noun)
 #noun.u<-data.frame(noun=noun.u,mineral=0)
 noun.t<-paste0(noun.u,collapse =" ")
-writeLines(noun.u,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/nouns.txt"))
-minerals<-read_csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/mineral_nouns.csv"))
-min1<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/deeps_mineral-nouns.txt"))
-min2<-read_csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/deeps_minerals.csv"))
-min3<-cbind(matrix(c(minerals$noun,min1,min2$noun)),1)
+writeLines(noun.u,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/nouns.txt"))
+min0<-read_csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/mineral_nouns.csv"))
+min1<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/deeps_mineral-nouns.txt"))
+min2<-read_csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/deeps_minerals.csv"))
+min5<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/cal-minerals_llma.txt"))
+min5<-unique(unlist(strsplit(min5,", "))) # llma minerals
+min7<-c(minerals$noun,min1,min2$noun,min5)
+min7<-gsub(" ","",min7)
+min7<-unique(min7)
+min3<-cbind(min7,F)
 min3<-min3[order(min3[,1]),]
+min3
+min3[149,]==min3[150,]
+min4
+#min6
 min4<-unique(min3[,1])
+# qmdf$uxpos<-gsub("[^a-zA-ZäöüÄÖÜß","",qmdf$uxpos)
 qmdf$mineral<-F
 for (k in min4){
   m<-qmdf$qpos==k
@@ -185,29 +217,36 @@ for (k in min4){
 qmdf$uxpos[qmdf$mineral]
 qmineral<-qmdf[qmdf$mineral,]
 qmin2<-qmineral
-qmin2$mineral<-1
-write_csv(qmineral,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/cal-minerals.csv"))
-qmin3<-fix(qmin2)
-qmin3$uxpos<-gsub("ü","ue",qmin3$uxpos)
-qmin3$uxpos<-gsub("ä","ae",qmin3$uxpos)
-qmin3$uxpos<-gsub("ö","oe",qmin3$uxpos)
-qmin3$uxpos<-gsub("Ü","Ue",qmin3$uxpos)
-qmin3$uxpos<-gsub("Ä","Ae",qmin3$uxpos)
-qmin3$uxpos<-gsub("Ö","Oe",qmin3$uxpos)
-qmin3$uxpos<-gsub("ß","sz",qmin3$uxpos)
+qmin2$mineral<-F
+qmin.all<-data.frame(noun=unique(min3[,1]),com=NA)
+qmin.all$noun
+qmineral<-qmineral[order(qmineral$qpos),]
+write_csv(qmin.all,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/allminerals.csv"))
+write_csv(qmineral,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/cal-minerals.csv"))
+return(qmineral)
+}
+calminall<-main.fun(pos.df)
+# qmin3<-fix(qmin2)
+# qmin3$uxpos<-gsub("ü","ue",qmin3$uxpos)
+# qmin3$uxpos<-gsub("ä","ae",qmin3$uxpos)
+# qmin3$uxpos<-gsub("ö","oe",qmin3$uxpos)
+# qmin3$uxpos<-gsub("Ü","Ue",qmin3$uxpos)
+# qmin3$uxpos<-gsub("Ä","Ae",qmin3$uxpos)
+# qmin3$uxpos<-gsub("Ö","Oe",qmin3$uxpos)
+# qmin3$uxpos<-gsub("ß","sz",qmin3$uxpos)
+# 
+# qmin3$qpos<-gsub("ü","ue",qmin3$qpos)
+# qmin3$qpos<-gsub("ä","ae",qmin3$qpos)
+# qmin3$qpos<-gsub("ö","oe",qmin3$qpos)
+# qmin3$qpos<-gsub("Ü","Ue",qmin3$qpos)
+# qmin3$qpos<-gsub("Ä","Ae",qmin3$qpos)
+# qmin3$qpos<-gsub("Ö","Oe",qmin3$qpos)
+# qmin3$qpos<-gsub("ß","sz",qmin3$qpos)
 
-qmin3$qpos<-gsub("ü","ue",qmin3$qpos)
-qmin3$qpos<-gsub("ä","ae",qmin3$qpos)
-qmin3$qpos<-gsub("ö","oe",qmin3$qpos)
-qmin3$qpos<-gsub("Ü","Ue",qmin3$qpos)
-qmin3$qpos<-gsub("Ä","Ae",qmin3$qpos)
-qmin3$qpos<-gsub("Ö","Oe",qmin3$qpos)
-qmin3$qpos<-gsub("ß","sz",qmin3$qpos)
-
-qmin4<-qmin3[,c(1,2)]
-colnames(qmin4)<-c("adj","noun")
-qmin4<-qmin4[order(qmin4$noun,decreasing = F),]
-write_csv(qmin4,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/cal-minerals.csv"))
+qmin4<-qmineral[,c(1,2)]
+colnames(qmin4)<-c("adj","mineral")
+qmin4<-qmin4[order(qmin4$mineral,decreasing = F),]
+write_csv(qmin4,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/exhibition/cal-minerals.csv"))
 ###
 # try get range network of associations
 qa<-c("schreiben","schrift","zeichen","zeichnen","zeichnung")
@@ -252,6 +291,6 @@ show.window<-function(pos.df,q,window){
   #r<-c((mw-window):(mw+window))
   trange<-pos.df$sentence[r]
 }
-tx<-show.window(pos.df,"r",10)
+tx<-show.window(pos.df,"che",10)
 tx
 
