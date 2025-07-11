@@ -30,6 +30,7 @@ library(quanteda)
 library(quanteda.textstats)
 #library(DramaAnalysis)
 library(collostructions)
+get.posdf<-function(){
 to1<-tokenize_word1(t1)
 to1[[2]]
 ta1<-table(unlist(to1))
@@ -90,6 +91,9 @@ library(udpipe)
 # #source("rlog.R")
 # library(readr)
 head(t1,100)
+library(readtext)
+t2<-readtext(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/schrift-der-steine.txt"))$text
+t2<-gsub("-\n","",t2)
 model.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/modeldir")
 model<-list.files(model.dir)
 print(model)
@@ -98,9 +102,12 @@ print(model.l)
 model.g<-paste(model.dir,model[grep(model.l,model)],sep = "/")
 print(model.g)
 model<-udpipe::udpipe_load_model(model.g)
-pos1<-udpipe_annotate(model,t1)
+pos1<-udpipe_annotate(model,t2)
 pos.df<-as.data.frame(pos1)
 
+save(pos.df,file = paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/steine01.pos.2.RData"))
+}
+load(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/steine01.pos.2.RData"))
 upos<-"ADJ"
 xpos<-"ADJA"
 qpos<-"NOUN"
@@ -201,4 +208,50 @@ qmin4<-qmin3[,c(1,2)]
 colnames(qmin4)<-c("adj","noun")
 qmin4<-qmin4[order(qmin4$noun,decreasing = F),]
 write_csv(qmin4,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/dinge/cal-minerals.csv"))
+###
+# try get range network of associations
+qa<-c("schreiben","schrift","zeichen","zeichnen","zeichnung")
+file.edit(paste0(Sys.getenv("HKW_TOP"),"/AVL/2024/dinge/schrift-der-steine.txt"))
+r<-15
+get.st.range<-function(pos.df,qmin4,qa,r,window){
+  m1<-pos.df$lemma%in%qa
+  sum(m1)
+  m1w<-which(m1)
+  m2<-pos.df$token%in%qmin4$noun
+  m2w<-which(m2)
+  sum(m2)
+  m3w<-lapply(m1w,function(x){
+    r1<-x-r
+    r2<-x+r
+    r3<-c(r1:r2)
+  })
+  m1r<-unique(unlist(m3w))
+  m4<-m2w%in%m1r
+  sum(m4)
+  m4w<-m2w[m4]
+  m41<-lapply(m4w,function(x){
+    r1<-x-window
+    r2<-x+window
+    r3<-c(r1:r2)
+    t<-pos.df$token[r3]
+  })
+  
+  return(m41)
+
+  
+  }
+scr.tokens<-get.st.range(pos.df,qmin4,qa,20,20)
+scr.tokens
+m<-pos.df$lemma=="r"
+mw<-which(m)
+pos.df$sentence[mw]
+sum(m,na.rm = T)
+show.window<-function(pos.df,q,window){
+  m<-pos.df$lemma==q
+  mw<-which(m)
+  #r<-c((mw-window):(mw+window))
+  trange<-pos.df$sentence[r]
+}
+tx<-show.window(pos.df,"r",10)
+tx
 
