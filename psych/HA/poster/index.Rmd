@@ -31,8 +31,9 @@ output:
     latex_engine: xelatex
 bibliography: 'psych.bib' #isnt in .md keep
 link-citations: yes
+#csl: chicago-fullnote-bibliography.csl
 #reference-section-title: "REF"
-#suppress-bibliography: true
+suppress-bibliography: true
 
 
 ---

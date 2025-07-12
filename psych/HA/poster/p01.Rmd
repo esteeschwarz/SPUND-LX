@@ -170,11 +170,12 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
 # n_ref<-dfa$corpsize[dfa$target=="ref"][1]
 md_target<-median(dfa$dist[dfa$target=="obs"])
 md_ref<-median(dfa$dist[dfa$target=="ref"])
-sample.df<-dfa[sample(1:length(dfa$dist),10),colnames(dfa)!="query_long"]
+sample.df<-dfa[sample(1:length(dfa$dist),10),
+               colnames(dfa)!="query_long"]
 #kable(sample.df)
 ```
 
-# xTitle
+<!--# xTitle-->
 # proposition & coherence in :schizophrenia: threads
 ### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
 ## subject
@@ -184,8 +185,7 @@ Investigate reference marking, coherence and information structure in schizophre
 Inspired by @zimmerer_deictic_2017 we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 
 ## method (M`r dataset`)
-To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M`r dataset` `r det.restrict`   
-This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M`r dataset` `r det.restrict`   This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
 
 ----
 
@@ -198,7 +198,7 @@ The dataframe used for modeling M`r dataset` consists of ``` `r length(dfa$q)` `
 
 
 ```{r sampledf,results=T,warning=F,message=F,echo=F,eval=T}
-kable(sample.df)
+kable(sample.df,row.names = F)
 
 ```
 ----
@@ -269,12 +269,12 @@ df.plot<-barplot(bar_mat,
         main = "distance distribution by query")
 
 
-cat("## conditions:\n")
 #print(unlist(qjs))
 #qjs$b
 #queries<-qjs
 queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="NOUN")
-kable(queries.df)
+# cat("## conditions:\n")
+ kable(queries.df,caption = "query conditions for preceding token")
 ```
 
 ```{r lmeplot, results=F,message=F,warning=F,echo=FALSE,eval=T,fig.path=paste0("plots/lmer-plot-df",dataset,"-")}
@@ -301,11 +301,10 @@ rmd.plot.lme(lm2.summ)
 #unlist(qjs$b)
 ```
 
-----
-
+<!-------->
 ## conclusion
 Over all conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.target` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
 So the medium distance of nouns, preceded by one of our queries, is with ``` `r md_target` ``` tokens width for the target corpus vs. ``` `r md_ref` ``` in the reference corpus also with respect to the covariables significantly (```r p.sig.ex```) higher but still to be tested with growing the corpus.
 
-## B. REF
+<!--## B. REF-->
 [^1]:snc.1:h2.pb.1000char/pg.queries.cites
