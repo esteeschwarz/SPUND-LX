@@ -28,24 +28,24 @@ Measuring the referent-reference distance which we here assume as indicator of c
 We built a corpus of the reddit r/schizophrenia thread (`n=755074` tokens) and a reference corpus of r/unpopularopinion (`n=271563`). Both were pos-tagged using the R udpipe:: package ([Wijffels 2023](#ref-wijffels_udpipe_2023)) which tags according to the universal dependencies tagset maintained by De Marneffe et al. ([2021](#ref-de_marneffe_universal_2021)). Still the 755074 tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.  
 The dataframe used for modeling consists of `87145` distance datapoints (sample below) derived from the postagged corpus.
 
-|       | dist | q   | target | url | lemma     | range | corpsize | det  |
-|:------|-----:|:----|:-------|----:|:----------|------:|---------:|:-----|
-| 2848  |   29 | a   | obs    | 416 | mg        |  1055 |   755074 | TRUE |
-| 58452 |   13 | a   | ref    |  92 | animation |  5392 |   271563 | TRUE |
-| 34117 |   20 | a   | ref    |  10 | take      |  4885 |   271563 | TRUE |
-| 42286 |   16 | a   | ref    |  36 | people    |  8785 |   271563 | TRUE |
-| 75587 |  520 | d   | ref    |  19 | sugar     |  5000 |   271563 | TRUE |
-| 71143 |   19 | c   | ref    |  72 | one       |  1169 |   271563 | TRUE |
-| 70738 |   54 | c   | ref    |  69 | warning   |  6358 |   271563 | TRUE |
-| 42564 |  137 | a   | ref    |  36 | scheme    |  8785 |   271563 | TRUE |
-| 2287  |   39 | a   | obs    | 373 | job       |  1669 |   755074 | TRUE |
-| 83002 |   96 | d   | ref    |  86 | wedding   |  3264 |   271563 | TRUE |
+|       | dist | q   | target | url | lemma   | range | corpsize | det  |
+|:------|-----:|:----|:-------|----:|:--------|------:|---------:|:-----|
+| 75920 |   16 | d   | ref    |  26 | vinegar |  3909 |   271563 | TRUE |
+| 32893 |  266 | a   | ref    |   4 | animal  |  4922 |   271563 | TRUE |
+| 82021 |  392 | d   | ref    |  78 | award   |   872 |   271563 | TRUE |
+| 50784 |   95 | a   | ref    |  53 | game    |  8169 |   271563 | TRUE |
+| 46232 |   32 | a   | ref    |  44 | burger  |  6207 |   271563 | TRUE |
+| 38533 |   93 | a   | ref    |  28 | reverse |  3264 |   271563 | TRUE |
+| 42195 |    4 | a   | ref    |  36 | people  |  8785 |   271563 | TRUE |
+| 52698 |  682 | a   | ref    |  66 | famine  |  3357 |   271563 | TRUE |
+| 47015 |   10 | a   | ref    |  47 | water   |  3352 |   271563 | TRUE |
+| 77841 | 1339 | d   | ref    |  40 | writing |  5266 |   271563 | TRUE |
 
 ------------------------------------------------------------------------
 
 ## results
 
-![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/distance-distribution-df2-viz1-1.png)
+![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/distance-distribution-df3-viz1-1.png)
 
     ## ## conditions:
 
@@ -58,7 +58,7 @@ The dataframe used for modeling consists of `87145` distance datapoints (sample 
 | e   | my                    | NOUN |
 | f   | your,their,his,her    | NOUN |
 
-![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/lmer-plot-df2-lmeplot-1.png)
+![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/lmer-plot-df3-lmeplot-1.png)
 
 ------------------------------------------------------------------------
 

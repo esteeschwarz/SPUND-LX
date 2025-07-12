@@ -1,4 +1,7 @@
 library(rmarkdown)
+##########
+dataset<-5
+##########
 mdns<-"index"
 wdr<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/poster/")
 wdr
@@ -24,7 +27,7 @@ m<-md=="---"
 # mw<-which(m)
 # md<-md[(mw[3]+2):length(md)]
 # md
-mdout.ns<-paste0(wdr,"poster.md")
+mdout.ns<-paste0(wdr,"poster-00",dataset,".md")
 mdout.ns
 img.repl<-function(md){
   m<-grep("<img src",md)

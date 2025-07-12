@@ -17,7 +17,8 @@ return(list(obs=tdbcorp,ref=tdbref))
 tdb<-read.db()
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
-#tdb<-tdbcorp
+tdbcorp<-tdb$obs
+tdbref<-tdb$ref
 #tdb.com<-dbGetQuery(con,"SELECT * FROM redditpsych")
 ###
 dep.fun<-function(){
@@ -943,13 +944,14 @@ get.dist<-function(qk,tdbw,det="notset"){
     
     ifelse(up1==det.q,ct<-"DET TRUE \t",ct<-"DET false\n")
     ct<-paste0(ct,length(l3w),"\t\t",c2)
-    cat(ct)
+    #cat(ct)
     d1<-diff(l3w)
     ifelse(length(d1)>0,
            df<-data.frame(q=names(qs[[qk]]),target=tdbw,url=u2,lemma=l2,m=length(l3w),range=sum(r1),dist=d1,det=det.y),
            df<-NA)
     #df$url<-u2
     #df$range<-length(r1w)
+    return(list(distdf=df,positions=l3w))
     return(df)
     return(data.frame(url=u2,lemma=l2,range=r1w,dist=d1))
     return(list(url=u2,lemma=l2,range=r1w,dist=d1))
@@ -958,71 +960,103 @@ get.dist<-function(qk,tdbw,det="notset"){
   
   return(d1)
 }
-#qda<-get.dist(1,"obs","DET")
+qda<-get.dist(1,"obs","DET") # TODO: match all antecedents .* == upos.DET
 qdaf<-get.dist(1,"obs",F) # intercept of all tokens, not only "DET"
-# qdb<-get.dist(2,"obs","DET")
-qdb<-get.dist(2,"obs",F)
-# qdc<-get.dist(3,"obs","DET")
+qdb<-get.dist(2,"obs","DET")
+qdbf<-get.dist(2,"obs",F)
+qdc<-get.dist(3,"obs","DET")
+qdcf<-get.dist(3,"obs",F)
+qdd<-get.dist(4,"obs","DET")
+qde<-get.dist(5,"obs","DET")
+qddf<-get.dist(4,"obs",F)
+qdef<-get.dist(5,"obs",F)
+qdf<-get.dist(6,"obs","DET")
+qdff<-get.dist(6,"obs",F)
+# qdc<-get.dist(3,"obs",F)
 # qdd<-get.dist(4,"obs",F)
 # qde<-get.dist(5,"obs",F)
 # qdf<-get.dist(6,"obs",F)
-qdc<-get.dist(3,"obs",F)
-qdd<-get.dist(4,"obs",F)
-qde<-get.dist(5,"obs",F)
-qdf<-get.dist(6,"obs",F)
 #qdb<-get.dist(qk,"obs")
 #qdar<-get.dist(1,"ref","DET")
+qdar<-get.dist(1,"ref","DET")
+qdbr<-get.dist(2,"ref","DET")
+qdcr<-get.dist(3,"ref","DET")
+qddr<-get.dist(4,"ref","DET")
+qder<-get.dist(5,"ref","DET")
+qdfr<-get.dist(6,"ref","DET")
 qdarf<-get.dist(1,"ref",F)
-# qdbr<-get.dist(2,"ref","DET")
-# qdcr<-get.dist(3,"ref","DET")
-# qddr<-get.dist(4,"ref","DET")
-# qder<-get.dist(5,"ref",F)
-# qdfr<-get.dist(6,"ref",F)
-qdbr<-get.dist(2,"ref",F)
-qdcr<-get.dist(3,"ref",F)
-qddr<-get.dist(4,"ref",F)
-qder<-get.dist(5,"ref",F)
-qdfr<-get.dist(6,"ref",F)
+qdbrf<-get.dist(2,"ref",F)
+qdcrf<-get.dist(3,"ref",F)
+qddrf<-get.dist(4,"ref",F)
+qderf<-get.dist(5,"ref",F)
+qdfrf<-get.dist(6,"ref",F)
 
-return(list(qdaf,qdb,qdc,qdd,qde,qdf,qdarf,qdbr,qdcr,qddr,qder,qdfr))
+return(list(qda,qdaf,qdb,qdbf,qdc,qdcf,qdd,qddf,qde,qdef,qdf,qdff,qdar,qdarf,qdbr,qdbrf,qdcr,qdcrf,qddr,qddrf,qder,qderf,qdfr,qdfrf))
 }
 #qdf<-list(qdaf,qdb,qdc,qdd,qde,qdf,qdarf,qdbr,qdcr,qddr,qder,qdfr)
 #########################
 ### care: this runs over all queries and takes while...
 qdf<-get.dist.list()
-save(qdf,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-005.RData"))
+
+####################
+save(qdf,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-complete_inc-range.RData"))
 ####################
 ql<-2
 ### this apply to qdf to extract distances to dataframe
 load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-005.RData"))
 
+# x1<-c(2,7,9,12,19,22)
+# x2<-diff(x1)
+# x3<-c(x1[1],x1[1:(length(x1)-1)]+x2)
+ql<-9
+#x<-qdf[[9]]
 get.lt.df<-function(ql){
-  
+
   lt1<-qdf[[ql]]
+
   #length(lt1[[1]])
-  # lt2<-lapply(lt1, function(x){
-  #   l<-length(x)
-  #   return(ifelse(l!=0,x,NA))
-  # })
-  lt2<-lt1[!is.na(lt1)]
-  lt3<-lapply(lt2, function(x){
-    df3<-data.frame(x$dist)
-    df3$q<-x$q
-    df3$target<-x$target
-    df3$url<-x$url
-    df3$lemma<-x$lemma
-    df3$range<-x$range
-    corpsize<-ifelse(x$target=="obs",length(tdbcorp$token),length(tdbref$token))
-    df3$corpsize<-corpsize
-    df3$det<-x$det
+  if(length(lt1)==0){
+    cat("no data for condition:",ql,"\n")
+    return(NA)
+  }
+  lt2<-lapply(lt1, function(x){
+    l<-length(x$distdf)
+    isna<-is.na(x$distdf)
+    return(ifelse(!isna,x,NA))
+  })
+  length(unlist(lt2))
+  isna<-!is.na(lt2)
+  sum(isna)
+  lt2b<-lt1[isna]
+#  x<-lt2b[[1]]
+  lt3<-lapply(lt2b, function(x){
+    df3<-data.frame(x$distdf)
+    x1<-x$positions
+    x2<-df3$dist
+    x3<-c(x1[1],x1[1:(length(x1)-1)]+x2)
+    df3$pos<-x3[2:length(x3)]
+    # df3$q<-x$q
+    # df3$target<-x$target
+    # df3$url<-x$url
+    # df3$lemma<-x$lemma
+    # df3$range<-x$range
+    # corpsize<-ifelse(x$target=="obs",length(tdbcorp$token),length(tdbref$token))
+    # df3$corpsize<-corpsize
+    # df3$det<-x$det
     #  df3$mf_rel<-x[[1]]$mf_rel
     # df3$ld<-x[[1]]$ld
     return(df3)
     return(x[[1]]$dist)
   })
+  # get.pos<-function(df){
+  #   ltdb<-length(df)
+  #   m<-grepl("<doc id|<s id|</s",df$token)
+  #   lclean<-ltdb
+  # }
+  #tdbcorp$token[228]
   library(abind)
   lt4.df<-data.frame(abind(lt3,along = 1))
-  colnames(lt4.df)[1]<-"dist"
+  #colnames(lt4.df)[1]<-"dist"
   mode(lt4.df$dist)<-"double"
   mode(lt4.df$range)<-"double"
   queries.l<-lapply(qs, function(x){
@@ -1042,11 +1076,29 @@ get.lt.df<-function(ql){
   print(median(lt4.df$dist))
   return(lt4.df)
 }
+# ltlist<-list(1=qda,2=qdaf,3=qdb,4=qdbf,5=qdc,6=qdcf,7=qdd,8=qddf,9=qde,10=qdef,11=qdf,12=qdff,13=qdar,14=qdarf,15=qdbr,16=qdbrf,17=qdcr,18=qdcrf,19=qddr,20=qddrf,21=qder,22=qderf,23=qdfr,24=qdfrf)
 
-qltdf<-rbind(get.lt.df(1),get.lt.df(2),get.lt.df(3),get.lt.df(4),get.lt.df(5),get.lt.df(6),
-             get.lt.df(7),get.lt.df(8),get.lt.df(9),get.lt.df(10),get.lt.df(11),get.lt.df(12))
-write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.csv"))
+# qltdf<-rbind(get.lt.df(1),get.lt.df(2),get.lt.df(3),get.lt.df(4),get.lt.df(5),get.lt.df(6),
+#              get.lt.df(7),get.lt.df(8),get.lt.df(9),get.lt.df(10),get.lt.df(11),get.lt.df(12))
+# #write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.csv"))
+# save(qltdf,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.RData"))
+# NAs = 9 (qde),11,13,21,23
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/qdf_dist.list-complete_inc-range.RData"))
+### > create qs above with build.query() first
+
+qltdf.1<-rbind(get.lt.df(2),get.lt.df(3),get.lt.df(5),get.lt.df(7),get.lt.df(9),get.lt.df(11),
+             get.lt.df(13),get.lt.df(15),get.lt.df(17),get.lt.df(19),get.lt.df(21),get.lt.df(23))
+### 006 >
+qltdf<-rbind(get.lt.df(2),get.lt.df(3),get.lt.df(5),get.lt.df(7),get.lt.df(10),get.lt.df(12),
+             get.lt.df(14),get.lt.df(15),get.lt.df(17),get.lt.df(19),get.lt.df(22),get.lt.df(24))
+save(qltdf,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-006.RData"))
+### 005 > all prepos == .*
+qltdf<-rbind(get.lt.df(2),get.lt.df(4),get.lt.df(6),get.lt.df(8),get.lt.df(10),get.lt.df(12),
+             get.lt.df(14),get.lt.df(16),get.lt.df(18),get.lt.df(20),get.lt.df(22),get.lt.df(24))
+#write.csv(qltdf.2,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-006.csv")) # too big
 save(qltdf,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.RData"))
+#qltdf<-qltdf.2
+##### > 006 is all dfs which do not respond NA for prepos=DET, and for such the df with prepos=.*
 #return(qltdf)
 #}
 dfa<-qltdf # to pass to eval-002.R, intercept (cond a) mean: 182

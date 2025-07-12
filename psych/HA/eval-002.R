@@ -6,18 +6,39 @@
 #dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
 ### df 005 to big for git as .csv
 #load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.RData")) # qltdf
+read.db<-function(){
+  
+  
+  library(DBI)
+  library(RSQLite)
+  #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
+  con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
+  dbListTables(con)
+  #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
+  tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
+  tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
+  return(list(obs=tdbcorp,ref=tdbref))
+}
+tdb<-read.db()
+n_obs<-length(tdb$obs$token)
+n_ref<-length(tdb$ref$token)
+rm(tdb)
 eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
 eval.ext<-c(".csv",".RData")
 eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
 eval.fs<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/",eval.f)
 eval.fs
 library(tools)
-dataset<-2
+#dataset<-5
 eval.n.hard<-dataset
+dn<-dataset
 read.eval<-function(dn){
+  e<-new.env()
   ext<-file_ext(eval.fs[dn])
   f<-eval.fs[dn]
-  ifelse(ext=="csv",out<-read.csv(f),out<-load(f))
+  f
+  ifelse(ext=="csv",out<-read.csv(f),load(f,envir = e))
+  ifelse(ext=="csv",out<-out,out<-e$qltdf)
   return(out)
   
 }
@@ -30,7 +51,8 @@ ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(eval.n.hard))
 dfa<-qltdf
 ###################
 mx<-colnames(dfa)!="X"
-dfa<-dfa[,mx]
+if(!is.null(mx))
+  dfa<-dfa[,mx]
 #dfa<-qltdf
 queries<-unique(dfa$query_long)
 if(is.null(queries))
@@ -79,7 +101,9 @@ library(lmerTest)
 #scipen(999)
 #lm1<-lmer(dist~target*q+(1|mf_rel)+(1|range)+(1|ld),dfa)
 #lm2<-lmer(dist~target+range+(1|lemma),dfa)
-lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
+lme.form<-"dist~target*q+range+(1|lemma)"
+lm2<-lmer(eval(expr(lme.form)),dfa)
+#lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
 #lm2<-lm(dist~target*q+range,dfa) # without random effects
 summary(lm2)

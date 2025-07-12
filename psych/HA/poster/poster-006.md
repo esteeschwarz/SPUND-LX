@@ -12,9 +12,9 @@ Investigate reference marking, coherence and information structure in schizophre
 
 Inspired by Zimmerer et al. ([2017](#ref-zimmerer_deictic_2017)) we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 
-## method (M3)
+## method (M6)
 
-To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M3 we restricted all matching antecendents of conditions b-f to must also be tagged “DET”.  
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M6 we restricted the matching antecendents of conditions b-d to must also be tagged “DET”.  
 This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** ([Prince 1981](#ref-prince_toward_1981)).
 
 ------------------------------------------------------------------------
@@ -25,27 +25,27 @@ Measuring the referent-reference distance which we here assume as indicator of c
 
 ## daten
 
-We built a corpus of the reddit r/schizophrenia thread (`n=755074` tokens) and a reference corpus of r/unpopularopinion (`n=271563`). Both were pos-tagged using the R udpipe:: package ([Wijffels 2023](#ref-wijffels_udpipe_2023)) which tags according to the universal dependencies tagset maintained by De Marneffe et al. ([2021](#ref-de_marneffe_universal_2021)). Still the 755074 tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.  
-The dataframe used for modeling consists of `87145` distance datapoints (sample below) derived from the postagged corpus.
+We built a corpus of the reddit r/schizophrenia thread (`n=` tokens) and a reference corpus of r/unpopularopinion (`n=`). Both were pos-tagged using the R udpipe:: package ([Wijffels 2023](#ref-wijffels_udpipe_2023)) which tags according to the universal dependencies tagset maintained by De Marneffe et al. ([2021](#ref-de_marneffe_universal_2021)). Still the tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.  
+The dataframe used for modeling consists of `125407` distance datapoints (sample below) derived from the postagged corpus.
 
-|       | dist | q   | target | url | lemma     | range | corpsize | det  |
-|:------|-----:|:----|:-------|----:|:----------|------:|---------:|:-----|
-| 2848  |   29 | a   | obs    | 416 | mg        |  1055 |   755074 | TRUE |
-| 58452 |   13 | a   | ref    |  92 | animation |  5392 |   271563 | TRUE |
-| 34117 |   20 | a   | ref    |  10 | take      |  4885 |   271563 | TRUE |
-| 42286 |   16 | a   | ref    |  36 | people    |  8785 |   271563 | TRUE |
-| 75587 |  520 | d   | ref    |  19 | sugar     |  5000 |   271563 | TRUE |
-| 71143 |   19 | c   | ref    |  72 | one       |  1169 |   271563 | TRUE |
-| 70738 |   54 | c   | ref    |  69 | warning   |  6358 |   271563 | TRUE |
-| 42564 |  137 | a   | ref    |  36 | scheme    |  8785 |   271563 | TRUE |
-| 2287  |   39 | a   | obs    | 373 | job       |  1669 |   755074 | TRUE |
-| 83002 |   96 | d   | ref    |  86 | wedding   |  3264 |   271563 | TRUE |
+|       | q   | target | url | lemma         | m   | range | dist | det   | pos  |
+|:------|:----|:-------|:----|:--------------|:----|------:|-----:|:------|:-----|
+| 2052  | a   | obs    | 233 | work          | 12  |   778 |  226 | FALSE | 625  |
+| 94337 | a   | ref    | 82  | animal        | 34  |  1343 |   22 | FALSE | 28   |
+| 5886  | a   | obs    | 530 | psychosis     | 3   |   639 |  533 | FALSE | 620  |
+| 53504 | a   | ref    | 3   | team          | 18  |  1658 |   29 | FALSE | 615  |
+| 5721  | a   | obs    | 521 | insight       | 6   |  1616 |   58 | FALSE | 168  |
+| 10760 | a   | obs    | 728 | hallucination | 7   |  1096 |   95 | FALSE | 144  |
+| 90399 | a   | ref    | 69  | rating        | 46  |  6358 |   97 | FALSE | 1852 |
+| 3890  | a   | obs    | 413 | restriction   | 8   |  2963 |  788 | FALSE | 813  |
+| 700   | a   | obs    | 62  | delusion      | 11  |   606 |   36 | FALSE | 489  |
+| 26515 | e   | obs    | 56  | schizophrenia | 21  |  3495 |  239 | FALSE | 1643 |
 
 ------------------------------------------------------------------------
 
 ## results
 
-![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/distance-distribution-df2-viz1-1.png)
+![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/distance-distribution-df6-viz1-1.png)
 
     ## ## conditions:
 
@@ -58,14 +58,14 @@ The dataframe used for modeling consists of `87145` distance datapoints (sample 
 | e   | my                    | NOUN |
 | f   | your,their,his,her    | NOUN |
 
-![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/lmer-plot-df2-lmeplot-1.png)
+![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/lmer-plot-df6-lmeplot-1.png)
 
 ------------------------------------------------------------------------
 
 ## conclusion
 
-Over all conditions <!--**B** (``` this, that, these, those, DET ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model (cf. [Bates et al. 2015](#ref-bates_fitting_2015)) which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist~target*q+range+(1|lemma),df)`) gets a p-value of `p=0.0000066` for the mean difference of `-25` tokens (targetref) compared to the target.  
-So the medium distance of nouns, preceded by one of our queries, is with `60` tokens width for the target corpus vs. `50` in the reference corpus also with respect to the covariables significantly (`p<0.001`) higher but still to be tested with growing the corpus.
+Over all conditions <!--**B** (``` this, that, these, those, DET ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model (cf. [Bates et al. 2015](#ref-bates_fitting_2015)) which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist~target*q+range+(1|lemma),df)`) gets a p-value of `p=0` for the mean difference of `2` tokens (targetref) compared to the target.  
+So the medium distance of nouns, preceded by one of our queries, is with `62` tokens width for the target corpus vs. `49` in the reference corpus also with respect to the covariables significantly (`p<0.001`) higher but still to be tested with growing the corpus.
 
 ## B. REF
 
