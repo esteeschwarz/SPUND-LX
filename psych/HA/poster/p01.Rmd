@@ -28,7 +28,7 @@ if(output.rmd=="html")
   author<-"st. schwarz"
 ```
 
-```{r eval,echo=F,warning=F,message=FALSE,eval=FALSE}
+```{r eval-gpt-manual,results=F,echo=F,warning=F,message=FALSE,eval=FALSE}
 options(scipen = 999)
 wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/")
 wd
@@ -143,7 +143,12 @@ co.df<-co.list$coeff
 p_value<-round(co.list$p,5)
 co.df
 ```
-
+```{r prelim,echo=F,warning=F,message=FALSE,results=F}
+dataset<-3
+eval.n<-dataset
+ifelse(dataset%in%c(3,5),det.restrict<-'(only in conditions b-d these must also be tagged "DET")',
+       det.restrict<-"")
+```
 # xTitle
 # proposition & coherence in :schizophrenia: threads
 ### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
@@ -154,7 +159,7 @@ Investigate reference marking, coherence and information structure in schizophre
 Inspired by @zimmerer_deictic_2017 we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 
 ## method
-To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns (only in conditions b-d these must also be tagged "DET".)  This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns `r det.restrict`.  This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
 
 ----
 
@@ -165,7 +170,7 @@ Measuring the referent-reference distance which we here assume as indicator of c
 We built a corpus of the reddit r/schizophrenia thread (```n=`r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n=`r n_ref` ```). Both were pos-tagged using the R udpipe:: package [@wijffels_udpipe_2023] which tags according to the universal dependencies tagset maintained by @de_marneffe_universal_2021. Still the `r n_obs` tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.   
 The dataframe used for modeling consists of ``` `r length(dfa$q)` ``` distance datapoints (sample below) derived from the postagged corpus.
 
-```{r queries,warning=F,message=F,echo=F,eval=T}
+```{r sourcescr,results=F,warning=F,message=F,echo=F,eval=T}
 # library(jsonlite)
 # library(abind)
  #qs<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
@@ -189,9 +194,13 @@ md_ref<-median(dfa$dist[dfa$target=="ref"])
 sample.df<-dfa[sample(1:length(dfa$dist),10),colnames(dfa)!="query_long"]
 #sample.df$mf_rel<-round(sample.df$mf_rel,4)
 #sample.df$ld<-round(sample.df$ld,4)
-kable(sample.df)
+#kable(sample.df)
 ```
 
+```{r sampledf,results=T,warning=F,message=F,echo=F,eval=T}
+kable(sample.df)
+
+```
 ----
 
 ## results
@@ -268,7 +277,7 @@ queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="
 kable(queries.df)
 ```
 
-```{r lme, message=F,warning=F,echo=FALSE,eval=T}
+```{r lmeplot, results=F,message=F,warning=F,echo=FALSE,eval=T}
 # source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
 #print(head(df))
 #print("anova_model <- aov(dist ~ target*q, data = df)")
@@ -282,6 +291,7 @@ p.sig.ex<-paste0("p<",sig.array[p.sig])
 #kable(anlm.summ)
 dist.target<-lm2.summ$coefficients["targetref",1]
 dist.target<-round(dist.target,0)
+rmd.plot.lme(lm2.summ)
 #p.target.q
 #get mean:
 # m.target<-median(dfa$dist[dfa$target=="obs"])

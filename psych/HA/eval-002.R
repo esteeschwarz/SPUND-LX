@@ -6,15 +6,51 @@
 #dfa<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-004.csv"))
 ### df 005 to big for git as .csv
 #load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-005.RData")) # qltdf
+eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
+eval.ext<-c(".csv",".RData")
+eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
+eval.fs<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/",eval.f)
+eval.fs
+library(tools)
+dataset<-2
+eval.n.hard<-dataset
+read.eval<-function(dn){
+  ext<-file_ext(eval.fs[dn])
+  f<-eval.fs[dn]
+  ifelse(ext=="csv",out<-read.csv(f),out<-load(f))
+  return(out)
+  
+}
+###################
+# select eval 3-5
+# if rmd defined eval.n
+#eval.n.hard<-2
+
+ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(eval.n.hard))
 dfa<-qltdf
-###
+###################
 mx<-colnames(dfa)!="X"
 dfa<-dfa[,mx]
 #dfa<-qltdf
 queries<-unique(dfa$query_long)
+if(is.null(queries))
+  queries<-unique(dfa$q)
+qf<-dfa$q%in%letters[1:6]
+if(sum(qf)==0){
+  qn<-unique(dfa$q)
+  dfa$q_long<-dfa$q
+  c<-letters[1:length(qn)]
+  for(k in 1:length(qn)){
+    m<-dfa$q==qn[k]
+    dfa$q[m]<-c[k]
+  }
+queries<-unique(dfa$q)
+  
+}
+
 #df<-q.all.df
-#qn<-unique(dfa$q)
-#c<-letters[1:length(qn)]
+# qn<-unique(dfa$q)
+# c<-letters[1:length(qn)]
 # for(k in 1:length(qn)){
 #   m<-dfa$q==qn[k]
 #   dfa$q[m]<-c[k]
@@ -28,9 +64,10 @@ target <- dfa$target       # Assuming the second column is the grouping variable
 
 target <- as.factor(target)
 table(target)
-dfsa<-dfa[dfa$q%in%c("b","c","d"),]
-dfsb<-dfa[dfa$q%in%c("e","f"),]
+dfsa<-dfa[dfa$q%in%queries[c(2,3,4)],]
+dfsb<-dfa[dfa$q%in%queries[c(5,6)],]
 length(dfsa$dist)
+length(dfsb$dist)
 #Y<-dfsb$dist
 #anova_model <- aov(Y ~ target, data = dfa)
 anova_model <- aov(Y ~ target*q, data = dfa)
@@ -43,7 +80,7 @@ library(lmerTest)
 #lm1<-lmer(dist~target*q+(1|mf_rel)+(1|range)+(1|ld),dfa)
 #lm2<-lmer(dist~target+range+(1|lemma),dfa)
 lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
-lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
+#lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
 #lm2<-lm(dist~target*q+range,dfa) # without random effects
 summary(lm2)
 lm2.summ<-summary(lm2)
@@ -56,18 +93,26 @@ lm2.summ
 anlm.summ
 mean(dfa$dist[dfa$target=="obs"])
 mean(dfa$dist[dfa$target=="ref"])
-mean(dfa$dist[dfa$target=="obs"&dfa$q=="a"])
-mean(dfa$dist[dfa$target=="ref"&dfa$q=="a"])
-mean(dfa$dist[dfa$target=="obs"&dfa$q=="b"])
-mean(dfa$dist[dfa$target=="ref"&dfa$q=="b"])
-mean(dfa$dist[dfa$target=="obs"&dfa$q=="c"])
-mean(dfa$dist[dfa$target=="ref"&dfa$q=="c"])
-mean(dfa$dist[dfa$target=="obs"&dfa$q=="d"])
-mean(dfa$dist[dfa$target=="ref"&dfa$q=="d"])
-mean(dfa$dist[dfa$target=="obs"&dfa$q=="e"])
-mean(dfa$dist[dfa$target=="ref"&dfa$q=="e"])
-mean(dfa$dist[dfa$target=="obs"&dfa$q=="f"])
-mean(dfa$dist[dfa$target=="ref"&dfa$q=="f"])
+for(q in seq_along(queries)){
+  query<-queries[q]
+#  cat("condition:",query," > obs / ref\n")
+  #cat("obs,ref\n")
+  mno<-mean(dfa$dist[dfa$target=="obs"&dfa$q==query])
+  mnr<-mean(dfa$dist[dfa$target=="ref"&dfa$q==query])
+  
+}
+# mean(dfa$dist[dfa$target=="obs"&dfa$q=="a"])
+# mean(dfa$dist[dfa$target=="ref"&dfa$q=="a"])
+# mean(dfa$dist[dfa$target=="obs"&dfa$q=="b"])
+# mean(dfa$dist[dfa$target=="ref"&dfa$q=="b"])
+# mean(dfa$dist[dfa$target=="obs"&dfa$q=="c"])
+# mean(dfa$dist[dfa$target=="ref"&dfa$q=="c"])
+# mean(dfa$dist[dfa$target=="obs"&dfa$q=="d"])
+# mean(dfa$dist[dfa$target=="ref"&dfa$q=="d"])
+# mean(dfa$dist[dfa$target=="obs"&dfa$q=="e"])
+# mean(dfa$dist[dfa$target=="ref"&dfa$q=="e"])
+# mean(dfa$dist[dfa$target=="obs"&dfa$q=="f"])
+# mean(dfa$dist[dfa$target=="ref"&dfa$q=="f"])
 #wks.
 # #get mean:
 # m.target<-median(dfa$dist[dfa$target=="obs"])
@@ -110,7 +155,8 @@ dfe<-df.eval
 dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 
 
-gpt.manual.fun<-function(){
+### not for eval-002
+gpt.manual.fun<-function(dfa){
 #gpt manual p
   data<-dfa
   
@@ -174,8 +220,8 @@ gpt.manual.fun<-function(){
   p_v<-round(p_value,14)
   return(co.df)
 }
-co.df<-gpt.manual.fun()
-co.df
+#co.df<-gpt.manual.fun(dfe)
+#co.df
 plot.dist<-function(){
 # Reshape data: rows = q, columns = corp, values = dist
 bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
@@ -409,9 +455,9 @@ sumtxdf<-rbind(ns.an,sumtx,ns.lm,lmco,empty)
 
 
 
-write.table(sumtxdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"),append = T,sep=",",row.names = F)
-
-anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
+# write.table(sumtxdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"),append = T,sep=",",row.names = F)
+# 
+# anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
 
 plot.lme<-function(anovas){
   plot.dist<-function(dfe){
@@ -471,5 +517,32 @@ plot.lme<-function(anovas){
 })
   
 }
-plot.lme(anovas)
+rmd.plot.lme<-function(lm2.summ){
+coef<-lm2.summ$coefficients
+cats<-rownames(coef)
+mean.abs<-coef[,1]
+mean.abs[1]<-0
+par(las=2)
+# After your barplot call
+bp <- barplot(mean.abs~cats,xlab = "",ylab="mean distance",main="lmer estimate relations")
+# bp <- barplot(bar_mat, beside = TRUE, col = c("black", "red"), names.arg = levels(dfe$q), legend.text = rownames(bar_mat), args.legend = list(x = "right"), ylab = "median distance", main = "distance by query and corpus")
+
+# Get the y-value for the line (e.g., first bar's height)
+y_intercept <- mean.abs[1]
+
+# Get x-limits from the barplot (bp gives midpoints of bars)
+x_min <- min(bp)
+x_max <- max(bp)
+
+# Draw the horizontal line only within the barplot area
+#  segments(x0 = x_min, y0 = y_intercept, x1 = x_max, y1 = y_intercept, col = "red", lwd = 1)
+tx<-x_max+1
+ty<-2
+# Add label "intercept" near the line (adjust x/y as needed)
+# text(x = tx, y = ty, labels = "intercept", pos = 3, col = "red", cex = 0.8)
+text(x = tx-4, y = ty+10, labels = paste0("Intercept (targetobs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
+#return(bp)
+}
+#rmd.plot.lme(lm2.summ)
+#plot.lme(anovas)
 

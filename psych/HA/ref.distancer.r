@@ -1,6 +1,9 @@
 #20250622(12.29)
 #15262.HA.psych
 ###############
+read.db<-function(){
+  
+
 library(DBI)
 library(RSQLite)
 #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
@@ -9,6 +12,11 @@ dbListTables(con)
 #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
 tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
 tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
+return(list(obs=tdbcorp,ref=tdbref))
+}
+tdb<-read.db()
+n_obs<-length(tdb$obs$token)
+n_ref<-length(tdb$ref$token)
 #tdb<-tdbcorp
 #tdb.com<-dbGetQuery(con,"SELECT * FROM redditpsych")
 ###
