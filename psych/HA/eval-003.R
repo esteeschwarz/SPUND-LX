@@ -1,7 +1,7 @@
 #20250713(12.14)
 #15292.psych.eval.cleaned
 #########################
-dataset<-7
+#dataset<-7
 
 read.db<-function(){
   
@@ -16,10 +16,11 @@ read.db<-function(){
   tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
   return(list(obs=tdbcorp,ref=tdbref))
 }
-tdb<-read.db()
+if(!exists("tdb"))
+  tdb<-read.db()
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
-rm(tdb)
+#rm(tdb)
 eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
 eval.ns
 eval.ext<-c(".csv",".RData")
@@ -36,9 +37,9 @@ eval.fs<-c(eval.fs,eval.fs.hkw)
 eval.fs
 library(tools)
 #dataset<-5
-eval.n.hard<-dataset
-dn<-dataset
-eval.n<-dn
+#eval.n.hard<-ifelse(exists("dataset"),dataset,eval.n)
+#dn<-dataset
+#eval.n<-dn
 read.eval<-function(dn){
   e<-new.env()
   ext<-file_ext(eval.fs[dn])
@@ -51,8 +52,10 @@ read.eval<-function(dn){
 }
 
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData"))
-ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(eval.n.hard))
+if(!exists("dfa")){
+ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
 dfa<-qltdf
+}
 create.sub<-function(dfa,target,con,det){
   sub1<-dfa[dfa$q%in%con&dfa$target%in%target&dfa$det%in%det,]
 }
@@ -102,31 +105,31 @@ rmd.plot.lme<-function(lm2.summ){
 # # Ensure q is ordered a-f
 # dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 
-dfb<-create.sub(qltdf,c("ref","obs"),letters[1:6],F)
-dfc<-create.sub(qltdf,c("ref","obs"),letters[1:6],T)
+# dfb<-create.sub(qltdf,c("ref","obs"),letters[1:6],F)
+# dfc<-create.sub(qltdf,c("ref","obs"),letters[1:6],T)
 dfa<-qltdf
-unique(dfa$det)
+# unique(dfa$det)
 #rm(qltdf)
-Y <- dfa$dist           # Dependent variable
-mean(Y[dfa$target=="obs"],na.rm = T)
-mean(Y[dfa$target=="obs"])
-mean(Y[dfa$target=="ref"])
-###
-anova_model <- aov(dist ~ target*q*det, data = dfa)
-anova_model <- aov(dist ~ target*q, data = dfa)
-#anova_model <- aov(Y ~ group*q, data = dfa)
-anova.sum<-summary(anova_model)
-anova.sum<-anova.sum[[1]]
-anova.sum
+# Y <- dfa$dist           # Dependent variable
+# mean(Y[dfa$target=="obs"],na.rm = T)
+# mean(Y[dfa$target=="obs"])
+# mean(Y[dfa$target=="ref"])
+# ###
+# anova_model <- aov(dist ~ target*q*det, data = dfa)
+# anova_model <- aov(dist ~ target*q, data = dfa)
+# #anova_model <- aov(Y ~ group*q, data = dfa)
+# anova.sum<-summary(anova_model)
+# anova.sum<-anova.sum[[1]]
+# anova.sum
 library(lmerTest)
 library(dplyr)
 lmeform.l<-list(no.pre.det=
 lme.form.f<-"dist~target*q+range+(1|lemma)",pre.det=
 lme.form.t<-"dist~target*q+range+(1|lemma)+(1|det)")
 anova.form.l<-list(no.pre.det="dist ~ target*q",pre.det="dist ~ target*q*det")
-target<-c("ref","obs")
-con<-letters[1:6]
-det.t<-c(F,T)
+# target<-c("ref","obs")
+# con<-letters[1:6]
+# det.t<-c(F,T)
 get.anovas<-function(qltdf,target,con,det.t){
 #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   dfa<-create.sub(qltdf,target,con,det.t)
@@ -153,11 +156,12 @@ get.anovas<-function(qltdf,target,con,det.t){
   
   bp<-rmd.plot.lme(lm2.summ)
   
-  return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,plot.md=dfe,plot.lme=bp))
+  return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,plot.md=dfe))
 }
-
-eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F))
+if(!exists("eval.1"))
+  eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F))
 eval.1$plot.lme
+fun.dep<-function(){
 lm2<-lmer(eval(expr(lmeform.l$no.pre.det)),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
@@ -179,6 +183,7 @@ for(q in seq_along(queries)){
   query<-queries[q]
   mno[q]<-mean(dfa$dist[dfa$target=="obs"&dfa$q==query])
   mnr[q]<-mean(dfa$dist[dfa$target=="ref"&dfa$q==query])
+}
 }
 #mno
 #mnr
@@ -219,7 +224,8 @@ for(q in seq_along(queries)){
 # dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 # 
 #plot
-plot.dist<-function(){
+
+plot.dist<-function(dfe){
   # Reshape data: rows = q, columns = corp, values = dist
   bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
   bar_mat <- t(bar_mat)  # barplot expects groups in columns
@@ -235,54 +241,42 @@ plot.dist<-function(){
                    main = "distance by query and corpus")
   
 }
-plot.dist()
+#plot.dist()
 rmd.plot.lme<-function(lm2.summ){
   coef<-lm2.summ$coefficients
   cats<-rownames(coef)
   mean.abs<-coef[,1]
   mean.abs[1]<-0
   par(las=2)
-  # After your barplot call
   bp <- barplot(mean.abs~cats,xlab = "",ylab="mean token distance",main="lmer estimate relations")
-  # bp <- barplot(bar_mat, beside = TRUE, col = c("black", "red"), names.arg = levels(dfe$q), legend.text = rownames(bar_mat), args.legend = list(x = "right"), ylab = "median distance", main = "distance by query and corpus")
-  
-  # Get the y-value for the line (e.g., first bar's height)
   y_intercept <- mean.abs[1]
-  
-  # Get x-limits from the barplot (bp gives midpoints of bars)
   x_min <- min(bp)
   x_max <- max(bp)
-  
-  # Draw the horizontal line only within the barplot area
-  #  segments(x0 = x_min, y0 = y_intercept, x1 = x_max, y1 = y_intercept, col = "red", lwd = 1)
   tx<-x_max+1
   ty<-2
-  # Add label "intercept" near the line (adjust x/y as needed)
-  # text(x = tx, y = ty, labels = "intercept", pos = 3, col = "red", cex = 0.8)
   text(x = tx-4, y = ty+10, labels = paste0("Intercept (corpus=obs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
-  return(bp)
+ # return(bp)
 }
-#bp<-rmd.plot.lme(lm2.summ)
-
 ### sums df
-sumtx.a<-data.frame(anlm.summ)
-sumtx.a<-cbind(anova.lme=rownames(sumtx.a),sumtx.a)
-sumtx.a<-sumtx.a[c(1,4,2,3,6,7)]
-sumtx.b<-data.frame(anova.sum)
-sumtx.b<-cbind(anova.plain=rownames(sumtx.b),sumtx.b)
-#sumtx.c<-rbind(sumtx.a,sumtx.b)
-#sumtx.b<-sumtx.b[c(1,2,3,5,6,7)]
-#umtx$dun<-NA
-lmco<-lm2.summ$coefficients
-lmco<-cbind(anova.lme=rownames(lmco),lmco)
-
-empty<-(rep("---",6))
-ns.an.a<-colnames(sumtx.a)
-ns.an.b<-colnames(sumtx.b)
-ns.lm<-c(colnames(lmco))
-colnames(sumtx.a)<-rep("X",6)
-colnames(sumtx.b)<-rep("X",6)
-colnames(lmco)<-rep("X",6)
-sumtxdf<-rbind(ns.an.a,sumtx.a,ns.an.b,sumtx.b,ns.lm,lmco,empty)
-
-
+# 
+# sumtx.a<-data.frame(anlm.summ)
+# sumtx.a<-cbind(anova.lme=rownames(sumtx.a),sumtx.a)
+# sumtx.a<-sumtx.a[c(1,4,2,3,6,7)]
+# sumtx.b<-data.frame(anova.sum)
+# sumtx.b<-cbind(anova.plain=rownames(sumtx.b),sumtx.b)
+# #sumtx.c<-rbind(sumtx.a,sumtx.b)
+# #sumtx.b<-sumtx.b[c(1,2,3,5,6,7)]
+# #umtx$dun<-NA
+# lmco<-lm2.summ$coefficients
+# lmco<-cbind(anova.lme=rownames(lmco),lmco)
+# 
+# empty<-(rep("---",6))
+# ns.an.a<-colnames(sumtx.a)
+# ns.an.b<-colnames(sumtx.b)
+# ns.lm<-c(colnames(lmco))
+# colnames(sumtx.a)<-rep("X",6)
+# colnames(sumtx.b)<-rep("X",6)
+# colnames(lmco)<-rep("X",6)
+# sumtxdf<-rbind(ns.an.a,sumtx.a,ns.an.b,sumtx.b,ns.lm,lmco,empty)
+# 
+# 

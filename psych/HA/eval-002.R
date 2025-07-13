@@ -490,7 +490,7 @@ sumtxdf<-rbind(ns.an.a,sumtx.a,ns.an.b,sumtx.b,ns.lm,lmco,empty)
 # 
  # anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
 
-plot.lme<-function(anovas){
+plot.lme.dep<-function(anovas){
   plot.dist<-function(dfe){
     # Reshape data: rows = q, columns = corp, values = dist
     # bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)

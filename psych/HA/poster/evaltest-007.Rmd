@@ -1,0 +1,62 @@
+---
+title: "poster-tests"
+author: "esteeschwarz"
+date: "`r Sys.Date()`"
+output: 
+  md_document:
+    variant: markdown_github
+    pandoc_args: ["--wrap=none"]
+  keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#dataset<-7
+```
+
+```{r,src,echo=F,warning=F,message=F,results=F}
+#eval.n<-7
+dataset<-7
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"))
+```
+
+# top
+eval output M`r dataset`
+```{r,dfs}
+s1<-eval.1$anova.plain
+p.select<-c("target|target:q")
+p.an<-s1[grep(p.select,rownames(s1)),]
+p.an
+s2<-eval.1$anova.lme
+p.an.lm<-s2[grep(p.select,rownames(s2)),]
+p.an.lm
+s3<-eval.1$lme
+dfe<-eval.1$plot.md
+s3
+```
+
+```{r boxplot1,echo=F,warning=F,message=F}
+# df1_no_outliers <- dfa %>%
+#   group_by(target) %>%
+#   filter(
+#     dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+#     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+#   ) %>%
+#   ungroup()
+boxplot(dist~target,dfa,outline=F,notch=T,varwidth=T)
+
+```
+
+```{r,barplot,echo=F,warning=F,message=F}
+plot.dist(dfe)
+```
+
+```{r lmeplot,echo=F,warning=F,message=F}
+rmd.plot.lme(s3)
+```
+
+
+
