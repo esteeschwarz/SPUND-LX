@@ -143,6 +143,7 @@ for(q in seq_along(queries)){
 # m.ref<-median(dfa$dist[dfa$target=="ref"])
 k<-1
 c<-1
+sum(is.na(dfa$q))
 get.m.df<-function(dfa){
   q.u<-unique(dfa$q) 
   ql<-unlist(lapply(seq_along(q.u),function(i){
@@ -174,7 +175,6 @@ df.eval<-get.m.df(dfa)
 df.eval$mean[df.eval$target=="obs"]
 df.eval$mean[df.eval$target=="ref"]
 dfe<-df.eval
-
 # Ensure q is ordered a-f
 dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 
@@ -262,7 +262,7 @@ df.plot<-barplot(bar_mat,
         main = "distance by query and corpus")
 
 }
-#plot.dist()
+plot.dist()
 rest.fun<-function(){
 # df.eval$mean==mdf$mean
 # df.eval$median==mdf$median
@@ -567,6 +567,6 @@ ty<-2
 text(x = tx-4, y = ty+10, labels = paste0("Intercept (targetobs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
 #return(bp)
 }
-#rmd.plot.lme(lm2.summ)
+rmd.plot.lme(lm2.summ)
 #plot.lme(anovas)
 

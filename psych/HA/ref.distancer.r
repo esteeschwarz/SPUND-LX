@@ -1068,7 +1068,9 @@ get.lt.df<-function(ql){
   isna<-!is.na(lt2)
   sum(isna)
   lt2b<-lt1[isna]
-  x<-lt2b[[2]]
+  rm(lt1)
+  rm(lt2)
+#  x<-lt2b[[2]]
   lt3<-lapply(lt2b, function(x){
     df3<-data.frame(x$distdf)
     # x1<-x$positions
@@ -1099,11 +1101,12 @@ get.lt.df<-function(ql){
   # }
   #tdbcorp$token[228]
   library(abind)
+  rm(lt2b)
   lt4.df<-data.frame(abind(lt3,along = 1))
   rm(lt3)
-  rm(lt2)
-  rm(lt2b)
-  rm(lt1)
+#  rm(lt2)
+ # rm(lt2b)
+  #rm(lt1)
   #colnames(lt4.df)[1]<-"dist"
   mode(lt4.df$dist)<-"double"
   mode(lt4.df$range)<-"double"
@@ -1154,6 +1157,12 @@ qltdf<-rbind(get.lt.df(1),get.lt.df(3),get.lt.df(5),get.lt.df(7),get.lt.df(9),ge
              get.lt.df(13),get.lt.df(15),get.lt.df(17),get.lt.df(19),get.lt.df(21),get.lt.df(23),
              get.lt.df(2),get.lt.df(4),get.lt.df(6),get.lt.df(8),get.lt.df(10),get.lt.df(12),
              get.lt.df(14),get.lt.df(16),get.lt.df(18),get.lt.df(20),get.lt.df(22),get.lt.df(24))
+isna<-is.na(qltdf$q)
+sum(isna)
+qltdf<-qltdf[!isna,]
+save(qltdf,file=(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData")))
+file.size(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData"))/1000
+
 qltdf.l<-list(get.lt.df(1),get.lt.df(3),get.lt.df(5),get.lt.df(7),get.lt.df(9),get.lt.df(11),
              get.lt.df(13),get.lt.df(15),get.lt.df(17),get.lt.df(19),get.lt.df(21),get.lt.df(23),
              get.lt.df(2),get.lt.df(4),get.lt.df(6),get.lt.df(8),get.lt.df(10),get.lt.df(12),
