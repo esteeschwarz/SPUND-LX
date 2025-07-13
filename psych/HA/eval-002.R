@@ -143,7 +143,6 @@ for(q in seq_along(queries)){
 # m.ref<-median(dfa$dist[dfa$target=="ref"])
 k<-1
 c<-1
-sum(is.na(dfa$q))
 get.m.df<-function(dfa){
   q.u<-unique(dfa$q) 
   ql<-unlist(lapply(seq_along(q.u),function(i){
@@ -175,6 +174,7 @@ df.eval<-get.m.df(dfa)
 df.eval$mean[df.eval$target=="obs"]
 df.eval$mean[df.eval$target=="ref"]
 dfe<-df.eval
+
 # Ensure q is ordered a-f
 dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
 
@@ -262,7 +262,7 @@ df.plot<-barplot(bar_mat,
         main = "distance by query and corpus")
 
 }
-plot.dist()
+#plot.dist()
 rest.fun<-function(){
 # df.eval$mean==mdf$mean
 # df.eval$median==mdf$median
@@ -463,25 +463,32 @@ print(tdb$upos[r1])
 }
 show.tok(2)
 }
-sumtx<-data.frame(anlm.summ)
-sumtx<-cbind(anova.plain=rownames(sumtx),sumtx)
+sumtx.a<-data.frame(anlm.summ)
+sumtx.a<-cbind(anova.lme=rownames(sumtx.a),sumtx.a)
+sumtx.a<-sumtx.a[c(1,4,2,3,6,7)]
+sumtx.b<-data.frame(anova.sum[[1]])
+sumtx.b<-cbind(anova.plain=rownames(sumtx.b),sumtx.b)
+#sumtx.c<-rbind(sumtx.a,sumtx.b)
+#sumtx.b<-sumtx.b[c(1,2,3,5,6,7)]
 #umtx$dun<-NA
 lmco<-lm2.summ$coefficients
-lmco<-cbind(anova.lme=rownames(lmco),lmco,"---")
+lmco<-cbind(anova.lme=rownames(lmco),lmco)
 
 empty<-(rep("---",6))
-ns.an<-colnames(sumtx)
+ns.an.a<-colnames(sumtx.a)
+ns.an.b<-colnames(sumtx.b)
 ns.lm<-c(colnames(lmco))
-colnames(sumtx)<-rep("X",7)
-colnames(lmco)<-rep("X",7)
-sumtxdf<-rbind(ns.an,sumtx,ns.lm,lmco,empty)
+colnames(sumtx.a)<-rep("X",6)
+colnames(sumtx.b)<-rep("X",6)
+colnames(lmco)<-rep("X",6)
+sumtxdf<-rbind(ns.an.a,sumtx.a,ns.an.b,sumtx.b,ns.lm,lmco,empty)
 
 
 
 
 # write.table(sumtxdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"),append = T,sep=",",row.names = F)
 # 
-# anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
+ # anovas<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/anovas.csv"))
 
 plot.lme<-function(anovas){
   plot.dist<-function(dfe){
@@ -567,6 +574,6 @@ ty<-2
 text(x = tx-4, y = ty+10, labels = paste0("Intercept (targetobs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
 #return(bp)
 }
-rmd.plot.lme(lm2.summ)
+# rmd.plot.lme(lm2.summ)
 #plot.lme(anovas)
 
