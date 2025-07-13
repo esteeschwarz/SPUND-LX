@@ -17,10 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 #dataset<-7
 ```
 
-```{r,src,echo=F,warning=F,message=F,results=F}
+```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
 #eval.n<-7
 dataset<-7
-source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"))
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 ```
 
 # top

@@ -2,8 +2,6 @@
 #dataset<-7
 ```
 
-![](evaltest-007_files/figure-markdown_github/unnamed-chunk-2-1.png)
-
 # top
 
 eval output M7
