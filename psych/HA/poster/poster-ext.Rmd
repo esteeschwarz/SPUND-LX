@@ -2,14 +2,14 @@
 title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
 author: "st. schwarz"
 date: "`r Sys.Date()`"
-output:
-  bookdown::html_document2:
-  keep_md: true
-#  self_contained: false
+output: 
+    bookdown::html_document2:
+      keep_md: true
+      self_contained: true
     #fig_path: "plots/"
-  md_document:
-    variant: markdown_github
-    pandoc_args: ["--wrap=none"]
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
   #keep_md: yes
 bibliography: psych.bib
 nocite: '@*'
@@ -20,6 +20,12 @@ nocite: '@*'
 knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 library(kableExtra)
+```
+
+```{css, echo=FALSE}
+table {
+  width: 100% !important;
+}
 ```
 
 ```{r}
@@ -35,7 +41,8 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 # top
 eval output M`r dataset`
 
-```{r,dfs,echo=FALSE}
+### legende
+```{r,legend,echo=FALSE,warning=F,message=F}
 legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",
@@ -43,8 +50,25 @@ legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
                    )
 #library(kableExtra)
 
-k<-kable(legend,caption = "model vars")
-kable_styling(k,full_width = TRUE)
+# k<-kable(legend,caption = "model vars")
+# k<-kable_styling(k,full_width = TRUE)
+# k
+kable(legend, caption = "model vars",format="markdown")
+```
+### anova analysis
+```{r,dfs,echo=FALSE,warning=F,message=F}
+# legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
+#                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
+#                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",
+#                             ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
+#                    )
+# #library(kableExtra)
+# 
+# # k<-kable(legend,caption = "model vars")
+# # k<-kable_styling(k,full_width = TRUE)
+# # k
+# kable(legend, caption = "model vars") #%>%
+# #  kable_styling(full_width = TRUE)
 s1<-eval.1$anova.plain
 p.select<-c("target|target:q")
 p.an<-s1[grep(p.select,rownames(s1)),]
@@ -70,9 +94,9 @@ qdiff<-int+qv
 qmin<-qdiff<int
 qvmin<-qv[qmin]
 names(qvmin)<-names(qvc)[qmin]
-qvmin
+#qvmin
 ```
-
+### plots
 ```{r boxplot1,echo=F,warning=F,message=F,fig.cap="compare distances by corpus"}
 # df1_no_outliers <- dfa %>%
 #   group_by(target) %>%
