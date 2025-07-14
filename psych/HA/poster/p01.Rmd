@@ -336,7 +336,7 @@ qvmin
 
 <!-------->
 ## conclusion
-Over conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->[``` `r names(qvmin)` ```] we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.use` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
+Over conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->[``` `r names(qvmin)` ```] we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma and determiner (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.use` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
 So the medium distance of nouns, preceded by one of our queries, is with ``` `r md_target` ``` tokens width for the target corpus vs. ``` `r md_ref` ``` in the reference corpus also with respect to the covariables significantly (```r p.sig.ex```) higher but still to be tested with growing the corpus.
 
 <!--![](QR_poster-ext.png)-->
