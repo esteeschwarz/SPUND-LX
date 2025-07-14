@@ -237,9 +237,10 @@ for(q in seq_along(queries)){
 # 
 #plot
 
-plot.dist<-function(dfe){
+plot.dist<-function(dfe,m){
   # Reshape data: rows = q, columns = corp, values = dist
-  bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
+  ifelse(m=="median",bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity),
+  bar_mat <- tapply(dfe$mean, list(dfe$q, dfe$target), identity))
   bar_mat <- t(bar_mat)  # barplot expects groups in columns
   par(las=1)
   # Make grouped barplot
@@ -249,7 +250,7 @@ plot.dist<-function(dfe){
                    names.arg = levels(dfe$q),
                    legend.text = rownames(bar_mat),
                    args.legend = list(x = "right"),
-                   ylab = "median distance",
+                   ylab = paste0(m," distance"),
                    main = "distance by query and corpus")
   
 }

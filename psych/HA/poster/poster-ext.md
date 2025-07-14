@@ -111,10 +111,14 @@ Table: (\#tab:legend)model vars
 </div>
 
 <div class="figure">
-<img src="poster-ext_files/figure-html/barplot-1.png" alt="median distances over query/corpus"  />
-<p class="caption">(\#fig:barplot)median distances over query/corpus</p>
+<img src="poster-ext_files/figure-html/barplot-median-1.png" alt="median distances over query/corpus"  />
+<p class="caption">(\#fig:barplot-median)median distances over query/corpus</p>
 </div>
 
+<div class="figure">
+<img src="poster-ext_files/figure-html/barplot-mean-1.png" alt="mean distances over query/corpus"  />
+<p class="caption">(\#fig:barplot-mean)mean distances over query/corpus</p>
+</div>
 
 <div class="figure">
 <img src="poster-ext_files/figure-html/lmeplot-1.png" alt="distances relation"  />

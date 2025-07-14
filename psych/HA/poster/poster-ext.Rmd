@@ -109,10 +109,13 @@ boxplot(dist~target,dfa,outline=F,notch=T,varwidth=T)
 
 ```
 
-```{r,barplot,echo=F,warning=F,message=F,fig.cap="median distances over query/corpus"}
-plot.dist(dfe)
+```{r,barplot-median,echo=F,warning=F,message=F,fig.cap="median distances over query/corpus"}
+plot.dist(dfe,"median")
 ```
 
+```{r,barplot-mean,echo=F,warning=F,message=F,fig.cap="mean distances over query/corpus"}
+plot.dist(dfe,"mean")
+```
 
 ```{r lmeplot,echo=F,warning=F,message=F,fig.cap="distances relation"}
 rmd.plot.lme(s3)
