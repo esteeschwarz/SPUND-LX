@@ -19,6 +19,7 @@ nocite: '@*'
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
+library(kableExtra)
 ```
 
 ```{r}
@@ -40,7 +41,9 @@ legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",
                             ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
                    )
-kable(legend,caption = "model vars")
+#library(kableExtra)
+
+kable(legend,caption = "model vars")%>%  kable_styling(full_width = TRUE)
 s1<-eval.1$anova.plain
 p.select<-c("target|target:q")
 p.an<-s1[grep(p.select,rownames(s1)),]
