@@ -1,5 +1,5 @@
 ---
-title: "xtitle: proposition & coherence observations in :schizophrenia: threads"
+title: "xtitle: presupposition & coherence observations in :schizophrenia: threads"
 runningheader: "xtitle" # only for pdf output
 author: "st. schwarz"
 date: "`r Sys.time()`"

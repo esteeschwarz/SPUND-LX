@@ -1,6 +1,6 @@
 <!--# xTitle-->
 
-# proposition & coherence in :schizophrenia: threads
+# presupposition & coherence in :schizophrenia: threads
 
 ### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
 
@@ -10,7 +10,7 @@ Investigate reference marking, coherence and information structure in schizophre
 
 ## background
 
-Inspired by Zimmerer et al. (2017) we are interested in observations concerning coherence and propositional conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
+Inspired by Zimmerer et al. (2017) we are interested in observations concerning coherence and presupposing conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
 
 ## method (M7)
 
@@ -27,18 +27,18 @@ Measuring the referent-reference distance which we here assume as indicator of c
 We built a corpus of the reddit r/schizophrenia thread (`n=755074` tokens) and a reference corpus of r/unpopularopinion (`n=271563`). Both were pos-tagged using the R udpipe:: package (Wijffels 2023) which tags according to the universal dependencies tagset maintained by De Marneffe et al. (2021). Still the 755074 tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.  
 The dataframe used for modeling M7 consists of `939879` distance datapoints (sample below) derived from the postagged corpus.
 
-| q   | target | url | lemma      | m   | range | dist | det   | pos    |
-|:----|:-------|:----|:-----------|:----|------:|-----:|:------|:-------|
-| a   | obs    | 760 | friend     | 14  |  3808 |  100 | FALSE | 540136 |
-| a   | ref    | 40  | dude       | 3   |  5266 |  105 | FALSE | 112505 |
-| a   | ref    | 47  | food       | 23  |  3352 |   35 | FALSE | 136527 |
-| f   | obs    | 964 | brain      | 24  |  1959 |   45 | FALSE | 724599 |
-| a   | ref    | 50  | limit      | 59  |  4210 |   75 | FALSE | 140956 |
-| a   | obs    | 887 | time       | 13  |  8308 |  327 | FALSE | 644352 |
-| a   | obs    | 631 | one        | 20  |  3641 |   92 | FALSE | 409147 |
-| a   | ref    | 73  | lecture    | 65  |  6064 |  296 | FALSE | 204569 |
-| d   | ref    | 47  | dishwasher | 26  |  3352 |   40 | FALSE | 134670 |
-| a   | ref    | 26  | bbq        | 47  |  3909 |   10 | FALSE | 70284  |
+| q   | target | url | lemma            | m   | range | dist | det   | pos    |
+|:----|:-------|:----|:-----------------|:----|------:|-----:|:------|:-------|
+| a   | obs    | 676 | think            | 31  |  5411 |  167 | FALSE | 459436 |
+| b   | ref    | 92  | game             | 80  |  5392 |   72 | FALSE | 247420 |
+| a   | ref    | 34  | ad               | 36  |  1519 |  195 | FALSE | 91608  |
+| a   | obs    | 887 | symptom          | 52  |  8308 |   29 | FALSE | 641962 |
+| a   | obs    | 676 | schizophreniform | 2   |  5411 |  320 | FALSE | 459627 |
+| a   | ref    | 12  | series           | 22  |  5221 |  509 | TRUE  | 32797  |
+| a   | obs    | 618 | people           | 14  |   451 |   13 | FALSE | 398025 |
+| a   | obs    | 932 | post             | 18  |  3756 |  170 | FALSE | 697157 |
+| a   | obs    | 897 | people           | 78  |  5685 |  199 | FALSE | 659168 |
+| a   | obs    | 337 | be               | 91  |  1570 |    9 | FALSE | 174466 |
 
 ------------------------------------------------------------------------
 
