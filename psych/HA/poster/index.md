@@ -6,7 +6,7 @@
 
 ## subject
 
-Investigate reference marking, coherence and information structure in schizophrenia language by measuring distance of similar nouns within range of comment thread preceded by certain determinants.\[^1\]
+Investigate reference marking, coherence and information structure in schizophrenia language by measuring distance of similar nouns within range of comment thread preceded by certain determinants.[^1]
 
 ## background
 
@@ -27,18 +27,18 @@ Measuring the referent-reference distance which we here assume as indicator of c
 We built a corpus of the reddit r/schizophrenia thread (`n=755074` tokens) and a reference corpus of r/unpopularopinion (`n=271563`). Both were pos-tagged using the R udpipe:: package (Wijffels 2023) which tags according to the universal dependencies tagset maintained by De Marneffe et al. (2021). Still the 755074 tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.  
 The dataframe used for modeling M7 consists of `939879` distance datapoints (sample below) derived from the postagged corpus.
 
-| q   | target | url | lemma         | m   | range | dist | det   | pos    |
-|:----|:-------|:----|:--------------|:----|------:|-----:|:------|:-------|
-| a   | ref    | 10  | theater       | 61  |  4885 |   44 | FALSE | 25698  |
-| a   | ref    | 80  | people        | 51  |  4259 |   44 | FALSE | 217947 |
-| a   | obs    | 347 | stress        | 9   |  1834 |  412 | FALSE | 183173 |
-| d   | ref    | 73  | book          | 10  |  6064 |  633 | FALSE | 202741 |
-| a   | obs    | 614 | schizophrenia | 16  |  1774 |   12 | FALSE | 394670 |
-| a   | ref    | 66  | thing         | 12  |  3357 |    8 | FALSE | 182196 |
-| a   | ref    | 36  | scam          | 55  |  8785 |    9 | FALSE | 104942 |
-| a   | obs    | 607 | work          | 36  |  6036 |   24 | FALSE | 386889 |
-| c   | ref    | 15  | language      | 30  |  1863 |   12 | FALSE | 41125  |
-| a   | ref    | 44  | burger        | 178 |  6207 |   16 | FALSE | 128847 |
+| q   | target | url | lemma      | m   | range | dist | det   | pos    |
+|:----|:-------|:----|:-----------|:----|------:|-----:|:------|:-------|
+| a   | obs    | 760 | friend     | 14  |  3808 |  100 | FALSE | 540136 |
+| a   | ref    | 40  | dude       | 3   |  5266 |  105 | FALSE | 112505 |
+| a   | ref    | 47  | food       | 23  |  3352 |   35 | FALSE | 136527 |
+| f   | obs    | 964 | brain      | 24  |  1959 |   45 | FALSE | 724599 |
+| a   | ref    | 50  | limit      | 59  |  4210 |   75 | FALSE | 140956 |
+| a   | obs    | 887 | time       | 13  |  8308 |  327 | FALSE | 644352 |
+| a   | obs    | 631 | one        | 20  |  3641 |   92 | FALSE | 409147 |
+| a   | ref    | 73  | lecture    | 65  |  6064 |  296 | FALSE | 204569 |
+| d   | ref    | 47  | dishwasher | 26  |  3352 |   40 | FALSE | 134670 |
+| a   | ref    | 26  | bbq        | 47  |  3909 |   10 | FALSE | 70284  |
 
 ------------------------------------------------------------------------
 
@@ -63,7 +63,10 @@ query conditions for preceding token
 
 ## conclusion
 
-Over all conditions <!--**B** (``` this, that, these, those, DET ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model (cf. Bates et al. 2015) which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist~target*q+range+(1|lemma)+(1|det),df)`) gets a p-value of `p=0` for the mean difference of `829` tokens (targetref) compared to the target.  
-So the medium distance of nouns, preceded by one of our queries, is with `77` tokens width for the target corpus vs. `59` in the reference corpus also with respect to the covariables significantly (`p<0.001`) higher but still to be tested with growing the corpus.
+Over conditions <!--**B** (``` this, that, these, those, DET ```)-->\[`c, e, f`\] we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model (cf. Bates et al. 2015) which posited a main effect of corpus\*q+range and random effects of lemma (`lme4::lmer(dist~target*q+range+(1|lemma)+(1|det),df)`) gets a p-value of `p=0.0035625` for the mean difference of `829` tokens (targetref) compared to the target.  
+So the medium distance of nouns, preceded by one of our queries, is with `77` tokens width for the target corpus vs. `59` in the reference corpus also with respect to the covariables significantly (`p<0.01`) higher but still to be tested with growing the corpus.
 
-<img src="QR_poster-ext.png"></img> <!--## B. REF--> \[^1\]:snc.1:h2.pb.1000char/pg.queries.cites
+<!--![](QR_poster-ext.png)-->
+<!--## B. REF-->
+
+[^1]: snc.1:h2.pb.1000char/pg.queries.cites

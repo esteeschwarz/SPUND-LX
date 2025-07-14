@@ -298,10 +298,14 @@ s2<-eval.1$anova.lme
 s3<-eval.1$lme
 anlm.summ<-s2
 lm2.summ<-s3
-p.target<-anlm.summ["target",length(anlm.summ)]
+#s1
+s1
+p.target<-s1[1,length(s1)]
+p.target.anlm<-anlm.summ["target:q",length(anlm.summ)]
 p.target.q<-anlm.summ["target:q",length(anlm.summ)]
+p.use<-p.target.anlm
 sig.array<-c(0,0.001,0.01,0.05,0.1,1)
-p.sig<-p.target<sig.array
+p.sig<-p.use<sig.array
 p.sig<-which(p.sig)[1]
 p.sig.ex<-paste0("p<",sig.array[p.sig])
 #kable(anlm.summ)
@@ -316,13 +320,25 @@ lme.form<-lmeform.l$pre.det
 
 #plot:
 #unlist(qjs$b)
+coef<-s3$coefficients
+### relations:
+int<-coef[1,1]
+qv<-coef[9:13,1]
+qvc<-qv
+names(qvc)<-letters[2:6]
+qdiff<-int+qv
+qmin<-qdiff<int
+qvmin<-qv[qmin]
+names(qvmin)<-names(qvc)[qmin]
+qvmin
+
 ```
 
 <!-------->
 ## conclusion
-Over all conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.target` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
+Over conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->[``` `r names(qvmin)` ```] we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.use` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
 So the medium distance of nouns, preceded by one of our queries, is with ``` `r md_target` ``` tokens width for the target corpus vs. ``` `r md_ref` ``` in the reference corpus also with respect to the covariables significantly (```r p.sig.ex```) higher but still to be tested with growing the corpus.
 
-<img src="QR_poster-ext.png"></img>
+<!--![](QR_poster-ext.png)-->
 <!--## B. REF-->
 [^1]:snc.1:h2.pb.1000char/pg.queries.cites
