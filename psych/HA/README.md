@@ -19,3 +19,6 @@
 
   #### observations
   computing distances with antecedent.pos==DET(eval-004) and antecedent.pos~DET (eval-005)brings contrary results for distances obs vs. ref. TODO check again dist df creating function.
+  
+
+  [poster appendix](https://ogy.de/poster-coherence)
