@@ -29,16 +29,16 @@ The dataframe used for modeling M7 consists of `939879` distance datapoints (sam
 
 | q   | target | url | lemma      | m   | range | dist | det   | pos    |
 |:----|:-------|:----|:-----------|:----|------:|-----:|:------|:-------|
-| a   | ref    | 36  | pyramid    | 75  |  8785 |   66 | FALSE | 96640  |
-| a   | obs    | 413 | disability | 19  |  2963 |   46 | FALSE | 227780 |
-| a   | ref    | 8   | shift      | 35  |  3119 |  202 | TRUE  | 18327  |
-| b   | ref    | 98  | talent     | 27  |  2479 |  111 | FALSE | 263578 |
-| a   | ref    | 10  | people     | 39  |  4885 |   71 | FALSE | 20807  |
-| a   | obs    | 898 | fuck       | 141 |  2974 |   37 | FALSE | 663038 |
-| c   | obs    | 697 | memory     | 27  |  1345 |  111 | FALSE | 480047 |
-| a   | ref    | 53  | console    | 38  |  8169 |   78 | FALSE | 152972 |
-| a   | obs    | 607 | people     | 24  |  6036 |  390 | FALSE | 383650 |
-| a   | ref    | 85  | other      | 6   |  2468 |   79 | FALSE | 230059 |
+| a   | obs    | 815 | trauma     | 17  |  2390 |   10 | FALSE | 587343 |
+| a   | obs    | 498 | time       | 21  |  5112 |   93 | FALSE | 290431 |
+| a   | ref    | 7   | exercising | 4   |   928 |   26 | FALSE | 14207  |
+| d   | ref    | 83  | check      | 77  |  2817 |   66 | FALSE | 226956 |
+| a   | obs    | 413 | director   | 3   |  2963 |  448 | FALSE | 229183 |
+| a   | ref    | 19  | thing      | 37  |  5000 |    7 | FALSE | 51581  |
+| a   | obs    | 723 | father     | 4   |  5636 |   35 | FALSE | 503889 |
+| a   | ref    | 44  | burger     | 178 |  6207 |   17 | FALSE | 127218 |
+| b   | ref    | 80  | people     | 51  |  4259 |   15 | FALSE | 221608 |
+| a   | ref    | 73  | lecture    | 65  |  6064 |   89 | FALSE | 205203 |
 
 ------------------------------------------------------------------------
 
@@ -65,6 +65,8 @@ query conditions for preceding token
 
 Over conditions <!--**B** (``` this, that, these, those, DET ```)-->\[`c, e, f`\] we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model (cf. Bates et al. 2015) which posited a main effect of corpus\*q+range and random effects of lemma and determiner (`lme4::lmer(dist~target*q+range+(1|lemma)+(1|det),df)`) gets a p-value of `p=0.0035625` for the mean difference of `829` tokens (targetref) compared to the target.  
 So the medium distance of nouns, preceded by one of our queries, is with `77` tokens width for the target corpus vs. `59` in the reference corpus also with respect to the covariables significantly (`p<0.01`) higher but still to be tested with growing the corpus.
+
+![](QR_poster-ext.png)
 
 <!--![](QR_poster-ext.png)-->
 <!--## B. REF-->
