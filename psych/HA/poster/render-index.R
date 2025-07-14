@@ -1,6 +1,6 @@
 library(rmarkdown)
 ##########
-dataset<-5
+dataset<-7
 ##########
 mdns<-"index"
 wdr<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/poster/")

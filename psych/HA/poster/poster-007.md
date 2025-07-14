@@ -44,7 +44,7 @@ The dataframe used for modeling M7 consists of `939879` distance datapoints (sam
 
 ## results
 
-![](plots/distance-distribution-df7-viz1-1.png)
+![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/distance-distribution-df7-viz1-1.png)
 
 | q   | precedent             | pos  |
 |:----|:----------------------|:-----|
@@ -57,7 +57,7 @@ The dataframe used for modeling M7 consists of `939879` distance datapoints (sam
 
 query conditions for preceding token
 
-![](plots/lmer-plot-df7-lmeplot-1.png)
+![](https://github.com/esteeschwarz/SPUND-LX/raw/main/psych/HA/poster/plots/lmer-plot-df7-lmeplot-1.png)
 
 <!-------->
 

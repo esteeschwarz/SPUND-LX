@@ -20,6 +20,18 @@ if(!exists("tdb"))
   tdb<-read.db()
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
+build.q<-function(){
+  q0<-list(a=list(q=".*",det="DET"))
+  q1<-list(b=list(q=c("this","that","these","those"),det="DET")) # mean distance: 76
+  q2<-list(c=list(q=c("the"),det="DET")) # mean distance: 81
+  q3<-list(d=list(q=c("a","an","some","any"),det="DET")) # mean distance: 63, lower
+  q4<-list(e=list(q=c("my"),det=F)) # mean distance: 55, lower
+  q5<-list(f=list(q=c("your","their","his","her"),det=F)) # mean distance: 100, higher
+  
+  return(list(q0,q1,q2,q3,q4,q5))
+}
+qs<-build.q()
+qs
 #rm(tdb)
 eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
 eval.ns
@@ -160,7 +172,7 @@ get.anovas<-function(qltdf,target,con,det.t){
 }
 if(!exists("eval.1"))
   eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F))
-eval.1$plot.lme
+#eval.1$plot.lme
 fun.dep<-function(){
 lm2<-lmer(eval(expr(lmeform.l$no.pre.det)),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)

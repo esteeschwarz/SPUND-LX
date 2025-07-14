@@ -158,6 +158,10 @@ if(dataset%in%c(4))
   det.restrict<-'we restricted the matching antecendents of conditions b-d to must also be tagged "DET".'
 if(dataset%in%c(6))
   det.restrict<-'we restricted the matching antecendents of conditions b-d to must also be tagged "DET".'
+if(dataset%in%c(7))
+  det.restrict<-'we observed all matching antecendents of conditions b-f wether be tagged "DET" or not.'
+queries<-letters[1:6]
+
 ```
 
 ```{r sourcescr,results=T,warning=F,message=F,echo=F,eval=T}
@@ -165,7 +169,8 @@ if(dataset%in%c(6))
 # library(abind)
  #qs<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
  qjs<-fromJSON(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
-source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"))
 # n_obs<-dfa$corpsize[dfa$target=="obs"][1]
 # n_ref<-dfa$corpsize[dfa$target=="ref"][1]
 md_target<-median(dfa$dist[dfa$target=="obs"])
@@ -272,6 +277,12 @@ df.plot<-barplot(bar_mat,
 #print(unlist(qjs))
 #qjs$b
 #queries<-qjs
+x<-qs[[2]]
+quer<-lapply(qs, function(x){
+  q<-x[[1]]$q
+  q<-paste0(q,collapse=",")
+})
+queries<-unlist(quer)
 queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="NOUN")
 # cat("## conditions:\n")
  kable(queries.df,caption = "query conditions for preceding token")
@@ -282,6 +293,11 @@ queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="
 #print(head(df))
 #print("anova_model <- aov(dist ~ target*q, data = df)")
 #print(an.summ)
+s1<-eval.1$anova.plain
+s2<-eval.1$anova.lme
+s3<-eval.1$lme
+anlm.summ<-s2
+lm2.summ<-s3
 p.target<-anlm.summ["target",length(anlm.summ)]
 p.target.q<-anlm.summ["target:q",length(anlm.summ)]
 sig.array<-c(0,0.001,0.01,0.05,0.1,1)
@@ -292,6 +308,7 @@ p.sig.ex<-paste0("p<",sig.array[p.sig])
 dist.target<-lm2.summ$coefficients["targetref",1]
 dist.target<-round(dist.target,0)
 rmd.plot.lme(lm2.summ)
+lme.form<-lmeform.l$pre.det
 #p.target.q
 #get mean:
 # m.target<-median(dfa$dist[dfa$target=="obs"])
@@ -306,5 +323,6 @@ rmd.plot.lme(lm2.summ)
 Over all conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.target` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
 So the medium distance of nouns, preceded by one of our queries, is with ``` `r md_target` ``` tokens width for the target corpus vs. ``` `r md_ref` ``` in the reference corpus also with respect to the covariables significantly (```r p.sig.ex```) higher but still to be tested with growing the corpus.
 
+<img src="QR_poster-ext.png"></img>
 <!--## B. REF-->
 [^1]:snc.1:h2.pb.1000char/pg.queries.cites
