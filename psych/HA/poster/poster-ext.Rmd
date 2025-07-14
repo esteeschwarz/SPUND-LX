@@ -3,10 +3,10 @@ title: "xtitle: coherence & presuppositions observations in :schizophrenia: thre
 author: "st. schwarz"
 date: "`r Sys.Date()`"
 output:
-  # bookdown::html_document2:
-  # keep_md: true  
-  # self_contained: false
-  #   #fig_path: "plots/"
+  bookdown::html_document2:
+  keep_md: true
+#  self_contained: false
+    #fig_path: "plots/"
   md_document:
     variant: markdown_github
     pandoc_args: ["--wrap=none"]

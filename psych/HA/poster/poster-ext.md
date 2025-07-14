@@ -63,16 +63,21 @@ model vars
     ## targetref:qf -211.3458451 2.219379e+02 9.388365e+05  -0.9522746 3.409580e-01
 
 <figure>
-<img src="evaltest-007_files/figure-markdown_github/boxplot1-1.png" alt="compare distances by corpus" />
+<img src="poster-ext_files/figure-markdown_github/boxplot1-1.png" alt="compare distances by corpus" />
 <figcaption aria-hidden="true">compare distances by corpus</figcaption>
 </figure>
 
 <figure>
-<img src="evaltest-007_files/figure-markdown_github/barplot-1.png" alt="median distances over query/corpus" />
+<img src="poster-ext_files/figure-markdown_github/barplot-1.png" alt="median distances over query/corpus" />
 <figcaption aria-hidden="true">median distances over query/corpus</figcaption>
 </figure>
 
-## ![distances relation](evaltest-007_files/figure-markdown_github/lmeplot-1.png)
+<figure>
+<img src="poster-ext_files/figure-markdown_github/lmeplot-1.png" alt="distances relation" />
+<figcaption aria-hidden="true">distances relation</figcaption>
+</figure>
+
+------------------------------------------------------------------------
 
 # REF
 
