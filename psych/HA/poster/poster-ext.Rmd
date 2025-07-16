@@ -23,7 +23,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-```{css, echo=FALSE}
+```{css, echo=FALSE,eval=F}
 table {
   width: 100% !important;
 }
@@ -42,7 +42,7 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 # top
 eval output M`r dataset`
 
-### legende
+## legende
 ```{r,legend,echo=FALSE,warning=F,message=F}
 legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
@@ -56,8 +56,9 @@ legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
 # k
 kable(legend, caption = "model vars",format="markdown")
 ```
-### anova analysis
-```{r,dfs,echo=FALSE,warning=F,message=F}
+## anova analysis
+### anova plain, formula: ``` `r anova.form.l$pre.det` ```
+```{r,dfs1,echo=FALSE,warning=F,message=F}
 # legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
 #                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
 #                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",
@@ -74,16 +75,28 @@ s1<-eval.1$anova.plain
 p.select<-c("target|target:q")
 p.an<-s1[grep(p.select,rownames(s1)),]
 #p.an
-print("anova plain")
+#cat("anova plain, formula: `",anova.form.l$pre.det,"`\n")
 s1
+```
+
+### anova of linear regression model: [`anova(summary(lmer))`]
+
+```{r,dfs2,echo=FALSE,warning=F,message=F}
+
+
+
 s2<-eval.1$anova.lme
 p.an.lm<-s2[grep(p.select,rownames(s2)),]
 #p.an.lm
-print("anova of linear regression model")
+#cat("anova of linear regression model (below): [`anova(summary(lmer))`]\n")
 s2
+```
+
+### linear regression coefficients, formula: ``` `r lmeform.l$pre.det` ```
+```{r,dfs3,echo=FALSE,warning=F,message=F}
 dfe<-eval.1$plot.md
 s3<-eval.1$lme
-print("lmer coefficients")
+#cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
 s3$coefficients
 coef<-s3$coefficients
 ### relations:
@@ -97,7 +110,7 @@ qvmin<-qv[qmin]
 names(qvmin)<-names(qvc)[qmin]
 #qvmin
 ```
-### plots
+## plots
 ```{r boxplot1,echo=F,warning=F,message=F,fig.cap="compare distances by corpus"}
 # df1_no_outliers <- dfa %>%
 #   group_by(target) %>%
