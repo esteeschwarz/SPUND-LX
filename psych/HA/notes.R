@@ -110,3 +110,9 @@ lm1<-lmer(dist~target*q+(1|prepos)+(1|lemma),tdba.n)
 sum1<-summary(lm1)
 sum1
 boxplot(dist~target,tdba.n,outline=F)
+library(utils)
+citation("RedditExtractoR")
+
+getwd()
+render("poster-ext.Rmd")
+

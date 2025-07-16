@@ -4,6 +4,7 @@ author: "st. schwarz"
 date: "`r Sys.Date()`"
 output: 
     bookdown::html_document2:
+      base_format: tufte::tufte_html
       keep_md: true
       self_contained: true
     #fig_path: "plots/"

@@ -1,9 +1,10 @@
 ---
 title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
 author: "st. schwarz"
-date: "2025-07-14"
+date: "2025-07-16"
 output: 
     bookdown::html_document2:
+      base_format: tufte::tufte_html
       keep_md: true
       self_contained: true
     #fig_path: "plots/"
@@ -106,24 +107,16 @@ Table: (\#tab:legend)model vars
 ```
 ### plots
 <div class="figure">
-<img src="poster-ext_files/figure-html/boxplot1-1.png" alt="compare distances by corpus"  />
-<p class="caption">(\#fig:boxplot1)compare distances by corpus</p>
-</div>
+<p class="caption">(\#fig:boxplot1)compare distances by corpus</p><img src="poster-ext_files/figure-html/boxplot1-1.png" alt="compare distances by corpus"  /></div>
 
 <div class="figure">
-<img src="poster-ext_files/figure-html/barplot-median-1.png" alt="median distances over query/corpus"  />
-<p class="caption">(\#fig:barplot-median)median distances over query/corpus</p>
-</div>
+<p class="caption">(\#fig:barplot-median)median distances over query/corpus</p><img src="poster-ext_files/figure-html/barplot-median-1.png" alt="median distances over query/corpus"  /></div>
 
 <div class="figure">
-<img src="poster-ext_files/figure-html/barplot-mean-1.png" alt="mean distances over query/corpus"  />
-<p class="caption">(\#fig:barplot-mean)mean distances over query/corpus</p>
-</div>
+<p class="caption">(\#fig:barplot-mean)mean distances over query/corpus</p><img src="poster-ext_files/figure-html/barplot-mean-1.png" alt="mean distances over query/corpus"  /></div>
 
 <div class="figure">
-<img src="poster-ext_files/figure-html/lmeplot-1.png" alt="distances relation"  />
-<p class="caption">(\#fig:lmeplot)distances relation</p>
-</div>
+<p class="caption">(\#fig:lmeplot)distances relation</p><img src="poster-ext_files/figure-html/lmeplot-1.png" alt="distances relation"  /></div>
 
 -----
 
