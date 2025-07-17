@@ -73,16 +73,20 @@ sum(mo)
 max(data$range)
 data<-data.s[!mo,]
 
+# 15294.
 ### 3rd approach
 tdb$obs$target<-"obs"
 tdb$ref$target<-"ref"
+tdb$obs$pos<-1:length(tdb$obs$token)
+tdb$ref$pos<-1:length(tdb$ref$token)
 tdba<-rbind(tdb$obs,tdb$ref)
 tdba.n<-tdba[tdba$upos=="NOUN",]
+n1w<-as.double(rownames(tdba.n))-1
 n1w<-as.double(rownames(tdba.n))-1
 tdba.n$pre<-tdba$token[n1w]
 #m<-grep("<doc ",tdba.n$pre)
 tdba.n$prepos<-tdba$upos[n1w]
-tdba.n$pos<-as.double(rownames(tdba.n))
+#tdba.n$pos<-as.double(rownames(tdba.n))
 dis1<-diff(tdba.n$pos)
 tdba.n$dist<-c(1,dis1)
 qs[[2]]
@@ -98,11 +102,11 @@ m4<-tdba.n$pre%in%qs[[4]]$d$q
 m5<-tdba.n$pre%in%qs[[5]]$e$q
 m6<-tdba.n$pre%in%qs[[6]]$f$q
 tdba.n$q<-"a"
-tdba.n$q[m2]<-"b"
-tdba.n$q[m3]<-"c"
-tdba.n$q[m4]<-"d"
-tdba.n$q[m5]<-"e"
-tdba.n$q[m6]<-"f"
+# tdba.n$q[m2]<-"b"
+# tdba.n$q[m3]<-"c"
+# tdba.n$q[m4]<-"d"
+# tdba.n$q[m5]<-"e"
+# tdba.n$q[m6]<-"f"
 table(tdba.n$q)
 model<-aov(dist~target*q,tdba.n)
 summary(model)
@@ -110,9 +114,90 @@ lm1<-lmer(dist~target*q+(1|prepos)+(1|lemma),tdba.n)
 sum1<-summary(lm1)
 sum1
 boxplot(dist~target,tdba.n,outline=F)
+# overall all-noun distances: lower for target
+mean
 library(utils)
 citation("RedditExtractoR")
 
+# idea: use df.complete as intercept and rbind subsets of conditions
+sub.2$q<-"b"
+sub.3$q<-"c"
+sub.4$q<-"d"
+sub.5$q<-"e"
+sub.6$q<-"f"
+#sub.2$q<-"b"
+tdba.2<-rbind(tdba.n,sub.2,sub.3,sub.4,sub.5,sub.6)
+table(tdba.2$q)
+t.det<-table(tdba.2$q[tdba.2$prepos=="DET"])
+# b -311, c/d ==, e/f 0 : the + a,any,some,an are all DET
+# unnu?
+# 1st: get only distances of same-noun
+boxplot(dist~target,tdba.n,outline=F)
+# overall all-noun distances: lower for target
+ar.obs<-array()
+ar.ref<-array()
+for(q in letters[1:6]){
+mn1<-mean(tdba.2$dist[tdba.2$q==q&tdba.2$target=="obs"])
+mn2<-mean(tdba.2$dist[tdba.2$q==q&tdba.2$target=="ref"])
+ar.obs[q]<-mn1
+ar.ref[q]<-mn2
+
+}  
+print(ar.obs)
+print(ar.ref)
+print(ar.ref-ar.obs)
+# worthless information since dist is random
+# get same-noun dist within range
+# define ranges
+uid<-tdba.2$uid
+length(unique(uid))
+head(uid)
+uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+#uid2<-gsub("-.*","",uid)
+head(uid2)
+uid2<-paste0(tdba.2$target,".",uid2)
+length(unique(uid2))
+tdb$url<-uid2
+unique(uid2)
+tdba.2$url<-uid2
+n.u<-unique(tdba.2$lemma)
+m.dup<-duplicated(tdba.2$lemma)
+dup.w<-which(m.dup)
+ld.u<-unique(tdba.2$lemma[m.dup])
+x<-ld.u[1]
+tdb3.l<-lapply(ld.u,function(x){
+  r1<-tdba.2$lemma==x
+  r1w<-which(r1)
+  r1u<-tdba.2$url[r1w]
+  p1<-tdba.2$pos[r1w]
+  
+### 15295.e
+  p1.o<-duplicated(tdba.2$token_id[r1w])
+  u<-r1u[1]
+  d1<-lapply(r1u,function(u){
+    r2w<-which(tdba.2$url==u)
+    r3w<-which(r1w%in%r2w)
+    d2<-diff(tdba.2$pos[r1w[r3w]])
+    ifelse(d2!=0,d3<-c(0,d2),d3<-NA)
+    return(d3)
+  })
+  d1<-unique(d1)
+  d1<-unlist(d1)
+  #d1<-d1[!is.na(d1)]
+  tdba.2$dist[r1w,]<-d1
+    
+  
+  
+  
+})
+tdba[p1,]
+tdba.2[r1w,] # stuck
+#######
+# bottom
 getwd()
+library(rmarkdown)
 render("poster-ext.Rmd")
+
+
+
 
