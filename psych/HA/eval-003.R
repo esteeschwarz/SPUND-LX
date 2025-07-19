@@ -14,6 +14,7 @@ read.db<-function(){
   #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
   tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
   tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
+  dbDisconnect(con)
   return(list(obs=tdbcorp,ref=tdbref))
 }
 if(!exists("tdb"))
