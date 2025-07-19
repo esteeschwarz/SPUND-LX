@@ -3,8 +3,8 @@ read.db<-function(){
   
   library(DBI)
   library(RSQLite)
-  #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
-  con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
+  con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
+  #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
   dbListTables(con)
   #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
   tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")

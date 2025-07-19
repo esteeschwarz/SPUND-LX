@@ -87,22 +87,33 @@ m1<-grepl("<doc |<s |</s>|</doc>",tdb1r$token)
 sum(m1)
 tdb1r<-tdb1r[!m1,]
 library(gtools)
-order_ido <- mixedorder(tdb1o$pid)
-tdb1os<-tdb1o[order(order_id),]
+order_ido <- mixedorder(tdb1o$pid,decreasing = F)
+tdb1os<-tdb1o[order(order_ido,rownames(tdb1o),tdb1o$timestamp),]
 order_idr <- mixedorder(tdb1r$pid)
-tdb1os<-tdb1o[order(order_id),]
-tdb1rs<-tdb1r[order(tdb1r$pid),]
-tdb$obs$pos<-1:length(tdb$obs$token)
-tdb$ref$pos<-1:length(tdb$ref$token)
-tdba.1<-rbind(tdb$obs,tdb$ref)
+tdb1rs<-tdb1r[order(order_idr),]
+#tdb1rs<-tdb1r[order(tdb1r$pid),]
+tdb1os$pos<-1:length(tdb1os$token)
+tdb1rs$pos<-1:length(tdb1rs$token)
+################################
+tdb1o$pos<-1:length(tdb1o$token)
+tdb1r$pos<-1:length(tdb1r$token)
+tdb1os[grep("l2-com9.",tdb1os$pid),"pid"]
+#tdb$ref$pos<-1:length(tdb$ref$token)
+tdba.1<-rbind(tdb1o,tdb1r)
+tdba<-tdba.1
 l1<-length(tdba.1$target)
-tdba<-rbind(tdb$obs,tdb$ref)
-tdba$run<-NA
-tdba$run[1:1012759]<-1
-tdba$run[1012760:(length(tdba$token))]<-2
+#tdba<-rbind(tdb$obs,tdb$ref)
+#tdba$run<-NA
+#tdba$run[1:1012759]<-1
+#tdba$run[1012760:(length(tdba$token))]<-2
 tdba.n<-tdba[tdba$upos=="NOUN",]
 n1w<-tdba.n$pos-1
+sum(n1w==1)
+n1w<-n1w[!is.na(n1w)]
+n1w[n1w==0]<-1
 #n1w<-as.double(rownames(tdba.n))-1
+tdba.n$pre<-NA
+length(tdba$token[n1w])
 tdba.n$pre<-tdba$token[n1w]
 #m<-grep("<doc ",tdba.n$pre)
 tdba.n$prepos<-tdba$upos[n1w]
@@ -149,6 +160,7 @@ sub.6$q<-"f"
 tdba.2<-rbind(tdba.n,sub.2,sub.3,sub.4,sub.5,sub.6)
 table(tdba.2$q)
 t.det<-table(tdba.2$q[tdba.2$prepos=="DET"])
+t.det
 # b -311, c/d ==, e/f 0 : the + a,any,some,an are all DET
 # unnu?
 # 1st: get only distances of same-noun
@@ -177,16 +189,16 @@ uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
 head(uid2)
 uid2<-paste0(tdba.2$target,".",uid2)
 length(unique(uid2))
-tdb$url<-uid2
+#tdb$url<-uid2
 unique(uid2)
 tdba.2$url<-uid2
 n.u<-unique(tdba.2$lemma)
 m.dup<-duplicated(tdba.2$lemma)
 dup.w<-which(m.dup)
-ld.u<-unique(tdba.2$lemma[m.dup])
+ld.u<-unique(tdba.2$lemma[dup.w])
 x<-ld.u[1]
-x<-ld.u[27]
-which(ld.u=="life")
+x<-ld.u[69]
+which(ld.u=="evidence")
 library(pbapply)
 library(abind)
 tdb3.l<-pblapply(ld.u,function(x){
@@ -194,6 +206,7 @@ tdb3.l<-pblapply(ld.u,function(x){
   print(x)
   r1<-tdba.2$lemma==x
   r1w<-which(r1)
+  r1w
   #p1.o<-duplicated(tdba.2$token_id[r1w])
   #sum(p1.o)
   #u<-r1u[1]
@@ -206,6 +219,8 @@ tdb3.l<-pblapply(ld.u,function(x){
   dups <- names(table(r1u))[table(r1u) > 1]
   dups
   r1ud <- which(r1u %in% dups)
+  c1<-tdba.2$pos[r1w[r1ud]]
+  c1
   r1w<-r1w[r1ud]
   #r1u<-r1u[r1ud]
   #p1<-tdba.2$pos[r1w]
@@ -215,7 +230,7 @@ tdb3.l<-pblapply(ld.u,function(x){
 #  p1.o<-duplicated(tdba.2$token_id[r1w])
  # sum(p1.o)
   u<-r1u[6]
-  uw<-which(r1u=="obs.23")
+  #uw<-which(r1u=="obs.23")
   r1u
   #r1u<-r1u[!p1.o]
   #r1w<-r1w[!p1.o]
@@ -226,14 +241,15 @@ tdb3.l<-pblapply(ld.u,function(x){
  # r1u2
 #  r1ud<-duplicated(r1u)
 #  r1u<-r1u[r1ud]
-  tdba.2[r1w[uw],]
+  #tdba.2[r1w[uw],]
   #############################
   target<-"obs"
   get.ds<-function(r1u,target){
   m1<-grep(target,r1u)
   r1u<-unique(r1u[m1])
+  r1u
   um<-which(r1u=="obs.2")
-  u<-r1u[3]
+  u<-r1u[um]
   d1<-lapply(r1u,function(u){
     print(u)
     d3<-NA
@@ -309,14 +325,31 @@ tdb4<-lapply(tdb3.l,function(x){
 tdb4<-tdb4[!is.na(tdb4)]
 tdb4<-data.frame(abind(tdb4,along = 1))
 mode(tdb4$dist)<-"double"
+tdb4$dist[tdb4$dist==0]<-NA
+tdb4$det<-FALSE
+tdb4$det[tdb4$prepos=="DET"]<-TRUE
+#qltdf<-tdb4
+#save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 #######################################
 boxplot(dist~target,tdb4,outline=F)
 max(tdb4$dist)
-ceil<-1000
+which.max(tdb4$dist)
+tdb4[7280:7300,]
+ceil<-4000
 mc<-tdb4$dist>ceil
 sum(mc)
 tdb4$dist[mc]<-NA
 boxplot(dist~target,tdb4,outline=F)
+model<-aov(dist~target*q,tdb4)
+summary(model)
+library(lmerTest)
+lm1<-lmer(dist~target*q+(1|prepos)+(1|lemma),tdb4)
+lm1<-lmer(dist~target*q+(1|prepos),tdb4)
+sum1<-summary(lm1)
+sum1
+anova(lm1)
+
+
 which(ld.u=="amateur")
 ld.u[219]
 tdba[p1,]
@@ -327,6 +360,7 @@ getwd()
 library(rmarkdown)
 render("poster-ext.Rmd")
 
-
-
-
+dfe<-get.mean.df(tdb4)
+plot.dist(dfe,"mean")
+plot.dist(dfe,"median")
+qltdf<-tdb4

@@ -89,14 +89,15 @@ get.mean.df<-function(dfa){
       m.c<-dfa$target[m.q]==cx
       l<-sum(m.c)
       df.m$n[df.m$target==cx&df.m$q==qx]<-l
-      df.m$mean[df.m$target==cx&df.m$q==qx]<-mean(dfa$dist[m.q][m.c])
-      df.m$median[df.m$target==cx&df.m$q==qx]<-median(dfa$dist[m.q][m.c])
+      df.m$mean[df.m$target==cx&df.m$q==qx]<-mean(dfa$dist[m.q][m.c],na.rm=T)
+      df.m$median[df.m$target==cx&df.m$q==qx]<-median(dfa$dist[m.q][m.c],na.rm=T)
     }
   }
   #dfm$q <- factor(dfm$q, levels = c("a", "b", "c", "d", "e", "f"))
   
   return(df.m)
 }
+#dfe<-get.mean.df(tdb4)
 rmd.plot.lme<-function(lm2.summ){
   coef<-lm2.summ$coefficients
   cats<-rownames(coef)
