@@ -46,6 +46,7 @@ Table: (\#tab:legend)model vars
 |q:d      |query condition     |a,an,any,some         |
 |q:e      |query condition     |my                    |
 |q:f      |query condition     |his,her,their,your    |
+
 ## anova analysis
 ### anova plain, formula: ``` dist ~ target*q*det ```
 

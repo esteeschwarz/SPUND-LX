@@ -165,7 +165,12 @@ m.dup<-duplicated(tdba.2$lemma)
 dup.w<-which(m.dup)
 ld.u<-unique(tdba.2$lemma[m.dup])
 x<-ld.u[1]
-tdb3.l<-lapply(ld.u,function(x){
+x<-ld.u[218]
+library(pbapply)
+library(abind)
+tdb3.l<-pblapply(ld.u,function(x){
+  tdba.2$dist<-NA
+  print(x)
   r1<-tdba.2$lemma==x
   r1w<-which(r1)
   r1u<-tdba.2$url[r1w]
@@ -174,6 +179,10 @@ tdb3.l<-lapply(ld.u,function(x){
 ### 15295.e
   p1.o<-duplicated(tdba.2$token_id[r1w])
   u<-r1u[1]
+  r1u
+  r1u2<-strsplit(r1u,"\\.")
+  r1u2
+  r1u2<-data.frame(abind(r1u2,along = 2))
   d1<-lapply(r1u,function(u){
     r2w<-which(tdba.2$url==u)
     r3w<-which(r1w%in%r2w)
@@ -181,15 +190,21 @@ tdb3.l<-lapply(ld.u,function(x){
     ifelse(d2!=0,d3<-c(0,d2),d3<-NA)
     return(d3)
   })
+  d1
   d1<-unique(d1)
+  d1
   d1<-unlist(d1)
-  #d1<-d1[!is.na(d1)]
-  tdba.2$dist[r1w,]<-d1
+  d1
+  mna<-is.na(d1)
+  d1<-d1[!mna]
+  tdba.2$dist[r1w[which(!mna)]]<-d1
     
   
   
   
 })
+which(ld.u=="amateur")
+ld.u[219]
 tdba[p1,]
 tdba.2[r1w,] # stuck
 #######
