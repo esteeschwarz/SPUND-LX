@@ -332,6 +332,9 @@ tdb4$det[tdb4$prepos=="DET"]<-TRUE
 #save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 tdb4<-qltdf
+mna<-is.na(tdb4$token)
+sum(mna)
+
 # apply url range to final df
 uid<-tdb$obs$uid
 uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
@@ -374,8 +377,78 @@ for(k in url.u.r){
 }
 url.u<-c(url.u.o,url.u.r)
 #head(uid)
+
+### normalize distances
+tdb6<-qltdf
+mna<-is.na(tdb6$token)
+tdb6<-tdb6[!mna,]
+target<-unique(tdb6$target)
+tdb6$range_f_within<-NA
+#tdb6$range_f<-NA
+# tdb6$range_f_obs<-NA
+# tdb6$range_f_ref<-NA
+#tdb6$range_factor<-NA
+tdb6$range_f_all<-mean(tdb6$range)/tdb6$range
+tdb6$range_f_obs<-mean(tdb6$range[tdb6$target=="obs"])/tdb6$range
+tdb6$range_f_ref<-mean(tdb6$range[tdb6$target=="ref"])/tdb6$range
+for(k in target){
+  r<-tdb6$target==k
+  mr<-mean(tdb6$range[r])/tdb6$range[r]
+  tdb6$range_f_within[r]<-mr
+}
+tdb6$dist_rel_within<-tdb6$dist_abs*tdb6$range_f_within
+tdb6$dist_rel_all<-tdb6$dist_abs*tdb6$range_f_all
+tdb6$dist_rel_obs<-tdb6$dist_abs*tdb6$range_f_obs
+tdb6$dist_rel_ref<-tdb6$dist_abs*tdb6$range_f_ref
 #######################################
-boxplot(dist~target,tdb4,outline=F)
+boxplot(dist_rel_all~target,tdb6,outline=F)
+boxplot(dist_rel_within~target,tdb6,outline=F)
+boxplot(dist_rel_ref~target,tdb6,outline=F)
+boxplot(dist_rel_obs~target,tdb6,outline=F)
+###########################################
+df_norm<-dfnorm
+# colnames(tdb6)[colnames(tdb6)=="dist"]<-"dist_rel"
+# colnames(tdb6)[colnames(tdb6)=="dist_abs"]<-"dist"
+reference_target<-"ref"
+
+gplot.dist<-function(dfnorm,reference_target){
+selector<-c(obs="dist_rel_obs",ref="dist_rel_ref")  
+colselect<-colnames(dfnorm)%in%selector[reference_target]
+col.ns<-colnames(dfnorm)[which(colselect)]
+plot_data <- dfnorm %>%
+  # select(target, dist, normalized_dist_to_ref, normalized_dist_within_cat) %>%
+  select(target, dist,col.ns , dist_rel_within) %>%
+  pivot_longer(cols = c(dist, col.ns, dist_rel_within),
+               names_to = "method", values_to = "distance") %>%
+  mutate(
+    method = case_when(
+      method == "dist" ~ "Raw",
+      method == col.ns ~ paste("Normalized to", reference_target),
+      method == "dist_rel_within" ~ "Normalized within target"
+    )
+  )
+
+# Create comparison plot
+p <- ggplot(plot_data, aes(x = target, y = distance, fill = target)) +
+  geom_boxplot(alpha = 0.7) +
+  stat_summary(fun = median, geom = "point", shape = 23, size = 3, 
+               fill = "white", color = "black") +
+  facet_wrap(~ method, scales = "free_y", ncol = 3) +
+  labs(
+    title = "Distance Comparison: Raw vs target-Normalized",
+    subtitle = "Diamond = median",
+    y = "Distance",
+    x = "target"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+return(p)
+}
+gplot.dist(dfnorm,"obs")
+###########################################
+
+
 max(tdb4$dist)
 which.max(tdb4$dist)
 tdb4[7280:7300,]

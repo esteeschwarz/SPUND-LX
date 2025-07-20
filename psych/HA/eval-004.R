@@ -239,14 +239,329 @@ analyze_dists <- function(df) {
     plots = plots
   )
 }
+# target-Specific Length Normalization
+library(dplyr)
+
+# ============================================================================
+# target-SPECIFIC NORMALIZATION FUNCTION
+# ============================================================================
+
+normalize_by_target_length <- function(df, reference_target = "obs") {
+  # Calculate mean URL length for each target
+  target_means <- df %>%
+    group_by(target) %>%
+    summarise(mean_range = mean(range, na.rm = TRUE), .groups = 'drop')
+  
+  # Get reference target mean (default: obs)
+  ref_mean_length <- target_means$mean_range[target_means$target == reference_target]
+  
+  if(length(ref_mean_length) == 0) {
+    stop(paste("Reference target", reference_target, "not found in data"))
+  }
+  
+  # Method 1: Standardize to reference target mean
+  df_norm1 <- df %>%
+    mutate(
+      normalized_dist_to_ref = dist * (ref_mean_length / range)
+    )
+  
+  # Method 2: Standardize each target to its own mean (within-target normalization)
+  df_norm2 <- df %>%
+    left_join(target_means, by = "target") %>%
+    mutate(
+      normalized_dist_within_cat = dist * (mean_range / range)
+    )
+  
+  # Method 3: Your suggested approach - standardize to target target means
+  df_final <- df_norm1 %>%
+    left_join(target_means, by = "target") %>%
+    mutate(
+      # Add the within-target version
+      normalized_dist_within_cat = dist * (mean_range / range),
+      
+      # Add target mean info for reference
+      target_mean_length = mean_range
+    ) %>%
+    select(-mean_range)  # clean up duplicate column
+  
+  return(list(
+    data = df_final,
+    target_means = target_means,
+    reference_used = reference_target,
+    ref_mean_length = ref_mean_length
+  ))
+}
+
+# ============================================================================
+# COMPARISON FUNCTION FOR target-SPECIFIC NORMALIZATION
+# ============================================================================
+
+compare_target_normalized <- function(df, reference_target = "obs") {
+  # Get normalized data
+  norm_result <- normalize_by_target_length(df, reference_target)
+  df_norm <- norm_result$data
+  
+  # Compare different normalization approaches
+  comparison <- df_norm %>%
+    group_by(target) %>%
+    summarise(
+      # Original values
+      raw_mean = mean(dist, na.rm = TRUE),
+      raw_median = median(dist, na.rm = TRUE),
+      raw_sd = sd(dist, na.rm = TRUE),
+      
+      # Normalized to reference target length
+      norm_to_ref_mean = mean(normalized_dist_to_ref, na.rm = TRUE),
+      norm_to_ref_median = median(normalized_dist_to_ref, na.rm = TRUE),
+      norm_to_ref_sd = sd(normalized_dist_to_ref, na.rm = TRUE),
+      
+      # Normalized within target (to own mean length)
+      norm_within_mean = mean(normalized_dist_within_cat, na.rm = TRUE),
+      norm_within_median = median(normalized_dist_within_cat, na.rm = TRUE),
+      norm_within_sd = sd(normalized_dist_within_cat, na.rm = TRUE),
+      
+      # URL length info
+      mean_range = mean(range, na.rm = TRUE),
+      
+      n = n(),
+      .groups = 'drop'
+    )
+  
+  # Calculate differences between categories
+  if(nrow(comparison) == 2) {
+    obs_row <- comparison[comparison$target == "obs", ]
+    ref_row <- comparison[comparison$target == "ref", ]
+    
+    differences <- data.frame(
+      method = c("Raw", "Normalized_to_ref", "Normalized_within"),
+      
+      obs_median = c(obs_row$raw_median, obs_row$norm_to_ref_median, obs_row$norm_within_median),
+      ref_median = c(ref_row$raw_median, ref_row$norm_to_ref_median, ref_row$norm_within_median),
+      
+      difference = c(
+        obs_row$raw_median - ref_row$raw_median,
+        obs_row$norm_to_ref_median - ref_row$norm_to_ref_median,
+        obs_row$norm_within_median - ref_row$norm_within_median
+      ),
+      
+      ratio = c(
+        obs_row$raw_median / ref_row$raw_median,
+        obs_row$norm_to_ref_median / ref_row$norm_to_ref_median,
+        obs_row$norm_within_median / ref_row$norm_within_median
+      ),
+      
+      obs_higher = c(
+        obs_row$raw_median > ref_row$raw_median,
+        obs_row$norm_to_ref_median > ref_row$norm_to_ref_median,
+        obs_row$norm_within_median > ref_row$norm_within_median
+      )
+    )
+  } else {
+    differences <- NULL
+  }
+  
+  return(list(
+    comparison_stats = comparison,
+    differences = differences,
+    target_means = norm_result$target_means,
+    normalized_data = df_norm
+  ))
+}
+
+# ============================================================================
+# STATISTICAL TESTING
+# ============================================================================
+
+test_target_normalization <- function(df, method = "to_ref", reference_target = "obs") {
+  norm_result <- normalize_by_target_length(df, reference_target)
+  df_norm <- norm_result$data
+  
+  # Choose which normalized values to test
+  if(method == "to_ref") {
+    obs_values <- df_norm$normalized_dist_to_ref[df_norm$target == "obs"]
+    ref_values <- df_norm$normalized_dist_to_ref[df_norm$target == "ref"]
+    method_name <- paste("Normalized to", reference_target, "mean length")
+  } else if(method == "within_cat") {
+    obs_values <- df_norm$normalized_dist_within_cat[df_norm$target == "obs"]
+    ref_values <- df_norm$normalized_dist_within_cat[df_norm$target == "ref"]
+    method_name <- "Normalized within target"
+  } else {
+    obs_values <- df_norm$dist[df_norm$target == "obs"]
+    ref_values <- df_norm$dist[df_norm$target == "ref"]
+    method_name <- "Raw distances"
+  }
+  
+  # Perform tests
+  t_test <- t.test(obs_values, ref_values)
+  wilcox_test <- wilcox.test(obs_values, ref_values)
+  
+  # Effect size
+  pooled_sd <- sqrt(((length(obs_values) - 1) * var(obs_values) + 
+                       (length(ref_values) - 1) * var(ref_values)) / 
+                      (length(obs_values) + length(ref_values) - 2))
+  cohens_d <- (mean(obs_values) - mean(ref_values)) / pooled_sd
+  
+  return(list(
+    method = method_name,
+    t_test = t_test,
+    wilcoxon = wilcox_test,
+    cohens_d = cohens_d,
+    obs_median = median(obs_values),
+    ref_median = median(ref_values),
+    difference = median(obs_values) - median(ref_values)
+  ))
+}
+
+# ============================================================================
+# SIMPLE USAGE FUNCTIONS
+# ============================================================================
+
+# Quick target-specific normalization (YOUR SUGGESTED APPROACH)
+quick_target_normalize <- function(df, reference_target = "obs") {
+  # Calculate mean URL length for reference target
+  ref_mean <- df %>%
+    filter(target == reference_target) %>%
+    summarise(mean_length = mean(range, na.rm = TRUE)) %>%
+    pull(mean_length)
+  
+  # Normalize all distances to this reference length
+  df %>%
+    mutate(
+      normalized_dist = dist * (ref_mean / range)
+    ) %>%
+    group_by(target) %>%
+    summarise(
+      raw_median = median(dist),
+      normalized_median = median(normalized_dist),
+      difference_from_raw = normalized_median - raw_median,
+      .groups = 'drop'
+    )
+}
+
+# Alternative: normalize each target to its own mean
+normalize_within_categories <- function(df) {
+  df %>%
+    group_by(target) %>%
+    mutate(
+      cat_mean_length = mean(range, na.rm = TRUE),
+      normalized_dist = dist * (cat_mean_length / range)
+    ) %>%
+    ungroup() %>%
+    group_by(target) %>%
+    summarise(
+      raw_median = median(dist),
+      raw_mean = mean(dist),
+      normalized_median = median(normalized_dist),
+      normalized_mean = mean(normalized_dist),
+      mean_range = first(cat_mean_length),
+      .groups = 'drop'
+    )
+}
+
+# ============================================================================
+# VISUALIZATION
+# ============================================================================
+
+plot_target_normalization <- function(df, reference_target = "obs") {
+  # Remove outliers in 'y' using IQR
+  Q1 <- quantile(df$dist, 0.25)
+  Q3 <- quantile(df$dist, 0.75)
+  IQR <- Q3 - Q1
+  
+  # df_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
+  # df_no_outliers <- subset(df, dist < limit)
+  # df<-df_no_outliers
+  norm_result <- normalize_by_target_length(df, reference_target)
+  df_norm <- norm_result$data
+  df <- df_norm
+  
+  
+  # Plot without outliers
+  library(ggplot2)
+  library(tidyr)
+  
+  # Prepare data for plotting
+  # plot_data <- df_no_outliers %>%
+  
+  plot_data <- df_norm %>%
+    select(target, dist, normalized_dist_to_ref, normalized_dist_within_cat) %>%
+    pivot_longer(cols = c(dist, normalized_dist_to_ref, normalized_dist_within_cat),
+                 names_to = "method", values_to = "distance") %>%
+    mutate(
+      method = case_when(
+        method == "dist" ~ "Raw",
+        method == "normalized_dist_to_ref" ~ paste("Normalized to", reference_target),
+        method == "normalized_dist_within_cat" ~ "Normalized within target"
+      )
+    )
+  
+  # Create comparison plot
+  p <- ggplot(plot_data, aes(x = target, y = distance, fill = target)) +
+    geom_boxplot(alpha = 0.7) +
+    stat_summary(fun = median, geom = "point", shape = 23, size = 3, 
+                 fill = "white", color = "black") +
+    facet_wrap(~ method, scales = "free_y", ncol = 3) +
+    labs(
+      title = "Distance Comparison: Raw vs target-Normalized",
+      subtitle = "Diamond = median",
+      y = "Distance",
+      x = "target"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "none")
+  
+  return(p)
+}
+
+# ============================================================================
+# EXAMPLE USAGE
+# ============================================================================
+
+# Example workflow:
+# 
+# # Your suggested approach - normalize to obs target mean
+df<-tdb6
+# colnames(df)[colnames(df)=="dist"]<-"dist_norm"
+# colnames(df)[colnames(df)=="dist_abs"]<-"dist"
+mode(df$dist)
+df<-df[!is.na(df$token),]
+
+limit<-3000 
+df2<-subset(df,dist < limit)
+df<-df2
+results_to_obs <- quick_target_normalize(df, reference_target = "obs")
+print(results_to_obs)
+
+# # Alternative - normalize to ref target mean  
+results_to_ref <- quick_target_normalize(df, reference_target = "ref")
+print(results_to_ref)
+# 
+# # Full comparison of methods
+full_comparison <- compare_target_normalized(df, reference_target = "obs")
+print(full_comparison$differences)
+
+dfnorm<-full_comparison$normalized_data
+# 
+# # Statistical testing
+test_results <- test_target_normalization(df, method = "to_ref", reference_target = "ref")
+print(paste("Obs median:", round(test_results$obs_median, 1),
+            "Ref median:", round(test_results$ref_median, 1),
+            "Difference:", round(test_results$difference, 1)))
+
+normalize_within_categories(df)
+# # Visualization
+plot_target_normalization(df, reference_target = "obs")
+
+
 
 # ============================================================================
 # Usage example:
 ### rm outliers
 limit<-5000
-m<-tdb4$dist>limit
-sum(m,na.rm = T)
-tdb5<-tdb4[!m,]
+# m<-tdb4$dist <limit
+# sum(m,na.rm = T)
+ tdb5<-dfa
+ mode(tdb)
 results <- analyze_dists(tdb5)
  print(results$comparison_stats)
  print(results$statistical_tests)
