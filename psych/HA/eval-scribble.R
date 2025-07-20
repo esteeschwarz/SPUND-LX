@@ -330,6 +330,50 @@ tdb4$det<-FALSE
 tdb4$det[tdb4$prepos=="DET"]<-TRUE
 #qltdf<-tdb4
 #save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
+tdb4<-qltdf
+# apply url range to final df
+uid<-tdb$obs$uid
+uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+mn1<-which(uid2=="")
+mn1<-uid2==""
+mn2<-which(is.na(uid2))
+head(uid2)
+uid2[!mn1]<-paste0("obs.",uid2[!mn1])
+length(unique(uid2))
+unique(uid2)
+tdb$obs$url<-uid2
+url.u.o<-unique(uid2)
+tdb$obs$range<-NA
+for(k in url.u){
+  r<-tdb$obs$url==k
+  tdb$obs$range[r]<-sum(r)
+}
+uid<-tdb$ref$uid
+uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+mn1<-which(uid2=="")
+mn1<-uid2==""
+mn2<-which(is.na(uid2))
+head(uid2)
+uid2[!mn1]<-paste0("ref.",uid2[!mn1])
+length(unique(uid2))
+unique(uid2)
+tdb$ref$url<-uid2
+url.u.r<-unique(uid2)
+tdb$ref$range<-NA
+tdb4$range<-NA
+for(k in url.u.o){
+  r1<-tdb$obs$url==k
+  r2<-tdb4$url==k
+  tdb4$range[r2]<-sum(r1)
+}
+for(k in url.u.r){
+  r1<-tdb$ref$url==k
+  r2<-tdb4$url==k
+  tdb4$range[r2]<-sum(r1)
+}
+url.u<-c(url.u.o,url.u.r)
+#head(uid)
 #######################################
 boxplot(dist~target,tdb4,outline=F)
 max(tdb4$dist)
@@ -344,12 +388,14 @@ model<-aov(dist~target*q,tdb4)
 summary(model)
 library(lmerTest)
 lm1<-lmer(dist~target*q+(1|prepos)+(1|lemma),tdb4)
-lm1<-lmer(dist~target*q+(1|prepos),tdb4)
+lm1<-lmer(dist~target*q+range+(1|prepos)+(1|det),tdb4)
+lm1<-lmer(dist~target*q+(1|prepos)+(1|det),qltdf)
 sum1<-summary(lm1)
 sum1
 anova(lm1)
-
-
+model<-aov(dist~target*q,qltdf)
+summary(model)
+rmd.plot.lme(sum1)
 which(ld.u=="amateur")
 ld.u[219]
 tdba[p1,]
@@ -360,7 +406,7 @@ getwd()
 library(rmarkdown)
 render("poster-ext.Rmd")
 
-dfe<-get.mean.df(tdb4)
+dfe<-get.mean.df(qltdf)
 plot.dist(dfe,"mean")
 plot.dist(dfe,"median")
 qltdf<-tdb4

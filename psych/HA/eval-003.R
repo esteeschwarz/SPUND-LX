@@ -72,13 +72,16 @@ dfa<-qltdf
 create.sub<-function(dfa,target,con,det){
   sub1<-dfa[dfa$q%in%con&dfa$target%in%target&dfa$det%in%det,]
 }
+#dfa<-qltdf
 get.mean.df<-function(dfa){
-  q.u<-unique(dfa$q) 
+  q.u<-unique(dfa$q)
+  q.u<-q.u[!is.na(q.u)]
   ql<-unlist(lapply(seq_along(q.u),function(i){
     rep(q.u[i],2)
   }))
   ql
   c.u<-unique(dfa$target)
+  c.u<-c.u[!is.na(c.u)]
   df.m<-data.frame(target=rep(c.u,length(q.u)),q=ql,n=NA,mean=NA,median=NA)
   for(k in 1:length(q.u)){
     qx<-q.u[k]
