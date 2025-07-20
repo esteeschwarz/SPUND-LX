@@ -1,7 +1,7 @@
 ---
 title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
 author: "st. schwarz"
-date: "2025-07-16"
+date: "2025-07-20"
 output: 
     bookdown::html_document2:
       base_format: tufte::tufte_html
@@ -29,7 +29,7 @@ nocite: '@*'
 
 
 # top
-eval output M7
+eval output M8
 
 ## legende
 
@@ -48,18 +48,18 @@ Table: (\#tab:legend)model vars
 |q:f      |query condition     |his,her,their,your    |
 
 ## anova analysis
-### anova plain, formula: ``` dist ~ target*q*det ```
+### anova plain, formula: [``` dist_rel_obs ~ target*q*det ```]
 
 ```
-##                  Df     Sum Sq    Mean Sq   F value    Pr(>F)    
-## target            1 1.2468e+09 1.2468e+09    4.8904   0.02701 *  
-## q                 5 1.9771e+11 3.9542e+10  155.0977 < 2.2e-16 ***
-## det               1 1.0423e+12 1.0423e+12 4088.5056 < 2.2e-16 ***
-## target:q          5 6.9820e+09 1.3964e+09    5.4772 4.797e-05 ***
-## target:det        1 2.0619e+10 2.0619e+10   80.8767 < 2.2e-16 ***
-## q:det             3 9.6954e+11 3.2318e+11 1267.6353 < 2.2e-16 ***
-## target:q:det      3 2.1915e+10 7.3049e+09   28.6527 < 2.2e-16 ***
-## Residuals    939859 2.3961e+14 2.5495e+08                        
+##                 Df     Sum Sq   Mean Sq  F value    Pr(>F)    
+## target           1  134571933 134571933 965.0767 < 2.2e-16 ***
+## q                5   50410956  10082191  72.3040 < 2.2e-16 ***
+## det              1     775655    775655   5.5626   0.01835 *  
+## target:q         5    4951167    990233   7.1014 1.197e-06 ***
+## target:det       1     369351    369351   2.6488   0.10363    
+## q:det            2     156766     78383   0.5621   0.57000    
+## target:q:det     1     173939    173939   1.2474   0.26405    
+## Residuals    59808 8339728732    139442                       
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -69,36 +69,43 @@ Table: (\#tab:legend)model vars
 
 ```
 ## Type III Analysis of Variance Table with Satterthwaite's method
-##              Sum Sq    Mean Sq NumDF  DenDF  F value    Pr(>F)    
-## target   2.2770e+10 2.2770e+10     1 932378  91.8099 < 2.2e-16 ***
-## q        7.4978e+10 1.4996e+10     5 938966  60.4629 < 2.2e-16 ***
-## range    3.9967e+10 3.9967e+10     1 933313 161.1487 < 2.2e-16 ***
-## target:q 4.3533e+09 8.7066e+08     5 938887   3.5106  0.003563 ** 
+##                Sum Sq Mean Sq NumDF DenDF F value    Pr(>F)    
+## target         713851  713851     1 58029  5.4780   0.01926 *  
+## q            14670061 2934012     5 57673 22.5153 < 2.2e-16 ***
+## det              8118    8118     1 57697  0.0623   0.80290    
+## target:q      6942650 1388530     5 57673 10.6554 2.983e-10 ***
+## target:det      47466   47466     1 57040  0.3642   0.54616    
+## q:det          312526  156263     2 57366  1.1991   0.30146    
+## target:q:det    36385   36385     1 57027  0.2792   0.59722    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-### linear regression coefficients, formula: ``` dist~target*q+range+(1|lemma)+(1|det) ```
+### linear regression coefficients, formula: [``` dist_rel_obs ~ target*q*det+(1|lemma) ```]
 
 ```
-##                  Estimate   Std. Error           df     t value     Pr(>|t|)
-## (Intercept)  3627.0768655 2.862226e+03 1.043945e+00   1.2672225 4.185783e-01
-## targetref     828.5368406 6.076557e+01 8.895688e+05  13.6349716 2.505347e-42
-## qb            324.9721102 1.608094e+02 9.389839e+05   2.0208526 4.329530e-02
-## qc            882.0629380 1.068461e+02 9.394977e+05   8.2554551 1.515171e-16
-## qd            913.0578719 1.112616e+02 9.397668e+05   8.2064060 2.281910e-16
-## qe             63.7928283 1.320875e+02 9.389772e+05   0.4829589 6.291250e-01
-## qf            204.7164407 1.618487e+02 9.389412e+05   1.2648628 2.059208e-01
-## range          -0.1277011 1.005961e-02 9.333130e+05 -12.6944357 6.393452e-37
-## targetref:qb  672.2718571 2.210629e+02 9.385871e+05   3.0410890 2.357306e-03
-## targetref:qc -317.5242989 1.291365e+02 9.392557e+05  -2.4588277 1.393933e-02
-## targetref:qd   79.8588196 1.400112e+02 9.395700e+05   0.5703743 5.684240e-01
-## targetref:qe  -98.5319632 2.607983e+02 9.381571e+05  -0.3778090 7.055726e-01
-## targetref:qf -211.3458451 2.219379e+02 9.388365e+05  -0.9522746 3.409580e-01
+##                        Estimate Std. Error        df      t value     Pr(>|t|)
+## (Intercept)          346.965858   4.360175  2327.528  79.57613649 0.000000e+00
+## targetref            -66.743997   4.300651 35395.338 -15.51951149 3.862251e-54
+## qb                   226.255322  69.678442 56608.487   3.24713522 1.166408e-03
+## qc                   101.492911  10.580420 59089.326   9.59252213 8.915839e-22
+## qd                   -20.431795 367.777039 57721.144  -0.05555484 9.556966e-01
+## qe                    79.652779  11.413635 59023.726   6.97873892 3.009701e-12
+## qf                    52.971173  16.530957 59038.137   3.20436212 1.354340e-03
+## detTRUE               -3.070543   4.788899 59797.616  -0.64117945 5.214086e-01
+## targetref:qb          44.944230  90.817521 57003.818   0.49488502 6.206832e-01
+## targetref:qc         278.234999  55.866005 57843.382   4.98039909 6.363562e-07
+## targetref:qd         268.808789  45.473394 58002.878   5.91134213 3.412228e-09
+## targetref:qe         196.635538  75.338078 58162.680   2.61004187 9.055434e-03
+## targetref:qf         232.916808 149.492104 57622.939   1.55805424 1.192259e-01
+## targetref:detTRUE     -6.592305  12.391475 59520.634  -0.53200324 5.947257e-01
+## qb:detTRUE           -87.726489  72.444560 56694.413  -1.21094655 2.259209e-01
+## qd:detTRUE           108.264281 367.629493 57719.427   0.29449291 7.683823e-01
+## targetref:qb:detTRUE -92.570710 175.189092 57026.531  -0.52840453 5.972207e-01
 ```
 ## plots
 <div class="figure">
-<p class="caption">(\#fig:boxplot1)compare distances by corpus</p><img src="poster-ext_files/figure-html/boxplot1-1.png" alt="compare distances by corpus"  /></div>
+<p class="caption">(\#fig:boxplot1)compare raw distances by corpus</p><img src="poster-ext_files/figure-html/boxplot1-1.png" alt="compare raw distances by corpus"  /></div>
 
 <div class="figure">
 <p class="caption">(\#fig:barplot-median)median distances over query/corpus</p><img src="poster-ext_files/figure-html/barplot-median-1.png" alt="median distances over query/corpus"  /></div>
@@ -109,6 +116,8 @@ Table: (\#tab:legend)model vars
 <div class="figure">
 <p class="caption">(\#fig:lmeplot)distances relation</p><img src="poster-ext_files/figure-html/lmeplot-1.png" alt="distances relation"  /></div>
 
+<div class="figure">
+<p class="caption">(\#fig:gplot)distances normalised</p><img src="poster-ext_files/figure-html/gplot-1.png" alt="distances normalised"  /></div>
 -----
 
 # REF

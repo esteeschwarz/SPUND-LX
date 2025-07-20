@@ -328,12 +328,13 @@ mode(tdb4$dist)<-"double"
 tdb4$dist[tdb4$dist==0]<-NA
 tdb4$det<-FALSE
 tdb4$det[tdb4$prepos=="DET"]<-TRUE
-#qltdf<-tdb4
+#qltdf<-tdb6
 #save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 tdb4<-qltdf
 mna<-is.na(tdb4$token)
 sum(mna)
+tdb4<-tdb4[!mna,]
 
 # apply url range to final df
 uid<-tdb$obs$uid
@@ -412,6 +413,8 @@ df_norm<-dfnorm
 reference_target<-"ref"
 
 gplot.dist<-function(dfnorm,reference_target){
+library(ggplot2)
+library(tidyr)  
 selector<-c(obs="dist_rel_obs",ref="dist_rel_ref")  
 colselect<-colnames(dfnorm)%in%selector[reference_target]
 col.ns<-colnames(dfnorm)[which(colselect)]
@@ -445,9 +448,8 @@ p <- ggplot(plot_data, aes(x = target, y = distance, fill = target)) +
 
 return(p)
 }
-gplot.dist(dfnorm,"obs")
+gplot.dist(tdb6,"obs")
 ###########################################
-
 
 max(tdb4$dist)
 which.max(tdb4$dist)

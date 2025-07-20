@@ -35,8 +35,12 @@ table {
 
 ```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
 #eval.n<-7
-dataset<-7
+dataset<-8
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+if(!exists("eval.1"))
+  eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs")
+anova.form<-eval.1$anova.form
+lme.form<-eval.1$lme.form
 ```
 
 # top
@@ -58,7 +62,7 @@ kable(legend, caption = "model vars",format="markdown")
 ```
 
 ## anova analysis
-### anova plain, formula: ``` `r anova.form.l$pre.det` ```
+### anova plain, formula: [``` `r anova.form` ```]
 ```{r,dfs1,echo=FALSE,warning=F,message=F}
 # legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
 #                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
@@ -93,7 +97,7 @@ p.an.lm<-s2[grep(p.select,rownames(s2)),]
 s2
 ```
 
-### linear regression coefficients, formula: ``` `r lmeform.l$pre.det` ```
+### linear regression coefficients, formula: [``` `r lme.form` ```]
 ```{r,dfs3,echo=FALSE,warning=F,message=F}
 dfe<-eval.1$plot.md
 s3<-eval.1$lme
@@ -102,9 +106,18 @@ s3$coefficients
 coef<-s3$coefficients
 ### relations:
 int<-coef[1,1]
-qv<-coef[9:13,1]
+#int
+qv<-coef[9:(length(coef[,1])),1]
 qvc<-qv
-names(qvc)<-letters[2:6]
+#qvc
+
+qvc.ns<-strsplit(names(qvc),"q")
+qvc.ns<-lapply(qvc.ns, function(x){
+  return(x[2])
+})
+qvc.ns<-unlist(qvc.ns)
+names(qvc)<-qvc.ns
+#l<-length(qvc.ns[[1]])
 qdiff<-int+qv
 qmin<-qdiff<int
 qvmin<-qv[qmin]
@@ -112,7 +125,7 @@ names(qvmin)<-names(qvc)[qmin]
 #qvmin
 ```
 ## plots
-```{r boxplot1,echo=F,warning=F,message=F,fig.cap="compare distances by corpus"}
+```{r boxplot1,echo=F,warning=F,message=F,fig.cap="compare raw distances by corpus"}
 # df1_no_outliers <- dfa %>%
 #   group_by(target) %>%
 #   filter(
@@ -136,6 +149,9 @@ plot.dist(dfe,"mean")
 rmd.plot.lme(s3)
 ```
 
+```{r gplot,echo=F,warning=F,message=F,fig.cap="distances normalised"}
+gplot.dist(dfa,"obs")
+```
 -----
 
 # REF
