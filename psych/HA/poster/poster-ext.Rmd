@@ -36,15 +36,21 @@ table {
 ```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
 #eval.n<-7
 dataset<-8
+target<-c("obs","ref")
+ref_target<-"all"
+rel<-T
+det<-c(T,F)
+conditions<-letters[1:6]
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 if(!exists("eval.1"))
-  eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs")
+  eval.1<-get.anovas(qltdf,target,conditions,det,rel,ref_target)
 anova.form<-eval.1$anova.form
 lme.form<-eval.1$lme.form
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target),", not normalised")
 ```
 
 # top
-eval output M`r dataset`
+eval output M`r dataset``r caption.ext`.
 
 ## legende
 ```{r,legend,echo=FALSE,warning=F,message=F}
@@ -125,7 +131,7 @@ names(qvmin)<-names(qvc)[qmin]
 #qvmin
 ```
 ## plots
-```{r boxplot1,echo=F,warning=F,message=F,fig.cap="compare raw distances by corpus"}
+```{r boxplot1,echo=F,warning=F,message=F,fig.cap=paste0("compare distances by corpus",caption.ext)}
 # df1_no_outliers <- dfa %>%
 #   group_by(target) %>%
 #   filter(
@@ -137,20 +143,20 @@ boxplot(dist~target,dfa,outline=F,notch=T,varwidth=T)
 
 ```
 
-```{r,barplot-median,echo=F,warning=F,message=F,fig.cap="median distances over query/corpus"}
+```{r,barplot-median,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
 plot.dist(dfe,"median")
 ```
 
-```{r,barplot-mean,echo=F,warning=F,message=F,fig.cap="mean distances over query/corpus"}
+```{r,barplot-mean,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
 plot.dist(dfe,"mean")
 ```
 
-```{r lmeplot,echo=F,warning=F,message=F,fig.cap="distances relation"}
+```{r lmeplot,echo=F,warning=F,message=F,fig.cap=paste0("distances relation",caption.ext)}
 rmd.plot.lme(s3)
 ```
 
-```{r gplot,echo=F,warning=F,message=F,fig.cap="distances normalised"}
-gplot.dist(dfa,"obs")
+```{r gplot,echo=F,warning=F,message=F,fig.cap="distances normalised vs. raw"}
+gplot.dist(dfa,ref_target)
 ```
 -----
 

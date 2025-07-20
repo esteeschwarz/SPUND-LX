@@ -73,7 +73,7 @@ create.sub<-function(dfa,target,con,det){
   sub1<-dfa[dfa$q%in%con&dfa$target%in%target&dfa$det%in%det,]
 }
 #dfa<-qltdf
-get.mean.df<-function(dfa){
+get.mean.df<-function(dfa,dist){
   q.u<-unique(dfa$q)
   q.u<-q.u[!is.na(q.u)]
   ql<-unlist(lapply(seq_along(q.u),function(i){
@@ -82,6 +82,7 @@ get.mean.df<-function(dfa){
   ql
   c.u<-unique(dfa$target)
   c.u<-c.u[!is.na(c.u)]
+#  dist<-c("dist","dist_rel)
   df.m<-data.frame(target=rep(c.u,length(q.u)),q=ql,n=NA,mean=NA,median=NA)
   for(k in 1:length(q.u)){
     qx<-q.u[k]
@@ -92,10 +93,13 @@ get.mean.df<-function(dfa){
       m.c<-dfa$target[m.q]==cx
       l<-sum(m.c)
       df.m$n[df.m$target==cx&df.m$q==qx]<-l
-      df.m$mean[df.m$target==cx&df.m$q==qx]<-mean(dfa$dist[m.q][m.c],na.rm=T)
-      df.m$median[df.m$target==cx&df.m$q==qx]<-median(dfa$dist[m.q][m.c],na.rm=T)
+      Y<-dfa[[dist]]
+      df.m$mean[df.m$target==cx&df.m$q==qx]<-mean(Y[m.q][m.c],na.rm=T)
+      df.m$median[df.m$target==cx&df.m$q==qx]<-median(Y[m.q][m.c],na.rm=T)
     }
   }
+  #d.sel<-"dist"
+  #mean(dfa[[d.sel]])
   #dfm$q <- factor(dfm$q, levels = c("a", "b", "c", "d", "e", "f"))
   
   return(df.m)
@@ -139,7 +143,7 @@ return(tdb6)
 gplot.dist<-function(dfnorm,reference_target){
   library(ggplot2)
   library(tidyr)  
-  selector<-c(obs="dist_rel_obs",ref="dist_rel_ref")  
+  selector<-c(obs="dist_rel_obs",ref="dist_rel_ref",all="dist_rel_all")  
   colselect<-colnames(dfnorm)%in%selector[reference_target]
   col.ns<-colnames(dfnorm)[which(colselect)]
   plot_data <- dfnorm %>%
@@ -172,7 +176,7 @@ gplot.dist<-function(dfnorm,reference_target){
   
   return(p)
 }
-
+#gplot.dist(dfa,"all")
 #df <- read.csv("eval-001.csv")
 
 # # Ensure q is ordered a-f
@@ -196,23 +200,24 @@ dfa<-qltdf
 # anova.sum
 library(lmerTest)
 library(dplyr)
-lmeform.l<-list(no.pre.det=
-lme.form.f<-"dist~target*q+range+(1|lemma)",pre.det=
-lme.form.t<-"dist~target*q+range+(1|lemma)+(1|det)",pre.det.r=
-lme.form.r<-"dist_rel_all~target*q+(1|lemma)+(1|det)")
-anova.form.l<-list(no.pre.det="dist ~ target*q",pre.det="dist ~ target*q*det",
-                   pre.det.r="dist_rel_all ~ target*q*det")
-# target<-c("ref","obs")
+# lmeform.l<-list(no.pre.det=
+# lme.form.f<-"dist~target*q+range+(1|lemma)",pre.det=
+# lme.form.t<-"dist~target*q+range+(1|lemma)+(1|det)",pre.det.r=
+# lme.form.r<-"dist_rel_all~target*q+(1|lemma)+(1|det)")
+# anova.form.l<-list(no.pre.det="dist ~ target*q",pre.det="dist ~ target*q*det",
+#                    pre.det.r="dist_rel_all ~ target*q*det")
+#   target<-c("ref","obs")
 # con<-letters[1:6]
 # det.t<-c(F,T)
 # r<-c(T)
-# ref<-"obs"
+# ref<-"all"
 get.anovas<-function(qltdf,target,con,det.t,r,ref){
 #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   dfa<-create.sub(qltdf,target,con,det.t)
-  d.ns<-c("dist",paste0("dist_rel_",ref))
+  d.ns<-c(paste0("dist_rel_",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
-  d.sel<-ifelse(r,colnames(dfa)[c.dist[2]],"dist")
+  d.sel<-which(colnames(dfa)==d.ns)
+  d.sel<-ifelse(r,colnames(dfa)[d.sel],"dist")
   det.f<-ifelse(sum(det.t)>0,"*det","")
   anova.fstr<-paste0(d.sel," ~ target*q",det.f)
   lme.str<-paste0(d.sel," ~ target*q",det.f,"+(1|lemma)",ifelse(r,"","+range"))
@@ -246,7 +251,7 @@ get.anovas<-function(qltdf,target,con,det.t,r,ref){
   lm2.summ
   anlm.summ
   anova.sum
-  df.eval<-get.mean.df(dfa)
+  df.eval<-get.mean.df(dfa,d.sel)
   dfe<-df.eval
   dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
   
@@ -256,7 +261,7 @@ get.anovas<-function(qltdf,target,con,det.t,r,ref){
 }
 #rm(eval.1)
 # if(!exists("eval.1"))
- # eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs")
+# eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs")
 #eval.1$plot.lme
 fun.dep<-function(){
 lm2<-lmer(eval(expr(lmeform.l$no.pre.det)),dfa)
