@@ -36,17 +36,24 @@ table {
 ```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
 #eval.n<-7
 dataset<-8
+reload<-T
 target<-c("obs","ref")
-ref_target<-"all"
+ref_target<-"obs"
 rel<-T
 det<-c(T,F)
 conditions<-letters[1:6]
+limit<-T
+ifelse(limit,ceiling<-"outliers removed","outliers not removed")
+if(reload)
+  rm(eval.1)
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 if(!exists("eval.1"))
-  eval.1<-get.anovas(qltdf,target,conditions,det,rel,ref_target)
+  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target)
 anova.form<-eval.1$anova.form
 lme.form<-eval.1$lme.form
-caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target),", not normalised")
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+dfe<-eval.1$plot.md
+
 ```
 
 # top
@@ -105,7 +112,6 @@ s2
 
 ### linear regression coefficients, formula: [``` `r lme.form` ```]
 ```{r,dfs3,echo=FALSE,warning=F,message=F}
-dfe<-eval.1$plot.md
 s3<-eval.1$lme
 #cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
 s3$coefficients
@@ -139,11 +145,15 @@ names(qvmin)<-names(qvc)[qmin]
 #     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
 #   ) %>%
 #   ungroup()
-boxplot(dist~target,dfa,outline=F,notch=T,varwidth=T)
+d.sel<-paste0("dist_rel_",ref_target)
+Y<-dfa[[d.sel]]
+boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
 
 ```
 
 ```{r,barplot-median,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
+dfe[,c("mean","median")]<-round(dfe[,c("mean","median")],0)
+kable(dfe)
 plot.dist(dfe,"median")
 ```
 

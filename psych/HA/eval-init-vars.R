@@ -1,10 +1,12 @@
-read.db<-function(){
+read.db<-function(run){
   
   
   library(DBI)
   library(RSQLite)
-  con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
+  db<-paste0("~/db/reddit_com.df.",run,".sqlite")
+  #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
   #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
+  con <- dbConnect(RSQLite::SQLite(),db)
   dbListTables(con)
   #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
   tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
@@ -12,8 +14,8 @@ read.db<-function(){
   dbDisconnect(con)
   return(list(obs=tdbcorp,ref=tdbref))
 }
-if(!exists("tdb"))
-  tdb<-read.db()
+# if(!exists("tdb"))
+#   tdb<-read.db()
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
 build.q<-function(){

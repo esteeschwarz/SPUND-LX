@@ -76,6 +76,9 @@ data<-data.s[!mo,]
 # 15294.
 ### 3rd approach
 tdb_s<-tdba
+
+# get tdb from sqlite
+
 tdb$obs$target<-"obs"
 tdb$ref$target<-"ref"
 tdb1o<-tdb$obs
@@ -329,6 +332,7 @@ tdb4$dist[tdb4$dist==0]<-NA
 tdb4$det<-FALSE
 tdb4$det[tdb4$prepos=="DET"]<-TRUE
 #qltdf<-tdb6
+#write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-008.csv")) # too big for git
 #save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 tdb4<-qltdf

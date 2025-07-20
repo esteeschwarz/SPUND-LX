@@ -65,10 +65,11 @@ read.eval<-function(dn){
 }
 
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData"))
-if(!exists("dfa")){
-ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
-dfa<-qltdf
-}
+# if(!exists("dfa")){
+# ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
+# dfa<-qltdf
+# dfa<-get.dist.norm(dfa)
+# }
 create.sub<-function(dfa,target,con,det){
   sub1<-dfa[dfa$q%in%con&dfa$target%in%target&dfa$det%in%det,]
 }
@@ -79,15 +80,17 @@ get.mean.df<-function(dfa,dist){
   ql<-unlist(lapply(seq_along(q.u),function(i){
     rep(q.u[i],2)
   }))
-  ql
+  ql<-ql[order(ql)]
   c.u<-unique(dfa$target)
   c.u<-c.u[!is.na(c.u)]
 #  dist<-c("dist","dist_rel)
   df.m<-data.frame(target=rep(c.u,length(q.u)),q=ql,n=NA,mean=NA,median=NA)
+  k<-1
   for(k in 1:length(q.u)){
     qx<-q.u[k]
     m.q<-dfa$q==qx
     sum(m.q)
+    c<-1
     for(c in 1:length(c.u)){
       cx<-c.u[c]
       m.c<-dfa$target[m.q]==cx
@@ -104,7 +107,7 @@ get.mean.df<-function(dfa,dist){
   
   return(df.m)
 }
-#dfe<-get.mean.df(tdb4)
+#dfe<-get.mean.df(dfa,"dist_rel_obs")
 rmd.plot.lme<-function(lm2.summ){
   coef<-lm2.summ$coefficients
   cats<-rownames(coef)
@@ -120,7 +123,7 @@ rmd.plot.lme<-function(lm2.summ){
   text(x = tx-4, y = ty+10, labels = paste0("Intercept (corpus=obs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
   return(bp)
 }
-get.dist.rel<-function(qltdf){
+get.dist.rel_dep<-function(qltdf){
 tdb6<-qltdf
 mna<-is.na(tdb6$token)
 tdb6<-tdb6[!mna,]
@@ -176,44 +179,56 @@ gplot.dist<-function(dfnorm,reference_target){
   
   return(p)
 }
-#gplot.dist(dfa,"all")
-#df <- read.csv("eval-001.csv")
-
-# # Ensure q is ordered a-f
-# dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
-
-# dfb<-create.sub(qltdf,c("ref","obs"),letters[1:6],F)
-# dfc<-create.sub(qltdf,c("ref","obs"),letters[1:6],T)
-dfa<-qltdf
-# unique(dfa$det)
-#rm(qltdf)
-# Y <- dfa$dist           # Dependent variable
-# mean(Y[dfa$target=="obs"],na.rm = T)
-# mean(Y[dfa$target=="obs"])
-# mean(Y[dfa$target=="ref"])
-# ###
-# anova_model <- aov(dist ~ target*q*det, data = dfa)
-# anova_model <- aov(dist ~ target*q, data = dfa)
-# #anova_model <- aov(Y ~ group*q, data = dfa)
-# anova.sum<-summary(anova_model)
-# anova.sum<-anova.sum[[1]]
-# anova.sum
 library(lmerTest)
 library(dplyr)
-# lmeform.l<-list(no.pre.det=
-# lme.form.f<-"dist~target*q+range+(1|lemma)",pre.det=
-# lme.form.t<-"dist~target*q+range+(1|lemma)+(1|det)",pre.det.r=
-# lme.form.r<-"dist_rel_all~target*q+(1|lemma)+(1|det)")
-# anova.form.l<-list(no.pre.det="dist ~ target*q",pre.det="dist ~ target*q*det",
-#                    pre.det.r="dist_rel_all ~ target*q*det")
-#   target<-c("ref","obs")
-# con<-letters[1:6]
-# det.t<-c(F,T)
-# r<-c(T)
-# ref<-"all"
+### normalize distances
+#limit<-F
+get.dist.norm<-function(tdb4,limit=F){
+  df<-tdb4
+  Q1 <- quantile(df$dist, 0.25,na.rm = T)
+  Q3 <- quantile(df$dist, 0.75,na.rm = T)
+  IQR <- Q3 - Q1
+  
+  df_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
+#  df_no_outliers <- subset(df, dist < limit)
+  #df<-df_no_outliers
+  ifelse(limit,tdb6<-df_no_outliers,tdb6<-tdb4)
+  max.l<-max(tdb6$dist,na.rm = T)
+  mna<-is.na(tdb6$token)
+  sum(mna)
+  tdb6<-tdb6[!mna,]
+  target<-unique(tdb6$target)
+  tdb6$range_f_within<-NA
+  tdb6$range_f_all<-mean(tdb6$range)/tdb6$range
+  tdb6$range_f_obs<-mean(tdb6$range[tdb6$target=="obs"])/tdb6$range
+  tdb6$range_f_ref<-mean(tdb6$range[tdb6$target=="ref"])/tdb6$range
+  for(k in target){
+    r<-tdb6$target==k
+    mr<-mean(tdb6$range[r])/tdb6$range[r]
+    tdb6$range_f_within[r]<-mr
+  }
+  tdb6$dist_rel_within<-tdb6$dist*tdb6$range_f_within
+  tdb6$dist_rel_all<-tdb6$dist*tdb6$range_f_all
+  tdb6$dist_rel_obs<-tdb6$dist*tdb6$range_f_obs
+  tdb6$dist_rel_ref<-tdb6$dist*tdb6$range_f_ref
+  tdb7<-tdb6[!is.na(tdb6$dist),]
+  return(tdb7)
+}
+if(reload){
+  ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
+  dfa<-qltdf
+}
+dfa<-get.dist.norm(dfa,limit)
+
+# max(tdb4$dist,na.rm = T)
+# limit<-5000
+# tdb5<-tdb4[tdb4$dist<limit,]
+# tdb6<-get.dist.norm(tdb5,5000)
+
 get.anovas<-function(qltdf,target,con,det.t,r,ref){
 #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   dfa<-create.sub(qltdf,target,con,det.t)
+  #dfa<-get.dist.norm(dfa,limit)
   d.ns<-c(paste0("dist_rel_",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
   d.sel<-which(colnames(dfa)==d.ns)

@@ -13,7 +13,7 @@ library(ggplot2)
 # ============================================================================
 # 1. RELATIVE DISTANCE NORMALIZATION
 # ============================================================================
-df<-tdb4
+df<-dfa
 normalize_relative <- function(df) {
   df %>%
     mutate(
@@ -464,8 +464,8 @@ normalize_within_categories <- function(df) {
 
 plot_target_normalization <- function(df, reference_target = "obs") {
   # Remove outliers in 'y' using IQR
-  Q1 <- quantile(df$dist, 0.25)
-  Q3 <- quantile(df$dist, 0.75)
+  Q1 <- quantile(df$dist, 0.25,na.rm = T)
+  Q3 <- quantile(df$dist, 0.75,na.rm = T)
   IQR <- Q3 - Q1
   
   # df_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
@@ -520,15 +520,15 @@ plot_target_normalization <- function(df, reference_target = "obs") {
 # Example workflow:
 # 
 # # Your suggested approach - normalize to obs target mean
-df<-tdb6
+df<-dfa
 # colnames(df)[colnames(df)=="dist"]<-"dist_norm"
 # colnames(df)[colnames(df)=="dist_abs"]<-"dist"
 mode(df$dist)
 df<-df[!is.na(df$token),]
 
-limit<-3000 
-df2<-subset(df,dist < limit)
-df<-df2
+#limit<-3000 
+#df2<-subset(df,dist < limit)
+#df<-df2
 results_to_obs <- quick_target_normalize(df, reference_target = "obs")
 print(results_to_obs)
 
@@ -565,13 +565,13 @@ limit<-5000
 results <- analyze_dists(tdb5)
  print(results$comparison_stats)
  print(results$statistical_tests)
- results$plots$relative_plot
- results$plots$boxplot
+# results$plots$relative_plot
+# results$plots$boxplot
  dfnorm<-results$normalized_data
  colnames(dfnorm)[colnames(dfnorm)=="dist"]<-"dist_abs"
  colnames(dfnorm)[grep("relative_dist",colnames(dfnorm))]<-"dist"
  # ============================================================================
  qltdf<-dfnorm
- results$plots$boxplot
+# results$plots$boxplot
  #boxplot(dist_rel~target,dfnorm,outline=F)
  
