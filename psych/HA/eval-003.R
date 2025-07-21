@@ -364,21 +364,52 @@ plot.dist<-function(dfe,m){
   
 }
 #plot.dist()
+#par(plot=new)
+#plot.new()
 rmd.plot.lme<-function(lm2.summ){
   coef<-lm2.summ$coefficients
   cats<-rownames(coef)
   mean.abs<-coef[,1]
+  baseline<-round(mean.abs[1],0)
+  #print(baseline)
   mean.abs[1]<-0
   par(las=2)
-  bp <- barplot(mean.abs~cats,xlab = "",ylab="mean token distance",main="lmer estimate relations")
+  
+  # Get current y-axis ticks
+  bp <- barplot(mean.abs~cats,xlab = "",yaxt="n",ylab="estimated mean token distance",main="lmer estimate relations")
+  y_ticks3 <- pretty(range(coef[,1]))
+#  y_ticks3 <- coef[,1]
+  
+ # print(y_ticks3)
+  y_labels3 <- y_ticks3 + baseline
+  axis(2, at = y_ticks3, labels = y_labels3)
+#  mtext("Absolute Value", side = 2, line = 3)
+#  y_ticks <- axTicks(2)  # gets the current tick positions
+  #print(y_ticks)
+    #baseline <- 287
+#  y_labels <- y_ticks + baseline
+  
+  # Replace y-axis
+ # old_par <- par(no.readonly = TRUE)
+  
+#  par(yaxt="n")
+  
+ #axis(2, labels=FALSE, tick=FALSE)
+#  axis(2, at=y_ticks, labels=y_labels)
+#  par(old_par)
+  
+#  axis(2, at=y_ticks)
   y_intercept <- mean.abs[1]
   x_min <- min(bp)
   x_max <- max(bp)
   tx<-x_max+1
   ty<-2
-  text(x = tx-4, y = ty+10, labels = paste0("Intercept (corpus=obs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
- # return(bp)
+#  text(x = tx-4, y = ty+10, labels = paste0("Intercept (corpus=obs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
+#  text(x = tx-4, y = ty+10, labels = paste0("Intercept (corpus=obs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
+  # return(bp)
+  
 }
+rmd.plot.lme(s3)
 ### sums df
 # 
 # sumtx.a<-data.frame(anlm.summ)

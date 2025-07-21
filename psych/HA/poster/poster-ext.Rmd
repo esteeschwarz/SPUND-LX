@@ -38,7 +38,7 @@ table {
 run<-15302
 dataset<-11
 
-reload<-T
+reload<-F
 target<-c("obs","ref")
 ref_target<-"obs"
 rel<-T
@@ -117,9 +117,17 @@ s2
 ```{r,dfs3,echo=FALSE,warning=F,message=F}
 s3<-eval.1$lme
 #cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
-print(s3, right = TRUE, width = 999)
+#print(s3, right = TRUE, width = 999)
 #print(s3)
-
+#options(max.print = 1000)  # Set higher limit
+invisible(capture.output(
+  suppressWarnings(
+    suppressMessages(
+      print(s3)
+    )
+  ), type = "message"
+))
+#print(s3)
 coef<-s3$coefficients
 ### relations:
 int<-coef[1,1]
@@ -141,6 +149,7 @@ qvmin<-qv[qmin]
 names(qvmin)<-names(qvc)[qmin]
 #qvmin
 ```
+
 ## plots
 ```{r boxplot1,echo=F,warning=F,message=F,fig.cap=paste0("compare distances by corpus",caption.ext)}
 # df1_no_outliers <- dfa %>%

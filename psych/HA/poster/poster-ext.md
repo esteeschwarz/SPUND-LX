@@ -95,10 +95,10 @@ Table: (\#tab:legend)model vars
 ## -6.3215 -0.4316 -0.0874  0.1283 12.4351 
 ## 
 ## Random effects:
-##    Groups        Name Variance Std.Dev.
-##    aut_id (Intercept)    40316    200.8
-##     lemma (Intercept)    42511    206.2
-##  Residual                32808    181.1
+##  Groups   Name        Variance Std.Dev.
+##  aut_id   (Intercept) 40316    200.8   
+##  lemma    (Intercept) 42511    206.2   
+##  Residual             32808    181.1   
 ## Number of obs: 1045155, groups:  aut_id, 4533; lemma, 3652
 ## 
 ## Fixed effects:
@@ -121,12 +121,10 @@ Table: (\#tab:legend)model vars
 ## targetref:qb:detTRUE  4.436e+01  2.166e+01  1.038e+06   2.048 0.040529 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-```
-
-```
 ## fit warnings:
 ## fixed-effect model matrix is rank deficient so dropping 8 columns / coefficients
 ```
+
 ## plots
 <div class="figure">
 <p class="caption">(\#fig:boxplot1)compare distances by corpus, normalised to obs, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/boxplot1-1.png" alt="compare distances by corpus, normalised to obs, distance ceiling =  outliers removed"  /></div>
