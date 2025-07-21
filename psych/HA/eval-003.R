@@ -143,6 +143,7 @@ tdb6$dist_rel_obs<-tdb6$dist_abs*tdb6$range_f_obs
 tdb6$dist_rel_ref<-tdb6$dist_abs*tdb6$range_f_ref
 return(tdb6)
 }
+##############################################
 gplot.dist<-function(dfnorm,reference_target){
   library(ggplot2)
   library(tidyr)  
@@ -161,12 +162,14 @@ gplot.dist<-function(dfnorm,reference_target){
         method == "dist_rel_within" ~ "Normalized within target"
       )
     )
-  
+  ylim<-max(dfe$mean)+100
   # Create comparison plot
   p <- ggplot(plot_data, aes(x = target, y = distance, fill = target)) +
-    geom_boxplot(alpha = 0.7) +
+    geom_boxplot(alpha = 0.7,coef=0,outlier.shape = NA) +
     stat_summary(fun = median, geom = "point", shape = 23, size = 3, 
                  fill = "white", color = "black") +
+    coord_cartesian(ylim = c(0, ylim)) +  # Adjust to your desired y-axis range
+  
     facet_wrap(~ method, scales = "free_y", ncol = 3) +
     labs(
       title = "Distance Comparison: Raw vs target-Normalized",

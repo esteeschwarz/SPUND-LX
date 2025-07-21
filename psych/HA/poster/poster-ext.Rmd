@@ -114,7 +114,9 @@ s2
 ```{r,dfs3,echo=FALSE,warning=F,message=F}
 s3<-eval.1$lme
 #cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
-s3$coefficients
+print(s3, right = TRUE, width = 999)
+#print(s3)
+
 coef<-s3$coefficients
 ### relations:
 int<-coef[1,1]
@@ -151,14 +153,23 @@ boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
 
 ```
 
-```{r,barplot-median,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
-dfe[,c("mean","median")]<-round(dfe[,c("mean","median")],0)
-kable(dfe)
-plot.dist(dfe,"median")
+```{r,barplot-median,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
+m1<-which(colnames(dfe)%in%c("mean","median"))
+dfe[,m1]<-round(dfe[,m1],0)
+# m2<-m1[length(m1):1]
+# m3<-c(1:(m1[1]-1),m2)
+# dfe<-dfe[,m3]
+plot.dist(dfe,"mean")
 ```
 
-```{r,barplot-mean,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
-plot.dist(dfe,"mean")
+
+```{r,dfe-table,echo=F,warning=F,message=F}
+kable(dfe)
+```
+
+
+```{r,barplot-mean,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
+plot.dist(dfe,"median")
 ```
 
 ```{r lmeplot,echo=F,warning=F,message=F,fig.cap=paste0("distances relation",caption.ext)}
