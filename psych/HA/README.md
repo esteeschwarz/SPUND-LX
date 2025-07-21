@@ -27,4 +27,4 @@
   - [ ] clean lemmata: many spelling errors in lemmalist > decreases pair factor
   - [ ] compute type/token ratio (lexical diversity) per url and include as fixed effect variable
   - [ ] ho-discourse givenness (referential distance), prince (1981)
-  
+  - [ ] ?what is proposition. ?what is presupposition. ?what is coherence.
