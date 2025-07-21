@@ -45,12 +45,13 @@ rel<-T
 det<-c(T,F)
 conditions<-letters[1:6]
 limit<-T
+author<-T
 ifelse(limit,ceiling<-"outliers removed","outliers not removed")
 if(reload)
   rm(eval.1)
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 if(!exists("eval.1"))
-  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target)
+  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
 anova.form<-eval.1$anova.form
 lme.form<-eval.1$lme.form
 caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))

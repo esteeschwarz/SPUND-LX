@@ -70,55 +70,55 @@ Table: (\#tab:legend)model vars
 ```
 ## Type III Analysis of Variance Table with Satterthwaite's method
 ##                Sum Sq Mean Sq NumDF   DenDF  F value    Pr(>F)    
-## target        5908779 5908779     1 1041840 153.5090 < 2.2e-16 ***
-## q            49397958 9879592     5 1041207 256.6700 < 2.2e-16 ***
-## det            895398  895398     1 1040899  23.2623 1.414e-06 ***
-## target:q      2262659  452532     5 1041208  11.7567 2.169e-11 ***
-## target:det      98820   98820     1 1040899   2.5673   0.10909    
-## q:det          755379  755379     1 1040893  19.6246 9.426e-06 ***
-## target:q:det   116477  116477     1 1040893   3.0261   0.08194 .  
+## target        6094426 6094426     1  718329 185.7599 < 2.2e-16 ***
+## q            42974986 8594997     5 1037780 261.9780 < 2.2e-16 ***
+## det            372221  372221     1 1037864  11.3454 0.0007564 ***
+## target:q      1766151  353230     5 1037779  10.7666  2.27e-10 ***
+## target:det      92612   92612     1 1037867   2.8228 0.0929316 .  
+## q:det          326995  326995     1 1037796   9.9669 0.0015938 ** 
+## target:q:det   137650  137650     1 1037795   4.1956 0.0405288 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-### linear regression coefficients, formula: [``` dist_rel_obs ~ target*q*det+(1|lemma) ```]
+### linear regression coefficients, formula: [``` dist_rel_obs ~ target*q*det+(1|lemma)+(1|aut_id) ```]
 
 ```
-## Linear mixed model fit by REML. t-tests use Satterthwaite's method [
-## lmerModLmerTest]
+## Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 ## Formula: eval(expr(lmeform))
 ##    Data: dfa
 ## 
-## REML criterion at convergence: 14012116
+## REML criterion at convergence: 13864438
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -5.3322 -0.5018 -0.1443  0.1039 11.4879 
+## -6.3215 -0.4316 -0.0874  0.1283 12.4351 
 ## 
 ## Random effects:
 ##    Groups        Name Variance Std.Dev.
-##     lemma (Intercept)    49298    222.0
-##  Residual                38491    196.2
-## Number of obs: 1045155, groups:  lemma, 3652
+##    aut_id (Intercept)    40316    200.8
+##     lemma (Intercept)    42511    206.2
+##  Residual                32808    181.1
+## Number of obs: 1045155, groups:  aut_id, 4533; lemma, 3652
 ## 
 ## Fixed effects:
-##                        Estimate Std. Error         df  t value Pr(>|t|)    
-## (Intercept)           2.422e+02  3.915e+00  3.043e+03   61.878  < 2e-16 ***
-## targetref            -8.495e+01  7.431e-01  1.044e+06 -114.318  < 2e-16 ***
-## qb                    2.186e+01  7.742e+00  1.041e+06    2.824 0.004745 ** 
-## qc                    6.796e+01  1.345e+00  1.042e+06   50.536  < 2e-16 ***
-## qd                    5.773e+01  1.414e+00  1.043e+06   40.830  < 2e-16 ***
-## qe                    7.982e+01  1.523e+00  1.042e+06   52.399  < 2e-16 ***
-## qf                    5.986e+01  1.904e+00  1.042e+06   31.444  < 2e-16 ***
-## detTRUE               2.836e+00  6.523e-01  1.044e+06    4.348 1.37e-05 ***
-## targetref:qb          3.550e+01  1.108e+01  1.041e+06    3.205 0.001350 ** 
-## targetref:qc          1.688e+01  6.443e+00  1.041e+06    2.621 0.008779 ** 
-## targetref:qd          3.846e+01  6.439e+00  1.041e+06    5.973 2.33e-09 ***
-## targetref:qe         -2.971e+01  7.874e+00  1.041e+06   -3.773 0.000161 ***
-## targetref:qf         -7.038e+01  3.957e+01  1.042e+06   -1.779 0.075280 .  
-## targetref:detTRUE    -1.462e+00  1.569e+00  1.043e+06   -0.932 0.351384    
-## qb:detTRUE            2.873e+01  8.232e+00  1.041e+06    3.491 0.000482 ***
-## targetref:qb:detTRUE  3.715e+01  2.136e+01  1.041e+06    1.740 0.081937 .  
+##                        Estimate Std. Error         df t value Pr(>|t|)    
+## (Intercept)           2.870e+02  4.900e+00  6.838e+03  58.565  < 2e-16 ***
+## targetref            -8.842e+01  3.051e+00  7.021e+04 -28.978  < 2e-16 ***
+## qb                    3.566e+01  7.380e+00  1.036e+06   4.833 1.35e-06 ***
+## qc                    6.937e+01  1.268e+00  1.038e+06  54.728  < 2e-16 ***
+## qd                    5.704e+01  1.325e+00  1.038e+06  43.053  < 2e-16 ***
+## qe                    7.522e+01  1.447e+00  1.038e+06  51.975  < 2e-16 ***
+## qf                    6.010e+01  1.805e+00  1.037e+06  33.291  < 2e-16 ***
+## detTRUE               3.154e+00  6.295e-01  1.042e+06   5.011 5.42e-07 ***
+## targetref:qb          2.973e+01  1.105e+01  1.038e+06   2.690 0.007140 ** 
+## targetref:qc          1.748e+01  6.460e+00  1.038e+06   2.706 0.006813 ** 
+## targetref:qd          3.302e+01  6.156e+00  1.037e+06   5.363 8.18e-08 ***
+## targetref:qe         -2.499e+01  8.090e+00  1.038e+06  -3.090 0.002005 ** 
+## targetref:qf         -1.280e+02  3.760e+01  1.038e+06  -3.404 0.000663 ***
+## targetref:detTRUE    -3.951e+00  1.561e+00  1.043e+06  -2.531 0.011370 *  
+## qb:detTRUE            1.201e+01  7.839e+00  1.036e+06   1.532 0.125614    
+## targetref:qb:detTRUE  4.436e+01  2.166e+01  1.038e+06   2.048 0.040529 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```

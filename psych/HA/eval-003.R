@@ -228,7 +228,7 @@ dfa<-get.dist.norm(dfa,limit)
 # tdb5<-tdb4[tdb4$dist<limit,]
 # tdb6<-get.dist.norm(tdb5,5000)
 
-get.anovas<-function(qltdf,target,con,det.t,r,ref){
+get.anovas<-function(qltdf,target,con,det.t,r,ref,author){
 #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   dfa<-create.sub(qltdf,target,con,det.t)
   #dfa<-get.dist.norm(dfa,limit)
@@ -238,7 +238,8 @@ get.anovas<-function(qltdf,target,con,det.t,r,ref){
   d.sel<-ifelse(r,colnames(dfa)[d.sel],"dist")
   det.f<-ifelse(sum(det.t)>0,"*det","")
   anova.fstr<-paste0(d.sel," ~ target*q",det.f)
-  lme.str<-paste0(d.sel," ~ target*q",det.f,"+(1|lemma)",ifelse(r,"","+range"))
+  aut.str<-ifelse(author,"+(1|aut_id)","")
+  lme.str<-paste0(d.sel," ~ target*q",det.f,"+(1|lemma)",aut.str,ifelse(r,"","+range"))
   # lmeform.l<-list(no.pre.det=
   #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
   #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))
