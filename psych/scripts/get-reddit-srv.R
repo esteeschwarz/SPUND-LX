@@ -5,7 +5,7 @@ library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15276
+tstamp<-15302
 dt<-1
 tstamp<-paste0(format(Sys.Date(),"%y-%m-%d"),".",dt)
 tstamp
@@ -58,9 +58,9 @@ model.l<-"eng"
 #model.l<-"ger"
 doc.id.act<-tstamp
 ###
-#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
-#source(paste0(Sys.getenv("HKW_TOP"),"/rwd/auth_anon.R"))
-source("~/rwd/auth_anon.R")
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/srv-functions.R"))
+source(paste0(Sys.getenv("HKW_TOP"),"/R/auth_anon.R"))
+#source("~/rwd/auth_anon.R")
 
 wd<-"~/dl/ske"
 out.dir<-paste0("~/temp/ske/corpora/reddit/auto/",thread,"/data")
@@ -189,16 +189,17 @@ post.sql<-function(df){
 }
 start.url<-1
 end.url<-length(url.df.x$date_utc)
-end.url<-200
+#end.url<-200
 range<-c(start.url:194,196:end.url)
-range<-1:100
+range<-101:end.url
 # end.url<-length(url.u)
 #url.id<-5
 rm(url.id)
 wait<-5
 #e:34+
-seq<-1:100
+#seq<-1:100
 seq<-1:length(range)
+#seq<-range
 i<-1
 range[seq[i]]
 m<-which(range==268)
@@ -365,7 +366,7 @@ sum(mtu.dup)
 i<-1
 #run<-12
 run<-url.id
-print(model)
+#print(model)
 url.comment.df.cpt.2<-url.comment.df.cpt
     df.ex.l<-pblapply(seq_along(1:length(url.comment.df.cpt.2$url)), function(i) {
       comments<-url.comment.df.cpt.2[i,]
