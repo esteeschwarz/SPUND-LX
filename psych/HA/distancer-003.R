@@ -2,12 +2,13 @@
 # 15302.3rd approach distancer, model 8
 # with basic df position diffs
 ##############################
-
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-init-vars.R"))
 # get tdb from sqlite
 qs<-build.q()
-
+save.ns.list<-012
+save.ns.dist<-012
 #tdb<-read.db(15276) # 2nd run
-tdb<-read.db(15302) # 3nd run
+tdb<-read.db(15303) # 3nd run
 
 tdb$obs$target<-"obs"
 tdb$ref$target<-"ref"
@@ -39,7 +40,9 @@ m32<-m31[2:length(m31)]
 m32<-c(m32,last(m3))
 k<-1
 for(k in 1:length(doc1)){
-  print(k)
+  #print(k)
+  cat(k,"of",length(doc1),"\n")
+  
   t2<-doc1[[k]]
   r1<-c(m3[k]:m32[k])
   tdb2o$url_t[r1]<-t2$url
@@ -75,7 +78,8 @@ m32<-m31[2:length(m31)]
 m32<-c(m32,last(m3))
 k<-1
 for(k in 1:length(doc1)){
-  print(k)
+ # print(k)
+  cat(k,"of",length(doc1),"\n")
   t2<-doc1[[k]]
   r1<-c(m3[k]:m32[k])
   tdb2r$url_t[r1]<-t2$url
@@ -348,7 +352,8 @@ tdb3.l<-pblapply(ld.u,function(x){
   return(d2)
 })
 #dim(tdb3.l[[113]])==0
-save(tdb3.l,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dist.df-010.RData"))
+#save.ns.list
+save(tdb3.l,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dist.df-",save.ns.list,".RData"))
 tdb4<-lapply(tdb3.l,function(x){
   d<-dim(x)
   ifelse(d[1]==0,return(NA),return(x))
@@ -368,7 +373,10 @@ mode(tdb4$dist)<-"double"
 tdb4$dist[tdb4$dist==0]<-NA
 tdb4$det<-FALSE
 tdb4$det[tdb4$prepos=="DET"]<-TRUE
-#qltdf<-tdb4
+qltdf<-tdb4
+### break here and run
+
+
 #write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-008.csv")) # too big for git
 #save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-011.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))

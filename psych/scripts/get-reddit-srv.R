@@ -5,18 +5,22 @@ library(readr)
 library(pbapply)
 library(abind)
 #####################
-tstamp<-15302
+tstamp<-15303
 dt<-1
 tstamp<-paste0(format(Sys.Date(),"%y-%m-%d"),".",dt)
 tstamp
 #thread<- "de"
+#######################
 thread<-"schizophrenia"
-#thread<-"unpopularopinion"
-corpus<-"stef_psych_schiz"
 dbcorpus<-"redditpsych"
 dbcorpus_pos<-"reddit_com_pos"
-#dbcorpus<-"reddit_ref"
-#dbcorpus_pos<-"reddit_pos_ref"
+##########################
+thread<-"unpopularopinion"
+dbcorpus<-"reddit_ref"
+dbcorpus_pos<-"reddit_pos_ref"
+##############################
+##################################
+corpus<-"stef_psych_schiz"
 subject.dir<-"SPUND-LX/psych/data"
 cloud<-"~/box.dh-index.org/httpdocs/cloud"
 cloud<-paste0(Sys.getenv("WWW_TOP"),"/cloud")
@@ -46,6 +50,14 @@ min(url.df.x$date_utc)
 # sum(m)
 return(url.df.x)
 }
+##################################
+url.df.x<-get.urls()
+
+# range in urldf / 1000 (for ref corp: 300)
+start.url<-1
+end.url<-length(url.df.x$date_utc)
+end.url<-300
+##################################
 
 # no matching urls: all new comments
 ####################################
@@ -72,7 +84,7 @@ out.com.df.ns
 log.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/intLX/createcorp/createcorp.log.csv")
 #load(paste(wd,"reddit_15494.df.RData",sep = "/"))
 # get url dataframe
-url.df.x<-get.urls()
+# url.df.x<-get.urls()
 # saved in function!
 #save(url.df.x,file = paste0(Sys.getenv("GIT_TOP"),"/",subject.dir,"/reddit_url.df.",tstamp,".RData"))
 ####################
@@ -187,11 +199,11 @@ post.sql<-function(df){
   Sys.sleep(wait.t)
   return(url.sub.df)
 }
-start.url<-1
-end.url<-length(url.df.x$date_utc)
+# start.url<-1
+# end.url<-length(url.df.x$date_utc)
 #end.url<-200
 range<-c(start.url:194,196:end.url)
-range<-101:end.url
+range<-start.url:end.url
 # end.url<-length(url.u)
 #url.id<-5
 rm(url.id)

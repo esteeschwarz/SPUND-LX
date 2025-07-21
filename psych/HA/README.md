@@ -7,6 +7,9 @@
 - F: coherence and proposition building, information structure
 - corpus includes comments thread on url (topic)
 
+[poster appendix](https://ogy.de/poster-coherence)   
+-----
+
 #### task
 - query NP with definite article/demonstrative pronoun
 - determine reference (introduction) distance of noun
@@ -20,5 +23,8 @@
   #### observations
   computing distances with antecedent.pos==DET(eval-004) and antecedent.pos~DET (eval-005) finds contrary results for distances obs vs. ref. TODO check again dist df creating function.
   
-
-  [poster appendix](https://ogy.de/poster-coherence)
+  #### todo
+  - [ ] clean lemmata: many spelling errors in lemmalist > decreases pair factor
+  - [ ] compute type/token ratio (lexical diversity) per url and include as fixed effect variable
+  - [ ] ho-discourse givenness (referential distance), prince (1981)
+  
