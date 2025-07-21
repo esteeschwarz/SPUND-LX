@@ -409,7 +409,7 @@ rmd.plot.lme<-function(lm2.summ){
   # return(bp)
   
 }
-rmd.plot.lme(s3)
+#rmd.plot.lme(s3)
 ### sums df
 # 
 # sumtx.a<-data.frame(anlm.summ)

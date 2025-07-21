@@ -386,8 +386,8 @@ sum(mna)
 tdb4<-tdb4[!mna,]
 
 # apply url range to final df
-uid<-tdb$obs$uid
-uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
+# uid<-tdb$obs$uid
+# uid2<-gsub("dfurl([0-9]{1,4})-.*","\\1",uid)
 #################
 uid2<-tdb2o$url_t
 mn1<-which(uid2=="")
@@ -429,16 +429,6 @@ tdb$ref$url<-uid2
 url.u.r<-unique(uid2)
 tdb$ref$range<-NA
 
-# mn1<-which(uid2=="")
-# mn1<-uid2==""
-# mn2<-which(is.na(uid2))
-# head(uid2)
-# uid2[!mn1]<-paste0("ref.",uid2[!mn1])
-# length(unique(uid2))
-# unique(uid2)
-# tdb$ref$url<-uid2
-# url.u.r<-unique(uid2)
-# tdb$ref$range<-NA
 tdb4$range<-NA
 for(k in url.u.o){
   r1<-tdb$obs$url==k
@@ -450,18 +440,17 @@ for(k in url.u.r){
   r2<-tdb4$url==k
   tdb4$range[r2]<-sum(r1)
 }
-aut.u<-unique(qltdf$author)
-qltdf$aut_id<-NA
+aut.u<-unique(tdb4$author)
+tdb4$aut_id<-NA
 for(a in 1:length(aut.u)){
-  r1<-qltdf$author==aut.u[a]
-  qltdf$aut_id[r1]<-a
+  cat(a,"von",length(aut.u),"\n")
+  r1<-tdb4$author==aut.u[a]
+  tdb4$aut_id[r1]<-a
   
 }
-#url.u<-c(url.u.o,url.u.r)
-#head(uid)
-#qltdf<-tdb4
+qltdf<-tdb4
 #write.csv(qltdf,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-008.csv")) # too big for git
-#save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-011.RData"))
+#save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-0",save.ns.dist,".RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 
 ### normalize distances # is done externally in eval-003.R during tests
@@ -487,6 +476,7 @@ tdb6$dist_rel_ref<-tdb6$dist*tdb6$range_f_ref
 return(tdb6)
 }
 
+out.fun<-function(){
 max(tdb4$dist,na.rm = T)
 # limit<-5000
 # tdb5<-tdb4[tdb4$dist<limit,]
@@ -576,3 +566,4 @@ dfe<-get.mean.df(qltdf)
 plot.dist(dfe,"mean")
 plot.dist(dfe,"median")
 qltdf<-tdb4
+}
