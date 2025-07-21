@@ -14,8 +14,8 @@ read.db<-function(run){
   dbDisconnect(con)
   return(list(obs=tdbcorp,ref=tdbref))
 }
-# if(!exists("tdb"))
-#   tdb<-read.db()
+if(!exists("tdb"))
+  tdb<-read.db(run)
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
 build.q<-function(){

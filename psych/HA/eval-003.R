@@ -2,8 +2,8 @@
 #15292.psych.eval.cleaned
 #########################
 #dataset<-7
-
-read.db<-function(){
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-init-vars.R"))
+read.db_dep<-function(){
   
   
   library(DBI)
@@ -18,10 +18,10 @@ read.db<-function(){
   return(list(obs=tdbcorp,ref=tdbref))
 }
 if(!exists("tdb"))
-  tdb<-read.db()
+  tdb<-read.db(run)
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
-build.q<-function(){
+build.q_dep<-function(){
   q0<-list(a=list(q=".*",det="DET"))
   q1<-list(b=list(q=c("this","that","these","those"),det="DET")) # mean distance: 76
   q2<-list(c=list(q=c("the"),det="DET")) # mean distance: 81

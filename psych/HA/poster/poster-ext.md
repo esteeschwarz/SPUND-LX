@@ -22,14 +22,14 @@ nocite: '@*'
 
 
 
-```r
+``` r
 #dataset<-7
 ```
 
 
 
 # top
-eval output M8, normalised to obs, distance ceiling =  outliers removed.
+eval output M11, normalised to obs, distance ceiling =  outliers removed.
 
 ## legende
 
@@ -51,15 +51,15 @@ Table: (\#tab:legend)model vars
 ### anova plain, formula: [``` dist_rel_obs ~ target*q*det ```]
 
 ```
-##                 Df     Sum Sq   Mean Sq   F value  Pr(>F)    
-## target           1  188198255 188198255 2623.7365 < 2e-16 ***
-## q                5   12386302   2477260   34.5363 < 2e-16 ***
-## det              1     331841    331841    4.6263 0.03149 *  
-## target:q         5     238670     47734    0.6655 0.64965    
-## target:det       1      76742     76742    1.0699 0.30098    
-## q:det            1       7767      7767    0.1083 0.74210    
-## target:q:det     1         49        49    0.0007 0.97912    
-## Residuals    53589 3843890727     71729                      
+##                   Df     Sum Sq    Mean Sq    F value    Pr(>F)    
+## target             1 3.6884e+09 3688441713 86368.2495 < 2.2e-16 ***
+## q                  5 4.5563e+08   91126214  2133.8040 < 2.2e-16 ***
+## det                1 2.8130e+07   28129559   658.6794 < 2.2e-16 ***
+## target:q           5 2.6402e+06     528048    12.3647 5.105e-12 ***
+## target:det         1 2.3260e+06    2325954    54.4643 1.584e-13 ***
+## q:det              1 2.7700e+06    2769968    64.8613 8.044e-16 ***
+## target:q:det       1 4.3320e+03       4332     0.1014    0.7501    
+## Residuals    1045139 4.4634e+10      42706                         
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -69,14 +69,14 @@ Table: (\#tab:legend)model vars
 
 ```
 ## Type III Analysis of Variance Table with Satterthwaite's method
-##               Sum Sq Mean Sq NumDF DenDF F value    Pr(>F)    
-## target        942002  942002     1 53142 13.7725 0.0002065 ***
-## q            1715931  343186     5 52610  5.0175 0.0001343 ***
-## det             1744    1744     1 52047  0.0255 0.8731412    
-## target:q      274352   54870     5 52617  0.8022 0.5478174    
-## target:det      8778    8778     1 52044  0.1283 0.7201598    
-## q:det            434     434     1 52029  0.0063 0.9365173    
-## target:q:det    8861    8861     1 52029  0.1296 0.7188976    
+##                Sum Sq Mean Sq NumDF   DenDF  F value    Pr(>F)    
+## target        5908779 5908779     1 1041840 153.5090 < 2.2e-16 ***
+## q            49397958 9879592     5 1041207 256.6700 < 2.2e-16 ***
+## det            895398  895398     1 1040899  23.2623 1.414e-06 ***
+## target:q      2262659  452532     5 1041208  11.7567 2.169e-11 ***
+## target:det      98820   98820     1 1040899   2.5673   0.10909    
+## q:det          755379  755379     1 1040893  19.6246 9.426e-06 ***
+## target:q:det   116477  116477     1 1040893   3.0261   0.08194 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -89,38 +89,41 @@ Table: (\#tab:legend)model vars
 ## Formula: eval(expr(lmeform))
 ##    Data: dfa
 ## 
-## REML criterion at convergence: 750046.5
+## REML criterion at convergence: 14012116
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.6964 -0.6103 -0.2730  0.2116  6.2846 
+## -5.3322 -0.5018 -0.1443  0.1039 11.4879 
 ## 
 ## Random effects:
 ##    Groups        Name Variance Std.Dev.
-##     lemma (Intercept)     4886     69.9
-##  Residual                68397    261.5
-## Number of obs: 53605, groups:  lemma, 3140
+##     lemma (Intercept)    49298    222.0
+##  Residual                38491    196.2
+## Number of obs: 1045155, groups:  lemma, 3652
 ## 
 ## Fixed effects:
-##                        Estimate Std. Error         df t value Pr(>|t|)    
-## (Intercept)            243.7965     2.9796  2119.2426  81.823  < 2e-16 ***
-## targetref             -107.4277     3.2635 22754.8007 -32.918  < 2e-16 ***
-## qb                     112.6641    58.6455 51418.0759   1.921   0.0547 .  
-## qc                      51.6152     8.2179 53428.9384   6.281 3.39e-10 ***
-## qd                      50.8464     8.0236 53556.5368   6.337 2.36e-10 ***
-## qe                      44.5199     8.8245 53549.6599   5.045 4.55e-07 ***
-## qf                      28.3428    12.6225 53477.5464   2.245   0.0247 *  
-## detTRUE                 -2.8252     3.6081 53094.1405  -0.783   0.4336    
-## targetref:qb           -87.2954    81.2112 52049.3097  -1.075   0.2824    
-## targetref:qc            29.9092    55.1123 52625.6411   0.543   0.5873    
-## targetref:qd            30.7563    42.7856 52604.2796   0.719   0.4722    
-## targetref:qe            91.8214    66.5296 52591.0522   1.380   0.1675    
-## targetref:qf          -115.0325   153.2120 53277.1126  -0.751   0.4528    
-## targetref:detTRUE       -0.1167     9.5973 53507.1658  -0.012   0.9903    
-## qb:detTRUE             -31.6643    60.7276 51491.0100  -0.521   0.6021    
-## targetref:qb:detTRUE    51.8534   144.0633 52029.2131   0.360   0.7189    
+##                        Estimate Std. Error         df  t value Pr(>|t|)    
+## (Intercept)           2.422e+02  3.915e+00  3.043e+03   61.878  < 2e-16 ***
+## targetref            -8.495e+01  7.431e-01  1.044e+06 -114.318  < 2e-16 ***
+## qb                    2.186e+01  7.742e+00  1.041e+06    2.824 0.004745 ** 
+## qc                    6.796e+01  1.345e+00  1.042e+06   50.536  < 2e-16 ***
+## qd                    5.773e+01  1.414e+00  1.043e+06   40.830  < 2e-16 ***
+## qe                    7.982e+01  1.523e+00  1.042e+06   52.399  < 2e-16 ***
+## qf                    5.986e+01  1.904e+00  1.042e+06   31.444  < 2e-16 ***
+## detTRUE               2.836e+00  6.523e-01  1.044e+06    4.348 1.37e-05 ***
+## targetref:qb          3.550e+01  1.108e+01  1.041e+06    3.205 0.001350 ** 
+## targetref:qc          1.688e+01  6.443e+00  1.041e+06    2.621 0.008779 ** 
+## targetref:qd          3.846e+01  6.439e+00  1.041e+06    5.973 2.33e-09 ***
+## targetref:qe         -2.971e+01  7.874e+00  1.041e+06   -3.773 0.000161 ***
+## targetref:qf         -7.038e+01  3.957e+01  1.042e+06   -1.779 0.075280 .  
+## targetref:detTRUE    -1.462e+00  1.569e+00  1.043e+06   -0.932 0.351384    
+## qb:detTRUE            2.873e+01  8.232e+00  1.041e+06    3.491 0.000482 ***
+## targetref:qb:detTRUE  3.715e+01  2.136e+01  1.041e+06    1.740 0.081937 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+```
 ## fit warnings:
 ## fixed-effect model matrix is rank deficient so dropping 8 columns / coefficients
 ```
@@ -133,20 +136,20 @@ Table: (\#tab:legend)model vars
 
 
 
-|target |q  |     n| mean| median|
-|:------|:--|-----:|----:|------:|
-|obs    |a  | 31824|  241|    122|
-|ref    |a  | 17295|  120|     50|
-|obs    |b  |   313|  325|    174|
-|ref    |b  |    27|  127|    110|
-|obs    |c  |  1226|  291|    156|
-|ref    |c  |    24|  168|     99|
-|obs    |d  |  1369|  307|    209|
-|ref    |d  |    41|  180|    173|
-|obs    |e  |  1005|  287|    154|
-|ref    |e  |    16|  238|    145|
-|obs    |f  |   462|  258|    146|
-|ref    |f  |     3|   46|     62|
+|target |q  |      n| mean| median|
+|:------|:--|------:|----:|------:|
+|obs    |a  | 557479|  169|     77|
+|ref    |a  | 394838|   57|     25|
+|obs    |b  |   5904|  217|    120|
+|ref    |b  |    747|  122|     44|
+|obs    |c  |  26883|  240|    138|
+|ref    |c  |   1033|  126|     73|
+|obs    |d  |  25400|  253|    149|
+|ref    |d  |   1041|  154|    106|
+|obs    |e  |  19228|  260|    149|
+|ref    |e  |    656|   93|     79|
+|obs    |f  |  11920|  211|    111|
+|ref    |f  |     26|  100|    126|
 
 
 <div class="figure">

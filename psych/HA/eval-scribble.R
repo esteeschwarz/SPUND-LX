@@ -469,6 +469,8 @@ library(lmerTest)
 lm1<-lmer(dist~target*q+(1|prepos)+(1|lemma),tdb4)
 lm1<-lmer(dist~target*q+range+(1|prepos)+(1|det),tdb4)
 lm1<-lmer(dist~target*q+(1|prepos)+(1|det),qltdf)
+lm1<-lmer(dist~target*q+(1|prepos)+(1|det),qltdf)
+lm1<-lmer(dist_rel_obs~target*q+(1|prepos)+(1|det),qltdf)
 sum1<-summary(lm1)
 sum1
 anova(lm1)
