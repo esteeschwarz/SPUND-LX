@@ -453,7 +453,7 @@ qltdf<-tdb4
 #save(qltdf,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-0",save.ns.dist,".RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-008.RData"))
 
-### normalize distances # is done externally in eval-003.R during tests
+### normalize distances # is called externally in eval-003.R during tests
 dist.norm<-function(tdb4){
 tdb6<-tdb4
 mna<-is.na(tdb6$token)
@@ -475,6 +475,17 @@ tdb6$dist_rel_obs<-tdb6$dist*tdb6$range_f_obs
 tdb6$dist_rel_ref<-tdb6$dist*tdb6$range_f_ref
 return(tdb6)
 }
+
+get.noun.p<-function(qltdf){
+  t1<-table(qltdf$lemma[qltdf$target=="obs"])
+  t1.rel<-t1/n_obs
+  t2<-table(qltdf$lemma[qltdf$target=="ref"])
+  t2.rel<-t2/n_ref
+head(t1.rel)
+t1.rel[which.max(t1.rel)]
+sum(t1==8)
+}
+
 
 out.fun<-function(){
 max(tdb4$dist,na.rm = T)
@@ -567,3 +578,5 @@ plot.dist(dfe,"mean")
 plot.dist(dfe,"median")
 qltdf<-tdb4
 }
+
+
