@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      R_LIBS_USER: ~/.local/lib/R/site-library
-
+    #  R_LIBS_USER: ~/.local/lib/R/site-library
+      R_LIBS_USER: /home/runner/work/_temp/Library
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -69,9 +69,7 @@ jobs:
         bundler-cache: true
 
     - name: Build Jekyll site
-      run: |
-        bundle install
-        bundle exec jekyll build
+      run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
       env:
           JEKYLL_ENV: "production"
 
