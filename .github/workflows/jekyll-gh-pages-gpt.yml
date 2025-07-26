@@ -9,6 +9,22 @@ on:
       - '_includes/**'
       - '.github/workflows/**'
       - 'docs/trigger.md'
+    paths-ignore:
+      - TEX
+      - corpusLX
+      - DA
+      - FRZ
+      - intLX
+      - meta
+      - agenda
+      - play
+      - psych
+      - public
+      - scripts
+      - site
+      - szondi
+      - tools
+
   workflow_dispatch:
 
 jobs:

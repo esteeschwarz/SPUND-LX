@@ -4,3 +4,4 @@ trigger.1
 - testpage,2,wo rlibs grande
 - caching
 - jekyll build error,2,3.1
+- exclude all, test004.Rmd was mine
