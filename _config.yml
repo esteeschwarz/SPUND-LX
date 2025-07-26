@@ -208,13 +208,27 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
-  - docs
   - tools
   - README.md
   - LICENSE
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - TEX
+  - corpusLX
+  - DA
+  - FRZ
+  - intLX
+  - meta
+  - agenda
+  - play
+  - psych
+  - public
+  - scripts
+  - site
+  - szondi
+  - tools
+
 
 jekyll-archives:
   enabled: [categories, tags]
