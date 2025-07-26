@@ -34,7 +34,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        submodules: yes  # If using Chirpy as a submodule
+        submodules: false  # If using Chirpy as a submodule
 
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
