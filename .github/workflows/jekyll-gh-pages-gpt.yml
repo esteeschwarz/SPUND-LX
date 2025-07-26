@@ -54,7 +54,7 @@ jobs:
         done
 
     - name: Setup Pages
-        id: pages
+      id: pages
         uses: actions/configure-pages@v4
 
     - name: Set up Ruby & Bundler
