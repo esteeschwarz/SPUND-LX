@@ -1,5 +1,4 @@
-# .github/workflows/build.yml
-name: Build & Deploy Site from Rmd
+name: "Build & Deploy Site from Rmd"
 
 on:
   push:

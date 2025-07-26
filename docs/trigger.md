@@ -1,3 +1,3 @@
 # 15311.snc
 trigger.1
-- syntax.3
+- syntax.3,4
