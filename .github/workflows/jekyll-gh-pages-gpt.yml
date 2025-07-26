@@ -82,7 +82,7 @@ jobs:
     #     publish_dir: ./_site
     #     publish_branch: gh-pages
 
-deploy:
+ deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
