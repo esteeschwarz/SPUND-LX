@@ -1,4 +1,4 @@
 # 15311.snc
 trigger.1
 - syntax.3,4,5
-- testpage,2
+- testpage,2,wo rlibs grande

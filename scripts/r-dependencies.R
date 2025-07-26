@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # ---- SETTINGS ----
-rmd_roots <- c("psych")  # Can be more than one root dir
+rmd_roots <- c("docs")  # Can be more than one root dir
 lib_dir <- Sys.getenv("R_LIBS_USER", unset = "~/.local/lib/R/site-library")
 
 # ---- FUNCTION TO PARSE PACKAGES ----
