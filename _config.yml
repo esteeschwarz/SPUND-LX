@@ -31,3 +31,25 @@ exclude:
   - .github
   - .git
   - .gitignore
+  - "*.gem"
+  - "*.gemspec"
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - TEX
+  - corpusLX
+  - DA
+  - FRZ
+  - intLX
+  - meta
+  - agenda
+  - play
+  - psych
+  - public
+  - scripts
+  - site
+  - szondi
+  - tools
