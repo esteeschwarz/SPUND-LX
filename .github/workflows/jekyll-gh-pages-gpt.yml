@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
 
     env:
@@ -74,14 +74,7 @@ jobs:
       with:
         path: "_site${{ steps.pages.outputs.base_path }}"
 
-    # - name: Deploy to GitHub Pages
-    #   uses: peaceiris/actions-gh-pages@v4
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./_site
-    #     publish_branch: gh-pages
-
- deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
