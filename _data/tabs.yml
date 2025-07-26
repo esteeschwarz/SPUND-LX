@@ -1,0 +1,12 @@
+- name: Home
+  path: /
+  icon: fas fa-home
+- name: LX psych
+  path: /docs/psych-pub/
+  icon: fas fa-chart-bar
+- name: XThings
+  path: /docs/xthings/
+  icon: fas fa-file-alt
+- name: About
+  path: /_tabs/about
+  icon: fas fa-user
