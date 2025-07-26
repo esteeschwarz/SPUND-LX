@@ -49,7 +49,7 @@ jobs:
         mkdir -p _posts
         for file in $(find docs -name '*.Rmd'); do
           fname=$(basename "$file" .Rmd)
-          Rscript -e "rmarkdown::render('$file', output_format = 'md_document', output_file = paste0('_posts/', format(Sys.Date(), '%Y-%m-%d-'), '$fname.md'))"
+          Rscript -e "rmarkdown::render('$file', output_format = 'md_document', output_file = paste0('../_posts/', format(Sys.Date(), '%Y-%m-%d-'), '$fname.md'))"
         done
 
     - name: Setup Pages
