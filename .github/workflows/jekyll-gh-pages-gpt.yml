@@ -30,19 +30,25 @@ jobs:
     - name: Install Pandoc
       uses: r-lib/actions/setup-pandoc@v2
 
-    - name: Cache R packages
+    - name: Restore R package cache
       uses: actions/cache@v4
       with:
         path: ${{ env.R_LIBS_USER }}
-        key: r-${{ runner.os }}-${{ hashFiles('psych/**/*.Rmd') }}
+        key: r-${{ runner.os }}-lib
         restore-keys: |
           r-${{ runner.os }}-
+
 
     - name: Install required R packages
       run: |
         mkdir -p "$R_LIBS_USER"
         Rscript scripts/r-dependencies.R
 
+    - name: Save updated R package cache
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ env.R_LIBS_USER }}
+        key: r-${{ runner.os }}-lib
 
     - name: Render all Rmd files to _posts/
       run: |
