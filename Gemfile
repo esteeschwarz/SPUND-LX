@@ -4,6 +4,7 @@ source "https://rubygems.org"
 #source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
+gem "jemoji"
 #gem "jekyll-theme-chirpy"
 gem "webrick"
 gem "jekyll-theme-chirpy", "~> 7.3"
