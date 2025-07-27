@@ -140,7 +140,7 @@ jobs:
       #   with:
       #     path: ./mdbook/workflow/book
       - name: Upload pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./corpusLX/14015-HA/HA-pages/_site
          # path: ./temp
@@ -163,5 +163,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
  

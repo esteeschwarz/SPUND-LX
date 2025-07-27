@@ -23,9 +23,16 @@ library(knitr)
 library(kableExtra)
 ```
 
-```{css, echo=FALSE,eval=F}
-table {
+```{css, echo=FALSE,eval=T}
+/*table {
   width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
 }
 ```
 
@@ -178,7 +185,7 @@ plot.dist(dfe,"mean")
 
 
 ```{r,dfe-table,echo=F,warning=F,message=F}
-kable(dfe)
+kable(dfe,caption = paste0("mean/median table for M",dataset),format="markdown")
 ```
 
 
