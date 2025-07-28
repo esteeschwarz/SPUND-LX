@@ -1,0 +1,1428 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3" xmlns:viz="http://gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2025-07-28">
+    <creator>Gephi 0.10.1</creator>
+    <title></title>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <nodes>
+      <node id="allgemein" label="allgemein">
+        <viz:size value="10.0"/>
+        <viz:position x="-335.10623" y="-91.84468"/>
+      </node>
+      <node id="Achat" label="Achat">
+        <viz:size value="10.0"/>
+        <viz:position x="-192.56783" y="36.329147"/>
+      </node>
+      <node id="ander" label="ander">
+        <viz:size value="10.0"/>
+        <viz:position x="205.62248" y="494.75525"/>
+      </node>
+      <node id="berühmt" label="berühmt">
+        <viz:size value="10.0"/>
+        <viz:position x="358.34967" y="-99.08354"/>
+      </node>
+      <node id="beschrieben" label="beschrieben">
+        <viz:size value="10.0"/>
+        <viz:position x="-111.91615" y="-146.16457"/>
+      </node>
+      <node id="blau" label="blau">
+        <viz:size value="10.0"/>
+        <viz:position x="424.53955" y="-437.95215"/>
+      </node>
+      <node id="gedrungen" label="gedrungen">
+        <viz:size value="10.0"/>
+        <viz:position x="314.76636" y="258.2057"/>
+      </node>
+      <node id="gerunden" label="gerunden">
+        <viz:size value="10.0"/>
+        <viz:position x="-202.33958" y="136.66673"/>
+      </node>
+      <node id="jeweilig" label="jeweilig">
+        <viz:size value="10.0"/>
+        <viz:position x="-470.85266" y="174.81834"/>
+      </node>
+      <node id="klein" label="klein">
+        <viz:size value="10.0"/>
+        <viz:position x="352.86743" y="62.595627"/>
+      </node>
+      <node id="menschlich" label="menschlich">
+        <viz:size value="10.0"/>
+        <viz:position x="4.5031" y="-368.83572"/>
+      </node>
+      <node id="mexikanisch" label="mexikanisch">
+        <viz:size value="10.0"/>
+        <viz:position x="180.96361" y="470.13928"/>
+      </node>
+      <node id="pur" label="pur">
+        <viz:size value="10.0"/>
+        <viz:position x="-345.84918" y="-302.25705"/>
+      </node>
+      <node id="schwarzweiß" label="schwarzweiß">
+        <viz:size value="10.0"/>
+        <viz:position x="59.259937" y="210.30522"/>
+      </node>
+      <node id="selten" label="selten">
+        <viz:size value="10.0"/>
+        <viz:position x="-273.5658" y="-187.53203"/>
+      </node>
+      <node id="unbestreitbar" label="unbestreitbar">
+        <viz:size value="10.0"/>
+        <viz:position x="-320.37006" y="-191.04085"/>
+      </node>
+      <node id="urinfarben" label="urinfarben">
+        <viz:size value="10.0"/>
+        <viz:position x="315.92896" y="330.09497"/>
+      </node>
+      <node id="wahrnehmhar" label="wahrnehmhar">
+        <viz:size value="10.0"/>
+        <viz:position x="-438.96295" y="-460.9162"/>
+      </node>
+      <node id="winzig" label="winzig">
+        <viz:size value="10.0"/>
+        <viz:position x="-378.24292" y="118.235214"/>
+      </node>
+      <node id="aufeinanderfolgend" label="aufeinanderfolgend">
+        <viz:size value="10.0"/>
+        <viz:position x="113.84929" y="7.4131637"/>
+      </node>
+      <node id="Ammonit" label="Ammonit">
+        <viz:size value="10.0"/>
+        <viz:position x="14.565264" y="241.24577"/>
+      </node>
+      <node id="groß" label="groß">
+        <viz:size value="10.0"/>
+        <viz:position x="-105.45317" y="137.06352"/>
+      </node>
+      <node id="lins" label="lins">
+        <viz:size value="10.0"/>
+        <viz:position x="435.6339" y="-225.73683"/>
+      </node>
+      <node id="erkennbar" label="erkennbar">
+        <viz:size value="10.0"/>
+        <viz:position x="-308.0344" y="194.38512"/>
+      </node>
+      <node id="Baryt" label="Baryt">
+        <viz:size value="10.0"/>
+        <viz:position x="-355.24976" y="-428.1273"/>
+      </node>
+      <node id="brüderlich" label="brüderlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-279.99005" y="-443.8893"/>
+      </node>
+      <node id="Baustein" label="Baustein">
+        <viz:size value="10.0"/>
+        <viz:position x="357.89075" y="379.3852"/>
+      </node>
+      <node id="kontrastierend" label="kontrastierend">
+        <viz:size value="10.0"/>
+        <viz:position x="-143.19322" y="241.97691"/>
+      </node>
+      <node id="regellos" label="regellos">
+        <viz:size value="10.0"/>
+        <viz:position x="371.42322" y="19.416521"/>
+      </node>
+      <node id="versetzt" label="versetzt">
+        <viz:size value="10.0"/>
+        <viz:position x="-433.43872" y="-151.65169"/>
+      </node>
+      <node id="lang" label="lang">
+        <viz:size value="10.0"/>
+        <viz:position x="356.4535" y="512.4431"/>
+      </node>
+      <node id="Bilderstein" label="Bilderstein">
+        <viz:size value="10.0"/>
+        <viz:position x="-132.08488" y="409.9724"/>
+      </node>
+      <node id="zerfetzt" label="zerfetzt">
+        <viz:size value="10.0"/>
+        <viz:position x="125.10393" y="-102.766464"/>
+      </node>
+      <node id="Chlorit" label="Chlorit">
+        <viz:size value="10.0"/>
+        <viz:position x="471.39575" y="-110.1505"/>
+      </node>
+      <node id="ahnlich" label="ahnlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-180.07286" y="205.53209"/>
+      </node>
+      <node id="Dendrit" label="Dendrit">
+        <viz:size value="10.0"/>
+        <viz:position x="-1.414991" y="451.299"/>
+      </node>
+      <node id="buschig" label="buschig">
+        <viz:size value="10.0"/>
+        <viz:position x="-341.67923" y="515.09705"/>
+      </node>
+      <node id="erwähnt" label="erwähnt">
+        <viz:size value="10.0"/>
+        <viz:position x="16.924578" y="401.6574"/>
+      </node>
+      <node id="hart" label="hart">
+        <viz:size value="10.0"/>
+        <viz:position x="-424.27594" y="256.1734"/>
+      </node>
+      <node id="Diamant" label="Diamant">
+        <viz:size value="10.0"/>
+        <viz:position x="476.61407" y="-286.3551"/>
+      </node>
+      <node id="mikroskopisch" label="mikroskopisch">
+        <viz:size value="10.0"/>
+        <viz:position x="354.54095" y="-21.2946"/>
+      </node>
+      <node id="Diatomee" label="Diatomee">
+        <viz:size value="10.0"/>
+        <viz:position x="19.847765" y="328.28784"/>
+      </node>
+      <node id="begehrt" label="begehrt">
+        <viz:size value="10.0"/>
+        <viz:position x="-399.8521" y="-398.9281"/>
+      </node>
+      <node id="Edelstein" label="Edelstein">
+        <viz:size value="10.0"/>
+        <viz:position x="-452.32623" y="22.386858"/>
+      </node>
+      <node id="genau" label="genau">
+        <viz:size value="10.0"/>
+        <viz:position x="231.00963" y="-244.14708"/>
+      </node>
+      <node id="kleiden" label="kleiden">
+        <viz:size value="10.0"/>
+        <viz:position x="376.04956" y="483.87177"/>
+      </node>
+      <node id="werdend" label="werdend">
+        <viz:size value="10.0"/>
+        <viz:position x="-13.160597" y="224.114"/>
+      </node>
+      <node id="unschmelzbar" label="unschmelzbar">
+        <viz:size value="10.0"/>
+        <viz:position x="290.20612" y="379.98547"/>
+      </node>
+      <node id="Eis" label="Eis">
+        <viz:size value="10.0"/>
+        <viz:position x="-173.09584" y="-393.0807"/>
+      </node>
+      <node id="blutrot" label="blutrot">
+        <viz:size value="10.0"/>
+        <viz:position x="-184.77736" y="-373.9079"/>
+      </node>
+      <node id="Eisenglanz" label="Eisenglanz">
+        <viz:size value="10.0"/>
+        <viz:position x="-10.009565" y="321.263"/>
+      </node>
+      <node id="speziell" label="speziell">
+        <viz:size value="10.0"/>
+        <viz:position x="60.752186" y="-232.99644"/>
+      </node>
+      <node id="schnell" label="schnell">
+        <viz:size value="10.0"/>
+        <viz:position x="-81.791" y="-272.66577"/>
+      </node>
+      <node id="Ergußgestein" label="Ergußgestein">
+        <viz:size value="10.0"/>
+        <viz:position x="-430.87195" y="368.07336"/>
+      </node>
+      <node id="vulkanisch" label="vulkanisch">
+        <viz:size value="10.0"/>
+        <viz:position x="208.73186" y="-304.9931"/>
+      </node>
+      <node id="amorphen" label="amorphen">
+        <viz:size value="10.0"/>
+        <viz:position x="-301.3804" y="-420.09482"/>
+      </node>
+      <node id="Felsgestein" label="Felsgestein">
+        <viz:size value="10.0"/>
+        <viz:position x="250.71849" y="199.67339"/>
+      </node>
+      <node id="bekannt" label="bekannt">
+        <viz:size value="10.0"/>
+        <viz:position x="207.39598" y="-411.62177"/>
+      </node>
+      <node id="offen" label="offen">
+        <viz:size value="10.0"/>
+        <viz:position x="229.10234" y="-398.98346"/>
+      </node>
+      <node id="unwandelbar" label="unwandelbar">
+        <viz:size value="10.0"/>
+        <viz:position x="-131.20631" y="490.78967"/>
+      </node>
+      <node id="geologisch" label="geologisch">
+        <viz:size value="10.0"/>
+        <viz:position x="-267.4267" y="103.0421"/>
+      </node>
+      <node id="Gestein" label="Gestein">
+        <viz:size value="10.0"/>
+        <viz:position x="144.77483" y="249.26897"/>
+      </node>
+      <node id="kieselsäurearm" label="kieselsäurearm">
+        <viz:size value="10.0"/>
+        <viz:position x="290.0042" y="519.66895"/>
+      </node>
+      <node id="zulaufend" label="zulaufend">
+        <viz:size value="10.0"/>
+        <viz:position x="172.0006" y="-235.7812"/>
+      </node>
+      <node id="Gesteinsart" label="Gesteinsart">
+        <viz:size value="10.0"/>
+        <viz:position x="-222.26338" y="-122.597336"/>
+      </node>
+      <node id="rot" label="rot">
+        <viz:size value="10.0"/>
+        <viz:position x="-426.2658" y="-216.6111"/>
+      </node>
+      <node id="Glimmer" label="Glimmer">
+        <viz:size value="10.0"/>
+        <viz:position x="-210.44856" y="-424.90723"/>
+      </node>
+      <node id="schwarz" label="schwarz">
+        <viz:size value="10.0"/>
+        <viz:position x="-99.173325" y="316.292"/>
+      </node>
+      <node id="grundlegend" label="grundlegend">
+        <viz:size value="10.0"/>
+        <viz:position x="-258.1833" y="-209.498"/>
+      </node>
+      <node id="Hämatitkristall" label="Hämatitkristall">
+        <viz:size value="10.0"/>
+        <viz:position x="-173.67241" y="459.0205"/>
+      </node>
+      <node id="völlig" label="völlig">
+        <viz:size value="10.0"/>
+        <viz:position x="-301.7818" y="-425.60806"/>
+      </node>
+      <node id="tiefbetrübt" label="tiefbetrübt">
+        <viz:size value="10.0"/>
+        <viz:position x="-429.19818" y="51.12639"/>
+      </node>
+      <node id="Herz" label="Herz">
+        <viz:size value="10.0"/>
+        <viz:position x="-358.35815" y="-394.9446"/>
+      </node>
+      <node id="unbeweglich" label="unbeweglich">
+        <viz:size value="10.0"/>
+        <viz:position x="419.22272" y="384.0766"/>
+      </node>
+      <node id="bekennen" label="bekennen">
+        <viz:size value="10.0"/>
+        <viz:position x="195.192" y="-110.29616"/>
+      </node>
+      <node id="Jaspis" label="Jaspis">
+        <viz:size value="10.0"/>
+        <viz:position x="-394.64804" y="259.89832"/>
+      </node>
+      <node id="zufällig" label="zufällig">
+        <viz:size value="10.0"/>
+        <viz:position x="-400.00632" y="-206.15697"/>
+      </node>
+      <node id="schwimmend" label="schwimmend">
+        <viz:size value="10.0"/>
+        <viz:position x="285.80322" y="58.98088"/>
+      </node>
+      <node id="Kalkstein" label="Kalkstein">
+        <viz:size value="10.0"/>
+        <viz:position x="94.339096" y="-344.25177"/>
+      </node>
+      <node id="toskanisch" label="toskanisch">
+        <viz:size value="10.0"/>
+        <viz:position x="-196.47203" y="117.601364"/>
+      </node>
+      <node id="vorgestellt" label="vorgestellt">
+        <viz:size value="10.0"/>
+        <viz:position x="-293.0937" y="-99.62459"/>
+      </node>
+      <node id="dünn" label="dünn">
+        <viz:size value="10.0"/>
+        <viz:position x="-50.749523" y="-361.4068"/>
+      </node>
+      <node id="Kalzit" label="Kalzit">
+        <viz:size value="10.0"/>
+        <viz:position x="-123.81212" y="5.522966"/>
+      </node>
+      <node id="mineralogisch" label="mineralogisch">
+        <viz:size value="10.0"/>
+        <viz:position x="469.4162" y="-437.32135"/>
+      </node>
+      <node id="schwach" label="schwach">
+        <viz:size value="10.0"/>
+        <viz:position x="238.93547" y="-107.216415"/>
+      </node>
+      <node id="gebildet" label="gebildet">
+        <viz:size value="10.0"/>
+        <viz:position x="-359.4898" y="313.33722"/>
+      </node>
+      <node id="Kalzitgarbe" label="Kalzitgarbe">
+        <viz:size value="10.0"/>
+        <viz:position x="392.3365" y="316.80322"/>
+      </node>
+      <node id="mineralisiert" label="mineralisiert">
+        <viz:size value="10.0"/>
+        <viz:position x="332.13763" y="94.684494"/>
+      </node>
+      <node id="beunruhigend" label="beunruhigend">
+        <viz:size value="10.0"/>
+        <viz:position x="427.80627" y="-391.409"/>
+      </node>
+      <node id="Kalzits" label="Kalzits">
+        <viz:size value="10.0"/>
+        <viz:position x="-384.94952" y="469.68567"/>
+      </node>
+      <node id="skalenoedrisch" label="skalenoedrisch">
+        <viz:size value="10.0"/>
+        <viz:position x="-441.30884" y="-307.90033"/>
+      </node>
+      <node id="zwillingsförmig" label="zwillingsförmig">
+        <viz:size value="10.0"/>
+        <viz:position x="-364.65833" y="275.13226"/>
+      </node>
+      <node id="lebendig" label="lebendig">
+        <viz:size value="10.0"/>
+        <viz:position x="219.84349" y="-361.97702"/>
+      </node>
+      <node id="Kieselgestein" label="Kieselgestein">
+        <viz:size value="10.0"/>
+        <viz:position x="172.3178" y="-459.8405"/>
+      </node>
+      <node id="undurchdringlich" label="undurchdringlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-396.05872" y="144.73332"/>
+      </node>
+      <node id="unvergänglich" label="unvergänglich">
+        <viz:size value="10.0"/>
+        <viz:position x="25.100725" y="-33.315506"/>
+      </node>
+      <node id="bedroht" label="bedroht">
+        <viz:size value="10.0"/>
+        <viz:position x="-282.4071" y="243.50969"/>
+      </node>
+      <node id="Kieselsäure" label="Kieselsäure">
+        <viz:size value="10.0"/>
+        <viz:position x="131.79686" y="-297.00195"/>
+      </node>
+      <node id="absolut" label="absolut">
+        <viz:size value="10.0"/>
+        <viz:position x="-310.32254" y="213.6812"/>
+      </node>
+      <node id="Kristall" label="Kristall">
+        <viz:size value="10.0"/>
+        <viz:position x="115.11211" y="-404.15848"/>
+      </node>
+      <node id="abstrakt" label="abstrakt">
+        <viz:size value="10.0"/>
+        <viz:position x="245.03813" y="163.03978"/>
+      </node>
+      <node id="anomal" label="anomal">
+        <viz:size value="10.0"/>
+        <viz:position x="-230.41924" y="-158.34459"/>
+      </node>
+      <node id="ausgekleidet" label="ausgekleidet">
+        <viz:size value="10.0"/>
+        <viz:position x="-31.440931" y="-20.148878"/>
+      </node>
+      <node id="äußerlich" label="äußerlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-141.88701" y="-25.715223"/>
+      </node>
+      <node id="bedauernswert" label="bedauernswert">
+        <viz:size value="10.0"/>
+        <viz:position x="227.81999" y="395.0197"/>
+      </node>
+      <node id="blasser" label="blasser">
+        <viz:size value="10.0"/>
+        <viz:position x="469.35785" y="424.27985"/>
+      </node>
+      <node id="blind" label="blind">
+        <viz:size value="10.0"/>
+        <viz:position x="396.93738" y="-293.55957"/>
+      </node>
+      <node id="blitzend" label="blitzend">
+        <viz:size value="10.0"/>
+        <viz:position x="102.41521" y="464.0315"/>
+      </node>
+      <node id="denkbar" label="denkbar">
+        <viz:size value="10.0"/>
+        <viz:position x="329.8648" y="312.29614"/>
+      </node>
+      <node id="doppelt" label="doppelt">
+        <viz:size value="10.0"/>
+        <viz:position x="-408.27917" y="213.33226"/>
+      </node>
+      <node id="durchscheinend" label="durchscheinend">
+        <viz:size value="10.0"/>
+        <viz:position x="-131.66008" y="-423.96414"/>
+      </node>
+      <node id="ebenen" label="ebenen">
+        <viz:size value="10.0"/>
+        <viz:position x="-37.533886" y="521.5562"/>
+      </node>
+      <node id="eigen" label="eigen">
+        <viz:size value="10.0"/>
+        <viz:position x="-462.1726" y="-297.00287"/>
+      </node>
+      <node id="eiskalt" label="eiskalt">
+        <viz:size value="10.0"/>
+        <viz:position x="315.70544" y="-34.499588"/>
+      </node>
+      <node id="fest" label="fest">
+        <viz:size value="10.0"/>
+        <viz:position x="484.22412" y="247.10991"/>
+      </node>
+      <node id="gediegen" label="gediegen">
+        <viz:size value="10.0"/>
+        <viz:position x="-117.65907" y="-93.96391"/>
+      </node>
+      <node id="geduldig" label="geduldig">
+        <viz:size value="10.0"/>
+        <viz:position x="134.75536" y="-414.1518"/>
+      </node>
+      <node id="geheim" label="geheim">
+        <viz:size value="10.0"/>
+        <viz:position x="456.4641" y="-467.93576"/>
+      </node>
+      <node id="geronnen" label="geronnen">
+        <viz:size value="10.0"/>
+        <viz:position x="28.403917" y="202.57079"/>
+      </node>
+      <node id="gesamt" label="gesamt">
+        <viz:size value="10.0"/>
+        <viz:position x="521.07434" y="86.87627"/>
+      </node>
+      <node id="gewöhnlich" label="gewöhnlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-245.61913" y="-102.38008"/>
+      </node>
+      <node id="glatt" label="glatt">
+        <viz:size value="10.0"/>
+        <viz:position x="512.98096" y="19.869677"/>
+      </node>
+      <node id="hinderlich" label="hinderlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-38.44221" y="113.02196"/>
+      </node>
+      <node id="hinterlistig" label="hinterlistig">
+        <viz:size value="10.0"/>
+        <viz:position x="-161.26393" y="-364.3295"/>
+      </node>
+      <node id="hochentwickelt" label="hochentwickelt">
+        <viz:size value="10.0"/>
+        <viz:position x="-42.553875" y="400.3631"/>
+      </node>
+      <node id="leicht" label="leicht">
+        <viz:size value="10.0"/>
+        <viz:position x="449.73492" y="-76.93373"/>
+      </node>
+      <node id="metallisch" label="metallisch">
+        <viz:size value="10.0"/>
+        <viz:position x="502.22333" y="-312.61328"/>
+      </node>
+      <node id="metaphorisch" label="metaphorisch">
+        <viz:size value="10.0"/>
+        <viz:position x="12.157549" y="-362.24515"/>
+      </node>
+      <node id="niedrig" label="niedrig">
+        <viz:size value="10.0"/>
+        <viz:position x="21.468493" y="406.08777"/>
+      </node>
+      <node id="prächtig" label="prächtig">
+        <viz:size value="10.0"/>
+        <viz:position x="-33.783215" y="385.76526"/>
+      </node>
+      <node id="rußig" label="rußig">
+        <viz:size value="10.0"/>
+        <viz:position x="-389.315" y="-266.44446"/>
+      </node>
+      <node id="schief" label="schief">
+        <viz:size value="10.0"/>
+        <viz:position x="59.215687" y="408.50952"/>
+      </node>
+      <node id="schwärz" label="schwärz">
+        <viz:size value="10.0"/>
+        <viz:position x="-114.64772" y="166.5421"/>
+      </node>
+      <node id="streng" label="streng">
+        <viz:size value="10.0"/>
+        <viz:position x="258.20612" y="5.7744"/>
+      </node>
+      <node id="transparent" label="transparent">
+        <viz:size value="10.0"/>
+        <viz:position x="-57.83897" y="401.71118"/>
+      </node>
+      <node id="ungewöhnlich" label="ungewöhnlich">
+        <viz:size value="10.0"/>
+        <viz:position x="300.58014" y="49.565475"/>
+      </node>
+      <node id="untadelig" label="untadelig">
+        <viz:size value="10.0"/>
+        <viz:position x="440.2527" y="25.748186"/>
+      </node>
+      <node id="verschieden" label="verschieden">
+        <viz:size value="10.0"/>
+        <viz:position x="-475.285" y="-160.43437"/>
+      </node>
+      <node id="winkelig" label="winkelig">
+        <viz:size value="10.0"/>
+        <viz:position x="85.69597" y="-167.0114"/>
+      </node>
+      <node id="zählebig" label="zählebig">
+        <viz:size value="10.0"/>
+        <viz:position x="37.829945" y="-369.9275"/>
+      </node>
+      <node id="verdächtig" label="verdächtig">
+        <viz:size value="10.0"/>
+        <viz:position x="-391.9016" y="-317.05023"/>
+      </node>
+      <node id="Kryptogame" label="Kryptogame">
+        <viz:size value="10.0"/>
+        <viz:position x="-275.49524" y="518.6319"/>
+      </node>
+      <node id="Manganabsätzen" label="Manganabsätzen">
+        <viz:size value="10.0"/>
+        <viz:position x="-344.835" y="-313.87497"/>
+      </node>
+      <node id="moosig" label="moosig">
+        <viz:size value="10.0"/>
+        <viz:position x="76.84642" y="28.183672"/>
+      </node>
+      <node id="Mangandendrit" label="Mangandendrit">
+        <viz:size value="10.0"/>
+        <viz:position x="-100.820755" y="163.62926"/>
+      </node>
+      <node id="dunkel" label="dunkel">
+        <viz:size value="10.0"/>
+        <viz:position x="336.0813" y="-362.6104"/>
+      </node>
+      <node id="Manganits" label="Manganits">
+        <viz:size value="10.0"/>
+        <viz:position x="48.79662" y="264.75763"/>
+      </node>
+      <node id="fossilienführend" label="fossilienführend">
+        <viz:size value="10.0"/>
+        <viz:position x="-24.612196" y="-282.0855"/>
+      </node>
+      <node id="Marmor" label="Marmor">
+        <viz:size value="10.0"/>
+        <viz:position x="390.20508" y="346.2497"/>
+      </node>
+      <node id="Marmorfarbe" label="Marmorfarbe">
+        <viz:size value="10.0"/>
+        <viz:position x="125.075485" y="-177.21785"/>
+      </node>
+      <node id="undeutlich" label="undeutlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-56.38081" y="218.02397"/>
+      </node>
+      <node id="minderwertig" label="minderwertig">
+        <viz:size value="10.0"/>
+        <viz:position x="143.75243" y="36.530746"/>
+      </node>
+      <node id="Mergelkonkretion" label="Mergelkonkretion">
+        <viz:size value="10.0"/>
+        <viz:position x="314.24194" y="142.37804"/>
+      </node>
+      <node id="aggressiv" label="aggressiv">
+        <viz:size value="10.0"/>
+        <viz:position x="172.91594" y="145.74217"/>
+      </node>
+      <node id="Mineral" label="Mineral">
+        <viz:size value="10.0"/>
+        <viz:position x="-158.76183" y="37.12236"/>
+      </node>
+      <node id="äußer" label="äußer">
+        <viz:size value="10.0"/>
+        <viz:position x="177.43669" y="-282.37665"/>
+      </node>
+      <node id="bestimmt" label="bestimmt">
+        <viz:size value="10.0"/>
+        <viz:position x="-296.068" y="-322.15372"/>
+      </node>
+      <node id="beteiligt" label="beteiligt">
+        <viz:size value="10.0"/>
+        <viz:position x="-329.3014" y="-215.33272"/>
+      </node>
+      <node id="betroffen" label="betroffen">
+        <viz:size value="10.0"/>
+        <viz:position x="231.35051" y="-179.51259"/>
+      </node>
+      <node id="eingeschlossen" label="eingeschlossen">
+        <viz:size value="10.0"/>
+        <viz:position x="50.69353" y="-274.97543"/>
+      </node>
+      <node id="fremdartig" label="fremdartig">
+        <viz:size value="10.0"/>
+        <viz:position x="-220.59633" y="72.60588"/>
+      </node>
+      <node id="geradlinig" label="geradlinig">
+        <viz:size value="10.0"/>
+        <viz:position x="232.16075" y="101.06651"/>
+      </node>
+      <node id="gleichgültig" label="gleichgültig">
+        <viz:size value="10.0"/>
+        <viz:position x="189.40172" y="30.237902"/>
+      </node>
+      <node id="grenzenlos" label="grenzenlos">
+        <viz:size value="10.0"/>
+        <viz:position x="49.898487" y="-327.2765"/>
+      </node>
+      <node id="langsam" label="langsam">
+        <viz:size value="10.0"/>
+        <viz:position x="22.27733" y="-333.06708"/>
+      </node>
+      <node id="per" label="per">
+        <viz:size value="10.0"/>
+        <viz:position x="-270.3345" y="-462.46658"/>
+      </node>
+      <node id="rasch" label="rasch">
+        <viz:size value="10.0"/>
+        <viz:position x="474.79236" y="212.55284"/>
+      </node>
+      <node id="verflüssig" label="verflüssig">
+        <viz:size value="10.0"/>
+        <viz:position x="-424.37134" y="365.93604"/>
+      </node>
+      <node id="vollständig" label="vollständig">
+        <viz:size value="10.0"/>
+        <viz:position x="127.17418" y="-208.36073"/>
+      </node>
+      <node id="vorwiegend" label="vorwiegend">
+        <viz:size value="10.0"/>
+        <viz:position x="-92.897934" y="-1.797957"/>
+      </node>
+      <node id="zwingend" label="zwingend">
+        <viz:size value="10.0"/>
+        <viz:position x="446.04016" y="-95.36806"/>
+      </node>
+      <node id="fossil" label="fossil">
+        <viz:size value="10.0"/>
+        <viz:position x="192.36174" y="248.48564"/>
+      </node>
+      <node id="Moose" label="Moose">
+        <viz:size value="10.0"/>
+        <viz:position x="272.13312" y="429.94635"/>
+      </node>
+      <node id="trocken" label="trocken">
+        <viz:size value="10.0"/>
+        <viz:position x="273.6098" y="-378.15796"/>
+      </node>
+      <node id="worden" label="worden">
+        <viz:size value="10.0"/>
+        <viz:position x="359.30396" y="200.89684"/>
+      </node>
+      <node id="Obsidiankling" label="Obsidiankling">
+        <viz:size value="10.0"/>
+        <viz:position x="-445.29938" y="-208.34789"/>
+      </node>
+      <node id="Onyx" label="Onyx">
+        <viz:size value="10.0"/>
+        <viz:position x="399.34326" y="368.67767"/>
+      </node>
+      <node id="wenig" label="wenig">
+        <viz:size value="10.0"/>
+        <viz:position x="32.030262" y="107.74919"/>
+      </node>
+      <node id="Opal" label="Opal">
+        <viz:size value="10.0"/>
+        <viz:position x="-133.32436" y="-298.91077"/>
+      </node>
+      <node id="Orthoklas" label="Orthoklas">
+        <viz:size value="10.0"/>
+        <viz:position x="89.0302" y="109.64293"/>
+      </node>
+      <node id="abscheulich" label="abscheulich">
+        <viz:size value="10.0"/>
+        <viz:position x="447.597" y="-313.57306"/>
+      </node>
+      <node id="Pyramide" label="Pyramide">
+        <viz:size value="10.0"/>
+        <viz:position x="45.995106" y="4.5876937"/>
+      </node>
+      <node id="alt" label="alt">
+        <viz:size value="10.0"/>
+        <viz:position x="-219.35362" y="-187.07768"/>
+      </node>
+      <node id="herrlich" label="herrlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-440.48724" y="336.8451"/>
+      </node>
+      <node id="liegend" label="liegend">
+        <viz:size value="10.0"/>
+        <viz:position x="-272.1291" y="-323.64316"/>
+      </node>
+      <node id="fünfeckig" label="fünfeckig">
+        <viz:size value="10.0"/>
+        <viz:position x="99.55534" y="-377.65994"/>
+      </node>
+      <node id="Pyrit" label="Pyrit">
+        <viz:size value="10.0"/>
+        <viz:position x="421.15356" y="-368.05835"/>
+      </node>
+      <node id="gleich" label="gleich">
+        <viz:size value="10.0"/>
+        <viz:position x="-102.67241" y="-447.98703"/>
+      </node>
+      <node id="Pyrite" label="Pyrite">
+        <viz:size value="10.0"/>
+        <viz:position x="-116.55974" y="-448.714"/>
+      </node>
+      <node id="Quarz" label="Quarz">
+        <viz:size value="10.0"/>
+        <viz:position x="-46.741497" y="477.52167"/>
+      </node>
+      <node id="braun" label="braun">
+        <viz:size value="10.0"/>
+        <viz:position x="111.61449" y="-128.74825"/>
+      </node>
+      <node id="kalt" label="kalt">
+        <viz:size value="10.0"/>
+        <viz:position x="-77.938126" y="284.5479"/>
+      </node>
+      <node id="offenkundig" label="offenkundig">
+        <viz:size value="10.0"/>
+        <viz:position x="125.93346" y="528.71924"/>
+      </node>
+      <node id="schlickförmig" label="schlickförmig">
+        <viz:size value="10.0"/>
+        <viz:position x="-49.420788" y="431.81525"/>
+      </node>
+      <node id="spitzig" label="spitzig">
+        <viz:size value="10.0"/>
+        <viz:position x="-359.64703" y="-436.23523"/>
+      </node>
+      <node id="unnachgiebig" label="unnachgiebig">
+        <viz:size value="10.0"/>
+        <viz:position x="-165.84154" y="-111.97319"/>
+      </node>
+      <node id="vereinbart" label="vereinbart">
+        <viz:size value="10.0"/>
+        <viz:position x="-311.2676" y="143.47856"/>
+      </node>
+      <node id="verloren" label="verloren">
+        <viz:size value="10.0"/>
+        <viz:position x="178.61089" y="-65.7177"/>
+      </node>
+      <node id="zerstäubt" label="zerstäubt">
+        <viz:size value="10.0"/>
+        <viz:position x="-246.17464" y="509.62708"/>
+      </node>
+      <node id="zugleich" label="zugleich">
+        <viz:size value="10.0"/>
+        <viz:position x="-392.67282" y="316.13574"/>
+      </node>
+      <node id="kurz" label="kurz">
+        <viz:size value="10.0"/>
+        <viz:position x="-310.87415" y="-114.41005"/>
+      </node>
+      <node id="Quarzleist" label="Quarzleist">
+        <viz:size value="10.0"/>
+        <viz:position x="436.92334" y="27.30736"/>
+      </node>
+      <node id="Quarznadeln" label="Quarznadeln">
+        <viz:size value="10.0"/>
+        <viz:position x="-1.9474007" y="-308.51932"/>
+      </node>
+      <node id="abtrünnig" label="abtrünnig">
+        <viz:size value="10.0"/>
+        <viz:position x="-340.17444" y="86.16356"/>
+      </node>
+      <node id="Salz" label="Salz">
+        <viz:size value="10.0"/>
+        <viz:position x="-159.37895" y="511.083"/>
+      </node>
+      <node id="mineralisch" label="mineralisch">
+        <viz:size value="10.0"/>
+        <viz:position x="518.4931" y="26.431292"/>
+      </node>
+      <node id="zuweilen" label="zuweilen">
+        <viz:size value="10.0"/>
+        <viz:position x="474.66296" y="130.21526"/>
+      </node>
+      <node id="Salze" label="Salze">
+        <viz:size value="10.0"/>
+        <viz:position x="433.51575" y="465.21423"/>
+      </node>
+      <node id="beharrlich" label="beharrlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-293.1796" y="-376.64075"/>
+      </node>
+      <node id="fluider" label="fluider">
+        <viz:size value="10.0"/>
+        <viz:position x="-443.3866" y="34.23033"/>
+      </node>
+      <node id="ungleichmäßig" label="ungleichmäßig">
+        <viz:size value="10.0"/>
+        <viz:position x="327.95404" y="-96.13304"/>
+      </node>
+      <node id="Silber" label="Silber">
+        <viz:size value="10.0"/>
+        <viz:position x="-240.39679" y="164.29137"/>
+      </node>
+      <node id="Siliziumoxid" label="Siliziumoxid">
+        <viz:size value="10.0"/>
+        <viz:position x="438.2693" y="372.78613"/>
+      </node>
+      <node id="Specularit" label="Specularit">
+        <viz:size value="10.0"/>
+        <viz:position x="441.68854" y="-301.60364"/>
+      </node>
+      <node id="bildnerisch" label="bildnerisch">
+        <viz:size value="10.0"/>
+        <viz:position x="29.378527" y="302.3208"/>
+      </node>
+      <node id="Stein" label="Stein">
+        <viz:size value="10.0"/>
+        <viz:position x="139.9641" y="75.4135"/>
+      </node>
+      <node id="abgrenzen" label="abgrenzen">
+        <viz:size value="10.0"/>
+        <viz:position x="183.68163" y="372.17126"/>
+      </node>
+      <node id="angeblich" label="angeblich">
+        <viz:size value="10.0"/>
+        <viz:position x="-438.17978" y="-125.82466"/>
+      </node>
+      <node id="anonym" label="anonym">
+        <viz:size value="10.0"/>
+        <viz:position x="-224.13954" y="340.47205"/>
+      </node>
+      <node id="anrührend" label="anrührend">
+        <viz:size value="10.0"/>
+        <viz:position x="322.96716" y="-163.08519"/>
+      </node>
+      <node id="arabisch" label="arabisch">
+        <viz:size value="10.0"/>
+        <viz:position x="-383.0515" y="175.77556"/>
+      </node>
+      <node id="aufgeschnitten" label="aufgeschnitten">
+        <viz:size value="10.0"/>
+        <viz:position x="371.09186" y="101.31999"/>
+      </node>
+      <node id="aufgestellt" label="aufgestellt">
+        <viz:size value="10.0"/>
+        <viz:position x="-431.65164" y="102.50395"/>
+      </node>
+      <node id="aufmerksam" label="aufmerksam">
+        <viz:size value="10.0"/>
+        <viz:position x="-197.30379" y="262.08856"/>
+      </node>
+      <node id="austauschbar" label="austauschbar">
+        <viz:size value="10.0"/>
+        <viz:position x="271.33734" y="-80.48097"/>
+      </node>
+      <node id="bekräftigen" label="bekräftigen">
+        <viz:size value="10.0"/>
+        <viz:position x="-460.54373" y="55.71263"/>
+      </node>
+      <node id="beständig" label="beständig">
+        <viz:size value="10.0"/>
+        <viz:position x="-212.9883" y="-360.0633"/>
+      </node>
+      <node id="bitter" label="bitter">
+        <viz:size value="10.0"/>
+        <viz:position x="120.48045" y="-83.67146"/>
+      </node>
+      <node id="bleich" label="bleich">
+        <viz:size value="10.0"/>
+        <viz:position x="-377.7127" y="-29.962355"/>
+      </node>
+      <node id="bruchstückhaft" label="bruchstückhaft">
+        <viz:size value="10.0"/>
+        <viz:position x="-311.8658" y="385.81482"/>
+      </node>
+      <node id="bunt" label="bunt">
+        <viz:size value="10.0"/>
+        <viz:position x="329.48645" y="396.10535"/>
+      </node>
+      <node id="deutlich" label="deutlich">
+        <viz:size value="10.0"/>
+        <viz:position x="97.637314" y="377.92603"/>
+      </node>
+      <node id="dichtgedrängt" label="dichtgedrängt">
+        <viz:size value="10.0"/>
+        <viz:position x="110.20628" y="-319.75427"/>
+      </node>
+      <node id="dritt" label="dritt">
+        <viz:size value="10.0"/>
+        <viz:position x="-35.570995" y="-405.90012"/>
+      </node>
+      <node id="durchgängig" label="durchgängig">
+        <viz:size value="10.0"/>
+        <viz:position x="-371.42392" y="379.72174"/>
+      </node>
+      <node id="durchsichtig" label="durchsichtig">
+        <viz:size value="10.0"/>
+        <viz:position x="378.3357" y="-32.323013"/>
+      </node>
+      <node id="einziges" label="einziges">
+        <viz:size value="10.0"/>
+        <viz:position x="-455.32236" y="-400.9383"/>
+      </node>
+      <node id="entgegengesetzt" label="entgegengesetzt">
+        <viz:size value="10.0"/>
+        <viz:position x="-40.135662" y="-126.37532"/>
+      </node>
+      <node id="erst" label="erst">
+        <viz:size value="10.0"/>
+        <viz:position x="115.81456" y="-439.82288"/>
+      </node>
+      <node id="folgend" label="folgend">
+        <viz:size value="10.0"/>
+        <viz:position x="-88.51546" y="-17.54283"/>
+      </node>
+      <node id="fühllos" label="fühllos">
+        <viz:size value="10.0"/>
+        <viz:position x="-418.51862" y="-267.04797"/>
+      </node>
+      <node id="ganz" label="ganz">
+        <viz:size value="10.0"/>
+        <viz:position x="-274.4495" y="59.896652"/>
+      </node>
+      <node id="gefestigt" label="gefestigt">
+        <viz:size value="10.0"/>
+        <viz:position x="-52.702374" y="207.24223"/>
+      </node>
+      <node id="gefunden" label="gefunden">
+        <viz:size value="10.0"/>
+        <viz:position x="250.5537" y="-282.07953"/>
+      </node>
+      <node id="hell" label="hell">
+        <viz:size value="10.0"/>
+        <viz:position x="213.83623" y="-293.04932"/>
+      </node>
+      <node id="konzentrisch" label="konzentrisch">
+        <viz:size value="10.0"/>
+        <viz:position x="-111.313675" y="108.19255"/>
+      </node>
+      <node id="märchenhaftes" label="märchenhaftes">
+        <viz:size value="10.0"/>
+        <viz:position x="58.187794" y="147.81981"/>
+      </node>
+      <node id="mühelos" label="mühelos">
+        <viz:size value="10.0"/>
+        <viz:position x="-199.76656" y="-184.523"/>
+      </node>
+      <node id="niederlegt" label="niederlegt">
+        <viz:size value="10.0"/>
+        <viz:position x="469.2699" y="-77.19017"/>
+      </node>
+      <node id="persönlich" label="persönlich">
+        <viz:size value="10.0"/>
+        <viz:position x="124.102646" y="-243.51485"/>
+      </node>
+      <node id="phantastisch" label="phantastisch">
+        <viz:size value="10.0"/>
+        <viz:position x="-137.69948" y="162.40758"/>
+      </node>
+      <node id="rein" label="rein">
+        <viz:size value="10.0"/>
+        <viz:position x="388.838" y="-281.2925"/>
+      </node>
+      <node id="schmählich" label="schmählich">
+        <viz:size value="10.0"/>
+        <viz:position x="-246.47755" y="61.938095"/>
+      </node>
+      <node id="schwankend" label="schwankend">
+        <viz:size value="10.0"/>
+        <viz:position x="484.75323" y="284.13422"/>
+      </node>
+      <node id="schwermütig" label="schwermütig">
+        <viz:size value="10.0"/>
+        <viz:position x="163.17674" y="-6.0740495"/>
+      </node>
+      <node id="sichtbar" label="sichtbar">
+        <viz:size value="10.0"/>
+        <viz:position x="-204.6392" y="274.3697"/>
+      </node>
+      <node id="starren" label="starren">
+        <viz:size value="10.0"/>
+        <viz:position x="-467.11035" y="-469.2175"/>
+      </node>
+      <node id="stumm" label="stumm">
+        <viz:size value="10.0"/>
+        <viz:position x="345.0597" y="526.4974"/>
+      </node>
+      <node id="sungen" label="sungen">
+        <viz:size value="10.0"/>
+        <viz:position x="93.048935" y="-308.43164"/>
+      </node>
+      <node id="tintespeiend" label="tintespeiend">
+        <viz:size value="10.0"/>
+        <viz:position x="110.08592" y="-236.84666"/>
+      </node>
+      <node id="tot" label="tot">
+        <viz:size value="10.0"/>
+        <viz:position x="296.4129" y="-303.68906"/>
+      </node>
+      <node id="überarbeitet" label="überarbeitet">
+        <viz:size value="10.0"/>
+        <viz:position x="-38.98286" y="-444.38153"/>
+      </node>
+      <node id="unbewegt" label="unbewegt">
+        <viz:size value="10.0"/>
+        <viz:position x="146.10588" y="262.3296"/>
+      </node>
+      <node id="unempfindlich" label="unempfindlich">
+        <viz:size value="10.0"/>
+        <viz:position x="57.663746" y="-104.659744"/>
+      </node>
+      <node id="unerschütterlich" label="unerschütterlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-10.678846" y="9.250596"/>
+      </node>
+      <node id="unterschiedlich" label="unterschiedlich">
+        <viz:size value="10.0"/>
+        <viz:position x="-99.034195" y="-312.85196"/>
+      </node>
+      <node id="ursprünglich" label="ursprünglich">
+        <viz:size value="10.0"/>
+        <viz:position x="-377.5363" y="-147.13136"/>
+      </node>
+      <node id="verschachtelt" label="verschachtelt">
+        <viz:size value="10.0"/>
+        <viz:position x="-338.4442" y="-443.47513"/>
+      </node>
+      <node id="verurteiln" label="verurteiln">
+        <viz:size value="10.0"/>
+        <viz:position x="359.13177" y="362.7392"/>
+      </node>
+      <node id="verwandelnd" label="verwandelnd">
+        <viz:size value="10.0"/>
+        <viz:position x="-149.06438" y="-276.34653"/>
+      </node>
+      <node id="wahrscheinlich" label="wahrscheinlich">
+        <viz:size value="10.0"/>
+        <viz:position x="49.248035" y="-65.63771"/>
+      </node>
+      <node id="weiß" label="weiß">
+        <viz:size value="10.0"/>
+        <viz:position x="-121.244675" y="338.55267"/>
+      </node>
+      <node id="wundersam" label="wundersam">
+        <viz:size value="10.0"/>
+        <viz:position x="-94.18361" y="284.04486"/>
+      </node>
+      <node id="zerklüftet" label="zerklüftet">
+        <viz:size value="10.0"/>
+        <viz:position x="-451.5301" y="-405.52563"/>
+      </node>
+      <node id="zerrieben" label="zerrieben">
+        <viz:size value="10.0"/>
+        <viz:position x="395.1949" y="213.00548"/>
+      </node>
+      <node id="Stufenpyramide" label="Stufenpyramide">
+        <viz:size value="10.0"/>
+        <viz:position x="83.69054" y="140.83159"/>
+      </node>
+      <node id="überhängend" label="überhängend">
+        <viz:size value="10.0"/>
+        <viz:position x="377.43768" y="-192.9886"/>
+      </node>
+      <node id="gleichuchl" label="gleichuchl">
+        <viz:size value="10.0"/>
+        <viz:position x="-151.16591" y="-197.72054"/>
+      </node>
+      <node id="Sykomor" label="Sykomor">
+        <viz:size value="10.0"/>
+        <viz:position x="145.17522" y="238.81529"/>
+      </node>
+      <node id="ausgelaugt" label="ausgelaugt">
+        <viz:size value="10.0"/>
+        <viz:position x="-469.7843" y="377.17377"/>
+      </node>
+      <node id="nah" label="nah">
+        <viz:size value="10.0"/>
+        <viz:position x="2.663775" y="122.88463"/>
+      </node>
+      <node id="locker" label="locker">
+        <viz:size value="10.0"/>
+        <viz:position x="177.51622" y="336.48175"/>
+      </node>
+      <node id="Talk" label="Talk">
+        <viz:size value="10.0"/>
+        <viz:position x="-448.94922" y="-64.606064"/>
+      </node>
+      <node id="Topas" label="Topas">
+        <viz:size value="10.0"/>
+        <viz:position x="170.59721" y="-426.67712"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="858" source="allgemein" target="Achat"/>
+      <edge id="859" source="ander" target="Achat"/>
+      <edge id="860" source="berühmt" target="Achat"/>
+      <edge id="861" source="beschrieben" target="Achat" weight="2.0"/>
+      <edge id="863" source="blau" target="Achat" weight="2.0"/>
+      <edge id="865" source="gedrungen" target="Achat"/>
+      <edge id="866" source="gerunden" target="Achat"/>
+      <edge id="867" source="jeweilig" target="Achat"/>
+      <edge id="868" source="klein" target="Achat"/>
+      <edge id="869" source="menschlich" target="Achat"/>
+      <edge id="870" source="mexikanisch" target="Achat"/>
+      <edge id="871" source="pur" target="Achat"/>
+      <edge id="872" source="schwarzweiß" target="Achat"/>
+      <edge id="873" source="selten" target="Achat"/>
+      <edge id="874" source="unbestreitbar" target="Achat"/>
+      <edge id="875" source="urinfarben" target="Achat"/>
+      <edge id="876" source="wahrnehmhar" target="Achat"/>
+      <edge id="877" source="winzig" target="Achat"/>
+      <edge id="878" source="aufeinanderfolgend" target="Ammonit"/>
+      <edge id="879" source="groß" target="Ammonit" weight="2.0"/>
+      <edge id="881" source="lins" target="Ammonit"/>
+      <edge id="882" source="erkennbar" target="Baryt"/>
+      <edge id="883" source="brüderlich" target="Baustein"/>
+      <edge id="884" source="kontrastierend" target="Baustein"/>
+      <edge id="885" source="regellos" target="Baustein"/>
+      <edge id="886" source="versetzt" target="Baustein"/>
+      <edge id="887" source="lang" target="Bilderstein"/>
+      <edge id="888" source="zerfetzt" target="Chlorit"/>
+      <edge id="889" source="ahnlich" target="Dendrit"/>
+      <edge id="890" source="buschig" target="Dendrit"/>
+      <edge id="891" source="erwähnt" target="Dendrit"/>
+      <edge id="892" source="hart" target="Diamant"/>
+      <edge id="893" source="mikroskopisch" target="Diatomee"/>
+      <edge id="894" source="begehrt" target="Edelstein"/>
+      <edge id="895" source="genau" target="Edelstein"/>
+      <edge id="896" source="kleiden" target="Edelstein"/>
+      <edge id="897" source="werdend" target="Edelstein"/>
+      <edge id="898" source="unschmelzbar" target="Eis"/>
+      <edge id="899" source="blutrot" target="Eisenglanz"/>
+      <edge id="900" source="speziell" target="Eisenglanz"/>
+      <edge id="901" source="schnell" target="Ergußgestein"/>
+      <edge id="902" source="vulkanisch" target="Ergußgestein"/>
+      <edge id="903" source="amorphen" target="Felsgestein"/>
+      <edge id="904" source="bekannt" target="Felsgestein"/>
+      <edge id="905" source="offen" target="Felsgestein"/>
+      <edge id="906" source="unwandelbar" target="Felsgestein"/>
+      <edge id="907" source="geologisch" target="Gestein"/>
+      <edge id="908" source="kieselsäurearm" target="Gestein"/>
+      <edge id="909" source="zulaufend" target="Gesteinsart"/>
+      <edge id="910" source="rot" target="Glimmer"/>
+      <edge id="911" source="schwarz" target="Glimmer"/>
+      <edge id="912" source="grundlegend" target="Hämatitkristall"/>
+      <edge id="913" source="völlig" target="Hämatitkristall"/>
+      <edge id="914" source="tiefbetrübt" target="Herz"/>
+      <edge id="915" source="unbeweglich" target="Herz"/>
+      <edge id="916" source="bekennen" target="Jaspis"/>
+      <edge id="917" source="zufällig" target="Jaspis"/>
+      <edge id="918" source="schwimmend" target="Kalkstein"/>
+      <edge id="919" source="toskanisch" target="Kalkstein"/>
+      <edge id="920" source="vorgestellt" target="Kalkstein"/>
+      <edge id="921" source="dünn" target="Kalzit"/>
+      <edge id="922" source="groß" target="Kalzit"/>
+      <edge id="923" source="mineralogisch" target="Kalzit"/>
+      <edge id="924" source="schwach" target="Kalzit"/>
+      <edge id="925" source="gebildet" target="Kalzitgarbe"/>
+      <edge id="926" source="mineralisiert" target="Kalzitgarbe"/>
+      <edge id="927" source="beunruhigend" target="Kalzits"/>
+      <edge id="928" source="skalenoedrisch" target="Kalzits"/>
+      <edge id="929" source="zwillingsförmig" target="Kalzits"/>
+      <edge id="930" source="lebendig" target="Kieselgestein"/>
+      <edge id="931" source="undurchdringlich" target="Kieselgestein"/>
+      <edge id="932" source="unvergänglich" target="Kieselgestein"/>
+      <edge id="933" source="bedroht" target="Kieselsäure"/>
+      <edge id="934" source="schwimmend" target="Kieselsäure"/>
+      <edge id="935" source="absolut" target="Kristall"/>
+      <edge id="936" source="abstrakt" target="Kristall"/>
+      <edge id="937" source="anomal" target="Kristall"/>
+      <edge id="938" source="ausgekleidet" target="Kristall"/>
+      <edge id="939" source="äußerlich" target="Kristall"/>
+      <edge id="940" source="bedauernswert" target="Kristall"/>
+      <edge id="941" source="blasser" target="Kristall"/>
+      <edge id="942" source="blind" target="Kristall"/>
+      <edge id="943" source="blitzend" target="Kristall"/>
+      <edge id="944" source="denkbar" target="Kristall"/>
+      <edge id="945" source="doppelt" target="Kristall"/>
+      <edge id="946" source="durchscheinend" target="Kristall"/>
+      <edge id="947" source="ebenen" target="Kristall"/>
+      <edge id="948" source="eigen" target="Kristall"/>
+      <edge id="949" source="eiskalt" target="Kristall"/>
+      <edge id="950" source="fest" target="Kristall"/>
+      <edge id="951" source="gediegen" target="Kristall"/>
+      <edge id="952" source="geduldig" target="Kristall"/>
+      <edge id="953" source="geheim" target="Kristall"/>
+      <edge id="954" source="geronnen" target="Kristall"/>
+      <edge id="955" source="gerunden" target="Kristall"/>
+      <edge id="956" source="gesamt" target="Kristall"/>
+      <edge id="957" source="gewöhnlich" target="Kristall" weight="2.0"/>
+      <edge id="959" source="glatt" target="Kristall"/>
+      <edge id="960" source="groß" target="Kristall"/>
+      <edge id="961" source="hart" target="Kristall"/>
+      <edge id="962" source="hinderlich" target="Kristall"/>
+      <edge id="963" source="hinterlistig" target="Kristall"/>
+      <edge id="964" source="hochentwickelt" target="Kristall"/>
+      <edge id="965" source="klein" target="Kristall"/>
+      <edge id="966" source="leicht" target="Kristall"/>
+      <edge id="967" source="metallisch" target="Kristall"/>
+      <edge id="968" source="metaphorisch" target="Kristall"/>
+      <edge id="969" source="niedrig" target="Kristall"/>
+      <edge id="970" source="prächtig" target="Kristall" weight="2.0"/>
+      <edge id="972" source="rußig" target="Kristall"/>
+      <edge id="973" source="schief" target="Kristall"/>
+      <edge id="974" source="schwärz" target="Kristall"/>
+      <edge id="975" source="streng" target="Kristall"/>
+      <edge id="976" source="transparent" target="Kristall"/>
+      <edge id="977" source="undurchdringlich" target="Kristall"/>
+      <edge id="978" source="ungewöhnlich" target="Kristall"/>
+      <edge id="979" source="untadelig" target="Kristall"/>
+      <edge id="980" source="verschieden" target="Kristall"/>
+      <edge id="981" source="winkelig" target="Kristall"/>
+      <edge id="982" source="winzig" target="Kristall"/>
+      <edge id="983" source="zählebig" target="Kristall"/>
+      <edge id="984" source="verdächtig" target="Kryptogame"/>
+      <edge id="985" source="erwähnt" target="Manganabsätzen"/>
+      <edge id="986" source="moosig" target="Mangandendrit"/>
+      <edge id="987" source="undurchdringlich" target="Mangandendrit"/>
+      <edge id="988" source="dunkel" target="Manganits"/>
+      <edge id="989" source="fossilienführend" target="Marmor"/>
+      <edge id="990" source="blasser" target="Marmorfarbe"/>
+      <edge id="991" source="undeutlich" target="Marmorfarbe"/>
+      <edge id="992" source="minderwertig" target="Mergelkonkretion"/>
+      <edge id="993" source="aggressiv" target="Mineral"/>
+      <edge id="994" source="ander" target="Mineral"/>
+      <edge id="995" source="äußer" target="Mineral"/>
+      <edge id="996" source="bestimmt" target="Mineral"/>
+      <edge id="997" source="beteiligt" target="Mineral"/>
+      <edge id="998" source="betroffen" target="Mineral"/>
+      <edge id="999" source="eingeschlossen" target="Mineral"/>
+      <edge id="1000" source="fremdartig" target="Mineral"/>
+      <edge id="1001" source="geradlinig" target="Mineral"/>
+      <edge id="1002" source="gewöhnlich" target="Mineral"/>
+      <edge id="1003" source="gleichgültig" target="Mineral"/>
+      <edge id="1004" source="grenzenlos" target="Mineral"/>
+      <edge id="1005" source="langsam" target="Mineral"/>
+      <edge id="1006" source="leicht" target="Mineral"/>
+      <edge id="1007" source="per" target="Mineral"/>
+      <edge id="1008" source="rasch" target="Mineral"/>
+      <edge id="1009" source="speziell" target="Mineral"/>
+      <edge id="1010" source="verflüssig" target="Mineral"/>
+      <edge id="1011" source="vollständig" target="Mineral"/>
+      <edge id="1012" source="vorwiegend" target="Mineral"/>
+      <edge id="1013" source="zwingend" target="Mineral"/>
+      <edge id="1014" source="fossil" target="Moose"/>
+      <edge id="1015" source="trocken" target="Moose"/>
+      <edge id="1016" source="worden" target="Obsidiankling"/>
+      <edge id="1017" source="kieselsäurearm" target="Onyx"/>
+      <edge id="1018" source="schwarzweiß" target="Onyx"/>
+      <edge id="1019" source="wenig" target="Onyx"/>
+      <edge id="1020" source="lebendig" target="Opal"/>
+      <edge id="1021" source="winzig" target="Orthoklas"/>
+      <edge id="1022" source="abscheulich" target="Pyramide"/>
+      <edge id="1023" source="alt" target="Pyramide"/>
+      <edge id="1024" source="gewöhnlich" target="Pyramide"/>
+      <edge id="1025" source="herrlich" target="Pyramide"/>
+      <edge id="1026" source="liegend" target="Pyramide"/>
+      <edge id="1027" source="fünfeckig" target="Pyrit"/>
+      <edge id="1028" source="gleich" target="Pyrite"/>
+      <edge id="1029" source="selten" target="Pyrite"/>
+      <edge id="1030" source="absolut" target="Quarz"/>
+      <edge id="1031" source="beteiligt" target="Quarz"/>
+      <edge id="1032" source="braun" target="Quarz"/>
+      <edge id="1033" source="kalt" target="Quarz"/>
+      <edge id="1034" source="offenkundig" target="Quarz"/>
+      <edge id="1035" source="schlickförmig" target="Quarz"/>
+      <edge id="1036" source="schwarz" target="Quarz"/>
+      <edge id="1037" source="spitzig" target="Quarz"/>
+      <edge id="1038" source="undurchdringlich" target="Quarz"/>
+      <edge id="1039" source="unnachgiebig" target="Quarz"/>
+      <edge id="1040" source="vereinbart" target="Quarz"/>
+      <edge id="1041" source="verloren" target="Quarz"/>
+      <edge id="1042" source="winzig" target="Quarz"/>
+      <edge id="1043" source="zerstäubt" target="Quarz"/>
+      <edge id="1044" source="zugleich" target="Quarz"/>
+      <edge id="1045" source="kurz" target="Quarzleist"/>
+      <edge id="1046" source="groß" target="Quarznadeln"/>
+      <edge id="1047" source="abtrünnig" target="Salz"/>
+      <edge id="1048" source="liegend" target="Salz"/>
+      <edge id="1049" source="mineralisch" target="Salz"/>
+      <edge id="1050" source="prächtig" target="Salz"/>
+      <edge id="1051" source="zuweilen" target="Salz"/>
+      <edge id="1052" source="ander" target="Salze"/>
+      <edge id="1053" source="beharrlich" target="Salze"/>
+      <edge id="1054" source="fluider" target="Salze"/>
+      <edge id="1055" source="metallisch" target="Salze"/>
+      <edge id="1056" source="ungleichmäßig" target="Salze"/>
+      <edge id="1057" source="schnell" target="Silber"/>
+      <edge id="1058" source="groß" target="Siliziumoxid"/>
+      <edge id="1059" source="blutrot" target="Specularit"/>
+      <edge id="1060" source="bildnerisch" target="Stein"/>
+      <edge id="1061" source="abgrenzen" target="Stein"/>
+      <edge id="1062" source="ander" target="Stein"/>
+      <edge id="1063" source="angeblich" target="Stein"/>
+      <edge id="1064" source="anonym" target="Stein"/>
+      <edge id="1065" source="anrührend" target="Stein"/>
+      <edge id="1066" source="arabisch" target="Stein"/>
+      <edge id="1067" source="aufgeschnitten" target="Stein"/>
+      <edge id="1068" source="aufgestellt" target="Stein"/>
+      <edge id="1069" source="aufmerksam" target="Stein"/>
+      <edge id="1070" source="äußer" target="Stein"/>
+      <edge id="1071" source="austauschbar" target="Stein"/>
+      <edge id="1072" source="bedauernswert" target="Stein"/>
+      <edge id="1073" source="bekennen" target="Stein"/>
+      <edge id="1074" source="bekräftigen" target="Stein"/>
+      <edge id="1075" source="beständig" target="Stein"/>
+      <edge id="1076" source="bitter" target="Stein"/>
+      <edge id="1077" source="bleich" target="Stein"/>
+      <edge id="1078" source="bruchstückhaft" target="Stein"/>
+      <edge id="1079" source="bunt" target="Stein"/>
+      <edge id="1080" source="deutlich" target="Stein"/>
+      <edge id="1081" source="dichtgedrängt" target="Stein"/>
+      <edge id="1082" source="dritt" target="Stein"/>
+      <edge id="1083" source="dunkel" target="Stein"/>
+      <edge id="1084" source="durchgängig" target="Stein"/>
+      <edge id="1085" source="durchsichtig" target="Stein" weight="2.0"/>
+      <edge id="1087" source="einziges" target="Stein"/>
+      <edge id="1088" source="entgegengesetzt" target="Stein"/>
+      <edge id="1089" source="erst" target="Stein"/>
+      <edge id="1090" source="fest" target="Stein"/>
+      <edge id="1091" source="folgend" target="Stein"/>
+      <edge id="1092" source="fühllos" target="Stein"/>
+      <edge id="1093" source="ganz" target="Stein"/>
+      <edge id="1094" source="gefestigt" target="Stein"/>
+      <edge id="1095" source="gefunden" target="Stein"/>
+      <edge id="1096" source="hell" target="Stein"/>
+      <edge id="1097" source="herrlich" target="Stein"/>
+      <edge id="1098" source="konzentrisch" target="Stein"/>
+      <edge id="1099" source="märchenhaftes" target="Stein"/>
+      <edge id="1100" source="mineralogisch" target="Stein"/>
+      <edge id="1101" source="mühelos" target="Stein"/>
+      <edge id="1102" source="niederlegt" target="Stein"/>
+      <edge id="1103" source="offenkundig" target="Stein"/>
+      <edge id="1104" source="persönlich" target="Stein"/>
+      <edge id="1105" source="phantastisch" target="Stein" weight="2.0"/>
+      <edge id="1107" source="rein" target="Stein"/>
+      <edge id="1108" source="schmählich" target="Stein"/>
+      <edge id="1109" source="schwankend" target="Stein"/>
+      <edge id="1110" source="schwarz" target="Stein"/>
+      <edge id="1111" source="schwermütig" target="Stein"/>
+      <edge id="1112" source="sichtbar" target="Stein"/>
+      <edge id="1113" source="starren" target="Stein"/>
+      <edge id="1114" source="stumm" target="Stein"/>
+      <edge id="1115" source="sungen" target="Stein"/>
+      <edge id="1116" source="tintespeiend" target="Stein"/>
+      <edge id="1117" source="tot" target="Stein"/>
+      <edge id="1118" source="überarbeitet" target="Stein"/>
+      <edge id="1119" source="unbewegt" target="Stein"/>
+      <edge id="1120" source="unempfindlich" target="Stein"/>
+      <edge id="1121" source="unerschütterlich" target="Stein"/>
+      <edge id="1122" source="ungleichmäßig" target="Stein"/>
+      <edge id="1123" source="unterschiedlich" target="Stein"/>
+      <edge id="1124" source="ursprünglich" target="Stein"/>
+      <edge id="1125" source="verschachtelt" target="Stein"/>
+      <edge id="1126" source="verurteiln" target="Stein"/>
+      <edge id="1127" source="verwandelnd" target="Stein"/>
+      <edge id="1128" source="wahrscheinlich" target="Stein"/>
+      <edge id="1129" source="weiß" target="Stein" weight="2.0"/>
+      <edge id="1131" source="werdend" target="Stein"/>
+      <edge id="1132" source="winzig" target="Stein"/>
+      <edge id="1133" source="wundersam" target="Stein"/>
+      <edge id="1134" source="zerklüftet" target="Stein"/>
+      <edge id="1135" source="zerrieben" target="Stein"/>
+      <edge id="1136" source="alt" target="Stufenpyramide"/>
+      <edge id="1137" source="überhängend" target="Stufenpyramide"/>
+      <edge id="1138" source="völlig" target="Stufenpyramide"/>
+      <edge id="1139" source="gleichuchl" target="Sykomor"/>
+      <edge id="1140" source="ausgelaugt" target="Sykomor"/>
+      <edge id="1141" source="nah" target="Sykomor"/>
+      <edge id="1142" source="locker" target="Talk"/>
+      <edge id="1143" source="skalenoedrisch" target="Topas"/>
+    </edges>
+  </graph>
+</gexf>
