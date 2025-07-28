@@ -31,6 +31,7 @@ doc1<-lapply(doc.a,function(x){
   
 })
 htm<-doc1[[1]]
+htm
 t1<-doc1[[1]]
 tdb2o<-tdb1o
 tdb2o$url_t<-NA
@@ -70,6 +71,7 @@ doc1<-lapply(doc.a,function(x){
 })
 htm<-doc1[[1]]
 t1<-doc1[[1]]
+t1
 tdb2r<-tdb1r
 tdb2r$url_t<-NA
 tdb2r$author<-NA
@@ -87,7 +89,8 @@ for(k in 1:length(doc1)){
   
 }
 tdb1r<-tdb2r[!m1,]
-# library(gtools)
+#install.packages("gtools")
+#library(gtools)
 # order_ido <- mixedorder(tdb1o$pid,decreasing = F)
 # tdb1os<-tdb1o[order(order_ido,rownames(tdb1o),tdb1o$timestamp),]
 # order_idr <- mixedorder(tdb1r$pid)
@@ -95,12 +98,16 @@ tdb1r<-tdb2r[!m1,]
 #tdb1rs<-tdb1r[order(tdb1r$pid),]
 # tdb1os$pos<-1:length(tdb1os$token)
 # tdb1rs$pos<-1:length(tdb1rs$token)
+#tdb.o.x<-tdb1o[sample(length(tdb1o$token),100),]
+tdb.o.s<-tdb1o[order(tdb1o$url_t,tdb1o$timestamp),]
+tdb.r.s<-tdb1o[order(tdb1r$url_t,tdb1r$timestamp),]
 ################################
-tdb1o$pos<-1:length(tdb1o$token)
-tdb1r$pos<-1:length(tdb1r$token)
+tdb.o.s$pos<-1:length(tdb.o.s$token)
+tdb.r.s$pos<-1:length(tdb.r.s$token)
 #tdb1os[grep("l2-com9.",tdb1os$pid),"pid"]
 #tdb$ref$pos<-1:length(tdb$ref$token)
-tdba.1<-rbind(tdb1o,tdb1r)
+tdba.1<-rbind(tdb.o.s,tdb.r.s)
+#save(tdba.1,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012.RData"))
 tdba<-tdba.1
 l1<-length(tdba.1$target)
 #tdba<-rbind(tdb$obs,tdb$ref)
