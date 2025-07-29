@@ -29,16 +29,31 @@ corpus <- c(
   "The puppy played energetically in the yard",
   "Felines move gracefully through gardens",
   "Animals need water and food to survive",
-  "The veterinarian examined the sick animal"
+  "The veterinarian examined the sick animal",
+  "The windows of the van were very dirty",
+  "and the author also writes books about Gustav Mahler.",
+  "but mainly cats do eat mouse."
 )
-corpus<-paste0(corpus,collapse = ". ")
+#corpus<-paste0(corpus,collapse = ". ")
 corpus
 # Create embeddings for the entire corpus
+get.embed<-function(corpus,m){
+  corpus<-paste0(corpus[m],collapse = ". ")
+  corpus
+  
 embeddings <- textEmbed(corpus, 
                        model = "sentence-transformers/all-MiniLM-L6-v2")
+}
 target_word<-"dog"
-# Function to find semantic references of a target word
-find_semantic_references <- function(target_word, corpus, embeddings, top_n = 3) {
+get.score<-function(target_word,embeddings){
+  
+  # corpus<-paste0(corpus[m],collapse = ". ")
+  # corpus
+  # Create embeddings for the entire corpus
+  # embeddings <- textEmbed(corpus, 
+  #                         model = "sentence-transformers/all-MiniLM-L6-v2")
+  # Function to find semantic references of a target word
+find_semantic_references <- function(target_word, embeddings) {
   
   # Create embedding for target word
   target_embedding <- textEmbed(target_word, 
@@ -46,8 +61,37 @@ find_semantic_references <- function(target_word, corpus, embeddings, top_n = 3)
   
   # Calculate cosine similarity between target and corpus
  similarities <- textSimilarity(target_embedding$texts$texts, embeddings$texts$texts)
+}
+return(find_semantic_references(target_word,embeddings))
+}
+corpus
+m<-1:length(corpus)
+m<-c(1:9,11)
+
+#similarities<-get.score("car",embeddings,m)
+corpus
+tokens<-unique(unlist(strsplit(corpus[m]," "))) # for within-corpus consistency
+tokens
+#tokens<-unique(unlist(strsplit(corpus," ")))
+#tokens<-unique(unlist(strsplit(corpus[10]," ")))
+library(pbapply)
+tokens<-c("cats","dogs","food") # for single token score
+tokens<-c("hare")
+embeddings<-get.embed(corpus,m)
+t.score<-pblapply(tokens, function(x){
+  s<-get.score(x,embeddings,m)
+})
+get.m.score<-function(t.score,tokens){
+sim.df<-data.frame(token=tokens,score=unlist(t.score))
+sim.df<-sim.df[order(sim.df$score,decreasing = T),]
+eval1<-mean(sim.df$score)
+#return(sim.df)
+}
+eval8<-get.m.score(t.score,tokens)
+#wks
   #similarities <- textSimilarity(target_embedding, embeddings)
   #similarities <- textSimilarity(unlist(target_embedding), unlist(embeddings))
+fun.dep<-function(){
  x<-embeddings$texts$texts[[1]] 
  similarities <- lapply(embeddings$texts$texts,function(x){
     s<-textSimilarity(target_embedding$texts$texts, x)
@@ -62,7 +106,8 @@ find_semantic_references <- function(target_word, corpus, embeddings, top_n = 3)
 #    slice_head(n = top_n)
   
   return(results)
-}
+
+get.score("male")
 #embeddings
 # Find sentences most similar to "dog"
 dog_references <- find_semantic_references("dog", corpus, embeddings)
@@ -210,3 +255,6 @@ for(word in names(batch_results)) {
   cat(sprintf("\nSemantic references for '%s':\n", word))
   print(batch_results[[word]])
 }
+}
+
+
