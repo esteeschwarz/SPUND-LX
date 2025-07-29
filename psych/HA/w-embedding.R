@@ -131,9 +131,12 @@ t1<-get.text(qltdf,tdba.1,mdf,1)
 ###wks
 embeddings<-get.embed(t1$t,1)
 tokens<-t1$lemmas
+get.t.score<-function(tokens,embeddings){
 t.score<-pblapply(tokens, function(x){
   s<-get.score(x,embeddings)
 })
+return(t.score)
+}
 get.m.score<-function(t.score,tokens){
   sim.df<-data.frame(token=tokens,score=unlist(t.score))
   sim.df<-sim.df[order(sim.df$score,decreasing = T),]
@@ -141,6 +144,41 @@ get.m.score<-function(t.score,tokens){
   return(sim.df)
 }
 evalt1<-get.m.score(t.score,tokens)
+### wks.
+# now new, apply on basedata
+url.u<-unique(tdba.1$url_t)
+tdba.1$ld<-NA
+tdba.1$embed.score<-NA
+u<-1
+rm(qltdf)
+for(u in 1:length(url.u)){
+  cat("\rprocessing ",u,"/",length(url.u))
+  url<-url.u[u]
+  r1<-tdba.1$url_t==url
+  t1<-tdba.1$token[r1]
+  t1u<-unique(t1)
+  n1<-tdba.1$upos=="NOUN"
+  r1w<-which(r1)
+  n1w<-which(n1)
+  r2<-r1w[r1w%in%n1w]
+  l1<-tdba.1$lemma[r2]
+  l1u<-unique(l1)
+  ld<-length(t1u)/length(t1)
+  tdba.1$ld[r1]<-ld
+  t2<-paste0(t1,collapse = " ")
+  embedd<-get.embed(t2,m)
+  t.score<-get.t.score(l1u,embedd)
+  t.s.df<-get.m.score(t.score,l1u)
+  for(t in 1:length(t.s.df$token)){
+    tok<-t.s.df$token[t]
+    r3<-tdba.1$lemma[r2]%in%tok
+    tdba.1$embed.score[r2[r3]]<-t.s.df$score[t]
+  }
+  
+}
+
+
+
 
 fun.dep<-function(){
  x<-embeddings$texts$texts[[1]] 
