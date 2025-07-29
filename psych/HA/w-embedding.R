@@ -1,14 +1,14 @@
-# Approach 1: Using the {text} package (recommended for ease of use)
-# Install required packages first:
-# install.packages(c("text", "dplyr", "tibble"))
-
+# 20250729(16.03)
+# 15314.word embeddings essai
+# add token-corpus similarity covar to distance df
+##################################################
 library(text)
 library(dplyr)
-library(tibble)
+#library(tibble)
 #install.packages("RSpectra") # text fail from source
 # Initialize text package (this will install Python dependencies if needed)
-# text::textrpp_install()
-# text::textrpp_initialize()
+#text::textrpp_install()
+#text::textrpp_initialize()
 
 # Example corpus
 corpus <- c(
@@ -34,8 +34,25 @@ corpus <- c(
   "and the author also writes books about Gustav Mahler.",
   "but mainly cats do eat mouse."
 )
+tx.dir<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data/txt/15303/")
+f<-list.files(tx.dir)
+fns<-paste0(tx.dir,f)
+fns<-fns[grep("\\.txt",fns)]
+# load corpus db complete, annotated
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012.RData"))
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData"))
+
+### notes:
+# we want to get a similarity score for determined nouns in corpus, per condition. the conditions are already
+# available as covar in the df. so for each noun with matching condition:
+# 1. get url range
+# 2. get sim score for that noun vs. the range: expresses if a noun more or less fits semantically
+# within the range=corpus or if its out-of-context.
+# 3. in the mixed model add covar as random factor or somehow scale as continuos var
+
+#######################################
 #corpus<-paste0(corpus,collapse = ". ")
-corpus
+corpus<-readLines(fns[1])
 # Create embeddings for the entire corpus
 get.embed<-function(corpus,m){
   corpus<-paste0(corpus[m],collapse = ". ")
@@ -66,7 +83,7 @@ return(find_semantic_references(target_word,embeddings))
 }
 corpus
 m<-1:length(corpus)
-m<-c(1:9,11)
+#m<-c(1:9,11)
 
 #similarities<-get.score("car",embeddings,m)
 corpus
@@ -76,21 +93,55 @@ tokens
 #tokens<-unique(unlist(strsplit(corpus[10]," ")))
 library(pbapply)
 tokens<-c("cats","dogs","food") # for single token score
-tokens<-c("hare")
+#tokens<-c("hare")
 embeddings<-get.embed(corpus,m)
+###############################
+tokens<-c("depression")
+tokens<-c("schizophrenia","depression","book","car","dog")
 t.score<-pblapply(tokens, function(x){
-  s<-get.score(x,embeddings,m)
+  s<-get.score(x,embeddings)
 })
 get.m.score<-function(t.score,tokens){
 sim.df<-data.frame(token=tokens,score=unlist(t.score))
 sim.df<-sim.df[order(sim.df$score,decreasing = T),]
 eval1<-mean(sim.df$score)
-#return(sim.df)
+return(sim.df)
 }
-eval8<-get.m.score(t.score,tokens)
+eval3<-get.m.score(t.score,tokens)
 #wks
-  #similarities <- textSimilarity(target_embedding, embeddings)
-  #similarities <- textSimilarity(unlist(target_embedding), unlist(embeddings))
+### now realtime
+mdf<-data.frame(qid=1:10,target=NA,condition=NA,upos=NA,det=F,m=NA)
+mdf[1,]<-c(1,"obs","b","NOUN",T,1)
+m<-1
+get.text<-function(qltdf,tdba.1,mdf,m){
+mdf1<-mdf[m,]
+mdf1
+um<-qltdf$q==mdf1$condition&qltdf$target==mdf1$target&qltdf$det==mdf1$det&qltdf$upos==mdf1$upos
+u<-qltdf$url[um]
+u<-unique(u)
+i<-as.double(mdf1$m)
+ux<-u[i]
+r1<-tdba.1$url_t==ux
+t1<-paste0(tdba.1$token[r1],collapse = " ")
+l<-qltdf$lemma[um]
+l<-unique(l)
+return(list(t=t1,lemmas=l))
+}
+t1<-get.text(qltdf,tdba.1,mdf,1)
+###wks
+embeddings<-get.embed(t1$t,1)
+tokens<-t1$lemmas
+t.score<-pblapply(tokens, function(x){
+  s<-get.score(x,embeddings)
+})
+get.m.score<-function(t.score,tokens){
+  sim.df<-data.frame(token=tokens,score=unlist(t.score))
+  sim.df<-sim.df[order(sim.df$score,decreasing = T),]
+  eval1<-mean(sim.df$score)
+  return(sim.df)
+}
+evalt1<-get.m.score(t.score,tokens)
+
 fun.dep<-function(){
  x<-embeddings$texts$texts[[1]] 
  similarities <- lapply(embeddings$texts$texts,function(x){
