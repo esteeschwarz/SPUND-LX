@@ -176,7 +176,7 @@ for(u in 1:length(url.u)){
   }
   
 }
-
+save(tdba.1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012b.RData"))
 
 
 
