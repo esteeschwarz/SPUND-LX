@@ -40,7 +40,7 @@ fns<-paste0(tx.dir,f)
 fns<-fns[grep("\\.txt",fns)]
 # load corpus db complete, annotated
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012.RData"))
-#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData"))
+# load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
 
 ### notes:
 # we want to get a similarity score for determined nouns in corpus, per condition. the conditions are already
@@ -176,10 +176,26 @@ for(u in 1:length(url.u)){
   }
   
 }
-save(tdba.1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012b.RData"))
+#save(tdba.1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012b.RData"))
 
+# add embed score to qltdf
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+m1<-!is.na(tdba.1$embed.score)
+sum(m1)
+m1w<-which(m1)
+head(tdba.1$pos[m1w])
+mode(qltdf$pos)<-"double"
+mode(tdba.1$pos)<-"double"
+p1<-qltdf$pos
+m2<-tdba.1$pos%in%p1
+sum(m2)
+head(p1)
 
-
+head(tdba.1$upos[m2])
+m3<-!is.na(tdba.1$upos[p1])
+head(p1)
+p1[max(p1)]
+sum(m3)
 fun.dep<-function(){
  x<-embeddings$texts$texts[[1]] 
  similarities <- lapply(embeddings$texts$texts,function(x){
