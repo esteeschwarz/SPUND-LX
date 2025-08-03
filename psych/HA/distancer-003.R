@@ -2,14 +2,17 @@
 # 15302.3rd approach distancer, model 8
 # with basic df position diffs
 ##############################
+
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-init-vars.R"))
 # get tdb from sqlite
 qs<-build.q()
-save.ns.list<-012
-save.ns.dist<-012
+save.ns.list<-013
+save.ns.dist<-013
 #tdb<-read.db(15276) # 2nd run
-tdb<-read.db(15303) # 3nd run
+tdb<-read.db(15302) # 3nd run # 1771934 tokens
+tdb<-read.db(15303) # 3nd run # 1771934 tokens
 
+get.tok.db<-function(tdb){
 tdb$obs$target<-"obs"
 tdb$ref$target<-"ref"
 tdb1o<-tdb$obs
@@ -36,9 +39,34 @@ t1<-doc1[[1]]
 tdb2o<-tdb1o
 tdb2o$url_t<-NA
 tdb2o$author<-NA
-m31<-m3-1
-m32<-m31[2:length(m31)]
-m32<-c(m32,last(m3))
+# m31<-m3-1
+# m32<-m31[2:length(m31)]
+# m32<-c(m32,m3[length(m3)])
+# tail(m3)
+# tail(m32)
+# head(m3)
+# head(m32)
+# tail(1:10)
+# mx<-1:10
+get.row<-function(mx,l){
+mx1<-mx-1
+mx2<-mx1[2:length(mx1)]
+mx2<-c(mx2,l)
+return(list(start=mx,end=mx2))
+}
+# mx<-get.row(c(1,9,13,16),20)
+# mx
+# mx[[1]]
+# mx[[2]]
+# mx
+m3l<-get.row(m3,length(m2))
+# head(m3l$start)
+# head(m3l$end)
+# tail(m3l$start)
+# tail(m3l$end)
+m3<-m3l$start
+m32<-m3l$end
+#wks.
 k<-1
 for(k in 1:length(doc1)){
   #print(k)
@@ -51,7 +79,10 @@ for(k in 1:length(doc1)){
   
 }
 #head(tdb1o$token[m2])
+# this removes struct tokens!
+m1s<-m1
 tdb1o<-tdb2o[!m1,]
+#tdb1o<-tdb2o
 ##################
 m1<-grepl("<doc |<s |</s>|</doc>",tdb1r$token)
 sum(m1)
@@ -75,9 +106,12 @@ t1
 tdb2r<-tdb1r
 tdb2r$url_t<-NA
 tdb2r$author<-NA
-m31<-m3-1
-m32<-m31[2:length(m31)]
-m32<-c(m32,last(m3))
+m3l<-get.row(m3,length(m2))
+m3<-m3l$start
+m32<-m3l$end
+#m31<-m3-1
+#m32<-m31[2:length(m31)]
+#m32<-c(m32,last(m3))
 k<-1
 for(k in 1:length(doc1)){
  # print(k)
@@ -88,7 +122,8 @@ for(k in 1:length(doc1)){
   tdb2r$author[r1]<-t2$author
   
 }
-tdb1r<-tdb2r[!m1,]
+ tdb1r<-tdb2r[!m1,]
+#tdb1r<-tdb2r
 #install.packages("gtools")
 #library(gtools)
 # order_ido <- mixedorder(tdb1o$pid,decreasing = F)
@@ -106,8 +141,10 @@ tdb.o.s$pos<-1:length(tdb.o.s$token)
 tdb.r.s$pos<-1:length(tdb.r.s$token)
 #tdb1os[grep("l2-com9.",tdb1os$pid),"pid"]
 #tdb$ref$pos<-1:length(tdb$ref$token)
-tdba.1<-rbind(tdb.o.s,tdb.r.s)
-#save(tdba.1,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012.RData"))
+tdba.1.15302<-list(obs=tdb1o,ref=tdb1r)
+}
+tdba.1.15303<-get.tok.db(tdb)
+# save(tdba.1.15303,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012c.RData"))
 tdba<-tdba.1
 l1<-length(tdba.1$target)
 #tdba<-rbind(tdb$obs,tdb$ref)
