@@ -143,15 +143,23 @@ tdb.r.s$pos<-1:length(tdb.r.s$token)
 #tdb$ref$pos<-1:length(tdb$ref$token)
 tdba.1.15302<-list(obs=tdb1o,ref=tdb1r)
 }
+tdba.1.15303.sm<-rbind(tdb.o.s,tdb.r.s)
 tdba.1.15303<-get.tok.db(tdb)
+tdba.1.15303.sm[1:10,]==tdba.1[1:10,1:20]
 # save(tdba.1.15303,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012c.RData"))
-tdba<-tdba.1
-l1<-length(tdba.1$target)
-#tdba<-rbind(tdb$obs,tdb$ref)
-#tdba$run<-NA
-#tdba$run[1:1012759]<-1
-#tdba$run[1012760:(length(tdba$token))]<-2
-tdba.n<-tdba[tdba$upos=="NOUN",]
+# tdba<-tdba.1.15303.sm
+# #l1<-length(tdba.1$target)
+# #tdba<-rbind(tdb$obs,tdb$ref)
+# #tdba$run<-NA
+# #tdba$run[1:1012759]<-1
+# #tdba$run[1012760:(length(tdba$token))]<-2
+# tdba.n<-tdba[tdba$upos=="NOUN",]
+# p1<-qltdf$pos
+# head(tdba.n$pos[p1])
+# head(tdba.n$upos[p1])
+# #wks.
+p2<-tdba$pos[p1]
+head(tdba$upos[p2])
 n1w<-tdba.n$pos-1
 sum(n1w==1)
 sum(n1w==0)

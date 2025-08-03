@@ -202,6 +202,33 @@ head(p1)
 p1[max(p1)]
 sum(m3)
 
+tdba<-tdba.1.15303.sm
+#l1<-length(tdba.1$target)
+#tdba<-rbind(tdb$obs,tdb$ref)
+#tdba$run<-NA
+#tdba$run[1:1012759]<-1
+#tdba$run[1012760:(length(tdba$token))]<-2
+tdba.n<-tdba.1[tdba.1$upos=="NOUN",]
+p1<-qltdf$pos
+head(tdba.n$pos[p1])
+head(tdba.n$upos[p1])
+#wks.: positions for df-012 in qltdf match positions in score df
+######
+# now get score into qltdf
+length(p1)
+qltdf$embed.score<-NA
+t1<-!is.na(tdba.n$embed.score)
+tdb2<-tdba.n[t1,]
+for (k in 1:length(p1)){
+  
+  p<-p1[k]
+  print(k)
+  tdburl<-unique(tdb2$url_t[p])
+  r<-qltdf$url==tdburl
+  rw<-which(r)
+  if(sum(r,na.rm = T)>0)
+    qltdf$embed.score[rw]<-tdb2$embed.score[p]
+}
 
 
 fun.dep<-function(){
