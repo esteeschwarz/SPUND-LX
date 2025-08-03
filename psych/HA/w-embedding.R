@@ -218,7 +218,36 @@ head(tdba.n$upos[p1])
 length(p1)
 qltdf$embed.score<-NA
 t1<-!is.na(tdba.n$embed.score)
+t1w<-which(t1)
+sum(t1)
 tdb2<-tdba.n[t1,]
+l1<-qltdf$lemma
+l1u<-unique(l1)
+u1<-qltdf$url
+u1u<-unique(u1)
+u2<-tdba.n$url_t[t1]
+u2u<-unique(u2)
+l2<-tdba.n$lemma[t1]
+l2u<-unique(l2)
+l<-1
+for(l in t1w){
+  print(l)
+  u<-tdba.n$url_t[l]
+  l<-tdba.n$lemma[l]
+  e<-tdba.n$embed.score[l]
+  if(!is.na(u)&!is.na(l)&!is.na(e)){
+    r1<-qltdf$lemma==l&qltdf$url==u
+    r1w<-which(r1)
+    cat(l,u,e,r1w,"\n")
+  
+  qltdf$embed.score[r1w]<-e
+  }
+}
+
+save(qltdf,file= paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012d.RData"))
+
+mean(qltdf$embed.score[qltdf$target=="obs"],na.rm = T)
+
 for (k in 1:length(p1)){
   
   p<-p1[k]
@@ -230,171 +259,39 @@ for (k in 1:length(p1)){
     qltdf$embed.score[rw]<-tdb2$embed.score[p]
 }
 
-
-fun.dep<-function(){
- x<-embeddings$texts$texts[[1]] 
- similarities <- lapply(embeddings$texts$texts,function(x){
-    s<-textSimilarity(target_embedding$texts$texts, x)
-  })
-  # Create results dataframe
-  results <- tibble(
-    sentence = corpus,
-    # similarity = as.numeric(similarities[1, ])
-    similarity = as.numeric(similarities)
-  ) %>%
-    arrange(desc(similarity)) %>%
-#    slice_head(n = top_n)
-  
-  return(results)
-
-get.score("male")
-#embeddings
-# Find sentences most similar to "dog"
-dog_references <- find_semantic_references("dog", corpus, embeddings)
-print("Most similar sentences to 'dog':")
-print(dog_references)
-
-# Find sentences most similar to "fast movement"
-speed_references <- find_semantic_references("fast movement", corpus, embeddings)
-print("Most similar sentences to 'fast movement':")
-print(speed_references)
-
-# -------------------------------------------------------------------
-# Approach 2: Using reticulate to access Python transformers directly
-# -------------------------------------------------------------------
-
-#library(reticulate)
-
-# Install Python packages (run once)
-# py_install(c("transformers", "torch", "sentence-transformers", "numpy", "sklearn"))
-
-# Python code executed in R
-# py_run_string("
-# import numpy as np
-# from sentence_transformers import SentenceTransformer
-# from sklearn.metrics.pairwise import cosine_similarity
-# 
-# # Load a pre-trained sentence transformer model
-# model = SentenceTransformer('all-MiniLM-L6-v2')
-# 
-# def get_embeddings(texts):
-#     return model.encode(texts)
-# 
-# def find_similar_sentences(target, corpus, top_k=3):
-#     # Get embeddings
-#     target_embedding = model.encode([target])
-#     corpus_embeddings = model.encode(corpus)
-#     
-#     # Calculate similarities
-#     similarities = cosine_similarity(target_embedding, corpus_embeddings)[0]
-#     
-#     # Get top k most similar
-#     top_indices = np.argsort(similarities)[::-1][:top_k]
-#     
-#     results = []
-#     for idx in top_indices:
-#         results.append({
-#             'sentence': corpus[idx],
-#             'similarity': similarities[idx]
-#         })
-#     
-#     return results
-# ")
-
-# Use the Python functions from R
-corpus_r <- c(
-  "The dog ran quickly through the park",
-  "A canine sprinted rapidly across the field", 
-  "The cat walked slowly down the street",
-  "Birds fly high in the sky",
-  "The puppy played energetically in the yard",
-  "Felines move gracefully through gardens",
-  "Animals need water and food to survive",
-  "The veterinarian examined the sick animal"
-)
-
-# Find similar sentences using Python backend
-# similar_to_dog <- py$find_similar_sentences("dog", corpus_r, 3L)
-# print("Using reticulate approach - similar to 'dog':")
-# for(i in seq_along(similar_to_dog)) {
-#   cat(sprintf("%.3f: %s\n", 
-#               similar_to_dog[[i]]$similarity, 
-#               similar_to_dog[[i]]$sentence))
-# }
-
-# -------------------------------------------------------------------
-# Approach 3: Word-level semantic search within documents
-# -------------------------------------------------------------------
-
-# Function to find semantically similar words/phrases in a document
-find_word_references <- function(target_word, document, window_size = 5) {
-  
-  # Split document into overlapping windows
-  words <- unlist(strsplit(document, "\\s+"))
-  
-  if(length(words) < window_size) {
-    windows <- list(paste(words, collapse = " "))
-  } else {
-    windows <- list()
-    for(i in 1:(length(words) - window_size + 1)) {
-      window <- paste(words[i:(i + window_size - 1)], collapse = " ")
-      windows <- append(windows, window)
-    }
-  }
-  
-  # Get embeddings for target and windows
-  target_emb <- textEmbed(target_word)
-  window_embs <- textEmbed(unlist(windows))
-  
-  # Calculate similarities
-  sims <- textSimilarity(target_emb, window_embs)
-  
-  # Return top matches
-  results <- tibble(
-    text_window = unlist(windows),
-    similarity = as.numeric(sims[1, ])
-  ) %>%
-    arrange(desc(similarity)) %>%
-    slice_head(n = 5)
-  
-  return(results)
+### new, only fetch scores for distanced nouns
+l1<-qltdf$lemma
+l1u<-unique(l1)
+u1<-qltdf$url
+u1u<-unique(u1)
+# matrix of unique nouns in unique urls
+# simply get lemma-url pairs (collocations)
+# library(collostructions)
+# freq.list(data.frame(factor(qltdf$lemma),factor(qltdf$url)))
+# fl<-freq.list(qltdf$lemma)
+# ul<-freq.list(qltdf$url)
+# fc<-join.freqs(fl,ul)
+t1<-table(qltdf$lemma,qltdf$url)
+t2<-t1[order(t1,decreasing = T)]
+head(t1)
+t2<-as.data.frame(t1)
+colnames(t2)<-c("lemma","url","freq")
+t3<-t2[t2$freq>0,]
+get.text<-function(tdba.1,ux){
+  r1<-tdba.1$url_t==ux
+  t1<-paste0(tdba.1$token[r1],collapse = " ")
+#  l<-qltdf$lemma[um]
+ # l<-unique(l)
+  return(t1)
 }
-
-# Example with a longer document
-long_document <- "The domestic dog is a domesticated descendant of the wolf. 
-Dogs were the first species to be domesticated by humans. The canine family 
-includes wolves, foxes, and domestic dogs. Puppies are young dogs that require 
-special care. Many people consider their pet dog to be part of their family. 
-Veterinarians specialize in animal health care, treating both cats and dogs."
-
-word_refs <- find_word_references("dog", long_document)
-print("Word references in document:")
-print(word_refs)
-
-# -------------------------------------------------------------------
-# Helper function for batch processing
-# -------------------------------------------------------------------
-
-batch_semantic_search <- function(target_words, corpus, top_n = 2) {
+#t1<-get.text(qltdf,tdba.1,mdf,1)
+library(pbapply)
+t1.l<-pblapply(t3$url,function(x){
+  u<-x
+  t1<-get.text(tdba.1,u)
+})
+  ###wks
+  embeddings<-get.embed(t1$t,1)
+  tokens<-t1$lemmas
   
-  results <- list()
-  
-  for(word in target_words) {
-    matches <- find_semantic_references(word, corpus, embeddings, top_n)
-    results[[word]] <- matches
-  }
-  
-  return(results)
 }
-
-# Example batch search
-target_words <- c("dog", "movement", "care")
-batch_results <- batch_semantic_search(target_words, corpus)
-
-for(word in names(batch_results)) {
-  cat(sprintf("\nSemantic references for '%s':\n", word))
-  print(batch_results[[word]])
-}
-}
-
-
