@@ -290,8 +290,23 @@ t1.l<-pblapply(t3$url,function(x){
   u<-x
   t1<-get.text(tdba.1,u)
 })
+u1u<-unique(t3$url)
+t2.l<-pblapply(u1u,function(x){
+  u<-x
+  t1<-get.text(tdba.1,u)
+})
+
+length(t1.l)
+tna<-lapply(t1.l,function(x){
+  return(is.na(x))
+})
+sum(unlist(tna))
+t1.l[[1]]
   ###wks
-  embeddings<-get.embed(t1$t,1)
+  embeddings<-pblapply(t1.l,function(x){
+    e<-get.embed(x,1)
+  })
+  
   tokens<-t1$lemmas
   
-}
+
