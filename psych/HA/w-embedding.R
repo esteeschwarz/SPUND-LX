@@ -295,6 +295,7 @@ t2.l<-pblapply(u1u,function(x){
   u<-x
   t1<-get.text(tdba.1,u)
 })
+save(t2.l,file= paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012_url-text.RData"))
 
 length(t1.l)
 tna<-lapply(t1.l,function(x){
