@@ -8,8 +8,6 @@ library(dplyr)
 #install.packages("RSpectra") # text fail from source
 # Initialize text package (this will install Python dependencies if needed)
 #text::textrpp_install()
-#text::textrpp_initialize()
-
 # Example corpus
 corpus <- c(
   "The dog ran quickly through the park",

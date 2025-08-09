@@ -1,8 +1,11 @@
 library(text)
 library(dplyr)
+print("loading datasets...")
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012.RData")) # tdba.1
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012_url-text.RData")) # t2.l
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+print("initializing text::")
+text::textrpp_initialize()
 
 t1<-table(qltdf$lemma,qltdf$url)
 t2<-t1[order(t1,decreasing = T)]
@@ -21,8 +24,11 @@ get.embed<-function(corpus,m){
 #target_word<-l1u[1]
 #target_word
 get.score<-function(target_word,embeddings){
+  
   tw<-as.character(target_word)
   print(tw)
+  write(paste0(Sys.time(),  " || processing word: -",tw,"-"),log.ns,append = T)
+  
   # corpus<-paste0(corpus[m],collapse = ". ")
   # corpus
   # Create embeddings for the entire corpus
@@ -45,6 +51,7 @@ get.score<-function(target_word,embeddings){
   return(find_semantic_references(tw,embeddings))
 }
 #s1<-get.score(l1u[1],embedd)
+library(pbapply)
 get.t.score<-function(tokens,embeddings){
   t.score<-pblapply(tokens, function(x){
     s<-get.score(x,embeddings)
@@ -69,8 +76,22 @@ get.m.score<-function(t.score,tokens){
 url.u<-unique(t3$url)
 t3$embed.score<-NA
 #u<-1
-for(u in 1:length(url.u)){
-  cat("\rprocessing ",u,"/",length(url.u))
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData"))
+m<-is.na(t3$embed.score)
+sum(m)
+url.n.done<-t3$url[m]
+url.u.2<-unique(url.n.done)
+length(url.u)
+length(url.u.2)
+url.u.sf<-url.u
+url.u<-url.u.2
+log.ns<-"~/log/embed-log.txt"
+u<-1
+range.u<-length(url.u)
+range.u<-1:10
+for(u in 1:length(range.u)){
+  cat("\rprocessing ",u,"/",length(range.u))
+  write(paste0(Sys.time(),  " || processing url: -",u,"- of -",length(range.u),"-"),log.ns,append = T)
   t2<-t2.l[[u]]
   ut3<-url.u[u]
   embedd<-get.embed(t2,1)
@@ -90,5 +111,6 @@ for(u in 1:length(url.u)){
   }
   
 }
+write(paste0(Sys.time(),  " || finished. processed: ",length(range.u)," urls"),log.ns,append = T)
 
-#save(t3,file = "embed-211.RData")
+save(t3,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData"))
