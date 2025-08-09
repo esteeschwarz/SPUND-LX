@@ -72,7 +72,7 @@ t3$embed.score<-NA
 for(u in 1:length(url.u)){
   cat("\rprocessing ",u,"/",length(url.u))
   t2<-t2.l[[u]]
-  ut3<-t3$url[u]
+  ut3<-url.u[u]
   embedd<-get.embed(t2,1)
   #embeddings<-embedd
   r1<-t3$url==ut3
@@ -91,3 +91,4 @@ for(u in 1:length(url.u)){
   
 }
 
+#save(t3,file = "embed-211.RData")
