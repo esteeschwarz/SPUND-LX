@@ -153,13 +153,14 @@ tdba.1.15303.sm[1:10,]==tdba.1[1:10,1:20]
 # #tdba$run<-NA
 # #tdba$run[1:1012759]<-1
 # #tdba$run[1012760:(length(tdba$token))]<-2
-# tdba.n<-tdba[tdba$upos=="NOUN",]
 # p1<-qltdf$pos
 # head(tdba.n$pos[p1])
 # head(tdba.n$upos[p1])
+tdba.n<-tdba[tdba$upos=="NOUN",] # cant remember in/out
+
 # #wks.
-p2<-tdba$pos[p1]
-head(tdba$upos[p2])
+# p2<-tdba$pos[p1]
+# head(tdba$upos[p2])
 n1w<-tdba.n$pos-1
 sum(n1w==1)
 sum(n1w==0)
