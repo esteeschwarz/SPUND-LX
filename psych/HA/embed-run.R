@@ -88,7 +88,7 @@ url.u<-url.u.2
 log.ns<-"~/log/embed-log.txt"
 u<-1
 range.u<-length(url.u)
-range.u<-1:10
+range.u<-1:15
 for(u in 1:length(range.u)){
   cat("\rprocessing ",u,"/",length(range.u))
   write(paste0(Sys.time(),  " || processing url: -",u,"- of -",length(range.u),"-"),log.ns,append = T)
