@@ -79,10 +79,12 @@ t3$embed.score<-NA
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData"))
 m<-is.na(t3$embed.score)
 sum(m)
+sum(!m)
 url.n.done<-t3$url[m]
 url.u.2<-unique(url.n.done)
-length(url.u)
-length(url.u.2)
+l1<-length(url.u)
+l2<-length(url.u.2)
+ldone<-l1-l2
 url.u.sf<-url.u
 url.u<-url.u.2
 log.ns<-"~/log/embed-log.txt"
@@ -90,8 +92,8 @@ u<-1
 range.u<-length(url.u)
 range.u<-1:15
 for(u in 1:length(range.u)){
-  cat("\rprocessing ",u,"/",length(range.u))
-  write(paste0(Sys.time(),  " || processing url: -",u,"- of -",length(range.u),"-"),log.ns,append = T)
+  cat("\rprocessing ",u,"/",length(range.u),"/",l2)
+  write(paste0(Sys.time(),  " ||\t url ",u," of ",length(range.u)," of ",l2," urls todo"),log.ns,append = T)
   t2<-t2.l[[u]]
   ut3<-url.u[u]
   embedd<-get.embed(t2,1)
