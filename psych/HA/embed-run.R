@@ -95,8 +95,9 @@ rnd<-20
 range.u<-sample(length(url.u),rnd)
 for(k in 1:length(range.u)){
   u<-range.u[k]
-  cat("\rprocessing ",u,"/",length(range.u),"/",l2)
-  write(paste0(Sys.time(),  " ||\t url ",u," of ",length(range.u)," of ",l2," urls todo"),log.ns,append = T)
+  cat("\rprocessing ",u,",",k,"/",length(range.u),"/",l2)
+  starttime<-Sys.time()
+  write(paste0(starttime,  " ||\t url ",u," of ",length(range.u)," of ",l2," urls todo"),log.ns,append = T)
   t2<-t2.l[[u]]
   ut3<-url.u[u]
   embedd<-get.embed(t2,1)
@@ -116,6 +117,10 @@ for(k in 1:length(range.u)){
   }
   
 }
-write(paste0(Sys.time(),  " || finished. processed: ",length(range.u)," urls"),log.ns,append = T)
+endtime<-Sys.time()
+elapsed<-endtime-starttime
+elapsed<- format(elapsed)
+elapsed
+write(paste0(endtime,  " || finished after ",elapsed," with ",length(range.u)," urls"),log.ns,append = T)
 
 save(t3,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData"))

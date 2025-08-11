@@ -1,3 +1,15 @@
+install.packages(c("text","pbapply"))
+sudo apt install libxml2-dev
+java jdk
+Warning: dependency ‘Matrix’ is not available
+also installing the dependencies ‘xml2’, ‘text2vec’, ‘rJava’, ‘gridtext’, ‘systemfonts’, ‘textmineR’, ‘mallet’, ‘ggwordcloud’, ‘ggforce’
+Warning message:
+package ‘Matrix’ is not available for this version of R
+‘Matrix’ version 1.7-3 is in the repositories but depends on R (>= 4.4)
+‘Matrix’ version 1.7-3 is in the repositories but depends on R (>= 4.6)
+
+
+
 conda tos accept --override-channels --channel CHANNEL
 https://repo.anaconda.com/pkgs/main
 https://repo.anaconda.com/pkgs/r
