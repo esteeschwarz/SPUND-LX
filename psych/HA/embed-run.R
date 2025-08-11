@@ -93,11 +93,12 @@ range.u<-length(url.u)
 range.u<-1:15
 rnd<-20
 range.u<-sample(length(url.u),rnd)
+starttime<-Sys.time()
+
 for(k in 1:length(range.u)){
   u<-range.u[k]
   cat("\rprocessing ",u,",",k,"/",length(range.u),"/",l2)
-  starttime<-Sys.time()
-  write(paste0(starttime,  " ||\t url ",u,", ",k,"/",length(range.u)," of ",l2," urls todo"),log.ns,append = T)
+  write(paste0(Sys.time(),  " ||\t url ",u,", ",k,"/",length(range.u)," of ",l2," urls todo"),log.ns,append = T)
   t2<-t2.l[[u]]
   ut3<-url.u[u]
   embedd<-get.embed(t2,1)
