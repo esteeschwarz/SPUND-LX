@@ -63,7 +63,13 @@ read.eval<-function(dn){
   return(out)
   
 }
-
+read.embed<-function(witch){
+  e2<-new.env()
+  load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-",witch,".RData"),envir = e2)
+  return(e2$t3)
+  
+}
+#t3<-read.embed(211)
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData"))
 # if(!exists("dfa")){
 # ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
@@ -185,7 +191,7 @@ gplot.dist<-function(dfnorm,reference_target){
 library(lmerTest)
 library(dplyr)
 ### normalize distances
-#limit<-F
+limit<-F
 get.dist.norm<-function(tdb4,limit=F){
   df<-tdb4
   Q1 <- quantile(df$dist, 0.25,na.rm = T)
@@ -222,7 +228,28 @@ if(reload){
   dfa<-qltdf
 }
 dfa<-get.dist.norm(dfa,limit)
+#dfa<-get.dist.norm(qltdf,limit)
 
+#################
+### apply embeds
+# qltdf_sf<-qltdf
+# dfa$embed.score<-NA
+# t3n<-t3[!is.na(t3$embed.score),]
+# for (k in 1:length(t3n$lemma)){
+#   cat("\r",k)
+#   l<-t3n$lemma[k]
+#   u<-t3n$url[k]
+#   e<-t3n$embed.score[k]
+#   r1<-qltdf$lemma==l&qltdf$url==u
+#   dfa$embed.score[r1]<-e
+# }
+# factor(dfa$embed.score)
+# df_used <- na.omit(dfa[, c("dist", "target", "lemma", "embed.score")])
+# df_used <- na.omit(dfa[, c("target", "embed.score")])
+# length(unique(df_used$target))
+#################################
+### to redo if enoght levels for embed score
+############################################
 # max(tdb4$dist,na.rm = T)
 # limit<-5000
 # tdb5<-tdb4[tdb4$dist<limit,]
@@ -278,9 +305,66 @@ get.anovas<-function(qltdf,target,con,det.t,r,ref,author){
   
   return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,plot.md=dfe,lme.form=lmeform,anova.form=anova.fstr))
 }
+
+### with embed
+get.anovas.e<-function(qltdf,target,con,det.t,r,ref,author,embed.t){
+  #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
+  dfa<-create.sub(qltdf,target,con,det.t)
+  #dfa<-get.dist.norm(dfa,limit)
+  d.ns<-c(paste0("dist_rel_",ref))
+  c.dist<-which(colnames(dfa)%in%d.ns)
+  d.sel<-which(colnames(dfa)==d.ns)
+  d.sel<-ifelse(r,colnames(dfa)[d.sel],"dist")
+  det.f<-ifelse(sum(det.t)>0,"*det","")
+  embed.f<-ifelse(sum(embed.t)>0,"+embed.score","")
+  anova.fstr<-paste0(d.sel," ~ target*q",det.f)
+  print(anova.fstr)
+  aut.str<-ifelse(author,"+(1|aut_id)","")
+  lme.str<-paste0(d.sel," ~ target*q",det.f,"+(1|lemma)",aut.str,ifelse(r,"+range",""),embed.f)
+  # lmeform.l<-list(no.pre.det=
+  #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
+  #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))
+  lmeform.l<-list(form.global<-lme.str)
+  lmeform.l
+  # anova.form.l<-list(no.pre.det=anova.fstr,
+  #                    pre.det=paste0(anova.fstr,"*det"))
+  # anova.form.l<-list(adapted=anova.fstr)
+  # 
+  #   anova.form.l
+  #lmeform<-ifelse(sum(det.t)==1,lmeform<-lmeform.l$pre.det,lmeform.l$no.pre.det)
+  lmeform<-lmeform.l[[1]]
+  print(lmeform)
+  #lmeform<-lmeform.l$pre.det
+  #Y <- dfa$dist           
+  #aov(as.formula(fstr),data = dfa)
+  ifelse(sum(det.t)==1,model<-aov(as.formula(anova.fstr),data=dfa),
+         model<-aov(as.formula(anova.fstr),data=dfa))
+  # makes no sense, not wks. if length(unique(dfa$det))==1 i.e. the subset includes only det==T or det==F, so only pass whole set
+  anova.sum<-summary(model)
+  anova.sum<-anova.sum[[1]]
+  anova.sum
+  lm2<-lmer(eval(expr(lmeform)),dfa)
+  #lm3<-lmer(eval(expr(lmeform)),dfa)
+  summary(lm2)
+  lm2.summ<-summary(lm2)
+  lm2.summ
+  anlm.summ<-anova(lm2)
+  anlm.summ
+  lm2.summ
+  anlm.summ
+  anova.sum
+  df.eval<-get.mean.df(dfa,d.sel)
+  dfe<-df.eval
+  dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
+  
+  # bp<-rmd.plot.lme(lm2.summ)
+  
+  return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,plot.md=dfe,lme.form=lmeform,anova.form=anova.fstr))
+}
+
 #rm(eval.1)
 # if(!exists("eval.1"))
-# eval.1<-get.anovas(qltdf,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs")
+#eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs",T,F)
 #eval.1$plot.lme
 fun.dep<-function(){
 lm2<-lmer(eval(expr(lmeform.l$no.pre.det)),dfa)

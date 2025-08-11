@@ -91,7 +91,10 @@ log.ns<-"~/log/embed-log.txt"
 u<-1
 range.u<-length(url.u)
 range.u<-1:15
-for(u in 1:length(range.u)){
+rnd<-20
+range.u<-sample(length(url.u),rnd)
+for(k in 1:length(range.u)){
+  u<-range.u[k]
   cat("\rprocessing ",u,"/",length(range.u),"/",l2)
   write(paste0(Sys.time(),  " ||\t url ",u," of ",length(range.u)," of ",l2," urls todo"),log.ns,append = T)
   t2<-t2.l[[u]]
