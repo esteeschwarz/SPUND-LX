@@ -231,8 +231,13 @@ dfa<-get.dist.norm(dfa,limit)
 #dfa<-get.dist.norm(qltdf,limit)
 
 #################
-### apply embeds
+### apply embeds: restore!
 # qltdf_sf<-qltdf
+# t4<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-2146.csv"))
+# load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData"))
+# t3$embed.score<-t4$embed_score
+# t3$url<-as.character(t3$url)
+# 
 # dfa$embed.score<-NA
 # t3n<-t3[!is.na(t3$embed.score),]
 # for (k in 1:length(t3n$lemma)){
@@ -240,7 +245,7 @@ dfa<-get.dist.norm(dfa,limit)
 #   l<-t3n$lemma[k]
 #   u<-t3n$url[k]
 #   e<-t3n$embed.score[k]
-#   r1<-qltdf$lemma==l&qltdf$url==u
+#   r1<-dfa$lemma==l&dfa$url==u
 #   dfa$embed.score[r1]<-e
 # }
 # factor(dfa$embed.score)
