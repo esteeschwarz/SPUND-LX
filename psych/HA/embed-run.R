@@ -3,17 +3,17 @@ library(dplyr)
 print("loading datasets...")
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012.RData")) # tdba.1
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012_url-text.RData")) # t2.l
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
 print("initializing text::")
 text::textrpp_initialize()
-
-t1<-table(qltdf$lemma,qltdf$url)
-t2<-t1[order(t1,decreasing = T)]
-head(t1)
-t2<-as.data.frame(t1)
-colnames(t2)<-c("lemma","url","freq")
-t3<-t2[t2$freq>0,]
-
+###### not needed, embed-211==t3
+# load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+# t1<-table(qltdf$lemma,qltdf$url)
+# t2<-t1[order(t1,decreasing = T)]
+# head(t1)
+# t2<-as.data.frame(t1)
+# colnames(t2)<-c("lemma","url","freq")
+# t3<-t2[t2$freq>0,]
+####################
 get.embed<-function(corpus,m){
   corpus<-paste0(corpus[m],collapse = ". ")
   corpus
@@ -73,10 +73,10 @@ get.m.score<-function(t.score,tokens){
 #   tdba.1$embed.score[r2[r3]]<-t.s.df$score[t]
 # }
 #embeddings<-get.embed(corpus,m)
-url.u<-unique(t3$url)
-t3$embed.score<-NA
+# t3$embed.score<-NA
 #u<-1
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData"))
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-211.RData")) # as t3
+url.u<-unique(t3$url)
 m<-is.na(t3$embed.score)
 sum(m)
 sum(!m)

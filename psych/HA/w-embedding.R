@@ -307,5 +307,9 @@ t1.l[[1]]
   })
   
   tokens<-t1$lemmas
+  # 
+  # qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
+  # load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+  # qltdf$embed.score<-qltdf_embed$embed_score
+  # save(qltdf,file= paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012_embed.RData"))
   
-

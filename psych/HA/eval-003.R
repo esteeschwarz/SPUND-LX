@@ -369,9 +369,21 @@ get.anovas.e<-function(qltdf,target,con,det.t,r,ref,author,embed.t){
 
 #rm(eval.1)
 # if(!exists("eval.1"))
-#eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs",T,F)
 #eval.1$plot.lme
 fun.dep<-function(){
+  ######
+  qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
+  load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+  qltdf$embed.score<-qltdf_embed$embed_score
+  dfa<-get.dist.norm(qltdf,limit)
+  
+  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs",T,T)
+  eval.0<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs",T,F)
+  #### with embed
+  eval.1$anova.lme
+  summary(eval.1$lme)
+  summary(eval.0$lme)
+  lm
 lm2<-lmer(eval(expr(lmeform.l$no.pre.det)),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
