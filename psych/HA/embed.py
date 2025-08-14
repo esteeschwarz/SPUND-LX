@@ -145,7 +145,8 @@ def main():
     print("Loading datasets...")
     
     # Set up paths (equivalent to Sys.getenv("HKW_TOP"))
-    base_path = os.path.expanduser("/project/workspace/")  # Adjust as needed
+    base_path = os.path.expanduser("/project/workspace/")  # codesandbox
+    base_path = os.path.expanduser("~/boxHKW/21S/DH/local/SPUND/2025/stef_psych/")  # local
     
     # Load data
     try:
@@ -155,7 +156,7 @@ def main():
         print("✓ URL text data (t2_l) loaded successfully")
         
         # Load t3 as CSV (this is your results dataframe with lemma, url, freq, embed_score columns)
-        t3 = pd.read_csv(f"{base_path}embed-0.csv")  # or whatever you named your t3 CSV export
+        t3 = pd.read_csv(f"{base_path}t3.embed-000.csv")  # or whatever you named your t3 CSV export
         print("✓ Results dataframe (t3) loaded successfully from CSV")
         
         # Ensure embed_score column exists and has proper NA handling
@@ -181,9 +182,85 @@ def main():
     
     # Apply numpy compatibility fix
     if not hasattr(np, '_core'):
+       # import numpy.core as _core
+        print("apply fix")
         import numpy.core as _core
         np._core = _core
+# 
+# # Force apply NumPy fix regardless of existing _core
+#     print(f"NumPy version: {np.__version__}")
+#     print(f"np has _core before fix: {hasattr(np, '_core')}")
+# 
+# # Apply fix regardless
+#     try:
+#       import numpy.core as _core
+#       np._core = _core
+#     
+#     # Force map the problematic submodules
+#       essential_modules = ['numeric', 'fromnumeric', 'multiarray', 'umath']
+#       for module_name in essential_modules:
+#         if hasattr(_core, module_name):
+#             setattr(np._core, module_name, getattr(_core, module_name))
+#     
+#       print("✓ NumPy fix applied (forced)")
+#     except Exception as e:
+#       print(f"NumPy fix failed: {e}")
+# 
+#     print(f"np has _core after fix: {hasattr(np, '_core')}")
+    # CORRECT FIX FOR NUMPY 2.x - Replace your NumPy fix section with this:
 
+    print(f"NumPy version: {np.__version__}")
+    print(f"np has _core: {hasattr(np, '_core')}")
+
+# For NumPy 2.x, use numpy._core instead of numpy.core (which is deprecated)
+    if int(np.__version__.split('.')[0]) >= 2:
+      print("NumPy 2.x detected - using numpy._core")
+      try:
+        # Import from the new numpy._core namespace
+        import numpy._core as _core
+        import numpy._core.numeric as _numeric
+        import numpy._core.fromnumeric as _fromnumeric
+        
+        # Ensure _core is properly set
+        if not hasattr(np, '_core') or np._core is None:
+            np._core = _core
+        
+        # Map essential submodules for pickle compatibility
+        essential_submodules = {
+            'numeric': _numeric,
+            'fromnumeric': _fromnumeric
+        }
+        
+        for name, module in essential_submodules.items():
+            if not hasattr(np._core, name):
+                setattr(np._core, name, module)
+        
+        print("✓ NumPy 2.x _core fix applied successfully")
+        
+      except ImportError as e:
+        print(f"NumPy 2.x fix failed: {e}")
+        # Fallback to old method
+        try:
+            import numpy.core as _core
+            np._core = _core
+            print("✓ Fallback to deprecated numpy.core worked")
+        except:
+            print("❌ Both NumPy fixes failed")
+
+    else:
+    # For NumPy 1.x, use the old numpy.core
+      print("NumPy 1.x detected - using numpy.core")
+      if not hasattr(np, '_core'):
+        try:
+            import numpy.core as _core
+            np._core = _core
+            print("✓ NumPy 1.x _core fix applied")
+        except ImportError as e:
+            print(f"NumPy 1.x fix failed: {e}")
+        else:
+          print("✓ NumPy _core already exists")
+
+    print(f"Final check - np has _core: {hasattr(np, '_core')}")
     # Load existing results if available
     results_file = f"{base_path}embed-0.pkl"
     if os.path.exists(results_file):
@@ -214,6 +291,8 @@ def main():
     
     # Set up processing parameters
     log_file = os.path.expanduser("/project/workspace/embed-log.txt")
+    log_file = os.path.expanduser(f"{base_path}embed-log.txt")
+    print(log_file)
     os.makedirs(os.path.dirname(log_file), exist_ok=True)
     
     # Sample random subset for processing (equivalent to sample())
@@ -224,7 +303,7 @@ def main():
    # else:
     range_u = list(range(len(url_n_done)))
     
-    #range_u = list(range(0, n))
+   # range_u = list(range(0, n))
 
     # Process URLs
     try:
@@ -243,7 +322,7 @@ def main():
                 t3.loc[mask, 'embed_score'] = row['score']
         
         # Save results
-        output_csv = f"{base_path}t3_results_updated.csv"
+        output_csv = f"{base_path}t3_results_updated_os.csv"
         t3.to_csv(output_csv, index=False)
         print(f"Processing completed successfully!")
         print(f"Updated results saved to: {output_csv}")
@@ -310,7 +389,7 @@ def convert_r_data():
 
 # 1. Install required packages:
 #    pip install sentence-transformers pandas numpy scikit-learn tqdm
-
+# py_install(c("sentence-transformers","pandas","numpy","scikit-learn","tqdm"))
 # 2. Convert R data files to Python format using one of these methods:
 
 #    Method A - Using pyreadr (recommended):

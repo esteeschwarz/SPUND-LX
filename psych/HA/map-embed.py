@@ -8,12 +8,12 @@ import pandas as pd
 import numpy as np
 
 # Set your base path
-base_path = "/project/workspace/"  # Adjust as needed
+base_path = "~/boxHKW/21S/DH/local/SPUND/2025/stef_psych/"  # Adjust as needed
 
 print("Loading dataframes...")
 
 # Load the updated t3 results with embed scores
-t3_updated = pd.read_csv(f"{base_path}t3_results_updated.csv")
+t3_updated = pd.read_csv(f"{base_path}t3_results_updated_os.csv")
 print(f"✓ Loaded t3_updated: {t3_updated.shape}")
 
 # Filter to only rows with embed_score (not NA)

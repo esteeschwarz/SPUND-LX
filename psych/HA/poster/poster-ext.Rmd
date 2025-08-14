@@ -55,16 +55,20 @@ det<-c(T,F)
 conditions<-letters[1:6]
 limit<-T
 author<-T
+embed<-T
 ifelse(limit,ceiling<-"outliers removed","outliers not removed")
 if(reload)
   rm(eval.1)
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 if(!exists("eval.1"))
-  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+#  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+  # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
+  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",F,T,c(T,F),c(T,F))
+
 anova.form<-eval.1$anova.form
 lme.form<-eval.1$lme.form
-caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
-dfe<-eval.1$plot.md
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# dfe<-eval.1$plot.md
 
 ```
 
@@ -73,6 +77,9 @@ eval output M`r dataset``r caption.ext`.
 
 ## legende
 ```{r,legend,echo=FALSE,warning=F,message=F}
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+print(caption.ext)
+dfe<-eval.1$plot.md
 legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",

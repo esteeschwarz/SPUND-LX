@@ -191,17 +191,19 @@ gplot.dist<-function(dfnorm,reference_target){
 library(lmerTest)
 library(dplyr)
 ### normalize distances
-limit<-F
-get.dist.norm<-function(tdb4,limit=F){
+#limit<-T
+tdb4<-qltdf.le.red
+get.dist.norm<-function(tdb4,limit){
   df<-tdb4
   Q1 <- quantile(df$dist, 0.25,na.rm = T)
   Q3 <- quantile(df$dist, 0.75,na.rm = T)
   IQR <- Q3 - Q1
   
-  df_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
+  tdb_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
+  max(tdb_no_outliers$dist)
 #  df_no_outliers <- subset(df, dist < limit)
   #df<-df_no_outliers
-  ifelse(limit,tdb6<-df_no_outliers,tdb6<-tdb4)
+  ifelse(sum(limit)>0,tdb6<-tdb_no_outliers,tdb6<-tdb4)
   max.l<-max(tdb6$dist,na.rm = T)
   mna<-is.na(tdb6$token)
   sum(mna)
@@ -225,6 +227,11 @@ get.dist.norm<-function(tdb4,limit=F){
 }
 if(reload){
   ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
+  qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
+  #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+  qltdf$embed.score<-qltdf_embed$embed_score
+  #dfa<-get.dist.norm(qltdf,limit)
+  
   dfa<-qltdf
 }
 dfa<-get.dist.norm(dfa,limit)
@@ -312,20 +319,25 @@ get.anovas<-function(qltdf,target,con,det.t,r,ref,author){
 }
 
 ### with embed
-get.anovas.e<-function(qltdf,target,con,det.t,r,ref,author,embed.t){
+### 15336. TODO: include lemma switch
+get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
   #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   dfa<-create.sub(qltdf,target,con,det.t)
   #dfa<-get.dist.norm(dfa,limit)
   d.ns<-c(paste0("dist_rel_",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
   d.sel<-which(colnames(dfa)==d.ns)
-  d.sel<-ifelse(r,colnames(dfa)[d.sel],"dist")
+  d.sel<-ifelse(range.ti[1],colnames(dfa)[d.sel],"dist")
   det.f<-ifelse(sum(det.t)>0,"*det","")
-  embed.f<-ifelse(sum(embed.t)>0,"+embed.score","")
+  embed.i<-ifelse(embed.ti[2],"+(embed.score*-1)","+embed.score")
+  embed.f<-ifelse(embed.ti[1],embed.i,"")
+  range.i<-ifelse(range.ti[2],"+(range*-1)","+range")
+  range.f<-ifelse(range.ti[1],range.i,"")
+  lemma.f<-ifelse(lemma,"+(1|lemma)","")
   anova.fstr<-paste0(d.sel," ~ target*q",det.f)
   print(anova.fstr)
   aut.str<-ifelse(author,"+(1|aut_id)","")
-  lme.str<-paste0(d.sel," ~ target*q",det.f,"+(1|lemma)",aut.str,ifelse(r,"+range",""),embed.f)
+  lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,range.f,embed.f)
   # lmeform.l<-list(no.pre.det=
   #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
   #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))
@@ -372,18 +384,46 @@ get.anovas.e<-function(qltdf,target,con,det.t,r,ref,author,embed.t){
 #eval.1$plot.lme
 fun.dep<-function(){
   ######
-  qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
+  qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_with_scores.csv"))
   load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
   qltdf$embed.score<-qltdf_embed$embed_score
+  library(pbapply)
+  le.lemma<-pblapply(qltdf$lemma,function(x){
+    l<-strsplit(x,"")%>%unlist()%>%length()
+    return(l)
+  })
+  le.lemma.u<-unlist(le.lemma)
+  sum(le.lemma.u)
+  head(le.lemma.u,700)
+  qltdf$le.char<-le.lemma.u
+  qltdf.le.red<-qltdf[qltdf$le.char>1,]
+  sum(!is.na(qltdf$embed.score))
   dfa<-get.dist.norm(qltdf,limit)
-  
-  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs",T,T)
+  max(dfa$dist)
+  dfa<-get.dist.norm(qltdf.le.red,limit)
+  # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+    
+  eval.3<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",T,c(T,T),c(T,T))
   eval.0<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),c(T),"obs",T,F)
+  eval.4<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",T,c(T,T),c(T,T))
+  eval.4<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",T,c(F,F),c(T,F))
+  eval.5<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",F,T,c(T,F),c(T,F))
+  eval.6<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",F,T,c(T,F),c(T,T)) #no
   #### with embed
   eval.1$anova.lme
+  l1<-lmer(dist~target*q*det+embed.score+(1|aut_id),dfa)
+  #l2<-lmer(dist~target*q*det+(embed.score*-1)+(1|aut_id),dfa)
+  summary(l2)
   summary(eval.1$lme)
+  summary(eval.4$lme)
   summary(eval.0$lme)
-  lm
+  summary(eval.5$lme)
+  max(dfa$dist)
+  mean(dfa$dist)
+  dfa.l<-dfa[dfa$dist<2000,]
+  qltdf.l<-qltdf.le.red[qltdf.le.red$dist<2000,]
+  dfa.l<-get.dist.norm(qltdf.l,T)
+  
 lm2<-lmer(eval(expr(lmeform.l$no.pre.det)),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
 #lm2<-lmer(dist~target*q+range+(1|lemma),dfa)
@@ -396,8 +436,14 @@ anlm.summ
 lm2.summ
 anlm.summ
 anova.sum
-mean(dfa$dist[dfa$target=="obs"])
-mean(dfa$dist[dfa$target=="ref"])
+mean(dfa.l$dist[dfa$target=="obs"],na.rm=T)
+mean(dfa.l$dist[dfa$target=="ref"],na.rm=T)
+median(dfa.l$dist[dfa$target=="obs"],na.rm=T)
+median(dfa.l$dist[dfa$target=="ref"],na.rm=T)
+mean(dfa$dist[dfa$target=="obs"],na.rm=T)
+mean(dfa$dist[dfa$target=="ref"],na.rm=T)
+median(dfa$dist[dfa$target=="obs"],na.rm=T)
+median(dfa$dist[dfa$target=="ref"],na.rm=T)
 queries<-letters[1:6]
 mno<-array()
 mnr<-array()
