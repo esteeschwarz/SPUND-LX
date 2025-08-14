@@ -55,7 +55,9 @@ det<-c(T,F)
 conditions<-letters[1:6]
 limit<-T
 author<-T
-embed<-T
+embed<-c(T,F)
+range<-c(T,F)
+lemma<-F
 ifelse(limit,ceiling<-"outliers removed","outliers not removed")
 if(reload)
   rm(eval.1)
@@ -63,7 +65,9 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 if(!exists("eval.1"))
 #  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
   # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
-  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],c(T,F),"obs",F,T,c(T,F),c(T,F))
+  # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+
+  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],det,"obs",lemma,author,range,embed)
 
 anova.form<-eval.1$anova.form
 lme.form<-eval.1$lme.form
@@ -80,9 +84,9 @@ eval output M`r dataset``r caption.ext`.
 caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
 print(caption.ext)
 dfe<-eval.1$plot.md
-legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
-                   explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
-                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",
+legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
+                   explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
+                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0..1",
                             ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
                    )
 #library(kableExtra)

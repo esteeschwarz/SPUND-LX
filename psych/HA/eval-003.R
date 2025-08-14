@@ -192,7 +192,21 @@ library(lmerTest)
 library(dplyr)
 ### normalize distances
 #limit<-T
-tdb4<-qltdf.le.red
+#tdb4<-qltdf.le.red
+lemma.reduce<-function(qltdf){
+  le.lemma<-pblapply(qltdf$lemma,function(x){
+    l<-strsplit(x,"")%>%unlist()%>%length()
+    return(l)
+  })
+  le.lemma.u<-unlist(le.lemma)
+  #sum(le.lemma.u)
+  #head(le.lemma.u,700)
+  qltdf$le.char<-le.lemma.u
+  qltdf<-qltdf[qltdf$le.char>1,]
+  return(qltdf)
+  
+}
+
 get.dist.norm<-function(tdb4,limit){
   df<-tdb4
   Q1 <- quantile(df$dist, 0.25,na.rm = T)
@@ -226,15 +240,17 @@ get.dist.norm<-function(tdb4,limit){
   return(tdb7)
 }
 if(reload){
-  ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
+#  ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
+  qltdf<-read.eval(dataset)
   qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
   #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
   qltdf$embed.score<-qltdf_embed$embed_score
   #dfa<-get.dist.norm(qltdf,limit)
-  
+  qltdf<-lemma.reduce(qltdf)
   dfa<-qltdf
+  dfa<-get.dist.norm(dfa,limit)
 }
-dfa<-get.dist.norm(dfa,limit)
+
 #dfa<-get.dist.norm(qltdf,limit)
 
 #################
@@ -267,7 +283,7 @@ dfa<-get.dist.norm(dfa,limit)
 # tdb5<-tdb4[tdb4$dist<limit,]
 # tdb6<-get.dist.norm(tdb5,5000)
 
-get.anovas<-function(qltdf,target,con,det.t,r,ref,author){
+get.anovas_dep<-function(qltdf,target,con,det.t,r,ref,author){
 #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   dfa<-create.sub(qltdf,target,con,det.t)
   #dfa<-get.dist.norm(dfa,limit)
@@ -320,9 +336,9 @@ get.anovas<-function(qltdf,target,con,det.t,r,ref,author){
 
 ### with embed
 ### 15336. TODO: include lemma switch
-get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
   #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
-  dfa<-create.sub(qltdf,target,con,det.t)
+  dfa<-create.sub(dfa,target,con,det.t)
   #dfa<-get.dist.norm(dfa,limit)
   d.ns<-c(paste0("dist_rel_",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
