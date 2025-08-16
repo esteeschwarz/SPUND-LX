@@ -7,7 +7,7 @@
 - F: coherence and proposition building, information structure
 - corpus includes comments thread on url (topic)
 
-[poster appendix](https://ogy.de/poster-coherence)   
+[poster appendix](https://esteeschwarz.github.io/open-lx/index.html)   
 snc:15307.1.2
 -----
 
