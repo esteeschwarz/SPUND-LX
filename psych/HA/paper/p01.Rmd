@@ -1,0 +1,352 @@
+
+```{r bibmy, eval=F, echo=FALSE, warning=FALSE,message=FALSE}
+#fetch zotero .bib online
+#share <- runif(1)
+# response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
+# bib<-httr::content(response,"text")
+# y<-tempfile("ref",fileext = ".bib")
+# writeLines(bib,y)
+# t<-Sys.time()
+# #tf<-format(t,"%a %b %d %Y (%H.%M)")
+# tf<-format(t,"%Y%m%d(%H.%M)")
+```
+
+
+```{r eval=T, results=F,echo=FALSE, warning=FALSE,message=FALSE}
+
+if (is_html_output()) {
+  print("html output")
+  output.rmd<-"html"
+  dlmsg<-paste0('download pdf <a href="https://ada-sub.dh-index.org/school/papers/017/devoir-2-handout.pdf">here</a>.')
+} else if (is_latex_output()) {
+  print("pdf")
+  output.rmd<-"pdf"
+  dlmsg<-'view handout [online](https://ada-sub.dh-index.org/school/papers/017/).'
+}
+author<-"st. schwarz"
+if(output.rmd=="html")
+  author<-"st. schwarz"
+```
+
+```{r eval-gpt-manual,results=F,echo=F,warning=F,message=FALSE,eval=FALSE}
+options(scipen = 999)
+wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/")
+wd
+df1<-read.csv(paste0(wd,"eval-001.csv"))
+df1$m_rel<-df1$m/df1$corp_size
+df1$m_rel<-round(df1$m_rel,5)
+df1$ld<-round(df1$ld,3)
+
+n_obs<-df1$corp_size[df1$corp=="obs"&df1$q=="a"]
+n_ref<-df1$corp_size[df1$corp=="ref"&df1$q=="a"]
+ld<-T
+get.co<-function(data,ld=T){
+# Center covariates
+ t1<-data$range[data$q=="a"]
+ t2<-diff(t1)
+# t3<-
+data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
+data$range_c    <- data$range    - mean(data$range[data$q=="a"]) # level intercept for conditions b-f 
+#data$corpsize_c <- data$corp_size - mean(data$corp_size)
+#data$m_rel_c    <- data$m_rel    - mean(data$m_rel)
+data$m_rel_c    <- data$m_rel - mean(data$m_rel[data$q=="a"])
+t1<-c(1200,500)
+t2<-abs(t1[1]-t1[2])-abs(t1[1]-t1[2])
+# Corpus dummy
+data$corpusB <- ifelse(data$corp == 'ref', 1, 0)
+data$corpusA <- ifelse(data$corp == 'obs', 1, 0)
+# data$ld<-round(ifelse(data$corp=="obs",df1$ld[df1$corp=="obs"],df1$ld[df1$corp=="ref"]),3)
+# Dummy code condition (a-e) into 4 dummy vars (base = 'a')
+data$cond_a <- ifelse(data$q == 'a', 1, 0)
+data$cond_b <- ifelse(data$q == 'b', 1, 0)
+data$cond_c <- ifelse(data$q == 'c', 1, 0)
+data$cond_d <- ifelse(data$q == 'd', 1, 0)
+data$cond_e <- ifelse(data$q == 'e', 1, 0)
+data$cond_f <- ifelse(data$q == 'f', 1, 0)
+
+# table(data$q)
+# dummy_matrix <- as.matrix(cbind(
+#   data$cond_b,
+#   data$cond_c,
+#   data$cond_d,
+#   data$cond_e
+# ))
+
+# qr(dummy_matrix)$rank
+# cor(data$corpusB, data$cond_b)
+# cor(data$corpusB, data$cond_c)
+# cor(data$corpusB, data$cond_d)
+# cor(data$corpusB, data$cond_e)
+
+ifelse(ld,X <- as.matrix(cbind(
+  1,
+  data$corpusA,
+  data$range_c,
+  #data$corpsize_c,
+  data$m_rel_c,
+  data$ld,
+#  data$cond_a,
+  data$cond_b,
+  data$cond_c,
+  data$cond_d,
+  data$cond_e,
+  data$cond_f
+)),X <- as.matrix(cbind(
+  1,
+  data$corpusA,
+  data$range_c,
+  #data$corpsize_c,
+  data$m_rel_c,
+#  data$cond_a,
+  data$cond_b,
+  data$cond_c,
+  data$cond_d,
+  data$cond_e,
+  data$cond_f
+))
+)
+
+qr(X)$rank  # should equal ncol(X) = 8
+
+Y <- data$dist
+
+XtX <- t(X) %*% X
+XtY <- t(X) %*% Y
+beta_hat <- solve(XtX) %*% XtY
+#?solve
+# m<-matrix(c(1,0,2,1,1,1,1,1,3),ncol = 3)
+# m
+# solve(m)
+# 2^-1
+residuals <- Y - X %*% beta_hat
+n <- nrow(X)
+k <- ncol(X)
+sigma2_hat <- sum(residuals^2) / (n - k)
+
+cov_beta <- sigma2_hat * solve(XtX)
+std_errors <- sqrt(diag(cov_beta))
+
+t_value <- beta_hat[2] / std_errors[2]
+df <- n - k
+p_value <- 2 * pt(-abs(t_value), df)
+# 1st: 0.352
+# 2nd, wt intercept = query(0) : 0.07
+coeff<-solve(t(X) %*% X) %*% t(X) %*% data$dist
+coeff<-round(coeff,3)
+#coeff
+co.df<-data.frame(coeff,row.names = c("intercept",colnames(data)[c(12,3,7,13,14,15,16,17)]))
+#co.df
+return(list(p=p_value,coeff=co.df))
+}
+co.list<-get.co(df1,F)
+co.df<-co.list$coeff
+p_value<-round(co.list$p,5)
+co.df
+```
+```{r prelim,echo=F,warning=F,message=FALSE,results=F}
+#dataset<-3
+eval.n<-dataset
+###############
+# 1=qda,2=qdaf,3=qdb,4=qdbf,5=qdc,6=qdcf,7=qdd,8=qddf,9=qde,10=qdef,11=qdf,12=qdff,13=qdar,14=qdarf,15=qdbr,16=qdbrf,17=qdcr,18=qdcrf,19=qddr,20=qddrf,21=qder,22=qderf,23=qdfr,24=qdfrf
+# 6 > prepos=F for 9,11,13,21,23, also alles DET auszer a, e & f
+###
+if(dataset%in%c(3))
+  det.restrict<-'we restricted all matching antecendents of conditions b-f to must also be tagged "DET".'
+if(dataset%in%c(2,5))
+  det.restrict<-'no restrictions concerning the matching antecedents to be tagged "DET" were accounted for.'
+if(dataset%in%c(4))
+  det.restrict<-'we restricted the matching antecendents of conditions b-d to must also be tagged "DET".'
+if(dataset%in%c(6))
+  det.restrict<-'we restricted the matching antecendents of conditions b-d to must also be tagged "DET".'
+if(dataset%in%c(7))
+  det.restrict<-'we observed all matching antecendents of conditions b-f wether be tagged "DET" or not.'
+queries<-letters[1:6]
+
+```
+
+```{r sourcescr,results=T,warning=F,message=F,echo=F,eval=T}
+# library(jsonlite)
+# library(abind)
+ #qs<-readLines(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
+ qjs<-fromJSON(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-qs.json"))
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"))
+# n_obs<-dfa$corpsize[dfa$target=="obs"][1]
+# n_ref<-dfa$corpsize[dfa$target=="ref"][1]
+md_target<-median(dfa$dist[dfa$target=="obs"])
+md_ref<-median(dfa$dist[dfa$target=="ref"])
+sample.df<-dfa[sample(1:length(dfa$dist),10),
+               colnames(dfa)!="query_long"]
+#kable(sample.df)
+```
+
+<!--# xTitle-->
+# presupposition & coherence in :schizophrenia: threads
+### stephan schwarz / a. stefanowitsch:16827_25S:sprache und psychose
+## subject
+Investigate reference marking, coherence and information structure in schizophrenia language by measuring distance of similar nouns within range of comment thread preceded by certain determinants.[^1]
+
+## background
+Inspired by @zimmerer_deictic_2017 we are interested in observations concerning coherence and presupposing conditions in schizophrenia language, as these linguistic markers appear underinvestigated in research while they seem to play a crucial role within target group language. (As such seen as asset of thinking or world building capacity which might suffer from linguistic deficits within the range of positive symptoms.)
+
+## method (M`r dataset`)
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M`r dataset` `r det.restrict`   This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+
+----
+
+## questions
+Measuring the referent-reference distance which we here assume as indicator of coherence we hope to find empirical evidence for disturbed or not world building capabilities within schizophrenia language. Premising that a large noun distance indicates a low reference-referent association we hypothesise that in a language/ToM setting where the speakers estimation of the audiences context understanding capacities is disturbed we will find higer medium scores for the distance under matching conditions.
+
+## daten
+We built a corpus of the reddit r/schizophrenia thread (```n=`r n_obs` ``` tokens) and a reference corpus of r/unpopularopinion (```n=`r n_ref` ```). Both were pos-tagged using the R udpipe:: package [@wijffels_udpipe_2023] which tags according to the universal dependencies tagset maintained by @de_marneffe_universal_2021. Still the `r n_obs` tokens can only, within the workflow of growing the corpus and devising the noun distances developed be just a starting point from where with more datapoints statistical evaluation becomes relevant first.   
+The dataframe used for modeling M`r dataset` consists of ``` `r length(dfa$q)` ``` distance datapoints (sample below) derived from the postagged corpus.
+
+
+```{r sampledf,results=T,warning=F,message=F,echo=F,eval=T}
+kable(sample.df,row.names = F)
+
+```
+----
+
+## results
+```{r,df1-kable,message=F,warning=F,echo=FALSE,eval=F}
+#knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+#kable(df1)
+```
+
+```{r,df1-print,message=F,warning=F,echo=FALSE,eval=F}
+#knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+#df1
+```
+
+```{r viz1,message=F,warning=F,echo=FALSE,eval=T,fig.path=paste0("plots/distance-distribution-df",dataset,"-")}
+#knitr::include_graphics("~/Documents/GitHub/school/papers/017/twitter-x.jpg",dpi = 150)
+# Reshape data for grouped barplot
+# library(reshape2)
+# df1<-dfa
+# df1_no_outliers <- df1 %>%
+#   group_by(target) %>%
+#   filter(
+#     dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+#     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+#   ) %>%
+#   ungroup()
+# #boxplot(dist~target,df1_no_outliers)
+# 
+# df1_wide <- dcast(df1_no_outliers, q ~ target, value.var = "dist")
+# df1_wide <- dcast(df1_no_outliers,q+target~dist,median)
+# df1_wide <- dcast(dfa,q+target~dist,median)
+# df1_wide <- acast(dfa,q+target~dist,median)
+# 
+# # Ensure the order of conditions a-f
+# df1_wide$q <- factor(df1_wide$q, levels = c("a", "b", "c", "d", "e", "f"))
+# df1_wide <- df1_wide[order(df1_wide$q), ]
+# #rowSum(df1_wide)
+# # Create the matrix for barplot
+# #bar_matrix <- t(as.matrix(df1_wide[, c("obs", "ref")]))
+# t.sum<-rowSums(df1_wide[,3:length(df1_wide)],na.rm = T)
+# t.sum<-rowSums(df1_wide,na.rm = T)
+#t.sum
+#bar_matrix <- t.sum
+# Plot grouped barplot
+# barplot(
+#   bar_matrix,
+#   beside = TRUE,
+# #  names.arg = c("0",levels(df1_wide$q)[2:6]),
+#   col = c("black", "red"),
+#   las = 1,
+#   cex.names = 0.7,
+#   main = "Distances distribution over conditions",
+#   ylab = "same-noun distance"
+# )
+# legend("topright", legend = c("obs", "ref"), fill = c("black", "red"))
+bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
+bar_mat <- t(bar_mat)  # barplot expects groups in columns
+
+# Make grouped barplot
+df.plot<-barplot(bar_mat,
+        beside = TRUE,
+        col = c("black", "red"),
+        names.arg = levels(dfe$q),
+        legend.text = rownames(bar_mat),
+        args.legend = list(x = "right"),
+        ylab = "median distance",
+        main = "distance distribution by query")
+
+
+#print(unlist(qjs))
+#qjs$b
+#queries<-qjs
+x<-qs[[2]]
+quer<-lapply(qs, function(x){
+  q<-x[[1]]$q
+  q<-paste0(q,collapse=",")
+})
+queries<-unlist(quer)
+queries.df<-data.frame(q=letters[1:6],precedent=c("ALL (.*)",queries[2:6]),pos="NOUN")
+# cat("## conditions:\n")
+ kable(queries.df,caption = "query conditions for preceding token")
+```
+
+```{r lmeplot, results=F,message=F,warning=F,echo=FALSE,eval=T,fig.path=paste0("plots/lmer-plot-df",dataset,"-")}
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-002.R"))
+#print(head(df))
+#print("anova_model <- aov(dist ~ target*q, data = df)")
+#print(an.summ)
+s1<-eval.1$anova.plain
+s2<-eval.1$anova.lme
+s3<-eval.1$lme
+anlm.summ<-s2
+lm2.summ<-s3
+#s1
+s1
+p.target<-s1[1,length(s1)]
+p.target.anlm<-anlm.summ["target:q",length(anlm.summ)]
+p.target.q<-anlm.summ["target:q",length(anlm.summ)]
+p.use<-p.target.anlm
+sig.array<-c(0,0.001,0.01,0.05,0.1,1)
+p.sig<-p.use<sig.array
+p.sig<-which(p.sig)[1]
+p.sig.ex<-paste0("p<",sig.array[p.sig])
+#kable(anlm.summ)
+dist.target<-lm2.summ$coefficients["targetref",1]
+dist.target<-round(dist.target,0)
+rmd.plot.lme(lm2.summ)
+lme.form<-lmeform.l$pre.det
+#p.target.q
+#get mean:
+# m.target<-median(dfa$dist[dfa$target=="obs"])
+# m.ref<-median(dfa$dist[dfa$target=="ref"])
+
+#plot:
+#unlist(qjs$b)
+coef<-s3$coefficients
+### relations:
+int<-coef[1,1]
+qv<-coef[9:13,1]
+qvc<-qv
+names(qvc)<-letters[2:6]
+qdiff<-int+qv
+qmin<-qdiff<int
+qvmin<-qv[qmin]
+names(qvmin)<-names(qvc)[qmin]
+qvmin
+
+```
+
+<!-------->
+## conclusion
+Over conditions <!--**B** (``` `r unlist(qjs$b)` ```)-->[``` `r names(qvmin)` ```] we find significantly higher distance scores in the target corpus which proves our hypothesis. An ANOVA analysis of the linear regression model [cf. @bates_fitting_2015] which posited a main effect of corpus\*q+range and random effects of lemma and determiner (```lme4::lmer(`r lme.form`,df)```) gets a p-value of ```p=`r p.use` ``` for the mean difference of ``` `r dist.target` ``` tokens (targetref) compared to the target.   
+So the medium distance of nouns, preceded by one of our queries, is with ``` `r md_target` ``` tokens width for the target corpus vs. ``` `r md_ref` ``` in the reference corpus also with respect to the covariables significantly (```r p.sig.ex```) higher but still to be tested with growing the corpus.
+
+
+```{r,echo=F,results='asis'}
+#knitr::include_graphics("QR_poster-ext.png")
+cat("![](QR_poster-ext.png)\n")
+
+```
+
+
+<!--![](QR_poster-ext.png)-->
+<!--## B. REF-->
+[^1]:snc.1:h2.pb.1000char/pg.queries.cites

@@ -1,0 +1,226 @@
+---
+title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+output: 
+    bookdown::html_document2:
+      base_format: tufte::tufte_html
+      keep_md: true
+      self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+#keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+```
+
+```{css, echo=FALSE,eval=T}
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+```
+
+```{r}
+#dataset<-7
+```
+
+```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
+#eval.n<-7
+# run<-15302
+# dataset<-11
+# appendix open-lx after all is loaded, yaml new=T, reload=F
+#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/poster-ext.Rmd"))
+
+run<-15303
+dataset<-12
+
+reload<-T
+target<-c("obs","ref")
+ref_target<-"obs"
+rel<-T
+det<-c(T,F)
+conditions<-letters[1:6]
+limit<-T
+author<-T
+embed<-c(T,F)
+range<-c(T,F)
+lemma<-F
+ifelse(limit,ceiling<-"outliers removed","outliers not removed")
+if(reload)
+  rm(eval.1)
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+if(!exists("eval.1"))
+#  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+  # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
+  # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+
+  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],det,"obs",lemma,author,range,embed)
+
+anova.form<-eval.1$anova.form
+lme.form<-eval.1$lme.form
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# dfe<-eval.1$plot.md
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+```
+
+# appendix
+eval output M`r dataset``r caption.ext`.
+
+## citetest, method (M`r dataset`)
+To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M`r dataset` (removed)...   This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+
+## legende
+```{r,legend,echo=FALSE,warning=F,message=F}
+
+print(caption.ext)
+dfe<-eval.1$plot.md
+legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
+                   explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
+                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0..1",
+                            ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
+                   )
+#library(kableExtra)
+
+# k<-kable(legend,caption = "model vars")
+# k<-kable_styling(k,full_width = TRUE)
+# k
+kable(legend, caption = "model vars",format="markdown")
+```
+
+## anova analysis
+### anova plain, formula: [``` `r anova.form` ```]
+```{r,dfs1,echo=FALSE,warning=F,message=F}
+# legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
+#                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
+#                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE",
+#                             ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
+#                    )
+# #library(kableExtra)
+# 
+# # k<-kable(legend,caption = "model vars")
+# # k<-kable_styling(k,full_width = TRUE)
+# # k
+# kable(legend, caption = "model vars") #%>%
+# #  kable_styling(full_width = TRUE)
+s1<-eval.1$anova.plain
+p.select<-c("target|target:q")
+p.an<-s1[grep(p.select,rownames(s1)),]
+#p.an
+#cat("anova plain, formula: `",anova.form.l$pre.det,"`\n")
+s1
+```
+
+### anova of linear regression model: [`anova(summary(lmer))`]
+
+```{r,dfs2,echo=FALSE,warning=F,message=F}
+
+
+
+s2<-eval.1$anova.lme
+p.an.lm<-s2[grep(p.select,rownames(s2)),]
+#p.an.lm
+#cat("anova of linear regression model (below): [`anova(summary(lmer))`]\n")
+s2
+```
+
+### linear regression coefficients, formula: [``` `r lme.form` ```]
+```{r,dfs3,echo=FALSE,warning=F,message=F}
+s3<-eval.1$lme
+#cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
+#print(s3, right = TRUE, width = 999)
+#print(s3)
+#options(max.print = 1000)  # Set higher limit
+invisible(capture.output(
+  suppressWarnings(
+    suppressMessages(
+      print(s3)
+    )
+  ), type = "message"
+))
+#print(s3)
+coef<-s3$coefficients
+### relations:
+int<-coef[1,1]
+#int
+qv<-coef[9:(length(coef[,1])),1]
+qvc<-qv
+#qvc
+
+qvc.ns<-strsplit(names(qvc),"q")
+qvc.ns<-lapply(qvc.ns, function(x){
+  return(x[2])
+})
+qvc.ns<-unlist(qvc.ns)
+names(qvc)<-qvc.ns
+#l<-length(qvc.ns[[1]])
+qdiff<-int+qv
+qmin<-qdiff<int
+qvmin<-qv[qmin]
+names(qvmin)<-names(qvc)[qmin]
+#qvmin
+```
+
+## plots
+```{r boxplot1,echo=F,warning=F,message=F,fig.cap=paste0("compare distances by corpus",caption.ext)}
+# df1_no_outliers <- dfa %>%
+#   group_by(target) %>%
+#   filter(
+#     dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+#     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+#   ) %>%
+#   ungroup()
+d.sel<-paste0("dist_rel_",ref_target)
+Y<-dfa[[d.sel]]
+boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
+
+```
+
+```{r,barplot-median,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
+m1<-which(colnames(dfe)%in%c("mean","median"))
+dfe[,m1]<-round(dfe[,m1],0)
+# m2<-m1[length(m1):1]
+# m3<-c(1:(m1[1]-1),m2)
+# dfe<-dfe[,m3]
+plot.dist(dfe,"mean")
+```
+
+
+```{r,dfe-table,echo=F,warning=F,message=F}
+kable(dfe,caption = paste0("mean/median table for M",dataset),format="markdown")
+```
+
+
+```{r,barplot-mean,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
+plot.dist(dfe,"median")
+```
+
+```{r lmeplot,echo=F,warning=F,message=F,fig.cap=paste0("distances relation",caption.ext)}
+rmd.plot.lme(s3)
+```
+
+```{r gplot,echo=F,warning=F,message=F,fig.cap="distances normalised vs. raw"}
+gplot.dist(dfa,ref_target)
+```
+-----
+
+## REF
+literature used and alii...   
+
+
