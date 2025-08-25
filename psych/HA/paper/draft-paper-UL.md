@@ -1,3 +1,25 @@
+---
+title: "draft: coherence & proposition observations in :schizophrenia: threads"
+author: "st. schwarz"
+date: "2025-08-25"
+output: 
+    bookdown::html_document2:
+      base_format: tufte::tufte_html
+      keep_md: true
+      self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+#keep_md: true
+---
+
+
+
+
 # 15303.ha.draft
 ## subject
 
@@ -50,7 +72,7 @@ finally increases.
 We thought about some serious caveats within the latest  method: If (lucky for our hypothesis) the target corpus has significantly higher distance scores over nearly all conditions, does that automatically indicate a less coherent reference-referent association within what is expressed in the comments? Couldn't we also assume that if the analogue nouns appear more distanced in general that a topic which is including these nouns is simply expanding over a wider range i.e. timeframe? What does that do to our assumptions in terms of coherence? A good way here could be to integrate (from M3) a general lexical diversity factor per url as fixed effect because we can assume that a higher type/token ratio logically decreases the probability of a noun appearing multiple times within a range and we could take that effect into account. 
 
 ### semantics, word field, embedding
-Further we created another covariable possible to integrate in the evaluation model: The probability of one specific noun appearing on its specific position in the thread range, computed with help of an open LL word embedding model (@huggingface_all-minilm-l6-v2_2025.) This is a common AI way of devising semantic relations in a corpus which exceeds a just frequency based keyword analysis. Using an LLM here allows for a distinctive identification of world field embeddings of the noun in question. In that way we get another variable linguistic feature extracted which may give general insights into the level of standardisation that applies to the corpora. So if a noun is found to be embedded with a high score into its context (the url thread) then it can be very much expected to be found there and does not appear out-of-context.[^7]
+Further we created another covariable possible to integrate in the evaluation model: The probability of one specific noun appearing on its specific position in the thread range, computed with help of an open LL word embedding model @huggingface_all-minilm-l6-v2_2025. This is a common AI way of devising semantic relations in a corpus which exceeds a just frequency based keyword analysis. Using an LLM here allows for a distinctive identification of world field embeddings of the noun in question. In that way we get another variable linguistic feature extracted which may give general insights into the level of standardisation that applies to the corpora. So if a noun is found to be embedded with a high score into its context (the url thread) then it can be very much expected to be found there and does not appear out-of-context.[^7]
 
 ### caveats
 Since devising the word embed score does take much computing ressources we had a script run on a server that solves the computing. But the first essai to integrate the new var into the evaluation model failed due to levels \< 2. Why? Because since we ran the script over the complete url ranges in the corpus and that is sorted after target,[^8] we did not compute any values for the reference corpus. So we learned this way again on linear regression models which require that a variable has more than one level (which would not be the case if the lmer() function excludes all NA rows: there will be no observations left with target=ref since all its embed.score values are NA and so all target.ref rows will be removed during regression.
@@ -74,3 +96,7 @@ Since devising the word embed score does take much computing ressources we had a
 
 [^8]:	where "obs" comes first
 
+
+-----
+
+## REF
