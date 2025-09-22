@@ -143,9 +143,11 @@ tdb.r.s$pos<-1:length(tdb.r.s$token)
 #tdb$ref$pos<-1:length(tdb$ref$token)
 tdba.1.15302<-list(obs=tdb1o,ref=tdb1r)
 }
-tdba.1.15303.sm<-rbind(tdb.o.s,tdb.r.s)
 tdba.1.15303<-get.tok.db(tdb)
-tdba.1.15303.sm[1:10,]==tdba.1[1:10,1:20]
+tdba.1.15303$obs$pos<-1:length(tdba.1.15303$obs$token)
+tdba.1.15303$ref$pos<-1:length(tdba.1.15303$ref$token)
+tdba.1.15303.sm<-rbind(tdba.1.15303$obs,tdba.1.15303$ref)
+#tdba.1.15303.sm[1:10,]==tdba.1[1:10,1:20]
 #save(tdba.1.15303,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.1.15303.RData"))
 # tdba<-tdba.1.15303.sm
 # #l1<-length(tdba.1$target)
@@ -156,8 +158,10 @@ tdba.1.15303.sm[1:10,]==tdba.1[1:10,1:20]
 # p1<-qltdf$pos
 # head(tdba.n$pos[p1])
 # head(tdba.n$upos[p1])
-tdba.n<-tdba[tdba$upos=="NOUN",] # cant remember in/out
+#tdba.n<-tdba[tdba$upos=="NOUN",] # cant remember in/out
 
+### 15393.new essai prepare df for claude distance
+tdba.n<-tdba.1.15303.sm
 # #wks.
 # p2<-tdba$pos[p1]
 # head(tdba$upos[p2])
@@ -168,10 +172,19 @@ n1w<-n1w[!is.na(n1w)]
 n1w[n1w==0]<-1
 #n1w<-as.double(rownames(tdba.n))-1
 tdba.n$pre<-NA
-length(tdba$token[n1w])
-tdba.n$pre<-tdba$token[n1w]
+length(tdba.n$token[n1w])
+tdba.n$pre<-tdba.n$token[n1w]
 #m<-grep("<doc ",tdba.n$pre)
-tdba.n$prepos<-tdba$upos[n1w]
+tdba.n$prepos<-tdba.n$upos[n1w]
+url.u<-unique(tdba.n$url_t)
+url.u
+tdba.n$url_id<-NA
+for (k in 1:length(url.u)){
+  cat("\r",k,"of",length(url.u))
+  r<-tdba.n$url_t==url.u[k]
+  tdba.n$url_id[r]<-k
+}
+
 #tdba.n$pos<-as.double(rownames(tdba.n))
 #dis1<-diff(tdba.n$pos)
 #tdba.n$dist<-c(1,dis1)
@@ -216,6 +229,10 @@ tdba.2<-rbind(tdba.n,sub.2,sub.3,sub.4,sub.5,sub.6)
 table(tdba.2$q)
 t.det<-table(tdba.2$q[tdba.2$prepos=="DET"])
 t.det
+
+save(tdba.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.2.RData"))
+
+### 15393 finish here
 # b -311, c/d ==, e/f 0 : the + a,any,some,an are all DET
 # unnu?
 # 1st: get only distances of same-noun
@@ -237,8 +254,8 @@ t.det
 # get same-noun dist within range
 # define ranges
 # 15303.new url range essai per url_text
-urlt<-tdba.2$url_t
-length(unique(urlt))
+#urlt<-tdba.2$url_t
+#length(unique(urlt))
 ###############
 uid<-tdba.2$uid
 length(unique(uid))

@@ -1,36 +1,71 @@
-# Analyse des relations anaphoriques et coréférences dans un corpus Reddit
-# Packages nécessaires
 library(tidyverse)
 library(igraph)
 library(visNetwork)
 library(quanteda)
 library(stringdist)
 library(DT)
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012c.RData"))
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.2.RData"))
+#tdba<-qltdf
+#d<-duplicated(tdba)
+#tdb2<-tdba[!d,]
+tdba<-tdba.2
+# obs<-tdba$obs
+# ref<-tdba$ref
+# rm(tdba.1.15303)
+colnames(tdba.2)
 
+cns<-c(1,3,5,6,7,17,18,19,20,22,24)
+tdba<-tdba.2[cns]
+#obs<-obs[cns]
+#tdbs<-tdba[cns]
+colnames(tdba)
+colnames(tdba)<-c("word","sentence_id","lemma","pos_tag","xpos","target","text_id","author","position","q","url_id")
+#ref<-ref[cns]
+#tdbs<-tdba[cns]
+#colnames(ref)
+#colnames(ref)<-c("word","sentence_id","lemma","pos_tag","xpos","com_id","target","text_id","author")
+#colnames(tdbs)
+data1<-tdba
+# data2<-ref
+# data1$position<-1:length(data1$word)
+# data2$position<-1:length(data2$word)
+data1$word<-gsub("[^a-zA-Z]","",data1$word)
+data1$lemma<-gsub("[^a-zA-Z]","",data1$lemma)
+data1<-data1[data1$word!="",]
+# data2$word<-gsub("[^a-zA-Z]","",data2$word)
+# data2$lemma<-gsub("[^a-zA-Z]","",data2$lemma)
+# data2<-data2[data2$word!="",]
+# url.u<-unique(data1$text_id)
+# url.u
+# data1$url_id<-NA
+# for (k in 1:length(url.u)){
+#   cat("\r",k,"of",length(url.u))
+#   r<-data1$text_id==url.u[k]
+#   data1$url_id[r]<-k
+# }
+# data2$url_id<-NA
+# url.u<-unique(data2$text_id)
+# for (k in 1:length(url.u)){
+#   cat("\r",k,"of",length(url.u))
+#   r<-data2$text_id==url.u[k]
+#   data2$url_id[r]<-k
+# }
+# obs<-data[data$target=="obs",]
+# ref<-data[data$target=="ref",]
 # ====== 1. PRÉPARATION DES DONNÉES ======
 # Fonction pour charger et nettoyer les données pos-taggées
-load_reddit_corpus <- function(tdb) {
+load_reddit_corpus <- function(data) {
   # Assumons un format : text_id, sentence_id, word, pos_tag, lemma
   #data <- read.csv(file_path, stringsAsFactors = FALSE)
 #  data<-tdb$obs
-  tdba<-tdba.1.15303
-  rm(tdba.1.15303)
-  colnames(tdba)
-  cns<-c(1,3,5,6,7,15,17,18)
-  tdbs<-tdba[cns]
-  colnames(tdbs)
-  colnames(tdbs)<-c("word","sentence_id","lemma","pos_tag","xpos","com_id","target","text_id")
-  colnames(tdbs)
-  data<-tdbs
   unique(data$pos_tag)
   unique(data$xpos)
   # Filtrer les noms (NN, NNS, NNP, NNPS)
   nouns <- data %>%
     filter(str_detect(pos_tag, "NOUN")) %>%
     mutate(
-      text_id = as.character(text_id),
-      position = row_number()
+      text_id = as.character(url_id),
+      position = position
     )
   
   return(nouns)
@@ -72,7 +107,7 @@ find_similar_nouns <- function(nouns_data, threshold = 0.8) {
 # Fonction pour calculer la distance entre mentions
 calculate_anaphora_distance <- function(nouns_data) {
   anaphora_candidates <- nouns_data %>%
-    group_by(text_id, lemma) %>%
+    group_by(text_id, lemma,target) %>%
     filter(n() > 1) %>%  # Noms qui apparaissent plusieurs fois
     mutate(
       mention_order = row_number(),
@@ -82,11 +117,13 @@ calculate_anaphora_distance <- function(nouns_data) {
   
   # Calculer les distances entre mentions successives
   distances <- anaphora_candidates %>%
-    group_by(text_id, lemma) %>%
+    group_by(text_id, lemma,target) %>%
     mutate(
       next_position = lead(position),
+      next_url = lead(text_id),
       distance_to_next = next_position - position,
-      is_anaphora = !is.na(distance_to_next)
+    #  is_anaphora = !is.na(distance_to_next)
+      is_anaphora = next_url == text_id
     ) %>%
     filter(is_anaphora) %>%
     ungroup()
@@ -130,12 +167,12 @@ create_semantic_network <- function(anaphora_data, similarity_data) {
   
   # Arêtes : relations anaphoriques
   anaphora_edges <- anaphora_data %>%
-    select(from = lemma, to = lemma, weight = distance_to_next, type = "is_anaphora") %>%
+    select(source = lemma, target = lemma, weight = distance_to_next, type = "is_anaphora") %>%
     distinct()
   
   # Arêtes : similarités
   similarity_edges <- similarity_data %>%
-    select(from = noun1, to = noun2, weight = similarity, type = "similarity")
+    select(source = noun1, target = noun2, weight = similarity, type = "similarity")
   
   # Combiner les arêtes
   all_edges <- bind_rows(anaphora_edges, similarity_edges) %>%
@@ -164,8 +201,8 @@ visualize_network <- function(network_data) {
 map_relations_to_texts <- function(anaphora_data, original_corpus) {
   # Créer une vue des relations dans leur contexte
   relation_map <- anaphora_data %>%
-    left_join(original_corpus, by = c("text_id", "position")) %>%
-    group_by("text_id", "lemma") %>%
+    left_join(original_corpus, by = c("text_id", "position","lemma")) %>%
+    group_by (text_id,lemma) %>%
     summarise(
       mentions = list(word),
       positions = list(position),
@@ -202,32 +239,73 @@ analyze_anaphora_patterns <- function(anaphora_data) {
 # run_anaphora_analysis <- function(corpus_file) {
   # 1. Charger les données
   cat("Chargement du corpus...\n")
-  nouns_data <- load_reddit_corpus("none")
+  # nouns_data_obs <- load_reddit_corpus(data1)
+  # nouns_data_ref <- load_reddit_corpus(data2)
+  nouns_data <- load_reddit_corpus(data1)
   
   # 2. Extraire les entités
-  cat("Extraction des entités nommées...\n")
-  entities <- extract_named_entities(nouns_data)
+  #cat("Extraction des entités nommées...\n")
+  #entities <- extract_named_entities(nouns_data)
   #none
   # 3. Trouver les synonymes/similaires
-  cat("Recherche de noms similaires...\n")
-  similar_nouns <- find_similar_nouns(nouns_data)
+  #cat("Recherche de noms similaires...\n")
+  #similar_nouns <- find_similar_nouns(nouns_data)
   
   # 4. Détecter les anaphores
   cat("Détection des anaphores...\n")
   anaphora_distances <- calculate_anaphora_distance(nouns_data)
-  coreference_chains <- detect_coreference_chains(nouns_data)
+  anaphora_distances.o <- calculate_anaphora_distance(nouns_data_obs)
+  anaphora_distances.r <- calculate_anaphora_distance(nouns_data_ref)
+  outliers <- function(df) {
+    # Remove outliers in 'y' using IQR
+    Q1 <- quantile(df$distance_to_next, 0.25,na.rm = T)
+    Q3 <- quantile(df$distance_to_next, 0.75,na.rm = T)
+    IQR <- Q3 - Q1
+    
+    df_no_outliers <- subset(df, distance_to_next > (Q1 - 1.5 * IQR) & distance_to_next < (Q3 + 1.5 * IQR))
+  }
+  anaphora_distances.oo<-outliers(anaphora_distances)
+  # anaphora_distances.oo<-outliers(anaphora_distances.o)
+  # anaphora_distances.ro<-outliers(anaphora_distances.r)
+  # sum(anaphora_distances.oo$total_mentions==1)
+  # sum(anaphora_distances.ro$total_mentions==1)
+  # ### test:
+  mean(anaphora_distances$distance_to_next)
+  # mean(anaphora_distances.oo$distance_to_next)
+  # median(anaphora_distances.r$distance_to_next)
+  # median(anaphora_distances.o$distance_to_next)
+  # sum(anaphora_distances.o$is_anaphora)
+  data3<-rbind(anaphora_distances.oo,anaphora_distances.ro)
+  #coreference_chains <- detect_coreference_chains(nouns_data)
+  anova.fstr<-paste0("dist"," ~ target*q")
+  data3<-data.frame(anaphora_distances)
+  colnames(data3)[grep("distance_to_next",colnames(data3))]<-"dist"
+  table(data3$q)
+  model<-aov(as.formula(anova.fstr),data=data3)
+  anova.sum<-summary(model)
+  anova.sum
+  lme.str<-paste0("dist ~ target*q+(1|lemma)+(1|author)")
+  #lme.str<-paste0("dist ~ target*q")
+  library(lme4)
+  library(lmerTest)
+  lm2<-lmer(eval(expr(lme.str)),data3)
+  #lm3<-lmer(eval(expr(lmeform)),dfa)
+  summary(lm2)
+  lm2.summ<-summary(lm2)
+  lm2.summ
+  anlm.summ<-anova(lm2)
+  anlm.summ
   
   # 5. Créer le réseau
   cat("Création du réseau sémantique...\n")
-  network <- create_semantic_network(anaphora_distances, similar_nouns)
+  #network <- create_semantic_network(anaphora_distances, similar_nouns)
   
   # 6. Analyser les patterns
   cat("Analyse des patterns...\n")
-  patterns <- analyze_anaphora_patterns(anaphora_distances)
+  patterns <- analyze_anaphora_patterns(anaphora_distances.oo)
   
   # 7. Cartographier sur les textes
   cat("Cartographie des relations...\n")
-  data$position<-1:length(data$word)
   relation_map <- map_relations_to_texts(anaphora_distances, nouns_data)
   #relation_map <- map_relations_to_texts(anaphora_distances, data)
   
@@ -247,7 +325,7 @@ analyze_anaphora_patterns <- function(anaphora_data) {
 # Pour exécuter l'analyse :
  #results <- run_anaphora_analysis("votre_corpus_reddit.csv")
  # visualize_network(results$network)
-visualize_network(network)
+#visualize_network(network)
 #write.csv(network$)
 
 
