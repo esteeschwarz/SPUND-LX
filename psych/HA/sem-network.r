@@ -228,8 +228,8 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   # 7. Cartographier sur les textes
   cat("Cartographie des relations...\n")
   data$position<-1:length(data$word)
-  #relation_map <- map_relations_to_texts(anaphora_distances, nouns_data)
-  relation_map <- map_relations_to_texts(anaphora_distances, data)
+  relation_map <- map_relations_to_texts(anaphora_distances, nouns_data)
+  #relation_map <- map_relations_to_texts(anaphora_distances, data)
   
   # # return(list(
   #   network = network,
@@ -239,12 +239,15 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   #   entities = entities
   # # ))
   
-# }
+# }load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/dcorpus.df.cpt-012c.RData"))
 
+# save(network,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/sem-network.RData"))
+# write.csv(network$nodes,paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/sem-network.nodes.csv"))
+# write.csv(network$edges,paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/sem-network.edges.csv"))
 # Pour exécuter l'analyse :
  #results <- run_anaphora_analysis("votre_corpus_reddit.csv")
  # visualize_network(results$network)
-#visualize_network(network)
+visualize_network(network)
 #write.csv(network$)
 
 
