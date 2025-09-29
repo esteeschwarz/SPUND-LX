@@ -14,6 +14,7 @@ The capacity to imagine or have in mind, what concrete information is accessible
 Now one indicator of that coherence we assume is *reference distance* where according to our hypothesis a larger distance would be observed in places where the adressant overestimates[^2] the ability of the partner to follow a reference. That would mean that we find a medium shorter distance between referent and reference in the reference corpus[^3] and larger distances in the target corpus. The references we are interested in are nouns that appear as anaphors i.e. here as noun analogies. The assumption is that if a noun is repeated *and* is combinded with certain preceding determiners, the speaker assumes that the adressee has some knowledge of what is talked about, depending on the strength of the determination. So [this, that, those, these]() would be rather strong determiners requiring that the noun most definitely was introduced before; these four determiners depict on of our 5 conditions listed below.
 
 ### deictic anchoring and propositional complexity
+#### raw
 [@zimmerer\_deictic\_2017, introduction]()
 - linguistic deviation
 Deictic anchoring is an inherent part of the process by which we make references to aspects in the world including entities, events, locations, and time. (2)
