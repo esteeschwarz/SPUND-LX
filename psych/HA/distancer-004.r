@@ -4,34 +4,55 @@ library(visNetwork)
 library(quanteda)
 library(stringdist)
 library(DT)
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.2.RData"))
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.n.RData"))
 #tdba<-qltdf
 #d<-duplicated(tdba)
 #tdb2<-tdba[!d,]
-tdba<-tdba.2
+tdba<-tdba.n
 # obs<-tdba$obs
 # ref<-tdba$ref
 # rm(tdba.1.15303)
-colnames(tdba.2)
+colnames(tdba.n)
 
-cns<-c(1,3,5,6,7,17,18,19,20,22,24)
-tdba<-tdba.2[cns]
+cns<-c(1,3,5,6,7,17,19,20,22,23,24,25,26)
+colnames(tdba.n)[cns]
+tdba<-tdba.n[cns]
+
 #obs<-obs[cns]
 #tdbs<-tdba[cns]
 colnames(tdba)
-colnames(tdba)<-c("word","sentence_id","lemma","pos_tag","xpos","target","text_id","author","position","q","url_id")
+# colnames(tdba)<-c("token","sentence_id","lemma","upos","xpos","target","text_id","author","position","q","url_id")
 #ref<-ref[cns]
 #tdbs<-tdba[cns]
 #colnames(ref)
 #colnames(ref)<-c("word","sentence_id","lemma","pos_tag","xpos","com_id","target","text_id","author")
 #colnames(tdbs)
 data1<-tdba
+#tdb$obs$url<-uid2
+# url.u.o<-unique(data1$url_id)
+# #url.u.t<-unique(data1$text_id)
+# data1$range<-NA
+# for(k in url.u.o){
+#   cat("\r",k)
+#   r<-data1$url_id==k
+#   data1$range[r]<-sum(r)
+# }
 # data2<-ref
 # data1$position<-1:length(data1$word)
 # data2$position<-1:length(data2$word)
-data1$word<-gsub("[^a-zA-Z]","",data1$word)
+### clean up
+data1$token<-gsub("[^a-zA-Z]","",data1$token)
 data1$lemma<-gsub("[^a-zA-Z]","",data1$lemma)
-data1<-data1[data1$word!="",]
+data1<-data1[data1$token!="",]
+### get embed score
+# sample
+url.u<-unique(data1$url_id)
+select<-1:2
+for(k in select){
+  r<-data1$url_id==k
+}
+
+
 # data2$word<-gsub("[^a-zA-Z]","",data2$word)
 # data2$lemma<-gsub("[^a-zA-Z]","",data2$lemma)
 # data2<-data2[data2$word!="",]
@@ -58,14 +79,14 @@ load_reddit_corpus <- function(data) {
   # Assumons un format : text_id, sentence_id, word, pos_tag, lemma
   #data <- read.csv(file_path, stringsAsFactors = FALSE)
 #  data<-tdb$obs
-  unique(data$pos_tag)
+  unique(data$upos)
   unique(data$xpos)
   # Filtrer les noms (NN, NNS, NNP, NNPS)
   nouns <- data %>%
-    filter(str_detect(pos_tag, "NOUN")) %>%
+    filter(str_detect(upos, "NOUN")) %>%
     mutate(
       text_id = as.character(url_id),
-      position = position
+      position = pos
     )
   
   return(nouns)
@@ -74,7 +95,7 @@ load_reddit_corpus <- function(data) {
 # ====== 2. EXTRACTION DES ENTITÉS ET SYNONYMES ======
 
 # Fonction pour identifier les entités nommées potentielles
-extract_named_entities <- function(nouns_data) {
+extract_named_entities_dep <- function(nouns_data) {
   named_entities <- nouns_data %>%
     # filter(str_detect(pos_tag, "NNP")) %>%  # Noms propres
     filter(str_detect(xpos, "NNP")) %>%  # Noms propres
@@ -86,7 +107,7 @@ extract_named_entities <- function(nouns_data) {
 }
 
 # Fonction pour détecter les synonymes/variations par similarité de chaînes
-find_similar_nouns <- function(nouns_data, threshold = 0.8) {
+find_similar_nouns_dep <- function(nouns_data, threshold = 0.8) {
   unique_nouns <- unique(nouns_data$lemma)
   
   # Calculer la distance entre tous les noms
@@ -121,7 +142,7 @@ calculate_anaphora_distance <- function(nouns_data) {
     mutate(
       next_position = lead(position),
       next_url = lead(text_id),
-      distance_to_next = next_position - position,
+      dist = next_position - position,
     #  is_anaphora = !is.na(distance_to_next)
       is_anaphora = next_url == text_id
     ) %>%
@@ -254,8 +275,23 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   # 4. Détecter les anaphores
   cat("Détection des anaphores...\n")
   anaphora_distances <- calculate_anaphora_distance(nouns_data)
-  anaphora_distances.o <- calculate_anaphora_distance(nouns_data_obs)
-  anaphora_distances.r <- calculate_anaphora_distance(nouns_data_ref)
+  url.d.u<-unique(anaphora_distances$text_id)
+  nouns.d<-unique(anaphora_distances$lemma)
+  url.u<-unique(data1$url_id)
+  select<-1:length(url.d.u)
+  library(pbapply)
+  #for(k in select){
+  embeds<-pblapply(seq_along(select),function(x){
+    k<-url.d.u[x]
+    cat("\r",k,"of",length(select))
+    r<-data1$url_id==k
+    t<-paste0(data1$token[r],collapse = " ")
+    embed<-get.embeds(t)
+  })
+  save(embeds,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
+  
+  # anaphora_distances.o <- calculate_anaphora_distance(nouns_data_obs)
+  # anaphora_distances.r <- calculate_anaphora_distance(nouns_data_ref)
   outliers <- function(df) {
     # Remove outliers in 'y' using IQR
     Q1 <- quantile(df$distance_to_next, 0.25,na.rm = T)
@@ -264,7 +300,9 @@ analyze_anaphora_patterns <- function(anaphora_data) {
     
     df_no_outliers <- subset(df, distance_to_next > (Q1 - 1.5 * IQR) & distance_to_next < (Q3 + 1.5 * IQR))
   }
+  
   anaphora_distances.oo<-outliers(anaphora_distances)
+  anaphora_distances.oo<-get.dist.norm(  anaphora_distances,T)
   # anaphora_distances.oo<-outliers(anaphora_distances.o)
   # anaphora_distances.ro<-outliers(anaphora_distances.r)
   # sum(anaphora_distances.oo$total_mentions==1)
@@ -275,19 +313,20 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   # median(anaphora_distances.r$distance_to_next)
   # median(anaphora_distances.o$distance_to_next)
   # sum(anaphora_distances.o$is_anaphora)
-  data3<-rbind(anaphora_distances.oo,anaphora_distances.ro)
+ # data3<-rbind(anaphora_distances.oo,anaphora_distances.ro)
   #coreference_chains <- detect_coreference_chains(nouns_data)
   anova.fstr<-paste0("dist"," ~ target*q")
-  data3<-data.frame(anaphora_distances)
+  data3<-data.frame(anaphora_distances.oo)
   colnames(data3)[grep("distance_to_next",colnames(data3))]<-"dist"
   table(data3$q)
   model<-aov(as.formula(anova.fstr),data=data3)
   anova.sum<-summary(model)
   anova.sum
-  lme.str<-paste0("dist ~ target*q+(1|lemma)+(1|author)")
-  #lme.str<-paste0("dist ~ target*q")
   library(lme4)
   library(lmerTest)
+  lme.str<-paste0("dist ~ target*q+(1|lemma)+(1|author)")
+  #lme.str<-paste0("dist ~ target*q")
+  lme.str<-paste0("dist ~ target*q+(1|author)")
   lm2<-lmer(eval(expr(lme.str)),data3)
   #lm3<-lmer(eval(expr(lmeform)),dfa)
   summary(lm2)

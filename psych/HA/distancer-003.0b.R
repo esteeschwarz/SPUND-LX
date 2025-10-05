@@ -161,6 +161,9 @@ tdba.1.15303.sm<-rbind(tdba.1.15303$obs,tdba.1.15303$ref)
 #tdba.n<-tdba[tdba$upos=="NOUN",] # cant remember in/out
 
 ### 15393.new essai prepare df for claude distance
+### 16412.
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.1.15303.RData"))
+tdba.1.15303.sm<-rbind(tdba.1.15303$obs,tdba.1.15303$ref)
 tdba.n<-tdba.1.15303.sm
 # #wks.
 # p2<-tdba$pos[p1]
@@ -179,11 +182,14 @@ tdba.n$prepos<-tdba.n$upos[n1w]
 url.u<-unique(tdba.n$url_t)
 url.u
 tdba.n$url_id<-NA
+tdba.n$range<-NA
 for (k in 1:length(url.u)){
   cat("\r",k,"of",length(url.u))
   r<-tdba.n$url_t==url.u[k]
   tdba.n$url_id[r]<-k
+  tdba.n$range[r]<-sum(r)
 }
+#save(tdba.n,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.n.RData"))
 
 #tdba.n$pos<-as.double(rownames(tdba.n))
 #dis1<-diff(tdba.n$pos)
@@ -200,12 +206,16 @@ m3<-tdba.n$pre%in%qs[[3]]$c$q
 m4<-tdba.n$pre%in%qs[[4]]$d$q
 m5<-tdba.n$pre%in%qs[[5]]$e$q
 m6<-tdba.n$pre%in%qs[[6]]$f$q
+
+### 16412.
+m0<-1:length(tdba.n$token)%in%c(which(m2),which(m3),which(m3),which(m4),which(m5),which(m6))
 tdba.n$q<-"a"
-# tdba.n$q[m2]<-"b"
-# tdba.n$q[m3]<-"c"
-# tdba.n$q[m4]<-"d"
-# tdba.n$q[m5]<-"e"
-# tdba.n$q[m6]<-"f"
+tdba.n$q<-"a"
+tdba.n$q[m2]<-"b"
+tdba.n$q[m3]<-"c"
+tdba.n$q[m4]<-"d"
+tdba.n$q[m5]<-"e"
+tdba.n$q[m6]<-"f"
 table(tdba.n$q)
 #model<-aov(dist~target*q,tdba.n)
 #summary(model)
@@ -228,9 +238,11 @@ sub.6$q<-"f"
 tdba.2<-rbind(tdba.n,sub.2,sub.3,sub.4,sub.5,sub.6)
 table(tdba.2$q)
 t.det<-table(tdba.2$q[tdba.2$prepos=="DET"])
+t.det<-table(tdba.n$q[tdba.n$prepos=="DET"])
 t.det
-
-save(tdba.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.2.RData"))
+tdba.n$det<-0
+tdba.n$det[tdba.n$prepos=="DET"]<-1
+save(tdba.n,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.n.RData"))
 
 ### 15393 finish here
 # b -311, c/d ==, e/f 0 : the + a,any,some,an are all DET

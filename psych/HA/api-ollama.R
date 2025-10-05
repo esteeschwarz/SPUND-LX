@@ -1,5 +1,6 @@
 library(jsonlite)
 
+get.embeds<-function(text){
 api<-"http://localhost:11434/api/embeddings"
 #params<-c(
   model="nomic-embed-text"
@@ -7,6 +8,7 @@ api<-"http://localhost:11434/api/embeddings"
   prompt="die strafe folgt auf dem fusze"
   prompt<-c("die strafe folgt auf dem fusze")
   prompt<-"drei katzen im ofen"
+  prompt<-text
 body <- list(
   model = model,
   prompt = prompt,
@@ -25,10 +27,10 @@ r<-POST(
 t<-content(r,"text")
 t
 result <- fromJSON(content(r, "text", encoding = "UTF-8"))
-target <- result$embedding
+#target <- result$embedding
 
 embeds <- result$embedding
-
+}
 # Function to calculate cosine similarity between two vectors
 cosine_similarity <- function(vec1, vec2) {
   dot_product <- sum(vec1 * vec2)
@@ -55,10 +57,8 @@ map_word_to_corpus <- function(target_embedding, corpus_embeddings) {
   
   return(similarities)
 }
-map_word_to_corpus(target,embeds)
+#map_word_to_corpus(target,embeds)
 # -d '{
 #   "model": "nomic-embed-text",
 #   "prompt": "The sky is blue because of Rayleigh scattering"
 # }'
-library(httr)
-r<-GET(api)
