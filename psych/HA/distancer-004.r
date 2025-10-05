@@ -290,6 +290,32 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   })
   save(embeds,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
   
+  select<-1:length(nouns.d)
+  nouns.embeds<-pblapply(seq_along(select),function(x){
+    t<-nouns.d[x]
+    cat("\r",x,"of",length(select))
+    #r<-data1$url_id==k
+    #t<-paste0(data1$token[r],collapse = " ")
+    embed<-get.embeds(t)
+  })
+  names(nouns.embeds)<-nouns.d
+  get.score(nouns.embeds[[1]],embeds[[1]])
+  select<-1:length(url.d.u)
+  #select<-1:5
+  #y<-"dad"
+  nouns.scores<-pblapply(seq_along(select),function(x){
+    r<-anaphora_distances$url_id==url.d.u[x]
+    n<-unique(anaphora_distances$token[r])
+    scores<-lapply(n, function(y){
+      s1<-nouns.embeds[[y]]
+      s<-get.score(s1,embeds[[x]])
+    })
+  })
+  for(k in 1:length(nouns.scores)){
+    r<-anaphora_distances$url_id==k
+    n<-unique(anaphora_distances$token[r])
+    
+  }
   # anaphora_distances.o <- calculate_anaphora_distance(nouns_data_obs)
   # anaphora_distances.r <- calculate_anaphora_distance(nouns_data_ref)
   outliers <- function(df) {
