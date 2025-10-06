@@ -50,6 +50,7 @@ background-color: rgba(0, 0, 0, 0.04);
 
 run<-15303
 dataset<-12
+dataset<-13
 
 reload<-T
 target<-c("obs","ref")
@@ -59,8 +60,9 @@ det<-c(T,F)
 conditions<-letters[1:6]
 limit<-T
 author<-T
-embed<-c(T,F)
-range<-c(T,F)
+embed<-c(T,F) #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+range<-c(T,F) #.ti: if, if inverted in lmer.
+#range<-T # no!
 lemma<-F
 ifelse(limit,ceiling<-"outliers removed","outliers not removed")
 if(reload)

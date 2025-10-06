@@ -51,6 +51,13 @@ select<-1:2
 for(k in select){
   r<-data1$url_id==k
 }
+aut.u<-unique(data1$author)
+select<-1:length(aut.u)
+for(k in select){
+  cat("\r",k)
+  r<-data1$author==aut.u[k]
+  data1$aut_id[r]<-k
+}
 
 
 # data2$word<-gsub("[^a-zA-Z]","",data2$word)
@@ -289,7 +296,6 @@ analyze_anaphora_patterns <- function(anaphora_data) {
     embed<-get.embeds(t)
   })
   save(embeds,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
-  
   select<-1:length(nouns.d)
   nouns.embeds<-pblapply(seq_along(select),function(x){
     t<-nouns.d[x]
@@ -303,21 +309,40 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   select<-1:length(url.d.u)
   #select<-1:5
   #y<-"dad"
+  # nouns.scores<-pblapply(seq_along(select),function(x){
+  #   r<-anaphora_distances$url_id==url.d.u[x]
+  #   n<-unique(anaphora_distances$lemma[r])
+  #   scores<-lapply(n, function(y){
+  #     s1<-nouns.embeds[[y]]
+  #     s<-get.score(s1,embeds[[x]])
+  #   })
+  #   names(scores)<-n
+  #   return(scores)
+  # })
+  select<-1:length(anaphora_distances$lemma)
+  u<-1
   nouns.scores<-pblapply(seq_along(select),function(x){
-    r<-anaphora_distances$url_id==url.d.u[x]
-    n<-unique(anaphora_distances$token[r])
-    scores<-lapply(n, function(y){
-      s1<-nouns.embeds[[y]]
-      s<-get.score(s1,embeds[[x]])
-    })
+   # r<-anaphora_distances$url_id==url.d.u[x]
+  #  n<-unique(anaphora_distances$lemma[r])
+   # scores<-lapply(n, function(y){
+    #  s1<-nouns.embeds[[y]]
+    n<-anaphora_distances$lemma[x]
+    u<-anaphora_distances$url_id[x]
+    ue<-which(url.d.u==u)
+    s1<-nouns.embeds[[n]]
+      scores<-get.score(s1,embeds[[ue]])
+    #})
+    names(scores)<-n
+    return(scores)
   })
-  for(k in 1:length(nouns.scores)){
-    r<-anaphora_distances$url_id==k
-    n<-unique(anaphora_distances$token[r])
-    
-  }
-  # anaphora_distances.o <- calculate_anaphora_distance(nouns_data_obs)
-  # anaphora_distances.r <- calculate_anaphora_distance(nouns_data_ref)
+  u
+  k
+  nouns.scores.c<-unlist(nouns.scores)
+  write.csv(data.frame(noun=anaphora_distances$lemma,embed_score=  nouns.scores.c),paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
+  
+  anaphora_distances$embed.score<-nouns.scores.c
+#  mode(anaphora_distances$embed_score)<-"double"
+  
   outliers <- function(df) {
     # Remove outliers in 'y' using IQR
     Q1 <- quantile(df$distance_to_next, 0.25,na.rm = T)
@@ -327,14 +352,15 @@ analyze_anaphora_patterns <- function(anaphora_data) {
     df_no_outliers <- subset(df, distance_to_next > (Q1 - 1.5 * IQR) & distance_to_next < (Q3 + 1.5 * IQR))
   }
   
-  anaphora_distances.oo<-outliers(anaphora_distances)
-  anaphora_distances.oo<-get.dist.norm(  anaphora_distances,T)
+ # anaphora_distances.oo<-outliers(anaphora_distances)
+  #anaphora_distances.oo<-get.dist.norm(  anaphora_distances,T)
+  #mode(anaphora_distances)
   # anaphora_distances.oo<-outliers(anaphora_distances.o)
   # anaphora_distances.ro<-outliers(anaphora_distances.r)
   # sum(anaphora_distances.oo$total_mentions==1)
   # sum(anaphora_distances.ro$total_mentions==1)
   # ### test:
-  mean(anaphora_distances$distance_to_next)
+  #mean(anaphora_distances$dist)
   # mean(anaphora_distances.oo$distance_to_next)
   # median(anaphora_distances.r$distance_to_next)
   # median(anaphora_distances.o$distance_to_next)
@@ -342,17 +368,34 @@ analyze_anaphora_patterns <- function(anaphora_data) {
  # data3<-rbind(anaphora_distances.oo,anaphora_distances.ro)
   #coreference_chains <- detect_coreference_chains(nouns_data)
   anova.fstr<-paste0("dist"," ~ target*q")
-  data3<-data.frame(anaphora_distances.oo)
-  colnames(data3)[grep("distance_to_next",colnames(data3))]<-"dist"
+#  data3<-data.frame(anaphora_distances.oo)
+ # mode(data3$embed)<-"double"
+  colnames(anaphora_distances)[grep("author",colnames(anaphora_distances))]<-"aut"
+  qltdf<-anaphora_distances
+  save(qltdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-013.RData"))
+  qltdf.oo<-get.dist.norm(qltdf,T)
+  data3<-qltdf.oo
+  #colnames(data3)[grep("distance_to_next",colnames(data3))]<-"dist"
   table(data3$q)
   model<-aov(as.formula(anova.fstr),data=data3)
   anova.sum<-summary(model)
   anova.sum
   library(lme4)
   library(lmerTest)
-  lme.str<-paste0("dist ~ target*q+(1|lemma)+(1|author)")
+  #lme.str<-paste0("dist ~ target*q+(1|lemma)+(1|author)")
   #lme.str<-paste0("dist ~ target*q")
   lme.str<-paste0("dist ~ target*q+(1|author)")
+  lme.str<-paste0("dist_rel_obs ~ target*q+(1|author)")
+  lme.str<-paste0("dist_rel_ref ~ target*q+(1|author)")
+  d.sel<-"dist_rel_obs"
+  d.sel<-"dist_rel_all"
+  det.f<-"*det"
+  aut.str<-"+(1|aut)"
+  r<-F
+  em<-T
+  l<-F
+  lme.str<-paste0(d.sel," ~ target*q",det.f,ifelse(l,"+(1|lemma)",""),aut.str,ifelse(r,"+range",""),ifelse(em,"+embed",""))
+  
   lm2<-lmer(eval(expr(lme.str)),data3)
   #lm3<-lmer(eval(expr(lmeform)),dfa)
   summary(lm2)

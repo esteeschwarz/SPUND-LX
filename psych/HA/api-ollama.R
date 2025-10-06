@@ -32,7 +32,7 @@ result <- fromJSON(content(r, "text", encoding = "UTF-8"))
 embeds <- result$embedding
 }
 # Function to calculate cosine similarity between two vectors
-cosine_similarity <- function(vec1, vec2) {
+get.score <- function(vec1, vec2) {
   dot_product <- sum(vec1 * vec2)
   norm1 <- sqrt(sum(vec1^2))
   norm2 <- sqrt(sum(vec2^2))
