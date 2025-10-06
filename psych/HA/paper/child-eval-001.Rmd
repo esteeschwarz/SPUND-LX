@@ -1,0 +1,47 @@
+
+## model evaluations
+### covariances
+```{r eval_001_cov,eval=TRUE,warning=FALSE,echo=FALSE}
+eff1<-vcov(eval.1$lme)
+eff1<-eff1[3:length(eff1[,1]),]
+eff1<-eff1[!grepl("target",rownames(eff1)),]
+#eff1
+e_plus_obs<-eff1[,1]>0
+e_plus_ref<-eff1[,2]>0
+#e_minus_obs<-eff1[,1]<0
+#e_minus_ref<-eff1[,2]<0
+e_sim<-e_plus_obs==e_plus_ref
+e_sim_plus<-which(e_sim)[which(e_sim)%in%which(e_plus_obs)]
+#e_sim_minus<-e_minus_obs==e_minus_ref
+#which(e_sim_minus)
+e_sim_w<-which(e_sim)
+#e_sim_not<-which(!e_sim_plus)
+e_sim_c<-paste0(rownames(eff1)[e_sim],collapse = ", ")
+e_sim_c_plus_obs<-paste0(rownames(eff1)[e_sim_plus],collapse = ", ")
+#e_sim_c_not<-paste0(rownames(eff1)[e_sim_not],collapse = ", ")
+e_obs_minus<-paste0(rownames(eff1)[which(!e_sim)],collapse = ", ")
+#e_ref_minus<-paste0(rownames(eff1)[which(!e_plus_ref)%in%which(e_sim_plus)],collapse = ", ")
+#e_obs_minus
+
+#e_ref_minus<-paste0(rownames(eff1)[!e_plus_ref],collapse = ", ")
+#print(e_sim_c)
+#eff1
+# qs[[5]]$e$q
+# paste0(c(paste0(qs[[2]]$b$q,collapse=","),paste0(qs[[5]]$e$q,collapse=","),paste0(qs[[6]]$f$q,collapse=",")),collapse = " - ")
+```
+
+Effects of the same direction for target OBS and REF are observed in ``` `r e_sim_c` ``` (with positive effects in ``` `r e_sim_c_plus_obs` ```) while contrary effects are observed in ``` `r e_obs_minus` ``` (with negative effects in target=obs and vcvs.)   
+
+In words:   
+
+- the antecedents ``` `r paste0(qs[[3]]$c$q,collapse=",")` ``` and the determined (det=TRUE) antecendents ``` `r paste0(qs[[4]]$d$q,collapse=",")` ``` seem to allow a wider distance between referent and reference in both target=OBS and target=REF. 
+- the antecedents ``` `r paste0(c(paste0(qs[[2]]$b$q,collapse=","),paste0(qs[[5]]$e$q,collapse=","),paste0(qs[[6]]$f$q,collapse=",")),collapse = " - ")` ``` decrease distance in target=OBS and increase distance values in target=REF.
+- higher ```embed.score``` values (better embedded noun) decrease distance in target=OBS and increase distance values in target=REF. (cf. par 3.7.5.4, better embedding allows wider distance: thus seems only valid for the reference corpus!)
+
+
+
+
+
+
+
+

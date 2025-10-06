@@ -372,7 +372,7 @@ analyze_anaphora_patterns <- function(anaphora_data) {
  # mode(data3$embed)<-"double"
   colnames(anaphora_distances)[grep("author",colnames(anaphora_distances))]<-"aut"
   qltdf<-anaphora_distances
-  save(qltdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-013.RData"))
+  #save(qltdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-013.RData"))
   qltdf.oo<-get.dist.norm(qltdf,T)
   data3<-qltdf.oo
   #colnames(data3)[grep("distance_to_next",colnames(data3))]<-"dist"
@@ -388,22 +388,22 @@ analyze_anaphora_patterns <- function(anaphora_data) {
   lme.str<-paste0("dist_rel_obs ~ target*q+(1|author)")
   lme.str<-paste0("dist_rel_ref ~ target*q+(1|author)")
   d.sel<-"dist_rel_obs"
-  d.sel<-"dist_rel_all"
+  #d.sel<-"dist_rel_all"
   det.f<-"*det"
-  aut.str<-"+(1|aut)"
-  r<-F
+  aut.str<-"+(1|aut_id)"
+  r<-T
   em<-T
   l<-F
-  lme.str<-paste0(d.sel," ~ target*q",det.f,ifelse(l,"+(1|lemma)",""),aut.str,ifelse(r,"+range",""),ifelse(em,"+embed",""))
+  lme.str<-paste0(d.sel," ~ target*q",det.f,ifelse(l,"+(1|lemma)",""),aut.str,ifelse(r,"+range",""),ifelse(em,"+embed.score",""))
   
   lm2<-lmer(eval(expr(lme.str)),data3)
   #lm3<-lmer(eval(expr(lmeform)),dfa)
   summary(lm2)
   lm2.summ<-summary(lm2)
-  lm2.summ
+  vcov(lm2.summ)
   anlm.summ<-anova(lm2)
   anlm.summ
-  
+  qs
   # 5. Créer le réseau
   cat("Création du réseau sémantique...\n")
   #network <- create_semantic_network(anaphora_distances, similar_nouns)

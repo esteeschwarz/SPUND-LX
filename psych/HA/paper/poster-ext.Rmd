@@ -46,11 +46,11 @@ background-color: rgba(0, 0, 0, 0.04);
 # run<-15302
 # dataset<-11
 # appendix open-lx after all is loaded, yaml new=T, reload=F
-#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/poster-ext.Rmd"))
+#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/"))
 
-run<-15303
-dataset<-12
-dataset<-13
+run<-15303 # db identifier
+dataset<-12 # last essai
+dataset<-13 # new distancer & embed approach
 
 reload<-T
 target<-c("obs","ref")
