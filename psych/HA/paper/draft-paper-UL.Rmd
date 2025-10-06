@@ -17,8 +17,9 @@ nocite: '@*'
 #keep_md: true
 ---
 
-```{r setup_UL_index, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 library(knitr)
 library(kableExtra)
 ```

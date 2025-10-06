@@ -1,0 +1,84 @@
+---
+title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+output: 
+    bookdown::html_document2:
+      base_format: tufte::tufte_html
+      keep_md: true
+      self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+#keep_md: true
+---
+
+```{r setup_prelim, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+```
+
+```{css, echo=FALSE,eval=T}
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+```
+
+```{r}
+#dataset<-7
+#prelim
+```
+
+```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
+#eval.n<-7
+# run<-15302
+# dataset<-11
+# appendix open-lx after all is loaded, yaml new=T, reload=F
+#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/"))
+
+run<-15303 # db identifier
+dataset<-12 # last essai
+dataset<-13 # new distancer & embed approach
+
+reload<-T
+target<-c("obs","ref")
+ref_target<-"obs"
+rel<-T
+det<-c(T,F)
+conditions<-letters[1:6]
+limit<-T
+author<-T
+embed<-c(T,F) #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+range<-c(T,F) #.ti: if, if inverted in lmer.
+#range<-T # no!
+lemma<-F
+ifelse(limit,ceiling<-"outliers removed","outliers not removed")
+if(reload)
+  rm(eval.1)
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+if(!exists("eval.1"))
+#  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+  # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
+  # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+
+  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],det,"obs",lemma,author,range,embed)
+
+anova.form<-eval.1$anova.form
+lme.form<-eval.1$lme.form
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# dfe<-eval.1$plot.md
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+```
