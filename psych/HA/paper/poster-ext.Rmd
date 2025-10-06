@@ -67,7 +67,9 @@ kable(legend, caption = "model vars",format="markdown")
 ```
 
 ## anova analysis
-### anova plain, formula: [``` `r anova.form` ```]
+### anova plain
+formula: [``` `r anova.form` ```]
+
 ```{r,dfs1,echo=FALSE,warning=F,message=F}
 # legend<-data.frame(variable=c("target","q","det",paste0("q:",letters[1:6])),
 #                    explanation=c("corpus","condition","antecedent POS==DET",rep("query condition",6)),
@@ -89,7 +91,8 @@ p.an<-s1[grep(p.select,rownames(s1)),]
 s1
 ```
 
-### anova of linear regression model: [`anova(summary(lmer))`]
+### anova of linear regression model
+[`anova(summary(lmer))`]
 
 ```{r,dfs2,echo=FALSE,warning=F,message=F}
 
@@ -102,7 +105,9 @@ p.an.lm<-s2[grep(p.select,rownames(s2)),]
 s2
 ```
 
-### linear regression coefficients, formula: [``` `r lme.form` ```]
+### linear regression coefficients
+formula: [``` `r lme.form` ```]
+
 ```{r,dfs3,echo=FALSE,warning=F,message=F}
 s3<-eval.1$lme
 #cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
