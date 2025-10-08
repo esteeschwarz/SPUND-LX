@@ -28,6 +28,13 @@ library(kableExtra)
 
 ```
 
+```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/child-data-001.Rmd"}
+
+```
+
+```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/methods-ul.md"}
+
+```
 
 ```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/child-eval-001.Rmd"}
 
