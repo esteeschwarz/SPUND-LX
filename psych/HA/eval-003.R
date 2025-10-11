@@ -337,24 +337,35 @@ get.anovas_dep<-function(qltdf,target,con,det.t,r,ref,author){
 
 ### with embed
 ### 15336. TODO: include lemma switch
-get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.ti,lme){
   #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
+  lme_stage_one<-function(){
+    lm1<-lm("dist ~ range",dfa)
+    res<-lm1$residuals
+    #dfa$dist_rel_lm<-res
+    return(res)
+  }
   dfa<-create.sub(dfa,target,con,det.t)
   #dfa<-get.dist.norm(dfa,limit)
   d.ns<-c(paste0("dist_rel_",ref))
+  d.ns<-c(paste0("dist",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
   d.sel<-which(colnames(dfa)==d.ns)
   d.sel<-ifelse(range.ti[1],colnames(dfa)[d.sel],"dist")
   det.f<-ifelse(sum(det.t)>0,"*det","")
-  embed.i<-ifelse(embed.ti[2],"+(embed.score*-1)","+embed.score")
+  embed.i<-ifelse(embed.ti[2]=="f","+(embed.score)","+(1|embed.score)")
   embed.f<-ifelse(embed.ti[1],embed.i,"")
-  range.i<-ifelse(range.ti[2],"+(range*-1)","+range")
+  range.i<-ifelse(range.ti[2]=="f","+range","+(1|range)")
   range.f<-ifelse(range.ti[1],range.i,"")
   lemma.f<-ifelse(lemma,"+(1|lemma)","")
   anova.fstr<-paste0(d.sel," ~ target*q",det.f)
   print(anova.fstr)
   aut.str<-ifelse(author,"+(1|aut_id)","")
-  lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,range.f,embed.f)
+  url.str<-ifelse(url,"+(1|url_id)","")
+  lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,range.f,embed.f,url.str)
+  ifelse(lme,dfa$dist_rel_lm<-lme_stage_one(),F)
+  d.sel<-ifelse(!lme,d.sel,"dist_rel_lm")
+  lme.str<-ifelse(!lme,lme.str,paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,embed.f,url.str))
   # lmeform.l<-list(no.pre.det=
   #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
   #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))

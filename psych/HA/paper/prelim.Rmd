@@ -55,15 +55,22 @@ dataset<-13 # new distancer & embed approach
 
 reload<-T
 target<-c("obs","ref")
-ref_target<-"obs"
-rel<-T
-det<-c(T,F)
-conditions<-letters[1:6]
+#ref_target<-"obs"
+norm_target<-"_rel_all"
+#norm_target<-""
+ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))
+ref<-norm_target
+det.t<-c(T,F)
+con<-letters[1:6]
 limit<-T
 author<-T
-embed<-c(T,F) #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+url<-T
+embed<-c(T,"f") #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
 range<-c(T,F) #.ti: if, if inverted in lmer.
 #range<-T # no!
+range<-c(T,"f")
+rel<-T
+lme<-F
 lemma<-F
 ifelse(limit,ceiling<-"outliers removed","outliers not removed")
 if(reload)
@@ -74,11 +81,11 @@ if(!exists("eval.1"))
   # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
   # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
 
-  eval.1<-get.anovas.e(dfa,c("obs","ref"),letters[1:6],det,"obs",lemma,author,range,embed)
+  eval.1<-get.anovas.e(dfa,c("obs","ref"),con,det.t,norm_target,lemma,author,url,range,embed,lme)
 
 anova.form<-eval.1$anova.form
 lme.form<-eval.1$lme.form
 # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
 # dfe<-eval.1$plot.md
-caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0(", not normalised, distance ceiling =",ceiling))
 ```

@@ -51,7 +51,7 @@ To compute distances we queried a corpus for matching conditions where certain (
 ## legende
 ```{r,legend,echo=FALSE,warning=F,message=F}
 
-print(caption.ext)
+#print(caption.ext)
 dfe<-eval.1$plot.md
 legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
                    explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
@@ -153,7 +153,7 @@ names(qvmin)<-names(qvc)[qmin]
 #     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
 #   ) %>%
 #   ungroup()
-d.sel<-paste0("dist_rel_",ref_target)
+d.sel<-paste0("dist",norm_target)
 Y<-dfa[[d.sel]]
 boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
 
@@ -183,7 +183,8 @@ rmd.plot.lme(s3)
 ```
 
 ```{r gplot,echo=F,warning=F,message=F,fig.cap="distances normalised vs. raw"}
-gplot.dist(dfa,ref_target)
+d_sel<-ifelse(ref_target!="",ref_target,"all")
+gplot.dist(dfa,d_sel)
 ```
 -----
 
