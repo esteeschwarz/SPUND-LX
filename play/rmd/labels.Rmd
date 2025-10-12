@@ -1,0 +1,56 @@
+---
+title: "Parent document"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+
+# # Define a chunk hook that prefixes labels dynamically
+# knit_hooks$set(chunk = function(x, options) {
+#   # If a label_prefix is provided, prepend it to the label
+#   if (!is.null(options$label_prefix) && !is.null(options$label)) {
+#     options$label <- paste0(options$label_prefix, "_", options$label)
+#   }
+#   x  # return chunk code unchanged
+# })
+```
+
+```{r}
+label_prefix <- "A"
+
+```
+
+
+```{r}
+label_prefix <- "B"
+render_child <- function(child_file, prefix) {
+  # Read the child
+  txt <- readLines(child_file)
+  # Substitute <<prefix>> placeholders with actual prefix
+  txt <- gsub("<<prefix>>", prefix, txt)
+  
+  # Write a temporary file
+  tmpfile <- tempfile(fileext = ".Rmd")
+  writeLines(txt, tmpfile)
+  
+  # Knit the child inline
+  res <- knit_child(tmpfile)
+  file.remove(tmpfile)
+  #return(res)
+  cat(res,sep = "\n")
+}
+```
+
+```{r,results='asis',echo=FALSE}
+
+render_child("child.Rmd", "A")
+```
+
+```{r}
+
+render_child("child.Rmd", "B")
+```
+
+
+

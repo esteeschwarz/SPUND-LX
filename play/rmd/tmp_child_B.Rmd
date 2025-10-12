@@ -1,0 +1,10 @@
+---
+title: "child document"
+output: html_document
+---
+
+## 📄 File 2: `child.Rmd`
+
+```{r label_prefix=label_prefix, label='summary'}
+summary(mtcars)
+```

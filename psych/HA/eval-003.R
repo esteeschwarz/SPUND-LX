@@ -76,10 +76,11 @@ read.embed<-function(witch){
 # dfa<-qltdf
 # dfa<-get.dist.norm(dfa)
 # }
-create.sub<-function(dfa,target,con,det){
-  sub1<-dfa[dfa$q%in%con&dfa$target%in%target&dfa$det%in%det,]
+create.sub<-function(dfa,target,con){
+  sub1<-dfa[dfa$q%in%con&dfa$target%in%target,]
 }
 #dfa<-qltdf
+#dist<-"dist_rel_obs"
 get.mean.df<-function(dfa,dist){
   q.u<-unique(dfa$q)
   q.u<-q.u[!is.na(q.u)]
@@ -113,7 +114,8 @@ get.mean.df<-function(dfa,dist){
   
   return(df.m)
 }
-#dfe<-get.mean.df(dfa,"dist_rel_obs")
+#dfe<-get.mean.df(dfa,"dist_rel_ref")
+#dfe
 rmd.plot.lme<-function(lm2.summ){
   coef<-lm2.summ$coefficients
   cats<-rownames(coef)
@@ -208,21 +210,30 @@ lemma.reduce<-function(qltdf){
   
 }
 
-get.dist.norm<-function(tdb4,limit){
-  df<-tdb4
+get.dist.norm<-function(dfa,limit){
+  df<-data.frame(dfa)
+#  lim<-limit
+  dflim<-subset(df,df$dist<limit)
+  typeof(dflim)
   Q1 <- quantile(df$dist, 0.25,na.rm = T)
   Q3 <- quantile(df$dist, 0.75,na.rm = T)
   IQR <- Q3 - Q1
-  
+  #limit
   tdb_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
   max(tdb_no_outliers$dist)
 #  df_no_outliers <- subset(df, dist < limit)
   #df<-df_no_outliers
-  ifelse(sum(limit)>0,tdb6<-tdb_no_outliers,tdb6<-tdb4)
+  ifelse(sum(limit)>0,ifelse(sum(limit)==1,tdb6<-tdb_no_outliers,tdb6<-dflim),tdb6<-df)
+  
   max.l<-max(tdb6$dist,na.rm = T)
   mna<-is.na(tdb6$token)
-  sum(mna)
-  tdb6<-tdb6[!mna,]
+#cat("token NA",sum(mna))
+  if(sum(mna)>0)
+    tdb6<-tdb6[!mna,]
+  mna<-is.na(tdb6$dist)
+  if(sum(mna)>0)
+    tdb6<-tdb6[!mna,]
+  
   target<-unique(tdb6$target)
   tdb6$range_f_within<-NA
   tdb6$range_f_all<-mean(tdb6$range)/tdb6$range
@@ -237,8 +248,7 @@ get.dist.norm<-function(tdb4,limit){
   tdb6$dist_rel_all<-tdb6$dist*tdb6$range_f_all
   tdb6$dist_rel_obs<-tdb6$dist*tdb6$range_f_obs
   tdb6$dist_rel_ref<-tdb6$dist*tdb6$range_f_ref
-  tdb7<-tdb6[!is.na(tdb6$dist),]
-  return(tdb7)
+  return(tdb6)
 }
 if(reload){
 #  ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
@@ -248,8 +258,8 @@ if(reload){
   qltdf$embed.score<-qltdf_embed$embed_score
   #dfa<-get.dist.norm(qltdf,limit)
   qltdf<-lemma.reduce(qltdf)
-  dfa<-qltdf
-  dfa<-get.dist.norm(dfa,limit)
+  #dfa<-qltdf
+  # dfa<-get.dist.norm(dfa,limit)
 }
 
 #dfa<-get.dist.norm(qltdf,limit)
@@ -345,13 +355,14 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
     #dfa$dist_rel_lm<-res
     return(res)
   }
-  dfa<-create.sub(dfa,target,con,det.t)
+  dfa<-create.sub(dfa,target,con)
   #dfa<-get.dist.norm(dfa,limit)
   d.ns<-c(paste0("dist_rel_",ref))
   d.ns<-c(paste0("dist",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
   d.sel<-which(colnames(dfa)==d.ns)
   d.sel<-ifelse(range.ti[1],colnames(dfa)[d.sel],"dist")
+  #d.sel<-d.ns
   det.f<-ifelse(sum(det.t)>0,"*det","")
   embed.i<-ifelse(embed.ti[2]=="f","+(embed.score)","+(1|embed.score)")
   embed.f<-ifelse(embed.ti[1],embed.i,"")
@@ -359,7 +370,7 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
   range.f<-ifelse(range.ti[1],range.i,"")
   lemma.f<-ifelse(lemma,"+(1|lemma)","")
   anova.fstr<-paste0(d.sel," ~ target*q",det.f)
-  print(anova.fstr)
+ # print(anova.fstr)
   aut.str<-ifelse(author,"+(1|aut_id)","")
   url.str<-ifelse(url,"+(1|url_id)","")
   lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,range.f,embed.f,url.str)
@@ -370,7 +381,7 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
   #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
   #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))
   lmeform.l<-list(form.global<-lme.str)
-  lmeform.l
+  #lmeform.l
   # anova.form.l<-list(no.pre.det=anova.fstr,
   #                    pre.det=paste0(anova.fstr,"*det"))
   # anova.form.l<-list(adapted=anova.fstr)
@@ -378,7 +389,7 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
   #   anova.form.l
   #lmeform<-ifelse(sum(det.t)==1,lmeform<-lmeform.l$pre.det,lmeform.l$no.pre.det)
   lmeform<-lmeform.l[[1]]
-  print(lmeform)
+ # print(lmeform)
   #lmeform<-lmeform.l$pre.det
   #Y <- dfa$dist           
   #aov(as.formula(fstr),data = dfa)

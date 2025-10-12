@@ -1,7 +1,7 @@
 ---
 title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
 author: "st. schwarz"
-date: "2025-10-06"
+date: "2025-10-12"
 output: 
     bookdown::html_document2:
       base_format: tufte::tufte_html
@@ -33,27 +33,186 @@ background-color: rgba(0, 0, 0, 0.04);
 </style>
 
 
+
+
 ``` r
 #dataset<-7
+#poster-ext-top
+render_child <- function(child_file, prefix) {
+  # Read the child
+  txt <- readLines(child_file)
+  # Substitute <<prefix>> placeholders with actual prefix
+  txt <- gsub("<<model>>", paste0("_M-",prefix), txt)
+  
+  # Write a temporary file
+  tmpfile <- tempfile(fileext = ".Rmd")
+  writeLines(txt, tmpfile)
+  
+  # Knit the child inline
+  res <- knit_child(tmpfile)
+  file.remove(tmpfile)
+  #return(res)
+  cat(res,sep = "\n")
+}
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+</style>
+
+
+
+
+``` r
+#dataset<-7
+#prelim
+```
+
+
+
+
+
+
+
+
+```
+## token NA 0
+```
+
+
+
+
+
+``` r
+render_child("child-poster-ext.Rmd", model.n)
+```
+
+
+
+```
+## 
+## 
+## processing file: /var/folders/4d/3c55d5_d0sd8g2015lq4vpt40000gn/T//RtmpYyd6X6/file183ac71084120.Rmd
+```
+
+  |                                                         |                                                 |   0%  |                                                         |..                                               |   3%                       |                                                         |...                                              |   6% [unnamed-chunk-18]    |                                                         |.....                                            |  10%                       |                                                         |......                                           |  13% [unnamed-chunk-19]    |                                                         |........                                         |  16%                       |                                                         |.........                                        |  19% [unnamed-chunk-20]    |                                                         |...........                                      |  23%                       |                                                         |.............                                    |  26% [wcount_M-1]          |                                                         |..............                                   |  29%                       |                                                         |................                                 |  32% [modelexp_M-1]        |                                                         |.................                                |  35%                       |                                                         |...................                              |  39% [legend_M-1]          |                                                         |.....................                            |  42%                       |                                                         |......................                           |  45% [dfs1_M-1]            |                                                         |........................                         |  48%                       |                                                         |.........................                        |  52% [dfs2_M-1]            |                                                         |...........................                      |  55%                       |                                                         |............................                     |  58% [dfs3_M-1]            |                                                         |..............................                   |  61%                       |                                                         |................................                 |  65% [boxplot1_M-1]        |                                                         |.................................                |  68%                       |                                                         |...................................              |  71% [barplot-median_M-1]  |                                                         |....................................             |  74%                       |                                                         |......................................           |  77% [dfe-table_M-1]       |                                                         |........................................         |  81%                       |                                                         |.........................................        |  84% [barplot-mean_M-1]    |                                                         |...........................................      |  87%                       |                                                         |............................................     |  90% [lmeplot_M-1]         |                                                         |..............................................   |  94%                       |                                                         |...............................................  |  97% [gplot_M-1]           |                                                         |.................................................| 100%                                                                                                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+</style>
+
+
+
+
+``` r
+#dataset<-7
+#poster-ext
+print(model.n)
+```
+
+
+
+```
+## [1] 1
+```
+
+
 
 
 
 # appendix
-eval output M13, normalised to obs, distance ceiling =  outliers removed.
+eval output data: 13, normalised to all, distance ceiling =  outliers removed, wordcount: 2599.
 
-## citetest, method (M13)
-To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M13 (removed)...   This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+## eval method model: 1
+
+
+
+```
+##                value
+## norm_target _rel_all
+## det.t           TRUE
+## limit           TRUE
+## author          TRUE
+## url             TRUE
+## embed1          TRUE
+## embed2             f
+## range1          TRUE
+## range2             f
+## rel             TRUE
+## lme            FALSE
+## lemma          FALSE
+```
+
+
+
 
 ## legende
 
-```
-## [1] ", normalised to obs, distance ceiling =  outliers removed"
-```
 
-
-
-Table: (\#tab:legend)model vars
+Table: (\#tab:legend_M-1)model vars
 
 |variable    |explanation                                |values                  |
 |:-----------|:------------------------------------------|:-----------------------|
@@ -71,43 +230,57 @@ Table: (\#tab:legend)model vars
 |q:e         |query condition                            |my                      |
 |q:f         |query condition                            |his,her,their,your      |
 
+
+
 ## anova analysis
-### anova plain, formula: [``` dist_rel_obs ~ target*q*det ```]
+### anova plain
+formula: [``` dist_rel_all ~ target*q*det ```]
+
+
 
 ```
-##                  Df     Sum Sq   Mean Sq   F value    Pr(>F)    
-## target            1  452303747 452303747 7336.4625 < 2.2e-16 ***
-## q                 5   12320667   2464133   39.9688 < 2.2e-16 ***
-## det               1    1636109   1636109   26.5380 2.588e-07 ***
-## target:q          5    2747371    549474    8.9126 1.786e-08 ***
-## target:det        1     251297    251297    4.0761  0.043496 *  
-## q:det             2     905292    452646    7.3420  0.000648 ***
-## target:q:det      1     717222    717222   11.6335  0.000648 ***
-## Residuals    126209 7780971239     61651                        
+##                  Df     Sum Sq    Mean Sq   F value    Pr(>F)    
+## target            1 1.2830e+09 1283010757 7336.4625 < 2.2e-16 ***
+## q                 5 3.4949e+07    6989793   39.9688 < 2.2e-16 ***
+## det               1 4.6410e+06    4641007   26.5380 2.588e-07 ***
+## target:q          5 7.7932e+06    1558646    8.9126 1.786e-08 ***
+## target:det        1 7.1283e+05     712833    4.0761  0.043496 *  
+## q:det             2 2.5680e+06    1283981    7.3420  0.000648 ***
+## target:q:det      1 2.0345e+06    2034482   11.6335  0.000648 ***
+## Residuals    126209 2.2072e+10     174881                        
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-### anova of linear regression model: [`anova(summary(lmer))`]
+
+
+### anova of linear regression model
+[`anova(summary(lmer))`]
+
 
 
 ```
 ## Type III Analysis of Variance Table with Satterthwaite's method
 ##                 Sum Sq   Mean Sq NumDF  DenDF   F value    Pr(>F)    
-## target         2618718   2618718     1  79483   51.0005 9.313e-13 ***
-## q               732070    146414     5 123324    2.8515  0.014059 *  
-## det              14450     14450     1 119400    0.2814  0.595768    
-## range        318496210 318496210     1  27290 6202.8299 < 2.2e-16 ***
-## embed.score   12389668  12389668     1 125991  241.2933 < 2.2e-16 ***
-## target:q        933689    186738     5 124373    3.6368  0.002726 ** 
-## target:det      540220    540220     1 123982   10.5210  0.001181 ** 
-## q:det           390120    195060     2 121665    3.7989  0.022399 *  
-## target:q:det    189268    189268     1 124039    3.6861  0.054872 .  
+## target         3245706   3245706     1   3519   23.4567 1.333e-06 ***
+## q              2091953    418391     5 122421    3.0237 0.0098706 ** 
+## det              34508     34508     1 118425    0.2494 0.6175055    
+## range        142964301 142964301     1   1025 1033.2042 < 2.2e-16 ***
+## embed.score   71204325  71204325     1 122690  514.5942 < 2.2e-16 ***
+## target:q       2202162    440432     5 123486    3.1830 0.0070933 ** 
+## target:det     1534830   1534830     1 123325   11.0922 0.0008672 ***
+## q:det          1019818    509909     2 120804    3.6851 0.0250971 *  
+## target:q:det    623611    623611     1 123315    4.5068 0.0337615 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-### linear regression coefficients, formula: [``` dist_rel_obs ~ target*q*det+(1|aut_id)+range+embed.score ```]
+
+
+### linear regression coefficients
+formula: [``` dist_rel_all ~ target*q*det+(1|aut_id)+range+(embed.score)+(1|url_id) ```]
+
+
 
 ```
 ## Linear mixed model fit by REML. t-tests use Satterthwaite's method [
@@ -115,39 +288,40 @@ Table: (\#tab:legend)model vars
 ## Formula: eval(expr(lmeform))
 ##    Data: dfa
 ## 
-## REML criterion at convergence: 1733592
+## REML criterion at convergence: 1859224
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -3.3198 -0.5695 -0.2131  0.2725  7.0321 
+## -2.8643 -0.5282 -0.1721  0.2469  6.9244 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  aut_id   (Intercept)  7540     86.83  
-##  Residual             51347    226.60  
-## Number of obs: 126226, groups:  aut_id, 8238
+##  aut_id   (Intercept)   8101    90.01  
+##  url_id   (Intercept)  23223   152.39  
+##  Residual             138370   371.98  
+## Number of obs: 126226, groups:  aut_id, 8238; url_id, 2145
 ## 
 ## Fixed effects:
 ##                    Estimate Std. Error         df t value Pr(>|t|)    
-## (Intercept)       3.504e+02  4.228e+00  3.672e+04  82.886  < 2e-16 ***
-## targetref        -4.627e+01  2.941e+00  8.918e+03 -15.729  < 2e-16 ***
-## qb               -2.402e+01  1.560e+01  1.217e+05  -1.540 0.123597    
-## qc               -2.131e+01  5.605e+00  1.222e+05  -3.802 0.000144 ***
-## qd               -3.603e+01  2.283e+02  1.194e+05  -0.158 0.874604    
-## qe                2.771e+01  3.890e+00  1.236e+05   7.123 1.06e-12 ***
-## qf               -1.474e+01  4.958e+00  1.232e+05  -2.973 0.002946 ** 
-## det               1.480e+01  4.867e+00  1.225e+05   3.042 0.002354 ** 
-## range            -2.763e-02  3.508e-04  2.729e+04 -78.758  < 2e-16 ***
-## embed.score      -1.211e+02  7.796e+00  1.260e+05 -15.534  < 2e-16 ***
-## targetref:qb      2.177e+01  1.760e+01  1.226e+05   1.238 0.215900    
-## targetref:qc      2.444e+01  1.317e+01  1.251e+05   1.856 0.063477 .  
-## targetref:qd     -8.566e-01  1.291e+01  1.251e+05  -0.066 0.947118    
-## targetref:qe     -2.672e+01  9.785e+00  1.250e+05  -2.730 0.006326 ** 
-## targetref:qf      1.525e+01  1.245e+01  1.248e+05   1.225 0.220738    
-## targetref:det    -1.664e+01  1.117e+01  1.253e+05  -1.490 0.136307    
-## qb:det            5.871e+01  1.714e+01  1.218e+05   3.425 0.000614 ***
-## qd:det            4.094e+01  2.283e+02  1.194e+05   0.179 0.857667    
-## targetref:qb:det -4.828e+01  2.514e+01  1.240e+05  -1.920 0.054872 .  
+## (Intercept)       7.789e+02  8.688e+00  8.969e+03  89.651  < 2e-16 ***
+## targetref        -7.312e+01  1.061e+01  1.300e+03  -6.893 8.50e-12 ***
+## qb               -3.390e+01  2.572e+01  1.218e+05  -1.318 0.187483    
+## qc               -3.717e+01  9.261e+00  1.226e+05  -4.014 5.98e-05 ***
+## qd               -5.353e+01  3.748e+02  1.184e+05  -0.143 0.886426    
+## qe                4.198e+01  6.460e+00  1.247e+05   6.498 8.14e-11 ***
+## qf               -3.185e+01  8.240e+00  1.244e+05  -3.866 0.000111 ***
+## det               2.144e+01  8.041e+00  1.229e+05   2.667 0.007662 ** 
+## range            -9.786e-02  3.044e-03  1.025e+03 -32.143  < 2e-16 ***
+## embed.score      -3.080e+02  1.358e+01  1.227e+05 -22.685  < 2e-16 ***
+## targetref:qb      3.136e+01  2.894e+01  1.225e+05   1.083 0.278599    
+## targetref:qc      3.842e+01  2.154e+01  1.237e+05   1.784 0.074435 .  
+## targetref:qd      7.432e-01  2.113e+01  1.238e+05   0.035 0.971935    
+## targetref:qe     -3.910e+01  1.602e+01  1.239e+05  -2.441 0.014662 *  
+## targetref:qf      3.033e+01  2.039e+01  1.238e+05   1.488 0.136766    
+## targetref:det    -2.490e+01  1.826e+01  1.239e+05  -1.363 0.172784    
+## qb:det            9.962e+01  2.826e+01  1.219e+05   3.526 0.000423 ***
+## qd:det            6.144e+01  3.747e+02  1.184e+05   0.164 0.869736    
+## targetref:qb:det -8.754e+01  4.124e+01  1.233e+05  -2.123 0.033761 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## fit warnings:
@@ -155,44 +329,323 @@ Table: (\#tab:legend)model vars
 ## Some predictor variables are on very different scales: consider rescaling
 ```
 
+
+
 ## plots
 <div class="figure">
-<p class="caption">(\#fig:boxplot1)compare distances by corpus, normalised to obs, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/boxplot1-1.png" alt="compare distances by corpus, normalised to obs, distance ceiling =  outliers removed"  /></div>
+<p class="caption">(\#fig:boxplot1_M-1)compare distances by corpus, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/boxplot1_M-1-1.png" alt="compare distances by corpus, normalised to all, distance ceiling =  outliers removed"  /></div>
 
 <div class="figure">
-<p class="caption">(\#fig:barplot-median)mean distances over query/corpus, normalised to obs, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/barplot-median-1.png" alt="mean distances over query/corpus, normalised to obs, distance ceiling =  outliers removed"  /></div>
+<p class="caption">(\#fig:barplot-median_M-1)mean distances over query/corpus, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/barplot-median_M-1-1.png" alt="mean distances over query/corpus, normalised to all, distance ceiling =  outliers removed"  /></div>
 
 
 
-Table: (\#tab:dfe-table)mean/median table for M13
+
+Table: (\#tab:dfe-table_M-1)mean/median table for M13
 
 |target |q  |     n| mean| median|
 |:------|:--|-----:|----:|------:|
-|obs    |a  | 42836|  234|    117|
-|ref    |a  | 58615|  121|     47|
-|obs    |b  |  2116|  286|    165|
-|ref    |b  |  1130|  121|     44|
-|obs    |c  |  5770|  231|    114|
-|ref    |c  |  1274|  120|     48|
-|obs    |d  |  5654|  260|    144|
-|ref    |d  |  1525|  122|     49|
-|obs    |e  |  3911|  281|    147|
-|ref    |e  |   671|  125|     45|
-|obs    |f  |  2311|  222|    133|
-|ref    |f  |   413|  116|     47|
+|obs    |a  | 42836|  395|    196|
+|ref    |a  | 58615|  203|     79|
+|obs    |b  |  2116|  481|    279|
+|ref    |b  |  1130|  204|     75|
+|obs    |c  |  5770|  388|    191|
+|ref    |c  |  1274|  203|     80|
+|obs    |d  |  5654|  437|    243|
+|ref    |d  |  1525|  205|     83|
+|obs    |e  |  3911|  473|    248|
+|ref    |e  |   671|  211|     75|
+|obs    |f  |  2311|  374|    224|
+|ref    |f  |   413|  195|     79|
+
+
 
 
 <div class="figure">
-<p class="caption">(\#fig:barplot-mean)median distances over query/corpus, normalised to obs, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/barplot-mean-1.png" alt="median distances over query/corpus, normalised to obs, distance ceiling =  outliers removed"  /></div>
+<p class="caption">(\#fig:barplot-mean_M-1)median distances over query/corpus, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/barplot-mean_M-1-1.png" alt="median distances over query/corpus, normalised to all, distance ceiling =  outliers removed"  /></div>
 
 <div class="figure">
-<p class="caption">(\#fig:lmeplot)distances relation, normalised to obs, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/lmeplot-1.png" alt="distances relation, normalised to obs, distance ceiling =  outliers removed"  /></div>
+<p class="caption">(\#fig:lmeplot_M-1)distances relation, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/lmeplot_M-1-1.png" alt="distances relation, normalised to all, distance ceiling =  outliers removed"  /></div>
 
 <div class="figure">
-<p class="caption">(\#fig:gplot)distances normalised vs. raw</p><img src="poster-ext_files/figure-html/gplot-1.png" alt="distances normalised vs. raw"  /></div>
+<p class="caption">(\#fig:gplot_M-1)distances normalised vs. raw</p><img src="poster-ext_files/figure-html/gplot_M-1-1.png" alt="distances normalised vs. raw"  /></div>
+
 -----
 
-## REF
+## lit-ext
 literature used and alii...   
+
+
+
+
+
+
+```
+## token NA 0
+```
+
+
+
+
+``` r
+render_child("child-poster-ext.Rmd", model.n)
+```
+
+
+
+```
+## 
+## 
+## processing file: /var/folders/4d/3c55d5_d0sd8g2015lq4vpt40000gn/T//RtmpYyd6X6/file183ac3bfd8b5b.Rmd
+```
+
+  |                                                         |                                                 |   0%  |                                                         |..                                               |   3%                       |                                                         |...                                              |   6% [unnamed-chunk-38]    |                                                         |.....                                            |  10%                       |                                                         |......                                           |  13% [unnamed-chunk-39]    |                                                         |........                                         |  16%                       |                                                         |.........                                        |  19% [unnamed-chunk-40]    |                                                         |...........                                      |  23%                       |                                                         |.............                                    |  26% [wcount_M-2]          |                                                         |..............                                   |  29%                       |                                                         |................                                 |  32% [modelexp_M-2]        |                                                         |.................                                |  35%                       |                                                         |...................                              |  39% [legend_M-2]          |                                                         |.....................                            |  42%                       |                                                         |......................                           |  45% [dfs1_M-2]            |                                                         |........................                         |  48%                       |                                                         |.........................                        |  52% [dfs2_M-2]            |                                                         |...........................                      |  55%                       |                                                         |............................                     |  58% [dfs3_M-2]            |                                                         |..............................                   |  61%                       |                                                         |................................                 |  65% [boxplot1_M-2]        |                                                         |.................................                |  68%                       |                                                         |...................................              |  71% [barplot-median_M-2]  |                                                         |....................................             |  74%                       |                                                         |......................................           |  77% [dfe-table_M-2]       |                                                         |........................................         |  81%                       |                                                         |.........................................        |  84% [barplot-mean_M-2]    |                                                         |...........................................      |  87%                       |                                                         |............................................     |  90% [lmeplot_M-2]         |                                                         |..............................................   |  94%                       |                                                         |...............................................  |  97% [gplot_M-2]           |                                                         |.................................................| 100%                                                                                                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+</style>
+
+
+
+
+``` r
+#dataset<-7
+#poster-ext
+print(model.n)
+```
+
+
+
+```
+## [1] 2
+```
+
+
+
+
+
+# appendix
+eval output data: 13, normalised to all, distance ceiling =  outliers removed, wordcount: 2599.
+
+## eval method model: 2
+
+
+
+```
+##             value
+## norm_target      
+## det.t        TRUE
+## limit       FALSE
+## author       TRUE
+## url          TRUE
+## embed1       TRUE
+## embed2          f
+## range1       TRUE
+## range2          f
+## rel         FALSE
+## lme         FALSE
+## lemma       FALSE
+```
+
+
+
+
+## legende
+
+
+Table: (\#tab:legend_M-2)model vars
+
+|variable    |explanation                                |values                  |
+|:-----------|:------------------------------------------|:-----------------------|
+|target      |corpus                                     |obs,ref                 |
+|q           |condition                                  |a,b,c,d,e,f             |
+|det         |antecedent POS==DET                        |TRUE,FALSE              |
+|aut_id      |author                                     |author hash             |
+|lemma       |lemma                                      |noun lemma              |
+|range       |url range of distance devised              |1..maxlength(urlthread) |
+|embed.score |semantic similarity score lemma vs. thread |0..1                    |
+|q:a         |query condition                            |.*                      |
+|q:b         |query condition                            |this,that,those,these   |
+|q:c         |query condition                            |the                     |
+|q:d         |query condition                            |a,an,any,some           |
+|q:e         |query condition                            |my                      |
+|q:f         |query condition                            |his,her,their,your      |
+
+
+
+## anova analysis
+### anova plain
+formula: [``` dist_rel_all ~ target*q*det ```]
+
+
+
+```
+##                  Df     Sum Sq    Mean Sq   F value    Pr(>F)    
+## target            1 1.2830e+09 1283010757 7336.4625 < 2.2e-16 ***
+## q                 5 3.4949e+07    6989793   39.9688 < 2.2e-16 ***
+## det               1 4.6410e+06    4641007   26.5380 2.588e-07 ***
+## target:q          5 7.7932e+06    1558646    8.9126 1.786e-08 ***
+## target:det        1 7.1283e+05     712833    4.0761  0.043496 *  
+## q:det             2 2.5680e+06    1283981    7.3420  0.000648 ***
+## target:q:det      1 2.0345e+06    2034482   11.6335  0.000648 ***
+## Residuals    126209 2.2072e+10     174881                        
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+
+
+### anova of linear regression model
+[`anova(summary(lmer))`]
+
+
+
+```
+## Type III Analysis of Variance Table with Satterthwaite's method
+##                 Sum Sq   Mean Sq NumDF  DenDF   F value    Pr(>F)    
+## target         3245706   3245706     1   3519   23.4567 1.333e-06 ***
+## q              2091953    418391     5 122421    3.0237 0.0098706 ** 
+## det              34508     34508     1 118425    0.2494 0.6175055    
+## range        142964301 142964301     1   1025 1033.2042 < 2.2e-16 ***
+## embed.score   71204325  71204325     1 122690  514.5942 < 2.2e-16 ***
+## target:q       2202162    440432     5 123486    3.1830 0.0070933 ** 
+## target:det     1534830   1534830     1 123325   11.0922 0.0008672 ***
+## q:det          1019818    509909     2 120804    3.6851 0.0250971 *  
+## target:q:det    623611    623611     1 123315    4.5068 0.0337615 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+
+
+### linear regression coefficients
+formula: [``` dist_rel_all ~ target*q*det+(1|aut_id)+range+(embed.score)+(1|url_id) ```]
+
+
+
+```
+## Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+## lmerModLmerTest]
+## Formula: eval(expr(lmeform))
+##    Data: dfa
+## 
+## REML criterion at convergence: 1859224
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.8643 -0.5282 -0.1721  0.2469  6.9244 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  aut_id   (Intercept)   8101    90.01  
+##  url_id   (Intercept)  23223   152.39  
+##  Residual             138370   371.98  
+## Number of obs: 126226, groups:  aut_id, 8238; url_id, 2145
+## 
+## Fixed effects:
+##                    Estimate Std. Error         df t value Pr(>|t|)    
+## (Intercept)       7.789e+02  8.688e+00  8.969e+03  89.651  < 2e-16 ***
+## targetref        -7.312e+01  1.061e+01  1.300e+03  -6.893 8.50e-12 ***
+## qb               -3.390e+01  2.572e+01  1.218e+05  -1.318 0.187483    
+## qc               -3.717e+01  9.261e+00  1.226e+05  -4.014 5.98e-05 ***
+## qd               -5.353e+01  3.748e+02  1.184e+05  -0.143 0.886426    
+## qe                4.198e+01  6.460e+00  1.247e+05   6.498 8.14e-11 ***
+## qf               -3.185e+01  8.240e+00  1.244e+05  -3.866 0.000111 ***
+## det               2.144e+01  8.041e+00  1.229e+05   2.667 0.007662 ** 
+## range            -9.786e-02  3.044e-03  1.025e+03 -32.143  < 2e-16 ***
+## embed.score      -3.080e+02  1.358e+01  1.227e+05 -22.685  < 2e-16 ***
+## targetref:qb      3.136e+01  2.894e+01  1.225e+05   1.083 0.278599    
+## targetref:qc      3.842e+01  2.154e+01  1.237e+05   1.784 0.074435 .  
+## targetref:qd      7.432e-01  2.113e+01  1.238e+05   0.035 0.971935    
+## targetref:qe     -3.910e+01  1.602e+01  1.239e+05  -2.441 0.014662 *  
+## targetref:qf      3.033e+01  2.039e+01  1.238e+05   1.488 0.136766    
+## targetref:det    -2.490e+01  1.826e+01  1.239e+05  -1.363 0.172784    
+## qb:det            9.962e+01  2.826e+01  1.219e+05   3.526 0.000423 ***
+## qd:det            6.144e+01  3.747e+02  1.184e+05   0.164 0.869736    
+## targetref:qb:det -8.754e+01  4.124e+01  1.233e+05  -2.123 0.033761 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## fit warnings:
+## fixed-effect model matrix is rank deficient so dropping 7 columns / coefficients
+## Some predictor variables are on very different scales: consider rescaling
+```
+
+
+
+## plots
+<div class="figure">
+<p class="caption">(\#fig:boxplot1_M-2)compare distances by corpus, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/boxplot1_M-2-1.png" alt="compare distances by corpus, normalised to all, distance ceiling =  outliers removed"  /></div>
+
+<div class="figure">
+<p class="caption">(\#fig:barplot-median_M-2)mean distances over query/corpus, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/barplot-median_M-2-1.png" alt="mean distances over query/corpus, normalised to all, distance ceiling =  outliers removed"  /></div>
+
+
+
+
+Table: (\#tab:dfe-table_M-2)mean/median table for M13
+
+|target |q  |     n| mean| median|
+|:------|:--|-----:|----:|------:|
+|obs    |a  | 42836|  395|    196|
+|ref    |a  | 58615|  203|     79|
+|obs    |b  |  2116|  481|    279|
+|ref    |b  |  1130|  204|     75|
+|obs    |c  |  5770|  388|    191|
+|ref    |c  |  1274|  203|     80|
+|obs    |d  |  5654|  437|    243|
+|ref    |d  |  1525|  205|     83|
+|obs    |e  |  3911|  473|    248|
+|ref    |e  |   671|  211|     75|
+|obs    |f  |  2311|  374|    224|
+|ref    |f  |   413|  195|     79|
+
+
+
+
+<div class="figure">
+<p class="caption">(\#fig:barplot-mean_M-2)median distances over query/corpus, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/barplot-mean_M-2-1.png" alt="median distances over query/corpus, normalised to all, distance ceiling =  outliers removed"  /></div>
+
+<div class="figure">
+<p class="caption">(\#fig:lmeplot_M-2)distances relation, normalised to all, distance ceiling =  outliers removed</p><img src="poster-ext_files/figure-html/lmeplot_M-2-1.png" alt="distances relation, normalised to all, distance ceiling =  outliers removed"  /></div>
+
+<div class="figure">
+<p class="caption">(\#fig:gplot_M-2)distances normalised vs. raw</p><img src="poster-ext_files/figure-html/gplot_M-2-1.png" alt="distances normalised vs. raw"  /></div>
+
+-----
+
+## lit-ext
+literature used and alii...   
+
+
 
 
