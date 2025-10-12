@@ -60,7 +60,7 @@ con<-letters[1:6]
 det.t=c(T,F)
 
 model1<-list(
-  norm_target="_rel_all",
+  norm_target="_rel_obs",
   det.t=T,
   limit=T,
   author=T,
@@ -85,7 +85,7 @@ model2<-list(
   lemma=F
 )
 model3<-list(
-  norm_target="_rel_obs",
+  norm_target="_rel_all",
     det.t=T,
 
   limit=T,
@@ -179,4 +179,21 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo =
 # # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
 # # dfe<-eval.1$plot.md
 # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0(", not normalised, distance ceiling =",ceiling))
+
+f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
+library(readtext)
+fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
+m<-grep("child|methods-ul.md|conclusion|draftpaper-ul.md",fns)
+t<-lapply(fns[m], function(x){
+  t<-readtext(x)$text
+  t<-gsub("```\\{.+```","",t)
+  c<-strsplit(t," ")
+  n<-length(unlist(c))
+  return(n)
+})
+#print(t[[3]])
+#writeLines(t[[3]],"countwds.txt")
+#f[2]
+swc<-sum(unlist(t))
+
 ```

@@ -39,9 +39,10 @@ In words:
 - the antecedents ``` `r paste0(c(paste0(qs[[2]]$b$q,collapse=","),paste0(qs[[5]]$e$q,collapse=","),paste0(qs[[6]]$f$q,collapse=",")),collapse = " - ")` ``` decrease distance in target=OBS and increase distance values in target=REF; condition d (``` `r paste0(c(paste0(qs[[4]]$d$q,collapse=",")),collapse = " - ")` ```) vcvs.   
 - higher ```embed.score``` values (better embedded noun) decrease distance in target=OBS and increase distance values in target=REF. (cf. par 3.7.5.4, better embedding allows wider distance > the expectation seems only valid for the reference corpus!)
 
-***sidenote:*** Positing the url range only as fixed effect instead of normalising the distances still estimates smaller distances for the reference corpus, but with no significance, the only significant difference with that regression formula shows in target=REF under condition e (antecedents: ``` `r paste0(qs[[5]]$e$q,collapse=",")` ```).
+***sidenote:*** Positing the url range only as fixed effect instead of normalising the distances still estimates smaller distances for the reference corpus, but with no significance, the only significant difference with that regression formula shows in target=REF under condition e (antecedents: ``` `r paste0(qs[[5]]$e$q,collapse=",")` ```).   
 
-
+### model fazit
+As you can cf. in the appendix with the seperate coefficient tables for each evaluation model, we find over all normalised subsets (vs. obs/ref/all) significantly smaller distances in the reference corpus with varying effects for the conditions. In the subsets, where we didnt normalise or remove outliers, we find the opposite effect; the raw data does not prove our hypothesis. But just looking into the (raw) mean values plot of Fig. \@ref(fig:barplot-mean2) we clearly see that normalising and removing outliers is necessary since mean distances there extend up to over 2000 tokens thus we wouldn't like to count all analogue noun occurences here as anaphora.
 
 
 

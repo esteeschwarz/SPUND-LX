@@ -9,27 +9,27 @@
 # # knitr::engine_output(options, x)
 # })
 #print(options$label)
-f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
-library(readtext)
-fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
-m<-grep("child|methods-ul.md|conclusion|draftpaper-ul.md",fns)
-t<-lapply(fns[m], function(x){
-  t<-readtext(x)$text
-  t<-gsub("```\\{.+```","",t)
-  c<-strsplit(t," ")
-  n<-length(unlist(c))
-  return(n)
-})
-#print(t[[3]])
-#writeLines(t[[3]],"countwds.txt")
-#f[2]
-swc<-sum(unlist(t))
+# f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
+# library(readtext)
+# fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
+# m<-grep("child|methods-ul.md|conclusion|draftpaper-ul.md",fns)
+# t<-lapply(fns[m], function(x){
+#   t<-readtext(x)$text
+#   t<-gsub("```\\{.+```","",t)
+#   c<-strsplit(t," ")
+#   n<-length(unlist(c))
+#   return(n)
+# })
+# #print(t[[3]])
+# #writeLines(t[[3]],"countwds.txt")
+# #f[2]
+# swc<-sum(unlist(t))
 ```
 
-## eval method model: `r model.n`
+## evaluation model: `r model.n`
 
 ### meta 
-eval output data: `r dataset``r caption.ext`, wordcount: `r swc`.   
+eval output data: `r dataset``r caption.ext`   
 
 ### parameter setting
 
@@ -132,7 +132,7 @@ boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
 
 ```
 
-```{r,label=barplot-median<<model>>,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
+```{r,label=barplot-mean<<model>>,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
 dfe<-eval.1$plot.md
 m1<-which(colnames(dfe)%in%c("mean","median"))
 dfe[,m1]<-round(dfe[,m1],0)
@@ -148,7 +148,7 @@ kable(dfe,caption = paste0("mean/median table for model: ",model.n),format="mark
 ```
 
 
-```{r,label=barplot-mean<<model>>,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
+```{r,label=barplot-median<<model>>,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
 plot.dist(dfe,"median")
 ```
 

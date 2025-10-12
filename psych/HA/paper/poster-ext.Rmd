@@ -79,7 +79,7 @@ expand_child <- function(child, prefix) {
 ```
 
 # appendix
-
+overall wordcount of paper: `r swc`.
 
 ## legende
 ```{r,label=legend,echo=FALSE,warning=F,message=F}
