@@ -42,11 +42,28 @@ background-color: rgba(0, 0, 0, 0.04);
 #poster-ext
 ```
 
-# appendix
-eval output M`r dataset``r caption.ext`.
+```{r wcount,echo=F,warning=F,message=F,fig.cap="distances normalised vs. raw"}
+f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
+library(readtext)
+fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
+m<-grep("child|methods-ul.md|conclusion|draftpaper-ul.md",fns)
+t<-lapply(fns[m], function(x){
+  t<-readtext(x)$text
+  t<-gsub("```\\{.+```","",t)
+  c<-strsplit(t," ")
+  n<-length(unlist(c))
+  return(n)
+})
+#print(t[[3]])
+#writeLines(t[[3]],"countwds.txt")
+#f[2]
+swc<-sum(unlist(t))
+```
 
-## citetest, method (M`r dataset`)
-To compute distances we queried a corpus for matching conditions where certain (assumed) determiners appear before similar nouns. In M`r dataset` (removed)...   This distance should give us information structural evidence of how strong these noun occurences are connected, i.e. if a noun appears out of the blue mostly or if it somewhere before has been introduced to the audience. In information structure definitions this would be termed with **given and new information** [@prince_toward_1981].
+# appendix
+eval output M`r dataset``r caption.ext`, wordcount: `r swc`.
+
+## method (M`r dataset`)
 
 ## legende
 ```{r,legend,echo=FALSE,warning=F,message=F}
@@ -186,9 +203,10 @@ rmd.plot.lme(s3)
 d_sel<-ifelse(ref_target!="",ref_target,"all")
 gplot.dist(dfa,d_sel)
 ```
+
 -----
 
-## REF
+## lit-ext
 literature used and alii...   
 
 

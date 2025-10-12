@@ -28,6 +28,8 @@ e_obs_minus<-paste0(rownames(eff1)[which(!e_sim)],collapse = ", ")
 #eff1
 # qs[[5]]$e$q
 # paste0(c(paste0(qs[[2]]$b$q,collapse=","),paste0(qs[[5]]$e$q,collapse=","),paste0(qs[[6]]$f$q,collapse=",")),collapse = " - ")
+
+#16422.todo: obs-ref estimate difference (tokens) in text!
 ```
 
 Effects of the same direction for target OBS and REF are observed in ``` `r e_sim_c` ``` (with positive effects in ``` `r e_sim_c_plus_obs` ```) while contrary effects are observed in ``` `r e_obs_minus` ``` (with negative effects in target=obs and vcvs.)   
@@ -37,7 +39,7 @@ In words:
 - the antecedents ``` `r paste0(c(paste0(qs[[2]]$b$q,collapse=","),paste0(qs[[5]]$e$q,collapse=","),paste0(qs[[6]]$f$q,collapse=",")),collapse = " - ")` ``` decrease distance in target=OBS and increase distance values in target=REF; condition d (``` `r paste0(c(paste0(qs[[4]]$d$q,collapse=",")),collapse = " - ")` ```) vcvs.   
 - higher ```embed.score``` values (better embedded noun) decrease distance in target=OBS and increase distance values in target=REF. (cf. par 3.7.5.4, better embedding allows wider distance > the expectation seems only valid for the reference corpus!)
 
-***sidenote:*** Positing the url range only as fixed effect instead of normalising the distances still estimates smaller distances for the reference corpus, but with no significance, the only significant difference with that regression formula shows in target=REF under condition e (antecedents: ``` `r paste0(qs[[5]]$d$q,collapse=",")` ```).
+***sidenote:*** Positing the url range only as fixed effect instead of normalising the distances still estimates smaller distances for the reference corpus, but with no significance, the only significant difference with that regression formula shows in target=REF under condition e (antecedents: ``` `r paste0(qs[[5]]$e$q,collapse=",")` ```).
 
 
 
