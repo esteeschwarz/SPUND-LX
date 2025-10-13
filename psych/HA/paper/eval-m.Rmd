@@ -1,0 +1,118 @@
+---
+title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+output: 
+    bookdown::html_document2:
+      base_format: tufte::tufte_html
+      keep_md: true
+      self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+#keep_md: true
+---
+
+```{r setup_ext_top, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+#library(glue)
+# knit_hooks$set(chunk = function(x, options) {
+#   # If a label_prefix is provided, prepend it to the label
+#   if (!is.null(options$label_prefix) && !is.null(options$label)) {
+#     options$label <- paste0(options$label,"_",options$label_prefix)
+#   }
+#   x  # return chunk code unchanged
+# })
+```
+
+```{css, echo=FALSE,eval=T}
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+```
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+#dataset<-7
+#poster-ext-top
+
+render_child <- function(child_file, prefix) {
+  # Read the child
+  txt <- readLines(child_file)
+  # Substitute <<prefix>> placeholders with actual prefix
+  txt <- gsub("<<model>>", paste0("_M-",prefix), txt)
+  
+  # Write a temporary file
+  tmpfile <- tempfile(fileext = ".Rmd")
+  writeLines(txt, tmpfile)
+  
+  # Knit the child inline
+  res <- knit_child(tmpfile)
+  file.remove(tmpfile)
+  #return(res)
+  cat(res,sep = "\n")
+}
+expand_child <- function(child, prefix) {
+  tmpfile <- tempfile(fileext = ".Rmd")
+  txt <- readLines(child)
+  txt <- gsub("<<model>>", prefix, txt, fixed = TRUE)
+  writeLines(txt, tmpfile)
+  return(tmpfile)
+}
+
+#childB <- expand_child("child.Rmd", "A")
+#childC <- expand_child("child.Rmd", "A")
+
+```
+
+```{r,child=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/prelim.Rmd")}
+
+```
+
+# appendix
+overall wordcount of paper: `r swc`.
+
+## legende
+```{r,label=legend,echo=FALSE,warning=F,message=F}
+
+#print(caption.ext)
+dfe<-eval.1$plot.md
+legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
+                   explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
+                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0..1",
+                            ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
+                   )
+#library(kableExtra)
+
+# k<-kable(legend,caption = "model vars")
+# k<-kable_styling(k,full_width = TRUE)
+# k
+kable(legend, caption = "model vars",format="markdown")
+```
+
+
+```{r preparemodel1,echo=F,warning=F,message=F}
+model.n<-7
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+childA <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childA}
+
+```
+

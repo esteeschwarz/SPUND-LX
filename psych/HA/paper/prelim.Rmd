@@ -136,7 +136,20 @@ model6<-list(
   lme=F,
   lemma=F
 )
-model.list<-list(model1,model2,model3,model4,model5,model6)
+model7<-list(
+  norm_target="_rel_scaled",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"c"),
+  range=c(T,"c"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model.list<-list(model1,model2,model3,model4,model5,model6,model7)
 model<-model.list[[1]]
 
 norm_target<-model$norm_target

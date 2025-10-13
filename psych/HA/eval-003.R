@@ -248,6 +248,10 @@ get.dist.norm<-function(dfa,limit){
   tdb6$dist_rel_all<-tdb6$dist*tdb6$range_f_all
   tdb6$dist_rel_obs<-tdb6$dist*tdb6$range_f_obs
   tdb6$dist_rel_ref<-tdb6$dist*tdb6$range_f_ref
+  tdb6$range_c<-tdb6$range-mean(tdb6$range,na.rm=T)
+  tdb6$embed_c<-tdb6$embed.score-mean(tdb6$embed.score,na.rm=T)
+  tdb6$dist_rel_scaled<-tdb6$dist / tdb6$range  # values now in [0,1] relative to each URL’s size
+
   return(tdb6)
 }
 if(reload){
