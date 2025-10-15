@@ -1,5 +1,5 @@
 ---
-title: "draft: coherence & proposition observations in :schizophrenia: threads"
+title: "coherence & proposition observations in :schizophrenia: threads"
 author: "st. schwarz"
 date: "`r Sys.Date()`"
 output: 
@@ -45,5 +45,3 @@ library(kableExtra)
 ```
 
 -----
-
-## literature

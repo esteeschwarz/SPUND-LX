@@ -1,5 +1,5 @@
 ---
-title: "xtitle: coherence & propositions observations in :schizophrenia: threads"
+title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
 author: "st. schwarz"
 date: "`r Sys.Date()`"
 output: 
@@ -162,27 +162,7 @@ childF <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/ch
 
 ```
 
-## Selbständigkeit: benutzte Hilfestellung
-In der vorliegenden Arbeit wurden keinerlei nicht erlaubte Hilfsmittel zur Erstellung von Inhalten verwendet. Die Benutzung von KI beschränkt sich auf (Tabelle):
-
-```{r,label=kitable,echo=F,tab.cap="verwendete Hilfsmittel"}
-med<-list(Hilfsmittel=c(
-  "github copilot","chatgpt.com","claude.ai","deepseek.com","nomic-embed-text (model)"
-),Verwendung=c(
-  "Hilfe bei der Skripterstellung (R, Python) zur \nProgrammierung der Distanzenberechnung, semantic embeddings und statistischen Auswertung","dito","dito","dito","calculate semantic embeddings"
-))
-med<-data.frame(med)
-#knitr::kable(med,caption = "benutzte Hilfsmittel",format="markdown")
-#library(kableExtra)
-
-# kable(mtcars[1:10, ], caption = "Scrollable table") %>%
-#   kable_styling(full_width = FALSE, position = "left") %>%
-#   scroll_box(width = "100%", height = "auto")
-knitr::kable(med,row.names = F,booktabs = TRUE)%>%
-    kable_styling(full_width = FALSE, position = "left",latex_options = "scale_down") %>%
-  scroll_box(width = "100%", height = "auto")
-```
 -----
 
-## references
+## lit-ext
 literature used and alii...   
