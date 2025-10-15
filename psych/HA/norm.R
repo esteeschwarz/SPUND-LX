@@ -79,3 +79,6 @@ lm1<-lmer(dist_scaled ~ corpus*q + range + (1|url_id),df_norm)
 summary(lm1)
 boxplot(dist_scaled ~corpus, df_norm)
 boxplot(dist_scaled~corpus,df_norm,outline=F,notch=T,varwidth=T)
+
+gplot.dist(dfa,"scaled")
+gplot.dist(dfa,"all")

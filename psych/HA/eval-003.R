@@ -155,7 +155,7 @@ return(tdb6)
 gplot.dist<-function(dfnorm,reference_target){
   library(ggplot2)
   library(tidyr)  
-  selector<-c(obs="dist_rel_obs",ref="dist_rel_ref",all="dist_rel_all")  
+  selector<-c(obs="dist_rel_obs",ref="dist_rel_ref",all="dist_rel_all",scaled="dist_rel_scaled")  
   colselect<-colnames(dfnorm)%in%selector[reference_target]
   col.ns<-colnames(dfnorm)[which(colselect)]
   plot_data <- dfnorm %>%
@@ -166,6 +166,7 @@ gplot.dist<-function(dfnorm,reference_target){
     mutate(
       method = case_when(
         method == "dist" ~ "Raw",
+       # method == "dist_rel_scaled" ~ "Raw",
         method == col.ns ~ paste("Normalized to", reference_target),
         method == "dist_rel_within" ~ "Normalized within target"
       )
