@@ -7,10 +7,12 @@ The dataframe used for our model (actual: dataset 13) consists of ``` `r length(
 ```{r data1,message=F,warning=F,echo=FALSE,tab.cap="data sample of distances df"  }
 sample.df<-dfa[sample(1:length(dfa$dist),10),]
 sample.df<-sample.df[sample.df$le.char<15,]
-m<-grep("dist_",colnames(sample.df))
+m1<-grepl("scaled",colnames(sample.df))
+m<-grep("dist_",colnames(sample.df)[!m1])
 sample.df[,m]<-round(sample.df[,m],0)
 m<-grep("embed",colnames(sample.df))
-sample.df[,m]<-round(sample.df[,m],3)
+sample.df[,c(m,which(m1))]<-round(sample.df[,c(m,which(m1))],2)
+#sample.df[,which(m1)]<-round(sample.df[,which(m1)],3)
 m<-colnames(sample.df)%in%c("author","lemma","position","sentence_id","text_id","is_anaphora","mention_order","le.char","next_position","xpos","next_url")
 sample.df<-sample.df[,!m]
 m<-grepl("range_",colnames(sample.df))

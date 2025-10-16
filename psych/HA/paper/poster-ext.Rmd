@@ -85,7 +85,6 @@ overall wordcount of paper: `r swc`.
 ```{r,label=legend,echo=FALSE,warning=F,message=F}
 
 #print(caption.ext)
-dfe<-eval.1$plot.md
 legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
                    explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
                    values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0..1",
@@ -106,6 +105,13 @@ model<-model.list[[model.n]]
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
 childA <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
 
+```
+
+## fixed effects in M1
+```{r effects,echo=F,warning=F,message=F}
+dfe<-eval.1$plot.md
+#print(eff.ex)
+print(eff1)
 ```
 
 ```{r child=childA}
@@ -162,6 +168,8 @@ childF <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/ch
 
 ```
 
+\clearpage
+
 ## Selbständigkeit: benutzte Hilfestellung
 In der vorliegenden Arbeit wurden keinerlei nicht erlaubte Hilfsmittel zur Erstellung von Inhalten verwendet. Die Benutzung von KI beschränkt sich auf (Tabelle):
 
@@ -173,16 +181,48 @@ med<-list(Hilfsmittel=c(
 ))
 med<-data.frame(med)
 #knitr::kable(med,caption = "benutzte Hilfsmittel",format="markdown")
-#library(kableExtra)
+library(kableExtra)
 
 # kable(mtcars[1:10, ], caption = "Scrollable table") %>%
 #   kable_styling(full_width = FALSE, position = "left") %>%
 #   scroll_box(width = "100%", height = "auto")
-knitr::kable(med,row.names = F,booktabs = TRUE)%>%
-    kable_styling(full_width = FALSE, position = "left",latex_options = "scale_down") %>%
-  scroll_box(width = "100%", height = "auto")
+wrap_df <- function(df, width = 25) {
+  data.frame(
+    lapply(df, function(col) {
+      # Only wrap character or factor columns
+      if (is.character(col) || is.factor(col)) {
+        sapply(as.character(col), function(x)
+          paste(strwrap(x, width = width), collapse = "\n"))
+      } else {
+        col
+      }
+    }),
+    stringsAsFactors = FALSE,
+    check.names = FALSE
+  )
+}
+
+library(knitr)
+
+# kable(
+#   wrap_df(med, width = 30),
+#   format = "markdown"
+# )
+if (is_html_output()) {
+knitr::kable(
+  med,
+  format = "html",
+  table.attr = 'style="word-wrap:break-word; white-space:normal; width:100%;"'
+)
+} else if (is_latex_output()) {
+kable(med, format = "latex", booktabs = TRUE, escape = FALSE) %>%
+  kable_styling(latex_options = "hold_position") %>%
+  column_spec(2, width = "10cm")  # wraps text in column 2
+}
 ```
+
 -----
+\clearpage
 
 ## references
 literature used and alii...   

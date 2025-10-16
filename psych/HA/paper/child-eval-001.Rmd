@@ -3,7 +3,9 @@
 ### covariances
 ```{r eval_001_cov,eval=TRUE,warning=FALSE,echo=FALSE}
 eff1<-vcov(eval.1$lme)
+#eval.1$lme.form
 #eff1
+eff.ex<-eff1[grep("q",rownames(eff1)),1:2]
 eff1<-eff1[3:length(eff1[,1]),]
 eff1<-eff1[!grepl("target",rownames(eff1)),]
 e_plus_obs<-eff1[,1]>0

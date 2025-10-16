@@ -260,7 +260,8 @@ if(reload){
   qltdf<-read.eval(dataset)
   qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
   #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
-  qltdf$embed.score<-qltdf_embed$embed_score
+  # qltdf$embed.score<-qltdf_embed$embed_score
+  qltdf$embed.score<-qltdf_embed$embed_score*100 # for better align in estimates (+1 unit change)
   #dfa<-get.dist.norm(qltdf,limit)
   qltdf<-lemma.reduce(qltdf)
   #dfa<-qltdf
