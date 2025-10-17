@@ -209,4 +209,23 @@ t<-lapply(fns[m], function(x){
 #f[2]
 swc<-sum(unlist(t))
 
+prepare_children <- function(files) {
+  out <- c()
+  for (i in seq_along(files)) {
+    f <- files[i]
+    if (grepl("\\.md$", f)) {
+      lines <- readLines(f, warn = FALSE)
+      prefix <- paste0("p", i, "_")
+      lines <- gsub("\\[\\^([0-9A-Za-z_-]+)\\]", paste0("[^", prefix, "\\1]"), lines)
+      tmp <- tempfile(fileext = ".md")
+      writeLines(lines, tmp)
+      out <- c(out, tmp)
+    } else {
+      out <- c(out, f)
+    }
+  }
+  out
+}
+childs<-prepare_children(fns[m])
+
 ```

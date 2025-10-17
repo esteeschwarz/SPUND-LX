@@ -24,24 +24,24 @@ library(knitr)
 library(kableExtra)
 ```
 
-```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/draftpaper-ul.md"}
-
+```{r child=childs[5]}
+#draftpaper
 ```
 
 ```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/child-data-001.Rmd"}
 
 ```
 
-```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/methods-ul.md"}
-
+```{r child=childs[6]}
+#methods
 ```
 
 ```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/child-eval-001.Rmd"}
 
 ```
 
-```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/conclusion-ul.md"}
-
+```{r child=childs[4]}
+#conclusion
 ```
 
 -----
