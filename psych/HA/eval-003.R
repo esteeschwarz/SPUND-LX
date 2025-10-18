@@ -152,7 +152,7 @@ tdb6$dist_rel_ref<-tdb6$dist_abs*tdb6$range_f_ref
 return(tdb6)
 }
 ##############################################
-gplot.dist<-function(dfnorm,reference_target){
+gplot.dist<-function(dfnorm,reference_target,margin){
   library(ggplot2)
   library(tidyr)  
   selector<-c(obs="dist_rel_obs",ref="dist_rel_ref",all="dist_rel_all",scaled="dist_rel_scaled")  
@@ -171,7 +171,8 @@ gplot.dist<-function(dfnorm,reference_target){
         method == "dist_rel_within" ~ "Normalized within target"
       )
     )
-  ylim<-max(dfe$mean)+100
+#  ylim<-max(dfe$mean)+100
+  ylim<-margin
   # Create comparison plot
   p <- ggplot(plot_data, aes(x = target, y = distance, fill = target)) +
     geom_boxplot(alpha = 0.7,coef=0,outlier.shape = NA) +

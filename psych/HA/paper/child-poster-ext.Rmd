@@ -158,7 +158,8 @@ rmd.plot.lme(s3)
 
 ```{r label=gplot<<model>>,echo=F,warning=F,message=F,fig.cap="distances normalised vs. raw"}
 d_sel<-ifelse(ref_target!="",ref_target,"all")
-gplot.dist(dfa,d_sel)
+if(model$rel)
+  gplot.dist(dfa,d_sel,800)
 ```
 
 

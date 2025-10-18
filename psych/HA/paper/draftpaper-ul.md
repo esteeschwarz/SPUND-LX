@@ -1,10 +1,10 @@
 # 15303.ha.draft
 ## subject
-In this paper we want to explore **reference marking, coherence and information structure in schizophrenia language** by measuring distance of similar nouns preceded by specified determinants.[^1]
+In this paper we want to explore **reference marking and coherence in schizophrenia language** by measuring corpus distance of similar nouns preceded by specified determinants.[^1]
   
-Inspired by @zimmerer_deictic_2017 we are interested in observations concerning coherence and propositional statement conditions in schizophrenia language. @nenchev_linguistic_2024 consider investigating in coherence as important "linguistic aspect in psychotic language addressing the relatedness between word chunks or sentences" an approach to "capture formal thought disorders (disorganisation, tangentiality, derailment and poverty of speech) in schizophrenia" (cf. @nenchev_linguistic_2024, 2.1: linguistic markers of schizophrenia).
+Inspired by @zimmerer_deictic_2017 we are interested in observations concerning coherence and propositional statement conditions in schizophrenia language. Further @nenchev_linguistic_2024 consider investigating in coherence as important "linguistic aspect in psychotic language addressing the relatedness between word chunks or sentences" an approach to "capture formal thought disorders (disorganisation, tangentiality, derailment and poverty of speech) in schizophrenia" (cf. @nenchev_linguistic_2024, 2.1: linguistic markers of schizophrenia). As this is not a clinical but a corpus linguistics study we do not intend to concur with recent psychiatric literature but rather take the subject as welcome task to test corpus linguistics methods.
 
-This linguistic marker seems to play a crucial role within target group language features. (As such seen as asset of thinking- or world building capacity which might deviate from standard within the range of negative symptoms.) With our approach we add to the research done concerning frequency based analyses of how typical patients language might appear and how that language deviates in terms of keywords or word fields, while our interest is more dedicated to the structural layer of the language which can not be described by raw frequencies. In our opionion disturbances on that layer might be hidden and not to grasp easily such that a listener would not always be able to precisely figure out what the disturbing factor is. Missing **coherence**, which we will investigate, may be a too narrow explanation to many impressions that schizophrene language leaves the listener with. But it seems to be a good starting point to unveiling structural patterns of patients language.
+Since above mentioned linguistic marker seems to play a crucial role within target group language features (and as such can be seen as asset of thinking- or world building capacity which might deviate from standard within the range of negative symptoms) we might with our approach add to the research done concerning frequency based analyses of how typical patients language might appear and how it deviates in terms of keywords or word fields. Our interest is more dedicated to the structural layer of the language which can not be described by raw frequencies. In our opionion disturbances on that layer might be hidden and not to grasp easily such that a listener would not always be able to precisely figure out what the disturbing factor is. Missing **coherence**, which we will investigate, may be a too narrow explanation to many impressions that schizophrene language leaves the listener with. But it seems to be a good starting point to unveiling structural patterns of patients language.
 
 ## definitions, terminology, assumptions
 ### coherence
@@ -29,7 +29,7 @@ Our basic assumptions rely on the *taxonomy of given end new information* coined
 
 [^3]:	where the participants may show a more realistic estimation of beforementioned ability
 
-[^4]:	[the reddit thread r/schizophrenia.] #CHK
+[^4]:	to prevent stigmatisation of the subreddit users we decided to not name it here.
 
 [^5]:	preceded by conditioned determiners
 
