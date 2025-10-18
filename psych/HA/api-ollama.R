@@ -1,5 +1,5 @@
 library(jsonlite)
-
+library(httr)
 get.embeds<-function(text){
 api<-"http://localhost:11434/api/embeddings"
 #params<-c(

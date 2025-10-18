@@ -1,0 +1,204 @@
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+
+## /*table {
+##   width: 100% !important;
+## 
+## }*/
+## pre {
+## border: 1px solid black;
+## border-radius: 0.25rem;
+## background-color: rgba(0, 0, 0, 0.04);
+## 
+## }
+
+#dataset<-7
+#prelim
+
+#eval.n<-7
+# run<-15302
+# dataset<-11
+# appendix open-lx after all is loaded, yaml new=T, reload=F
+#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/"))
+
+run<-15303 # db identifier
+dataset<-12 # last essai
+dataset<-13 # new distancer & embed approach
+
+reload<-T
+target<-c("obs","ref")
+#ref_target<-"obs"
+con<-letters[1:6]
+det.t=c(T,F)
+
+model1<-list(
+  norm_target="_rel_obs",
+  det.t=T,
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model2<-list(
+  norm_target="",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model3<-list(
+  norm_target="_rel_all",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model4<-list(
+  norm_target="_rel_ref",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model5<-list(
+  norm_target="_rel_within",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model6<-list(
+  norm_target="",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model7<-list(
+  norm_target="_rel_scaled",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"c"),
+  range=c(T,"c"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model.list<-list(model1,model2,model3,model4,model5,model6,model7)
+model<-model.list[[1]]
+
+norm_target<-model$norm_target
+#norm_target<-""
+ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))
+ref<-norm_target
+det.t<-model$det.t
+limit<-model$limit
+author<-model$author
+url<-model$url
+embed<-model$embed #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+range<-model$range #.ti: if, if inverted in lmer.
+#range<-T # no!
+#range<-c(T,"f")
+rel<-model$rel
+lme<-model$lme
+lemma<-model$lemma
+
+ceiling<-ifelse(sum(limit)>0,"outliers removed","outliers not removed")
+
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+
+if(reload)
+  rm(eval.1)
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+#dfa<-get.dist.norm(dfa,limit)
+# 
+# if(!exists("eval.1"))
+# #  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+#   # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
+#   # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+# 
+#   eval.1<-get.anovas.e(dfa,c("obs","ref"),con,det.t,norm_target,lemma,author,url,range,embed,lme)
+# 
+# anova.form<-eval.1$anova.form
+# lme.form<-eval.1$lme.form
+# # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# # dfe<-eval.1$plot.md
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0(", not normalised, distance ceiling =",ceiling))
+
+f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
+library(readtext)
+fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
+m<-grep("child|methods-ul.md|conclusion|draftpaper-ul.md",fns)
+t<-lapply(fns[m], function(x){
+  t<-readtext(x)$text
+  t<-gsub("```\\{.+```","",t)
+  c<-strsplit(t," ")
+  n<-length(unlist(c))
+  return(n)
+})
+#print(t[[3]])
+#writeLines(t[[3]],"countwds.txt")
+#f[2]
+swc<-sum(unlist(t))
+
+prepare_children <- function(files) {
+  out <- c()
+  for (i in seq_along(files)) {
+    f <- files[i]
+    if (grepl("\\.md$", f)) {
+      lines <- readLines(f, warn = FALSE)
+      prefix <- paste0("p", i, "_")
+      lines <- gsub("\\[\\^([0-9A-Za-z_-]+)\\]", paste0("[^", prefix, "\\1]"), lines)
+      tmp <- tempfile(fileext = ".md")
+      writeLines(lines, tmp)
+      out <- c(out, tmp)
+    } else {
+      out <- c(out, f)
+    }
+  }
+  out
+}
+childs<-prepare_children(fns[m])
+
