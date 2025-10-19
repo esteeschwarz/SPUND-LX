@@ -424,7 +424,44 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
   
   return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,lmer=lm2,plot.md=dfe,lme.form=lmeform,anova.form=anova.fstr))
 }
+#######################
+# 16432.modeling essais
+eval.t1<-function(){
+  #dfa<-get.dist.norm(qltdf,T)
+  source(knitr::purl("paper/prelim.Rmd", documentation = 0))
 
+  lm1<-lmer(dist_rel_scaled~-1+target*q+embed.score+(1|range),dfa)
+  s1<-summary(lm1)
+  s1
+  par(las=2)
+  barplot(s1$coefficients[,1]*100)
+  plot(s1)
+  lm2<-lm(dist_rel_scaled~-1+target*q+embed.score+(1|range),dfa)
+  lm2<-lm(dist~-1+target+embed.score+(1|range),dfa)
+  lm2<-lm(dist_rel_scaled~-1+target+embed.score+(1|range),dfa)
+  lm2<-lm(dist_rel_obs~-1+target+embed.score+(1|range),dfa)
+  #plot(lm2)
+  anova(lm2)
+#  car::crPlots(climb.lm, terms = . ~ log(dist), xaxt='n', xlab="Distance")
+  library(car)
+  car::crPlots(m<-lm(dist ~ log(speed) ,data=cars),terms=.~log(speed), xaxt='n', xlab="Distance")
+  car::crPlots(m<-lm(dist ~ speed ,data=cars),terms=.~speed, xaxt='n', xlab="Distance")
+  car::crPlots(m<-lm(dist ~ speed ,data=cars))
+  car::crPlots(m<-lm(dist_rel_all ~ q ,data=dfa),smooth=T)
+  car::crPlots(m<-lm(dist_rel_all ~ target+q+embed.score ,data=dfa),smooth=T)
+  car::crPlots(m<-lm(dist_rel_all ~ target+q+range ,data=dfa),smooth=T)
+  car::crPlots(m<-lm(dist ~ target+q+range ,data=dfa),smooth=T)
+  par(las=2)
+  #boxplot(log(dist/range*embed.score)~target*q,data=dfa)
+  boxplot(log(dist/range_c*embed.score)~target*q,data=dfa,col=c(8,2))
+  boxplot(log(dist/range*embed.score)~target,data=qltdf,col=c(8,2))
+  boxplot(log(dist/embed.score)~target*range,data=qltdf,col=c(8,2))
+  plot(data.frame(range=qltdf$range,dist=log(qltdf$dist)))
+  plot(dist/range~log(dfa$embed.score),dfa)
+  car::crPlots(lm(dist_rel_obs~-1+target+q+embed.score+(1|range),dfa), terms="target", xaxt='n')
+  car::crPlots(lm(log(dist/range*embed.score)~target+q+aut_id,dfa), terms=.~target)
+}
+#log(5)
 #rm(eval.1)
 # if(!exists("eval.1"))
 #eval.1$plot.lme

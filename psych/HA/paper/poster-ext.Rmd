@@ -31,22 +31,22 @@ background-color: rgba(0, 0, 0, 0.04);
 #dataset<-7
 #poster-ext-top
 
-render_child <- function(child_file, prefix) {
-  # Read the child
-  txt <- readLines(child_file)
-  # Substitute <<prefix>> placeholders with actual prefix
-  txt <- gsub("<<model>>", paste0("_M-",prefix), txt)
-  
-  # Write a temporary file
-  tmpfile <- tempfile(fileext = ".Rmd")
-  writeLines(txt, tmpfile)
-  
-  # Knit the child inline
-  res <- knit_child(tmpfile)
-  file.remove(tmpfile)
-  #return(res)
-  cat(res,sep = "\n")
-}
+# render_child <- function(child_file, prefix) {
+#   # Read the child
+#   txt <- readLines(child_file)
+#   # Substitute <<prefix>> placeholders with actual prefix
+#   txt <- gsub("<<model>>", paste0("_M-",prefix), txt)
+#   
+#   # Write a temporary file
+#   tmpfile <- tempfile(fileext = ".Rmd")
+#   writeLines(txt, tmpfile)
+#   
+#   # Knit the child inline
+#   res <- knit_child(tmpfile)
+#   file.remove(tmpfile)
+#   #return(res)
+#   cat(res,sep = "\n")
+# }
 expand_child <- function(child, prefix) {
   tmpfile <- tempfile(fileext = ".Rmd")
   txt <- readLines(child)
@@ -69,8 +69,8 @@ overall wordcount of paper: `r swc`.
 #print(caption.ext)
 legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
                    explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
-                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0..1",
-                            ".*","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
+                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0:1 (scaled 0:100)",
+                            "any !{b,c,d,e,f}","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
                    )
 #library(kableExtra)
 
@@ -89,11 +89,11 @@ childA <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/ch
 
 ```
 
-## fixed effects in M1
+## covariance effects in M1 {#covar}
 ```{r effects,echo=F,warning=F,message=F}
-dfe<-eval.1$plot.md
+#dfe<-eval.1$plot.md
 #print(eff.ex)
-print(eff1)
+print(eff1.s)
 ```
 
 ```{r child=childA}

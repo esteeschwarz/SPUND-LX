@@ -1,12 +1,12 @@
 ---
-title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
-author: "st. schwarz"
-date: "`r Sys.Date()`"
-output: 
-    bookdown::html_document2:
-      base_format: tufte::tufte_html
-      keep_md: true
-      self_contained: true
+# title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
+# author: "st. schwarz"
+# date: "`r Sys.Date()`"
+# output: 
+#     bookdown::html_document2:
+#       base_format: tufte::tufte_html
+#       keep_md: true
+#       self_contained: true
     #fig_path: "plots/"
   # md_document:
   #   variant: markdown_github
@@ -37,7 +37,7 @@ background-color: rgba(0, 0, 0, 0.04);
 }
 ```
 
-```{r}
+```{r,echo=FALSE}
 #dataset<-7
 #prelim
 ```
@@ -219,6 +219,7 @@ prepare_children <- function(files) {
       lines <- readLines(f, warn = FALSE)
       prefix <- paste0("p", i, "_")
       lines <- gsub("\\[\\^([0-9A-Za-z_-]+)\\]", paste0("[^", prefix, "\\1]"), lines)
+      lines <- gsub("\\\\_", "_", lines)
       tmp <- tempfile(fileext = ".md")
       writeLines(lines, tmp)
       out <- c(out, tmp)

@@ -4,7 +4,7 @@
 ```{r eval_001_cov,eval=TRUE,warning=FALSE,echo=FALSE}
 eff1<-vcov(eval.1$lme)
 #eval.1$lme.form
-#eff1
+eff1.s<-eff1
 eff.ex<-eff1[grep("q",rownames(eff1)),]
 eff1<-eff1[3:length(eff1[,1]),]
 eff1<-eff1[!grepl("target",rownames(eff1)),]
@@ -32,14 +32,15 @@ e_obs_minus<-paste0(rownames(eff1)[which(!e_sim)],collapse = ", ")
 # paste0(c(paste0(qs[[2]]$b$q,collapse=","),paste0(qs[[5]]$e$q,collapse=","),paste0(qs[[6]]$f$q,collapse=",")),collapse = " - ")
 
 #16422.todo: obs-ref estimate difference (tokens) in text!
--1.220460e-01--1.123020e-01
-b <- fixef(eval.1$lmer)
-b
-eval.1$lme
+#-1.220460e-01--1.123020e-01
+#b <- fixef(eval.1$lmer)
+#b
+#eval.1$lme
 #barplot(b)
 ```
 
-Effects of the same direction for target OBS and REF are observed in ``` `r e_sim_c` ``` (with positive effects in ``` `r e_sim_c_plus_obs` ```) while contrary effects are observed in ``` `r e_obs_minus` ``` (with negative effects in target=obs and vcvs.)   
+Effects of the same direction for target OBS and REF are observed in ``` `r e_sim_c` ``` (with positive effects in ``` `r e_sim_c_plus_obs` ```) while contrary effects are observed in ``` `r e_obs_minus` ``` (with negative effects in target=obs and vcvs)  (cf. sec. \@ref(covar)).  
+
 In words:   
 
 - the antecedents ``` `r paste0(qs[[3]]$c$q,collapse=",")` ``` seem to allow a wider distance between referent and reference in both target=OBS and target=REF. 
