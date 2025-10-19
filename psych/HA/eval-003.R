@@ -422,7 +422,7 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
   
   # bp<-rmd.plot.lme(lm2.summ)
   
-  return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,plot.md=dfe,lme.form=lmeform,anova.form=anova.fstr))
+  return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,lmer=lm2,plot.md=dfe,lme.form=lmeform,anova.form=anova.fstr))
 }
 
 #rm(eval.1)

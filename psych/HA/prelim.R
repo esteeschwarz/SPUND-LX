@@ -170,7 +170,7 @@ source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo =
 f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
 library(readtext)
 fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
-m<-grep("child|methods-ul.md|conclusion|draftpaper-ul.md",fns)
+m<-grep("child|ul.md",fns)
 t<-lapply(fns[m], function(x){
   t<-readtext(x)$text
   t<-gsub("```\\{.+```","",t)
@@ -181,6 +181,8 @@ t<-lapply(fns[m], function(x){
 #print(t[[3]])
 #writeLines(t[[3]],"countwds.txt")
 #f[2]
+#t
+#fns[m]
 swc<-sum(unlist(t))
 
 prepare_children <- function(files) {
