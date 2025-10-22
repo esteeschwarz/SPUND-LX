@@ -1,0 +1,302 @@
+
+## github repo for scripts & alii
+@schwarz_poster_2025
+
+
+```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
+#eval.n<-7
+# run<-15302
+# dataset<-11
+# appendix open-lx after all is loaded, yaml new=T, reload=F
+#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/"))
+
+run<-15303 # db identifier
+dataset<-12 # last essai
+dataset<-13 # new distancer & embed approach
+
+reload<-T
+target<-c("obs","ref")
+#ref_target<-"obs"
+con<-letters[1:6]
+det.t=c(T,F)
+
+model1<-list(
+  norm_target="_rel_obs",
+  det.t=T,
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model2<-list(
+  norm_target="",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model3<-list(
+  norm_target="_rel_all",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model4<-list(
+  norm_target="_rel_ref",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model5<-list(
+  norm_target="_rel_within",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model6<-list(
+  norm_target="",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model7<-list(
+  norm_target="_rel_scaled",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"c"),
+  range=c(T,"c"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model.list<-list(model1,model2,model3,model4,model5,model6,model7)
+model.n<-1
+model<-model.list[[model.n]]
+
+norm_target<-model$norm_target
+#norm_target<-""
+ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))
+ref<-norm_target
+det.t<-model$det.t
+limit<-model$limit
+author<-model$author
+url<-model$url
+embed<-model$embed #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+range<-model$range #.ti: if, if inverted in lmer.
+#range<-T # no!
+#range<-c(T,"f")
+rel<-model$rel
+lme<-model$lme
+lemma<-model$lemma
+
+ceiling<-ifelse(sum(limit)>0,"outliers removed","outliers not removed")
+
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+
+if(reload)
+  rm(eval.1)
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+#dfa<-get.dist.norm(dfa,limit)
+# 
+# if(!exists("eval.1"))
+# #  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+#   # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
+#   # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+# 
+#   eval.1<-get.anovas.e(dfa,c("obs","ref"),con,det.t,norm_target,lemma,author,url,range,embed,lme)
+# 
+# anova.form<-eval.1$anova.form
+# lme.form<-eval.1$lme.form
+# # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# # dfe<-eval.1$plot.md
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0(", not normalised, distance ceiling =",ceiling))
+
+f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
+library(readtext)
+fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
+m<-grep("child|ul.md",fns)
+t<-lapply(fns[m], function(x){
+  t<-readtext(x)$text
+  t<-gsub("```\\{.+```","",t)
+  c<-strsplit(t," ")
+  n<-length(unlist(c))
+  return(n)
+})
+#print(t[[3]])
+#writeLines(t[[3]],"countwds.txt")
+#f[2]
+#t
+#fns[m]
+swc<-sum(unlist(t))
+
+prepare_children <- function(files) {
+  out <- c()
+  for (i in seq_along(files)) {
+    f <- files[i]
+    if (grepl("\\.md$", f)) {
+      lines <- readLines(f, warn = FALSE)
+      prefix <- paste0("p", i, "_")
+      lines <- gsub("\\[\\^([0-9A-Za-z_-]+)\\]", paste0("[^", prefix, "\\1]"), lines)
+      lines <- gsub("\\\\_", "_", lines)
+      tmp <- tempfile(fileext = ".md")
+      writeLines(lines, tmp)
+      out <- c(out, tmp)
+    } else {
+      out <- c(out, f)
+    }
+  }
+  out
+}
+#childs<-prepare_children(fns[m])
+
+```
+
+## data
+
+- target corpus: subreddit channel (``` `r paste0("n =",length(tdb$obs$token)," tokens")` ```)
+- reference corpus: r/unpopularopinion (``` `r paste0("n =",length(tdb$ref$token)," tokens")` ```)
+- pos-tagged using R udpipe package (@wijffels_udpipe_2023) (universal dependencies tagset)
+- dataframe of ``` `r length(qltdf$token)` ``` distance datapoints 
+- the distances are normalised to the target corpus 
+- outliers are excluded from the analysis
+
+## sample subset
+```{r data1,message=F,warning=F,echo=FALSE,tab.cap="data sample of distances df"  }
+sample.df<-dfa[sample(1:length(dfa$dist),10),]
+sample.df<-sample.df[sample.df$le.char<15,]
+m1<-grepl("scaled",colnames(sample.df))
+m<-grep("dist_",colnames(sample.df)[!m1])
+sample.df[,m]<-round(sample.df[,m],0)
+m<-grep("embed",colnames(sample.df))
+sample.df[,c(m,which(m1))]<-round(sample.df[,c(m,which(m1))],2)
+#sample.df[,which(m1)]<-round(sample.df[,which(m1)],3)
+m<-colnames(sample.df)%in%c("author","lemma","position","sentence_id","text_id","is_anaphora","mention_order","le.char","next_position","xpos","next_url")
+sample.df<-sample.df[,!m]
+m<-grepl("range_",colnames(sample.df))
+sample.df<-sample.df[,!m]
+#colnames(sample.df)
+#library(knitr)
+library(kableExtra)
+
+# kable(mtcars[1:10, ], caption = "Scrollable table") %>%
+#   kable_styling(full_width = FALSE, position = "left") %>%
+#   scroll_box(width = "100%", height = "auto")
+knitr::kable(sample.df,row.names = F,booktabs = TRUE)%>%
+    kable_styling(full_width = FALSE, position = "left",latex_options = "scale_down") %>%
+  scroll_box(width = "100%", height = "auto")
+
+
+```
+
+## general
+```{r,label=boxplot1,echo=F,warning=F,message=F,fig.cap=paste0("compare distances by corpus",caption.ext)}
+# df1_no_outliers <- dfa %>%
+#   group_by(target) %>%
+#   filter(
+#     dist >= quantile(dist, 0.25) - 1.5 * IQR(dist),
+#     dist <= quantile(dist, 0.75) + 1.5 * IQR(dist)
+#   ) %>%
+#   ungroup()
+d.sel<-paste0("dist",norm_target)
+Y<-dfa[[d.sel]]
+boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
+
+```
+
+## mean
+```{r,label=barplot-mean,echo=F,warning=F,message=F,fig.cap=paste0("mean distances over query/corpus",caption.ext)}
+dfe<-eval.1$plot.md
+m1<-which(colnames(dfe)%in%c("mean","median"))
+dfe[,m1]<-round(dfe[,m1],0)
+# m2<-m1[length(m1):1]
+# m3<-c(1:(m1[1]-1),m2)
+# dfe<-dfe[,m3]
+plot.dist(dfe,"mean")
+```
+
+## mean/median
+```{r,label=dfe-table,echo=F,warning=F,message=F}
+kable(dfe,caption = paste0("table (normalised) for model: ",model.n),format="markdown")
+```
+
+
+
+
+## median
+```{r,label=barplot-median,echo=F,warning=F,message=F,fig.cap=paste0("median distances over query/corpus",caption.ext)}
+plot.dist(dfe,"median")
+```
+
+## estimates
+```{r, label=lmeplot,echo=F,warning=F,message=F,fig.cap=paste0("distances relation",caption.ext)}
+s3<-eval.1$lme
+
+rmd.plot.lme(s3)
+```
+
+## normalised vs. raw
+```{r label=gplot,echo=F,warning=F,message=F,fig.cap="distances normalised vs. raw"}
+d_sel<-ifelse(ref_target!="",ref_target,"all")
+if(model$rel)
+  gplot.dist(dfa,d_sel,800)
+```
+
+## why normalise
+```{r,label=dfe-raw,echo=F,warning=F,message=F}
+model.n<-2
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+dfe<-eval.1$plot.md
+dfe$mean<-round(dfe$mean,0)
+
+kable(dfe,caption = paste0("mean/median table (raw) for model: ",model.n),format="markdown")
+```
+
+## REF
+
+
+
