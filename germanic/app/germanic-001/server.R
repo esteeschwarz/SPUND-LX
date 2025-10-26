@@ -8,7 +8,9 @@
 #
 
 library(shiny)
-load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/K6.RData"))
+k6temp<-tempfile("tempk6.RData")
+download.file("https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/germanic/K6.Rdata",k6temp)
+load(k6temp)
 # Define server logic required to draw a histogram
 get.sample<-function(n,k5){
   # m<-k5$chk_ann=="1"
