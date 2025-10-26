@@ -99,20 +99,30 @@ regx5<-"לע\\b"
 regx6<-"[מקפטרכסדגבז]"
 regx6<-paste0(regx6,"ל","\\b")
 regx6
+regx7<-"[מקפטרכסדגבז]"
+regx7<-paste0(regx7,"ע","\\b")
+regx7
 m1<-grepl(regx1,k4$token)
 sum(m1)
 k4$paradigm_he<-unlist(stri_extract_all_regex(k4$token,regx1))
 k4$paradigm_lat[m1]<-"-em"
 sum(!is.na(k4$paradigm_he))
 m3<-grepl(regx3,k4$token)
+regx3
 sum(m3)
 k4$paradigm_he[m3]<-unlist(stri_extract_all_regex(k4$token,regx3))[m3]
 k4$paradigm_lat[m3]<-"-en"
+##############################
 m2<-grepl(regx2,k4$token)
+regx2
 sum(m2)
-#m<-!is.na(unlist(stri_extract_all_regex(k4$token[is.na(k4$paradigm_lat)],"ע\\b")))
 k4$paradigm_he[m2]<-unlist(stri_extract_all_regex(k4$token,regx2))[m2]
 k4$paradigm_lat[m2]<-"-e"
+m7<-grepl(regx7,k4$token)
+regx7
+sum(m7)
+k4$paradigm_he[m7]<-unlist(stri_extract_all_regex(k4$token,regx7))[m7]
+k4$paradigm_lat[m7]<-"-e"
 m4<-grepl(regx4,k4$token)
 k4$paradigm_he[m4]<-unlist(stri_extract_all_regex(k4$token,regx4))[m4]
 k4$paradigm_lat[m4]<-"-len"
@@ -146,8 +156,10 @@ for(k in 1:length(transdf$id)){
 cat("\r",k)
 k6$latin<-gsub(transdf$ivrit[k],transdf$latin[k],k6$latin)  
 }
-write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
 sa.AN<-get.sample(k6)
+
+#####################
+write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
 write.csv(sa.AN,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/sample-ADJ-NOUN.csv"))
 
 
