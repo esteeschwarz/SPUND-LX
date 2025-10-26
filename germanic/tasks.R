@@ -157,6 +157,7 @@ k4$kwic[!is.na(k4$paradigm_lat)]<-kw[k4$id[!is.na(k4$paradigm_lat)]]
 k5<-k4[!is.na(k4$kwic),]
 }
 k5<-repl.fun(k4)
+mode(k5$paradigm_he)<-"character"
 k51<-get.kx(k5$kwic,1)
 k52<-get.kx(k5$kwic,2)
 k53<-get.kx(k5$kwic,3)
@@ -164,13 +165,30 @@ k5$art<-k51$token
 k5$adj<-k52$token
 k5$noun<-k53$token
 #write.csv(k5,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
+k5<-k6
 get.sample<-function(k5){
-sub1<-k5[k5$pos=="NOUN",]
-sa.N<-sub1[sample(1:length(sub1$id),20),]
-sub1<-k5[k5$pos=="ADJ",]
-sa.A<-sub1[sample(1:length(sub1$id),20),]
+  # m<-k5$chk_ann=="1"
+  # sum(m)
+#  sum(k6$art=="der"&!is.na(k6$chk_ann))
+get.d<-function(n,k5){
+sub1<-k5[k5$pos=="NOUN"&!is.na(k5$chk_ann),]
+sub3<-k5[k5$pos=="NOUN"&!is.na(k5$chk_ann)&k5$art=="der",]
+#sub1<-rbind(sub3,sub1)
+sa.N<-sub1[sample(1:length(sub1$id),15),]
+ifelse(length(sub3$id)>2,sa.d<-sub3[sample(1:length(sub3$id),3),],sa.d<-sub3)
+sa.N<-rbind(sa.N,sa.d)
+sub2<-k5[k5$pos=="ADJ"&!is.na(k5$chk_ann),]
+sa.A<-sub2[sample(1:length(sub2$id),20),]
 sa.AN<-rbind(sa.A,sa.N)
 }
+sa.AN<-get.d(5,k5)
+chk.d<-sa.AN$art=="der"
+# while(sum(chk.d)<3)
+#    sa.AN<-get.d(5,k5)
+   
+return(sa.AN)
+}
+sa.AN<-get.sample(k6)
 #write.csv(sa.AN,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/sample-ADJ-NOUN.csv"))
 #write.csv(kw,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic-all.csv"))
 #kw[869]
@@ -189,9 +207,22 @@ k6$latin<-get.trans(k6$latin,transdf)
 k6$art<-get.trans(k6$art,transdf)  
 k6$adj<-get.trans(k6$adj,transdf)  
 k6$noun<-get.trans(k6$noun,transdf)  
-write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
+#write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
+noun.u<-unique(k6$noun)
+noun.u<-data.frame(noun=noun.u,check=1)
+nouns.c<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/nouns_cor.csv"))
+nouns.c5<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5_cor.csv"))
+m<-nouns.c$check==1
+sum(m)
+k6$chk_ann<-NA
+m2<-k6$noun%in%nouns.c$noun[m]
+sum(m2)
+k6$chk_ann[m2]<-1
+m<-!is.na(nouns.c5$chk_ann)
+sum(m)
+k6$chk_ann[m]<-1
 sa.AN<-get.sample(k6)
-
+#write.csv(noun.u,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/nouns.csv"))
 #####################
 write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
 write.csv(sa.AN,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/sample-ADJ-NOUN.csv"))
