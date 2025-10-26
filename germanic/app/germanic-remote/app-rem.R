@@ -8,11 +8,33 @@
 #
 
 #library(shiny)
+r1<-'/\\{([^}]+)\\}/g'
 
 # Define UI for application that draws a histogram
 ui <- 
 fluidPage(
-  
+  tags$head(
+    tags$style(HTML(".highlight { color: blue; font-weight: bold; }")),
+    tags$script(HTML("
+      // Run whenever new content appears
+    /*  Shiny.addCustomMessageHandler('highlightBraces', function(id) {
+        const el = document.getElementById('showsamples');
+        if (el) {
+       el.innerHTML = el.textContent.replace(/\\{([^}]+)\\}/g, '<span class=\"highlight\">{$1}</span>');
+        }
+        const para = document.createElement('p');
+        para.innerText = 'This is a {par}agraph';
+        para.innerHTML = para.textContent.replace(/\\{([^}]+)\\}/g, 'dumm<a href=\"link\">{$1}</a>');
+        //document.body.appendChild(para);
+        const test = document.createElement('p');
+        test.innerHTML = el.textContent;
+        */
+       // document.body.appendChild(test);
+        
+
+      });
+    "))
+  ),
   # Application title
   titlePanel("germanic samples: yiddish"),
   
@@ -63,6 +85,9 @@ server <-
       
       
       )
+    })
+    observe({
+      session$sendCustomMessage("highlightBraces", "showsamples")
     })
     
     
