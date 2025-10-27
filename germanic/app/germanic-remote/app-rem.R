@@ -60,8 +60,11 @@ fluidPage(
     # ,
     # actionButton("refresh", "reload", class = "btn-primary btn-sm"),
     #
-    HTML('<p>Q: <a href="https://ske.li/germanic_yid_002">sketchengine</a><p>'),
+    HTML('<p>Q: <a href="https://ske.li/germanic_yid_003">sketchengine</a><p>'),
     verbatimTextOutput("query"),
+    hr(),
+    htmlOutput("md_content"),
+    hr(),
     DTOutput("showsamples"),
     hr(),
     textInput("id","input row ID to show complete sample"),
@@ -80,7 +83,14 @@ server <-
     rv <- reactiveValues(
       n = 5,
     )
+    list.files()
+    info<-ifelse(Sys.getenv("SYS")%in%c("lapsi","tapee"),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/app/germanic-remote/info.md"),
+                 "https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/germanic/app/germanic-remote/info.md")
+    info<-readLines(info)
       output$query<-renderText(q)
+      output$md_content <- renderUI({
+        includeMarkdown(info)
+      })
       #observeEvent(input$refresh, {
      # rv$n <- input$bins
       #df<-k6[sample(length(k6$id),length(k6$id)),]
