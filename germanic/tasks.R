@@ -223,7 +223,10 @@ sum(m2)
 k6$chk_ann[m2]<-1
 m<-!is.na(nouns.c5$chk_ann)
 sum(m)
-k6$chk_ann[m]<-1
+################
+### not wt new download!
+#k6$chk_ann[m]<-1
+################
 sa.AN<-get.sample(k6)
 
 #write.csv(noun.u,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/nouns.csv"))
@@ -231,5 +234,9 @@ sa.AN<-get.sample(k6)
 write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
 write.csv(sa.AN,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/sample-ADJ-NOUN.csv"))
 save(k6,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/K6.Rdata"))
-save(dfo,file = paste0(Sys.getenv("GIT_TOP"),"/work/essais/germanic-001/dfo.Rdata"))
+# tapee
+work.f<-ifelse(Sys.getenv("SYS")=="lapsi","/test/work_test/","/work/")
+save(dfo,file = paste0(Sys.getenv("GIT_TOP"),work.f,"essais/germanic-001/dfo.RData"))
+
+#save(dfo,file = paste0(Sys.getenv("GIT_TOP"),"/work/essais/germanic-001/dfo.RData"))
 

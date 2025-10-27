@@ -60,7 +60,7 @@ fluidPage(
     # ,
     # actionButton("refresh", "reload", class = "btn-primary btn-sm"),
     #
-    HTML('<p>Q: <a href="https://ske.li/germanic_yid_001">sketchengine</a><p>'),
+    HTML('<p>Q: <a href="https://ske.li/germanic_yid_002">sketchengine</a><p>'),
     verbatimTextOutput("query"),
     DTOutput("showsamples"),
     hr(),
