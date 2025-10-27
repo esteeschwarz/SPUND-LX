@@ -52,6 +52,8 @@ pr<-readLines(paste0("~/boxHKW/21S/DH/local/SPUND/2025/huening/skeconcordances/"
 pr[1]<-pr[5]
 pr<-writeLines(pr,paste0("~/boxHKW/21S/DH/local/SPUND/2025/huening/skeconcordances/",f[length(f)]))
 df<-read.csv(paste0("~/boxHKW/21S/DH/local/SPUND/2025/huening/skeconcordances/",f[length(f)]))
+dfo<-df
+
 # 20 NN, +genus, +article, +adj
 kw<-df$KWIC
 s1<-strsplit(kw," ")
@@ -229,4 +231,5 @@ sa.AN<-get.sample(k6)
 write.csv(k6,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/kwic5.csv"))
 write.csv(sa.AN,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/sample-ADJ-NOUN.csv"))
 save(k6,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/K6.Rdata"))
+save(dfo,file = paste0(Sys.getenv("GIT_TOP"),"/work/essais/germanic-001/dfo.Rdata"))
 

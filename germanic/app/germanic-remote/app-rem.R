@@ -6,10 +6,12 @@
 #
 #    https://shiny.posit.co/
 #
+library(DT)
 
 #library(shiny)
 r1<-'/\\{([^}]+)\\}/g'
-
+load("dfo.RData")
+q<-dfo$Left[3]
 # Define UI for application that draws a histogram
 ui <- 
 fluidPage(
@@ -50,16 +52,23 @@ fluidPage(
   
   # Show a plot of the generated distribution
   mainPanel(
-    sliderInput("bins",
-                "Number of samples:",
-                min = 1,
-                max = 30,
-                value = 10)
-    ,
-    actionButton("refresh", "reload", class = "btn-primary btn-sm"),
+    # sliderInput("bins",
+    #             "Number of samples:",
+    #             min = 1,
+    #             max = 30,
+    #             value = 10)
+    # ,
+    # actionButton("refresh", "reload", class = "btn-primary btn-sm"),
+    #
+    HTML('<p>Q: <a href="https://ske.li/germanic_yid_001">sketchengine</a><p>'),
+    verbatimTextOutput("query"),
+    DTOutput("showsamples"),
+    hr(),
+    textInput("id","input row ID to show complete sample"),
+    tableOutput("row")
     
     
-    tableOutput("showsamples")
+    #tableOutput("showsamples")
   )
   
 )
@@ -71,21 +80,42 @@ server <-
     rv <- reactiveValues(
       n = 5,
     )
-    observeEvent(input$refresh, {
-      rv$n <- input$bins
-      output$showsamples <- renderTable({
-        n<-rv$n
-        df<-get.sample(n,k6)
-        print(df)
-        cns<-c("paradigm_he","paradigm_lat","kwic","art","adj","noun")
-        df<-df[,colnames(df)%in%cns]
-        
-      },width = "100%"
-      
-      
-      
-      )
-    })
+      output$query<-renderText(q)
+      #observeEvent(input$refresh, {
+     # rv$n <- input$bins
+      #df<-k6[sample(length(k6$id),length(k6$id)),]
+      df<-k6
+      cns<-c("id","paradigm_he","paradigm_lat","kwic","art","adj","noun")
+      df<-df[,colnames(df)%in%cns]
+      output$showsamples<-renderDT({
+        datatable(
+          df,
+          options = list(
+            pageLength = 10,          # Number of rows per page
+            lengthMenu = c(5, 10, 25, 50)  # Dropdown to select number of rows
+            #order = list(list(1, 'asc'))    # Default sorting by 2nd column
+          ),
+          filter = "top",  # Adds a filter box at the top of each column
+          rownames = FALSE
+        )
+      })
+      output$row<-renderTable({
+        id<-input$id
+        dfo[id,2:length(dfo)]
+      },width = "100%")
+    #   output$showsamples <- renderTable({
+    #     n<-rv$n
+    #     df<-get.sample(n,k6)
+    #     print(df)
+    #     cns<-c("paradigm_he","paradigm_lat","kwic","art","adj","noun")
+    #     df<-df[,colnames(df)%in%cns]
+    #     
+    #   },width = "100%"
+    #   
+    #   
+    #   
+    #   )
+    # })
     observe({
       session$sendCustomMessage("highlightBraces", "showsamples")
     })
