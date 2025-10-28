@@ -63,9 +63,9 @@ create_text_embeddings <- function(texts, dim = 50) {
 
 #embeddings <- create_text_embeddings(textes_francais, dim = 50)
 
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.n.RData"))
-tdba<-tdba.n
-urls<-unique(tdba.n$url_t)
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.n.RData"))
+#tdba<-tdba.n
+#urls<-unique(tdba.n$url_t)
 ### i am using (instead of the templates) embeddings here from a reddit channel created with nomic-text-embed model using ollama local instance.
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
 embeddings<-matrix(unlist(embeds),ncol = length(embeds))
