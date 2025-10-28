@@ -67,7 +67,8 @@ create_text_embeddings <- function(texts, dim = 50) {
 #tdba<-tdba.n
 #urls<-unique(tdba.n$url_t)
 ### i am using (instead of the templates) embeddings here from a reddit channel created with nomic-text-embed model using ollama local instance.
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
+load("data1.embeds.RData") # embeds on github folder
 embeddings<-matrix(unlist(embeds),ncol = length(embeds))
 embeddings<-t(embeddings)
 cat("=== EMBEDDINGS CRÉÉS ===\n")
