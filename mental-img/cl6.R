@@ -70,6 +70,7 @@ create_text_embeddings <- function(texts, dim = 50) {
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
 load("data1.embeds.RData") # embeds on github folder
 embeddings<-matrix(unlist(embeds),ncol = length(embeds))
+#write.csv(embeddings,paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.csv"))
 embeddings<-t(embeddings)
 cat("=== EMBEDDINGS CRÉÉS ===\n")
 cat("Dimensions:", dim(embeddings), "\n")
