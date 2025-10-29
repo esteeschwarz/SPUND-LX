@@ -66,12 +66,15 @@ create_text_embeddings <- function(texts, dim = 50) {
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/tdba.n.RData"))
 #tdba<-tdba.n
 #urls<-unique(tdba.n$url_t)
+m<-grep("schizoph",urls)
+max(m)
 ### i am using (instead of the templates) embeddings here from a reddit channel created with nomic-text-embed model using ollama local instance.
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.RData"))
 load("data1.embeds.RData") # embeds on github folder
 embeddings<-matrix(unlist(embeds),ncol = length(embeds))
 #write.csv(embeddings,paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/data1.embeds.csv"))
 embeddings<-t(embeddings)
+diff.embeds<-get.embeds("a photograph of an astronaut riding a horse")
 cat("=== EMBEDDINGS CRÉÉS ===\n")
 cat("Dimensions:", dim(embeddings), "\n")
 cat("Textes:", nrow(embeddings), "\n\n")
@@ -190,7 +193,7 @@ grid.arrange(grobs = circular_plots, ncol = 2,
 
 cat("\n=== APPROCHE 3: ART GÉNÉRATIF ===\n")
 cat("Transformation créative en image abstraite\n\n")
-
+labels<-c(paste0("target-",c(1:1500)),paste0("reference-",c(1501:length(embeddings))))
 create_generative_image <- function(embedding_vector, size = 64, text_label = "") {
   img <- matrix(0, nrow = size, ncol = size)
   
@@ -245,7 +248,9 @@ generative_plots <- list()
 for (i in 1:length(example_texts_idx)) {
   idx <- example_texts_idx[i]
   p <- create_generative_image(embeddings[idx, ], size = 48,
-                               text_label = textes_francais[idx])
+                              # text_label = textes_francais[idx])
+  text_label = labels[idx])
+
   generative_plots[[i]] <- p
 }
 
