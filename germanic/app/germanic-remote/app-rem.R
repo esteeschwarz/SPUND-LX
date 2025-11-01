@@ -60,7 +60,7 @@ fluidPage(
     "))
   ),
   # Application title
-  titlePanel("germanic samples: yiddish"),
+  titlePanel("16451.germanic samples: yiddish"),
   
   # Sidebar with a slider input for number of bins
   # sidebarLayout(
