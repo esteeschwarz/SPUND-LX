@@ -16,7 +16,29 @@ q<-dfo$Left[3]
 ui <- 
 fluidPage(
   tags$head(
-    tags$style(HTML(".highlight { color: blue; font-weight: bold; }")),
+    tags$style(HTML(".highlight { color: blue; font-weight: bold; }
+    /* Fullwidth container */
+      .container-fluid {
+        max-width: 100% !important;
+        padding-left: 2% !important;
+        padding-right: 2% !important;
+      }
+      
+      /* Better spacing */
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+      
+      /* Table styling */
+      .dataTables_wrapper {
+        width: 100% !important;
+      }
+      
+      /* Title spacing */
+      h2 {
+        margin-bottom: 20px;
+      }")),
     tags$script(HTML("
       // Run whenever new content appears
     /*  Shiny.addCustomMessageHandler('highlightBraces', function(id) {
