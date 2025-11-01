@@ -90,7 +90,7 @@ fluidPage(
     hr(),
     DTOutput("showsamples"),
     hr(),
-    textInput("id","input row ID to show complete sample"),
+    textInput("id","input row ID to show complete KWIC sample"),
     tableOutput("row")
     
     
