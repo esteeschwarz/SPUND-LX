@@ -73,7 +73,8 @@ fluidPage(
   #     ),
   
   # Show a plot of the generated distribution
-  mainPanel(
+  #mainPanel(
+  fluidRow(
     # sliderInput("bins",
     #             "Number of samples:",
     #             min = 1,
