@@ -134,11 +134,13 @@ server <-
       })
       # Render detail table based on selection
   output$row <- renderTable({
-    selected_row <- input$showsamples_rows_selected$id
+    selected_row <- input$showsamples_rows_selected
+
     
     if (length(selected_row)) {
+        id=df$id[selected_row]
       # Extract selected row data
-      dfo[selected_row, 2:length(df)]
+      dfo[id,2:length(df)]
       
       # Filter the extra info df
       #details <- subset(extra_info, Species == selected_species)
