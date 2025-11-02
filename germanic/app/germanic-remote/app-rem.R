@@ -141,7 +141,7 @@ server <-
         id=df$id[selected_row]
       # Extract selected row data
       #dfo[id,2:length(dfo)]
-      data.frame(select=selected_row,id=df$id[selected_row],kwic="samplekwic",chk=04)
+      data.frame(select=selected_row,id=id,kwic=dfo$KWIC[id],chk=06)
       # Filter the extra info df
       #details <- subset(extra_info, Species == selected_species)
       
