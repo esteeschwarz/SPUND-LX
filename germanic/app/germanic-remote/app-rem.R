@@ -132,10 +132,28 @@ server <-
           rownames = FALSE
         )
       })
-      output$row<-renderTable({
-        id<-input$id
-        dfo[id,2:length(dfo)]
-      },width = "100%")
+      # Render detail table based on selection
+  output$row <- renderTable({
+    selected_row <- input$showsamples_rows_selected$id
+    
+    if (length(selected_row)) {
+      # Extract selected row data
+      dfo[selected_row, 2:length(df)]
+      
+      # Filter the extra info df
+      #details <- subset(extra_info, Species == selected_species)
+      
+      #datatable(details, options = list(dom = 't'))  # show only table body
+    } 
+    # else {
+      #datatable(data.frame(Message = "Please select a row on the left"))
+    
+  },width="100%")
+
+      #output$row<-renderTable({
+        #id<-input$id
+        #dfo[id,2:length(dfo)]
+     # },width = "100%")
     #   output$showsamples <- renderTable({
     #     n<-rv$n
     #     df<-get.sample(n,k6)
