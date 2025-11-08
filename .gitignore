@@ -11,3 +11,5 @@
 **/.Ulysses-Group.plist
 **/.Ulysses-Settings.plist
 **/*history
+**/.ipynb_checkpoints
+**/.jupyter
