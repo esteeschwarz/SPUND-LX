@@ -1,7 +1,7 @@
 ---
 title: "17373.topic_6.index"
-name: "TOPIC_6.index"
-#output_dir: _site
+name: "TOPIC_6.index.rm"
+#output_dir: _site-c
 output:
   html_document:
     df_print: paged

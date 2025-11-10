@@ -1,6 +1,7 @@
 ---
-title: "TOPIC #6"
-#output_dir: _site
+title: "TOPIC #6: sym"
+#output_dir: /Users/guhl/Documents/GitHub/open-lx/content/sbc/
+output_dir: sbc
 output:
   html_document:
     df_print: paged

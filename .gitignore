@@ -13,3 +13,5 @@
 **/*history
 **/.ipynb_checkpoints
 **/.jupyter
+**/sbc
+**/*_dep

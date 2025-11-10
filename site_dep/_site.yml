@@ -1,6 +1,6 @@
 ---
 title: "TOPIC #6"
-#output_dir: _site
+output_dir: /Users/guhl/Documents/GitHub/open-lx/content/sbc
 output:
   html_document:
     df_print: paged
@@ -11,7 +11,7 @@ output:
   ##html_notebook:
     ##df_print: paged
 navbar:
-  title: "topic 6"
+  title: "topic 6: SBC"
   left:
     - text: "pages"
       menu:
@@ -26,7 +26,7 @@ navbar:
       href: HA-slides.html
       id: "slides"
     - text: "doku"
-      href: _doku.nb.html
+      href: doku.nb.html
 bibliography: CORPUS-LX.bib
 biblio-style: apalike
 link-citations: yes
