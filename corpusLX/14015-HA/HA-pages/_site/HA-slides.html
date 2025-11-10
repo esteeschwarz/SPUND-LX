@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="stschwarz" />
+  <title>topic #6 folien. polysemous verbs with light and concrete senses.</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="site_libs/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="reveal.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">topic #6 folien. polysemous verbs with light and
+concrete senses.</h1>
+    <h2 class="author">stschwarz</h2>
+    <h3 class="date">2025-11-10 07:25:37.123379</h3>
+</section>
+
+<section id="term-paper-draft" class="title-slide slide level1">
+<h1>term paper draft</h1>
+<p>essai of a replication study of <span class="citation"
+data-cites="mehl_what_2021">Mehl (2021)</span>: “What we talk about when
+we talk about corpus frequency: The example of polysemous verbs with
+light and concrete senses”.</p>
+</section>
+
+<section>
+<section id="init" class="title-slide slide level1">
+<h1>init</h1>
+<blockquote>
+<p>“If onomasiological frequency measurements do indeed correlate with
+elicitation tests, potential impact would be immense. Researchers would
+be able to examine onomasiological frequencies in spoken corpora rather
+than performing elicitation tests. That possibility would facilitate
+cognitive research into languages and varieties around the world,
+without the necessity of in situ psycholinguistic testing, and would
+also encourage the creation of more spoken corpora.” (<a
+href="https://doi.org/10.1515/cllt-2017-0039"><span class="citation"
+data-cites="mehl_what_2021">Mehl (2021)</span> p.23</a>)</p>
+</blockquote>
+</section>
+<section id="method" class="slide level2">
+<h2>method</h2>
+<h3 id="following-corpus-was-used-to-determine-frequencies">following
+corpus was used to determine frequencies:</h3>
+<p>Q.1: Santa Barbara corpus of spoken American English, (<a
+href="https://www.linguistics.ucsb.edu/research/santa-barbara-corpus"><span
+class="citation" data-cites="ucsb_santa_2005">UCSB et al.
+(2005)</span></a>)</p>
+<p>the corpus data was downloaded from: <a
+href="https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip">https://www.linguistics.ucsb.edu/sites/secure.lsit.ucsb.edu.ling.d7/files/sitefiles/research/SBC/SBCorpus.zip</a></p>
+</section>
+<section id="exploring-scripts" class="slide level2">
+<h2>exploring scripts:</h2>
+<ul>
+<li><a
+href="https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/14015.concrete-abstract_HA.R">14015.concrete-abstract_HA.R</a>:
+creates corpus of downloaded .zip</li>
+<li><a
+href="https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/sbc-postag.R">sbc-postag.R</a>:
+postags the corpus</li>
+<li><a
+href="https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/get-freq-df.R">get-freq-df.R</a>:
+first evaluation</li>
+<li><a
+href="https://github.com/esteeschwarz/SPUND-LX/blob/main/corpusLX/14015-HA/collexemes-01.R">collexemes-01.R</a>:
+2nd evaluation script</li>
+</ul>
+<p><a href="_doku.nb.html">see documentation</a></p>
+</section>
+<section id="corpus-sample" class="slide level2">
+<h2>corpus sample</h2>
+<pre><code>##       scb  id                                                text   lfd light     alt
+## 2974    3 242                 % I wanted it to be  home made Q  .  2974     0    make
+## 65343  57 123                       ... It&#39;s gonna get messed up. 65343    NA a-other
+## 9465    8 567        and then I didn&#39;t and I .. kept making like,  9465     1    make
+## 67928  59 714  And he&#39;s  really good at making out .. the budget. 67928     1    make
+## 35078  30 612       ... God is continually .. building character. 35078     0   build
+## 61913  53 604                               and make the payroll, 61913     1    make
+## 28500  24  25                                            .. Yeah. 28500    NA a-other</code></pre>
+</section>
+<section id="distribution-analysis" class="slide level2">
+<h2>distribution analysis</h2>
+<p>cf. <span class="citation" data-cites="mehl_what_2021">(Mehl 2021,
+11–14)</span></p>
+<pre><code>##          make.ice.wr make.ice.sp take.ice.wr take.ice.sp give.ice.wr give.ice.sp take.sbc give.sbc make.sbc
+## concrete          68          96          62         131          52         105      148       60       88
+## light            321         353          85          79         167         227      462      249      475</code></pre>
+</section>
+<section class="slide level2">
+
+<div class="figure">
+<img src="HA-slides_files/figure-revealjs/fig-01-dist-1.png" alt="absolute distribution of lemmas over corpora. ICE data from study." width="768" />
+<p class="caption">
+absolute distribution of lemmas over corpora. ICE data from study.
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="figure">
+<img src="HA-slides_files/figure-revealjs/fig-02-dist-rel-1.png" alt="relative distribution of lemmas over corpora." width="768" />
+<p class="caption">
+relative distribution of lemmas over corpora.
+</p>
+</div>
+</section>
+<section id="semantic-alternatives-to-make" class="slide level2">
+<h2>semantic alternatives to make</h2>
+<ul>
+<li>includes alternatives to /make/ that Mehl defined in his study</li>
+<li>all occurences are counted
+<ul>
+<li>Mehl contrasted only these alternate occurences which:</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>“are defined as those verbs that occur in the corpus with the same
+concrete direct objects as make, (take, and give) and with a roughly
+equivalent meaning.” (cf. <span class="citation"
+data-cites="mehl_what_2021">Mehl (2021)</span> p.13)</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<pre><code>##              bring build carry create generate give make produce take
+## all.objects     46    18    10      6        1  115  163       3  174
+## all.conc.obj    12     1     2      1       29   55   50      12    1</code></pre>
+</section>
+<section class="slide level2">
+
+<p><img src="HA-slides_files/figure-revealjs/obj.eval-plot-1.png" width="768" /></p>
+</section>
+<section class="slide level2">
+
+</section>
+<section class="slide level2">
+
+</section>
+<section class="slide level2">
+
+<pre><code>##          SLOT1     SLOT2 fS1 fS2 OBS EXP ASSOC COLL.STR.LOGL SIGNIF
+## 137     finish    afghan  13   2   2   0  attr      28.51461  *****
+## 654     Filled    cookie   1   6   1   0  attr      15.81813   ****
+## 924     create      Adam  13   1   1   0  attr      14.17394    ***
+## 928     create      rift  13   1   1   0  attr      14.17394    ***
+## 930     record  Simpsons  13   1   1   0  attr      14.17394    ***
+## 1337    shovel      food   1  34   1   0  attr      12.20185    ***
+## 1338 Unsweeten      food   1  34   1   0  attr      12.20185    ***
+## 1476   filling     stuff   1  46   1   0  attr      11.58948    ***
+## 1518    create     cause  13   2   1   0  attr      11.40296    ***
+## 1519    create committee  13   2   1   0  attr      11.40296    ***
+## 1520    create condition  13   2   1   0  attr      11.40296    ***
+## 1784      bake     bread   5   7   1   0  attr      10.48243     **
+## 1862      roll    tamale   8   5   1   0  attr      10.19627     **
+## 2626    record      trip  13   8   1   0  attr       8.15687     **
+## 3307    record      game  13  16   1   0  attr       6.71671     **</code></pre>
+</section>
+<section id="nd-approach-collexeme-evaluation" class="slide level2">
+<h2>2nd approach collexeme evaluation</h2>
+<pre><code>##         SLOT1       SLOT2 fS1 fS2 OBS EXP ASSOC COLL.STR.LOGL SIGNIF
+## 1        take        care 334  33  32 1.5  attr       190.790  *****
+## 17       make    decision 279  10   9 0.4  attr        52.401  *****
+## 18       make  difference 279  13  10 0.5  attr        51.581  *****
+## 37       take       trick 334  10   8 0.5  attr        39.521  *****
+## 42       make       sense 279  12   8 0.5  attr        37.292  *****
+## 43       take      shower 334   6   6 0.3  attr        36.973  *****
+## 62       make       fudge 279   7   6 0.3  attr        33.490  *****
+## 74       take        look 334  10   7 0.5  attr        31.217  *****
+## 82       give     sticker 173   4   4 0.1  attr        29.934  *****
+## 91       make       money 279  74  15 2.9  attr        28.180  *****
+## 96      build      garage  25   5   3 0.0  attr        27.645  *****
+## 100      make        copy 279  14   7 0.5  attr        26.835  *****
+## 107      make      budget 279   4   4 0.2  attr        26.075  *****
+## 110      take   advantage 334   6   5 0.3  attr        25.483  *****
+## 117     build         dam  25   7   3 0.0  attr        24.826  *****
+## 120      take       space 334   4   4 0.2  attr        24.626  *****
+## 121      take       while 334   4   4 0.2  attr        24.626  *****
+## 130      make       noise 279   7   5 0.3  attr        24.390  *****
+## 133      take        bite 334  10   6 0.5  attr        23.886  *****
+## 141      take     picture 334  20   8 0.9  attr        23.536  *****
+## 149      give         try 173   3   3 0.1  attr        22.433  *****
+## 150      give      lesson 173   6   4 0.1  attr        22.391  *****
+## 155      take       class 334  16   7 0.7  attr        22.062  *****
+## 287     carry     mission  12   5   2 0.0  attr        19.226   ****
+## 289      make         fun 279  10   5 0.4  attr        19.136   ****
+## 290      give        shot 173   8   4 0.2  attr        19.033   ****
+## 295     bring         art  56   8   3 0.1  attr        18.801   ****
+## 305      give     measure 173   4   3 0.1  attr        17.982   ****
+## 306     bring      bottle  56   9   3 0.1  attr        17.943   ****
+## 318      give        idea 173  39   7 0.9  attr        17.292   ****
+## 319     build   character  25   4   2 0.0  attr        17.291   ****
+## 400     carry       chair  12   8   2 0.0  attr        16.967   ****
+## 426   produce    champion   3   1   1 0.0  attr        15.948   ****
+## 490     bring        deer  56   3   2 0.0  attr        15.701   ****
+## 499      make      report 279   8   4 0.3  attr        15.296   ****
+## 567     build       plant  25   6   2 0.0  attr        15.210   ****
+## 569      make  connection 279   4   3 0.2  attr        15.125    ***
+## 570      make       sound 279   4   3 0.2  attr        15.125    ***
+## 575      give     headach 173   2   2 0.0  attr        14.944    ***
+## 576      give  permission 173   2   2 0.0  attr        14.944    ***
+## 577      give      sanity 173   2   2 0.0  attr        14.944    ***
+## 641    create        rift   6   1   1 0.0  attr        14.360    ***
+## 677      take  punishment 334   4   3 0.2  attr        14.056    ***
+## 756      take       break 334  14   5 0.6  attr        13.389    ***
+## 757      take        year 334  14   5 0.6  attr        13.389    ***
+## 760     build    building  25   9   2 0.0  attr        13.333    ***
+## 825      give      answer 173   7   3 0.2  attr        13.063    ***
+## 826      give        call 173   7   3 0.2  attr        13.063    ***
+## 827      make       dingo 279   2   2 0.1  attr        13.024    ***
+## 828      make      living 279   2   2 0.1  attr        13.024    ***
+## 829      make        loan 279   2   2 0.1  attr        13.024    ***
+## 830      make        mess 279   2   2 0.1  attr        13.024    ***
+## 831      make     mistake 279   2   2 0.1  attr        13.024    ***
+## 832      make    progress 279   2   2 0.1  attr        13.024    ***
+## 833      make       quilt 279   2   2 0.1  attr        13.024    ***
+## 836      make      tamale 279   5   3 0.2  attr        12.972    ***
+## 842     carry     baggage  12   1   1 0.0  attr        12.883    ***
+## 862     carry         sho  12   1   1 0.0  attr        12.883    ***
+## 944      take         cut 334   2   2 0.1  attr        12.301    ***
+## 945      take         nap 334   2   2 0.1  attr        12.301    ***
+## 1004     take      square 334   5   3 0.2  attr        11.919    ***
+## 1044   create       cause   6   2   1 0.0  attr        11.589    ***
+## 1045   create   committee   6   2   1 0.0  attr        11.589    ***
+## 1046   create   condition   6   2   1 0.0  attr        11.589    ***
+## 1053   create      stress   6   2   1 0.0  attr        11.589    ***
+## 1066     make       pizza 279   6   3 0.2  attr        11.462    ***
+## 1081 generate       power   1  24   1 0.0  attr        11.453    ***
+## 1108    build   cofferdam  25   1   1 0.0  attr        11.370    ***
+## 1115    build        nest  25   1   1 0.0  attr        11.370    ***
+## 1116    build      podium  25   1   1 0.0  attr        11.370    ***
+## 1118    build      towers  25   1   1 0.0  attr        11.370    ***
+## 1150    bring        gift  56   7   2 0.1  attr        11.204    ***
+## 1153     give  antibiotic 173   3   2 0.1  attr        11.173    ***
+## 1154     give      notice 173   3   2 0.1  attr        11.173    ***
+## 1417  produce      report   3   8   1 0.0  attr         9.924     **
+## 1493    bring      action  56   1   1 0.0  attr         9.734     **
+## 1494    bring      beauty  56   1   1 0.0  attr         9.734     **
+## 1495    bring      coupon  56   1   1 0.0  attr         9.734     **
+## 1496    bring  extinction  56   1   1 0.0  attr         9.734     **
+## 1497    bring   inspector  56   1   1 0.0  attr         9.734     **
+## 1498    bring         joy  56   1   1 0.0  attr         9.734     **
+## 1499    bring    politics  56   1   1 0.0  attr         9.734     **
+## 1500    bring    semiload  56   1   1 0.0  attr         9.734     **
+## 1501    bring   spikenard  56   1   1 0.0  attr         9.734     **
+## 1546     give   character 173   4   2 0.1  attr         9.495     **
+## 1579     make   statement 279   8   3 0.3  attr         9.351     **
+## 1588     make arrangement 279   3   2 0.1  attr         9.283     **
+## 1589     make   cartilage 279   3   2 0.1  attr         9.283     **
+## 1590     make     ceviche 279   3   2 0.1  attr         9.283     **
+## 1591     make     comment 279   3   2 0.1  attr         9.283     **
+## 1592     make       humor 279   3   2 0.1  attr         9.283     **
+## 1593     make         pan 279   3   2 0.1  attr         9.283     **
+## 1764  produce        heat   3  14   1 0.0  attr         8.750     **
+## 1798    build     library  25   2   1 0.0  attr         8.604     **
+## 1804     take         off 334   3   2 0.1  attr         8.577     **
+## 1805     take       shelf 334   3   2 0.1  attr         8.577     **
+## 1806     take         top 334   3   2 0.1  attr         8.577     **
+## 1807     take        wire 334   3   2 0.1  attr         8.577     **
+## 1827     give       break 173  14   3 0.3  attr         8.410     **
+## 1837    carry   paperwork  12   4   1 0.0  attr         8.394     **
+## 1850     give       grace 173   5   2 0.1  attr         8.358     **
+## 1851     give     history 173   5   2 0.1  attr         8.358     **
+## 1852     give       scale 173   5   2 0.1  attr         8.358     **
+## 1857     take        trip 334   8   3 0.4  attr         8.346     **
+## 1949     take       lunch 334  24   5 1.1  attr         8.011     **
+## 1976     give        name 173  29   4 0.7  attr         7.853     **
+## 2032     make        turn 279   4   2 0.2  attr         7.635     **
+## 2067     give     backrub 173   1   1 0.0  attr         7.466     **
+## 2068     give    brushoff 173   1   1 0.0  attr         7.466     **
+## 2069     give        bump 173   1   1 0.0  attr         7.466     **
+## 2070     give      credit 173   1   1 0.0  attr         7.466     **
+##  [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 425 rows ]</code></pre>
+</section>
+<section class="slide level2">
+
+<div class="figure">
+<img src="HA-slides_files/figure-revealjs/fig-05-sema-T-make-1.png" alt="semasiological: T-score of near synonymes to make" width="768" />
+<p class="caption">
+semasiological: T-score of near synonymes to make
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="figure">
+<img src="HA-slides_files/figure-revealjs/fig-06-sema-T-take-1.png" alt="semasiological: T-score of near synonymes to take" width="768" />
+<p class="caption">
+semasiological: T-score of near synonymes to take
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="figure">
+<img src="HA-slides_files/figure-revealjs/fig-07-sema-p-make-1.png" alt="semasiological: p of near synonymes to make" width="768" />
+<p class="caption">
+semasiological: p of near synonymes to make
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="figure">
+<img src="HA-slides_files/figure-revealjs/fig-08-sema-p-take-1.png" alt="semasiological: p of near synonymes to take" width="768" />
+<p class="caption">
+semasiological: p of near synonymes to take
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="b-references" class="title-slide slide level1 unnumbered">
+<h1 class="unnumbered">B: references</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-mehl_what_2021" class="csl-entry" role="listitem">
+Mehl, Seth. 2021. <span>“What We Talk about When We Talk about Corpus
+Frequency: <span>The</span> Example of Polysemous Verbs with Light and
+Concrete Senses.”</span> <em>Corpus Linguistics and Linguistic
+Theory</em> 17 (1): 223–47. <a
+href="https://doi.org/10.1515/cllt-2017-0039">https://doi.org/10.1515/cllt-2017-0039</a>.
+</div>
+<div id="ref-ucsb_santa_2005" class="csl-entry" role="listitem">
+UCSB, John W. DuBois, L. Chafe Wallace, Charles Meyer, Sandra A.
+Thompson, Robert Englebretson, and Nii Martey. 2005. <span>“Santa
+<span>Barbara</span> <span>Corpus</span> of <span>Spoken</span>
+<span>American</span> <span>English</span> <span></span>
+<span>Department</span> of <span>Linguistics</span> - <span>UC</span>
+<span>Santa</span> <span>Barbara</span>.”</span> <em>SBC</em>. <a
+href="https://www.linguistics.ucsb.edu/research/santa-barbara-corpus">https://www.linguistics.ucsb.edu/research/santa-barbara-corpus</a>.
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="site_libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="site_libs/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
