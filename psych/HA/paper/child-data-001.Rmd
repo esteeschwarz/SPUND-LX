@@ -24,7 +24,7 @@ library(kableExtra)
 # kable(mtcars[1:10, ], caption = "Scrollable table") %>%
 #   kable_styling(full_width = FALSE, position = "left") %>%
 #   scroll_box(width = "100%", height = "auto")
-knitr::kable(sample.df,row.names = F,booktabs = TRUE)%>%
+knitr::kable(sample.df,row.names = F,booktabs = TRUE,label = "data1",caption = "data sample of distances df")%>%
     kable_styling(full_width = FALSE, position = "left",latex_options = "scale_down") %>%
   scroll_box(width = "100%", height = "auto")
 

@@ -64,6 +64,11 @@ expand_child <- function(child, prefix) {
 overall wordcount of paper: `r swc`.
 
 ## legende
+<!--remove after test
+snc: try reference tables:
+- not: KI table (cf. \@ref(tab:kitable))
+- should: legende (cf. \@ref(tab:legend))
+-->
 ```{r,label=legend,echo=FALSE,warning=F,message=F}
 
 #print(caption.ext)
@@ -193,11 +198,13 @@ library(knitr)
 if (is_html_output()) {
 knitr::kable(
   med,
+  caption = "verwendete Hilfsmittel",
   format = "html",
   table.attr = 'style="word-wrap:break-word; white-space:normal; width:100%;"'
 )
 } else if (is_latex_output()) {
-kable(med, format = "latex", booktabs = TRUE, escape = FALSE) %>%
+kable(med,   caption = "verwendete Hilfsmittel",
+format = "latex", booktabs = TRUE, escape = FALSE) %>%
   kable_styling(latex_options = "hold_position") %>%
   column_spec(2, width = "10cm")  # wraps text in column 2
 }
