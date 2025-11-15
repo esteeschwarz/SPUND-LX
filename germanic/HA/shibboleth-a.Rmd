@@ -1,0 +1,84 @@
+---
+title: "balkons & die straszenbahn"
+subtitle: "cross language observations on The Shibboleth in yiddish, frisian and berlin dialect"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+#date: "2025-10-18"
+categories: [expose,linguistics]
+tags: [LX,sociolinguistics,HA,shibboleth,register]
+# output:
+# #     bookdown::html_document2:
+# #       base_format: tufte::tufte_html
+# #       keep_md: true
+# #       self_contained: true
+#     #fig_path: "plots/"
+#   md_document:
+#     variant: markdown_github
+#     pandoc_args: ["--wrap=none"]
+#   #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
+nocite: '@*'
+#csl: /Users/guhl/Documents/GitHub/SPUND-LX/meta/apa-single-spaced.csl
+# keep_md: yes
+# keep_tex: yes
+header-includes:
+    - \usepackage{fontspec}
+    - \newfontfamily\ipafont{Arial Unicode MS}
+    - '\newcommand{\ipa}[1]{{\ipafont #1}}'
+    - \usepackage{titlesec}
+    - \titleformat{\chapter}[hang]{\huge\bfseries}{}{0pt}{}
+    - \titleformat{\section}[hang]{\Large\bfseries}{\thesection}{1em}{}
+documentclass: book
+url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+description: "shibboleths in germanic languages"
+#bibliography: "/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib"
+link-citations: true
+github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
+site: bookdown::bookdown_site
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+# library(knitr)
+# library(kableExtra)
+```
+
+```{r functions,echo=F,warning=F,message=F}
+ipa <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\ipa{", text, "}")
+  } else {
+    text
+  }
+}
+```
+
+```{r,echo=F,eval=FALSE}
+source("~/rwd/psych-meta.R")
+myname<-ifelse(exists("myname"),myname,"placeholder")
+mtrk<-ifelse(exists("mtrk"),mtrk,"placeholder")
+
+```
+
+```{r,echo=F}
+pdfsrc<-""
+if(!knitr::is_latex_output())
+  pdfsrc<-'load pdf <a href="../../essais/germanic/shibboleth-a.pdf">here</a>'
+
+```
+
+
+# index
+<hr>
+`r pdfsrc`
+<hr>
+```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/abstract-ul.md"}
+
+```
+-----
+# References
+<!--\clearpage-->
+
+<!--chapter:end:index.Rmd-->
+

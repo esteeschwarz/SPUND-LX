@@ -1,0 +1,12 @@
+book_filename: "example-book"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+
+# Order of Rmd files
+rmd_files:
+  - 001.Rmd
+# metadata:
+#   nocite: |
+#     @*

@@ -1,0 +1,31 @@
+---
+title: "Example Book"
+author: "Your Name"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: germanic-exc.bib
+#csl: apa.csl    # optional
+# references:
+#    - id: REF
+nocite: |
+ @*
+---
+
+# index
+
+This is an example chapter.  
+Example inline citation: @kvist_prosodic_2019.
+
+# Another Chapter
+
+More text.
+
+# References
+
+<!--
+This hidden div triggers Pandoc to include ALL bib entries,
+even if they are never cited in the text.
+-->
+<!--<div style="display:none;">
+@* 
+</div>-->

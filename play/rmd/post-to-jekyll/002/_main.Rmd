@@ -1,0 +1,14 @@
+---
+title: "Test"
+output: 
+  bookdown::markdown_document2:
+    pandoc_args: ["--citeproc"]
+bibliography: refs.bib
+---
+
+This is a citation: @arhammar_beitrage_2000.
+
+# References
+
+<!--chapter:end:002.Rmd-->
+

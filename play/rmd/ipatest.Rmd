@@ -1,0 +1,19 @@
+---
+title: "IPA Examples"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    keep_tex: true
+header-includes:
+  - \usepackage{fontspec}
+  - \newfontfamily\ipafont{Arial Unicode MS}
+  - '\newcommand{\ipa}[1]{{\ipafont #1}}'
+---
+
+Normal text here.
+
+IPA: \ipa{ɛ ə ʃ θ ð ŋ} und normaler text
+
+More normal text.
+
+and normal weiter

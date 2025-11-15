@@ -1,0 +1,22 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: subsection
+    download: ["pdf"]   # enables PDF download button
+ # includes:
+  #  in_header: header.html
+
+bookdown::pdf_book:
+  latex_engine: xelatex
+  citation_package: none
+  # includes:
+  #   in_header: preamble.tex
+
+# This creates the fully citation-resolved Markdown file
+bookdown::markdown_document2:
+   # pandoc_args: ["--citeproc"]
+    # preserve_yaml: true
+    toc: false
+    #citation_package: none
+   # reference_section: false
