@@ -17,4 +17,4 @@ cat("the upsidedown")
 
 ![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}
 
-![stable diffusion output Marienbad](stable-diff-001.png){#fig-stable-01}
+![stable diffusion output Marienbad](https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png){#fig-stable-01}
