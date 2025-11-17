@@ -1,0 +1,15 @@
+{
+  "hash": "7b2930b55cc1c3f4b111a3962a4d32d9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"samling\"\nnocite: '@*'\nbibliography: sebald.bib\n---\n\nfirst collection [documenting] of materials\n\n\n\n## now alltogether\n\n\n![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

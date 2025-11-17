@@ -1,0 +1,36 @@
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
+
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
+_site_dep
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+_sass/vendors
+assets/js/dist
+.Rproj.user
+**/.DS_Store
+.Rhistory
+.RData
+*.rds
+content/LX-psych/*_files
+/.quarto/
+**/*.quarto_ipynb

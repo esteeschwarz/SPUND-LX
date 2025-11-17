@@ -1,0 +1,17 @@
+---
+title: "about"
+bibliography: sebald.bib
+---
+
+About this site: (We) try to present W.G. Sebald: Austerlitz (1992) in a way that most conforms (in our opinion) to his own way of :documenting: < and documenting, in the sense of the things dealt with in class, is what he **really** did. > switch.
+
+Ich werde bis auf die Daten nicht sein (Leben) hier nachvollziehen, da reicht ein schnell gelesener [Wikieintrag](https://de.wikipedia.org/wiki/W._G._Sebald). Er lebte jdfs. kein langes Leben, sondern grade von 1944 bis 2001 und hinterliesz jedoch ein umfangreiches Oeuvre aus (im Sinne des Seminars: halbdokumentarisch-fiktionalen Texten), Gedichten und Essais. In der Deutschen Nationalbibliothek sind 273 eigenständige Publikationen verzeichnet, @dnb_wg_2025.
+
+Ein eifriger Archivar hat sich die Mühe gemacht, einiges (wirklich einiges, und sehr akribisch) zu Sebald zusammenzutragen: @wirth_wgsebaldstartseite_2025.
+
+```{r}
+1 + 1
+cat("the upsidedown")
+```
+
+> auch hier sind 1 und 1 zwei.

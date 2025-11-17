@@ -1,0 +1,18 @@
+---
+title: "samling"
+nocite: '@*'
+bibliography: sebald.bib
+---
+
+first collection [documenting] of materials
+
+```{r}
+#| include: false
+1 + 1
+cat("the upsidedown")
+```
+
+## now alltogether
+
+
+![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}

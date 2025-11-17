@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: /Users/guhl/Documents/GitHub/wg-sebald/docs
+
+website:
+  title: "001"
+  navbar:
+    left:
+      - href: index.qmd
+        text: home
+      - about.qmd
+      - raw.qmd
+      - samling.qmd
+
+format:
+  html:
+    theme:
+      - cosmo #litera
+      - brand
+    #mainfont: Courier
+    monofont: Menlo
+    #font: Courier
+    css: styles.css
+    toc: true
+
+editor: source
+
+execute:
+  freeze: auto

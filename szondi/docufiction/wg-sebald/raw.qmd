@@ -1,0 +1,49 @@
+---
+title: "raw"
+bibliography: sebald.bib
+echo: false
+
+---
+
+## A few mentions on *Austerlitz*
+
+
+```{r}
+1 + 1
+cat("the upsidedown")
+get.meta<-function(text){
+t<-readLines(paste0(Sys.getenv("HKW_TOP"),"/AVL/2025/dokufiktion/",text))
+w1<-strsplit(t," ")
+w2<-unlist(w1)
+wl<-length(w2)
+w3<-unique(w2)
+ttr<-round(length(w3)/wl,2)
+t1<-strsplit(w2,"")
+t2<-unlist(t1)
+tl<-lapply(t1,length)
+tl<-unlist(tl)
+tlmn<-round(mean(tl),2)
+return(list(wl=wl,tlmn=tlmn,ttr=ttr))
+}
+meta1<-get.meta("sebald_austerlitz.txt")
+meta2<-get.meta("mann_joseph.txt")
+meta3<-get.meta("musil_me.txt")
+tabmeta<-data.frame(author=c("sebald","mann","musil"),book=c("austerlitz","joseph und seine brüder","der mann ohne eigenschaften"),words=c(meta1$wl,meta2$wl,meta3$wl),avg_wordlength=c(meta1$tlmn,meta2$tlmn,meta3$tlmn),ttr=c(meta1$ttr,meta2$ttr,meta3$ttr))
+```
+
+## now data
+Sebalds *Austerlitz* contains not more than `{r} meta1$wl` words, the mean word length is `{r} meta1$tlmn` characters. The type/token ratio, an indicator for lexical diversity of a text, is `{r} meta1$ttr` (cf. @tbl-meta for comparison). So we have here a text with significantly more unique tokens over all types (= verhältnismäszig abwechslungsreicher text) as the two other books.
+
+```{r}
+#| label: tbl-meta
+#| tbl-cap: "stats comparison of major oeuvres of german literature"
+
+knitr::kable(tabmeta)
+
+```
+
+Das Buch kostet als ebook 15,99 Euro, @buecherde_austerlitz_2025. Das ist immer noch verhalten, Joseph und Der Mann ohne Eigenschaften kosten beide 9,99; Sebald gehört noch nicht zu den einfach zu verlegenden Klassikern, wird aber ebenfalls ohne Kopierschutz verkauft. Deshalb können wir gern an dieser Stelle, wo die 50 Seiten aufhören, weiterlesen. 
+
+## mixed
+Ich empfehle weiterhin (GPT würde das genauso sehen): Theweleit, Buch der Könige / Raoul Schrott, Erste Erde. Es scheint sich zu der Zeit ein Muster herausgebildet zu haben - Kluge gehört dann auch dazu - sich auf diese halbdokumentarische Weise der-Vergangenheit(Theweleit/Kluge)-und-allem-Angelegentlichen(Schrott: auszer der Reihe) anzunähern. Wenn sie das ganze nicht nur aus Trotz gegen die Weiter:anwesenheit: der Schergen schrieben (der jedoch sehr wahrscheinlich dabei war in den Kriegskindern [32-42-44]), dann sicherlich, um auf ihre Weise etwas zu erhalten auf eine notwendig unnachsichtige und unterhaltsame Art. Sebald erntet dafür nicht nur Lob, cf. @strawson_2001_2001, auch in Raoul Schrott und Klaus Theweleit finden wir streitbare Literatur; vielleicht würde aktuell manches unter *mansplaining* laufen, was die Herren da erklären. Aber auch Teresa Präauer z.b. schreibt sich in *Tier werden* literarisch in die Wissenschaft bzw. Geschichte ein.  
+In meine zumindest jetzt, nach Sebald, etwas besser das Konzept dessen, was mit **Dokufiktion** gemeint sein soll, verstanden zu haben, nachdem der Habitus klar ist. Und der in Sebald immerwieder gern recurrierende Thomas Brown, der schon im 16. Jh. auf dem Feld groszes leistete, sorgt auch heute noch für ehrfürchtige Vertiefung quer durch die Geschichte und Wissenschaft.
