@@ -1,8 +1,8 @@
 {
-  "hash": "7b2930b55cc1c3f4b111a3962a4d32d9",
+  "hash": "4f767b6db2b1c419596558f5cedf229e",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"samling\"\nnocite: '@*'\nbibliography: sebald.bib\n---\n\nfirst collection [documenting] of materials\n\n\n\n## now alltogether\n\n\n![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}",
+    "markdown": "---\ntitle: \"samling\"\nnocite: '@*'\nbibliography: sebald.bib\n---\n\nfirst collection [documenting] of materials\n\n\n\n## now alltogether\n\n\n![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}\n\n![stable diffusion output Marienbad](stable-diff-001.png){#fig-stable-01}",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
