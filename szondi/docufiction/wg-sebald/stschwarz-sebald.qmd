@@ -1,0 +1,29 @@
+---
+title: "dokufiktion - w.g. sebald"
+author: "st. schwarz"
+format: 
+  pdf:
+    fig-pos: "H" # Forces images to appear exactly where they are included
+    mainfont: Georgia
+    font-size: 12
+    #cite-method: biblatex
+    colorlinks: true
+toc: true
+number-sections: true
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+# temp class doku
+
+{{< include about.qmd >}}
+
+{{< pagebreak >}}
+
+{{< include raw.qmd >}}
+
+{{< pagebreak >}}
+
+{{< include samling.qmd >}}
+

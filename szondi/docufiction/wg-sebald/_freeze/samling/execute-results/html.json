@@ -1,9 +1,11 @@
 {
-  "hash": "25f865b5466a78abfcb524814f617bef",
+  "hash": "244e4fb0144daed28f4413d7f2290c99",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"samling\"\nnocite: '@*'\nbibliography: sebald.bib\n---\n\nfirst collection [documenting] of materials\n\n\n\n## now alltogether\n\n\n![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}\n\n![stable diffusion output Marienbad](https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png){#fig-stable-01}",
-    "supporting": [],
+    "markdown": "---\ntitle: \"samling\"\nnocite: '@*'\nbibliography: sebald.bib\n---\n\nfirst collection [documenting] of materials\n\n\n\n## now alltogether\n\n\n![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}\n\n![stable diffusion output Marienbader Elegie](https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png){#fig-stable-01}\n\n-----\n# refs",
+    "supporting": [
+      "samling_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

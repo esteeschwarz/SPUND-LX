@@ -9,8 +9,8 @@ echo: false
 
 
 ```{r}
-1 + 1
-cat("the upsidedown")
+#1 + 1
+#cat("the upsidedown")
 get.meta<-function(text){
 t<-readLines(paste0(Sys.getenv("HKW_TOP"),"/AVL/2025/dokufiktion/",text))
 w1<-strsplit(t," ")

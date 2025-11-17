@@ -11,6 +11,9 @@ website:
       - about.qmd
       - raw.qmd
       - samling.qmd
+    right:
+      - href: stschwarz-sebald.pdf
+        text: pdf
 
 format:
   html:
