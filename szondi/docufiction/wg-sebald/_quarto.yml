@@ -14,6 +14,8 @@ website:
     right:
       - href: stschwarz-sebald.pdf
         text: pdf
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/docufiction/wg-sebald
+        icon: github
 
 format:
   html:

@@ -2,6 +2,7 @@
 title: "raw"
 bibliography: sebald.bib
 echo: false
+warning: false
 
 ---
 

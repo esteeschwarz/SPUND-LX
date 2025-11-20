@@ -1,1 +1,5 @@
 /* css styles */
+.cell-output-stdout code {
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+}
