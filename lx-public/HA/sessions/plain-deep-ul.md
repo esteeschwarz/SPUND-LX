@@ -1,0 +1,4 @@
+### deep
+digging deeper into the blog, we find that the site is built upon wordpress and also hosted via wordpress. that hints to some basics to mention.
+
+hosting a site via wordpress.com is not a cheap business (#ref), the technical affordances are moderate to low i.e. with minimal tech knowledge you can build a nice looking and good working web presence. since the site itself doesnt offer own posts which are not announcements or links to articles on magazines or newspapers, we conclude that its not really active posting here or :content creating: in the sense of a blog. means we will probably not find content which has not undergone external review process. so no amateur business at all. 
