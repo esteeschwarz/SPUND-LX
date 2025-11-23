@@ -98,7 +98,9 @@ jobs:
       run: |
         quarto render lx-public/HA/sessions/ -P reload:false
         ls
-        echo "q content..."
+        echo "---- q content..."
+        ls q/publx/
+        echo "---- ls 001"
         ls q/publx/001
 
     # - name: Deploy to GitHub Pages
@@ -133,7 +135,7 @@ jobs:
       run: |
        #    rm -rf target/public/*
        #   mkdir -p target/public
-          cp -r q/publx/001/* target/essais/publx/002/
+          cp -r ./q/publx/001/* target/essais/publx/002/
 
     - name: Commit and push
       run: |
