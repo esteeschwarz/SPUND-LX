@@ -2,4 +2,4 @@
 title: "SNC"
 ---
 
-- 16482.1. q workflow, didnt find source html dir
+- 16482.1. q workflow, didnt find source html dir, wt target
