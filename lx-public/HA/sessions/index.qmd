@@ -1,0 +1,91 @@
+---
+title: "gretchen mcculloch"
+subtitle: "page analysis"
+bibliography: lx-pub.bib
+---
+# Q
+
+```{r}
+#| echo: false
+src<-"https://gretchenmcculloch.com/writing/"
+```
+
+[to G. McCulloch page](`r src`)
+
+# meta
+
+```{r}
+#| label: "depr links calculation"
+#| echo: false
+#| warning: false
+#| output: false
+#| eval: false
+
+library(httr)
+library(xml2)
+r<-GET(src)
+t<-content(r,"text")
+htm<-read_html(t)
+all.li<-xml_find_all(htm,"//li")
+lli<-length(all.li)
+li.a<-xml_find_all(all.li,"a")
+a.h<-xml_attr(li.a,"href")
+#print(a.h)
+#a.dep<-lapply(a.h,function(x)
+#
+aldf<-data.frame(link=a.h,valid=NA)
+#l<-25
+for(l in 1:length(aldf$link)){
+  #print(unlist(x))
+  #print(typeof(x))
+  x<-aldf$link[l]
+  #print(x)
+  e <- simpleError("test error")
+  
+  #r<-tryCatch(GET(url=x),error=next("error"))
+  if(x!="")
+    r<-tryCatch(GET(url=x),error=function(e) e)
+  #print(r)
+  dep<-tryCatch(r$status_code!=200,error=function(e) e)
+  dep
+  length(dep)
+  ifelse(length(dep)>0,aldf$valid[l]<-!dep,aldf$valid[l]<-FALSE)
+  
+}
+#rx<-GET(a.h[25])
+lhtt<-grepl("http",aldf$link)
+lvalid<-sum(aldf$valid,na.rm = T)
+lsum<-sum(lhtt)
+ldep<-lsum-lvalid
+ldf<-data.frame(links=lsum,valid=lvalid,deprecated=ldep)
+```
+
+
+```{r}
+#| echo: false
+#| tbl-cap: "valid article links overview"
+#| label: "tbl-links"
+
+load("ldf.RData")
+knitr::kable(t(ldf))
+#save(ldf,file = "ldf.RData")
+```
+
+the personal homepage (@mcculloch_writing_2014) functions as landing page to spread articles. as we see in table @tbl-links, there are some linkings to articles deprecated. many do link to articles behind a paywall (@mcculloch_widely-spoken_2018), some are hosted on rather disturbing platforms (@mcculloch_15_2015, cf. @fig-gretchen-001).
+
+![mental floss](gretchen-001.jpg){#fig-gretchen-001}
+
+## content
+### plain
+the readable articles which i got some overview from, are adressing a linguistically pretrained (or: educated) audience rather than laien, since few words occuring you have to know to understand the context of the explanations which do not dig very deep but cover linguistic aspects in a humorous and entertaining way, i.e. the writing style is rather informal and lazy, but not unelaborated. subjects give interesting insights into some of important yet not always common topics.
+
+### framed
+
+```{r}
+#| echo: false
+#| label: tbl-art
+#| tbl-cap: publication in categories
+
+df<-read.csv("art-meta.csv")
+knitr::kable(df)
+```
