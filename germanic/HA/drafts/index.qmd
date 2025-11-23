@@ -3,7 +3,7 @@ title: "germanic languages, project drafts"
 date: "2025-11-15"
 categories: [expose,linguistics]
 tags: [LX,sociolinguistics,HA,shibboleth,AI speech,register]
-bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
+bibliography: germanic-exc.bib
 url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
 description: "germanic languages paper drafts"
 link-citations: true
@@ -26,16 +26,16 @@ github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
 #         icon: github
   #base-url: /q/ this doesnt wk
 # because of IPA / ivrit
-format:
-  pdf:
-    latex_engine: xelatex  # default
-    fig-pos: "H" # Forces images to appear exactly where they are included
-    mainfont: 'Noto Serif'
-    font-size: 12
-    colorlinks: true
-    include-in-header: rtl.tex
-
 # format:
+#   pdf:
+#     latex_engine: xelatex  # default
+#     fig-pos: "H" # Forces images to appear exactly where they are included
+#     mainfont: 'Noto Serif'
+#     font-size: 12
+#     colorlinks: true
+#     include-in-header: rtl.tex
+
+format:
 #   pdf:
 #     latex_engine: xelatex  # default
 #     fig-pos: "H" # Forces images to appear exactly where they are included
