@@ -131,9 +131,9 @@ jobs:
 
     - name: Copy into Repo B/public
       run: |
-      #    rm -rf target/public/*
+       #    rm -rf target/public/*
        #   mkdir -p target/public
-      cp -r q/publx/001/* target/essais/publx/002/
+          cp -r q/publx/001/* target/essais/publx/002/
 
     - name: Commit and push
       run: |
