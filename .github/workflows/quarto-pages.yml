@@ -98,7 +98,7 @@ jobs:
       run: |
         quarto render lx-public/HA/sessions/ -P reload:false
         ls
-        echo "---- q content..."
+        echo "---- q/publx content..."
         ls q/publx/
         echo "---- ls 001"
         ls q/publx/001
