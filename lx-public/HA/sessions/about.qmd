@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "SNC"
 ---
 
-About this site
+- 16482.1. q workflow

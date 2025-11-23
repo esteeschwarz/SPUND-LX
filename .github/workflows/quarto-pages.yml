@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths: lx-public/HA/sessions
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -95,7 +96,7 @@ jobs:
 
     - name: Render Quarto site
       run: |
-        quarto render _qmd/ -P reload:false
+        quarto render lx-public/HA/sessions/ -P reload:false
         ls
         echo "q0 content..."
         #ls q0
