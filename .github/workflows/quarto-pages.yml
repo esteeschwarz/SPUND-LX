@@ -99,7 +99,7 @@ jobs:
         quarto render lx-public/HA/sessions/ -P reload:false
         ls
         echo "q content..."
-        ls q
+        ls q/publx/001
 
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
