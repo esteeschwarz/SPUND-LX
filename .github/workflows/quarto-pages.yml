@@ -3,7 +3,9 @@ name: Render and Deploy Chirpy+Quarto Website
 on:
   push:
     branches: [ main ]
-    paths: lx-public/HA/sessions/**
+    paths: 
+       - lx-public/HA/sessions/**
+       - germanic/HA/drafts/**
   pull_request:
   workflow_dispatch:
 
@@ -97,6 +99,7 @@ jobs:
     - name: Render Quarto site
       run: |
         quarto render lx-public/HA/sessions/ -P reload:false
+        quarto render germanic/HA/drafts/ -P reload:false
         ls
         echo "---- q/publx content..."
         ls q/publx/
@@ -105,8 +108,8 @@ jobs:
     - name: Upload rendered HTML directory
       uses: actions/upload-artifact@v4
       with:
-        name: publx-001
-        path: q/publx/001
+        name: q-open
+        path: q
 
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
@@ -132,8 +135,8 @@ jobs:
     - name: Download rendered directory
       uses: actions/download-artifact@v4
       with:
-        name: publx-001
-        path: publx-001
+        name: q-open
+        path: q-open
 
     - name: Check out Repo B
       uses: actions/checkout@v4
@@ -146,7 +149,7 @@ jobs:
       run: |
        #    rm -rf target/public/*
        #   mkdir -p target/public
-        cp -r publx-001/* target/essais/publx/002/
+        cp -r q-open/* target/essais/
 
     - name: Commit and push
       run: |

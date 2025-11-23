@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/germanic
+  output-dir: ../../../q/germanic/001
 params:
     reload: false
 
