@@ -1,0 +1,41 @@
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+  word-break: normal;
+  word-wrap: normal;
+
+}
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre code {
+  white-space: inherit;
+}
+
+.book .book-body .page-wrapper table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* css styles */
+.cell-output-stdout code {
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+}
+
+/* body {
+  font-family:
+    "Noto Sans",
+    "Noto Serif",
+    "Noto Sans Hebrew",
+    "Noto Serif Hebrew",
+    "DejaVu Sans",
+    "DejaVu Serif",
+    sans-serif !important;
+} */

@@ -1,0 +1,115 @@
+---
+title: "germanic languages, project drafts"
+date: "2025-11-15"
+categories: [expose,linguistics]
+tags: [LX,sociolinguistics,HA,shibboleth,AI speech,register]
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
+url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+description: "germanic languages paper drafts"
+link-citations: true
+github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
+# website:
+#   title: "001"
+#   navbar:
+#     left:
+#       - href: index.qmd
+#       - href: draft-A.qmd
+#         text: draft A
+#       - href: draft-B.qmd
+#         text: draft B
+#       - href: draft-C.qmd
+#         text: draft C
+#     right:
+#       # - href: draft-A.pdf
+#       #   text: pdf-temp
+#       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/germanic
+#         icon: github
+  #base-url: /q/ this doesnt wk
+# because of IPA / ivrit
+format:
+  pdf:
+    latex_engine: xelatex  # default
+    fig-pos: "H" # Forces images to appear exactly where they are included
+    mainfont: 'Noto Serif'
+    font-size: 12
+    colorlinks: true
+    include-in-header: rtl.tex
+
+# format:
+#   pdf:
+#     latex_engine: xelatex  # default
+#     fig-pos: "H" # Forces images to appear exactly where they are included
+#     # mainfont: Georgia
+#     # mainfont: Georgia
+#     mainfont: 'Noto Serif'
+#     #mainfont: 'Computer Modern Roman'
+#     font-size: 12
+#     #cite-method: biblatex
+#     colorlinks: true
+#         #  \newcommand{\he}[1]{{\hebrewfont #1}}
+#     #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
+#     header-includes: |
+#      \usepackage{fontspec}
+#      \newfontfamily\ipafont{Arial Unicode MS}
+#      \newcommand{\ipa}[1]{{\ipafont #1}}
+#      \usepackage[margin=1in]{geometry}
+#      \usepackage{fvextra}
+#      \fvset{breaklines=true, breakanywhere=true}
+#      \usepackage{polyglossia}
+#      \setmainlanguage{english}
+#      \setotherlanguage{hebrew}
+#      \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
+#      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
+
+
+  html:
+    theme:
+      - cosmo #litera
+      - brand
+    #mainfont: Courier
+    monofont: Menlo
+    #font: Courier
+    css: styles.css
+    toc: true
+---
+
+```{r,echo=F,eval=T}
+pdfsrc<-""
+if(!knitr::is_latex_output())
+  pdfsrc<-'load pdf <a href="../../essais/germanic/shibboleth-a.pdf">here</a>'
+ipa <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\ipa{", text, "}")
+  } else {
+    text
+  }
+}
+he <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\he{", text, "}")
+  } else {
+    text
+  }
+}
+
+#cat(pdfsrc)
+```
+
+<!--
+::: {.content-visible when-format="html"}
+
+load pdf [here](index.pdf)
+
+:::
+-->
+
+# index
+
+```{r}
+#| echo: false
+#| warning: false
+
+meta<-read.csv("meta.csv")
+meta<-t(meta)
+knitr::kable(meta)
+```

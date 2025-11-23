@@ -22,3 +22,9 @@ pre code {
   overflow-x: auto;
   white-space: nowrap;
 }
+
+/* css styles */
+.cell-output-stdout code {
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+}

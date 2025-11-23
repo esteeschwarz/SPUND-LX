@@ -1,0 +1,5 @@
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{hebrew}
+\newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
+\newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}

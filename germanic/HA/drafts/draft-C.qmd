@@ -1,0 +1,43 @@
+---
+title: "English L1/L2 structures in german >L1 speakers"
+subtitle: "A corpus based investigation of english language patterns in german term papers of exchange students."
+author: "st. schwarz"
+date: "2025-11-20"
+categories: [expose,linguistics]
+tags: [LX,sociolinguistics,HA,L1/L2,register]
+# bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
+bibliography: germanic-exc.bib
+# nocite: '@*'
+url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+description: "germanic languages project draft C"
+link-citations: true
+github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
+---
+
+```{r,echo=F,eval=F}
+pdfsrc<-""
+if(!knitr::is_latex_output())
+  pdfsrc<-'load pdf <a href="../../essais/germanic/shibboleth-a.pdf">here</a>'
+ipa <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\ipa{", text, "}")
+  } else {
+    text
+  }
+}
+#cat(pdfsrc)
+```
+
+<!--
+::: {.content-visible when-format="html"}
+
+load pdf [here](.pdf)
+
+:::
+-->
+# index
+
+{{< include abstractC-ul.md >}}
+
+
+# References

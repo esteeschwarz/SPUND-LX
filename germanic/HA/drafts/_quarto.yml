@@ -1,0 +1,74 @@
+project:
+  type: website
+  output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/germanic
+params:
+    reload: false
+
+website:
+  title: "project drafts"
+  navbar:
+    left:
+      - href: https://esteeschwarz.github.io/open-lx/posts/germanic-ha
+        text: HOME
+      - href: draft-A.qmd
+        text: draft A
+      - href: draft-B.qmd
+        text: draft B
+      - href: draft-C.qmd
+        text: draft C
+    right:
+      # - href: draft-A.pdf
+      #   text: pdf-temp
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/germanic
+        icon: github
+  #site-url: https://esteeschwarz.github.io/open-lx/posts/germanic-ha
+
+format:
+  html:
+    theme:
+      - cosmo #litera
+      - brand
+    #mainfont: Courier
+    monofont: Menlo
+    #font: Courier
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    include-in-header:
+      text: |
+        <!-- HTML simply prints the inner text -->
+        <!-- 16482.snc -->
+        <script type="application/latex">
+        \newcommand{\he}[1]{#1}
+        </script>
+
+  pdf:
+#    latex_engine: xelatex  # default
+    fig-pos: "H" # Forces images to appear exactly where they are included
+    #mainfont: Georgia
+    # mainfont: Georgia
+ #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
+    #mainfont: 'Computer Modern Roman'
+    font-size: 12
+    #cite-method: biblatex
+    colorlinks: true
+        #  \newcommand{\he}[1]{{\hebrewfont #1}}
+    #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
+    # header-includes: |
+    #  \usepackage{fontspec}
+    #  \newfontfamily\ipafont{Arial Unicode MS}
+    #  \newcommand{\ipa}[1]{{\ipafont #1}}
+    #  \usepackage[margin=1in]{geometry}
+    #  \usepackage{fvextra}
+    #  \fvset{breaklines=true, breakanywhere=true}
+    #  \usepackage{polyglossia}
+    #  \setmainlanguage{english}
+    #  \setotherlanguage{hebrew}
+    #  \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
+    #  \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
+  #  include-in-header: rtl.tex
+
+editor: source
+
+execute:
+  freeze: auto

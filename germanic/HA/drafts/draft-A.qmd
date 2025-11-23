@@ -1,0 +1,71 @@
+---
+title: "balkons & die straszenbahn"
+subtitle: "cross language observations on The Shibboleth in yiddish, frisian and berlin dialect"
+author: "st. schwarz"
+date: "2025-11-15"
+categories: [expose,linguistics]
+tags: [LX,sociolinguistics,HA,shibboleth,register]
+# bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
+bibliography: germanic-exc.bib
+nocite: '@*'
+url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+description: "germanic languages project draft A"
+link-citations: true
+github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
+# because of IPA / ivrit
+format:
+  pdf:
+    latex_engine: xelatex  # default
+    fig-pos: "H" # Forces images to appear exactly where they are included
+    mainfont: 'Noto Serif'
+    font-size: 12
+    colorlinks: true
+    include-in-header: rtl.tex
+  html:
+    theme:
+      - cosmo #litera
+      - brand
+    #mainfont: Courier
+    monofont: Menlo
+    #font: Courier
+    css: styles.css
+    toc: true
+    toc-depth: 3
+
+---
+
+```{r,echo=F,eval=T}
+pdfsrc<-""
+if(!knitr::is_latex_output())
+  pdfsrc<-'load pdf <a href="../../essais/germanic/shibboleth-a.pdf">here</a>'
+ipa <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\ipa{", text, "}")
+  } else {
+    text
+  }
+}
+he <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\he{", text, "}")
+  } else {
+    text
+  }
+}
+#cat(pdfsrc)
+```
+
+<!--
+::: {.content-visible when-format="html"}
+
+load pdf [here](index.pdf)
+
+:::
+-->
+# index
+
+{{< include abstractA-ul.md >}}
+
+
+
+# References
