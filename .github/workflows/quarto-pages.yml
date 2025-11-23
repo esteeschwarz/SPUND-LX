@@ -102,6 +102,11 @@ jobs:
         ls q/publx/
         echo "---- ls 001"
         ls q/publx/001
+    - name: Upload rendered HTML directory
+      uses: actions/upload-artifact@v4
+      with:
+        name: publx-001
+        path: q/publx/001
 
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
@@ -124,6 +129,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: render
     steps:
+    - name: Download rendered directory
+      uses: actions/download-artifact@v4
+      with:
+        name: publx-001
+        path: publx-001
+
     - name: Check out Repo B
       uses: actions/checkout@v4
       with:
@@ -135,7 +146,7 @@ jobs:
       run: |
        #    rm -rf target/public/*
        #   mkdir -p target/public
-          cp -r ./q/publx/001/* target/essais/publx/002/
+        cp -r publx-001/* target/essais/publx/002/
 
     - name: Commit and push
       run: |
