@@ -1,0 +1,31 @@
+name: Render Quarto in custom container
+
+on:
+  push:
+    branches: ["main"]
+    paths: 
+       - lx-public/HA/sessions/**
+       - germanic/HA/drafts/**
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/${{ github.repository_owner }}/quarto-r-tex:latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Render Quarto
+        run: |
+          quarto render lx-public/HA/sessions/ -P reload:false
+          ls q/publx/001
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: publx-001
+          path: q/publx/001
