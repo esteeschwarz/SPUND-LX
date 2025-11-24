@@ -3,6 +3,7 @@ language is developing and changing. there are many factors that influence langu
 
 ### inspiration
 now what are we experiencing if communicating with an artificial intelligence? first comes to mind the seemingly :natural language: adressed to us. one may feel as if talking to a human when asking questions and getting a response. studies prove that a significant amount of us show behaviour towards the AI that one would expect humans show only towards each other. that leads to the first question:
+
 > if we hold the AI as a human communication partner, could its behaviour towards us (here: their language) influence the way we talk/act viceversa? can people learn from an AI *how* to talk and what would they learn in this case? what is the language *taught* here specifically? do we adapt to patterns or linguistic markers common for *AI speech*?
 
 #### AI speech: wtf
