@@ -89,6 +89,7 @@ the readable articles which i got some overview from, are adressing a linguistic
 #| echo: false
 #| label: tbl-art
 #| tbl-cap: publication in categories
+#| warning: false
 
 df<-read.csv("art-meta.csv")
 knitr::kable(df)
