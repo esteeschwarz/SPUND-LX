@@ -19,6 +19,7 @@ website:
     right:
       # - href: draft-A.pdf
       #   text: pdf-temp
+      - href: snc.md
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/germanic
         icon: github
   #site-url: https://esteeschwarz.github.io/open-lx/posts/germanic-ha
