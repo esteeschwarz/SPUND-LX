@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxml2-dev \
     libfontconfig1-dev \
     fonts-dejavu \
+    fonts-noto \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Quarto
