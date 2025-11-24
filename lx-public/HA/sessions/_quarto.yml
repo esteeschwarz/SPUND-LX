@@ -8,7 +8,8 @@ website:
     left:
       - href: https://esteeschwarz.github.io/open-lx/posts/g-mcculloch
         text: INDEX
-      - about.qmd
+    right:
+      - snc.qmd
 
 format:
   html:
