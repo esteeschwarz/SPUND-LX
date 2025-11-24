@@ -16,8 +16,7 @@ website:
     right:
       - href: stschwarz-sebald.pdf
         text: pdf
-      - href: snc.md
-        text: SNC
+      - snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/docufiction/wg-sebald
         icon: github
   #base-url: /q/ this doesnt wk
