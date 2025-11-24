@@ -16,10 +16,10 @@ jobs:
       image: ghcr.io/${{ github.repository_owner }}/quarto-r-tex:latest
 
     steps:
-      - name: Checkout source
+    - name: Checkout source
         uses: actions/checkout@v4
     - name: Render Quarto site
-      run: |
+        run: |
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
          ls
