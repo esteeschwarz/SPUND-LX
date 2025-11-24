@@ -22,19 +22,19 @@ RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/q
 RUN quarto install tinytex
 
 # Install some latex packages frequently needed by Quarto/Rmarkdown
-RUN /root/.TinyTeX/bin/*/tlmgr install \
-      latexmk \
-      wrapfig \
-      amsmath \
-      amssymb \
-      unicode-math \
-      xcolor \
-      palatino \
-      mathpazo \
-      oberdiek \
-      upquote \
-      microtype \
-      placeins
+# RUN /root/.TinyTeX/bin/*/tlmgr install \
+#       latexmk \
+#       wrapfig \
+#       amsmath \
+#       amssymb \
+#       unicode-math \
+#       xcolor \
+#       palatino \
+#       mathpazo \
+#       oberdiek \
+#       upquote \
+#       microtype 
+#       #      placeins
 
 # Ensure TinyTeX is on PATH
 ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
