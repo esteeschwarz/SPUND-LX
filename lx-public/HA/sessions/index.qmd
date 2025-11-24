@@ -1,6 +1,10 @@
 ---
 title: "gretchen mcculloch"
 subtitle: "page analysis"
+author: "st. schwarz"
+date: "`r Sys.time()`"
+categories: [LX,linguistics & the public,blog analysis]
+
 bibliography: lx-pub.bib
 ---
 # Q
