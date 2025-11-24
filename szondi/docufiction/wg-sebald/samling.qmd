@@ -12,14 +12,16 @@ first collection [documenting] of materials
 #| include: false
 1 + 1
 cat("the upsidedown")
+download.file("https://stiftung-buchkunst.de/images/max/scans_cropped59.jpg","sebaldiana.jpg")
+download.file("https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png","stable-diff.png")
 ```
 
 ## now alltogether
 
 
-![Q: Sebaldiana](https://www.stiftung-buchkunst.de/images/max/scans_cropped59.jpg){#fig-sebaldiana}
+![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana}
 
-![stable diffusion output Marienbader Elegie](https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png){#fig-stable-01}
+![stable diffusion output Marienbader Elegie](stable-diff.png){#fig-stable-01}
 
 ## Q on bricolage
 ```{r}
@@ -29,7 +31,11 @@ t<-readLines("notes.md")
 print(t)
 ```
 
+```{r}
+# predata<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/docufiction/wg-sebald/preprocessed.RData")
+# save.image(file = predata)
+```
+
 {{< include notes.md >}}
 
------
-# refs
+# references {#references}

@@ -34,3 +34,4 @@ assets/js/dist
 content/LX-psych/*_files
 /.quarto/
 **/*.quarto_ipynb
+_freeze

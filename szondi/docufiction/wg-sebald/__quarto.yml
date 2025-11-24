@@ -1,8 +1,8 @@
 project:
   type: website
-  output-dir: ../../../q/sebald/001
+  output-dir: ../q
 params:
-    reload: false
+  use_predata: false
 
 website:
   title: "001"
@@ -16,10 +16,9 @@ website:
     right:
       - href: stschwarz-sebald.pdf
         text: pdf
-      - _snc.md
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/docufiction/wg-sebald
         icon: github
-  #base-url: /q/ this doesnt wk
+  #base-url: /q/
 
 format:
   html:

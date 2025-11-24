@@ -22,6 +22,7 @@ jobs:
       run: |
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
+         quarto render szondi/docufiction/wg-sebald/ -P reload:false
          ls
          echo "---- q content..."
          ls q
