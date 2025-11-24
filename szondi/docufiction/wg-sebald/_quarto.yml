@@ -8,7 +8,7 @@ website:
   title: "001"
   navbar:
     left:
-      - href: ../../../posts/wg-sebald
+      - href: ../../../posts/sebald
         text: home
       - about.qmd
       - raw.qmd
@@ -16,7 +16,8 @@ website:
     right:
       - href: stschwarz-sebald.pdf
         text: pdf
-      - snc.md
+      - href: snc.md
+        text: SNC
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/docufiction/wg-sebald
         icon: github
   #base-url: /q/ this doesnt wk
