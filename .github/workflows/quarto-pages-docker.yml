@@ -1,4 +1,4 @@
-name: Render Quarto in custom container
+name: Render Quarto in container
 
 on:
   push:
