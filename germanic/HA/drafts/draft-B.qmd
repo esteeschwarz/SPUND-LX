@@ -2,8 +2,8 @@
 title: "xtitle"
 subtitle: "AI and language change & variation"
 author: "st. schwarz"
-date: "2025-11-20"
-categories: [expose,linguistics]
+date: today
+date-format: "YYYYMMDD(HH.mm)"
 tags: [LX,sociolinguistics,HA,AI speech,register]
 # bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
 bibliography: germanic-exc.bib

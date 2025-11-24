@@ -2,7 +2,7 @@
 title: "English L1/L2 structures in german >L1 speakers"
 subtitle: "A corpus based investigation of english language patterns in german term papers of exchange students."
 author: "st. schwarz"
-date: "2025-11-20"
+date: "`r Sys.time()`"
 categories: [expose,linguistics]
 tags: [LX,sociolinguistics,HA,L1/L2,register]
 # bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
