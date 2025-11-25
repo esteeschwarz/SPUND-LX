@@ -104,7 +104,6 @@ load pdf [here](index.pdf)
 -->
 
 # index
-
 ```{r}
 #| echo: false
 #| warning: false

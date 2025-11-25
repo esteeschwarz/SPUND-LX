@@ -9,13 +9,16 @@ website:
   navbar:
     left:
       - href: https://esteeschwarz.github.io/open-lx/posts/germanic-ha
-        text: HOME
-      - href: draft-A.qmd
-        text: draft A
-      - href: draft-B.qmd
-        text: draft B
-      - href: draft-C.qmd
-        text: draft C
+        text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+
+      - text: drafts
+        menu:
+          - href: draft-A.qmd
+            text: draft A
+          - href: draft-B.qmd
+            text: draft B
+          - href: draft-C.qmd
+            text: draft C
     right:
       # - href: draft-A.pdf
       #   text: pdf-temp
