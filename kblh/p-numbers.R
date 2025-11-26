@@ -11,8 +11,8 @@
 
 #x<-6
 #k<-1
-n<-1000
-s<-1
+#n<-1000
+#s<-1
 get.pn<-function(s,n,m,csv){
 xl<-s:n
 # 6,28,496,8128
@@ -53,4 +53,9 @@ print(pn)
 }
 #csv<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/kblh/p-numbers.csv")
 csv<-"/var/www/html/cloud/p-numbers.csv"
-system.time(get.pn(1,1000,"c",csv)) #v0.1: 1:1000 1.208
+system.time(get.pn(1,100000,"c",csv)) #v0.1: 1:1000 1.208
+
+# run: nohup Rscript p-numbers.R > output.log 2>&1 &
+
+
+
