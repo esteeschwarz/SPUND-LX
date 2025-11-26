@@ -16,3 +16,5 @@
 **/sbc
 **/*_dep
 q
+**/.quarto
+**/_freeze

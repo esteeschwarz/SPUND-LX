@@ -1,0 +1,5 @@
+---
+title: "SNC"
+---
+
+- 16485.1.wf trigger special smi.
