@@ -3,6 +3,8 @@ title: "SMI paper draft"
 subtitle: "schizophrenie & mental images - draft hypothesis"
 author: "st. schwarz"
 date: today
+bibliography: smi.bib
+nocite: '@*'
 categories: [LX,psycholinguistics,CLIP,mental images,SMI]
 
 #bibliography: lx-pub.bib
