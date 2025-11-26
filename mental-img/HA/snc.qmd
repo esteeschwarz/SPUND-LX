@@ -2,4 +2,4 @@
 title: "SNC"
 ---
 
-- 16485.1.wf trigger special smi.
+- 16485.1.wf trigger special smi.tr1.
