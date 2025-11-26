@@ -10,6 +10,9 @@ website:
         text: INDEX
     right:
       - snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/mental-img
+        icon: github
+
 
 format:
   html:
