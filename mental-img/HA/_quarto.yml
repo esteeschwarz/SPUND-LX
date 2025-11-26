@@ -1,7 +1,7 @@
 project:
   type: website
   # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
-  output-dir: ../../../q/smi/001
+  output-dir: ../../q/smi/001
 website:
   title: "003"
   navbar:
