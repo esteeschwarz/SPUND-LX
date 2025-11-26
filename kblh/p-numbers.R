@@ -21,7 +21,7 @@ xl<-s:n
 pa<-array()
 #xlist<-list(1:10000)
 
-df<-data.frame(id=1,lim=n,p.number=NA)
+df<-data.frame(start=s,lim=n,p.number=NA)
 write.table(df,csv,quote = F)
 
 xk<-lapply(xl,function(i){
@@ -40,9 +40,9 @@ xk<-lapply(xl,function(i){
   pa<-pa[!m]
  # pp<-sum(pa)==x
   pp<-sum(pa,na.rm = T)==i
-  df<-data.frame(lim=n,p.number=i)
+  df<-data.frame(start=s,lim=n,p.number=i)
   if(pp)
-    write.table(df,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/kblh/p-numbers.csv"),append = T,quote = F,col.names = F)
+    write.table(df,csv,append = T,quote = F,col.names = F)
   return(pp)
 })
 sum(unlist(xk))
@@ -50,10 +50,13 @@ xk2<-unlist(xk)
 pn<-which(xk2)
 cat("\np-number range 1 to",n,"\n")
 print(pn)
+
 }
 #csv<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/kblh/p-numbers.csv")
 csv<-"/var/www/html/cloud/p-numbers.csv"
-system.time(get.pn(1,100000,"c",csv)) #v0.1: 1:1000 1.208
+dur<-system.time(get.pn(1,100,"c",csv)) #v0.1: 1:1000 1.208
+dur
+write.table(data.frame(time=Sys.time(),elapsed=dur[3],row.names = "finished"),csv,append = T,quote = F,col.names = T)
 
 # run: nohup Rscript p-numbers.R > output.log 2>&1 &
 

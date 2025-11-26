@@ -1,5 +1,6 @@
-id lim p.number
-1 1 1000 NA
-1 1000 6
-1 1000 28
-1 1000 496
+start lim p.number
+1 1 100 NA
+1 1 100 6
+1 1 100 28
+time elapsed
+finished 2025-11-26 06:32:15.078198 0.0840000000025611
