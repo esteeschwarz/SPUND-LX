@@ -2,7 +2,7 @@
 title: "SMI paper draft"
 subtitle: "schizophrenie & mental images - draft hypothesis"
 author: "st. schwarz"
-date: "`r Sys.time()`"
+date: "`r Sys.Date()`"
 categories: [LX,psycholinguistics,CLIP,mental images,SMI]
 
 #bibliography: lx-pub.bib
