@@ -1,0 +1,28 @@
+project:
+  type: website
+  # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
+  output-dir: ../../q/smi/001
+website:
+  title: "003"
+  navbar:
+    left:
+      - href: https://esteeschwarz.github.io/open-lx/posts/smi-a
+        text: INDEX
+    right:
+      - snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/mental-img
+        icon: github
+
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    toc-depth: 3
+
+execute: 
+  freeze: auto
+
