@@ -6,8 +6,16 @@ date: today
 bibliography: smi.bib
 nocite: '@*'
 categories: [LX,psycholinguistics,CLIP,mental images,SMI]
+cats_md: [essais,linguistics,expose]
+tags_md: [psych,HA,LX,corpus,CLIP]
+site_link_text: "draft"
+site_title: "005"
+class: 'schizophrenie and mental images; x-student research group, wilck/nenchev, charite berlin (BUA) WS25.'
+task: 'research questions and hypothesis for group research project'
+input_dir: sampleproject/site
+project_dir: sampleproject
+id: smi
 
-#bibliography: lx-pub.bib
 ---
 
 {{< include task001-ul.md >}}
