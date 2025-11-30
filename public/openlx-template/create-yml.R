@@ -43,10 +43,23 @@ head.post.md$task<-head.index.qmd$task
 head.post.md$id<-head.index.qmd$id
 head.post.md$description<-head.index.qmd$description
 
+handlers <- list(
+  logical = function(x) {
+    # Return bare 'true'/'false' without quotes
+    val<- ifelse (x, "true","false")
+    structure(val, class = "verbatim")   # <- prevents quoting!
+    
+  }
+)
 
+# yaml::write_yaml(
+#   x,
+#   file = "out.yml",
+#   handlers = handlers
+# )
 #write_yaml(head.post.md,paste0("cp/",head.post.md$date,"-",head.index.qmd$id,".md"))
 post.tmp<-tempfile("post.md")
-write_yaml(head.post.md,post.tmp)
+write_yaml(head.post.md,post.tmp,handlers=handlers)
 post.tx<-readLines(post.tmp)
 library(xfun)
 yaml_body(head.post.md)
@@ -62,10 +75,10 @@ workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",head.index.q
 workflow.yml$name<-paste0("Render quarto (",head.index.qmd$id,")")
 workflow.yml$jobs$deploy$steps[[4]]$run<-gsub("SMI",head.index.qmd$id,workflow.yml$jobs$deploy$steps[[4]]$run)
 write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",head.index.qmd$id,".yml"))
-write_yaml(workflow.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",head.index.qmd$id,".yml"))
-write_yaml(quarto.yml,"_quarto.yml")
+write_yaml(workflow.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",head.index.qmd$id,".yml"),handlers=handlers)
+write_yaml(quarto.yml,"_quarto.yml",handlers=handlers)
 filename <- tempfile()
 con <- file("_quarto.yml", "w")
-write_yaml(quarto.yml, con,fileEncoding = "UTF-8")
+write_yaml(quarto.yml, con,fileEncoding = "UTF-8",handlers=handlers)
 close(con)
-write_yaml(quarto.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/_quarto.yml"))
+write_yaml(quarto.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/_quarto.yml"),handlers=handlers)
