@@ -10,7 +10,7 @@ categories: [AVL,buechner,reception]
 cats_md: [essais,AVL]
 tags_md: [AVL,buechner,reception]
 site_link_text: "class presentation"
-site_title: "006"
+site_title: 006
 class: 'georg büchner. mara ruwe. WS25 FUB.'
 task: 'session preparation to: buechner & reception'
 input_dir: szondi/buechner/site

@@ -12,7 +12,20 @@ workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-te
 quarto.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/_quarto.yml"))
 # adapt
 ## quarto.yml
-quarto.yml$project$`output-dir`<-head.index.qmd$
+# get q dir
+d0<-normalize_path("index.qmd")
+d1<-strsplit(d0,"/")
+m<-grep("SPUND-LX",unlist(d1))
+p<-length(unlist(d1))-m-1
+p
+#q<-list.dirs(paste0(rep("..",p),collapse = "/"))
+q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
+q
+list.dirs(q)
+q.dir<-paste0(q,"/",head.index.qmd$id)
+q.dir
+#d1<-list.dirs("../../.."),d1)
+quarto.yml$project$`output-dir`<-q.dir
 quarto.yml$website$title<-head.index.qmd$site_title
 quarto.yml$website$navbar$left[[1]]$href<-paste0("https://esteeschwarz.github.io/open-lx/posts/",head.index.qmd$id)
 quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",head.index.qmd$project_dir)
@@ -43,11 +56,16 @@ post.md
 #writeLines(post.md,paste0("cp/",head.post.md$date,"-",head.index.qmd$id,".md"))
 writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",head.index.qmd$id,".md"))
 ## workflow.yml
-workflow.yml$`TRUE`$push$paths<-paste0(head.index.qmd$input_dir,"/**")
+workflow.yml$`on`$push$paths<-paste0(head.index.qmd$input_dir,"/**")
 workflow.yml$jobs$render$steps[2][[1]]
 workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",head.index.qmd$input_dir," -P reload:false\nls q")
 workflow.yml$name<-paste0("Render quarto (",head.index.qmd$id,")")
 workflow.yml$jobs$deploy$steps[[4]]$run<-gsub("SMI",head.index.qmd$id,workflow.yml$jobs$deploy$steps[[4]]$run)
 write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",head.index.qmd$id,".yml"))
+write_yaml(workflow.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",head.index.qmd$id,".yml"))
 write_yaml(quarto.yml,"_quarto.yml")
-           
+filename <- tempfile()
+con <- file("_quarto.yml", "w")
+write_yaml(quarto.yml, con,fileEncoding = "UTF-8")
+close(con)
+write_yaml(quarto.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/_quarto.yml"))

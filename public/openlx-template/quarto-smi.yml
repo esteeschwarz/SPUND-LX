@@ -1,6 +1,5 @@
 name: Render Quarto (smi)
-
-on:
+'on':
   push:
     branches: ["main"]
     paths: 
