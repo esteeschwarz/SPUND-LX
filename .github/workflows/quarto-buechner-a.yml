@@ -1,5 +1,5 @@
 name: Render quarto (buechner-a)
-'TRUE':
+'on':
   push:
     branches: main
     paths: szondi/buechner/site/**
