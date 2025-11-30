@@ -1,6 +1,9 @@
 # 16491.openlx.newpost
 ######################
 library(yaml)
+#############
+## setwd() to where index.qmd is
+################################
 post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/open-lx/_posts")
 workflow.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/.github/workflows")
 head.index.qmd<-read_yaml("index.qmd")
@@ -46,5 +49,5 @@ workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",head.index.q
 workflow.yml$name<-paste0("Render quarto (",head.index.qmd$id,")")
 workflow.yml$jobs$deploy$steps[[4]]$run<-gsub("SMI",head.index.qmd$id,workflow.yml$jobs$deploy$steps[[4]]$run)
 write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",head.index.qmd$id,".yml"))
-
+write_yaml(quarto.yml,"_quarto.yml")
            

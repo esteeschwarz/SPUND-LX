@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: '006'
+website:
+  title: '003'
+  navbar:
+    left:
+    - href: https://esteeschwarz.github.io/open-lx/posts/buechner-a
+      text: INDEX
+    right:
+    - snc.qmd
+    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/buechner
+      icon: github
+format:
+  html:
+    theme:
+    - cosmo
+    - brand
+    css: styles.css
+    toc: yes
+    toc-depth: 3
+execute:
+  freeze: auto

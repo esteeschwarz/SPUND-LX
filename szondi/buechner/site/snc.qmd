@@ -1,0 +1,5 @@
+---
+title: SNC
+---
+# info
+automated workflow to post via script wt just index.qmd provided.
