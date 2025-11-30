@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: ../../../q/buechner-a
 website:
-  title: 6
+  title: '006'
   navbar:
     left:
     - href: https://esteeschwarz.github.io/open-lx/posts/buechner-a
