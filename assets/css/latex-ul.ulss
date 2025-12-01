@@ -1,0 +1,445 @@
+//
+// LaTeX-Style Ulysses Stylesheet
+// Mimics standard RMarkdown LaTeX PDF output
+//
+// Based on Computer Modern font family and LaTeX article class
+//
+
+//
+// Document & Layout Settings
+//
+
+document-settings {
+	page-inset-top:		30mm;	page-inset-inner:	30mm
+	page-inset-bottom:	35mm;	page-inset-outer:	30mm
+	// LaTeX uses generous margins (approximately 1.5-1.75 inches)
+
+	section-break:			none
+	// LaTeX doesn't force page breaks at H1
+
+	two-sided:				no
+	page-binding:			left
+
+	footnote-enumeration:	per-document
+	footnote-placement:		end-of-page
+	footnote-style:			decimal
+}
+
+
+
+//
+// Default Typography
+//
+
+defaults {
+	font-family:			"CMU Serif"
+	// Computer Modern Unicode - install from: 
+	// https://www.fontsquirrel.com/fonts/computer-modern
+	// Fallback: "Latin Modern Roman" or "Times New Roman"
+	
+	font-size:				12pt
+	line-height:			18pt
+	// LaTeX uses tighter line spacing than typical word processors
+
+	text-alignment:			justified
+	hyphenation:			yes
+}
+
+
+
+//
+// Basic Non-Text-Area Page Layout
+//
+
+area-header {
+	content:				none
+	top-spacing:			0mm
+	bottom-spacing:			0mm
+}
+
+area-footnotes {
+	font-size:				10pt
+	line-height:			13pt
+	margin-right:			0mm
+	top-spacing:			12pt
+}
+
+area-footer {
+	content:				page-number
+	text-alignment:			center
+	// LaTeX centers page numbers by default
+	font-size:				10pt
+	top-spacing:			15mm
+	bottom-spacing:			0mm
+}
+
+
+
+//
+// Reusable styles (variables & mixins)
+//
+
+$mark-color =				#FEFDD5
+$black =					#000000
+$light-grey =				#D6D6D6
+$link-blue = 				#0000EE
+
+@code {
+	font-family:			"CMU Typewriter Text"
+	// Computer Modern Typewriter
+	// Fallback: "Courier New" or "Courier"
+	font-weight:			normal
+	font-slant:				normal
+}
+
+
+
+//
+// Headers
+//
+
+heading-all {
+	font-family:			"CMU Serif"
+	font-weight:			bold
+	line-height:			1.2em
+	keep-with-following:	true
+	text-alignment:			left
+	hyphenation:			no
+}
+
+heading-1 {
+	font-size:				24pt
+	// \section size in LaTeX
+	margin-top:				24pt
+	margin-bottom:			12pt
+}
+
+heading-2 {
+	font-size:				18pt
+	// \subsection size
+	margin-top:				20pt
+	margin-bottom:			10pt
+}
+
+heading-3 {
+	font-size:				14pt
+	// \subsubsection size
+	margin-top:				16pt
+	margin-bottom:			8pt
+}
+
+heading-4 {
+	font-size:				12pt
+	margin-top:				14pt
+	margin-bottom:			6pt
+}
+
+heading-5 {
+	font-size:				12pt
+	font-slant:				italic
+	margin-top:				12pt
+	margin-bottom:			6pt
+}
+
+heading-6 {
+	font-size:				12pt
+	font-weight:			normal
+	font-slant:				italic
+	margin-top:				12pt
+	margin-bottom:			6pt
+}
+
+
+
+//
+// Paragraph styles
+//
+
+paragraph-divider {
+	page-break:				after
+}
+
+paragraph-figure {
+	margin-top:				12pt
+	margin-bottom:			12pt
+	text-alignment:			center
+}
+
+figure-caption {
+	font-size:				11pt
+	font-slant:				normal
+}
+
+paragraph + paragraph {
+	first-line-indent:		1.5em
+	// LaTeX indents all paragraphs except the first after headings
+}
+
+heading-all + paragraph {
+	first-line-indent:		0pt
+	// No indent for first paragraph after heading
+}
+
+
+
+//
+// Block styles
+//
+
+block-all {
+	margin-top:				10pt
+	margin-bottom:			10pt
+	margin-left:			2em
+	margin-right:			0em
+}
+
+block-code : @code {
+	font-size:				10pt
+	line-height:			14pt
+	font-color:				#000000
+	
+	margin-left:			2em
+	margin-right:			2em
+	margin-top:				10pt
+	margin-bottom:			10pt
+	
+	background-color:		#F5F5F5
+	// Subtle background like RMarkdown code blocks
+}
+
+block-code paragraph {
+	margin-top:				0pt
+	margin-bottom:			0pt
+	text-alignment:			left
+	first-line-indent:		0pt
+	hyphenation:			no
+	default-tab-interval:	4em
+}
+
+block-quote {
+	font-slant:				normal
+	font-size:				11pt
+	margin-left:			2em
+	margin-right:			2em
+	margin-top:				10pt
+	margin-bottom:			10pt
+}
+
+block-raw {
+	visibility:				hidden
+}
+
+block-comment {
+	visibility:				hidden
+}
+
+
+
+//
+// List styles
+//
+
+list-all {
+	margin-left:			2em
+	margin-top:				6pt
+	margin-bottom:			6pt
+}
+
+list-all list-all {
+	margin-top:				2pt
+	margin-bottom:			2pt
+}
+
+list-ordered {
+	enumeration-format:		"%d."
+	text-inset:				2em
+}
+
+list-ordered list-ordered {
+	enumeration-format:		"(%*%c)"
+	// LaTeX uses (a), (b), (c) for nested
+	text-inset:				2.5em
+}
+
+list-ordered list-ordered list-ordered {
+	enumeration-format:		"%*.%r"
+	// Roman numerals for third level
+	text-inset:				3em
+}
+
+list-unordered {
+	enumeration-format:		"•"
+	// LaTeX uses bullet
+	text-inset:				1.5em
+}
+
+list-unordered list-unordered {
+	enumeration-format:		"–"
+	// En dash for second level
+	text-inset:				2em
+}
+
+list-unordered list-unordered list-unordered {
+	enumeration-format:		"*"
+	// Asterisk for third level
+	text-inset:				2.5em
+}
+
+
+
+//
+// Inline styles
+//
+
+inline-strong {
+	font-weight:			bold
+}
+
+inline-emphasis {
+	font-slant:				italic
+}
+
+inline-mark {
+	background-color:		$mark-color
+}
+
+inline-citation {
+	font-slant:				italic
+}
+
+inline-code : @code {
+	font-size:				11pt
+	background-color:		#F0F0F0
+	// Subtle gray background for inline code
+}
+
+inline-link {
+	font-color:				$link-blue
+	underline:				none
+	// LaTeX links typically aren't underlined in print
+}
+
+inline-comment {
+	visibility:				hidden
+}
+
+inline-delete {
+	visibility:				hidden
+}
+
+inline-annotation {
+	footnote-visibility:	hidden
+}
+
+inline-annotation:anchor {
+	background-color:		#ffffff
+}
+
+inline-raw {
+	visibility:				hidden
+}
+
+
+
+//
+// Ulysses specific stuff
+//
+
+ulysses-tag {
+	visibility:				hidden
+}
+
+inline-link ulysses-tag {
+	visibility:				hidden
+}
+
+list-all ulysses-tag {
+	visibility:				hidden
+}
+
+
+//
+// Syntax styles (for code highlighting)
+//
+
+syntax-all {
+}
+
+syntax-entity {
+	font-color:				#6f42c1
+}
+
+syntax-tag {
+	font-color:				#22863a
+}
+
+syntax-keyword {
+	font-color:				#d73a49
+}
+
+syntax-parameter {
+	font-color:				#24292e
+}
+
+syntax-string {
+	font-color:				#032f62
+}
+
+syntax-constant {
+	font-color:				#005cc5
+}
+
+syntax-variable {
+	font-color:				#e36209
+}
+
+syntax-escape {
+	font-weight:			bold
+	font-color:				#22863a
+}
+
+syntax-comment {
+	font-color:				#6a737d
+	font-slant:				italic
+}
+
+syntax-error {
+	font-color:				#b31d28
+}
+
+syntax-heading {
+	font-weight:			bold
+	font-color:				#005cc5
+}
+
+syntax-italic {
+	font-slant:				italic
+}
+
+syntax-bold {
+	font-weight:			bold
+}
+
+syntax-deleted {
+	font-color:				#b31d28
+	background-color:		#ffeef0
+}
+
+syntax-inserted {
+	font-color:				#22863a
+	background-color:		#f0fff4
+}
+
+syntax-changed {
+	font-color:				#e36209
+	background-color:		#ffebda
+}
+
+syntax-link {
+	underline:				none
+	font-color:				#0000EE
+}
+
+syntax-list {
+	font-color:				#e36209
+}
