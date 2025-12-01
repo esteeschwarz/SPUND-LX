@@ -1,0 +1,26 @@
+---
+title: "test"
+#format: revealjs
+format:
+  revealjs:
+    include-after-body: shuffle-slides.js
+---
+# head
+top
+
+# zwei
+h2
+
+## drei
+3
+
+## vier
+4
+
+# sec2
+
+## eins
+1
+
+## zwei
+2

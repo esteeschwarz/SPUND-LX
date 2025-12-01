@@ -8,6 +8,7 @@ website:
     - href: https://esteeschwarz.github.io/open-lx/posts/buechner-a
       text: INDEX
     - qa.qmd
+    - slides.qmd
     right:
     - snc.qmd
     - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/buechner
