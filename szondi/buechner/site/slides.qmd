@@ -144,3 +144,4 @@ markup annotations from @pethes_war_2006
 ## 
 46. Dass alles schon einmal da war und langweilig ist, ist am Ende weder eine Provokation des Volks, noch die Melancholie Dantons – und auch nicht eine etwaige Resignation Georg Büchners. Es ist ein literarisches Verfahren, das dem Bruch in der Struktur der Geschichte selbst gerecht zu werden vermag 
 
+# quellen{#refs}
