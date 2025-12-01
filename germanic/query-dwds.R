@@ -16,12 +16,14 @@ api<-"https://www.dwds.de/r/?" #q=alphabetisch&view=json&corpus=dtak" # wks. wt 
 lemma<-"sneaker"
 lemma<-"computer"
 lemma<-"alphabet"
+lemma<-"melancholie"
 ################
 corpus<-"dtak" # 1500-1903
 view<-"json"
 view<-"csv"
+limit<-1000 # if not set gets only first 50 hits, so useful for query if lemma exists, but not wt frequency
 #corpus<-""
-url<-paste0(api,"q=",lemma,"&corpus=",corpus,"&view=",view)
+url<-paste0(api,"q=",lemma,"&corpus=",corpus,"&view=",view,"&limit=",limit)
 url
 r<-GET(url,add_headers(
   `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -29,7 +31,7 @@ r<-GET(url,add_headers(
 t<-content(r,"text")
 t
 df<-data.frame(Hit="no hits")
-writeLines(t,"t.csv")
+#writeLines(t,"t.csv")
 if(view=="csv"){
   tcsv<-tempfile("t.csv")
   writeLines(t,tcsv)
@@ -44,3 +46,5 @@ if(view=="json"&t!='[{\"meta_\":{}}]')
 cat("--------\nnumber of hits:",length(df$Hit),"\n---------\n")
 # t
 # writeLines(t,"dwds.q.html")
+
+lm<-read.csv(Sys.getenv("HKW_TOP"),"")
