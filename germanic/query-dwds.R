@@ -1,16 +1,16 @@
 # 20251201(13.33)
 # 16493.query dwds as reference corpus
 ######################################
-# works only if header agent set to browser agent!
+# works only if header user agent set to browser agent!
 
 library(jsonlite)
 library(httr)
 library(readr)
 url<-"https://www.dwds.de/r/?q=alphabetisch&view=json&corpus=dtak"
 url<-"https://www.dwds.de/r/?q=alphabetisch&view=csv&corpus=dtak"
-url<-"https://www.dwds.de/api/frequency?q=alphabetisch&corpus=dtak"
+url<-"https://www.dwds.de/api/frequency?q=alphabetisch&corpus=dtak" # wks, but no corpus selectable
 api<-"https://www.dwds.de/api/frequency?"
-api<-"https://www.dwds.de/r/?" #q=alphabetisch&view=json&corpus=dtak"
+api<-"https://www.dwds.de/r/?" #q=alphabetisch&view=json&corpus=dtak" # wks. wt user agent set to browser agent
 #q=alphabetisch&corpus=dtak"
 ################
 lemma<-"sneaker"
