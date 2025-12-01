@@ -8,7 +8,8 @@ bibliography: buechner.bib
 
 # intro
 markup annotations from @pethes_war_2006
-[back to site](/essais/buechner-a/)
+
+[back to site](/index.html)
 
 
 ## 
@@ -28,9 +29,6 @@ markup annotations from @pethes_war_2006
 
 ## 
 7. bringt damit nicht nur einen historischen Stoff, sondern die historischen Quellen selbst auf die Bühne 
-
-## 
-8. Paul Celan: Der Meridian. Frankfurt/Main 1999, S. 3. 
 
 ## 
 9. sondern auf die Tatsache des Zitierens und Wiederholens selbst – und entlarvt damit die Vision einer von Tyrannen befreiten Zukunft als Zitat aus der Vergangenheit. 
