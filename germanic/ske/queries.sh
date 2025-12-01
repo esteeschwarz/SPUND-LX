@@ -1,0 +1,1 @@
+[tag="V.*" & lemma!="liegen" & lemma!="fallen"]{0,1} []{0,2} [lemma="schnee"] []{0,2} [tag="V.*" & lemma!="liegen" & lemma!="fallen"]
