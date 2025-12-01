@@ -15,8 +15,8 @@ api<-"https://www.dwds.de/r/?" #q=alphabetisch&view=json&corpus=dtak" # wks. wt 
 ################
 lemma<-"sneaker"
 lemma<-"computer"
-lemma<-"alphabet"
-lemma<-"melancholie"
+#lemma<-"alphabet"
+#lemma<-"melancholie"
 ################
 corpus<-"dtak" # 1500-1903
 view<-"json"
@@ -47,4 +47,11 @@ cat("--------\nnumber of hits:",length(df$Hit),"\n---------\n")
 # t
 # writeLines(t,"dwds.q.html")
 
-lm<-read.csv(Sys.getenv("HKW_TOP"),"")
+lm<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/dwds_lemmata.csv"))
+l1.u<-lm$url[sample(200000,1)]
+r<-GET(l1.u,add_headers(
+  `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+))
+t<-content(r,"text")
+t
+#writeLines(t,"dwds.q.html")
