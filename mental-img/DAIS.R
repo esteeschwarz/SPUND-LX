@@ -2,6 +2,9 @@
 # 16495.process.DAIS
 ####################
 dais.top<-"/Users/guhl/boxHKW/UNIhkw/21S/DH/local/SPUND/2025/hux/DAIS-C-Annotated - Upload"
+########
+dais.top<-"mydesktop/daiscorpusdirectory"
+## adapt to the filesources on your desktop and comment out the following line
 dais.top<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/DAIS-C-Annotated - Upload")
 d1<-list.dirs(dais.top)
 m<-grep("Only_Raw",d1)
@@ -14,9 +17,9 @@ fcl<-list.files(cl.raw)
 fco<-list.files(co.raw)
 library(udpipe)
 #udpipe::udpipe_download_model("english-ewt")
-#?udpipe::udpipe_load_model()
+##udpipe::udpipe_load_model()
 model<-udpipe::udpipe_load_model(paste0(Sys.getenv("HKW_TOP"),"/SPUND/english-ewt-ud-2.5-191206.udpipe"))
-
+## also adapt to whre the model is saved
 #filestrn<-list.files(sbctrn)
 filestrn<-fcl
 #trnlist<-list()
@@ -56,33 +59,33 @@ dfcl.pos<-udpipe::udpipe_annotate(model,sbc.sub.c)
 
 dfcl.pos<-data.frame(dfcl.pos)
 dfco.pos<-data.frame(dfco.pos)
-df.pos<-list(co=dfco.pos,cl=dfcl.pos)
-save(df.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
 dfcl.pos$target<-"CL"
 dfco.pos$target<-"CO"
+df.pos<-list(co=dfco.pos,cl=dfcl.pos)
+#save(df.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
 
-fcl.df<-lapply(fcl, function(x){
-  #f<-paste(cl.raw,x,sep="/")
-  t<-readLines(f)
-  df<-udpipe::udpipe_annotate(model,t)  
-  #df<-data.frame(df)
-})
-fco.df<-lapply(fco, function(x){
-  f<-paste(co.raw,x,sep="/")
-  t<-readLines(f)
-  df<-udpipe::udpipe_annotate(model,t)  
-})
-
-df.pos<-list(co=fco.df,cl=fcl.df)
-save(df.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
-
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
-library(abind)
-df.cl<-lapply(df.pos$cl,function(x){
-  #l<-abind(data.frame(x$conllu),along = 1)
-  return(data.frame(x$conllu))
-})
-df.cl[[1]]
-df.cl<-data.frame(abind(df.cl,along = 1)
-
-
+# fcl.df<-lapply(fcl, function(x){
+#   #f<-paste(cl.raw,x,sep="/")
+#   t<-readLines(f)
+#   df<-udpipe::udpipe_annotate(model,t)  
+#   #df<-data.frame(df)
+# })
+# fco.df<-lapply(fco, function(x){
+#   f<-paste(co.raw,x,sep="/")
+#   t<-readLines(f)
+#   df<-udpipe::udpipe_annotate(model,t)  
+# })
+# 
+# df.pos<-list(co=fco.df,cl=fcl.df)
+# #save(df.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
+# 
+# #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
+# # library(abind)
+# # df.cl<-lapply(df.pos$cl,function(x){
+# #   #l<-abind(data.frame(x$conllu),along = 1)
+# #   return(data.frame(x$conllu))
+# # })
+# # df.cl[[1]]
+# # df.cl<-data.frame(abind(df.cl,along = 1)
+# # 
+# # 
