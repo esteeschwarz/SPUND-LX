@@ -3,145 +3,144 @@ title: "annotations"
 format: revealjs
   # revealjs:
   #   include-after-body: shuffle-slides.js
-bibliography: buechner.bib
 ---
 
 # intro
 markup annotations from @pethes_war_2006
-
 [back to site](/index.html)
 
+## 2
+poetologische Reflexion von Büchners Verfahren, ein Sechstel seines Dramentextes unmittelbar aus historischen Darstellungen abzuschreiben
 
-## 
-2. poetologische Reflexion von Büchners Verfahren, ein Sechstel seines Dramentextes unmittelbar aus historischen Darstellungen abzuschreiben 
+## 3
+revolutionäre Umsturzversuche in die ewige Wiederkehr des Gleichen münden
 
-## 
-3. revolutionäre Umsturzversuche in die ewige Wiederkehr des Gleichen münden 
+## 4
+sozialgeschichtliche Ansatz an die Stelle textimmanenter Analysen getreten, wurde er wieder von strukturalen und poststrukturalen Modellen hinterfragt
 
-## 
-4. sozialgeschichtliche Ansatz an die Stelle textimmanenter Analysen getreten, wurde er wieder von strukturalen und poststrukturalen Modellen hinterfragt 
+## 5
+Friedrich Schlegels apodiktische Subsumption der Französischen Revolution unter die „Tendenzen des Zeitalters
 
-## 
-5. Friedrich Schlegels apodiktische Subsumption der Französischen Revolution unter die „Tendenzen des Zeitalters 
+## 6
+Kleists Verlegung des Impulses zum Umsturz in das Zucken von Mirabeaus Oberlippe
 
-## 
-6. Kleists Verlegung des Impulses zum Umsturz in das Zucken von Mirabeaus Oberlippe 
+## 7
+bringt damit nicht nur einen historischen Stoff, sondern die historischen Quellen selbst auf die Bühne
 
-## 
-7. bringt damit nicht nur einen historischen Stoff, sondern die historischen Quellen selbst auf die Bühne 
+## 8
+Paul Celan: Der Meridian. Frankfurt/Main 1999, S. 3.
 
-## 
-9. sondern auf die Tatsache des Zitierens und Wiederholens selbst – und entlarvt damit die Vision einer von Tyrannen befreiten Zukunft als Zitat aus der Vergangenheit. 
+## 9
+sondern auf die Tatsache des Zitierens und Wiederholens selbst – und entlarvt damit die Vision einer von Tyrannen befreiten Zukunft als Zitat aus der Vergangenheit.
 
-## 
-10. zwei grundsätzliche Paradoxien des Zitierens offen: das formale Paradox zwischen Authentizität und Inszenierung auf der einen sowie das inhaltliche Paradox von Zukunfts- und Vergangenheitsbezug auf der anderen Seite. 
+## 10
+zwei grundsätzliche Paradoxien des Zitierens offen: das formale Paradox zwischen Authentizität und Inszenierung auf der einen sowie das inhaltliche Paradox von Zukunfts- und Vergangenheitsbezug auf der anderen Seite.
 
-## 
-11. vorwärts gewandte Revolutionsrhetorik entstammt einem Archiv der Sentenzen und Phrasen 
+## 11
+vorwärts gewandte Revolutionsrhetorik entstammt einem Archiv der Sentenzen und Phrasen
 
-## 
-12. Während das Stück bereits in der zeitgenössischen Rezeption als bloße historisierende Kopie bezeichnet wurde10, begnügten sich die ersten philologischen Arbeiten mit der Identifikation der Quellen 
+## 12
+Während das Stück bereits in der zeitgenössischen Rezeption als bloße historisierende Kopie bezeichnet wurde10, begnügten sich die ersten philologischen Arbeiten mit der Identifikation der Quellen
 
-## 
-13. Dass Büchners Zitatmontage aber eine eigene Ästhetik implizieren könnte, ist erst in jüngerer Zeit erwogen worden 
+## 13
+Dass Büchners Zitatmontage aber eine eigene Ästhetik implizieren könnte, ist erst in jüngerer Zeit erwogen worden
 
-## 
-14. Grundsätzlich schwebt über jedem Satz, über jedem Wort in Büchners Texten der Verdacht, es könne nicht von ihm sein 
+## 14
+Grundsätzlich schwebt über jedem Satz, über jedem Wort in Büchners Texten der Verdacht, es könne nicht von ihm sein
 
-## 
-15. Verhältnis von Dramentext und historischer Quelle 
+## 15
+Verhältnis von Dramentext und historischer Quelle
 
-## 
-16. Langweilig sind Zitate, weil sie „schon einmal da“ waren, das heißt: nichts Neues kommunizieren 
+## 16
+Langweilig sind Zitate, weil sie „schon einmal da“ waren, das heißt: nichts Neues kommunizieren
 
-## 
-17. scharfen Kontrast zum Anspruch einer Revolution, die Gesellschaft radikal zu erneuern 
+## 17
+scharfen Kontrast zum Anspruch einer Revolution, die Gesellschaft radikal zu erneuern
 
-## 
-18. Diese Melancholie ist aber, so werde ich zu zeigen versuchen, weniger eine individualpsychologische Pathologie als der Spiegel einer neuen Relation zwischen Individuum und Geschichte 
+## 18
+Diese Melancholie ist aber, so werde ich zu zeigen versuchen, weniger eine individualpsychologische Pathologie als der Spiegel einer neuen Relation zwischen Individuum und Geschichte
 
-## 
-19. scheint dieses Motiv allerdings durchaus der melancholischen Verfassung der betreffenden Figuren zugehörig. So, wenn der Hauptmann im „Woyzeck“ pseudophilosophische Reflexionen über die Unmöglichkeit, die endlos dahinfließende Zeit sinnvoll zu füllen, anstellt 
+## 19
+scheint dieses Motiv allerdings durchaus der melancholischen Verfassung der betreffenden Figuren zugehörig. So, wenn der Hauptmann im „Woyzeck“ pseudophilosophische Reflexionen über die Unmöglichkeit, die endlos dahinfließende Zeit sinnvoll zu füllen, anstellt
 
-## 
-20. Bezug zwischen Melancholie und Langeweile ausdrücklich gestiftet, 
+## 20
+Bezug zwischen Melancholie und Langeweile ausdrücklich gestiftet,
 
-## 
-21. Zitat ist Melancholie. Diese Lesart, der zufolge die existentielle Langeweile, der die Figuren bei Büchner immer wieder Ausdruck verleihen, der Wiederkehr von bereits Geschehenem und der Wiederholung von bereits Gesagtem geschuldet ist 
+## 21
+Zitat ist Melancholie. Diese Lesart, der zufolge die existentielle Langeweile, der die Figuren bei Büchner immer wieder Ausdruck verleihen, der Wiederkehr von bereits Geschehenem und der Wiederholung von bereits Gesagtem geschuldet ist
 
-## 
-22. Zitationstechnik seines Autors mit der Geschichtsmelancholie seines Protagonisten. 
+## 22
+Zitationstechnik seines Autors mit der Geschichtsmelancholie seines Protagonisten.
 
-## 
-23. Büchners „Danton“ als Geschichtsdrama am Ende der Geschichte gelesen werden, eines Endes aber, das an die Stelle der Hegelschen Objektivierung des Weltgeists ein geradezu posthistorisches Szenario treten lässt 
+## 23
+Büchners „Danton“ als Geschichtsdrama am Ende der Geschichte gelesen werden, eines Endes aber, das an die Stelle der Hegelschen Objektivierung des Weltgeists ein geradezu posthistorisches Szenario treten lässt
 
-## 
-24. Das Zitieren ist bei Büchner mithin nicht als austauschbares Stilmittel oder gar zu überwindende Vorstufe der Werkgenese zu betrachten, sondern als eine spezifische Schreibweise, die an die Stelle einer unmittelbaren Darstellung Sprechakte inszeniert und auf diese Weise den rhetorischen Charakter jeglicher Darstellung reflektiert 
+## 24
+Das Zitieren ist bei Büchner mithin nicht als austauschbares Stilmittel oder gar zu überwindende Vorstufe der Werkgenese zu betrachten, sondern als eine spezifische Schreibweise, die an die Stelle einer unmittelbaren Darstellung Sprechakte inszeniert und auf diese Weise den rhetorischen Charakter jeglicher Darstellung reflektiert
 
-## 
-25. Vom bloß dokumentierenden Zitat lässt sich mithin das Zitat dieses Zitats unterscheiden 
+## 25
+Vom bloß dokumentierenden Zitat lässt sich mithin das Zitat dieses Zitats unterscheiden
 
-## 
-26. schließt dieser Topos der Langeweile nicht nur, wie in der Forschung mehrfach kommentiert, an das aus dem 18. Jahrhundert ererbte, gleichermaßen medizinische wie literarische Bild der Melancholie an. 
+## 26
+schließt dieser Topos der Langeweile nicht nur, wie in der Forschung mehrfach kommentiert, an das aus dem 18. Jahrhundert ererbte, gleichermaßen medizinische wie literarische Bild der Melancholie an.
 
-## 
-27. Langeweile des Personals in Büchners Texten beruht vielmehr auf einem strukturellen Korrelat des Zitierens: der Wiederholung immergleicher Abläufe und der Wahrnehmung einer genuinen Leere der Zeit 
+## 27
+Langeweile des Personals in Büchners Texten beruht vielmehr auf einem strukturellen Korrelat des Zitierens: der Wiederholung immergleicher Abläufe und der Wahrnehmung einer genuinen Leere der Zeit
 
-## 
-28. Umschlag einer vita activa in eine vita contemplativa 
+## 28
+Umschlag einer vita activa in eine vita contemplativa
 
-## 
-29. strukturelle Widerspruch, wie er zwischen dem revolutionären Aufbruch und der resignativen Einsicht in die ewige Wiederkehr allen Geschehens besteht 
+## 29
+strukturelle Widerspruch, wie er zwischen dem revolutionären Aufbruch und der resignativen Einsicht in die ewige Wiederkehr allen Geschehens besteht
 
-## 
-30. Thiers Dantons Zögern mit Hinweis auf seine zunehmende politische Isolation rationalisiert habe, gründe Büchner dasselbe Zögern auf grundsätzliche Reflexionen über die Natur des Menschen 
+## 30
+Thiers Dantons Zögern mit Hinweis auf seine zunehmende politische Isolation rationalisiert habe, gründe Büchner dasselbe Zögern auf grundsätzliche Reflexionen über die Natur des Menschen
 
-## 
-31. ist es die Revolutionsgeschichte selbst, die Danton den Elan zum Handeln nimmt 
+## 31
+ist es die Revolutionsgeschichte selbst, die Danton den Elan zum Handeln nimmt
 
-## 
-32. Dantons vermeintlich so revolutionäre Reden sind nur Zitate einer längst geprägten Rhetorik 
+## 32
+Dantons vermeintlich so revolutionäre Reden sind nur Zitate einer längst geprägten Rhetorik
 
-## 
-33. dass Danton in seinen letzten politischen Reden nicht nur das Ende des revolutionären Terrors fordert, sondern sich bereits in der Gegenwart des Stücks nach der Revolution, am Ende ihrer Geschichte, befindet. 
+## 33
+dass Danton in seinen letzten politischen Reden nicht nur das Ende des revolutionären Terrors fordert, sondern sich bereits in der Gegenwart des Stücks nach der Revolution, am Ende ihrer Geschichte, befindet.
 
-## 
-34. Das grammatische Futur wie das Messen der Zeit laufen leer, weil der revolutionäre Imperativ, Neues in die Welt zu setzen, vom Verlauf der Revolution selbst widerlegt wurde 
+## 34
+Das grammatische Futur wie das Messen der Zeit laufen leer, weil der revolutionäre Imperativ, Neues in die Welt zu setzen, vom Verlauf der Revolution selbst widerlegt wurde
 
-## 
-35. Danton, wird zum Agenten der Geschichte am Ende eines auf die Zukunft und ihre Neuerungen ausgerichteten Geschichtsverständnisses. Er ist damit zugleich derjenige Repräsentant des heroischen Individuums der Geschichte, der das Ende dieses Typus einläutet 
+## 35
+Danton, wird zum Agenten der Geschichte am Ende eines auf die Zukunft und ihre Neuerungen ausgerichteten Geschichtsverständnisses. Er ist damit zugleich derjenige Repräsentant des heroischen Individuums der Geschichte, der das Ende dieses Typus einläutet
 
-## 
-36. Umschlag der heroischen Geschichte in dasjenige, was im 20. Jahrhundert unter dem Schlagwort ‚Posthistoire‘ diskutiert wurde. 
+## 36
+Umschlag der heroischen Geschichte in dasjenige, was im 20. Jahrhundert unter dem Schlagwort ‚Posthistoire‘ diskutiert wurde.
 
-## 
-37. das Ende des Glaubens an die Lehren der Vergangenheit, das Ende des mechanischen Modells einer Fortschrittsgeschichte und den Umschlag der Geschichte in den quasi naturgeschichtlichen Prozess von Zerfall, Entropie und schließlich Erstarrung 
+## 37
+das Ende des Glaubens an die Lehren der Vergangenheit, das Ende des mechanischen Modells einer Fortschrittsgeschichte und den Umschlag der Geschichte in den quasi naturgeschichtlichen Prozess von Zerfall, Entropie und schließlich Erstarrung
 
-## 
-38. bricht notwendig mit der Zurechnung historischer Ereignisse an historische Subjekte 
+## 38
+bricht notwendig mit der Zurechnung historischer Ereignisse an historische Subjekte
 
-## 
-39. Wo keine sinnhaft gesteuerten Veränderungen mehr zu konstatieren sind, gibt es auch keinen für die Vorgänge verantwortlichen Agenten mehr: „Ohne heroisches Subjekt keine Geschichte. 
+## 39
+Wo keine sinnhaft gesteuerten Veränderungen mehr zu konstatieren sind, gibt es auch keinen für die Vorgänge verantwortlichen Agenten mehr: „Ohne heroisches Subjekt keine Geschichte.
 
-## 
-40. politischen Parolen weniger aufeinanderprallen als unaufgelöst nebeneinander stehen, dann manifestiert sich deutlich, dass die Revolution in ein Stadium eingetreten ist, in dem anstelle neuer Visionen das Zitieren der alten Phrasen vorherrscht 
+## 40
+politischen Parolen weniger aufeinanderprallen als unaufgelöst nebeneinander stehen, dann manifestiert sich deutlich, dass die Revolution in ein Stadium eingetreten ist, in dem anstelle neuer Visionen das Zitieren der alten Phrasen vorherrscht
 
-## 
-41. In „Danton’s Tod“kommt die Revolution als sie selbst zu Wort – und stellt in dieser Zitierbarkeit ihre eigene Möglichkeit in Frage. Wo der Neuanfang schon einmal da gewesen, wo Dantons revolutionäre Rhetorik iterierbar ist, entzieht sich der Umsturz das Ziel, das er vorgibt. 
+## 41
+In „Danton’s Tod“kommt die Revolution als sie selbst zu Wort – und stellt in dieser Zitierbarkeit ihre eigene Möglichkeit in Frage. Wo der Neuanfang schon einmal da gewesen, wo Dantons revolutionäre Rhetorik iterierbar ist, entzieht sich der Umsturz das Ziel, das er vorgibt.
 
-## 
-42. dokumentarische Poetik damit als negative Poetik zu bewerten 
+## 42
+dokumentarische Poetik damit als negative Poetik zu bewerten
 
-## 
-43. materiellen Nachweis der Posthistoire? 
+## 43
+materiellen Nachweis der Posthistoire?
 
-## 
-44. Neben ihrer politischen Dimension wirft die dokumentarische Literatur – die unter diesem Titel ja erst in der Weimarer Republik und dann vor allem nach dem Zweiten Weltkrieg Karriere machen wird – stets auch ein ästhetisches Problem auf, das darin besteht, den Kontrast zwischen einer poetisch geformten Sprache und der schieren Faktizität des Dokuments auszutarieren. 
+## 44
+Neben ihrer politischen Dimension wirft die dokumentarische Literatur – die unter diesem Titel ja erst in der Weimarer Republik und dann vor allem nach dem Zweiten Weltkrieg Karriere machen wird – stets auch ein ästhetisches Problem auf, das darin besteht, den Kontrast zwischen einer poetisch geformten Sprache und der schieren Faktizität des Dokuments auszutarieren.
 
-## 
-45. zeigt, auf welche Weise die Zitate aus historischen Quellen selbst Teil einer poetischen Textur werden können, die die Rhetorik der Zitate aufgreift, weiterverfolgt und mit eigenen Worten reinszeniert 
+## 45
+zeigt, auf welche Weise die Zitate aus historischen Quellen selbst Teil einer poetischen Textur werden können, die die Rhetorik der Zitate aufgreift, weiterverfolgt und mit eigenen Worten reinszeniert
 
-## 
-46. Dass alles schon einmal da war und langweilig ist, ist am Ende weder eine Provokation des Volks, noch die Melancholie Dantons – und auch nicht eine etwaige Resignation Georg Büchners. Es ist ein literarisches Verfahren, das dem Bruch in der Struktur der Geschichte selbst gerecht zu werden vermag 
+## 46
+Dass alles schon einmal da war und langweilig ist, ist am Ende weder eine Provokation des Volks, noch die Melancholie Dantons – und auch nicht eine etwaige Resignation Georg Büchners. Es ist ein literarisches Verfahren, das dem Bruch in der Struktur der Geschichte selbst gerecht zu werden vermag
 
-# quellen{#refs}

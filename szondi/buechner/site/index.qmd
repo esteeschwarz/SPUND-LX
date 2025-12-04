@@ -19,5 +19,7 @@ ids: buechner-a
 
 ---
 
+`r source("create-slides.R")``
+
 {{< include task001-ul.md >}}
 
