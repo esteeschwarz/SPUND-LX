@@ -30,6 +30,7 @@ source("create-slides.R") #todo: update docker first with package: stringi,yaml;
 #| echo: false
 #| output: false
 #| warning: false
+#| include: false
 
 #stmp <- tempfile(fileext = ".qmd")
 src<-"task001-ul.md"

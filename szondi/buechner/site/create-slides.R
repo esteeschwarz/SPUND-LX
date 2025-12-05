@@ -29,3 +29,11 @@ m<-grep("x-content",a3)
 #a4<-c(a3,a2)
 a4<-c(a3,a2)
 writeLines(a4,"slides.qmd")
+
+
+src<-"task001-ul.md"
+### correct ulysses md issues
+t<-readLines(src)
+lines <- gsub("\\\\_", "_", t)
+#md<-tempfile(fileext = ".md")
+writeLines(lines,src)

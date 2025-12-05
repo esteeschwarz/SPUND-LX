@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: ../../../q/buechner-a
+  pre-render: "create-slides.R"
 website:
   title: '006'
   navbar:
