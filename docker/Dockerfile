@@ -41,7 +41,7 @@ RUN quarto install tinytex
 ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
 
 # Install common R packages for Quarto
-RUN R -e "install.packages(c('rmarkdown','knitr','jsonlite','xml2','remotes'))"
+RUN R -e "install.packages(c('rmarkdown','knitr','jsonlite','xml2','remotes','stringi','yaml'))"
 
 # Optional: Install your renv base snapshot
 # COPY renv.lock /workspace/
