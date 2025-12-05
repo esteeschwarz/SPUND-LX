@@ -26,5 +26,22 @@ ids: buechner-a
 source("create-slides.R") #todo: update docker first with package: stringi,yaml; updated, should work now.
 ```
 
+```{r}
+#| echo: false
+#| output: false
+#| warning: false
+
+#stmp <- tempfile(fileext = ".qmd")
+src<-"task001-ul.md"
+### correct ulysses md issues
+t<-readLines(src)
+lines <- gsub("\\\\_", "_", t)
+#md<-tempfile(fileext = ".md")
+writeLines(lines,src)
+#knitr::knit_child(tmp)
+
+```
+
+
 {{< include task001-ul.md >}}
 

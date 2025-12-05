@@ -1,5 +1,5 @@
 ---
-title: "annotations"
+title: "QA-slides"
 format: revealjs
   # revealjs:
   #   include-after-body: shuffle-slides.js
@@ -10,4 +10,9 @@ bibliography: buechner.bib
 markup annotations from @pethes_war_2006
 
 [back to site](/index.html)
+
+> instead of a long talk I encourage you to a little discussion oriented on (my) findings in the text read.
+
+# snc
+16497
 
