@@ -23,7 +23,7 @@ ids: buechner-a
 #| echo: false
 #| output: false
 #| warning: false
-#source("create-slides.R") #todo: update docker first with package: stringi,yaml
+source("create-slides.R") #todo: update docker first with package: stringi,yaml; updated, should work now.
 ```
 
 {{< include task001-ul.md >}}
