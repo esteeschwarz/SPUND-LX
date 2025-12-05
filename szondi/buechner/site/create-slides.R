@@ -27,7 +27,8 @@ a2<-unlist(a2)
 a3<-readLines("_slides.qmd")
 m<-grep("x-content",a3)
 #a4<-c(a3,a2)
-a4<-c(a3,a2)
+refs<-"# references{#references}"
+a4<-c(a3,a2,"",refs)
 writeLines(a4,"slides.qmd")
 
 
