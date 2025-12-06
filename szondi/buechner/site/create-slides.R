@@ -7,7 +7,7 @@ get.notes<-function(docdir){
  # m<-grep("docx",f)
   t<-read_docx(paste(docdir,f[m],sep="/"))
   #t[[7]]
-  library(xml2)
+  #library(xml2)
   d<-docx_summary(t)
   m<-grep("reception pethes",d$text)
   h1<-d$style_name=="Heading 1"
@@ -20,7 +20,7 @@ get.notes<-function(docdir){
   hbc<-h1[which(hbb)][1]-1
   d$text[hbc]
   notes<-d$text[hba:hbc]
-  notes
+  notes<-notes[notes!=""]
   
 }
 # t<-readLines("qa.qmd")
@@ -38,7 +38,7 @@ get.notes<-function(docdir){
 #   c("## ",x[2],"")
 # })
 notes<-get.notes("..")
-
+notes
 #t2<-notes
 #x<-2
 put.qmd<-function(t2){
@@ -52,6 +52,7 @@ put.qmd<-function(t2){
   a<-stri_match(t,regex="(.*)(HYPERLINK.*)+")
   a
   n<-x
+  t<-gsub("^\n","",t)
   ifelse(sum(is.na(a))==length(a),t<-c(t,""),t<-c(paste0("## ",n),a[2],""))
   a
   return(t)
