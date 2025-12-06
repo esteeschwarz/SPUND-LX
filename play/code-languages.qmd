@@ -1,0 +1,67 @@
+
+```{mermaid}
+graph TD
+    LN[Langage Naturel Humain]
+    
+    LN --> LOGIC[Logique Mathématique & Algèbre]
+    LOGIC --> LAMBDA[Lambda Calcul - Church 1930s]
+    LOGIC --> TURING[Machine de Turing 1936]
+    
+    LAMBDA --> LISP[LISP 1958]
+    TURING --> ASM[Langage Assembleur 1940s]
+    
+    ASM --> FORTRAN[FORTRAN 1957]
+    FORTRAN --> BASIC[BASIC 1964]
+    FORTRAN --> C[C 1972]
+    FORTRAN --> S[S 1976]
+    S --> R[R 1993]
+
+    SCHEME --> R
+    LISP --> SCHEME[Scheme 1975]
+    LISP --> CLOJURE[Clojure 2007]
+    
+    ASM --> COBOL[COBOL 1959]
+    
+    C --> CPP[C++ 1985]
+    C --> OBJC[Objective-C 1984]
+    C --> PERL[Perl 1987]
+    
+    CPP --> JAVA[Java 1995]
+    CPP --> CSHARP[C# 2000]
+    CPP --> RUST[Rust 2010]
+    
+    JAVA --> KOTLIN[Kotlin 2011]
+    JAVA --> SCALA[Scala 2004]
+    
+    OBJC --> SWIFT[Swift 2014]
+    
+    BASIC --> VB[Visual Basic 1991]
+    
+    PERL --> PYTHON[Python 1991]
+    PERL --> PHP[PHP 1995]
+    PERL --> RUBY[Ruby 1995]
+    
+    PYTHON --> GO[Go 2009]
+    
+    RUBY --> CRYSTAL[Crystal 2014]
+    
+    SCHEME --> JS[JavaScript 1995]
+    JS --> TS[TypeScript 2012]
+    
+    C --> MATLAB[MATLAB 1984]
+    MATLAB --> JULIA[Julia 2012]
+    
+    LOGIC --> PROLOG[Prolog 1972]
+    LOGIC --> HASKELL[Haskell 1990]
+    
+    LAMBDA --> ML[ML 1973]
+    ML --> OCAML[OCaml 1996]
+    ML --> FSHARP[F# 2005]
+    
+    LN --> SQL[SQL 1974 - Langage déclaratif]
+    
+    style LN fill:#ffcccc
+    style LOGIC fill:#ffe6cc
+    style LAMBDA fill:#fff4cc
+    style TURING fill:#fff4cc
+```

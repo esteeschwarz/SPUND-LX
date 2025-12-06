@@ -73,3 +73,89 @@ write.table(data.frame(time=Sys.time(),elapsed=dur[3],row.names = "finished"),cs
 
 
 
+### 16501.claude
+# Approche avec boucles et état mutable
+diviseurs_imperatif <- function(n) {
+  resultat <- list()
+  
+  for(i in 1:n) {
+    divs <- c()  # état mutable
+    for(j in 1:i) {
+      if(i %% j == 0) {
+        divs <- c(divs, j)  # modification d'état
+      }
+    }
+    resultat[[i]] <- divs
+  }
+  
+  return(resultat)
+}
+
+# Usage
+div_imp <- diviseurs_imperatif(10)
+div_imp[[10]]  # [1]  1  2  5 10
+system.time(diviseurs_imperatif(1000))
+
+
+# Approche avec fonctions, pas de boucles explicites
+diviseurs_fonctionnel <- function(n) {
+  lapply(1:n, function(i) {
+    Filter(function(j) i %% j == 0, 1:i)
+  })
+}
+
+# Encore plus fonctionnel avec composition
+diviseurs_fonctionnel2 <- function(n) {
+  lapply(1:n, \(i) (1:i)[i %% (1:i) == 0])
+}
+
+# Usage
+div_func <- diviseurs_fonctionnel(10)
+div_func[[10]]  # [1]  1  2  5 10
+system.time(diviseurs_fonctionnel(1000))
+
+
+# Exploite la vectorisation de R - le plus "R-idiomatique"
+diviseurs_vectorise <- function(n) {
+ x<- lapply(1:n, \(i) which(i %% (1:i) == 0))
+ print(x)
+}
+
+# Ou avec outer() pour être encore plus vectorisé
+diviseurs_matrix <- function(n) {
+  nums <- 1:n
+  # Crée une matrice de modulos
+  mat <- outer(nums, nums, `%%`) == 0
+  # Pour chaque ligne, trouve les diviseurs
+  lapply(1:n, \(i) which(mat[i, 1:i]))
+}
+
+# Usage
+div_vec <- diviseurs_vectorise(1000)
+div_vec[[100]]  # [1]  1  2  4  5 10 20 25 50 100
+
+system.time(diviseurs_vectorise(1000))
+system.time(diviseurs_matrix(1000))
+
+
+system.time(diviseurs_vectorise(1000))
+
+p<-diviseurs_vectorise(10000)
+#library(purrr)
+l<-unlist(lapply(p,function(x){
+  length(x)
+}))
+plot(l,type="l")
+#histogram(l)
+which.max(l)
+w<-which(l==2)
+
+d<-diff(w)
+d
+plot(d,type="h")
+w[which.max(d):(which.max(d)+1)]
+
+
+
+
+
