@@ -14,11 +14,10 @@ bibliography: buechner.bib
 > instead of a long talk I encourage you to a little discussion oriented on (my) findings in the text read.
 
 # snc
-16497.2
+16497.2,16501,16502.2
 
 ## 1
 poetologische Reflexion von Büchners Verfahren, ein Sechstel seines Dramentextes unmittelbar aus historischen Darstellungen abzuschreiben 
-
 
 - buechner lässt hier das publikum seine eigene technik kommentieren und stellt sie damit in frage
 
@@ -28,7 +27,6 @@ Melancholie der Titelfigur mit einem posthistorischen Geschichtsverständnis in 
 ## 4
 Kaum war der sozialgeschichtliche Ansatz an die Stelle textimmanenter Analysen getreten, wurde er wieder von strukturalen und poststrukturalen Modellen hinterfragt 
 
-
 - wer? vertreter:
   - textimmanent
   - soz.geschichtl.
@@ -37,7 +35,6 @@ Kaum war der sozialgeschichtliche Ansatz an die Stelle textimmanenter Analysen g
 
 ## 6
 Alternative zwischen ‚eigenem‘ Text und ‚fremden‘Kontext gerät spätestens ins Wanken, wenn die Kontexte selbst zur ästhetischen Faktur eines literarischen Textes werden, wenn die Texte also durch eine, modern gesprochen, dokumentarische Montage nicht nur historisch kontextualisierbar sind, sondern die entsprechenden Kontexte auf der Textoberfläche selbst präsentieren und zum Teil des Textes werden lassen. 
-
 
 - volk *ist* kontext;  *wird* selbst sprecher, das den kontext kommentiert *und* seine darstellung
 

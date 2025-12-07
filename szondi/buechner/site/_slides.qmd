@@ -14,5 +14,5 @@ bibliography: buechner.bib
 > instead of a long talk I encourage you to a little discussion oriented on (my) findings in the text read.
 
 # snc
-16497.2,16501,16502
+16497.2,16501,16502.2
 

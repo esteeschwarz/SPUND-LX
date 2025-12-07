@@ -38,12 +38,13 @@ get.notes<-function(docdir){
 #   c("## ",x[2],"")
 # })
 notes<-get.notes("..")
-notes
+notes[1:10]
 #t2<-notes
 #x<-2
 put.qmd<-function(t2){
   library(stringi)
   t2<-t2[2:length(t2)]
+  tdf<-data.frame(id=1:length(t2),a=NA,t=NA)
   a2<-lapply(seq_along(t2), function(x){
 
   t<-t2[x]
@@ -52,10 +53,20 @@ put.qmd<-function(t2){
   a<-stri_match(t,regex="(.*)(HYPERLINK.*)+")
   a
   n<-x
+  cat("run",n,"\n")
+  print(length(a[2]))
+  print(a[2])
+  print(length(t))
+  #print(t)
   t<-gsub("^\n","",t)
-  ifelse(sum(is.na(a))==length(a),t<-c(t,""),t<-c(paste0("## ",n),a[2],""))
+  print(t)
+  tdf$id[x]<-n
+  print(sum(is.na(a))==length(a))
+  ifelse(sum(is.na(a))==length(a),tdf$a[n]<-t,tdf$a[n]<-a[2])
+  print("chk1")
+  ifelse(sum(is.na(a))==length(a),tdf$t[n]<-paste0(t,"\n"),tdf$t[n]<-paste0("## ",n,"\n",a[2],"\n"))
   a
-  return(t)
+  return(tdf[n,])
   #t<-t
   #n<-a[2]
   
@@ -63,9 +74,11 @@ put.qmd<-function(t2){
   n<-paste0("## ",n)
   c(n,t,"")
 })
-a2<-unlist(a2)
+library(abind)
+a3<-data.frame(abind(a2,along = 1))
 }
 a2<-put.qmd(notes)
+a2$t[1:10]
 #notes
 #a2
 a3<-readLines("_slides.qmd")
@@ -73,7 +86,11 @@ a3<-readLines("_slides.qmd")
 #a4<-c(a3,a2)
 refs<-"# references{#references}"
 a4<-c(a3,a2,"",refs)
+a4<-c(a3,a2$t,"",refs)
 writeLines(a4,"slides.qmd")
+a3<-readLines("_qa.qmd")
+a4<-c(a3,a2$t,"",refs)
+writeLines(a4,"qa.qmd")
 
 ### get notes from marginnote docx export
 

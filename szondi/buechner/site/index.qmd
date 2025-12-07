@@ -43,6 +43,15 @@ writeLines(lines,src)
 
 ```
 
+```{r}
+#| echo: false
+#| warning: false
+
+tdf<-read.csv("qa.csv")
+m2<-grep("(elancholi)",tdf$t)
+m1<-grep("(.evolution)",tdf$t)
+
+```
 
 {{< include task001-ul.md >}}
 

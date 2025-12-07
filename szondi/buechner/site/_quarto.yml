@@ -8,7 +8,6 @@ website:
     left:
     - href: https://esteeschwarz.github.io/open-lx/posts/buechner-a
       text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
-    - qa.qmd
     - slides.qmd
     right:
     - snc.qmd
