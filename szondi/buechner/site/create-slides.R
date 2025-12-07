@@ -101,4 +101,8 @@ src<-"task001-ul.md"
 t<-readLines(src)
 lines <- gsub("\\\\_", "_", t)
 #md<-tempfile(fileext = ".md")
-writeLines(lines,paste0(src,".qmd"))
+srcqmd<-paste0(src,".qmd")
+writeLines(lines,srcqmd)
+
+cat("-------- written qmd: ",srcqmd,"------\n")
+
