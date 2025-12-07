@@ -23,7 +23,7 @@ ids: buechner-a
 #| echo: false
 #| output: false
 #| warning: false
-source("create-slides.R") #todo: update docker first with package: stringi,yaml; updated, should work now.
+#source("create-slides.R") #todo: update docker first with package: stringi,yaml; updated, should work now.
 ```
 
 ```{r}
@@ -31,11 +31,14 @@ source("create-slides.R") #todo: update docker first with package: stringi,yaml;
 #| output: false
 #| warning: false
 #| include: false
+#| execute: false
+#| eval: false
+
 
 #stmp <- tempfile(fileext = ".qmd")
 src<-"task001-ul.md"
 ### correct ulysses md issues
-t<-readLines(src)
+#t<-readLines(src)
 lines <- gsub("\\\\_", "_", t)
 #md<-tempfile(fileext = ".md")
 writeLines(lines,src)
@@ -43,15 +46,6 @@ writeLines(lines,src)
 
 ```
 
-```{r}
-#| echo: false
-#| warning: false
 
-tdf<-read.csv("qa.csv")
-m2<-grep("(elancholi)",tdf$t)
-m1<-grep("(.evolution)",tdf$t)
-
-```
-
-{{< include filename=task001-ul.md.qmd >}}
+{{< include _task001-ul.md >}}
 

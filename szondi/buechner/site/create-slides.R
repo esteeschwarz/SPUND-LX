@@ -55,11 +55,11 @@ put.qmd<-function(t2){
   n<-x
   cat("run",n,"\n")
   print(length(a[2]))
-  print(a[2])
+  #print(a[2])
   print(length(t))
   #print(t)
   t<-gsub("^\n","",t)
-  print(t)
+  #print(t)
   tdf$id[x]<-n
   print(sum(is.na(a))==length(a))
   ifelse(sum(is.na(a))==length(a),tdf$a[n]<-t,tdf$a[n]<-a[2])
@@ -96,13 +96,14 @@ writeLines(a4,"qa.qmd")
 
 
 
-src<-"task001-ul.md"
+src<-"_task001-ul.md"
 ### correct ulysses md issues
 t<-readLines(src)
 lines <- gsub("\\\\_", "_", t)
 #md<-tempfile(fileext = ".md")
 srcqmd<-paste0(src,".qmd")
-writeLines(lines,srcqmd)
+#writeLines(lines,srcqmd)
+writeLines(lines,src)
 
 cat("-------- written qmd: ",srcqmd,"------\n")
 

@@ -1,10 +1,10 @@
 ---
 title: QA
 bibliography: buechner.bib
-nocite: '@pethes_war_2006'
+#nocite: '@pethes_war_2006'
 ---
 
-# annotations: reception pethes
+# annotations: reception @pethes_war_2006
 ## 1
 poetologische Reflexion von Büchners Verfahren, ein Sechstel seines Dramentextes unmittelbar aus historischen Darstellungen abzuschreiben 
 

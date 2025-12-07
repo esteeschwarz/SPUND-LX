@@ -1,0 +1,9 @@
+```{r}
+#| echo: false
+#| warning: false
+#print("vvars qmd run...")
+tdf<-read.csv("qa.csv")
+m2<-grep("(elancholi)",tdf$t)
+m1<-grep("(.evolution)",tdf$t)
+
+```

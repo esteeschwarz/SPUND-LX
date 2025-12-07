@@ -7,12 +7,14 @@ im sinne pethes ist unter "rezeption" an dieser stelle eher buechners rezeption 
 ## repetition
 buechner hat hier (in Danton, Lenz, Woyzeck) eine quelleninterpretation gewählt, die es ihm erlaubt, die historischen (damals schon) dokumente in seinem werk auch auf der metaebene einzusetzen, zb. um aussagen seiner protagonisten mittels derselben zu relativieren. so wird im *danton* die "langeweile", die die ausführungen der revolutionsführer beim publikum (dem volk) auslösen in @pethes_war_2006 als eintrag buechners zur historizität der - bzw. jeglicher - revolutionsbestrebungen verstanden, (QA: @tbl-rev). die geschichte, an der festgestellt wird, dasz sie sich fortwährend - stets an anderen protagonisten - wiederholt, schafft beständig selbst gründe für ihre aufhebung. nichts soll ernstgenommen werden, da es in der zukunft hinfällig ist. keine glaubensgrundsätze, ideologien, überzeugungen halten dem nächsten paradigmenwechsel stand. und an dieser stelle tritt auch die **melancholia** auf...
 
+{{< include _vars.qmd >}}
+
 ```{r}
 #| label: tbl-rev
 #| tbl-cap: "annotations: revolution"
 #| echo: false
 #| warning: false
-kdf<-data.frame(annotations=tdf$a[m1])
+kdf<-data.frame(id=m1,annotations=tdf$a[m1])
 
 knitr::kable(kdf)
 
@@ -26,7 +28,7 @@ zieht sich durch das werk buechners (QA: @tbl-mel) und das motiv wird hier von p
 #| tbl-cap: "annotations: melancholie"
 #| echo: false
 #| warning: false
-kdf<-data.frame(annotations=tdf$a[m2])
+kdf<-data.frame(id=m2,annotations=tdf$a[m2])
 
 knitr::kable(kdf)
 
