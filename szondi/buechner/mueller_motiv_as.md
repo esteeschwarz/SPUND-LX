@@ -1,4 +1,3 @@
-# heiner müller, motiv bei a.s.
 debuisson auf jamaica
 zwischen schwarzen brüsten
 in paris robespierre

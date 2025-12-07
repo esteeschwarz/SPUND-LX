@@ -2,6 +2,8 @@
 ## dokufiktion
 im sinne pethes ist unter "rezeption" an dieser stelle eher buechners rezeption der konsultierten quellen, sein umgang selber damit, zu verstehen; weniger eine buechner-rezeption. er legt dar, wie buechner zu seiner zeit die dokumente einzubetten gelingt, vielleicht schon ganz im stil einer heute so verstandenen "dokufiktion", die mit den mitteln authentischer bis fiktionaler dokumentation von zeitgeschehen arbeitet und dabei ihren reiz daraus zieht, dasz neben der bloszen aufzählung von fakten oder gegebenheiten diese mal mehr oder weniger literarisch verwandelt werden dh. unterhaltsam. beispiele davon sehen wir (seminar dokufiktion Brüggemann, WS25) zb. bei Margerite Duras, W.G. Sebald und anderen.
 
+![Q: heiner müller, motiv a.s. - stable diffusion output: nur halb fiktiv](stable-diff-001.png)
+
 ## repetition
 buechner hat hier (in Danton, Lenz, Woyzeck) eine quelleninterpretation gewählt, die es ihm erlaubt, die historischen (damals schon) dokumente in seinem werk auch auf der metaebene einzusetzen, zb. um aussagen seiner protagonisten mittels derselben zu relativieren. so wird im *danton* die "langeweile", die die ausführungen der revolutionsführer beim publikum (dem volk) auslösen in @pethes_war_2006 als eintrag buechners zur historizität der - bzw. jeglicher - revolutionsbestrebungen verstanden, ([QA][1]: 17, 23, 29, 33, 34). die geschichte, an der festgestellt wird, dasz sie sich fortwährend - stets an anderen protagonisten - wiederholt, schafft beständig selbst gründe für ihre aufhebung. nichts soll ernstgenommen werden, da es in der zukunft hinfällig ist. keine glaubensgrundsätze, ideologien, überzeugungen halten dem nächsten paradigmenwechsel stand. und an dieser stelle tritt auch die **melancholia** auf...
 
