@@ -79,6 +79,7 @@ a3<-data.frame(abind(a2,along = 1))
 }
 a2<-put.qmd(notes)
 a2$t[1:10]
+write.csv(a2,"qa.csv")
 #notes
 #a2
 a3<-readLines("_slides.qmd")
