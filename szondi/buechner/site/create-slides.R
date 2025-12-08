@@ -79,6 +79,7 @@ a3<-data.frame(abind(a2,along = 1))
 }
 a2<-put.qmd(notes)
 a2$t[1:10]
+a2$t<-gsub("(http[s]*://.+)(?>[ \\\n])","[see linked source](\\1)",a2$t,perl = T)
 write.csv(a2,"qa.csv")
 #notes
 #a2
