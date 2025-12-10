@@ -48,7 +48,10 @@ cat("--------\nnumber of hits:",length(df$Hit),"\n---------\n")
 # writeLines(t,"dwds.q.html")
 
 lm<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/dwds_lemmata.csv"))
+sum(grepl("klima",lm$lemma))
+lm$lemma[grepl("[kK]lima",lm$lemma)]
 l1.u<-lm$url[sample(200000,1)]
+l1.u<-lm$url[lm$lemma=="nervös"]
 r<-GET(l1.u,add_headers(
   `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 ))
