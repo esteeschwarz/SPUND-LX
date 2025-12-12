@@ -89,3 +89,46 @@ df.pos<-list(co=dfco.pos,cl=dfcl.pos)
 # # df.cl<-data.frame(abind(df.cl,along = 1)
 # # 
 # # 
+spacymodel<-"en_core_web_lg"
+spacy.stopwords<-read.csv("spacy-stopwords.csv")
+stopw<-c("er","erm","oh","yeah","mm","mhm","y")
+stopwords<-rbind(spacy.stopwords,stopw)
+# chunks of 10
+vector <- 1:length(dfcl.pos$doc_id)
+chunk_size <- 10  # Example chunk size
+
+# Function to split the vector into chunks of equal length
+split_into_chunks <- function(vec, chunk_size) {
+  split(vec, ceiling(seq_along(vec) / chunk_size))
+}
+
+# Split the vector into chunks
+chunks <- split_into_chunks(vector, chunk_size)
+
+
+
+t1<-table(dfcl.pos$token)
+t2<-table(dfco.pos$token)
+tdf2<-data.frame(t2,target="co")
+tdf1<-data.frame(t1,target="cl")
+tdf<-rbind(tdf1,tdf2)
+colnames(tdf)<-c("token","freq","target")
+m<-duplicated(tdf$token)
+tdf$unique<-1
+m2<-tdf$token%in%tdf$token[m]
+sum(m2)
+tdf$unique[m2]<-0
+sum(m)
+m<-tdf$token%in%stopwords$stopword
+sum(m)
+tdf$stopword<-0
+tdf$stopword[m]<-1
+tdf<-tdf[order(tdf$token),]
+tdf[tdf$unique&!tdf$stopword,]
+# tdf.cl<-tdf[!m,]
+# tdf.co<-tdf[!m,]
+# tdf.cpt<-rbind(tdf.cl,tdf.co)
+# tdf.cpt<-tdf.cpt[!duplicated()]
+# m<-tdf.cl$token%in%tdf.co$token
+write.csv(tdf,"tokenlist_DAIS-cpt.csv")
+
