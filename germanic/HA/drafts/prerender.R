@@ -43,9 +43,10 @@ get.notes<-function(docdir){
 #   c("## ",x[2],"")
 # })
 notes<-get.notes("..")
-notes[1:10]
-#t2<-notes
-#x<-2
+notes[1:50]
+notes[39]
+t2<-notes
+x<-38
 put.qmd<-function(t2){
   library(stringi)
   t2<-t2[2:length(t2)]
@@ -55,20 +56,21 @@ put.qmd<-function(t2){
   t<-t2[x]
   t
  # a<-stri_match(t,regex="([0-9]+)\\. (.+)( \\\\>\\\\>)")
-  a<-stri_match(t,regex="(.*)(HYPERLINK.*)+")
+  a<-stri_match(t,regex="(.*)(HYPERLINK.*>>)")
+#  a<-stri_match(t,regex="(.*)")
   a
   n<-x
-  cat("run",n,"\n")
-  print(length(a[2]))
+  #cat("run",n,"\n")
+  #print(length(a[2]))
   #print(a[2])
-  print(length(t))
+  #print(length(t))
   #print(t)
   t<-gsub("^\n","",t)
   #print(t)
   tdf$id[x]<-n
-  print(sum(is.na(a))==length(a))
+  #print(sum(is.na(a))==length(a))
   ifelse(sum(is.na(a))==length(a),tdf$a[n]<-t,tdf$a[n]<-a[2])
-  print("chk1")
+  #print("chk1")
   ifelse(sum(is.na(a))==length(a),tdf$t[n]<-paste0(t,"\n"),tdf$t[n]<-paste0("## ",n,"\n",a[2],"\n"))
   a
   return(tdf[n,])
@@ -84,29 +86,32 @@ a3<-data.frame(abind(a2,along = 1))
 }
 notes
 a2<-put.qmd(notes)
-a2$t[1:10]
+#a2$t[1:10]
 a2$t<-gsub("(http[s]*://.+)(?>[ \\\n])","[see linked source](\\1)",a2$t,perl = T)
 write.csv(a2,"qa.csv")
 #notes
 #a2
 
-get.slides<-function(){
-a3<-readLines("_slides.qmd")
+get.slides<-function(a2){
+#a3<-readLines("_slides.qmd")
 #m<-grep("x-content",a3)
 #a4<-c(a3,a2)
 refs<-"# references{#references}"
-a4<-c(a3,a2,"",refs)
-a4<-c(a3,a2$t,"",refs)
-writeLines(a4,"slides.qmd")
+# a4<-c(a3,a2,"",refs)
+# a4<-c(a3,a2$t,"",refs)
+# writeLines(a4,"slides.qmd")
 a3<-readLines("_qa.qmd")
 a4<-c(a3,a2$t,"",refs)
-writeLines(a4,"qa.qmd")
+#writeLines(a4,"qa.qmd")
+writeLines(a3,"qa.qmd")
+#cat("-------- written qa.qmd: ------\n")
 
 ### get notes from marginnote docx export
 
 }
+get.slides(a2)
 
-src<-"_abstractB-ul.md"
+#src<-"_abstractB-ul.md"
 f<-list.files()
 k<-2
 m<-grep("-ul.md",f)
@@ -119,9 +124,9 @@ t<-readLines(src)
 #lines <- gsub("(?={{)\\\\>", ">", lines,perl = T)
 lines <- gsub("(?=\\\\)([>_])", "\\1du", t,perl = T)
 #md<-tempfile(fileext = ".md")
-srcqmd<-paste0(src,".qmd")
+#srcqmd<-paste0(src,".qmd")
 #writeLines(lines,srcqmd)
 writeLines(lines,src)
+cat("-------- written md: ",src,"------\n")
 }
-cat("-------- written qmd: ",srcqmd,"------\n")
 

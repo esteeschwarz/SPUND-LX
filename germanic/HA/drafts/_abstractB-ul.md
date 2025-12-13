@@ -58,6 +58,9 @@ the research-question-still-to-develop will orientate on the following table of 
 #| tbl-cap: "annotations: revolution"
 #| echo: false
 #| warning: false
+#| eval: false
+
+
 kdf<-data.frame(id=m1,annotations=tdf$a[m1])
 
 knitr::kable(kdf)

@@ -12,16 +12,18 @@ website:
     left:
       - href: https://esteeschwarz.github.io/open-lx/posts/germanic-ha
         text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
-
-      - text: drafts
+      - text: expose
+        menu:  
+          - href: draft-B.qmd
+            text: expose
+          - qa.qmd
+      - play.qmd
+      - text: drafts out
         menu:
           - href: draft-A.qmd
             text: draft A
-          - href: draft-B.qmd
-            text: draft B
           - href: draft-C.qmd
-            text: draft C
-      - play.qmd
+            text: draft C      
     right:
       # - href: draft-A.pdf
       #   text: pdf-temp
