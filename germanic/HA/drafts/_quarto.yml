@@ -15,7 +15,7 @@ website:
       - text: expose
         menu:  
           - href: draft-B.qmd
-            text: expose
+            text: draft B
           - qa.qmd
       - play.qmd
       - text: drafts out

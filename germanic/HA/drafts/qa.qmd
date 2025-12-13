@@ -9,8 +9,8 @@ bibliography: germanic-ai.bib
 {{< include _vars.qmd >}}
 
 ```{r}
-#| label: tbl-rev
-#| tbl-cap: "annotations: revolution"
+#| label: tbl-qa
+#| tbl-cap: "annotations: BSI"
 #| echo: false
 #| warning: false
 #| eval: true
