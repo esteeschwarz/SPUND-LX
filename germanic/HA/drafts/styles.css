@@ -28,3 +28,5 @@ pre code {
   word-break: break-word !important;
   white-space: pre-wrap !important;
 }
+
+h6 {text-align:left; overflow-x: scroll; color: #d3bd7e; background: #202020; padding: 10pt 15pt; border-radius: 3px;font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;white-space:pre;margin-bottom:0.5em;margin-top:2em;left:10%;}

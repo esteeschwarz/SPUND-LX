@@ -1,16 +1,16 @@
 ---
-title: "xtitle"
-subtitle: "AI and language change & variation"
+title: "samling"
+subtitle: "draft B samling"
 author: "st. schwarz"
 date: "`r Sys.time()`"
 # date: today
 # date-format: "YYYYMMDD(HH.mm)" # doesnt include time
-tags: [LX,sociolinguistics,HA,AI speech,register,prompt linguistics]
+tags: [LX,HA,AI speech,brainstorming]
 # bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
-bibliography: germanic-ai.bib
-nocite: '@*'
+bibliography: germanic-exc.bib
+# nocite: '@*'
 url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
-description: "germanic languages project draft B"
+description: "germanic languages project draft B - samling"
 link-citations: true
 github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
 ---
@@ -38,6 +38,6 @@ load pdf [here](.pdf)
 -->
 # index
 
-{{< include _abstractB-ul.md >}}
+{{< include _play-ul.md >}}
 
 # References

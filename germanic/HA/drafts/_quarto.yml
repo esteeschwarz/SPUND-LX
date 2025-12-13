@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: ../../../q/germanic/001
+  pre-render: "prerender.R"
+
 params:
     reload: false
 
@@ -19,6 +21,7 @@ website:
             text: draft B
           - href: draft-C.qmd
             text: draft C
+          - play.qmd
     right:
       # - href: draft-A.pdf
       #   text: pdf-temp
