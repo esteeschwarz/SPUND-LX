@@ -1,10 +1,10 @@
 # GPT essais
 
 # bezug
-(bild selbst zu posten problematisch...)
 
-[chatGPT generated image](https://chatgpt.com/s/m_693ce54daa28819192dcb6622dedddbe)
+<!--[chatGPT generated image](https://chatgpt.com/s/m_693ce54daa28819192dcb6622dedddbe)-->
 
+![Q: transformer generated image](https://ada-sub.dh-index.org/school/api/png/lx/gpt-001-endetag.jpg)
 
 
 # prompt 1: 

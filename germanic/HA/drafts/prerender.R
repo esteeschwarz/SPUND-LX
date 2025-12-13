@@ -12,7 +12,7 @@ get.notes<-function(docdir){
   d
   m<-grep("Wie KI unsere Sprache",d$text)
   h1<-d$style_name=="Heading 1"
-  h1<-d$level==1
+  #h1<-d$level==1 # wks only on tapee, different officer version?
   h1<-which(h1)
   hb<-m==h1
   hba<-which(hb)

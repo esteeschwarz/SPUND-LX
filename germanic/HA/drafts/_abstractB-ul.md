@@ -24,6 +24,15 @@ first to do would be to create (or search for) a corpus of AI generated output. 
 	2. is there then societal adaptation of AI produced language?
 	3. what are the rules (historic evidence) for adaptation?
 
+## going deeper
+### corpus creation
+as proposed in @sec-methods a secure way to building a corpus of AI speech - which we need to explore phenomena - is to archive LLM output to dedicated prompts. we will use an open source model provided with llama which can run on a local machine and is adressed via an API by script.
+
+#### constraints
+we will form prompts following these directives lead by our research question:
+1. correction of mistakes to devise actual "knowledge" of model concerning standardisation and normative aspects
+2. 
+
 # capacities
 to arrive at a research question, maybe discarding above
 

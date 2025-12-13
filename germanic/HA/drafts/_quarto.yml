@@ -21,7 +21,7 @@ website:
             text: draft B
           - href: draft-C.qmd
             text: draft C
-          - play.qmd
+      - play.qmd
     right:
       # - href: draft-A.pdf
       #   text: pdf-temp
