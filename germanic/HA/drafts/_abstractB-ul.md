@@ -24,4 +24,18 @@ first to do would be to create (or search for) a corpus of AI generated output. 
 	2. is there then societal adaptation of AI produced language?
 	3. what are the rules (historic evidence) for adaptation?
 
+## capacities
+to arrive at a research question, maybe discarding above
+
+### what i would like to...
+- AI chat queries analysis
+- analyse linguistic knowledge capacities of AIs
+- proofread responses, factchecking
+
+### and what i  actually **can** do
+- statistics
+- automated prompting using APIs
+- automated response processing
+- masked prompt generation
+
 [^1]:	which could very well be adapted to our research question
