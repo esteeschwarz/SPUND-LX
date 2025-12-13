@@ -47,7 +47,7 @@ to arrive at a research question, maybe discarding above
 - masked prompt generation
 
 # annotations
-{{< include_vars.qmd >}}
+{{< include _vars.qmd >}}
 
 the research-question-still-to-develop will orientate on the following table of my annotations on Q: @bsi_wie_2025 where i did find some interesting points although the source itself may be subject to doubt.
 
