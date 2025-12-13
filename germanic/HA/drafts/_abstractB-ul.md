@@ -13,7 +13,7 @@ But: what if learners or people with deficient language skills begin to sync the
 
 There may also be tiny (oberlehrerhafte) standardisations of our own speech peculiarities (idiosyncrasies) we are confronted with which we are kind of nudged to relativate if always sending them into a black hole.
 
-## methods
+## methods {#sec-methods}
 first to do would be to create (or search for) a corpus of AI generated output. to use an existing corpus would prevent biasing which on the other hand could be interesting to explore i.e. we could by building (generating) a corpus ourselves on the basis of certain dedicated prompts[^1] force the AI to generate phenomena of interest to our research question. where we get into medias res...
 
 ## focusing questions
@@ -31,7 +31,6 @@ as proposed in @sec-methods a secure way to building a corpus of AI speech - whi
 #### constraints
 we will form prompts following these directives lead by our research question:
 1. correction of mistakes to devise actual "knowledge" of model concerning standardisation and normative aspects
-2. 
 
 # capacities
 to arrive at a research question, maybe discarding above
@@ -48,9 +47,11 @@ to arrive at a research question, maybe discarding above
 - masked prompt generation
 
 # annotations
-Q: @bsi_wie_2025
+{{< include_vars.qmd >}}
 
-{{< include _vars.qmd >}}
+the research-question-still-to-develop will orientate on the following table of my annotations on Q: @bsi_wie_2025 where i did find some interesting points although the source itself may be subject to doubt.
+
+**prompt-linguistics** seems to be a promising keyword in this context, also @vechta_u_beyond_2024 published a CfP[^2] in that genre for a themenheft which will be published april 2026 titled: **Themenheft Beyond Prompting?! Sozio-technische Systeme, KI und Medienbildung in der Post-Digitalität**, edited by Annekatrin Bock, Lina Franken, Franco Rau, Jessica Kühn und Ada Fehr. 
 
 ```{r}
 #| label: tbl-rev
@@ -64,3 +65,5 @@ knitr::kable(kdf)
 ```
 
 [^1]:	which could very well be adapted to our research question
+
+[^2]:	for which i in the moment dont find a reliable source anymore so its not cited.

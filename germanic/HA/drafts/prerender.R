@@ -107,13 +107,21 @@ writeLines(a4,"qa.qmd")
 }
 
 src<-"_abstractB-ul.md"
+f<-list.files()
+k<-2
+m<-grep("-ul.md",f)
+for(k in m){
+src<-f[k]  
+
 ### correct ulysses md issues
 t<-readLines(src)
-lines <- gsub("\\\\_", "_", t)
+#lines <- gsub("\\\\_", "_", t)
+#lines <- gsub("(?={{)\\\\>", ">", lines,perl = T)
+lines <- gsub("(?=\\\\)([>_])", "\\1du", t,perl = T)
 #md<-tempfile(fileext = ".md")
 srcqmd<-paste0(src,".qmd")
 #writeLines(lines,srcqmd)
 writeLines(lines,src)
-
+}
 cat("-------- written qmd: ",srcqmd,"------\n")
 
