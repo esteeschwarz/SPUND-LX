@@ -124,7 +124,9 @@ sum(m)
 tdf$stopword<-0
 tdf$stopword[m]<-1
 tdf<-tdf[order(tdf$token),]
-tdf[tdf$unique&!tdf$stopword,]
+m<-tdf$unique&!tdf$stopword&tdf$freq>6
+sum(m)
+tdf[m,]
 # tdf.cl<-tdf[!m,]
 # tdf.co<-tdf[!m,]
 # tdf.cpt<-rbind(tdf.cl,tdf.co)
