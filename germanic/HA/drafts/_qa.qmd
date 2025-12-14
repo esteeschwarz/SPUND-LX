@@ -8,7 +8,7 @@ bibliography: germanic-ai.bib
 
 ---
 
-# annotations @bsi_wie_2025
+#### notes on @bsi_wie_2025
 
 {{< include _vars.qmd >}}
 
