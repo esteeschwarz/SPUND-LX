@@ -13,7 +13,7 @@ website:
   navbar:
     left:
       - href: ../../..
-        text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+        text: '<img src="../../../images/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
       - text: expose
         menu:  
           - href: draft-B.qmd

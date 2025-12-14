@@ -7,7 +7,7 @@ website:
   navbar:
     left:
     - href: ../../
-      text: '<img src="../../../q/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+      text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
     - slides.qmd
     right:
     - snc.qmd

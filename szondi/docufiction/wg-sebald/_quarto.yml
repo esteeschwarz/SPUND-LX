@@ -9,7 +9,7 @@ website:
   navbar:
     left:
       - href: ../../../
-        text: '<img src="../../../q/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+        text: '<img src="../../../images/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
       - about.qmd
       - raw.qmd
       - samling.qmd
