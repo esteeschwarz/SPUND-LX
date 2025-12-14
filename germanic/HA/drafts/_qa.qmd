@@ -1,16 +1,22 @@
 ---
-title: QA
+title: annotations
 bibliography: germanic-ai.bib
 #nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+
 ---
 
 # annotations @bsi_wie_2025
 
 {{< include _vars.qmd >}}
 
+`r tblcap<-paste0("Table ",params$tables$tbl_qa$num,", BSI: annotations")`
+
 ```{r}
-#| label: tbl-qa
-#| tbl-cap: "annotations: BSI"
+#| label: tbl_qa
+#| tbl-cap: !expr 'tblcap'
 #| echo: false
 #| warning: false
 #| eval: true

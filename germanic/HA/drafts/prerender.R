@@ -43,8 +43,8 @@ get.notes<-function(docdir){
 #   c("## ",x[2],"")
 # })
 notes<-get.notes("..")
-notes[1:50]
-notes[39]
+#notes[1:50]
+#notes[39]
 t2<-notes
 x<-38
 put.qmd<-function(t2){
@@ -54,11 +54,11 @@ put.qmd<-function(t2){
   a2<-lapply(seq_along(t2), function(x){
 
   t<-t2[x]
-  t
+ # t
  # a<-stri_match(t,regex="([0-9]+)\\. (.+)( \\\\>\\\\>)")
   a<-stri_match(t,regex="(.*)(HYPERLINK.*>>)")
 #  a<-stri_match(t,regex="(.*)")
-  a
+ # a
   n<-x
   #cat("run",n,"\n")
   #print(length(a[2]))
