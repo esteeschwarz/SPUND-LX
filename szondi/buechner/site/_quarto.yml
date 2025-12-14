@@ -6,7 +6,7 @@ website:
   title: '006'
   navbar:
     left:
-    - href: https://esteeschwarz.github.io/open-lx/posts/buechner-a
+    - href: ../../..
       text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
     - slides.qmd
     right:

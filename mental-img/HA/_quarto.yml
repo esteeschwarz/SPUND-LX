@@ -6,8 +6,8 @@ website:
   title: "003"
   navbar:
     left:
-      - href: https://esteeschwarz.github.io/open-lx/posts/smi-a
-        text: INDEX
+      - href: ../../..
+        text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
     right:
       - snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/mental-img

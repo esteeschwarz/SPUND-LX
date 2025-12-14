@@ -8,8 +8,8 @@ website:
   title: "001"
   navbar:
     left:
-      - href: ../../../posts/sebald
-        text: home
+      - href: ../../..
+        text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
       - about.qmd
       - raw.qmd
       - samling.qmd
