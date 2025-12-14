@@ -12,7 +12,7 @@ website:
   title: "project drafts"
   navbar:
     left:
-      - href: ../../posts/germanic-ha
+      - href: ../../../posts/germanic-ha
         text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
       - text: expose
         menu:  
