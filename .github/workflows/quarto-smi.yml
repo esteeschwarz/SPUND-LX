@@ -52,9 +52,7 @@ jobs:
 
     - name: Copy into Repo B/public
       run: |
-       #    rm -rf target/public/*
-       #   mkdir -p target/public
-        cp -r q-open/* target/essais/
+          cp -r q-open/* target/essais/
 
     - name: Commit and push
       run: |
@@ -75,8 +73,6 @@ jobs:
 
     - name: Copy into Repo C/public
       run: |
-        #    rm -rf target/public/*
-        #   mkdir -p target/public
          cp -r q-open/* target/essais/
     - name: Commit and push
       run: |
