@@ -5,7 +5,7 @@ params:
     reload: false
 
 website:
-  title: "001"
+  title: "010"
   navbar:
     left:
       - href: ../../../

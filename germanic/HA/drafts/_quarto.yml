@@ -9,7 +9,7 @@ params:
 
 
 website:
-  title: "project drafts"
+  title: "006"
   navbar:
     left:
       - href: ../../..

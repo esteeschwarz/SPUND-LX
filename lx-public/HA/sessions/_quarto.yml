@@ -3,11 +3,11 @@ project:
   # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
   output-dir: ../../../q/publx/001
 website:
-  title: "003"
+  title: "007"
   navbar:
     left:
       - href: https://esteeschwarz.github.io/open-lx/posts/g-mcculloch
-        text: INDEX
+        text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
     right:
       - snc.qmd
 

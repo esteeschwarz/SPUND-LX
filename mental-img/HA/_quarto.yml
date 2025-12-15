@@ -3,7 +3,7 @@ project:
   # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
   output-dir: ../../q/smi/001
 website:
-  title: "003"
+  title: "009"
   navbar:
     left:
       - href: ../../..

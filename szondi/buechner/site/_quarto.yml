@@ -3,7 +3,7 @@ project:
   output-dir: ../../../q/buechner-a
   pre-render: "create-slides.R"
 website:
-  title: '006'
+  title: '011'
   navbar:
     left:
     - href: ../../
