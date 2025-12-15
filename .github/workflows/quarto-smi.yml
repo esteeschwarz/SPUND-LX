@@ -64,7 +64,8 @@ jobs:
           git push
       env:
           GITHUB_TOKEN: ${{ secrets.TARGET_REPO_PAT }}
-        - name: Check out Repo C
+      
+    - name: Check out Repo C
       uses: actions/checkout@v4
       with:
         repository: esteeschwarz/DC-LX
