@@ -7,7 +7,7 @@ website:
   navbar:
     left:
       - href: ../../..
-        text: ../../../images/backward.end.alt.svg
+        text: '<img src="../../../images/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
     right:
       - snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/lx-public
