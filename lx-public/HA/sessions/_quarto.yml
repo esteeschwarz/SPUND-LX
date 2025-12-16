@@ -6,10 +6,13 @@ website:
   title: "007"
   navbar:
     left:
-      - href: https://esteeschwarz.github.io/open-lx/posts/g-mcculloch
-        text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+      - href: ../../..
+        text: ../../../images/backward.end.alt.svg
     right:
       - snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/lx-public
+        icon: github
+
 
 format:
   html:
