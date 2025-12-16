@@ -8,7 +8,8 @@ tags: [LX,sociolinguistics,HA,shibboleth,register]
 # bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
 bibliography: germanic-exc.bib
 nocite: '@*'
-url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+# url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+url: "https://esteeschwarz.github.io/DC-LX/linguistics/germanic-ha"
 description: "germanic languages project draft A"
 link-citations: true
 github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"

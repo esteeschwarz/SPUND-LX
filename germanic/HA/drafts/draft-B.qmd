@@ -1,5 +1,5 @@
 ---
-title: "xtitle"
+title: "xtitle/AI"
 subtitle: "AI and language change & variation"
 author: "st. schwarz"
 date: "`r Sys.time()`"
@@ -9,7 +9,8 @@ tags: [LX,sociolinguistics,HA,AI speech,register,prompt linguistics]
 # bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
 bibliography: germanic-ai.bib
 nocite: '@*'
-url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+# url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
+url: "https://esteeschwarz.github.io/DC-LX/linguistics/germanic-ha"
 description: "germanic languages project draft B"
 link-citations: true
 github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
