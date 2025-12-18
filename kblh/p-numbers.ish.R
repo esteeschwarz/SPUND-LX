@@ -1,7 +1,16 @@
 # Exploite la vectorisation de R - le plus "R-idiomatique"
 diviseurs_vectorise <- function(n) {
-  x<- lapply(1:n, \(i) which(i %% (1:i) == 0))
- # print(x)
+  t<-system.time(x<- lapply(1:n, function(i) {
+	  cat("\rvectorisation: ",i,"\t")
+	  p<-which(i %% (1:i) == 0)
+    return(p)
+  }
+  )
+	  )
+	  
+  
+  cat(" ... finished after",t[3],"sec\n")
+  return(x)
 }
 
 # Ou avec outer() pour être encore plus vectorisé
@@ -14,8 +23,8 @@ diviseurs_matrix <- function(n) {
 }
 
 # Usage
-div_vec <- diviseurs_vectorise(1000)
-div_vec[[100]]  # [1]  1  2  4  5 10 20 25 50 100
+#div_vec <- diviseurs_vectorise(1000)
+#div_vec[[100]]  # [1]  1  2  4  5 10 20 25 50 100
 
 # system.time(diviseurs_vectorise(1000))
 # system.time(diviseurs_matrix(1000))
@@ -24,9 +33,11 @@ div_vec[[100]]  # [1]  1  2  4  5 10 20 25 50 100
 # system.time(diviseurs_vectorise(1000))
 #############################
 get.pn.vec<-function(range){
-p<-diviseurs_vectorise(10000)
+	print("finding pn over get.pn.vec(range)...")
+p<-diviseurs_vectorise(range)
 pn<-lapply(p,function(i){
   #  print(i)
+  cat("\rsummarise: ",i[length(i)])
   s<-sum(i[1:(length(i)-1)])
   t<-s==i[length(i)]
 })
@@ -35,6 +46,7 @@ sum(pt)
 #pu<-unlist(p)
 px<-1:length(p)
 pnx<-px[pt]
+cat(" ... finished...\npn:\n")
 print(pnx)
 }
 #############################
@@ -93,8 +105,9 @@ get.r(0)
 sqrt(9)
 
 #####################
-pn<-get.pn.vec(10000)
+pn<-get.pn.vec(1000)
 #####################
-
+#print(pn)
+#get.pn.vec(50000)
 
 
