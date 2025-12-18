@@ -92,7 +92,7 @@ df.pos<-list(co=dfco.pos,cl=dfcl.pos)
 spacymodel<-"en_core_web_lg"
 spacy.stopwords<-read.csv("spacy-stopwords.csv")
 stopw<-c("er","erm","oh","yeah","mm","mhm","y")
-stopwords<-rbind(spacy.stopwords,stopw)
+stopwords<-c(spacy.stopwords$stopword,stopw)
 # chunks of 10
 vector <- 1:length(dfcl.pos$doc_id)
 chunk_size <- 10  # Example chunk size
@@ -106,6 +106,10 @@ split_into_chunks <- function(vec, chunk_size) {
 chunks <- split_into_chunks(vector, chunk_size)
 
 
+load( paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df.pos.RData"))
+
+dfcl.pos<-df.pos$cl
+dfco.pos<-df.pos$co
 
 t1<-table(dfcl.pos$token)
 t2<-table(dfco.pos$token)
@@ -119,7 +123,7 @@ m2<-tdf$token%in%tdf$token[m]
 sum(m2)
 tdf$unique[m2]<-0
 sum(m)
-m<-tdf$token%in%stopwords$stopword
+m<-tdf$token%in%stopwords
 sum(m)
 tdf$stopword<-0
 tdf$stopword[m]<-1

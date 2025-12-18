@@ -63,6 +63,7 @@ cat("\np-number range 1 to",n,"\n")
 print(xo)
 
 }
+run.1<-function(){
 #csv<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/kblh/p-numbers.csv")
 csv<-"/var/www/html/cloud/p-numbers.csv"
 dur<-system.time(get.pn(100001,150000,"c",csv)) #v0.1: 1:1000 1.208
@@ -70,7 +71,7 @@ dur
 write.table(data.frame(time=Sys.time(),elapsed=dur[3],row.names = "finished"),csv,append = T,quote = F,col.names = T)
 
 # run: nohup Rscript p-numbers.R > output.log 2>&1 &
-
+}
 
 
 ### 16501.claude
@@ -139,8 +140,19 @@ system.time(diviseurs_matrix(1000))
 
 
 system.time(diviseurs_vectorise(1000))
-
+#############################
 p<-diviseurs_vectorise(10000)
+pn<-lapply(p,function(i){
+#  print(i)
+  s<-sum(i[1:(length(i)-1)])
+  t<-s==i[length(i)]
+})
+pt<-unlist(pn)
+sum(pt)
+#pu<-unlist(p)
+px<-1:length(p)
+px[pt]
+#############################
 #library(purrr)
 l<-unlist(lapply(p,function(x){
   length(x)
