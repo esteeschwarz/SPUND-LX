@@ -1,0 +1,29 @@
+project:
+  type: website
+  # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
+  output-dir: ../../../../q/publx/dcl
+  # pre-render: fetch-zotero.R
+
+website:
+  title: "007"
+  navbar:
+    left:
+      - href: ../../..
+        text: '<img src="../../../images/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+    right:
+      - snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/lx-public
+        icon: github
+
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    toc-depth: 3
+
+execute: 
+  freeze: auto

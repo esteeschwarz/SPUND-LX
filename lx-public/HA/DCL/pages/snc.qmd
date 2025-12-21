@@ -1,0 +1,6 @@
+---
+title: "SNC"
+---
+
+- 16482.1. q workflow, didnt find source html dir, wt target
+- fetch bib entries from zotero, including notes, and display
