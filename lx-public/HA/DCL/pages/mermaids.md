@@ -1,0 +1,19 @@
+
+## 16523
+### 1
+ich stehe jetzt vor der herausforderung, diesen beitrag (project page as 2nd layer site in dcl multisite layout) so convenient wie möglich zu veröffentlichen.
+
+### preliminary, setup, status quo
+#### a mermaid visualisation
+
+```{mermaid}
+graph TD
+
+s1[SETUP]-->
+dcl[jekyll site: dcl]
+wd[working dir: spund-lx]
+dcl-->p1[post display]-->
+p2[2nd layer: project display]
+
+```
+
