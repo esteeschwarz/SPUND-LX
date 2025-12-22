@@ -3,7 +3,8 @@ title: "DCL site essai"
 subtitle: "website project page / Dahlem Center for Linguistics"
 author: "st. schwarz"
 date: "`r Sys.time()`"
-categories: [LX,linguistics & the public,webdesign]
+categories: [linguistics]
+tags: [LX,webdesign]
 #bibliography: lx-pub.bib
 bibliography: lx-pub.bib
 bibtag: dcl
@@ -11,10 +12,14 @@ nocite: "@*"
 ---
 # index
 ```{r}
+#| echo:false
+#| output: false
+
+
 bibyml<-rmarkdown::metadata$bibliography
 tag<-rmarkdown::metadata$bibtag
-print(bibyml)
-print(tag)
+# print(bibyml)
+# print(tag)
 
 ```
 

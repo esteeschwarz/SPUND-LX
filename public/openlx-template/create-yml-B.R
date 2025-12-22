@@ -57,7 +57,11 @@ mp<-!mp
 mp<-which(mp)
 sum(mp)
 mp
+
+post.dir<-postmeta$post.dir[mp]
+post.dir
 q.dir<-q.dir[mp]
+q.dir
 #pub.site<-postmeta$pub.site[mp]
 #rm(pub.site)
 ### wks.
@@ -68,18 +72,24 @@ dclx.cat<-head.index.project.qmd$categories[1]
 page.dir<-strsplit(q.dir,"/q/")
 page.dir<-page.dir[[1]][2]
 page.dir<-paste0("essais/",page.dir)
-post.dir<-ifelse(pub.site=="open-lx","posts",dclx.cat)
-site_link<-paste0(parent.posts,"/",page.dir)
+pub.site
+post.dir
+post.dir<-ifelse(pub.site=="open-lx","posts",post.dir)
+site_link<-paste0(parent.posts,page.dir)
 site_link
+############################
+postmeta$link[mp]<-site_link
+############################
+post.dir
 post.ids<-postmeta$name[mp]
 post.wd<-postmeta$wd[mp]
-quarto.yml$website$navbar$left[[1]]$href<-paste0(parent.posts,"/",post.dir,"/",post.ids)
+quarto.yml$website$navbar$left[[1]]$href<-paste0(parent.posts,post.dir,"/",post.ids)
 quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",post.wd)
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
 head.post.md$date<-as.character(Sys.Date())
 head.post.md$categories<-dclx.cat
-head.post.md$tags<-head.index.project.qmd$tags
+head.post.md$tags<-""
 head.post.md$author<-head.index.project.qmd$author
 head.post.md$title<-head.index.project.qmd$title
 head.post.md$teaser<-head.index.project.qmd$subtitle
@@ -87,7 +97,7 @@ head.post.md$class<-postmeta$class[mp]
 head.post.md$task<-postmeta$subject[mp]
 #site_link<-paste0(q,postmeta$name[mp])
 head.post.md$site_link_text<-postmeta$site_link_text[mp]
-#head.post.md$site_link<-postmeta$site_link[mp]
+head.post.md$site_link<-site_link
 head.post.md$ids<-site_link
 head.post.md$description<-postmeta$about[mp]
 ### TODO: priority override: define .csv < index.qmd or vcvs.
@@ -116,6 +126,8 @@ yaml_body(head.post.md)
 post.md<-c("---",post.tx,"---")
 post.md
 quarto.yml
+post.dir
+post.ns.dir<-paste(post.ns.dir,post.dir,sep = "/")
 post.ns.dir
 #writeLines(post.md,paste0("cp/",head.post.md$date,"-",head.index.qmd$id,".md"))
 writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
@@ -152,3 +164,5 @@ filename <- tempfile()
 #write_yaml(quarto.yml, con,fileEncoding = "UTF-8",handlers=handlers)
 #close(con)
 write_yaml(quarto.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/_quarto.yml"),handlers=handlers)
+library(readr)
+write_csv(postmeta,src.csv,na = "")

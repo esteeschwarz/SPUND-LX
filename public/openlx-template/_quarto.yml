@@ -15,8 +15,10 @@ website:
   title: "999"
   navbar:
     left:
-      - href: index.html
+      - href: back to postentry
         text: '`<i class="weui--back2-outlined"></i>`{=html}'
+      - href: index.qmd
+        text: index
       - text: work  
         menu:  
           - href: sample-B.html
@@ -51,11 +53,13 @@ format:
         \newcommand{\he}[1]{#1}
         </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  pdf:
-    fig-pos: "H" # Forces images to appear exactly where they are included
-    font-size: 12
-    colorlinks: true
+        <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
+# 
+#   pdf:
+#     fig-pos: "H" # Forces images to appear exactly where they are included
+#     font-size: 12
+#     colorlinks: true
+# no pdf with mermaids
 editor: source
 
 execute:
