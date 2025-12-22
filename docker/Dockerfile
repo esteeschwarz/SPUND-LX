@@ -22,8 +22,8 @@ RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/q
 #RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
 RUN quarto install tinytex
 RUN quarto install chromium
-export QUARTO_CHROMIUM_PATH="$(quarto env info --json | jq -r '.chromium.path')"
-export QUARTO_CHROMIUM_ARGS="--no-sandbox --disable-dev-shm-usage"
+RUN export QUARTO_CHROMIUM_PATH="$(quarto env info --json | jq -r '.chromium.path')"
+RUN export QUARTO_CHROMIUM_ARGS="--no-sandbox --disable-dev-shm-usage"
 # Install some latex packages frequently needed by Quarto/Rmarkdown
 # RUN /root/.TinyTeX/bin/*/tlmgr install \
 #       latexmk \
