@@ -1,0 +1,90 @@
+---
+title: "workflow"
+---
+
+## 16523
+### 1
+ich stehe jetzt vor der herausforderung, diesen beitrag (project page as 2nd layer site in dcl multisite layout) so convenient wie möglich zu veröffentlichen.
+
+#### options
+```{mermaid}
+%%| label: fig-workflow-pub
+%%| fig-cap: “publishing process options diagram”
+%%| fig-alt: “Flowchart showing the publishing workflow"
+
+
+graph TD
+
+CR[create content] -->
+dcl[in blog repo]
+CR-->wd[in working repo]
+dcl-->se[single post]
+dcl-->ml[multilayer]
+se-->fm[content format markdown, no python/R embedding or complex sites. restricted to jekyll render]
+ml-->fmm[content may include complex page built from RMarkdown, Quarto or Python notebooks or any other framework]
+o2[option 2]
+```
+
+#### preliminary: setup, status quo
+
+```{mermaid}
+%%| label: fig-setup
+%%| fig-cap: “publishing process setup status quo”
+%%| fig-alt: “Flowchart showing the current publishing workflow"
+
+graph TD
+
+s1[CONTENT]-->
+dcl[jekyll site: dcl]
+wd[working dir: spund-lx]
+dcl-->p1[post display]-->
+p2[2nd layer: project display]
+wd-->p2
+s1-->wd
+```
+
+#### goal: integrate new project page in blog
+
+```{mermaid}
+%%| label: fig-howto
+%%| fig-cap: “publishing process forward”
+%%| fig-alt: “Flowchart showing the workflow to integrate new content"
+
+graph TD
+
+s1[CONTENT: quarto page]-->
+dcl[jekyll site: dcl: essais folder]
+wd[working dir: GIT]-->wd2[spund-lx/lx-public/HA/DCL/pages]-->level1[complete quarto site folder including .qmd and quarto.yml]
+level1-->ch[changes]-->r1[trigger rendering process]-->
+git1[render via github actions]-->p2
+r1-->srv1[render on target server]-->updcl[update DCL essais]-->p2
+dcl-->p1[post entry]-->l1[link to 2nd layer: project page]-->p2
+p2[2nd layer: project display]
+ch-->rloc[docs rendered locally]-->p2
+r1-->p2
+wd-->csv[.csv metadata table of essais]-->ch-->chk1[is the project on DCL]-->pdcl1[yes]
+s1-->wd
+pdcl1-->r1
+pdcl1-->rloc
+chk1-->pdcl0[no]-->crp[create project page]-->crman[manually]
+crp-->crcsv[on base of metadata.csv]-->csv-->pub1[publish]-->p2
+```
+
+#### todo: next steps to project page
+
+```{mermaid}
+%%| label: fig-todo
+%%| fig-cap: “publishing process next todo”
+%%| fig-alt: “Flowchart showing the next steps to integrate new content"
+
+graph TD
+
+crcsv[create .csv metadata table]-->
+item[new project item]
+wf[update render git workflow]-->wf1[to fire on changes in]-->csv[.csv metadata table]
+crcsv-->csv-->item-->inc[includes]-->meta-->m1[render dir relative to working dir]
+meta-->m2[tags]
+meta-->m3[cats]
+
+
+```

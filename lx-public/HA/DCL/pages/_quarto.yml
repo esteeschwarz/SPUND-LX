@@ -5,7 +5,7 @@ project:
   # pre-render: fetch-zotero.R
 
 website:
-  title: "007"
+  title: "012"
   navbar:
     left:
       - href: ../../..
