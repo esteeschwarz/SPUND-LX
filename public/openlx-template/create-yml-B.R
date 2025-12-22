@@ -46,12 +46,15 @@ p<-length(unlist(d1))-m-1
 p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
-q2<-paste0(paste0(rep("..",p-1),collapse = "/"),"/")
+q2<-paste0(paste0(rep("..",2),collapse = "/"),"/") # fixed for dclx
+q1<-paste0(paste0(rep("..",p),collapse = "/"),"/") # fixed for dclx
 q
 q2
+q1
 parent.posts<-q2
 list.dirs(q) # wks.
 q.dir<-paste0(q,"/",postmeta$wd)
+q.dir
 mp<-postmeta$published
 mp<-!mp
 mp<-which(mp)
@@ -77,6 +80,7 @@ pub.site
 parent.posts
 post.dir
 post.dir<-ifelse(pub.site=="open-lx","posts",post.dir)
+post.dir
 site_link<-paste0(parent.posts,page.dir)
 site_link
 ############################
@@ -85,7 +89,9 @@ postmeta$link[mp]<-site_link
 post.dir
 post.ids<-postmeta$name[mp]
 post.wd<-postmeta$wd[mp]
-quarto.yml$website$navbar$left[[1]]$href<-paste0(parent.posts,post.dir,"/",post.ids)
+paste0(q1,post.dir,"/",post.ids)
+#quarto.yml$website$navbar$left[[1]]$href<-paste0(parent.posts,post.dir,"/",post.ids)
+quarto.yml$website$navbar$left[[1]]$href<-paste0(q1,post.dir,"/",post.ids)
 quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",post.wd)
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
