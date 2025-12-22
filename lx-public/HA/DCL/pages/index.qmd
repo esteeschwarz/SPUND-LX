@@ -12,7 +12,7 @@ nocite: "@*"
 ---
 # index
 ```{r}
-#| echo:false
+#| echo: false
 #| output: false
 
 

@@ -46,7 +46,7 @@ p<-length(unlist(d1))-m-1
 p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
-q2<-paste0(paste0(rep("..",p),collapse = "/"),"/")
+q2<-paste0(paste0(rep("..",p-1),collapse = "/"),"/")
 q
 q2
 parent.posts<-q2
@@ -72,7 +72,9 @@ dclx.cat<-head.index.project.qmd$categories[1]
 page.dir<-strsplit(q.dir,"/q/")
 page.dir<-page.dir[[1]][2]
 page.dir<-paste0("essais/",page.dir)
+page.dir
 pub.site
+parent.posts
 post.dir
 post.dir<-ifelse(pub.site=="open-lx","posts",post.dir)
 site_link<-paste0(parent.posts,page.dir)
