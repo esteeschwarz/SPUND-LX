@@ -6,12 +6,14 @@ params:
 website:
   navbar:
     left:
-    - href: ../../../..//LX/dcl-pr
+    - href: ../../../../LX/dcl-pr
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
+    - href: index.qmd
+      text: index
     - text: work
       menu:
-      - href: sample-B.html
-        text: _dep B
+      - workflow.qmd
+      - mermaids.qmd
     - text: drafts
       menu:
       - href: sample-A.html
@@ -36,10 +38,12 @@ format:
         \newcommand{\he}[1]{#1}
         </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  pdf:
-    fig-pos: H
-    font-size: 12
-    colorlinks: true
+        <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
+  # pdf:
+  #   fig-pos: H
+  #   font-size: 12
+  #   colorlinks: true
+### no mermaids with pdf, quarto chromium issue
 editor: source
 execute:
   freeze: auto
