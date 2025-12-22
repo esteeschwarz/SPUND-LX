@@ -40,6 +40,7 @@ format:
     fig-pos: H
     font-size: 12
     colorlinks: true
+    pdf-engine: pdflatex
 editor: source
 execute:
   freeze: auto
