@@ -6,7 +6,7 @@ params:
 website:
   navbar:
     left:
-    - href: ../../../linguistics/dcl-pr
+    - href: ../../../../../linguistics/dcl-pr
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
     - href: index.qmd
       text: index
