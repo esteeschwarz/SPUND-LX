@@ -7,4 +7,4 @@ title: "SNC"
 - q workflow, didnt find source html dir, wt target
 - fetch bib entries from zotero, including notes, and display
 
-{{< include mermaids.md >}}
+{{< include mermaids.qmd >}}
