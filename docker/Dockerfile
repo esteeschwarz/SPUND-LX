@@ -20,9 +20,8 @@ RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/q
 
 # Install TinyTeX (user-level!)
 #RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
-RUN |
-   quarto install tinytex
-   quarto install chromium
+RUN quarto install tinytex
+RUN quarto install chromium
 
 # Install some latex packages frequently needed by Quarto/Rmarkdown
 # RUN /root/.TinyTeX/bin/*/tlmgr install \
