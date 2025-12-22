@@ -13,9 +13,7 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v4
     - name: Render Quarto site
-      run: |-
-        quarto render lx-public/HA/DCL/pages -P reload:false
-        ls q
+      run: quarto render lx-public/HA/DCL/pages -P reload:false
     - name: Upload rendered HTML directory
       uses: actions/upload-artifact@v4
       with:
@@ -37,10 +35,25 @@ jobs:
         token: ${{ secrets.TARGET_REPO_PAT }}
         path: target
     - name: Copy into Repo B/public
+      run: cp -r q-open/* target/essais/
+    - name: Commit and push
       run: |
-        #    rm -rf target/public/*
-        #   mkdir -p target/public
-         cp -r q-open/* target/essais/
+        cd target
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add .
+        git commit -m "Update quarto sites: dcl-pr" || echo "No changes"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.TARGET_REPO_PAT }}
+    - name: Check out Repo C
+      uses: actions/checkout@v4
+      with:
+        repository: esteeschwarz/DC-LX
+        token: ${{ secrets.TARGET_REPO_PAT }}
+        path: target
+    - name: Copy into Repo C/public
+      run: cp -r q-open/* target/essais/
     - name: Commit and push
       run: |
         cd target

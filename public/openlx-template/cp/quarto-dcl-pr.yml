@@ -2,7 +2,7 @@ name: Render quarto (dcl-pr)
 'on':
   push:
     branches: main
-    paths: lx-public/HA/DCL/pages/**mmm
+    paths: lx-public/HA/DCL/pages/**
   workflow_dispatch: ~
 jobs:
   render:

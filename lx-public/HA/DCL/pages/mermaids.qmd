@@ -1,4 +1,8 @@
 
+---
+title: mermaids
+---
+
 ## 16523
 ### 1
 ich stehe jetzt vor der herausforderung, diesen beitrag (project page as 2nd layer site in dcl multisite layout) so convenient wie möglich zu veröffentlichen.

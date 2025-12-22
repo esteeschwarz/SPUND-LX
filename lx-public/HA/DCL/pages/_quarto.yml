@@ -6,7 +6,7 @@ params:
 website:
   navbar:
     left:
-    - href: https://esteeschwarz.github.io/open-lx/posts/dcl-pr
+    - href: ../../../..//LX/dcl-pr
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
     - text: work
       menu:
@@ -36,12 +36,10 @@ format:
         \newcommand{\he}[1]{#1}
         </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  # pdf:
-  #   fig-pos: H
-  #   font-size: 12
-  #   colorlinks: true
-  #   pdf-engine: pdflatex
-### no mermaid pdf render, quarto server error.
+  pdf:
+    fig-pos: H
+    font-size: 12
+    colorlinks: true
 editor: source
 execute:
   freeze: auto

@@ -6,13 +6,18 @@ library(yaml)
 setwd("/Users/guhl/Documents/GitHub/SPUND-LX/lx-public/HA/DCL/pages")
 getwd()
 ################################
+pub.site<-"DC-LX"
 src.index<-paste0(getwd(),"/index.qmd")
-src.csv<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/_data/postmeta.csv")
-pub.site<-"open-lx"
+src.csv<-paste0(Sys.getenv("GIT_TOP"),"/DC-LX/_data/postmeta.csv")
 post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/",pub.site,"/_posts")
 workflow.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/.github/workflows")
-head.index.sample.qmd<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/index.qmd"))
-head.index.project.qmd<-read_yaml(src.index)
+head.index.tx<-readLines(src.index)
+m<-which(head.index.tx=="---")
+idx.tmp<-tempfile(fileext = ".qmd")
+writeLines(head.index.tx[m[1]:m[2]],idx.tmp)
+#read_yaml(idx.tmp)
+#head.index.sample.qmd<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/index.qmd"))
+head.index.project.qmd<-read_yaml(idx.tmp)
 head.post.md<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/2025-11-29-template.md"))
 workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/quarto-pages-docker.yml"))
 names(workflow.yml)[2]<-"on"
@@ -41,21 +46,34 @@ p<-length(unlist(d1))-m-1
 p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
+q2<-paste0(paste0(rep("..",p),collapse = "/"),"/")
 q
+q2
+parent.posts<-q2
 list.dirs(q) # wks.
 q.dir<-paste0(q,"/",postmeta$wd)
 mp<-postmeta$published
 mp<-!mp
+mp<-which(mp)
+sum(mp)
+mp
 q.dir<-q.dir[mp]
+#pub.site<-postmeta$pub.site[mp]
+#rm(pub.site)
 ### wks.
 #d1<-list.dirs("../../.."),d1)
 quarto.yml$project$`output-dir`<-q.dir
 quarto.yml$website$title<-head.index.project.qmd$site_title
 dclx.cat<-head.index.project.qmd$categories[1]
+page.dir<-strsplit(q.dir,"/q/")
+page.dir<-page.dir[[1]][2]
+page.dir<-paste0("essais/",page.dir)
 post.dir<-ifelse(pub.site=="open-lx","posts",dclx.cat)
+site_link<-paste0(parent.posts,"/",page.dir)
+site_link
 post.ids<-postmeta$name[mp]
 post.wd<-postmeta$wd[mp]
-quarto.yml$website$navbar$left[[1]]$href<-paste0("https://esteeschwarz.github.io/",pub.site,"/",post.dir,"/",post.ids)
+quarto.yml$website$navbar$left[[1]]$href<-paste0(parent.posts,"/",post.dir,"/",post.ids)
 quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",post.wd)
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
@@ -67,7 +85,7 @@ head.post.md$title<-head.index.project.qmd$title
 head.post.md$teaser<-head.index.project.qmd$subtitle
 head.post.md$class<-postmeta$class[mp]
 head.post.md$task<-postmeta$subject[mp]
-site_link<-paste0(q,postmeta$name[mp])
+#site_link<-paste0(q,postmeta$name[mp])
 head.post.md$site_link_text<-postmeta$site_link_text[mp]
 #head.post.md$site_link<-postmeta$site_link[mp]
 head.post.md$ids<-site_link
@@ -106,7 +124,7 @@ writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
 ### careful!
 ############
 input_dir<-post.wd
-workflow.yml$on$push$paths<-paste0(input_dir,"/**mmm")
+workflow.yml$on$push$paths<-paste0(input_dir,"/**")
 workflow.yml$jobs$render$steps[2][[1]]
 #workflow.yml$on$workflow_dispatch<-"~"
 # workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",head.index.qmd$input_dir," -P reload:false\nls q")

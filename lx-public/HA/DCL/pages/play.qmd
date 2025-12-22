@@ -1,5 +1,5 @@
 ---
-title: play
+title: preliminary
 extensions:
   iconify:
     style: "color: #b22222;"
@@ -15,9 +15,8 @@ format:
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 ---
 
-# 16516.snc.play
-
-## mermaid
+## 16516.snc
+### what is known so far
 
 ```{mermaid}
 graph TD

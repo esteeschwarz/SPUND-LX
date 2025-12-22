@@ -10,4 +10,12 @@ bibtag: dcl
 nocite: "@*"
 ---
 # index
-{{< include page1.qmd >}}
+```{r}
+bibyml<-rmarkdown::metadata$bibliography
+tag<-rmarkdown::metadata$bibtag
+print(bibyml)
+print(tag)
+
+```
+
+{{< include _page1.qmd >}}
