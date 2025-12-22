@@ -1,6 +1,6 @@
 ---
-title: "SMI paper draft"
-subtitle: "schizophrenie & mental images - draft hypothesis"
+title: "sample project page"
+subtitle: "sample project - draft hypothesis"
 author: "st. schwarz"
 date: today
 bibliography: smi.bib

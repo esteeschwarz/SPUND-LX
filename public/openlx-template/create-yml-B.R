@@ -4,27 +4,46 @@ library(yaml)
 #############
 ## setwd() to where index.qmd is
 setwd("/Users/guhl/Documents/GitHub/SPUND-LX/lx-public/HA/DCL/pages")
+getwd()
 ################################
+src.index<-paste0(getwd(),"/index.qmd")
+src.csv<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/_data/postmeta.csv")
 post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/open-lx/_posts")
 workflow.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/.github/workflows")
-head.index.qmd<-read_yaml("index.qmd")
+head.index.sample.qmd<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/index.qmd"))
+#head.index.project.qmd<-read_yaml(src.index)
 head.post.md<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/2025-11-29-template.md"))
-workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/quarto-smi.yml"))
+workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/quarto-render-sample.yml"))
 quarto.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/_quarto.yml"))
+postmeta<-read.csv(src.csv)
+chk.meta<-function(src.csv){
+  t<-readLines(src.csv)
+  c<-strsplit(t,",")
+  lc<-lapply(c,length)
+  unlist(lc)
+  f<-which(unlist(lc)!=lc[[1]])
+  f
+  print(c[[1]])
+  print(c[[9]])
+
+}
+chk.meta(src.csv)
 # adapt
 ## quarto.yml
 # get q dir
-d0<-normalize_path("index.qmd")
+
+d0<-normalizePath(src.index)
 d1<-strsplit(d0,"/")
 m<-grep("SPUND-LX",unlist(d1))
 p<-length(unlist(d1))-m-1
-p
+p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
 q
-list.dirs(q)
-q.dir<-paste0(q,"/",head.index.qmd$ids)
+list.dirs(q) # wks.
+q.dir<-paste0(q,"/",postmeta$wd)
 q.dir
+### wks.
 #d1<-list.dirs("../../.."),d1)
 quarto.yml$project$`output-dir`<-q.dir
 quarto.yml$website$title<-head.index.qmd$site_title

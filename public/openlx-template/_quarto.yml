@@ -1,28 +1,62 @@
 project:
   type: website
-  # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
-  output-dir: ../../q/smi/001
+  # output-dir: /var/www/html/pingtest
+  output-dir: sample
+#  pre-render: "prerender.R"
+
+params:
+    reload: false
+   
+
+# extensions:
+#   iconify:
+#     style: "color: #b22222;"
 website:
-  title: "003"
+  title: "999"
   navbar:
     left:
-      - href: https://esteeschwarz.github.io/open-lx/posts/smi-a
-        text: INDEX
+      - href: index.html
+        text: '`<i class="weui--back2-outlined"></i>`{=html}'
+      - text: work  
+        menu:  
+          - href: sample-B.html
+            text: _dep B
+      - text: drafts
+        menu:
+          - href: sample-A.html
+            text: draft A
+          - href: sample-C.html
+            text: draft C      
     right:
-      - snc.qmd
-      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/mental-img
+      - href: snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/germanic
         icon: github
-
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+      - cosmo #litera
+    # mainfont: Courier
+    monofont: Menlo
+    # css: 
+      # - css/styles.css
+      # - css/icons.css
     toc: true
     toc-depth: 3
+    include-in-header:
+      text: |
+        <!-- HTML simply prints the inner text -->
+        <!-- 16482.snc -->
+        <script type="application/latex">
+        \newcommand{\he}[1]{#1}
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-execute: 
+  pdf:
+    fig-pos: "H" # Forces images to appear exactly where they are included
+    font-size: 12
+    colorlinks: true
+editor: source
+
+execute:
   freeze: auto
-
