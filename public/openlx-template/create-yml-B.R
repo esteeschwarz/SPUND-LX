@@ -8,12 +8,14 @@ getwd()
 ################################
 src.index<-paste0(getwd(),"/index.qmd")
 src.csv<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/_data/postmeta.csv")
-post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/open-lx/_posts")
+pub.site<-"open-lx"
+post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/",pub.site,"/_posts")
 workflow.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/.github/workflows")
 head.index.sample.qmd<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/index.qmd"))
-#head.index.project.qmd<-read_yaml(src.index)
+head.index.project.qmd<-read_yaml(src.index)
 head.post.md<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/2025-11-29-template.md"))
-workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/quarto-render-sample.yml"))
+workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/quarto-pages-docker.yml"))
+names(workflow.yml)[2]<-"on"
 quarto.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/_quarto.yml"))
 postmeta<-read.csv(src.csv)
 chk.meta<-function(src.csv){
@@ -42,26 +44,35 @@ q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
 q
 list.dirs(q) # wks.
 q.dir<-paste0(q,"/",postmeta$wd)
-q.dir
+mp<-postmeta$published
+mp<-!mp
+q.dir<-q.dir[mp]
 ### wks.
 #d1<-list.dirs("../../.."),d1)
 quarto.yml$project$`output-dir`<-q.dir
-quarto.yml$website$title<-head.index.qmd$site_title
-quarto.yml$website$navbar$left[[1]]$href<-paste0("https://esteeschwarz.github.io/open-lx/posts/",head.index.qmd$ids)
-quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",head.index.qmd$project_dir)
+quarto.yml$website$title<-head.index.project.qmd$site_title
+dclx.cat<-head.index.project.qmd$categories[1]
+post.dir<-ifelse(pub.site=="open-lx","posts",dclx.cat)
+post.ids<-postmeta$name[mp]
+post.wd<-postmeta$wd[mp]
+quarto.yml$website$navbar$left[[1]]$href<-paste0("https://esteeschwarz.github.io/",pub.site,"/",post.dir,"/",post.ids)
+quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",post.wd)
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
-head.post.md$site_link_text<-head.index.qmd$site_link_text
 head.post.md$date<-as.character(Sys.Date())
-head.post.md$categories<-head.index.qmd$cats_md
-head.post.md$tags<-head.index.qmd$tags_md
-head.post.md$author<-head.index.qmd$author
-head.post.md$title<-head.index.qmd$title
-head.post.md$subtitle<-head.index.qmd$subtitle
-head.post.md$class<-head.index.qmd$class
-head.post.md$task<-head.index.qmd$task
-head.post.md$ids<-head.index.qmd$ids
-head.post.md$description<-head.index.qmd$description
+head.post.md$categories<-dclx.cat
+head.post.md$tags<-head.index.project.qmd$tags
+head.post.md$author<-head.index.project.qmd$author
+head.post.md$title<-head.index.project.qmd$title
+head.post.md$teaser<-head.index.project.qmd$subtitle
+head.post.md$class<-postmeta$class[mp]
+head.post.md$task<-postmeta$subject[mp]
+site_link<-paste0(q,postmeta$name[mp])
+head.post.md$site_link_text<-postmeta$site_link_text[mp]
+#head.post.md$site_link<-postmeta$site_link[mp]
+head.post.md$ids<-site_link
+head.post.md$description<-postmeta$about[mp]
+### TODO: priority override: define .csv < index.qmd or vcvs.
 
 handlers <- list(
   logical = function(x) {
@@ -86,16 +97,37 @@ yaml_body(head.post.md)
 
 post.md<-c("---",post.tx,"---")
 post.md
+quarto.yml
+post.ns.dir
 #writeLines(post.md,paste0("cp/",head.post.md$date,"-",head.index.qmd$id,".md"))
-writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",head.index.qmd$ids,".md"))
+writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
 ## workflow.yml
-workflow.yml$`on`$push$paths<-paste0(head.index.qmd$input_dir,"/**")
+####################################################################
+### careful!
+############
+input_dir<-post.wd
+workflow.yml$on$push$paths<-paste0(input_dir,"/**mmm")
 workflow.yml$jobs$render$steps[2][[1]]
-workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",head.index.qmd$input_dir," -P reload:false\nls q")
-workflow.yml$name<-paste0("Render quarto (",head.index.qmd$ids,")")
-workflow.yml$jobs$deploy$steps[[4]]$run<-gsub("SMI",head.index.qmd$ids,workflow.yml$jobs$deploy$steps[[4]]$run)
-write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",head.index.qmd$ids,".yml"))
-write_yaml(workflow.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",head.index.qmd$ids,".yml"),handlers=handlers)
+#workflow.yml$on$workflow_dispatch<-"~"
+# workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",head.index.qmd$input_dir," -P reload:false\nls q")
+# workflow.yml$name<-paste0("Render quarto (",head.index.qmd$ids,")")
+# workflow.yml$jobs$deploy$steps[[4]]$run<-gsub("SMI",head.index.qmd$ids,workflow.yml$jobs$deploy$steps[[4]]$run)
+### B
+workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",input_dir," -P reload:false\nls q")
+workflow.yml$jobs$render$steps[2][[1]]$run<-paste0("quarto render ",input_dir," -P reload:false")
+workflow.yml$jobs$render$steps[2][[1]]
+workflow.yml$name<-paste0("Render quarto (",post.ids,")")
+workflow.yml$jobs$deploy$steps[[4]]$run<-gsub("rsample",post.ids,workflow.yml$jobs$deploy$steps[[4]]$run)
+workflow.yml$jobs$deploy$steps[[4]]$run
+workflow.yml$jobs$deploy$steps[[7]]$run<-gsub("rsample",post.ids,workflow.yml$jobs$deploy$steps[[7]]$run)
+workflow.yml$jobs$deploy$steps[[7]]$run
+
+con <- file(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"), "w")
+write_yaml(workflow.yml, paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"),fileEncoding = "UTF-8",handlers=handlers)
+
+write_yaml(workflow.yml,con,handlers=handlers)
+close(con)
+write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",post.ids,".yml"),handler=handlers)
 write_yaml(quarto.yml,"_quarto.yml",handlers=handlers)
 filename <- tempfile()
 con <- file("_quarto.yml", "w")

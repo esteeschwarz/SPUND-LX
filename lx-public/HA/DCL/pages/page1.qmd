@@ -1,0 +1,94 @@
+
+# Qs
+```{r}
+#| echo: false
+#| warning: false
+#| output: false
+
+#bibyml<-"dcl.bib"
+library(bib2df)
+bibyml<-rmarkdown::metadata$bibliography
+tag<-rmarkdown::metadata$bibtag
+source("fetch-zotero.R",echo = F)
+#bibq<-bib2df(bibyml,merge_lines = T)
+#print(bibdf)
+bibq$ANNOTE[is.na(bibq$ANNOTE)]<-""
+anno<-bibq$ANNOTE
+#print(anno)
+#anno2<-ifelse(anno!="",paste0("\n  - ",anno),"")
+anno
+bibentries<-paste(paste0("- @",bibq$BIBTEXKEY),anno,collapse = "\n")
+cat(bibentries)
+```
+
+## preliminary link assembly
+`r bibentries`
+
+
+# meta
+## snc
+- no new
+
+```{r}
+#| label: "depr links calculation"
+#| echo: false
+#| warning: false
+#| output: false
+#| eval: false
+
+library(httr)
+library(xml2)
+r<-GET(src)
+t<-content(r,"text")
+htm<-read_html(t)
+all.li<-xml_find_all(htm,"//li")
+lli<-length(all.li)
+li.a<-xml_find_all(all.li,"a")
+a.h<-xml_attr(li.a,"href")
+#print(a.h)
+#a.dep<-lapply(a.h,function(x)
+#
+aldf<-data.frame(link=a.h,valid=NA)
+#l<-25
+for(l in 1:length(aldf$link)){
+  #print(unlist(x))
+  #print(typeof(x))
+  x<-aldf$link[l]
+  #print(x)
+  e <- simpleError("test error")
+  
+  #r<-tryCatch(GET(url=x),error=next("error"))
+  if(x!="")
+    r<-tryCatch(GET(url=x),error=function(e) e)
+  #print(r)
+  dep<-tryCatch(r$status_code!=200,error=function(e) e)
+  dep
+  length(dep)
+  ifelse(length(dep)>0,aldf$valid[l]<-!dep,aldf$valid[l]<-FALSE)
+  
+}
+#rx<-GET(a.h[25])
+lhtt<-grepl("http",aldf$link)
+lvalid<-sum(aldf$valid,na.rm = T)
+lsum<-sum(lhtt)
+ldep<-lsum-lvalid
+ldf<-data.frame(links=lsum,valid=lvalid,deprecated=ldep)
+```
+
+```{r}
+#| echo: false
+#| label: tbl-art
+#| tbl-cap: publication in categories
+#| warning: false
+#| eval: false
+
+df<-read.csv("../../art-meta.csv")
+knitr::kable(df)
+#list.files("../../")
+```
+
+### play
+<!-- <iframe style='width: 450px; height: 413px;' src='https://voyant-tools.org/tool/CollocatesGraph/?query=language&query=internet&query=linguist&corpus=cd78d8661f955932f36390cc6afc6eb2'></iframe> -->
+
+{{< include ../../sessions/plain-deep-ul.md >}}
+

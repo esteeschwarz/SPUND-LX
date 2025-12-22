@@ -1,29 +1,45 @@
 project:
   type: website
-  # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
-  output-dir: ../../../../q/publx/dcl
-  # pre-render: fetch-zotero.R
-
+  output-dir: ../../../../q/lx-public/HA/DCL/pages
+params:
+  reload: false
 website:
-  title: "012"
   navbar:
     left:
-      - href: ../../..
-        text: '<img src="../../../images/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+    - href: https://esteeschwarz.github.io/open-lx/posts/dcl-pr
+      text: '`<i class="weui--back2-outlined"></i>`{=html}'
+    - text: work
+      menu:
+      - href: sample-B.html
+        text: _dep B
+    - text: drafts
+      menu:
+      - href: sample-A.html
+        text: draft A
+      - href: sample-C.html
+        text: draft C
     right:
-      - snc.qmd
-      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/lx-public
-        icon: github
-
-
+    - href: snc.qmd
+    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/lx-public/HA/DCL/pages
+      icon: github
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: cosmo
+    monofont: Menlo
     toc: true
     toc-depth: 3
-
-execute: 
+    include-in-header:
+      text: |
+        <!-- HTML simply prints the inner text -->
+        <!-- 16482.snc -->
+        <script type="application/latex">
+        \newcommand{\he}[1]{#1}
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  pdf:
+    fig-pos: H
+    font-size: 12
+    colorlinks: true
+editor: source
+execute:
   freeze: auto
