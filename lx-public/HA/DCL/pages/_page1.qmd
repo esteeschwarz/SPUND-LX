@@ -96,5 +96,6 @@ knitr::kable(df)
 ### play
 <!-- <iframe style='width: 450px; height: 413px;' src='https://voyant-tools.org/tool/CollocatesGraph/?query=language&query=internet&query=linguist&corpus=cd78d8661f955932f36390cc6afc6eb2'></iframe> -->
 
-{{< include ../../sessions/plain-deep-ul.md >}}
+<!-- 
+{{< include ../../sessions/plain-deep-ul.md >}} -->
 
