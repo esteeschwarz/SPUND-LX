@@ -47,7 +47,7 @@ p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
 q2<-paste0(paste0(rep("..",2),collapse = "/"),"/") # fixed for dclx
-q1<-paste0(paste0(rep("..",p),collapse = "/"),"/") # fixed for dclx
+q1<-paste0(paste0(rep("..",p+1),collapse = "/"),"/") # fixed for dclx
 q
 q2
 q1
