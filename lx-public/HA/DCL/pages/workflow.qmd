@@ -88,3 +88,57 @@ meta-->m3[cats]
 
 
 ```
+
+### 2
+#### issues
+there's premises we have to clear off before developing to great extend
+
+- if it will be (and thats not sure) possible at all to use github as storage and render platform that would deploy the pages to an FU server where the DCL page is hosted. there can be administrative concerns about providing or hosting the backend at github with everybody able to read the source code of the site. this should generally be no issue because there doesnt have to be stored any material exceeding what is displayed as html anyway thus accessible, but coming from this,
+
+```{r}
+#| echo: false
+#| output: false
+
+
+md_to_mermaid <- function(md_text,target,labels) {
+    print(labels)
+      print(getwd())
+
+  ifelse(!is.null(labels),prel<-paste0("%%","|"," ",labels),pre<-"")
+  preamble<-ifelse(target=="quarto","```{mermaid}\n","")
+  post<-ifelse(target=="quarto","\n```","")
+ # preamble<-""
+  result <- system2(
+    # command = "/Users/guhl/Documents/GitHub/le-rust/essais/mermaid/target/debug/./mermaid",
+    command = "./mermaid-int",
+    input = md_text,
+    stdout = TRUE,
+    stderr = TRUE
+  )
+#  result<-system2("./mermaid", liste,TRUE,TRUE)
+  print(prel)
+  paste0(preamble,paste(prel,collapse = "\n"),"\n\n",paste(result, collapse = "\n"),post)
+}
+
+list<-"
+- options to avoid the github hosting service are:
+  - to render the pages completely on the contribuer device and deploy only html rendered pages to the restricted FU server -userpage level with no administrative user at the project level-
+    - affords the contribuer to install render services on device
+    - contribuer only pushes pages to site
+    - edited source stays on device
+  - to use a page hosting server -or userpage level- which allows for admin tasks like installing basic render services -which here would be jekyll, ruby and quarto- and to maintaining these services
+    - contribuer needs to edit and push the markdown source which is rendered on the FU server apres
+    - affords admin poition for maintaing the packages server side"
+
+#mermaid<-md_to_mermaid(list,"quarto")
+#cat (mermaid)
+labels<-c("label: fig-premise","fig-cap: contribute options")
+print(labels)
+mermaid<-md_to_mermaid(list,"quarto",labels)
+cat (mermaid)
+```
+
+
+`r md_to_mermaid(list,"quarto",labels)`
+
+
