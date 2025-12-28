@@ -100,6 +100,12 @@ there's premises we have to clear off before developing to great extend
 #| output: false
 
 
+if (Sys.info()["sysname"] == "Darwin") {
+  m.binary <- "./mermaid-int"
+} else if (Sys.info()["sysname"] == "Linux") {
+  m.binary <- "./mermaid-lx"
+}
+
 md_to_mermaid <- function(md_text,target,labels) {
     print(labels)
       print(getwd())
@@ -110,7 +116,7 @@ md_to_mermaid <- function(md_text,target,labels) {
  # preamble<-""
   result <- system2(
     # command = "/Users/guhl/Documents/GitHub/le-rust/essais/mermaid/target/debug/./mermaid",
-    command = "./mermaid-int",
+    command = m.binary,
     input = md_text,
     stdout = TRUE,
     stderr = TRUE
