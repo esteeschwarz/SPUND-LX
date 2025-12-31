@@ -12,13 +12,24 @@ postmeta<-read.csv(src.csv)
 mp<-postmeta$published
 mp<-!mp
 mp<-which(mp)
-sum(mp)
+lc<-length(mp)
+#sum(mp)
+#k<-2
+#mp<-mp[k]
+########################
+mp
+#do.create(mp[3])
+do.create<-function(mp){
 wd<-postmeta$wd[mp]
-wd<-ifelse(grepl("^GitHub",wd),paste0("/Users/guhl/Documents/",wd),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd))
+ifelse(!is.na(wd),
+  wd<-ifelse(grepl("^GitHub",wd),paste0("/Users/guhl/Documents/",wd),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd)),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/"))
+wd             
+#ifelse(wd=="")
 setwd(wd)
 pub.site<-"DC-LX"
 f<-list.files(wd)
 ifelse(sum(grepl("index.qmd",f)),src.index<-paste0(getwd(),"/index.qmd"),src.index<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/index.qmd"))
+src.index
 post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/",pub.site,"/_posts")
 workflow.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/.github/workflows")
 head.index.tx<-readLines(src.index)
@@ -94,6 +105,9 @@ quarto.yml$website$title<-head.index.project.qmd$site_title
 dclx.cat<-head.index.project.qmd$categories[1]
 page.dir<-strsplit(q.dir,"/q/")
 page.dir
+slug<-strsplit(page.dir[[length(page.dir)]],"/")
+slug<-slug[[length(slug)]]
+slug<-slug[[length(slug)]]
 page.dir<-page.dir[[1]][length(page.dir)]
 page.dir<-paste0("essais/",page.dir)
 page.dir
@@ -138,6 +152,7 @@ head.post.md$site_link_text<-postmeta$site_link_text[mp]
 head.post.md$site_link<-site_link
 head.post.md$ids<-site_link
 head.post.md$description<-postmeta$about[mp]
+head.post.md$slug<-postmeta$name[mp]
 ### TODO: priority override: define .csv < index.qmd or vcvs.
 head.post.md
 handlers <- list(
@@ -271,3 +286,7 @@ library(readr)
 
 
 write_csv(postmeta,src.csv,na = "")
+}
+for(k in mp){
+  do.create(k)
+}

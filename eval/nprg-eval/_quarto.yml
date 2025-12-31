@@ -6,7 +6,7 @@ params:
 website:
   navbar:
     left:
-    - href: ../../../../linguistics/survey_eval
+    - href: ../../../../linguistics/survey-eval
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
     - href: index.qmd
       text: index
