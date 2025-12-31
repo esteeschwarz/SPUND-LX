@@ -1,14 +1,21 @@
-pid,name,subject,link,site_link_text,term,class,tutor,about,abstract,wd,level_to_q,published,pub.site
-10,sebald,w.g. sebald session preparation,../../essais/sebald/001,page intern,WS25/26,dokufiktion,Brüggemann,,,szondi/docufiction/wg-sebald,3,1,
-4,snc,testing frontend,../,parent index (..),,,,try update dynamic,,,,1,
-3,sbc,santa santa barbara corpus essai,../../essais/sbc/,page,SoSe24,corpus linguistics,stefanowitsch,,,corpusLX/14015-HA/HA-pages,3,1,
-5,publx,why & how to public LX,,,,WS25,linguistik und öffentlichkeit,stefanowitch,,,,1,
-6,germanic-ha,term project drafts,../../essais/germanic/001,paper drafts,WS25,germanische sprachen im vergleich,hüning/konvicna,,,germanic/HA/drafts,3,1,
-2,germanic,yiddish grammar paradigms,https://ada-sub.dh-index.org/shiny/work/essais/germanic-001/,shiny app,WS25,germanische sprachen im vergleich,hüning/konvicna,,,germanic/app/germanic-001,3,1,
-7,g-mcculloch,analyse einer linguistischen öffentlichkeit anhand vorhandener kategorien,../../essais/publx/001,view analysis here,WS25,linguistik und öffentlichkeit,stefanowitch,g. mcculloch site analysis,,lx-public/HA/sessions,3,1,
-8,dcl,dahlem center for linguistics site proposal,,,WS25,linguistik und öffentlichkeit,stefanowitch,,,,,1,
-9,smi-a,research questions and hypothesis for group research project,../../essais/smi/001,draft,WS25,schizophrenie and mental images / x-student research group,wilck/nenchev charite berlin (BUA),,,mental-img/HA,2,1,
-1,coherence,term paper,../../essais/coherence/,paper,SoSe25,sprache und psychose,stefanowitsch,,,psych/HA/paper,3,1,
-11,buechner-a,a georg buechner reception task,../../essais/buechner-a,class presentation,WS25,georg büchner,mara ruwe,session preparation to: buechner & reception,,szondi/buechner/site,3,1,
-12,dcl-pr,dahlem center for linguistics project page,,,WS25,linguistik und öffentlichkeit,stefanowitch,workflows and process to DCL,,lx-public/HA/DCL/pages,4,1,open-lx
-13,dcl-pr,dahlem center for linguistics project page,,,WS25,linguistik und öffentlichkeit,stefanowitch,workflows and process to DCL,,lx-public/HA/DCL/pages,4,0,DC-LC
+pid,name,subject,link,site_link_text,term,class,tutor,about,abstract,wd,level_to_q,published,pub.site,post.dir
+10,sebald,w.g. sebald session preparation,../../essais/sebald/001,page intern,WS25/26,dokufiktion,Brüggemann,,,szondi/docufiction/wg-sebald,3,1,,
+4,snc,testing frontend,../,parent index (..),,,,try update dynamic,,,,1,,
+3,sbc,santa santa barbara corpus essai,../../essais/sbc/,page,SoSe24,corpus linguistics,stefanowitsch,,,corpusLX/14015-HA/HA-pages,3,1,,
+5,publx,why & how to public LX,,,WS25,linguistik und öffentlichkeit,stefanowitch,,,,,1,,
+6,germanic-ha,term project drafts,../../essais/germanic/001,paper drafts,WS25,germanische sprachen im vergleich,hüning/konvicna,,,germanic/HA/drafts,3,1,,
+2,germanic,yiddish grammar paradigms,https://ada-sub.dh-index.org/shiny/work/essais/germanic-001/,shiny app,WS25,germanische sprachen im vergleich,hüning/konvicna,yiddish grammar paradigms,,germanic/app/germanic-001,3,1,,
+7,g-mcculloch,analyse einer linguistischen öffentlichkeit anhand vorhandener kategorien,../../essais/publx/001,view analysis here,WS25,linguistik und öffentlichkeit,stefanowitch,g. mcculloch site analysis,,lx-public/HA/sessions,3,1,,
+8,dcl,dahlem center for linguistics site proposal,../../essais/lx-public/HA/DCL/pages,see this post continued as single site quarto page,WS25,linguistik und öffentlichkeit,stefanowitch,DCL pages preliminary and drafts,,,,1,,
+9,smi-a,research questions and hypothesis for group research project,../../essais/smi/001,draft,WS25,schizophrenie and mental images / x-student research group,wilck/nenchev charite berlin (BUA),"mental images, stable diffusion etc.",,mental-img/HA,2,1,,
+1,coherence,term paper,../../essais/coherence/,paper,SoSe25,sprache und psychose,stefanowitsch,,,psych/HA/paper,3,1,,
+11,buechner-a,a georg buechner reception task,../../essais/buechner-a,class presentation,WS25,georg büchner,mara ruwe,session preparation to: buechner & reception,,szondi/buechner/site,3,1,,
+13,dcl-pr,dahlem center for linguistics project page,../../essais/lx-public/HA/DCL/pages,project view,WS25,linguistik und öffentlichkeit,stefanowitch,workflows and process to DCL,,lx-public/HA/DCL/pages,4,1,DC-LX,linguistics
+14,platonov,12203.platonov.baugrube,../../essais/10277_platonov,open essai,SoSe20,Arbeiter und Literatur,Chr. Schäfer,12203.platonov.baugrube,,,,1,DC-LX,avl
+15,network-uebung,meyerhoff network visualisation,../../essais/12013_meyerhoff_expo,open visualisation,WS22,variationslinguistik,rosemeyer,meyerhoff network visualisation,,,,1,DC-LX,linguistics
+16,yani,12023_yani_expo,../../essais/12023_yani,page,WS22,corpus linguistics,rosemeyer,class project: yani[final],,,,1,DC-LX,linguistics
+17,meindl-uebung,12042.meindl übungen,../../essais/12042_meindl,page,WS22,corpus linguistics,rosemeyer,meindl chi test essai,,,,1,DC-LX,linguistics
+18,negation,12052.VAR.schwenter.NEG,../../essais/negation,open poster,WS22,variationslinguistik,rosemeyer,"brazilian portuguese, negation",,,,1,DC-LX,linguistics
+19,int002,12025.INT / conversation analysis,../../essais/INT_UE002,page,WS22,interaktionslinguistik,lanwer,transkriptionsübung,,,,1,DC-LX,linguistics
+20,nprg004_eval,audio sample analysis,../../essais/eval/nprg/nprg004_eval,analysis page,WS23,neuropragmatik,pulvermüller,audio analysis,,eval/nprg/nprg004_eval,4,0,DC-LX,linguistics
+21,survey_eval,NEUROPRAGMATIK rating studie,../../essais/eval/nprg/survey_eval,survey study,WS23,neuropragmatik,pulvermüller,bewertungsstudie,,eval/nprg/survey_eval,4,1,DC-LX,linguistics

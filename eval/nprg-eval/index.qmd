@@ -1,0 +1,16 @@
+---
+title: NPRG survey
+subtitle: neuropragmatics survey study 
+author: st. schwarz
+date: '2023-01-25'
+categories: linguistics
+layout: page
+tags: [rating study,neuropragmatik]
+teaser: neuropragmatics rating study
+class: neuropragmatik
+task: 
+site_link_text: open study evaluation
+site_link: ../../essais/eval/nprg/nprg004_eval
+ids: ../../essais/eval/nprg/survey_eval
+description: audio analysis
+---

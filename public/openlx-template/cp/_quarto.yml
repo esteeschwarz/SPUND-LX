@@ -1,12 +1,12 @@
 project:
   type: website
-  output-dir: ../../../../q/lx-public/HA/DCL/pages
+  output-dir: ../../../q/eval/nprg-eval
 params:
   reload: false
 website:
   navbar:
     left:
-    - href: ../../../../../linguistics/dcl-pr
+    - href: ../../../../linguistics/survey_eval
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
     - href: index.qmd
       text: index
@@ -22,7 +22,7 @@ website:
         text: draft C
     right:
     - href: snc.qmd
-    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/lx-public/HA/DCL/pages
+    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/eval/nprg-eval
       icon: github
 format:
   html:

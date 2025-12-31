@@ -3,12 +3,22 @@
 library(yaml)
 #############
 ## setwd() to where index.qmd is
-setwd("/Users/guhl/Documents/GitHub/SPUND-LX/lx-public/HA/DCL/pages")
+# setwd("/Users/guhl/Documents/GitHub/SPUND-LX/lx-public/HA/DCL/pages")
+
 getwd()
 ################################
-pub.site<-"DC-LX"
-src.index<-paste0(getwd(),"/index.qmd")
 src.csv<-paste0(Sys.getenv("GIT_TOP"),"/DC-LX/_data/postmeta.csv")
+postmeta<-read.csv(src.csv)
+mp<-postmeta$published
+mp<-!mp
+mp<-which(mp)
+sum(mp)
+wd<-postmeta$wd[mp]
+wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd)
+setwd(wd)
+pub.site<-"DC-LX"
+f<-list.files(wd)
+ifelse(sum(grepl("index.qmd",f)),src.index<-paste0(getwd(),"/index.qmd"),src.index<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/index.qmd"))
 post.ns.dir<-paste0(Sys.getenv("GIT_TOP"),"/",pub.site,"/_posts")
 workflow.ns<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/.github/workflows")
 head.index.tx<-readLines(src.index)
@@ -22,7 +32,6 @@ head.post.md<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-te
 workflow.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/quarto-pages-docker.yml"))
 names(workflow.yml)[2]<-"on"
 quarto.yml<-read_yaml(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/_quarto.yml"))
-postmeta<-read.csv(src.csv)
 chk.meta<-function(src.csv){
   t<-readLines(src.csv)
   c<-strsplit(t,",")
@@ -39,31 +48,30 @@ chk.meta(src.csv)
 ## quarto.yml
 # get q dir
 
-d0<-normalizePath(src.index)
+d0<-normalizePath(wd)
+dq<-postmeta$level_to_q[mp]
 d1<-strsplit(d0,"/")
 m<-grep("SPUND-LX",unlist(d1))
 p<-length(unlist(d1))-m-1
+p<-ifelse(p==dq,p,dq)
+
 p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
-q2<-paste0(paste0(rep("..",2),collapse = "/"),"/") # fixed for dclx
+q2<-paste0(paste0(rep("..",dq-2),collapse = "/"),"/") # fixed for dclx
 q1<-paste0(paste0(rep("..",p+1),collapse = "/"),"/") # fixed for dclx
-q
-q2
+q0<-paste0(paste0(rep("..",p-1),collapse = "/"),"/")
 q1
 parent.posts<-q2
+parent.posts
 list.dirs(q) # wks.
-q.dir<-paste0(q,"/",postmeta$wd)
+q.dir<-paste0(q,"/",postmeta$wd[mp])
 q.dir
-mp<-postmeta$published
-mp<-!mp
-mp<-which(mp)
-sum(mp)
 mp
 
 post.dir<-postmeta$post.dir[mp]
 post.dir
-q.dir<-q.dir[mp]
+#q.dir<-q.dir[mp]
 q.dir
 #pub.site<-postmeta$pub.site[mp]
 #rm(pub.site)
@@ -81,10 +89,12 @@ parent.posts
 post.dir
 post.dir<-ifelse(pub.site=="open-lx","posts",post.dir)
 post.dir
-site_link<-paste0(parent.posts,page.dir)
+slt<-postmeta$link[mp]!=""
+site_link<-ifelse(slt,postmeta$link[mp],paste0(parent.posts,page.dir))
 site_link
 ############################
-postmeta$link[mp]<-site_link
+if(!slt)
+  postmeta$link[mp]<-site_link
 ############################
 post.dir
 post.ids<-postmeta$name[mp]
@@ -96,8 +106,11 @@ quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwa
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
 head.post.md$date<-as.character(Sys.Date())
+head.post.md$date<-head.index.project.qmd$date
 head.post.md$categories<-dclx.cat
-head.post.md$tags<-""
+tags<-head.index.project.qmd$tags
+tags<-paste0("[",paste0(tags,collapse = ","),"]")
+head.post.md$tags<-tags
 head.post.md$author<-head.index.project.qmd$author
 head.post.md$title<-head.index.project.qmd$title
 head.post.md$teaser<-head.index.project.qmd$subtitle
@@ -109,13 +122,12 @@ head.post.md$site_link<-site_link
 head.post.md$ids<-site_link
 head.post.md$description<-postmeta$about[mp]
 ### TODO: priority override: define .csv < index.qmd or vcvs.
-
+head.post.md
 handlers <- list(
   logical = function(x) {
     # Return bare 'true'/'false' without quotes
     val<- ifelse (x, "true","false")
     structure(val, class = "verbatim")   # <- prevents quoting!
-    
   }
 )
 
@@ -128,17 +140,77 @@ handlers <- list(
 post.tmp<-tempfile("post.md")
 write_yaml(head.post.md,post.tmp,handlers=handlers)
 post.tx<-readLines(post.tmp)
+post.yml<-read_yaml(post.tmp)
+#post.yml<-yaml_body(head.post.md)
+#post.yml$body$tags<- structure(post.yml$tags, class = "verbatim")
+post.yml
+#attr(post.yml$body$tags,"quoted") <- F
+str(post.yml$body$tags)
 library(xfun)
 yaml_body(head.post.md)
-
+yaml_body(post.yml)
+post.tx
 post.md<-c("---",post.tx,"---")
+post.md<-c("---",unlist(post.yml),"---")
+# Convert to YAML string
+verbatim_handler <- function(x, ...) {
+  # Return the string as a raw scalar (no quotes, no escaping)
+  yaml::as.yaml.scalar(x, style = "verbatim")
+}
+#?yaml::as.yaml()
+#head
+head.post.md
+yaml_str <- as.yaml(
+  post.yml$body,
+  handlers = list(
+    verbatim = verbatim_handler
+  )
+)
+# force quotes around a string
+port_def <- '["drei","vier"]'
+#attr(port_def, "quoted") <- T
+x <- list(ports = list(port_def))
+cat(as.yaml(x))
+post.yml<-head.post.md
+#attr(post.yml$body$tags,"quoted")<-T
+yaml_str<-as.yaml(post.yml)
+yaml_str
+#as.yaml(post.yml$body$tags,unicode = )
+as.yaml('---\ncat: schwarz\ntags: ["multi","line","string"]\n---')
+#read_yaml("[multi\nline\nstring")
+#x <- "tag: [thing,ter]"
+#attr(x, "tag") <- "!thing"
+#attr(x,"quoted") <- F
+#as.yaml(x)
+# Wrap with frontmatter delimiters
+post.yml.md <- paste0(
+  "---\n",
+  yaml_str,
+  "---\n"
+)
+post.yml.md
 post.md
+post.yml
 quarto.yml
 post.dir
 post.ns.dir<-paste(post.ns.dir,post.dir,sep = "/")
 post.ns.dir
 #writeLines(post.md,paste0("cp/",head.post.md$date,"-",head.index.qmd$id,".md"))
-writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
+#writeLines(post.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
+handlers <- list(
+  logical = function(x) {
+    # Return bare 'true'/'false' without quotes
+    val<- ifelse (x, "true","false")
+    structure(val, class = "verbatim")
+  }
+)
+
+write_yaml(post.yml.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"),handlers=handlers)
+writeLines(post.yml.md,post.tmp)
+post.tx<-readLines(post.tmp)
+m<-grep("tags:",post.tx)
+post.tx[m]<-gsub("[']","",post.tx[m])
+writeLines(post.tx,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
 ## workflow.yml
 ####################################################################
 ### careful!
@@ -173,4 +245,6 @@ filename <- tempfile()
 #close(con)
 write_yaml(quarto.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/_quarto.yml"),handlers=handlers)
 library(readr)
+
+
 write_csv(postmeta,src.csv,na = "")
