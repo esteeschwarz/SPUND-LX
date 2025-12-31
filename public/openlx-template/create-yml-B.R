@@ -119,19 +119,20 @@ quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwa
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
 head.post.md$date<-as.character(Sys.Date())
-head.post.md$date<-head.index.project.qmd$date
+head.post.md$date<-postmeta$date[mp]
 head.post.md$categories<-dclx.cat
 tags<-head.index.project.qmd$tags
+tags<-unlist(strsplit(postmeta$tags[mp],","))
 ##################################################
 #tags<-paste0("[",paste0(tags,collapse = ","),"]")
 ##################################################
 head.post.md$tags<-tags
 head.post.md$tags
 head.post.md$author<-head.index.project.qmd$author
-head.post.md$title<-head.index.project.qmd$title
-head.post.md$teaser<-head.index.project.qmd$subtitle
+head.post.md$title<-postmeta$title[mp]
+# head.post.md$teaser<-postmeta$subject[mp]
 head.post.md$class<-postmeta$class[mp]
-head.post.md$task<-postmeta$subject[mp]
+head.post.md$task<-postmeta$about[mp]
 #site_link<-paste0(q,postmeta$name[mp])
 head.post.md$site_link_text<-postmeta$site_link_text[mp]
 head.post.md$site_link<-site_link
@@ -259,13 +260,13 @@ write_yaml(workflow.yml,con,handlers=handlers)
 
 write_yaml(workflow.yml, paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"),fileEncoding = "UTF-8",handlers=handlers)
 close(con)
-
+quarto.ns<-wd
 #write_yaml(quarto.yml,"_quarto.yml",handlers=handlers)
 filename <- tempfile()
 #con <- file("_quarto.yml", "w")
 #write_yaml(quarto.yml, con,fileEncoding = "UTF-8",handlers=handlers)
 #close(con)
-write_yaml(quarto.yml,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/_quarto.yml"),handlers=handlers)
+write_yaml(quarto.yml,paste0(quarto.ns,"/_quarto.yml"),handlers=handlers)
 library(readr)
 
 
