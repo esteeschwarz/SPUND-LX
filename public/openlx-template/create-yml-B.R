@@ -14,7 +14,7 @@ mp<-!mp
 mp<-which(mp)
 sum(mp)
 wd<-postmeta$wd[mp]
-wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd)
+wd<-ifelse(grepl("^GitHub",wd),paste0("/Users/guhl/Documents/",wd),paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd))
 setwd(wd)
 pub.site<-"DC-LX"
 f<-list.files(wd)
@@ -51,10 +51,21 @@ chk.meta(src.csv)
 d0<-normalizePath(wd)
 dq<-postmeta$level_to_q[mp]
 d1<-strsplit(d0,"/")
+d1
 m<-grep("SPUND-LX",unlist(d1))
-p<-length(unlist(d1))-m-1
+sum(m)
+p<-F
+if(!is.null(m)&sum(m)!=0)
+  p<-length(unlist(d1))-m-1
+p
+dq
+parent.posts<-postmeta$link[mp]
 p<-ifelse(p==dq,p,dq)
-
+#q<-mp
+post.dir<-postmeta$post.dir[mp]
+q.dir<-post.dir
+q1<-paste0(paste0(rep("..",2),collapse = "/"),"/") # fixed for dclx
+if(!p==-9){
 p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
@@ -63,13 +74,14 @@ q1<-paste0(paste0(rep("..",p+1),collapse = "/"),"/") # fixed for dclx
 q0<-paste0(paste0(rep("..",p-1),collapse = "/"),"/")
 q1
 parent.posts<-q2
-parent.posts
-list.dirs(q) # wks.
+q
 q.dir<-paste0(q,"/",postmeta$wd[mp])
 q.dir
+}
+parent.posts
+#list.dirs(q) # wks.
 mp
 
-post.dir<-postmeta$post.dir[mp]
 post.dir
 #q.dir<-q.dir[mp]
 q.dir
@@ -81,7 +93,8 @@ quarto.yml$project$`output-dir`<-q.dir
 quarto.yml$website$title<-head.index.project.qmd$site_title
 dclx.cat<-head.index.project.qmd$categories[1]
 page.dir<-strsplit(q.dir,"/q/")
-page.dir<-page.dir[[1]][2]
+page.dir
+page.dir<-page.dir[[1]][length(page.dir)]
 page.dir<-paste0("essais/",page.dir)
 page.dir
 pub.site
@@ -109,8 +122,11 @@ head.post.md$date<-as.character(Sys.Date())
 head.post.md$date<-head.index.project.qmd$date
 head.post.md$categories<-dclx.cat
 tags<-head.index.project.qmd$tags
-tags<-paste0("[",paste0(tags,collapse = ","),"]")
+##################################################
+#tags<-paste0("[",paste0(tags,collapse = ","),"]")
+##################################################
 head.post.md$tags<-tags
+head.post.md$tags
 head.post.md$author<-head.index.project.qmd$author
 head.post.md$title<-head.index.project.qmd$title
 head.post.md$teaser<-head.index.project.qmd$subtitle
@@ -140,6 +156,7 @@ handlers <- list(
 post.tmp<-tempfile("post.md")
 write_yaml(head.post.md,post.tmp,handlers=handlers)
 post.tx<-readLines(post.tmp)
+post.tx
 post.yml<-read_yaml(post.tmp)
 #post.yml<-yaml_body(head.post.md)
 #post.yml$body$tags<- structure(post.yml$tags, class = "verbatim")
@@ -151,7 +168,7 @@ yaml_body(head.post.md)
 yaml_body(post.yml)
 post.tx
 post.md<-c("---",post.tx,"---")
-post.md<-c("---",unlist(post.yml),"---")
+#post.md<-c("---",unlist(post.yml),"---")
 # Convert to YAML string
 verbatim_handler <- function(x, ...) {
   # Return the string as a raw scalar (no quotes, no escaping)
@@ -205,10 +222,11 @@ handlers <- list(
   }
 )
 
-write_yaml(post.yml.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"),handlers=handlers)
+#write_yaml(post.yml.md,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"),handlers=handlers)
 writeLines(post.yml.md,post.tmp)
 post.tx<-readLines(post.tmp)
 m<-grep("tags:",post.tx)
+post.tx[m]
 post.tx[m]<-gsub("[']","",post.tx[m])
 writeLines(post.tx,paste0(post.ns.dir,"/",head.post.md$date,"-",post.ids,".md"))
 ## workflow.yml
@@ -233,11 +251,15 @@ workflow.yml$jobs$deploy$steps[[7]]$run<-gsub("rsample",post.ids,workflow.yml$jo
 workflow.yml$jobs$deploy$steps[[7]]$run
 
 con <- file(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"), "w")
-write_yaml(workflow.yml, paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"),fileEncoding = "UTF-8",handlers=handlers)
-
+#########
+### write only on write==T
+if(postmeta$write.workflow[mp])
+  write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",post.ids,".yml"),handler=handlers)
 write_yaml(workflow.yml,con,handlers=handlers)
+
+write_yaml(workflow.yml, paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"),fileEncoding = "UTF-8",handlers=handlers)
 close(con)
-write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",post.ids,".yml"),handler=handlers)
+
 #write_yaml(quarto.yml,"_quarto.yml",handlers=handlers)
 filename <- tempfile()
 #con <- file("_quarto.yml", "w")

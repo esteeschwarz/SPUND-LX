@@ -1,12 +1,12 @@
 project:
   type: website
-  output-dir: ../../../q/eval/nprg-eval
+  output-dir: linguistics
 params:
   reload: false
 website:
   navbar:
     left:
-    - href: ../../../../linguistics/survey_eval
+    - href: ../../linguistics/hulx-poster
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
     - href: index.qmd
       text: index
@@ -22,7 +22,7 @@ website:
         text: draft C
     right:
     - href: snc.qmd
-    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/eval/nprg-eval
+    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/GitHub/HU-LX
       icon: github
 format:
   html:
