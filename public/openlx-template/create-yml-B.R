@@ -13,17 +13,31 @@ mp<-postmeta$published
 mp<-!mp
 mp<-which(mp)
 lc<-length(mp)
+mp
 #sum(mp)
 #k<-2
 #mp<-mp[k]
 ########################
 mp
 #do.create(mp[3])
+get.wd<-function(mp){
+  wd<-postmeta$wd[mp]
+  ifelse((!is.na(wd))||(length(wd)==0),
+         wd<-ifelse(grepl("^GitHub",wd),paste0("/Users/guhl/Documents/",wd),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd)),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/"))
+  wd<-ifelse(length(wd)==0,getwd(),wd)
+  return(wd)             
+  
+}
+do.from.folder<-function(){
+  wd<-get.wd(mp)
+  wd
+}
 do.create<-function(mp){
-wd<-postmeta$wd[mp]
-ifelse(!is.na(wd),
-  wd<-ifelse(grepl("^GitHub",wd),paste0("/Users/guhl/Documents/",wd),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd)),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/"))
-wd             
+  wd<-get.wd(mp)
+# wd<-postmeta$wd[mp]
+# ifelse(!is.na(wd),
+#   wd<-ifelse(grepl("^GitHub",wd),paste0("/Users/guhl/Documents/",wd),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/",wd)),wd<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/"))
+# wd             
 #ifelse(wd=="")
 setwd(wd)
 pub.site<-"DC-LX"
@@ -76,7 +90,13 @@ p<-ifelse(p==dq,p,dq)
 post.dir<-postmeta$post.dir[mp]
 q.dir<-post.dir
 q1<-paste0(paste0(rep("..",2),collapse = "/"),"/") # fixed for dclx
-if(!p==-9){
+q.dir
+post.dir
+q1
+from.folder<-ifelse(length(q.dir)==0&length(post.dir)==0&head.index.project.qmd$index,T,F)
+if(!from.folder)
+  if(!p==-9){
+    
 p # position of project dir relative to working repo (SPUND-LX)
 #q<-list.dirs(paste0(rep("..",p),collapse = "/"))
 q<-paste0(paste0(rep("..",p),collapse = "/"),"/q")
@@ -86,6 +106,7 @@ q0<-paste0(paste0(rep("..",p-1),collapse = "/"),"/")
 q1
 parent.posts<-q2
 q
+mp
 q.dir<-paste0(q,"/",postmeta$wd[mp])
 q.dir
 }
@@ -105,54 +126,146 @@ quarto.yml$website$title<-head.index.project.qmd$site_title
 dclx.cat<-head.index.project.qmd$categories[1]
 page.dir<-strsplit(q.dir,"/q/")
 page.dir
-slug<-strsplit(page.dir[[length(page.dir)]],"/")
+slug<-head.index.project.qmd$slug
+slug.t<-head.index.project.qmd$slugt
+if(!from.folder&!is.null(slug)){
+  slug<-strsplit(page.dir[[length(page.dir)]],"/")
 slug<-slug[[length(slug)]]
 slug<-slug[[length(slug)]]
+}
+pub.site
+wd.dcl<-strsplit(wd,paste0(pub.site,"/"))
+wd.dcl
+page.dir<-wd.dcl[[length(wd.dcl)]]
+page.dir<-page.dir[[length(page.dir)]]
+
+ifelse(from.folder,page.dir<-page.dir[[1]][length(page.dir)],page.dir<-paste0("essais/",page.dir))
 page.dir<-page.dir[[1]][length(page.dir)]
-page.dir<-paste0("essais/",page.dir)
-page.dir
 pub.site
 parent.posts
+ifelse(length(parent.posts)==0,parent.posts<-"../../",parent.posts<-parent.posts)
 post.dir
 post.dir<-ifelse(pub.site=="open-lx","posts",post.dir)
 post.dir
+post.df<-data.frame(postmeta[length(postmeta$pid),])
+post.df[1,]<-""
+post.df
+row.names(post.df)<-length(postmeta$pid)+1
+postmeta<-rbind(postmeta,post.df)
+mp<-length(postmeta$pid)
 slt<-postmeta$link[mp]!=""
-site_link<-ifelse(slt,postmeta$link[mp],paste0(parent.posts,page.dir))
+
+site_link<-head.index.project.qmd$site_link
+if(is.null(site_link)&length(mp)!=0)
+  site_link<-ifelse(slt,postmeta$link[mp],paste0(parent.posts,page.dir))
 site_link
 ############################
+#mp<-1
+#post.df$link<-site_link
 if(!slt)
   postmeta$link[mp]<-site_link
 ############################
 post.dir
+if(is.na(post.dir))
+  post.dir<-tolower(head.index.project.qmd$categories)
 post.ids<-postmeta$name[mp]
+print(post.ids)
+if(post.ids==""||is.null(post.ids))
+  post.ids<-ifelse(!is.na(head.index.project.qmd$slug)||is.null(head.index.project.qmd$slug),head.index.project.qmd$slug,post.ids)
 post.wd<-postmeta$wd[mp]
+if(post.wd=="")
+  post.wd<-head.index.project.qmd$wd
+if(is.null(post.wd))
+  post.wd<-postmeta$wd[mp]
+
 paste0(q1,post.dir,"/",post.ids)
 #quarto.yml$website$navbar$left[[1]]$href<-paste0(parent.posts,post.dir,"/",post.ids)
 quarto.yml$website$navbar$left[[1]]$href<-paste0(q1,post.dir,"/",post.ids)
 quarto.yml$website$navbar$right[[2]]$href<-paste0("https://github.com/esteeschwarz/SPUND-LX/tree/main/",post.wd)
+post.wd
 ## post.md
 #head.post.md$site_link<-paste0("[",head.index.qmd$site_link_text,"](../../essais/",head.index.qmd$id,")")
-head.post.md$date<-as.character(Sys.Date())
 head.post.md$date<-postmeta$date[mp]
-head.post.md$categories<-dclx.cat
+head.post.md$date<-ifelse(head.post.md$date=="",head.index.project.qmd$dat,head.post.md$date)
+head.post.md$date<-ifelse(head.post.md$date=="",as.character(Sys.Date()),head.post.md$date)
+#head.post.md$date<-postmeta$date[mp]
+#####################################
+#break
+head.post.md$categories<-ifelse(dclx.cat!="",dclx.cat,"")
+postmeta$post.dir[mp]<-ifelse(dclx.cat!="",dclx.cat,"")
 tags<-head.index.project.qmd$tags
-tags<-unlist(strsplit(postmeta$tags[mp],","))
+typeof(tags)
+tags<-unlist(tags)
+ifelse(length(tags)==0,tags<-unlist(strsplit(postmeta$tags[mp],",")),tags<-tags)
+tags
 ##################################################
 #tags<-paste0("[",paste0(tags,collapse = ","),"]")
 ##################################################
 head.post.md$tags<-tags
 head.post.md$tags
+postmeta$tags[mp]<-paste0(tags,collapse = ",")
 head.post.md$author<-head.index.project.qmd$author
-head.post.md$title<-postmeta$title[mp]
-# head.post.md$teaser<-postmeta$subject[mp]
-head.post.md$class<-postmeta$class[mp]
-head.post.md$task<-postmeta$about[mp]
-#site_link<-paste0(q,postmeta$name[mp])
-head.post.md$site_link_text<-postmeta$site_link_text[mp]
-head.post.md$site_link<-site_link
-head.post.md$ids<-site_link
-head.post.md$description<-postmeta$about[mp]
-head.post.md$slug<-postmeta$name[mp]
+mode(postmeta$pid)<-"double"
+pid<-max(postmeta$pid,na.rm = T)+1
+cat("--- pid: \n")
+print(pid)
+head.post.md$pid<-ifelse(postmeta$pid[mp]==""||is.null(head.post.md$pid)||head.post.md$pid=="",pid,postmeta$pid[mp])
+postmeta$pid[mp]<-head.post.md$pid
+
+##################
+# head.post.md$title<-ifelse(postmeta$title[mp]=="",head.index.project.qmd$title,head.post.md$title)
+# postmeta$title[mp]<-ifelse(postmeta$title[mp]=="",head.index.project.qmd$title,head.post.md$title)
+# # head.post.md$teaser<-postmeta$subject[mp]
+# head.post.md$class<-ifelse(postmeta$class[mp]=="",head.index.project.qmd$class,head.post.md$class)
+# postmeta$class[mp]<-ifelse(postmeta$class[mp]=="",head.index.project.qmd$class,head.post.md$class)
+# # head.post.md$class<-postmeta$class[mp]
+# head.post.md$task<-ifelse(postmeta$task[mp]==""||length(postmeta$task[mp])==0,head.index.project.qmd$task,head.post.md$task)
+# postmeta$task[mp]<-ifelse(postmeta$task[mp]==""||length(postmeta$task[mp])==0,head.index.project.qmd$task,head.post.md$task)
+# postmeta$about[mp]<-postmeta$task[mp]
+# #head.post.md$task<-ifelse(postmeta$about[mp]
+# #site_link<-paste0(q,postmeta$name[mp])
+# site_link
+# # if(postmeta$site_link_text[mp]==""&head.index.project.qmd$site_link_text=="")
+# #   head.post.md$site_link_text<-"open"
+# # postmeta$site_link_text[mp]<-head.post.md$site_link_text
+# head.post.md$site_link<-ifelse(postmeta$site_link[mp]==""&head.index.project.qmd$site_link=="",
+#        head.post.md$site_link<-"",ifelse(postmeta$site_link[mp]!="",postmeta$site_link[mp],head.index.project.qmd$site_link))
+# postmeta$link[mp]<-head.post.md$site_link
+# head.post.md$ids<-site_link
+# postmeta$link[mp]<-head.post.md$site_link
+# head.post.md$description<-postmeta$about[mp]
+# head.post.md$slug<-ifelse(postmeta$name[mp]=="",head.index.project.qmd$slug,postmeta$name[mp])
+# postmeta$name[mp]<-head.post.md$slug
+# head.post.md$tutor<-ifelse(postmeta$tutor[mp]=="",head.index.project.qmd$tutor,postmeta$tutor[mp])
+# postmeta$tutor[mp]<-head.post.md$tutor
+# head.post.md$subject<-ifelse(postmeta$subject[mp]=="",head.index.project.qmd$subject,postmeta$subject[mp])
+# postmeta$subject[mp]<-head.post.md$subject
+# head.post.md$term<-ifelse(postmeta$term[mp]=="",head.index.project.qmd$term,postmeta$term[mp])
+# postmeta$term[mp]<-head.post.md$term
+# head.post.md$date<-ifelse(postmeta$date[mp]=="",head.index.project.qmd$date,postmeta$date[mp])
+# postmeta$date[mp]<-head.post.md$date
+# head.post.md$term<-ifelse(postmeta$term[mp]=="",head.index.project.qmd$term,postmeta$term[mp])
+# postmeta$term[mp]<-head.post.md$term
+
+#######################################
+cat("---- apply over postmeta ---- \n")
+col<-"tags"
+for(col in colnames(postmeta)){
+  print(col)
+  if(is.null(head.index.project.qmd[[col]])||sum(is.na(head.index.project.qmd[[col]]))>0||sum(head.index.project.qmd[[col]]=="")>0)
+    head.index.project.qmd[col]<-""
+  
+  head.post.md[col]<-ifelse(postmeta[mp,col]=="",head.index.project.qmd[col],postmeta[mp,col])
+  postmeta[mp,col]<-head.post.md[col]
+  
+}
+
+### finish postmeta
+# postmeta$pid[mp]<-mp
+#postmeta$tutor<-head.index.project.qmd$tutor
+# postmeta$subject<-head.index.project.qmd$subtitle
+# postmeta$tutor<-head.index.project.qmd$tutor
+
 ### TODO: priority override: define .csv < index.qmd or vcvs.
 head.post.md
 handlers <- list(
@@ -269,7 +382,13 @@ workflow.yml$jobs$deploy$steps[[7]]$run
 con <- file(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/public/openlx-template/cp/quarto-",post.ids,".yml"), "w")
 #########
 ### write only on write==T
-if(postmeta$write.workflow[mp])
+wf.write<-postmeta$write.workflow[mp]
+print(length(wf.write))
+print(wf.write)
+wf.w<-ifelse(length(wf.write)>0&wf.write!="",wf.write,F)
+cat("--- debug ---\n")
+print(wf.w)
+if(wf.w)
   write_yaml(workflow.yml,paste0(workflow.ns,"/quarto-",post.ids,".yml"),handler=handlers)
 write_yaml(workflow.yml,con,handlers=handlers)
 
@@ -286,7 +405,9 @@ library(readr)
 
 
 write_csv(postmeta,src.csv,na = "")
+write_csv(postmeta,"postmeta.csv",na = "")
+cat("--- finished, csv written\n")
+return(postmeta)
 }
-for(k in mp){
-  do.create(k)
-}
+mp
+pm<-ifelse(length(mp)==0,do.create(mp),F)
