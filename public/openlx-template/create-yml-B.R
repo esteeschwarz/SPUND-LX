@@ -205,6 +205,7 @@ head.post.md$tags<-tags
 head.post.md$tags
 postmeta$tags[mp]<-paste0(tags,collapse = ",")
 head.post.md$author<-head.index.project.qmd$author
+head.post.md$description<-ifelse(head.index.project.qmd$description!="",head.index.project.qmd$description,head.index.project.qmd$subtitle)
 mode(postmeta$pid)<-"double"
 pid<-max(postmeta$pid,na.rm = T)+1
 cat("--- pid: \n")
@@ -259,7 +260,8 @@ for(col in colnames(postmeta)){
   postmeta[mp,col]<-head.post.md[col]
   
 }
-
+postmeta$name<-postmeta$slug
+postmeta$description<-postmeta$about
 ### finish postmeta
 # postmeta$pid[mp]<-mp
 #postmeta$tutor<-head.index.project.qmd$tutor
@@ -405,7 +407,7 @@ library(readr)
 
 
 write_csv(postmeta,src.csv,na = "")
-write_csv(postmeta,"postmeta.csv",na = "")
+#write_csv(postmeta,"postmeta.csv",na = "")
 cat("--- finished, csv written\n")
 return(postmeta)
 }
