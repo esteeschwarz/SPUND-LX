@@ -42,9 +42,9 @@ knitr::kable(kdf)
 #| eval: true
 
 qa<-c("Wie KI unsere Sprache","yakura-llm")
-m1<-tdf$paper==qa[2]
+m2<-tdf$paper==qa[2]
 
-kdf<-data.frame(id=m1,annotations=tdf$a[m1])
+kdf<-data.frame(id=m2,annotations=tdf$a[m2])
 
 knitr::kable(kdf)
 
