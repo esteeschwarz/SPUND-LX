@@ -9,11 +9,12 @@ params:
 
 
 website:
-  title: "006"
   navbar:
     left:
-      - href: ../../..
+      - href: ../../../linguistics/germanic-ha
         text: '`<i class="weui--back2-outlined"></i>`{=html}'
+      - href: index.qmd
+        text: index
       - text: expose
         menu:  
           - href: draft-B.qmd
