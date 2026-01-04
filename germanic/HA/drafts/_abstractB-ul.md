@@ -59,6 +59,14 @@ the research-question-still-to-develop will orientate on the findings ([Table `r
 ### Q
 - characteristics of the optimal prompt (@leidinger_language_2023)
   - can we trace these in corpora?
+  - findings:
+    - no significant accuracy increase with simplification or lower perplexity score
+	- no accuracy increase with more frequent synonymes
+  - ie: there doesnt seem to be a generally "optimal language" to prompting
+	- may not seek for structural features really
+  - contradictory to BSI study and intuitive guess (experience) on optimized prompt language
+  
+
 
 
 [^1]:	which could very well be adapted to our research question

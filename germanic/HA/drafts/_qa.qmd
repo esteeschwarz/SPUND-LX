@@ -8,19 +8,41 @@ bibliography: germanic-ai.bib
 
 ---
 
-#### notes on @bsi_wie_2025
-
 {{< include _vars.qmd >}}
 
-`r tblcap<-paste0("Table ",params$tables$tbl_qa$num,", BSI: annotations")`
+#### notes on @bsi_wie_2025
+
+`r tblcap<-paste0("Table ",params$tables$tbl_qa1$num,", BSI: annotations")`
 
 ```{r}
-#| label: tbl_qa
+#| label: tbl_qa1
 #| tbl-cap: !expr 'tblcap'
 #| echo: false
 #| warning: false
 #| eval: true
 
+qa<-c("Wie KI unsere Sprache","yakura-llm")
+m1<-tdf$paper==qa[1]
+
+kdf<-data.frame(id=m1,annotations=tdf$a[m1])
+
+knitr::kable(kdf)
+
+```
+
+#### notes on @yakura_empirical_2025
+
+`r tblcap<-paste0("Table ",params$tables$tbl_qa2$num,", Yakura, LLM influence: annotations")`
+
+```{r}
+#| label: tbl_qa2
+#| tbl-cap: !expr 'tblcap'
+#| echo: false
+#| warning: false
+#| eval: true
+
+qa<-c("Wie KI unsere Sprache","yakura-llm")
+m1<-tdf$paper==qa[2]
 
 kdf<-data.frame(id=m1,annotations=tdf$a[m1])
 
