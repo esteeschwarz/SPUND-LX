@@ -136,7 +136,7 @@ a4<-c(a3,a2$t,"",refs)
 #cat("-------- written qa.qmd: ------\n")
 
 ### get notes from marginnote docx export
-
+return(a3) # without slides included
 }
 a4<-get.slides(a2)
 writeLines(a4,"qa.qmd")
