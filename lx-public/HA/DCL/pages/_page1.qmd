@@ -34,6 +34,7 @@ cat(bibentries)
 # meta
 ## snc
 - no new
+- workflow in menu
 
 ```{r}
 #| label: "depr links calculation"
@@ -87,6 +88,7 @@ ldf<-data.frame(links=lsum,valid=lvalid,deprecated=ldep)
 #| tbl-cap: publication in categories
 #| warning: false
 #| eval: false
+#| output: false
 
 df<-read.csv("../../art-meta.csv")
 knitr::kable(df)
