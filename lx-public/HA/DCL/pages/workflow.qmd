@@ -17,7 +17,7 @@ graph TD
 
 CR[create content] -->
 dcl[in blog repo]
-CR-->wd[in working repo]
+CR-->wd[in working repo]-->ml
 dcl-->se[single post]
 dcl-->ml[multilayer]
 se-->fm[content format markdown, no python/R embedding or complex sites. restricted to jekyll render]
