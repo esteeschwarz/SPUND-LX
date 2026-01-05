@@ -8,3 +8,7 @@ title: "SNC"
 - fetch bib entries from zotero, including notes, and display
 
 <!-- {{< include mermaids.qmd >}} -->
+
+## 16013.
+### 1
+- dclx workflow push _site to userpage
