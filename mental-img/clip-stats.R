@@ -65,4 +65,11 @@ summary(lm1)
 summary(lm2)
 summary(lm3)
 summary(lm4)
+library(ggplot2)
+ggplot(data = dff, aes(x = cl_score,fill = group)) +
+  geom_density(alpha=0.5) +
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal() 
 
+?density
+plot(density(dff$cl_score,grou), main = "Density Plot", xlab = "Variable", ylab = "Density")

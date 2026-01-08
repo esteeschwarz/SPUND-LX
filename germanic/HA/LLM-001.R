@@ -60,8 +60,8 @@ res <- GET(url = base_url, query = params)
 stop_for_status(res)  # error if non-2xx
 }
 #####################
-library(httr)
-library(jsonlite)
+# library(httr)
+# library(jsonlite)
 
 #api_key <- "YOUR_API_KEY_HERE"
 query<-ds2$names.types.label[1]
@@ -173,8 +173,8 @@ if (status_code(response) == 200) {
 ### wks.
 # 3. get exact institution channel from channels:
 
-library(httr)
-library(jsonlite)
+# library(httr)
+# library(jsonlite)
 library(stringr)
 library(dplyr)
 library(promises)
@@ -285,6 +285,68 @@ analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
   })
   
 }
+p.text<-readtext("yakura-prompt.md")$text
+v.list<-videos_df$channelTitle
+v.list<-unique(v.list)
+v.list<-paste0(v.list,collapse = "#")
+p.text<-gsub("_list_",v.list,p.text)
+p.text
 r1<-analyze_with_ollama_async(p.text)
 ### wks. returns channel of interest
+videos_df$channel_true<-F
+ch1<-gsub("# ","",r1)
+videos_df$channel_true[videos_df$channelTitle==ch1]<-T
+#r1
+####################################
+# 4. transcribe
+#install.packages(c("processx"))
+#remotes::install_github("bnosac/audio.whisper")
+# $brew install cmake !
+#remotes::install_github("bnosac/audio.whisper", ref = "0.5.0")
+library(audio.whisper)
+library(processx)
+library(dplyr)
+
+#$brew install yt-dlp ffmpeg
+
+#df <- data.frame(channel_id = c("UC_x5XG1OV2P6uZZ5FSM9Ttw", "UCSJ4gkVC6NrvII8umztf0Ow"))
+df <- data.frame(channel_id = unique(videos_df$channelId[videos_df$channel_true]))
+df
+output_dir <- "audio_transcripts"
+dir.create(output_dir, showWarnings = FALSE)
+model<-whisper("base")
+for (id in df$channel_id) {
+  cmd <- sprintf('yt-dlp -x --audio-format mp3 -o "%s/%%(channel_id)s_%%(id)s.%%(ext)s" "https://www.youtube.com/channel/%s/videos"', 
+                 output_dir, id)
+  processx::run("bash", c("-c", cmd))  # downloads latest videos' audio
+  
+  audio_files <- list.files(output_dir, pattern = paste0(id, ".*mp3"), full.names = TRUE)
+  if (length(audio_files)) {
+    latest <- tail(audio_files)[1]
+    out.ns<-paste0(latest,".wav")
+    cmd <- sprintf('ffmpeg -i %s -b:a 16 %s.wav', 
+                   latest, latest)
+    cmd<-sprintf("ffmpeg -i %s -ar 16000 -ab 16k -f wav %s",latest,out.ns)
+    cmd
+    processx::run("bash", c("-c", cmd))  # downloads latest videos' audio
+    #audio<-system.file(package="audio.whisper",out.ns)
+    # audio <- system.file(package = "audio.whisper", "samples", "proficiat.wav")
+    
+    audio<-out.ns
+    audio
+    # trans <- whisper_transcribe(latest, model = "base.en")$text  # local model
+    # trans <- predict(model,newdata = audio,language = "nl",type = "transcribe")  # local model
+    trans <- predict(model,newdata = audio,language = "de",type = "transcribe")  # local model
+    trans$tokens
+    text<-gsub("\n","",trans$tokens$token)
+    writeLines(trans$data$text,paste0(latest,".txt"))
+    cat("Channel", id, ":", substr(text, 1, 200), "...\n")
+    df[df$channel_id == id, "transcript"] <- text
+  }
+}
+### wks.
+# gets transcript text from !16Khz/16Kbit! .wav
+###############################################
+
+
 
