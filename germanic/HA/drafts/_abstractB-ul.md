@@ -57,7 +57,7 @@ the research-question-still-to-develop will orientate on the findings ([Table `r
 ...we come to a maybe more feasable to explore topic within the research of semantic, syntactic and pragmatic features of speech of AI users that is affected by that use. in the not citable @bsi_wie_2025 a focus lies on how users language changes depending on their making "heavy use" of AI tools. there seems to be an influence of the affordances to create successful/optimized prompts for best results on a. the language used in that prompts and furthermore b. the language beyond that usecase say the users everyday life. which is exactly what we were looking for, and from here, we can dig into corpora to find manifestations of features the study discovered as e.g. simplification of complex syntactic structures in favour of reference based patterns.
 
 ### Q
-- characteristics of the optimal prompt (@leidinger_language_2023)
+#### characteristics of the optimal prompt, @leidinger_language_2023
   - can we trace these in corpora?
   - findings:
     - no significant accuracy increase with simplification or lower perplexity score
@@ -65,8 +65,10 @@ the research-question-still-to-develop will orientate on the findings ([Table `r
   - ie: there doesnt seem to be a generally "optimal language" to prompting
 	- may not seek for structural features really
   - contradictory to BSI study and intuitive guess (experience) on optimized prompt language
-  
 
+#### Empirical evidence of Large Language Model's influence on human spoken communication, @yakura_empirical_2025
+- finds significant changes in human spoken communication past GPT onset
+- try replication on german language: [preview](yakura.html)
 
 
 [^1]:	which could very well be adapted to our research question
