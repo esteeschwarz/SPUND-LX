@@ -314,7 +314,8 @@ df <- data.frame(channel_id = unique(videos_df$channelId[videos_df$channel_true]
 df
 output_dir <- "audio_transcripts"
 dir.create(output_dir, showWarnings = FALSE)
-model<-whisper("base")
+whisper_download_model("base",model_dir = paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
+model<-whisper(paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
 for (id in df$channel_id) {
   cmd <- sprintf('yt-dlp -x --audio-format mp3 -o "%s/%%(channel_id)s_%%(id)s.%%(ext)s" "https://www.youtube.com/channel/%s/videos"', 
                  output_dir, id)
