@@ -6,6 +6,7 @@
 
 # 1. query db
 #############
+prepare.video_df<-function(){
 src<-"~/boxHKW/UNIhkw/21S/DH/local/SPUND/2025/huening/research-registry/v2.0-2025-12-16-ror-data.csv"
 d<-read.csv(src)
 colnames(d)
@@ -15,12 +16,14 @@ sum(m,na.rm = T)
 ds1<-d[m,]
 m<-grep("education",ds1$types)
 ds2<-ds1[m,]
+#save(ds2,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ds2.RData"))
 ### subset of german educational institutions
 #############################################
 # 2. get youtube channels
 #########################
 # gpt1
 # install.packages(c("httr", "jsonlite"))  # run once if needed
+get.video_df<-function(ds2,institution){
 library(httr)
 library(jsonlite)
 #library(gargle)
@@ -64,9 +67,17 @@ stop_for_status(res)  # error if non-2xx
 # library(jsonlite)
 
 #api_key <- "YOUR_API_KEY_HERE"
+ds2$names.types.label # 601 institutions categorized
+###############################
 query<-ds2$names.types.label[1]
+# 1: mannheim : audio downloaded
+# 2: hildesheim : try complete
+institution
+query<-ds2$names.types.label[institution] # maybe small set to test workflow
+###############################
 search_query <- query
 api_key
+query
 # Step 1: Get channels
 response <- GET(
   url = "https://www.googleapis.com/youtube/v3/search",
@@ -74,18 +85,52 @@ response <- GET(
     part = "snippet",
     q = search_query,
     type = "channel",
-    maxResults = 10,
+    maxResults = 20,
     key = api_key
   )
 )
+
 
 if (status_code(response) == 200) {
   channel_data <- content(response, as = "parsed")
   
   # Step 2: For each channel, get videos in date range
-  published_after <- "2024-01-01T00:00:00Z"  # RFC 3339 format
-  published_before <- "2024-12-31T23:59:59Z"
-  
+  # published_after <- "2024-01-01T00:00:00Z"  # RFC 3339 format
+  # published_before <- "2024-12-31T23:59:59Z"
+  gpt_onset<-"2022-11-30T23:59:59Z"
+  # library(lubridate)
+  # library(anytime)
+  # date_string <- gpt_onset
+  # parsed_date <- ymd_hms(date_string, tz = "UTC")
+  # 
+  # # Subtract 4 years
+  # result <- parsed_date - years(4)
+  # 
+  # # Format back to RFC 3339
+  # published_after <- rfc3339(result)
+  published_after <- "2018-12-31T23:59:59Z"
+  published_before <- "2025-12-31T23:59:59Z"
+  # Parse ISO 8601 timestamp
+  # date_string <- "2022-11-30T23:59:59Z"  # Corrected to valid date
+  # parsed_date <- ymd_hms(date_string, tz = "UTC")
+  # 
+  # # Subtract 4 years
+  # result <- parsed_date - years(4)
+  # result
+  # formatted <- format_ISO8601(result, usetz = TRUE)
+  # formatted <- rfc3339(result)
+  # formatted
+  # library(anytime)
+  # # [1] "2018-11-30 23:59:59 UTC"
+  # 
+  # date_obj <- as.POSIXct(gpt_onset, tz = "UTC")
+  # result_base <- seq(date_obj, by = "-4 years", length.out = 2)[2]
+  # result_base
+  # 
+  # gpt_onset
+  # published_after <- "2020-01-01T00:00:00Z"  # RFC 3339 format
+  # published_before <- "2024-12-31T23:59:59Z"
+  # 
   all_videos <- list()
   i<-1
   for (i in seq_along(channel_data$items)) {
@@ -145,11 +190,14 @@ if (status_code(response) == 200) {
   if (length(all_videos) > 0) {
     videos_df <- do.call(rbind, all_videos)
     print(head(videos_df))
+    return(videos_df)
   }
   
 } else {
   cat("Error:", status_code(response), "\n")
   cat("Message:", content(response, as = "text"), "\n")
+}
+
 }
 
 
@@ -168,10 +216,24 @@ if (status_code(response) == 200) {
 # )
 # 
 # channels
+#institution<-1
+#institution<-55
+for(i in 1:length(ds2$id)){
+videos_df<-get.video_df(ds2,i)
 
+videos_sf<-videos_df
+#videos_cpt<-videos_df
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
+videos_cpt<-rbind(videos_cpt,videos_sf)
+save(videos_cpt,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
+}
+unique(videos_cpt$channelTitle)
+}
 ##########
 ### wks.
 # 3. get exact institution channel from channels:
+get.videos<-function(){
+load(paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
 
 # library(httr)
 # library(jsonlite)
@@ -297,7 +359,9 @@ videos_df$channel_true<-F
 ch1<-gsub("# ","",r1)
 videos_df$channel_true[videos_df$channelTitle==ch1]<-T
 #r1
+}
 ####################################
+get.text<-function(){
 # 4. transcribe
 #install.packages(c("processx"))
 #remotes::install_github("bnosac/audio.whisper")
@@ -312,18 +376,23 @@ library(dplyr)
 #df <- data.frame(channel_id = c("UC_x5XG1OV2P6uZZ5FSM9Ttw", "UCSJ4gkVC6NrvII8umztf0Ow"))
 df <- data.frame(channel_id = unique(videos_df$channelId[videos_df$channel_true]))
 df
-output_dir <- "audio_transcripts"
-dir.create(output_dir, showWarnings = FALSE)
+# output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/001")
+# dir.create(output_dir, showWarnings = FALSE)
 whisper_download_model("base",model_dir = paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
 model<-whisper(paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
+
 for (id in df$channel_id) {
+  output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/",id)
+  dir.create(output_dir, showWarnings = FALSE)
   cmd <- sprintf('yt-dlp -x --audio-format mp3 -o "%s/%%(channel_id)s_%%(id)s.%%(ext)s" "https://www.youtube.com/channel/%s/videos"', 
                  output_dir, id)
   processx::run("bash", c("-c", cmd))  # downloads latest videos' audio
   
   audio_files <- list.files(output_dir, pattern = paste0(id, ".*mp3"), full.names = TRUE)
   if (length(audio_files)) {
+    for (k in 1:length(audio_files)){
     latest <- tail(audio_files)[1]
+    latest <- audio_files[k]
     out.ns<-paste0(latest,".wav")
     cmd <- sprintf('ffmpeg -i %s -b:a 16 %s.wav', 
                    latest, latest)
@@ -341,9 +410,14 @@ for (id in df$channel_id) {
     trans$tokens
     text<-gsub("\n","",trans$tokens$token)
     writeLines(trans$data$text,paste0(latest,".txt"))
-    cat("Channel", id, ":", substr(text, 1, 200), "...\n")
+    writeLines(trans$data$text,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/utube-audio/transcripts/",
+               latest,".txt"))
+    cat("Channel", id, ", audio [",k,"] transcribed / extract:", substr(text, 1, 100), "...\n")
+    # cat("Channel", id, ":", substr(text, 1, 200), "...\n")
     df[df$channel_id == id, "transcript"] <- text
+    }
   }
+}
 }
 ### wks.
 # gets transcript text from !16Khz/16Kbit! .wav
@@ -351,3 +425,4 @@ for (id in df$channel_id) {
 
 
 
+  
