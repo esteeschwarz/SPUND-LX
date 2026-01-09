@@ -279,6 +279,7 @@ check_ollama_status_async <- function() {
   })
 }
 library(readtext)
+videos_df<-videos_cpt
 p.text<-readtext("yakura-prompt.md")$text
 v.list<-videos_df$channelTitle
 v.list<-unique(v.list)
