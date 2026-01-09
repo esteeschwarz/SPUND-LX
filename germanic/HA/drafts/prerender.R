@@ -152,7 +152,7 @@ src<-f[k]
 t<-readLines(src)
 #lines <- gsub("\\\\_", "_", t)
 #lines <- gsub("(?={{)\\\\>", ">", lines,perl = T)
-lines <- gsub("(?=\\\\)([>_])", "\\1du", t,perl = T)
+lines <- gsub("(?=\\\\)([>_])", "\\1", t,perl = T)
 #md<-tempfile(fileext = ".md")
 #srcqmd<-paste0(src,".qmd")
 #writeLines(lines,srcqmd)

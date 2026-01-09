@@ -19,6 +19,7 @@ website:
         menu:  
           - href: draft-B.qmd
             text: draft B
+          - yakura.qmd
           - qa.qmd
       - play.qmd
       - text: drafts out
