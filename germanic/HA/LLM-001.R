@@ -23,7 +23,6 @@ ds2<-ds1[m,]
 #########################
 # gpt1
 # install.packages(c("httr", "jsonlite"))  # run once if needed
-get.video_df<-function(ds2,institution){
 library(httr)
 library(jsonlite)
 #library(gargle)
@@ -37,6 +36,7 @@ q<-cred$q[m]
 eval(e)
 
 API_KEY<-api_key<-key
+get.video_df<-function(ds2,ins){
 funout<-function(){
 #api_key <- "YOUR_API_KEY_HERE"  # <- replace with your key
 
@@ -69,11 +69,11 @@ stop_for_status(res)  # error if non-2xx
 #api_key <- "YOUR_API_KEY_HERE"
 ds2$names.types.label # 601 institutions categorized
 ###############################
-query<-ds2$names.types.label[1]
+#query<-ds2$names.types.label[i]
 # 1: mannheim : audio downloaded
 # 2: hildesheim : try complete
-institution
-query<-ds2$names.types.label[institution] # maybe small set to test workflow
+#institution<-query
+query<-ds2$names.types.label[ins] # maybe small set to test workflow
 ###############################
 search_query <- query
 api_key
@@ -132,7 +132,7 @@ if (status_code(response) == 200) {
   # published_before <- "2024-12-31T23:59:59Z"
   # 
   all_videos <- list()
-  i<-1
+  #i<-1
   for (i in seq_along(channel_data$items)) {
     channel_id <- channel_data$items[[i]]$snippet$channelId
     channel_title <- channel_data$items[[i]]$snippet$channelTitle
@@ -166,6 +166,7 @@ if (status_code(response) == 200) {
           
           # Store video info for later use
           all_videos[[length(all_videos) + 1]] <- data.frame(
+            target = query,
             channelId = channel_id,
             channelTitle = channel_title,
             channelLang = channel_lang,
@@ -201,38 +202,25 @@ if (status_code(response) == 200) {
 }
 
 
-# # Parse JSON response
-# dat <- fromJSON(content(res, as = "text", encoding = "UTF-8"))
-# 
-# # Extract a data frame of channels: id + title + description, etc.
-# channels <- data.frame(
-#   channelId   = vapply(dat$items$id$channelId, identity, character(1)),
-#   title       = vapply(dat$items$snippet$title, identity, character(1)),
-#   description = vapply(dat$items$snippet$description, identity, character(1)),
-#   publishedAt = vapply(dat$items$snippet$publishedAt, identity, character(1)),
-#   thumbnails  = vapply(dat$items$snippet$thumbnails$default$url,
-#                        identity, character(1)),
-#   stringsAsFactors = FALSE
-# )
-# 
-# channels
-#institution<-1
-#institution<-55
-for(i in 1:length(ds2$id)){
-videos_df<-get.video_df(ds2,i)
+# for(i in 1:length(ds2$id)){
+  for(i in 10:11){
+    videos_df<-get.video_df(ds2,i)
 
 videos_sf<-videos_df
+#videos_cpt$target<-"n.a."
 #videos_cpt<-videos_df
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
 videos_cpt<-rbind(videos_cpt,videos_sf)
 save(videos_cpt,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
 }
 unique(videos_cpt$channelTitle)
+#save(videos_cpt,file = paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
 }
 ##########
+################################################
 ### wks.
 # 3. get exact institution channel from channels:
-get.videos<-function(){
+get.videos_match<-function(){
 load(paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
 
 # library(httr)
@@ -280,30 +268,27 @@ check_ollama_status_async <- function() {
 }
 library(readtext)
 videos_df<-videos_cpt
+setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA"))
 p.text<-readtext("yakura-prompt.md")$text
+videos_df$target[videos_df$target=="n.a."]<-NA
+videos_df<-videos_df[!is.na(videos_df$target),]
+target<-unique(videos_df$target)
+target<-target[!is.na(target)]
+#t<-target[tr]
+
+###############################
+get.channel_match<-function(tr){
+  t<-target[tr]
+  m<-videos_df$target==t
+videos_df<-videos_df[m,]
 v.list<-videos_df$channelTitle
 v.list<-unique(v.list)
 v.list<-paste0(v.list,collapse = "#")
 p.text<-gsub("_list_",v.list,p.text)
-
+p.text<-gsub("_target_",t,p.text)
+desc<-videos_df$description[t]
+p.text
 analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
-  # future({
-  # Prepare prompt (shorter for faster processing)
-  # prompt <- paste0(
-  #   "Analyse the drama segmentation into headers (acts, scenes) and speakers within scenes. Usually these are occuring as full line content, but thats not sure. For improvement you ought to c",
-  #   "Extract drama structure patterns as JSON only:\n",
-  #   '{"h1_patterns": ["act_regex1", "act_regex2"], ',
-  #   '"h2_patterns": ["scene_regex1", "scene_regex2"], ',
-  #   '"speaker_patterns": ["speaker_regex1", "speaker_regex2"], ',
-  #   '"h1_examples": ["Act example"], "h2_examples": ["Scene example"], ',
-  #   '"speaker_examples": ["Speaker example"]}\n\n',
-  #   "TEXT:\n", substr(text_sample, 1, 2000)  # Limit sample size for speed
-  # )
-  limit<-"\nDONT output any preamble or introduction, dont output/repeat the spoken text. just output the speakernames and only the speakernames in pure json.\nExtract only the unique speaker names as they appear in the following play. Output a valid JSON array of strings. Do not add any explanation, preamble, or extra text. Only output the JSON. DONT hallucinate, interprete, summarize the text or anything else which is not demanded by this prompt"
-  # Prepare prompt for Claude
-  # prompt <- paste0(p.text,limit,
-  #                  "TEXT SAMPLE:\n",
-  #                  text_sample    )
   prompt<-p.text
     request_body <- list(
     model = model,
@@ -348,20 +333,25 @@ analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
   })
   
 }
-p.text<-readtext("yakura-prompt.md")$text
-v.list<-videos_df$channelTitle
-v.list<-unique(v.list)
-v.list<-paste0(v.list,collapse = "#")
-p.text<-gsub("_list_",v.list,p.text)
-p.text
+#}
+# p.text<-readtext("yakura-prompt.md")$text
+# v.list<-videos_df$channelTitle
+# v.list<-unique(v.list)
+# v.list<-paste0(v.list,collapse = "#")
+# p.text<-gsub("_list_",v.list,p.text)
+# p.text
 r1<-analyze_with_ollama_async(p.text)
 ### wks. returns channel of interest
+print(r1)
+print(head(videos_df))
 videos_df$channel_true<-F
 ch1<-gsub("# ","",r1)
 videos_df$channel_true[videos_df$channelTitle==ch1]<-T
 #r1
+return(videos_df)
 }
 ####################################
+videos_m<-get.channel_match(1)
 get.text<-function(){
 # 4. transcribe
 #install.packages(c("processx"))
