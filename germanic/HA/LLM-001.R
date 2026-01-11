@@ -363,6 +363,7 @@ library(processx)
 library(dplyr)
 
 #$brew install yt-dlp ffmpeg
+# on monterey install yt-dlp via macports (missing [deno] in brew install)
 
 #df <- data.frame(channel_id = c("UC_x5XG1OV2P6uZZ5FSM9Ttw", "UCSJ4gkVC6NrvII8umztf0Ow"))
 df <- data.frame(channel_id = unique(videos_df$channelId[videos_df$channel_true]))
