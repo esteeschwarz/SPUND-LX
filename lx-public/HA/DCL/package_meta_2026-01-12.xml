@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE surveyContent SYSTEM "https://www.soscisurvey.de/templates/doctype.survey.dtd">
+<surveyContent version="2.4">
+<program>sosci</program>
+<version>3.8.00</version>
+<timestamp>2026-01-12 04:45:53</timestamp>
+<title>meta</title>
+<description />
+<language>ger</language>
+<attributes.specific program="ofb">
+<attr id="language">ger</attr>
+</attributes.specific>
+<section>
+<title>meta</title>
+<attributes.specific program="ofb">
+<attr id="id">MT</attr>
+</attributes.specific>
+<question>
+<description>intro</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>
+<![CDATA[# 16024.
+## Dahlem Center for Linguistics
+### Umfrage: Bedarfsermittlung
+
+#### Hintergrund
+Im Rahmen einer Hausarbeit möchte ich dem Dahlem Center for Linguistics eine überarbeitete und neu organsierte Webseite als Vorschlag anbieten. Um meinen Vorschlag an die Bedürfnisse und den Workflow der NutzerInnen anpassen zu können, ist eine erste Einschätzung dieser Bedürfnisse nötig, die ich mit dieser Umfrage erheben will.
+Wenn Sie können, nehmen Sie sich bitte die Zeit, die Fragen möglichst genau zu lesen und, soweit es geht, zu beantworten. Sie würden mir helfen, wenn Sie auch bei den offenen Fragen kurz in sich gehen und Rückmeldung geben.
+
+> Wenn Sie noch nie vom Dahlem Center for Linguistics gehört haben oder nicht involviert sind, wird auch diese Möglichkeit in den Fragen berücksichtigt - bitte brechen Sie in diesem Fall die Umfrage deshalb hier nicht ab (:]]>
+</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>consent</description>
+<class>select</class>
+<title>zuerst</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>Einverständniserklärung</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+<attr id="restrictions.answered">yes</attr>
+</attributes.specific>
+<item>
+<text>ich bin einverstanden mit der elektronischen Auswertung meiner Angaben.</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>else-break</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>(andernfalls wird die Umfrage an dieser Stelle beendet.)</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">3</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>meta_age</description>
+<class>checkbox</class>
+<title>(um einschätzen zu können, welche Altersgruppen an der Erstellung der Inhalte beteiligt sind)</title>
+<explanation>natürlich freiwillige Angabe...</explanation>
+<inputPosition>right</inputPosition>
+<labels>
+<li i="1">alter</li>
+<li i="2">geschlecht</li>
+<li i="3">bildungsgrad ()</li>
+</labels>
+<lead>Alter</lead>
+<order>default</order>
+<residualOptions>
+<li i="0">n.a.</li>
+</residualOptions>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">4</attr>
+<attr id="scale.niveau">6</attr>
+</attributes.specific>
+<item>
+<text>18-30</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>31-45</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>46-70</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>gender</description>
+<class>checkbox</class>
+<title>statistik</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<lead>gender</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+<item>
+<text>m</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>w</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>d</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>k.a.</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>danke...</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<headerText>danke...</headerText>
+<inputPosition>right</inputPosition>
+<lead>... dasz Sie an der befragung teilgenommen haben. damit haben wir wahrscheinlich vermieden, dasz lange gespräche mit allen beteiligten geführt werden müssten / ich hoffe, es war nicht zu aufwendig, danke jdfs. für Ihre mühen, mit freundlichen grüszen, st.</lead>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">6</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>FG</description>
+<class>dropdown</class>
+<title>Fachgebiet</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+<item>
+<text>Romanistik</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Dt. - Nl. Philologie</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Lat. - Gr. Philologie</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>AVL</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Engl. Philologie</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>Psychologie</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>FGO</description>
+<class>text</class>
+<title>anderes Fachgebiet</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">8</attr>
+<attr id="pos">8</attr>
+</attributes.specific>
+<item>
+<text>bitte nennen</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>FGV</description>
+<class>checkbox</class>
+<title>zusatz</title>
+<explanation />
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">9</attr>
+<attr id="pos">9</attr>
+</attributes.specific>
+<filter>
+<condition type="any">
+<value id="vOpt">1</value>
+<value id="vOpt">2</value>
+</condition>
+<effect type="+qst">
+<value id="qIS">GN08</value>
+</effect>
+</filter>
+<item>
+<text>ich bin in der Verwaltung / Administration des Centers tätig</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>ich bin in der Verwaltung / Administration der Website tätig</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>tech</description>
+<class>selscale</class>
+<title>technische begabung: vertrautheit mit CMS / tools,frameworks / general IT </title>
+<explanation>mein know how in computertechnischen dingen</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">10</attr>
+<attr id="pos">10</attr>
+<attr id="operation">right</attr>
+</attributes.specific>
+<item>
+<text>nix</text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+</attributes.specific>
+</item>
+<item>
+<text>sehr gering</text>
+<attributes.specific program="ofb">
+<attr id="id">2</attr>
+<attr id="pos">2</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwas</text>
+<attributes.specific program="ofb">
+<attr id="id">3</attr>
+<attr id="pos">3</attr>
+</attributes.specific>
+</item>
+<item>
+<text>etwas besser</text>
+<attributes.specific program="ofb">
+<attr id="id">4</attr>
+<attr id="pos">4</attr>
+</attributes.specific>
+</item>
+<item>
+<text>gut</text>
+<attributes.specific program="ofb">
+<attr id="id">5</attr>
+<attr id="pos">5</attr>
+</attributes.specific>
+</item>
+<item>
+<text>sehr gut</text>
+<attributes.specific program="ofb">
+<attr id="id">6</attr>
+<attr id="pos">6</attr>
+</attributes.specific>
+</item>
+<item>
+<text>professionell</text>
+<attributes.specific program="ofb">
+<attr id="id">7</attr>
+<attr id="pos">7</attr>
+</attributes.specific>
+</item>
+</question>
+<question>
+<description>free-h1</description>
+<class>TextContent</class>
+<title />
+<explanation />
+<headerText>mir ist da noch was eingefallen...</headerText>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">11</attr>
+<attr id="pos">11</attr>
+<attr id="alignment">default</attr>
+<attr id="character">plain</attr>
+</attributes.specific>
+</question>
+<question>
+<description>freifeld</description>
+<class>text</class>
+<title />
+<explanation>(hier können Sie bei zeit/kapazität noch schreiben, was Sie an Ideen, kritik, bedenken zum DCL und meinem vorhaben noch loswerden wollen)</explanation>
+<inputPosition>right</inputPosition>
+<order>default</order>
+<attributes.specific program="ofb">
+<attr id="id">12</attr>
+<attr id="pos">12</attr>
+</attributes.specific>
+<item>
+<text> </text>
+<attributes.specific program="ofb">
+<attr id="id">1</attr>
+<attr id="pos">1</attr>
+<attr id="height">200</attr>
+</attributes.specific>
+</item>
+</question>
+</section>
+</surveyContent>
