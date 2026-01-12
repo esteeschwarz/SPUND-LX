@@ -3,7 +3,7 @@
 <surveyContent version="2.4">
 <program>sosci</program>
 <version>3.8.00</version>
-<timestamp>2026-01-11 19:50:54</timestamp>
+<timestamp>2026-01-12 04:45:04</timestamp>
 <title>content</title>
 <description />
 <language>ger</language>
@@ -16,10 +16,7 @@
 <attr id="id">CN</attr>
 </attributes.specific>
 <question>
-<description>
-<![CDATA[# preliminary
-wir würden ger...]]>
-</description>
+<description>CN-prelim-h1</description>
 <class>TextContent</class>
 <title />
 <explanation />
@@ -39,8 +36,8 @@ wir würden gern mehr zum status quo der content creation erfahren]]>
 <question>
 <description>how</description>
 <class>select</class>
-<title>um einen Beitrag zu veröffentlichen bzw. Inhalte zu aktualisieren, ist im Moment folgendes zu tun</title>
-<explanation />
+<title>inhalte, generell</title>
+<explanation>um einen beitrag zu veröffentlichen bzw. inhalte zu aktualisieren, ist im moment folgendes zu tun:</explanation>
 <inputPosition>right</inputPosition>
 <order>default</order>
 <attributes.specific program="ofb">
@@ -55,7 +52,7 @@ wir würden gern mehr zum status quo der content creation erfahren]]>
 </attributes.specific>
 </item>
 <item>
-<text>ich gebe eine Textdatei ab, die dann von jemandem ins System eingepflegt wird</text>
+<text>ich gebe (schicke) eine textdatei ab, die dann von jemandem ins system eingepflegt wird</text>
 <attributes.specific program="ofb">
 <attr id="id">2</attr>
 <attr id="pos">2</attr>
@@ -65,8 +62,8 @@ wir würden gern mehr zum status quo der content creation erfahren]]>
 <question>
 <description>cms</description>
 <class>checkbox</class>
-<title>im CMS</title>
-<explanation>Mehrfachnennung möglich</explanation>
+<title>fragen zum content management</title>
+<explanation>im CMS:</explanation>
 <inputPosition>right</inputPosition>
 <order>default</order>
 <attributes.specific program="ofb">
@@ -75,6 +72,14 @@ wir würden gern mehr zum status quo der content creation erfahren]]>
 <attr id="character">static</attr>
 <attr id="columns">1</attr>
 </attributes.specific>
+<filter>
+<condition type="any">
+<value id="vOpt">2</value>
+</condition>
+<effect type="+qst">
+<value id="qIS">GN09</value>
+</effect>
+</filter>
 <item>
 <text>habe ich vielfältige Einstellungs/ Formatierungsmöglichkeiten</text>
 <attributes.specific program="ofb">
@@ -83,7 +88,7 @@ wir würden gern mehr zum status quo der content creation erfahren]]>
 </attributes.specific>
 </item>
 <item>
-<text>lade ich fertig formatierte Texte hoch</text>
+<text>lade ich fertig formatierte Texte hoch (word/open word)</text>
 <attributes.specific program="ofb">
 <attr id="id">2</attr>
 <attr id="pos">2</attr>
