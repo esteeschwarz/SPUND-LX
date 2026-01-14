@@ -24,10 +24,11 @@ library(lme4)
 library(lmerTest)
 print(colnames(df4_lim))
 print(head(df4_lim))
+colnames(df4_lim)[grep("text_chunk_clips",colnames(df4_lim))]<-"cl_score"
+colnames(df4_lim)[grep("filename",colnames(df4_lim))]<-"TN"
 dff4 <- df4_lim %>%
-  unnest_longer(text_chunk_clips)
-colnames(dff4)[1]<-"cl_score"
-colnames(dff4)[grep("filename",colnames(dff4))]<-"TN"
+  unnest_longer(cl_score)
+#colnames(dff4)[1]<-"cl_score"
 ggplot(data = dff4, aes(x = cl_score,fill = group)) +
   geom_density(alpha=0.5) +
   labs(title = "Density Plot", x = "clip score", y = "Density") +
