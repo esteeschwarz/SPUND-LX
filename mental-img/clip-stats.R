@@ -210,6 +210,8 @@ unique(df4_lim$filename)
 # Check column types
 str(df4_lim)
 sapply(df4_lim, class)
+sapply(df4,class)
+sapply(dff4,class)
 
 # > sapply(df4_lim, class)
 # $text_chunk_clips
@@ -265,4 +267,30 @@ dff4$cl_score <- unlist(df4_lim$text_chunk_clips)
 
 # Reset rownames
 rownames(dff4) <- NULL
+
+list_lengths <- sapply(df4_lim$text_chunk_clips, length)
+
+# Expand rows
+dff4 <- df4_lim[rep(seq_len(nrow(df4_lim)), list_lengths), ]
+
+# Flatten the list column
+dff4$cl_score <- unlist(df4_lim$text_chunk_clips)
+dff4<-dff4[,2:length(dff4)]
+t1<-unique(dff4$text_chunk)
+for(k in 1:length(t1)){
+  m<-dff4$text_chunk==t1[k]
+  dff4$text_chunk[m]<-k
+}
+save(dff4,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/mental-img/HA/df4_lim.RData"))
+
+# Reset rownames
+rownames(dff4) <- NULL
+#colnames(dff4)[grep("text_chunk_clips",colnames(dff4))]<-"cl_score"
+colnames(dff4)[grep("filename",colnames(dff4))]<-"TN"
+ggplot(data = dff4, aes(x = cl_score,fill = group)) +
+  geom_density(alpha=0.5) +
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal() 
+lm6<-lmer(cl_score~group+(1|TN)+(1|text_chunk)+ld+fstPPr_rate,dff4)
+
 
