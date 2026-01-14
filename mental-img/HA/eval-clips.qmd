@@ -24,6 +24,7 @@ library(lme4)
 library(lmerTest)
 #print(colnames(df4_lim))
 print(head(df4_lim))
+
 # dff4 <- df4_lim %>%
 #   unnest_longer(cl_score)
 # dff4 <- df4_lim %>%
@@ -44,6 +45,7 @@ dff4$cl_score <- unlist(df4_lim$text_chunk_clips)
 rownames(dff4) <- NULL
 #colnames(dff4)[grep("text_chunk_clips",colnames(dff4))]<-"cl_score"
 colnames(dff4)[grep("filename",colnames(dff4))]<-"TN"
+print(unique(dff4$TN))
 ggplot(data = dff4, aes(x = cl_score,fill = group)) +
   geom_density(alpha=0.5) +
   labs(title = "Density Plot", x = "clip score", y = "Density") +
