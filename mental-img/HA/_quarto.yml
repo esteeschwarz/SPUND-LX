@@ -3,11 +3,15 @@ project:
   # output-dir: /Users/guhl/Documents/GitHub/open-lx/essais/publx/001
   output-dir: ../../q/smi/001
 website:
-  title: "009"
   navbar:
     left:
-      - href: ../../..
-        text: '<img src="../../../images/backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+    - href: ../../../linguistics/smi/001
+      text: '`<i class="weui--back2-outlined"></i>`{=html}'
+    - href: index.qmd
+      text: index
+    - text: work
+      menu:
+      - eval-clips.qmd
     right:
       - snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/mental-img
@@ -22,6 +26,15 @@ format:
     css: styles.css
     toc: true
     toc-depth: 3
+    include-in-header:
+      text: |
+        <!-- HTML simply prints the inner text -->
+        <!-- 16482.snc -->
+        <script type="application/latex">
+        \newcommand{\he}[1]{#1}
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
 
 execute: 
   freeze: auto

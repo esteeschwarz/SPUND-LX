@@ -1,0 +1,38 @@
+---
+title: CLIP evaluation
+---
+
+## corpus clip scores
+- data: clip_results.parquet (Ivan Nenchev)
+- additional: 
+  - lexical diversity score
+  - 1stPPronoun rate
+  - exploded clip scores, not mean!
+
+```{r}
+#| warning: false
+#| echo: false
+
+### wks., proceed from here:
+print(getwd())
+load("df4_lim.RData")
+###############################################################
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(lmerTest)
+
+dff4 <- df4_lim |>
+  unnest_longer(text_chunk_clips)
+colnames(dff4)[1]<-"cl_score"
+ggplot(data = dff4, aes(x = cl_score,fill = group)) +
+  geom_density(alpha=0.5) +
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal() 
+lm6<-lmer(cl_score~group+(1|filename)+(1|text_chunk)+ld+fstPPr_rate,dff4)
+#lm4<-lm(cl_score~group,dff)
+# summary(lm1)
+print(summary(lm6))
+
+```

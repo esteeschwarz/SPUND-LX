@@ -156,8 +156,49 @@ dfa.2$text[1]
 ### Q2 no issue, all checked
 }
 ############################
+### okay, other features? simple lexical diversity first
+ld<-lapply(seq_along(1:length(df$filename)),function(l){
+cat("processing row:",l,"\r")
+    t<-df$text[l]
+  t2<-unlist(strsplit(t," "))
+  t3<-unique(t2)
+  ttr<-length(t3)/length(t2)
+  firstPPr<-t2%in%c("I","my","me","mine")
+  fstPP<-sum(firstPPr)
+  
+  return(data.frame(l=length(t2),ttr=ttr,firstPPr=fstPP))
+  # return(list(ttr=ttr,fstPP=fstPP))
+})
+#rm(ld)
+library(abind)
+ldf<-data.frame(abind(ld,along=1))
+ldf$fstPPr_rate<-ldf$firstPPr/ldf$l
+df4<-cbind(df,ld=ldf$ttr,fstPPr_rate=ldf$fstPPr_rate)
+dff4 <- df4 |>
+  unnest_longer(text_chunk_clips)
+colnames(dff4)[7]<-"cl_score"
+lm6<-lmer(cl_score~group+(1|filename)+(1|text_chunk)+ld+fstPPr_rate,dff4)
+#lm4<-lm(cl_score~group,dff)
+summary(lm1)
+summary(lm6)
+df4_lim<-df4[,c("text_chunk_clips","group","ld","fstPPr_rate")]
+#save(df4,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
+save(df4_lim,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/mental-img/HA/df4_lim.RData"))
+#########################################################################
+### wks., proceed from here:
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
+###############################################################
+library(tidyr)
+library(dplyr)
 
-
-
-
-
+dff4 <- df4 |>
+  unnest_longer(text_chunk_clips)
+colnames(dff4)[7]<-"cl_score"
+ggplot(data = dff4, aes(x = cl_score,fill = group)) +
+  geom_density(alpha=0.5) +
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal() 
+lm6<-lmer(cl_score~group+(1|filename)+(1|text_chunk)+ld+fstPPr_rate,dff4)
+#lm4<-lm(cl_score~group,dff)
+# summary(lm1)
+summary(lm6)
