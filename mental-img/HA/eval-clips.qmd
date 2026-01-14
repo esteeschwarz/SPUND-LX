@@ -14,7 +14,7 @@ title: CLIP evaluation
 #| echo: false
 
 ### wks., proceed from here:
-print(getwd())
+# print(getwd())
 load("df4_lim.RData")
 ###############################################################
 library(tidyr)
