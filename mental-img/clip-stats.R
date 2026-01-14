@@ -182,6 +182,8 @@ lm6<-lmer(cl_score~group+(1|filename)+(1|text_chunk)+ld+fstPPr_rate,dff4)
 summary(lm1)
 summary(lm6)
 df4_lim<-df4[,c("text_chunk_clips","filename","group","text_chunk","ld","fstPPr_rate")]
+df4_lim$text_chunk_clips <- as.list(df4_lim$text_chunk_clips)
+
 #save(df4,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
 #save(df4_lim,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/mental-img/HA/df4_lim.RData"))
 #########################################################################
@@ -202,3 +204,51 @@ lm6<-lmer(cl_score~group+(1|filename)+(1|text_chunk)+ld+fstPPr_rate,dff4)
 #lm4<-lm(cl_score~group,dff)
 # summary(lm1)
 summary(lm6)
+
+### git tidy issue on unnest
+unique(df4_lim$filename)
+# Check column types
+str(df4_lim)
+sapply(df4_lim, class)
+
+# > sapply(df4_lim, class)
+# $text_chunk_clips
+# [1] "arrow_list"    "vctrs_list_of" "vctrs_vctr"    "list"         
+# 
+# $filename
+# [1] "character"
+# 
+# $group
+# [1] "character"
+# 
+# $text_chunk
+# [1] "character"
+# 
+# $ld
+# [1] "numeric"
+# 
+# $fstPPr_rate
+# [1] "numeric"
+
+
+# Check for duplicates or hidden whitespace in colnames
+colnames(df4_lim)
+nchar(colnames(df4_lim))  # reveals hidden spaces
+
+# Inspect the cl_score column specifically
+class(df4_lim$cl_score)
+length(df4_lim$cl_score[[1]])  # length of first nested list
+sapply(df4_lim$cl_score, length)  # all lengths
+
+# Check TN specifically
+class(df4_lim$TN)
+unique(df4_lim$TN) |> head(20)
+any(is.na(df4_lim$TN))
+any(duplicated(df4_lim$TN))
+
+# Check for empty rows
+nrow(df4_lim)
+any(rowSums(is.na(df4_lim)) == ncol(df4_lim))
+
+# Try unnesting just cl_score alone
+test <- df4_lim %>% select(cl_score) %>% unnest_longer(cl_score)
