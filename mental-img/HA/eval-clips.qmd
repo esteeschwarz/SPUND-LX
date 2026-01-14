@@ -26,7 +26,10 @@ print(colnames(df4_lim))
 print(head(df4_lim))
 colnames(df4_lim)[grep("text_chunk_clips",colnames(df4_lim))]<-"cl_score"
 colnames(df4_lim)[grep("filename",colnames(df4_lim))]<-"TN"
+# dff4 <- df4_lim %>%
+#   unnest_longer(cl_score)
 dff4 <- df4_lim %>%
+  select(TN, text_chunk, group, ld, fstPPr_rate, cl_score) %>%
   unnest_longer(cl_score)
 #colnames(dff4)[1]<-"cl_score"
 ggplot(data = dff4, aes(x = cl_score,fill = group)) +
