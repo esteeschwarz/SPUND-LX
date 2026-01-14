@@ -193,7 +193,7 @@ load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
 library(tidyr)
 library(dplyr)
 
-dff4 <- df4 |>
+dff4 <- df4_lim |>
   unnest_longer(text_chunk_clips)
 colnames(dff4)[7]<-"cl_score"
 ggplot(data = dff4, aes(x = cl_score,fill = group)) +
@@ -252,3 +252,17 @@ any(rowSums(is.na(df4_lim)) == ncol(df4_lim))
 
 # Try unnesting just cl_score alone
 test <- df4_lim %>% select(cl_score) %>% unnest_longer(cl_score)
+
+### base R unnesting
+# Get the lengths of each list element
+list_lengths <- sapply(df4_lim$text_chunk_clips, length)
+
+# Expand rows
+dff4 <- df4_lim[rep(seq_len(nrow(df4_lim)), list_lengths), ]
+
+# Flatten the list column
+dff4$cl_score <- unlist(df4_lim$text_chunk_clips)
+
+# Reset rownames
+rownames(dff4) <- NULL
+
