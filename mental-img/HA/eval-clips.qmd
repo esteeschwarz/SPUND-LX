@@ -22,7 +22,8 @@ library(dplyr)
 library(ggplot2)
 library(lme4)
 library(lmerTest)
-
+print(colnames(df4_lim))
+print(head(df4_lim))
 dff4 <- df4_lim |>
   unnest_longer(text_chunk_clips)
 colnames(dff4)[1]<-"cl_score"

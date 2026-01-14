@@ -181,9 +181,9 @@ lm6<-lmer(cl_score~group+(1|filename)+(1|text_chunk)+ld+fstPPr_rate,dff4)
 #lm4<-lm(cl_score~group,dff)
 summary(lm1)
 summary(lm6)
-df4_lim<-df4[,c("text_chunk_clips","group","ld","fstPPr_rate")]
+df4_lim<-df4[,c("text_chunk_clips","filename","group","text_chunk","ld","fstPPr_rate")]
 #save(df4,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
-save(df4_lim,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/mental-img/HA/df4_lim.RData"))
+#save(df4_lim,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/mental-img/HA/df4_lim.RData"))
 #########################################################################
 ### wks., proceed from here:
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
