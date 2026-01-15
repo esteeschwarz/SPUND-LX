@@ -1,4 +1,3 @@
-%pip install pandas
 import pandas as pd
 
 # Load Parquet into DataFrame

@@ -190,8 +190,8 @@ df4_lim$text_chunk_clips <- as.list(df4_lim$text_chunk_clips)
 ### wks., proceed from here:
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/df4.RData"))
 ###############################################################
-library(tidyr)
-library(dplyr)
+# library(tidyr)
+# library(dplyr)
 
 dff4 <- df4_lim |>
   unnest_longer(text_chunk_clips)
@@ -294,3 +294,26 @@ ggplot(data = dff4, aes(x = cl_score,fill = group)) +
 lm6<-lmer(cl_score~group+(1|TN)+(1|text_chunk)+ld+fstPPr_rate,dff4)
 
 
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/mental-img/HA/df4_lim.RData"))
+###############################################################
+
+library(ggplot2)
+library(lme4)
+library(lmerTest)
+ggplot(data = dff4, aes(x = cl_score,fill = group)) +
+  geom_density(alpha=0.5) +
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal() 
+lm6<-lmer(cl_score~group+(1|TN)+(1|text_chunk)+ld+fstPPr_rate,dff4)
+#lm4<-lm(cl_score~group,dff)
+# summary(lm1)
+print(summary(lm6))
+
+
+### randomize table before clip
+dfb<-read_parquet(d1)
+
+dfb1<-dfb[sample(length(dfb$filename),length(dfb$filename)),]
+dfb1<-dfb1[!grepl("WMatrix",dfb1$filename),]
+write_parquet(dfb1,paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/tabelle_rnd.parquet"))
+?write_parquet

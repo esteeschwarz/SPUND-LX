@@ -11,7 +11,7 @@ title: CLIP evaluation
 
 ```{r}
 #| warning: false
-#| echo: true
+#| echo: false
 
 ### wks., proceed from here:
 # print(getwd())
