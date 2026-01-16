@@ -317,3 +317,30 @@ dfb1<-dfb[sample(length(dfb$filename),length(dfb$filename)),]
 dfb1<-dfb1[!grepl("WMatrix",dfb1$filename),]
 write_parquet(dfb1,paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/tabelle_rnd.parquet"))
 ?write_parquet
+
+library(ggplot2)
+# Varianzvergleich auf Personen ebene
+unique(df$filename)
+df_no_big<-df[!grepl("WMatrix",df$filename),]
+df_pers_var <- aggregate(var_clip ~ filename + group, data = df_no_big, FUN = mean)
+?aggregate
+t.test(var_clip ~ group, data = df_pers_var)
+t.test(var_clip ~ group, data = df_no_big)
+
+ggplot(df_pers_var, aes(x = group, y = var_clip)) +
+  geom_point(position = position_jitter(width = 0.1), size = 2) +
+  geom_boxplot(alpha = 0.3) +
+  labs(y = "Variance of CLIP score within interview")
+
+
+# Varianzvergleich auf Chunk ebene
+
+t.test(var_clip ~ group, data = df_no_big)
+
+ggplot(df_no_big, aes(x = group, y = var_clip)) +
+  geom_point(position = position_jitter(width = 0.1), size = 2) +
+  geom_boxplot(alpha = 0.3) +
+  labs(y = "Variance of CLIP score within interview")
+
+
+
