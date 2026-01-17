@@ -6,7 +6,7 @@
 
 # 1. query db
 #############
-prepare.video_df<-function(){
+prepare.video_df<-function(ins){
 src<-"~/boxHKW/UNIhkw/21S/DH/local/SPUND/2025/huening/research-registry/v2.0-2025-12-16-ror-data.csv"
 d<-read.csv(src)
 colnames(d)
@@ -67,7 +67,7 @@ stop_for_status(res)  # error if non-2xx
 # library(jsonlite)
 
 #api_key <- "YOUR_API_KEY_HERE"
-ds2$names.types.label # 601 institutions categorized
+inst.label<-ds2$names.types.label # 601 institutions categorized
 ###############################
 #query<-ds2$names.types.label[i]
 # 1: mannheim : audio downloaded
@@ -79,6 +79,18 @@ search_query <- query
 api_key
 query
 # Step 1: Get channels
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
+check.matched<-function(){
+  target<-unique(videos_cpt$target)
+  target
+  m<-target%in%inst.label
+  cat(target[m],"already channeled...\n")
+  if(sum(m)==length(ins))
+    return(F)
+  return(T)
+}
+if(!check.matched())
+  return("institution already checked. skipping...")
 response <- GET(
   url = "https://www.googleapis.com/youtube/v3/search",
   query = list(
@@ -203,7 +215,7 @@ if (status_code(response) == 200) {
 
 
 # for(i in 1:length(ds2$id)){
-  for(i in 10:11){
+ for(i in ins){
     videos_df<-get.video_df(ds2,i)
 
 videos_sf<-videos_df
@@ -214,14 +226,15 @@ videos_cpt<-rbind(videos_cpt,videos_sf)
 save(videos_cpt,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
 }
 unique(videos_cpt$channelTitle)
-#save(videos_cpt,file = paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
+save(videos_cpt,file = paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
+return(videos_cpt)
 }
 ##########
 ################################################
 ### wks.
 # 3. get exact institution channel from channels:
-get.videos_match<-function(){
-load(paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
+get.videos_match<-function(videos_df,what){
+#load(paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
 
 # library(httr)
 # library(jsonlite)
@@ -229,6 +242,7 @@ library(stringr)
 library(dplyr)
 library(promises)
 library(future)
+library(httr)
 
 # Enable async processing for better server performance
 plan(multisession)
@@ -266,8 +280,10 @@ check_ollama_status_async <- function() {
     })
   })
 }
-library(readtext)
-videos_df<-videos_cpt
+#print(check_ollama_status_async())
+#library(readtext)
+
+#videos_df<-videos_df[what,]
 setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA"))
 p.text<-readtext("yakura-prompt.md")$text
 videos_df$target[videos_df$target=="n.a."]<-NA
@@ -275,19 +291,23 @@ videos_df<-videos_df[!is.na(videos_df$target),]
 target<-unique(videos_df$target)
 target<-target[!is.na(target)]
 #t<-target[tr]
-
+target
+#tr<-1
 ###############################
-get.channel_match<-function(tr){
+get.channel_match<-function(videos_df,tr){
   t<-target[tr]
+#  m<-videos_df$target==t
+  print(t)
   m<-videos_df$target==t
+  print(sum(m))
 videos_df<-videos_df[m,]
 v.list<-videos_df$channelTitle
 v.list<-unique(v.list)
 v.list<-paste0(v.list,collapse = "#")
 p.text<-gsub("_list_",v.list,p.text)
 p.text<-gsub("_target_",t,p.text)
-desc<-videos_df$description[t]
-p.text
+#desc<-videos_df$description[t]
+print(p.text)
 analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
   prompt<-p.text
     request_body <- list(
@@ -343,16 +363,31 @@ analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
 r1<-analyze_with_ollama_async(p.text)
 ### wks. returns channel of interest
 print(r1)
-print(head(videos_df))
+#print(head(videos_df))
+#m<-videos_df
 videos_df$channel_true<-F
 ch1<-gsub("# ","",r1)
+#ch1<-c(paste0("en: ",ch1),paste0("de: ",ch1))
+ch1
+target
+unique(videos_df$channelTitle)
 videos_df$channel_true[videos_df$channelTitle==ch1]<-T
 #r1
 return(videos_df)
 }
 ####################################
-videos_m<-get.channel_match(1)
-get.text<-function(){
+videos_df.m<-videos_df
+#channel<-target[t]
+for (t in what){
+#  channel<-target[t]
+  channel<-t
+  print(channel)
+  videos_df.m<-get.channel_match(videos_df.m,channel)
+}
+return(videos_df.m)
+}
+
+get.text<-function(what){
 # 4. transcribe
 #install.packages(c("processx"))
 #remotes::install_github("bnosac/audio.whisper")
@@ -362,6 +397,18 @@ library(audio.whisper)
 library(processx)
 library(dplyr)
 
+### data:
+ # load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
+  #############################
+  vtest<-prepare.video_df(1:10)
+  #############################
+  #head(ds2,50)
+  #what<-ds2[1]
+  #videos_df<-videos_cpt
+  videos_df<-vtest
+  tu<-unique(videos_df$target)
+what<-tu[3]
+videos_df.m<-get.videos_match(videos_df,what)
 #$brew install yt-dlp ffmpeg
 # on monterey install yt-dlp via macports (missing [deno] in brew install)
 
