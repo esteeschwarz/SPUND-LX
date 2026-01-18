@@ -423,20 +423,29 @@ what
 # unique(videos_df$channelTitle[videos_df$target==what[3]])
 # videos_df$target[videos_df$channelTitle%in%videos_df$channelTitle[videos_df$target==what[4]]]<-what[4]
 # unique(videos_df$target[videos_df$channelTitle%in%videos_df$channelTitle[videos_df$target==what[4]]])
+# videos_cpt<-videos_df
+# save(videos_cpt,file=(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData")))
+# save(videos_cpt,file = paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df-cpt.RData"))
+# save(videos_df.m,file = paste0(Sys.getenv("GIT_TOP"),"/gitmini/cloud/work/videos_df.m.RData"))
+# save(videos_df.m,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/videos_df.m.RData"))
+
 videos_df.m<-get.videos_match(videos_df,what)
 #$brew install yt-dlp ffmpeg
 # on monterey install yt-dlp via macports (missing [deno] in brew install)
 
 #df <- data.frame(channel_id = c("UC_x5XG1OV2P6uZZ5FSM9Ttw", "UCSJ4gkVC6NrvII8umztf0Ow"))
-df <- data.frame(channel_id = unique(videos_df$channelId[videos_df$channel_true]))
-df
+df <- data.frame(channel_id = unique(videos_df.m$channelId[videos_df.m$channel_true]),
+                 label=unique(videos_df.m$channelTitle[videos_df.m$channel_true]))
+df$label<-gsub(" ","_",df$label)
 # output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/001")
 # dir.create(output_dir, showWarnings = FALSE)
-whisper_download_model("base",model_dir = paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
+# whisper_download_model("base",model_dir = paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
 model<-whisper(paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
 
-for (id in df$channel_id) {
-  output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/",id)
+for (k in 1:length(df$channel_id)) {
+  id<-df$channel_id[k]
+  label<-df$label[k]
+  output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/",label)
   dir.create(output_dir, showWarnings = FALSE)
   cmd <- sprintf('yt-dlp -x --audio-format mp3 -o "%s/%%(channel_id)s_%%(id)s.%%(ext)s" "https://www.youtube.com/channel/%s/videos"', 
                  output_dir, id)
