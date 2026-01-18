@@ -288,24 +288,24 @@ setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA"))
 p.text<-readtext("yakura-prompt.md")$text
 videos_df$target[videos_df$target=="n.a."]<-NA
 videos_df<-videos_df[!is.na(videos_df$target),]
-target<-unique(videos_df$target)
-target<-target[!is.na(target)]
+# target<-unique(videos_df$target)
+# target<-target[!is.na(target)]
 #t<-target[tr]
-target
 #tr<-1
 ###############################
 get.channel_match<-function(videos_df,tr){
-  t<-target[tr]
+  #t<-target[tr]
 #  m<-videos_df$target==t
-  print(t)
-  m<-videos_df$target==t
+  cat("target to match:",tr,"\n")
+  # print(tr)
+  m<-videos_df$target==tr
   print(sum(m))
 videos_df<-videos_df[m,]
 v.list<-videos_df$channelTitle
 v.list<-unique(v.list)
 v.list<-paste0(v.list,collapse = "#")
 p.text<-gsub("_list_",v.list,p.text)
-p.text<-gsub("_target_",t,p.text)
+p.text<-gsub("_target_",tr,p.text)
 #desc<-videos_df$description[t]
 print(p.text)
 analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
@@ -331,6 +331,7 @@ analyze_with_ollama_async <- function(p.text,model = DEFAULT_MODEL) {
     if (status_code(response) == 200) {
       result <- fromJSON(content(response, "text", encoding = "UTF-8"))
       response_text <- result$response
+      cat("----> matching target:",response_text,"\n")
       return(response_text)
       # print(response_text)
       #  response_text<-'{"Algernon": ["ALGERNON"], "Lane": ["LANE"], "Jack": ["JACK"]}'
@@ -365,11 +366,11 @@ r1<-analyze_with_ollama_async(p.text)
 print(r1)
 #print(head(videos_df))
 #m<-videos_df
-videos_df$channel_true<-F
+#videos_df$channel_true<-F
 ch1<-gsub("# ","",r1)
 #ch1<-c(paste0("en: ",ch1),paste0("de: ",ch1))
 ch1
-target
+#target
 unique(videos_df$channelTitle)
 videos_df$channel_true[videos_df$channelTitle==ch1]<-T
 #r1
@@ -377,14 +378,17 @@ return(videos_df)
 }
 ####################################
 videos_df.m<-videos_df
+videos_df.m$channel_true<-F
 #channel<-target[t]
 for (t in what){
 #  channel<-target[t]
   channel<-t
   print(channel)
-  videos_df.m<-get.channel_match(videos_df.m,channel)
+  if(!is.na(channel))
+    videos_df.m<-get.channel_match(videos_df.m,channel)
+  
 }
-return(videos_df.m)
+return(videos_df.m[videos_df.m$channel_true,])
 }
 
 get.text<-function(what){
@@ -407,7 +411,9 @@ library(dplyr)
   #videos_df<-videos_cpt
   videos_df<-vtest
   tu<-unique(videos_df$target)
-what<-tu[3]
+  tu
+what<-tu[c(2,3,5,6)]
+what
 videos_df.m<-get.videos_match(videos_df,what)
 #$brew install yt-dlp ffmpeg
 # on monterey install yt-dlp via macports (missing [deno] in brew install)

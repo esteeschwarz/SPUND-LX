@@ -16,5 +16,8 @@ Description: The International Max Planck Research School on the Life Course (LI
 Title: Behavioral Insights Bicocca 
 Description: BIB-Behavioral Insights Bicocca is a new research center focused on the behavioral analysis of public policies and public ...
 
-# List of channels
+# target (institution)
+Name: _target_
+
+# list of channels (candidates)
 _list_
