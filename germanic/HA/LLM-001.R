@@ -396,10 +396,14 @@ return(videos_df.m[videos_df.m$channel_true,])
 
 get.text<-function(what){
 # 4. transcribe
-#install.packages(c("processx"))
-#remotes::install_github("bnosac/audio.whisper")
+#install.packages(c("processx","remotes"))
+remotes::install_github("bnosac/audio.whisper")
 # $brew install cmake !
+# sudo apt install cmake
 #remotes::install_github("bnosac/audio.whisper", ref = "0.5.0")
+#$brew install yt-dlp ffmpeg
+# on monterey install yt-dlp via macports (missing [deno] in brew install)
+
 library(audio.whisper)
 library(processx)
 library(dplyr)
@@ -430,8 +434,7 @@ what
 # save(videos_df.m,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/videos_df.m.RData"))
 
 videos_df.m<-get.videos_match(videos_df,what)
-#$brew install yt-dlp ffmpeg
-# on monterey install yt-dlp via macports (missing [deno] in brew install)
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/videos_df.m.RData"))
 
 #df <- data.frame(channel_id = c("UC_x5XG1OV2P6uZZ5FSM9Ttw", "UCSJ4gkVC6NrvII8umztf0Ow"))
 df <- data.frame(channel_id = unique(videos_df.m$channelId[videos_df.m$channel_true]),
@@ -440,18 +443,29 @@ df$label<-gsub(" ","_",df$label)
 # output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/001")
 # dir.create(output_dir, showWarnings = FALSE)
 # whisper_download_model("base",model_dir = paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
-model<-whisper(paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
+model.path<-whisper_download_model("base",model_dir="/home/esteeadnim/gpt/models")
+#model<-whisper(paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
+model.p<-model.path$file_model
+model<-whisper(model.p)
+#Sys.setenv(WHISPER_MODEL_DIR = "~/gpt/models")
+#model.path<-whisper_download_model("base")
+#model<-whisper("base")
+  # output_dir <- paste0("~/rwd/audio_transcripts/")
+  # dir.create(output_dir, showWarnings = FALSE,recursive=T)
+
 
 for (k in 1:length(df$channel_id)) {
   id<-df$channel_id[k]
   label<-df$label[k]
   output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/",label)
-  dir.create(output_dir, showWarnings = FALSE)
+  output_dir <- paste0("~/rwd/audio_transcripts/",label)
+  dir.create(output_dir, showWarnings = FALSE,recursive=T)
   cmd <- sprintf('yt-dlp -x --audio-format mp3 -o "%s/%%(channel_id)s_%%(id)s.%%(ext)s" "https://www.youtube.com/channel/%s/videos"', 
                  output_dir, id)
   processx::run("bash", c("-c", cmd))  # downloads latest videos' audio
   
   audio_files <- list.files(output_dir, pattern = paste0(id, ".*mp3"), full.names = TRUE)
+  print(audio_files)
   if (length(audio_files)) {
     for (k in 1:length(audio_files)){
     latest <- tail(audio_files)[1]
