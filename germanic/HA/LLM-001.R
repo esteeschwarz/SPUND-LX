@@ -215,9 +215,11 @@ if (status_code(response) == 200) {
 
 
 # for(i in 1:length(ds2$id)){
- for(i in ins){
-    videos_df<-get.video_df(ds2,i)
-
+ for(v in ins){
+    videos_df<-get.video_df(ds2,v)
+for (w in 1:5000){
+  cat("waiting...",w,"\r")
+}
 videos_sf<-videos_df
 #videos_cpt$target<-"n.a."
 #videos_cpt<-videos_df
@@ -297,11 +299,12 @@ get.channel_match<-function(videos_df,tr){
   #t<-target[tr]
 #  m<-videos_df$target==t
   cat("target to match:",tr,"\n")
+  cat("available targets:",unique(videos_df$target),"\n")
   # print(tr)
   m<-videos_df$target==tr
   print(sum(m))
-videos_df<-videos_df[m,]
-v.list<-videos_df$channelTitle
+# videos_df<-videos_df[m,]
+v.list<-videos_df$channelTitle[m]
 v.list<-unique(v.list)
 v.list<-paste0(v.list,collapse = "#")
 p.text<-gsub("_list_",v.list,p.text)
@@ -383,8 +386,8 @@ videos_df.m$channel_true<-F
 for (t in what){
 #  channel<-target[t]
   channel<-t
-  print(channel)
-  if(!is.na(channel))
+cat("channel match loop:",channel,"\n")  
+if(!is.na(channel))
     videos_df.m<-get.channel_match(videos_df.m,channel)
   
 }
@@ -402,18 +405,24 @@ library(processx)
 library(dplyr)
 
 ### data:
- # load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
+  #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
   #############################
-  vtest<-prepare.video_df(1:10)
+  vtest<-prepare.video_df(11:20)
   #############################
   #head(ds2,50)
   #what<-ds2[1]
   #videos_df<-videos_cpt
-  videos_df<-vtest
+#  videos_df<-vtest
   tu<-unique(videos_df$target)
-  tu
-what<-tu[c(2,3,5,6)]
+  tu<-tu[tu!="n.a."]
+  tu<-tu[!grepl("skipping",tu)]
+#what<-tu[c(2,3,5,6)]
+what<-tu
 what
+# unique(videos_df$channelTitle[videos_df$target=="n.a."])
+# unique(videos_df$channelTitle[videos_df$target==what[3]])
+# videos_df$target[videos_df$channelTitle%in%videos_df$channelTitle[videos_df$target==what[4]]]<-what[4]
+# unique(videos_df$target[videos_df$channelTitle%in%videos_df$channelTitle[videos_df$target==what[4]]])
 videos_df.m<-get.videos_match(videos_df,what)
 #$brew install yt-dlp ffmpeg
 # on monterey install yt-dlp via macports (missing [deno] in brew install)
