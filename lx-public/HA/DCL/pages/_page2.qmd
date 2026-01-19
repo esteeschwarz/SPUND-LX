@@ -1,0 +1,14 @@
+---
+title: paper
+---
+# intro
+## abstract
+...
+## preliminary
+since we do not really get on information concerning the actual workflows of the content creation to the DCL pages, we will try to propose a more general pipeline to that based on our experiences with publishing. we will introduce possible alternatives to the actual (assumed) workflow and setup and give short insight into what is possible and under which circumstances.
+
+## status quo
+generally the momentary website seems not to be updated very much and although providing a friendly user experience lacks of content that would be integrating the introduced projects development i.e. you are presented a few projects related to linguistics but if you want to explore these deeper or keep updated with research results you realize that its often not more than a teaser with no follow up.
+
+one reason for that as we assume might be a complicated workflow of delivering content or a workflow which does not allow project members to actively participate in content creation besides delivering finalised documents which then are integrated. say it appears to be a rather static process of content creation, not really adapted to the fluidity of academic research processes which tend to be in a progress-state for long time until results are published.
+but namely the processs and progress of a project is what interests people who dive into scientific research. in times of fluid knowledge being key to understanding the world around one individum, static knowledge production (printed books in contrast to open source datasets and complex interfaces to data exploring or visualising)...[]

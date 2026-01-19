@@ -46,26 +46,50 @@ dim(d2)
 df3$data
 df4<-data.frame(q=questions,text=NA,value=NA)
 k<-2
-for (k in 1:length(df3$data$CASE)){
-  ds<-df3$data[k,]
-#  ds<-ds[is.na(ds[1,]),]
-  colnames(ds)
-  r<-1
-  for (r in 1:length(ds)){
-  m<-rownames(df4)==colnames(ds)[r]
-  sum(m)
-  m<-which(m)
-  df4$value[m]<-ds[1,r]
-  # m<-names(labels)==colnames(ds)[r]
-  # sum(m)
-  # m<-which(m)
-  # df4$text[m]<-names(labels)[1,r]
-}
-}
+# for (k in 1:length(df3$data$CASE)){
+#   ds<-df3$data
+# #  ds<-ds[is.na(ds[1,]),]
+#   colnames(ds)
+#   r<-1
+#  # df4<-cbind(df4,ds)
+#   
+#   #for (r in 1:length(ds)){
+#   m<-rownames(df4)==colnames(ds)[r]
+#   sum(m)
+#   m<-which(m)
+#  # m2<-colnames(ds)[r]%in%rownames(df4)
+# # df4$value[m]<-ds[1,r]
+# # df4<-cbind(df4,ds)
+#    m<-names(labels)==colnames(ds)[r]
+#    sum(m)
+#    m<-which(m)
+#    df4$text[m]<-names(labels)[1,r]
+# #}
+# }
 for(l in names(label)){
 m<-l==rownames(df4)
 sum(m)
 m<-which(m)
 df4$text[m]<-label[l]
 }
-
+# k<-2
+# l<-1
+# l<-"CN02"
+#df4<-data.frame(q=questions,text=NA,value=NA)
+for (k in 1:length(ds$CASE)){
+  ds2<-ds[k,]
+  case<-paste0("case",k)
+  df4<-cbind(df4,case=NA)
+  c<-length(df4)
+  c
+#  for(l in names(ds2)){
+    m<-rownames(df4)%in%names(ds2)
+    sum(m)
+    m<-which(m)
+ #   df4$text[m]<-label[]
+    ds3<-ds2
+    df4[names(ds2),c]<-t(ds2)
+    #df4[m,c]<-t(ds2)
+ # }
+}
+#ds<-df3$data
