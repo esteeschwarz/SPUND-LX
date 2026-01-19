@@ -1,3 +1,5 @@
+@lang: en
+@begin
  [Musik]
  Okay, so, my first question would be,
  you being a politician in the UK,
@@ -111,3 +113,4 @@
  So I think that's the biggest threat.
  Okay, thank you so much for your time.
  * Musik *
+@end

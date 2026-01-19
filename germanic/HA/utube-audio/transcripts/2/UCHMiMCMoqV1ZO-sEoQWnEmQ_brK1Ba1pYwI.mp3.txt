@@ -1,3 +1,5 @@
+@lang: en
+@begin
  [Musik]
  One of the things I left government with was a clear idea of the role of academic institutions like MIT and
  Hurti in preparing the next generation and sustaining the next generation which is going to have to confront these challenges in nuclear strategic affairs, security.
@@ -5,3 +7,4 @@
  We have this huge opportunity from the Stanton Foundation which has endowed both CNSP, the Center for Nuclear Security Policy at MIT as well as the Hurti School, to do precisely that, to train the next generation and to do policy-relevant research in nuclear security.
  I think it's absolutely transformational what the Stanton Foundation has done both for MIT and for Hurti and I look forward to working with the Hurti School and our German counterparts to try to build a global footprint to build the next generation here in Germany and in NATO and Europe and the United States because it's going to take all of us collectively, I think, in our Alliance system to confront the challenges that we face in the coming generation.
  [Musik]
+@end

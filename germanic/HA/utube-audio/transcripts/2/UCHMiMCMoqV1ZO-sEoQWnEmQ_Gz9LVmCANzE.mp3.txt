@@ -1,3 +1,5 @@
+@lang: de
+@begin
  Sehr geehrter Herr Fizekanzler und Bundesminister Klingbeil,
  Exzellenzen, lieber Johannes, liebe Kollegen,
  Gäste und Freunde der Herdiskul und des Schaktelorcenters.
@@ -361,3 +363,4 @@
  Auf geht's, Korb hoch, der Frühling Europas liegt noch vor uns.
  Vielen Dank fürs Zuhören, vielen Dank für die Einladung und ich freue mich jetzt auf die Diskussion.
  Danke.
+@end

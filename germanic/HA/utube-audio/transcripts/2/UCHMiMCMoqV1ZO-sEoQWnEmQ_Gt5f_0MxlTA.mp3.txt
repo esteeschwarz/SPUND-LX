@@ -1,3 +1,5 @@
+@lang: en-messy
+@begin
  Mein Name ist Marina Henke.
  Ich bin ein Professor in der Herdiskul und bin geliebt
  zu heute's Event,
@@ -408,3 +410,4 @@
  And what did he say about his view of foreign policy in this and that's where I want to quote he said foreign policy today is not just a specialist discipline for well dressed white bearded well behaved diplomats.
  Now foreign policy is also world economic policy world material policy world agricultural policy world monetary policy and world security policy right because we live in a universal system of mutual dependence whether we want it or not we cannot get away with it in other words if we think about foreign and security policy we have to think about the whole range and in some ways.
  However difficult it is to grasp that that sort of cancel a mid-veil if you so want and white brick is in some ways also of course reflected in the strategy that we are talking about.
+@end

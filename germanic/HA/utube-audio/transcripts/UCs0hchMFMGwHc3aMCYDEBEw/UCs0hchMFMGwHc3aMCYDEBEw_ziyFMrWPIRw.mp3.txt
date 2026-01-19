@@ -1,3 +1,5 @@
+@lang: de
+@begin
  [Musik]
  Mein Name ist Christina. Ich bin Lehrerin für Wirtschaft und Englisch an der Max Weber Schule in Freiburg.
  Das ist eine große, kaufmännische berufliche Schule.
@@ -37,3 +39,4 @@
  Ja, da merke ich immer wieder, dass diese Ausbildung einfach sehr, sehr fundiert ist, die die Universität Mannheim ermöglicht.
  Und davon zähre ich letzten Endes jeden Tag.
  [Musik]
+@end

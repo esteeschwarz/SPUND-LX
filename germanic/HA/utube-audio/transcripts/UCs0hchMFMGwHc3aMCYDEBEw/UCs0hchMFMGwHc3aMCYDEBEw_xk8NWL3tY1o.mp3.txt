@@ -1,3 +1,5 @@
+@lang: de
+@begin
  Für den Bereich des Fachinformatikers gibt es mehrere Wege, die man einschlagen kann,
  zum einen beispielsweise den Fachinformatiker für Systemintegration.
  Und hier geht es schwerpunktmäßig dann eben auch darum, Systeme zu betreuen, an der Hardware zu arbeiten.
@@ -32,3 +34,4 @@
  Das macht es dann nicht so schlimm.
  Für mich hier total wohl, dadurch dass es nicht immer nur um die harte Münze geht, sondern auch viele andere Kriterien an Rolle spielen, die einen sehr sehr angenehm ist und der Entspanntersarbeitsumfeld hat.
  Trotz allem ist es vielleicht manchmal nicht ganz so verbissen, wie es eben in der Wirtschaft auch ist.
+@end

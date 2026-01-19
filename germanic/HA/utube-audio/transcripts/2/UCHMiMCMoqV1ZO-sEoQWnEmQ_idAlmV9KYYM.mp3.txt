@@ -1,4 +1,6 @@
- Es heißt, dass die Exploration und die Übliche Beziehung von European Union zu tun,
+@lang: en-messy
+@begin
+Es heißt, dass die Exploration und die Übliche Beziehung von European Union zu tun,
  um die EU zu machen, dass die EU mehr geheernd und mehr im Bereich für einen größeren,
  liberaldemokratischen, konstitutischen EU zu tun.
  Ich bin Maria Golobebe, und ich bin die neue Henry-Gender-Lan-Fellow mit Hertha-School,
@@ -50,3 +52,4 @@
  Existing-Partner-Simulationen für andere Target-Audinienzungen. Das ist etwas, das ich auch
  mache als eine Habe, weil ich sehr leise, dass ich sehr leise, dass ich eine so eine Szenarie mit
  den Wohl-Ving-Events mit den Fällen zu sein, dass die Menschen zu reichen, dass sie sich in der Nähe zu sein haben.
+@end

@@ -1,3 +1,5 @@
+@lang: en
+@begin
  [Musik]
  3 fair and inclusive elections are at the core of democracy.
  Interference in elections requires a powerful response.
@@ -232,3 +234,4 @@
  Hat euch gerade den Datenzugang noch mal angesprochen, das wurde jetzt vor kurzem der degligierte Rechtsakt zum Datenzugang veröffentlicht durch die Kommission. Da gab es auch die Besonderheit von zwei Stakeholder-Partizipationen, einmal auf den Gesamt-Draft des DSAs und dann auf den Draft das Dädagate-Morichtsakt zum Datenzugang, das eben auch Forschende aus ganz Europa, aber auch außerhalb der Europas eigenes Feedback einbringen konnten und das nochmal nachjustiert wurde quasi der Draft.
  Und erst jetzt können Forschende wirklich diesen tieferen Datenzugang stellen, der unter Artikel 48 quasi dieses große Versprechen, dass man die Risiken der Plattform besser verstehen kann, weil der bisherige Datenzugang dreht sich eigentlich nur um Application-Programming Interfaces, also quasi Schnittstellen über die Mandaten von den Plattformen sammeln kann und Artikel 4012.
  Aber das, was wirklich eine Wendung bedeutet für die Forschung, ist Artikel 404 und 48, was eben jetzt nochmal sich zeigen wird.
+@end

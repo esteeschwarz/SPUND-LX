@@ -1,3 +1,5 @@
+@lang: en
+@begin
  Before I begin, I would like to say a word to Klaus, who is the person for whom we organize
  this meeting.
  Our relationship over 40 years is so interesting that I could devote an entire lecture to it,
@@ -342,3 +344,4 @@
  The markets have this strange thing which is called confidence which can go and away.
  And you can pretend that you don't have confidence anymore even if you have.
  And public services sort of are complemented by that.
+@end

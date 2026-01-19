@@ -1,3 +1,5 @@
+@lang: en
+@begin
  Dear Mr. Gandhi, Dear students, faculty, staff and friends of the HATISchool, Ladies and Gentlemen,
  it is my great honor to welcome Mr. Rohl Gandhi, Leader of the Opposition in the Lok Sabha
  to the HATISchool this afternoon for an exchange with our students.
@@ -312,3 +314,4 @@
  if you go to the root of all religions you'll find they're saying very similar things
  so to me I value how many I value connection I value respect and I think an India that gives its people all its people respect connection is the India that I would look forward to
  that's a closing word if I've ever heard one so thank you very much Mr. Gandhi
+@end

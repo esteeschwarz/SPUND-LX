@@ -1,3 +1,5 @@
+@lang: en
+@begin
  Basically, I am the only one who's not an expert at all on the topic here, I guess, in the room.
  But trying to get my head around the topic, even I realized that the regulation of digital
  platforms has evolved from a niche topic of legal, technical issues towards a central governance
@@ -326,3 +328,4 @@
  from actors that have social security concerns and especially worried about Russia Ukraine
  and about how basically for US companies are now many of them are aligning very closely
  with the second Trump administration.
+@end

@@ -1,3 +1,5 @@
+@lang: en-messy
+@begin
  Ich glaube, wir können es starten. Hallo und willkommen zu heute ist es in der Stelle, um die Zeit des Frank-Ko-German-Aktions in der Weg oft ein eröffnen Gloverorder.
  Heute ist die finale Event der Pariserplatz-Dialog-Series, die Frank-Ko-German-Dialog-Series, sehr kindly supported by the Federal Foreign Office.
  Und just last week we met with 145 guests from France, Germany, and beyond at the Pariserplatz in Berlin to explore some of Europe's most pressing issues today from industrial policy and the new MFF to geopolitics and defense, digital sovereignty and coalitions of the willing as a means to overcome political deadlock.
@@ -301,3 +303,4 @@
  So I'm rather quite a few proposals for solutions going forward with perhaps a positive visions for the union being one of the bigger ones so thank you very much for being with us on this very last event of the Paris a place dialogue to all six speakers and of course also the audience in the online room today.
  Thank you to for having us bye.
  Thank you bye bye.
+@end

@@ -1,3 +1,5 @@
+@lang: en
+@begin
  Nuclear weapons are back with a vengeance now.
  I think after the end of the Cold War, there was this assumption that nuclear weapons would
  recede into the background and become less salient international politics.
@@ -21,3 +23,4 @@
  mass destruction policy.
  I probably spent the bulk of my time on nuclear encountering weapons and mass destruction
  policy, but it was all hands on deck, and we tried to address these unprecedented challenges.
+@end

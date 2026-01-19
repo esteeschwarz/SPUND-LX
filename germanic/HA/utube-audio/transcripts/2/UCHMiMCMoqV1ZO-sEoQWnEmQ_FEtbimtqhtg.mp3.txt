@@ -1,3 +1,5 @@
+ @lang: de
+ @begin
  Der Weg in die Elektromobilität ist richtig und den werden wir weiter konsequent gehen.
  Aber es gibt eine Diskussion im Zusammenhang mit der Europäischen Regulierung, die in den letzten
  Monaten schon die Diskussion bestimmt hat.
@@ -227,3 +229,4 @@
  Und das führt, glaube ich, politisch, das schwierig, also schwieriger als unsere Papier umzusetzen. Genau, ich glaube auch, als im wen sind dichten besteht dann quasi das aus Australienlementen.
  Erst mal muss die europäische Kommission signalisieren, dass quasi solche europäischen Praferenzen nachts in einem Programm nicht im Konflikt stehen zu europäischen Regeln, also dass man nochmal sagt, okay, wenn ihr beide für richtig in dem Bereich was machen möcht, mit uns bekommt ihr keine Probleme.
  Sweit ist dann auf diese Seite.
+@end

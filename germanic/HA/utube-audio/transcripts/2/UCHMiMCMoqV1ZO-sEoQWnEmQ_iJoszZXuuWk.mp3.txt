@@ -1,3 +1,5 @@
+@lang: en-messy
+@begin
  Hallo, guten Morgen und willkommen zu der Herdyschool.
  Mein Name ist Marina Henke, ich bin ein Professor
  in der Herdyschool und ich bin gelistet
@@ -390,3 +392,4 @@
  And Steve Sabo is here at a piece following up on that saying yeah but you also got to prepare for the possibility of a Biden victory and both of those things are true.
  And so they're very different people and I'd like to talk for a minute about the directions and tone I think that that both of them might pursue.
  But I do think there's a point to be made that as Benadetta has pointed out there's features of the geopolitical environment there's also features of American society and American politics that cross parties and that affect Europe.
+@end

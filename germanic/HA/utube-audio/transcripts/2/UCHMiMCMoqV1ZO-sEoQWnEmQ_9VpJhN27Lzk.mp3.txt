@@ -1,4 +1,5 @@
- [Applaus]
+@lang: en
+@begin [Applaus]
  Thank you to the these faculty proud families.
  Most of all, to the graduating class of
  herty school, 2025.
@@ -197,3 +198,4 @@
  Thank you.
  [Applause]
  President Albeck Dors.
+@end
