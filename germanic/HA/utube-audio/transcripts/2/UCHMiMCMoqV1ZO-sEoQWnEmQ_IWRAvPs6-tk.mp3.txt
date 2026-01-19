@@ -1,0 +1,234 @@
+ [Musik]
+ 3 fair and inclusive elections are at the core of democracy.
+ Interference in elections requires a powerful response.
+ The EU has the most advanced and powerful legal framework for online platforms,
+ balancing freedom and responsibility. The Digital Services Act.
+ It cannot be said often enough that the DSA does not censor content.
+ It creates efficient mechanism for the removal of illegal content
+ defined by other EU or national law such as illegal hate speech.
+ Because what is illegal offline is also illegal online.
+ [Musik]
+ Das war die EU-Digitalkommissarin Henna Fikunen
+ über den Digital Services Act auch DSA genannt,
+ dass EU-Gesetz das soziale Medien wie TikTok-X und Instagram orientiert
+ und das Plattform vor allem zu mehr Transparenz,
+ der Entfernung illegaler Inhalte und agoritmische Risiken verpflichtet.
+ Seit Februar letzten Jahres gilt der DSA
+ alle online-Dienste in der EU.
+ Doch wie funktioniert das Ganze in der Praxis?
+ Und reicht da aus, um Nutzerinnen und auch den politischen Diskurs in Europa zu schützen?
+ Darüber wollen wir in dieser Folge von YouTube-Gaussprechen
+ mit Luisa Quaritch, unser Policy-Fellow, am Jack the Law Center
+ und Philip Darius Postdoc am Center für Digital Governance an der Herr Diskoul.
+ Hallo. - Hallo, Herr Lohlenker für die Einladung.
+ Sehr gerne, hallo, ihr beiden.
+ Sozialen Medien sind in unserem Leben ja nicht mehr wegzudenken.
+ Also ob jetzt eBay, Instagram, X, via alle sind immer auf Plattformen unterwegs.
+ Heute wollen wir uns aber vor allem damit beschäftigen,
+ wie eben diese sozial-Megian-Plattformen nicht nur Einfluss auf unser Leben haben,
+ sondern auf demokratische Wahlen und auf die politischen Prozesse in der EU
+ und wie die EU damit umgeht.
+ Vielleicht fangen wir einmal an mit der Gefahr,
+ die soziale Medien für politische Prozesse darstellen können
+ und oft ist ja dann von Desinformationen, die redet, die auf sozialen Plattformen verbreitet wird.
+ Wie groß ist denn diese Fahrwirklich genau die von sozialen Medien ausgeht
+ für demokratische Diskurse für Wahlen und für unsere Demokratie?
+ Genau. Also in den letzten Monaten gab es immer wieder Diskussionen
+ über die Rolle von Social Media-Plattformen insbesondere im Zusammenhang mit Wahlen.
+ Also das gab es eigentlich bei allen größeren Wahlen in den letzten Monaten.
+ Jetzt im Mai war ja die Präsidentschaftswahl in Polen.
+ Da gab es hinterher Berichte über gezielte Desinformationskampagnen
+ und auch größere Bottennetzwerke auf Social Media.
+ Im größeres Beispiel ist natürlich auch die Präsidentschaftswahl in Rumänien im letzten Jahr,
+ wo es zumindest auffällig war, dass einige eigentlich eher kleinere Panditaten
+ dann kurz vor der Wahl extrem große Reichweite auf TikTok hatten.
+ In dem Zusammenhang geht es natürlich auch häufig um Russland,
+ dass Social Media-Plattformen nutzt, um gezielt das Informationsdarativen zu verbreiten.
+ Aber es ist eben auch nicht nur Russland.
+ Also bei der Bundestagswahl zum Beispiel bei Elon Musk häufig in den Medien
+ der seine Plattform X auch versucht hat zu nutzen, die AfD zu unterstützen
+ und dort ein Interview mit Alice Weidel geführt hat.
+ Also diese Versuche gibt es auf jeden Fall.
+ Man muss dazu aber auch sagen, dass inwieweit die Ergebnisse von Wahlen zum Beispiel beeinflusst,
+ das ist sehr schwer zu messen.
+ Genau, wie Luisa gerade eben gesagt hat, sind Effekte auf individual eben relativ schwierig zu messen in empirischen Studien.
+ Wenn man zum Beispiel ein Web-Chacking-Penal-Daten denkt und eben dann oft nicht signifikant.
+ Und da wir alle aus ganz vielen verschiedenen Quäden unsere Informationen beziehen
+ und gerade während Wahlen eben da der Zyklus auch noch mal zunehmend,
+ quasi an politischen Informationen und vielleicht auch targeted ads,
+ ist es ganz schwierig, das zu isolieren als Effekt auf einzelner, auf einzelner Nachrichten.
+ Und genau deshalb ist es umso wichtiger zu wissen,
+ welcher Content, wie weit überhaupt verweitet ist auf der Plattform,
+ um digitale Plattform als Informationsumgebung besser zu verstehen.
+ Denn wir alle, wenn wir das Gefühl haben, dass sich die Mehrhalt Meinung ändert,
+ das kann jetzt der Nachrichten des Kurs sein, aber es kann auch in sozialen Medien sein.
+ Dann hat das auch einfluss auf unsere Einstellung und wie wir diese äußern.
+ Und in der Tat zeigen Forschungsergebnisse, dass Radikaler und emotionalisierender Content
+ im Durchschnitt einer deutlich größere Rolle und größere Reichweite in sozialen Medien spielt,
+ als das jetzt irgendwie konstruktive Nachrichten oftmals machen.
+ Und darum haben populistisch und radikaler Parteien teilweise enormer Reichweiten auf verschiedenen Plattformen.
+ Dabei erdiktokfieh im Gespräch in den letzten ein bis zwei Jahren.
+ Und Kolleginnen vom Projekt Sparta, der Bundeswehruniversität und ich haben vor den Europawahlen,
+ Daten gesammelt von einem europäischen Parteien.
+ Und das Arbeitspapier befindet sich zurzeit im Review-Prozess.
+ Und da wir herausgefunden, dass in der gesamten EU vor den Europawahlen zum europäischen Parlament
+ radikale populistische, linkspopulistische und rechtspopulistische Parteien erfolgreicher waren,
+ darin likes zu generieren und quasi wie man das nennt, im neuen deutschen Audience-Engagement zu generieren.
+ Und das eben gerade auf TikTok und YouTube, das eben halt quasi, dass was in den Medien oft berichtet wird,
+ auch empirisch auch in ganz Europa hält.
+ Und natürlich hängt das auch mit extrem aktiven Unterstützerinnen der extremen Parteien zusammen
+ die vielleicht eine höhere politische Incentivierung haben, aktiv zu sein.
+ Und wahrscheinlich mehr, wie man das nennt Identity-Qs, also sich auch stärker damit identifizieren.
+ Und aber durch diese Aktivität dann die Post auch zunehmend noch durch die algorithmischen Systeme gebustet werden,
+ weil die sehen ganz stark auf Early Engagement nach Postanspengen.
+ Und grundsätzlich würde ich sagen, es ist ein Problem, die fehlende Transparenz und Datenzugang zu Algorithmen.
+ Und das erschwert eine Ursachenanalyse.
+ Und deswegen ist der DSA wichtig, dass es eben mehr Datenzugang gibt.
+ Und dann Beispiel von X oder eben als Theta sieht man ja auch, dass als Elon Musk die AfD postgerteilt hat, die AfD auf einmal eine viel größere Reichweite hatte global.
+ Es besteht aus dem Verdacht, dass der Algorithmus politisch gleichgesinnte Positionen stärker boostet und eben rechtspopulistischen Kantien stärker boostet.
+ Und so werden bestimmte politische Akteure von den Plattformen und den verwendeten Algorithmusensystem eben bevorzugt.
+ Genau, also insgesamt denke ich kann man schon sagen, dass immer mehr politische Diskurs auf Social Media-Plattform stattfindet
+ und dass diese Plattformen aber eben kein neutraler Marktplatz sind für diesen Diskurs, sondern das verschiedene Faktoren wie das Design von Plattformen, aber auch wie verschiedene Akteure, diese Plattformen nutzen, dann ist gesamt den Diskurs verzehren können.
+ Jetzt haben wir in der EU ja den Digital Services Act, das er letztes Jahr in Kraft ist, also den DSA.
+ Ein Gesetz, das eben dieses Social Media-Plattform regulieren soll, um die Nutzer*innen zu schützen, aber auch um den demokratischen Diskurs besser zu schützen.
+ Was wird denn genau in diesem DSA geregert und wie versucht die EU Social Media-Plattformen in Schacht zu halten?
+ Genau, der DSA und auch das sogenannte Schwestergesetz über digitale Märkte DMA, sollten so eine Art umfassendes Regelweg eine Art neues Grundgesetz für die Online-Werk liefern und dass sie Plattformen damit sicherer und fährer machen.
+ Der DMA konzentriert sich mehr auf diese Wettbewerbsdimension und soll verhindern, dass große Techunternehmen, die sogenannte Geldkeeper-Positionen haben, diese Stellung ausnutzen können und der DSA reguliert alle Arten von digitalen Diensten, die in Europa angeboten werden.
+ Genau in erster Linie soll der die Rechte von Nutzer*innen und Nutzer*innen schützen und aber auch, wie du schon gesagt hast, mehr Transparenz auf Plattformen sorgen, zum Beispiel auch wenn Plattformen Sachen entscheiden, wie Inhalte zu moderieren oder auch Inhalte zu entfernen.
+ Der DSA soll besseren Datenzugang für Forscher liefern und für Flüchtetplattformen auch risiken, die von ihren Diensten stehen könnten zu minimieren und einzuaten.
+ Da gibt es noch mal Unterschiede, also für besonders große Plattformen, das sind DSA Plattformen mit mehr als 45 Millionen monatlichen Aktiven Nutzen für die Geld noch mal strengere Regeln.
+ Also das sind dann auch die bekannten großen Social Media-Platforms Instagram, Facebook, X-Linkt, in zum Beispiel. Aber sind eben auch andere Plattformen, wie zum Beispiel Booking.com, Amazon oder auch Zerlando.
+ Ja, Baby Large. Wir heißen die Web. Die sind ja nur Large Online-Platte.
+ Ja, auch ganz schön Flops abgekürzt.
+ Baby Large Online-Sort-Endless.
+ Ja, ich hab immer nur Flops in der Änderung, die DSA-Denke.
+ Ja. Wir hoffen natürlich, dass der DSA keinen Flop wird abend.
+ Und was auch noch interessant ist, ist wie, also wie der DSA reguliert.
+ Denn das ist schon eine Veränderung von European Governance in der Hinsicht, dass es quasi Policy Innovationen gibt.
+ Zum einen hat die Kommission eine viel zentrale Rolle als den anderen regulatorischen Netzwerken,
+ zum Beispiel ein Energienerzwerker oder Energieregulierung denkt. Und das war insbesondere auf Wunsch der französischen Regierung während das Trilogverfahren,
+ wurde das stärker verankert, weil man im in der europäischen Daten Grundschutzverordnung beziehungsweise der Durchsetzung davon gesehen hat,
+ dass die irische Regierung vor allem, das ging über den Plattformen nicht richtig durchsetzen konnte oder die irische Data Protection Officer.
+ Und dadurch jetzt rechtfertigt, dass die Kommission stärker beteiligt ist und versucht, das gegenüber diesen sehr großen Online-Plattformen und den Search-Anjens durchzusetzen.
+ Und man davon ausgeht, dass wahrscheinlich dort mehr Expertise vorhanden ist und vielleicht auch mehr Schlusskraft vorhanden ist,
+ als jetzt teilweise kleinere Regierungen oder den Data Protection Officer oder dann auch den DSC.
+ Jetzt ist es so, dass in Irland, der Digital Service Coordinator dafür steht, die DSC relativ gut ausgestattet wurde.
+ Das ist eine neue Medienkommission, Sie nahm genannt mit zur Zeit, glaube ich, ungefähr 250 angestellten, von denen nicht alle am DSA-Durchsetzung arbeiten, aber viele.
+ Und die versuchen eben quasi Kapazitäten entzurentwecken über die Zeit.
+ Was es außerdem noch gibt als Neuerung, also neben der Beteiligung der Kommission, neben diesen neuen Regulatorikbehörden und dem Netzwerker,
+ gibt es die Beteiligung von zivilgesellschaftlichen Intermedieren.
+ Also wird das zumindest jetzt in der Regulatory Governance Forschung genannt.
+ Und eigentlich bedeutet das verschiedene Steakholdergruppen, die regulatorische Funktionen übernehmen können.
+ Das sind zum Beispiel Forschende, die durch Datenzugang wissen schaffen sollen, also ein besseres Verständnis von den eventuellen Risiken, von den Digitaren diensten.
+ Dann zweiten sind das Auditorium, oder Auditors Independent Algorithmic Auditors, das heißt das im Englischen.
+ Also ähnlich wie im Finanzorditing, gibt es jetzt Auditing-Firmen, die durch die Plattform angestellt werden.
+ Und die algorithmischen Systeme auf Risiken untersuchen sollen und dann den Plattform helfen Reports, also Risiko Reports zu veröffnen.
+ Ich nenne einmal im Jahr.
+ Und außerdem gibt es trusted-fläger-Organisationen, das sind teilweise private Firmen, teilweise NGOs, die für die Plattform oder dem Plattformen dabei helfen,
+ illegalen oder gegen die Guidelines verstoßenen Content, auch dem Plattformen zu identifizieren.
+ Und die wurden früher direkt von dem Plattformen ausgewählt, während der Wert von den DSC's zertifiziert, wo einige aussehen.
+ Das wollen wir nicht, machen wir nicht mehr mit, aber es soll eben quasi eine gewisse Standardisierung reinbringen und Qualitätssicherungen.
+ Ihr habt ja eben auch schon darüber gesprochen, dass das Problem mit Plats so schmierplattformen ist,
+ dass bestimmte Stimmen und vor allem Stimmen, die polarisierender sind, stärker oder verstärkt werden auf Plattformen.
+ Und dass das Auswirkungen auf podische Prozesse haben kann. Jetzt haben wir ein bisschen gesprochen, wie der DSA-Deplatform reguliert und wer involviert ist,
+ aber wie versucht der DSA denn ganz konkret dazu beizutragen, dass auch demokratische Wahlen frei und fair bleiben auch im In-der-On-Lens-Währe?
+ Da hatte DSA eine Verpflichtung und zwar für besonders große Plattform.
+ Das nennt sich das Systemische Risiken. Da müssen große Plattformen eine Risikoanalyse vorlegen und für Systemische Risiken zu den eben auch Risiken für Wahlprozesse und politischen Diskurs zählen.
+ So analysieren welche Risiken auf ihren Plattformen auftreten und wie sie dagegen vorangehen wollen. Also das ist zum Beispiel auf so einer Social Media Platform DX, wäre ein Risiko-Desinformation und die Verbreitung von Desinformation und diesen Risiko-Brichten beschreibt X-Dan, wie sie dagegen vorgehen.
+ In dem Fall sind das Community-Nodes, das heißt, dass es die Möglichkeit für Nutzer an In-Halt-Context zu markieren und so soll dann die Verbreitung oder der Risiko, das mit Desinformation verbunden ist, minimiert werden.
+ Im DSA wird meiner Meinung nach oder der Meinung von vielen Forschenden bewusst auch nicht festgeschrieben, was systemische Risiken genau sind, da sich der Kontext dieser Risiken ja auch mit der Zeit verändern kann. Und insgesamt ist eben auch eher ein procedureller Ansatz, in dem sich die verschiedenen Institutionen auch über die Zeit mitentwickeln quasi und adaptiv sein können.
+ Algorithm Watch, das ist eine NGO, die in Berlin tätig ist, aber auch im europäischen Kontext hat zum Beispiel ein Risiko-Positeer und verschiedene Risiko-Arten gesammelt, auch um quasi Forschende dabei zu unterstützen ihre Datenanträge zu stellen, weil jeder Datenantrag einen Risiko-Bezug auch braucht, damit der gestattet werden kann.
+ Und jetzt im Endeffekt liegt es an den Auditoren oder Forschenden und dem Plattformen selbst Risiken zu identifizieren und zum Teil eben auch Strategien zur Risiko-Verminderung zu entwickeln und zu testen.
+ Außerdem kann die Kommission bei den großen Plattformen Informationen zu genannten Risk-Mitigation-Anfragen und nach den Reports eben auch so Amanda Reports-Anfragen, wenn die Risiko-Reports nicht quasi vollständig sind,
+ kann da noch mal nachgefragt werden von Seiten der Kommission.
+ Wir hören ja jetzt von Kritikern von allen aus den USA, ja, mal wieder, dass der DSA eine Zensur darstellt, dass die EU jetzt den Plattform sagen möchte, was der wie sagen darf und was entfernt werden muss.
+ Das linkt bei euch jetzt ja ganz anders, als es ja die Verantwortung liegt ja eher bei den Plattformen und bei Forschenden und, wie hast du sie daran inter...intermediere.
+ ...intermediere.
+ ... als wirklich der EU, also gibt es denn konkrete Regelungen in den DSA, was angezeigt werden darf, was auf Plattform online-Plattform stehen darf oder ist das wirklich in den Händen von X selber zusammenarbeiten mit den Intermedierern?
+ Also, wenn ich anfangen kann, in meinen Augen geht es eher um das Gegenteil als Zensur im DSA, denn es geht um die Schaffung von Transparenz, wie wir es schon genannt hatten, und eigentlich auch Rechenschaftslichten der Plattform und der Service Provider.
+ Und gerade Transparenz darüber, welcher Content auf dem Plattformen gelöscht wird, darüber gab es ja vorher eigentlich wenig Einsicht.
+ Die Plattformen hatten zwar schon begonnen, so selbst Transparenz-Sy-Reports zu veröffentlichen, die waren aber überhaupt nicht standardisiert und haben überall ganz andere Kennzahlen berichtet.
+ Und da ist es eben wichtig einen Eingrundstein dafür besser zu verstehen, wie diese algorithmischen Systeme funktionieren und eingesetzt werden.
+ Und wenn zurzeit Kritiker, da hat ja auch die derzeitige OS-Regierung, wenn damit Kritiker gemeint sind, dann sollte man sich für Augen führen, wie eben einiger dieser Kritikerin Kritikerinnen selber mit verschiedenen Zensur umgehen und mit der Presse als demokratischer Kontrollinstanz für Politik umgehen.
+ Jetzt gerade letzte Woche wurde wieder verschiedene Agenturen von den Pressekonferenzen der OS-Regierung ausgeschlossen. Und ja, also es ist eher ein politisches Instrument, das da genutzt wird auch teilweise.
+ Aber natürlich ist es trotzdem wichtig, sich auch Gedanken über Gewaltenteilung zu machen und auch bei den digitalen Dienstekordinautoren zu schauen, dass da teilweise die Kapazitäten nicht missbraucht werden.
+ Jetzt nach Hause bei den USA zu bleiben, auch generell bestimmen, auch jetzt neben der derzeitigen OS-Regierung bestehen relativ große Kulturenterschiede, was als Free-Speech verstanden wird.
+ Wenn den USA durch den ersten Anhang der OS-Verfassung Free-Speech geschützt ist, das sogenannte First Amendment und den Europa-Speed eigentlich der Schutz von Minderheiten und der Grundrechtschutz einer viel größer Rolle im politischen oder im öffentlichen Diskurs.
+ Und den Deutschland zum Beispiel ist ein Beispiel dafür Holocaustleugnung, was das illegal ist und den USA aber quasi jeder eigentlich hinausposern darf.
+ Um da vielleicht noch mal zu ergänzen, wir hatten es ja auch am Anfang schon im O-Ton von Herrn Wirkundin gehört, dass der DSA an sich gar nichts darüber sagt, was illegal ist, sondern eigentlich nur einheitliche Regeln darüber schaffen soll, wie mit solchen Illegal-Inheiten umgegangen wird.
+ Was dann illegal ist, inhaltlich, dass er in Nazellarben recht geregelt oder eigentlich andere gesetzt wird, nicht über den gar nicht eigentlich nur den durch den DSA.
+ Und genau also bei der OS-Regierung, da war das in den letzten Monaten schon echt auch völlig, wie häufig da der DSA erwähnt wurde.
+ Das waren teilweise komplett absurde Behauptungen, dass Leute ins Gefängnis gesteckt würden, wegen dem DSA oder auch das Wahlen annuliert werden würden aufgrund von DSA.
+ Das stimmt natürlich überhaupt nicht und da muss man schon diese Angriffe im Zusammenhang mit den größeren politischen Narrativ der OS-Regierung sehen.
+ Weniger als das ist wirklich inhaltlich begründet ist beim DSA.
+ Das heißt der DSA sagt, was mit Illegal-Inhalten gemacht werden muss, aber sagt nicht den Plattform, was Illegal-Inhalte sind.
+ Was passiert dann, wenn sozial Medien Plattformen sich nicht an die Regeln des DSAs halten?
+ Der DSA sieht auf jeden Fall auch Sensionsmöglichkeiten vor. Also zum einen kann die EU-Kommission, das ist die Behörde, die das gegenüber den sehr großen Plattformen durchsetzen.
+ Die können verbindliche Maßnahmen zur Behebung von Verstößen anordnen und die können auch Geldstrafen verhängen.
+ Das können bis zu 6% des globalen Jahresumsatzes sein. Vielleicht um das ein bisschen im Kontext zu setzen.
+ Das ist ungefähr die großen Ordnung von Strafe, Geldstrafe, die es auch im Bettbewerbsrecht gibt.
+ Das sind es ungefähr 10% des globalen Jahresumsatzes, genau also ungefähr in der Größenordnung.
+ Unter dem DMA gab es auch schon Geldstrafen, nämlich gegen Apple und gegen Meta jeweils 500 bzw. 200 Millionen Euro.
+ Das sind aber jeweils unter 1% des Jahresumsatzes gewesen 0,1-0,3% also sehr viel niedriger als was da maximal möglich wäre.
+ Zu diesen Schrafungs, man muss aber vielleicht auch noch sagen, dass der DSA insgesamt wirklich eher kooperativ angelegt ist und dass diese Geldstrafen am Ende von einem ziemlich langen Prozess stehen.
+ Die Kommission fragt erst mal Informationen an, wenn sie irgendwo ein Verdacht hat, dass ein Verstoß gegen den DSA vorlegen könnte.
+ Dann kann die Plattform wieder darauf reagieren, dann gibt es eine Untersuchung und eine Vorlaufige Feststellung von einem Verstoß.
+ Da kann die Plattform wieder reagieren, kann sich verteidigen und kann auch schon Maßnahmen umsetzen.
+ Und wenn dann am Ende von diesem Prozess immer noch einen Verschuss vorliegt, dann gibt es eben am Ende diese Geldstrafen.
+ Und bis jetzt war das auch noch nicht der Fall, dass es unter dem DSA eine Geldstrafe verhandelt wurde.
+ Strafen gibt es noch keine, aber es gibt ja schon einige Verfahren unter den DSA gegen verschiedene Plattformen, die momentan Laufungen nicht abunteranam auch gegen Facebook und EX.
+ Und EX, warum ist die Kommission gegen die Plattform vorgegangen, was da die Gründe und können wir schon irgendwas aus diesen Verfahren lernen?
+ Also kann wir sagen, da gibt es Klär, also da gibt es offensichtliche Schwachstellen in der Art und Weise, wie der DSA reguliert und das ist eine offene Flanke, die so nicht funktioniert.
+ Kann man schon irgendwelche Rückschlüsse ziehen.
+ Es gibt schon eine ganze Menge an Laufenden Verfahren über 10, also auch gegen fast alle oder gegen viele von den größeren Plattformen, gegen AliExpress, Facebook, Instagram, TikTok, Timo.
+ Das betrifft auch ganz unterschiedliche Aspekte vom DSA, also bei TikTok, es geht zum Beispiel um Jugendschutz unter anderem.
+ Bei AliExpress steht der Vorwurf, um Raum, dass nicht genug gegen illegale Produkte auf der Website getallen wird.
+ Und was ein größeres Problem zu sein scheint ist, ist es auch in bei ganz vielen Plattformen darum geht, das vorschönig ausreichend Zugang zu Daten, ergewert bekommen.
+ Und auch diese systemischen Errisigen, die wir schon angesprochen haben, da scheint es auch bei vielen Plattformen Probleme zu geben, dass das nicht ausreicht, nachdem, was unter dem DSA gefordert wird.
+ Und wir hatten ja auch schon um Demokratische, über demokratische Prozesse gesprochen und Wahlprozesse. Da gibt es auch schon Verfahren und zwar, genau besonders viel auch sehen, erregt, haben die Verfahren gegen X und gegen TikTok.
+ Gegen X läuft schon seit 2023 ein Verfahren und da geht es auch unter anderem darum, ob die Community Notes effektiv genug dabei sind, den demokratischen Diskurs ob X zu schützen.
+ Dieses Verfahren hat die Kommission anfangen, das ist jetzt auch nochmal erweitert.
+ Das war rund um die Bundestagswahl, da hatte ich erwähnt, dass Elon Musk seine Reichweite aktiv genutzt hat, um zum Beispiel die AfD zu unterstützen.
+ Und da gab es Vermutung, dass vielleicht der Empfehlungsalberitmus in Transparent geändert worden sein könnte, um eben seine Reichweite zum Beispiel zu boosten.
+ Und der DSA schreibt vor, dass die wichtigsten Parameter eines Empfehlungsalberitmus oder Empfehlungssystems in den AGB ist transparent gemacht werden müssen. Und das könnte eben nicht passieren.
+ Da ich ganz kurz hier einhacken, aber es heißt, es geht dabei wirklich darum, die Änderungen müssen transparent sein. Aber dass die Änderungen gemacht werden ist in Ordnung.
+ Das schreibt der DSA nicht vor, dass politische Inhalte nicht gebustet werden dürfen. Es geht nur um, dass wenn es passiert ist, dass transparent gemacht werden muss.
+ Ich würde sagen, es sind zwei unterschiedliche Sachen, das eine, was hat relativ klar geregelt, ist, dass die wichtigsten Parameter eines Empfehlungssystems in den AGB stehen müssen.
+ Ob dann davon unabhängig quasi die Verstärkung von bestimmten Inhalten vielleicht auch ein anderes Risiko ist, das ist nochmal ein anderes Frage.
+ Und wer wahrscheinlich auch sehr viel schwieriger für die Kommission zu beweisen, genau, dass er wäre der erste Schritt, glaube ich, das unter diesem Transparenz-Ausberg zu betrachten.
+ Könnt aber sein, dass es unabhängig davon auch unter anderem DSA-Verpflichtungen verstoß ist.
+ Genau, und dann gibt es auch noch einen Verfahren gegen TikTok.
+ Im letzten Dezember hatte die Kommission, das eröffnet nach der ummanischen Präsidentschaftswahl.
+ Da gibt es eben auch den Verdacht, dass das größere Ausländische Einflussnahme gab.
+ Und das TikTok nicht gemacht hat, um die Integrität des Wahlprozesses dazu schützen.
+ Da gibt es zum Beispiel auch darum, dass politische Werbung eigentlich auf TikTok nicht erlaubt ist.
+ Und das aber trotzdem, dass es im größeren Umfang wirklicherweise gegeben hat.
+ Genau, und all diesen Verfahren gibt es aber noch keine endgültige Entscheidung.
+ Es gibt es einige Verfahren auch gegen US-Unternehmen unter dem DSA, aber noch keine finalen Entscheidung, auch keine Sanktionen.
+ Hat das damit etwas zu tun, dass Europa und die EU sich momentan auch in einem Handelskonflikt mit der US-Adensation befindet und der DSA und die Entscheidung unter dem DSA jetzt quasi Teil der Verhandlungsmasse im Handelskonflikt sind?
+ Ja, also es gibt zumindest diese Befürchtung, dass das so ist.
+ Das geht da insbesondere um das Verfahren gegen X. Es gab jetzt letzte Woche wieder Berichte.
+ Es ist die Entscheidung der Kommission, ob X-Final gegen den DSA verstoßen hat, eigentlich schon längst feststeht.
+ Das ist aber nicht veröffentlicht, um jetzt noch das aktuelle Verhandlung abzuwarten.
+ Die wurden jetzt mehrfach auch aufgeschoben und sollen jetzt noch bis Anfang August gehen.
+ Es könnte sein, dass wenn die dann abgeschlossen sind, immer groß, die Entscheidung veröffentlicht wird.
+ Aber es zeigt auf jeden Fall auch eine Schwachstelle in der Umsetzung des DSA, nämlich dass die Kommission als Behörde, dass so eine bewisse Doppelrolle hat.
+ Auf der einen Seite sind sie politisch zuständig für das Aushandeln von solchen Handelsabkommen.
+ Und wenn dann, wie von der US-Regierung ja extrem fasziert, der DSA und Teil von solchen Verhandlungen wird, dann bringt der DSA am Ende nicht den Schutz für Nutzerinnen, der eigentlich bringen soll.
+ Und langfristig macht das natürlich die Kommission auch unglaubwürdig in ihrer Rolle als unabhängiger Durchsetzungsbehörde für den DSA.
+ Ja, genau. Und wenn die europäische Kommission regulaturische Maßnahmen wie Straftzahlungen aufgrund der Nichteinheiten des DSAs verhängt und die US-Regierung,
+ dass dann eben als gegen sie interpretiert, als gegen die US-Art, amerikanischen Interessen gerichtet interpretiert, dann kann das DSA-Enforcement ganz schnell zum geopolitischen Spiel sein werden.
+ Was wir uns natürlich nicht wünschen und deswegen hat auch eine unabhängiger Qualse-Durchführung und Durchsetzung davon wichtig ist.
+ Und das auch die Kommission nicht anfängt, das ekstraatisch jetzt irgendwie aufzuhäden, weil man Donald Trump nicht verärgern will oder weil man vielleicht die eigene Verhandlungsmasse oder Verhandlungsposition erdisch stärken möchte.
+ Und ich glaube aber auch, dass die Kommission sich die letzten ein und ein half Jahre sehr groß so mügel geben hat, Evidenz von Forschenden von NGOs in Europa zusammen.
+ Um eben sattefeste, juristisch sattefeste Evidenz zu haben für die Posti-Dengs, für die Verfahren gegen die Plattformen, damit man da in den ersten Fällen eben nicht vielleicht vorgericht noch verliert, wenn sie die Plattformen gegen die verhängt und staffen juristisch werden.
+ Und was ist jetzt eurerwart, um wie das weitergeht? Also weren wir die Sanktionen dann bald sehen oder erster Markus und was sollte die Kommission jetzt machen?
+ Genau, also unabhängig von der Entscheidung gegen X würde ich sagen, stehen wir insgesamt noch ziemlich am Anfang der Umsatzung des USA.
+ Es gibt super viele offene Fragen, auch teilweise bewusst offen angelegte Verpflichtungen unter den USA, die wird man nach und nach quasi weiter erforschen müssen und bei in einem Punkt auch sicherlich vor Gericht klären.
+ Wenn Plattformen solche Entscheidungen dann zum Beispiel anfechten, das wird doch einige Zeit dauern, es dauert auch bis sich Kapazitäten zur Umsetzung, sowohl auf EU-Ebene als auch auf Bittlitzstadt eben aufgebaut werden.
+ Wir hatten auch schon erwähnt, dass der Datenzugang für Forschern wichtiger Punkt ist bei der Umsetzung vom DSA bis Daraus dann wieder Ergebnisse produziert ist, die man wiederum inhaltlich beim Ideas-Aiden nutzen kann.
+ Da wird auch noch wieder eine Zeit dauern. Ich glaube, was jetzt erstmal super wichtig ist, ist eben nicht diese Eindruck entsteht, es ist politisch in der Umsetzung.
+ Und da sollte die Kommission jetzt vor allen Dingen drauf achten.
+ Hat euch gerade den Datenzugang noch mal angesprochen, das wurde jetzt vor kurzem der degligierte Rechtsakt zum Datenzugang veröffentlicht durch die Kommission. Da gab es auch die Besonderheit von zwei Stakeholder-Partizipationen, einmal auf den Gesamt-Draft des DSAs und dann auf den Draft das Dädagate-Morichtsakt zum Datenzugang, das eben auch Forschende aus ganz Europa, aber auch außerhalb der Europas eigenes Feedback einbringen konnten und das nochmal nachjustiert wurde quasi der Draft.
+ Und erst jetzt können Forschende wirklich diesen tieferen Datenzugang stellen, der unter Artikel 48 quasi dieses große Versprechen, dass man die Risiken der Plattform besser verstehen kann, weil der bisherige Datenzugang dreht sich eigentlich nur um Application-Programming Interfaces, also quasi Schnittstellen über die Mandaten von den Plattformen sammeln kann und Artikel 4012.
+ Aber das, was wirklich eine Wendung bedeutet für die Forschung, ist Artikel 404 und 48, was eben jetzt nochmal sich zeigen wird.

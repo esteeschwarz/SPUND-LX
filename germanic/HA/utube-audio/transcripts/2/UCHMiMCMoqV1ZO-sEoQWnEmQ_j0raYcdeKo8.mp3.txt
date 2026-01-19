@@ -1,0 +1,328 @@
+ Basically, I am the only one who's not an expert at all on the topic here, I guess, in the room.
+ But trying to get my head around the topic, even I realized that the regulation of digital
+ platforms has evolved from a niche topic of legal, technical issues towards a central governance
+ challenge of our time.
+ It cuts across competition, innovation, democratic accountability and institutional design.
+ And the risks involved that call for regulation are not abstracts.
+ Recommend the systems that amplify hate speech and disinformation, AI generated forgeries
+ in political campaigns, opaque algorithms affecting credit scores, welfare, excess, and
+ use visibility.
+ These systems shape not only our markets but public trust and democratic legitimacy.
+ And this is all happening in a context where we would be busy addressing these problems
+ directly, but we face issues of what sociologists in the 50s, 60s would have called system maintenance.
+ So the EU has positioned itself as maybe a regulatory front runner with the Digital Services
+ Act, the Digital Markets Act, and now the AI Act.
+ But it faces a ever more difficult challenge that starts with the US, the Trump administration
+ that already doing the campaign has shifted the tone.
+ And this shift in tone is becoming more real and concrete now with respect to the tech
+ companies.
+ And I suspect that that will have effects in terms of pushback to what the EU is trying
+ to do.
+ Meanwhile, in the UK post Brexit, the UK is developing its own approaches with the Digital
+ Markets Competition and Consumer Act and the Enforcement Mechanism designed.
+ Please lead to rather fundamental questions, so have we learned something from the experience
+ we gained about from the last one or two decades that helps us to think about how to regulate
+ these issues?
+ What are the institutional realities that we have to consider when we think about these ambitions?
+ And how can we think about the reality that AI is a known unknown to quote a famous former
+ defence minister?
+ It's a known unknown, so we know that something is going on, but we don't know this shape
+ it will take in one year and five years or in ten years.
+ And I have a pleasure to introduce the amazing panel with which I will discuss these issues.
+ To my right is Alison Harcourt, who is professor of public policy at the University of Exeter
+ and she's leading expert on media and communication regulation with a strong focus on co-regulation,
+ civil society participation and the politics of regulatory design.
+ Her recent book, Brexit and the digital single market examines how the UK's departure from
+ the U has shaped regulatory capacity and approaches in a number of sub-sectors of the field.
+ Thanks for joining us, Alison.
+ To the left is outer left.
+ This sounds too political for me.
+ So on my left side is Danila Shokman, who is our own professor of digital governance
+ here at the Hattie School and the director of our Centre for Digital Governance.
+ Originally, it was correct to say China, a scholar originally, her research explores
+ how digital platforms influence political communication and governance in both democratic
+ and authoritarian settings.
+ She's also of the book media commercialization and authoritarian rule in China and currently
+ involved a project which is called the long arm of authoritarianism, so how kind of authoritarian
+ strategies influence us here today.
+ At the Hattie School, she has conducted a research, applied policy work and debates on
+ the emerging approaches of the EU, for example, in the context of the Digital Service Act.
+ And finally, also of course to my left is Kilian, Kilian Fiditman, he is deputy head
+ of policy and advocacy at algorithm, watch a burden based nonprofit that monitors algorithmic
+ decision making and promotes accountability in digital system.
+ He works at the intersection of AI regulation transparency and civil society advocacy.
+ His recent work focuses on how automated system both in public and private sector can
+ be democratically governed.
+ Yeah, we all would like to see, know about that and see that and how civil society actors
+ can be embedded more meaningfully into the EU's evolving digital governance architecture.
+ So welcome to that panel and let's dig into that and start.
+ I thought about this by way of thinking about three topic blocks where I will address one
+ of the panelists first and the others then should chip in and respond and the more I can
+ be in the back the better for the discussion.
+ So the first block is about regulatory architecture and capacities and I would like to address
+ any first.
+ So Danny one might say that some people have argued that the emerging IAA regulation will
+ encounter similar bottlenecks and accountability channel just as prior platform governance.
+ So any lessons that you can draw from your work on the emerging regulatory landscape
+ in the EU that give us an insight into how strong the regulatory architecture is in Europe
+ to address these challenges.
+ How do I turn it on?
+ I don't think you need to turn it on.
+ Just wait for Matt to do his thing.
+ Hi Matt, can you please help me out?
+ Yes, so thank you.
+ Give me a voice.
+ Thank you.
+ Great question, what have we learned from the Digital Services Act?
+ I know some of the panelists are experts also on the AI Act.
+ My personal background is to look into what is called in the EU, the Digital Services
+ Act and the Digital Markets Act as a package, as an attempt to govern and hold platforms,
+ social media platforms but also online search engines.
+ It's important the American ones within the EU accountable.
+ And so before I turn to Kai's question about the regulatory capacities, I just want to
+ sort of zoom out to the bird's eye perspective for just one moment in terms of thinking about
+ how this European approach develops in comparison to what we know about how platforms and how digital
+ technology has been governed in the past.
+ So in the past, this was a very self-regulatory approach.
+ It was also governed under the United Nations framework, a multi-stakeholder model, giving
+ companies a lot of autonomy in decision making, while also giving government mostly the role
+ of implementing laws that then the platforms or tech companies would implement as intermediaries
+ so to speak.
+ And of course, societal actors were in the multi-stakeholder also involved, but they, I would
+ say, in comparison to the companies were much less powerful, I would argue.
+ And so what we see in the European Union mostly after Snowden evolving with GDPR first,
+ but now also the Digital Services Act, Digital Markets Act package and then the AI Act, which
+ I think Killian will talk more about, is what I personally would call a procedural approach
+ towards a giving public administration a stronger role, while at the same time also not moving
+ in that direction of China, where China, of course, gives a lot of power and a lot of implementation,
+ strength to state institutions that are very actively engaged in censorship and in managing
+ digital technology.
+ The EU approach is not focused so much on censorship and identifying exactly, for example, what
+ kind of information is disinformation or online hate speech and not, but instead asks platforms
+ or tech companies to come up with their own risk management plans, identify what potential
+ society risks they would play, and then now the EU is building what's called a digital
+ service coordinator network, a public administrative structure that together with the European Commission
+ is then aiming to hold platforms accountable for what they themselves choose in their risk
+ management plans.
+ So what we see at the moment in terms of just the early implementation of this new Digital
+ Service Coordinator Network, we see several challenges, actually Philip Darius, who is
+ also here in the room, maybe you can wave, Philip and I, we have conducted qualitative interviews
+ with Digital Service Coordinators in Ireland and also in Germany.
+ Ireland is very important in this network because most of the big US tech companies, they
+ are registered in the European Union in Ireland and therefore Ireland as a Digital Service
+ Coordinator is going to play a very key role in terms of implementation.
+ So what Philip and I have discovered is that in this early implementation phase, these
+ Digital Service Coordinators, most of them are existing public administrative bodies and
+ civil servants.
+ They oftentimes they lack the knowledge or expertise in order to really understand what the
+ technology itself or the data itself.
+ And so in the Digital Services Act, there is a very important key oversight mechanism which
+ is aimed at giving researchers, everybody in this room, but also researches where academic
+ researchers, but also academic researchers like Kylian who is at algorithm watch so in
+ NGOs, is empowering these researchers, these societal actors in order to gain data access
+ to the platforms in order to check whether what they claim they're doing is actually happening
+ in practice.
+ So what we see in terms of the now turning to Kais question about the challenges for regulatory
+ capacities is that these Digital Service Coordinators because they don't have the data science
+ capacity, they don't have that kind of training.
+ So they are dependent on these researchers to engage in this kind of research and communicate
+ well with them.
+ And what we see is that that requires a shift in terms of how civil servants think about
+ their own relationship to the societal actors as in aiblers or facilitators of research.
+ But then at the same time the researchers oftentimes they lack the funding in order to actually
+ go ahead and do that kind of research.
+ And so currently I see those two as the main challenges in terms of building that capacity.
+ Thank you very much, Danny, turning over to Alison.
+ Well Danny was speaking I was thinking of the UK and the UK's experience with the procedural
+ type of approaches and risk-based regulation.
+ I was thinking of the time when I was at the LSE in 2007 and the director of the financial
+ service authority was there and speaking to us with huge confidence about the aerosystem
+ of risk-based regulation of the regulatory, the financial regulator which at the same
+ time, the same minute basically what we didn't know was the proverbial hitting the fan
+ and kind of the bank run to black, what was the name of the was about to happen.
+ So I wonder how current thinking in the UK is engaging with this procedural risk-based
+ type of approach is it kind of more or less within the same line of regulatory logic
+ or taking a different stance.
+ Is it working?
+ It usually is.
+ Okay.
+ It's not the question I thought you were going to ask me but I think I was going to ask
+ answer the one on how things have changed with the AI act.
+ I'm more perhaps a new or an...
+ Oh we can do that too.
+ But in the UK I think that post-Brexit was supposed to be taking back control and have
+ more flexibility and so forth and so on.
+ But of course I think the great trade-off of course is between cost effectiveness and choosing
+ maybe political and geopolitical security.
+ So when we look at AI regulation we are really looking at self-regulation in the UK and we're
+ looking at FDI for investment here in Europe.
+ We are...
+ The big difference really is investment in cloud computing and we have investment by AWS,
+ Microsoft, Google and so forth in the UK and then we have self-regulation of those systems
+ where is in the EU we are investing heavily in producing your own cloud.
+ And so I think that's really the big difference.
+ And you have hopefully greater data security and national security constraints let's say
+ within that.
+ But of course that's not cost effective because it's a lot of subsidization in the European
+ Commission and national states haven't been very effective sometimes in picking winners
+ so that's the trade-off because I remember you were asking about the trade-off.
+ A lot of companies though are following EU regulation because they are operating in both
+ the EU and the UK.
+ So there's that consideration as well that they have to look to Europe as to what they
+ might be required to do in Europe.
+ So in interviews companies really are looking to the European lead and AI regulation.
+ Do you want me to answer the other question?
+ So I think the question was on what have we learned from the USA?
+ The EU has learned from past experiences to what works and what doesn't work.
+ The EU tends to mitigate these kinds of risks that you were talking about by providing
+ more power to the European Commission.
+ I think there's been a re-centralization of power to the Commission with the establishment
+ of the AI office within the European Commission itself.
+ The AI board is the equivalent of the USA's.
+ Those are the member states and the regulatory bodies.
+ They advise.
+ That's the advisory board.
+ The power is with the Commission.
+ And I'm not saying that the other difference is it's more self-regulatory under the USA with
+ companies setting their own codes and voluntary and also having kind of different systems of
+ provision of data that you were talking about for access for researchers.
+ Whereas it's a much more top-down regulatory architecture with the EUA Act.
+ So like Anna was talking about, Sen and Sen and the committee will be setting conformity
+ assessments.
+ There's going to be, sorry, there's going to be like this external kind of list of NANDOs,
+ which is going to be kind of setting, assessing AI systems so that they can provide themselves.
+ It's still self-regulatory with a CE mark, but they also have to pass Sen and Sen and
+ Sen and like.
+ Guidelines as well in addition to that.
+ So they have those two things to pass.
+ And even though the CE mark is self-regulatory and self-assessed, the difference is that there's
+ going to be hefty fines.
+ And it's not that they're not hefty under the USA, but there's going to be hefty fines
+ if they do not conform to Sen and Sen and like and third party assessments on AI systems.
+ So I think that's the big difference is the recent realization of power within the
+ commission itself.
+ I have a follow-up question on this for me to understand this.
+ You talk about recent realization within the EU.
+ At the same time, it continues to be a procedural approach, which is where I'm coming from a
+ process that works a lot with what companies do internally.
+ So could you talk a little bit more about this kind of balance between centralization,
+ mining, enforcement on the one hand and the continuous role of co-regulatory approaches
+ in the sense of how Dany outlined it, the plans that companies have to develop.
+ Is that to be continued in the domain of AI or is this also being reduced in that sense?
+ So reliance on co-regulation goes down, stays the same, goes up.
+ I think it goes up in the, because we have this new code of practice coming out on
+ genitive AI within the European Commission, which includes input from people like Killian
+ and algorithm watch, it's taking a very long time and that's the trade off as well.
+ They've just postponed this until next year, 2026.
+ It's supposed to come out next month.
+ So there is, but there's a lot more, there are a lot more constraints on what companies
+ are doing and a lot more direction that comes from the European Commission and from external
+ groups, including of course, conformity assessment providers as well.
+ That doesn't happen under the DSA, because the DSA really is self-regulatory and the
+ codes of practice are coming from the platforms themselves.
+ Okay, got it, thank you.
+ Killian, involving you, I've kind of two questions in a row for you.
+ I would like, if possible, like you to start first, before we go more into the question
+ of the role of civil society, more on your take of the regulatory approach as discussed
+ here, in particular the procedural nature.
+ If possible, critical, but anyway.
+ Yeah, so algorithm watch is like we do evidence-based advocacy.
+ So our theory of change as you put that when you're in NGO is that we try to bring
+ some, also our own research finding, but also other research results and so on to the
+ policy making table and advocate for them.
+ But that's important to set out first, like I'm not an academic, but we like produce our
+ research for the goal of advocacy.
+ So I'm like speaking more as an activist and as an scientist in that sense.
+ So just wanting to point that out.
+ And of course, we then focus on certain regulatory processes.
+ And I've been following the AI Act a lot over the past two years and what we see there is
+ really like when you when you ask me about like core tensions that we see in this policymaking,
+ it is really a classical game of power concentration on the sides of the corporation.
+ So very early on we saw like a big counter move if you want from the companies.
+ And even though the commission wanted to include fundamental rights as like an explicit goal
+ and what's being regulated there.
+ So they added fundamental rights to a product safety regulation, which is like a bit of a
+ strange move, right? They took the classical instruments of product safety and said, yeah,
+ but we're also going to regulate fundamental rights and certain harms.
+ And then in the process, this got watered down a lot in our view and one part is, for
+ example, you brought up the participation process for what is called GPAI code of practice,
+ like the general purpose AI models.
+ And for example, we didn't even participate in that.
+ Yeah, because people like you contributed, we decided not to because we really didn't
+ see the point.
+ They allowed like basically everyone that applied to that process in so that you have like 400
+ groups or so part of this part is like stakeholder participation process.
+ And then civil society organization, researchers and corporations like technically on the
+ same level, but in reality, of course, not because Apple is bringing like teams of 50
+ people to this table.
+ And we for us, it would be like half a, you know, half a full time position or something
+ like that.
+ No, there's really no point, there's really no difference we can make there.
+ And when we can dive into that later a bit.
+ Yeah.
+ And the second part was more about the policy making, like as like what the problems are
+ there in the process.
+ My general question would be how optimistic you are with the effectiveness of that selected
+ approach, but can we stay with what you just said a bit longer and let that sink in a
+ little bit.
+ So I think you what kind of I received here was two things.
+ First, the consultation procedure, which is uniform across EU policy making terms of stakeholder
+ consultation based on roadmaps and drafts is stacked against or in favor of big companies
+ because of their kind of firepower they have.
+ And then you decide for a kind of strategic retreat and not engaging in a process where
+ you would consider that you don't have any influence at all.
+ And what I didn't yet get is how this has impacted the actual design of the regulation.
+ You mentioned that was a discussion about including fundamental rights was then this dropped
+ on the basis of the pressure by the companies.
+ I remember we had a discussion with your colleague from algorithm watch maybe one and a half
+ here go.
+ Maybe you could take us through the process a little bit more.
+ No it was not dropped.
+ It's still like in the first article of the regulation and in all the you know supporting
+ material and so on it's still like an explicit goal of this regulation.
+ And that's important also because we can always refer to that and a point out like this
+ is this is an important aspect still.
+ But of course some of the instruments that were on the table on the table to achieve something
+ here were watered down quite a bit.
+ And one example is that you know the AI takes this risk based approach that says some
+ systems are super risky.
+ Like this like always is risk pyramid like and that's like this tiny like piece at the
+ top and then you have lots of like not so critical system that's the basis of this triangle.
+ And on the very top the regulation says these systems must be prohibited because it's
+ unacceptable risk that's like the highest category.
+ And of course that's what we like that was one of the points that we focused on as civil
+ society really bringing that to the table over and over again and fighting for some prohibitions
+ that have actually some some teeth.
+ So for example there's one on like social scoring you know but then as you can imagine it
+ really comes down to like how these definitions are framed whether they actually capture something
+ or not.
+ And that was really us the civil society putting that bringing that to the table over and
+ over again to make it happen because from the corporate side you know obviously no company
+ would would be standing there and saying like yeah you're right this product we're selling
+ is really super dangerous and shouldn't exist.
+ So focusing on that was was one example where we say so you were successful in that.
+ Yeah yeah but of course we were hoping for for much more so what happened during the
+ policy making is that you say this should be prohibited but then it gets moved down to
+ the high risk category at some point.
+ For example we said like some of the applications in policing is super discriminatory and super
+ dangerous and really shouldn't exist but then you have not just the corporate actors but
+ also security actors that stand against that.
+ But yeah there is some success in that for sure so I don't want to like keeping like prohibition
+ as a means of regulation in this space is a success in my view for us.
+ Okay Danny Ellison you would like to comment on this directly it looked like maybe just
+ a comment so because Killian you mentioned how over time you at least in your experience
+ some of the sort of tougher positions were watered down and then also how that related
+ to security considerations.
+ So for the DSA process in comparison to the process that you're describing I think most
+ of the stakeholders that I have talked to were actually surprised how much more they felt
+ in comparison that they as societal actors could actually influence the content of the
+ Digital Services Act.
+ I think there was a general sense that there was this window of opportunity in Brussels and
+ that there was a lot of support in terms of empowering these societal actors most importantly
+ researchers at civil society organizations and also at academic institutions and it was
+ also I think in terms of the interpretation of the DSA that was considered to be in comparison
+ as much more successful at the same time now in terms of the implementation we are in
+ a phase during the second Trump administration and there is a lot of pressure coming also
+ from actors that have social security concerns and especially worried about Russia Ukraine
+ and about how basically for US companies are now many of them are aligning very closely
+ with the second Trump administration.

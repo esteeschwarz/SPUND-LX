@@ -1,0 +1,486 @@
+ Vielen Dank.
+ Guten Tag.
+ Und willkommen zu der Herdiskul.
+ Ich bin Violetta Moreno-Lax,
+ der Wubin-Professor
+ des International Law
+ und der Direktor des Center for Fundamental Rights.
+ Ich bin sehr schön und leise,
+ zu haben Sie hier zu uns heute hier mit uns
+ für die Finalkonferenz
+ des Affar-Projekts.
+ Affar-Stands für Algorithmic-Fernes,
+ für Asylum Seekers und Refugees.
+ Und das ist ein sehr leises Projekt
+ des Center für die letzten vier Jahre.
+ Es ist ein sehr leises Projekt
+ und ein Honor für so lange zu erfolgen.
+ Ich would like to acknowledge
+ a few significant facts
+ about the project before
+ we continue with the keynote
+ and the rest of the proceedings.
+ Affar-Has been
+ very significant
+ nicht nur because of its contribution
+ to academia and to research
+ debates,
+ but also most importantly also
+ for its policy impact.
+ It's been funded by the
+ Volkswagen Foundation
+ under the Challenges to Europe-Programm.
+ And it's been led
+ by Professor Catherine Costello
+ who we're going to be meeting in a few seconds
+ for those of you who do not know
+ her yet.
+ She's one of the photo most experts
+ in leading scholars
+ at the G.Migration Law
+ who served as Professor
+ for Fundamental Rights
+ here and co-director
+ for the Center for Fundamental Rights
+ between 2020 and 2023.
+ The project
+ has brought together
+ a collaborative network
+ of six European universities,
+ the European University Institutes,
+ University College Dublin,
+ the University of Copenhagen,
+ the University of Zagreb
+ and the University of Woric.
+ And it has gathered
+ established scholars,
+ elite career academics,
+ PhD students,
+ as well as top policy makers
+ and stakeholders.
+ Working across law, migration studies,
+ human rights, and new technologies.
+ Many of these people
+ are among us today,
+ and you will have the opportunity
+ to listen to their findings
+ because they are going to be presenting
+ a number of considerations,
+ make the Afar project
+ both highly relevant
+ and very impactful, as I was saying.
+ The project has brought
+ together, as I was already
+ noting, leading scholars
+ from across Europe
+ to examine how new technologies
+ are reshaping migration
+ and asylum governance
+ and to analyze the notion of fairness,
+ which is very elusive
+ as you are going to see,
+ in a context where decision-making
+ is increasingly automated.
+ The project has produced
+ invaluable outputs
+ at the cutting edge of academic
+ scholarship,
+ but also provide innovative tools
+ for asylum governance
+ and engaging
+ with IT
+ and the challenges that AI
+ poses on the ground.
+ Among these, I have a few examples
+ that I wanted to highlight.
+ First is a report
+ entitled "Automatic Immigration
+ and Asylum"
+ by Dr. Derea Oskul,
+ who is also here
+ and you will hear about her work
+ tomorrow, which offers
+ one of the first systematic
+ mappings of automation
+ in the area of migration
+ and asylum governance, conducted so far.
+ It documents how European
+ states and EU institutions
+ are developing tools
+ for strategic identification, speech
+ and dialect, detection,
+ mobile data extraction
+ and algorithmic risk assessment,
+ which is being deployed
+ at different points
+ during the migration journey
+ of refugees and migrants.
+ I have also a second example
+ that I wanted to highlight,
+ which is the tech litigation database
+ and open access collection
+ of judgments on
+ contested uses
+ of automated decision-making
+ systems in the public sphere,
+ edited by Dr. Francesca Palmiotto,
+ who is also here with us today,
+ representing another
+ of the key contributions of the project.
+ It is designed
+ to support researchers,
+ legal practitioners and civil society organizations
+ well beyond the life
+ of the Afar project.
+ So watch the space, because it is going to be
+ very useful and very influential.
+ Afar the distinctive aspect
+ of the Afar project is its
+ sustained collaboration
+ and exchange with policy makers.
+ From the outset,
+ the project has organized regular workshops,
+ bringing together policy makers,
+ practitioners and members of civil society.
+ Dr. Lenka Drajanova
+ and Professor Martin Rousse
+ authored an influential paper
+ examining how
+ competing moral frameworks
+ shape public perceptions
+ of the human rights and the human rights
+ and the human rights and the human rights.
+ This has now been embedded
+ in a series of
+ a far policy briefs,
+ which I would recommend that you consult
+ in your own time.
+ The project has also engaged
+ on multiple occasions
+ with the office of the high commissioner
+ for human rights at the UN level,
+ presenting research findings
+ and contributing to broader
+ discussions and debates
+ in asylum governance.
+ Last June, for example,
+ the Afar theme,
+ led by Professor Catherine Costello,
+ contributed to the high level
+ dialogue shaping
+ UN guidelines on digital border technologies.
+ There is a new story on our website
+ that you can consult if you are curious.
+ So, in these ways,
+ the Afar project exemplifies
+ the mission of the Center for
+ Fundamental Rights here
+ at the Heritage School.
+ Aspiring to be a beacon of hope
+ and a hub for socially engaged
+ and impactful research,
+ teaching and outreach on key
+ current and emerging challenges
+ to fundamental rights
+ and to address these issues
+ from a problem-solving
+ and solution-oriented perspective.
+ So, we are honored
+ to welcome you
+ to the final conference of the project.
+ I would like now to pass the floor
+ to Professor Catherine Costello,
+ who will address you also a few words.
+ Thank you all very much and enjoy the conference.
+ (Applause)
+ Thank you very much, Violetta.
+ It seems so timely to be back in Berlin
+ at this juncture for the Center
+ for Fundamental Rights
+ and for the Afar project.
+ As most of you in the room know,
+ the Center has a new director in Violetta,
+ who gave her inaugural lecture
+ just in the last few days here in Berlin.
+ And for the inaugural director,
+ Professor Bachelors Challa,
+ and I who did that job jointly,
+ I suppose, Violetta,
+ is now taking over from a job
+ which two women did.
+ So, we really wish her every success
+ in the role and hope that we can continue to work
+ to support the project.
+ We really wish her every success
+ in the role and hope that we can continue to work.
+ To support the work of the Center,
+ which really has a unique position
+ in, I guess, German legal landscape
+ and more widely in the sense of having
+ a real commitment to do
+ serious scholarship on Fundamental Rights.
+ That is both legal and empirically well-grounded
+ and deeply critical and socially engaged.
+ And so in that space, I think, Violetta was
+ just a wonderful choice
+ as the next, the current director of the Center.
+ For the Afar project,
+ as was mentioned, it comes
+ as we are beginning to wind down the research,
+ but of course nothing is ever finished in research,
+ so it doesn't feel like the end at all.
+ We have three PhD researchers as part of the project,
+ and we are also celebrating the fact that the first
+ of those three PhDs was completed and defended
+ also this week.
+ So I congratulate Dr. Mathea Kanteck
+ on his PhD.
+ (applause)
+ Which is unbiometrics, so watch this space.
+ There are some new findings there.
+ So rather than belabor the point about the project,
+ it just falls to me to have this great pleasure to introduce our speaker tonight.
+ When we were deliberating about what sort of speaker we wanted
+ for this keynote, we really wanted somebody who was both a scholar
+ and an activist,
+ who had a commitment to human rights,
+ but also a very critical edge in his work,
+ and so Mat Mammudi really stood out.
+ For those of you who don't know him,
+ Mat is currently assistant professor in digital humanities
+ at the University of Cambridge,
+ and he remains a researcher and advisor
+ on artificial intelligence and human rights at Amnesty International,
+ which is how I originally got to know Mat and his work,
+ particularly on the band,
+ the SCAN campaign on facial recognition technologies.
+ At Amnesty, he led research and advocacy on AI-driven surveillance
+ from the NYPD's surveillance machine
+ to automate it apartheid in the occupied Palestinian territory.
+ He's a research associate at many different institutes
+ and also on the advisory council
+ of Fox Glove, a very small but impactful UK NGO
+ that's brought successful legal challenges
+ on the use of new technologies in migration in the UK.
+ He was the inaugural Jo Cox PhD scholar at the University of Cambridge,
+ and he also spent some time at the hearty school previously researching
+ the use of new technologies on and ostensibly
+ for asylum seekers and refugees in that era.
+ In particular, he's the author of migrants in the digital periphery,
+ new urban frontiers of controls published this year
+ by the University of California Press,
+ which we recommend to you most highly,
+ and I'm sure he's going to mention in his speech today.
+ So with that, I'm very pleased to introduce Dr. Mat Mamoudi,
+ who's going to give the keynote lecture of the Afr conference.
+ Thank you all very much.
+ (Applause)
+ Thank you, Alata.
+ Thank you, Catherine, and a huge thanks also to Ida,
+ Mirko, and members of the Afr project,
+ not only for honoring me with the invitation,
+ but for the profoundly important and incisive work
+ that's coming out of the project,
+ which could not be coming at a more critical juncture.
+ I look very much forward to learning more about their latest findings
+ tomorrow throughout the program of the day.
+ Thank you all for spending your Thursday evening with us here at Hetze.
+ Last time I was here, as Catherine mentioned,
+ I was a visiting scholar before the pandemic,
+ while carrying out some of the research that came to constitute my book,
+ my grandson, Digital Puriffry.
+ And so in that spirit, I want to thank also my research partners,
+ witnesses, comrades, and fellow travelers for sharing their stories with me here in Berlin,
+ for giving up time, capacity, and care when they absolutely did not have to.
+ This work is in part dedicated to them.
+ So while much has changed while I was last here,
+ I've reflected on the years of techno-optimism,
+ techno-entrepreneurial optimism in particular,
+ that in many ways incubated the obsession with automation,
+ the concentration of tech power,
+ and its deep entanglements with bordering as an enterprise.
+ And in my book, I take stock of that moment,
+ and tonight I'll be attempting to do the same.
+ You may be wondering what sort of disciplinary tradition
+ I'm coming at this from.
+ I'm a sociologist by training, but I'm of course a human rights practitioner as well.
+ So you'll see me dabbling in some ethnographic explanations and stories
+ whilst also trying to take stock of the implications for human rights.
+ So you've have not only heard this story on March 8th, 2025,
+ the US Department of Homeland Security,
+ on lawfully arrested recent Columbia graduate and activist Mahmoud Khalil,
+ a permanent resident of the United States.
+ He was intercepted and detained by men in unmarked vehicles,
+ who picked him up without explanation as he returned home from dinner with his wife.
+ Khalil's arrest came on the back of advocating for a free Palestine,
+ and an end to the genocide in Gaza, while he remained a student at Columbia,
+ an institution that capitulated to the on lawful surveillance requested by the Trump administration
+ into records of students participating in Palestine protests,
+ students carrying out their rights of free expression,
+ rather than protecting them and their constitutional rights.
+ Shortly before Khalil's arrest, reports emerged of the state department's use of an AI-assisted catch-and-revoque system,
+ intended to scour thousands of students visa holders' social media accounts
+ onto the auspices of identifying Hamas supporters.
+ While such reports seem preposterous and unprecedented at the time,
+ in particular, they're used in historic cities of sanctuary, like New York City.
+ Their deployment follow a long trajectory of weaponization of sanctuary spaces,
+ through layering them with digital urban infrastructures
+ that move borders closer to the cities and those most subjected to its violence.
+ And in this way, bordering smart algorithmic systems and the city
+ are intimately tied with the unruly migrant body.
+ Whether under the auspices of the capture of dissenting students on visas
+ to curb undesirable migrants from Latin American and Muslim majority nations
+ or operationalizing in other ways, arbitrary but ideologically convenient processes
+ of racialization, surveillance, capture and expulsion, race, technology,
+ and border entanglements conscribe vulnerable communities on the move
+ to what I've referred to as the digital periphery.
+ That is to say, in service of racial capital and grand tech aspirations.
+ So the lines between borders and border subjects, such as refugees and migrants,
+ have increasingly become blurred over the last couple of decades.
+ Eberszar combination of experimental biometric identification,
+ such as fingerprinting, iris scanning, voice and facial recognition
+ and even DNA collection have become part and parcel of the tools
+ that are used against communities on the move.
+ And they're bringing borders closer to moving bodies and the spaces that they inhabit.
+ For instance, following return, you may have heard of the case of Afghan refugees
+ who have faced compulsory Irish registration programs administered by the United Nations High Commissioner for Refugees
+ in order to receive assistance.
+ In Jordan, the World Food Program deployed the IPA program,
+ which was supplied by the company IRISCAR for the Zatthari refugee camps,
+ ostensibly in an effort to counter fraudulent behavior amongst residents of the camps.
+ Humanitarian workers who had previously championed these programs had meanwhile sounded the alarm.
+ Not only was there no data to support the idea that fraud was a significant problem in the camp,
+ but incoming refugees were disincentivized from registering in the camp in the first place,
+ and were forced to forego life essential goods and services to avoid biometric conscription.
+ On the U.S. Southern border, technological fortification since the 1970s
+ has meant the installation of intrusion detection programs, which are precursors to the now dozens of surveillance towers
+ that it is equipped with set up by Israeli surveillance company Elbit Systems
+ for use by U.S. Customs and border protection to improve border security and force protection
+ with the help of artificial intelligence and automation.
+ So increasingly these same processes by which displaced populations are assessed,
+ have their access to information controlled and are surveilled between borders,
+ for example at camps and at border crossings, now exist within borders, within states and within cities in particular.
+ And while they in more recent history have been advanced in the name of greater efficiency, inclusion,
+ even invoking the language of extending access to their rights,
+ they serve to data-fi, automate and further scale colonial relations.
+ So these digital efforts often transmute border regimes and their antecedent racial logics into elastic bands,
+ tied to the bodies of different tensions, seeking to foreclose any evasion long before an individual arrives at a material frontier
+ of which they are deemed undeserving.
+ So cities are quite important to how this plays out.
+ Historically cities have been sanctuaries for refugees, assilies and undocumented immigrants alike.
+ Communities on the move have lived anonymity and proximity to familial and diaspora networks.
+ The possibility for escape though in these spaces is increasingly diminishing.
+ As cities of refuge rely increasingly on tech companies to develop digital urban infrastructures
+ for accessing information, services and socioeconomic life at large,
+ they are also inviting borders closer to cities and even closer to migrant communities, their networks, their movements, their bodies.
+ And it marks a convergence between Silicon Valley logics, a steer and xenophobic migration management practices and racial capitalism.
+ And I'm going to be reflecting a lot on the role that race and racialization plays in the exploitation that we observe in these entanglements.
+ So as actors that are involved in the regulation of movement and therefore in migrant lives,
+ technology companies are increasingly closing in on the final frontiers of fugitivity to data fi and commodify those escaping their circumstances in search of something better.
+ So cities and local authorities have responded to the presence of immigrant communities by deploying these digital technology intervention purportedly to mitigate access to crucial information and services.
+ New York City was such an example in an environment that during the first Trump administration was prone to deportation rates,
+ infrastructural technologies such as sophisticated public Wi-Fi, smart ID cards and digital city services had led to deep anxieties amongst refugees,
+ assailees and non-documented communities at large related in particular to information sharing surveillance and retrievals.
+ As a so-called smart city, immigration advocates have been casting doubt over how compatible this anchovy city is with its high tech aspirations.
+ Given the uncertainties particularly around how resident data is collected, used and shared by the city's digital service offerings and surveillance infrastructure.
+ New York City has this extensive surveillance capabilities that compound anti-sanctuary logics rather than sanctuary logics.
+ And they expand the field of vision for adversarial immigration authorities such as ICE, CBP and the New York Police Department.
+ Berlin is another such city which I was looking at during the first sort of emergence of the techno optimism that came out of the Syrian refugee crisis of 2015.
+ And here a combination of civil society and smaller private sector initiatives purported to integrate refugees.
+ The over 12 million refugees that the time who had fled the Syrian crisis in 2015 had provided especially ample opportunity for technologists seeking to test and develop digital tools for access to work, housing and credible identities.
+ And these developments reflect existing racialized integration narratives, right? And the construction of a sort of a precarious urban entrepreneurial refugee.
+ It became apparent to me at the time of doing this research that Berlin's digital refugee response was part and parcel of a form of digital ghettoization in which digital refugee nest is used as a symbolic form of capital to attract funding while enabling tokenistic claims of political solidarity.
+ And here often award-winning digital initiatives celebrated for providing refugee integration services constituted nothing more than speculative deployments of app-based technologies that you Facebook page likes as a proxy for their success or a number of refugees that were using their tools.
+ This kept in turn capital in motion between big tech funders such as meta and Google and Salesforce and tech entrepreneurs with subsidiary support from local authorities who often robber stamp these initiatives as helping them solve the refugee crisis.
+ Even German initiative that failed through exhausting funding streams and not once engaging with refugees in spite of this being at the center of their alleged offering ended up being hired by venture capitalists and governments and players like the MasterCard Foundation to advise on matters related to tech and displacement.
+ We're talking about this before as a sort of a failing upwards that seemed to happen in this space. I want to zoom in on New York City a little bit more with just around 343 deportation raids between January and October 2018 alone which averages at about one raid per day.
+ The irony of the sanctuary city status of New York didn't escape the many case workers and immigrants rights activists that I encountered in the city while the term hardly featured in how asylum seekers, asiles and other immigrant populations conceptualize their presence in the city.
+ The sanctuary city may exist on two levels first as a movement driven largely by civil society and religious organizations and as a policy adopted by the mayor's office for immigrant affairs not to share information with a federal authority on its immigrant populations.
+ But it also remains the administrative material and spatial embodiment of violent gatekeeping practices that contribute any potential right to sanctuary offerings.
+ So one of my informants I'm quoting from here says I don't know why they call this a city of immigrants says Mario nodding to the files of clients that are sitting under desk clients that are dreaming of refuge in New York City.
+ And against the backdrop of Trump's tightening immigration climate at the time this is during the first administration visible not just by virtue of his emphatic border wall fantasies and the increasing deportation rates by ice but by how the State Department had continued to defund and sabotage even voluntary agencies that were in charge of providing menial resettlement services.
+ The one that Mario works at in Brooklyn was experiencing despite being the bedrock of resettlement in the United States a complete stifling to the point of obsolescence and for migrant populations in New York City these voluntary agencies are often the last hope for institutional support for sanctuary from persecution poverty and for shelter.
+ So when these services shrink when the sanctuary city shrinks it's not in small part due to these dismantle and practices at the institutional level that come down from folks that carry out authoritarian practices like the Trump administration.
+ But they also emerge from foundations that go beyond outright policy among other spheres of influence this is notably inherited from Silicon Valley. So as a sanctuary city shrinks displaced individuals documented on undocumented alike are deterred from seeking institutional support and as a result marginal smart city services are relied upon to maintain the city symbolic status as a city of immigrants.
+ Yet so many of these digital infrastructures are in complete contradiction of the sanctuary ideas. So celebrated digital pathways to the city of sanctuary such as public Wi-Fi projects known as Lincoln YC the ID NYC municipal ID system and the affordable housing initiative housing connect or just a few of the tools that were cementing precarity fear and surveillance into the fabric of urban migrant life despite being literally marketed as a city.
+ So it's not only a city that is currently marketed at helping the integration and providing a support avenue for these communities.
+ I note in particular the payphones that are spread and littered across New York City that had been replaced by these nodes these Lincoln YC kiosks delivered in partnership with the mayor's office and a company known as intersection.
+ The key is equipped with public Wi-Fi the ability to place phone calls charge devices and comes with a tablet on the side through which city services maps and directions can also be accessed.
+ The city is literally littered with these towering screens giving recommendations about what to see in the city or at the time that I was writing this it was listing the names of victims of police brutality.
+ The kiosks display at births and fun facts tailored to the particular area and intersection has deep partnerships with the mayor's office for immigrant affairs as well as with the New York City's Human Rights Commission giving access to immigration services such as 311 and translation services amongst others on the kiosks directly accessible by anyone.
+ It has also been known to provide ads based for local immigrant rights organizations and services to contrary to how the initiative had been advertised however each unit also has three hidden cameras on them and these are fairly obscure unless you look closely behind the black panel at the edge of the kiosks.
+ It also has a Bluetooth sensor now as of 2019 intersection holds more than 8.6 terabytes of user data distributed over 6 million unique users in New York City.
+ As I come to find out data collected through the kiosks like the one that stood outside many of the refugee resettlement organizations along with census data aided the company intersections targeting linguistically and culturally of communities of interest and became known to have been shared with federal immigration enforcement agencies.
+ One of my informants said that a great show of faith would have been to remove the cameras or remove other sensors and as an activist she is one of the people who organized with and behalf of undocumented immigrants and communities of color in particular and is concerned about the possibilities for resistance in future if they know where protests are happening in Manhattan they know the uprising is coming and they need to keep tabs on it how can we resist.
+ There is an aspect however by the local authorities of not wanting to rock the boat and in tandem with that immigrant community organizers are finding themselves replicating those feelings of not wanting to rock the boat amidst an increasing climate of reinforcing immigration rates.
+ So the embodied experience of surveillance induced trauma becomes suddenly an indescapable reality hidden under the allure of the city's technoshovenism out of sight and out of politics whether in a psyllies skeptical of data collection and light of having fled persecution among undocumented immigrants who are fighting to maintain what little legal claim they have to the homes they've been cultivating for decades or survivors of other forms of violent surveillance including domestic abuse.
+ I ended up scraping and mapping publicly available accounts of ice deportation rates curated by the immigrant defense project and the center for constitutional rights against an updated list of kiosks provided on Lincoln YC's website and it unveiled the ways in which digital infrastructures such as Lincoln YC interact with physical infrastructures into fearing an everyday human movement.
+ The kiosks under community suspicions of complicity are regarded as extending and increasing the possibility of the raid and causing information panics and if you look closely you'll see that the kiosks are concentrated around areas in which deportation rates are happening.
+ In 2022, Amnesty International also released a map of facial recognition enabled cameras that further compound these chilling effects that are experienced by again communities that are on the move as well as racialized communities in particular showing that there is a direct relationship between where cameras are placed and racialized and poor communities in particular.
+ Smart ID systems were another way in which the city was trying to uphold its mythological status as a city of immigrants and it did not factor in community experiences off the actual information environment before deploying these tools.
+ The city's rollout off the ID NYC identity card for New Yorkers irrespective of immigration status was initially treated as a welcome intervention. It was launched in 2015 with an enrollment of just over 1.3 million residents by late 2020.
+ ID NYC is a government issued photo identification card and it's an attempt to mainstream access to city services irrespective of status and as per their website the card is for everyone including the most vulnerable communities homeless youth the elderly undocumented immigrants formally incarcerated people and others who have difficulty obtaining other government issued ID.
+ So by serving as an ID that could be used when you're interacting with the NYPD in theory avoiding being taken into custody because of an absence of ID the card allegedly protects populations who are often subject to selective bias and persistent policing.
+ But card holders were reporting to have been profiled by ICE precisely for bearing the card and in some cases taken into custody despite producing the card upon request.
+ So this is a very important example taken from October 2018 documents that people are very hesitant to use them not least because of the number of hard working undocumented immigrant delivering pizza pizza drivers who had shown up to military bases and had been detained and subject to deportation orders.
+ So incident specifically involving an individual 35 year old undocumented immigrant who was making a piece of delivery to the US Army base in Fort Hamilton in 2018.
+ Ordinarily this resident would use ID NYC without a problem but was prompted to present a driver's license and in the absence of his license security ran his background and found an open deportation order from 2010 at which point he was detained and later handed over to ICE.
+ So this individual now faces deportation on another occasion a couple attempting to visit their grandson and Army sergeant were detained on July 4th 2018 for presenting the ID NYC card.
+ So the ID NYC card becomes itself a marker for your difference, for your alterity, for the fact that you do not possess privileged immigration status.
+ And these are just a couple of examples demonstrating the consequences that the visibility produced some of these tech initiatives have led to including through the ID NYC tool.
+ Now zooming in on Berlin Berlin doesn't necessarily sustain surveillance structures related to immigration enforcement into city in the same way that New York City does.
+ Nevertheless, the increased availability and usage of apps to access information services work and housing transforms the ways in which refugees access socioeconomic life in the city.
+ Refuge in Berlin today is unavoidably digitally mediated, constrained and enabled by digital maps and apps.
+ And the names of Tickno Urban Entrepreneurships fears under the purview of local authorities and the state have increasingly been encased in privatized digital layers specifically tailored towards refugees.
+ With little to no oversight or accountability, this neoliberal approach to urban refuge in Berlin risks perpetuating the deep-seated myth that refugees in vulnerable migrant populations are made a fundamentally different matter that their needs literacy and even desires around flexibility and stability are distinct and by nature more precarious.
+ This in turn give rise to what I've observed as digital refugees and the exploitation of it.
+ One of my collaborators deconstructs this underlying premise of refugee tech and the people behind them unveiling a fundamentally essentializing process.
+ He says, "The thing that bothered me the most is people who think they're helping but they're not and they're getting all the credit for it."
+ So like, okay, let's say somebody came up with an augmented reality school for refugees like augmented reality and everybody would be wearing the 3D thing and learn languages.
+ It sounds cool, sounds like futuristic and all. I mean, you might get funds, it might be framed and covered on a couple of TV channels or newspapers.
+ And that's all good. But this is for you. But does it really work for refugees? And that's a question. And it seemed like many people were not really asking themselves this question.
+ That didn't really go down well with me because in tech development, most probably they are actually treating refugees as an object, as a very fixed well-known object which is not the case.
+ So, end quote. "The brand's specificity with which digital initiatives here in Berlin were being marketed sort of placed to exactly what mine foreman was describing.
+ For example, you had integrate. You had jobs for refugees. You had refugees welcome. You had refugee texts. You had tech-fugies.
+ Combined with the lack of nuance, context awareness and neglect of the pluriverse of people, experiences and backgrounds and makeup refugees, allow for the already racialized figure of the refugee to take on a technologically mediated managerial disposition of digital refugee-ness.
+ Of an other-ness that's waiting to be exploited."
+ In a conversation some weeks before a workshop I attended here in Berlin, a chapter lead of tech-fugies had gone to painstaking lengths to pitch his vision of a solution to the refugee problem to me.
+ And I quote here, "D Germany is not doing enough at a policy level. Refugee integration should be offered as a service."
+ This individual who I shall refer to as Mateo, his vision is one in which municipalities and venture capitalists fund third party private organizations to provide tools for refugee integration.
+ Where there is already a war for funding. And Mateo explained that his approach was apolitical and therefore better for the state. It would help the state avoid having to wake the AFD beast.
+ Mateo's perspective is not just a vision but an astute reflection of how epistemologies of survival are sidelined in favor of capital.
+ It's a reminder that well-connected European urban entrepreneurs like Mateo are more likely to receive funding support and an audience for their intervention in refugee governance,
+ while individuals like my informant Nadim with live experience and membership in the communities and questions are asked to simply be grateful for the ideas of the Mateos of the world.
+ Recasting refugees into an essentialized other, the refugee tech enterprise as a whole, transmute human subjectivity into financially desiphable objects, attracting capital from tech giants, venture capitalists and local authorities alike in the process.
+ In this scenario, whiteness is more receptive to one-dimensional, decontextualized refugees from refugee land, driving funding towards that particular mediation of the issue, rather than the equally complex human beings that pertain to the status of refugee.
+ To me, this really reflects the core of how tech systems for securitization are marketed and justified altogether from the lower tech to the higher tech AI offerings.
+ The identification often essentialized racialized entity, whether needy or a threat becomes a rationale for a tech deployment.
+ It is assumed lack of agency, usually coupled with an equal and transcendent presumption of nefariousness, informs and shape the modus operandi of technologies that are deeply political and violent, but that get away with being apolitical and simply invested in efficiency.
+ In the past, we decipher these exploitative entanglements, governments and local authorities have already become deeply enmeshed in a political economy that exploit the most precarious of communities on the move.
+ This is what I think about as a digital periphery.
+ One research partner from Miehante, which is a US-based organization, put it particularly succinctly when they said that they, the tech company, pretend that they're just doing market saturation, but then they fucking depend on government contracts like we're back in the 90s.
+ And I quote again, your neoliberal bullshit doesn't confuse me.
+ I think of the digital periphery as an attempt at making sense of how the extractive tendrils of Silicon Valley have become steeped in the everyday lives of migrant communities and how their construction as a threat or needy in turn becomes a source of violent capital itself.
+ And I write on this in an effort to make sense of how new and emerging purportedly smart technologies serve as new frontiers for racial capitalism and what the Black radical tradition, critical migration studies and urban studies combined with the critical science and technologies, studies, methods and approaches can tell us about these new terrains.
+ How do they symbolically, psychosomatically and materially change everyday infrastructures and how we engage with them? How do possibilities for movements and resistance in the increasingly digital city expand or contract as a function of race, immigration status, labor precarity or class?
+ And how is control over movement necessary for 21st century capital accumulation and the expansion of carcerality?
+ Now boomerangling back to our contemporary predicament, technology deployments in the context of the so-called global refugee crisis that has seemingly continued repackaged similar colonial imperatives for liberal imaginaries.
+ And that's why I can insist on taking a point of departure in racial capitalism and practices of bordering as the organizing structure behind technology production in the digital age.
+ Borders and now cities have become experimental sites where populations are digitally enclosed and where life is subject to exploitation by tech actors.
+ We find ourselves in times of great urgencies in matters related to the shifting nature of power and its obfuscation through the symbiotic entanglements of state and corporate power.
+ Bear with me here.
+ This coupled with the dismantlement of bare minimum but crucial institutions of care and the stigmatization of practices of resistance are still animating and compounding the increasingly violent conditions faced by precarious communities on the move.
+ And while today much of this state come corporate violence is on full unapologetic display, it was brewing under auspices of tolerance, liberalism and tech entrepreneurial aspirations.
+ My book is a snapshot of the late stages of this moment to take account of not only the extremes when they've reached their logical conclusions as we're witnessing especially now, but to account for the moments in between to remind us that there is nothing new about the racial violence of the core of capitalism and therefore no technical fixes per se.
+ Some of the talks tomorrow, panels tomorrow will in particular reflect on how the harms come out of these systems in completely predictable ways.
+ To undo this violence requires engagement that is fundamentally revolutionary.
+ And I am heartened to have seen some of this play out in the last 23 months in particular at factories, tech company headquarters, container ports, even at times in code.
+ Where an acute awareness of the techno entrepreneurial entanglements of occupation, apartheid and unfolding genocide in the Palestinian territory is creating a new consciousness of resistance.
+ And we must remember that the use of technical language and numbers to advance racial domination is a long standing feature of colonial conduct and a register that has evolved and advanced throughout the formation of racial capitalism.
+ From the 19th century birth of the British census in India as an attempt at exerting atomized social control over its colonized subjects to early eugenicist classifications of intelligence like IQ to the IBM, Hollerith punch card system used to systematize and manage concentration camps to symbols and letters drawn on the skin of immigrants arriving on Ellis islands right through to the ethnic and racial classifications in personal identification cards in South Africa and Rwanda.
+ These lucrative modes of subjugation were also employed under the guise of technical or scientific fixes to various problems associated with largely racialized communities.
+ And today these same Ellis islands inscription manifest digitally often without our knowledge.
+ So our task has to be to collectively expose, resist and interrupt where we can.
+ And I'm hoping part of this with the FR conference can help us get there.
+ Thank you.
+ Thank you.

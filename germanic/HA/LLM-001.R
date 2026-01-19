@@ -400,9 +400,9 @@ get.text<-function(what){
 #remotes::install_github("bnosac/audio.whisper")
 # $brew install cmake !
 #remotes::install_github("bnosac/audio.whisper", ref = "0.5.0")
-library(audio.whisper)
-library(processx)
-library(dplyr)
+# library(audio.whisper)
+# library(processx)
+# library(dplyr)
 
 ### data:
   #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/videos_df-cpt.RData"))
@@ -433,6 +433,14 @@ videos_df.m<-get.videos_match(videos_df,what)
 #$brew install yt-dlp ffmpeg
 # on monterey install yt-dlp via macports (missing [deno] in brew install)
 
+##################
+library(audio.whisper)
+library(processx)
+library(dplyr)
+
+
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/videos_df.m.RData"))
+
 #df <- data.frame(channel_id = c("UC_x5XG1OV2P6uZZ5FSM9Ttw", "UCSJ4gkVC6NrvII8umztf0Ow"))
 df <- data.frame(channel_id = unique(videos_df.m$channelId[videos_df.m$channel_true]),
                  label=unique(videos_df.m$channelTitle[videos_df.m$channel_true]))
@@ -441,52 +449,74 @@ df$label<-gsub(" ","_",df$label)
 # dir.create(output_dir, showWarnings = FALSE)
 # whisper_download_model("base",model_dir = paste0(Sys.getenv("HKW_TOP"),"/SPUND/models/"))
 Sys.setenv(WHISPER_MODEL_DIR = "/Users/guhl/gpt/models")
-model.path<-whisper_download_model("base")
+#model.path<-whisper_download_model("base")
 model<-whisper("base")
 
 #model<-whisper(model.path$file_model)
 #?whisper
 df
+k<-2
 for (k in 2:length(df$channel_id)) {
   id<-df$channel_id[k]
   label<-df$label[k]
   output_dir <- paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/audio_transcripts/",label)
-  dir.create(output_dir, showWarnings = FALSE)
+  dir.create(output_dir)
   cmd <- sprintf('yt-dlp -x --audio-format mp3 -o "%s/%%(channel_id)s_%%(id)s.%%(ext)s" "https://www.youtube.com/channel/%s/videos"', 
                  output_dir, id)
   processx::run("bash", c("-c", cmd))  # downloads latest videos' audio
 }
-  audio_files <- list.files(output_dir, pattern = paste0(id, ".*mp3"), full.names = TRUE)
-  if (length(audio_files)) {
+  audio_files <- list.files(output_dir, pattern = paste0(id, ".*mp3$"), full.names = TRUE)
+#  if (length(audio_files)) {
+  k<-3
     for (k in 3:length(audio_files)){
-    latest <- tail(audio_files)[1]
+    #  for (k in 3:3){
+        
+  #  latest <- tail(audio_files)[1]
     latest <- audio_files[k]
+    latest
     out.ns<-paste0(latest,".wav")
     cmd <- sprintf('ffmpeg -i %s -b:a 16 %s.wav', 
                    latest, latest)
-    cmd<-sprintf("ffmpeg -i %s -ar 16000 -ab 16k -f wav %s",latest,out.ns)
+    cmd<-sprintf("ffmpeg -i %s -t 1800 -ar 16000 -ab 16k -f wav %s",latest,out.ns)
     cmd
+    f.done<-list.files(output_dir,full.names = T)
+    m<-out.ns%in%f.done
+    if(m)
+      next
+    cat("\n--------> processing Channel", id, ", audio [",k,"]\n")
+    # auto split file in segments
+    # ffmpeg -i input.mp3 -f segment -segment_time 300 -c:a pcm_s16le output_%03d.wav
+    # 300=5min, 1800=30min
+    # first 30min
+    # ffmpeg -i input.mp3 -t 1800 -c:a pcm_s16le output_first_30.wav
     processx::run("bash", c("-c", cmd))  # downloads latest videos' audio
     #audio<-system.file(package="audio.whisper",out.ns)
     # audio <- system.file(package = "audio.whisper", "samples", "proficiat.wav")
-    
+    # UCHMiMCMoqV1ZO-sEoQWnEmQ_20cNQNWEDMc.mp3: 25MB/163MB/39KB/42min
     audio<-out.ns
     audio
+    out.tx.ns<-paste0(latest,".txt")
+    m2<-out.tx.ns%in%f.done
+    if(m2)
+      next
     # trans <- whisper_transcribe(latest, model = "base.en")$text  # local model
     # trans <- predict(model,newdata = audio,language = "nl",type = "transcribe")  # local model
-    trans <- predict(model,newdata = audio,language = "de",type = "transcribe")  # local model
+#    trans <- predict(model,newdata = audio,language = "de",type = "transcribe")  # local model
+    trans <- predict(model,newdata = audio,type = "transcribe")  # local model, if set lang=de then also translates english audio to german!
+    writeLines(trans$data$text,out.tx.ns)
+    
     trans$tokens
-    text<-gsub("\n","",trans$tokens$token)
-    writeLines(trans$data$text,paste0(latest,".txt"))
+    #text<-gsub("\n","",trans$tokens$token)
+    text<-trans$data$text
     # writeLines(trans$data$text,paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/utube-audio/transcripts/",
     #            latest,".txt"))
-    cat("Channel", id, ", audio [",k,"] transcribed / extract:", substr(text, 1, 100), "...\n")
+    cat("\n--------> finished Channel", id, ", audio [",k,"] transcribed / extract:", substr(text, 1, 100), "[...]\n")
     # cat("Channel", id, ":", substr(text, 1, 200), "...\n")
    # df[df$channel_id == id, "transcript"] <- text
     }
   }
 }
-}
+
 ### wks.
 # gets transcript text from !16Khz/16Kbit! .wav
 ###############################################
