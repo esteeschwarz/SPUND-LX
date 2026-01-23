@@ -44,7 +44,10 @@ ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
 
 # Install common R packages for Quarto
 RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda','googlesheets4','bookdown','rmarkdown','knitr','jsonlite','abind','xml2','remotes','stringi','yaml','officer','bib2df','lme4','ggplot2','tidyr','dplyr','lmerTest'))"
-RUN R -e "rmarkdown::install_pandoc_cli(version = '3.8.3')"
+# RUN R -e "rmarkdown::install_pandoc_cli(version = '3.8.3')"
+
+FROM pandoc/latex:3.8.3
+
 # Optional: Install your renv base snapshot
 # COPY renv.lock /workspace/
 # RUN R -e "install.packages('renv'); renv::restore()"
