@@ -4,6 +4,7 @@ FROM rocker/r-ver:4.3 AS r-base
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     git \
+    curl \
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
@@ -19,8 +20,8 @@ RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/q
     && rm quarto-1.8.26-linux-amd64.deb
 
 # # Install exact pandoc
-RUN curl -fsSL https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-1-amd64.deb \
-    -o pandoc.deb && dpkg -i pandoc.deb && rm pandoc.deb
+RUN wget -O pandoc.deb -q https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-1-amd64.deb \
+    && dpkg -i pandoc.deb && rm pandoc.deb
 
 # Install TinyTeX (user-level!)
 #RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
