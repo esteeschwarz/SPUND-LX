@@ -1,5 +1,5 @@
-FROM rocker/r-ver:4.3.1
-
+# FROM rocker/r-ver:4.3.1
+FROM rocker/r-ver:4.3 AS r-base
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
@@ -47,7 +47,7 @@ RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda',
 # RUN R -e "rmarkdown::install_pandoc_cli(version = '3.8.3')"
 
 FROM pandoc/latex:3.8.3
-
+COPY --from=r-base /usr/local /usr/local
 # Optional: Install your renv base snapshot
 # COPY renv.lock /workspace/
 # RUN R -e "install.packages('renv'); renv::restore()"
