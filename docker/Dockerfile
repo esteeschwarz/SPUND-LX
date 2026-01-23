@@ -18,6 +18,10 @@ RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/q
     && dpkg -i quarto-1.8.26-linux-amd64.deb \
     && rm quarto-1.8.26-linux-amd64.deb
 
+# # Install exact pandoc
+RUN curl -fsSL https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-1-amd64.deb \
+    -o pandoc.deb && dpkg -i pandoc.deb && rm pandoc.deb
+
 # Install TinyTeX (user-level!)
 #RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
 RUN quarto install tinytex
@@ -46,8 +50,12 @@ ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
 RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda','googlesheets4','bookdown','rmarkdown','knitr','jsonlite','abind','xml2','remotes','stringi','yaml','officer','bib2df','lme4','ggplot2','tidyr','dplyr','lmerTest'))"
 # RUN R -e "rmarkdown::install_pandoc_cli(version = '3.8.3')"
 
-FROM pandoc/latex:3.8.3
-COPY --from=r-base /usr/local /usr/local
+
+
+
+# FROM pandoc/latex:3.8.3
+# COPY --from=r-base /usr/local /usr/local
+RUN R -e "cat('--- > container installed wt r, quarto, pandoc\n')"
 # Optional: Install your renv base snapshot
 # COPY renv.lock /workspace/
 # RUN R -e "install.packages('renv'); renv::restore()"
