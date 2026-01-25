@@ -1,0 +1,10 @@
+{
+  "contents": [
+    {
+      "role": "user",
+      "parts": [
+        { "file_data": { "file_uri": "textprompt.txt" } }
+      ]
+    }
+  ]
+}

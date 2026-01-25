@@ -4,7 +4,7 @@
             "role": "user",
             "parts": [
                 {
-                    "text": "wann wurde google gemini mit welchem model in deutschland öffentlich verfügbar eingeführt? antwort deutsch, maximal 10 wörter."
+                    "text": "wann wurde google gemini mit welchem model in deutschland öffentlich verfügbar eingeführt?\nantwort auf deutsch in maximal 10 worten."
                 }
             ]
         }
