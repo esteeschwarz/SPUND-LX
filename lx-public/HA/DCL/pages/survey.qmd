@@ -45,3 +45,6 @@ title: DCL status-quo questionary
 - scales
 - freitext
 - options
+
+## survey NO
+it was not possible for us to get responses to our survey.
