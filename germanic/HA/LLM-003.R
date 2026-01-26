@@ -199,14 +199,14 @@ Sys.sleep(s)
 return(ptdf)
 }
 btt.summaries<-get.sum(ptdf)
-save(btt.summaries,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData"))
+# save(btt.summaries,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData"))
 # curl<-'curl \
 # -X POST \
 # -H "Content-Type: application/json" \
 # "https://${API_ENDPOINT}/v1/publishers/google/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${API_KEY}" -d "@request.json"'
 # 
 # 
-
+############################################################
 ### get gpt keywords: gpt preferred words vs. human language
 library(quanteda)
 # library(devtools)
@@ -222,6 +222,8 @@ library(dplyr)
 library(tidyr)
 #install.packages("tidytext")
 library(tidytext)
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData"))
+
 df<-btt.summaries
 # Add corpus labels for binding
 # df_human <- df %>%
@@ -241,11 +243,21 @@ df_combined <- bind_rows(df1,df2)
 library(stringr)
 # Tokenize to words (lowercase, remove punctuation/numbers)
 df_combined$id<-1:length(df_combined$date)
-tokens <- df_combined %>%
-  unnest_tokens(word, text, token = "words") %>%
-  filter(str_detect(word, "^[a-z]+$")) %>%  # Optional: alphabetic words only
-  mutate(word = tolower(word))
-stops<-stopwords("de")
+#df_combined$text[1]
+### step to udpipe
+# tokens <- df_combined %>%
+#   unnest_tokens(word, text, token = "words") %>%
+#   filter(str_detect(word, "^[A-Za-zäöüÄÖÜ]+$")) %>%  # Optional: alphabetic words only
+#   mutate(word = tolower(word))
+# tokens <- df_combined %>%
+#   unnest_tokens(word, text, token = "words")# Optional: alphabetic words only
+# tokens<-unlist(strsplit(df_combined$text,"[ .:,;?!\\)\\(\\|\n|\\]|\\["))
+# tokens<-tokens[tokens!=""]
+tokens.2 <- df_combined %>%
+  unnest_tokens(word, text, token = "words",to_lower = F) # Optional: alphabetic words only
+  head(tokens.2$word,20)
+# ?unnest_tokens
+  stops<-stopwords("de")
 stops.m<-c("dass","a","ab")
 stops.j<-c(stops,stops.m)
 m<-tokens$word%in%stops.j
@@ -259,6 +271,9 @@ tokens.r<-tokens[!m,]
 #   summarise(docs_with_word = n_distinct(id), .groups = "drop") %>%
 #   mutate(total_docs = length(unique(df_combined$date)))  # N same for both corpora
 # ?n_distinct
+###################
+# for udpipe
+tokens.r<-tokens.2
 colnames(tokens.r)
 fh<-freq.list(tokens.r$word[tokens.r$target=="human"])
 fg<-freq.list(tokens.r$word[tokens.r$target=="gpt"])
@@ -288,7 +303,17 @@ library(udpipe)
 model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
 ##################################
 ## test
-df.ann<-as.data.frame(udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id))
+# df.ann<-as.data.frame(udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id,target=df_combined$target))
+# df.sub<-df_combined[1,]
+# df.ann<-udpipe::udpipe_annotate(model,df.sub$text,doc_id = df.sub$id,target=df.sub$target,parser = "none")
+# df.ann<-udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id,target=df_combined$target,parser = "none",trace = T)
+# tu<-unique(tokens.2$word)
+
+df.ann<-udpipe::udpipe_annotate(model,fj$WORD,trace = T,parser = "none")
+
+dfa.pos<-as.data.frame(df.ann)
+#save(dfa.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
+
 #?udpipe_annotate
 
 
