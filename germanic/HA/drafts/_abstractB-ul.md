@@ -70,10 +70,6 @@ the research-question-still-to-develop will orientate on the findings ([Table `r
 - finds significant changes in human spoken communication past GPT onset
 - try replication on german language: [preview](yakura.html)
 
-# process on yakura replication
-after starting with the same pipeline of building a corpus from youtube material, we decided for another alternative out of resource reasons. the current corpus which we will work on is created from german parliamental protocols, freely available (resource reason) here: @dip_dip_2026. Also we decided for google gemini since working with that model simply costs less than the openAI GPT variant.
-
-for the beginning we created a subset of protocols from 2021-01-01 to 2021-07-31 which are 38 protocols. to get the model preferred vocabulary we prompted gemini to summarize each protocol in its own words with restricting to not using more than 10% of words from the original text and limited to 300 words/summary. we postag the corpus and devise relative lemma frequencies to get the gemini keywords.
 
 [^1]:	which could very well be adapted to our research question
 
