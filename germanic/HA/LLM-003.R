@@ -318,6 +318,7 @@ for(k in 1:length(dfa.pos$token)){
   fj$lemma[m]<-dfa.pos$lemma[k]
 }
 #save(dfa.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
+# save(fj,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
 
 #?udpipe_annotate
 
