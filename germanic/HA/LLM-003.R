@@ -312,6 +312,11 @@ model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud
 df.ann<-udpipe::udpipe_annotate(model,fj$WORD,trace = T,parser = "none")
 
 dfa.pos<-as.data.frame(df.ann)
+fj$lemma<-NA
+for(k in 1:length(dfa.pos$token)){
+  m<-fj$WORD==dfa.pos$token[k]
+  fj$lemma[m]<-dfa.pos$lemma[k]
+}
 #save(dfa.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 
 #?udpipe_annotate
