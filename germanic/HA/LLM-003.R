@@ -69,6 +69,7 @@ ptdf<-rbind(tdf1,tdf2,tdf3,tdf4)
 #save(ptdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData"))
 }
 
+get.gpt<-function(){
 ### load btt corpus
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData"))
 
@@ -206,8 +207,10 @@ btt.summaries<-get.sum(ptdf)
 # "https://${API_ENDPOINT}/v1/publishers/google/models/${MODEL_ID}:${GENERATE_CONTENT_API}?key=${API_KEY}" -d "@request.json"'
 # 
 # 
+}
 ############################################################
 ### get gpt keywords: gpt preferred words vs. human language
+get.freq<-function(){
 library(quanteda)
 # library(devtools)
 # install_github("skeptikantin/collostructions")
@@ -257,7 +260,8 @@ tokens.2 <- df_combined %>%
   unnest_tokens(word, text, token = "words",to_lower = F) # Optional: alphabetic words only
   head(tokens.2$word,20)
 # ?unnest_tokens
-  stops<-stopwords("de")
+###########################
+    stops<-stopwords("de")
 stops.m<-c("dass","a","ab")
 stops.j<-c(stops,stops.m)
 m<-tokens$word%in%stops.j
@@ -319,11 +323,86 @@ for(k in 1:length(dfa.pos$token)){
 }
 #save(dfa.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 # save(fj,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
-
+}
 #?udpipe_annotate
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
+tokens.r$lemma<-NA
 
+# for(k in 1:length(fj$WORD)){
+#   cat("token:",k,"\r")
+#   token<-fj$WORD[k]
+#   m<-tokens.r$word==token
+#   tokens.r$lemma[m]<-fj$lemma[k]
+# }
 
+tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
+tokens.r$lemma[is.na(tokens.r$lemma)]<-tokens.r$word[is.na(tokens.r$lemma)]
 
+stops<-stopwords("de")
+stops
+stops.m<-c("dass","a","ab")
+stops.j<-c(stops,stops.m)
+??capitalize
+library(Hmisc)
+stops.u<-lapply(stops.j, function(x){
+  c1<-capitalize(x)
+})
+stops.u<-unlist(stops.u)
+stops.u
+stops.j<-c(stops.j,stops.u)
+m<-tokens.r$word%in%stops.j
 
+tokens.r<-tokens.r[!m,]
+m<-tokens.r$lemma%in%stops.j
+sum(m)
+tokens.r<-tokens.r[!m,]
+sum(tok.r2$word=="wir")
+tok.r2<-tokens.r[tokens.r$word!="",]
+tok.r2<-tok.r2[!is.na(tok.r2$word),]
+tok.r2<-tok.r2[!is.na(tok.r2$word),]
+tok.r2<-tok.r2[!is.na(tok.r2$lemma),]
+sum(tok.r2$word=="es")
+sum(tok.r2$lemma%in%"es")
 
+fh<-freq.list(tok.r2$lemma[tok.r2$target=="human"])
+sum("es"==fh$WORD)
+fg<-freq.list(tok.r2$lemma[tok.r2$target=="gpt"])
+#factor(tok.r2$lemma)
+fa<-freq.list(as.character(tok.r2$lemma))
+fj2<-join.freqs(fg,fa)
+fs2<-fj2%>%mutate(p=fg/fa)
+# sum(tok.r2$target=="gpt")
+fh<-as.data.frame(table(tok.r2$lemma[tok.r2$target=="human"]))
+fg<-as.data.frame(table(tok.r2$lemma[tok.r2$target=="gpt"]))
+fa<-as.data.frame(table(tok.r2$lemma))
+#fa<-table(tok.r2$lemma)
+#fa<-fa[order(fa,decreasing = T)]
+#fa
+#sum(names(fa)=="Form")
+fj1<-join.freqs(fg,fa)
+fs<-fj1%>%mutate(p=fg/fa)
+fs<-fs[order(fs$p,decreasing = T),]
+head(fs,10)
+fs2<-fs2[order(fs2$p,decreasing = T),]
+head(fs2,10)
+?join.freqs
+fj2<-join.freqs(fg,fa,all = F,threshold = 5)
+fs3<-fj2%>%mutate(p=fg/fa)
+fs3<-fs3[order(fs3$p,decreasing = T),]
+fs3<-fs3[fs3$p!=1,]
+#fs2<-fs2[order(fs2$p,decreasing = T),]
+head(fs3,20)
+fs4<-fs3
+fs4$ng<-length(fg$WORD)
+fs4$na<-length(fa$WORD)
+fs4$rfg<-fs4$fg/fs4$ng
+fs4$rfa<-fs4$fa/fs4$na
+head(fs4,20)
+fs4$rp<-fs4$rfg/fs4$rfa
+fs4<-fs4[order(fs4$rp,decreasing = T),]
+head(fs4,30)
+save(fs4,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/freq.fs4.RData"))
+save(fs4,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/freq.fs4.RData"))
 
+### wks.
+#######################################
