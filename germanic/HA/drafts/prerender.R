@@ -160,3 +160,4 @@ writeLines(lines,src)
 cat("-------- written md: ",src,"------\n")
 }
 
+source("fetch-zotero.R")

@@ -1,0 +1,371 @@
+
+@misc{dip_dip_2026,
+	title = {{DIP}},
+	url = {https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content},
+	urldate = {2026-01-24},
+	journal = {Bundestagsprotokolle},
+	author = {{DIP}},
+	year = {2026},
+}
+
+@misc{wikipedia_google_2026,
+	title = {Google {Gemini}},
+	copyright = {Creative Commons Attribution-ShareAlike License},
+	url = {https://de.wikipedia.org/w/index.php?title=Google_Gemini&oldid=263426206},
+	abstract = {Google Gemini (ehemals Google Bard) ist ein von Google entwickelter KI-basierter, multimodaler Chatbot. Er wurde als direkte Reaktion auf den Erfolg von ChatGPT entwickelt und im März 2023 in eingeschränkter Kapazität veröffentlicht, bevor er im Laufe des Sommers in weiteren Ländern verfügbar wurde. Google Gemini ist mittlerweile in über 40 Sprachen verfügbar.},
+	urldate = {2026-01-25},
+	journal = {Wikipedia},
+	author = {{Wikipedia} and {Google}},
+	month = jan,
+	year = {2026},
+	note = {Page Version ID: 263426206},
+}
+
+@misc{flach_skeptikantin_2026,
+	title = {skeptikantin},
+	url = {https://github.com/skeptikantin},
+	language = {en},
+	urldate = {2026-01-25},
+	journal = {GitHub - collostructions},
+	author = {Flach},
+	year = {2026},
+}
+
+@misc{fobbe_r_2026,
+	title = {[{R}] {Source} {Code} des '{Corpus} der {Plenarprotokolle} des {Deutschen} {Bundestages}' ({CPP}-{BT}-{Source})},
+	url = {https://zenodo.org/records/18177197},
+	abstract = {Überblick
+
+Dieses R-Skript lädt die Plenarprotokolle des Deutschen Bundestages im XML-Format von dessen Open Data Portal  und dem Dokumentations- und Informationssystem für parlamentarische Materialien (DIP) herunter und verarbeitet sie in einen reichhaltigen menschen- und maschinenlesbaren Korpus. Es ist die Basis für den Corpus der Plenarprotokolle des Deutschen Bundestages (CPP-BT).
+
+Alle mit diesem Skript erstellten Datensätze werden dauerhaft kostenlos und urheberrechtsfrei auf Zenodo, dem wissenschaftlichen Archiv des CERN, veröffentlicht. Jede Version ist mit ihrem eigenen, persistenten Digital Object Identifier (DOI) versehen. Die neueste Version des Datensatzes ist immer über diesen Link erreichbar:https://doi.org/10.5281/zenodo.4542661
+
+Der CPP-BT ist der Zwillings-Korpus des Corpus der Drucksachen des Deutschen Bundestages (CDRS-BT). Durch die Verbindung beider Korpora können Sie Plenarprotokolle und Drucksachen — und damit alle Vorgänge des Bundestages — in einheitlichen Analysen untersuchen.
+
+ 
+
+NEU in Version 2026-01-17
+
+
+
+Vollständige Aktualisierung der Daten (bis einschließlich aktuellste Wahlperiode)
+
+Bericht für Qualitätskontrolle englisch benannt (für Zenodo-Kompatibilität)
+
+Einzelkorrektur für fehlerhafte Bezeichnung der SPD-Fraktion
+
+Verlagerung von einfachen Hilfsskripten in die README-Dokumentation um das Projekt zu vereinfachen
+
+Reduzierung der Größe des Docker Layers für Systembibliotheken
+
+Parallelisierung von Quanteda repariert
+
+Reduzierung von R Packages
+
+Es können nicht mehr Cores als vergübar selektiert werden
+
+Zenodo Upload hinzufügt
+
+
+ 
+
+Funktionsweise
+
+Primäre Endprodukte des Skripts sind folgende Archive:
+
+
+
+Alle Plenarprotokolle (ab 1. Wahlperiode) im Parquet-Format (mit zusätzlichen Metadaten)
+
+Alle Plenarprotokolle (ab 1. Wahlperiode) im CSV-Format (mit zusätzlichen Metadaten)
+
+Metadaten zu Plenarprotokollen im CSV-Format (wie zuvor, nur ohne Texte)
+
+Bundestagsreden (ab 18. Wahlperiode) im CSV-Format (mit zusätzlichen Metadaten)
+
+Bundestagsreden (ab 18. Wahlperiode) im Parquet-Format (mit zusätzlichen Metadaten)
+
+Metadaten zu Bundestagsreden im CSV-Format (wie zuvor, nur ohne Texte)
+
+Alle Plenarprotokolle (ab 1. Wahlperiode) und Bundestagsreden (ab 18. Wahlperiode) im TXT-Format
+
+Alle Analyse-Ergebnisse (Tabellen als CSV, Grafiken als PDF und PNG)
+
+
+Alle Ergebnisse werden im Ordner output/ abgelegt. Zusätzlich werden für alle ZIP-Archive kryptographische Signaturen (SHA2-256 und SHA3-512) berechnet und in einer CSV-Datei hinterlegt. 
+
+ 
+
+Systemanforderungen
+
+
+
+Docker 
+
+Docker Compose
+
+24 GB Speicherplatz auf Festplatte
+
+Multi-core CPU empfohlen (8 cores/16 threads für die Referenzdatensätze).
+
+
+In der Standard-Einstellung wird das Skript vollautomatisch die maximale Anzahl an Rechenkernen/Threads auf dem System zu nutzen. Die Anzahl der verwendeten Kerne kann in der Konfigurationsatei angepasst werden. Wenn die Anzahl Threads auf 1 gesetzt wird, ist die Parallelisierung deaktiviert.
+
+ 
+
+Anleitung
+
+Schritt 1: Ordner vorbereiten
+
+Kopieren Sie bitte den gesamten Source Code in einen leeren Ordner (!), beispielsweise mit:
+
+\$ git clone https://codeberg.org/seanfobbe/cpp-bt
+
+Verwenden Sie immer einen separaten und leeren (!) Ordner für die Kompilierung. Die Skripte löschen innerhalb von bestimmten Unterordnern (files/, temp/, analysis/ und output/) alle Dateien die den Datensatz verunreinigen könnten --- aber auch nur dort.
+
+ 
+
+Schritt 2: API Key hinterlegen
+
+Der Zugriff auf das Dokumentations- und Informationssystem für parlamentarische Materialien (DIP) benötigt einen API Key. Der öffentliche API Key wird hier veröffentlicht und ist in der Regel ein Jahr gültig. Der API Key muss in der Datei ".Renviron" im Projektordner hinterlegt werden, beispielsweise durch folgenden Befehl (die Ziffern 123456 müssen durch den gültigen API Key ersetzt werden).
+
+\$ echo DIP\_APIKEY = "123456" {\textgreater} .Renviron
+
+ 
+
+Schritt 3: Docker Image erstellen
+
+Ein Docker Image stellt ein komplettes Betriebssystem mit der gesamten verwendeten Software automatisch zusammen. Nutzen Sie zur Erstellung des Images einfach:
+
+\$ docker-compose build --pull
+
+ 
+
+Schritt 4: Datensatz kompilieren
+
+Falls Sie zuvor den Datensatz schon einmal kompiliert haben (ob erfolgreich oder erfolglos), können Sie mit folgendem Befehl alle Arbeitsdaten im Ordner löschen:
+
+\$ git clean -fdx
+
+ 
+
+Den vollständigen Datensatz kompilieren Sie mit folgendem Skript:
+
+\$ bash docker-run-project.sh
+
+ 
+
+Ergebnis
+
+Der Datensatz und alle weiteren Ergebnisse sind nun im Ordner output/ abgelegt.
+
+ 
+
+Pipeline visualisieren
+
+Sie können die Pipeline visualisieren, aber nur nachdem sie die zentrale .Rmd-Datei mindestens einmal gerendert haben:
+
+{\textgreater} targets::tar\_glimpse()     \# Nur Datenobjekte
+{\textgreater} targets::tar\_visnetwork()  \# Alle Objekte
+
+Troubleshooting
+
+Hilfreiche Befehle, um Fehler zu lokalisieren und zu beheben.
+
+{\textgreater} tar\_progress()  \# Zeigt Fortschritt und Fehler an
+{\textgreater} tar\_meta()      \# Alle Metadaten
+{\textgreater} tar\_meta(fields = "warnings", complete\_only = TRUE)  \# Warnungen
+{\textgreater} tar\_meta(fields = "error", complete\_only = TRUE)  \# Fehlermeldungen
+{\textgreater} tar\_meta(fields = "seconds")  \# Laufzeit der Targets
+
+ 
+
+Weitere Open Access Veröffentlichungen (Fobbe)
+
+Website — www.seanfobbe.de
+
+Open Data  —  https://zenodo.org/communities/sean-fobbe-data/
+
+Source Code  —  https://zenodo.org/communities/sean-fobbe-code/
+
+Volltexte regulärer Publikationen  —  https://zenodo.org/communities/sean-fobbe-publications/
+
+ 
+
+Urheberrecht
+
+Der Source Code und alle von mir bereitgestellten Rohdaten stehen unter der GNU General Public License v3.0 oder später. Beachten Sie bitte die Pflicht zur Weitergabe unter der gleichen Lizenz.
+
+ 
+
+Kontakt
+
+Fehler gefunden? Anregungen? Melden Sie diese entweder im Issue Tracker auf Codeberg oder kontaktieren Sie mich über www.seanfobbe.de},
+	urldate = {2026-01-24},
+	publisher = {Zenodo},
+	author = {Fobbe, Sean},
+	month = jan,
+	year = {2026},
+	doi = {10.5281/zenodo.18177197},
+	note = {Language: deu},
+	keywords = {Bundesrepublik Deutschland, Bundestag, Debatte, Deutscher Bundestag, Deutschland, Gesetz, Gesetzgebung, Legislative, Parlament, Parliament, Plenarprotokoll, Politik, R, Source Code, Verordnung},
+}
+
+@inproceedings{abrami_german_2022,
+	address = {Marseille, France},
+	title = {German {Parliamentary} {Corpus} ({GerParCor})},
+	url = {https://aclanthology.org/2022.lrec-1.202/},
+	abstract = {Parliamentary debates represent a large and partly unexploited treasure trove of publicly accessible texts. In the German-speaking area, there is a certain deficit of uniformly accessible and annotated corpora covering all German-speaking parliaments at the national and federal level. To address this gap, we introduce the German Parliamentary Corpus (GerParCor). GerParCor is a genre-specific corpus of (predominantly historical) German-language parliamentary protocols from three centuries and four countries, including state and federal level data. In addition, GerParCor contains conversions of scanned protocols and, in particular, of protocols in Fraktur converted via an OCR process based on Tesseract. All protocols were preprocessed by means of the NLP pipeline of spaCy3 and automatically annotated with metadata regarding their session date. GerParCor is made available in the XMI format of the UIMA project. In this way, GerParCor can be used as a large corpus of historical texts in the field of political communication for various tasks in NLP.},
+	urldate = {2026-01-19},
+	booktitle = {Proceedings of the {Thirteenth} {Language} {Resources} and {Evaluation} {Conference}},
+	publisher = {European Language Resources Association},
+	author = {Abrami, Giuseppe and Bagci, Mevlüt and Hammerla, Leon and Mehler, Alexander},
+	editor = {Calzolari, Nicoletta and Béchet, Frédéric and Blache, Philippe and Choukri, Khalid and Cieri, Christopher and Declerck, Thierry and Goggi, Sara and Isahara, Hitoshi and Maegaard, Bente and Mariani, Joseph and Mazo, Hélène and Odijk, Jan and Piperidis, Stelios},
+	month = jun,
+	year = {2022},
+	pages = {1900--1906},
+}
+
+@misc{registry_ror_2025,
+	title = {{ROR} {Data}},
+	url = {https://zenodo.org/records/17953395},
+	doi = {10.5281/zenodo.17953395},
+	abstract = {Data dump from the Research Organization Registry (ROR), a community-led registry of open identifiers for research organizations.
+
+Release v2.0 contains ROR IDs and metadata for 120,445 research organizations in JSON and CSV format, in schema version 2. This includes the addition of 249 new records and metadata updates to 228 existing records. See the release notes.
+
+Data format
+
+Beginning with release v2.0 on 16 December 2025, data releases contain JSON and CSV files formatted only for schema v2. In addition, v2 files will no longer have `\_schema\_v2` appended to the end of the filename, ex v2.0-2025-12-16-ror-data.json. 
+
+The CSV file contains a subset of fields from the JSON file, some of which have been flattened for easier parsing. As ROR records and the ROR schema are maintained in JSON, the CSV is for convenience only. JSON is the format of record.
+
+Release versioning
+
+Beginning with data release 2.0, files in the ROR Data dump on Zenodo will no longer include CSV and JSON files of the registry in the v1 schema. The ROR API default version is v2 as of July 2025, and v1 of the ROR API and dataset has been deprecated entirely, as of 8 December 2025. The data dump major version has been incremented to 2 per below.
+
+Data releases are versioned as follows:
+
+
+
+Minor versions (ex 1.1, 1.2, 1.3):  Contain changes to data, such as a new records and updates to existing records. No changes to the data model/structure.
+
+Patch versions (ex 1.0.1):  Used infrequently to correct errors in a release. No changes to the data model/structure.
+
+Major versions (ex 1.x, 2.x, 3.x):  Contains changes to data model/structure, as well as the data itself. Major versions will be released with significant advance notice.
+
+
+For convenience, the date is also included in the release file name, ex: v2.0-2025-12-16-ror-data.zip.
+
+The ROR data dump is provided under the  Creative Commons CC0 Public Domain Dedication. Location data in ROR comes from GeoNames and is licensed under a Creative Commons Attribution 4.0 license.},
+	urldate = {2026-01-07},
+	publisher = {Zenodo},
+	author = {Registry, Research Organization},
+	month = dec,
+	year = {2025},
+	keywords = {PID, ROR, affiliation, institution identifier, open infrastructure, organization identifier, persistent identifier},
+}
+
+@misc{yakura_empirical_2025,
+	title = {Empirical evidence of {Large} {Language} {Model}'s influence on human spoken communication},
+	url = {http://arxiv.org/abs/2409.01754},
+	doi = {10.48550/arXiv.2409.01754},
+	abstract = {From the invention of writing and the printing press, to television and social media, human history is punctuated by major innovations in communication technology, which fundamentally altered how ideas spread and reshaped our culture. Recent chatbots powered by generative artificial intelligence constitute a novel medium that encodes cultural patterns in their neural representations and disseminates them in conversations with hundreds of millions of people. Understanding whether these patterns transmit into human language, and ultimately shape human culture, is a fundamental question. While fully quantifying the causal impact of a chatbot like ChatGPT on human culture is very challenging, lexicographic shift in human spoken communication may offer an early indicator of such broad phenomenon. Here, we apply econometric causal inference techniques to 740,249 hours of human discourse from 360,445 YouTube academic talks and 771,591 conversational podcast episodes across multiple disciplines. We detect a measurable and abrupt increase in the use of words preferentially generated by ChatGPT, such as delve, comprehend, boast, swift, and meticulous, after its release. These findings suggest a scenario where machines, originally trained on human data and subsequently exhibiting their own cultural traits, can, in turn, measurably reshape human culture. This marks the beginning of a closed cultural feedback loop in which cultural traits circulate bidirectionally between humans and machines. Our results motivate further research into the evolution of human-machine culture, and raise concerns over the erosion of linguistic and cultural diversity, and the risks of scalable manipulation.},
+	urldate = {2026-01-04},
+	publisher = {arXiv},
+	author = {Yakura, Hiromu and Lopez-Lopez, Ezequiel and Brinkmann, Levin and Serna, Ignacio and Gupta, Prateek and Soraperra, Ivan and Rahwan, Iyad},
+	month = jul,
+	year = {2025},
+	note = {arXiv:2409.01754 [cs]},
+	keywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language, Computer Science - Computers and Society, Computer Science - Human-Computer Interaction},
+}
+
+@inproceedings{shrivastava_repository-level_2023,
+	address = {Honolulu, Hawaii, USA},
+	series = {{ICML}'23},
+	title = {Repository-level prompt generation for large language models of code},
+	volume = {202},
+	abstract = {With the success of large language models (LLMs) of code and their use as code assistants (e.g. Codex (Chen et al., 2021) used in GitHub Copilot), techniques for introducing domain-specific knowledge in the prompt design process become important. In this work, we propose a framework called Repo-Level Prompt Generator that learns to generate example-specific prompts using prompt proposals. The prompt proposals take context from the entire repository, thereby incorporating both the structure of the repository and the context from other relevant files (e.g. imports, parent class files). Our technique doesn't require any access to the weights of the LLM, making it applicable in cases where we only have black-box access to the LLM. We conduct experiments on the task of single-line code auto-completion using code repositories taken from Google Code archives. We demonstrate that an oracle constructed from our prompt proposals gives a relative improvement of 36\% over Codex, showing the quality of these proposals. Further, we show that when we train a model to predict a prompt proposal, we can achieve significant performance gains over Codex and other baselines. We release our code, data, and trained checkpoints at https://github.com/shrivastavadisha/repo\_level\_prompt\_generation.},
+	urldate = {2026-01-03},
+	booktitle = {Proceedings of the 40th {International} {Conference} on {Machine} {Learning}},
+	publisher = {JMLR.org},
+	author = {Shrivastava, Disha and Larochelle, Hugo and Tarlow, Daniel},
+	month = jul,
+	year = {2023},
+	pages = {31693--31715},
+}
+
+@misc{noauthor_automatic_nodate,
+	title = {Automatic register identification for the open web using multilingual deep learning},
+	url = {https://arxiv.org/html/2406.19892v3},
+	urldate = {2026-01-03},
+}
+
+@inproceedings{leidinger_language_2023,
+	address = {Singapore},
+	title = {The language of prompting: {What} linguistic properties make a prompt successful?},
+	shorttitle = {The language of prompting},
+	url = {https://aclanthology.org/2023.findings-emnlp.618/},
+	doi = {10.18653/v1/2023.findings-emnlp.618},
+	abstract = {The latest generation of LLMs can be prompted to achieve impressive zero-shot or few-shot performance in many NLP tasks. However, since performance is highly sensitive to the choice of prompts, considerable effort has been devoted to crowd-sourcing prompts or designing methods for prompt optimisation. Yet, we still lack a systematic understanding of how linguistic properties of prompts correlate with the task performance. In this work, we investigate how LLMs of different sizes, pre-trained and instruction-tuned, perform on prompts that are semantically equivalent, but vary in linguistic structure. We investigate both grammatical properties such as mood, tense, aspect and modality, as well as lexico-semantic variation through the use of synonyms. Our findings contradict the common assumption that LLMs achieve optimal performance on prompts which reflect language use in pretraining or instruction-tuning data. Prompts transfer poorly between datasets or models, and performance cannot generally be explained by perplexity, word frequency, word sense ambiguity or prompt length. Based on our results, we put forward a proposal for a more robust and comprehensive evaluation standard for prompting research.},
+	urldate = {2026-01-02},
+	booktitle = {Findings of the {Association} for {Computational} {Linguistics}: {EMNLP} 2023},
+	publisher = {Association for Computational Linguistics},
+	author = {Leidinger, Alina and van Rooij, Robert and Shutova, Ekaterina},
+	editor = {Bouamor, Houda and Pino, Juan and Bali, Kalika},
+	month = dec,
+	year = {2023},
+	pages = {9210--9232},
+}
+
+@article{wu_corpus-based_2025,
+	title = {A {Corpus}-{Based} {Multidimensional} {Analysis} of {Linguistic} {Features} between {Human}-{Authored} and {ChatGPT}-{Generated} {Compositions}},
+	volume = {8},
+	issn = {2617-0299},
+	url = {https://al-kindipublishers.org/index.php/ijllt/article/view/9257},
+	doi = {10.32996/ijllt.2025.8.5.10},
+	language = {en},
+	number = {5},
+	urldate = {2026-01-02},
+	journal = {International Journal of Linguistics, Literature and Translation},
+	author = {Wu, JinLiang},
+	month = may,
+	year = {2025},
+	keywords = {ChatGPT-Generated Compositions, Corpus-Based Analysis, Educational Proficiency Levels, Human-Authored Compositions, Second Language Writing},
+	pages = {102--110},
+}
+
+@misc{ramirez_chatgpt_2025,
+	title = {{ChatGPT} {Is} {Changing} the {Words} {We} {Use} in {Conversation}},
+	url = {https://www.scientificamerican.com/article/chatgpt-is-changing-the-words-we-use-in-conversation/},
+	abstract = {Words frequently used by ChatGPT, including “delve” and “meticulous,” are getting more common in spoken language, according to an analysis of more than 700,000 hours of videos and podcasts},
+	language = {en},
+	urldate = {2025-12-15},
+	journal = {Scientific American},
+	author = {Ramirez, Vanessa Bates},
+	year = {2025},
+}
+
+@misc{duke_upress_critical_2025,
+	title = {Critical {AI}},
+	url = {https://www.dukeupress.edu/critical-ai},
+	language = {en},
+	urldate = {2025-12-08},
+	author = {{Duke UPress}},
+	year = {2025},
+}
+
+@article{aleksic_opinion_2025,
+	title = {Opinion {\textbar} {It}’s happening: {People} are starting to talk like {ChatGPT}},
+	issn = {0190-8286},
+	shorttitle = {Opinion {\textbar} {It}’s happening},
+	url = {https://www.washingtonpost.com/opinions/2025/08/20/chatgpt-claude-chatbots-language/},
+	abstract = {Unnervingly, words overrepresented in chatbot responses are turning up more in human conversation.},
+	language = {en-US},
+	urldate = {2025-12-15},
+	journal = {The Washington Post},
+	author = {Aleksic, Adam},
+	month = aug,
+	year = {2025},
+}
+

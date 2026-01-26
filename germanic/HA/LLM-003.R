@@ -207,6 +207,91 @@ save(btt.summaries,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.
 # 
 # 
 
+### get gpt keywords: gpt preferred words vs. human language
+library(quanteda)
+# library(devtools)
+# install_github("skeptikantin/collostructions")
+
+library(collostructions)
+# btt.f<-lapply(btt.summaries$summary,function(x){
+#   t<-strsplit(x," ")
+#   freq.list(unlist(t))
+# })
+# dfmat2<-matrix
+library(dplyr)
+library(tidyr)
+#install.packages("tidytext")
+library(tidytext)
+df<-btt.summaries
+# Add corpus labels for binding
+# df_human <- df %>%
+#   mutate(corpus = "human") %>%
+#   rename(text = text)
+# 
+# df_gpt <- df %>%
+#   mutate(corpus = "gpt") %>%
+#   rename(summary = text)
+df1<-df[,1:2]
+df2<-df[,c(1,3)]
+df1<-cbind(df1,"human")
+df2<-cbind(df2,"gpt")
+colnames(df1)<-c("date","text","target")
+colnames(df2)<-c("date","text","target")
+df_combined <- bind_rows(df1,df2)
+library(stringr)
+# Tokenize to words (lowercase, remove punctuation/numbers)
+df_combined$id<-1:length(df_combined$date)
+tokens <- df_combined %>%
+  unnest_tokens(word, text, token = "words") %>%
+  filter(str_detect(word, "^[a-z]+$")) %>%  # Optional: alphabetic words only
+  mutate(word = tolower(word))
+stops<-stopwords("de")
+stops.m<-c("dass","a","ab")
+stops.j<-c(stops,stops.m)
+m<-tokens$word%in%stops.j
+tokens.r<-tokens[!m,]
+# df_freq <- tokens.r %>%
+#   group_by(target, word) %>%
+#   summarise(docs_with_word = n_distinct(id), .groups = "drop") %>%
+#   mutate(total_docs = length(unique(df_combined$id)))  # N same for both corpora
+# df_freq <- tokens.r %>%
+#   group_by(target, word) %>%
+#   summarise(docs_with_word = n_distinct(id), .groups = "drop") %>%
+#   mutate(total_docs = length(unique(df_combined$date)))  # N same for both corpora
+# ?n_distinct
+colnames(tokens.r)
+fh<-freq.list(tokens.r$word[tokens.r$target=="human"])
+fg<-freq.list(tokens.r$word[tokens.r$target=="gpt"])
+fa<-freq.list(tokens.r$word)
+fj<-join.freqs(fg,fa)
+fs<-fj%>%mutate(p=fg/fa)
+### wks., joined frequencies of target=gpt+target=all, score for gpt
+head(fs,10)
+library(clipr)
+write_clip(head(fs,10))
+#########################################
+### fg=freq.gemini,fa=freq.all
+# WORD	fg	fa	p
+# thema	60	1601	0.0374765771392879
+# unsere	49	2203	0.0222423967317295
+# liebe	41	3356	0.0122169249106079
+# wichtig	39	1607	0.0242688238954574
+# parteifreunde	36	39	0.923076923076923
+# geben	30	1298	0.0231124807395994
+# heute	28	3836	0.0072992700729927
+# arbeit	26	1394	0.0186513629842181
+# einblick	25	34	0.735294117647059
+# geht	24	3692	0.00650054171180932
+##########################################
+### now with lemma, udpipe pipeline...
+library(udpipe)
+model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
+##################################
+## test
+df.ann<-as.data.frame(udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id))
+#?udpipe_annotate
+
+
 
 
 

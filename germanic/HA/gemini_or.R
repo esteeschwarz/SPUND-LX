@@ -54,3 +54,22 @@ gemini_vertex <- function(
   }
 }
 t<-gemini_vertex()
+
+body<-list(contents = list(
+  list(
+    role = "user",
+    parts = list(
+      list(
+        fileData = list(
+          mimeType = "text/plain",
+          fileUri = "textfile.txt"
+        )
+      ),
+      list(text = readtext("~/Documents/GitHub/SPUND-LX/germanic/HA/g-prompt01.txt")$text)
+    )
+)
+)
+)
+write_json(body,"~/Documents/GitHub/SPUND-LX/germanic/HA/contents2.json")
+
+
