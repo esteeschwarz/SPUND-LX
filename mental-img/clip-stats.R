@@ -344,3 +344,19 @@ ggplot(df_no_big, aes(x = group, y = var_clip)) +
 
 
 
+
+# 20260128(18.54)
+# 16055.clip data with metadata
+###############################
+library(arrow)
+library(lme4)
+library(lmerTest)
+d1<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/smi_data_metadata.csv")
+df<-read.csv(d1)
+colnames(df)
+t<-lapply(df[,1:length(df)],function(x){
+  typeof(x)
+})
+unlist(t)
+lm1<-lmer(mean_clip_de_jina~person+)
+
