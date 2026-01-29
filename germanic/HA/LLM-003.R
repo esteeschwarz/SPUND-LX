@@ -1,5 +1,5 @@
 # 20250125(15.03)
-# 16042.gemini.corpus.btt
+# 16052.gemini.corpus.btt
 #########################
 # wtf: huening germanic languages im vergleich: create gemini chat corpus - extract keywords 
 ############################################################################################
