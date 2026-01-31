@@ -45,7 +45,7 @@ print(baseurl)
 #params
 r<-GET(baseurl,query=q)
 }
-r2<-r
+#r2<-r
 getdf<-function(range){
 d.start<-range[1]
 d.end<-range[2]
@@ -57,17 +57,35 @@ t<-fromJSON(content(r2,"text"))
 tdf1<-data.frame(date=t$documents$datum,text=t$documents$text)        
 }
 
-range<-c("2021-01-01","2021-03-31")
+# range<-c("2021-01-01","2021-03-31")
+# tdf1<-getdf(range)
+# range<-c("2021-04-01","2021-12-31")
+# tdf2<-getdf(range)
+# range<-c("2021-04-01","2021-05-30")
+# tdf3<-getdf(range)
+# range<-c("2021-06-01","2021-07-31")
+# tdf4<-getdf(range)
+# ptdf<-rbind(tdf1,tdf2,tdf3,tdf4)
+
+### first dataset
+###################################
+range<-c("2025-01-01","2025-31-03")
 tdf1<-getdf(range)
-range<-c("2021-04-01","2021-12-31")
+range<-c("2025-04-01","2025-12-31")
 tdf2<-getdf(range)
-range<-c("2021-04-01","2021-05-30")
+range<-c("2025-04-01","2025-05-30")
 tdf3<-getdf(range)
-range<-c("2021-06-01","2021-07-31")
+range<-c("2025-06-01","2025-07-31")
 tdf4<-getdf(range)
-ptdf<-rbind(tdf1,tdf2,tdf3,tdf4)
+range<-c("2025-08-01","2025-11-30")
+tdf5<-getdf(range)
+ptdf.2<-rbind(tdf1,tdf2,tdf3,tdf4,tdf5)
+
 #save(ptdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData"))
 }
+ptdf.2<-get.btt()
+
+save(ptdf.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData"))
 
 get.gpt<-function(){
 ### load btt corpus
@@ -225,8 +243,9 @@ library(dplyr)
 library(tidyr)
 #install.packages("tidytext")
 library(tidytext)
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData"))
-
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData")) # protocols + gpt summary texts 
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData")) # protocols after gemini
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData")) # protocols before gemini
 df<-btt.summaries
 # Add corpus labels for binding
 # df_human <- df %>%
@@ -259,13 +278,16 @@ df_combined$id<-1:length(df_combined$date)
 tokens.2 <- df_combined %>%
   unnest_tokens(word, text, token = "words",to_lower = F) # Optional: alphabetic words only
   head(tokens.2$word,20)
+ptdf.2$target<-"post"
+tokens.3<-ptdf.2 %>%
+  unnest_tokens(word,text,token = "words",to_lower = F)
 # ?unnest_tokens
 ###########################
-    stops<-stopwords("de")
-stops.m<-c("dass","a","ab")
-stops.j<-c(stops,stops.m)
-m<-tokens$word%in%stops.j
-tokens.r<-tokens[!m,]
+#     stops<-stopwords("de")
+# stops.m<-c("dass","a","ab")
+# stops.j<-c(stops,stops.m)
+# m<-tokens$word%in%stops.j
+# tokens.r<-tokens[!m,]
 # df_freq <- tokens.r %>%
 #   group_by(target, word) %>%
 #   summarise(docs_with_word = n_distinct(id), .groups = "drop") %>%
@@ -279,15 +301,15 @@ tokens.r<-tokens[!m,]
 # for udpipe
 tokens.r<-tokens.2
 colnames(tokens.r)
-fh<-freq.list(tokens.r$word[tokens.r$target=="human"])
-fg<-freq.list(tokens.r$word[tokens.r$target=="gpt"])
-fa<-freq.list(tokens.r$word)
-fj<-join.freqs(fg,fa)
-fs<-fj%>%mutate(p=fg/fa)
-### wks., joined frequencies of target=gpt+target=all, score for gpt
-head(fs,10)
-library(clipr)
-write_clip(head(fs,10))
+# # fh<-freq.list(tokens.r$word[tokens.r$target=="human"])
+# # fg<-freq.list(tokens.r$word[tokens.r$target=="gpt"])
+# # fa<-freq.list(tokens.r$word)
+# # fj<-join.freqs(fg,fa)
+# # fs<-fj%>%mutate(p=fg/fa)
+# ### wks., joined frequencies of target=gpt+target=all, score for gpt
+# head(fs,10)
+# library(clipr)
+# write_clip(head(fs,10))
 #########################################
 ### fg=freq.gemini,fa=freq.all
 # WORD	fg	fa	p
@@ -303,8 +325,8 @@ write_clip(head(fs,10))
 # geht	24	3692	0.00650054171180932
 ##########################################
 ### now with lemma, udpipe pipeline...
-library(udpipe)
-model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
+# library(udpipe)
+# model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
 ##################################
 ## test
 # df.ann<-as.data.frame(udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id,target=df_combined$target))
@@ -313,20 +335,26 @@ model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud
 # df.ann<-udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id,target=df_combined$target,parser = "none",trace = T)
 # tu<-unique(tokens.2$word)
 
-df.ann<-udpipe::udpipe_annotate(model,fj$WORD,trace = T,parser = "none")
-
-dfa.pos<-as.data.frame(df.ann)
-fj$lemma<-NA
-for(k in 1:length(dfa.pos$token)){
-  m<-fj$WORD==dfa.pos$token[k]
-  fj$lemma[m]<-dfa.pos$lemma[k]
-}
+# df.ann<-udpipe::udpipe_annotate(model,fj$WORD,trace = T,parser = "none")
+# 
+# dfa.pos<-as.data.frame(df.ann)
+# fj$lemma<-NA
+# for(k in 1:length(dfa.pos$token)){
+#   m<-fj$WORD==dfa.pos$token[k]
+#   fj$lemma[m]<-dfa.pos$lemma[k]
+# }
 #save(dfa.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 # save(fj,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
+return(list(t1=tokens.r,t2=tokens.3))
 }
 #?udpipe_annotate
+tokens<-get.freq()
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
+tokens.r<-tokens$t1
+tokens.3<-tokens$t2
 tokens.r$lemma<-NA
+tokens.3$lemma<-NA
 
 # for(k in 1:length(fj$WORD)){
 #   cat("token:",k,"\r")
@@ -335,14 +363,18 @@ tokens.r$lemma<-NA
 #   tokens.r$lemma[m]<-fj$lemma[k]
 # }
 
-tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
+#tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
+tokens.r$lemma <- dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
 tokens.r$lemma[is.na(tokens.r$lemma)]<-tokens.r$word[is.na(tokens.r$lemma)]
+tokens.3$lemma <- dfa.pos$lemma[match(tokens.3$word, dfa.pos$token)]
+#tokens.3$lemma <- fj$lemma[match(tokens.3$word, fj$WORD)]
+tokens.3$lemma[is.na(tokens.3$lemma)]<-tokens.3$word[is.na(tokens.3$lemma)]
 
 stops<-stopwords("de")
 stops
-stops.m<-c("dass","a","ab")
+stops.m<-c("dass","a","ab","immer","mal","erst","ja")
 stops.j<-c(stops,stops.m)
-??capitalize
+#??capitalize
 library(Hmisc)
 stops.u<-lapply(stops.j, function(x){
   c1<-capitalize(x)
@@ -350,46 +382,507 @@ stops.u<-lapply(stops.j, function(x){
 stops.u<-unlist(stops.u)
 stops.u
 stops.j<-c(stops.j,stops.u)
+stops.u<-lapply(stops.j, function(x){
+  c1<-toupper(x)
+})
+stops.u<-unlist(stops.u)
+stops.u
+stops.j<-c(stops.j,stops.u)
+stops.j<-unique(stops.j)
 m<-tokens.r$word%in%stops.j
 
 tokens.r<-tokens.r[!m,]
+m<-tokens.3$word%in%stops.j
+sum(m)
+tokens.3<-tokens.3[!m,]
 m<-tokens.r$lemma%in%stops.j
 sum(m)
 tokens.r<-tokens.r[!m,]
-sum(tok.r2$word=="wir")
+m<-tokens.3$lemma%in%stops.j
+sum(m)
+tokens.3<-tokens.3[!m,]
+m<-tokens.3$lemma%in%stops.j
+sum(m)
+m<-tokens.r$lemma%in%stops.j
+sum(m)
 tok.r2<-tokens.r[tokens.r$word!="",]
 tok.r2<-tok.r2[!is.na(tok.r2$word),]
 tok.r2<-tok.r2[!is.na(tok.r2$word),]
 tok.r2<-tok.r2[!is.na(tok.r2$lemma),]
+sum(tok.r2$word=="wir")
+sum(tok.r2$lemma=="Die")
+tok.r3<-tokens.3[tokens.3$word!="",]
+tok.r3<-tok.r3[!is.na(tok.r3$word),]
+tok.r3<-tok.r3[!is.na(tok.r3$word),]
+tok.r3<-tok.r3[!is.na(tok.r3$lemma),]
+sum(grepl("[0-9]",tok.r3$lemma))
+sum(grepl("[0-9]",tok.r2$lemma))
+tok.r2<-tok.r2[!grepl("[0-9]",tok.r2$lemma),]
+tok.r3<-tok.r3[!grepl("[0-9]",tok.r3$lemma),]
+t1<-table(tok.r2$lemma)
+t1[order(t1)]
+t1<-table(tok.r3$lemma)
+t1[order(t1)]
+sum(tok.r3$word=="Die")
+sum(tok.r2$lemma%in%"Die")
 sum(tok.r2$word=="es")
-sum(tok.r2$lemma%in%"es")
+sum(tok.r3$lemma%in%"Die")
 
-fh<-freq.list(tok.r2$lemma[tok.r2$target=="human"])
-sum("es"==fh$WORD)
-fg<-freq.list(tok.r2$lemma[tok.r2$target=="gpt"])
-#factor(tok.r2$lemma)
-fa<-freq.list(as.character(tok.r2$lemma))
-fj2<-join.freqs(fg,fa)
-fs2<-fj2%>%mutate(p=fg/fa)
+# fh<-freq.list(tok.r2$lemma[tok.r2$target=="human"])
+# sum("es"==fh$WORD)
+# fg<-freq.list(tok.r2$lemma[tok.r2$target=="gpt"])
+# fp<-freq.list(tok.r3$lemma[tok.r3$target=="post"])
+# #factor(tok.r2$lemma)
+# fa<-freq.list(as.character(tok.r2$lemma))
+# fj2<-join.freqs(fg,fa)
+# fs2<-fj2%>%mutate(p=fg/fa)
+# fj3<-join.freqs(fg,fa)
 # sum(tok.r2$target=="gpt")
-fh<-as.data.frame(table(tok.r2$lemma[tok.r2$target=="human"]))
-fg<-as.data.frame(table(tok.r2$lemma[tok.r2$target=="gpt"]))
-fa<-as.data.frame(table(tok.r2$lemma))
+# fh<-as.data.frame(table(tok.r2$lemma[tok.r2$target=="human"]))
+# fg<-as.data.frame(table(tok.r2$lemma[tok.r2$target=="gpt"]))
+# fa<-as.data.frame(table(tok.r2$lemma))
+# fp<-as.data.frame(freq.list(tok.r3$lemma[tok.r3$target=="post"]))
 #fa<-table(tok.r2$lemma)
 #fa<-fa[order(fa,decreasing = T)]
 #fa
+#?freq.list
+f1p<-data.frame(freq.list(tok.r3$lemma,convert = T))
+f1a<-data.frame(freq.list(tok.r2$lemma,convert = T))
+f1h<-data.frame(freq.list(tok.r2$lemma[tok.r2$target=="human"],convert = T))
+f1g<-data.frame(freq.list(tok.r2$lemma[tok.r2$target=="gpt"],convert = T))
+fr.list<-list(a=f1a,h=f1h,g=f1g,p=f1p)
+#save(fr.list,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fr_list.RData"))
+#f1a[fa$WORD=="die",]
+# t1<-table(tok.r2$lemma)
+# t1[order(t1,decreasing = T)]
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fr_list.RData"))
+f1p<-fr.list$p
+f1a<-fr.list$a
+f1g<-fr.list$g
+f1h<-fr.list$h
+f1p1<-data.frame(f1p,target="post",size=sum(f1p$FREQ))
+f1a1<-data.frame(f1a,target="all",size=sum(f1a$FREQ))
+f1h1<-data.frame(f1h,target="human",size=sum(f1h$FREQ))
+f1g1<-data.frame(f1g,target="gpt",size=sum(f1g$FREQ))
+
+######################################################
+f1z1<-f1g1[1,]
+#1z1[1,]<-c("intercept",1,"0-intercept",1)
+#fz1[1,1]<-"intercept"
+#fa2<-rbind(fh1,fp1)
+#f1
+lmdf<-rbind(f1z1,f1a1,f1h1,f1g1,f1p1)
+lmdf$WORD<-as.character(lmdf$WORD)
+mode(lmdf$WORD)
+lmdf$WORD[lmdf$target=="0-intercept"]<-"intercept"
+#lmdf$f.rel<-(lmdf$FREQ)/(lmdf$size)
+mode(lmdf$FREQ)<-"double"
+mode(lmdf$size)<-"double"
+lmdf<-lmdf%>%mutate(f.rel=FREQ/size)
+head(lmdf)
+t1<-table(lmdf$WORD)
+t1[order(t1)]
+library(lme4)
+library(lmerTest)
+lm1<-lmer(f.rel~target+(1|WORD),lmdf)
+summary(lm1)
+# lm3<-lmer(FREQ~target*gu+(1|WORD)+size,fa2)
+# summary(lm3)
+lm1<-lm(f.rel~target,lmdf)
+summary(lm1)
 #sum(names(fa)=="Form")
-fj1<-join.freqs(fg,fa)
+# fj_h_g<-join.freqs(fh,fg,all=T)
+# fj_h_p<-join.freqs(fh,fp,all=T)
+# fj_g_a<-join.freqs(fa,fg,all = T)
+# fs<-fj_g_a%>%mutate(p=(fg/sum(fg))+0.000001/(fa/sum(fa)+0.000001))
+# fs5<-fj_h_p%>%mutate(p=(fh/sum(fh))+0.000001/(fp/sum(fp)+0.000001))
+# fs<-fs[order(fs$p,decreasing = T),]
+# head(fs,20)
+# fs2<-fs[order(fs$p,decreasing = T),]
+# head(fs2,10)
+# gp<-fs2$WORD[fs2$fa<=fs2$fg]
+# gp
+# unique(lmdf$target)
+# #lmdf$g0<-0
+# # fa1$gu<-0
+# # fh1$gu<-0
+# # fp1$gu<-0
+# # fg1$gu<-0
+f1a1$gus<-0
+f1h1$gus<-0
+f1p1$gus<-0
+f1g1$gus<-0
+#fa1$gu<-0
+f1a1$gus[f1a1$WORD%in%f1g1$WORD]<-1
+f1h1$gus[f1h1$WORD%in%f1g1$WORD]<-1
+f1p1$gus[f1p1$WORD%in%f1g1$WORD]<-1
+f1g1$gus[f1g1$WORD%in%f1g1$WORD]<-1
+f1z1$gus<-0
+sum(f1p1$gus)
+sum(f1h1$gus)
+lmdf<-rbind(f1z1,f1a1,f1h1,f1g1,f1p1)
+lmdf$WORD<-as.character(lmdf$WORD)
+mode(lmdf$WORD)
+mode(lmdf$FREQ)<-"double"
+mode(lmdf$size)<-"double"
+lmdf$f.rel<-as.double(lmdf$FREQ)/as.double(lmdf$size)
+lmdf$WORD[lmdf$target=="0-intercept"]<-"intercept"
+head(lmdf)
+lmdf$gus<-lmdf$gus*lmdf$f.rel
+#fs2$target<-"all"
+#fs5$target<-"allpp"
+#fs2$e<-"gpt"
+#fs2$target[match(fa,fg)]<-"gpt"
+#tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
+# fs2$target[fs2$fa==fs2$fg]<-"gpt"
+# fs2$target[fs2$fg==0]<-"human"
+# fs5$target[fs5$fh==0]<-"post"
+# fs5$target[fs5$fp==0]<-"phuman"
+# fs6<-rbind(fs2[,c(1,4,5)],fs5[,c(1,4,5)])
+get.dist.norm<-function(lmdf){
+  #df<-data.frame(dfa)
+  dfa<-lmdf
+  #  lim<-limit
+#  dflim<-subset(df,df$dist<limit)
+ # typeof(dflim)
+  mode(dfa$size)<-"double"
+  mode(dfa$FREQ)<-"double"
+  tdb6<-dfa
+  #  mode(tdb6$size)<-"double"
+  
+  target<-unique(tdb6$target)
+  tdb6$f.norm_within<-NA
+  # tdb6$f.norm_all<-mean(tdb6$FREQ)/tdb6$FREQ
+  # tdb6$f.norm_h<-mean(tdb6$FREQ[tdb6$target=="human"])/tdb6$FREQ
+  # tdb6$f.norm_g<-mean(tdb6$FREQ[tdb6$target=="gpt"])/tdb6$FREQ
+  # tdb6$f.norm_p<-mean(tdb6$FREQ[tdb6$target=="post"])/tdb6$FREQ
+  tdb6$f.norm_all<-mean(tdb6$f.rel)/tdb6$f.rel
+  tdb6$f.norm_h<-mean(tdb6$f.rel[tdb6$target=="human"])/tdb6$f.rel
+  tdb6$f.norm_g<-mean(tdb6$f.rel[tdb6$target=="gpt"])/tdb6$f.rel
+  tdb6$f.norm_p<-mean(tdb6$f.rel[tdb6$target=="post"])/tdb6$f.rel
+  for(k in target){
+    r<-tdb6$target==k
+    mr<-mean(tdb6$f.rel[r])/tdb6$f.rel[r]
+    tdb6$f.norm_within[r]<-mr
+  }
+  tdb6$f.rel_within<-tdb6$f.rel*tdb6$f.norm_within
+  tdb6$f.rel_all<-tdb6$f.rel*tdb6$f.norm_all
+  tdb6$f.rel_all<-tdb6$f.norm_all
+  tdb6$f.rel_h<-tdb6$f.rel*tdb6$f.norm_h
+  tdb6$f.rel_g<-tdb6$f.rel*tdb6$f.norm_g
+  tdb6$f.rel_p<-tdb6$f.rel*tdb6$f.norm_p
+  tdb6$range_c<-tdb6$size-mean(tdb6$size,na.rm=T)
+#  tdb6$embed_c<-tdb6$embed.score-mean(tdb6$embed.score,na.rm=T)
+#  tdb6$f_rel_scaled<-tdb6$FREQ / tdb6$size  # values now in [0,1] relative to each URL’s size
+  
+  df_norm <- dfa %>%
+    group_by(target) %>%
+    mutate(
+      f.rel   = FREQ / sum(FREQ),          # relative frequency within corpus
+      f.pm    = (FREQ / sum(FREQ)) * 1e6  # per million tokens
+    ) %>%
+    ungroup()
+  
+  return(df_norm)
+}
+
+lmdf.n<-get.dist.norm(lmdf)
+#t1<-table(lmdf.n$WORD)
+lmdf.c<-lmdf.n[!grepl("intercept|all",lmdf.n$target),]
+lmdf.c$target[grep("human",lmdf.c$target)]<-"0-human"
+m1 <- lmer(f.pm ~ target + (1 | WORD), data = lmdf.c)
+summary(m1)
+m2 <- lmer(f.pm ~ target * gus +
+             (1 | WORD),
+           data = lmdf.c)
+summary(m2)
+m3<-lm(f.pm~target*gus,lmdf.c)
+summary(m3)
+#  one row per token with variables: corpus (0/1), lemma, text_id
+m <- glmer(target ~ 1 + (1 | lemma),
+           data = tok.r2,
+           family = binomial)
+m <- glmer(target ~ 1 + (1 | lemma),
+           data = tok.r2)
+
+
+
+############################
+library(dplyr)
+library(tidyr)
+
+tab <- freq_df %>%
+  mutate(target = factor(target, levels = c("human", "gpt"))) %>%
+  pivot_wider(
+    names_from  = target,
+    values_from = freq,
+    values_fill = 0
+  ) %>%
+  rename(
+    human_count = human,
+    gpt_count   = gpt
+  )
+lmdf<-data.frame(rbind(f1a1,f1p1,f1g1,f1h1))
+mode(lmdf$FREQ)<-"double"
+mode(lmdf$target)
+lmdf$lemma<-as.character(lmdf$WORD)
+m<-colnames(lmdf)%in%c("lemma","FREQ","size","target")
+sum(m)
+m<-which(m)
+m
+lmdf.c<-lmdf[,m]
+#mode()
+#factor(lmdf$target,levels = c("human", "gpt","all"))
+unique(lmdf$target)
+mode(lmdf.c$lemma)
+mode(lmdf.c$target)
+mode(lmdf.c$FREQ)
+mode(lmdf.c$size)
+lmdf.c<-lmdf.c%>%mutate(freq=as.double(FREQ))
+#?pivot_wider
+library(tidyr)
+tab <- 
+  pivot_wider(lmdf.c,
+    names_from  = target,
+    values_from = FREQ,
+    values_fill = 0
+    
+  ) 
+#tab<-data.frame(tab)
+# tab <- lmdf.c %>%
+#   mutate(target = factor(target, levels = c("human", "gpt","post","all"))) %>%
+#   pivot_wider(
+#     names_from  = target,
+#     values_from = FREQ,
+#   ) %>%
+#   rename(
+#     human_count = human,
+#     gpt_count   = gpt
+#   )
+# tab <- lmdf %>%
+#   mutate(corpus = target) %>%
+#   pivot_wider(
+#     names_from  = target,
+#     values_from = FREQ,
+#     values_fill = 0
+#   ) %>%
+#   rename(
+#     human_count = human,
+#     gpt_count   = gpt
+#   )
+# 
+library(lme4)
+library(lmerTest)
+m <- glmer(
+  cbind(gpt, human) ~ 1 + (1 | lemma),
+  data   = tab,
+  family = binomial
+)
+# m2<-lmer(freq~1+(1|lemma),lmdf.c)
+# sm2<-summary(m2)
+# r<-sm2$residuals
+# rl<-ranef(m2)$lemma
+# head(r,50)
+# summary(m)
+# ?ranef
+re_lemma <- ranef(m)$lemma  # data frame with '(Intercept)'
+re_lemma$lemma <- rownames(re_lemma)
+# re_lemma$res<-rl[,1]
+#save(re_lemma,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lemma_gpt-human.RData"))
+# Higher random intercept => more GPT‑typical
+gpt_typical  <- re_lemma[order(-re_lemma[["(Intercept)"]]), ]
+# gpt_typical  <- re_lemma[order(-re_lemma$res), ]
+human_typical <- re_lemma[order(re_lemma[["(Intercept)"]]), ]
+# tr<-re_lemma[re_lemma$`(Intercept)`>0,] # useless, simply all gpt lemma?
+# tr<-re_lemma[re_lemma$`(Intercept)`>8,] # useless, simply all gpt lemma?
+lmdf.c$gus.c<-0
+lmdf.c$gus.c[lmdf.c$lemma%in%tr$lemma]<-1
+lmdf.c$in.gp<- re_lemma$`(Intercept)`[match(lmdf.c$lemma, re_lemma$lemma)]
+lmdf.c$f.rel<-lmdf.c$freq/lmdf.c$size*1000000
+lmdf.c$target[grepl("human",lmdf.c$target)]<-"0-human"
+save(lmdf.c,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lm-base_lmdf.c.RData"))
+
+#######################################
+# lmdf.c$gus.c<-0
+# lmdf.c$gus.c[lmdf.c$gus==1]<-lmdf.c$f.rel[lmdf.c$gus==1]
+#   #t1[order(t1,decreasing = F)]
+#head(lmdf.n,30)
+lm1<-lm(f.rel~target*in.gp,lmdf.c)
+# lm1<-lm(f.rel~target+in.gp,lmdf.c)
+# lm1<-lm(f.rel~target*gus.c,lmdf.c)
+summary(lm1)
+#lmdf[lmdf$target=="post",]
+lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
+# lm2<-lmer(f.rel~target*in.gp+(1|size),lmdf.c)
+# lm2<-lmer(f.rel~target*gus.c+(1|size),lmdf.c)
+# lm2<-lmer(f.rel~target*gus.c+in.gp+(1+gus.c|lemma),lmdf.c)
+summary(lm2)
+##############################################
+# Predicted f.rel for high vs low in.gp in targetpost
+newdata <- data.frame(
+  target = "post",
+  # in.gp = c(0, 1),  # human vs GPT typical
+  in.gp = c(-5,0,5, 10),  # human vs GPT typical
+  lemma = "dummy"
+)
+# newdata <- data.frame(
+#   target = "all",
+#   in.gp = c(0, 1),  # human vs GPT typical
+#   lemma = "dummy"
+# )
+### for plot
+newdata <- data.frame(
+  target = "post",
+  # in.gp = c(0, 1),  # human vs GPT typical
+  in.gp = c(-5,0,5, 10),  # human vs GPT typical
+  lemma = "dummy"
+)
+newdata <- data.frame(
+  target = "post",
+  # in.gp = c(0, 1),  # human vs GPT typical
+  # in.gp = -10:10,  # human vs GPT typical
+  in.gp = head(gpt_typical$`(Intercept)`,10),  # human vs GPT typical
+  lemma = "dummy"
+)
+
+p1<-predict(lm2, newdata, re.form = NA)  # fixed effects only
+p1<-data.frame(gp.score=newdata$in.gp,freq=p1)
+plot(p1,type="l")
+
+# Base R scatter plot by target group
+plot(lmdf.c$in.gp, lmdf.c$f.rel, 
+     col  = as.factor(lmdf.c$target), 
+     pch  = 19, 
+     xlab = "in.gp (GPT typicality score)",
+     ylab = "f.rel (relative frequency)",
+     main = "GPT scores vs relative frequency by target")
+
+# Add legend
+legend("topright", 
+       legend = levels(as.factor(lmdf.c$target)),
+       col   = 1:length(levels(as.factor(lmdf.c$target))), 
+       pch   = 19)
+
+# Add regression lines per group (optional)
+targets <- unique(lmdf.c$target)
+colors  <- 1:length(targets)
+for(i in seq_along(targets)) {
+  subset_data <- lmdf.c[lmdf.c$target == targets[i], ]
+  abline(lm(f.rel ~ in.gp, data = subset_data), 
+         col = colors[i], lwd = 2)
+}
+
+# Density plot of in.gp by target
+levels(factor(lmdf.c$target))
+plot(density(lmdf.c$in.gp[lmdf.c$target == levels(factor(lmdf.c$target))], 
+             main = "Distribution of GPT scores (in.gp) by target",
+             xlab = "in.gp (GPT typicality score)",
+             ylab = "Density",
+             col  = 1, 
+             lwd = 2))
+     
+     # Overlay densities for all targets
+     targets <- levels(as.factor(lmdf.c$target))
+     colors  <- rainbow(length(targets))
+     for(i in seq_along(targets)) {
+       dens <- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])
+       lines(dens, col = colors[i], lwd = 2)
+     }
+     
+     # Legend
+     legend("topright", 
+            legend = targets,
+            col    = colors, 
+            lwd    = 2)
+
+     
+          levels(factor(lmdf.c$target))
+     plot(density(lmdf.c$f.rel[lmdf.c$target == levels(factor(lmdf.c$target))], 
+                  main = "Distribution of GPT scores (in.gp) by target",
+                  xlab = "in.gp (GPT typicality score)",
+                  ylab = "Density",
+                  col  = 1, 
+                  lwd = 2))
+     
+     # Overlay densities for all targets
+     targets <- levels(as.factor(lmdf.c$target))
+     colors  <- rainbow(length(targets))
+     for(i in seq_along(targets)) {
+       dens <- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])
+       lines(dens, col = colors[i], lwd = 2)
+     }
+     
+     # Legend
+     legend("topright", 
+            legend = targets,
+            col    = colors, 
+            lwd    = 2)
+     
+#sum(match(fs2$fa,fs2$fg))
+#fa1$gu[fa1$WORD%in%gp]<-1
+#f#g1$gu[fg1$WORD%in%gp]<-1
+#fg1$gu<-fs4$p
+#fg1$gu<-fs3$p
+#fg1$gus<-fg1$FREQ*fg1$gu
+#fh1$gu[fh1$WORD%in%gp]<-1
+#fp1$gu[fp1$WORD%in%gp]<-1
+sum(fa1$gu)
+fa3<-join.freqs(fh,fg)
+fa4<-fa3%>%mutate(fa=fh+fg)
+fa4<-fa4[,c(1,4)]
+fa4
+fa5<-join.freqs(fa4,fp)
+fa2<-rbind(fh1,fg1,fp1)
+f
+fa2$target<-"all"
+lmdf<-rbind(fa2,fh1,fg1,fp1)
+sum(lmdf$gu)
+lmdf$f.rel<-lmdf$FREQ/lmdf$size
+head(lmdf)
+library(lme4)
+library(lmerTest)
+lm1<-lmer(f.rel~target*gus+(1|WORD),lmdf)
+#s1<-lmdf[sample(length(lmdf$WORD),50),]
+# lm1<-lmer(FREQ~target*gu+(1|size),lmdf)
+summary(lm1)
+lm2<-lm(f.rel~target*gus,lmdf)
+summary(lm2)
+fj5<-join.freqs(fa,fg,all = T)
+fj6<-join.freqs(fa,fp,all = T)
+fj7<-join.freqs(data.frame(fj6[,c(1,2)]),fg,all = T)
+fj8<-join.freqs(data.frame(fj7[,c(1,2)]),data.frame(fj1[,c(1,3)]))
+fj9<-join.freqs(data.frame(fj8[,c(1,2)]),data.frame(fj7[,c(1,3)]))
+fj10<-join.freqs(data.frame(fj9[,c(1,2)]),data.frame(fj6[,c(1,3)]))
+fj9<-cbind(as.character(fj7$Var1),fj7[,c(2,3)],fj4[,3])
+fj10<-cbind(factor(fj7$Var1),fj9)
+fj10[,1]<-as.character(fj7[,1])
+typeof(fj7[,1])
+fj3<-fj2
+fj3$fg<-NA
+fj11<-fj6
+fj11$fg<-NA
+for(k in 1:length(fg$Var1)){
+  cat("processing: ",k,"\r")
+  m<-fj11$Var1%in%fg$Var1[k]
+  fj11$fg[m]<-fg$Var1[k]
+}
+fj11$fh<-fj11$fa-fj11$fg
+#########################
+#save(fj11,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj11.f.all.RData"))
+#######################################################################################
+fj3$fg<-fg$Freq[match(fg$Var1, fj3$Var1)]
+
 fs<-fj1%>%mutate(p=fg/fa)
 fs<-fs[order(fs$p,decreasing = T),]
 head(fs,10)
 fs2<-fs2[order(fs2$p,decreasing = T),]
 head(fs2,10)
 ?join.freqs
-fj2<-join.freqs(fg,fa,all = F,threshold = 5)
+fj2<-join.freqs(fg,fa,all = F)
 fs3<-fj2%>%mutate(p=fg/fa)
+fg1$gu<-fs3$p
 fs3<-fs3[order(fs3$p,decreasing = T),]
-fs3<-fs3[fs3$p!=1,]
+#fs3<-fs3[fs3$p!=1,]
 #fs2<-fs2[order(fs2$p,decreasing = T),]
 head(fs3,20)
 fs4<-fs3
@@ -400,9 +893,15 @@ fs4$rfa<-fs4$fa/fs4$na
 head(fs4,20)
 fs4$rp<-fs4$rfg/fs4$rfa
 fs4<-fs4[order(fs4$rp,decreasing = T),]
+
 head(fs4,30)
 save(fs4,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/freq.fs4.RData"))
 save(fs4,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/freq.fs4.RData"))
 
 ### wks.
 #######################################
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/freq.fs4.RData"))
+head(fs4,30)
+fs4[fs4$fa==0,]
+
+
