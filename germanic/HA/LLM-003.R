@@ -697,6 +697,7 @@ human_typical <- re_lemma[order(re_lemma[["(Intercept)"]]), ]
 # tr<-re_lemma[re_lemma$`(Intercept)`>8,] # useless, simply all gpt lemma?
 lmdf.c$gus.c<-0
 lmdf.c$gus.c[lmdf.c$lemma%in%tr$lemma]<-1
+lmdf.c$gus.c[lmdf.c$lemma%in%lmdf.c$lemma[lmdf.c$target=="gpt"]]<-1
 lmdf.c$in.gp<- re_lemma$`(Intercept)`[match(lmdf.c$lemma, re_lemma$lemma)]
 lmdf.c$f.rel<-lmdf.c$freq/lmdf.c$size*1000000
 lmdf.c$target[grepl("human",lmdf.c$target)]<-"0-human"
@@ -771,53 +772,117 @@ for(i in seq_along(targets)) {
   abline(lm(f.rel ~ in.gp, data = subset_data), 
          col = colors[i], lwd = 2)
 }
+###################################
+### descriptive stats simple
+m<-lmdf.c$gus.c==1
+sum(m)
+mh<-lmdf.c$target=="0-human"
+mp<-lmdf.c$target=="post"
+mg<-lmdf.c$target=="gpt"
+shc<-sum(which(mh)%in%which(m))
+spc<-sum(which(mp)%in%which(m))
+sgc<-sum(which(mg)%in%which(m))
+sh<-sum(lmdf.c$freq[mh])
+sg<-sum(lmdf.c$freq[mg])
+sp<-sum(lmdf.c$freq[mp])
+mh1<-lmdf.c$gus.c==1&lmdf.c$target=="0-human"
+sh1<-sum(lmdf.c$freq[mh1])/sum(lmdf.c$freq[lmdf.c$target=="0-human"])
+mp1<-lmdf.c$gus.c==1&lmdf.c$target=="post"
+sp1<-sum(lmdf.c$freq[mp1])/sum(lmdf.c$freq[lmdf.c$target=="post"])
+mg1<-lmdf.c$gus.c==1&lmdf.c$target=="gpt"
+sg1<-sum(lmdf.c$freq[mg1])/sum(lmdf.c$freq[lmdf.c$target=="gpt"])
+sp1>sh1 # TRUE!
+### > more occurences (rel. frequencies) of gpt vocabular in post gpt corpus
+sp1-sh1 # only 0.02587 points
+############################################################################
+### simple plots
+p.df<-data.frame(gpt=sg1,pregpt=sh1,postgpt=sp1)
+boxplot(p.df)
+p.df<-lmdf.c
+p.df$target[p.df$target=="0-human"]<-"human"
+p.df<-data.frame(gpt=lmdf.c$freq[mg1],human=lmdf.c$freq[mh1],postgpt=lmdf.c$freq[mp1])
+#?boxplot
+boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T)
+library(ggplot2)
+dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
+#max(p.df$f.rel)
+# ggplot(data = dff2, aes(x = f.rel,fill = target)) +
+#   geom_density(alpha=0.5) +
+#   labs(title = "Density Plot", x = "clip score", y = "Density") +
+#   theme_minimal() 
+ggplot(data = dff2, aes(x = f.rel, fill = target)) +
+  geom_density(alpha = 0.3) +
+  coord_cartesian(xlim = c(1, 1000)) +  # set your range here
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal()
 
-# Density plot of in.gp by target
-levels(factor(lmdf.c$target))
-plot(density(lmdf.c$in.gp[lmdf.c$target == levels(factor(lmdf.c$target))], 
-             main = "Distribution of GPT scores (in.gp) by target",
-             xlab = "in.gp (GPT typicality score)",
-             ylab = "Density",
-             col  = 1, 
-             lwd = 2))
-     
-     # Overlay densities for all targets
-     targets <- levels(as.factor(lmdf.c$target))
-     colors  <- rainbow(length(targets))
-     for(i in seq_along(targets)) {
-       dens <- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])
-       lines(dens, col = colors[i], lwd = 2)
-     }
-     
-     # Legend
-     legend("topright", 
-            legend = targets,
-            col    = colors, 
-            lwd    = 2)
+# ?chisq.test
+# ## Effect of simulating p-values
+# x <- matrix(c(12, 5, 7, 7), ncol = 2)
+# x
+# chisq.test(x)$p.value           # 0.4233
+# chisq.test(x, simulate.p.value = TRUE, B = 10000)$p.value
+# # around 0.29!
+# x <- c(A = 20, B = 15, C = 25)
+# x<-matrix(c(sh1,sp1,sg1,sh,sp,sg),ncol = 2)
+# x<-c(sh1,sp1,sg1,sh,sp,sg)
+# chisq.test(x)
+# chisq.test(as.table(x))             # the same
+# #x <- c(89,37,30,28,2)
+# x<-c(sh1,sp1,sh,sp)
+# p <- c(0.05,0.05,0.05,0.05)
+# try(
+#   chisq.test(x, p = p)                # gives an error
+# )
+# chisq.test(x, p = p, rescale.p = TRUE)
+# 
 
-     
-          levels(factor(lmdf.c$target))
-     plot(density(lmdf.c$f.rel[lmdf.c$target == levels(factor(lmdf.c$target))], 
-                  main = "Distribution of GPT scores (in.gp) by target",
-                  xlab = "in.gp (GPT typicality score)",
-                  ylab = "Density",
-                  col  = 1, 
-                  lwd = 2))
-     
-     # Overlay densities for all targets
-     targets <- levels(as.factor(lmdf.c$target))
-     colors  <- rainbow(length(targets))
-     for(i in seq_along(targets)) {
-       dens <- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])
-       lines(dens, col = colors[i], lwd = 2)
-     }
-     
-     # Legend
-     legend("topright", 
-            legend = targets,
-            col    = colors, 
-            lwd    = 2)
-     
+# # Density plot of in.gp by target
+# levels(factor(lmdf.c$target))
+# plot(density(lmdf.c$in.gp[lmdf.c$target == levels(factor(lmdf.c$target))], 
+#              main = "Distribution of GPT scores (in.gp) by target",
+#              xlab = "in.gp (GPT typicality score)",
+#              ylab = "Density",
+#              col  = 1, 
+#              lwd = 2))
+#      
+#      # Overlay densities for all targets
+#      targets <- levels(as.factor(lmdf.c$target))
+#      colors  <- rainbow(length(targets))
+#      for(i in seq_along(targets)) {
+#        dens <- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])
+#        lines(dens, col = colors[i], lwd = 2)
+#      }
+#      
+#      # Legend
+#      legend("topright", 
+#             legend = targets,
+#             col    = colors, 
+#             lwd    = 2)
+# 
+#      
+#           levels(factor(lmdf.c$target))
+#      plot(density(lmdf.c$f.rel[lmdf.c$target == levels(factor(lmdf.c$target))], 
+#                   main = "Distribution of GPT scores (in.gp) by target",
+#                   xlab = "in.gp (GPT typicality score)",
+#                   ylab = "Density",
+#                   col  = 1, 
+#                   lwd = 2))
+#      
+#      # Overlay densities for all targets
+#      targets <- levels(as.factor(lmdf.c$target))
+#      colors  <- rainbow(length(targets))
+#      for(i in seq_along(targets)) {
+#        dens <- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])
+#        lines(dens, col = colors[i], lwd = 2)
+#      }
+#      
+#      # Legend
+#      legend("topright", 
+#             legend = targets,
+#             col    = colors, 
+#             lwd    = 2)
+#      
 #sum(match(fs2$fa,fs2$fg))
 #fa1$gu[fa1$WORD%in%gp]<-1
 #f#g1$gu[fg1$WORD%in%gp]<-1
