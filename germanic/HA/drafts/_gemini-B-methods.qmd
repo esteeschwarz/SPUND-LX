@@ -91,7 +91,7 @@ library(ggplot2)
 dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
 ggplot(data = dff2, aes(x = f.rel, fill = target)) +
   geom_density(alpha = 0.3) +
-  coord_cartesian(xlim = c(1, 1000)) +  # set your range here
+  coord_cartesian(xlim = c(0, 0.12)) +  # set your range here
   labs(title = "Density Plot", x = "GPT score", y = "Density") +
   theme_minimal()
 
@@ -101,7 +101,7 @@ ggplot(data = dff2, aes(x = f.rel, fill = target)) +
 
 ## evaluation
 ### basic descriptive
-to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemmas increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). if these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
+to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). if these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
 
 ```{r,kablediff}
 #| echo: false
@@ -127,8 +127,10 @@ main="descriptive stats: GPT vocab raw frequencies")
 
 ```
 
+### responsible lemmata
+
 ### linear regression {#sec-lm-1}
-to prove descriptive results, we compute the stability of the frequency variance for target and reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
+to prove descriptive results, we compute the stability of the frequency increase for target- vs. reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
 
 ```{r,lmes}
 #| echo: false
@@ -175,5 +177,6 @@ summary(lm2)
 #| warning: false
 
 print(anova(lm1))
-
 ```
+
+

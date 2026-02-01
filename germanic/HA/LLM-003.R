@@ -858,6 +858,10 @@ lm2a<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c) ### this, all targets
 #lm2b<-lmer(f.rel~target*gus.c+in.gp+(1|lemma),lmdf.s) ### or this, target pre/post
 summary(lm2a)
 summary(lm2b)
+lmran<-ranef(lm2a)
+lran<-lmran$lemma
+lran$lemma<-rownames(lran)
+lran<-lran[order(lran$`(Intercept)`,decreasing = T),]
 # lm2<-lmer(f.rel~target*in.gp+(1|size),lmdf.c)
 #lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.c)
 #lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.s)
