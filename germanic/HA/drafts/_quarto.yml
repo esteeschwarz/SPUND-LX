@@ -20,6 +20,7 @@ website:
           - href: draft-B.qmd
             text: draft B
           - yakura.qmd
+          - gemini.qmd
           - qa.qmd
       - play.qmd
       - text: drafts out

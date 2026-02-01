@@ -68,7 +68,9 @@ the research-question-still-to-develop will orientate on the findings ([Table `r
 
 #### Empirical evidence of Large Language Model's influence on human spoken communication, @yakura_empirical_2025
 - finds significant changes in human spoken communication past GPT onset
-- try replication on german language: [preview](yakura.html)
+- try replication on german language: 
+  - [preview motivation and preliminary](yakura.html)
+  - [preview paper & first results](gemini.html)
 
 
 [^1]:	which could very well be adapted to our research question

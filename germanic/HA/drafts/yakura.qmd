@@ -28,3 +28,5 @@ for the beginning we created a subset of protocols from 2021-01-01 to 2021-07-31
 ptx<-readLines("../g-prompt01.txt")
 print(ptx)
 ```
+
+> please preview/follow paper [here](gemini.html).

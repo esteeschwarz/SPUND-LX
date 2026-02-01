@@ -1,0 +1,11 @@
+---
+title: gemini paper
+bibliography: germanic-ai.bib
+---
+
+{{< include _vars.qmd >}}
+
+# index
+{{< include _gemini-A-ul.md >}}
+{{< include _gemini-B-methods.qmd >}}
+

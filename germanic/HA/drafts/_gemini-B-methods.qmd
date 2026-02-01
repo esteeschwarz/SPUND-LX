@@ -1,0 +1,34 @@
+## methods
+### data
+
+```{r}
+#| echo: false
+#| output: false
+
+mh<-lmdf.c$target=="0-human"
+mp<-lmdf.c$target=="post"
+mg<-lmdf.c$target=="gpt"
+
+sh<-sum(lmdf.c$freq[c(which(mh))])
+sp<-sum(lmdf.c$freq[c(which(mp))])
+sg<-sum(lmdf.c$freq[c(which(mg))])
+ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,sh,sp))
+
+```
+
+our human langugae data consists of raw texts from german bundestag plenary protocols (@dip_dip_2026). the LLM corpus consists of  model summaries of a first subset of these texts generated with the following prompt: @sec-gemini-prompt.
+
+#### corpus subsets
+`{r}knitr::kable(ts)`
+
+### gemini prompt {#sec-gemini-prompt}
+```{r}
+#| echo: false
+#| warning: false
+
+ptx<-readLines("../g-prompt01.txt")
+print(ptx)
+```
+
+### computation
+we first devised AI-typical lemma in the model corpus which are distinctive for that corpus using a linear model (R, lme4::glmer()) that calculates a score for each lemma in the corpus 
