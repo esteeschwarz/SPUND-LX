@@ -348,9 +348,11 @@ colnames(tokens.r)
 return(list(t1=tokens.r,t2=tokens.3))
 }
 #?udpipe_annotate
+###################
+### 16062.from here
 tokens<-get.freq()
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
 tokens.r<-tokens$t1
 tokens.3<-tokens$t2
 tokens.r$lemma<-NA
@@ -372,8 +374,9 @@ tokens.3$lemma[is.na(tokens.3$lemma)]<-tokens.3$word[is.na(tokens.3$lemma)]
 
 stops<-stopwords("de")
 stops
-stops.m<-c("dass","a","ab","immer","mal","erst","ja")
-stops.j<-c(stops,stops.m)
+stops.m<-c("dass","a","ab","immer","mal","erst","ja") # manual edit
+stops.p<-c("linken","beim","daran","geehrt","grünen","spd","cdu","csu","afd","AfD","fdp","dabei") # after modeling, (cmodel)
+stops.j<-c(stops,stops.m,stops.p)
 #??capitalize
 library(Hmisc)
 stops.u<-lapply(stops.j, function(x){
@@ -419,14 +422,18 @@ sum(grepl("[0-9]",tok.r3$lemma))
 sum(grepl("[0-9]",tok.r2$lemma))
 tok.r2<-tok.r2[!grepl("[0-9]",tok.r2$lemma),]
 tok.r3<-tok.r3[!grepl("[0-9]",tok.r3$lemma),]
-t1<-table(tok.r2$lemma)
-t1[order(t1)]
-t1<-table(tok.r3$lemma)
-t1[order(t1)]
+# t1<-table(tok.r2$lemma)
+# t1[order(t1)]
+# t1<-table(tok.r3$lemma)
+# t1[order(t1)]
 sum(tok.r3$word=="Die")
 sum(tok.r2$lemma%in%"Die")
-sum(tok.r2$word=="es")
+sum(tok.r2$word=="afd")
+sum(tok.r2$lemma=="afd")
+sum(grepl("AFD",tok.r2$lemma))
+tok.r2[grepl("afd",tok.r2$word),]
 sum(tok.r3$lemma%in%"Die")
+sum(tok.r3$lemma%in%"AFD")
 
 # fh<-freq.list(tok.r2$lemma[tok.r2$target=="human"])
 # sum("es"==fh$WORD)
@@ -446,8 +453,15 @@ sum(tok.r3$lemma%in%"Die")
 #fa<-fa[order(fa,decreasing = T)]
 #fa
 #?freq.list
+t1<-table(tok.r2$lemma)
+t1[t1=="afd"]
+grep("afd",t1)
+t1[order(t1)]
+mode(tok.r2)
 f1p<-data.frame(freq.list(tok.r3$lemma,convert = T))
-f1a<-data.frame(freq.list(tok.r2$lemma,convert = T))
+f1a<-data.frame(freq.list(as.character(tok.r2$lemma),convert = T))
+#f1ab<-f1a
+#f1ab$lemma<-as.character(f1a$WORD)
 f1h<-data.frame(freq.list(tok.r2$lemma[tok.r2$target=="human"],convert = T))
 f1g<-data.frame(freq.list(tok.r2$lemma[tok.r2$target=="gpt"],convert = T))
 fr.list<-list(a=f1a,h=f1h,g=f1g,p=f1p)
@@ -455,7 +469,9 @@ fr.list<-list(a=f1a,h=f1h,g=f1g,p=f1p)
 #f1a[fa$WORD=="die",]
 # t1<-table(tok.r2$lemma)
 # t1[order(t1,decreasing = T)]
+#######################################################################
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fr_list.RData"))
+#######################################################################
 f1p<-fr.list$p
 f1a<-fr.list$a
 f1g<-fr.list$g
@@ -466,11 +482,14 @@ f1h1<-data.frame(f1h,target="human",size=sum(f1h$FREQ))
 f1g1<-data.frame(f1g,target="gpt",size=sum(f1g$FREQ))
 
 ######################################################
-f1z1<-f1g1[1,]
+#f1z1<-f1g1[1,]
 #1z1[1,]<-c("intercept",1,"0-intercept",1)
 #fz1[1,1]<-"intercept"
 #fa2<-rbind(fh1,fp1)
 #f1
+####################
+### out
+lmd.out<-function(){
 lmdf<-rbind(f1z1,f1a1,f1h1,f1g1,f1p1)
 lmdf$WORD<-as.character(lmdf$WORD)
 mode(lmdf$WORD)
@@ -622,6 +641,9 @@ tab <- freq_df %>%
     human_count = human,
     gpt_count   = gpt
   )
+} #end out
+############################################
+### this
 lmdf<-data.frame(rbind(f1a1,f1p1,f1g1,f1h1))
 mode(lmdf$FREQ)<-"double"
 mode(lmdf$target)
@@ -631,6 +653,7 @@ sum(m)
 m<-which(m)
 m
 lmdf.c<-lmdf[,m]
+sum(lmdf.c$lemma=="afd")
 #mode()
 #factor(lmdf$target,levels = c("human", "gpt","all"))
 unique(lmdf$target)
@@ -648,47 +671,25 @@ tab <-
     values_fill = 0
     
   ) 
-#tab<-data.frame(tab)
-# tab <- lmdf.c %>%
-#   mutate(target = factor(target, levels = c("human", "gpt","post","all"))) %>%
-#   pivot_wider(
-#     names_from  = target,
-#     values_from = FREQ,
-#   ) %>%
-#   rename(
-#     human_count = human,
-#     gpt_count   = gpt
-#   )
-# tab <- lmdf %>%
-#   mutate(corpus = target) %>%
-#   pivot_wider(
-#     names_from  = target,
-#     values_from = FREQ,
-#     values_fill = 0
-#   ) %>%
-#   rename(
-#     human_count = human,
-#     gpt_count   = gpt
-#   )
-# 
 library(lme4)
 library(lmerTest)
+#################
+### get GPT score
+#################
+# takes bit...
+#################
 m <- glmer(
   cbind(gpt, human) ~ 1 + (1 | lemma),
   data   = tab,
   family = binomial
 )
-# m2<-lmer(freq~1+(1|lemma),lmdf.c)
-# sm2<-summary(m2)
-# r<-sm2$residuals
-# rl<-ranef(m2)$lemma
-# head(r,50)
-# summary(m)
 # ?ranef
+
 re_lemma <- ranef(m)$lemma  # data frame with '(Intercept)'
 re_lemma$lemma <- rownames(re_lemma)
 # re_lemma$res<-rl[,1]
 #save(re_lemma,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lemma_gpt-human.RData"))
+#############################################
 # Higher random intercept => more GPT‑typical
 gpt_typical  <- re_lemma[order(-re_lemma[["(Intercept)"]]), ]
 # gpt_typical  <- re_lemma[order(-re_lemma$res), ]
@@ -696,13 +697,15 @@ human_typical <- re_lemma[order(re_lemma[["(Intercept)"]]), ]
 # tr<-re_lemma[re_lemma$`(Intercept)`>0,] # useless, simply all gpt lemma?
 # tr<-re_lemma[re_lemma$`(Intercept)`>8,] # useless, simply all gpt lemma?
 lmdf.c$gus.c<-0
-lmdf.c$gus.c[lmdf.c$lemma%in%tr$lemma]<-1
-lmdf.c$gus.c[lmdf.c$lemma%in%lmdf.c$lemma[lmdf.c$target=="gpt"]]<-1
-lmdf.c$in.gp<- re_lemma$`(Intercept)`[match(lmdf.c$lemma, re_lemma$lemma)]
-lmdf.c$f.rel<-lmdf.c$freq/lmdf.c$size*1000000
+#lmdf.c$gus.c[lmdf.c$lemma%in%tr$lemma]<-1
+lmdf.c$gus.c[lmdf.c$lemma%in%lmdf.c$lemma[lmdf.c$target=="gpt"]]<-1 # set predictor=1 if lemma in gpt corpus
+lmdf.c$in.gp<- re_lemma$`(Intercept)`[match(lmdf.c$lemma, re_lemma$lemma)] 
+lmdf.c$f.rel<-(lmdf.c$freq/lmdf.c$size)*100
 lmdf.c$target[grepl("human",lmdf.c$target)]<-"0-human"
 save(lmdf.c,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lm-base_lmdf.c.RData"))
-
+save(lmdf.c,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lm-base_lmdf.c.RData"))
+# qlist<-list(lmdf=lmdf.c,plots=list(bplot=bplot,gplot=gplot),eval=list(gpt.v=gpt_typical))
+#?glmer
 #######################################
 # lmdf.c$gus.c<-0
 # lmdf.c$gus.c[lmdf.c$gus==1]<-lmdf.c$f.rel[lmdf.c$gus==1]
@@ -719,25 +722,29 @@ lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
 # lm2<-lmer(f.rel~target*gus.c+in.gp+(1+gus.c|lemma),lmdf.c)
 summary(lm2)
 ##############################################
+### lm with limited set
+
+
+
 # Predicted f.rel for high vs low in.gp in targetpost
-newdata <- data.frame(
-  target = "post",
-  # in.gp = c(0, 1),  # human vs GPT typical
-  in.gp = c(-5,0,5, 10),  # human vs GPT typical
-  lemma = "dummy"
-)
+# newdata <- data.frame(
+#   target = "post",
+#   # in.gp = c(0, 1),  # human vs GPT typical
+#   in.gp = c(-5,0,5, 10),  # human vs GPT typical
+#   lemma = "dummy"
+# )
 # newdata <- data.frame(
 #   target = "all",
 #   in.gp = c(0, 1),  # human vs GPT typical
 #   lemma = "dummy"
 # )
 ### for plot
-newdata <- data.frame(
-  target = "post",
-  # in.gp = c(0, 1),  # human vs GPT typical
-  in.gp = c(-5,0,5, 10),  # human vs GPT typical
-  lemma = "dummy"
-)
+# newdata <- data.frame(
+#   target = "post",
+#   # in.gp = c(0, 1),  # human vs GPT typical
+#   in.gp = c(-5,0,5, 10),  # human vs GPT typical
+#   lemma = "dummy"
+# )
 newdata <- data.frame(
   target = "post",
   # in.gp = c(0, 1),  # human vs GPT typical
@@ -747,31 +754,41 @@ newdata <- data.frame(
 )
 
 p1<-predict(lm2, newdata, re.form = NA)  # fixed effects only
+p1
 p1<-data.frame(gp.score=newdata$in.gp,freq=p1)
 plot(p1,type="l")
 
 # Base R scatter plot by target group
-plot(lmdf.c$in.gp, lmdf.c$f.rel, 
+gpt.pplot<-plot(lmdf.c$in.gp, lmdf.c$f.rel, 
      col  = as.factor(lmdf.c$target), 
      pch  = 19, 
      xlab = "in.gp (GPT typicality score)",
      ylab = "f.rel (relative frequency)",
-     main = "GPT scores vs relative frequency by target")
+     main = "GPT scores vs relative frequency by target"
 
-# Add legend
+     )
 legend("topright", 
-       legend = levels(as.factor(lmdf.c$target)),
-       col   = 1:length(levels(as.factor(lmdf.c$target))), 
-       pch   = 19)
-
-# Add regression lines per group (optional)
-targets <- unique(lmdf.c$target)
-colors  <- 1:length(targets)
-for(i in seq_along(targets)) {
-  subset_data <- lmdf.c[lmdf.c$target == targets[i], ]
-  abline(lm(f.rel ~ in.gp, data = subset_data), 
-         col = colors[i], lwd = 2)
-}
+            legend = levels(as.factor(lmdf.c$target)),
+            col   = 1:length(levels(as.factor(lmdf.c$target))), 
+            pch   = 19)
+#)
+#gpt.pplot
+# Add legend
+# legend("topright", 
+#        legend = levels(as.factor(lmdf.c$target)),
+#        col   = 1:length(levels(as.factor(lmdf.c$target))), 
+#        pch   = 19)
+# 
+# #gpt.pplot
+# # Add regression lines per group (optional)
+# targets <- unique(lmdf.c$target)
+# colors  <- 1:length(targets)
+# 
+# for(i in seq_along(targets)) {
+#   subset_data <- lmdf.c[lmdf.c$target == targets[i], ]
+#   abline(lm(f.rel ~ in.gp, data = subset_data), 
+#          col = colors[i], lwd = 2)
+# }
 ###################################
 ### descriptive stats simple
 m<-lmdf.c$gus.c==1
@@ -796,13 +813,18 @@ sp1>sh1 # TRUE!
 sp1-sh1 # only 0.02587 points
 ############################################################################
 ### simple plots
-p.df<-data.frame(gpt=sg1,pregpt=sh1,postgpt=sp1)
-boxplot(p.df)
+#p.df<-data.frame(gpt=sg1,pregpt=sh1,postgpt=sp1)
+
+#save(lmdf.c,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lm-base_lmdf.c.RData"))
+# qlist<-list(lmdf=lmdf.c,plots=list(p.df=p.df),eval=list(gpt.v=gpt_typical))
+
+
+#boxplot(p.df)
 p.df<-lmdf.c
+#p.df<-data.frame(gpt=lmdf.c$freq[mg1],human=lmdf.c$freq[mh1],postgpt=lmdf.c$freq[mp1])
 p.df$target[p.df$target=="0-human"]<-"human"
-p.df<-data.frame(gpt=lmdf.c$freq[mg1],human=lmdf.c$freq[mh1],postgpt=lmdf.c$freq[mp1])
 #?boxplot
-boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T)
+boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T)
 library(ggplot2)
 dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
 #max(p.df$f.rel)
@@ -812,11 +834,139 @@ dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
 #   theme_minimal() 
 ggplot(data = dff2, aes(x = f.rel, fill = target)) +
   geom_density(alpha = 0.3) +
-  coord_cartesian(xlim = c(1, 1000)) +  # set your range here
+  coord_cartesian(xlim = c(0, 0.12)) +  # set your range here
   labs(title = "Density Plot", x = "clip score", y = "Density") +
   theme_minimal()
+#################################################################
+### lm with limited subset of corpus
+sum(mh)
+sum(mp)
+lmdf.s<-lmdf.c[c(which(mh),which(mp)),]
+p.df<-lmdf.c
+#p.df<-data.frame(gpt=lmdf.c$freq[mg1],human=lmdf.c$freq[mh1],postgpt=lmdf.c$freq[mp1])
+p.df$target[p.df$target=="0-human"]<-"human"
+lm1<-lm(f.rel~target*in.gp,lmdf.s)
+# lm1<-lm(f.rel~target+in.gp,lmdf.c)
+# lm1<-lm(f.rel~target*gus.c,lmdf.c)
+summary(lm1)
+anova(lm1)
+#lmdf[lmdf$target=="post",]
+# lm2b<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.s)
+ lm2b<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.s)
+# lm2a<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.c)
+lm2a<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c) ### this, all targets
+#lm2b<-lmer(f.rel~target*gus.c+in.gp+(1|lemma),lmdf.s) ### or this, target pre/post
+summary(lm2a)
+summary(lm2b)
+# lm2<-lmer(f.rel~target*in.gp+(1|size),lmdf.c)
+#lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.c)
+#lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.s)
+#lm2<-lmer(f.rel~target*gus.c+in.gp+(1|lemma),lmdf.s)
+#summary(lm2)
+############
+### get responsible lemmata
+suh<-lmdf.c[mh1,]
+sup<-lmdf.c[mp1,]
+lhp<-lapply(suh$lemma, function(x){
+  f1<-suh$freq[suh$lemma==x]/sum(suh$freq)
+  f2<-sup$freq[sup$lemma==x]/sum(sup$freq)
+  ifelse(f2>f1,return(sup[sup$lemma==x,]),return(NA))
+  return(NA)
+})
+library(abind)
+lhp<-lhp[!is.na(lhp)]
+lpt<-data.frame(abind(lhp,along = 1))
+# sum(lhpu)
+# lpt<-suh[lhpu,]
+# x<-10
+# y<-100
+# x/(y*100)
+lpt[lpt$in.gp>8&lpt$f.rel>=4,]
+lpt$f.r2<-as.double(lpt$freq)/as.double(lpt$size)*100
+lpt[lpt$in.gp>=6&lpt$f.r2>=0.02,]
+#save(lpt,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lpt.RData"))
 
-# ?chisq.test
+#################################
+### how many speakers in plenar?
+# relation in.gp / f.rel:
+# with
+# lc<-lpt[lpt$in.gp>=7&lpt$f.r2>=0.02,]
+# # we get n=9 lemma, freq from 303 to 1616
+# # ?chisq.test
+# lp<-lpt
+i<-1
+k<-113
+k
+i<-1
+############################################################################
+### get lemma responsible for results, by chisquare test on correlation of
+### relative frequencies and gpt score of lemma
+get.lemmas<-function(pt=0.2){
+  mf<-max(lpt$f.r2)
+  mf<-ceiling(mf*100)
+  mfa<-c(1:mf)
+  cmodel<-lapply(seq_along(1:ceiling(as.double(max(lpt$in.gp)))), function(i){
+  plist<-list()
+  lt<-list(p=1)
+  ll<-list()
+  
+  put.lemma<-function(lt.p,lc){
+    ll<-list()
+    
+  ll$p<-lt.p
+  ll$lemmas<-lc$lemma
+  return(ll)
+  }
+  #k
+  cat("top run:",i,"\n")
+#  mfa
+  k<-10
+  for(k in mfa){
+    cat("run",i,"loop run:\t\t",k,"\r")
+    p<-k/100
+    lc<-lpt[lpt$in.gp>=i&lpt$f.r2>=p,]
+  ifelse(length(lc$FREQ)>1,
+  lt<-chisq.test(lc$in.gp,lc$f.r2),
+  lt$p.value<-1)
+  lt.p<-lt$p.value
+  lt.p
+  plist[k]<-NA
+  if(lt.p<pt&lt.p>0.0000000001){
+    plist[k]<-lt.p
+    ll[[k]]<-put.lemma(lt.p,lc)
+  }
+  }
+  return(ll)
+})
+all_lemmas <- unlist(lapply(cmodel, function(L1) {
+  l<-lapply(L1, function(L2){L2[["lemmas"]]
+  })
+}))
+
+lemmas<-all_lemmas[!is.na(all_lemmas)]
+# t1<-table(lemmas)
+# t1<-t1[order(t1,decreasing = T)]
+# t1
+t1<-freq.list(lemmas)
+}
+# t1<-get.lemmas(pt=0.1) # pt = threshold to chisquare valid p-value of freq vs gpt.score, here: p < pt
+# t1
+### wks.
+### turns out that
+# afd,cdu,csu,spd,grünen are the topmost responsible lemma for our results at a pt=0.5 threshold
+# so these have to be discarded via the stoplist
+# if we set pt lower then we get more human terms i.e. we harden the connection between a high score and a high frequency and get more valuable terms.
+# put that in a matrix...
+t1<-get.lemmas(pt=0.1) # pt = threshold to chisquare valid p-value of freq vs gpt.score, here: p < pt
+t2<-get.lemmas(pt=0.2) # pt = threshold to chisquare valid p-value of freq vs gpt.score, here: p < pt
+tj<-join.freqs(t1,t2)
+tj2<-tj[tj$t1!=tj$t2,]
+tj3<-tj2%>%mutate(diff=t2-t1)
+#save(tj3,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lemma-resp.tj3.RData"))
+###########################################################################################
+###
+#chisq.test(lc$in.gp,lc$f.r2)
+# model collapses
 # ## Effect of simulating p-values
 # x <- matrix(c(12, 5, 7, 7), ncol = 2)
 # x
