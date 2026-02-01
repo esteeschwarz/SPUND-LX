@@ -1,6 +1,4 @@
 ---
-title: methods
-bibliography: germanic-ai.bib
 ---
 
 ## methods
@@ -30,7 +28,7 @@ our human langugae data consists of raw texts from german bundestag plenary prot
 `r knitr::kable(ts)`
 
 ### gemini prompt {#sec-gemini-prompt}
-```{r}
+```{r,prompt}
 #| echo: false
 #| warning: false
 
@@ -39,4 +37,87 @@ print(ptx)
 ```
 
 ### computation
-we first devised AI-typical lemma in the model corpus which are distinctive for that corpus using a linear model (R, lme4::glmer()) that calculates a score for each lemma in the corpus 
+we first devised AI-typical lemmata in the model corpus which are distinctive for that corpus using a linear regression model (R, package lme4::glmer(): @bates_fitting_2015) that calculates a score for each lemma in the corpus, see 
+
+```{r}
+#| echo: false
+#| output: false
+#| label: gpt.dplot
+#| fig-cap: "lemma gpt score"
+
+gpt.pplot<-plot(lmdf.c$in.gp, lmdf.c$f.rel, 
+     col  = as.factor(lmdf.c$target), 
+     pch  = 19, 
+     xlab = "in.gp (GPT typicality score)",
+     ylab = "f.rel (relative frequency)",
+     main = "GPT scores vs relative frequency by target"
+
+     )
+legend("topright", 
+            legend = levels(as.factor(lmdf.c$target)),
+            col   = 1:length(levels(as.factor(lmdf.c$target))), 
+            pch   = 19)
+
+```
+
+
+```{r, prelim}
+#| echo: false
+#| output: false
+
+
+mh1<-lmdf.c$gus.c==1&lmdf.c$target=="0-human"
+sh1<-sum(lmdf.c$freq[mh1])/sum(lmdf.c$freq[lmdf.c$target=="0-human"])
+mp1<-lmdf.c$gus.c==1&lmdf.c$target=="post"
+sp1<-sum(lmdf.c$freq[mp1])/sum(lmdf.c$freq[lmdf.c$target=="post"])
+mg1<-lmdf.c$gus.c==1&lmdf.c$target=="gpt"
+sg1<-sum(lmdf.c$freq[mg1])/sum(lmdf.c$freq[lmdf.c$target=="gpt"])
+sp1>sh1 # TRUE!
+### > more occurences (rel. frequencies) of gpt vocabular in post gpt corpus
+sp1-sh1 # only 0.02587 points
+
+boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T)
+
+library(ggplot2)
+dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
+#max(p.df$f.rel)
+# ggplot(data = dff2, aes(x = f.rel,fill = target)) +
+#   geom_density(alpha=0.5) +
+#   labs(title = "Density Plot", x = "clip score", y = "Density") +
+#   theme_minimal() 
+ggplot(data = dff2, aes(x = f.rel, fill = target)) +
+  geom_density(alpha = 0.3) +
+  coord_cartesian(xlim = c(1, 1000)) +  # set your range here
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal()
+
+```
+
+```{r}
+#| echo: false
+#| output: false
+#| label: boxplot01
+#| fig-cap: "lemma gpt comparison"
+
+
+boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
+main="descriptive stats: gpt vocab raw frequencies")
+
+```
+
+```{r}
+#| echo: false
+#| output: false
+#| label: densplot01
+#| fig-cap: "target gpt density"
+
+
+library(ggplot2)
+dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
+ggplot(data = dff2, aes(x = f.rel, fill = target)) +
+  geom_density(alpha = 0.3) +
+  coord_cartesian(xlim = c(1, 1000)) +  # set your range here
+  labs(title = "Density Plot", x = "GPT score", y = "Density") +
+  theme_minimal()
+
+```
