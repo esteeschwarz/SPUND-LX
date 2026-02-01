@@ -4,7 +4,7 @@ qa<-c("Wie KI unsere Sprache","yakura-llm")
 get.notes<-function(docdir){
   f<-list.files(docdir)
   m<-grep("docx",f)
-  f[m]
+  # f[m]
   m<-m[2] # latest docx export
   library(officer)
 #  f<-list.files()
@@ -13,26 +13,26 @@ get.notes<-function(docdir){
   #t[[7]]
   #library(xml2)
   d<-docx_summary(t)
-  d
+  # d
   
   get.qnotes<-function(q,d){
   #q<-"Wie KI unsere Sprache"
   # m<-grep("Wie KI unsere Sprache",d$text)
     m<-grep(q,d$text)
     h1<-d$style_name=="Heading 1"
-  d$text[h1]
+  # d$text[h1]
   #h1<-d$level==1 # wks only on tapee, different officer version?
   h1<-which(h1)
   hb<-m==h1
   hba<-which(hb)
-  d$text[h1[hb]]
+  # d$text[h1[hb]]
   hba<-h1[hb]
   hbb<-h1>m
   hbc<-h1[which(hbb)][1]-1
   if(is.na(hbc))
      hbc<-length(d$doc_index)
-  hbc
-  d$text[hba:hbc]
+  # hbc
+  # d$text[hba:hbc]
   notes<-d$text[hba:hbc]
   notes<-notes[notes!=""]
   
@@ -100,7 +100,7 @@ put.qmd<-function(t2){
   ifelse(sum(is.na(a))==length(a),tdf$a[n]<-t,tdf$a[n]<-a[2])
   #print("chk1")
   ifelse(sum(is.na(a))==length(a),tdf$t[n]<-paste0(t,"\n"),tdf$t[n]<-paste0("## ",n,"\n",a[2],"\n"))
-  a
+  # a
   return(tdf[n,])
   #t<-t
   #n<-a[2]
@@ -112,7 +112,7 @@ put.qmd<-function(t2){
 library(abind)
 a3<-data.frame(abind(a2,along = 1))
 }
-notes
+# notes
 #a2<-put.qmd(notes$nx)
 a2<-put.qmd(notes)
 #a2$t[1:10]

@@ -1,4 +1,12 @@
+---
+title: methods
+bibliography: germanic-ai.bib
+---
+
 ## methods
+### snc
+16062.1
+
 ### data
 
 ```{r}
@@ -19,7 +27,7 @@ ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,sh,sp))
 our human langugae data consists of raw texts from german bundestag plenary protocols (@dip_dip_2026). the LLM corpus consists of  model summaries of a first subset of these texts generated with the following prompt: @sec-gemini-prompt.
 
 #### corpus subsets
-`{r}knitr::kable(ts)`
+`r knitr::kable(ts)`
 
 ### gemini prompt {#sec-gemini-prompt}
 ```{r}
