@@ -1,4 +1,4 @@
-```{r}
+```{r,vars}
 #| echo: false
 #| warning: false
 #print("vvars qmd run...")

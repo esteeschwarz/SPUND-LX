@@ -7,6 +7,8 @@ Our findings are still limited to a yet very small corpus of texts after the int
 ## hypothesis
 following @yakura_empirical_2025 we assumed that the consuming of LLM generated language influences the human production of language such that vocabulary typical for LLM output will be found with higher frequencies in human language corpora dating after chat agents introduction.
 
+### next methods
+
 
 
 

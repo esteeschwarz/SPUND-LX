@@ -1,13 +1,10 @@
----
----
-
 ## methods
 ### snc
-16062.1
+16062.1.2
 
 ### data
 
-```{r}
+```{r,m1}
 #| echo: false
 #| output: false
 
@@ -37,29 +34,7 @@ print(ptx)
 ```
 
 ### computation
-we first devised AI-typical lemmata in the model corpus which are distinctive for that corpus using a linear regression model (R, package lme4::glmer(): @bates_fitting_2015) that calculates a score for each lemma in the corpus, see 
-
-```{r}
-#| echo: false
-#| output: false
-#| label: gpt.dplot
-#| fig-cap: "lemma gpt score"
-
-gpt.pplot<-plot(lmdf.c$in.gp, lmdf.c$f.rel, 
-     col  = as.factor(lmdf.c$target), 
-     pch  = 19, 
-     xlab = "in.gp (GPT typicality score)",
-     ylab = "f.rel (relative frequency)",
-     main = "GPT scores vs relative frequency by target"
-
-     )
-legend("topright", 
-            legend = levels(as.factor(lmdf.c$target)),
-            col   = 1:length(levels(as.factor(lmdf.c$target))), 
-            pch   = 19)
-
-```
-
+we first devised AI-typical lemmata in the model corpus which are distinctive for that corpus using a linear regression model (R, package lme4::glmer(): @bates_fitting_2015) that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
 
 ```{r, prelim}
 #| echo: false
@@ -75,40 +50,40 @@ sg1<-sum(lmdf.c$freq[mg1])/sum(lmdf.c$freq[lmdf.c$target=="gpt"])
 sp1>sh1 # TRUE!
 ### > more occurences (rel. frequencies) of gpt vocabular in post gpt corpus
 sp1-sh1 # only 0.02587 points
-
-boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T)
-
-library(ggplot2)
-dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
-#max(p.df$f.rel)
-# ggplot(data = dff2, aes(x = f.rel,fill = target)) +
-#   geom_density(alpha=0.5) +
-#   labs(title = "Density Plot", x = "clip score", y = "Density") +
-#   theme_minimal() 
-ggplot(data = dff2, aes(x = f.rel, fill = target)) +
-  geom_density(alpha = 0.3) +
-  coord_cartesian(xlim = c(1, 1000)) +  # set your range here
-  labs(title = "Density Plot", x = "clip score", y = "Density") +
-  theme_minimal()
+p.df<-lmdf.c
+p.df$target[p.df$target=="0-human"]<-"human"
+s.df<-data.frame(target=c("human","post","DIFF:"),freq=c(sh1,sp1,sp1-sh1))
+s.df$freq<-round(s.df$freq,4)
 
 ```
 
-```{r}
+
+```{r,gptplot}
 #| echo: false
-#| output: false
-#| label: boxplot01
-#| fig-cap: "lemma gpt comparison"
+#| output: true
+#| label: fig-gpt.dplot
+#| fig-cap: "lemma gpt scores over targets"
 
+gpt.pplot<-plot(p.df$in.gp, p.df$f.rel, 
+     col  = as.factor(p.df$target), 
+     pch  = 19, 
+     xlab = "in.gp (GPT typicality score)",
+     ylab = "f.rel (relative frequency)",
+     main = "GPT scores vs relative frequency by target"
 
-boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
-main="descriptive stats: gpt vocab raw frequencies")
+     )
+legend("topright", 
+            legend = levels(as.factor(p.df$target)),
+            col   = 1:length(levels(as.factor(p.df$target))), 
+            pch   = 19)
 
 ```
 
-```{r}
+
+```{r,gplot}
 #| echo: false
-#| output: false
-#| label: densplot01
+#| output: true
+#| label: fig-densplot01
 #| fig-cap: "target gpt density"
 
 
@@ -119,5 +94,86 @@ ggplot(data = dff2, aes(x = f.rel, fill = target)) +
   coord_cartesian(xlim = c(1, 1000)) +  # set your range here
   labs(title = "Density Plot", x = "GPT score", y = "Density") +
   theme_minimal()
+
+```
+
+
+
+## evaluation
+### basic descriptive
+to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemmas increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). if these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
+
+```{r,kablediff}
+#| echo: false
+#| output: true
+#| label: tbl-s.df
+#| tbl-cap: "GPT lemma frequencies (table) over target. (freq / Mtoken)"
+
+knitr::kable(s.df,label = "tab-s.df")
+```
+
+
+```{r,boxdesc}
+#| echo: false
+#| output: true
+#| label: fig-boxplot01
+#| fig-cap: "GPT lemma frequencies (boxplot) over target. (freq / Mtoken)"
+#| warning: false
+
+
+# boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
+boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+main="descriptive stats: GPT vocab raw frequencies")
+
+```
+
+### linear regression {#sec-lm-1}
+to prove descriptive results, we compute the stability of the frequency variance for target and reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
+
+```{r,lmes}
+#| echo: false
+#| output: true
+#| warning: false
+
+library(lme4)
+library(lmerTest)
+
+lm1<-lm(f.rel~target*in.gp,lmdf.c)
+lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
+
+```
+
+#### basic (lm)
+formula: `frequency.relative ~ target * in.gpt`
+
+```{r,lm}
+#| echo: false
+#| output: true
+#| warning: false
+
+summary(lm1)
+
+```
+
+#### mixed effects model (lmer)
+formula: `frequency.relative ~ target * in.gpt +(1|lemma)`
+
+```{r,lmer}
+#| echo: false
+#| output: true
+#| warning: false
+
+summary(lm2)
+
+```
+
+
+#### anova of mixed effects model
+```{r,anova}
+#| echo: false
+#| output: true
+#| warning: false
+
+print(anova(lm1))
 
 ```

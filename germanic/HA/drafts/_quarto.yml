@@ -47,6 +47,7 @@ format:
     #font: Courier
     css: styles.css
     toc: true
+    number-sections: true
     toc-depth: 3
     include-in-header:
       text: |
