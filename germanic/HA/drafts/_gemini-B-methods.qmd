@@ -130,8 +130,12 @@ main="descriptive stats: GPT vocab raw frequencies")
 ```
 
 ### responsible lemmata
-selection of first 20 lemma that are responsible for the increase of frequency in general
-```{r,lemma-res}
+selection of first 20 lemma that are responsible for the increase of frequency in general.
+
+> this list is still in progress since bit complicated to sync descriptive lemma list with the linear model list derived, which looks more realistic for a gpt output but with lot of rubbish in it due to mislemmatization.
+
+#### lemma descriptive output
+```{r,lemma-res-desc}
 #| echo: false
 #| output: true
 #| warning: false
@@ -140,6 +144,18 @@ load("../lemma-resp.tj3.RData")
 
 head(tj3$WORD[order(tj3$diff,decreasing = T)],20)
 ```
+
+#### lemma linear model output
+```{r,lemma-res-lm}
+#| echo: false
+#| output: true
+#| warning: false
+
+load("../lemma-res.lres.RData")
+lres.h<-head(lres,20)
+lres.h$lemma
+```
+
 
 ### linear regression {#sec-lm-1}
 to prove descriptive results, we compute the stability of the frequency increase for target- vs. reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
@@ -217,4 +233,4 @@ in the fixed effects correlation output of the lmer() model we see that the gpt 
 print(anova(lm1))
 ```
 
-
+# references {#references}
