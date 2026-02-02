@@ -128,6 +128,7 @@ main="descriptive stats: GPT vocab raw frequencies")
 ```
 
 ### responsible lemmata
+selection of first 20 lemma that are responsible for the increase of frequency in general
 ```{r,lemma-res}
 #| echo: false
 #| output: true
@@ -137,6 +138,7 @@ main="descriptive stats: GPT vocab raw frequencies")
 
 load("../lemma-resp.tj3.RData")
 
+head(tj3$WORD[order(tj3$diff,decreasing = T)],20)
 ```
 
 ### linear regression {#sec-lm-1}
@@ -144,7 +146,7 @@ to prove descriptive results, we compute the stability of the frequency increase
 
 ```{r,lmes}
 #| echo: false
-#| output: true
+#| output: false
 #| warning: false
 
 library(lme4)
@@ -183,7 +185,7 @@ summary(lm2)
 #### anova of mixed effects model
 ```{r,anova}
 #| echo: false
-#| output: true
+#| output: false
 #| warning: false
 
 print(anova(lm1))
