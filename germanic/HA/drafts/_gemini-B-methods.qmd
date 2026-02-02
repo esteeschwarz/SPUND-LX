@@ -119,7 +119,7 @@ knitr::kable(s.df,label = "tab-s.df")
 #| echo: false
 #| output: true
 #| label: fig-boxplot01
-#| fig-cap: "GPT lemma frequencies (boxplot) over target. (freq / Mtoken)"
+#| fig-cap: "GPT lemma frequencies (boxplot) over target. (freq / vH)"
 #| warning: false
 
 
