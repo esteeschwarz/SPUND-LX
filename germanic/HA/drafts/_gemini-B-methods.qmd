@@ -107,7 +107,7 @@ to first gather an insight, yet with simple descriptive stats comparing the raw 
 #| echo: false
 #| output: true
 #| label: tbl-s.df
-#| tbl-cap: "GPT lemma frequencies (table) over target. (freq / Mtoken)"
+#| tbl-cap: "GPT lemma frequencies (table) over target. (freq / vH)"
 
 knitr::kable(s.df,label = "tab-s.df")
 ```
@@ -132,8 +132,6 @@ selection of first 20 lemma that are responsible for the increase of frequency i
 ```{r,lemma-res}
 #| echo: false
 #| output: true
-#| label: fig-boxplot01
-#| fig-cap: "GPT lemma frequencies (boxplot) over target. (freq / Mtoken)"
 #| warning: false
 
 load("../lemma-resp.tj3.RData")
@@ -144,7 +142,7 @@ head(tj3$WORD[order(tj3$diff,decreasing = T)],20)
 ### linear regression {#sec-lm-1}
 to prove descriptive results, we compute the stability of the frequency increase for target- vs. reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
 
-```{r,lmes}
+```{r,lm-models}
 #| echo: false
 #| output: false
 #| warning: false
@@ -177,10 +175,21 @@ formula: `frequency.relative ~ target * in.gpt +(1|lemma)`
 #| output: true
 #| warning: false
 
-summary(lm2)
+s2<-summary(lm2)
+s2
+ingpvar<-s2$vcov@factors$correlation
+ingpv<-ingpvar[,5]
+ingpv<-ingpv[4]
+#ingpv
 
 ```
 
+#### helper interpretation, to be tested
+the coefficients interesting for us are the in.gp and targetpost:in.gp estimates. here we test the association between the gpt score of a lemma and its estimated frequency and its showing that a general increase of frequency is estimated if the score rises and that for the post-gpt corpus that increase is significant (and not random in data). 
+
+in the correlation output of the lmer() model we see that the gpt score increases the target corpus frequency for lemma by:
+
+``` `r ingpv` ```
 
 #### anova of mixed effects model
 ```{r,anova}
