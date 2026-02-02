@@ -1,6 +1,8 @@
 ## methods
 ### snc
-16062.1.2
+16062.1.2.16063.1
+
+please cf. @schwarz_this_2026 for the corpus building and evaluation script (still messy.)
 
 ### data
 
@@ -185,11 +187,9 @@ ingpv<-ingpv[4]
 ```
 
 #### helper interpretation, to be tested
-the coefficients interesting for us are the in.gp and targetpost:in.gp estimates. here we test the association between the gpt score of a lemma and its estimated frequency and its showing that a general increase of frequency is estimated if the score rises and that for the post-gpt corpus that increase is significant (and not random in data). 
+the coefficients interesting for us are the in.gp and targetpost:in.gp estimates. here we test the association between the gpt score of a lemma and its estimated frequency and its showing that a general increase of frequency is estimated if the score rises and that for the post-gpt corpus that increase is small but yet significant (and not random in data). 
 
-in the correlation output of the lmer() model we see that the gpt score increases the target corpus frequency for lemma by:
-
-``` `r ingpv` ```
+in the correlation output of the lmer() model we see that the gpt score increases the target corpus frequency for lemma by ``` `r ingpv` ```.
 
 #### anova of mixed effects model
 ```{r,anova}
