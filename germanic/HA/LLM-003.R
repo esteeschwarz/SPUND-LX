@@ -849,7 +849,14 @@ summary(lm2b)
 lmran<-ranef(lm2a)
 lran<-lmran$lemma
 lran$lemma<-rownames(lran)
-lran<-lran[order(lran$`(Intercept)`,decreasing = T),]
+lran<-lran[order(lran$`(Intercept)`,decreasing = F),]
+# save(lran,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lemma-res.lran.RData"))
+lres.h<-head(lran,1000)
+lres.t<-tail(lran,1000)
+lres<-rbind(lres.h,lres.t)
+save(lres,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lemma-res.lres.RData"))
+
+lres
 # lm2<-lmer(f.rel~target*in.gp+(1|size),lmdf.c)
 #lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.c)
 #lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.s)

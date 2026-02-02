@@ -1,9 +1,10 @@
 ---
-title: paper
+title: draft paper
 ---
 # intro
 ## abstract
 ...
+
 ## preliminary
 since we do not really get on information concerning the actual workflows of the content creation to the DCL pages, we will try to propose a more general pipeline to that based on our experiences with publishing. we will introduce possible alternatives to the actual (assumed) workflow and setup and give short insight into what is possible and under which circumstances.
 

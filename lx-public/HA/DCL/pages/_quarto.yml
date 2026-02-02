@@ -15,6 +15,7 @@ website:
       - workflow.qmd
       - mermaids.qmd
       - survey.qmd
+      - page2.qmd
     - text: drafts
       menu:
       - href: sample-A.html

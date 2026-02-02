@@ -26,8 +26,8 @@ library(jsonlite)
 bibdf<-fromJSON(y,flatten=T)
 bibkey<-bibdf$key[grep("lx-pub",bibdf$data.name)]
 #################################################
-response<-GET(paste0("https://api.zotero.org/groups/4713246/collections/",bibkey,"/items?format=json"))
-response.bib<-GET(paste0("https://api.zotero.org/groups/4713246/collections/",bibkey,"/items?format=bibtex"))
+response<-GET(paste0("https://api.zotero.org/groups/4713246/collections/",bibkey,"/items?format=json&limit=499"))
+response.bib<-GET(paste0("https://api.zotero.org/groups/4713246/collections/",bibkey,"/items?format=bibtex&limit=499"))
 # bib<-httr::content(response,"text")
 bibjs<-httr::content(response,"text")
 bibtx.cpt<-httr::content(response.bib,"text")
