@@ -74,6 +74,7 @@ for (k in m2){
 bdf$data.title
 bdf$anno
 bdf$data.tags
+#tag # defined in parent script!
 m<-lapply(bdf$data.tags,function(x){tag%in%unlist(x)&"front"%in%unlist(x)})
 sum(unlist(m))
 which(unlist(m))
@@ -92,6 +93,7 @@ library(xml2)
 i<-2
 ##################################################
 dclbib<-lapply(1:length(bdf.tag$key),function(i){
+  print(i)
 anno.t<-""
 key<-bdf.tag$key[i]
 print(bdf.tag$title[i])
@@ -106,7 +108,7 @@ if(!is.na(anno)){
 anno.t<-paste0("<ul>",t,"</ul>")
 }
 #anno.t
-  response<-GET(paste0("https://api.zotero.org/groups/4713246/items/",key,"?format=bibtex"))
+  response<-GET(paste0("https://api.zotero.org/groups/4713246/items/",key,"?format=bibtex&limit=499"))
 #t<-content(response,"text")
 bibtx<-httr::content(response,"text")
 #y<-tempfile("ref",fileext = ".bib")
@@ -115,7 +117,9 @@ bibtx<-httr::content(response,"text")
 writeLines(bibtx,y)
 bibitem<-bib2df(y)
 x<-bibitem
-rref <- bibentry(
+print(x)
+if(length(x$BIBTEXKEY)>0){
+  rref <- bibentry(
    bibtype = x$CATEGORY,
    key = x$BIBTEXKEY,
    title = x$TITLE,
@@ -125,6 +129,7 @@ rref <- bibentry(
    year = x$YEAR,
    url = x$URL,
     annote = anno.t)
+}
 })
 
 
