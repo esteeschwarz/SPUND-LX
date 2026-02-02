@@ -83,9 +83,9 @@ ptdf.2<-rbind(tdf1,tdf2,tdf3,tdf4,tdf5)
 
 #save(ptdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData"))
 }
-ptdf.2<-get.btt()
+#ptdf.2<-get.btt()
 
-save(ptdf.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData"))
+#save(ptdf.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData"))
 
 get.gpt<-function(){
 ### load btt corpus
@@ -228,7 +228,8 @@ btt.summaries<-get.sum(ptdf)
 }
 ############################################################
 ### get gpt keywords: gpt preferred words vs. human language
-get.freq<-function(){
+############################################################
+get.tokens<-function(){
 library(quanteda)
 # library(devtools)
 # install_github("skeptikantin/collostructions")
@@ -348,9 +349,11 @@ colnames(tokens.r)
 return(list(t1=tokens.r,t2=tokens.3))
 }
 #?udpipe_annotate
-###################
+###########################################################################
+###########################################################################
 ### 16062.from here
-tokens<-get.freq()
+tokens<-get.tokens()
+get.freq<-function(){
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
 tokens.r<-tokens$t1
@@ -358,12 +361,6 @@ tokens.3<-tokens$t2
 tokens.r$lemma<-NA
 tokens.3$lemma<-NA
 
-# for(k in 1:length(fj$WORD)){
-#   cat("token:",k,"\r")
-#   token<-fj$WORD[k]
-#   m<-tokens.r$word==token
-#   tokens.r$lemma[m]<-fj$lemma[k]
-# }
 
 #tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
 tokens.r$lemma <- dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
@@ -469,9 +466,11 @@ fr.list<-list(a=f1a,h=f1h,g=f1g,p=f1p)
 #f1a[fa$WORD=="die",]
 # t1<-table(tok.r2$lemma)
 # t1[order(t1,decreasing = T)]
+}
 #######################################################################
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fr_list.RData"))
 #######################################################################
+get.lmdf<-function(){
 f1p<-fr.list$p
 f1a<-fr.list$a
 f1g<-fr.list$g
@@ -704,9 +703,11 @@ lmdf.c$f.rel<-(lmdf.c$freq/lmdf.c$size)*100
 lmdf.c$target[grepl("human",lmdf.c$target)]<-"0-human"
 save(lmdf.c,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lm-base_lmdf.c.RData"))
 save(lmdf.c,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lm-base_lmdf.c.RData"))
+}
 # qlist<-list(lmdf=lmdf.c,plots=list(bplot=bplot,gplot=gplot),eval=list(gpt.v=gpt_typical))
 #?glmer
 #######################################
+test.lm<-function(){
 # lmdf.c$gus.c<-0
 # lmdf.c$gus.c[lmdf.c$gus==1]<-lmdf.c$f.rel[lmdf.c$gus==1]
 #   #t1[order(t1,decreasing = F)]
@@ -721,30 +722,9 @@ lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
 # lm2<-lmer(f.rel~target*gus.c+(1|size),lmdf.c)
 # lm2<-lmer(f.rel~target*gus.c+in.gp+(1+gus.c|lemma),lmdf.c)
 summary(lm2)
+#}
 ##############################################
 ### lm with limited set
-
-
-
-# Predicted f.rel for high vs low in.gp in targetpost
-# newdata <- data.frame(
-#   target = "post",
-#   # in.gp = c(0, 1),  # human vs GPT typical
-#   in.gp = c(-5,0,5, 10),  # human vs GPT typical
-#   lemma = "dummy"
-# )
-# newdata <- data.frame(
-#   target = "all",
-#   in.gp = c(0, 1),  # human vs GPT typical
-#   lemma = "dummy"
-# )
-### for plot
-# newdata <- data.frame(
-#   target = "post",
-#   # in.gp = c(0, 1),  # human vs GPT typical
-#   in.gp = c(-5,0,5, 10),  # human vs GPT typical
-#   lemma = "dummy"
-# )
 newdata <- data.frame(
   target = "post",
   # in.gp = c(0, 1),  # human vs GPT typical
@@ -772,6 +752,7 @@ legend("topright",
             col   = 1:length(levels(as.factor(lmdf.c$target))), 
             pch   = 19)
 #)
+}
 #gpt.pplot
 # Add legend
 # legend("topright", 
@@ -791,6 +772,9 @@ legend("topright",
 # }
 ###################################
 ### descriptive stats simple
+do.desc<-function(){
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lm-base_lmdf.c.RData"))
+
 m<-lmdf.c$gus.c==1
 sum(m)
 mh<-lmdf.c$target=="0-human"
@@ -837,9 +821,13 @@ ggplot(data = dff2, aes(x = f.rel, fill = target)) +
   coord_cartesian(xlim = c(0, 0.12)) +  # set your range here
   labs(title = "Density Plot", x = "clip score", y = "Density") +
   theme_minimal()
+}
 #################################################################
 ### lm with limited subset of corpus
-sum(mh)
+lm.lim<-function(){
+  mh<-lmdf.c$target=="0-human"
+  mp<-lmdf.c$target=="post"
+  sum(mh)
 sum(mp)
 lmdf.s<-lmdf.c[c(which(mh),which(mp)),]
 p.df<-lmdf.c
@@ -867,6 +855,7 @@ lran<-lran[order(lran$`(Intercept)`,decreasing = T),]
 #lm2<-lmer(f.rel~target+in.gp+(1|lemma),lmdf.s)
 #lm2<-lmer(f.rel~target*gus.c+in.gp+(1|lemma),lmdf.s)
 #summary(lm2)
+}
 ############
 ### get responsible lemmata
 suh<-lmdf.c[mh1,]

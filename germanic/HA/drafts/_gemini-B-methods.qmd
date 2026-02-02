@@ -128,6 +128,16 @@ main="descriptive stats: GPT vocab raw frequencies")
 ```
 
 ### responsible lemmata
+```{r,lemma-res}
+#| echo: false
+#| output: true
+#| label: fig-boxplot01
+#| fig-cap: "GPT lemma frequencies (boxplot) over target. (freq / Mtoken)"
+#| warning: false
+
+load("../lemma-resp.tj3.RData")
+
+```
 
 ### linear regression {#sec-lm-1}
 to prove descriptive results, we compute the stability of the frequency increase for target- vs. reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
