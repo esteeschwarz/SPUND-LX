@@ -848,7 +848,93 @@ summary(lm2a)
 summary(lm2b)
 lm3 <- glmer(f.rel ~ target * in.gp + (1 | lemma), data = lmdf.c, 
                     family = poisson(link = "log"))
-summary(lm3)
+lm3 <- glmer(f.rel ~ target + in.gp + (1 | lemma), data = lmdf.c, 
+             family = poisson(link = "log"))
+lm2a_glmer <- glmer(f.rel ~ target * in.gp + (1 | lemma), 
+                    data = lmdf.c, 
+                    family = poisson(link = "log"),
+                    control = glmerControl(optimizer = "bobyqa", 
+                                           optCtrl = list(trace = 1, MAXFUN = 100000)))
+lm2a_glmer <- glmer(f.rel ~ target * in.gp + (1 | lemma), 
+                    data = lmdf.c, 
+                    family = poisson(link = "log"),
+                    verbose = 5)  # Levels 0-5; 5 shows everything [web:44]
+lm2a_glmer <- glmer(f.rel ~ target + in.gp + (1 | lemma), 
+                    data = lmdf.c, 
+                    family = poisson(link = "log"),
+                    verbose = 5,  # Max debugging output
+                    control = glmerControl(
+                      optimizer = "bobyqa",
+                      optCtrl = list(trace = 1, maxfun = 10),  # Max 5000 fn evaluations
+                      calc.derivs = FALSE  # Faster, less precise
+                    ))
+# 1. Switch optimizer (handles cycling better)
+control = glmerControl(optimizer = "Nelder_Mead", 
+                       optCtrl = list(maxfun = 5000))
+
+# 2. Better starting values from simpler model
+simple <- glmer(f.rel ~ 1 + (1|lemma), family=poisson, data=lmdf.c)
+lm2a_glmer <- update(simple, . ~ . + target*in.gp, 
+                     control=glmerControl(optimizer="bobyqa", 
+                                          optCtrl=list(maxfun=5000)))
+
+# 3. Scale predictors (flattens surface)
+lmdf.c$target_s <- scale(lmdf.c$target)[,1]
+lmdf.c$in_gp_s <- scale(as.numeric(lmdf.c$in.gp))[,1]
+glmer(f.rel ~ target_s * in_gp_s + (1|lemma), family=poisson, data=lmdf.c)
+
+############
+tab <- 
+  pivot_wider(lmdf.c,
+              names_from  = target,
+              values_from = FREQ,
+              values_fill = 0
+              
+  ) 
+tab2 <- 
+  pivot_wider(lmdf.c,
+              names_from  = target,
+              values_from = f.rel,
+              values_fill = 0
+              
+  )
+colnames(tab2)[grep("0",colnames(tab2))]<-"human"
+#################
+### get GPT score
+#################
+# takes bit...
+#################
+
+m3 <- glmer(
+  cbind(gpt, human) ~ 1*gus.c + (1 | lemma)+(1|gus.c),
+  data   = tab2,
+  family = binomial,
+  verbose =5
+)
+unique(1*lmdf.c$gus.c)
+m3 <- glmer(
+  f.rel ~ target + (1 | lemma)+(1|gus.c),
+  data   = lmdf.c,
+  family = poisson("sqrt"),
+  verbose =5
+)
+?glmer
+m3 <- glmer(
+  cbind(human,post) ~ 1*in.gp + (1 | lemma),
+  data   = tab2,
+  family = binomial,
+  verbose =5
+)
+simple <- glmer(f.rel ~ 1 + (1|lemma), family=poisson, data=lmdf.c)
+summary(m3)
+lmran<-ranef(m3)
+lran3<-lmran$lemma
+lran3$lemma<-rownames(lran3)
+lran3<-lran3[order(lran3$`(Intercept)`,decreasing = T),]
+head(lran3,30)
+tail(lran3,30)
+
+summary(m3)
 lmran<-ranef(lm2a)
 lran<-lmran$lemma
 lran$lemma<-rownames(lran)
@@ -880,14 +966,17 @@ ingpv<-ingpvar[,5]
 ingpv[4]
 ?summary
 pc1<-s2$coefficients[8,1]/s2$coefficients[1,1]*100
-+s2$coefficients[1,1]
+#+s2$coefficients[1,1]
 pc8<-round(s2$coefficients[8,1],6)
 pc1<-round(s2$coefficients[1,1],6)
-pcd<-pc1-pc8
-pcd<-round(pcd,5)
+# pcd<-pc1-pc8
+# pcd<-round(pcd,5)
 #pcd
-p100<-pc1*100
-pcdp<-(pcd/p100)
+# pc1<-10
+# pc8<-2
+pcd<-pc8
+p100<-100/pc1
+pcdp<-(pcd*p100)
 pcdp
 pcdp<-round(pcdp,5)
 pcdp
