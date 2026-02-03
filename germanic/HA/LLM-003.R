@@ -846,6 +846,9 @@ lm2a<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c) ### this, all targets
 #lm2b<-lmer(f.rel~target*gus.c+in.gp+(1|lemma),lmdf.s) ### or this, target pre/post
 summary(lm2a)
 summary(lm2b)
+lm3 <- glmer(f.rel ~ target * in.gp + (1 | lemma), data = lmdf.c, 
+                    family = poisson(link = "log"))
+summary(lm3)
 lmran<-ranef(lm2a)
 lran<-lmran$lemma
 lran$lemma<-rownames(lran)

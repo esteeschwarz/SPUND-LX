@@ -220,9 +220,9 @@ pcp<-round(pc8/pc1*100,2)
 ```
 
 #### helper interpretation, to be tested
-the coefficients interesting for us are the in.gp and targetpost:in.gp estimates. here we test the association between the gpt score of a lemma and its estimated frequency and its showing that a general increase of frequency is estimated if the score rises (=the lemma is within the lemmas preferred used by gemini) and that for the post-gpt corpus that increase by ``` `r pcd` ``` (`r pcdp`%) is significant (and not random in data).
+the coefficients interesting for us are the in.gp and targetpost:in.gp estimates. here we test the association between the gpt score of a lemma and its estimated frequency and its showing that a general increase of frequency is estimated if the score rises (=the lemma is within the lemmas preferred used by gemini) and that for the post-gpt corpus that increase is significant (and not random in data).
 
-in the fixed effects correlation output of the lmer() model we see that the gpt score increases the target corpus frequency for lemma by ``` `r ingpv` ```.
+in the fixed effects correlation output of the lmer() model we see that the gpt score correlates with the target corpus frequency for lemma by ``` `r ingpv` ```.
 
 #### anova of mixed effects model
 ```{r,anova}
