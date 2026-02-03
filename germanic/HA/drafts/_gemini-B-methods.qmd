@@ -1,10 +1,10 @@
-## methods
-### snc
+# methods
+## snc
 16062.1.2.16063.1
 
 please cf. @schwarz_this_2026 for the corpus building and evaluation script (still messy.)
 
-### data
+## data
 
 ```{r,m1}
 #| echo: false
@@ -23,7 +23,7 @@ ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,sh,sp))
 
 our human langugae data consists of raw texts from german bundestag plenary protocols (@dip_dip_2026). the LLM corpus consists of  model summaries of a first subset of these texts generated with the following prompt: @sec-gemini-prompt.
 
-#### corpus subsets
+### corpus subsets
 `r knitr::kable(ts)`
 
 ### gemini prompt {#sec-gemini-prompt}
@@ -35,7 +35,7 @@ ptx<-readLines("../g-prompt01.txt")
 print(ptx)
 ```
 
-### computation
+## computation
 we first devised AI-typical lemmata in the model corpus which are distinctive for that corpus using a linear regression model (R, package lme4::glmer(): @bates_fitting_2015) that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
 
 ```{r, prelim}
@@ -101,8 +101,8 @@ ggplot(data = dff2, aes(x = f.rel, fill = target)) +
 
 
 
-## evaluation
-### basic descriptive
+# evaluation
+## basic descriptive
 to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). if these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
 
 ```{r,kablediff}
@@ -129,12 +129,12 @@ main="descriptive stats: GPT vocab raw frequencies")
 
 ```
 
-### responsible lemmata
+## responsible lemmata
 selection of first 20 lemma that are responsible for the increase of frequency in general.
 
 > this list is still in progress since bit complicated to sync descriptive lemma list with the linear model list derived, which looks more realistic for a gpt output but with lot of rubbish in it due to mislemmatization.
 
-#### lemma descriptive output
+### lemma descriptive output
 ```{r,lemma-res-desc}
 #| echo: false
 #| output: true
@@ -145,7 +145,7 @@ load("../lemma-resp.tj3.RData")
 head(tj3$WORD[order(tj3$diff,decreasing = T)],20)
 ```
 
-#### lemma linear model output
+### lemma linear model output
 ```{r,lemma-res-lm}
 #| echo: false
 #| output: true
@@ -157,7 +157,7 @@ lres.h$lemma
 ```
 
 
-### linear regression {#sec-lm-1}
+## linear regression {#sec-lm-1}
 to prove descriptive results, we compute the stability of the frequency increase for target- vs. reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where frequency are the relative lemma frequencies over corpus; target defines reference resp. target corpus[post-gpt] (human/post) and in.gpt as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
 
 ```{r,lm-models}
@@ -173,7 +173,7 @@ lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
 
 ```
 
-#### basic (lm)
+### basic (lm)
 formula: `frequency.relative ~ target * in.gpt`
 
 ```{r,lm}
@@ -185,7 +185,7 @@ summary(lm1)
 
 ```
 
-#### mixed effects model (lmer)
+### mixed effects model (lmer)
 formula: `frequency.relative ~ target * in.gpt +(1|lemma)`
 
 ```{r,lmer}
@@ -231,7 +231,7 @@ the coefficients interesting for us are the in.gp and targetpost:in.gp estimates
 
 in the fixed effects correlation output of the lmer() model we see that the gpt score correlates with the target corpus frequency for lemma by ``` `r ingpv` ```.
 
-#### anova of mixed effects model [out]
+### anova of mixed effects model [out]
 ```{r,anova}
 #| echo: false
 #| output: false
