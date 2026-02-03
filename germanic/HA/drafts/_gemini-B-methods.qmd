@@ -231,7 +231,7 @@ the coefficients interesting for us are the in.gp and targetpost:in.gp estimates
 
 in the fixed effects correlation output of the lmer() model we see that the gpt score correlates with the target corpus frequency for lemma by ``` `r ingpv` ```.
 
-#### anova of mixed effects model
+#### anova of mixed effects model [out]
 ```{r,anova}
 #| echo: false
 #| output: false
