@@ -1,6 +1,6 @@
 # methods
 
-please cf. @schwarz_this_2026 [#todo] for the corpus building and evaluation script 
+please cf. @schwarz_this_2026 [#todo] for the corpus building and evaluation scripts
 
 ## data
 

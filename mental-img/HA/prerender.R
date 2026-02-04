@@ -1,14 +1,18 @@
 #docdir<-".."
 qa<-c("Wie KI unsere Sprache","yakura-llm")
-
+#docdir<-".."
 get.notes<-function(docdir){
   f<-list.files(docdir)
   m<-grep("docx",f)
-  # f[m]
+  m
+  if(!length(m)>0)
+    return(data.frame(n="no-text",nx="no margin notes..."))# f[m]
   m<-m[2] # latest docx export
   library(officer)
 #  f<-list.files()
  # m<-grep("docx",f)
+  # if(!length(m)>0)
+  #   return("no margin notes...")
   t<-read_docx(paste(docdir,f[m],sep="/"))
   #t[[7]]
   #library(xml2)
@@ -116,6 +120,7 @@ a3<-data.frame(abind(a2,along = 1))
 #a2<-put.qmd(notes$nx)
 a2<-put.qmd(notes)
 #a2$t[1:10]
+a2
 a2$t<-gsub("(http[s]*://.+)(?>[ \\\n])","[see linked source](\\1)",a2$t,perl = T)
 write.csv(a2,"qa.csv")
 #notes
