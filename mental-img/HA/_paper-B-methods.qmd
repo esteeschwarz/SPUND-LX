@@ -39,7 +39,12 @@ print(ptx)
 
 # results
 ## basic descriptive
+## visuals
+[...]
+raffael script (commit hash!) from ggl-doc: @richter_evaluation_2026
+
 ## linear regression {#sec-lm-1}
+
 to prove descriptive results, we compute the stability [...] with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below [...]
 
 ```{r,lm-models}
