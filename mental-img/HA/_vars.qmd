@@ -2,7 +2,7 @@
 #| echo: false
 #| warning: false
 #| output: false
-#| eval: false
+#| eval: true
 
 
 #print("vvars qmd run...")
@@ -12,5 +12,5 @@ tdf<-read.csv("qa.csv")
 #m1<-1:length(tdf$t)
 
 params<-list(tables=list(tbl_qa1=list(file="qa.qmd",num=1),tbl_qa2=list(file="qa.qmd",num=2)))
-load("../lm-base_lmdf.c.RData")
+#load("../lm-base_lmdf.c.RData")
 ```

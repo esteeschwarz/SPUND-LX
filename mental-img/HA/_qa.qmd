@@ -1,6 +1,6 @@
 ---
 title: annotations
-bibliography: germanic-ai.bib
+bibliography: smi.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
