@@ -1,0 +1,117 @@
+# methods
+
+please cf. @schwarz_this_2026 [#todo] for the corpus building and evaluation script 
+
+## data
+
+```{r,m1}
+#| echo: false
+#| output: false
+#| eval: false
+
+mh<-lmdf.c$target=="0-human"
+mp<-lmdf.c$target=="post"
+mg<-lmdf.c$target=="gpt"
+
+sh<-sum(lmdf.c$freq[c(which(mh))])
+sp<-sum(lmdf.c$freq[c(which(mp))])
+sg<-sum(lmdf.c$freq[c(which(mg))])
+ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,sh,sp))
+
+```
+
+our corpus consists of interview transcripts available in raw text which were tokenised and segmented into 10-unit chunks for further processing, @sec-clip-01.
+
+### corpus stats
+`knitr::kable(ts)` [insert corpus stats]
+
+## clip score computation {#sec-clip-01}
+the computation of clip scores was done using HU resources with a python script cf. @nenchev_clip_2026
+```{r,prompt}
+#| echo: false
+#| warning: false
+#| eval: false
+
+ptx<-readLines("../g-prompt01.txt")
+print(ptx)
+```
+
+
+# evaluation
+## basic descriptive
+## linear regression {#sec-lm-1}
+to prove descriptive results, we compute the stability [...] with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below [...]
+
+```{r,lm-models}
+#| echo: false
+#| output: false
+#| warning: false
+#| eval: false
+
+library(lme4)
+library(lmerTest)
+
+lm1<-lm(f.rel~target*in.gp,lmdf.c)
+lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
+
+```
+
+### basic (lm)
+formula: `frequency.relative ~ target * in.gpt`
+
+```{r,lm}
+#| echo: false
+#| output: true
+#| warning: false
+#| eval: false
+
+summary(lm1)
+
+```
+
+### mixed effects model (lmer)
+formula: `frequency.relative ~ target * in.gpt +(1|lemma)`
+
+```{r,lmer}
+#| echo: false
+#| output: true
+#| warning: false
+#| eval: false
+
+s2<-summary(lm2)
+s2
+ingpvar<-s2$vcov@factors$correlation
+ingpv<-ingpvar[,5]
+ingpv<-ingpv[4]
+#ingpv
+pc8<-round(s2$coefficients[8,1],6)
+pc1<-round(s2$coefficients[1,1],6)
+#pc1<-s2$coefficients[1,1]
+pcp<-round(pc8/pc1*100,2)
+pc8<-round(s2$coefficients[8,1],6)
+pc1<-round(s2$coefficients[1,1],6)
+pcd<-pc1-pc8
+pcd<-round(pcd,5)
+#pcd
+p100<-pc1*100
+pcdp<-(pcd/p100)
+#pcdp
+pcdp<-round(pcdp,5)
+pcd<-pc8
+p100<-100/pc1
+pcdp<-(pcd*p100)
+#pcdp
+pcdp<-round(pcdp,5)
+#pcdp
+
+#pcdp
+#pcdp
+#pc1<-s2$coefficients[1,1]
+pcp<-round(pc8/pc1*100,2)
+
+```
+
+#### helper interpretation, to be tested
+the coefficients interesting for us are 
+
+# references {#references}

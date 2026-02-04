@@ -1,0 +1,16 @@
+---
+title: SMI paper
+bibliography: smi.bib
+nocite: '@*'
+
+---
+
+{{< include _vars.qmd >}}
+
+# index
+## snc
+16065.1
+
+{{< include _paper-A-ul.md >}}
+{{< include _paper-B-methods.qmd >}}
+

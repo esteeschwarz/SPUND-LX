@@ -1,0 +1,16 @@
+```{r,vars}
+#| echo: false
+#| warning: false
+#| output: false
+#| eval: false
+
+
+#print("vvars qmd run...")
+tdf<-read.csv("qa.csv")
+# m2<-grep("(elancholi)",tdf$t)
+# m1<-grep("(.evolution)",tdf$t)
+#m1<-1:length(tdf$t)
+
+params<-list(tables=list(tbl_qa1=list(file="qa.qmd",num=1),tbl_qa2=list(file="qa.qmd",num=2)))
+load("../lm-base_lmdf.c.RData")
+```
