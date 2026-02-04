@@ -9,8 +9,10 @@ nocite: '@*'
 
 # index
 ## snc
-16065.1
+16065.1.2
 
 {{< include _paper-A-ul.md >}}
 {{< include _paper-B-methods.qmd >}}
+{{< include _paper-C-ul.md >}}
 
+# references {#references}

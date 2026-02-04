@@ -1,4 +1,4 @@
-# methods
+# material/methods
 
 please cf. @schwarz_this_2026 [#todo] for the corpus building and evaluation scripts
 
@@ -25,7 +25,7 @@ our corpus consists of interview transcripts available in raw text which were to
 ### corpus stats
 `knitr::kable(ts)` [insert corpus stats]
 
-## clip score computation {#sec-clip-01}
+## computations {#sec-clip-01}
 the computation of clip scores was done using HU resources with a python script cf. @nenchev_clip_2026
 ```{r,prompt}
 #| echo: false
@@ -37,7 +37,7 @@ print(ptx)
 ```
 
 
-# evaluation
+# results
 ## basic descriptive
 ## linear regression {#sec-lm-1}
 to prove descriptive results, we compute the stability [...] with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below [...]
@@ -113,5 +113,3 @@ pcp<-round(pc8/pc1*100,2)
 
 #### helper interpretation, to be tested
 the coefficients interesting for us are 
-
-# references {#references}

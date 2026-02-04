@@ -3,11 +3,14 @@ inspired by the paper *[...]*, @ref, who found evidence for [...] we tried to re
 
 Our first draft essai proves their hypothesis [...].
 
+# background
 ## preliminary
 - embedding into class subject
 - [...]
 
-# hypothesis
+## literature
+
+## hypothesis
 [...]
 
 
