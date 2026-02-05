@@ -2,10 +2,11 @@
 # 16015.class.clip stats from scores
 ####################################
 
-d2<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/pqdir/clip_results.parquet")
+d2<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/data/clip_results.parquet")
 #library(parqr)
 #parquet<-"~/boxHKW/21S/DH/local/SPUND/2025/hux/pqdir"
-d1<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/tabelle.parquet")
+d1<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/data/tabelle.parquet")
+d1<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/data/smi_data_metadata.csv") #16055.
 #df<-parquet_readr(path=d1)
 #install.packages("arrow")
 library(arrow)
@@ -13,6 +14,7 @@ library(arrow)
 
 
 df<-read_parquet(d2)
+df<-read.csv(d1)
 #df<-read_parquet(d1)
 # f <- system.file(parquet, package = "arrow")
 # f
@@ -31,6 +33,7 @@ colnames(df)
 #df$id<-1:length(df$filename)
 head(df)
 lm1<-lmer(mean_clip~group+(1|filename),df)
+lm1<-lmer(mean_clip_de_jina~group+(1|person),df)
 lm2<-lm(mean_clip~group,df)
 summary(lm2)
 summary(lm1)
@@ -351,12 +354,12 @@ ggplot(df_no_big, aes(x = group, y = var_clip)) +
 library(arrow)
 library(lme4)
 library(lmerTest)
-d1<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/smi_data_metadata.csv")
+d1<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/hux/data/smi_data_metadata.csv")
 df<-read.csv(d1)
 colnames(df)
 t<-lapply(df[,1:length(df)],function(x){
   typeof(x)
 })
 unlist(t)
-lm1<-lmer(mean_clip_de_jina~person+)
+lm1<-lmer(mean_clip_de_jina~person)
 

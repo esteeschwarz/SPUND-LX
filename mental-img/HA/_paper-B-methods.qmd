@@ -3,27 +3,48 @@
 please cf. @schwarz_this_2026 [#todo] for the corpus building and evaluation scripts
 
 ## data
+```{r, prelim}
+#| echo: false
+#| output: false
+
+load("df4_lim.RData") # clip scores df
+
+mh1<-dff4$group=="hc"
+sh1<-dff4$group=="scz"
+phc<-dff4[mh1,]
+psz<-dff4[sh1,]
+mnh<-mean(phc$cl_score)
+mns<-mean(psz$cl_score)
+
+mns<mnh # TRUE!
+### > more occurences (rel. frequencies) of gpt vocabular in post gpt corpus
+mns-mnh # only 0.02587 points
+p.df<-dff4
+s.df<-data.frame(dataset=1,group=c("hc","scz","DIFF:"),mean_clip=c(mnh,mns,mnh-mns))
+s.df$mean_clip<-round(s.df$mean_clip,4)
+s.df
+```
 
 ```{r,m1}
 #| echo: false
 #| output: false
-#| eval: false
+#| eval: true
 
-mh<-lmdf.c$target=="0-human"
-mp<-lmdf.c$target=="post"
-mg<-lmdf.c$target=="gpt"
+lhc<-length(phc$TN)
+lsz<-length(psz$TN)
+huc<-length(unique(phc$TN))
+hus<-length(unique(psz$TN))
+ts<-data.frame(dataset=1,group=c("HC","SCZ"),participants=c(huc,hus),tokens=c(lhc,lsz))
+#ts
 
-sh<-sum(lmdf.c$freq[c(which(mh))])
-sp<-sum(lmdf.c$freq[c(which(mp))])
-sg<-sum(lmdf.c$freq[c(which(mg))])
-ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,sh,sp))
 
 ```
 
 our corpus consists of interview transcripts available in raw text which were tokenised and segmented into 10-unit chunks for further processing, @sec-clip-01.
 
 ### corpus stats
-`knitr::kable(ts)` [insert corpus stats]
+
+`r knitr::kable(ts)`
 
 ## computations {#sec-clip-01}
 the computation of clip scores was done using HU resources with a python script cf. @nenchev_clip_2026
@@ -39,9 +60,58 @@ print(ptx)
 
 # results
 ## basic descriptive
+first simple descriptive stats insights which are to test for stability...
+```{r,kablediff}
+#| echo: false
+#| output: true
+#| label: tbl-s.df
+#| tbl-cap: "mean clip scores (table) over groups"
+
+knitr::kable(s.df,label = "tab-s.df")
+```
+
 ## visuals
 [...]
+
 raffael script (commit hash!) from ggl-doc: @richter_evaluation_2026
+```{r,clip-dens}
+#| warning: false
+#| echo: false
+#| label: clip-dens
+#| fig-cap: "clip score density plot"
+
+### wks., proceed from here:
+# print(getwd())
+#load("df4_lim.RData")
+###############################################################
+#library(tidyr)
+#library(dplyr)
+library(ggplot2)
+# library(lme4)
+# library(lmerTest)
+#print(colnames(df4_lim))
+#print(head(df4_lim))
+
+ggplot(data = dff4, aes(x = cl_score,fill = group)) +
+  geom_density(alpha=0.5) +
+  labs(title = "Density Plot", x = "clip score", y = "Density") +
+  theme_minimal() 
+
+```
+
+```{r,boxdesc}
+#| echo: false
+#| output: true
+#| label: fig-boxplot01
+#| fig-cap: "mean clip scores (boxplot) over groups."
+#| warning: false
+
+
+# boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
+boxplot(mean_clip~group,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+main="descriptive stats: clip scores plot")
+
+```
 
 ## linear regression {#sec-lm-1}
 
@@ -51,68 +121,70 @@ to prove descriptive results, we compute the stability [...] with a linear regre
 #| echo: false
 #| output: false
 #| warning: false
-#| eval: false
+#| eval: true
 
 library(lme4)
 library(lmerTest)
 
-lm1<-lm(f.rel~target*in.gp,lmdf.c)
-lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
+lm6<-lmer(cl_score~group+(1|TN)+(1|text_chunk)+ld+fstPPr_rate,dff4)
+lm4<-lm(cl_score~group,dff4)
+# summary(lm1)
+# print(summary(lm6))
 
 ```
 
 ### basic (lm)
-formula: `frequency.relative ~ target * in.gpt`
+formula: `clipscore ~ group`
 
 ```{r,lm}
 #| echo: false
 #| output: true
 #| warning: false
-#| eval: false
+#| eval: true
 
-summary(lm1)
+summary(lm4)
 
 ```
 
 ### mixed effects model (lmer)
-formula: `frequency.relative ~ target * in.gpt +(1|lemma)`
+formula: `clipscore ~ group + (1|TN)+(1|text_chunk)+ld+fstPPr_rate` < positing random effects for participant and token and fixed effects for type/token ratio (lexical diversity factor) and 1st-person-pronoun rate.
 
 ```{r,lmer}
 #| echo: false
 #| output: true
 #| warning: false
-#| eval: false
+#| eval: true
 
-s2<-summary(lm2)
+s2<-summary(lm6)
 s2
-ingpvar<-s2$vcov@factors$correlation
-ingpv<-ingpvar[,5]
-ingpv<-ingpv[4]
-#ingpv
-pc8<-round(s2$coefficients[8,1],6)
-pc1<-round(s2$coefficients[1,1],6)
-#pc1<-s2$coefficients[1,1]
-pcp<-round(pc8/pc1*100,2)
-pc8<-round(s2$coefficients[8,1],6)
-pc1<-round(s2$coefficients[1,1],6)
-pcd<-pc1-pc8
-pcd<-round(pcd,5)
-#pcd
-p100<-pc1*100
-pcdp<-(pcd/p100)
-#pcdp
-pcdp<-round(pcdp,5)
-pcd<-pc8
-p100<-100/pc1
-pcdp<-(pcd*p100)
-#pcdp
-pcdp<-round(pcdp,5)
-#pcdp
+# ingpvar<-s2$vcov@factors$correlation
+# ingpv<-ingpvar[,5]
+# ingpv<-ingpv[4]
+# #ingpv
+# pc8<-round(s2$coefficients[8,1],6)
+# pc1<-round(s2$coefficients[1,1],6)
+# #pc1<-s2$coefficients[1,1]
+# pcp<-round(pc8/pc1*100,2)
+# pc8<-round(s2$coefficients[8,1],6)
+# pc1<-round(s2$coefficients[1,1],6)
+# pcd<-pc1-pc8
+# pcd<-round(pcd,5)
+# #pcd
+# p100<-pc1*100
+# pcdp<-(pcd/p100)
+# #pcdp
+# pcdp<-round(pcdp,5)
+# pcd<-pc8
+# p100<-100/pc1
+# pcdp<-(pcd*p100)
+# #pcdp
+# pcdp<-round(pcdp,5)
+# #pcdp
 
-#pcdp
-#pcdp
-#pc1<-s2$coefficients[1,1]
-pcp<-round(pc8/pc1*100,2)
+# #pcdp
+# #pcdp
+# #pc1<-s2$coefficients[1,1]
+# pcp<-round(pc8/pc1*100,2)
 
 ```
 
