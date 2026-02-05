@@ -108,7 +108,7 @@ ggplot(data = dff4, aes(x = cl_score,fill = group)) +
 
 
 # boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
-boxplot(mean_clip~group,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+boxplot(mean_clip~group,p.df[c(which(mh1),which(sh1)),],outline=F,notch=T,
 main="descriptive stats: clip scores plot")
 
 ```
