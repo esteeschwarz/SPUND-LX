@@ -27,19 +27,20 @@ our human langugae data consists of raw texts from german bundestag plenary prot
 `r knitr::kable(ts)`
 
 ### gemini prompt {#sec-gemini-prompt}
-```{r,prompt-dep}
+```{r,prompt}
 #| echo: false
 #| warning: false
-#| eval: false
+#| eval: true
 
 ptx<-readLines("../g-prompt01.txt")
 print(ptx)
 ```
 
-```{r,prompt}
+```{r,prompt-dep}
 #| results: asis
 #| echo: false
 #| warning: false
+#| eval: false
 
 ptx<-readLines("../g-prompt01.txt")
 cat("```text\n",
