@@ -21,6 +21,7 @@ jobs:
       uses: actions/checkout@v4
     - name: Render Quarto site
       run: |
+         echo "DOWNLOAD_PW=${{ secrets.DOWNLOAD_PW }}" >> .Renviron
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
          quarto render szondi/docufiction/wg-sebald/ -P reload:false

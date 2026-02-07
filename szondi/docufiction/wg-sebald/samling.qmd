@@ -12,8 +12,9 @@ first collection [documenting] of materials
 #| include: false
 1 + 1
 cat("the upsidedown")
-download.file("https://stiftung-buchkunst.de/images/max/scans_cropped59.jpg","sebaldiana.jpg")
-download.file("https://ada-sub.dh-index.org/school/api/png/sebald-stable-diff-001.png","stable-diff.png")
+dlpw<-Sys.getenv("DOWNLOAD_PW")
+download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")
+download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")
 ```
 
 ## now alltogether
