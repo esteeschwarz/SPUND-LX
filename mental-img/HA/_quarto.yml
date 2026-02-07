@@ -7,7 +7,7 @@ project:
 website:
   navbar:
     left:
-    - href: ../../../linguistics/smi/001
+    - href: ../../../linguistics/smi-a
       text: '`<i class="weui--back2-outlined"></i>`{=html}'
     - href: index.qmd
       text: index

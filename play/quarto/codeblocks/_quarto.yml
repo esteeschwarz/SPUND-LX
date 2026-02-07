@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "Site with wrapped PDF"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - text: "Download"
+        menu:
+          - href: report.pdf
+            text: "Download PDF"
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - brand
+    code-overflow: wrap
+  pdf:
+    include-in-header:
+      - text: |
+          \usepackage{fvextra}
+          \makeatletter
+          \AtBeginDocument{
+            \fvset{
+              breaklines=true,
+              breakanywhere=true,
+              fontsize=\small
+            }
+          }
+          \makeatother
+
+execute:
+  echo: true

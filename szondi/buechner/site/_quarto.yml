@@ -3,11 +3,12 @@ project:
   output-dir: ../../../q/buechner-a
   pre-render: "create-slides.R"
 website:
-  title: '011'
   navbar:
     left:
     - href: ../../
-      text: '<img src="backward.end.alt.svg" style="height:1em; vertical-align:-0.1em;">'
+      text: '`<i class="weui--back2-outlined"></i>`{=html}'
+    - href: index.qmd
+      text: index
     - slides.qmd
     right:
     - snc.qmd
@@ -21,5 +22,41 @@ format:
     css: styles.css
     toc: true
     toc-depth: 3
+    include-in-header:
+      text: |
+        <!-- HTML simply prints the inner text -->
+        <!-- 16482.snc -->
+        <script type="application/latex">
+        \newcommand{\he}[1]{#1}
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
+  pdf:
+    #    latex_engine: xelatex  # default
+    fig-pos: "H" # Forces images to appear exactly where they are included
+    pandoc_args: ["--wrap=none"]
+
+    #mainfont: Georgia
+    # mainfont: Georgia
+    #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
+    #mainfont: 'Computer Modern Roman'
+    font-size: 12
+    #cite-method: biblatex
+    colorlinks: true
+        #  \newcommand{\he}[1]{{\hebrewfont #1}}
+    #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
+    # header-includes: |
+    #  \usepackage{fontspec}
+    #  \newfontfamily\ipafont{Arial Unicode MS}
+    #  \newcommand{\ipa}[1]{{\ipafont #1}}
+    #  \usepackage[margin=1in]{geometry}
+    #  \usepackage{fvextra}
+    #  \fvset{breaklines=true, breakanywhere=true}
+    #  \usepackage{polyglossia}
+    #  \setmainlanguage{english}
+    #  \setotherlanguage{hebrew}
+    #  \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
+    #  \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
+    #  include-in-header: rtl.tex
 execute:
   freeze: auto

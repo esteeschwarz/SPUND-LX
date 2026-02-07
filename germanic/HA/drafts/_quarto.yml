@@ -61,6 +61,8 @@ format:
   pdf:
 #    latex_engine: xelatex  # default
     fig-pos: "H" # Forces images to appear exactly where they are included
+    #pandoc_args: ["--wrap=none"]
+
     #mainfont: Georgia
     # mainfont: Georgia
  #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
@@ -70,7 +72,10 @@ format:
     colorlinks: true
         #  \newcommand{\he}[1]{{\hebrewfont #1}}
     #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
-    # header-includes: |
+    header-includes: |
+      \usepackage{fvextra}
+      \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+      \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
     #  \usepackage{fontspec}
     #  \newfontfamily\ipafont{Arial Unicode MS}
     #  \newcommand{\ipa}[1]{{\ipafont #1}}

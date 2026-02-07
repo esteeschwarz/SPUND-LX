@@ -1,0 +1,51 @@
+---
+title: annotations
+bibliography: smi.bib
+#nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+
+---
+
+{{< include _vars.qmd >}}
+
+#### notes on @bsi_wie_2025
+
+`r tblcap<-paste0("Table ",params$tables$tbl_qa1$num,", BSI: annotations")`
+
+```{r}
+#| label: tbl_qa1
+#| tbl-cap: !expr 'tblcap'
+#| echo: false
+#| warning: false
+#| eval: true
+
+qa<-c("Wie KI unsere Sprache","yakura-llm")
+m1<-tdf$paper==qa[1]
+
+kdf<-data.frame(id=which(m1),annotations=tdf$a[m1])
+
+knitr::kable(kdf)
+
+```
+
+#### notes on @yakura_empirical_2025
+
+`r tblcap<-paste0("Table ",params$tables$tbl_qa2$num,", Yakura, LLM influence: annotations")`
+
+```{r}
+#| label: tbl_qa2
+#| tbl-cap: !expr 'tblcap'
+#| echo: false
+#| warning: false
+#| eval: true
+
+qa<-c("Wie KI unsere Sprache","yakura-llm")
+m2<-tdf$paper==qa[2]
+
+kdf<-data.frame(id=which(m2),annotations=tdf$a[m2])
+
+knitr::kable(kdf)
+
+```

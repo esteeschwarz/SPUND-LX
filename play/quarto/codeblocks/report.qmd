@@ -1,0 +1,81 @@
+---
+title: "PDF Report with Wrapped Code"
+format: pdf
+---
+
+# PDF report
+
+This document will be rendered to `report.pdf`. Long code lines will wrap in the PDF.
+
+```{r}
+#| echo: true
+# A very long R line to show wrapping in PDF:
+paste("this-is-a-very-long-string", 1:100, collapse = " ")
+1+2
+paste("this-is-a-very-long-string", 1:100)
+```
+
+secon chunk
+```{r}
+#| echo: true
+# A very long R line to show wrapping in PDF:
+paste("this-is-a-very-long-string", 1:100, collapse = " ")
+1+2
+paste("this-is-a-very-long-string", 1:100)
+```
+
+echo: false, readlines
+```{r}
+#| echo: false
+#| warning: false
+
+ptx<-readLines("gemini-prompt.md")
+ptx
+```
+
+echo: true, readlines. new.define
+1,2,gpt
+```{r}
+#| echo: true
+#| warning: false
+
+ptx<-readLines("gemini-prompt.md")
+as.character(ptx)
+
+# A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF:
+
+
+
+readLines("gemini-prompt.md")
+
+t<-tempfile("t.txt")
+writeLines(ptx,t)
+tx<-readtext::readtext(t)$text
+tx
+##
+```
+
+
+```{r}
+#| echo: true
+# A very long R line to show wrapping in PDF:
+paste("this-is-a-very-long-string", 1:100, collapse = " ")
+1+2
+paste("this-is-a-very-long-string", 1:100)
+```
+
+```{r}
+#| results: asis
+
+cat(readLines("gemini-prompt.md"), sep = "\n")
+```
+
+```{r}
+#| results: asis
+
+txt <- readLines("gemini-prompt.md")
+cat("```text\n",
+    paste(txt, collapse = "\n"),
+    "\n```",
+    sep = "")
+```

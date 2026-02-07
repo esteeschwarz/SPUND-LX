@@ -1,0 +1,46 @@
+---
+title: "About"
+---
+
+# About
+
+This page is part of the same website.
+
+It shows that you can have multiple HTML pages and still offer a separate PDF report.
+
+echo: true, command
+```{r}
+#| echo: true
+# A very long R line to show wrapping in PDF:
+paste("this-is-a-very-long-string", 1:100, collapse = " ")
+```
+
+echo: false, readlines
+```{r}
+#| echo: false
+#| warning: false
+
+ptx<-readLines("gemini-prompt.md")
+ptx
+```
+
+echo: true, readlines
+```{r}
+#| echo: true
+#| warning: false
+
+ptx<-readLines("gemini-prompt.md")
+ptx
+
+# A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF:
+
+
+
+readLines("gemini-prompt.md")
+
+t<-tempfile("t.txt")
+writeLines(ptx,t)
+tx<-readtext::readtext(t)$text
+tx
+##
+```
