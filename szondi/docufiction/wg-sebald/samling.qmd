@@ -11,7 +11,7 @@ first collection [documenting] of materials
 16071.1
 
 ```{r, download-img}
-#| include: true
+#| include: false
 1 + 1
 cat("the upsidedown")
 dlpw<-Sys.getenv("DOWNLOAD_PW")
@@ -21,10 +21,16 @@ download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg
 size<-file.info(list.files()[grep("sebaldiana.jpg",list.files())])$size
 print(size)
 #print(dlpw)
+image_available <- file.exists("sebaldiana.jpg") && file.size("sebaldiana.jpg") > 400
 ```
 
 ## now alltogether
 
+```{r sebald-image, echo=FALSE, results='asis'}
+if (image_available) {
+  cat("![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana}\n")
+}
+```
 
 <!-- ![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana} -->
 
