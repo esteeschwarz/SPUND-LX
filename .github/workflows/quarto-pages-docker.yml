@@ -19,11 +19,15 @@ jobs:
     steps:
     - name: Checkout source
       uses: actions/checkout@v4
+    - name: chk vars
+      run: |
+         ls -la
+         echo "DOWNLOAD_PW=${{ secrets.DOWNLOAD_PW }}" >> .Renviron
+         curl -o r.json https://ids.dh-index.org/api/ids-version
+         cat r.json
+         ls -la
     - name: Render Quarto site
       run: |
-         echo "DOWNLOAD_PW=${{ secrets.DOWNLOAD_PW }}" >> .Renviron
-         cat .Renviron
-         curl https://ids.dh-index.org/api/ids-version
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
          quarto render szondi/docufiction/wg-sebald/ -P reload:false
