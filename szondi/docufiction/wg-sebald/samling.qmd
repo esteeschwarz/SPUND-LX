@@ -17,10 +17,10 @@ cat("the upsidedown")
 dlpw<-Sys.getenv("DOWNLOAD_PW")
 download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")
 download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")
-Sys.sleep(10)
+#Sys.sleep(10)
 size<-file.info(list.files()[grep("sebaldiana.jpg",list.files())])$size
 print(size)
-print(dlpw)
+#print(dlpw)
 ```
 
 ## now alltogether
