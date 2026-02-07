@@ -10,7 +10,7 @@ first collection [documenting] of materials
 ## snc
 16071.1
 
-```{r}
+```{r, download-img}
 #| include: true
 1 + 1
 cat("the upsidedown")
@@ -20,7 +20,7 @@ download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg
 Sys.sleep(10)
 size<-file.info(list.files()[grep("sebaldiana.jpg",list.files())])$size
 print(size)
-#print(dlpw)
+print(dlpw)
 ```
 
 ## now alltogether
