@@ -26,6 +26,9 @@ jobs:
          curl -o r.json https://ids.dh-index.org/api/ids-version
          cat r.json
          ls -la
+         echo "should display"
+         cat .Renviron
+         echo "nestcepas...."
     - name: Render Quarto site
       run: |
          quarto render lx-public/HA/sessions/ -P reload:false
