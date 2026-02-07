@@ -74,6 +74,7 @@ format:
     #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
     header-includes: |
       \usepackage{fancyvrb}
+      \usepackage{fvextra}
       \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
 
     #  \usepackage{fontspec}
