@@ -39,14 +39,14 @@ echo: true, readlines. new.define
 #| echo: true
 #| warning: false
 
-ptx<-readLines("gemini-prompt.md")
+ptx<-readLines("gemini-prompt.txt")
 as.character(ptx)
 
 # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF:
 
 
 
-readLines("gemini-prompt.md")
+readLines("gemini-prompt.txt")
 
 t<-tempfile("t.txt")
 writeLines(ptx,t)
@@ -67,13 +67,13 @@ paste("this-is-a-very-long-string", 1:100)
 ```{r}
 #| results: asis
 
-cat(readLines("gemini-prompt.md"), sep = "\n")
+cat(readLines("gemini-prompt.txt"), sep = "\n")
 ```
 
 ```{r}
 #| results: asis
 
-txt <- readLines("gemini-prompt.md")
+txt <- readLines("gemini-prompt.txt")
 cat("```text\n",
     paste(txt, collapse = "\n"),
     "\n```",

@@ -73,9 +73,9 @@ format:
         #  \newcommand{\he}[1]{{\hebrewfont #1}}
     #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
     header-includes: |
-      \usepackage{fvextra}
-      \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-      \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
+      \usepackage{fancyvrb}
+      \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+
     #  \usepackage{fontspec}
     #  \newfontfamily\ipafont{Arial Unicode MS}
     #  \newcommand{\ipa}[1]{{\ipafont #1}}
@@ -93,3 +93,4 @@ editor: source
 
 execute:
   freeze: auto
+code-overflow: wrap

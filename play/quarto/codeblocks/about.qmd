@@ -15,12 +15,13 @@ echo: true, command
 paste("this-is-a-very-long-string", 1:100, collapse = " ")
 ```
 
-echo: false, readlines
+echo: false, readlines   
+cell-output cell-output-stdout
 ```{r}
 #| echo: false
 #| warning: false
 
-ptx<-readLines("gemini-prompt.md")
+ptx<-readLines("gemini-prompt.txt")
 ptx
 ```
 
@@ -29,18 +30,41 @@ echo: true, readlines
 #| echo: true
 #| warning: false
 
-ptx<-readLines("gemini-prompt.md")
+ptx<-readLines("gemini-prompt.txt")
 ptx
 
 # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF:
 
 
 
-readLines("gemini-prompt.md")
+readLines("gemini-prompt.txt")
 
 t<-tempfile("t.txt")
 writeLines(ptx,t)
 tx<-readtext::readtext(t)$text
 tx
 ##
+```
+```{r}
+#| echo: true
+# A very long R line to show wrapping in PDF:
+paste("this-is-a-very-long-string", 1:100, collapse = " ")
+1+2
+paste("this-is-a-very-long-string", 1:100)
+```
+
+```{r}
+#| results: asis
+
+cat(readLines("gemini-prompt.txt"), sep = "\n")
+```
+
+### div
+```{r}
+#| results: asis
+
+txt <- readLines("gemini-prompt.txt")
+cat(sprintf('<div class="cell-output cell-output-stdout">
+<pre><code>%s</code></pre>
+</div>',txt))
 ```

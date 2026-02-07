@@ -19,11 +19,17 @@ format:
     theme: 
       - cosmo
       - brand
-    code-overflow: wrap
+    #code-overflow: wrap
+    css: styles.css
   pdf:
     include-in-header:
       - text: |
           \usepackage{fvextra}
+          \DefineVerbatimEnvironment{cell-output cell-output-stdout}{Verbatim}{
+          breaklines=true,
+          breakanywhere=true,
+          fontsize=\small
+          }
           \makeatletter
           \AtBeginDocument{
             \fvset{
@@ -33,6 +39,9 @@ format:
             }
           }
           \makeatother
+          \usepackage{fancyvrb}
+          \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true}
 
 execute:
   echo: true
+code-overflow: wrap
