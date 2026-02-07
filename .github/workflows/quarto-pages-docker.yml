@@ -22,6 +22,8 @@ jobs:
     - name: Render Quarto site
       run: |
          echo "DOWNLOAD_PW=${{ secrets.DOWNLOAD_PW }}" >> .Renviron
+         cat .Renviron
+         curl https://ids.dh-index.org/api/ids-version
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
          quarto render szondi/docufiction/wg-sebald/ -P reload:false
