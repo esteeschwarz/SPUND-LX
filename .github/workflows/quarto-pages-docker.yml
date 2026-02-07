@@ -27,9 +27,11 @@ jobs:
          cat r.json
          ls -la
          echo "should display"
-         cat .Renviron
+         #cat .Renviron
          echo "nestcepas...."
     - name: Render Quarto site
+      env:
+          DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
       run: |
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
