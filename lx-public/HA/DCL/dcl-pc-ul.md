@@ -38,7 +38,7 @@ textabschnit usw...
 - item 4
 
 # head 2
-bissel text noch... und vielleicht eine kleine[^1] fusznote
+bissel text noch... und vielleicht eine kleine[^5] fusznote
 
 #### nochwas?
 [...]
@@ -46,4 +46,4 @@ bissel text noch... und vielleicht eine kleine[^1] fusznote
 ### notes on the umsetzung
 [...]
 
-[^1]:	fusznotentext, nur zur veranschaulichung
+[^5]:	fusznotentext, nur zur veranschaulichung
