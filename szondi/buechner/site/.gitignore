@@ -1,2 +1,5 @@
 /.quarto/
 **/*.quarto_ipynb
+qa.csv
+qa.qmd
+slides.qmd

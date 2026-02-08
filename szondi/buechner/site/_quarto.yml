@@ -5,15 +5,19 @@ project:
 website:
   navbar:
     left:
-    - href: ../../
-      text: '`<i class="weui--back2-outlined"></i>`{=html}'
-    - href: index.qmd
-      text: index
-    - slides.qmd
+      - href: ../../
+        text: '`<i class="weui--back2-outlined"></i>`{=html}'
+      - text: work
+        menu:  
+        - href: index.qmd
+          text: reception class
+        - href: buechner-imago.qmd
+          text: my very own woyzeck
+      - slides.qmd
     right:
-    - snc.qmd
-    - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/buechner
-      icon: github
+      - snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/szondi/buechner
+        icon: github
 format:
   html:
     theme:
