@@ -1,2 +1,9 @@
 ## 16072.buechner.picture
 {{< include _buechner-ul.md >}}
+
+### snc
+könnte sonst ewig so weitermachen..., kleine zugabe noch, der prägende büchner-angebrachte "soundtrack" der wilson inszenierung von leonce/lena am BE... / ist natürlich im pdf nicht zu sehen, deshalb little link to parent frame in footnotes[^4].
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/34jdCKLIC2rmMyACRTKZNG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+[^4]: this paper online: [https://esteeschwarz.github.io/DC-LX/essais/buechner-a/buechner-imago.html](https://esteeschwarz.github.io/DC-LX/essais/buechner-a/buechner-imago.html)
