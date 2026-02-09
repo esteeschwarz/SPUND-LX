@@ -2,7 +2,7 @@ t<-read.csv(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/kblh/letters.csv"))
 ########
 wd<-"יצר"
 wd<-"ברחמימ"
-wd<-"לב"
+#wd<-"לב"
 wd<-"כבוד"
 ########
 s<-unlist(strsplit(wd,""))
