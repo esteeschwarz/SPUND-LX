@@ -1,4 +1,18 @@
-## 16072.buechner.picture
+---
+title: 16072.buechner.picture
+author: "st. schwarz"
+date: today
+bibliography: buechner.bib
+categories: [AVL,buechner,reception]
+cats_md: [essais,AVL]
+tags_md: [AVL,buechner,reception]
+class: 'georg büchner. mara ruwe. WS25 FUB.'
+task: 'buechner own reception'
+input_dir: szondi/buechner/site
+project_dir: szondi/buechner
+ids: buechner-a
+---
+
 {{< include _buechner-ul.md >}}
 
 ### snc
