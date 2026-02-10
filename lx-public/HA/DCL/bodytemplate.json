@@ -1,0 +1,18 @@
+{
+    "contents": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "wann wurde google gemini mit welchem model in deutschland öffentlich verfügbar eingeführt?\nantwort auf deutsch in maximal 10 worten."
+                }
+            ]
+        }
+    ]
+    , "generationConfig": {
+        "temperature": 0.1
+        ,"topP": 0.95
+        ,"seed": 0
+        
+    }
+}
