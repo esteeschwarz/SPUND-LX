@@ -4,6 +4,7 @@ wd<-"יצר"
 wd<-"ברחמימ"
 #wd<-"לב"
 wd<-"כבוד"
+wd<-"לח"
 ########
 s<-unlist(strsplit(wd,""))
 v<-lapply(s, function(x){
