@@ -8,6 +8,8 @@ format:
     theme: Cosmo
     toc: false
     self-contained: false
+  # pdf:
+  #   browser: chrome
 execute:
   echo: false
 ---
@@ -16,13 +18,19 @@ class: germanische sprachen im vergleich
 tutor: Hüning / Konvicna  
 term: WS25/26  
 
+#### bg
+bg content try
+
 ```{r background-script, echo=FALSE, results='asis'}
 script_lines <- readLines("../LLM-003.R")
 
 cat("```r\n")
-cat(paste(script_lines[1:100], collapse = "\n"))
+s<-sample(1:length(script_lines),75)
+cat(paste(script_lines[s], collapse = "\n"))
 cat("\n```")
 ```
+
+footer: snc.16093.1/107*162
 
 
 # Ausgangslage
