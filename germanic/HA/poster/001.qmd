@@ -1,0 +1,73 @@
+---
+title: "Polysemous Verbs with Light and Concrete Senses"
+subtitle: "A Corpus Linguistics Replication Study"
+author: "Stephan Schwarz – FU Berlin – 2026"
+format:
+  html:
+    css: poster.css
+    theme: Cosmo
+    toc: false
+    self-contained: false
+execute:
+  echo: false
+---
+#### meta
+class: germanische sprachen im vergleich  
+tutor: Hüning / Konvicna  
+term: WS25/26  
+
+```{r background-script, echo=FALSE, results='asis'}
+script_lines <- readLines("../LLM-003.R")
+
+cat("```r\n")
+cat(paste(script_lines[1:100], collapse = "\n"))
+cat("\n```")
+```
+
+
+# Ausgangslage
+
+We explored frequencies of verbs in light and concrete use in the
+Santa Barbara Corpus of Spoken American English.
+
+We aim to replicate Mehl (2021).
+
+# Hypotheses
+
+- Light senses are more frequent
+- Concrete senses are more salient
+- Embodied experience shapes meaning
+
+# Methoden
+
+We built a corpus database of SBC data available for download.
+
+After annotating for light and concrete use, we counted frequencies.
+
+# p3
+
+```{r,fig1}
+plot(cars)
+```
+
+# p2
+```{r,fig2}
+hist(rnorm(100))
+```
+
+```{r,fig3}
+boxplot(rnorm(100), main = "")
+```
+
+# Conclusion
+We observe a preference for the lemma make
+in spoken context.
+The create-light relation expectation
+was not fulfilled.
+
+
+
+# References
+Gilquin (2008)
+Mehl (2021)
+UCSB Santa Barbara Corpus

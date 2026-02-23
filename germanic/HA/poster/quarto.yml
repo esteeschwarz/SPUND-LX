@@ -1,0 +1,8 @@
+format:
+  html:
+    css: poster.css
+    theme: none
+    toc: false
+    self-contained: true
+execute:
+  echo: false
