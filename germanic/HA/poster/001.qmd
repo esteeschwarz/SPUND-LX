@@ -30,7 +30,7 @@ bg content try
 script_lines <- readLines("../LLM-003.R")
 
 cat("```r\n")
-s<-sample(1:length(script_lines),79)
+s<-sample(1:length(script_lines),77)
 cat(paste(script_lines[s], collapse = "\n"))
 cat("\n```")
 ```
