@@ -13,10 +13,15 @@ format:
 execute:
   echo: false
 ---
-#### meta
+::: {#logo}
+![](fu-logo-250616-RGB-s.svg)
+:::
+
+::: {#meta}
 class: germanische sprachen im vergleich  
 tutor: Hüning / Konvicna  
 term: WS25/26  
+:::
 
 #### bg
 bg content try
@@ -25,12 +30,12 @@ bg content try
 script_lines <- readLines("../LLM-003.R")
 
 cat("```r\n")
-s<-sample(1:length(script_lines),75)
+s<-sample(1:length(script_lines),79)
 cat(paste(script_lines[s], collapse = "\n"))
 cat("\n```")
 ```
 
-footer: snc.16093.1/107*162
+<!-- footer: snc.16093.1/107*162 -->
 
 
 # Ausgangslage
