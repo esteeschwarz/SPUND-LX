@@ -18,9 +18,9 @@ body {
 /*  --col1: 267mm;
   --col2: 267mm;
   --col3: 267mm;*/
-  --col1: 265mm;
-  --col2: 230mm; /*671x480*/
-  --col3: 265mm;
+  --col1: 270mm;
+  --col2: 220mm; /*671x480 1900-1230 20cm image width */
+  --col3: 270mm;
   --bodyTop: calc(67mm + 5px); /* header + spacing */
   --width: 841;
   --height: 1187;
@@ -78,6 +78,18 @@ section.level1 {
   z-index: 5;
       /* font-family: "Source Sans 3", sans-serif; */
 
+}
+/* #p2 > div:nth-child(2) > div > div > figure */
+/* section.level1 .figure {
+margin: 1 0 0rem;
+} */
+figure {
+margin: revert;
+}
+
+figure.figure {
+margin: 1 0 0rem;
+display: inline-block;
 }
 
 section.level1 > h1 {

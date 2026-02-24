@@ -119,83 +119,83 @@ term: WS25/26</p>
 <section id="bg" class="level4">
 <h4 class="anchored" data-anchor-id="bg">bg</h4>
 <p>bg content try</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">grepl</span>(<span class="st">"[0-9]"</span>,tok.r3<span class="sc">$</span>lemma))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#qdf$value[1:2]&lt;-""</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        fileData <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(m)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fs&lt;-fs[order(fs$p,decreasing = T),]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>m<span class="ot">&lt;-</span>tokens<span class="fl">.3</span><span class="sc">$</span>lemma<span class="sc">%in%</span>stops.j</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(gpt, human) <span class="sc">~</span> <span class="dv">1</span><span class="sc">*</span>gus.c <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> lemma)<span class="sc">+</span>(<span class="dv">1</span><span class="sc">|</span>gus.c),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># tr&lt;-re_lemma[re_lemma$`(Intercept)`&gt;0,] # useless, simply all gpt lemma?</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fj3<span class="sc">$</span>fg<span class="ot">&lt;-</span>fg<span class="sc">$</span>Freq[<span class="fu">match</span>(fg<span class="sc">$</span>Var1, fj3<span class="sc">$</span>Var1)]</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>k</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 16052.gemini.corpus.btt</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># if we set pt lower then we get more human terms i.e. we harden the connection between a high score and a high frequency and get more valuable terms.</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>p.df<span class="sc">$</span>target[p.df<span class="sc">$</span>target<span class="sc">==</span><span class="st">"0-human"</span>]<span class="ot">&lt;-</span><span class="st">"human"</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># x&lt;-c(sh1,sp1,sh,sp)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> binomial,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>lmdf<span class="sc">$</span>f.rel<span class="ot">&lt;-</span><span class="fu">as.double</span>(lmdf<span class="sc">$</span>FREQ)<span class="sc">/</span><span class="fu">as.double</span>(lmdf<span class="sc">$</span>size)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">target =</span> <span class="fu">factor</span>(target, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"human"</span>, <span class="st">"gpt"</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># x&lt;-matrix(c(sh1,sp1,sg1,sh,sp,sg),ncol = 2)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># qlist&lt;-list(lmdf=lmdf.c,plots=list(bplot=bplot,gplot=gplot),eval=list(gpt.v=gpt_typical))</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># wichtig   39  1607    0.0242688238954574</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span><span class="dv">10</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>fs4<span class="ot">&lt;-</span>fs3</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(docs_with_word = n_distinct(id), .groups = "drop") %&gt;%</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"processed:"</span>,k,<span class="st">"... waiting -"</span>,s,<span class="st">"-seconds</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#        dens &lt;- density(lmdf.c$in.gp[lmdf.c$target == targets[i]])</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>tok.r3<span class="ot">&lt;-</span>tok.r3[<span class="sc">!</span><span class="fu">is.na</span>(tok.r3<span class="sc">$</span>lemma),]</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># qlist&lt;-list(lmdf=lmdf.c,plots=list(p.df=p.df),eval=list(gpt.v=gpt_typical))</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># range&lt;-c("2021-04-01","2021-12-31")</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                     <span class="at">control=</span><span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>request_body<span class="ot">&lt;-</span>gg.json</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># chisq.test(x, simulate.p.value = TRUE, B = 10000)$p.value</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(abind)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> binomial</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># p &lt;- c(0.05,0.05,0.05,0.05)</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  f2<span class="ot">&lt;-</span>sup<span class="sc">$</span>freq[sup<span class="sc">$</span>lemma<span class="sc">==</span>x]<span class="sc">/</span><span class="fu">sum</span>(sup<span class="sc">$</span>freq)</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># tokens.r&lt;-tokens[!m,]</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_headers</span>(<span class="st">`</span><span class="at">Content-Type</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"application/json"</span>),</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># chisq.test(x)$p.value           # 0.4233</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="do">##########################################</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>turl<span class="ot">&lt;-</span><span class="st">"https://search.dip.bundestag.de/api/v1/plenarprotokoll-text?f.datum.start=2021-01-11&amp;f.datum.end=2021-01-15&amp;format=json&amp;apikey=OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw"</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># gpt_typical  &lt;- re_lemma[order(-re_lemma$res), ]</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>lmdf<span class="sc">$</span>WORD<span class="ot">&lt;-</span><span class="fu">as.character</span>(lmdf<span class="sc">$</span>WORD)</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>fa4<span class="ot">&lt;-</span>fa4[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>sh.H1<span class="ot">&lt;-</span><span class="fu">gsub</span>(<span class="st">"[' </span><span class="sc">\\\\</span><span class="st">]"</span>,<span class="st">""</span>,sh.H1[[<span class="dv">2</span>]])</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># pc1&lt;-10</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>fj11<span class="sc">$</span>fg<span class="ot">&lt;-</span><span class="cn">NA</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co"># save(btt.summaries,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData"))</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>p.df<span class="ot">&lt;-</span>lmdf.c</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>?glmer</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># fs5&lt;-fj_h_p%&gt;%mutate(p=(fh/sum(fh))+0.000001/(fp/sum(fp)+0.000001))</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(h3)[<span class="dv">2</span>]<span class="ot">&lt;-</span>sh.H2[<span class="dv">1</span>]</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>tokens.r<span class="ot">&lt;-</span>tokens<span class="sc">$</span>t1</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  f.rel <span class="sc">~</span> target <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> lemma)<span class="sc">+</span>(<span class="dv">1</span><span class="sc">|</span>gus.c),</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(f.pm <span class="sc">~</span> target <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> WORD), <span class="at">data =</span> lmdf.c)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>pc1<span class="ot">&lt;-</span><span class="fu">round</span>(s2<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">1</span>],<span class="dv">6</span>)</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co"># einblick  25  34  0.735294117647059</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  target<span class="ot">&lt;-</span><span class="fu">unique</span>(tdb6<span class="sc">$</span>target)</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>ingpv[<span class="dv">4</span>]</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>lmdf.c<span class="sc">$</span>gus.c<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(tok.r2<span class="sc">$</span>lemma<span class="sc">==</span><span class="st">"Die"</span>)</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># head(fs2,10)</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co">#save(tj3,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lemma-resp.tj3.RData"))</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="co"># try(</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="co"># tdb6$f.norm_p&lt;-mean(tdb6$FREQ[tdb6$target=="post"])/tdb6$FREQ</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>h3<span class="ot">&lt;-</span><span class="fu">unlist</span>(h3)</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="co">#??capitalize</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co">#f1</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_fill =</span> <span class="dv">0</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>gg.json<span class="ot">&lt;-</span><span class="fu">fromJSON</span>(<span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"GIT_TOP"</span>),<span class="st">"/ulysses/work/API/contents.json"</span>))</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>qdf</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="co"># p.text&lt;-gsub("\n","   ",p.text)</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f1g1<span class="ot">&lt;-</span><span class="fu">data.frame</span>(f1g,<span class="at">target=</span><span class="st">"gpt"</span>,<span class="at">size=</span><span class="fu">sum</span>(f1g<span class="sc">$</span>FREQ))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gg.json</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>get.freq<span class="ot">&lt;-</span><span class="cf">function</span>(){</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mg<span class="ot">&lt;-</span>lmdf.c<span class="sc">$</span>target<span class="sc">==</span><span class="st">"gpt"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>lpt[lpt<span class="sc">$</span>in.gp<span class="sc">&gt;</span><span class="dv">8</span><span class="sc">&amp;</span>lpt<span class="sc">$</span>f.rel<span class="sc">&gt;=</span><span class="dv">4</span>,]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#params&lt;-list(params)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># t1&lt;-table(tok.r3$lemma)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sh<span class="ot">&lt;-</span><span class="fu">sum</span>(lmdf.c<span class="sc">$</span>freq[mh])</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># lm1&lt;-lm(f.rel~target+in.gp,lmdf.c)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>m<span class="ot">&lt;-</span><span class="fu">grep</span>(<span class="st">"datum.start"</span>,qdf<span class="sc">$</span>key)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glmer</span>(target <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> lemma),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>lmdf<span class="sc">$</span>lemma<span class="ot">&lt;-</span><span class="fu">as.character</span>(lmdf<span class="sc">$</span>WORD)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># tdb6$f.norm_all&lt;-mean(tdb6$FREQ)/tdb6$FREQ</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#      legend("topright", </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>tokens.r<span class="sc">$</span>lemma[<span class="fu">is.na</span>(tokens.r<span class="sc">$</span>lemma)]<span class="ot">&lt;-</span>tokens.r<span class="sc">$</span>word[<span class="fu">is.na</span>(tokens.r<span class="sc">$</span>lemma)]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># einblick  25  34  0.735294117647059</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#f1ab$lemma&lt;-as.character(f1a$WORD)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>s2<span class="sc">$</span>devcomp</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>t1<span class="ot">&lt;-</span><span class="fu">table</span>(tok.r2<span class="sc">$</span>lemma)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># df.ann&lt;-as.data.frame(udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id,target=df_combined$target))</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#      </span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#fp1$gu[fp1$WORD%in%gp]&lt;-1</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>f1g1<span class="sc">$</span>gus<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># qlist&lt;-list(lmdf=lmdf.c,plots=list(p.df=p.df),eval=list(gpt.v=gpt_typical))</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="do">#######################################</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(word = tolower(word))</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">grepl</span>(<span class="st">"AFD"</span>,tok.r2<span class="sc">$</span>lemma))</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>m<span class="ot">&lt;-</span>tokens.r<span class="sc">$</span>word<span class="sc">%in%</span>stops.j</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>fs4<span class="sc">$</span>na<span class="ot">&lt;-</span><span class="fu">length</span>(fa<span class="sc">$</span>WORD)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># gp&lt;-fs2$WORD[fs2$fa&lt;=fs2$fg]</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>fs<span class="ot">&lt;-</span>fs[<span class="fu">order</span>(fs<span class="sc">$</span>p,<span class="at">decreasing =</span> T),]</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  f1<span class="ot">&lt;-</span>suh<span class="sc">$</span>freq[suh<span class="sc">$</span>lemma<span class="sc">==</span>x]<span class="sc">/</span><span class="fu">sum</span>(suh<span class="sc">$</span>freq)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>lmdf.c<span class="sc">$</span>gus.c[lmdf.c<span class="sc">$</span>lemma<span class="sc">%in%</span>lmdf.c<span class="sc">$</span>lemma[lmdf.c<span class="sc">$</span>target<span class="sc">==</span><span class="st">"gpt"</span>]]<span class="ot">&lt;-</span><span class="dv">1</span> <span class="co"># set predictor=1 if lemma in gpt corpus</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>lmdf<span class="ot">&lt;-</span><span class="fu">rbind</span>(f1z1,f1a1,f1h1,f1g1,f1p1)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m3)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>lran<span class="ot">&lt;-</span>lran[<span class="fu">order</span>(lran<span class="sc">$</span><span class="st">`</span><span class="at">(Intercept)</span><span class="st">`</span>,<span class="at">decreasing =</span> F),]</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">#             col    = colors, </span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>lran3<span class="ot">&lt;-</span>lmran<span class="sc">$</span>lemma</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>m<span class="ot">&lt;-</span><span class="fu">grep</span>(<span class="st">"datum.end"</span>,qdf<span class="sc">$</span>key)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># # fs&lt;-fj%&gt;%mutate(p=fg/fa)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>lpt[lpt<span class="sc">$</span>in.gp<span class="sc">&gt;=</span><span class="dv">6</span><span class="sc">&amp;</span>lpt<span class="sc">$</span>f.r2<span class="sc">&gt;=</span><span class="fl">0.02</span>,]</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>f1p1<span class="sc">$</span>gus[f1p1<span class="sc">$</span>WORD<span class="sc">%in%</span>f1g1<span class="sc">$</span>WORD]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co">#f1</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  fj11<span class="sc">$</span>fg[m]<span class="ot">&lt;-</span>fg<span class="sc">$</span>Var1[k]</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>                       optCtrl <span class="ot">=</span> <span class="fu">list</span>(<span class="at">maxfun =</span> <span class="dv">5000</span>)<span class="er">)</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>stops.u<span class="ot">&lt;-</span><span class="fu">lapply</span>(stops.j, <span class="cf">function</span>(x){</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co"># ?ranef</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>e</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>f1a<span class="ot">&lt;-</span>fr.list<span class="sc">$</span>a</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>gg.json<span class="ot">&lt;-</span><span class="fu">fromJSON</span>(<span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"GIT_TOP"</span>),<span class="st">"/SPUND-LX/germanic/HA/contents3.json"</span>))</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="co">#   rename(summary = text)</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  mh<span class="ot">&lt;-</span>lmdf.c<span class="sc">$</span>target<span class="sc">==</span><span class="st">"0-human"</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># fa&lt;-as.data.frame(table(tok.r2$lemma))</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>qdf<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="fu">matrix</span>(qx[[<span class="dv">2</span>]],<span class="at">ncol =</span> <span class="dv">2</span>,<span class="at">byrow =</span> T))</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="do">### now with lemma, udpipe pipeline...</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co"># fs5$target[fs5$fp==0]&lt;-"phuman"</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="co"># lm2&lt;-lmer(f.rel~target*gus.c+in.gp+(1+gus.c|lemma),lmdf.c)</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a> <span class="co"># typeof(dflim)</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co">#fa1$gu[fa1$WORD%in%gp]&lt;-1</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>s2<span class="ot">&lt;-</span><span class="fu">summary.lm</span>(lm1)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(h3)[<span class="dv">2</span>]<span class="ot">&lt;-</span>sh.H2[<span class="dv">1</span>]</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(baseurl)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co">#mode()</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>f1g<span class="ot">&lt;-</span>fr.list<span class="sc">$</span>g</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>f1h1<span class="ot">&lt;-</span><span class="fu">data.frame</span>(f1h,<span class="at">target=</span><span class="st">"human"</span>,<span class="at">size=</span><span class="fu">sum</span>(f1h<span class="sc">$</span>FREQ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- footer: snc.16093.1/107*162 -->
 </section>
 <section id="ausgangslage" class="level1">
