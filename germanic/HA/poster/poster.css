@@ -80,6 +80,20 @@ section.level1 {
       /* font-family: "Source Sans 3", sans-serif; */
 
 }
+section.level5 {
+  position: absolute;
+  border: 3px solid #5c8a2f;
+  background-color: blue;
+  /* color: white;  */
+  padding: 10mm;
+  box-sizing: border-box;
+  font-size: 24pt;
+  line-height: 1.2;
+  z-index: 5;
+  font-family: Monospace;
+      /* font-family: "Source Sans 3", sans-serif; */
+  border-radius: 5px;
+}
 /* #p2 > div:nth-child(2) > div > div > figure */
 /* section.level1 .figure {
 margin: 1 0 0rem;
@@ -106,6 +120,15 @@ section.level1 > h4 {
   padding: 5mm;
   border-bottom: 3px solid #5c8a2f; */
   /* font-size: 26pt; */
+  overflow: hidden;
+  margin-block-start: 0px;
+}
+section.level5 > h5 {
+  /* background: #e6e6a8;
+  margin: -10mm -10mm 10mm -10mm;
+  padding: 5mm;
+  border-bottom: 3px solid #5c8a2f; */
+  font-size: 38pt;
   overflow: hidden;
   margin-block-start: 0px;
 }
@@ -188,11 +211,38 @@ font-size: 1.4em;
   width: var(--col2);
   /* height: 292mm; */
 }
-#p4 {
-  top: calc(var(--bodyTop) + 330mm);
-  left: calc(var(--col1) + 40mm);
-  width: var(--col2);
+#c1 {
+  top: calc(var(--bodyTop) + 200mm);
+  right: calc(var(--col3) - var(--col3) + 5px);
+ width: calc(var(--col3) + 20mm);
   /* height: 292mm; */
+ color: white;
+}
+.ptext {
+    color: white;
+}
+.ptext .sourceCode {
+  height: 100%;
+    /* opacity: 0.8; */
+  pointer-events: none;
+  overflow: wrap;
+ /* background-color: blue; */
+  /* color: white; */
+}
+
+.ptext pre {
+  margin: 0;
+  height: 100%;
+  /* overflow: hidden;       CRITICAL */
+  white-space: pre-wrap;  /* optional wrapping */
+  
+}
+
+/* Optional: prevent horizontal growth */
+.ptext code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  
 }
 /* BOTTOM BAND (~299mm) */
 
@@ -308,3 +358,4 @@ font-size: 1.4em;
   word-break: break-word;
   
 }
+

@@ -54,10 +54,21 @@ inspired by the above paper which indeed found (evidence) for GPT influenced hum
 # Methods / Data
 
 our human langugae data consists of raw texts from german bundestag plenary protocols (). 
-the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see left.
+the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see below.
 
 
 we first devised AI-typical lemmata in the model corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
+
+```{r prompt, echo=FALSE, warning=FALSE}
+prompt <- readLines("../g-prompt01.txt")
+prompt<-paste(prompt,collapse = "\n")
+```
+
+##### c1
+`r prompt`
+
+
+
 
 # p2
 ```{r}
