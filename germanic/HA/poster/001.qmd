@@ -23,20 +23,20 @@ tutor: Hüning / Konvicna
 term: WS25/26  
 :::
 
-#### bg
-bg content try
+::: {#code-container}
 
 ```{r background-script, echo=FALSE, results='asis'}
 script_lines <- readLines("../LLM-003.R")
 
 cat("```r\n")
-s<-sample(1:length(script_lines),77)
-cat(paste(script_lines[s], collapse = "\n"))
+s<-sample(1:length(script_lines),80)
+s<-1:100
+cat(paste(s," - ",script_lines[s], collapse = "\n"))
 cat("\n```")
 ```
 
 <!-- footer: snc.16093.1/107*162 -->
-
+:::
 
 # Ausgangslage
 

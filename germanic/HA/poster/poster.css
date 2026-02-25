@@ -22,8 +22,8 @@ body {
   --col2: 220mm; /*671x480 1900-1230 20cm image width */
   --col3: 270mm;
   --bodyTop: calc(67mm + 5px); /* header + spacing */
-  --width: 841;
-  --height: 1187;
+  --width: 841mm;
+  --height: 1184mm;
 
   }
 
@@ -34,7 +34,8 @@ body {
   /* width: 801mm;
   height: 1149mm; */
   width: 841mm;
-  height: 1187mm;
+  /* height: 1187mm; */
+  height: calc(var(--height) - var(--bodyTop));
 }
 /* HEADER */
 .quarto-title-block {
@@ -237,37 +238,65 @@ font-size: 1.3em;
   /* padding: 15mm; */
   box-sizing: border-box;
     /* border: none; */
+    overflow: hidden;       /* CRITICAL */
+  /* border: 3px solid black;
+  box-sizing: border-box; */
 }
-#bg .sourceCode {
-/* div.code[data-chunk-name="background-script"] { */
-    /* top: var(--bodyTop); */
-    /* left: 5mm;
-    right: 5mm; */
-       position: relative;
 
-    /* bottom: 5mm;
- top: 0;
-  left: 0;*/
-  /* width: var(--width)mm;  */
-  width: 100%;
-  height: calc(var(--height) - var(--bodyTop) - 160)mm; 
-  /* z-index: 7; */
-  /* filter: blur(3px); */
-  opacity: 0.8;
+/* code cutoff demo */
+
+/* Parent container with fixed size */
+#code-container {
+    top: calc(var(--bodyTop) - 5px);
+    position: absolute;
+    /* left: 5mm; */
+    /* right: 5mm; */
+    /* bottom: 5mm; */
+    /* height: var(--height)mm;  */
+    /* height: 1187mm; */
+    height: 100%;
+    z-index: 1;
+    background-color: transparent;
+      /* width: var(--width)mm; */
+ width: 100%;
+ 
+      border-left: 4px solid black;
+      border-right: 4px solid black;
+      border-top: 4px solid black;
+      border-bottom: 4px solid black;
+  /* padding: 15mm; */
+  box-sizing: border-box;
+    /* border: none; */
+    overflow: hidden;       /* CRITICAL */
+
+}
+
+/* Remove extra wrappers expanding height */
+#code-container .cell {
+  height: 100%;
+}
+
+#code-container .sourceCode {
+  height: 100%;
+    opacity: 0.8;
   pointer-events: none;
   overflow: hidden;
   font-size: 26pt;
       background-color: transparent;
-  overflow: wrap;
-  /* display: inline; */
-  white-space: pre-wrap !important;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+
 }
 
-div.sourceCode pre,
-div.sourceCode code {
-  white-space: pre-wrap !important;
+#code-container pre {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;       /* CRITICAL */
+  white-space: pre-wrap;  /* optional wrapping */
+  
+}
+
+/* Optional: prevent horizontal growth */
+#code-container code {
   overflow-wrap: anywhere;
   word-break: break-word;
+  
 }

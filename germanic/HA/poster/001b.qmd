@@ -1,0 +1,32 @@
+---
+title: "Code Cutoff Demo"
+format:
+  html:
+    css: bgcode.css
+    theme: Cosmo
+    toc: false
+    self-contained: false
+  # pdf:
+  #   browser: chrome
+execute:
+  echo: false
+---
+
+# Normal Content
+
+Some normal text.
+
+---
+
+::: {#code-container}
+```{r background-script, echo=FALSE, results='asis'}
+  cat("```r\n")
+for(i in 1:200){
+
+  cat(i," > This is a long line of code that would normally expand vertically.\n")
+}
+cat("\n```")
+
+```
+
+:::
