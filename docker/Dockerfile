@@ -54,9 +54,10 @@ RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda',
 # ---- Install Node.js + npm (LTS) ----
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
+RUN node --version && npm --version
 
-RUN npm install -g playwright-core
-# RUN npx playwright install chromium
+RUN npm install -g playwright
+RUN npx playwright install chromium
 RUN which chromium
 
 
