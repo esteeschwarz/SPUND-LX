@@ -77,7 +77,7 @@ prompt<-paste(prompt,collapse = "\n")
 #| echo: FALSE
 
 
-knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-boxplot01-1.png")
+knitr::include_graphics("../../../../DC-LX/essais/germanic/001/gemini_files/figure-html/fig-boxplot01-1.png")
 ```
 
 
@@ -87,7 +87,7 @@ knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-bo
 #| label: "fig-densplot01"
 #| echo: FALSE
 
-knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
+knitr::include_graphics("../../../../DC-LX/essais/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
 
 
 ```
@@ -97,7 +97,7 @@ knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-de
 #| label: "fig-gpt.dplot"
 #| echo: FALSE
 
-knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
+knitr::include_graphics("../../../../DC-LX/essais/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
 
 ```
 
