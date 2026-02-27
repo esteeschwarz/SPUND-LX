@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: ../../../q/germanic/001
   pre-render: "prerender.R"
+  post-render: "render-pdf.sh"
+  exclude: 
+   - poster/poster.qmd
 
 params:
     reload: false
@@ -22,6 +25,8 @@ website:
           - yakura.qmd
           - gemini.qmd
           - qa.qmd
+          - href: poster/poster_A0.pdf
+            text: poster
       - play.qmd
       - text: drafts out
         menu:
