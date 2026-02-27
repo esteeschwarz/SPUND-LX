@@ -58,7 +58,7 @@ RUN node --version && npm --version
 
 RUN npm install -g playwright
 RUN npx playwright install chromium
-RUN which chromium
+# RUN which chromium
 
 
 # FROM pandoc/latex:3.8.3
