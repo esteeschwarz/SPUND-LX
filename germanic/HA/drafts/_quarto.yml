@@ -26,7 +26,8 @@ website:
           - qa.qmd
           - href: poster_A0.pdf
             text: poster
-      - play.qmd
+      - href: play.html
+        text: samling
       - text: drafts out
         menu:
           - href: draft-A.qmd
