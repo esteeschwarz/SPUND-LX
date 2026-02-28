@@ -10,7 +10,7 @@ await page.goto(`file://${process.cwd()}/001.html`, {
 await page.emulateMedia({ media: 'print' });
 
 await page.pdf({
-  path: 'poster_A0.pdf',
+  path: '../../../q/germanic/001/poster_A0.pdf',
   width: '841mm',
   height: '1190mm',
   printBackground: true // background color of boxes!

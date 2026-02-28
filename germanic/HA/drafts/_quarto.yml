@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: ../../../q/germanic/001
   pre-render: "prerender.R"
-  post-render: "render-pdf.sh"
+  post-render: "postrender.R"
  
 
 params:
@@ -66,7 +66,9 @@ format:
 #    latex_engine: xelatex  # default
     fig-pos: "H" # Forces images to appear exactly where they are included
     #pandoc_args: ["--wrap=none"]
-
+    keep-tex: true
+    # hyperrefoptions:
+    #   - draft
     #mainfont: Georgia
     # mainfont: Georgia
  #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
@@ -80,6 +82,9 @@ format:
       \usepackage{fancyvrb}
       \usepackage{fvextra}
       \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+    # include-in-header:
+    #   text: |
+    #     \hypersetup{draft}
 
     #  \usepackage{fontspec}
     #  \newfontfamily\ipafont{Arial Unicode MS}

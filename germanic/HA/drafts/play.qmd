@@ -13,7 +13,12 @@ url: "https://esteeschwarz.github.io/open-lx/posts/germanic-001"
 description: "germanic languages project draft B - samling"
 link-citations: true
 github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
+format:
+  pdf:
+    hyperrefoptions:
+      - draft
 ---
+
 
 ```{r,echo=F,eval=F}
 pdfsrc<-""
