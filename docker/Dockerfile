@@ -59,7 +59,7 @@ RUN node --version && npm --version
 RUN npm install -g playwright
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
-RUN npx playwright install chromium
+RUN npx playwright install --with-deps chromium
 # RUN npx playwright install chromium
 # RUN which chromium
 RUN chmod -R 755 /ms-playwright
