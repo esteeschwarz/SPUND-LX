@@ -35,11 +35,11 @@ jobs:
          ls -ld /ms-playwright
          ls -l /ms-playwright
          find /ms-playwright -type f -name chrome -exec ls -l {} \;
-         which chromium
+         # which chromium
     - name: Render Quarto site
       env:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
-          PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+          PLAYWRIGHT_BROWSERS_PATH: /ms-playwright/chromium-1208/chrome-linux64/chrome
       run: |
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
