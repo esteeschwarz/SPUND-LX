@@ -29,6 +29,7 @@ jobs:
          echo "should display"
          #cat .Renviron
          echo "nestcepas...."
+         which chromium
     - name: Render Quarto site
       env:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
