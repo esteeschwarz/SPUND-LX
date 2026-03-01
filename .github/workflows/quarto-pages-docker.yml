@@ -30,10 +30,11 @@ jobs:
          #cat .Renviron
          echo "nestcepas...."
          ls /ms-playwright
-         which chromium
+         # which chromium
     - name: Render Quarto site
       env:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
+          PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
       run: |
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
