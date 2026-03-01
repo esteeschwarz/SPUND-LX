@@ -69,7 +69,9 @@ function resolveChromiumPath() {
   const linuxPaths = [
     '/usr/bin/chromium',
     '/usr/bin/chromium-browser',
-    '/usr/bin/google-chrome'
+    '/usr/bin/google-chrome',
+    '/root/.cache/ms-playwright/chromium-1208'
+
   ];
 
   for (const p of linuxPaths) {
