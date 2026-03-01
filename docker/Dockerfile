@@ -60,7 +60,7 @@ RUN npm install -g playwright
 # RUN npx playwright install chromium
 # RUN which chromium
 RUN apt-get update && \
-    apt-get install -y chromium
+    apt-get install -y chromium-bsu
 
 # FROM pandoc/latex:3.8.3
 # COPY --from=r-base /usr/local /usr/local
