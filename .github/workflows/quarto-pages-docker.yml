@@ -30,7 +30,10 @@ jobs:
          #cat .Renviron
          echo "nestcepas...."
          ls /ms-playwright
-         # which chromium
+         whoami
+         id
+         ls -ld /ms-playwright
+         which chromium
     - name: Render Quarto site
       env:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
