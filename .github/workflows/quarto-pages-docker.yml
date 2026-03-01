@@ -29,6 +29,7 @@ jobs:
          echo "should display"
          #cat .Renviron
          echo "nestcepas...."
+         ls /ms-playwright
          which chromium
     - name: Render Quarto site
       env:
