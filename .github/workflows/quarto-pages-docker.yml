@@ -33,6 +33,8 @@ jobs:
          whoami
          id
          ls -ld /ms-playwright
+         ls -l /ms-playwright
+         find /ms-playwright -type f -name chrome -exec ls -l {} \;
          which chromium
     - name: Render Quarto site
       env:
