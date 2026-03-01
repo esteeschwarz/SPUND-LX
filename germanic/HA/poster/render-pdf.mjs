@@ -70,7 +70,6 @@ function resolveChromiumPath() {
     '/usr/bin/chromium',
     '/usr/bin/chromium-browser',
     '/usr/bin/google-chrome',
-    '/ms-playwright',
     '/ms-playwright/chromium-1208/chrome-linux64/chrome'
 
   ];
