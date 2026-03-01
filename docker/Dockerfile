@@ -57,9 +57,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
 RUN node --version && npm --version
 
 RUN npm install -g playwright
-RUN npx playwright install chromium
+# RUN npx playwright install chromium
 # RUN which chromium
-
+RUN apt-get update && \
+    apt-get install -y chromium
 
 # FROM pandoc/latex:3.8.3
 # COPY --from=r-base /usr/local /usr/local
