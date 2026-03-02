@@ -2,150 +2,148 @@
   size: A0 portrait;
   margin: 5mm;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-body {
-  margin: 10;
-  /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: "Source Sans 3", sans-serif;
-
-}
-
-/* A0: 841*1190mm */
-
-/* COLUMN WIDTHS (exact from image ratio) */
 :root {
-/*  --col1: 267mm;
-  --col2: 267mm;
-  --col3: 267mm;*/
   --col1: 270mm;
-  --col2: 220mm; /*671x480 1900-1230 20cm image width */
+  --col2: 220mm;
   --col3: 270mm;
-  --bodyTop: calc(67mm + 5px); /* header + spacing */
-  --width: 841mm;
-  --height: 1184mm;
+  --poster-width: 841mm;
+  --poster-height: 1184mm;
+  --header-height: 65mm;
+  --gap: 15mm;
+  --bodyTop: 65mm;
+}
 
-  }
-
-
-/* BODY START */
-#quarto-document-content {
-  position: absolute;
-  /* width: 801mm;
-  height: 1149mm; */
-  width: 841mm;
-  /* height: 1187mm; */
-  height: calc(var(--height) - var(--bodyTop));
-}
-/* HEADER */
-.quarto-title-block {
-  position: absolute;
-  top: 0mm;
-  left: 168mm;
-  /* width: calc(841mm - 165mm); */
-  width: calc(100% - 168mm);
-  /* height: 60mm;  computed */
-    height: 1187mm;
-
-  border: 4px solid black;
-  border-left: 0px solid transparent;
-  border-bottom: 0px solid transparent;
-  padding: 15mm;
-  box-sizing: border-box;
-  background: white;
-  z-index: 0;
-}
-.quarto-title h1 {
- font-size: 46pt;
-}
-.quarto-title p {
- font-size: 38pt;
-}
-#title-block-header.quarto-title-block.default .quarto-title-meta {
-    display: none;
-}
 /* ========================= */
-/* SECTION BASE STYLE */
+/* BASE */
+/* ========================= */
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+/* ========================= */
+/* HEADER (kept absolute) */
+/* ========================= */
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 5mm;
+    width: 158mm;
+    border-right: 4px solid black;
+    box-sizing: border-box;
+    z-index: 20;
+}
+#title-block-header {
+    margin-block-end: unset;
+    /* position: unset; */
+    margin-top: unset;
+}
+#meta {
+    position: absolute;
+    top: 0mm;
+    right: 0mm;
+    height: 65mm;
+    width: calc(var(--poster-width) - 600)mm;
+    z-index: 20;
+    border-left: 4px solid black;
+    box-sizing: border-box;
+    text-align: right;
+    padding: 20px;
+    font-size: 1.4em;
+}
+.quarto-title-block {
+    position: absolute;
+    top: 0mm;
+    left: 162mm;
+    width: calc(var(--poster-width) - 164mm);
+    height: calc(var(--header-height) - 0.5mm);
+    border-bottom: 4px solid black;
+    border-left: none;
+    padding: 15mm;
+    box-sizing: border-box;
+    background: white;
+    z-index: 10;
+}
+
+.quarto-title h1 {
+  font-size: 46pt;
+}
+
+.quarto-title p {
+  font-size: 38pt;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta {
+  display: none;
+}
+
+/* ========================= */
+/* POSTER GRID WRAPPER */
+/* ========================= */
+
+#quarto-document-content {
+    position: absolute;
+    width: var(--poster-width);
+    /* margin-top: calc(var(--header-height) + 15mm); */
+    /* padding: 10mm; */
+    display: grid;
+    grid-template-columns: var(--col1) var(--col2) var(--col3);
+    column-gap: var(--gap);
+    box-sizing: border-box;
+    border: 4px solid black;
+    z-index: 9;
+}
+
+/* ========================= */
+/* INDEPENDENT VERTICAL COLUMNS */
+/* ========================= */
+
+.column-1,
+.column-2,
+.column-3 {
+  display: inline;
+  /* flex-direction: column; */
+  gap: var(--gap);
+  z-index: 5;
+}
+
+/* Assign sections to columns */
+
+#preliminary,
+#questions-hypotheses,
+#refs {
+  grid-column: 1;
+}
+
+#p2,
+#p3,
+#fig3 {
+  grid-column: 2;
+}
+
+#methods-data,
+#fig1,
+#results,
+#c1 {
+  grid-column: 3;
+}
+
+/* ========================= */
+/* SECTION STYLING */
 /* ========================= */
 
 section.level1 {
-  position: absolute;
   border: 3px solid #5c8a2f;
   background: #f2f2b0;
   padding: 10mm;
   box-sizing: border-box;
   font-size: 36pt;
   line-height: 1.4;
-  z-index: 5;
-      /* font-family: "Source Sans 3", sans-serif; */
-
-}
-/* section.quarto-appendix-contents {
-    position: absolute;
-  border: 3px solid #5c8a2f;
-  background: #f2f2b0;
-  padding: 10mm;
-  box-sizing: border-box;
-  font-size: 24pt;
-  line-height: 1;
-  z-index: 5;
-
-} */
-section#quarto-bibliography.quarto-appendix-contents {
-    /* display: none; */
-      position: absolute;
-  border: 3px solid #5c8a2f;
-  background: #f2f2b0;
-  padding: 10mm;
-  box-sizing: border-box;
-  font-size: 30pt;
-  line-height: 1.2;
-  z-index: 5;
-  bottom: -60mm;
-      /* font-family: "Source Sans 3", sans-serif; */
-
-}
-#quarto-appendix.default {
-    border-top: unset;
-    background-color: unset;
-    padding-top: unset;
-    margin-top: unset;
-    z-index: unset;
-}
-}
-section.quarto-appendix-contents > h1 {
-background: #e6e6a8;
-  margin: -10mm -10mm 10mm -10mm;
-  padding: 5mm;
-  border-bottom: 3px solid #5c8a2f;
-  font-size: 38pt;
-}
-
-section.level5 {
-  position: absolute;
-  border: 3px solid #5c8a2f;
-  background-color: blue;
-  /* color: white;  */
-  padding: 10mm;
-  box-sizing: border-box;
-  font-size: 24pt;
-  line-height: 1.2;
-  z-index: 5;
-  font-family: Monospace;
-      /* font-family: "Source Sans 3", sans-serif; */
-  border-radius: 5px;
-}
-/* #p2 > div:nth-child(2) > div > div > figure */
-/* section.level1 .figure {
-margin: 1 0 0rem;
-} */
-figure {
-margin: revert;
-}
-
-figure.figure {
-margin: 1 0 0rem;
-display: inline-block;
 }
 
 section.level1 > h1 {
@@ -155,207 +153,94 @@ section.level1 > h1 {
   border-bottom: 3px solid #5c8a2f;
   font-size: 38pt;
 }
+
 section.level1 > h4 {
-  /* background: #e6e6a8;
-  margin: -10mm -10mm 10mm -10mm;
-  padding: 5mm;
-  border-bottom: 3px solid #5c8a2f; */
-  /* font-size: 26pt; */
-  overflow: hidden;
-  margin-block-start: 0px;
+  margin-block-start: 0;
 }
+
+section.level5 {
+  border: 3px solid #5c8a2f;
+  background-color: blue;
+  padding: 10mm;
+  box-sizing: border-box;
+  font-size: 24pt;
+  line-height: 1.2;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
 section.level5 > h5 {
-  /* background: #e6e6a8;
+  font-size: 38pt;
+  margin-block-start: 0;
+}
+
+/* ========================= */
+/* BIBLIOGRAPHY */
+/* ========================= */
+
+section#quarto-bibliography.quarto-appendix-contents {
+  border: 3px solid #5c8a2f;
+  background: #f2f2b0;
+  padding: 10mm;
+  box-sizing: border-box;
+  font-size: 30pt;
+  line-height: 1.2;
+}
+
+section.quarto-appendix-contents > h1 {
+  background: #e6e6a8;
   margin: -10mm -10mm 10mm -10mm;
   padding: 5mm;
-  border-bottom: 3px solid #5c8a2f; */
+  border-bottom: 3px solid #5c8a2f;
   font-size: 38pt;
-  overflow: hidden;
-  margin-block-start: 0px;
 }
 
 /* ========================= */
-/* EXACT IMAGE-MATCHED PLACEMENT */
+/* FIGURES */
 /* ========================= */
 
-/* TOP BODY BAND (~584mm total height) */
-#logo {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 168mm;
-  /* height: 70mm */
-  z-index: 15;
-    /* border-right: 4px solid black; */
-    border: 4px solid black;
-box-sizing: border-box;
-
-}
-#meta {
-    position: absolute;
-    top: 0;
-    right: 10mm;
-    height: 68mm;
-    width: calc(var(width) - 600)mm;
-    z-index: 20;
-  border-left: 4px solid black;
-box-sizing: border-box;
-text-align: right;
-/* padding-left: 20px;
-padding-top: 20px; */
-padding: 20px;
-font-size: 1.4em;
-
-
-}
-#preliminary {
-  top: var(--bodyTop);
-  left: 5px; 
-  width: var(--col1);
-  /* height: 292mm; half of upper band */
+figure {
+  margin: revert;
 }
 
-#methods-data {
-  top: var(--bodyTop);
-  /* left: calc(var(--col1) + 33); */
-  right: calc(var(--col3) - var(--col3) + 5px);
- width: calc(var(--col3));
-  /* height: 292mm; */
+figure.figure {
+  margin: 1rem 0 0 0;
+  display: inline-block;
 }
 
-#fig1 {
-  top: var(--bodyTop);
-  left: calc(var(--col1) + var(--col2));
-  width: var(--col3);
-  height: 584mm; /* spans both upper rows */
-}
+/* ========================= */
+/* CODE BLOCKS */
+/* ========================= */
 
-#questions-hypotheses {
-  top: calc(var(--bodyTop) + 310mm);
-  /* left: 5mm; */
-  left: 5px;
-  /* width: calc(var(--col1) - 30)mm; */
-  width: var(--col1);
-  /* height: 100mm; */
-}
-
-#p2 {
-  top: calc(var(--bodyTop));
-  left: calc(var(--col1) + 40mm);
-  width: var(--col2);
-  /* height: 292mm; */
-}
-
-#p3 {
-  top: calc(var(--bodyTop) + 330mm);
-  left: calc(var(--col1) + 40mm);
-  width: var(--col2);
-  /* height: 292mm; */
-}
-#c1 {
-  top: calc(var(--bodyTop) + 200mm);
-  /* margin-top: 10mm; */
-  right: calc(var(--col3) - var(--col3) + 5px);
- width: calc(var(--col3) + 20mm);
-  /* height: 292mm; */
- color: white;
-}
-#c2 {
-  top: calc(var(--bodyTop) + 300mm);
-  /* margin-top: 10mm; */
-  right: calc(var(--col3) - var(--col3) + 5px);
- width: calc(var(--col3) + 20mm);
-  /* height: 292mm; */
- color: white;
-}
 .ptext {
-    color: white;
-}
-.ptext .sourceCode {
-  height: 100%;
-    /* opacity: 0.8; */
-  pointer-events: none;
-  overflow: wrap;
- /* background-color: blue; */
-  /* color: white; */
+  color: white;
 }
 
 .ptext pre {
   margin: 0;
-  height: 100%;
-  /* overflow: hidden;       CRITICAL */
-  white-space: pre-wrap;  /* optional wrapping */
-  
+  white-space: pre-wrap;
 }
 
-/* Optional: prevent horizontal growth */
 .ptext code {
   overflow-wrap: anywhere;
   word-break: break-word;
-  
 }
-/* BOTTOM BAND (~299mm) */
-
-#refs {
-  /* top: calc(var(--bodyTop) + 584mm); */
-  /* left: 5mm; */
-  left: 5px;
-  width: calc(var(--col1) + var(--col1));
-  /* height: 299mm; */
-  /* bottom: 5mm; */
-}
-/* #references {
-    display: none;
-} */
-#fig3 {
-  top: calc(var(--bodyTop) + 584mm);
-  left: var(--col1);
-  width: var(--col2);
-  height: 299mm;
-}
-
-#results {
-  top: calc(var(--bodyTop) + 584mm);
-  /* left: calc(var(--col1) + 33 + var(--col2) + 33); */
-    right: calc(var(--col3) - var(--col3) + 5px);
-
-  width: var(--col3);
-  /* height: 299mm; */
-}
-
-/* LOWER TAIL (169mm area remains visually below bottom band) */
 
 /* ========================= */
-/* BLURRED BACKGROUND SCRIPT */
+/* BACKGROUND FRAME */
 /* ========================= */
 
 #bg {
-    top: calc(var(--bodyTop) - 5px);
-    position: absolute;
-    /* left: 5mm; */
-    /* right: 5mm; */
-    /* bottom: 5mm; */
-      height: var(--height)mm; 
-    z-index: 1;
-    background-color: transparent;
-      /* width: var(--width)mm; */
- width: 100%;
- 
-      border-left: 4px solid black;
-      border-right: 4px solid black;
-      border-top: 4px solid black;
-      border-bottom: 4px solid black;
-  /* padding: 15mm; */
+  position: absolute;
+  top: 5mm;
+  left: 5mm;
+  width: calc(var(--poster-width) - 10mm);
+  height: calc(var(--poster-height) - 10mm);
+  border: 4px solid black;
   box-sizing: border-box;
-    /* border: none; */
-    overflow: hidden;       /* CRITICAL */
-  /* border: 3px solid black;
-  box-sizing: border-box; */
+  z-index: 0;
+  pointer-events: none;
 }
-
-/* code cutoff demo */
-
-/* Parent container with fixed size */
 #code-container {
     top: calc(var(--bodyTop) - 5px);
     position: absolute;
@@ -410,4 +295,3 @@ font-size: 1.4em;
   word-break: break-word;
   
 }
-

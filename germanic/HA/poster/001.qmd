@@ -5,7 +5,7 @@ author: "Stephan Schwarz – FU Berlin – 2026"
 bibliography: ../drafts/germanic-ai.bib
 format:
   html:
-    css: poster.css
+    css: poster_grid.css
     theme: Cosmo
     toc: false
     self-contained: false
