@@ -6,6 +6,7 @@ on:
     paths: 
        - lx-public/HA/sessions/**
        - germanic/HA/drafts/**
+       - germanic/HA/poster/**
        - szondi/docufiction/wg-sebald/**
   workflow_dispatch:
 
