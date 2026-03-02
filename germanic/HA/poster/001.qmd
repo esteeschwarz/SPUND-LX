@@ -54,7 +54,7 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 
 # Methods / Data
 
-our human languaga data consists of raw texts from german bundestag plenary protocols. 
+our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
 the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see in c1.
 
 we first devised model typical lemmata in the AI corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
