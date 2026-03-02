@@ -38,11 +38,14 @@ function findMacPlaywrightChromium() {
 
   // pick latest installed
   const latest = dirs.sort().reverse()[0];
+const arch = os.arch(); // 'arm64' for Apple Silicon, 'x64' for Intel
+
+const chromeFolder = arch === 'arm64' ? 'chrome-mac-arm64' : 'chrome-mac-x64';
 
   const chromePath = path.join(
     base,
     latest,
-    'chrome-mac-x64',
+    chromeFolder,
     'Google Chrome for Testing.app',
     'Contents',
     'MacOS',
@@ -95,7 +98,11 @@ await page.pdf({
   path: '../../../q/germanic/001/poster_A0.pdf',
   width: '841mm',
   height: '1190mm',
-  printBackground: true
+  printBackground: true,
+  pageRanges: '1' // Only export the first page
+
 });
 
 await browser.close();
+console.log('>>>>> poster PDF successfully created. <<<<<');
+

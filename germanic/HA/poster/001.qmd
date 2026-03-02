@@ -104,6 +104,3 @@ knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gp
 # Results
 to gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
 
-
-
-# References
