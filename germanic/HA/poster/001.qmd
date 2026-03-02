@@ -60,14 +60,19 @@ the LLM corpus consists of  model summaries of a first subset of these texts gen
 we first devised model typical lemmata in the AI corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
 
 ```{r prompt, echo=FALSE, warning=FALSE}
+load("../drafts/plist.RData")
 prompt <- readLines("../g-prompt01.txt")
+#prompt<-paste(prompt,collapse = "\n")
+prompt<-plist$ptx
 prompt<-paste(prompt,collapse = "\n")
+
 ```
 
 ##### c1
 `r prompt`
 
-
+##### c2
+<!-- `r print(plist$sdf)` -->
 
 
 # p2
@@ -78,6 +83,7 @@ prompt<-paste(prompt,collapse = "\n")
 
 
 knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-boxplot01-1.png")
+#plist$boxdesc #TODO
 ```
 
 
@@ -87,9 +93,9 @@ knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-bo
 #| label: "fig-densplot01"
 #| echo: FALSE
 
-knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
+# knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
 
-
+plist$gplot
 ```
 
 ```{r}
@@ -97,8 +103,8 @@ knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-de
 #| label: "fig-gpt.dplot"
 #| echo: FALSE
 
-knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
-
+# knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
+plist$gptplot
 ```
 
 # Results

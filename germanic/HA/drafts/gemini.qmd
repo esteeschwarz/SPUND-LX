@@ -1,6 +1,7 @@
 ---
 title: gemini paper
 bibliography: germanic-ai.bib
+warning: false
 ---
 
 {{< include _vars.qmd >}}

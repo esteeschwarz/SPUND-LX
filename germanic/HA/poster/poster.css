@@ -254,6 +254,15 @@ font-size: 1.4em;
 }
 #c1 {
   top: calc(var(--bodyTop) + 200mm);
+  /* margin-top: 10mm; */
+  right: calc(var(--col3) - var(--col3) + 5px);
+ width: calc(var(--col3) + 20mm);
+  /* height: 292mm; */
+ color: white;
+}
+#c2 {
+  top: calc(var(--bodyTop) + 300mm);
+  /* margin-top: 10mm; */
   right: calc(var(--col3) - var(--col3) + 5px);
  width: calc(var(--col3) + 20mm);
   /* height: 292mm; */

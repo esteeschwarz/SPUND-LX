@@ -10,6 +10,7 @@ please cf. @schwarz_this_2026 for the corpus building and evaluation script (sti
 #| echo: false
 #| output: false
 
+plist<-list()
 mh<-lmdf.c$target=="0-human"
 mp<-lmdf.c$target=="post"
 mg<-lmdf.c$target=="gpt"
@@ -18,7 +19,7 @@ sh<-sum(lmdf.c$freq[c(which(mh))])
 sp<-sum(lmdf.c$freq[c(which(mp))])
 sg<-sum(lmdf.c$freq[c(which(mg))])
 ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,sh,sp))
-
+plist$ts<-ts
 ```
 
 our human langugae data consists of raw texts from german bundestag plenary protocols (@dip_dip_2026). the LLM corpus consists of  model summaries of a first subset of these texts generated with the following prompt: @sec-gemini-prompt.
@@ -34,6 +35,7 @@ our human langugae data consists of raw texts from german bundestag plenary prot
 
 ptx<-readLines("../g-prompt01.txt")
 print(ptx)
+plist$ptx<-ptx
 ```
 
 ```{r,prompt-dep}
@@ -70,7 +72,8 @@ p.df<-lmdf.c
 p.df$target[p.df$target=="0-human"]<-"human"
 s.df<-data.frame(target=c("human","post","DIFF:"),freq=c(sh1,sp1,sp1-sh1))
 s.df$freq<-round(s.df$freq,4)
-
+plist$sdf<-s.df
+plist$pdf<-p.df
 ```
 
 
@@ -80,7 +83,7 @@ s.df$freq<-round(s.df$freq,4)
 #| label: fig-gpt.dplot
 #| fig-cap: "lemma gpt scores over targets"
 
-gpt.pplot<-plot(p.df$in.gp, p.df$f.rel, 
+gpt.plot<-plot(p.df$in.gp, p.df$f.rel, 
      col  = as.factor(p.df$target), 
      pch  = 19, 
      xlab = "in.gp (GPT typicality score)",
@@ -92,7 +95,8 @@ legend("topright",
             legend = levels(as.factor(p.df$target)),
             col   = 1:length(levels(as.factor(p.df$target))), 
             pch   = 19)
-
+plist$gptplot<-gpt.plot
+#gpt.plot
 ```
 
 
@@ -105,25 +109,28 @@ legend("topright",
 
 library(ggplot2)
 dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
-ggplot(data = dff2, aes(x = f.rel, fill = target)) +
+gplot<-ggplot(data = dff2, aes(x = f.rel, fill = target)) +
   geom_density(alpha = 0.3) +
   coord_cartesian(xlim = c(0, 0.12)) +  # set your range here
   labs(title = "Density Plot", x = "GPT score", y = "Density") +
   theme_minimal()
-
+plist$dff2<-dff2
+plist$gplot<-gplot
+gplot
 ```
 
 
 
 # evaluation
 ## basic descriptive
-to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). if these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
+to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). wether these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
 
 ```{r,kablediff}
 #| echo: false
 #| output: true
 #| label: tbl-s.df
 #| tbl-cap: "GPT lemma frequencies (table) over target. (freq / vH)"
+#| warning: false
 
 knitr::kable(s.df,label = "tab-s.df")
 ```
@@ -138,9 +145,9 @@ knitr::kable(s.df,label = "tab-s.df")
 
 
 # boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
-boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+boxdesc<-boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
 main="descriptive stats: GPT vocab raw frequencies")
-
+plist$boxdesc<-boxdesc
 ```
 
 ## responsible lemmata
@@ -237,6 +244,8 @@ pcdp<-round(pcdp,5)
 #pcdp
 #pc1<-s2$coefficients[1,1]
 pcp<-round(pc8/pc1*100,2)
+plist$s2<-s2
+save(plist,file="plist.RData")
 
 ```
 
