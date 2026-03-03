@@ -6,13 +6,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
-  --col1: 270mm;
+  --col1: 275mm;
   --col2: 220mm;
-  --col3: 270mm;
+  --col3: 276mm;
   --poster-width: 841mm;
   --poster-height: 1184mm;
   --header-height: 65mm;
-  --gap: 15mm;
+  --gap: 34mm;
   --bodyTop: 65mm;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 #title-block-header {
     margin-block-end: unset;
-    /* position: unset; */
+    position: absolute;
     margin-top: unset;
 }
 #meta {
@@ -123,8 +123,7 @@ body {
 /* Assign sections to columns */
 
 #preliminary,
-#questions-hypotheses,
-#quarto-appendix {
+#questions-hypotheses {
    
 
   grid-column: 1;
@@ -186,20 +185,28 @@ section.level5 {
   font-family: monospace;
   border-radius: 5px;
 }
-.bw {
-  border: 3px solid #5c8a2f;
-  background-color: blue;
-  padding: 10mm;
-  box-sizing: border-box;
-  font-size: 24pt;
-  line-height: 1.2;
-  font-family: monospace;
-  border-radius: 5px;
+section.level1.bw, 
+section.level1.bw > pre {
+    border: 3px solid #5c8a2f;
+    background-color: blue;
+    padding: 10mm;
+    box-sizing: border-box;
+    font-size: 24pt;
+    line-height: 1.2;
+    font-family: monospace;
+    border-radius: 5px;
+    color: white;
+    width: fit-content;
 }
+section.level1.bw > h1{
+  display: none;
+}
+
 section.level5 > h5 {
   font-size: 38pt;
   margin-block-start: 0;
-}section#quarto-bibliography.quarto-appendix-contents {
+}
+section#quarto-bibliography.quarto-appendix-contents {
   border: 3px solid #5c8a2f;
   background: #f2f2b0;
   padding: 10mm;
@@ -215,7 +222,13 @@ section.quarto-appendix-contents > h1 {
   border-bottom: 3px solid #5c8a2f;
   font-size: 38pt;
 }
-
+#quarto-appendix.default {
+    background-color: #fff;
+    padding-top: unset;
+    margin-top: 0mm;
+    z-index: 998;
+    bottom: 5mm;
+}
 /* ========================= */
 /* FIGURES */
 /* ========================= */
@@ -232,9 +245,9 @@ figure.figure {
 #bg {
   position: absolute;
   top: 5mm;
-  left: 5mm;
-  width: calc(var(--poster-width) - 10mm);
-  height: calc(var(--poster-height) - 10mm);
+  left: 2mm;
+  width: calc(var(--poster-width) - 5mm);
+  height: calc(var(--poster-height) + 2mm);
   border: 4px solid black;
   box-sizing: border-box;
   z-index: 0;
@@ -246,9 +259,9 @@ figure.figure {
     /* left: 5mm; */
     /* right: 5mm; */
     /* bottom: 5mm; */
-    height: calc(var(--poster-height) - var(--header-height))mm;
+    /* height: calc(var(--poster-height) - var(--header-height))mm; */
     /* height: var(--poster-height); */
-    /* height: 100%; */
+    height: 100%;
     z-index: 1;
     background-color: transparent;
     /* width: var(--width)mm; */

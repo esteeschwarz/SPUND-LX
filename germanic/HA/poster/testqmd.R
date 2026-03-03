@@ -2,7 +2,7 @@
 setwd("~/Documents/GitHub/SPUND-LX/germanic/HA/poster")
 load("../drafts/plist.RData")
 list.files()
-plist$sdf
+knitr::kable(plist$sdf)
 plist$ptx
 prompt<-plist$ptx
 prompt<-paste(prompt,collapse = "\n")

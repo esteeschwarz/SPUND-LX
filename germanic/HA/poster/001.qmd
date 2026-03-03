@@ -83,7 +83,7 @@ plist$gplot
 # Methods / Data
 
 our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
-the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see in c1.
+the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see C1.
 
 we first devised model typical lemmata in the AI corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
 
@@ -91,26 +91,26 @@ we first devised model typical lemmata in the AI corpus which are distinct for t
 # prompt <- readLines("../g-prompt01.txt")
 #prompt<-paste(prompt,collapse = "\n")
 prompt<-plist$ptx
-prompt<-paste(prompt,collapse = "\n")
+prompt<-paste("C1: ",prompt,collapse = "\n")
 
 ```
 
-
-# c1 {.bw}
-`r prompt`
-
-prompt fin
-
-# c2
-table sdf
-```{r} 
-plist$sdf
-```
 
 # Questions / Hypotheses
 
 - do humans adapt to language produced by LLM and incorporate model vocabulary into their own language production?
 - H1: we will find higher frequencies of LLM typical vocabulary within human natural language corpora after onset of model introduction.
+
+# c1 {.bw}
+`r prompt`
+
+
+# c2 {.bw}
+corpus stats
+``` `r knitr::kable(plist$sdf)` ```
+```{r,results='asis',eval=F} 
+knitr::kable(plist$sdf)
+```
 
 
 # Results
