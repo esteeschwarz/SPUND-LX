@@ -19,3 +19,4 @@ q
 **/.quarto
 **/_freeze
 **/site_libs
+**/plist.RData

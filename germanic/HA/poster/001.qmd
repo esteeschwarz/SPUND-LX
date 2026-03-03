@@ -5,7 +5,8 @@ author: "Stephan Schwarz – FU Berlin – 2026"
 bibliography: ../drafts/germanic-ai.bib
 format:
   html:
-    css: poster_grid.css
+    # css: poster_grid.css
+    css: poster.css
     theme: Cosmo
     toc: false
     self-contained: false
@@ -72,6 +73,7 @@ prompt<-paste(prompt,collapse = "\n")
 `r prompt`
 
 ##### c2
+table sdf
 <!-- `r print(plist$sdf)` -->
 
 
@@ -103,8 +105,8 @@ plist$gplot
 #| label: "fig-gpt.dplot"
 #| echo: FALSE
 
-# knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
-plist$gptplot
+knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
+# plist$gptplot #todo
 ```
 
 # Results
