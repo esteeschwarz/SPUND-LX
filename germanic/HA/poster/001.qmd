@@ -62,7 +62,7 @@ we first devised model typical lemmata in the AI corpus which are distinct for t
 
 ```{r prompt, echo=FALSE, warning=FALSE}
 load("../drafts/plist.RData")
-prompt <- readLines("../g-prompt01.txt")
+# prompt <- readLines("../g-prompt01.txt")
 #prompt<-paste(prompt,collapse = "\n")
 prompt<-plist$ptx
 prompt<-paste(prompt,collapse = "\n")

@@ -20,7 +20,7 @@ RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/q
     && rm quarto-1.8.26-linux-amd64.deb
 
 # # Install exact pandoc
-RUN wget -O pandoc.deb -q https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-1-amd64.deb \
+RUN wget -O pandoc.deb -q https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-1-amd64.deb \
     && dpkg -i pandoc.deb && rm pandoc.deb
 
 # Install TinyTeX (user-level!)
