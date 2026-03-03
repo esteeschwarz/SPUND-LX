@@ -1,5 +1,5 @@
 # testqmd
-setwd("Documents/GitHub/SPUND-LX/germanic/HA/poster")
+setwd("~/Documents/GitHub/SPUND-LX/germanic/HA/poster")
 load("../drafts/plist.RData")
 list.files()
 plist$sdf

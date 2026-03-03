@@ -115,7 +115,8 @@ body {
 /* Assign sections to columns */
 
 #preliminary,
-#questions-hypotheses {
+#questions-hypotheses,
+#quarto-appendix {
     /* border: 3px solid #5c8a2f;
     background: #f2f2b0;
     padding: 10mm;
@@ -135,17 +136,18 @@ body {
 #methods-data,
 #fig1,
 #results,
-#c1 {
+#c1,
+#c2 {
   grid-column: 3;
 }
-#refs {
+/* #refs { */
   /* top: calc(var(--bodyTop) + 584mm); */
   /* left: 5mm; */
   /* left: 5px;
   width: calc(var(--col1) + var(--col2)); */
   /* height: 299mm; */
-  bottom: 5mm;
-}
+  /* bottom: 5mm; */
+/* } */
 /* #references {
     display: none;
 } */
@@ -165,7 +167,7 @@ section#quarto-bibliography.quarto-appendix-contents {
     background-color: unset;
     padding-top: unset;
     margin-top: unset;
-    z-index: unset;
+    z-index: 5;
 }
 
 section.quarto-appendix-contents > h1 {
@@ -212,7 +214,16 @@ section.level5 {
   font-family: monospace;
   border-radius: 5px;
 }
-
+.bw {
+  border: 3px solid #5c8a2f;
+  background-color: blue;
+  padding: 10mm;
+  box-sizing: border-box;
+  font-size: 24pt;
+  line-height: 1.2;
+  font-family: monospace;
+  border-radius: 5px;
+}
 section.level5 > h5 {
   font-size: 38pt;
   margin-block-start: 0;

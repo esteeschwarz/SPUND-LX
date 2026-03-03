@@ -83,7 +83,7 @@ plist$pdf<-p.df
 #| label: fig-gpt.dplot
 #| fig-cap: "lemma gpt scores over targets"
 
-gpt.plot<-plot(p.df$in.gp, p.df$f.rel, 
+plot(p.df$in.gp, p.df$f.rel, 
      col  = as.factor(p.df$target), 
      pch  = 19, 
      xlab = "in.gp (GPT typicality score)",
@@ -95,7 +95,7 @@ legend("topright",
             legend = levels(as.factor(p.df$target)),
             col   = 1:length(levels(as.factor(p.df$target))), 
             pch   = 19)
-plist$gptplot<-gpt.plot
+plist$gptplot<-recordPlot()
 #gpt.plot
 ```
 
@@ -145,9 +145,9 @@ knitr::kable(s.df,label = "tab-s.df")
 
 
 # boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
-boxdesc<-boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
 main="descriptive stats: GPT vocab raw frequencies")
-plist$boxdesc<-boxdesc
+plist$boxdesc<-recordPlot()
 ```
 
 ## responsible lemmata

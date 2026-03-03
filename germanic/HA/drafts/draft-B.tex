@@ -1,0 +1,577 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={xtitle/AI},
+  pdfauthor={st. schwarz},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{xtitle/AI}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{AI and language change \& variation}
+\author{st. schwarz}
+\date{2026-03-03}
+\begin{document}
+\maketitle
+
+
+\section{index}\label{index}
+
+\section{abstract B: idee 2}\label{abstract-b-idee-2}
+
+language is developing and changing. there are many factors that
+influence language change, but i want to focus on one that may become
+relevant in todays language development: the change of language by
+constant and increasing use of AI tools that :communicate: with us as
+partners one may consider :real: or human-equivalent.
+
+\subsection{inspiration}\label{inspiration}
+
+now what are we experiencing if communicating with an artificial
+intelligence? first comes to mind the seemingly :natural language:
+adressed to us. one may feel as if talking to a human when asking
+questions and getting a response. studies prove that a significant
+amount of us show behaviour towards the AI that one would expect humans
+show only towards each other. that leads to the first question:
+
+\begin{quote}
+if we hold the AI as a human communication partner, could its behaviour
+towards us (here: their language) influence the way we talk/act
+viceversa? can people learn from an AI \emph{how} to talk and what would
+they learn in this case? what is the language \emph{taught} here
+specifically? do we adapt to patterns or linguistic markers common for
+\emph{AI speech}?
+\end{quote}
+
+\subsection{AI speech: wtf}\label{ai-speech-wtf}
+
+we can assume as common ground that the language used (here: output) by
+LLMs seems rather neutral, deprived of features deviating from the norm.
+its rather easy to understand, doesnt contain irony or sarcasm very
+often nor hyperbolic sentence structures (if not explicitly prompted)
+and could be very well used in a textbook for learners. it may be
+considered \emph{universal} in aspects of transferability into other
+languages. it uses to not contain any specific vocabular or non-standard
+phrases. the syntax and grammar seems to follow the corresponding rules
+as the models are trained on large corpora of natural language. if we
+would (and we will do that) analyse a corpus of LLM outputs we very
+probably will find that in any feature it complies with the average
+feature matrix of any language compared. so if one language goes like
+SPO with having an average wordcount of 5wds/phrase and an average
+wordlength of 5 chars then the LLM certainly will show the same features
+for output in that language. no magic so far.
+
+But: what if learners or people with deficient language skills begin to
+sync their output with the artificial language in their chatverlauf?
+simple like: beginning a response firstly with an appreciation of the
+:very interesting question: whatever the other may have asked? we're
+already heading that way\ldots{}
+
+There may also be tiny (oberlehrerhafte) standardisations of our own
+speech peculiarities (idiosyncrasies) we are confronted with which we
+are kind of nudged to relativate if always sending them into a black
+hole.
+
+\subsection{methods}\label{sec-methods}
+
+first to do would be to create (or search for) a corpus of AI generated
+output. to use an existing corpus would prevent biasing which on the
+other hand could be interesting to explore i.e.~we could by building
+(generating) a corpus ourselves on the basis of certain dedicated
+prompts\footnote{which could very well be adapted to our research
+  question} force the AI to generate phenomena of interest to our
+research question. where we get into medias res\ldots{}
+
+\subsection{focusing questions}\label{focusing-questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  does a generative AI generally produces output that is in any aspects
+  of interest for linguistic research?
+\item
+  how will users prime the output?
+\item
+  how are users adapting their own production to the output?
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    is there any consistency concerning this adaptation?
+  \item
+    is there then societal adaptation of AI produced language?
+  \item
+    what are the rules (historic evidence) for adaptation?
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{going deeper}\label{going-deeper}
+
+\subsubsection{corpus creation}\label{corpus-creation}
+
+as proposed in Section~\ref{sec-methods} a secure way to building a
+corpus of AI speech - which we need to explore phenomena - is to archive
+LLM output to dedicated prompts. we will use an open source model
+provided with llama which can run on a local machine and is adressed via
+an API by script.
+
+\paragraph{constraints}\label{constraints}
+
+we will form prompts following these directives lead by our research
+question: 1. correction of mistakes to devise actual ``knowledge'' of
+model concerning standardisation and normative aspects
+
+\section{capacities}\label{capacities}
+
+to arrive at a research question, maybe discarding above
+
+\subsection{what i would like to\ldots{}}\label{what-i-would-like-to}
+
+\begin{itemize}
+\tightlist
+\item
+  AI chat queries analysis
+\item
+  analyse linguistic knowledge capacities of AIs
+\item
+  proofread responses, factchecking
+\end{itemize}
+
+\subsection{\texorpdfstring{and what i actually \textbf{can}
+do}{and what i actually can do}}\label{and-what-i-actually-can-do}
+
+\begin{itemize}
+\tightlist
+\item
+  statistics
+\item
+  automated prompting using APIs
+\item
+  automated response processing
+\item
+  masked prompt generation
+\end{itemize}
+
+\section{annotations}\label{annotations}
+
+the research-question-still-to-develop will orientate on the findings
+(\href{qa.qmd\#tbl_qa}{Table}, my annotations) in BSI
+(\citeproc{ref-bsi_wie_2025}{2025}) where i see some interesting points
+although the source itself may be subject to doubt.
+
+\textbf{prompt-linguistics} seems to be a promising keyword in this
+context, also Vechta U (\citeproc{ref-vechta_u_beyond_2024}{2024})
+published a CfP\footnote{for which i in the moment dont find a reliable
+  source anymore so its not cited.} in that genre for a themenheft which
+will be published april 2026 titled: \textbf{Themenheft Beyond
+Prompting?! Sozio-technische Systeme, KI und Medienbildung in der
+Post-Digitalität}, edited by Annekatrin Bock, Lina Franken, Franco Rau,
+Jessica Kühn und Ada Fehr.
+
+\subsection{from here\ldots{}}\label{from-here}
+
+\ldots we come to a maybe more feasable to explore topic within the
+research of semantic, syntactic and pragmatic features of speech of AI
+users that is affected by that use. in the not citable BSI
+(\citeproc{ref-bsi_wie_2025}{2025}) a focus lies on how users language
+changes depending on their making ``heavy use'' of AI tools. there seems
+to be an influence of the affordances to create successful/optimized
+prompts for best results on a. the language used in that prompts and
+furthermore b. the language beyond that usecase say the users everyday
+life. which is exactly what we were looking for, and from here, we can
+dig into corpora to find manifestations of features the study discovered
+as e.g.~simplification of complex syntactic structures in favour of
+reference based patterns.
+
+\subsubsection{Q}\label{q}
+
+\paragraph{\texorpdfstring{characteristics of the optimal prompt,
+Leidinger, Rooij, and Shutova
+(\citeproc{ref-leidinger_language_2023}{2023})}{characteristics of the optimal prompt, Leidinger, Rooij, and Shutova (2023)}}\label{characteristics-of-the-optimal-prompt-leidinger_language_2023}
+
+\begin{itemize}
+\tightlist
+\item
+  can we trace these in corpora?
+\item
+  findings:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    no significant accuracy increase with simplification or lower
+    perplexity score
+  \item
+    no accuracy increase with more frequent synonymes
+  \end{itemize}
+\item
+  ie: there doesnt seem to be a generally ``optimal language'' to
+  prompting
+
+  \begin{itemize}
+  \tightlist
+  \item
+    may not seek for structural features really
+  \end{itemize}
+\item
+  contradictory to BSI study and intuitive guess (experience) on
+  optimized prompt language
+\end{itemize}
+
+\paragraph{\texorpdfstring{Empirical evidence of Large Language Model's
+influence on human spoken communication, Yakura et al.
+(\citeproc{ref-yakura_empirical_2025}{2025})}{Empirical evidence of Large Language Model's influence on human spoken communication, Yakura et al. (2025)}}\label{empirical-evidence-of-large-language-models-influence-on-human-spoken-communication-yakura_empirical_2025}
+
+\begin{itemize}
+\tightlist
+\item
+  finds significant changes in human spoken communication past GPT onset
+\item
+  try replication on german language:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{yakura.html}{preview motivation and preliminary}
+  \item
+    \href{gemini.html}{preview paper \& first results}
+  \end{itemize}
+\end{itemize}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-abrami_german_2022}
+Abrami, Giuseppe, Mevlüt Bagci, Leon Hammerla, and Alexander Mehler.
+2022. {``German {Parliamentary} {Corpus} ({GerParCor}).''} In
+\emph{Proceedings of the {Thirteenth} {Language} {Resources} and
+{Evaluation} {Conference}}, edited by Nicoletta Calzolari, Frédéric
+Béchet, Philippe Blache, Khalid Choukri, Christopher Cieri, Thierry
+Declerck, Sara Goggi, et al., 1900--1906. Marseille, France: European
+Language Resources Association.
+\url{https://aclanthology.org/2022.lrec-1.202/}.
+
+\bibitem[\citeproctext]{ref-aleksic_opinion_2025}
+Aleksic, Adam. 2025. {``Opinion {\textbar} {It}'s Happening: {People}
+Are Starting to Talk Like {ChatGPT}.''} \emph{The Washington Post},
+August.
+\url{https://www.washingtonpost.com/opinions/2025/08/20/chatgpt-claude-chatbots-language/}.
+
+\bibitem[\citeproctext]{ref-noauthor_automatic_nodate}
+{``Automatic Register Identification for the Open Web Using Multilingual
+Deep Learning.''} n.d. Accessed January 3, 2026.
+\url{https://arxiv.org/html/2406.19892v3}.
+
+\bibitem[\citeproctext]{ref-bates_fitting_2015}
+Bates, Douglas, Martin Mächler, Ben Bolker, and Steve Walker. 2015.
+{``Fitting {Linear} {Mixed}-{Effects} {Models} {Using} Lme4.''}
+\emph{Journal of Statistical Software} 67 (1): 1--48.
+\url{https://doi.org/10.18637/jss.v067.i01}.
+
+\bibitem[\citeproctext]{ref-bsi_wie_2025}
+BSI, Brand Science Institute. 2025. {``Wie {KI} Unsere {Sprache}
+Verändert -- {Eine} Empirische {Studie}.''}
+\url{https://www.bsi.ag/cases/104-case-studie-wie-ki-unsere-sprache-veraendert---eine-empirische-studie.html}.
+
+\bibitem[\citeproctext]{ref-dip_dip_2026}
+DIP. 2026. {``{DIP} - {Bundestagsprotokolle}.''} Docs. \emph{DIP - API}.
+Berlin.
+\url{https://dip.bundestag.de/\%C3\%BCber-dip/hilfe/api\#content}.
+
+\bibitem[\citeproctext]{ref-duke_upress_critical_2025}
+Duke UPress. 2025. {``Critical {AI}.''}
+\url{https://www.dukeupress.edu/critical-ai}.
+
+\bibitem[\citeproctext]{ref-flach_collostructions_2021}
+Flach, Susanne. 2021. {``Collostructions: {An} {R} Implementation for
+the Family of Collostructional Methods. {Package} Version v.0.2.0.''}
+\emph{GitHub - Skeptikantin}. \url{https://github.com/skeptikantin}.
+
+\bibitem[\citeproctext]{ref-fobbe_r_2026}
+Fobbe, Sean. 2026. {``{[}{R}{]} {Source} {Code} Des '{Corpus} Der
+{Plenarprotokolle} Des {Deutschen} {Bundestages}'
+({CPP}-{BT}-{Source}).''} Zenodo.
+\url{https://doi.org/10.5281/zenodo.18177197}.
+
+\bibitem[\citeproctext]{ref-kalwa_noch_2025}
+Kalwa, Nina. 2025. {``»{Noch} Steckt {KI} in Den {Kinderschuhen}«.''}
+\emph{Zeitschrift Für Literaturwissenschaft Und Linguistik} 55 (2):
+379--405. \url{https://doi.org/10.1007/s41244-025-00379-0}.
+
+\bibitem[\citeproctext]{ref-kraus_studie_2025}
+Krauß, Patrick, and FAU U. 2025. {``Studie Zeigt: {KI} Lernt
+{Sprachregeln} Beim {Lesen}.''} \emph{FAU}.
+\url{https://www.fau.de/2025/11/news/forschung/studie-ki-lernt-sprachregeln-beim-lesen/}.
+
+\bibitem[\citeproctext]{ref-leidinger_language_2023}
+Leidinger, Alina, Robert van Rooij, and Ekaterina Shutova. 2023. {``The
+Language of Prompting: {What} Linguistic Properties Make a Prompt
+Successful?''} In \emph{Findings of the {Association} for
+{Computational} {Linguistics}: {EMNLP} 2023}, edited by Houda Bouamor,
+Juan Pino, and Kalika Bali, 9210--32. Singapore: Association for
+Computational Linguistics.
+\url{https://doi.org/10.18653/v1/2023.findings-emnlp.618}.
+
+\bibitem[\citeproctext]{ref-milicka_ai_2025}
+Milička, Jiří, Anna Marklová, and Václav Cvrček. 2025. {``{AI} {Brown}
+and {AI} {Koditex}: {LLM}-{Generated} {Corpora} {Comparable} to
+{Traditional} {Corpora} of {English} and {Czech} {Texts}.''}
+\url{https://doi.org/10.48550/arxiv.2509.22996}.
+
+\bibitem[\citeproctext]{ref-ramirez_chatgpt_2025}
+Ramirez, Vanessa Bates. 2025. {``{ChatGPT} {Is} {Changing} the {Words}
+{We} {Use} in {Conversation}.''} \emph{Scientific American}.
+\url{https://www.scientificamerican.com/article/chatgpt-is-changing-the-words-we-use-in-conversation/}.
+
+\bibitem[\citeproctext]{ref-ror_ror_2025}
+ROR, Research Organization Registry. 2025. {``{ROR} {Data}.''} Zenodo.
+\url{https://doi.org/10.5281/zenodo.17953395}.
+
+\bibitem[\citeproctext]{ref-roussel_einsatz_2024}
+Roussel, Stephanie, and Ayaal Herdam. 2024. {``Einsatz von Künstlicher
+{Intelligenz} Im Überarbeitungsprozess von {Texten} in Der
+{Fremdsprache} {Deutsch}: {Fokus} Auf {Wortschatz} Und {Syntax}.''}
+\emph{German as a Foreign Language} 2024 (3): 61--86.
+\url{https://hal.science/hal-04999057}.
+
+\bibitem[\citeproctext]{ref-schwarz_this_2026}
+Schwarz, St. 2026. {``This Papers Evaluation Script.''}
+\emph{GitHub/Esteeschwarz}. Berlin.
+\url{https://github.com/esteeschwarz/SPUND-LX/blob/main/germanic/HA/LLM-003.R}.
+
+\bibitem[\citeproctext]{ref-shrivastava_repository-level_2023}
+Shrivastava, Disha, Hugo Larochelle, and Daniel Tarlow. 2023.
+{``Repository-Level Prompt Generation for Large Language Models of
+Code.''} In \emph{Proceedings of the 40th {International} {Conference}
+on {Machine} {Learning}}, 202:31693--715. {ICML}'23. Honolulu, Hawaii,
+USA: JMLR.org.
+
+\bibitem[\citeproctext]{ref-vechta_u_beyond_2024}
+Vechta U. 2024. {``Beyond {Prompting}.''}
+\url{https://www.uni-vechta.de/beyondprompting/news/details/projekt-beyond-prompting-erfolgreiche-drittmitteleinwerbung}.
+
+\bibitem[\citeproctext]{ref-wikipedia_google_2026}
+Wikipedia, and Google. 2026. {``Google {Gemini}.''} \emph{Wikipedia}.
+\url{https://de.wikipedia.org/w/index.php?title=Google_Gemini&oldid=263426206}.
+
+\bibitem[\citeproctext]{ref-wu_corpus-based_2025}
+Wu, JinLiang. 2025. {``A {Corpus}-{Based} {Multidimensional} {Analysis}
+of {Linguistic} {Features} Between {Human}-{Authored} and
+{ChatGPT}-{Generated} {Compositions}.''} \emph{International Journal of
+Linguistics, Literature and Translation} 8 (5): 102--10.
+\url{https://doi.org/10.32996/ijllt.2025.8.5.10}.
+
+\bibitem[\citeproctext]{ref-yakura_empirical_2025}
+Yakura, Hiromu, Ezequiel Lopez-Lopez, Levin Brinkmann, Ignacio Serna,
+Prateek Gupta, Ivan Soraperra, and Iyad Rahwan. 2025. {``Empirical
+Evidence of {Large} {Language} {Model}'s Influence on Human Spoken
+Communication.''} arXiv.
+\url{https://doi.org/10.48550/arXiv.2409.01754}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
