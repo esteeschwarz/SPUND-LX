@@ -48,6 +48,11 @@ cat("\n```")
 # Preliminary
 inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the @yakura_empirical_2025 pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.
 
+# Questions / Hypotheses
+
+- do humans adapt to language produced by LLM and incorporate model vocabulary into their own language production?
+- H1: we will find higher frequencies of LLM typical vocabulary within human natural language corpora after onset of model introduction.
+
 # p2
 ```{r}
 #| fig-cap: "stats descriptive"
@@ -60,7 +65,7 @@ plist$boxdesc #TODO
 ```
 
 
-
+# p3
 ```{r}
 #| fig-cap: "model vocab density"
 #| label: "fig-densplot01"
@@ -71,6 +76,7 @@ plist$boxdesc #TODO
 plist$gplot
 ```
 
+# p4
 ```{r}
 #| fig-cap: "model vocab distribution"
 #| label: "fig-gpt.dplot"
@@ -96,10 +102,6 @@ prompt<-paste("C1: ",prompt,collapse = "\n")
 ```
 
 
-# Questions / Hypotheses
-
-- do humans adapt to language produced by LLM and incorporate model vocabulary into their own language production?
-- H1: we will find higher frequencies of LLM typical vocabulary within human natural language corpora after onset of model introduction.
 
 # c1 {.bw}
 `r prompt`

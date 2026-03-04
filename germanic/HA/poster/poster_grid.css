@@ -88,13 +88,18 @@ body {
 
   width: calc(var(--poster-width));
   height: calc(var(--poster-height) - var(--header-height));
-
-  display: grid;
-  grid-template-columns: var(--col1) var(--col2) var(--col3);
+display: grid;
+grid-template-columns: var(--col1) var(--col2) var(--col3);
+grid-auto-flow: column;
+grid-auto-rows: max-content;
+align-items: start;
+  /* display: grid; */
+  /* grid-template-columns: var(--col1) var(--col2) var(--col3); */
   column-gap: var(--gap);
+  row-gap: var(--gap);
 
   align-items: start;      /* critical */
-  grid-auto-rows: auto;    /* critical */
+  /* grid-auto-rows: auto;    critical */
 
   box-sizing: border-box;
     border: 4px solid black;
@@ -128,9 +133,13 @@ body {
 
   grid-column: 1;
 }
+#quarto-appendix {
+    grid-column: 1;
 
+}
 #p2,
 #p3,
+#p4,
 #fig3 {
   grid-column: 2;
 }
