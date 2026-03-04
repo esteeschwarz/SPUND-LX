@@ -3,6 +3,8 @@ title: "AI Speech and language variation & change"
 subtitle: "A study on manifestation of AI speech in human natural language"
 author: "Stephan Schwarz – FU Berlin – 2026"
 bibliography: ../drafts/germanic-ai.bib
+suppress-bibliography: false
+reference-location: document
 format:
   html:
     css: poster_grid.css
@@ -24,8 +26,9 @@ class: [16838] germanische sprachen im vergleich
 tutor: Hüning / Konvicna  
 term: WS25/26  
 
-
-snc: `r Sys.time()`
+-----
+authored: st. schwarz  
+snc: #16115::`r Sys.time()`
 :::
 
 ::: {#code-container}
@@ -44,7 +47,14 @@ cat("\n```")
 
 <!-- footer: snc.16093.1/107*162 -->
 :::
+```{r prompt, echo=FALSE, warning=FALSE}
+# prompt <- readLines("../g-prompt01.txt")
+#prompt<-paste(prompt,collapse = "\n")
+prompt<-plist$ptx
+prompt<-paste("C1: ",prompt,collapse = "\n")
 
+```
+::: {.column-1}
 # Preliminary
 inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the @yakura_empirical_2025 pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.
 
@@ -52,6 +62,25 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 
 - do humans adapt to language produced by LLM and incorporate model vocabulary into their own language production?
 - H1: we will find higher frequencies of LLM typical vocabulary within human natural language corpora after onset of model introduction.
+
+# Methods / Data
+
+our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
+the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see C1.
+
+we first devised model typical lemmata in the AI corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
+
+# c1 {.bw}
+`r prompt`
+:::
+
+::: {.column-2}
+# c2 {.bw}
+corpus stats
+``` `r knitr::kable(plist$sdf)` ```
+```{r,results='asis',eval=F} 
+knitr::kable(plist$sdf)
+```
 
 # p2
 ```{r}
@@ -63,7 +92,6 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 #knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-boxplot01-1.png")
 plist$boxdesc #TODO
 ```
-
 
 # p3
 ```{r}
@@ -85,36 +113,15 @@ plist$gplot
 #knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
  plist$gptplot #todo
 ```
+:::
 
-# Methods / Data
-
-our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
-the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see C1.
-
-we first devised model typical lemmata in the AI corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
-
-```{r prompt, echo=FALSE, warning=FALSE}
-# prompt <- readLines("../g-prompt01.txt")
-#prompt<-paste(prompt,collapse = "\n")
-prompt<-plist$ptx
-prompt<-paste("C1: ",prompt,collapse = "\n")
-
-```
-
-
-
-# c1 {.bw}
-`r prompt`
-
-
-# c2 {.bw}
-corpus stats
-``` `r knitr::kable(plist$sdf)` ```
-```{r,results='asis',eval=F} 
-knitr::kable(plist$sdf)
-```
-
-
+::: {.column-3}
 # Results
 to gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
+
+:::{#refs}
+# references
+:::
+:::
+
 

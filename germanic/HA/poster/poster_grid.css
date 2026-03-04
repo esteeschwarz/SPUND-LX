@@ -47,7 +47,7 @@ body {
   position: absolute;
     top: calc(-1*var(--header-height));
   right: 0mm;
-  height: 65mm;
+    height: calc(var(--header-height) - 2mm);
   width: calc(var(--poster-width) - 600mm);
   z-index: 20;
   border-left: 4px solid black;
@@ -62,8 +62,8 @@ body {
     top: calc(-1*var(--header-height));
     left: 162mm;
     width: calc(var(--poster-width) - 164mm);
-    height: var(--header-height);
-    border-bottom: 4px solid black;
+    height: calc(var(--header-height) - 2mm);
+    /* border-bottom: 4px solid black; */
     padding: 15mm;
     box-sizing: border-box;
     background: white;
@@ -80,8 +80,59 @@ body {
 /* ========================= */
 /* GRID CONTAINER */
 /* ========================= */
-
+/* Container becomes a horizontal flexbox */
 #quarto-document-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;  /* critical — columns don't stretch to match each other */
+  gap: var(--gap);
+  /* remove: column-count, grid-* everything */
+  position: absolute;
+  top: calc(var(--header-height));
+  left: 5mm;
+
+  width: calc(var(--poster-width));
+  height: calc(var(--poster-height) - var(--header-height));
+
+
+  box-sizing: border-box;
+  /* box-sizing: border-box; */
+    border: 4px solid black;
+  z-index: 9;
+}
+
+/* Each column is an independent vertical stack */
+.column-1, .column-2, .column-3 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  align-items: stretch;
+  flex-shrink: 0;  /* don't let columns compress */
+}
+
+/* Fixed widths per column */
+.column-1 { width: var(--col1); }
+.column-2 { width: var(--col2); }
+.column-3 { width: var(--col3); }
+
+#quarto-document-content_dep1 {
+  position: absolute;
+  top: calc(var(--header-height));
+  left: 5mm;
+
+  width: calc(var(--poster-width));
+  height: calc(var(--poster-height) - var(--header-height));
+
+  column-count: 3;           /* ← TRUE independent columns */
+  column-gap: var(--gap);          /* horizontal spacing */
+  row-gap: var(--gap);
+
+  box-sizing: border-box;
+  /* box-sizing: border-box; */
+    border: 4px solid black;
+  z-index: 9;
+}
+#quarto-document-content_dep0 {
   position: absolute;
   top: calc(var(--header-height));
   left: 5mm;
@@ -168,6 +219,9 @@ z-index: 10;
   height: auto;        /* critical */
   min-height: 0;       /* critical */
   align-self: start;   /* prevents stretching */
+  break-inside: avoid;   /* prevents splitting */
+  margin-bottom: 20mm;
+
 }
 
 section.level1 > h1 {
@@ -238,6 +292,10 @@ section.quarto-appendix-contents > h1 {
     z-index: 998;
     bottom: 5mm;
 }
+div.hanging-indent {
+    margin-left: auto;
+    text-indent: 0;
+}
 /* ========================= */
 /* FIGURES */
 /* ========================= */
@@ -265,13 +323,17 @@ figure.figure {
 #code-container {
     /* top: 5mm; */
     position: absolute;
+    position: absolute;
+    inset: 0;              /* fills parent */
+    z-index: -1;           /* push behind siblings */
+    pointer-events: none;
     /* left: 5mm; */
     /* right: 5mm; */
     /* bottom: 5mm; */
     /* height: calc(var(--poster-height) - var(--header-height))mm; */
     /* height: var(--poster-height); */
     height: 100%;
-    z-index: 1;
+    /* z-index: 1; */
     background-color: transparent;
     /* width: var(--width)mm; */
     width: 100%;
