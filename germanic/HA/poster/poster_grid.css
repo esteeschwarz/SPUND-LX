@@ -57,6 +57,23 @@ body {
   font-size: 1.4em;
 }
 
+#references {
+  /* position: absolute;
+    top: calc(-1*var(--header-height));
+  right: 0mm;
+    height: calc(var(--header-height) - 2mm);
+  width: calc(var(--poster-width) - 600mm);
+  z-index: 20;
+  border-left: 4px solid black;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 20px; */
+  font-size: 32pt;
+}
+.column-3 > #refs {
+  /* margin-top: auto; */
+  align-self: end;
+}
 .quarto-title-block {
     position: absolute;
     top: calc(-1*var(--header-height));
@@ -114,7 +131,13 @@ body {
 .column-1 { width: var(--col1); }
 .column-2 { width: var(--col2); }
 .column-3 { width: var(--col3); }
+.column-3 {
+    align-self: stretch;  /* override the flex-start on parent */
 
+}
+.column-3 > #refs {
+  margin-top: auto;
+}
 #quarto-document-content_dep1 {
   position: absolute;
   top: calc(var(--header-height));
@@ -209,19 +232,18 @@ align-items: start;
 /* ========================= */
 
 section.level1 {
-  border: 3px solid #5c8a2f;
-  background: #f2f2b0;
-  padding: 10mm;
-  box-sizing: border-box;
-  font-size: 36pt;
-  line-height: 1.4;
-z-index: 10;
-  height: auto;        /* critical */
-  min-height: 0;       /* critical */
-  align-self: start;   /* prevents stretching */
-  break-inside: avoid;   /* prevents splitting */
-  margin-bottom: 20mm;
-
+    border: 3px solid #5c8a2f;
+    background: #f2f2b0;
+    padding: 10mm;
+    box-sizing: border-box;
+    font-size: 36pt;
+    line-height: 1.4;
+    z-index: 10;
+    height: auto;
+    min-height: 0;
+    /* align-self: start; */
+    break-inside: avoid;
+    /* margin-bottom: 20mm; */
 }
 
 section.level1 > h1 {
