@@ -79,13 +79,25 @@ range<-c("2025-06-01","2025-07-31")
 tdf4<-getdf(range)
 range<-c("2025-08-01","2025-11-30")
 tdf5<-getdf(range)
-ptdf.2<-rbind(tdf1,tdf2,tdf3,tdf4,tdf5)
+range<-c("2020-01-01","2020-03-01")
+tdf6<-getdf(range)
+range<-c("2020-03-02","2020-06-01")
+tdf7<-getdf(range)
+range<-c("2020-06-02","2020-08-01")
+tdf8<-getdf(range)
+range<-c("2020-08-02","2020-10-01")
+tdf9<-getdf(range)
+range<-c("2025-12-01","2026-02-01")
+tdf10<-getdf(range)
+range<-c("2026-02-02","2026-03-10")
+tdf11<-getdf(range)
+ptdf.2<-rbind(tdf1,tdf2,tdf3,tdf4,tdf5,tdf6,tdf7,tdf8,tdf9,tdf10,tdf11)
 
 #save(ptdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData"))
 }
-#ptdf.2<-get.btt()
+ptdf.2<-get.btt()
 
-#save(ptdf.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData"))
+#save(ptdf.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt03.RData"))
 
 get.gpt<-function(){
 ### load btt corpus
@@ -245,8 +257,9 @@ library(tidyr)
 #install.packages("tidytext")
 library(tidytext)
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData")) # protocols + gpt summary texts 
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData")) # protocols after gemini
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData")) # protocols after gemini
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData")) # protocols before gemini
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt03.RData")) # protocols after gemini
 df<-btt.summaries
 # Add corpus labels for binding
 # df_human <- df %>%
@@ -256,8 +269,9 @@ df<-btt.summaries
 # df_gpt <- df %>%
 #   mutate(corpus = "gpt") %>%
 #   rename(summary = text)
-df1<-df[,1:2]
+#df1<-df[,1:2]
 df2<-df[,c(1,3)]
+df1<-ptdf.2
 df1<-cbind(df1,"human")
 df2<-cbind(df2,"gpt")
 colnames(df1)<-c("date","text","target")
@@ -266,6 +280,9 @@ df_combined <- bind_rows(df1,df2)
 library(stringr)
 # Tokenize to words (lowercase, remove punctuation/numbers)
 df_combined$id<-1:length(df_combined$date)
+gp<-df_combined$target=="gpt"
+writeLines(head(df_combined$text[gp]),paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-test-gpt.txt"))
+
 #df_combined$text[1]
 ### step to udpipe
 # tokens <- df_combined %>%
@@ -276,10 +293,33 @@ df_combined$id<-1:length(df_combined$date)
 #   unnest_tokens(word, text, token = "words")# Optional: alphabetic words only
 # tokens<-unlist(strsplit(df_combined$text,"[ .:,;?!\\)\\(\\|\n|\\]|\\["))
 # tokens<-tokens[tokens!=""]
+# df_combined$text[1]
+# mp<-lapply(df_combined$text,function(x){
+#   xt<-unlist(strsplit(x,"\n"))
+#   print(length(xt))
+#   m<-grep("^[0-9]{3,4}\\. Sitzung $",xt)
+#   print(m)
+#   m<-m[m>10]
+#   print(m)
+#   ifelse(length(m)>0,t<-xt[m[1]:length(x)],t<-x)
+#   return(t)
+#   })
+# thead<-unlist(strsplit(df_combined$text[1],"\n"))
+# thead<-data.frame(head="head",p=thead[1:965])
+# tok.h <- thead %>% unnest_tokens(word,p,token = "words",to_lower = F) # Optional: alphabetic words only
+# tok.h<-unnest_tokens(th)
+# ht<-table(tok.h$word)
+# ht<-ht[order(ht,decreasing = T)]
+# htm<-ht>10
+# ht[htm]
+# ?unnest_tokens
+# df_combined$pr<-mp
+# head(df_combined$pr)
+# df_combined[mp,]
 tokens.2 <- df_combined %>%
   unnest_tokens(word, text, token = "words",to_lower = F) # Optional: alphabetic words only
   head(tokens.2$word,20)
-ptdf.2$target<-"post"
+ptdf.2$target<-"human"
 tokens.3<-ptdf.2 %>%
   unnest_tokens(word,text,token = "words",to_lower = F)
 # ?unnest_tokens
@@ -302,6 +342,8 @@ tokens.3<-ptdf.2 %>%
 # for udpipe
 tokens.r<-tokens.2
 colnames(tokens.r)
+return(list(t1=tokens.r,t2=tokens.3))
+}
 # # fh<-freq.list(tokens.r$word[tokens.r$target=="human"])
 # # fg<-freq.list(tokens.r$word[tokens.r$target=="gpt"])
 # # fa<-freq.list(tokens.r$word)
@@ -326,8 +368,9 @@ colnames(tokens.r)
 # geht	24	3692	0.00650054171180932
 ##########################################
 ### now with lemma, udpipe pipeline...
-# library(udpipe)
-# model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
+ant<-function(toks){
+library(udpipe)
+model<-udpipe::udpipe_load_model(paste(Sys.getenv("HKW_TOP"),"data/german-gsd-ud-2.5-191206.udpipe",sep = "/"))
 ##################################
 ## test
 # df.ann<-as.data.frame(udpipe::udpipe_annotate(model,df_combined$text,doc_id = df_combined$id,target=df_combined$target))
@@ -337,6 +380,7 @@ colnames(tokens.r)
 # tu<-unique(tokens.2$word)
 
 # df.ann<-udpipe::udpipe_annotate(model,fj$WORD,trace = T,parser = "none")
+df.ann<-udpipe::udpipe_annotate(model,toks,trace = T,parser = "none")
 # 
 # dfa.pos<-as.data.frame(df.ann)
 # fj$lemma<-NA
@@ -346,7 +390,7 @@ colnames(tokens.r)
 # }
 #save(dfa.pos,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 # save(fj,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
-return(list(t1=tokens.r,t2=tokens.3))
+return(df.ann)
 }
 #?udpipe_annotate
 ###########################################################################
@@ -357,6 +401,9 @@ get.freq<-function(){
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
 tokens.r<-tokens$t1
+unique(tokens.r$target)
+# mp<-grep("^[0-9]{3,4}\\.",tokens.r$word)
+# tokens.r[mp,]
 tokens.3<-tokens$t2
 tokens.r$lemma<-NA
 tokens.3$lemma<-NA
@@ -364,11 +411,26 @@ tokens.3$lemma<-NA
 
 #tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
 tokens.r$lemma <- dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
-tokens.r$lemma[is.na(tokens.r$lemma)]<-tokens.r$word[is.na(tokens.r$lemma)]
-tokens.3$lemma <- dfa.pos$lemma[match(tokens.3$word, dfa.pos$token)]
-#tokens.3$lemma <- fj$lemma[match(tokens.3$word, fj$WORD)]
-tokens.3$lemma[is.na(tokens.3$lemma)]<-tokens.3$word[is.na(tokens.3$lemma)]
-
+lna<-is.na(tokens.r$lemma)
+sum(lna) # too big, 1.2mio
+#writeLines(head(ptdf.2$text),paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-test.txt"))
+toks<-tokens.r$word[lna]
+toks.c<-toks[!toks%in%stops.j]
+m<-grepl("[^A-Za-zöäüÖÄÜßáàÉÁé]",toks.c)
+sum(m)
+toks.c<-toks.c[!m]
+tok.ann<-ant(toks.c) #18:05-18:25
+colnames(tok.n2)
+tok.n2<-as.data.frame(tok.ann)
+tok.na.anno<-tok.n2[,c(6,7)]
+save(tok.na.anno,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.na.ann.RData"))
+##########################
+### annotate again for nas
+# tokens.r$lemma[is.na(tokens.r$lemma)]<-tokens.r$word[is.na(tokens.r$lemma)]
+# tokens.3$lemma <- dfa.pos$lemma[match(tokens.3$word, dfa.pos$token)]
+# #tokens.3$lemma <- fj$lemma[match(tokens.3$word, fj$WORD)]
+# tokens.3$lemma[is.na(tokens.3$lemma)]<-tokens.3$word[is.na(tokens.3$lemma)]
+######################
 stops<-stopwords("de")
 stops
 stops.m<-c("dass","a","ab","immer","mal","erst","ja") # manual edit
