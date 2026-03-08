@@ -3,6 +3,7 @@ library(tidyverse)
 
 # --- Load & prepare ---
 # df <- read.csv("your_data.csv") %>%
+dlim<-"2024-01-01"
 df<-tok.r3%>%
 # tok.r3%>%
   mutate(
@@ -14,8 +15,8 @@ df<-tok.r3%>%
     date_scaled = date/max(date)
   )
 
-df <- df %>%
-  add_count(lemma, name = "freq")
+# df <- df %>%
+#   add_count(lemma, name = "freq")
 df_agg <- df %>%
   count(lemma, date, target)
 m<-lmer(n~target+date+(1|lemma),df_agg)
@@ -68,7 +69,7 @@ tail(lemma_effects, 20)
 
 library(tidyverse)
 
-df_both <- read.csv("dfsample.csv")
+#df_both <- read.csv("dfsample.csv")
 df_both<-df_agg
 # --- Step 1: total n per lemma per target ---
 lemma_target <- df_both %>%
@@ -158,5 +159,105 @@ lemma_trends %>%
     y = "Trend in human corpus (Poisson slope)",
     title = "GPT-typical lemmas rising in human speech?",
     subtitle = "Top-right quadrant = gpt-preferred AND increasing in human corpus"
+  ) +
+  theme_minimal()
+
+lemma_trends <- df_human %>%
+  group_by(lemma) %>%
+  filter(n() >= 3) %>%
+  summarise(
+    model  = list(glm(n ~ date, family = poisson)),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    slope    = map_dbl(model, ~ coef(.x)[["date"]]),
+    p_value  = map_dbl(model, ~ summary(.x)$coefficients["date", "Pr(>|z|)"]),
+    z_value  = map_dbl(model, ~ summary(.x)$coefficients["date", "z value"])
+  ) %>%
+  select(-model) %>%
+  arrange(p_value)
+
+gpt_lemmas_rising <- lemma_trends %>%
+  filter(slope > 0, p_value < 0.05)
+sum()
+
+# --- Aggregate: n per lemma × post × target ---
+
+df_agg <- df %>%
+  count(lemma, post, target)
+# --- total tokens per post × target condition ---
+totals <- df_agg %>%
+  group_by( post,target)%>% 
+
+  summarise(total = sum(n), .groups = "drop")
+
+# --- join totals, compute relative frequency ---
+df_agg <- df %>%
+  count(lemma, post, target) %>%
+  left_join(totals, by = c("post", "target")) %>%
+  mutate(rel_freq = n / total)         # proportion of all tokens in that slice
+df_agg$post<-ifelse(df_agg$post==1,TRUE,FALSE)
+unique(df_agg$post)
+lemma_post_trends <- df_agg %>%
+  filter(target == "human") %>%
+  group_by(lemma) %>%
+  filter(sum(n) >= 10, n() >= 2) %>%
+  summarise(
+    model   = list(glm(n ~ post + offset(log(total)), family = poisson)),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    slope   = map_dbl(model, ~ coef(.x)[["postTRUE"]]),
+    p_value = map_dbl(model, ~ summary(.x)$coefficients["postTRUE", "Pr(>|z|)"]),
+    z_value = map_dbl(model, ~ summary(.x)$coefficients["postTRUE", "z value"])
+  ) %>%
+  select(-model)
+# --- Filter to human, fit per-lemma logistic-style Poisson ---
+unique(df_agg$post)
+lemma_post_trends <- df_agg %>%
+  filter(target == "human") %>%
+  group_by(lemma) %>%
+  filter(sum(n) >= 10, n() >= 2) %>%        # needs obs in both post conditions
+  summarise(
+    model   = list(glm(n ~ post, family = poisson)),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    slope   = map_dbl(model, ~ coef(.x)[["postTRUE"]]),
+    p_value = map_dbl(model, ~ summary(.x)$coefficients["postTRUE", "Pr(>|z|)"]),
+    z_value = map_dbl(model, ~ summary(.x)$coefficients["postTRUE", "z value"])
+  ) %>%
+  select(-model) %>%
+  arrange(p_value)
+
+
+library(tidyverse)
+library(ggrepel)
+
+lp<-lemma_post_trends %>%
+  left_join(gpt_lemmas %>% select(lemma, log_odds), by = "lemma") %>%
+  filter(!is.na(log_odds)) %>%
+  mutate(
+    significant = p_value < 0.4,
+    label       = if_else(significant & slope > 0 & log_odds > 0, lemma, NA_character_)
+  )
+# %>%
+  ggplot(aes(x = log_odds, y = slope)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_point(aes(size = -log10(p_value),        # bigger = more significant
+                 color = significant & slope > 0 & log_odds > 0),
+             alpha = 0.6) +
+  ggrepel::geom_text_repel(aes(label = label), size = 3, max.overlaps = 20) +
+  scale_color_manual(values = c("TRUE" = "#2166ac", "FALSE" = "grey70"),
+                     labels = c("other", "gpt-typical & rising post-onset")) +
+  scale_size_continuous(range = c(1, 6)) +
+  labs(
+    x     = "GPT preference (log-odds)",
+    y     = "Post-onset rate change (Poisson coefficient)",
+    title = "GPT-typical lemmas rising after onset in human corpus",
+    subtitle = "Top-right quadrant = gpt-preferred AND more frequent post-onset\nPoint size = statistical significance (−log10 p)",
+    color = NULL,
+    size  = "−log10(p)"
   ) +
   theme_minimal()
