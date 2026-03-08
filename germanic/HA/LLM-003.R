@@ -95,7 +95,7 @@ ptdf.2<-rbind(tdf1,tdf2,tdf3,tdf4,tdf5,tdf6,tdf7,tdf8,tdf9,tdf10,tdf11)
 
 #save(ptdf,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData"))
 }
-ptdf.2<-get.btt()
+#ptdf.2<-get.btt()
 
 #save(ptdf.2,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt03.RData"))
 
@@ -397,6 +397,32 @@ return(df.ann)
 ###########################################################################
 ### 16062.from here
 tokens<-get.tokens()
+
+get.stops<-function(){
+  stops<-stopwords("de")
+  stops
+  stops.m<-c("dass","a","ab","immer","mal","erst","ja") # manual edit
+  stops.p<-c("linken","beim","daran","geehrt","grünen","spd","cdu","csu","afd","AfD","fdp","dabei") # after modeling, (cmodel)
+  stops.j<-c(stops,stops.m,stops.p)
+  #??capitalize
+  library(Hmisc)
+  stops.u<-lapply(stops.j, function(x){
+    c1<-capitalize(x)
+  })
+  stops.u<-unlist(stops.u)
+  stops.u
+  stops.j<-c(stops.j,stops.u)
+  stops.u<-lapply(stops.j, function(x){
+    c1<-toupper(x)
+  })
+  stops.u<-unlist(stops.u)
+  stops.u
+  stops.j<-c(stops.j,stops.u)
+  stops.j<-unique(stops.j)
+  
+}
+stops.j<-get.stops()
+
 get.freq<-function(){
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-dfa.pos.RData"))
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fj.pos.RData"))
@@ -410,82 +436,102 @@ tokens.3$lemma<-NA
 
 
 #tokens.r$lemma <- fj$lemma[match(tokens.r$word, fj$WORD)]
+#load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.na.ann.RData"))
 tokens.r$lemma <- dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
 lna<-is.na(tokens.r$lemma)
 sum(lna) # too big, 1.2mio
 #writeLines(head(ptdf.2$text),paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-test.txt"))
-toks<-tokens.r$word[lna]
-toks.c<-toks[!toks%in%stops.j]
-m<-grepl("[^A-Za-zöäüÖÄÜßáàÉÁé]",toks.c)
+# toks<-tokens.r$word[lna]
+# toks.c<-toks[!toks%in%stops.j]
+# m<-grepl("[^A-Za-zöäüÖÄÜßáàÉÁé]",toks.c)
+# sum(m)
+# toks.c<-toks.c[!m]
+# ####### tok.ann<-ant(toks.c) #18:05-18:25
+# colnames(tok.n2)
+# tok.n2<-as.data.frame(tok.ann)
+# tok.na.anno<-tok.n2[,c(6,7)]
+#save(tok.na.anno,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.na.ann.RData"))
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.na.ann.RData"))
+tokens.r$lemma[lna] <- tok.na.anno$lemma[match(tokens.r$word[lna], tok.na.anno$token)]
+lna2<-is.na(tokens.r$lemma)
+sum(lna2) # too big, 1.2mio
+m<-grepl("[^A-Za-zöäüÖÄÜßáàÉÁé]",tokens.r$word)
 sum(m)
-toks.c<-toks.c[!m]
-tok.ann<-ant(toks.c) #18:05-18:25
-colnames(tok.n2)
-tok.n2<-as.data.frame(tok.ann)
-tok.na.anno<-tok.n2[,c(6,7)]
-save(tok.na.anno,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.na.ann.RData"))
+tokens.r<-tokens.r[!m,]
+lna2<-is.na(tokens.r$lemma)
+sum(lna2) # too big, 1.2mio
+m<-tokens.r$lemma%in%stops.j
+sum(m)
+tokens.r<-tokens.r[!m,]
+lna2<-is.na(tokens.r$lemma)
+sum(lna2) # too big, 1.2mio
+m<-tokens.r$word%in%stops.j
+sum(m)
+tokens.r<-tokens.r[!m,]
+lna2<-is.na(tokens.r$lemma)
+sum(lna2) # too big, 1.2mio
 ##########################
 ### annotate again for nas
-# tokens.r$lemma[is.na(tokens.r$lemma)]<-tokens.r$word[is.na(tokens.r$lemma)]
+tokens.r$lemma[is.na(tokens.r$lemma)]<-tokens.r$word[is.na(tokens.r$lemma)]
 # tokens.3$lemma <- dfa.pos$lemma[match(tokens.3$word, dfa.pos$token)]
 # #tokens.3$lemma <- fj$lemma[match(tokens.3$word, fj$WORD)]
 # tokens.3$lemma[is.na(tokens.3$lemma)]<-tokens.3$word[is.na(tokens.3$lemma)]
 ######################
-stops<-stopwords("de")
-stops
-stops.m<-c("dass","a","ab","immer","mal","erst","ja") # manual edit
-stops.p<-c("linken","beim","daran","geehrt","grünen","spd","cdu","csu","afd","AfD","fdp","dabei") # after modeling, (cmodel)
-stops.j<-c(stops,stops.m,stops.p)
-#??capitalize
-library(Hmisc)
-stops.u<-lapply(stops.j, function(x){
-  c1<-capitalize(x)
-})
-stops.u<-unlist(stops.u)
-stops.u
-stops.j<-c(stops.j,stops.u)
-stops.u<-lapply(stops.j, function(x){
-  c1<-toupper(x)
-})
-stops.u<-unlist(stops.u)
-stops.u
-stops.j<-c(stops.j,stops.u)
-stops.j<-unique(stops.j)
-m<-tokens.r$word%in%stops.j
-
-tokens.r<-tokens.r[!m,]
-m<-tokens.3$word%in%stops.j
-sum(m)
-tokens.3<-tokens.3[!m,]
-m<-tokens.r$lemma%in%stops.j
-sum(m)
-tokens.r<-tokens.r[!m,]
-m<-tokens.3$lemma%in%stops.j
-sum(m)
-tokens.3<-tokens.3[!m,]
-m<-tokens.3$lemma%in%stops.j
-sum(m)
-m<-tokens.r$lemma%in%stops.j
-sum(m)
+# stops<-stopwords("de")
+# stops
+# stops.m<-c("dass","a","ab","immer","mal","erst","ja") # manual edit
+# stops.p<-c("linken","beim","daran","geehrt","grünen","spd","cdu","csu","afd","AfD","fdp","dabei") # after modeling, (cmodel)
+# stops.j<-c(stops,stops.m,stops.p)
+# #??capitalize
+# library(Hmisc)
+# stops.u<-lapply(stops.j, function(x){
+#   c1<-capitalize(x)
+# })
+# stops.u<-unlist(stops.u)
+# stops.u
+# stops.j<-c(stops.j,stops.u)
+# stops.u<-lapply(stops.j, function(x){
+#   c1<-toupper(x)
+# })
+# stops.u<-unlist(stops.u)
+# stops.u
+# stops.j<-c(stops.j,stops.u)
+# stops.j<-unique(stops.j)
+# m<-tokens.r$word%in%stops.j
+# sum(m)
+# tokens.r<-tokens.r[!m,]
+# m<-tokens.3$word%in%stops.j
+# sum(m)
+# tokens.3<-tokens.3[!m,]
+# m<-tokens.r$lemma%in%stops.j
+# sum(m)
+# tokens.r<-tokens.r[!m,]
+# m<-tokens.3$lemma%in%stops.j
+# sum(m)
+# tokens.3<-tokens.3[!m,]
+# m<-tokens.3$lemma%in%stops.j
+# sum(m)
+# m<-tokens.r$lemma%in%stops.j
+# sum(m)
 tok.r2<-tokens.r[tokens.r$word!="",]
 tok.r2<-tok.r2[!is.na(tok.r2$word),]
-tok.r2<-tok.r2[!is.na(tok.r2$word),]
+#tok.r2<-tok.r2[!is.na(tok.r2$word),]
 tok.r2<-tok.r2[!is.na(tok.r2$lemma),]
 sum(tok.r2$word=="wir")
 sum(tok.r2$lemma=="Die")
-tok.r3<-tokens.3[tokens.3$word!="",]
-tok.r3<-tok.r3[!is.na(tok.r3$word),]
-tok.r3<-tok.r3[!is.na(tok.r3$word),]
-tok.r3<-tok.r3[!is.na(tok.r3$lemma),]
-sum(grepl("[0-9]",tok.r3$lemma))
+# tok.r3<-tokens.3[tokens.3$word!="",]
+# tok.r3<-tok.r3[!is.na(tok.r3$word),]
+# #tok.r3<-tok.r3[!is.na(tok.r3$word),]
+# tok.r3<-tok.r3[!is.na(tok.r3$lemma),]
+# sum(grepl("[0-9]",tok.r3$lemma))
 sum(grepl("[0-9]",tok.r2$lemma))
-tok.r2<-tok.r2[!grepl("[0-9]",tok.r2$lemma),]
-tok.r3<-tok.r3[!grepl("[0-9]",tok.r3$lemma),]
+# tok.r2<-tok.r2[!grepl("[0-9]",tok.r2$lemma),]
+# tok.r3<-tok.r3[!grepl("[0-9]",tok.r3$lemma),]
 # t1<-table(tok.r2$lemma)
 # t1[order(t1)]
 # t1<-table(tok.r3$lemma)
 # t1[order(t1)]
-sum(tok.r3$word=="Die")
+#sum(tok.r3$word=="Die")
 sum(tok.r2$lemma%in%"Die")
 sum(tok.r2$word=="afd")
 sum(tok.r2$lemma=="afd")
@@ -512,15 +558,25 @@ sum(tok.r3$lemma%in%"AFD")
 #fa<-fa[order(fa,decreasing = T)]
 #fa
 #?freq.list
-t1<-table(tok.r2$lemma)
-t1[t1=="afd"]
-grep("afd",t1)
-t1[order(t1)]
-mode(tok.r2)
-f1p<-data.frame(freq.list(tok.r3$lemma,convert = T))
-f1a<-data.frame(freq.list(as.character(tok.r2$lemma),convert = T))
+# t1<-table(tok.r2$lemma)
+# t1[t1=="afd"]
+# grep("afd",t1)
+# t1[order(t1)]
+# mode(tok.r2)
+# f1p<-data.frame(freq.list(tok.r3$lemma,convert = T))
+# f1a<-data.frame(freq.list(as.character(tok.r2$lemma),convert = T))
 #f1ab<-f1a
 #f1ab$lemma<-as.character(f1a$WORD)
+save(tok.r3,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.r2.RData"))
+colnames(tok.r2)
+tok.r3<-tok.r2[,c(1,2,3,5)]
+tok.r3<-tok.r3[order(tok.r3$date),]
+du<-unique(tok.r3$date)
+du
+dlim<-"2025-01-01"
+dlim<du[73]
+tok.r3$post<-tok.r3$date>=dlim
+tok.r3$date[tok.r3$target=="gpt"]<-dlim
 f1h<-data.frame(freq.list(tok.r2$lemma[tok.r2$target=="human"],convert = T))
 f1g<-data.frame(freq.list(tok.r2$lemma[tok.r2$target=="gpt"],convert = T))
 fr.list<-list(a=f1a,h=f1h,g=f1g,p=f1p)
@@ -532,6 +588,19 @@ fr.list<-list(a=f1a,h=f1h,g=f1g,p=f1p)
 #######################################################################
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fr_list.RData"))
 #######################################################################
+### 16112.new computations from raw data
+########################################
+per.lme<-function(tok.r3){
+  library(lme4)
+  library(lmerTest)
+  df<-tok.r3[tok.r3$target=="human",]
+  lm1<-lmer(post~target+(1|lemma),df)
+  lm1<-lmer(post~target+(1|lemma),tok.r3)
+  lm2<-lm(post~target,tok.r3)
+  summary(lm1)
+  summary(lm2)
+}
+write.csv (tok.r3[sample(length(tok.r3$date),30),],"~/Documents/GitHub/temp/toksample.csv")
 get.lmdf<-function(){
 f1p<-fr.list$p
 f1a<-fr.list$a
