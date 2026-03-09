@@ -67,6 +67,7 @@ head(lemma_effects, 20)
 # Top lemmas for post=FALSE
 tail(lemma_effects, 20)
 
+###################################################
 library(tidyverse)
 
 #df_both <- read.csv("dfsample.csv")
@@ -95,6 +96,11 @@ lemma_pref <- lemma_target %>%
 gpt_lemmas <- lemma_pref %>%
   filter(n_total >= 10) %>%       # drop hapax / very rare
   slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
+############################
+gpt_lemmas <- lemma_pref %>%
+  filter(n_gpt >= 10) %>%       # drop hapax / very rare
+  slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
+#############################
 df_human <- df_both %>%
   filter(target == "human",
          lemma %in% gpt_lemmas$lemma)
@@ -181,9 +187,10 @@ gpt_lemmas_rising <- lemma_trends %>%
   filter(slope > 0, p_value < 0.05)
 sum()
 
+###################################################
 # --- Aggregate: n per lemma × post × target ---
-
-df_agg <- df %>%
+###################################################
+df_agg <- df_sf %>%
   count(lemma, post, target)
 # --- total tokens per post × target condition ---
 totals <- df_agg %>%
@@ -191,8 +198,61 @@ totals <- df_agg %>%
 
   summarise(total = sum(n), .groups = "drop")
 
+# --- total tokens per target (across all dates/post) ---
+totals_target <- df_both %>%
+  group_by(target) %>%
+  summarise(total_target = sum(n), .groups = "drop")
+df_both<-df_agg
+# --- Step 1: total n per lemma per target ---
+lemma_target <- df_both %>%
+  group_by(lemma, target) %>%
+  summarise(n = sum(n), .groups = "drop")
+df_human <- df_both %>%
+  filter(target == "human",
+         lemma %in% gpt_lemmas$lemma)
+
+
+# --- relative frequency per lemma × target ---
+lemma_pref <- df_both %>%
+  group_by(lemma, target) %>%
+  summarise(n = sum(n), .groups = "drop") %>%
+  left_join(totals_target, by = "target") %>%
+  mutate(rel_freq = n / total_target) %>%
+  select(lemma, target, n, rel_freq) %>%
+  pivot_wider(
+    names_from  = target,
+    values_from = c(n, rel_freq),
+    values_fill = 0
+  ) %>%
+  mutate(
+    # log-odds on relative frequencies + smoothing
+    log_odds = log((rel_freq_gpt   + 1e-9) /
+                     (rel_freq_human + 1e-9))
+  ) %>%
+  arrange(desc(log_odds))
+gpt_lemmas <- lemma_pref %>%
+  filter(n_gpt >= 10) %>%       # drop hapax / very rare
+  slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
+#################################################
+m<-lemma_pref$n_human==0
+sum(m)
+### chk:
+m2<-lemma_pref$lemma[m]%in%df_sf$lemma[df_sf$target=="human"]
+sum(m2)
+### TRUE (=0)
+#############
+head(lemma_pref$lemma,50)
+m<-grepl("^wichtige[^r]",df_sf$lemma)
+sum(m)
+unique(df_sf$lemma[m])
+df_sf$lemma[m]<-"wichtig"
+m2<-grepl("^wichtige$",df_sf$lemma)
+sum(m2)
+unique(df_sf$lemma[m2])
+df_sf$lemma[m2]<-"wichtig"
+#########################
 # --- join totals, compute relative frequency ---
-df_agg <- df %>%
+df_agg <- df_sf %>%
   count(lemma, post, target) %>%
   left_join(totals, by = c("post", "target")) %>%
   mutate(rel_freq = n / total)         # proportion of all tokens in that slice
@@ -212,6 +272,7 @@ lemma_post_trends <- df_agg %>%
     z_value = map_dbl(model, ~ summary(.x)$coefficients["postTRUE", "z value"])
   ) %>%
   select(-model)
+################
 # --- Filter to human, fit per-lemma logistic-style Poisson ---
 unique(df_agg$post)
 lemma_post_trends <- df_agg %>%
@@ -231,17 +292,16 @@ lemma_post_trends <- df_agg %>%
   arrange(p_value)
 
 
-library(tidyverse)
-library(ggrepel)
+#library(tidyverse)
+#library(ggrepel)
 
-lp<-lemma_post_trends %>%
+lemma_post_trends %>%
   left_join(gpt_lemmas %>% select(lemma, log_odds), by = "lemma") %>%
   filter(!is.na(log_odds)) %>%
   mutate(
-    significant = p_value < 0.4,
-    label       = if_else(significant & slope > 0 & log_odds > 0, lemma, NA_character_)
-  )
-# %>%
+    significant = p_value < 0.05,
+    label       = if_else(significant & slope > 0 & log_odds > 1, lemma, NA_character_)
+  ) %>%
   ggplot(aes(x = log_odds, y = slope)) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey60") +
@@ -256,8 +316,18 @@ lp<-lemma_post_trends %>%
     x     = "GPT preference (log-odds)",
     y     = "Post-onset rate change (Poisson coefficient)",
     title = "GPT-typical lemmas rising after onset in human corpus",
-    subtitle = "Top-right quadrant = gpt-preferred AND more frequent post-onset\nPoint size = statistical significance (−log10 p)",
+    subtitle = "Top-right quadrant = gpt-preferred AND more frequent post-onset\nPoint size = statistical significance (−log10 p)\n(only TRUE lemmas are labeled)",
     color = NULL,
     size  = "−log10(p)"
   ) +
   theme_minimal()
+dfs<-df_agg[df_agg$target=="human",]
+dfs<-df_agg
+#dfs$in.gp<-dfs$lemma%in%gpt_lemmas$lemma
+dfs$gp <- lemma_pref$log_odds[match(dfs$lemma,lemma_pref$lemma)]
+#dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
+
+lm1<-lmer(rel_freq~post*gp+(1|lemma)+(1|target),dfs)
+summary(lm1)
+lm2<-lm(rel_freq~post,dfs)
+summary(lm2)
