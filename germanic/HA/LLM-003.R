@@ -259,8 +259,10 @@ library(tidytext)
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData")) # protocols + gpt summary texts 
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData")) # protocols after gemini
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData")) # protocols before gemini
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt03.RData")) # protocols after gemini
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt03.RData")) # protocols all
 df<-btt.summaries
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/pos-tag.R"))
+
 # Add corpus labels for binding
 # df_human <- df %>%
 #   mutate(corpus = "human") %>%
@@ -279,9 +281,9 @@ colnames(df2)<-c("date","text","target")
 df_combined <- bind_rows(df1,df2)
 library(stringr)
 # Tokenize to words (lowercase, remove punctuation/numbers)
-df_combined$id<-1:length(df_combined$date)
+df_combined$idd<-1:length(df_combined$date)
 gp<-df_combined$target=="gpt"
-writeLines(head(df_combined$text[gp]),paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-test-gpt.txt"))
+#writeLines(head(df_combined$text[gp]),paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt-test-gpt.txt"))
 
 #df_combined$text[1]
 ### step to udpipe
@@ -323,6 +325,18 @@ ptdf.2$target<-"human"
 tokens.3<-ptdf.2 %>%
   unnest_tokens(word,text,token = "words",to_lower = F)
 # ?unnest_tokens
+### USE df1,df2
+range<-1:length(df2$date)
+pos.btt<-lapply(seq_along(range), function(i){
+  p<-get.pos(df2[i,])
+})
+pos.bt.df<-data.frame(abind(pos.btt,along = 1))
+range<-1:length(df1$date)
+pos.btt<-lapply(seq_along(range), function(i){
+  p<-get.pos(df1[i,])
+})
+pos.bt.df1<-data.frame(abind(pos.btt,along = 1))
+
 ###########################
 #     stops<-stopwords("de")
 # stops.m<-c("dass","a","ab")

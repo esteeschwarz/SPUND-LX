@@ -4,10 +4,22 @@ library(tidyverse)
 # --- Load & prepare ---
 # df <- read.csv("your_data.csv") %>%
 dlim<-"2024-01-01"
+##################
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.r3.RData"))
 df<-tok.r3%>%
 # tok.r3%>%
   mutate(
     post      = as.integer(post),               # TRUE=1, FALSE=0
+    lemma     = factor(lemma),
+    target    = factor(target),
+    date      = as.numeric(as.Date(date))-as.numeric(as.Date(dlim)),      # days since epoch
+    # date_scaled = scale(date)[,1]               # helps convergence
+    date_scaled = date/max(date)
+  )
+df<-tok.r3%>%
+  # tok.r3%>%
+  mutate(
+  #  post      = as.integer(post),               # TRUE=1, FALSE=0
     lemma     = factor(lemma),
     target    = factor(target),
     date      = as.numeric(as.Date(date))-as.numeric(as.Date(dlim)),      # days since epoch
@@ -186,14 +198,15 @@ lemma_trends <- df_human %>%
 gpt_lemmas_rising <- lemma_trends %>%
   filter(slope > 0, p_value < 0.05)
 sum()
-
+##########
+### 16113.
 ###################################################
 # --- Aggregate: n per lemma × post × target ---
 ###################################################
-df_agg <- df_sf %>%
+df_t <- df_sf %>%
   count(lemma, post, target)
 # --- total tokens per post × target condition ---
-totals <- df_agg %>%
+totals <- df_t %>%
   group_by( post,target)%>% 
 
   summarise(total = sum(n), .groups = "drop")
@@ -326,7 +339,7 @@ dfs<-df_agg
 #dfs$in.gp<-dfs$lemma%in%gpt_lemmas$lemma
 dfs$gp <- lemma_pref$log_odds[match(dfs$lemma,lemma_pref$lemma)]
 #dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
-
+#save(dfs,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/dfs.RData"))
 lm1<-lmer(rel_freq~post*gp+(1|lemma)+(1|target),dfs)
 summary(lm1)
 lm2<-lm(rel_freq~post,dfs)
