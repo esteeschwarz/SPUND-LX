@@ -330,7 +330,7 @@ range<-1:length(df2$date)
 pos.btt<-lapply(seq_along(range), function(i){
   p<-get.pos(df2[i,])
 })
-pos.bt.df<-data.frame(abind(pos.btt,along = 1))
+pos.bt.df2<-data.frame(abind(pos.btt,along = 1))
 range<-1:length(df1$date)
 pos.btt<-lapply(seq_along(range), function(i){
   p<-get.pos(df1[i,])
