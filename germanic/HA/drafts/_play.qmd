@@ -23,7 +23,7 @@ format:
 ```{r,echo=F,eval=F}
 pdfsrc<-""
 if(!knitr::is_latex_output())
-  pdfsrc<-'load pdf <a href="../../essais/germanic/shibboleth-a.pdf">here</a>'
+  pdfsrc<-'load pdf <a href="../../essais/germanic/001/shibboleth-a.pdf">here</a>'
 ipa <- function(text) {
   if (knitr::is_latex_output()) {
     paste0("\\ipa{", text, "}")
@@ -37,7 +37,7 @@ ipa <- function(text) {
 <!--
 ::: {.content-visible when-format="html"}
 
-load pdf [here](.pdf)
+load pdf [here](shibboleth-a.pdf)
 
 :::
 -->
