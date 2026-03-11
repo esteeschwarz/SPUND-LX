@@ -73,22 +73,24 @@ ptdf.2$target<-"human"
   #unnest_tokens(word,text,token = "words",to_lower = F)
 # ?unnest_tokens
 ### USE df1,df2
-range<-1:length(df2$date)
-print("get pos summaries df...")
-pos.btt<-lapply(seq_along(range), function(i){
-  p<-get.pos(df2[i,])
-})
-pos.bt.df2<-data.frame(abind(pos.btt,along = 1))
-save(pos.bt.df2,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df2.pos.RData")) # protocols all
-print("sync cloud...")
-system("sh ~/syncbg.sh")
 range<-1:length(df1$date)
 print("get pos protocols...")
 pos.btt<-lapply(seq_along(range), function(i){
+  cat("postag protocols:",i,"\n")
   p<-get.pos(df1[i,])
 })
 pos.bt.df1<-data.frame(abind(pos.btt,along = 1))
 save(pos.bt.df1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df1.pos.RData")) # protocols all
 print("sync cloud..."
+system("sh ~/syncbg.sh")
+range<-1:length(df2$date)
+print("get pos summaries df...")
+pos.btt<-lapply(seq_along(range), function(i){
+  cat("postag summaries:",i,"\n")
+  p<-get.pos(df2[i,])
+})
+pos.bt.df2<-data.frame(abind(pos.btt,along = 1))
+save(pos.bt.df2,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df2.pos.RData")) # protocols all
+print("sync cloud...")
 system("sh ~/syncbg.sh")
 print("finished...")
