@@ -8,7 +8,7 @@ load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData")) # 
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData")) # protocols before gemini
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt03.RData")) # protocols all
 df<-btt.summaries
-source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/pos-tag.R"))
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/pos-py.R"))
 
 # Add corpus labels for binding
 # df_human <- df %>%
@@ -73,15 +73,57 @@ ptdf.2$target<-"human"
   #unnest_tokens(word,text,token = "words",to_lower = F)
 # ?unnest_tokens
 ### USE df1,df2
+range<-1:1
 range<-1:length(df1$date)
 print("get pos protocols...")
+# text<-paste(toks[1:20],collapse = "w|w")
+# wordarray<-toks[1:20]
+# escape_regex <- function(x) {
+#   gsub("([.|()\\^{}+$*?]|\\[|\\]|\\\\)", "\\\\\\1", x)
+# }
+
+# pattern <- paste0(
+#   "\\b(",
+#   paste(escape_regex(wordarray), collapse="|"),
+#   ")\\b"
+# )
+# text<-gsub("[)\\(?.*]","dum",text)
+# text<-gsub("\\[","dum",text)
+# text<-gsub("\\]","dum",text)
+# text
+# t1<-gsub(pattern,"dum",df1$text[1])
+# t1
+#range<-1:3
+#i<-1
+#df_sf<-df1
 pos.btt<-lapply(seq_along(range), function(i){
   cat("postag protocols:",i,"\n")
   p<-get.pos(df1[i,])
+  # toks<-p$text
+  # #text<-paste(toks[1:20],collapse = "/w|/w")
+  # # pattern <- paste0(
+  # #   "\\b(",
+  # #   paste(escape_regex(toks), collapse="|"),
+  # #   ")\\b"
+  # # )
+  # cat("removing",length(toks), "lemmatized tokens from future runs to spare resources\n")
+  # ps<-i+1
+  # dfm<-df1$text
+  # for(k in 1:length(toks)){
+  #   cat("replacing -",k,"\n")
+  # pattern <- paste0(
+  #     "\\b(",
+  #     escape_regex(toks[k]),
+  #     ")\\b"
+  #   )
+  #   
+  # dfm<-gsub(pattern," ",dfm[ps:length(dfm)])
+  # }
+  return(p)
 })
 pos.bt.df1<-data.frame(abind(pos.btt,along = 1))
 save(pos.bt.df1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df1.pos.RData")) # protocols all
-print("sync cloud..."
+print("sync cloud...")
 system("sh ~/syncbg.sh")
 range<-1:length(df2$date)
 print("get pos summaries df...")
