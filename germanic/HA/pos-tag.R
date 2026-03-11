@@ -1,7 +1,7 @@
 # 20260309(13.58)
 # 16113.germanic.pos-tagging
 ############################
-
+	
 #library(reticulate)
 # 
 # #reticulate::py_install("stanza")
@@ -13,13 +13,14 @@
 
 library(reticulate)
 
-# reticulate::install_python("3.10:latest")
+#reticulate::install_python("3.10:latest")
 # virtualenv_create("stanza-env-3.10",python = "3.10")
 #install
 #wks.
 use_virtualenv("stanza-env-3.10", required = TRUE)
 py_config()
-# py_install(c("stanza", "torch", "numpy<2"), pip = TRUE)
+ py_install(c("stanza", "torch", "numpy<2"), pip = 
+TRUE)
 # restart with new numpy!
 stanza <- import("stanza")
 stanza$download("de")

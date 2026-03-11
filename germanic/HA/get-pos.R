@@ -2,6 +2,7 @@ library(dplyr)
 library(tidyr)
 #install.packages("tidytext")
 library(tidytext)
+print("loading data...")
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData")) # protocols + gpt summary texts 
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt02.RData")) # protocols after gemini
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/ptdf_btt01.RData")) # protocols before gemini
@@ -35,7 +36,7 @@ gp<-df_combined$target=="gpt"
 ### step to udpipe
 # tokens <- df_combined %>%
 #   unnest_tokens(word, text, token = "words") %>%
-#   filter(str_detect(word, "^[A-Za-zäöüÄÖÜ]+$")) %>%  # Optional: alphabetic words only
+#   filter(str_detect(word, "^[A-Za-z????????????]+$")) %>%  # Optional: alphabetic words only
 #   mutate(word = tolower(word))
 # tokens <- df_combined %>%
 #   unnest_tokens(word, text, token = "words")# Optional: alphabetic words only
@@ -73,17 +74,21 @@ ptdf.2$target<-"human"
 # ?unnest_tokens
 ### USE df1,df2
 range<-1:length(df2$date)
+print("get pos summaries df...")
 pos.btt<-lapply(seq_along(range), function(i){
   p<-get.pos(df2[i,])
 })
 pos.bt.df2<-data.frame(abind(pos.btt,along = 1))
 save(pos.bt.df2,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df2.pos.RData")) # protocols all
+print("sync cloud...")
 system("sh ~/syncbg.sh")
 range<-1:length(df1$date)
+print("get pos protocols...")
 pos.btt<-lapply(seq_along(range), function(i){
   p<-get.pos(df1[i,])
 })
 pos.bt.df1<-data.frame(abind(pos.btt,along = 1))
 save(pos.bt.df1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df1.pos.RData")) # protocols all
-
+print("sync cloud..."
 system("sh ~/syncbg.sh")
+print("finished...")
