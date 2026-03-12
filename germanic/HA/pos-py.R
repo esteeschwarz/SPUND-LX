@@ -12,17 +12,21 @@
 # reticulate::py_config()
 
 library(reticulate)
+#reticulate::py_exe()
 
-# reticulate::install_python("3.10:latest")
-# virtualenv_create("stanza-env-3.10",python = "3.10")
+#reticulate::install_python("3.10:latest") #!not on mini! (via apt)
+#sudo apt install python3.10 python3.10-venv python3.10-dev
+#no use_python("/usr/bin/python3.10", required = TRUE)
+
+#virtualenv_create("stanza-env-3.10",python = "3.10")
 #install
 #wks.
 use_virtualenv("stanza-env-3.10", required = TRUE)
 py_config()
-# py_install(c("stanza", "torch", "numpy<2"), pip = TRUE)
+#py_install(c("stanza", "torch", "numpy<2"), pip = TRUE)
 # restart with new numpy!
 stanza <- import("stanza")
-stanza$download("de")
+#stanza$download("de")
 nlp <- stanza$Pipeline("de")
 
 fun1<-function(){
