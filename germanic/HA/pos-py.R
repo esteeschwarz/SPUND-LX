@@ -10,11 +10,18 @@
 # import("numpy")
 # import("torch")
 # reticulate::py_config()
-
+#install.packages("reticulate")
+#sudo apt install libpng-dev
+#install.packages("png")
 library(reticulate)
 #reticulate::py_exe()
 
 #reticulate::install_python("3.10:latest") #!not on mini! (via apt)
+# sudo apt update
+# sudo apt install software-properties-common
+
+# sudo add-apt-repository ppa:deadsnakes/ppa
+# sudo apt update
 #sudo apt install python3.10 python3.10-venv python3.10-dev
 #no use_python("/usr/bin/python3.10", required = TRUE)
 
@@ -24,6 +31,7 @@ library(reticulate)
 use_virtualenv("stanza-env-3.10", required = TRUE)
 py_config()
 #py_install(c("stanza", "torch", "numpy<2"), pip = TRUE)
+#.rs.restartR() #no.
 # restart with new numpy!
 stanza <- import("stanza")
 #stanza$download("de")
@@ -60,6 +68,7 @@ get.pos<-function(td){
   
   doc <- nlp(tx)
   #doc
+#  install.packages("abind")
   library(abind)
   library(jsonlite)
   docdf<-fromJSON(as.character(doc),flatten = T)

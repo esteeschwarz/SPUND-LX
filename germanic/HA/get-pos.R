@@ -1,6 +1,6 @@
 library(dplyr)
 library(tidyr)
-#install.packages("tidytext")
+#install.packages(c("tidytext","abind","tidyr","dplyr","stringr"))
 library(tidytext)
 print("loading data...")
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/btt.summaries.RData")) # protocols + gpt summary texts 
