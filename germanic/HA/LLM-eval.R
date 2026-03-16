@@ -5,17 +5,17 @@ library(tidyverse)
 # df <- read.csv("your_data.csv") %>%
 dlim<-"2024-01-01"
 ##################
-load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.r3.RData"))
-df<-tok.r3%>%
-# tok.r3%>%
-  mutate(
-    post      = as.integer(post),               # TRUE=1, FALSE=0
-    lemma     = factor(lemma),
-    target    = factor(target),
-    date      = as.numeric(as.Date(date))-as.numeric(as.Date(dlim)),      # days since epoch
-    # date_scaled = scale(date)[,1]               # helps convergence
-    date_scaled = date/max(date)
-  )
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.r2.RData"))
+# df<-tok.r3%>%
+# # tok.r3%>%
+#   mutate(
+#     # post      = as.integer(post),               # TRUE=1, FALSE=0
+#     lemma     = factor(lemma),
+#     target    = factor(target),
+#     date      = as.numeric(as.Date(date))-as.numeric(as.Date(dlim)),      # days since epoch
+#     # date_scaled = scale(date)[,1]               # helps convergence
+#     date_scaled = date/max(date)
+#   )
 df<-tok.r3%>%
   # tok.r3%>%
   mutate(
@@ -26,9 +26,18 @@ df<-tok.r3%>%
     # date_scaled = scale(date)[,1]               # helps convergence
     date_scaled = date/max(date)
   )
-
+df_sf<-df
+m<-grepl("^wichtige[^r]",df_sf$lemma)
+sum(m)
+unique(df_sf$lemma[m])
+df_sf$lemma[m]<-"wichtig"
+m2<-grepl("^wichtige$",df_sf$lemma)
+sum(m2)
+unique(df_sf$lemma[m2])
+df_sf$lemma[m2]<-"wichtig"
 # df <- df %>%
 #   add_count(lemma, name = "freq")
+fun1<-function(){
 df_agg <- df %>%
   count(lemma, date, target)
 m<-lmer(n~target+date+(1|lemma),df_agg)
@@ -198,6 +207,7 @@ lemma_trends <- df_human %>%
 gpt_lemmas_rising <- lemma_trends %>%
   filter(slope > 0, p_value < 0.05)
 sum()
+}
 ##########
 ### 16113.
 ###################################################
@@ -212,17 +222,17 @@ totals <- df_t %>%
   summarise(total = sum(n), .groups = "drop")
 
 # --- total tokens per target (across all dates/post) ---
+df_both<-df_t
 totals_target <- df_both %>%
   group_by(target) %>%
   summarise(total_target = sum(n), .groups = "drop")
-df_both<-df_agg
 # --- Step 1: total n per lemma per target ---
 lemma_target <- df_both %>%
   group_by(lemma, target) %>%
   summarise(n = sum(n), .groups = "drop")
-df_human <- df_both %>%
-  filter(target == "human",
-         lemma %in% gpt_lemmas$lemma)
+# df_human <- df_both %>%
+#   filter(target == "human",
+#          lemma %in% gpt_lemmas$lemma)
 
 
 # --- relative frequency per lemma × target ---
@@ -246,6 +256,7 @@ lemma_pref <- df_both %>%
 gpt_lemmas <- lemma_pref %>%
   filter(n_gpt >= 10) %>%       # drop hapax / very rare
   slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
+gpt_lemmas
 #################################################
 m<-lemma_pref$n_human==0
 sum(m)
@@ -255,22 +266,23 @@ sum(m2)
 ### TRUE (=0)
 #############
 head(lemma_pref$lemma,50)
-m<-grepl("^wichtige[^r]",df_sf$lemma)
-sum(m)
-unique(df_sf$lemma[m])
-df_sf$lemma[m]<-"wichtig"
-m2<-grepl("^wichtige$",df_sf$lemma)
-sum(m2)
-unique(df_sf$lemma[m2])
-df_sf$lemma[m2]<-"wichtig"
+# m<-grepl("^wichtige[^r]",df_sf$lemma)
+# sum(m)
+# unique(df_sf$lemma[m])
+# df_sf$lemma[m]<-"wichtig"
+# m2<-grepl("^wichtige$",df_sf$lemma)
+# sum(m2)
+# unique(df_sf$lemma[m2])
+# df_sf$lemma[m2]<-"wichtig"
 #########################
 # --- join totals, compute relative frequency ---
 df_agg <- df_sf %>%
   count(lemma, post, target) %>%
   left_join(totals, by = c("post", "target")) %>%
   mutate(rel_freq = n / total)         # proportion of all tokens in that slice
-df_agg$post<-ifelse(df_agg$post==1,TRUE,FALSE)
+#df_agg$post<-ifelse(df_agg$post==1,TRUE,FALSE)
 unique(df_agg$post)
+df_agg$post[df_agg$target=="gpt"]<-NA
 lemma_post_trends <- df_agg %>%
   filter(target == "human") %>%
   group_by(lemma) %>%
@@ -334,13 +346,20 @@ lemma_post_trends %>%
     size  = "−log10(p)"
   ) +
   theme_minimal()
-dfs<-df_agg[df_agg$target=="human",]
+#dfs<-df_agg[df_agg$target=="human",]
 dfs<-df_agg
 #dfs$in.gp<-dfs$lemma%in%gpt_lemmas$lemma
 dfs$gp <- lemma_pref$log_odds[match(dfs$lemma,lemma_pref$lemma)]
 #dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
 #save(dfs,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/dfs.RData"))
-lm1<-lmer(rel_freq~post*gp+(1|lemma)+(1|target),dfs)
+lm1<-lmer(rel_freq~post*gp+(1|lemma),dfs)
 summary(lm1)
 lm2<-lm(rel_freq~post,dfs)
 summary(lm2)
+
+### back-to-data
+x<-"Reichtumsberichen"
+m<-tok.r3$lemma==x
+which(m)
+e<-c((which(m)[1]-20):(which(m)[1]+20))
+tok.r3$lemma[e]
