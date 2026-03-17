@@ -53,36 +53,36 @@ pos.btt<-lapply(seq_along(range), function(i){
   if(length(p)<2)
     return(NA)
   leun<-unique(p$lemma)
-  cat("cleaning df from -",length(leun), "- already lemmatized...")
-  tu<-unique(p$text)
-  ps<-i+1
-  if(ps<length(df2$date)){
-  tcl<-df2$text[ps:length(df2$text)]
-  tcl
-  vector <- 1:length(tu)
-  chunk_size <- 100  # Example chunk size
-  
-  # Function to split the vector into chunks of equal length
-  
-  # Split the vector into chunks
-  chunks <- split_into_chunks(vector, chunk_size)
-  chunks
-  for(k in chunks){
-    pattern <- paste0(
-    "\\b(",
-    paste(escape_regex(tu[k]), collapse="|"),
-    ")\\b"
-  )
-  tcl<-gsub(pattern," ",tcl)
-  }
-  # for(k in 1:length(tu)){
-  #   l<-tu[k]
-  #   cat("replacing ",k,"\r")
-  #   l<-escape_regex(l)    
-  #   tcl<-gsub(l," ",tcl)
+  # cat("cleaning df from -",length(leun), "- already lemmatized...")
+  # tu<-unique(p$text)
+  # ps<-i+1
+  # if(ps<length(df2$date)){
+  # tcl<-df2$text[ps:length(df2$text)]
+  # tcl
+  # vector <- 1:length(tu)
+  # chunk_size <- 100  # Example chunk size
+  # 
+  # # Function to split the vector into chunks of equal length
+  # 
+  # # Split the vector into chunks
+  # chunks <- split_into_chunks(vector, chunk_size)
+  # chunks
+  # for(k in chunks){
+  #   pattern <- paste0(
+  #   "\\b(",
+  #   paste(escape_regex(tu[k]), collapse="|"),
+  #   ")\\b"
+  # )
+  # tcl<-gsub(pattern," ",tcl)
   # }
-  df2$text[ps:length(df2$text)]<<-tcl
-  }
+  # # for(k in 1:length(tu)){
+  # #   l<-tu[k]
+  # #   cat("replacing ",k,"\r")
+  # #   l<-escape_regex(l)    
+  # #   tcl<-gsub(l," ",tcl)
+  # # }
+  # df2$text[ps:length(df2$text)]<<-tcl
+  # }
   return(p)
     
   
@@ -91,7 +91,7 @@ pos.btt<-pos.btt[!is.na(pos.btt)]
 pos.bt.df2<-data.frame(abind(pos.btt,along = 1))
 save(pos.bt.df2,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df2.pos.RData")) # protocols all
 print("sync cloud...")
-system("sh ~/syncbg.sh")
+#system("sh ~/syncbg.sh")
 ########################
 #break
 
@@ -116,25 +116,25 @@ pos.btt<-lapply(seq_along(range), function(i){
   ps<-i+1
   tcl<-df1$text[ps:length(df1$text)]
   tcl
-  if(ps<length(df1$date)){
-    for(k in 1:length(chunks)){
-      chunk<-chunks[[k]]
-      cat("gsub -",k,"of -",length(chunks),"\r")
-    pattern <- paste0(
-      "\\b(",
-      paste(escape_regex(tu[chunk]), collapse="|"),
-      ")\\b"
-    )
-    tcl<-gsub(pattern," ",tcl)
-    }
-  # for(k in 1:length(tu)){
-  #    l<-tu[k]
-  #    cat("replacing ",k,"\r")
-  #     l<-escape_regex(l)    
-  #     tcl<-gsub(l," ",tcl)
+  # if(ps<length(df1$date)){
+  #   for(k in 1:length(chunks)){
+  #     chunk<-chunks[[k]]
+  #     cat("gsub -",k,"of -",length(chunks),"\r")
+  #   pattern <- paste0(
+  #     "\\b(",
+  #     paste(escape_regex(tu[chunk]), collapse="|"),
+  #     ")\\b"
+  #   )
+  #   tcl<-gsub(pattern," ",tcl)
+  #   }
+  # # for(k in 1:length(tu)){
+  # #    l<-tu[k]
+  # #    cat("replacing ",k,"\r")
+  # #     l<-escape_regex(l)    
+  # #     tcl<-gsub(l," ",tcl)
+  # # }
+  # df1$text[ps:length(df1$text)]<<-tcl
   # }
-  df1$text[ps:length(df1$text)]<<-tcl
-  }
   return(p)
 })
 
@@ -146,5 +146,5 @@ tokens.r$lemma[lna] <- tok.na.anno$lemma[match(tokens.r$word[lna], tok.na.anno$t
 
 save(pos.bt.df1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df1.pos.RData")) # protocols all
 print("sync cloud...")
-system("sh ~/syncbg.sh")
+#system("sh ~/syncbg.sh")
 print("finished...")
