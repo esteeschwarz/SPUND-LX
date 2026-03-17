@@ -31,7 +31,7 @@ library(reticulate)
 use_virtualenv("stanza-env-3.10", required = TRUE)
 py_config()
 #py_install(c("stanza", "torch", "numpy<2"), pip = TRUE)
-#.rs.restartR() #no.
+#.rs.restartR() #no. lx
 # restart with new numpy!
 stanza <- import("stanza")
 #stanza$download("de")
@@ -67,6 +67,9 @@ library(abind)
 td<-df2[1,]
 get.pos<-function(td){
   tx<-td$text
+  ms<-grep("[^ \n]",tx)
+  if(length(ms)==0)
+    return(FALSE)
   tl<-unlist(strsplit(tx,"\n"))
 #  tx<-gsub("\n","\n\n",tx)
   print("apply nlp...")
@@ -96,7 +99,7 @@ get.pos<-function(td){
     df
     docdf$id<-as.character(docdf$id)
     docdf$id<-gsub(",","-",docdf$id)
-  cat("\t\t\t\t, apply nlp doc to df -",ii,"of",length(docdf),"\r")
+  cat("\t\t\t\t, apply nlp doc to df -",ii,"of",length(docdf$id),"\r")
     #  d<-fromJSON(as.character(x),flatten = T)
     d<-data.frame(docdf)
     d$text<-gsub("\n","",d$text)
