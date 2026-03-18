@@ -141,8 +141,8 @@ pos.btt<-lapply(seq_along(range), function(i){
 
 pos.btt<-pos.btt[!is.na(pos.btt)]
 pos.bt.df1<-data.frame(abind(pos.btt,along = 1))
-tokens.r$lemma <- dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
-tokens.r$lemma[lna] <- tok.na.anno$lemma[match(tokens.r$word[lna], tok.na.anno$token)]
+# tokens.r$lemma <- dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
+# tokens.r$lemma[lna] <- tok.na.anno$lemma[match(tokens.r$word[lna], tok.na.anno$token)]
 
 save(pos.bt.df1,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df1.pos.RData")) # protocols all
 print("sync cloud...")
