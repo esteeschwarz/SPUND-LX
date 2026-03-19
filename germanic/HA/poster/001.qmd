@@ -28,7 +28,8 @@ term: WS25/26
 
 -----
 authored: st. schwarz  
-snc: #16115::`r Sys.time()`
+snc: #16115::`r Sys.time()`   
+[<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 :::
 
 ::: {#code-container}
@@ -66,7 +67,7 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 # Methods / Data
 
 our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
-the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt you see C1.
+the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.
 
 we first devised model typical lemmata in the AI corpus which are distinct for that corpus using a linear regression model that calculates a score for each lemma in the corpus, see @fig-gpt.dplot and @fig-densplot01.
 
@@ -118,6 +119,8 @@ plist$gplot
 ::: {.column-3}
 # Results
 to gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
+
+{placeholder}{we also found significant frequency increases using a linear regression model, but after experiencing issues with udpipe which first become visible when revisiting our data we had to lemmatize corpus again using the stanza nlp pipeline. results will show up here when evaluated with new lemmas.}
 
 :::{#refs}
 # references
