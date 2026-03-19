@@ -1,4 +1,5 @@
 library(lme4)
+library(lmerTest)
 library(tidyverse)
 
 # --- Load & prepare ---
@@ -6,6 +7,7 @@ library(tidyverse)
 dlim<-"2024-01-01"
 ##################
 load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.r2.RData"))
+load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df3_cpt.pos.RData"))
 # df<-tok.r3%>%
 # # tok.r3%>%
 #   mutate(
@@ -16,15 +18,17 @@ load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/tok.r2.RData"))
 #     # date_scaled = scale(date)[,1]               # helps convergence
 #     date_scaled = date/max(date)
 #   )
+tok.r3<-df3
 df<-tok.r3%>%
   # tok.r3%>%
   mutate(
   #  post      = as.integer(post),               # TRUE=1, FALSE=0
     lemma     = factor(lemma),
     target    = factor(target),
-    date      = as.numeric(as.Date(date))-as.numeric(as.Date(dlim)),      # days since epoch
+    date_i      = as.numeric(as.Date(date))-as.numeric(as.Date(dlim)),      # days since epoch
     # date_scaled = scale(date)[,1]               # helps convergence
-    date_scaled = date/max(date)
+    date_scaled = date_i/max(date_i),
+    post=date_i>0 
   )
 df_sf<-df
 m<-grepl("^wichtige[^r]",df_sf$lemma)
@@ -213,7 +217,8 @@ sum()
 ###################################################
 # --- Aggregate: n per lemma × post × target ---
 ###################################################
-df_t <- df_sf %>%
+### 16125
+df_t <- df %>%
   count(lemma, post, target)
 # --- total tokens per post × target condition ---
 totals <- df_t %>%
@@ -256,7 +261,8 @@ lemma_pref <- df_both %>%
 gpt_lemmas <- lemma_pref %>%
   filter(n_gpt >= 10) %>%       # drop hapax / very rare
   slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
-gpt_lemmas
+gpt_lemmas$log_odds<-gpt_lemmas$log_odds-min(gpt_lemmas$log_odds)
+gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)]<-gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)-1]-gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)-1]/10
 #################################################
 m<-lemma_pref$n_human==0
 sum(m)
@@ -319,7 +325,7 @@ lemma_post_trends <- df_agg %>%
 
 #library(tidyverse)
 #library(ggrepel)
-
+library(ggplot2)
 lemma_post_trends %>%
   left_join(gpt_lemmas %>% select(lemma, log_odds), by = "lemma") %>%
   filter(!is.na(log_odds)) %>%
@@ -352,9 +358,9 @@ dfs<-df_agg
 dfs$gp <- lemma_pref$log_odds[match(dfs$lemma,lemma_pref$lemma)]
 #dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
 #save(dfs,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/dfs.RData"))
-lm1<-lmer(rel_freq~post*gp+(1|lemma),dfs)
+lm1<-lmer(rel_freq~post+gp+(1|lemma),dfs)
 summary(lm1)
-lm2<-lm(rel_freq~post,dfs)
+lm2<-lm(rel_freq~post+gp,dfs)
 summary(lm2)
 
 ### back-to-data

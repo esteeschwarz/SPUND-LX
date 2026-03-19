@@ -411,6 +411,19 @@ return(df.ann)
 ###########################################################################
 ### 16062.from here
 tokens<-get.tokens()
+### 16125.new with pos df1,2
+get.tokens.n<-function(){
+  library(dplyr)
+  load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df1.pos.RData")) # protocols all
+  load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df2.pos.RData")) # summaries annotated df all
+  pos.bt.df1$target<-"human"
+  pos.bt.df2$target<-"gpt"
+  df_combined <- bind_rows(pos.bt.df1,pos.bt.df2)
+  df3<-df_combined
+  colnames(df3)[2]<-"word"
+  save(df3,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/df3_cpt.pos.RData"))
+  
+}
 
 get.stops<-function(){
   stops<-stopwords("de")
