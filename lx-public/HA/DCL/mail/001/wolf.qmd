@@ -1,0 +1,57 @@
+---
+title: "DEKBLAT | ANARKKIV LANKALEVIKKI | ADA-SUB"
+author: "Stephan Schwarz"
+date: today
+
+format:
+
+  pdf:
+    documentclass: article
+    geometry:
+      - margin=22mm
+    fontsize: 10pt
+    include-in-header: |
+      \usepackage{microtype}
+      \usepackage{setspace}
+      \setstretch{1.05}
+    css: styles-pdf.scss
+
+  html:
+    embed-resources: true
+#    theme: none
+    css: styles-email.css
+    toc: false
+    page-layout: full
+
+#execute: false
+---
+
+::: {.meta-header}
+12293.DYN_wolf  
+Chiara Liso / Dynamiken der post-deutschen Gegenwartslyrik
+:::
+
+# password parsley
+
+Der Login auf einer geschützten Seite läuft über ein Verfahren,
+das als *Single Sign On* bezeichnet wird…
+
+## Shibboleth
+
+Das Wort *petersilie — parsley — perejil* wird als Zugang benötigt…
+
+> Wer es falsch ausspricht, fällt auf.
+
+---
+
+### Literatur
+
+1. Wolf, U. *Etymologischer Gossip im Gedicht*  
+2. Dembeck, T. *Literatur und Mehrsprachigkeit*
+
+---
+
+::: {.footer-note}
+the anarkkiv lankalevikki worksheet collection  
+https://ada-sub.dh-index.org/blog
+:::
