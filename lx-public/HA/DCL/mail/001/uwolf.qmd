@@ -1,5 +1,7 @@
 ---
 title: 12293.wolf gossip satz für satz
+date: today
+author: stschwarz
 format:
 #   html:
 #     css: poster_grid.css
@@ -10,17 +12,20 @@ format:
     pdf:
       keep-tex: true
       template: pdf-template.tex
+    #   pdf-engine: lualatex
+
 
 logo-left: ../fadenlogo-fwb.png
 logo-right: ../dcl-head-niemand.png
 
 meta: |
-  class: [16412] dynamiken postdeutscher gegenwartslyrik  
-  tutor: chiara liso
-  term: SS22
-  authored: st. schwarz  
-#   16127: `r Sys.time()`   
-#   back: [to paper <<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+  class: [16412] dynamiken postdeutscher gegenwartslyrik ::
+  tutor: chiara liso ::
+  term: SS22\linebreak
+  << [back to paper <<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+
+foot: |
+   the anarkkiv lankalevikki worksheet collection: <https://ada-sub.dh-index.org/blog>
 ---
 <!-- ::: {#logo}
 ![](../fadenlogoC-fwbSVG.svg)
@@ -90,3 +95,4 @@ wir könnten das alles ohne weiteres fortschreiben; nur zu welchem ausgang wolle
 [^4]:	Gramling, D. (2016). Zur Mehrsprachigkeitsforschung in der interkulturellen Literaturwissenschaft: Wende, Romanze, Rückkehr? Zeitschrift für interkulturelle Germanistik, 7(1), 133–150. [https://doi.org/10.14361/zig-2016-0109](https://doi.org/10.14361/zig-2016-0109)
 
 [^5]:	Meibauer, J., Demske, U., Geilfuß-Wolfgang, J., Pafel, J., Ramers, K. H., Rothweiler, M., & Steinbach, M. (2015). Einführung in die germanistische Linguistik (3., überarbeitete und aktualisierte Auflage). [https://doi.org/10.1007/978-3-476-05424-1](https://doi.org/10.1007/978-3-476-05424-1)
+

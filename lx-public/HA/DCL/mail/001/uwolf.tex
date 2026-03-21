@@ -158,6 +158,9 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{array}
+\usepackage{tikz}
+\usepackage{fontspec}
+\newfontfamily\headerfont{Source Sans 3}
 
 % ---------- column types ----------
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
@@ -188,21 +191,56 @@
 \vspace{6pt}
 
 % ---------- META AREA ----------
-\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
 
 {\small
+\textbf{Author:} stschwarz\\
 
+\textbf{Date:} 2026-03-21
 
-class: {[}16412{]} dynamiken postdeutscher gegenwartslyrik tutor: chiara
-liso term: SS22 authored: st. schwarz
+class: {[}16412{]} dynamiken postdeutscher gegenwartslyrik :: tutor:
+chiara liso :: term: SS22\linebreak \textless\textless{}
+\href{https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html}{back
+to paper \textless\textless{}}
 }
-\end{tabularx}
 
 \vspace{12pt}
 }
+\newcommand{\CustomFooter}{
+\noindent
+\begin{tikzpicture}
+\node[
+    fill=footerbg,
+    text=footerfg,
+    inner sep=10pt,
+    rounded corners=2pt,
+    text width=\textwidth
+] (box)
+{
+\begin{minipage}{0.97\textwidth}
 
+% ===== META SECTION =====
+\hrule
+\vspace{6pt}
+
+% ---------- foot AREA ----------
+
+{\small
+{\headerfont\Large\bfseries the anarkkiv lankalevikki worksheet
+collection: \url{https://ada-sub.dh-index.org/blog}}
+
+}
+
+\end{minipage}
+};
+\end{tikzpicture}
+}
 % place header at document start
 \AtBeginDocument{\CustomHeader}
+\AtEndDocument{\CustomFooter}
+
+% ---------- footer BOX ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
 
 % ---------- BODY ----------
 \begin{document}
@@ -367,5 +405,9 @@ deutschen{]} literatur {[}et ici me manque encore une foi la verbe
 finite allemand{]} u.u.: zum leben verhelfen. die gegend um fr. wolf
 bietet jdfs. genug material, dies bestreben längst in taten umgesetzt zu
 sehen.
+% \vspace{6pt}
+\hrule
+\vspace{6pt}
+
 
 \end{document}
