@@ -160,7 +160,8 @@
 \usepackage{array}
 \usepackage{tikz}
 \usepackage{fontspec}
-\newfontfamily\headerfont{Source Sans 3}
+% \newfontfamily\headerfont{Source Sans 3}
+\newfontfamily\headerfont{Gill Sans Light}
 
 % ---------- column types ----------
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
@@ -219,17 +220,18 @@ to paper \textless\textless{}}
 \begin{minipage}{0.97\textwidth}
 
 % ===== META SECTION =====
-\hrule
-\vspace{6pt}
+% \hrule
+% \vspace{6pt}
 
 % ---------- foot AREA ----------
-
+\begin{center}
 {\small
-{\headerfont\Large\bfseries the anarkkiv lankalevikki worksheet
-collection: \url{https://ada-sub.dh-index.org/blog}}
+{\headerfont\bfseries the anarkkiv lankalevikki worksheet collection:
+\url{https://ada-sub.dh-index.org/blog}}
 
 }
-
+\end{center}
+% \hrule
 \end{minipage}
 };
 \end{tikzpicture}

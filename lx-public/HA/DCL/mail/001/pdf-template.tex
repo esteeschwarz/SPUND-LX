@@ -160,7 +160,8 @@
 \usepackage{array}
 \usepackage{tikz}
 \usepackage{fontspec}
-\newfontfamily\headerfont{Source Sans 3}
+% \newfontfamily\headerfont{Source Sans 3}
+\newfontfamily\headerfont{Gill Sans Light}
 
 % ---------- column types ----------
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
@@ -229,18 +230,19 @@ $endif$
 \begin{minipage}{0.97\textwidth}
 
 % ===== META SECTION =====
-\hrule
-\vspace{6pt}
+% \hrule
+% \vspace{6pt}
 
 % ---------- foot AREA ----------
-
+\begin{center}
 {\small
 $if(foot)$
-{\headerfont\Large\bfseries $foot$}
+{\headerfont\bfseries $foot$}
 $endif$
 
 }
-
+\end{center}
+% \hrule
 \end{minipage}
 };
 \end{tikzpicture}
