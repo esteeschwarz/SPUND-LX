@@ -2,6 +2,12 @@
 title: 12293.wolf gossip satz für satz
 date: today
 author: stschwarz
+meta: |
+  class: [16412] dynamiken postdeutscher gegenwartslyrik ::
+  tutor: chiara liso ::
+  term: SS22 ::
+  << [back to paper <<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 format:
 #   html:
 #     css: poster_grid.css
@@ -12,20 +18,23 @@ format:
     pdf:
       keep-tex: true
       template: pdf-template.tex
-    #   pdf-engine: lualatex
+      latex_engine: lualatex  # default
+      fig-pos: "H" # Forces images to appear exactly where they are included
+      mainfont: 'Noto Serif'
+      font-size: 11
+      colorlinks: true
+      include-in-header: 
+        - rtl.tex
+        # - paper.tex
+        #   pdf-engine: lualatex
+    #   header-includes:
+    #     - \newcommand{\docfoot}{$params.foot$}
+    #     - \newcommand{\docmeta}{$meta$}
 
 
-logo-left: ../fadenlogo-fwb.png
-logo-right: ../dcl-head-niemand.png
+logoleft: ../fadenlogo-fwb.png
+logoright: ../dcl-head-niemand.png
 
-meta: |
-  class: [16412] dynamiken postdeutscher gegenwartslyrik ::
-  tutor: chiara liso ::
-  term: SS22\linebreak
-  << [back to paper <<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
-
-foot: |
-   the anarkkiv lankalevikki worksheet collection: <https://ada-sub.dh-index.org/blog>
 ---
 <!-- ::: {#logo}
 ![](../fadenlogoC-fwbSVG.svg)
@@ -46,6 +55,29 @@ snc: #16127::`r Sys.time()`
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 ::: -->
 
+```{r,echo=F,eval=T}
+pdfsrc<-""
+if(!knitr::is_latex_output())
+  pdfsrc<-'load pdf <a href="../../essais/germanic/shibboleth-a.pdf">here</a>'
+ipa <- function(text) {
+  if (knitr::is_latex_output()) {
+    paste0("\\ipa{", text, "}")
+  } else {
+    text
+  }
+}
+he <- function(text) {
+  if (knitr::is_latex_output()) {
+    # text<-"dummy"
+    paste0("\\he{", text, "}")
+  } else {
+    text
+  }
+}
+#cat(pdfsrc)
+```
+
+
 # password parsley
 der **login** auf einer der geschützten seiten einer mit unserer universität verbundenen (institution) läuft über ein verfahren, das als **single sign on** bezeichnet wird. bei diesem werden der nutzername und das passwort (unsere zedat **credentials**) nicht der von uns gewünschten seite übermittelt, sondern nur die zusage einer instanz (die ich im folgenden näher beleuchten will), dasz unsere credentials richtig sind, wir also der instanz (ich nenne sie hier einmal: wächter) den richtigen nutzernamen und passwort übergeben haben, um auf die ferne seite (ein korpusengine, ein bibliotheksportal, generell eine ferne anwendung im netz, die den zugriff zb. nur den **affiliates** bestimmter bildungseinrichtungen erlaubt / ich nenne sie hier zb.: waffenlager, repositorium), zugreifen zu können. beide seiten, wächter und repositorium, sind sich einig, dasz uns der zugriff auf die ressourcen nur gestattet wird, wenn wir derjenige sind, der wir zu sein vorgeben. zb. student/ der FUB.
 
@@ -63,8 +95,7 @@ das wort petersilie - parsley - [perejil] wird als zugang benötigt, um gegenüb
 ähnliches, weniger drastisches, kann menschen widerfahren, die um nur prominente beispiele zu nennen, [derrida], [bourdieu], [accessoir] oder eben, um zurückzukehren [shibboleth] (heute! dazu siehe Ri12.6 unten.) falsch aussprechen. (cf. dembeck, pg.212).[^2]
 
 #### 
- שִׁבֹּלֶת
-[die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein bringt niemanden weiter, es geht um die kleinen punkte..., die unscheinbaren merkzeichen, die das wort [Ri, 12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist in der deutsch-assoziierenden polyphonischen auslegung..., das hat sicher auch fr. wolf beschäftigt... die stelle in Ri12.6 jdfs. gibt auch dieser interpretation einen raum. die richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu werden.
+שִׁבֹּלֶת: [die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein bringt niemanden weiter, es geht um die kleinen punkte..., die unscheinbaren merkzeichen, die das wort [Ri, 12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist in der deutsch-assoziierenden polyphonischen auslegung..., das hat sicher auch fr. wolf beschäftigt... die stelle in Ri12.6 jdfs. gibt auch dieser interpretation einen raum. die richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu werden.
 
 #### 
 in der literatur(wissenschaft) kann es essentiell werden, namen, termini...  nicht nur richtig einzusetzen, sondern sie auch richtig auszusprechen. dasz dabei hegemoniale... (beweggründe? aspekte? belange? sic!) zum tragen kommen, sei hier nicht nur erwähnt. die **domaininhaber** definieren die korrektheit der anwendung. wenn die dömäne (die dominikanische republik? der gilead?) ist, haben diejenigen die epistemische? begriffshoheit, die dort **schon immer ansässig sind**. in der literatur und ihrer wissenschaft die worteigner und wissenschaftler der jeweiligen domäne. man setzt sich schnell in irgendwelche nesseln, wenn man das shibboleth nicht kennt. man fällt auf, aber man geht unter.
