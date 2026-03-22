@@ -125,8 +125,8 @@
 
 % \documentclass[12pt, a4paper]{article}
 
-\usepackage{iftex}
-\RequireXeTeX
+% \usepackage{iftex}
+% \RequireXeTeX
 
 % ------------------------------------------------------------
 % SINGLE FONT covering Latin + Hebrew — the key to zero markup.
@@ -149,12 +149,12 @@
 % of each character and sets run direction automatically.
 % No \LR or \RL commands needed in the source.
 % ------------------------------------------------------------
-\usepackage{fontspec}
-\defaultfontfeatures{Renderer=HarfBuzz}
-\setmainfont{Source Sans 3}[
-  Ligatures    = TeX,
-  FallbackFonts = {Alef, Arial Hebrew, Lucida Grande, FreeSans}
-]
+% \usepackage{fontspec}
+% \defaultfontfeatures{Renderer=HarfBuzz}
+% \setmainfont{Georgia}[
+%   Ligatures    = TeX,
+%   FallbackFonts = {Alef, Arial Hebrew, Source Sans 3,Lucida Grande, FreeSans}
+% ]
 % \usepackage{fontspec}
 % \defaultfontfeatures{Renderer=HarfBuzz}
 
@@ -170,22 +170,95 @@
 
 % \setmainfont{Avenir Next}
 
+% \newfontfamily\hebrewfont{Alef}[
+%   Renderer = HarfBuzz,
+%   Script   = Hebrew
+% ]
+
+% % \usepackage[Hebrew]{ucharclasses}
+% % \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
+% \usepackage[Hebrew, IPAExtensions]{ucharclasses}
+
+% \newfontfamily\ipafont{Source Sans 3}[Renderer=HarfBuzz]
+
+% \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
+% \setTransitionsFor{IPAExtensions}{\ipafont}{\normalfont}
+% % \usepackage{ucharclasses}
+% % \setTransitionsForHebrew{\hebrewfont}{\normalfont}
+% \usepackage{bidi}
+% ============================================================
+% loani.tex  —  include-in-header snippet
+% XeLaTeX: Georgia main, Alef Hebrew, Source Sans 3 IPA
+% ucharclasses watches all three IPA Unicode blocks.
+% bidi loaded BEFORE ucharclasses — required load order.
+% ============================================================
+
+\usepackage{iftex}
+\RequireXeTeX
+
+\usepackage{fontspec}
+\defaultfontfeatures{Renderer=HarfBuzz}
+
+\setmainfont{Georgia}[
+  Ligatures     = TeX,
+  FallbackFonts = {Alef, Arial Hebrew, Source Sans 3, Lucida Grande}
+]
+
 \newfontfamily\hebrewfont{Alef}[
   Renderer = HarfBuzz,
   Script   = Hebrew
 ]
 
-\usepackage[Hebrew]{ucharclasses}
-% \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
-% \usepackage[Hebrew, IPAExtensions]{ucharclasses}
+\newfontfamily\ipafont{Source Sans 3}[
+  Renderer = HarfBuzz
+]
 
-\newfontfamily\ipafont{Source Sans 3}[Renderer=HarfBuzz]
-
-\setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
-% \setTransitionsFor{IPAExtensions}{\ipafont}{\normalfont}
-% \usepackage{ucharclasses}
-% \setTransitionsForHebrew{\hebrewfont}{\normalfont}
+% ------------------------------------------------------------
+% bidi FIRST — must be initialised before ucharclasses hooks
+% ------------------------------------------------------------
 \usepackage{bidi}
+
+% ------------------------------------------------------------
+% ucharclasses — all blocks that carry IPA characters:
+%   IPAExtensions        U+0250–U+02AF
+%   SpacingModifierLetters U+02B0–U+02FF  (ʰ ʷ ˈ ˌ ː etc.)
+%   PhoneticExtensions   U+1D00–U+1D7F   (small caps, turned letters)
+% ------------------------------------------------------------
+\usepackage[
+  Hebrew,
+  IPAExtensions,
+  SpacingModifierLetters,
+  PhoneticExtensions
+]{ucharclasses}
+
+\setTransitionsFor{Hebrew}              {\hebrewfont}{\normalfont}
+% \setTransitionsFor{IPAExtensions}        {\ipafont}{\normalfont\rmfamily}
+\setTransitionsFor{SpacingModifierLetters}{\ipafont}{\normalfont\rmfamily}
+\setTransitionsFor{PhoneticExtensions}   {\ipafont}{\normalfont\rmfamily}
+\setTransitionsFor{IPAExtensions}{\color{red}\ipafont}{\normalfont\rmfamily}
+% \setTransitionsFor{IPAExtensions}        {\bgroup\ipafont}{\egroup}
+% \setTransitionsFor{SpacingModifierLetters}{\bgroup\ipafont}{\egroup}
+% \setTransitionsFor{PhoneticExtensions}   {\bgroup\ipafont}{\egroup}
+% \setTransitionsFor{IPAExtensions}       {\ipafont}   {\normalfont}
+% \setTransitionsFor{SpacingModifierLetters}{\ipafont} {\normalfont}
+% \setTransitionsFor{PhoneticExtensions}  {\ipafont}   {\normalfont}
+% \setTransitionsFor{IPAExtensions}{%
+%   \begingroup\ipafont
+% }{%
+%   \endgroup
+% }
+% \setTransitionsFor{SpacingModifierLetters}{%
+%   \begingroup\ipafont
+% }{%
+%   \endgroup
+% }
+% \setTransitionsFor{PhoneticExtensions}{%
+%   \begingroup\ipafont
+% }{%
+%   \endgroup
+% }
+
+\usepackage[hyperfootnotes=false]{hyperref}
 % \renewcommand{\,}{\thinspace}
 % \usepackage{etoolbox}
 % \AtBeginEnvironment{footnote}{\hbadness=10000\hfuzz=10pt}
@@ -219,7 +292,7 @@
 \usepackage{tikz}
 
 % ---------- header font (adjust to taste) ----------
-\newfontfamily\headerfont{Gill Sans Light}
+\newfontfamily\headerfont{Source Sans 3}
 
 % ---------- footer colors ----------
 \definecolor{footerbg}{HTML}{000000}
@@ -251,10 +324,10 @@
 \begin{minipage}[c]{\linewidth}
 \centering
 \ifdefined\doctitle
-  {\Large\bfseries\doctitle}%
+  {\Large\bfseries\headerfont\doctitle}%
 \fi
 \ifdefined\docsubtitle
-  \\[2pt]{\normalsize\docsubtitle}%
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
 \fi
 \end{minipage}
 % &
@@ -285,7 +358,10 @@
   \textbf{Date:} \docdate
 \fi
 \ifdefined\docmeta
-  \\\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
 \fi
 }
 \vspace{6pt}
@@ -315,8 +391,8 @@ at ([yshift=5mm]current page.south)
   \begin{center}
   {\small
   \ifdefined\docfoot
+    % {\docfoot}%
     {\headerfont\docfoot}%
-    % {\headerfont\bfseries\docfoot}%
   \fi
   }
   \end{center}
@@ -334,7 +410,7 @@ at ([yshift=5mm]current page.south)
 \newcommand{\doctitle}{12293.wolf gossip satz für satz}
 \newcommand{\docsubtitle}{uljana wolf response paper}
 \newcommand{\docdate}{2026-03-22}
-\newcommand{\docmeta}{class: [16412] dynamiken postdeutscher gegenwartslyrik :: tutor: chiara liso :: term: SS22 \newline snc: 16132.6 \newline >> back to paper >> https://esteeschwarz.github.io/DC-LX/essais/papers/010/}
+\newcommand{\docmeta}{class: [16412] dynamiken postdeutscher gegenwartslyrik :: tutor: chiara liso :: term: SS22 \newline snc: 16132.8 \newline >> back to paper >> https://esteeschwarz.github.io/DC-LX/essais/papers/010/}
 \newcommand{\docfoot}{the anarkkiv lankalevikki worksheet collection >> https://ada-sub.dh-index.org/blog}
 \newcommand{\doclogoleft}{../fadenlogo-fwb.png}
 \newcommand{\doclogoright}{../dcl-head-niemand.png}
@@ -461,10 +537,10 @@ beispiel das prinzip des \textbf{shibboleth} zu erklären.
 
 das wort petersilie - parsley - {[}perejil{]} wird als zugang benötigt,
 um gegenüber der gemeinschaft der natives NICHT als fremder zu
-erscheinen = dem massaker zum opfer zu fallen. wer es {[}pɛʟɛχɪʟ{]}
-ausspricht, und nicht {[}pɛʀɛχɪʟ{]}, wie die einheimischen, wird
-ermordet. es ist also gut, die aussprache zu wissen. oder zu
-beherrschen.
+erscheinen = dem massaker zum opfer zu fallen. wer es
+{\ipafont [pɛʟɛχɪʟ]} ausspricht, und nicht {\ipafont [pɛʀɛχɪʟ],} wie die
+einheimischen, wird ermordet. es ist also gut, die aussprache zu wissen.
+oder zu beherrschen.
 
 ähnliches, weniger drastisches, kann menschen widerfahren, die um nur
 prominente beispiele zu nennen, {[}derrida{]}, {[}bourdieu{]},
@@ -477,7 +553,8 @@ pg.212).\footnote{Dembeck, T., Parr, R., \& Küpper, T. (2017). Literatur
 
 \paragraph{2}\label{section-1}
 
-S: שִׂבֹלֶת \textgreater{}
+S: שִׂבֹלֶת \textgreater{} {[}now that was hard getting to the
+script\ldots{]}\\
 \href{https://www.pealim.com/dict/3270-shibolet/}{die übersetzung}
 allein bringt niemanden weiter, es geht um die kleinen punkte\ldots, die
 unscheinbaren merkzeichen, die das wort

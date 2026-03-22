@@ -8,7 +8,7 @@ meta: |
   class: [16412] dynamiken postdeutscher gegenwartslyrik ::
   tutor: chiara liso ::
   term: SS22 \\newline
-  snc: 16132.6 \\newline
+  snc: 16132.8 \\newline
   >> back to paper >> <https://esteeschwarz.github.io/DC-LX/essais/papers/010/>
 foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 format:
@@ -45,6 +45,7 @@ docmeta: |
 
 filters:
   - commands.lua
+  - ipa.lua
 logoleft: ../fadenlogo-fwb.png
 logoright: ../dcl-head-niemand.png
 
@@ -108,7 +109,8 @@ das wort petersilie - parsley - [perejil] wird als zugang benötigt, um gegenüb
 ähnliches, weniger drastisches, kann menschen widerfahren, die um nur prominente beispiele zu nennen, [derrida], [bourdieu], [accessoir] oder eben, um zurückzukehren [shibboleth] (heute! dazu siehe Ri12.6 unten.) falsch aussprechen. (cf. dembeck, pg.212).[^2]   
 
 #### 2
-S: שִׂבֹלֶת > [die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein bringt niemanden weiter, es geht um die kleinen punkte..., die unscheinbaren merkzeichen, die das wort [Ri, 12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist in der deutsch-assoziierenden polyphonischen auslegung..., das hat sicher auch fr. wolf beschäftigt... die stelle in Ri12.6 jdfs. gibt auch dieser interpretation einen raum. die richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu werden.
+S: שִׂבֹלֶת > [now that was hard getting to the script...]  
+[die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein bringt niemanden weiter, es geht um die kleinen punkte..., die unscheinbaren merkzeichen, die das wort [Ri, 12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist in der deutsch-assoziierenden polyphonischen auslegung..., das hat sicher auch fr. wolf beschäftigt... die stelle in Ri12.6 jdfs. gibt auch dieser interpretation einen raum. die richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu werden.
 
 #### 3
 in der literatur(wissenschaft) kann es essentiell werden, namen, termini...  nicht nur richtig einzusetzen, sondern sie auch richtig auszusprechen. dasz dabei hegemoniale... (beweggründe? aspekte? belange? sic!) zum tragen kommen, sei hier nicht nur erwähnt. die **domaininhaber** definieren die korrektheit der anwendung. wenn die dömäne (die dominikanische republik? der gilead?) ist, haben diejenigen die epistemische? begriffshoheit, die dort **schon immer ansässig sind**. in der literatur und ihrer wissenschaft die worteigner und wissenschaftler der jeweiligen domäne. man setzt sich schnell in irgendwelche nesseln, wenn man das shibboleth nicht kennt. man fällt auf, aber man geht unter.

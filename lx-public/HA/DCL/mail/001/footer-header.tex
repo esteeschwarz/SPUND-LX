@@ -16,7 +16,7 @@
 \usepackage{tikz}
 
 % ---------- header font (adjust to taste) ----------
-\newfontfamily\headerfont{Gill Sans Light}
+\newfontfamily\headerfont{Source Sans 3}
 
 % ---------- footer colors ----------
 \definecolor{footerbg}{HTML}{000000}
@@ -48,10 +48,10 @@
 \begin{minipage}[c]{\linewidth}
 \centering
 \ifdefined\doctitle
-  {\Large\bfseries\doctitle}%
+  {\Large\bfseries\headerfont\doctitle}%
 \fi
 \ifdefined\docsubtitle
-  \\[2pt]{\normalsize\docsubtitle}%
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
 \fi
 \end{minipage}
 % &
@@ -82,7 +82,10 @@
   \textbf{Date:} \docdate
 \fi
 \ifdefined\docmeta
-  \\\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
 \fi
 }
 \vspace{6pt}
@@ -112,8 +115,8 @@ at ([yshift=5mm]current page.south)
   \begin{center}
   {\small
   \ifdefined\docfoot
-    {\docfoot}%
-    % {\headerfont\bfseries\docfoot}%
+    % {\docfoot}%
+    {\headerfont\docfoot}%
   \fi
   }
   \end{center}
