@@ -153,54 +153,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 
-% <<< default ---------------------------
-% RTL
-\usepackage{fontspec}
-% \setmainfont{Noto Serif}
-\usepackage{polyglossia}
-\setmainlanguage{english}
-\setotherlanguage{hebrew}
-\usepackage[english,hebrew]{babel}
-% \newfontfamily\hebrewfontdep{Noto Serif Hebrew}[Script=Hebrew]
-% \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
-% \setmainfont{Noto Serif}[
-%   Ligatures=TeX
-% ]
-
-% \newfontfamily\hebrewfont[
-%   Script=Hebrew,
-%   Scale=MatchLowercase
-% ]{Noto Serif Hebrew}
-% \usepackage{fontspec}
-% \usepackage{fontspec}
-% \usepackage{luaotfload}
-% \usepackage[english,hebrew]{babel}
-% \directlua{
-%   luaotfload.add_fallback("fb",{
-%     "NotoSerifHebrew:mode=harf;"
-%   })
-% }
-
-% \setmainfont{Noto Serif}[
-%   Renderer=HarfBuzz,
-%   RawFeature={fallback=fb}
-% ]
-% \directlua{
-% local hebrew_range = {0x0590,0x05FF}
-
-% callback.register("pre_linebreak_filter",
-%   function(head)
-%     tex.set("textdir","TLT")
-%     for n in node.traverse_id(node.id("glyph"), head) do
-%       if n.char >= hebrew_range[1] and n.char <= hebrew_range[2] then
-%         tex.set("textdir","TRT")
-%         break
-%       end
-%     end
-%     return head
-%   end)
-% }
-\setmainfont{FreeSerif}
+% <<< DEFAULT
 
 % ---------- required packages ----------
 \usepackage{graphicx}
@@ -209,8 +162,16 @@
 \usepackage{array}
 \usepackage{tikz}
 \usepackage{fontspec}
+\usepackage{fontspec}
+% \setmainfont{Noto Serif}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{hebrew}
+% \usepackage[english,hebrew]{babel} % throws iffalse error
 % \newfontfamily\headerfont{Source Sans 3}
 \newfontfamily\headerfont{Gill Sans Light}
+\setmainfont{Free Serif}
+
 
 % ---------- column types ----------
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
@@ -226,8 +187,8 @@
 \begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
 
 % LEFT LOGO
-$if(logo-left)$
-\includegraphics[width=10mm,height=10mm,keepaspectratio]{$logo-left$}
+$if(logoleft)$
+\includegraphics[width=10mm,height=10mm,keepaspectratio]{$logoleft$}
 $endif$
 &
 % CENTER TITLE BLOCK
@@ -237,8 +198,8 @@ $if(subtitle)$
 $endif$
 &
 % RIGHT MOTTO
-$if(logo-right)$
-\includegraphics[height=10mm,keepaspectratio]{$logo-right$}
+$if(logoright)$
+\includegraphics[height=10mm,keepaspectratio]{$logoright$}
 $endif$
 
 \end{tabularx}
@@ -298,11 +259,10 @@ $endif$
     text=footerfg,
     inner sep=10pt,
     rounded corners=2pt,
-    text width=\dimexpr\textwidth-20pt\relax
-] 
-at ([yshift=15mm]current page.south)
-
+    text width=\textwidth
+] (box)
 {
+\begin{minipage}{0.97\textwidth}
 
 % ===== META SECTION =====
 % \hrule
@@ -318,17 +278,14 @@ $endif$
 }
 \end{center}
 % \hrule
+\end{minipage}
 };
 \end{tikzpicture}
 }
 % place header at document start
 \AtBeginDocument{\CustomHeader}
-% \AtEndDocument{\CustomFooter}
-\AtEndDocument{%
-  \par
-  \thispagestyle{empty}
-  \CustomFooter
-}
+\AtEndDocument{\CustomFooter}
+
 % ---------- footer BOX ----------
 \definecolor{footerbg}{HTML}{000000}
 \definecolor{footerfg}{HTML}{FFFFFF}
@@ -337,9 +294,9 @@ $endif$
 \begin{document}
 
 $body$
+% \vspace{6pt}
+\hrule
 \vspace{6pt}
 
-\hrule
 
-% \CustomFooter
 \end{document}
