@@ -11,7 +11,7 @@
 -- end
 
 -- vars.lua
-function Meta(m)
+local function BMeta(m)
   local includes = m["header-includes"] or pandoc.List()
   
   if m.foot then
@@ -76,6 +76,63 @@ function HMeta(m)
   -- inject(includes, "docmeta",      m.meta)
   -- inject(includes, "doclogoleft",  m.logoleft)
   -- inject(includes, "doclogoright", m.logoright)
+
+  m["header-includes"] = includes
+  return m
+end
+
+-- vars.lua
+-- Reads YAML front matter and injects \newcommand definitions
+-- into header-includes so LaTeX snippets can use \doc... vars
+-- without any $var$ Pandoc template syntax.
+--
+-- YAML key      →  LaTeX command
+-- title         →  \doctitle
+-- subtitle      →  \docsubtitle
+-- author        →  \docauthor      (list joined with ", ")
+-- date          →  \docdate
+-- meta          →  \docmeta        (multiline ok)
+-- foot          →  \docfoot
+-- logoleft      →  \doclogoleft    (image path)
+-- logoright     →  \doclogoright   (image path)
+
+local function inject(includes, cmd, value)
+  if value == nil then return end
+  local str = pandoc.utils.stringify(value)
+  if str ~= "" then
+    includes:insert(pandoc.RawBlock("latex",
+      "\\newcommand{\\" .. cmd .. "}{" .. str .. "}"))
+  end
+end
+
+function Meta(m)
+  local includes = m["header-includes"] or pandoc.List()
+
+  inject(includes, "doctitle",     m.title)
+  inject(includes, "docsubtitle",  m.subtitle)
+  inject(includes, "docdate",      m.date)
+  inject(includes, "docmeta",      m.meta)
+  inject(includes, "docfoot",      m.foot)
+  inject(includes, "doclogoleft",  m.logoleft)
+  inject(includes, "doclogoright", m.logoright)
+
+  -- author: join list into single string if needed
+  if m.author then
+    local authors
+    if type(m.author) == "table" and m.author.t == "MetaList" then
+      local parts = {}
+      for _, a in ipairs(m.author) do
+        table.insert(parts, pandoc.utils.stringify(a))
+      end
+      authors = table.concat(parts, ", ")
+    else
+      authors = pandoc.utils.stringify(m.author)
+    end
+    if authors ~= "" then
+      includes:insert(pandoc.RawBlock("latex",
+        "\\newcommand{\\docauthor}{" .. authors .. "}"))
+    end
+  end
 
   m["header-includes"] = includes
   return m

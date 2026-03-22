@@ -2,6 +2,7 @@
 title: 12293.wolf gossip satz für satz
 date: today
 author: stschwarz
+title-meta: ""
 meta: |
   class: [16412] dynamiken postdeutscher gegenwartslyrik ::
   tutor: chiara liso ::
@@ -27,7 +28,8 @@ format:
       colorlinks: true
       include-in-header: 
         - loani.tex
-        # - footer-header.tex
+        - footer-header.tex
+      include-before-body: go-head.tex
         # - paper.tex
         #   pdf-engine: lualatex
     #   header-includes:

@@ -1,21 +1,26 @@
+% ============================================================
+% header.tex  —  include-in-header snippet
+% Replaces $var$ Pandoc syntax with \ifdefined\doc... guards.
+% Vars injected via vars.lua Lua filter from YAML front matter:
+%   \doctitle      \docsubtitle   \docauthor   \docdate
+%   \docmeta       \docfoot       \doclogoleft \doclogoright
+%
+% No fancyhdr. Header fires via \AtBeginDocument,
+% footer via \AtEndDocument — bidi-safe.
+% ============================================================
 
-% ---------- required packages ----------
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{array}
 \usepackage{tikz}
-% \usepackage{fontspec}
-% \usepackage{fontspec}
-% \setmainfont{Noto Serif}
-% \usepackage{polyglossia}
-% \setmainlanguage{english}
-% \setotherlanguage{hebrew}
-% % \usepackage[english,hebrew]{babel} % throws iffalse error
-% % \newfontfamily\headerfont{Source Sans 3}
-\newfontfamily\headerfont{Gill Sans Light}
-% \setmainfont{Free Serif}
 
+% ---------- header font (adjust to taste) ----------
+\newfontfamily\headerfont{Gill Sans Light}
+
+% ---------- footer colors ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
 
 % ---------- column types ----------
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
@@ -25,143 +30,84 @@
 % vertical separator rule
 \newcommand{\vsep}{\color{black}\vrule width 1pt}
 
-% ---------- HEADER ----------
-% claude
 % ============================================================
-% header.tex  —  include-in-header snippet
-% bidi-safe: header content wrapped in \LTR to prevent
-% direction primitives firing in fancyhdr's LR mode context.
+% CUSTOM HEADER
 % ============================================================
-
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{xcolor}
-
-\newcommand{\headersmall}{\footnotesize\color{gray}}
-
-\newlength{\logoheight}
-\setlength{\logoheight}{1.2cm}
-
-% ------------------------------------------------------------
-% HEADER CONTENT as a macro, not a savebox
-% Built fresh each page inside \LTR — bidi stays out
-% ------------------------------------------------------------
-\newcommand{\docheadercontent}{%
-  \LTR{%
-    \begin{tabularx}{\textwidth}{@{}lXr@{}}
-      % ROW 1: logoleft | title | logoright
-      \ifdefined\logoleft
-        \includegraphics[height=\logoheight]{\logoleft}%
-      \fi
-      &
-      \centering
-      \ifdefined\title
-        {\large\bfseries\title}%
-      \fi
-      &
-      \ifdefined\logoright
-        \includegraphics[height=\logoheight]{\logoright}%
-      \fi
-      \\[4pt]
-      % ROW 2: author | date | meta
-      {\headersmall\ifdefined\author\author\fi}
-      &
-      \centering{\headersmall\ifdefined\date\date\fi}
-      &
-      \raggedleft{\headersmall\ifdefined\meta\meta\fi}
-      \\
-      \midrule
-    \end{tabularx}%
-  }%
-}
-
-% ------------------------------------------------------------
-% FANCYHDR
-% ------------------------------------------------------------
-\pagestyle{fancy}
-\fancyhf{}
-
-\fancyhead[L]{\docheadercontent}
-
-\fancyfoot[C]{\footnotesize\thepage}
-
-\renewcommand{\headrulewidth}{0pt}
-
-\setlength{\headheight}{2.8cm}
-\setlength{\headsep}{0.4cm}
-
-
-% --------
-
-\newcommand{\CustomHeaderdep}{
+\newcommand{\CustomHeader}{%
+\LTR{%
 \noindent
 \begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
 
 % LEFT LOGO
-% $if(logoleft)$
-\includegraphics[width=10mm,height=10mm,keepaspectratio]{\logoleft}
-der \textbf{login} auf einer der geschützten seiten
-% $endif$
-% &
+\ifdefined\doclogoleft
+  \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
+\fi
+&
 % CENTER TITLE BLOCK
-% \Large\bfseries \title
-% $if(subtitle)$
-% \normalsize \subtitle
-% $endif$
-% &
-% RIGHT MOTTO
-\includegraphics[height=10mm,keepaspectratio]{\logoright}
+\ifdefined\doctitle
+  {\Large\bfseries\doctitle}%
+\fi
+\ifdefined\docsubtitle
+  \\\normalsize\docsubtitle
+\fi
+&
+% RIGHT LOGO
+\ifdefined\doclogoright
+  \includegraphics[height=10mm,keepaspectratio]{\doclogoright}%
+\fi
 
 \end{tabularx}
 
-% \vspace{6pt}
 \hrule
 \vspace{6pt}
 
 % ---------- META AREA ----------
-
-% \author\\
-% \textbf{Meta:} \meta
+{\small
+\ifdefined\docauthor
+  \textbf{Author:} \docauthor\\
+\fi
+\ifdefined\docdate
+  \textbf{Date:} \docdate
+\fi
+\ifdefined\docmeta
+  \\\docmeta
+\fi
 }
-\newcommand{\CustomFooter}{
-\begin{tikzpicture}[remember picture,overlay]
+
+\vspace{12pt}
+}% end \LTR
+}% end \CustomHeader
+
+% ============================================================
+% CUSTOM FOOTER  (overlay, anchored to page bottom)
+% ============================================================
+\newcommand{\CustomFooter}{%
+\begin{tikzpicture}[remember picture, overlay]
 \node[
-    anchor=south,
-    draw,
-    fill=footerbg,
-    text=footerfg,
-    inner sep=10pt,
-    rounded corners=2pt,
-    text width=\dimexpr\textwidth-20pt\relax
+  anchor=south,
+  draw,
+  fill=footerbg,
+  text=footerfg,
+  inner sep=10pt,
+  rounded corners=2pt,
+  text width=\dimexpr\textwidth-20pt\relax
 ]
 at ([yshift=5mm]current page.south)
-{
-\begin{center}
-{\small
-{\headerfont\bfseries \foot}
-
-}
-\end{center}
+{%
+  \begin{center}
+  {\small
+  \ifdefined\docfoot
+    {\headerfont\bfseries\docfoot}%
+  \fi
+  }
+  \end{center}
 };
-\end{tikzpicture}
-}
-% place header at document start
+\end{tikzpicture}%
+}% end \CustomFooter
+
+% ============================================================
+% FIRE header at doc start, footer at doc end
+% ============================================================
 % \AtBeginDocument{\CustomHeader}
 \AtEndDocument{\CustomFooter}
-
-% ---------- footer BOX ----------
-\definecolor{footerbg}{HTML}{000000}
-\definecolor{footerfg}{HTML}{FFFFFF}
-
-% ---------- BODY ----------
-% \begin{document}
-
-% $body$
-% % \vspace{6pt}
-% \hrule
-% \vspace{6pt}
-
-
-% \end{document}
+\renewcommand{\maketitle}{}
