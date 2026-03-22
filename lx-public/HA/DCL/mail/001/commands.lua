@@ -1,86 +1,3 @@
--- meta-to-latex.lua
--- function Meta(m)
---   if m.docmeta then
---     local lines = pandoc.utils.stringify(m.docmeta)
---     -- escape for LaTeX and inject into header
---     local cmd = "\\newcommand{\\docmeta}{" .. lines .. "}"
---     m["header-includes"] = m["header-includes"] or pandoc.List()
---     m["header-includes"]:insert(pandoc.RawBlock("latex", cmd))
---   end
---   return m
--- end
-
--- vars.lua
-local function BMeta(m)
-  local includes = m["header-includes"] or pandoc.List()
-  
-  if m.foot then
-    includes:insert(pandoc.RawBlock("latex",
-      "\\newcommand{\\foot}{" .. pandoc.utils.stringify(m.foot) .. "}"))
-  end
-  
-  -- if m.meta then
-  --   includes:insert(pandoc.RawBlock("latex",
-  --     "\\newcommand{\\meta}{" .. pandoc.utils.stringify(m.meta) .. "}"))
-  -- end
- 
-  if m.meta then
-    local lines = pandoc.utils.stringify(m.meta)
-    -- escape for LaTeX and inject into header
-    local cmd = "\\newcommand{\\meta}{" .. lines .. "}"
-    m["header-includes"] = m["header-includes"] or pandoc.List()
-    m["header-includes"]:insert(pandoc.RawBlock("latex", cmd))
-  end
-  if m.logoleft then
-    includes:insert(pandoc.RawBlock("latex",
-      "\\newcommand{\\logoleft}{" .. pandoc.utils.stringify(m.logoleft) .. "}"))
-  end
-
-  if m.logoright then
-    includes:insert(pandoc.RawBlock("latex",
-      "\\newcommand{\\logoright}{" .. pandoc.utils.stringify(m.logoright) .. "}"))
-  end
-
-  m["header-includes"] = includes
-  return m
-end
-
--- vars.lua
--- Maps YAML front matter fields to \newcommand definitions
--- injected into header-includes before LaTeX sees them.
---
--- Supported YAML keys → LaTeX commands:
---   title      → \doctitle
---   author     → \docauthor
---   date       → \docdate
---   meta       → \docmeta       (multiline ok, use \\ in value)
---   logoleft   → \doclogoleft   (image path)
---   logoright  → \doclogoright  (image path)
-
-local function inject(includes, cmd, value)
-  if value then
-    local str = pandoc.utils.stringify(value)
-    if str ~= "" then
-      includes:insert(pandoc.RawBlock("latex",
-        "\\newcommand{\\" .. cmd .. "}{" .. str .. "}"))
-    end
-  end
-end
-
-function HMeta(m)
-  local includes = m["header-includes"] or pandoc.List()
-
-  inject(includes, "title",     m.title)
-  inject(includes, "author",    m.author)
-  inject(includes, "date",      m.date)
-  -- inject(includes, "docmeta",      m.meta)
-  -- inject(includes, "doclogoleft",  m.logoleft)
-  -- inject(includes, "doclogoright", m.logoright)
-
-  m["header-includes"] = includes
-  return m
-end
-
 -- vars.lua
 -- Reads YAML front matter and injects \newcommand definitions
 -- into header-includes so LaTeX snippets can use \doc... vars
@@ -91,11 +8,12 @@ end
 -- subtitle      →  \docsubtitle
 -- author        →  \docauthor      (list joined with ", ")
 -- date          →  \docdate
--- meta          →  \docmeta        (multiline ok)
+-- meta          →  \docmeta        (rich: links/formatting preserved)
 -- foot          →  \docfoot
 -- logoleft      →  \doclogoleft    (image path)
 -- logoright     →  \doclogoright   (image path)
 
+-- Plain stringify for fields that are always plain text
 local function inject(includes, cmd, value)
   if value == nil then return end
   local str = pandoc.utils.stringify(value)
@@ -105,18 +23,52 @@ local function inject(includes, cmd, value)
   end
 end
 
+-- Rich inject: converts Pandoc inlines → LaTeX, preserving
+-- links, emphasis etc. Used for \docmeta and \docfoot.
+local function inject_rich(includes, cmd, value)
+  if value == nil then return end
+
+  -- MetaBlocks: walk each block, convert inlines to LaTeX
+  local blocks
+  if value.t == "MetaBlocks" then
+    blocks = value
+  elseif value.t == "MetaInlines" then
+    blocks = pandoc.Blocks({ pandoc.Para(value) })
+  else
+    -- fallback to plain stringify
+    inject(includes, cmd, value)
+    return
+  end
+
+  -- Convert blocks to LaTeX via Pandoc writer
+  local doc = pandoc.Pandoc(blocks)
+  local latex = pandoc.write(doc, "latex")
+
+  -- Strip surrounding \par / newlines Pandoc adds around blocks
+  latex = latex:gsub("^%s*\\par%s*", "")
+               :gsub("%s*\\par%s*$", "")
+               :gsub("^%s+", "")
+               :gsub("%s+$", "")
+               :gsub("\\href(%b{})(%b{})", "\\mbox{\\href%1%2}")
+
+  if latex ~= "" then
+    includes:insert(pandoc.RawBlock("latex",
+      "\\newcommand{\\" .. cmd .. "}{" .. latex .. "}"))
+  end
+end
+
 function Meta(m)
   local includes = m["header-includes"] or pandoc.List()
 
-  inject(includes, "doctitle",     m.title)
-  inject(includes, "docsubtitle",  m.subtitle)
-  inject(includes, "docdate",      m.date)
-  inject(includes, "docmeta",      m.meta)
-  inject(includes, "docfoot",      m.foot)
-  inject(includes, "doclogoleft",  m.logoleft)
-  inject(includes, "doclogoright", m.logoright)
+  inject(includes,      "doctitle",     m.title)
+  inject(includes,      "docsubtitle",  m.subtitle)
+  inject(includes,      "docdate",      m.date)
+  inject_rich(includes, "docmeta",      m.meta)   -- rich: preserves links
+  inject_rich(includes, "docfoot",      m.foot)   -- rich: preserves links
+  inject(includes,      "doclogoleft",  m.logoleft)
+  inject(includes,      "doclogoright", m.logoright)
 
-  -- author: join list into single string if needed
+  -- author: join list into single string
   if m.author then
     local authors
     if type(m.author) == "table" and m.author.t == "MetaList" then

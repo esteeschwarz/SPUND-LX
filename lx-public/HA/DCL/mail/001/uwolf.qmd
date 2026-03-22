@@ -1,13 +1,15 @@
 ---
 title: 12293.wolf gossip satz für satz
-date: today
-author: stschwarz
+subtitle: uljana wolf response paper
+date: '`r format(Sys.time())`'
+author: esteeschwarz
 title-meta: ""
 meta: |
   class: [16412] dynamiken postdeutscher gegenwartslyrik ::
   tutor: chiara liso ::
-  term: SS22 ::
-  << [back to paper <<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+  term: SS22 \\newline
+  snc: 16132.5 \\newline
+  >> back to paper >> <https://esteeschwarz.github.io/DC-LX/essais/papers/010/>
 foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 format:
 #   html:

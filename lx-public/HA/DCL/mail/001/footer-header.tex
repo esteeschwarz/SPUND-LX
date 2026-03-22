@@ -43,13 +43,25 @@
   \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
 \fi
 &
-% CENTER TITLE BLOCK
+% CENTER: title + subtitle stacked in a minipage so \\ is a
+% line break within the cell, not a new table row
+\begin{minipage}[c]{\linewidth}
+\centering
 \ifdefined\doctitle
   {\Large\bfseries\doctitle}%
 \fi
 \ifdefined\docsubtitle
-  \\\normalsize\docsubtitle
+  \\[2pt]{\normalsize\docsubtitle}%
 \fi
+\end{minipage}
+% &
+% % CENTER TITLE BLOCK
+% \ifdefined\doctitle
+%   {\Large\bfseries\doctitle}%
+% \fi
+% \ifdefined\docsubtitle
+%   \\\normalsize\docsubtitle
+% \fi
 &
 % RIGHT LOGO
 \ifdefined\doclogoright
@@ -59,7 +71,7 @@
 \end{tabularx}
 
 \hrule
-\vspace{6pt}
+% \vspace{6pt}
 
 % ---------- META AREA ----------
 {\small
@@ -73,8 +85,11 @@
   \\\docmeta
 \fi
 }
+\vspace{6pt}
 
-\vspace{12pt}
+\hrule
+
+% \vspace{12pt}
 }% end \LTR
 }% end \CustomHeader
 
