@@ -134,7 +134,7 @@
 % fontspec will fall back to the FallbackFonts list for any
 % glyph the main font lacks; order matters.
 % ------------------------------------------------------------
-\usepackage{fontspec}
+% \usepackage{fontspec}
 
 % \setmainfont{FreeSans}[
 %   Ligatures    = TeX,
@@ -150,10 +150,10 @@
 % No \LR or \RL commands needed in the source.
 % ------------------------------------------------------------
 \usepackage{fontspec}
-% \defaultfontfeatures{Renderer=HarfBuzz}
+\defaultfontfeatures{Renderer=HarfBuzz}
 \setmainfont{Source Sans 3}[
   Ligatures    = TeX,
-  FallbackFonts = {Alef, Arial Hebrew, Lucida Grande, FreeSans, Source Sans 3}
+  FallbackFonts = {Alef, Arial Hebrew, Lucida Grande, FreeSans}
 ]
 % \usepackage{fontspec}
 % \defaultfontfeatures{Renderer=HarfBuzz}
@@ -165,12 +165,12 @@
 %   Script   = Hebrew
 % ]
 
-\usepackage{fontspec}
-\defaultfontfeatures{Renderer=HarfBuzz}
+% \usepackage{fontspec}
+% \defaultfontfeatures{Renderer=HarfBuzz}
 
 % \setmainfont{Avenir Next}
 
-\newfontfamily\hebrewfont{Arial Hebrew}[
+\newfontfamily\hebrewfont{Alef}[
   Renderer = HarfBuzz,
   Script   = Hebrew
 ]
@@ -187,19 +187,19 @@
 % \setTransitionsForHebrew{\hebrewfont}{\normalfont}
 \usepackage{bidi}
 % \renewcommand{\,}{\thinspace}
-\usepackage{etoolbox}
-\AtBeginEnvironment{footnote}{\hbadness=10000\hfuzz=10pt}
-\let\oldfootnote\footnote
+% \usepackage{etoolbox}
+% \AtBeginEnvironment{footnote}{\hbadness=10000\hfuzz=10pt}
+% \let\oldfootnote\footnote
 % \renewcommand{\footnote}[1]{\oldfootnote{\LTR #1}}
-\usepackage{etoolbox}
+% \usepackage{etoolbox}
 % \patchcmd{\footnote}{\ignorespaces}{\leavevmode\LTR\ignorespaces}{}{}
 % \let\bidi@saved@everypar\everypar
-\usepackage{endfloat}
-\AtEndDocument{\let\LTR\relax\let\RTL\relax}
-\AtBeginDocument{
-  \let\LTR\relax
-  \let\RTL\relax
-}
+% \usepackage{endfloat}
+% \AtEndDocument{\let\LTR\relax\let\RTL\relax}
+% \AtBeginDocument{
+%   \let\LTR\relax
+%   \let\RTL\relax
+% }
 \usepackage[hyperfootnotes=false]{hyperref}
 \KOMAoption{captions}{tableheading}
 \makeatletter

@@ -1,4 +1,3 @@
-% \documentclass[11pt]{article}
 % Options for packages loaded elsewhere
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
@@ -107,7 +106,106 @@
  
 
 
+% ============================================================
+% bidi-auto.tex  —  XeLaTeX template for plain-text mixed
+% Latin / Hebrew input with ZERO markup in the source.
+%
+% The Unicode Bidirectional Algorithm (UBA) handles direction
+% automatically. XeLaTeX + bidi respect it at the paragraph
+% level. Font fallback via fontspec covers missing glyphs.
+%
+% Compile:
+%   pandoc input.md -o output.pdf \
+%     --pdf-engine=xelatex \
+%     --template=bidi-auto.tex
+%
+% Or standalone:
+%   xelatex bidi-auto.tex
+% ============================================================
+
+% \documentclass[12pt, a4paper]{article}
+
+\usepackage{iftex}
+\RequireXeTeX
+
+% ------------------------------------------------------------
+% SINGLE FONT covering Latin + Hebrew — the key to zero markup.
+% Taamey Frank CLM or SBL BibLit both span the full range.
+% fontspec will fall back to the FallbackFonts list for any
+% glyph the main font lacks; order matters.
+% ------------------------------------------------------------
+% \usepackage{fontspec}
+
+% \setmainfont{FreeSans}[
+%   Ligatures    = TeX,
+%   FallbackFonts = {SBL BibLit, SBL Hebrew, FreeSans, DejaVu Sans}
+% ]
+
+% That's it for fonts. No \newfontfamily, no \texthebrew{}.
+
+% ------------------------------------------------------------
+% BIDI — loads the Unicode Bidirectional Algorithm support.
+% With bidi loaded, XeLaTeX reads the Unicode script properties
+% of each character and sets run direction automatically.
+% No \LR or \RL commands needed in the source.
+% ------------------------------------------------------------
+\usepackage{fontspec}
+\defaultfontfeatures{Renderer=HarfBuzz}
+\setmainfont{Source Sans 3}[
+  Ligatures    = TeX,
+  FallbackFonts = {Alef, Arial Hebrew, Lucida Grande, FreeSans}
+]
+% \usepackage{fontspec}
+% \defaultfontfeatures{Renderer=HarfBuzz}
+
+% \setmainfont{Avenir Next}
+
+% \newfontfamily\hebrewfont{Arial Hebrew}[
+%   Renderer = HarfBuzz,
+%   Script   = Hebrew
+% ]
+
+% \usepackage{fontspec}
+% \defaultfontfeatures{Renderer=HarfBuzz}
+
+% \setmainfont{Avenir Next}
+
+\newfontfamily\hebrewfont{Alef}[
+  Renderer = HarfBuzz,
+  Script   = Hebrew
+]
+
+\usepackage[Hebrew]{ucharclasses}
+% \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
+% \usepackage[Hebrew, IPAExtensions]{ucharclasses}
+
+\newfontfamily\ipafont{Source Sans 3}[Renderer=HarfBuzz]
+
+\setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
+% \setTransitionsFor{IPAExtensions}{\ipafont}{\normalfont}
+% \usepackage{ucharclasses}
+% \setTransitionsForHebrew{\hebrewfont}{\normalfont}
+\usepackage{bidi}
+% \renewcommand{\,}{\thinspace}
+% \usepackage{etoolbox}
+% \AtBeginEnvironment{footnote}{\hbadness=10000\hfuzz=10pt}
+% \let\oldfootnote\footnote
+% \renewcommand{\footnote}[1]{\oldfootnote{\LTR #1}}
+% \usepackage{etoolbox}
+% \patchcmd{\footnote}{\ignorespaces}{\leavevmode\LTR\ignorespaces}{}{}
+% \let\bidi@saved@everypar\everypar
+% \usepackage{endfloat}
+% \AtEndDocument{\let\LTR\relax\let\RTL\relax}
+% \AtBeginDocument{
+%   \let\LTR\relax
+%   \let\RTL\relax
+% }
+\usepackage[hyperfootnotes=false]{hyperref}
 \KOMAoption{captions}{tableheading}
+\newcommand{\foot}{the anarkkiv lankalevikki worksheet collection >> https://ada-sub.dh-index.org/blog}
+\newcommand{\meta}{class: [16412] dynamiken postdeutscher gegenwartslyrik :: tutor: chiara liso :: term: SS22 :: << back to paper <<}
+\newcommand{\logoleft}{../fadenlogo-fwb.png}
+\newcommand{\logoright}{../dcl-head-niemand.png}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -152,134 +250,23 @@
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
-
-% <<< DEFAULT
-
-% ---------- required packages ----------
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{xcolor}
-\usepackage{array}
-\usepackage{tikz}
-\usepackage{fontspec}
-\usepackage{fontspec}
-% \setmainfont{Noto Serif}
-\usepackage{polyglossia}
-\setmainlanguage{english}
-\setotherlanguage{hebrew}
-% \usepackage[english,hebrew]{babel}
-% \newfontfamily\headerfont{Source Sans 3}
-\newfontfamily\headerfont{Gill Sans Light}
-\setmainfont{Free Serif}
+\hypersetup{
+  pdftitle={12293.wolf gossip satz für satz},
+  pdfauthor={stschwarz},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
 
 
-% ---------- column types ----------
-\newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}m{45mm}}
-
-% vertical separator rule
-\newcommand{\vsep}{\color{black}\vrule width 1pt}
-
-% ---------- HEADER ----------
-\newcommand{\CustomHeader}{
-\noindent
-\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
-
-% LEFT LOGO
-\includegraphics[width=10mm,height=10mm,keepaspectratio]{../fadenlogo-fwb.png}
-&
-% CENTER TITLE BLOCK
-{\Large\bfseries 12293.wolf gossip satz für satz}
-&
-% RIGHT MOTTO
-\includegraphics[height=10mm,keepaspectratio]{../dcl-head-niemand.png}
-
-\end{tabularx}
-
-% \vspace{6pt}
-\hrule
-\vspace{6pt}
-
-% ---------- META AREA ----------
-
-{\small
-\textbf{Author:} stschwarz\\
-
-\textbf{Date:} 2026-03-22
-
-class: {[}16412{]} dynamiken postdeutscher gegenwartslyrik :: tutor:
-chiara liso :: term: SS22 :: \textless\textless{}
-\href{https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html}{back
-to paper \textless\textless{}}
-}
-
-\vspace{12pt}
-}
-\newcommand{\CustomFooter}{
-\begin{tikzpicture}[remember picture,overlay]
-\node[
-    anchor=south,
-    draw,
-    fill=footerbg,
-    text=footerfg,
-    inner sep=10pt,
-    rounded corners=2pt,
-    text width=\dimexpr\textwidth-20pt\relax
-]
-at ([yshift=5mm]current page.south)
-{
-% \small Footer content here
-\begin{center}
-{\small
-{\headerfont\bfseries the anarkkiv lankalevikki worksheet collection
-\textgreater\textgreater{} \url{https://ada-sub.dh-index.org/blog}}
-
-}
-\end{center}
-};
-\end{tikzpicture}
-}
-\newcommand{\CustomFooterdep}{
-\noindent
-\begin{tikzpicture}
-\node[
-    fill=footerbg,
-    text=footerfg,
-    inner sep=10pt,
-    rounded corners=2pt,
-    text width=\textwidth
-] (box)
-{
-\begin{minipage}{0.97\textwidth}
-
-% ===== META SECTION =====
-% \hrule
-% \vspace{6pt}
-
-% ---------- foot AREA ----------
-\begin{center}
-{\small
-{\headerfont\bfseries the anarkkiv lankalevikki worksheet collection
-\textgreater\textgreater{} \url{https://ada-sub.dh-index.org/blog}}
-
-}
-\end{center}
-% \hrule
-\end{minipage}
-};
-\end{tikzpicture}
-}
-% place header at document start
-\AtBeginDocument{\CustomHeader}
-\AtEndDocument{\CustomFooter}
-
-% ---------- footer BOX ----------
-\definecolor{footerbg}{HTML}{000000}
-\definecolor{footerfg}{HTML}{FFFFFF}
-
-% ---------- BODY ----------
+\title{12293.wolf gossip satz für satz}
+\author{stschwarz}
+\date{2026-03-22}
 \begin{document}
+\maketitle
+
 
 \section{password parsley}\label{password-parsley}
 
@@ -312,7 +299,7 @@ zu sein vorgeben. zb. student/ der FUB.
 genauer: kenner des SHIBBOLETH. dieses beschäftigt hier also auch uljana
 wolf.
 
-\paragraph{}\label{section}
+\paragraph{1}\label{section}
 
 wer gelegentlich ein biszchen in der literatur umherstreift, wird über
 \textbf{codes \& switches} schon gestolpert sein, die nur denen
@@ -347,9 +334,10 @@ pg.212).\footnote{Dembeck, T., Parr, R., \& Küpper, T. (2017). Literatur
   (Hrsg.)\,; unter Mitarbeit von Thomas Küpper. Tübingen: Narr Francke
   Attempto.}
 
-\paragraph{}\label{section-1}
+\paragraph{2}\label{section-1}
 
-שִׁבֹּלֶת: \href{https://www.pealim.com/dict/3270-shibolet/}{die übersetzung}
+S: שִׂבֹלֶת \textgreater{}
+\href{https://www.pealim.com/dict/3270-shibolet/}{die übersetzung}
 allein bringt niemanden weiter, es geht um die kleinen punkte\ldots, die
 unscheinbaren merkzeichen, die das wort
 \href{https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en}{Ri,
@@ -362,7 +350,7 @@ richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern
 die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu
 werden.
 
-\paragraph{}\label{section-2}
+\paragraph{3}\label{section-2}
 
 in der literatur(wissenschaft) kann es essentiell werden, namen,
 termini\ldots{} nicht nur richtig einzusetzen, sondern sie auch richtig
@@ -379,38 +367,38 @@ man fällt auf, aber man geht unter.
 also kucken wir: was heiszt :hegemonial: was heiszt :epistemisch:. wir
 kucken überall, wo nesseln warten könnten\ldots{} hegemonial im gossip,
 (cf.~DIE WESTSÄULENLIEBHABEREI DER ÜBERSETZUNG. Ilse Aichingers
-„schwache Architekur``)\footnote{Prammer, T., Vescoli, C., \& Erb, E.
+`schwache Architekur')\footnote{Prammer, T., Vescoli, C., \& Erb, E.
   (2021). Was für Sätze\,: Zu Ilse Aichinger / Theresia Prammer,
   Christine Vescoli (Hg.)\,; Elke Erb, Uljana Wolf, Monika Rinck, Ruth
   Klüger, Marlene Streeruwitz {[}und weitere{]}. (1. Auflage). Wien:
-  Edition Korrespondenzen.}:
+  Edition Korrespondenzen.}
 
 \begin{quote}
-``Antihegemoniale, antikoloniale Übersetzung ist nicht der Macht treu,
-dem Besten, dem Brutalen, sondern besteht auf diesen schwächeren, den
-‚nicht ausreichenden' Möglichkeiten. Eine Übersetzung muss untreu sein,
-um das bloßzustellen, was das Beste „verbirgt``.''
+Antihegemoniale, antikoloniale Übersetzung ist nicht der Macht treu, dem
+Besten, dem Brutalen, sondern besteht auf diesen schwächeren, den `nicht
+ausreichenden' Möglichkeiten. Eine Übersetzung muss untreu sein, um das
+bloßzustellen, was das Beste `verbirgt'.
 \end{quote}
 
 zu :epistemisch: sagt fr. wolf nichts, aber (gramling, 2016)\footnote{Gramling,
   D. (2016). Zur Mehrsprachigkeitsforschung in der interkulturellen
   Literaturwissenschaft: Wende, Romanze, Rückkehr? Zeitschrift für
   interkulturelle Germanistik, 7(1), 133--150.
-  \url{https://doi.org/10.14361/zig-2016-0109}}:
+  \url{https://doi.org/10.14361/zig-2016-0109}}
 
 \begin{quote}
-``In ihrer bescheidenen Weise vermochte es die Einsprachigkeit, zur
-Basis für einen enormen Überbau ästhetischer und epistemischer
-Paradigmen zu avancieren, denen man sich nur schwer entziehen kann --
-einschließlich des modernen Buchs, wie wir es kennen, und eines Kanons
-der Weltliteratur, der das einsprachige (übersetzte oder übersetzbare)
-Buch als Grundeinheit verwendet. Auch in den bildstürmerischsten
-Bereichen der kulturellen Produktion -- sei es im Surrealismus, in der
+In ihrer bescheidenen Weise vermochte es die Einsprachigkeit, zur Basis
+für einen enormen Überbau ästhetischer und epistemischer Paradigmen zu
+avancieren, denen man sich nur schwer entziehen kann -- einschließlich
+des modernen Buchs, wie wir es kennen, und eines Kanons der
+Weltliteratur, der das einsprachige (übersetzte oder übersetzbare) Buch
+als Grundeinheit verwendet. Auch in den bildstürmerischsten Bereichen
+der kulturellen Produktion -- sei es im Surrealismus, in der
 Dekonstruktion, in der Kybernetik oder im Anarchismus -- spielt die
 Einsprachigkeit eine zentrale Rolle. Sie bestimmt, was verlässlich
 kommuniziert, verkehrsfähig übersetzt, politisch operationalisiert,
 international verteilt und auch privat im Gedächtnis behalten werden
-kann.''
+kann.
 \end{quote}
 
 können wir jetzt diese wörter benutzen? kennen wir nun ihre bedeutung?
@@ -420,10 +408,10 @@ in die germanistische Linguistik, pg. 82)\footnote{Meibauer, J., Demske,
   U., Geilfuß-Wolfgang, J., Pafel, J., Ramers, K. H., Rothweiler, M., \&
   Steinbach, M. (2015). Einführung in die germanistische Linguistik (3.,
   überarbeitete und aktualisierte Auflage).
-  \url{https://doi.org/10.1007/978-3-476-05424-1}}:
+  \url{https://doi.org/10.1007/978-3-476-05424-1}}
 
 \begin{quote}
-``Die Phoneme in (18b) stehen in Opposition bzw. sie kontrastieren.
+Die Phoneme in (18b) stehen in Opposition bzw. sie kontrastieren.
 Während Phone (Laute) in der Notation in eckigen Klammern stehen, werden
 Phoneme in Schrägstriche eingefasst.
 \end{quote}
@@ -441,9 +429,8 @@ deutschen{]} literatur {[}et ici me manque encore une foi la verbe
 finite allemand{]} u.u.: zum leben verhelfen. die gegend um fr. wolf
 bietet jdfs. genug material, dies bestreben längst in taten umgesetzt zu
 sehen.
-% \vspace{6pt}
-\hrule
-\vspace{6pt}
+
+
 
 
 \end{document}
