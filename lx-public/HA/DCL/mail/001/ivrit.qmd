@@ -17,14 +17,16 @@ format:
 #     self-contained: false
     pdf:
       keep-tex: true
-      template: pdf-template.tex
-      latex_engine: lualatex  # default
+      # template: ivrit-template.tex
+      latex_engine: xelatex  # bidi
+      latex-tinytex: false
+
       fig-pos: "H" # Forces images to appear exactly where they are included
-      mainfont: 'Free Sans'
+      # mainfont: 'Avenir Next'
       font-size: 11
       colorlinks: true
       include-in-header: 
-        - rtl.tex
+        - ivrit_template.tex
         # - paper.tex
         #   pdf-engine: lualatex
     #   header-includes:
@@ -95,7 +97,7 @@ das wort petersilie - parsley - [perejil] wird als zugang benötigt, um gegenüb
 ähnliches, weniger drastisches, kann menschen widerfahren, die um nur prominente beispiele zu nennen, [derrida], [bourdieu], [accessoir] oder eben, um zurückzukehren [shibboleth] (heute! dazu siehe Ri12.6 unten.) falsch aussprechen. (cf. dembeck, pg.212).[^2]
 
 #### 
-שִׁבֹּלֶת: [die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein bringt niemanden weiter, es geht um die kleinen punkte..., die unscheinbaren merkzeichen, die das wort [Ri, 12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist in der deutsch-assoziierenden polyphonischen auslegung..., das hat sicher auch fr. wolf beschäftigt... die stelle in Ri12.6 jdfs. gibt auch dieser interpretation einen raum. die richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu werden.
+שִׁבֹּלֶת > [die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein bringt niemanden weiter, es geht um die kleinen punkte..., die  שִׂבֹלֶת  paste(שִׂבֹלֶת) unscheinbaren merkzeichen, die das wort [Ri, 12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist in der deutsch-assoziierenden polyphonischen auslegung..., das hat sicher auch fr. wolf beschäftigt... die stelle in Ri12.6 jdfs. gibt auch dieser interpretation einen raum. die richtige aussprache (hier nicht durch haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten) öffnet tore, verhindert, ermordet zu werden.
 
 #### 
 in der literatur(wissenschaft) kann es essentiell werden, namen, termini...  nicht nur richtig einzusetzen, sondern sie auch richtig auszusprechen. dasz dabei hegemoniale... (beweggründe? aspekte? belange? sic!) zum tragen kommen, sei hier nicht nur erwähnt. die **domaininhaber** definieren die korrektheit der anwendung. wenn die dömäne (die dominikanische republik? der gilead?) ist, haben diejenigen die epistemische? begriffshoheit, die dort **schon immer ansässig sind**. in der literatur und ihrer wissenschaft die worteigner und wissenschaftler der jeweiligen domäne. man setzt sich schnell in irgendwelche nesseln, wenn man das shibboleth nicht kennt. man fällt auf, aber man geht unter.
@@ -117,7 +119,7 @@ gemeint waren also die ***:phone:*** [kongruenz], [kontingenz], [kohärenz]. ein
 
 wir könnten das alles ohne weiteres fortschreiben; nur zu welchem ausgang wollen wir damit gelangen? reicht der ansatz, um gewisztheit über zumindest fr. wolfs engagement für ambiguitäten, ambivalenzen udgl. [nicht die begriffe, sondern das bestreben UM] zu erlangen, wollte man einer offenen literaturwissenschaft, entkanonisierten vielleicht entkolonialisierten und..., da sind wir: post[nationalen][hier: deutschen] literatur [et ici me manque encore une foi la verbe finite allemand] u.u.: zum leben verhelfen. die gegend um fr. wolf bietet jdfs. genug material, dies bestreben längst in taten umgesetzt zu sehen.
 
-[^1]:	Wolf, U. Etymologischer Gossip im Gedicht. In: Braun, M., & Thill, H. (2018). Aus Mangel an Beweisen : deutsche Lyrik 2008-2018 / herausgegeben von Michael Braun und Hans Thill. Heidelberg: Wunderhorn.
+[^1]:	Wolf, U. Etymologischer Gossip im Gedicht. In: Braun, M., Thill, H. (2018). Aus Mangel an Beweisen: deutsche Lyrik 2008-2018 / herausgegeben von Michael Braun und Hans Thill. Heidelberg: Wunderhorn.
 
 [^2]:	Dembeck, T., Parr, R., & Küpper, T. (2017). Literatur und Mehrsprachigkeit : ein Handbuch / Till Dembeck/Rolf Parr (Hrsg.) ; unter Mitarbeit von Thomas Küpper. Tübingen: Narr Francke Attempto.
 
