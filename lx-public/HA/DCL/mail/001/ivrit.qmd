@@ -18,15 +18,18 @@ format:
     pdf:
       keep-tex: true
       # template: ivrit-template.tex
-      latex_engine: xelatex  # bidi
-      latex-tinytex: false
+      # latex_engine: xelatex  # bidi
+      # latex-tinytex: false
 
       fig-pos: "H" # Forces images to appear exactly where they are included
       # mainfont: 'Avenir Next'
       font-size: 11
       colorlinks: true
+      # babel-lang: english
+      # babel-otherlangs: hebrew
+      # babeloptions: bidi=basic, provide=*
       include-in-header: 
-        - ivrit_template.tex
+        - lualoani.tex
         # - paper.tex
         #   pdf-engine: lualatex
     #   header-includes:
@@ -34,6 +37,9 @@ format:
     #     - \newcommand{\docmeta}{$meta$}
 
 
+filters:
+  # - commands.lua
+  - luaipa.lua
 logoleft: ../fadenlogo-fwb.png
 logoright: ../dcl-head-niemand.png
 

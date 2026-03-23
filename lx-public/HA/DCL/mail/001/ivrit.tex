@@ -107,99 +107,55 @@
 
 
 % ============================================================
-% bidi-auto.tex  —  XeLaTeX template for plain-text mixed
-% Latin / Hebrew input with ZERO markup in the source.
-%
-% The Unicode Bidirectional Algorithm (UBA) handles direction
-% automatically. XeLaTeX + bidi respect it at the paragraph
-% level. Font fallback via fontspec covers missing glyphs.
-%
-% Compile:
-%   pandoc input.md -o output.pdf \
-%     --pdf-engine=xelatex \
-%     --template=bidi-auto.tex
-%
-% Or standalone:
-%   xelatex bidi-auto.tex
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
 % ============================================================
 
-% \documentclass[12pt, a4paper]{article}
-
 \usepackage{iftex}
-\RequireXeTeX
+\RequireLuaTeX
 
-% ------------------------------------------------------------
-% SINGLE FONT covering Latin + Hebrew — the key to zero markup.
-% Taamey Frank CLM or SBL BibLit both span the full range.
-% fontspec will fall back to the FallbackFonts list for any
-% glyph the main font lacks; order matters.
-% ------------------------------------------------------------
-% \usepackage{fontspec}
-
-% \setmainfont{FreeSans}[
-%   Ligatures    = TeX,
-%   FallbackFonts = {SBL BibLit, SBL Hebrew, FreeSans, DejaVu Sans}
-% ]
-
-% That's it for fonts. No \newfontfamily, no \texthebrew{}.
-
-% ------------------------------------------------------------
-% BIDI — loads the Unicode Bidirectional Algorithm support.
-% With bidi loaded, XeLaTeX reads the Unicode script properties
-% of each character and sets run direction automatically.
-% No \LR or \RL commands needed in the source.
-% ------------------------------------------------------------
 \usepackage{fontspec}
-\defaultfontfeatures{Renderer=HarfBuzz}
-\setmainfont{Source Sans 3}[
-  Ligatures    = TeX,
-  FallbackFonts = {Alef, Arial Hebrew, Lucida Grande, FreeSans}
+
+\setmainfont{Georgia}[
+  Ligatures = TeX
 ]
-% \usepackage{fontspec}
-% \defaultfontfeatures{Renderer=HarfBuzz}
-
-% \setmainfont{Avenir Next}
-
-% \newfontfamily\hebrewfont{Arial Hebrew}[
-%   Renderer = HarfBuzz,
-%   Script   = Hebrew
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
 % ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
 
-% \usepackage{fontspec}
-% \defaultfontfeatures{Renderer=HarfBuzz}
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
 
-% \setmainfont{Avenir Next}
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
 
-\newfontfamily\hebrewfont{Alef}[
-  Renderer = HarfBuzz,
-  Script   = Hebrew
-]
+% ------------------------------------------------------------
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
+% ------------------------------------------------------------
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
 
-\usepackage[Hebrew]{ucharclasses}
-% \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
-% \usepackage[Hebrew, IPAExtensions]{ucharclasses}
-
-\newfontfamily\ipafont{Source Sans 3}[Renderer=HarfBuzz]
-
-\setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
-% \setTransitionsFor{IPAExtensions}{\ipafont}{\normalfont}
-% \usepackage{ucharclasses}
-% \setTransitionsForHebrew{\hebrewfont}{\normalfont}
-\usepackage{bidi}
-% \renewcommand{\,}{\thinspace}
-% \usepackage{etoolbox}
-% \AtBeginEnvironment{footnote}{\hbadness=10000\hfuzz=10pt}
-% \let\oldfootnote\footnote
-% \renewcommand{\footnote}[1]{\oldfootnote{\LTR #1}}
-% \usepackage{etoolbox}
-% \patchcmd{\footnote}{\ignorespaces}{\leavevmode\LTR\ignorespaces}{}{}
-% \let\bidi@saved@everypar\everypar
-% \usepackage{endfloat}
-% \AtEndDocument{\let\LTR\relax\let\RTL\relax}
-% \AtBeginDocument{
-%   \let\LTR\relax
-%   \let\RTL\relax
-% }
 \usepackage[hyperfootnotes=false]{hyperref}
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -259,7 +215,7 @@
 
 \title{12293.wolf gossip satz für satz}
 \author{stschwarz}
-\date{2026-03-22}
+\date{2026-03-23}
 \begin{document}
 \maketitle
 
@@ -316,8 +272,9 @@ beispiel das prinzip des \textbf{shibboleth} zu erklären.
 
 das wort petersilie - parsley - {[}perejil{]} wird als zugang benötigt,
 um gegenüber der gemeinschaft der natives NICHT als fremder zu
-erscheinen = dem massaker zum opfer zu fallen. wer es {[}pɛʟɛχɪʟ{]}
-ausspricht, und nicht {[}pɛʀɛχɪʟ{]}, wie die einheimischen, wird
+erscheinen = dem massaker zum opfer zu fallen. wer es
+{[}p{\ipafont ɛʟɛ}χ{\ipafont ɪʟ}{]} ausspricht, und nicht
+{[}p{\ipafont ɛʀɛ}χ{\ipafont ɪʟ}{]}, wie die einheimischen, wird
 ermordet. es ist also gut, die aussprache zu wissen. oder zu
 beherrschen.
 
