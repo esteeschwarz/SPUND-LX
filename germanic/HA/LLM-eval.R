@@ -31,14 +31,18 @@ df<-tok.r3%>%
     post=date_i>0 
   )
 df_sf<-df
-m<-grepl("^wichtige[^r]",df_sf$lemma)
+m<-df$lemma%in%stops.j
 sum(m)
-unique(df_sf$lemma[m])
-df_sf$lemma[m]<-"wichtig"
-m2<-grepl("^wichtige$",df_sf$lemma)
-sum(m2)
-unique(df_sf$lemma[m2])
-df_sf$lemma[m2]<-"wichtig"
+df<-df[!m,]
+# 
+# m<-grepl("^wichtige[^r]",df_sf$lemma)
+# sum(m)
+# unique(df_sf$lemma[m])
+# df_sf$lemma[m]<-"wichtig"
+# m2<-grepl("^wichtige$",df_sf$lemma)
+# sum(m2)
+# unique(df_sf$lemma[m2])
+# df_sf$lemma[m2]<-"wichtig"
 # df <- df %>%
 #   add_count(lemma, name = "freq")
 fun1<-function(){
@@ -218,7 +222,14 @@ sum()
 # --- Aggregate: n per lemma × post × target ---
 ###################################################
 ### 16125
-df_t <- df %>%
+# df_t <- df %>%
+#   count(lemma, post, target)
+### 16133
+m<-grepl("[a-zA-ZöäüÖÄÜß]",df$lemma)
+unique(df$lemma[!m])
+sum(!m) # 28932! remove!
+df_c<-df[m,]
+df_t <- df_c %>%
   count(lemma, post, target)
 # --- total tokens per post × target condition ---
 totals <- df_t %>%
@@ -261,6 +272,8 @@ lemma_pref <- df_both %>%
 gpt_lemmas <- lemma_pref %>%
   filter(n_gpt >= 10) %>%       # drop hapax / very rare
   slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
+#################################################################
+### downscale first 50 gpt lemma odds so that minimum is near 0
 gpt_lemmas$log_odds<-gpt_lemmas$log_odds-min(gpt_lemmas$log_odds)
 gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)]<-gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)-1]-gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)-1]/10
 #################################################
@@ -282,14 +295,14 @@ head(lemma_pref$lemma,50)
 # df_sf$lemma[m2]<-"wichtig"
 #########################
 # --- join totals, compute relative frequency ---
-df_agg <- df_sf %>%
+df_agg <- df_c %>%
   count(lemma, post, target) %>%
   left_join(totals, by = c("post", "target")) %>%
   mutate(rel_freq = n / total)         # proportion of all tokens in that slice
 #df_agg$post<-ifelse(df_agg$post==1,TRUE,FALSE)
 unique(df_agg$post)
 df_agg$post[df_agg$target=="gpt"]<-NA
-lemma_post_trends <- df_agg %>%
+lemma_post_trends.off <- df_agg %>%
   filter(target == "human") %>%
   group_by(lemma) %>%
   filter(sum(n) >= 10, n() >= 2) %>%
@@ -326,7 +339,7 @@ lemma_post_trends <- df_agg %>%
 #library(tidyverse)
 #library(ggrepel)
 library(ggplot2)
-lemma_post_trends %>%
+lemma_post_trends.off %>%
   left_join(gpt_lemmas %>% select(lemma, log_odds), by = "lemma") %>%
   filter(!is.na(log_odds)) %>%
   mutate(
@@ -362,8 +375,64 @@ lm1<-lmer(rel_freq~post+gp+(1|lemma),dfs)
 summary(lm1)
 lm2<-lm(rel_freq~post+gp,dfs)
 summary(lm2)
+### 16133.
+gpt_lemmas
+m<-df_agg$lemma%in%gpt_lemmas$lemma
+df_p.post <- df_agg[m,] %>%
+  filter(target == "human"&post) %>%
+  group_by(lemma)
+df_p.pre <- df_agg[m,] %>%
+  filter(target == "human"&!post) %>%
+  group_by(lemma)
+mtp<-df_p.post$rel_freq[match(df_p.post$lemma,df_p.pre$lemma)]>df_p.pre$rel_freq[match(df_p.pre$lemma,df_p.post$lemma)]
+mtc<-df_p.post$lemma[match(df_p.post$lemma,df_p.pre$lemma)]==df_p.pre$lemma[match(df_p.pre$lemma,df_p.post$lemma)]
+sum(mtp)
+head(mtc)
+mtc
+sum(df_p.post$lemma==df_p.pre$lemma)==length(gpt_lemmas$lemma)
+### TRUE, true matrix
+mg<-df_p.post$lemma%in%gpt_lemmas$lemma
+mg<-df_p.post$rel_freq>df_p.pre$rel_freq
+sum(df_p.post$rel_freq[mg])-sum(df_p.pre$rel_freq[mg])
+df_lg<-df_p.post[mg,]
+df_lg$lemma
+lg.diff<-sum(df_p.post$rel_freq[mg])-sum(df_p.pre$rel_freq[mg])
+lg.diff # 0.003937 relative freq increase of gpt lemma in post corpus 
+df_lgc<-cbind(df_p.post,rel_f.pre=df_p.pre$rel_freq)%>%mutate(
+  diff = rel_freq - rel_f.pre,
+  post.increase = rel_freq > rel_f.pre
+)
+m<-df_lgc$post.increase
+lgm<-df_lgc$diff[m]>mean(df_lgc$diff[m])
+barplot(diff~lemma,df_lgc[which(m)[lgm],])
+boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
+par(las=1)
+pb<-boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
+pb$stats
+### normalize freq
+corpus_sizes <- df_agg |>
+  distinct(lemma, post) |>        # one row per document
+  count(post, name = "corpus_size")  # total tokens per condition
 
-### back-to-data
+# Or if each row IS a token:
+corpus_sizes <- df |>
+  count(post, name = "corpus_size")
+
+lemma_counts <- df_c |>
+  count(lemma, post)
+
+df_lg.norm<-lemma_counts |>
+  left_join(corpus_sizes, by = "post") |>
+  mutate(freq_pmw = n / corpus_size * 1e6)
+pb<-boxplot(freq_pmw~post,df_lg.norm,outline=F,notch=T)
+pb$stats
+df_lg.norm$gp <- lemma_pref$log_odds[match(df_lg.norm$lemma,lemma_pref$lemma)]
+
+lm1<-lmer(freq_pmw~post+gp+(1|lemma),df_lg.norm)
+summary(lm1)
+lm2<-lm(freq_pmw~post+gp,df_lg.norm)
+summary(lm2)
+
 x<-"Reichtumsberichen"
 m<-tok.r3$lemma==x
 which(m)
