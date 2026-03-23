@@ -38,13 +38,13 @@ lemma_post_trends <- df_agg %>%
   select(-model) %>%
   arrange(p_value)
 
-totals <- df_t %>%
+totals <- df_agg %>%
   group_by( post,target)%>% 
   
   summarise(total = sum(n), .groups = "drop")
 
 # --- total tokens per target (across all dates/post) ---
-df_both<-df_t
+df_both<-df_agg
 totals_target <- df_both %>%
   group_by(target) %>%
   summarise(total_target = sum(n), .groups = "drop")
@@ -158,15 +158,26 @@ sum(lgm)
 df_lgc.x<-df_lgc[which(m)[lgm],]
 par(las=2.5)
 barplot(diff~as.character(lemma),df_lgc.x,xlab="",main="lemma rel. freq. absolute increase pre-post onset")
+plist$barplot<-recordPlot()
+dfs<-dfs[order(dfs$gp,decreasing = T),]
+par(las=3)
+m<-dfs$gp>0
+dfbar<-dfs[m,]
+#m1<-dfbar$gp[which(m)[length(which(m))]]
+y<-dfbar$gp-max(dfbar$gp)
+barplot(gp-max(gp)~as.character(lemma),head(dfbar,8),xlab="",main="lemma rel. freq. absolute increase pre-post onset",lim=1)
+?barplot
 #boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
 par(las=1)
-pb<-boxplot(rel_freq~post,dfs[dfs$target=="human"&dfs$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T,main="GPT preferred lemma rel. freq. pre vs. post (TRUE) onset corpus")
-pb$stats
+pb1<-boxplot(rel_freq~post,dfs[dfs$target=="human"&dfs$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T,main="GPT preferred lemma rel. freq. pre vs. post (TRUE) onset corpus")
+boxstat<-data.frame(var="freq_rel gpt lemmas",pre=pb1$stats[3,1],post=pb1$stats[3,2])
+plist$boxdesc2<-recordPlot()
 ### normalize freq
 corpus_sizes <- df_agg |>
   distinct(lemma, post) |>        # one row per document
   count(post, name = "corpus_size")  # total tokens per condition
-
+corpus_sizes
+totals
 # Or if each row IS a token:
 # corpus_sizes <- df |>
 #   count(post, name = "corpus_size")
@@ -176,15 +187,24 @@ lemma_counts <- df_agg
 df_lg.norm<-lemma_counts |>
   left_join(corpus_sizes, by = "post") |>
   mutate(freq_pmw = n / corpus_size * 1e6)
-pb<-boxplot(freq_pmw~post,df_lg.norm,outline=F,notch=T)
-pb$stats
+pb2<-boxplot(freq_pmw~post,df_lg.norm,outline=F,notch=T,main="diff normalised frequencies pre-post onset")
+pb2$stats
+boxstat<-rbind(boxstat,c(var="freq normalised pmw",pre=pb2$stats[3,1],post=pb2$stats[3,2]))
+boxstat<-cbind(stat="mean",boxstat)
+boxstat
+tt<-t(totals$total[!is.na(totals$post)])
+boxstat<-rbind(boxstat,c(stat="tokens",var="n",pre=tt[1],post=tt[2]))
+#?bind_rows
+boxstat
+plist$boxstat<-boxstat
 df_lg.norm$gp <- lemma_pref$log_odds[match(df_lg.norm$lemma,lemma_pref$lemma)]
 
 lm1<-lmer(freq_pmw~post+gp+(1|lemma),df_lg.norm)
 summary(lm1)
 lm2<-lm(freq_pmw~post+gp,df_lg.norm)
 summary(lm2)
-
+plist$lme$lm1<-lm1
+plist$lme$lm2<-lm2
 #load("~/Documents/GitHub/SPUND-LX/germanic/HA/drafts/plist.RData")
 # plist$totals<-totals
 # plist$df_agg<-df_agg

@@ -273,6 +273,39 @@ gpt_lemmas <- lemma_pref %>%
   filter(n_gpt >= 10) %>%       # drop hapax / very rare
   slice_max(log_odds, n = 50)     # top 50 gpt-preferred lemmas
 #################################################################
+### old method:
+library(tidyr)
+tab <- 
+  pivot_wider(df_agg,
+              names_from  = target,
+              values_from = n,
+              values_fill = 0
+              
+  ) 
+library(lme4)
+library(lmerTest)
+#################
+### get GPT score
+#################
+# takes bit...
+#################
+m <- glmer(
+  cbind(gpt, human) ~ 1 + (1 | lemma),
+  data   = tab,
+  family = binomial
+)
+# ?ranef
+
+re_lemma <- ranef(m)$lemma  # data frame with '(Intercept)'
+re_lemma$lemma <- rownames(re_lemma)
+# re_lemma$res<-rl[,1]
+#save(re_lemma,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lemma_gpt-human.RData"))
+#############################################
+# Higher random intercept => more GPT‑typical
+gpt_typical  <- re_lemma[order(-re_lemma[["(Intercept)"]]), ]
+# gpt_typical  <- re_lemma[order(-re_lemma$res), ]
+human_typical <- re_lemma[order(re_lemma[["(Intercept)"]]), ]
+
 ### downscale first 50 gpt lemma odds so that minimum is near 0
 gpt_lemmas$log_odds<-gpt_lemmas$log_odds-min(gpt_lemmas$log_odds)
 gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)]<-gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)-1]-gpt_lemmas$log_odds[which.min(gpt_lemmas$log_odds)-1]/10
@@ -302,6 +335,11 @@ df_agg <- df_c %>%
 #df_agg$post<-ifelse(df_agg$post==1,TRUE,FALSE)
 unique(df_agg$post)
 df_agg$post[df_agg$target=="gpt"]<-NA
+
+###############################################################################
+### df_agg in plist.RData
+load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/drafts/plist2.RData"))
+df_agg<-plist$df_agg
 lemma_post_trends.off <- df_agg %>%
   filter(target == "human") %>%
   group_by(lemma) %>%
@@ -436,6 +474,8 @@ summary(lm2)
 load("~/Documents/GitHub/SPUND-LX/germanic/HA/drafts/plist.RData")
 plist$totals<-totals
 plist$df_agg<-df_agg
+plist$lemma_pref<-lemma_pref
+plist$lemma_counts<-lemma_counts
 save(plist,file="plist2.RData")
 x<-"Reichtumsberichen"
 m<-tok.r3$lemma==x

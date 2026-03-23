@@ -1124,7 +1124,7 @@ ingpv<-ingpvar[,5]
 ingpv[4]
 ?summary
 pc1<-s2$coefficients[8,1]/s2$coefficients[1,1]*100
-#+s2$coefficients[1,1]
+#s2$coefficients[1,1]
 pc8<-round(s2$coefficients[8,1],6)
 pc1<-round(s2$coefficients[1,1],6)
 # pcd<-pc1-pc8
@@ -1143,6 +1143,7 @@ pcdp
 pcp<-round(pc8/pc1*100,2)
 
 }
+
 ############
 ### get responsible lemmata
 suh<-lmdf.c[mh1,]
