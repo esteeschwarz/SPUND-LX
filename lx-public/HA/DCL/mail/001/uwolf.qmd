@@ -21,15 +21,15 @@ format:
     pdf:
       keep-tex: true
     #   template: pdf-template.tex
-      latex_engine: xelatex  # default lualatex
-      latex-tinytex: false
+    #   latex_engine: xelatex  # default lualatex
+    #   latex-tinytex: false
 
       fig-pos: "H" # Forces images to appear exactly where they are included
     #   mainfont: 'Free Sans'
       font-size: 11
       colorlinks: true
       include-in-header: 
-        - loani.tex
+        - lualoani.tex
         - footer-header.tex
       include-before-body: go-head.tex
         # - paper.tex
@@ -45,7 +45,7 @@ docmeta: |
 
 filters:
   - commands.lua
-  - ipa.lua
+  - luaipa.lua
 logoleft: ../fadenlogo-fwb.png
 logoright: ../dcl-head-niemand.png
 

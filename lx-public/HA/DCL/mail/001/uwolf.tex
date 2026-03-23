@@ -107,172 +107,55 @@
 
 
 % ============================================================
-% bidi-auto.tex  —  XeLaTeX template for plain-text mixed
-% Latin / Hebrew input with ZERO markup in the source.
-%
-% The Unicode Bidirectional Algorithm (UBA) handles direction
-% automatically. XeLaTeX + bidi respect it at the paragraph
-% level. Font fallback via fontspec covers missing glyphs.
-%
-% Compile:
-%   pandoc input.md -o output.pdf \
-%     --pdf-engine=xelatex \
-%     --template=bidi-auto.tex
-%
-% Or standalone:
-%   xelatex bidi-auto.tex
-% ============================================================
-
-% \documentclass[12pt, a4paper]{article}
-
-% \usepackage{iftex}
-% \RequireXeTeX
-
-% ------------------------------------------------------------
-% SINGLE FONT covering Latin + Hebrew — the key to zero markup.
-% Taamey Frank CLM or SBL BibLit both span the full range.
-% fontspec will fall back to the FallbackFonts list for any
-% glyph the main font lacks; order matters.
-% ------------------------------------------------------------
-% \usepackage{fontspec}
-
-% \setmainfont{FreeSans}[
-%   Ligatures    = TeX,
-%   FallbackFonts = {SBL BibLit, SBL Hebrew, FreeSans, DejaVu Sans}
-% ]
-
-% That's it for fonts. No \newfontfamily, no \texthebrew{}.
-
-% ------------------------------------------------------------
-% BIDI — loads the Unicode Bidirectional Algorithm support.
-% With bidi loaded, XeLaTeX reads the Unicode script properties
-% of each character and sets run direction automatically.
-% No \LR or \RL commands needed in the source.
-% ------------------------------------------------------------
-% \usepackage{fontspec}
-% \defaultfontfeatures{Renderer=HarfBuzz}
-% \setmainfont{Georgia}[
-%   Ligatures    = TeX,
-%   FallbackFonts = {Alef, Arial Hebrew, Source Sans 3,Lucida Grande, FreeSans}
-% ]
-% \usepackage{fontspec}
-% \defaultfontfeatures{Renderer=HarfBuzz}
-
-% \setmainfont{Avenir Next}
-
-% \newfontfamily\hebrewfont{Arial Hebrew}[
-%   Renderer = HarfBuzz,
-%   Script   = Hebrew
-% ]
-
-% \usepackage{fontspec}
-% \defaultfontfeatures{Renderer=HarfBuzz}
-
-% \setmainfont{Avenir Next}
-
-% \newfontfamily\hebrewfont{Alef}[
-%   Renderer = HarfBuzz,
-%   Script   = Hebrew
-% ]
-
-% % \usepackage[Hebrew]{ucharclasses}
-% % \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
-% \usepackage[Hebrew, IPAExtensions]{ucharclasses}
-
-% \newfontfamily\ipafont{Source Sans 3}[Renderer=HarfBuzz]
-
-% \setTransitionsFor{Hebrew}{\hebrewfont}{\normalfont}
-% \setTransitionsFor{IPAExtensions}{\ipafont}{\normalfont}
-% % \usepackage{ucharclasses}
-% % \setTransitionsForHebrew{\hebrewfont}{\normalfont}
-% \usepackage{bidi}
-% ============================================================
-% loani.tex  —  include-in-header snippet
-% XeLaTeX: Georgia main, Alef Hebrew, Source Sans 3 IPA
-% ucharclasses watches all three IPA Unicode blocks.
-% bidi loaded BEFORE ucharclasses — required load order.
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
 % ============================================================
 
 \usepackage{iftex}
-\RequireXeTeX
+\RequireLuaTeX
 
 \usepackage{fontspec}
-\defaultfontfeatures{Renderer=HarfBuzz}
 
 \setmainfont{Georgia}[
-  Ligatures     = TeX,
-  FallbackFonts = {Alef, Arial Hebrew, Source Sans 3, Lucida Grande}
+  Ligatures = TeX
 ]
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
+% ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
 
-\newfontfamily\hebrewfont{Alef}[
-  Renderer = HarfBuzz,
-  Script   = Hebrew
-]
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
 
-\newfontfamily\ipafont{Source Sans 3}[
-  Renderer = HarfBuzz
-]
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
 
 % ------------------------------------------------------------
-% bidi FIRST — must be initialised before ucharclasses hooks
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
 % ------------------------------------------------------------
-\usepackage{bidi}
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
 
-% ------------------------------------------------------------
-% ucharclasses — all blocks that carry IPA characters:
-%   IPAExtensions        U+0250–U+02AF
-%   SpacingModifierLetters U+02B0–U+02FF  (ʰ ʷ ˈ ˌ ː etc.)
-%   PhoneticExtensions   U+1D00–U+1D7F   (small caps, turned letters)
-% ------------------------------------------------------------
-\usepackage[
-  Hebrew,
-  IPAExtensions,
-  SpacingModifierLetters,
-  PhoneticExtensions
-]{ucharclasses}
-
-\setTransitionsFor{Hebrew}              {\hebrewfont}{\normalfont}
-% \setTransitionsFor{IPAExtensions}        {\ipafont}{\normalfont\rmfamily}
-\setTransitionsFor{SpacingModifierLetters}{\ipafont}{\normalfont\rmfamily}
-\setTransitionsFor{PhoneticExtensions}   {\ipafont}{\normalfont\rmfamily}
-\setTransitionsFor{IPAExtensions}{\color{red}\ipafont}{\normalfont\rmfamily}
-% \setTransitionsFor{IPAExtensions}        {\bgroup\ipafont}{\egroup}
-% \setTransitionsFor{SpacingModifierLetters}{\bgroup\ipafont}{\egroup}
-% \setTransitionsFor{PhoneticExtensions}   {\bgroup\ipafont}{\egroup}
-% \setTransitionsFor{IPAExtensions}       {\ipafont}   {\normalfont}
-% \setTransitionsFor{SpacingModifierLetters}{\ipafont} {\normalfont}
-% \setTransitionsFor{PhoneticExtensions}  {\ipafont}   {\normalfont}
-% \setTransitionsFor{IPAExtensions}{%
-%   \begingroup\ipafont
-% }{%
-%   \endgroup
-% }
-% \setTransitionsFor{SpacingModifierLetters}{%
-%   \begingroup\ipafont
-% }{%
-%   \endgroup
-% }
-% \setTransitionsFor{PhoneticExtensions}{%
-%   \begingroup\ipafont
-% }{%
-%   \endgroup
-% }
-
-\usepackage[hyperfootnotes=false]{hyperref}
-% \renewcommand{\,}{\thinspace}
-% \usepackage{etoolbox}
-% \AtBeginEnvironment{footnote}{\hbadness=10000\hfuzz=10pt}
-% \let\oldfootnote\footnote
-% \renewcommand{\footnote}[1]{\oldfootnote{\LTR #1}}
-% \usepackage{etoolbox}
-% \patchcmd{\footnote}{\ignorespaces}{\leavevmode\LTR\ignorespaces}{}{}
-% \let\bidi@saved@everypar\everypar
-% \usepackage{endfloat}
-% \AtEndDocument{\let\LTR\relax\let\RTL\relax}
-% \AtBeginDocument{
-%   \let\LTR\relax
-%   \let\RTL\relax
-% }
 \usepackage[hyperfootnotes=false]{hyperref}
 % ============================================================
 % header.tex  —  include-in-header snippet
@@ -310,7 +193,7 @@
 % CUSTOM HEADER
 % ============================================================
 \newcommand{\CustomHeader}{%
-\LTR{%
+% \LTR{%
 \noindent
 \begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
 
@@ -369,7 +252,7 @@
 \hrule
 
 % \vspace{12pt}
-}% end \LTR
+% }% end \LTR
 }% end \CustomHeader
 
 % ============================================================
@@ -409,7 +292,7 @@ at ([yshift=5mm]current page.south)
 \KOMAoption{captions}{tableheading}
 \newcommand{\doctitle}{12293.wolf gossip satz für satz}
 \newcommand{\docsubtitle}{uljana wolf response paper}
-\newcommand{\docdate}{2026-03-22}
+\newcommand{\docdate}{2026-03-23}
 \newcommand{\docmeta}{class: [16412] dynamiken postdeutscher gegenwartslyrik :: tutor: chiara liso :: term: SS22 \newline snc: 16132.8 \newline >> back to paper >> https://esteeschwarz.github.io/DC-LX/essais/papers/010/}
 \newcommand{\docfoot}{the anarkkiv lankalevikki worksheet collection >> https://ada-sub.dh-index.org/blog}
 \newcommand{\doclogoleft}{../fadenlogo-fwb.png}
@@ -478,7 +361,7 @@ at ([yshift=5mm]current page.south)
 \makeatother
 \subtitle{uljana wolf response paper}
 \author{esteeschwarz}
-\date{2026-03-22}
+\date{2026-03-23}
 \begin{document}
 \maketitle
 
@@ -538,9 +421,10 @@ beispiel das prinzip des \textbf{shibboleth} zu erklären.
 das wort petersilie - parsley - {[}perejil{]} wird als zugang benötigt,
 um gegenüber der gemeinschaft der natives NICHT als fremder zu
 erscheinen = dem massaker zum opfer zu fallen. wer es
-{\ipafont [pɛʟɛχɪʟ]} ausspricht, und nicht {\ipafont [pɛʀɛχɪʟ],} wie die
-einheimischen, wird ermordet. es ist also gut, die aussprache zu wissen.
-oder zu beherrschen.
+{[}p{\ipafont ɛʟɛ}χ{\ipafont ɪʟ}{]} ausspricht, und nicht
+{[}p{\ipafont ɛʀɛ}χ{\ipafont ɪʟ}{]}, wie die einheimischen, wird
+ermordet. es ist also gut, die aussprache zu wissen. oder zu
+beherrschen.
 
 ähnliches, weniger drastisches, kann menschen widerfahren, die um nur
 prominente beispiele zu nennen, {[}derrida{]}, {[}bourdieu{]},
