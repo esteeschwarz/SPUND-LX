@@ -415,8 +415,8 @@ corpus_sizes <- df_agg |>
   count(post, name = "corpus_size")  # total tokens per condition
 
 # Or if each row IS a token:
-corpus_sizes <- df |>
-  count(post, name = "corpus_size")
+# corpus_sizes <- df |>
+#   count(post, name = "corpus_size")
 
 lemma_counts <- df_c |>
   count(lemma, post)
@@ -433,6 +433,10 @@ summary(lm1)
 lm2<-lm(freq_pmw~post+gp,df_lg.norm)
 summary(lm2)
 
+load("~/Documents/GitHub/SPUND-LX/germanic/HA/drafts/plist.RData")
+plist$totals<-totals
+plist$df_agg<-df_agg
+save(plist,file="plist2.RData")
 x<-"Reichtumsberichen"
 m<-tok.r3$lemma==x
 which(m)
