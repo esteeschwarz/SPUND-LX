@@ -77,13 +77,6 @@ we first devised model typical lemmata in the AI corpus which are distinct for t
 :::
 
 ::: {.column-2}
-# c2 {.bw}
-corpus stats
-<!-- ``` `r knitr::kable(plist$boxstat)` ``` -->
-```{r,eval=T} 
-# knitr::kable(plist$sdf)
-print(plist$boxstat)
-```
 
 # p2
 ```{r}
@@ -110,6 +103,14 @@ lb0<-plist$lb0
 lb1<-length(b1)
 ```
 
+# c2 {.bw}
+corpus stats
+<!-- ``` `r knitr::kable(plist$boxstat)` ``` -->
+```{r,eval=T} 
+# knitr::kable(plist$sdf)
+print(plist$boxstat)
+```
+
 ```{r,eval=F}
 #| fig-cap: "model vocab density"
 #| label: "fig-densplot01"
@@ -120,6 +121,16 @@ lb1<-length(b1)
 plist$gplot
 ```
 
+# c3: regression simple model {.bws}
+
+```{r,eval=T} 
+#knitr::kable(plist$sdf)
+print(summary(plist$lme$lm2))
+anova(plist$lme$lm2)
+
+```
+
+
 # p4
 ```{r}
 #| fig-cap: "model vocab distribution"
@@ -127,7 +138,7 @@ plist$gplot
 #| echo: FALSE
 
 #knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
- plist$gptplot #todo
+ plist$gptplot2 #todo
 ```
 :::
 
@@ -139,11 +150,12 @@ the `r lb1` lemma where 1. the relative frequency of lemma in target=post is hig
 
 {placeholder}{we also found significant frequency increases using a linear regression model, but after experiencing issues with udpipe which first become visible when revisiting our data we had to lemmatize corpus again using the stanza nlp pipeline. results will show up here when evaluated with new lemmas.}
 
-# c3: lmer {.bws}
+# c4: regression mixed effects model {.bws}
 
 ```{r,eval=T} 
 #knitr::kable(plist$sdf)
 print(summary(plist$lme$lm1))
+anova(plist$lme$lm1)
 ```
 
 

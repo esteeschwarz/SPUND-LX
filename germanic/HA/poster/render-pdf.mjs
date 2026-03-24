@@ -87,7 +87,7 @@ const browser = await chromium.launch({
 
 const page = await browser.newPage();
 
-await page.goto(`file://${process.cwd()}/001.html`);
+await page.goto(`file://${process.cwd()}/002.html`);
 await page.emulateMedia({ media: 'print' });
 
 await page.pdf({
