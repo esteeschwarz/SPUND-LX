@@ -85,8 +85,7 @@ function resolveChromiumPath() {
 }
 
 const browser = await chromium.launch({
-  executablePath: resolveChromiumPath(),
-  args: ['--no-sandbox', '--disable-setuid-sandbox']
+  executablePath: resolveChromiumPath()
 });
 
 const page = await browser.newPage();
