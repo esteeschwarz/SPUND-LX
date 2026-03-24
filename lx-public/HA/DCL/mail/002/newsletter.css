@@ -12,10 +12,10 @@ body {
     content: counter(page);
     font-size: 10pt;
   }
-  /* @footnote {
+  @footnote {
     border-top: 0.5pt solid black;
     padding-top: 4mm;
-  } */
+  }
 
 }
 
@@ -32,19 +32,24 @@ h1, h2, h3 {
 p {
   widows: 2;
   orphans: 2;
-  color: red;
+  /* color: red; */
 }
 
 /* FOOTNOTES */
 .footnote {
   float: footnote;
   font-size: 9pt;
+  color: red;
 }
 .paged-footnote {
   float: footnote;
   font-size: 0.85em;
+    color: red;
+
 }
-.footnote-back {
+/* .footnote-back {
   float: footnote;
   font-size: 0.85em;
-}
+    color: red; /*only button*/
+
+/*} */

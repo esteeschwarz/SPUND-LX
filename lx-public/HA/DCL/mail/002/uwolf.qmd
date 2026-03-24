@@ -19,6 +19,12 @@ format:
     toc: false
     self-contained: false
     include-in-header: foots.html
+    include-after-body: 
+         - paged.polyfill.html
+        #  - foots.html
+    # include-before-body: 
+    #     - foots.html
+
     # pdf:
     #   keep-tex: true
     # #   template: pdf-template.tex

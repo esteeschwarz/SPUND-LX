@@ -27463,7 +27463,7 @@
 				resolve(new Response(request.responseText, {status}));
 			};
 
-			request.onerror = reject;
+			// request.onerror = reject; // 16134. error on local xmlhttp request
 
 			request.send(options.body || null);
 		});
