@@ -37,41 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="uwolf_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="uwolf_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="uwolf_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+<script src="paged.polyfill.js"></script>
 
-  const notes = {};
-
-  /* collect footnote texts */
-  document.querySelectorAll(".footnotes li").forEach(li => {
-    notes[li.id] = li.cloneNode(true);
-  });
-
-  /* replace references with inline footnotes */
-  document.querySelectorAll("a.footnote-ref").forEach(ref => {
-
-    const id = ref.getAttribute("href").substring(1);
-    const note = notes[id];
-
-    if (!note) return;
-
-    // remove backlink arrow
-    const back = note.querySelector("a");
-    if (back) back.remove();
-
-    const span = document.createElement("span");
-    span.className = "paged-footnote";
-    span.innerHTML = note.innerHTML;
-
-    ref.replaceWith(span);
-  });
-
-  /* remove endnote section */
-  const endnotes = document.querySelector(".footnotes");
-  if (endnotes) endnotes.remove();
-
-});
-</script>
+<script src="foots.js"></script>
 
 
 <link rel="stylesheet" href="newsletter.css">
@@ -129,7 +97,7 @@ term: SS22
 
 -----
 authored: st. schwarz  
-snc: #16127::2026-03-24 05:42:36.290561   
+snc: #16127::2026-03-24 14:18:15.218035   
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 ::: -->
 <section id="password-parsley" class="level1">
