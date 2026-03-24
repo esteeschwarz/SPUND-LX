@@ -1,3 +1,3 @@
 cd ../poster
-quarto render 001.qmd
+quarto render 002.qmd
 node render-pdf.mjs

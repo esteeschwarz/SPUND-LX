@@ -165,8 +165,8 @@ m<-dfs$gp>0
 dfbar<-dfs[m,]
 #m1<-dfbar$gp[which(m)[length(which(m))]]
 y<-dfbar$gp-max(dfbar$gp)
-barplot(gp-max(gp)~as.character(lemma),head(dfbar,8),xlab="",main="lemma rel. freq. absolute increase pre-post onset",lim=1)
-?barplot
+# barplot(gp-max(gp)~as.character(lemma),head(dfbar,8),xlab="",main="lemma rel. freq. absolute increase pre-post onset",lim=1)
+# ?barplot
 #boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
 par(las=1)
 pb1<-boxplot(rel_freq~post,dfs[dfs$target=="human"&dfs$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T,main="GPT preferred lemma rel. freq. pre vs. post (TRUE) onset corpus")

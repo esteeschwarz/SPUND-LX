@@ -298,6 +298,8 @@ m <- glmer(
 
 re_lemma <- ranef(m)$lemma  # data frame with '(Intercept)'
 re_lemma$lemma <- rownames(re_lemma)
+lemma_pref$gpglm<-re_lemma$`(Intercept)`[match(lemma_pref$lemma,re_lemma$lemma)]
+plist$lemma_pref<-lemma_pref
 # re_lemma$res<-rl[,1]
 #save(re_lemma,file=paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/lemma_gpt-human.RData"))
 #############################################
@@ -407,12 +409,17 @@ lemma_post_trends.off %>%
 dfs<-df_agg
 #dfs$in.gp<-dfs$lemma%in%gpt_lemmas$lemma
 dfs$gp <- lemma_pref$log_odds[match(dfs$lemma,lemma_pref$lemma)]
+#dfs$gpglm <- lemma_pref$gpglm[match(dfs$lemma,lemma_pref$lemma)]
 #dfa.pos$lemma[match(tokens.r$word, dfa.pos$token)]
 #save(dfs,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/dfs.RData"))
 lm1<-lmer(rel_freq~post+gp+(1|lemma),dfs)
 summary(lm1)
 lm2<-lm(rel_freq~post+gp,dfs)
 summary(lm2)
+# lm3<-lmer(rel_freq~post+gpglm+(1|lemma),dfs)
+# summary(lm3)
+# lm4<-lm(rel_freq~post+gpglm,dfs)
+# summary(lm4)
 ### 16133.
 gpt_lemmas
 m<-df_agg$lemma%in%gpt_lemmas$lemma
@@ -442,7 +449,8 @@ df_lgc<-cbind(df_p.post,rel_f.pre=df_p.pre$rel_freq)%>%mutate(
 )
 m<-df_lgc$post.increase
 lgm<-df_lgc$diff[m]>mean(df_lgc$diff[m])
-barplot(diff~lemma,df_lgc[which(m)[lgm],])
+par(las=2)
+barplot(diff~as.character(lemma),df_lgc[which(m)[lgm],])
 boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
 par(las=1)
 pb<-boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
@@ -465,20 +473,21 @@ df_lg.norm<-lemma_counts |>
 pb<-boxplot(freq_pmw~post,df_lg.norm,outline=F,notch=T)
 pb$stats
 df_lg.norm$gp <- lemma_pref$log_odds[match(df_lg.norm$lemma,lemma_pref$lemma)]
+df_lg.norm$gpglm <- lemma_pref$gpglm[match(df_lg.norm$lemma,lemma_pref$lemma)]
 
 lm1<-lmer(freq_pmw~post+gp+(1|lemma),df_lg.norm)
 summary(lm1)
 lm2<-lm(freq_pmw~post+gp,df_lg.norm)
 summary(lm2)
+# lm3<-lmer(freq_pmw~post+gpglm+(1|lemma),df_lg.norm)
+# summary(lm3)
+# lm4<-lm(freq_pmw~post+gpglm,df_lg.norm)
+# summary(lm4)
 
 load("~/Documents/GitHub/SPUND-LX/germanic/HA/drafts/plist.RData")
 plist$totals<-totals
 plist$df_agg<-df_agg
 plist$lemma_pref<-lemma_pref
 plist$lemma_counts<-lemma_counts
+plist$lme$lm1
 save(plist,file="plist2.RData")
-x<-"Reichtumsberichen"
-m<-tok.r3$lemma==x
-which(m)
-e<-c((which(m)[1]-20):(which(m)[1]+20))
-tok.r3$lemma[e]

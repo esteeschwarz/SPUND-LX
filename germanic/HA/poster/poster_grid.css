@@ -282,6 +282,36 @@ section.level1.bw > pre {
     border-radius: 5px;
     color: white;
     width: fit-content;
+    height: fit-content;
+}
+
+pre {
+  color: unset();
+}
+.cell {
+  color: greenyellow;
+}
+code {
+  color: unset();
+}
+pre code {
+  color: greenyellow;
+  font-size: 13pt;
+}
+section.level1.bws, 
+section.level1.bws > pre,
+section.level1.bws > cell,
+section.level1.bws.cell.cell-output.pre {
+    border: 3px solid #5c8a2f;
+    background-color: blue;
+    padding: 10mm;
+    box-sizing: border-box;
+    font-size: 13pt;
+    line-height: 1.1;
+    font-family: monospace;
+    border-radius: 5px;
+    color: black;
+    width: fit-content;
 }
 section.level1.bw > h1{
   display: none;
