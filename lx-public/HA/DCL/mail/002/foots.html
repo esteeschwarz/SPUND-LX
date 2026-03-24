@@ -1,0 +1,35 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const notes = {};
+
+  /* collect footnote texts */
+  document.querySelectorAll(".footnotes li").forEach(li => {
+    notes[li.id] = li.cloneNode(true);
+  });
+
+  /* replace references with inline footnotes */
+  document.querySelectorAll("a.footnote-ref").forEach(ref => {
+
+    const id = ref.getAttribute("href").substring(1);
+    const note = notes[id];
+
+    if (!note) return;
+
+    // remove backlink arrow
+    const back = note.querySelector("a");
+    if (back) back.remove();
+
+    const span = document.createElement("span");
+    span.className = "paged-footnote";
+    span.innerHTML = note.innerHTML;
+
+    ref.replaceWith(span);
+  });
+
+  /* remove endnote section */
+  const endnotes = document.querySelector(".footnotes");
+  if (endnotes) endnotes.remove();
+
+});
+</script>

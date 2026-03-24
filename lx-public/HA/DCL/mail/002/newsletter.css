@@ -1,0 +1,46 @@
+body {
+  font-family: serif;
+  line-height: 1.4;
+}
+
+/* PAGE SETUP */
+@page {
+  size: A4;
+  margin: 25mm;
+
+  @bottom-center {
+    content: counter(page);
+    font-size: 10pt;
+  }
+}
+
+/* first page */
+@page :first {
+  @bottom-center { content: none; }
+}
+
+/* avoid bad breaks */
+h1, h2, h3 {
+  break-after: avoid;
+}
+
+p {
+  widows: 2;
+  orphans: 2;
+}
+
+/* FOOTNOTES */
+.footnote {
+  float: footnote;
+  font-size: 9pt;
+}
+.paged-footnote {
+  float: footnote;
+  font-size: 0.85em;
+}
+@page {
+  @footnote {
+    border-top: 0.5pt solid black;
+    padding-top: 4mm;
+  }
+}

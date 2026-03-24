@@ -57,18 +57,15 @@ const chromeFolder = arch === 'arm64' ? 'chrome-mac-arm64' : 'chrome-mac-x64';
 
 function resolveChromiumPath() {
 
-  // 1️⃣ Explicit override
   if (process.env.CHROMIUM_PATH) {
     return process.env.CHROMIUM_PATH;
   }
 
-  // 2️⃣ mac local Playwright cache
   if (os.platform() === 'darwin') {
     const pw = findMacPlaywrightChromium();
     if (pw) return pw;
   }
 
-  // 3️⃣ Linux system chromium (CI / container)
   const linuxPaths = [
     '/usr/bin/chromium',
     '/usr/bin/chromium-browser',

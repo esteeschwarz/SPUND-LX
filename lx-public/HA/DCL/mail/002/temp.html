@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+
+<style>
+
+body {
+  font-family: serif;
+  line-height: 1.4;
+}
+
+/* PAGE SETUP */
+@page {
+  size: A4;
+  margin: 25mm;
+
+  @bottom-center {
+    content: counter(page);
+    font-size: 10pt;
+  }
+}
+
+/* first page */
+@page :first {
+  @bottom-center { content: none; }
+}
+
+/* avoid bad breaks */
+h1, h2, h3 {
+  break-after: avoid;
+}
+
+p {
+  widows: 2;
+  orphans: 2;
+}
+
+/* FOOTNOTES */
+.footnote {
+  float: footnote;
+  font-size: 9pt;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Document Title</h1>
+
+<p>
+This is text with a footnote
+<span class="footnote">This is a real paged footnote.</span>
+continuing normally.
+</p>
+
+<p>More text...</p>
+
+</body>
+</html>
