@@ -7,12 +7,12 @@
 
 :root {
   --col1: 275mm;
-  --col2: 220mm;
+  --col2: 248mm;
   --col3: 276mm;
   --poster-width: 841mm;
   --poster-height: 1184mm;
   --header-height: 65mm;
-  --gap: 34mm;
+  --gap: 20mm;
   --bodyTop: 65mm;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 #meta {
   position: absolute;
-    top: calc(-1*var(--header-height));
+    top: calc(-1*var(--header-height) - 5mm);
   right: 0mm;
     height: calc(var(--header-height) - 2mm);
   width: calc(var(--poster-width) - 600mm);
@@ -53,7 +53,7 @@ body {
   border-left: 4px solid black;
   box-sizing: border-box;
   text-align: right;
-  padding: 20px;
+  padding: 10px;
   font-size: 1.4em;
 }
 
@@ -230,11 +230,10 @@ align-items: start;
 /* ========================= */
 /* SECTIONS */
 /* ========================= */
-
 section.level1 {
     border: 3px solid #5c8a2f;
     background: #f2f2b0;
-    padding: 10mm;
+    /* padding: 5mm; */
     box-sizing: border-box;
     font-size: 36pt;
     line-height: 1.4;
@@ -245,13 +244,38 @@ section.level1 {
     break-inside: avoid;
     /* margin-bottom: 20mm; */
 }
-
 section.level1 > h1 {
-  background: #e6e6a8;
-  margin: -10mm -10mm 10mm -10mm;
-  padding: 5mm;
-  border-bottom: 3px solid #5c8a2f;
-  font-size: 38pt;
+    background: #e6e6a8;
+    /* margin: -10mm -10mm 10mm -10mm; */
+    padding-left: 2mm;
+    /* padding-bottom: 5mm; */
+    font-size: 38pt;
+    margin-top: 0mm;
+    /* margin-left: 2mm; */
+}
+section.level1 > p,ul,ol,li {
+    /* background: #e6e6a8; */
+    /* margin: -10mm -10mm 10mm -10mm; */
+    padding-left: 2mm;
+    /* padding-bottom: 5mm; */
+    /* font-size: 38pt; */
+    /* margin-left: 2mm; */
+    /* margin-left: 2mm; */
+}
+/* p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+} */
+ol, ul {
+    padding-left: unset();
+}
+section.level1 > h1 {
+    background: #e6e6a8;
+    /* margin: -10mm -10mm 10mm -10mm; */
+    padding-left: 5mm;
+    /* padding-bottom: 5mm; */
+    font-size: 38pt;
 }
 
 /* Appendix styling preserved */
@@ -270,16 +294,34 @@ section.level5 {
   font-family: monospace;
   border-radius: 5px;
 }
-section.level1.bw, 
+section.level1.bw {
+    border: 3px solid #5c8a2f;
+    background-color: blue;
+    /* padding: 10mm; */
+    box-sizing: border-box;
+    font-size: 24pt;
+    line-height: 1.2;
+    /* font-family: monospace; */
+    border-radius: 5px;
+    /* color: white; */
+    width: fit-content;
+    height: fit-content;
+}
+section.level1.bw > p {
+  color: white;
+      font-family: monospace;
+
+}
+
 section.level1.bw > pre {
     border: 3px solid #5c8a2f;
     background-color: blue;
-    padding: 10mm;
+    padding: 5mm;
     box-sizing: border-box;
     font-size: 24pt;
     line-height: 1.2;
     font-family: monospace;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     color: white;
     width: fit-content;
     height: fit-content;
@@ -289,32 +331,78 @@ pre {
   color: unset();
 }
 .cell {
-  color: greenyellow;
+    color: unset();
+    padding-left: 5mm;
 }
 code {
   color: unset();
 }
 pre code {
   color: greenyellow;
-  font-size: 13pt;
+  font-size: 1
 }
-section.level1.bws, 
-section.level1.bws > pre,
-section.level1.bws > cell,
-section.level1.bws.cell.cell-output.pre {
+section.level1.bws, section.level1.bws > pre, section.level1.bws.cell.cell-output.pre {
     border: 3px solid #5c8a2f;
     background-color: blue;
-    padding: 10mm;
+    /* padding: 10mm; */
     box-sizing: border-box;
-    font-size: 13pt;
+    font-size: 18pt;
     line-height: 1.1;
     font-family: monospace;
     border-radius: 5px;
-    color: black;
+    /* color: white; */
     width: fit-content;
+    margin: auto;
 }
-section.level1.bw > h1{
-  display: none;
+section.level1.bw > h1 {
+    background: #e6e6a8;
+    /* margin: -10mm -10mm 10mm -10mm; */
+    padding-left: 2mm;
+    /* padding-bottom: 5mm; */
+    font-size: 38pt;
+    margin-top: 0mm;
+    /* margin-left: 2mm; */
+    padding-right: 2mm;
+}
+
+section.level1.ct {
+    font-size: 20pt;
+    /* padding-left: 5mm; */
+    /* padding-right: 5mm; */
+}
+section.level1.bws > h1 {
+    background: #e6e6a8;
+    /* margin: -10mm -10mm 10mm -10mm; */
+    padding-left: 2mm;
+    /* padding-bottom: 5mm; */
+    font-size: 38pt;
+    margin-top: 0mm;
+    /* margin-left: 2mm; */
+    padding-right: 2mm;
+}
+
+figcaption {
+  font-size: 18pt;
+     margin-bottom: .5em;
+    padding-left: 10mm;
+    padding-top: 5mm;
+}
+
+
+.quarto-figure {
+
+  margin-bottom: unset();
+}
+
+.img-fluid {
+  width: 90%;
+  margin: 0.1rem;
+}
+
+table, table.table {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
 }
 
 section.level5 > h5 {

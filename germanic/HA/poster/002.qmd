@@ -53,9 +53,11 @@ cat("\n```")
 # prompt <- readLines("../g-prompt01.txt")
 #prompt<-paste(prompt,collapse = "\n")
 prompt<-plist$ptx
-prompt<-paste0("C1: ",paste(prompt,collapse = "\n"))
+# prompt<-paste0("C1: ",paste(prompt,collapse = "\n"))
+prompt<-paste0("",paste(prompt,collapse = "\n"))
 
 ```
+
 ::: {.column-1}
 # Preliminary
 inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the @yakura_empirical_2025 pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.
@@ -70,7 +72,7 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
 the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.
 
-we first devised model typical lemmata in the AI corpus which are distinct for that corpus using the log odds score calculated over pre/post target.
+we first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target.
 
 # c1 {.bw}
 `r prompt`
@@ -105,12 +107,16 @@ lb0<-plist$lb0
 lb1<-length(b1)
 ```
 
-# c2 {.bw}
-corpus stats
+# c2: corpus stats {.ct}
 <!-- ``` `r knitr::kable(plist$boxstat)` ``` -->
-```{r,eval=T} 
+```{r,eval=T}
+#| label: "boxstats"
+#| fig-cap: "statistics..."
+#| warning: false
+#| echo: false
+
 # knitr::kable(plist$sdf)
-print(plist$boxstat)
+knitr::kable(plist$boxstat)
 ```
 
 ```{r,eval=F}
