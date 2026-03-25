@@ -157,7 +157,8 @@ to gather an insight, yet with simple descriptive stats comparing the raw freque
 
 the `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot
 
-{placeholder}{we also found significant frequency increases using a linear regression model, but after experiencing issues with udpipe which first become visible when revisiting our data we had to lemmatize corpus again using the stanza nlp pipeline. results will show up here when evaluated with new lemmas.}
+we found significant frequency increases using a linear regression model (@bates_fitting_2015), cf. C3/C4, which tested the hypothesis.
+
 
 # c4: regression mixed effects model {.bws}
 
@@ -167,6 +168,8 @@ print(summary(plist$lme$lm1))
 anova(plist$lme$lm1)
 ```
 
+# Limitations
+if the findings of increased AI lemma frequencies really prove manifestation of AI language depends also on influences of other factors of language variation and change which @yakura_empirical_2025 already took into account. a deeper going analysis of general trends in language development and investigation on the bidirectional influences of model-training and human language could harden the results. 
 
 :::{#refs}
 # references
