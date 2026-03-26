@@ -82,8 +82,18 @@ function resolveChromiumPath() {
 }
 
 const browser = await chromium.launch({
-  executablePath: resolveChromiumPath()
+  executablePath: resolveChromiumPath(),
+  args: [
+    "--disable-dev-shm-usage",
+    "--disable-setuid-sandbox"
+  ]
 });
+// chromium.launch({
+//   args: [
+//     "--disable-dev-shm-usage",
+//     "--disable-setuid-sandbox"
+//   ]
+// })
 
 const page = await browser.newPage();
 
