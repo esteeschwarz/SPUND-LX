@@ -72,7 +72,7 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
 the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.
 
-we first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target.
+we first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target, @fig-gpt.dplot.
 
 # c1 {.bw}
 `r prompt`
