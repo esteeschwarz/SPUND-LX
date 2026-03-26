@@ -14,6 +14,8 @@
   --header-height: 65mm;
   --gap: 20mm;
   --bodyTop: 65mm;
+  
+  
 }
 
 /* ========================= */
@@ -453,7 +455,7 @@ figure.figure {
 /* BACKGROUND FRAME */
 /* ========================= */
 
-#bg {
+/* #bg {
   position: absolute;
   top: 5mm;
   left: 2mm;
@@ -463,6 +465,17 @@ figure.figure {
   box-sizing: border-box;
   z-index: 2;
   pointer-events: none;
+} */
+#bg {
+  position: absolute;
+  inset: 0;                /* CRITICAL */
+  border: 4px solid black;
+  box-sizing: border-box;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+ 
 }
 #code-container {
     /* top: 5mm; */
