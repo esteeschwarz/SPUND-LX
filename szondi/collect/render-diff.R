@@ -90,7 +90,7 @@ edges <- rbind(
   make_edges(tokens_a, "A"),
   make_edges(tokens_b, "B")
 )
-
+adj.m
 # Create graph
 g <- graph_from_data_frame(edges, directed = FALSE)
 
@@ -104,7 +104,20 @@ membership <- ifelse(
   all_nodes %in% in_a & all_nodes %in% in_b, "both",
   ifelse(all_nodes %in% in_a, "A", "B")
 )
+### create reveal vectors for print
+folie<-readLines("folie.Rmd")
 
+left.f<-lapply(seq_along(adj.f), function(i){
+  t<-paste0("## f",i)
+  t<-c(t,paste0(adj.f[1:i],","),"")
+
+  
+})
+head(left.f)
+unlist(left.f)
+left.f.c<-paste(unlist(left.f),collapse = "\n")
+folie<-gsub("_folien_",left.f.c,folie)
+writeLines(folie,"folie_m.Rmd")
 # Color palette
 col_map <- c(A = "#4E79A7", B = "#F28E2B", both = "#59A14F")
 V(g)$color <- col_map[membership]

@@ -1,0 +1,26 @@
+---
+title: "Auto-Progress Reveal.js Presentation"
+output:
+  revealjs::revealjs_presentation:
+    # theme: sky  # Optional: choose from default, simple, sky, beige, serif, blood, moon
+    center: true
+    # transition: slide  # Optional: fade, slide, convex, concave, zoom
+    self_contained: true
+    # lib_dir: libs
+    # includes:
+    #  before_body: configure.html
+    css: custom.css
+    reveal_options:
+      slideNumber: true
+      previewLinks: true
+      # controlsLayout: 'bottom-left'
+      autoSlide: 700
+      transition: none
+---
+
+## Slide 1: Introduction
+
+- This presentation auto-advances every 1 second [web:1][web:2].
+- Uses reveal.js via R Markdown [web:6].
+
+_folien_

@@ -1,0 +1,18 @@
+/* Disable vertical + horizontal centering */
+
+.reveal .slides section {
+  text-align: left !important;
+}
+
+/*.reveal .slides section.present {
+  top: 0 !important;
+  transform: none !important;
+}
+
+.reveal .slides {
+  align-items: flex-start !important;
+}
+
+.reveal section {
+  padding-top: 40px;
+}*/
