@@ -64,7 +64,8 @@ td<-btt.summaries[1,]
 }
 library(abind)
   library(jsonlite)
-td<-df2[1,]
+#td<-df2[1,]
+#td<-tdf
 get.pos<-function(td){
   tx<-td$text
   ms<-grep("[^ \n]",tx)

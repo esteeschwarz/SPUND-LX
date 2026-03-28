@@ -1,0 +1,67 @@
+---
+title: "m-f-diff-renderer"
+output: html_document
+date: "2026-03-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+library(diffr)
+t1<-"https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/1b6bfd5c47cb263080844ea82ffafe91f83aa46a/szondi/collect/m_f.txt"
+t2<-"https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/5db0e3015f05a0acc62437d1f04f875681494a60/szondi/collect/m_f.txt"
+tt1<-readLines(t1)
+tt2<-readLines(t2)
+pt1<-tempfile("m.txt")
+pt2<-tempfile("f.txt")
+writeLines(tt1,pt1)
+writeLines(tt2,pt2)
+dhtm<-diffr(pt1,pt2)
+library(htmlwidgets)
+htm<-createWidget("diff",dhtm)
+#htm
+
+
+```
+
+```{r}
+#htm$x
+```
+
+```{r}
+t2m<-unlist(strsplit(tt1,";"))
+t2f<-unlist(strsplit(tt2,";"))
+t2m<-t2m[order(t2m)]
+t2f<-t2f[order(t2f)]
+t2m<-gsub("^[^a-zA-Z]{1,5}","",t2m)
+t2f<-gsub("^[^a-zA-Z]{1,5}","",t2f)
+t2m<-t2m[order(t2m)]
+t2f<-t2f[order(t2f)]
+writeLines(t2m,pt1)
+writeLines(t2f,pt2)
+dhtm<-diffr(pt1,pt2)
+library(htmlwidgets)
+htm<-createWidget("diff",dhtm)
+htm$x

@@ -1,0 +1,2076 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <style>
+      body{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #333;
+        line-height: 1.42857143;
+        margin: 10px 0 0;
+        overflow-y: scroll; /* always display vertical scrollbar */
+      }
+
+      #macro_level{
+        margin-bottom: 100px;
+        table-layout: fixed;
+      }
+
+      .synopsis-headline {
+        position: sticky;
+        top: 12px;
+        z-index: 2;
+        background: #999999;
+        color: white;
+        text-align: center;
+        border: solid 1px white;
+        font-size: 18px;
+        padding: 4px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.6);
+      }
+      .synopsis-segment {
+        padding: 0 15px;
+        vertical-align: top;
+        text-align: justify;
+        font-family: serif;
+        font-size: 18px;
+        line-height: 1.5;
+        border-right: dotted 1px #999;
+        word-wrap: break-word;
+      }
+      .synopsis-segment:last-child { border-right: 0 none; }
+
+      .dir_right{ direction: rtl; }
+
+      /* styling of missing segment */
+      .synopsis-missing{
+        text-align: center;
+        color: #999999;
+        font-style: italic;
+      }
+
+      /* elements for colored markings of differences */
+      hl[c="copy"]{ background-color:#EAEAEA; }
+      hl[c="add"]{ background-color:#99FF99; }
+      hl[c="del"]{ background-color:#FFAAAA; }
+      hl[c="sub"]{ background-color:#BBBBFF; }
+
+      /* menu of micro levels */
+      .synopsis-ml-menu { padding: 20px 5px 40px; }
+      .collapse{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-bottom: none;
+        border-radius: 4px;
+      }
+      .btn-ml-menu {
+        display: block;
+        padding: 1px;
+        text-align: center;
+        border: 1px solid #dddddd;
+        background-color: #f8f8f8;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #337ab7;
+      }
+      .btn-ml-menu:hover { color: #333; }
+
+      /* neu */
+      .btn-ml-menu-non {
+         display: block;
+         padding: 1px;
+         border: 1px solid #dddddd;
+         background-color: #f8f8f8;
+         border-radius: 4px;
+         color: #337ab7;
+       }
+
+      .wasserzeichen{
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        color: #d8d8d8;
+        z-index: -1;
+        pointer-events: none;
+        margin-top: -30px;
+        font-family: serif;
+        font-size: 22px;
+      }
+      .wasserzeichen-inner{
+        position: relative;
+        left: -50%;
+      }
+
+      .micro_level:first-of-type::before{
+        content: '';
+        display: block;
+        height: 25px;
+      }
+
+      .copy-segment{
+        color: #bbb;
+        z-index: -1;
+      }
+      .copy-ref{
+        text-align: center;
+        z-index: -1;
+      }
+      .copy-ref a {
+        cursor: pointer;
+        color: #337ab7;
+        text-decoration: none;
+      }
+      .copy-apparatus { color: #bbb; }
+
+      .macro-table-rtl{ direction: rtl; }
+      .macro-table-rtl thread{ direction: ltr; }
+      .macro-table-rtl tbody{ direction: ltr; }
+      .macro-table-rtl .synopsis-segment:last-child { border-right: dotted 1px #999; }
+      .macro-table-rtl .synopsis-segment:first-child { border-right: 0 none; }
+      .macro-table-rtl .apparatus_rtl .apparatus-table-inner td:last-child { text-align: right; }
+
+      /* apparatus of differences within micro level menu */
+      .apparatus-col {
+        padding-bottom: 10px;
+        float:left;
+      }
+      .apparatus-table { margin-right: 20px; }
+      .apparatus-table td { padding-right: 10px; }
+      .apparatus-table td:first-child { font-size: 75%; }
+      .apparatus-table-inner td:first-child {
+        font-size: 100%;
+        font-weight: bold;
+        vertical-align: top;
+        text-align: right;
+      }
+      .apparatus_rtl .apparatus-col {
+        float: right !important;
+        direction: rtl;
+      }
+      .apparatus_rtl .apparatus-col .apparatus-table-inner { direction: rtl !important; }
+      .apparatus_rtl .apparatus-col .apparatus-table-inner td:first-child { text-align: left; }
+
+      /* style of Special Elements */
+      .lera-alteration{ color: rgb(141, 28, 28); }
+      .lera-note{ position: relative; color: #555; font-size: 80%; border: 1px solid rgb(202, 202, 202); padding: 0.2em; border-radius: 4px; }
+      .lera-note-text{
+        visibility: hidden;
+        background-color: #fff;
+        color: #555;
+        border: 1px solid #999; padding: 0.2em; border-radius: 4px;
+        text-align: center;
+        /* position per default on the bottom */
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        top: 100%;
+        left: 50%;
+        margin-left: -125px;
+      }
+      .lera-note-milestone { color: rgb(138, 0, 0); font-weight: bolder; }
+      .lera-note:hover .lera-note-text { visibility: visible; }
+      .lera-name { color: darkblue; }
+      .lera-name-person {}
+      .lera-head{ font-size: 125%; font-weight: bold; }
+      .lera-gap { white-space: pre-wrap; }
+      .lera-ref{ font-weight: bold; }
+
+      /* style of Text Emphasis */
+      .lera-large{ font-size: 120%; }
+      .lera-smallcaps{ font-variant: small-caps; }
+      .lera-spaced{ letter-spacing: 0.2em; }
+      .lera-unclear{ opacity: 0.8; text-shadow: 0 0 5px #333; }
+
+      /* html-download specific */
+      #white-box{
+         position: fixed;
+         top:0;
+         left: 0;
+         right: 0;
+         height: 25px;
+         background: #fff;
+       }
+      .micro_level:first-of-type::before{
+        content: '';
+        display: block;
+        height: 25px;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        // handle collapse buttons
+        var coll = document.getElementsByClassName("btn-ml-menu");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            //this.classList.toggle("active");
+            var content = this.previousElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+              this.innerHTML = "⮟";
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+              this.innerHTML = "⮝";
+            }
+          });
+        }
+
+      }
+      //handle scroll to the copied segments original position
+      function scroll_to_segment_pos(row){
+        var position = document.getElementById('macro-table-sticky').tBodies[row].offsetTop;
+        position -= document.getElementById('macro-table-sticky').tBodies[0].rows[0].offsetTop;
+
+        window.scrollTo({
+          top: position,
+          behavior: 'smooth'
+        });
+      }
+
+    </script>
+  </head>
+  <body>
+    <div id="white-box"></div>
+    <div id="macro_level">
+      <table id="macro-table-sticky" width="100%">
+        <thead>
+          <tr>
+            <th class="synopsis-headline" width="50%">
+              DWDS m/f render (M)
+            </th>
+            <th class="synopsis-headline" width="50%">
+              DWDS m/f render (F)
+            </th>
+          </tr>
+        </thead>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  1
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  https://www.dwds.de/wb/wdg/Mann 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  https://www.dwds.de/wb/wdg/Frau 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  2
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  1974 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  1967 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  3
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  berl. salopp scherzh. Ach wat, Männeken, antwortete der freundliche Mann G. Hermann Kubinke 51 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  4
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  bertr./ er ist hier der (erste) M. an der Spritze (hat hier zu bestimmen, spielt hier eine wichtige Rolle) salopp er spielt den wilden M. (er gebärdet sich wild, tut übertrieben energisch) den starken, großen, feinen M. markieren, spielen, mimen 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  5
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  das ist nur etwas für Männer 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  6
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  das Kind im Manne 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  7
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  der bedeutende, große, verdiente M. stellte sich der Kamera 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  8
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  der schwarze M. /Kinderschreck/ 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  9
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  e)s, Männer/ -en/ - 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  10
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  ein altes, verhutzeltes Männchen, Männlein 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(27)">
+                  Kopie von 28
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  ein altes, verhutzeltes Frauchen 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  11
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein Gespräch unter Männern 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  12
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein großer, kleiner, stattlicher, kräftiger M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  13
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein hübscher, schöner, bärtiger, blonder M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  14
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein kluger, geistreicher, gebildeter, intelligenter, gelehrter, umg. studierter⌝ M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  15
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein M. der Tat 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  16
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein M. der Wissenschaft 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  17
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein M. in reiferen, in den besten Jahren 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  18
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein M. mittleren Alters 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  19
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein M. von ungewöhnlichem Format, von Geist, Grundsätzen, Charakter, Einfluß, umg. von Welt⌝, mit Humor 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  20
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein netter, liebenswürdiger, feiner, interessanter, salopp toller⌝ M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  21
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ein verheirateter, geschiedener M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  22
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  er ist ein M. geworden, zum Mann(e) (heran)gereift 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  23
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  ich als M. denke darüber anders 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  24
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  in der Anrede/ umg. darf’s etwas mehr sein, junger M.? 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  darf’s etwas mehr sein, junge F.? /Anrede/ 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  25
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  Kinderspiel wer hat Angst vorm schwarzen M.? 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  26
+                </div>
+              </div>
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(49)">
+                  Kopie von 50
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  Pl.Männer 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  die berufstätige F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  27
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  die Rechte, Gleichberechtigung der F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  28
+                </div>
+              </div>
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(9)">
+                  Kopie von 10
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  ein altes, verhutzeltes Männchen, Männlein 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  ein altes, verhutzeltes Frauchen 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  29
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  eine alleinstehende, verheiratete, geschiedene, mütterliche, häusliche, schwangere, kinderlose F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  30
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  eine einfache, natürliche, anständige, liederliche, schlampige F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  31
+                </div>
+              </div>
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(49)">
+                  Kopie von 50
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  Pl.Männer 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  eine emanzipierte F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  32
+                </div>
+              </div>
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(49)">
+                  Kopie von 50
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  Pl.Männer 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  eine F. lieben 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  33
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  eine nette, liebenswürdige, kluge, geistreiche, nervöse, hysterische, verwöhnte F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  34
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  eine schöne, hübsche, bezaubernde, gepflegte, große, kleine, stattliche, kräftige, zarte, zierliche, blonde F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  35
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  eine sportliche, interessante, salopp tolle F.⌝ 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  36
+                </div>
+              </div>
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(1)">
+                  Kopie von 2
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  1974 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  en 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  37
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  er hat viel Glück bei den Frauen 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  38
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  er heiratete eine reiche F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  39
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  er setzte alles daran, diese F. zu erobern 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  40
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  er wurde in Gesellschaft von zweifelhaften, fragwürdigen Frauen gesehen 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  41
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  er] blieb bis gegen das Ende seines Lebens ein Günstling der Frauen Th. Mann 8,268 (Krull) 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  42
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  Mann, der 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  Frau, die 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  43
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  geh. gnädige F. /Anrede/ 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  44
+                </div>
+              </div>
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(1)">
+                  Kopie von 2
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  1974 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  Kurpfuscherin) 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  45
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  sie ist die F. meiner Träume 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  46
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  um eine F. werben 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  47
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  umg. eine weise F. (Hebamme 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  48
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  mein Unwille gegen die Schöpfung, die uns gespalten hat in Mann und Weib Frisch Don Juan V 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  49
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  nicht so drängeln, junger M.! 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  50
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  Pl.Männer 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(25)">
+                  Kopie von 26
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  die berufstätige F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  51
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  salopp den lieben Gott einen guten, frommen M. sein lassen (unbekümmert in den Tag hinein leben) du hast wohl ’nen kleinen M. im Ohr (du bist wohl verrückt, was fällt dir ein)! der M. im Mond /aus den Mondflecken gedeutete sagenhafte Gestalt/ 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  52
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  salopp Was wollen Sie damit sagen, Mann? A. Neumann Es waren ihrer sechs 380 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  53
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  sei ein M. (zeige eine männliche Haltung)! du hast dich als M. bewährt, gezeigt, erwiesen 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  54
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  sie gab sich diesem M. hin 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  55
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  sie hat einen reichen M. geheiratet 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  56
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  sie lebt mit einem anderen M. zusammen 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  57
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  spött. guter M., Sie irren sich! 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  58
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  starke, kräftige, gesunde, beherzte, gesetzte Männer 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  59
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  umg. das war typisch, echt M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  umg. er hat viele Frauen (Geliebte) gehabt das war typisch, echt F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  60
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  umg. der M. kann etwas 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  61
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  umg. er war der M. des Tages (stand im Mittelpunkt des Interesses) jetzt bist du ein gemachter M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  62
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  umg. scherzh. Männlein und Weiblein (Männer und Frauen) einen M. lieben 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  63
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  Verkl.: Sg. u. Pl.Männchen, Männlein, berl. Männeken, Pl.auch Männerchen/ erwachsene Person männlichen Geschlechts: ein alter, junger, älterer, jüngerer M. 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  64
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  <br>
+                  vgl. Männchen / 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="copy-ref">
+                <a onclick="scroll_to_segment_pos(25)">
+                  Kopie von 26
+                </a>
+              </div>
+              <div class="synopsis-segment-text">
+                <span class="copy-segment">
+                  die berufstätige F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  65
+                </div>
+              </div>
+              <div class="synopsis-segment-text">
+                <span>
+                  von M. zu M. sprechen 
+                </span>
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  66
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  Verkl.: Frauchen/ erwachsene Person weiblichen Geschlechts: eine alte, junge, ältere, jüngere F. 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="micro_level">
+          <tr>
+            <td class="synopsis-segment">
+              <div class="wasserzeichen">
+                <div class="wasserzeichen-inner">
+                  67
+                </div>
+              </div>
+              <div class="synopsis-missing">
+                
+              </div>
+            </td>
+            <td class="synopsis-segment">
+              <div class="synopsis-segment-text">
+                <span>
+                  Willst du genau erfahren, was sich ziemt, / So frage nur bei edlen Frauen an Goethe Tasso II 1 
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="synopsis-ml-menu" colspan="2">
+              <span class="btn btn-ml-menu-non">&nbsp;</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
