@@ -153,12 +153,17 @@ df_lgc<-cbind(df_p.post,rel_f.pre=df_p.pre$rel_freq)%>%mutate(
   post.increase = rel_freq > rel_f.pre
 )
 m<-df_lgc$post.increase
+lb0<-sum(m)
+plist$lb0<-lb0
 lgm<-df_lgc$diff[m]>(mean(df_lgc$diff[m]))
 sum(lgm)
 df_lgc.x<-df_lgc[which(m)[lgm],]
 par(las=2.5)
-barplot(diff~as.character(lemma),df_lgc.x,xlab="",main="lemma rel. freq. absolute increase pre-post onset")
+
+b1<-barplot(diff~as.character(lemma),df_lgc.x,xlab="",main="lemma rel. freq. absolute increase pre-post onset")
 plist$barplot<-recordPlot()
+plist$b1<-b1
+plist$b1
 dfs<-dfs[order(dfs$gp,decreasing = T),]
 par(las=3)
 m<-dfs$gp>0
@@ -195,14 +200,31 @@ boxstat
 tt<-t(totals$total[!is.na(totals$post)])
 boxstat<-rbind(boxstat,c(stat="tokens",var="n",pre=tt[1],post=tt[2]))
 #?bind_rows
-boxstat
-plist$boxstat<-boxstat
+boxstatx[1,c(3,4)]<-round(as.double(plist$boxstat[1,c(3,4)]),6)
+boxstatx[2,c(3,4)]<-round(as.double(plist$boxstat[2,c(3,4)]),3)
+plist$boxstat<-boxstatx
 df_lg.norm$gp <- lemma_pref$log_odds[match(df_lg.norm$lemma,lemma_pref$lemma)]
 
 lm1<-lmer(freq_pmw~post+gp+(1|lemma),df_lg.norm)
 summary(lm1)
 lm2<-lm(freq_pmw~post+gp,df_lg.norm)
 summary(lm2)
+dfsp<-dfs
+dfsp$post[dfsp$target="gpt"]<-"gpt"
+unique(dfsp$post)
+gpt.pplot<-plot(dfsp$gp, dfsp$rel_freq, 
+                col  = as.factor(dfsp$post), 
+                pch  = 19, 
+                xlab = "model typicality score",
+                ylab = "relative lemma frequency",
+                main = "GPT scores vs relative frequency by target"
+                
+)
+legend("topright", 
+       legend = levels(as.factor(dfsp$post)),
+       col   = 1:length(levels(as.factor(dfsp$post))), 
+       pch   = 19)
+plist$gptplot2<-recordPlot()
 plist$lme$lm1<-lm1
 plist$lme$lm2<-lm2
 #load("~/Documents/GitHub/SPUND-LX/germanic/HA/drafts/plist.RData")
@@ -210,5 +232,5 @@ plist$lme$lm2<-lm2
 # plist$df_agg<-df_agg
 # plist$lemma_pref<-lemma_pref
 
-# save(plist,file="plist2.RData")
+ save(plist,file="plist2.RData")
 
