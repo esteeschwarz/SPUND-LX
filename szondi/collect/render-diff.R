@@ -30,6 +30,8 @@ adj.f<-tpos.f$lemma[grepl("ADJA",tpos.f$xpos)]
 adj.m<-tpos.m$lemma[grepl("ADJA",tpos.m$xpos)]
 adj.f<-unique(adj.f)
 adj.m<-unique(adj.m)
+adj.m<-adj.m[2:length(adj.m)]
+adj.f<-adj.f[2:length(adj.f)]
 ac<-list(adj.f,adj.m)
 al<-1:length(ac)
 g<-which.max(c(length(ac[[1]]),length(ac[[2]])))
@@ -107,6 +109,7 @@ membership <- ifelse(
 ### create reveal vectors for print
 folie<-readLines("folie.Rmd")
 
+#adj.f<-adj.f[2:length(adj.f)]
 left.f<-lapply(seq_along(adj.f), function(i){
   t<-paste0("## f",i)
   t<-c(t,paste0(adj.f[1:i],","),"")
@@ -115,9 +118,29 @@ left.f<-lapply(seq_along(adj.f), function(i){
 })
 head(left.f)
 unlist(left.f)
-left.f.c<-paste(unlist(left.f),collapse = "\n")
-folie<-gsub("_folien_",left.f.c,folie)
-writeLines(folie,"folie_m.Rmd")
+tail(left.f)
+li.f<-paste("- ",adj.f)
+li.f<-c("## F.cpt","",li.f)
+li.f
+left.f<-c(left.f,li.f)
+left.f
+left.m<-lapply(seq_along(adj.m), function(i){
+  t<-paste0("## m",i)
+  t<-c(t,paste0(adj.m[1:i],","),"")
+  
+  
+})
+head(left.m)
+unlist(left.m)
+li.m<-paste("- ",adj.m)
+li.m<-c("## M.cpt","",li.m)
+li.m
+left.m<-c(left.m,li.m)
+left.m
+left.cpt<-paste(c(unlist(left.f),unlist(left.m)),collapse = "\n")
+left.cpt
+folie.m<-gsub("_folien_",left.cpt,folie)
+writeLines(folie.m,"folie_m.Rmd")
 # Color palette
 col_map <- c(A = "#4E79A7", B = "#F28E2B", both = "#59A14F")
 V(g)$color <- col_map[membership]
