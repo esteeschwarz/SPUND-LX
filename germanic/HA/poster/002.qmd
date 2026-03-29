@@ -13,6 +13,7 @@ format:
     toc: false
     self-contained: false
     include-before-body: css.html
+    embed-resources: true
   # pdf:
   #   browser: chrome
 execute:
@@ -33,11 +34,15 @@ snc: #16115::`r Sys.time()`
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 :::
 
+```{r loads, echo=FALSE,output=F,warning=F}
+
+load("../drafts/plist2.RData")
+```
+
 ::: {#code-container}
 
 ```{r background-script, echo=FALSE, results='asis'}
 script_lines <- readLines("../LLM-003.R")
-load("../drafts/plist2.RData")
 
 cat("```r\n")
 s<-sample(1:length(script_lines),80)

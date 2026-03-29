@@ -70,7 +70,8 @@ function resolveChromiumPath() {
     '/usr/bin/chromium',
     '/usr/bin/chromium-browser',
     '/usr/bin/google-chrome',
-    '/ms-playwright/chromium-1208/chrome-linux64/chrome'
+    '/ms-playwright/chromium-1208/chrome-linux64/chrome',
+    '/snap/bin/chromium'
 
   ];
 
@@ -82,11 +83,11 @@ function resolveChromiumPath() {
 }
 
 const browser = await chromium.launch({
-  executablePath: resolveChromiumPath(),
-  args: [
-    "--disable-dev-shm-usage",
-    "--disable-setuid-sandbox"
-  ]
+  executablePath: resolveChromiumPath()
+  // args: [
+  //   "--disable-dev-shm-usage",
+  //   "--disable-setuid-sandbox"
+  // ]
 });
 // chromium.launch({
 //   args: [
