@@ -34,7 +34,7 @@ snc: #16115::`r Sys.time()`
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 :::
 
-```{r background-script, echo=FALSE, warning=F,output=F}
+```{r loads, echo=FALSE, warning=F,output=F}
 #script_lines <- readLines("../LLM-003.R")
 load("../drafts/plist2.RData")
 ```
@@ -160,14 +160,14 @@ anova(plist$lme$lm2)
 
 ::: {.column-3}
 # Results
-To gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
+Yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
 
-The `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot
+The `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot.
 
-We found significant frequency increases using a linear regression model (@bates_fitting_2015), cf. C3/C4, which tested the hypothesis.
+We observe significant frequency increases using a linear regression model (@bates_fitting_2015), cf. C3/C4, which tested the hypothesis.
 
 
-# c4: regression mixed effects model {.bws}
+# c4: regression random effects model {.bws}
 
 ```{r,eval=T,warning=F,message=F} 
 #knitr::kable(plist$sdf)
@@ -179,14 +179,16 @@ c1<-s1$coefficients
 c2<-s2$coefficients
 c2<-round(c2,2)
 c1<-round(c1,2)
-c2
-s2
+#c2
+#s2
 ```
 
 # model explanations {.expl}
-We see in the model summaries that frequency increases are significant (p<0.001) when positing a random effect of lemma (C1) with an estimate increase of mean frequency (pmw) per lemma by `r c1[3,1]` vs. the intercept (post=FALSE i.e. target(pre)). 
+We see in the model summaries that frequency increases are significant (p<0.001) when positing a random effect of lemma (model 1, cf. C4) with an estimate increase of mean frequency (pmw) per lemma by `r c1[3,1]` vs. the intercept (post=FALSE i.e. target[pre]). 
 
-In model C2 (simple model without lemma effect) we observe an estimate increase of mean frequency (pmw) of post=TRUE by `r c2[2,1]` vs. the intercept (post=FALSE i.e. target(pre)).
+In model 2, cf. C3 (simple model without lemma effect) we observe an estimate increase of mean frequency (pmw) of post=TRUE by `r c2[2,1]` vs. the intercept.
+
+In both models `gp` (independent var of above mentioned gpt score: higher score > more model typical lemma) has been included as fixed effect, but vcvs. without random lemma effect that predictor lets the model naturally collapse (p<10E-16).
 
 
 # Limitations
