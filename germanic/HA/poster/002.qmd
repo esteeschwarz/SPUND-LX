@@ -34,8 +34,8 @@ snc: #16115::`r Sys.time()`
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 :::
 
-```{r loads, echo=FALSE,output=F,warning=F}
-
+```{r background-script, echo=FALSE, warning=F,output=F}
+#script_lines <- readLines("../LLM-003.R")
 load("../drafts/plist2.RData")
 ```
 
@@ -43,6 +43,7 @@ load("../drafts/plist2.RData")
 
 ```{r background-script, echo=FALSE, results='asis'}
 script_lines <- readLines("../LLM-003.R")
+# load("../drafts/plist2.RData")
 
 cat("```r\n")
 s<-sample(1:length(script_lines),80)
@@ -65,7 +66,7 @@ prompt<-paste0("",paste(prompt,collapse = "\n"))
 
 ::: {.column-1}
 # Preliminary
-inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the @yakura_empirical_2025 pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.
+Inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the @yakura_empirical_2025 pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.
 
 # Questions / Hypotheses
 
@@ -74,10 +75,11 @@ inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 
 # Methods / Data
 
-our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
-the LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.
+Our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
 
-we first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target, @fig-gpt.dplot.
+The LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.
+
+We first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target, cf. @fig-gpt.dplot.
 
 # c1 {.bw}
 `r prompt`
@@ -158,11 +160,11 @@ anova(plist$lme$lm2)
 
 ::: {.column-3}
 # Results
-to gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
+To gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
 
-the `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot
+The `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot
 
-we found significant frequency increases using a linear regression model (@bates_fitting_2015), cf. C3/C4, which tested the hypothesis.
+We found significant frequency increases using a linear regression model (@bates_fitting_2015), cf. C3/C4, which tested the hypothesis.
 
 
 # c4: regression mixed effects model {.bws}
@@ -171,10 +173,24 @@ we found significant frequency increases using a linear regression model (@bates
 #knitr::kable(plist$sdf)
 print(summary(plist$lme$lm1))
 anova(plist$lme$lm1)
+s1<-summary(plist$lme$lm1)
+s2<-summary(plist$lme$lm2)
+c1<-s1$coefficients
+c2<-s2$coefficients
+c2<-round(c2,2)
+c1<-round(c1,2)
+c2
+s2
 ```
 
+# model explanations {.expl}
+We see in the model summaries that frequency increases are significant (p<0.001) when positing a random effect of lemma (C1) with an estimate increase of mean frequency (pmw) per lemma by `r c1[3,1]` vs. the intercept (post=FALSE i.e. target(pre)). 
+
+In model C2 (simple model without lemma effect) we observe an estimate increase of mean frequency (pmw) of post=TRUE by `r c2[2,1]` vs. the intercept (post=FALSE i.e. target(pre)).
+
+
 # Limitations
-if the findings of increased AI lemma frequencies really prove manifestation of AI language depends also on influences of other factors of language variation and change which @yakura_empirical_2025 already took into account. a deeper going analysis of general trends in language development and investigation on the bidirectional influences of model-training and human language could harden the results. 
+If the findings of increased AI lemma frequencies really prove manifestation of AI language depends also on influences of other factors of language variation and change which @yakura_empirical_2025 already took into account. A deeper going analysis of general trends in language development and investigation on the bidirectional influences of model-training and human language could harden the results. 
 
 :::{#refs}
 # references
