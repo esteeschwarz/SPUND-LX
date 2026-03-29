@@ -1,2 +1,6 @@
 # SNC
 - snc.1.2.2.3.4,cache R,docker wks,render in container wks.,new build,syntax,5,wks.
+
+#### 16132.fin
+- render in git runner, chrome headless html > pdf export from quarto doc.
+- abgabe poster: 20260329(18.29) <https://esteeschwarz.github.io/DC-LX/essais/germanic/001/16838_HA_stschwarz-posterA0.pdf>
