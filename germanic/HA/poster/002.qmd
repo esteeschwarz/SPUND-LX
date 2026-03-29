@@ -66,15 +66,15 @@ prompt<-paste0("",paste(prompt,collapse = "\n"))
 ```
 
 ::: {.column-1}
-# Preliminary
+# preliminary
 Inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the @yakura_empirical_2025 pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.
 
-# Questions / Hypotheses
+# questions / hypotheses
 
 - do humans adapt to language produced by LLM and incorporate model vocabulary into their own language production?
 - H1: we will find higher frequencies of LLM typical vocabulary within human natural language corpora after onset of model introduction.
 
-# Methods / Data
+# methods / data
 
 Our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
 
@@ -86,13 +86,17 @@ For corpus building and evaluation scripts cf. @schwarz_this_2026.
 
 # c1 {.bw}
 `r prompt`
+
+# discussion / limitations
+If the findings of increased AI lemma frequencies really prove manifestation of AI language depends also on influences of other factors of language variation and change which @yakura_empirical_2025 already took into account. A deeper going analysis of general trends in language development and investigation on the bidirectional influences of model-training and human language could harden the results. Also dating of the adressed onset of gemini introduction and correspondingly synchronizing the target resp. the AI corpus date ranges is an issue not yet fully adressed within our pipeline. Since google gemini was introduced in different stages with changing model traing data, to exactly sync our corpora with the model output i.e. build the AI vocabulary corresponding with that timeframe is an open issue.
+
 :::
 
 ::: {.column-2}
 
 # p2
 ```{r}
-#| fig-cap: "stats descriptive"
+#| fig-cap: "descriptive stats plot"
 #| label: "fig-boxplot01"
 #| echo: FALSE
 #| warning: FALSE
@@ -104,7 +108,7 @@ plist$boxdesc2 #TODO
 
 # p3
 ```{r,eval=T}
-#| fig-cap: "lemma frequency increase"
+#| fig-cap: "lemma frequency increase of relevant AI typical lemma"
 #| label: "fig-barplot"
 #| echo: FALSE
 #| warning: FALSE
@@ -151,7 +155,7 @@ anova(plist$lme$lm2)
 
 # p4
 ```{r}
-#| fig-cap: "model vocab distribution"
+#| fig-cap: "model typical vocab distribution"
 #| label: "fig-gpt.dplot"
 #| echo: FALSE
 #| warning: FALSE
@@ -162,7 +166,7 @@ anova(plist$lme$lm2)
 :::
 
 ::: {.column-3}
-# Results
+# results
 Yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
 
 The `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot.
@@ -186,16 +190,12 @@ c1<-round(c1,2)
 #s2
 ```
 
-# model explanations {.expl}
+# model explanations
 We see in the model summaries that frequency increases are significant (p<0.001) when positing a random effect of lemma (model 1, cf. C4) with an estimate increase of mean frequency (pmw) per lemma by `r c1[3,1]` vs. the intercept (post=FALSE i.e. target[pre]). 
 
 In model 2, cf. C3 (simple model without lemma effect) we observe an estimate increase of mean frequency (pmw) of post=TRUE by `r c2[2,1]` vs. the intercept.
 
 In both models `gp` (independent var of above mentioned gpt score: higher score > more model typical lemma) has been included as fixed effect, but vcvs. without random lemma effect that predictor lets the model naturally collapse (p<10E-16).
-
-
-# Limitations
-If the findings of increased AI lemma frequencies really prove manifestation of AI language depends also on influences of other factors of language variation and change which @yakura_empirical_2025 already took into account. A deeper going analysis of general trends in language development and investigation on the bidirectional influences of model-training and human language could harden the results. 
 
 :::{#refs}
 # references
