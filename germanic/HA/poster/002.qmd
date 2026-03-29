@@ -30,9 +30,9 @@ term: WS25/26
 
 -----
 ![to paper...](qr_ogy-de-study-ai-speech.png)
-authored: st. schwarz  
-snc: #16115::`r Sys.time()`   
-[<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+authored: st. schwarz     
+snc: #16115::`r format(Sys.time(),tz = "Europe/Berlin",format = "%Y%m%d(%H:%M)",usetz = TRUE)`      
+[<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)     
 :::
 
 ```{r loads, echo=FALSE, warning=F,output=F}
