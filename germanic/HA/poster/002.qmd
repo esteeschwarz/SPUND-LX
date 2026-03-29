@@ -13,7 +13,7 @@ format:
     toc: false
     self-contained: false
     include-before-body: css.html
-    embed-resources: true
+    # embed-resources: true
   # pdf:
   #   browser: chrome
 execute:
@@ -29,6 +29,7 @@ tutor: Hüning / Konvicna
 term: WS25/26  
 
 -----
+![to paper...](qr_ogy-de-study-ai-speech.png)
 authored: st. schwarz  
 snc: #16115::`r Sys.time()`   
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
@@ -77,9 +78,11 @@ Inspired by @bsi_wie_2025 and @yakura_empirical_2025 which found evidence for GP
 
 Our human languaga data consists of raw texts from german bundestag plenary protocols, @dip_dip_2026. 
 
-The LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.
+The LLM corpus consists of  model summaries of a first subset of these texts generated with the prompt (to gemini API, @wikipedia_google_2026) you see in C1.
 
 We first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target, cf. @fig-gpt.dplot.
+
+For corpus building and evaluation scripts cf. @schwarz_this_2026.
 
 # c1 {.bw}
 `r prompt`
