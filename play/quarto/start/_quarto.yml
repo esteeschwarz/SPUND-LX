@@ -1,9 +1,9 @@
 project:
   type: website
-  output-dir: ../output/001
+  output-dir: ../output/002
 
 website:
-  title: "Site with wrapped PDF"
+  title: "002"
   navbar:
     left:
       - href: index.qmd
