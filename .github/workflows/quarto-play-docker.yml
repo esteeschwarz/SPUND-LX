@@ -60,24 +60,42 @@ jobs:
     #   with:
     #     name: output # target
     #     path: play/quarto/output  
-    - name: build pages
-      id: pages
-      uses: actions/configure-pages@v4
+    # - name: build pages
+    #   id: pages
+    #   uses: actions/configure-pages@v4
      
-    - name: Upload pages
-      uses: actions/upload-pages-artifact@v3
+    # - name: Upload pages
+    #   uses: actions/upload-pages-artifact@v3
+    #   with:
+    #     path: ./play/quarto/output
+    - name: Checkout gh-pages into ./site-current
+      uses: actions/checkout@v4
       with:
-        path: ./play/quarto/output
-      
+        ref: gh-pages
+        path: site-current
+
+    - name: Merge rendered output into existing site
+      run: |
+          # copies new/updated files; does NOT delete existing ones
+          rsync -av --no-delete ./play/quarto/output site-current/
+
+    - name: Commit and push
+      run: |
+          cd site-current
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Deploy: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
     
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
  
