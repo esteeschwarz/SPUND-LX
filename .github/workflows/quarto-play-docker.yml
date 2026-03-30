@@ -77,7 +77,8 @@ jobs:
     - name: Merge rendered output into existing site
       run: |
           # copies new/updated files; does NOT delete existing ones
-          rsync -av --no-delete ./play/quarto/output site-current/
+          # rsync -av --no-delete ./play/quarto/output site-current/
+          cp -a ./play/quarto/output/. site-current/
 
     - name: Commit and push
       run: |
