@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: ../output/001
+
+website:
+  title: "Site with wrapped PDF"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - text: "Download"
+        menu:
+          - href: report.pdf
+            text: "Download PDF"
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - brand
+    #code-overflow: wrap
+    css: styles.css
+  # pdf:
+  #   include-in-header:
+  #     - text: |
+  #         \usepackage{fvextra}
+  #         \DefineVerbatimEnvironment{cell-output cell-output-stdout}{Verbatim}{
+  #         breaklines=true,
+  #         breakanywhere=true,
+  #         fontsize=\small
+  #         }
+  #         \makeatletter
+  #         \AtBeginDocument{
+  #           \fvset{
+  #             breaklines=true,
+  #             breakanywhere=true,
+  #             fontsize=\small
+  #           }
+  #         }
+  #         \makeatother
+  #         \usepackage{fancyvrb}
+  #         \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true}
+
+execute:
+  echo: true
+code-overflow: wrap
