@@ -1,9 +1,16 @@
 # 2025023(17.04)
 # 16133.poster.eval-script(LLM-eval.R excerpt)
 ##############################################
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(lme4)
+library(lmerTest)
 
 ### df_agg in plist.RData
 load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/drafts/plist2.RData"))
+#save(df_agg,file=paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/df_agg.RData"))
+#load(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/df_agg.RData"))
 df_agg<-plist$df_agg
 lemma_post_trends.off <- df_agg %>%
   filter(target == "human") %>%
@@ -22,6 +29,8 @@ lemma_post_trends.off <- df_agg %>%
 ################
 # --- Filter to human, fit per-lemma logistic-style Poisson ---
 unique(df_agg$post)
+
+
 lemma_post_trends <- df_agg %>%
   filter(target == "human") %>%
   group_by(lemma) %>%
@@ -159,11 +168,12 @@ lgm<-df_lgc$diff[m]>(mean(df_lgc$diff[m]))
 sum(lgm)
 df_lgc.x<-df_lgc[which(m)[lgm],]
 par(las=2.5)
-
+################ plot responsible lemma
 b1<-barplot(diff~as.character(lemma),df_lgc.x,xlab="",main="lemma rel. freq. absolute increase pre-post onset")
 plist$barplot<-recordPlot()
 plist$b1<-b1
 plist$b1
+#######################################
 dfs<-dfs[order(dfs$gp,decreasing = T),]
 par(las=3)
 m<-dfs$gp>0
@@ -173,10 +183,13 @@ y<-dfbar$gp-max(dfbar$gp)
 # barplot(gp-max(gp)~as.character(lemma),head(dfbar,8),xlab="",main="lemma rel. freq. absolute increase pre-post onset",lim=1)
 # ?barplot
 #boxplot(rel_freq~post,df_agg[df_agg$target=="human"&df_agg$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T)
+
+############### GPT preferred lemma plot over target
 par(las=1)
 pb1<-boxplot(rel_freq~post,dfs[dfs$target=="human"&dfs$lemma%in%gpt_lemmas$lemma,],outline=F,notch=T,main="GPT preferred lemma rel. freq. pre vs. post (TRUE) onset corpus")
 boxstat<-data.frame(var="freq_rel gpt lemmas",pre=pb1$stats[3,1],post=pb1$stats[3,2])
 plist$boxdesc2<-recordPlot()
+####################################################
 ### normalize freq
 corpus_sizes <- df_agg |>
   distinct(lemma, post) |>        # one row per document
@@ -200,6 +213,7 @@ boxstat
 tt<-t(totals$total[!is.na(totals$post)])
 boxstat<-rbind(boxstat,c(stat="tokens",var="n",pre=tt[1],post=tt[2]))
 #?bind_rows
+boxstatx<-boxstat
 boxstatx[1,c(3,4)]<-round(as.double(plist$boxstat[1,c(3,4)]),6)
 boxstatx[2,c(3,4)]<-round(as.double(plist$boxstat[2,c(3,4)]),3)
 plist$boxstat<-boxstatx
@@ -210,7 +224,7 @@ summary(lm1)
 lm2<-lm(freq_pmw~post+gp,df_lg.norm)
 summary(lm2)
 dfsp<-dfs
-dfsp$post[dfsp$target="gpt"]<-"gpt"
+dfsp$post[dfsp$target=="gpt"]<-"gpt"
 unique(dfsp$post)
 gpt.pplot<-plot(dfsp$gp, dfsp$rel_freq, 
                 col  = as.factor(dfsp$post), 
@@ -227,10 +241,11 @@ legend("topright",
 plist$gptplot2<-recordPlot()
 plist$lme$lm1<-lm1
 plist$lme$lm2<-lm2
+plist$df_lg.norm<-df_lg.norm
 #load("~/Documents/GitHub/SPUND-LX/germanic/HA/drafts/plist.RData")
 # plist$totals<-totals
 # plist$df_agg<-df_agg
 # plist$lemma_pref<-lemma_pref
 
- save(plist,file="plist2.RData")
+ save(plist,file="plist3.RData")
 

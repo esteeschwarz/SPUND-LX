@@ -1,0 +1,305 @@
+# methods
+## snc
+16062.1.2.16063.1
+
+please cf. @schwarz_this_2026 for the corpus building and evaluation script (still messy.)
+
+## data
+
+```{r,m1}
+#| echo: false
+#| output: false
+
+plist3<-list()
+#ts<-plist$ts
+#ts
+lmdf.c<-plist$df_agg
+mpr<-!lmdf.c$post
+mpo<-lmdf.c$post
+mg<-lmdf.c$target=="gpt"
+
+shpr<-sum(lmdf.c$n[c(which(mpr))])
+shpo<-sum(lmdf.c$n[c(which(mpo))])
+sg<-sum(lmdf.c$n[c(which(mg))])
+ts<-data.frame(target=c("gemini","human-pre","human-post"),tokens=c(sg,shpr,shpo))
+plist3$ts<-ts
+```
+
+our human langugae data consists of raw texts from german bundestag plenary protocols (@dip_dip_2026). the LLM corpus consists of  model summaries of a first subset of these texts generated with the following prompt: @sec-gemini-prompt.
+
+### corpus subsets
+`r knitr::kable(ts)`
+
+### gemini prompt {#sec-gemini-prompt}
+```{r,prompt}
+#| echo: false
+#| warning: false
+#| eval: true
+
+ptx<-readLines("../g-prompt01.txt")
+print(ptx)
+plist3$ptx<-ptx
+```
+
+```{r,prompt-dep}
+#| results: asis
+#| echo: false
+#| warning: false
+#| eval: false
+
+ptx<-readLines("../g-prompt01.txt")
+cat("```text\n",
+    paste(ptx, collapse = "\n"),
+    "\n```",
+    sep = "")
+```
+
+## computation
+we first devised AI-typical lemmata in the model corpus which are distinct for that corpus by log frequency calculation, see @fig-gpt.dplot
+
+```{r, prelim}
+#| echo: false
+#| output: false
+#| eval: true
+
+lmdf.c<-plist$df_agg
+#dfs$gp <- lemma_pref$log_odds[match(dfs$lemma,lemma_pref$lemma)]
+lmdf.c$in.gp <- lmdf.c$lemma%in%lmdf.c$lemma[mg]
+
+mh1<-lmdf.c$in.gp&lmdf.c$target=="human"
+#sum(mh1)
+sh1<-sum(lmdf.c$n[mh1])/sum(lmdf.c$n[lmdf.c$target=="human"])
+mp1<-lmdf.c$in.gp&lmdf.c$post
+#sum(mp1,na.rm = T)
+sp1<-sum(lmdf.c$n[mp1],na.rm=T)/sum(lmdf.c$n[lmdf.c$post],na.rm = T)
+mg1<-lmdf.c$in.gp&lmdf.c$target=="gpt"
+sg1<-sum(lmdf.c$n[mg1])/sum(lmdf.c$n[lmdf.c$target=="gpt"])
+sp1>sh1 # TRUE!
+### > more occurences (rel. frequencies) of gpt vocabular in post gpt corpus
+sp1-sh1 # only 0.02587 points, #16143. > 0.003001367
+p.df<-lmdf.c
+p.df$target[p.df$target=="0-human"]<-"human"
+s.df<-data.frame(target=c("pre","post","DIFF:"),freq=c(sh1,sp1,sp1-sh1))
+s.df$freq<-round(s.df$freq,4)
+#s.df
+plist3$sdf<-s.df
+plist3$pdf<-p.df
+```
+
+
+```{r,gptplot}
+#| echo: false
+#| output: true
+#| label: fig-gpt.dplot
+#| fig-cap: "lemma gpt scores over targets"
+
+# plot(p.df$in.gp, p.df$rel_freq, 
+#      col  = as.factor(p.df$target), 
+#      pch  = 19, 
+#      xlab = "in.gp (GPT typicality score)",
+#      ylab = "f.rel (relative frequency)",
+#      main = "GPT scores vs relative frequency by target"
+
+#      )
+# legend("topright", 
+#             legend = levels(as.factor(p.df$target)),
+#             col   = 1:length(levels(as.factor(p.df$target))), 
+#             pch   = 19)
+# plist3$gptplot<-recordPlot()
+plist$gptplot2
+#gpt.plot
+```
+
+
+```{r,gplot}
+#| echo: false
+#| output: true
+#| label: fig-densplot01
+#| fig-cap: "target gpt density"
+#| eval: false
+
+
+library(ggplot2)
+dff2<-p.df[c(which(mh1),which(mp1),which(mg1)),]
+gplot<-ggplot(data = dff2, aes(x = f.rel, fill = target)) +
+  geom_density(alpha = 0.3) +
+  coord_cartesian(xlim = c(0, 0.12)) +  # set your range here
+  labs(title = "Density Plot", x = "GPT score", y = "Density") +
+  theme_minimal()
+plist$dff2<-dff2
+plist$gplot<-gplot
+gplot
+```
+
+
+
+# evaluation
+## basic descriptive
+to first gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, only by small amount (see @tbl-s.df) and hard to visualise (see @fig-boxplot01). wether these findings become relevant, we'll see in @sec-lm-1 where we evaluate the frequencies with a linear regression model.
+
+```{r,kablediff}
+#| echo: false
+#| output: true
+#| label: tbl-s.df
+#| tbl-cap: "GPT lemma frequencies (table) over target. (freq / vH)"
+#| warning: false
+
+knitr::kable(s.df,label = "tab-s.df")
+```
+
+
+```{r,boxdesc}
+#| echo: false
+#| output: true
+#| label: fig-boxplot01
+#| fig-cap: "GPT lemma frequencies (boxplot) over target. (freq / vH)"
+#| warning: false
+
+
+# boxplot(f.rel~target,p.df[c(which(mh1),which(mp1),which(mg1)),],outline=F,notch=T,
+# boxplot(f.rel~target,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+# b1<-boxplot(rel_freq~post,p.df[c(which(mh1),which(mp1)),],outline=F,notch=T,
+# main="descriptive stats: GPT vocab raw frequencies")
+plist$boxdesc2
+#b1$stats[3,]
+#b1$stats[3,2]-b1$stats[3,1]
+#plist3$boxdesc<-recordPlot()
+b1<-plist$b1
+lb0<-plist$lb0
+lb1<-length(b1)
+```
+
+## responsible lemmata
+The `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot.
+
+```{r,eval=T}
+#| fig-cap: "lemma frequency increase of relevant AI typical lemma"
+#| label: "fig-barplot"
+#| echo: FALSE
+#| warning: FALSE
+
+# knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
+
+plist$barplot
+# b1<-plist$b1
+# lb0<-plist$lb0
+# lb1<-length(b1)
+```
+
+### lemma descriptive output
+```{r,lemma-res-desc}
+#| echo: false
+#| output: true
+#| warning: false
+#| eval: false
+
+load("../lemma-resp.tj3.RData")
+
+head(tj3$WORD[order(tj3$diff,decreasing = T)],20)
+plist$
+```
+
+### lemma linear model output
+```{r,lemma-res-lm}
+#| echo: false
+#| output: true
+#| warning: false
+#| eval: false
+
+load("../lemma-res.lres.RData")
+lres.h<-head(lres,20)
+lres.h$lemma
+```
+
+
+## linear regression {#sec-lm-1}
+to prove descriptive results, we compute the stability of the frequency increase for target- vs. reference corpus with a linear regression model using R's lme4::lmer() function, cf. @bates_fitting_2015. coefficents are printed below, where `freq_pmw` is the lemma frequencies/pmw over corpus; `post` defines reference resp. target corpus [post==TRUE|FALSE] (pre/post) and gp as numerical variable representing the gpt-score of the corresponding lemma i.e. wether it scores high (positive values) or low (negative values) in terms of being preferredly used by the chat agent.
+
+```{r,lm-models}
+#| echo: false
+#| output: false
+#| warning: false
+
+library(lme4)
+library(lmerTest)
+df_lg.norm<-plist$df_lg.norm
+# lm1<-lm(f.rel~target*in.gp,lmdf.c)
+# lm2<-lmer(f.rel~target*in.gp+(1|lemma),lmdf.c)
+lm1<-lmer(freq_pmw~post+gp+(1|lemma),df_lg.norm)
+#summary(lm1)
+lm2<-lm(freq_pmw~post+gp,df_lg.norm)
+#summary(lm2)
+
+```
+
+### basic (lm)
+formula: `frequency.pmw ~ post + gpt.score`
+
+```{r,lm}
+#| echo: false
+#| output: true
+#| warning: false
+
+summary(lm2)
+
+```
+
+### random effects model (lmer)
+formula: `frequency.pmw ~ post + gpt.score + (1|lemma)`
+
+```{r,lmer}
+#| echo: false
+#| output: true
+#| warning: false
+
+s2<-summary(lm1)
+s2
+ingpvar<-s2$vcov@factors$correlation
+ingpvar
+ingpv<-ingpvar[,3]
+ingpv<-ingpv[3]
+#ingpv
+pc8<-round(s2$coefficients[3,1],6)
+pc1<-round(s2$coefficients[1,1],6)
+#pc1<-s2$coefficients[1,1]
+pcp<-round(pc8/pc1*100,2)
+pc8<-round(s2$coefficients[3,1],6)
+pc1<-round(s2$coefficients[1,1],6)
+pcd<-pc8
+pcd<-round(pcd,5)
+#pcd
+p100<-pc1*100
+pcdp<-(pcd/p100)
+#pcdp
+pcdp<-round(pcdp,5)
+pcd<-pc8
+p100<-100/pc1
+pcdp<-(pcd*p100)
+#pcdp
+pcdp<-round(pcdp,5)
+#pcdp
+
+#pcdp
+#pcdp
+#pc1<-s2$coefficients[1,1]
+pcp<-round(pc8/pc1*100,2)
+plist3$s2<-s2
+save(plist3,file="plist4.RData")
+
+```
+
+#### helper interpretation, to be tested
+the coefficients interesting for us are the gp and post estimates. here we test the association between the gpt score of a lemma and its estimated frequency and its showing that a general increase of frequency is estimated if the score rises (=the lemma is within the lemmas preferred used by gemini) and that for the post-gpt corpus this increase  (``` `r pcdp`% ```) is significant for single lemmata (and not random in data).
+
+in the fixed effects correlation output of the lmer() model we see that the gpt score correlates with the target corpus frequency for lemma by ``` `r ingpv` ```.
+
+### anova of mixed effects model [out]
+```{r,anova}
+#| echo: false
+#| output: false
+#| warning: false
+
+print(anova(lm1))
+```
+
+# references {#references}

@@ -267,9 +267,9 @@ target & tokens \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-gemini & 3895 \\
-human-pre & 1437497 \\
-human-post & 1363467 \\
+gemini & 3866 \\
+human-pre & 1640446 \\
+human-post & 1940385 \\
 \end{longtable}
 
 \subsubsection{gemini prompt}\label{sec-gemini-prompt}
@@ -283,10 +283,8 @@ human-post & 1363467 \\
 \subsection{computation}\label{computation}
 
 we first devised AI-typical lemmata in the model corpus which are
-distinctive for that corpus using a linear regression model (R, package
-lme4::glmer(): Bates et al. (2015)) that calculates a score for each
-lemma in the corpus, see Figure~\ref{fig-gpt.dplot} and
-Figure~\ref{fig-densplot01}.
+distinct for that corpus by log frequency calculation, see
+Figure~\ref{fig-gpt.dplot}
 
 \begin{figure}[H]
 
@@ -297,18 +295,6 @@ Figure~\ref{fig-densplot01}.
 }
 
 \caption{\label{fig-gpt.dplot}lemma gpt scores over targets}
-
-\end{figure}%
-
-\begin{figure}[H]
-
-\centering{
-
-\pandocbounded{\includegraphics[keepaspectratio]{gemini_files/figure-pdf/fig-densplot01-1.pdf}}
-
-}
-
-\caption{\label{fig-densplot01}target gpt density}
 
 \end{figure}%
 
@@ -337,9 +323,9 @@ target & freq \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-human & 0.3708 \\
-post & 0.3890 \\
-DIFF: & 0.0182 \\
+pre & 0.4384 \\
+post & 0.4414 \\
+DIFF: & 0.0030 \\
 
 \end{longtable}
 
@@ -370,30 +356,8 @@ mislemmatization.
 
 \subsubsection{lemma descriptive output}\label{lemma-descriptive-output}
 
-\begin{verbatim}
- [1] müssen            deutschland       menschen          liebe            
- [5] stehen            mehr              sagen             einsetzen        
- [9] herausforderungen wichtig           aktuell           interessen       
-[13] partei            wichtiger         arbeiten          arbeitsplätze    
-[17] berlin            bleiben           bürger            bürgerinnen      
-348 Levels: abgeordnete aktiv aktuell alice all alltag ... zusammenhalt
-\end{verbatim}
-
 \subsubsection{lemma linear model
 output}\label{lemma-linear-model-output}
-
-\begin{verbatim}
- [1] "abschlussrede"             "adherehen"                
- [3] "constraints"               "designed"                 
- [5] "engagehen"                 "ganztagsbetreuungsplätzen"
- [7] "geburtstagskinder"         "gegenliebe"               
- [9] "here's"                    "krämerladen"              
-[11] "mammutsitzung"             "meetehen"                 
-[13] "mitgemischen"              "parlamentariers"          
-[15] "parlamentspartei"          "rumgeschrauben"           
-[17] "schlüsselwörter"           "specific"                 
-[19] "summary"                   "tailored"                 
-\end{verbatim}
 
 \subsection{linear regression}\label{sec-lm-1}
 
@@ -409,97 +373,90 @@ agent.
 
 \subsubsection{basic (lm)}\label{basic-lm}
 
-formula:
-\texttt{frequency.relative\ \textasciitilde{}\ target\ *\ in.gpt}
+formula: \texttt{frequency.pmw\ \textasciitilde{}\ post\ +\ gpt.score}
 
 \begin{verbatim}
 
 Call:
-lm(formula = f.rel ~ target * in.gp, data = lmdf.c)
+lm(formula = freq_pmw ~ post + gp, data = df_lg.norm)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.04285 -0.00099 -0.00099 -0.00077  1.57754 
+   Min     1Q Median     3Q    Max 
+ -1400   -435   -388   -243 436922 
 
 Coefficients:
-                   Estimate Std. Error t value Pr(>|t|)    
-(Intercept)       1.061e-03  5.421e-05  19.570  < 2e-16 ***
-targetall         5.864e-06  7.666e-05   0.077   0.9390    
-targetgpt         6.128e-02  1.370e-03  44.733  < 2e-16 ***
-targetpost        9.944e-05  7.899e-05   1.259   0.2081    
-in.gp             2.535e-03  6.791e-05  37.333  < 2e-16 ***
-targetall:in.gp  -2.157e-04  9.387e-05  -2.298   0.0215 *  
-targetgpt:in.gp  -1.922e-03  2.404e-04  -7.996 1.30e-15 ***
-targetpost:in.gp  3.859e-04  9.731e-05   3.965 7.33e-05 ***
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   833.75      38.64  21.576  < 2e-16 ***
+postTRUE       83.94      20.64   4.067 4.77e-05 ***
+gp             68.11       5.20  13.097  < 2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.0149 on 223173 degrees of freedom
-Multiple R-squared:  0.1278,    Adjusted R-squared:  0.1278 
-F-statistic:  4672 on 7 and 223173 DF,  p-value: < 2.2e-16
+Residual standard error: 3765 on 133087 degrees of freedom
+  (1393 observations deleted due to missingness)
+Multiple R-squared:  0.0014,    Adjusted R-squared:  0.001385 
+F-statistic: 93.32 on 2 and 133087 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 \subsubsection{mixed effects model
 (lmer)}\label{mixed-effects-model-lmer}
 
 formula:
-\texttt{frequency.relative\ \textasciitilde{}\ target\ *\ in.gpt\ +(1\textbar{}lemma)}
+\texttt{frequency.pmw\ \textasciitilde{}\ post\ +\ gpt.score\ +\ (1\textbar{}lemma)}
 
 \begin{verbatim}
 Linear mixed model fit by REML. t-tests use Satterthwaite's method [
 lmerModLmerTest]
-Formula: f.rel ~ target * in.gp + (1 | lemma)
-   Data: lmdf.c
+Formula: freq_pmw ~ post + gp + (1 | lemma)
+   Data: df_lg.norm
 
-REML criterion at convergence: -1319734
+REML criterion at convergence: 2490672
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--70.063  -0.031  -0.028  -0.017 115.436 
+-48.624  -0.047  -0.032   0.008  74.360 
 
 Random effects:
- Groups   Name        Variance  Std.Dev.
- lemma    (Intercept) 8.870e-05 0.009418
- Residual             9.543e-05 0.009769
-Number of obs: 223181, groups:  lemma, 110393
+ Groups   Name        Variance Std.Dev.
+ lemma    (Intercept) 8839356  2973    
+ Residual             1754704  1325    
+Number of obs: 133090, groups:  lemma, 99649
 
 Fixed effects:
-                   Estimate Std. Error         df t value Pr(>|t|)    
-(Intercept)       9.193e-04  4.795e-05  2.101e+05  19.171  < 2e-16 ***
-targetall        -5.765e-06  5.026e-05  1.447e+05  -0.115   0.9087    
-targetgpt        -1.781e-02  1.015e-03  1.676e+05 -17.535  < 2e-16 ***
-targetpost       -3.930e-05  5.911e-05  1.937e+05  -0.665   0.5061    
-in.gp             2.216e-03  6.094e-05  1.992e+05  36.359  < 2e-16 ***
-targetall:in.gp   1.262e-04  6.200e-05  1.463e+05   2.035   0.0419 *  
-targetgpt:in.gp   1.096e-02  1.772e-04  1.672e+05  61.847  < 2e-16 ***
-targetpost:in.gp  2.781e-04  6.444e-05  1.469e+05   4.315  1.6e-05 ***
+             Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept) 4.344e+02  3.966e+01 1.055e+05  10.953   <2e-16 ***
+postTRUE    1.246e+02  9.496e+00 5.602e+04  13.126   <2e-16 ***
+gp          2.932e+01  5.723e+00 1.017e+05   5.124    3e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
-            (Intr) trgtll trgtgp trgtps in.gp  trgtl:. trgtg:.
-targetall   -0.524                                            
-targetgpt   -0.028  0.026                                     
-targetpost  -0.585  0.425  0.027                              
-in.gp       -0.118  0.063  0.034  0.070                       
-trgtll:n.gp  0.065 -0.121 -0.034 -0.053 -0.540                
-trgtgpt:n.g  0.025 -0.023 -0.938 -0.023 -0.218  0.214         
-trgtpst:n.g  0.082 -0.059 -0.003 -0.140 -0.512  0.501   0.175 
+         (Intr) psTRUE
+postTRUE -0.110       
+gp        0.959  0.009
+\end{verbatim}
+
+\begin{verbatim}
+3 x 3 Matrix of class "corMatrix"
+            (Intercept)     postTRUE          gp
+(Intercept)   1.0000000 -0.110159806 0.959345449
+postTRUE     -0.1101598  1.000000000 0.008711618
+gp            0.9593454  0.008711618 1.000000000
 \end{verbatim}
 
 \paragraph{helper interpretation, to be
 tested}\label{helper-interpretation-to-be-tested}
 
-the coefficients interesting for us are the in.gp and targetpost:in.gp
-estimates. here we test the association between the gpt score of a lemma
-and its estimated frequency and its showing that a general increase of
-frequency is estimated if the score rises (=the lemma is within the
-lemmas preferred used by gemini) and that for the post-gpt corpus this
-increase (\texttt{30.25027\%}) is significant (and not random in data).
+the coefficients interesting for us are the gp and post estimates. here
+we test the association between the gpt score of a lemma and its
+estimated frequency and its showing that a general increase of frequency
+is estimated if the score rises (=the lemma is within the lemmas
+preferred used by gemini) and that for the post-gpt corpus this increase
+(\texttt{6.75072\%}) is significant (and not random in data).
 
 in the fixed effects correlation output of the lmer() model we see that
 the gpt score correlates with the target corpus frequency for lemma by
-\texttt{0.0695357}.
+\texttt{1}.
 
 \subsubsection{anova of mixed effects model
 {[}out{]}}\label{anova-of-mixed-effects-model-out}
@@ -521,9 +478,9 @@ Berlin.
 \url{https://dip.bundestag.de/\%C3\%BCber-dip/hilfe/api\#content}.
 
 \bibitem[\citeproctext]{ref-schwarz_this_2026}
-Schwarz, St. 2026. {``This Papers Evaluation Script.''}
+Schwarz, St. 2026. {``This Papers Corpus Build \& Evaluation Scripts.''}
 \emph{GitHub/Esteeschwarz}. Berlin.
-\url{https://github.com/esteeschwarz/SPUND-LX/blob/main/germanic/HA/LLM-003.R}.
+\url{https://github.com/esteeschwarz/SPUND-LX/blob/main/germanic/HA/}.
 
 \bibitem[\citeproctext]{ref-wikipedia_google_2026}
 Wikipedia, and Google. 2026. {``Google {Gemini}.''} \emph{Wikipedia}.
