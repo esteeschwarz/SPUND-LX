@@ -41,8 +41,8 @@ readLines("gemini-prompt.txt")
 
 t<-tempfile("t.txt")
 writeLines(ptx,t)
-tx<-readtext::readtext(t)$text
-tx
+#tx<-readtext::readtext(t)$text
+#tx
 ##
 ```
 ```{r}
