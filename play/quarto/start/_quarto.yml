@@ -1,9 +1,9 @@
 project:
   type: website
-  output-dir: ../output/002
+  output-dir: ../output/001
 
 website:
-  title: "002"
+  title: "001"
   navbar:
     left:
       - href: index.qmd
