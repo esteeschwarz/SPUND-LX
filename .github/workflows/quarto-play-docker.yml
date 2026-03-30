@@ -1,7 +1,7 @@
-name: build HA pages
+name: quarto play pages
 on:
   push:
-    paths: ['play/quarto/start']
+    paths: ['play/quarto/start/**']
     branches: [ main ]
   pull_request:
     branches: [ main ]
