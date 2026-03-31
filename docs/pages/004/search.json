@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "index",
     "section": "",
-    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n16143.1 trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5"
+    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6"
   },
   {
     "objectID": "index.html#snc",
     "href": "index.html#snc",
     "title": "index",
     "section": "",
-    "text": "16143.1 trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5"
+    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6"
   },
   {
     "objectID": "about.html",
