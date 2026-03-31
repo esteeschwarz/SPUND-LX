@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n16143.1 trigger wf\nsite 004\nwf cp -ar to copy site-libs"
+    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n16143.1 trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output"
   },
   {
     "objectID": "index.html#snc",
     "href": "index.html#snc",
     "title": "Home",
     "section": "",
-    "text": "16143.1 trigger wf\nsite 004\nwf cp -ar to copy site-libs"
+    "text": "16143.1 trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output"
   },
   {
     "objectID": "about.html",
