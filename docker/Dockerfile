@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libfontconfig1-dev \
     fonts-dejavu \
     fonts-noto \
+    rsync \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Quarto
@@ -48,7 +49,7 @@ RUN export QUARTO_CHROMIUM_ARGS="--no-sandbox --disable-dev-shm-usage"
 ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
 
 # Install common R packages for Quarto
-RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda','googlesheets4','bookdown','rmarkdown','knitr','jsonlite','abind','xml2','remotes','stringi','yaml','officer','bib2df','lme4','ggplot2','tidyr','dplyr','lmerTest'))"
+RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda','googlesheets4','bookdown','rmarkdown','knitr','jsonlite','abind','xml2','remotes','stringi','yaml','officer','bib2df','lme4','ggplot2','tidyr','dplyr','lmerTest','readtext'))"
 # RUN R -e "rmarkdown::install_pandoc_cli(version = '3.8.3')"
 
 # ---- Install Node.js + npm (LTS) ----
