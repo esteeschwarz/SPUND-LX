@@ -78,7 +78,8 @@ jobs:
       run: |
           # copies new/updated files; does NOT delete existing ones
           ls -R ./play/quarto/output
-          rsync -av ./play/quarto/output site-current/docs/
+          rsync -av ./play/quarto/output/pages site-current/docs
+          ls -R site-current/docs
           #cp -Ra ./play/quarto/output/. site-current/docs/
           #cp -a ./play/quarto/output/. docs/
 
