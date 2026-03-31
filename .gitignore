@@ -13,7 +13,7 @@
 **/*history
 **/.ipynb_checkpoints
 **/.jupyter
-**/sbc
+**/corpusLX/**/sbc
 **/*_dep
 q
 **/.quarto
