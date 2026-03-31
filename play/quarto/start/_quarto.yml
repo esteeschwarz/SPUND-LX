@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: ../output/004
+  output-dir: ../output/pages/004
 
 website:
   title: "004"
