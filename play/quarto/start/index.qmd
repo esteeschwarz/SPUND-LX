@@ -15,4 +15,5 @@ Use the navigation bar to visit the About page or download the PDF report.
 - wf cp -ar to copy site-libs
 - ls output: chk libs.
 - with new wf, rsync in image installed: no, --no-delete unknown
-- t4
+- t4, test on m12, wks.
+- t5
