@@ -2,11 +2,71 @@
 title: gemini paper
 bibliography: germanic-ai.bib
 warning: false
+date: '`r format(Sys.time())`'
+
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+# format:
+html:
+    theme:
+      - cosmo #litera
+      - brand
+    #mainfont: Courier
+    monofont: Menlo
+    #font: Courier
+    css: styles.css
+    toc: true
+    number-sections: true
+    toc-depth: 3
+    include-in-header:
+      text: |
+        <!-- HTML simply prints the inner text -->
+        <!-- 16482.snc -->
+        <script type="application/latex">
+        \newcommand{\he}[1]{#1}
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
+
+pdf:
+      keep-tex: true
+    #   template: pdf-template.tex
+    #   latex_engine: xelatex  # default lualatex
+    #   latex-tinytex: false
+
+      fig-pos: "H" # Forces images to appear exactly where they are included
+    #   mainfont: 'Free Sans'
+      font-size: 11
+      colorlinks: true
+      include-in-header: 
+        - ../assets/lualoani.tex
+        - ../assets/footer-header.tex
+      include-before-body: ../assets/go-head.tex
+        # - paper.tex
+        #   pdf-engine: lualatex
+    #   header-includes:
+    #     - \newcommand{\docfoot}{$params.foot$}
+    #     - \newcommand{\docmeta}{$meta$}
+
+meta: |
+  class: [16838] germanische sprachen im vergleich  
+  tutor: hüning/konvicna   
+  term: WS25/26  
+
+filters:
+  - ../assets/commands.lua
+  - ../assets/luaipa.lua
+logoleft: ../assets/fadenlogo-fwb.png
+logoright: ../assets/dcl-head-niemand.png
 ---
 
 {{< include _vars.qmd >}}
 
 # index
+## snc
+- 16144.1.pdf
+- wks. no fro q.yml
+- no.
+
 {{< include _gemini-A-ul.md >}}
 {{< include _gemini-B-methods-2.qmd >}}
 

@@ -3,6 +3,10 @@ project:
   output-dir: ../../../q/germanic/001
   pre-render: "prerender.R"
   post-render: "postrender.R"
+  resources: 
+    - "!*.plist"
+    - "!.Rhistory"
+    - "!*.RData"
  
 
 params:
@@ -22,7 +26,9 @@ website:
           - href: draft-B.qmd
             text: draft B
           - yakura.qmd
-          - gemini.qmd
+          - href: gemini.html
+            text: gemini paper_no
+          - gemini.qmd  
           - qa.qmd
           - href: poster_A0.pdf
             text: poster (under construction)
@@ -99,6 +105,78 @@ format:
     #  \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
     #  \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
   #  include-in-header: rtl.tex
+ 
+  # pdf:
+  #     keep-tex: true
+  #   #   template: pdf-template.tex
+  #   #   latex_engine: xelatex  # default lualatex
+  #   #   latex-tinytex: false
+
+  #     fig-pos: "H" # Forces images to appear exactly where they are included
+  #   #   mainfont: 'Free Sans'
+  #     font-size: 11
+  #     colorlinks: true
+  #     include-in-header: 
+  #       - ../assets/lualoani.tex
+  #       - ../assets/footer-header.tex
+  #       - ../assets/rtl.tex
+  #     include-before-body: ../assets/go-head.tex
+  #       # - paper.tex
+  #       #   pdf-engine: lualatex
+  #     header-includes:
+  #           \usepackage{fancyvrb}
+  #           \usepackage{fvextra}
+  #           \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+
+
+meta: |
+  class: [16838] germanische sprachen im vergleich  
+  tutor: hüning/konvicna   
+  term: WS25/26
+
+filters:
+  - ../assets/commands.lua
+  - ../assets/luaipa.lua
+logoleft: ../assets/fadenlogo-fwb.png
+logoright: ../assets/dcl-head-niemand.png      
+
+
+#   pdf:
+# #    latex_engine: xelatex  # default
+#     fig-pos: "H" # Forces images to appear exactly where they are included
+#     #pandoc_args: ["--wrap=none"]
+#     keep-tex: true
+#     # hyperrefoptions:
+#     #   - draft
+#     #mainfont: Georgia
+#     # mainfont: Georgia
+#  #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
+#     #mainfont: 'Computer Modern Roman'
+#     font-size: 12
+#     #cite-method: biblatex
+#     colorlinks: true
+#         #  \newcommand{\he}[1]{{\hebrewfont #1}}
+#     #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
+#     header-includes: |
+#       \usepackage{fancyvrb}
+#       \usepackage{fvextra}
+#       \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+#     # include-in-header:
+#     #   text: |
+#     #     \hypersetup{draft}
+
+#     #  \usepackage{fontspec}
+#     #  \newfontfamily\ipafont{Arial Unicode MS}
+#     #  \newcommand{\ipa}[1]{{\ipafont #1}}
+#     #  \usepackage[margin=1in]{geometry}
+#     #  \usepackage{fvextra}
+#     #  \fvset{breaklines=true, breakanywhere=true}
+#     #  \usepackage{polyglossia}
+#     #  \setmainlanguage{english}
+#     #  \setotherlanguage{hebrew}
+#     #  \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
+#     #  \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
+#   #  include-in-header: rtl.tex
 
 editor: source
 

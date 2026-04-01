@@ -143,6 +143,11 @@
 \usepackage{fancyvrb}
 \usepackage{fvextra}
 \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\newcommand{\doctitle}{gemini paper}
+\newcommand{\docdate}{2026-04-01}
+\newcommand{\docmeta}{class: [16838] germanische sprachen im vergleich tutor: hüning/konvicna term: WS25/26}
+\newcommand{\doclogoleft}{../assets/fadenlogo-fwb.png}
+\newcommand{\doclogoright}{../assets/dcl-head-niemand.png}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -199,12 +204,24 @@
 
 \title{gemini paper}
 \author{}
-\date{}
+\date{2026-04-01}
 \begin{document}
 \maketitle
 
 
 \section{index}\label{index}
+
+\subsection{snc}\label{snc}
+
+\begin{itemize}
+\tightlist
+\item
+  16144.1.pdf
+\item
+  wks. no fro q.yml
+\item
+  no.
+\end{itemize}
 
 \section{the einleitung}\label{the-einleitung}
 
@@ -244,7 +261,7 @@ in human language corpora dating after chat agent introduction.
 
 \section{methods}\label{methods}
 
-\subsection{snc}\label{snc}
+\subsection{snc}\label{snc-1}
 
 16062.1.2.16063.1
 
@@ -344,15 +361,22 @@ target. (freq / vH)}
 
 \subsection{responsible lemmata}\label{responsible-lemmata}
 
-selection of first 20 lemma that are responsible for the increase of
-frequency in general.
+The 9 lemma where 1. the relative frequency of lemma in target=post is
+higher than in target=pre (n=27) and 2. that frequency exceeds the mean
+relative frequency is displayed in Figure~\ref{fig-barplot}.
 
-\begin{quote}
-this list is still in progress since bit complicated to sync descriptive
-lemma list with the linear model list derived, which looks more
-realistic for a gpt output but with lot of rubbish in it due to
-mislemmatization.
-\end{quote}
+\begin{figure}[H]
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{gemini_files/figure-pdf/fig-barplot-1.pdf}}
+
+}
+
+\caption{\label{fig-barplot}lemma frequency increase of relevant AI
+typical lemma}
+
+\end{figure}%
 
 \subsubsection{lemma descriptive output}\label{lemma-descriptive-output}
 
@@ -364,12 +388,12 @@ output}\label{lemma-linear-model-output}
 to prove descriptive results, we compute the stability of the frequency
 increase for target- vs.~reference corpus with a linear regression model
 using R's lme4::lmer() function, cf. Bates et al. (2015). coefficents
-are printed below, where frequency are the relative lemma frequencies
-over corpus; target defines reference resp. target corpus{[}post-gpt{]}
-(human/post) and in.gpt as numerical variable representing the gpt-score
-of the corresponding lemma i.e.~wether it scores high (positive values)
-or low (negative values) in terms of being preferredly used by the chat
-agent.
+are printed below, where \texttt{freq\_pmw} is the lemma frequencies/pmw
+over corpus; \texttt{post} defines reference resp. target corpus
+{[}post==TRUE\textbar FALSE{]} (pre/post) and gp as numerical variable
+representing the gpt-score of the corresponding lemma i.e.~wether it
+scores high (positive values) or low (negative values) in terms of being
+preferredly used by the chat agent.
 
 \subsubsection{basic (lm)}\label{basic-lm}
 
@@ -398,8 +422,8 @@ Multiple R-squared:  0.0014,    Adjusted R-squared:  0.001385
 F-statistic: 93.32 on 2 and 133087 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
-\subsubsection{mixed effects model
-(lmer)}\label{mixed-effects-model-lmer}
+\subsubsection{random effects model
+(lmer)}\label{random-effects-model-lmer}
 
 formula:
 \texttt{frequency.pmw\ \textasciitilde{}\ post\ +\ gpt.score\ +\ (1\textbar{}lemma)}
@@ -452,7 +476,8 @@ we test the association between the gpt score of a lemma and its
 estimated frequency and its showing that a general increase of frequency
 is estimated if the score rises (=the lemma is within the lemmas
 preferred used by gemini) and that for the post-gpt corpus this increase
-(\texttt{6.75072\%}) is significant (and not random in data).
+(\texttt{6.75072\%}) is significant for single lemmata (and not random
+in data).
 
 in the fixed effects correlation output of the lmer() model we see that
 the gpt score correlates with the target corpus frequency for lemma by
