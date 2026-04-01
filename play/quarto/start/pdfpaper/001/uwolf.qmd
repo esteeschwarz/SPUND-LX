@@ -8,7 +8,7 @@ meta: |
   class: [16412] dynamiken postdeutscher gegenwartslyrik ::
   tutor: chiara liso ::
   term: SS22 \\newline
-  snc: 16132.8 \\newline
+  snc: 16145.1 \\newline
   >> back to paper >> <https://esteeschwarz.github.io/DC-LX/essais/papers/010/>
 foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 format:

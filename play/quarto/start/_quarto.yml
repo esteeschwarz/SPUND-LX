@@ -10,8 +10,7 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: pdfpaper
-        text: 2pdf
+      - pdfpaper/001/uwolf.qmd
       - text: "Download"
         menu:
           - href: report.pdf
