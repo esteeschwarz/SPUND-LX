@@ -10,6 +10,8 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: pdfpaper
+        text: 2pdf
       - text: "Download"
         menu:
           - href: report.pdf

@@ -12,13 +12,13 @@ meta: |
   >> back to paper >> <https://esteeschwarz.github.io/DC-LX/essais/papers/010/>
 foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 format:
-#   html:
-#     css: poster_grid.css
-#     # css: poster.css
-#     theme: Cosmo
-#     toc: false
-#     self-contained: false
-    pdf:
+  html:
+    # css: poster_grid.css
+    # css: poster.css
+    theme: Cosmo
+    toc: false
+    self-contained: false
+  pdf:
       keep-tex: true
     #   template: pdf-template.tex
     #   latex_engine: xelatex  # default lualatex
