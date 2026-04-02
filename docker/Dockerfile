@@ -22,6 +22,12 @@ RUN apt-get update \
  && apt-get update \
  && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
  && apt-get install -y --no-install-recommends ttf-mscorefonts-installer \
+ && wget https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip \
+ && mkdir ~/.local/share/fonts/SourceSans3 \
+ && unzip OTF-source-sans-3.052R.zip -d ~/.local/share/fonts/SourceSans3/ \
+ && wget "https://github.com/google/fonts/raw/refs/heads/main/ofl/alef/Alef-Regular.ttf" \
+ && mkdir ~/.local/share/fonts/Alef \
+ && cp Alef-Regular.ttf -d ~/.local/share/fonts/Alef/ \
  && fc-cache -f -v \
  && rm -rf /var/lib/apt/lists/*
 # echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
