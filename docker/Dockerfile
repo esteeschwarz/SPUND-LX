@@ -14,6 +14,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rsync \
     && rm -rf /var/lib/apt/lists/*
 
+# install fonts
+RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-msc-eula boolean true" \
+    | debconf-set-selections
+RUN apt-get install -y ttf-mscorefonts-installer
+RUN fc-cache -f -v
+
 # Install Quarto
 # quarto-1.8.26-linux-amd64.deb
 RUN wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.26/quarto-1.8.26-linux-amd64.deb \
