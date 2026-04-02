@@ -15,12 +15,26 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # install fonts
-RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-msc-eula boolean true" \
-    | debconf-set-selections
-# RUN apt-get install -y ttf-mscorefonts-installer
-RUN apt update
-RUN apt install -y ttf-mscorefonts-installer
-RUN fc-cache -f -v
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends software-properties-common fontconfig \
+ && add-apt-repository multiverse \
+ && apt-get update \
+ && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
+ && apt-get install -y --no-install-recommends ttf-mscorefonts-installer \
+ && fc-cache -f -v \
+ && rm -rf /var/lib/apt/lists/*
+# echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
+
+
+# RUN sudo apt-get update
+
+# RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-msc-eula boolean true" \
+#     | debconf-set-selections
+# # RUN apt-get install -y ttf-mscorefonts-installer
+# RUN apt update
+# RUN apt install -y ttf-mscorefonts-installer
+# RUN fc-cache -f -v
 
 # Install Quarto
 # quarto-1.8.26-linux-amd64.deb

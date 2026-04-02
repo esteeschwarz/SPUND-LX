@@ -1,0 +1,32 @@
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+  word-break: normal;
+  word-wrap: normal;
+
+}
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre code {
+  white-space: inherit;
+}
+
+.book .book-body .page-wrapper table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* css styles */
+.cell-output-stdout code {
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+}
+
+h6 {text-align:left; overflow-x: scroll; color: #d3bd7e; background: #202020; padding: 10pt 15pt; border-radius: 3px;font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;white-space:pre;margin-bottom:0.5em;margin-top:2em;left:10%;}
