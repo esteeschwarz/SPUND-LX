@@ -22,3 +22,7 @@ Use the navigation bar to visit the About page or download the PDF report.
 
 ### 16145.
 - pdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.
+
+### 16146.
+- font georgia missing, installed in container.
+- t1
