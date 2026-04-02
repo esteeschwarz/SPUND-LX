@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # install fonts
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-msc-eula boolean true" \
     | debconf-set-selections
-RUN apt-get install -y ttf-mscorefonts-installer
+# RUN apt-get install -y ttf-mscorefonts-installer
+RUN apt update
+RUN apt install ttf-mscorefonts-installer
 RUN fc-cache -f -v
 
 # Install Quarto
