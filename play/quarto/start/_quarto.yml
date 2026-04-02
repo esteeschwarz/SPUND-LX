@@ -1,7 +1,9 @@
 project:
   type: website
   output-dir: ../output/pages/004
-
+date: "2026-04-02"
+# author: esteeschwarz
+title-meta: ""
 website:
   title: "004"
   navbar:
