@@ -19,7 +19,7 @@ execute:
 
 ::: {#meta}
 class: [16838] germanische sprachen im vergleich  
-tutor: Hüning / Konvicna  
+tutor: Hüning / Konvicka  
 term: WS25/26  
 
 

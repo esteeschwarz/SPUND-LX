@@ -139,13 +139,196 @@
  
 
 
+% ============================================================
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
+% ============================================================
+
+\usepackage{iftex}
+\RequireLuaTeX
+
+\usepackage{fontspec}
+
+\setmainfont{Georgia}[
+  Ligatures = TeX
+]
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
+% ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
+
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
+
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
+
+% ------------------------------------------------------------
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
+% ------------------------------------------------------------
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
+
+\usepackage[hyperfootnotes=false]{hyperref}
+% ============================================================
+% header.tex  —  include-in-header snippet
+% Replaces $var$ Pandoc syntax with \ifdefined\doc... guards.
+% Vars injected via vars.lua Lua filter from YAML front matter:
+%   \doctitle      \docsubtitle   \docauthor   \docdate
+%   \docmeta       \docfoot       \doclogoleft \doclogoright
+%
+% No fancyhdr. Header fires via \AtBeginDocument,
+% footer via \AtEndDocument — bidi-safe.
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+
+% ---------- header font (adjust to taste) ----------
+\newfontfamily\headerfont{Source Sans 3}
+
+% ---------- footer colors ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
+
+% ---------- column types ----------
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{45mm}}
+
+% vertical separator rule
+\newcommand{\vsep}{\color{black}\vrule width 1pt}
+
+% ============================================================
+% CUSTOM HEADER
+% ============================================================
+\newcommand{\CustomHeader}{%
+% \LTR{%
+\noindent
+\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
+
+% LEFT LOGO
+\ifdefined\doclogoleft
+  \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
+\fi
+&
+% CENTER: title + subtitle stacked in a minipage so \\ is a
+% line break within the cell, not a new table row
+\begin{minipage}[c]{\linewidth}
+\centering
+\ifdefined\doctitle
+  {\Large\bfseries\headerfont\doctitle}%
+\fi
+\ifdefined\docsubtitle
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
+\fi
+\end{minipage}
+% &
+% % CENTER TITLE BLOCK
+% \ifdefined\doctitle
+%   {\Large\bfseries\doctitle}%
+% \fi
+% \ifdefined\docsubtitle
+%   \\\normalsize\docsubtitle
+% \fi
+&
+% RIGHT LOGO
+\ifdefined\doclogoright
+  \includegraphics[height=10mm,keepaspectratio]{\doclogoright}%
+\fi
+
+\end{tabularx}
+
+\hrule
+% \vspace{6pt}
+
+% ---------- META AREA ----------
+{\small
+\ifdefined\docauthor
+  \textbf{Author:} \docauthor\\
+\fi
+\ifdefined\docdate
+  \textbf{Date:} \docdate
+\fi
+\ifdefined\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
+\fi
+}
+\vspace{6pt}
+
+\hrule
+
+% \vspace{12pt}
+% }% end \LTR
+}% end \CustomHeader
+
+% ============================================================
+% CUSTOM FOOTER  (overlay, anchored to page bottom)
+% ============================================================
+\newcommand{\CustomFooter}{%
+\begin{tikzpicture}[remember picture, overlay]
+\node[
+  anchor=south,
+  draw,
+  fill=footerbg,
+  text=footerfg,
+  inner sep=10pt,
+  rounded corners=2pt,
+  text width=\dimexpr\textwidth-20pt\relax
+]
+at ([yshift=5mm]current page.south)
+{%
+  \begin{center}
+  {\small
+  \ifdefined\docfoot
+    % {\docfoot}%
+    {\headerfont\docfoot}%
+  \fi
+  }
+  \end{center}
+};
+\end{tikzpicture}%
+}% end \CustomFooter
+
+% ============================================================
+% FIRE header at doc start, footer at doc end
+% ============================================================
+% \AtBeginDocument{\CustomHeader}
+\AtEndDocument{\CustomFooter}
+\renewcommand{\maketitle}{}
 \KOMAoption{captions}{tableheading}
 \usepackage{fancyvrb}
 \usepackage{fvextra}
 \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
 \newcommand{\doctitle}{gemini paper}
 \newcommand{\docdate}{2026-04-01}
-\newcommand{\docmeta}{class: [16838] germanische sprachen im vergleich tutor: hüning/konvicna term: WS25/26}
+\newcommand{\docmeta}{class: [16838] germanische sprachen im vergleich tutor: hüning/konvicka term: WS25/26}
 \newcommand{\doclogoleft}{../assets/fadenlogo-fwb.png}
 \newcommand{\doclogoright}{../assets/dcl-head-niemand.png}
 \makeatletter
@@ -193,7 +376,6 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={gemini paper},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -208,6 +390,8 @@
 \begin{document}
 \maketitle
 
+\CustomHeader
+
 
 \section{index}\label{index}
 
@@ -221,6 +405,14 @@
   wks. no fro q.yml
 \item
   no.
+\end{itemize}
+
+\subsubsection{16145.}\label{section}
+
+\begin{itemize}
+\tightlist
+\item
+  from parent qyml
 \end{itemize}
 
 \section{the einleitung}\label{the-einleitung}

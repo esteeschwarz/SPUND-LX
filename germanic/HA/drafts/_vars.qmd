@@ -11,6 +11,8 @@ tdf<-read.csv("qa.csv")
 #m1<-1:length(tdf$t)
 
 params<-list(tables=list(tbl_qa1=list(file="qa.qmd",num=1),tbl_qa2=list(file="qa.qmd",num=2)))
+tblcap1<-paste0("Table ",params$tables$tbl_qa1$num,", BSI: annotations")
+tblcap2<-paste0("Table ",params$tables$tbl_qa2$num,", Yakura, LLM influence: annotations")
 #load("../lm-base_lmdf.c.RData")
 #source("../LLM-poster.R")
 load("plist3.RData")

@@ -19,3 +19,6 @@ Use the navigation bar to visit the About page or download the PDF report.
 - t4, test on m12, wks.
 - t5: site_libs was in ignore. rm.
 - t6
+
+### 16145.
+- pdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.

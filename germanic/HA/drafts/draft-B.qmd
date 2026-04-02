@@ -1,11 +1,10 @@
 ---
 title: "xtitle/AI"
-subtitle: "AI and language change & variation"
+subtitle: "AI and language variation :: change"
 author: "st. schwarz"
 date: "`r Sys.time()`"
-# date: today
-# date-format: "YYYYMMDD(HH.mm)" # doesnt include time
-tags: [LX,sociolinguistics,HA,AI speech,register,prompt linguistics]
+categories: [expose,linguistics]
+tags: [LX,sociolinguistics,HA,L1/L2,register]
 # bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/germanic/HA/germanic-exc.bib
 bibliography: germanic-ai.bib
 nocite: '@*'
@@ -40,5 +39,6 @@ load pdf [here](.pdf)
 # index
 
 {{< include _abstractB-ul.md >}}
+
 
 # References

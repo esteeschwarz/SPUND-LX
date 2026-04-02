@@ -5,7 +5,7 @@ bibliography: germanic-ai.bib
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
 #   - tbl-summary: {file: "results.qmd", num: 2}
-
+title-meta: ""
 ---
 
 {{< include _vars.qmd >}}

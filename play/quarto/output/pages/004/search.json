@@ -32,13 +32,13 @@
     "href": "index.html",
     "title": "index",
     "section": "",
-    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6"
+    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config."
   },
   {
     "objectID": "index.html#snc",
     "href": "index.html#snc",
     "title": "index",
     "section": "",
-    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6"
+    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config."
   }
 ]

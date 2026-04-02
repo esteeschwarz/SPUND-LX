@@ -7,7 +7,9 @@ project:
     - "!*.plist"
     - "!.Rhistory"
     - "!*.RData"
- 
+date: "2025-11-15"
+# author: esteeschwarz
+title-meta: ""
 
 params:
     reload: false
@@ -43,19 +45,19 @@ website:
     right:
       # - href: draft-A.pdf
       #   text: pdf-temp
-      - href: snc.md
+      - href: snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/tree/main/germanic
         icon: github
   #site-url: https://esteeschwarz.github.io/open-lx/posts/germanic-ha
 
+
+### from pdfpaper qyml
 format:
   html:
-    theme:
-      - cosmo #litera
+    theme: 
+      - cosmo
       - brand
-    #mainfont: Courier
-    monofont: Menlo
-    #font: Courier
+    #code-overflow: wrap
     css: styles.css
     toc: true
     number-sections: true
@@ -70,75 +72,145 @@ format:
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
   pdf:
-#    latex_engine: xelatex  # default
-    fig-pos: "H" # Forces images to appear exactly where they are included
-    #pandoc_args: ["--wrap=none"]
-    keep-tex: true
-    # hyperrefoptions:
-    #   - draft
-    #mainfont: Georgia
-    # mainfont: Georgia
- #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
-    #mainfont: 'Computer Modern Roman'
-    font-size: 12
-    #cite-method: biblatex
-    colorlinks: true
-        #  \newcommand{\he}[1]{{\hebrewfont #1}}
-    #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
-    header-includes: |
-      \usepackage{fancyvrb}
-      \usepackage{fvextra}
-      \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
-    # include-in-header:
-    #   text: |
-    #     \hypersetup{draft}
-
-    #  \usepackage{fontspec}
-    #  \newfontfamily\ipafont{Arial Unicode MS}
-    #  \newcommand{\ipa}[1]{{\ipafont #1}}
-    #  \usepackage[margin=1in]{geometry}
-    #  \usepackage{fvextra}
-    #  \fvset{breaklines=true, breakanywhere=true}
-    #  \usepackage{polyglossia}
-    #  \setmainlanguage{english}
-    #  \setotherlanguage{hebrew}
-    #  \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
-    #  \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
-  #  include-in-header: rtl.tex
- 
-  # pdf:
-  #     keep-tex: true
-  #   #   template: pdf-template.tex
-  #   #   latex_engine: xelatex  # default lualatex
-  #   #   latex-tinytex: false
-
-  #     fig-pos: "H" # Forces images to appear exactly where they are included
-  #   #   mainfont: 'Free Sans'
-  #     font-size: 11
-  #     colorlinks: true
-  #     include-in-header: 
-  #       - ../assets/lualoani.tex
-  #       - ../assets/footer-header.tex
-  #       - ../assets/rtl.tex
-  #     include-before-body: ../assets/go-head.tex
-  #       # - paper.tex
-  #       #   pdf-engine: lualatex
-  #     header-includes:
-  #           \usepackage{fancyvrb}
-  #           \usepackage{fvextra}
-  #           \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
-
-
-meta: |
-  class: [16838] germanische sprachen im vergleich  
-  tutor: hüning/konvicna   
-  term: WS25/26
+      keep-tex: true
+      fig-pos: "H" # Forces images to appear exactly where they are included
+    #   mainfont: 'Free Sans'
+      font-size: 11
+      colorlinks: true
+      include-in-header: 
+        - ../assets/lualoani.tex
+        - ../assets/footer-header.tex
+       
+      include-before-body: ../assets/go-head.tex
+      header-includes: |
+       \usepackage{fancyvrb}
+       \usepackage{fvextra}
+       \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+      #include-in-header:
 
 filters:
   - ../assets/commands.lua
   - ../assets/luaipa.lua
 logoleft: ../assets/fadenlogo-fwb.png
-logoright: ../assets/dcl-head-niemand.png      
+logoright: ../assets/dcl-head-niemand.png
+  # pdf:
+  #   include-in-header:
+  #     - text: |
+  #         \usepackage{fvextra}
+  #         \DefineVerbatimEnvironment{cell-output cell-output-stdout}{Verbatim}{
+  #         breaklines=true,
+  #         breakanywhere=true,
+  #         fontsize=\small
+  #         }
+  #         \makeatletter
+  #         \AtBeginDocument{
+  #           \fvset{
+  #             breaklines=true,
+  #             breakanywhere=true,
+  #             fontsize=\small
+  #           }
+  #         }
+  #         \makeatother
+  #         \usepackage{fancyvrb}
+  #         \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true}
+
+# execute:
+#   echo: true
+# code-overflow: wrap
+
+###
+
+# format:
+#   html:
+#     theme:
+#       - cosmo #litera
+#       - brand
+#     #mainfont: Courier
+#     monofont: Menlo
+#     #font: Courier
+#     css: styles.css
+#     toc: true
+#     number-sections: true
+#     toc-depth: 3
+#     include-in-header:
+#       text: |
+#         <!-- HTML simply prints the inner text -->
+#         <!-- 16482.snc -->
+#         <script type="application/latex">
+#         \newcommand{\he}[1]{#1}
+#         </script>
+#         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+#         <link rel="stylesheet" href="https://esteeschwarz.github.io/DC-LX/assets/css/icons.css">
+#   pdf:
+# #    latex_engine: xelatex  # default
+#     fig-pos: "H" # Forces images to appear exactly where they are included
+#     #pandoc_args: ["--wrap=none"]
+#     keep-tex: true
+#     # hyperrefoptions:
+#     #   - draft
+#     #mainfont: Georgia
+#     # mainfont: Georgia
+#  #   mainfont: 'Noto Serif' # noto serif: only font both ivrit&ipa in pdf
+#     #mainfont: 'Computer Modern Roman'
+#     font-size: 12
+#     #cite-method: biblatex
+#     colorlinks: true
+#         #  \newcommand{\he}[1]{{\hebrewfont #1}}
+#     #      \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup} # wks rtl+ivrit
+#     header-includes: |
+#       \usepackage{fancyvrb}
+#       \usepackage{fvextra}
+#       \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+#     # include-in-header:
+#     #   text: |
+#     #     \hypersetup{draft}
+
+#     #  \usepackage{fontspec}
+#     #  \newfontfamily\ipafont{Arial Unicode MS}
+#     #  \newcommand{\ipa}[1]{{\ipafont #1}}
+#     #  \usepackage[margin=1in]{geometry}
+#     #  \usepackage{fvextra}
+#     #  \fvset{breaklines=true, breakanywhere=true}
+#     #  \usepackage{polyglossia}
+#     #  \setmainlanguage{english}
+#     #  \setotherlanguage{hebrew}
+#     #  \newfontfamily\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
+#     #  \newcommand{\he}[1]{\bgroup\textdir TRT{\hebrewfont #1}\egroup}
+#   #  include-in-header: rtl.tex
+ 
+#   # pdf:
+#   #     keep-tex: true
+#   #   #   template: pdf-template.tex
+#   #   #   latex_engine: xelatex  # default lualatex
+#   #   #   latex-tinytex: false
+
+#   #     fig-pos: "H" # Forces images to appear exactly where they are included
+#   #   #   mainfont: 'Free Sans'
+#   #     font-size: 11
+#   #     colorlinks: true
+#   #     include-in-header: 
+#   #       - ../assets/lualoani.tex
+#   #       - ../assets/footer-header.tex
+#   #       - ../assets/rtl.tex
+#   #     include-before-body: ../assets/go-head.tex
+#   #       # - paper.tex
+#   #       #   pdf-engine: lualatex
+#   #     header-includes:
+#   #           \usepackage{fancyvrb}
+#   #           \usepackage{fvextra}
+#   #           \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+
+
+meta: |
+  class: [16838] germanische sprachen im vergleich  
+  tutor: hüning/konvicka   
+  term: WS25/26
+
+# filters:
+#   - ../assets/commands.lua
+#   - ../assets/luaipa.lua
+# logoleft: ../assets/fadenlogo-fwb.png
+# logoright: ../assets/dcl-head-niemand.png      
 
 
 #   pdf:

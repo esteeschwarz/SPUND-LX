@@ -5,18 +5,20 @@ bibliography: germanic-ai.bib
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
 #   - tbl-summary: {file: "results.qmd", num: 2}
-
+title-meta: ""
 ---
 
 {{< include _vars.qmd >}}
 
-#### notes on @bsi_wie_2025
+## notes on 
+paper: @bsi_wie_2025   
 
-`r tblcap<-paste0("Table ",params$tables$tbl_qa1$num,", BSI: annotations")`
+
+<!-- `r tblcap<-paste0("Table ",params$tables$tbl_qa1$num,", BSI: annotations")` -->
 
 ```{r}
 #| label: tbl_qa1
-#| tbl-cap: !expr 'tblcap'
+#| tbl-cap: "BSI: annotations"
 #| echo: false
 #| warning: false
 #| eval: true
@@ -30,13 +32,15 @@ knitr::kable(kdf)
 
 ```
 
-#### notes on @yakura_empirical_2025
+## notes on 
+paper: @yakura_empirical_2025   
 
-`r tblcap<-paste0("Table ",params$tables$tbl_qa2$num,", Yakura, LLM influence: annotations")`
 
+<!-- `r tblcap<-paste0("Table ",params$tables$tbl_qa2$num,", Yakura, LLM influence: annotations")` -->
+<!-- !expr 'tblcap2' -->
 ```{r}
 #| label: tbl_qa2
-#| tbl-cap: !expr 'tblcap'
+#| tbl-cap: "Yakura, LLM influence: annotations"
 #| echo: false
 #| warning: false
 #| eval: true

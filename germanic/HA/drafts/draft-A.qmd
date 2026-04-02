@@ -1,5 +1,5 @@
 ---
-title: "balkons & die straszenbahn"
+title: "balkons u. die straszenbahn"
 subtitle: "cross language observations on The Shibboleth in yiddish, frisian and berlin dialect"
 author: "st. schwarz"
 date: "2025-11-15"
@@ -14,24 +14,24 @@ description: "germanic languages project draft A"
 link-citations: true
 github-repo: "esteeschwarz/SPUND-LX/tree/main/germanic"
 # because of IPA / ivrit
-format:
-  pdf:
-    latex_engine: xelatex  # default
-    fig-pos: "H" # Forces images to appear exactly where they are included
-    mainfont: 'Noto Serif'
-    font-size: 12
-    colorlinks: true
-    include-in-header: rtl.tex
-  html:
-    theme:
-      - cosmo #litera
-      - brand
-    #mainfont: Courier
-    monofont: Menlo
-    #font: Courier
-    css: styles.css
-    toc: true
-    toc-depth: 3
+# format:
+#   pdf:
+#     latex_engine: xelatex  # default
+#     fig-pos: "H" # Forces images to appear exactly where they are included
+#     mainfont: 'Noto Serif'
+#     font-size: 12
+#     colorlinks: true
+#     include-in-header: rtl.tex
+#   html:
+#     theme:
+#       - cosmo #litera
+#       - brand
+#     #mainfont: Courier
+#     monofont: Menlo
+#     #font: Courier
+#     css: styles.css
+#     toc: true
+#     toc-depth: 3
 
 ---
 
@@ -47,7 +47,7 @@ ipa <- function(text) {
   }
 }
 he <- function(text) {
-  if (knitr::is_latex_output()) {
+  if (knitr::is_latex_output()&1==0) {
     paste0("\\he{", text, "}")
   } else {
     text
