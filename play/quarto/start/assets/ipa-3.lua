@@ -59,7 +59,64 @@ end
 -- Quarto flattens metadata into plain {t, c} Lua tables before filters run.
 -- We recurse through these directly to produce LaTeX strings.
 -- ---------------------------------------------------------------------------
-local function walk_inlines(inlines)
+
+local pandoc = require("pandoc")
+
+local function get_url_dep(meta)
+  local para = meta[1]
+  local out = {}
+
+  io.stderr:write("\n--- cmeta[1].t=" .. para.t .. " ---\n")
+--   io.stderr:write("\n--- cmeta[1].c=" .. para .. " ---\n")
+
+--   if para and para.t == "Para" then
+    for _, el in ipairs(para.content) do
+    --   if el.t == "Quoted" and el.content and el.content[1].t == "Link" then
+        local link1 = el.content[1]
+        local link2 = el.content[2]
+        local link3 = el.content[3]
+        io.stderr:write("\n --- link1: " .. tostring(link1.content[1]) .. " --- \n")
+        io.stderr:write("\n --- link2: " .. tostring(link1.content) .. " --- \n")
+        io.stderr:write("\n --- link3: " .. tostring(link1.content[3]) .. " --- \n")
+
+        -- if link.target and link.target ~= "" then
+          -- Return the URL as a raw LaTeX inline element
+        table.insert(out,"\\protect\\href{" .. link1 .."}{nothing}")
+        --   return linkc
+        --   return pandoc.MetaValue(pandoc.RawInline("latex", "\\url{" .. link.target .. "}"))
+    end
+    --   end
+    -- end
+--   end
+  return out
+end
+
+local pandoc = require("pandoc")
+
+function get_url(meta)
+  local para = meta[1]
+  local out = {}
+
+  io.stderr:write("\n--- cmeta[1].t=" .. para.t .. " ---\n")
+  if para and para.t == "Para" then
+    for _, el in ipairs(para.content) do
+      if el.t == "Quoted" and el.content and el.content[1].t == "Link" then
+        local link = el.content[1]
+        if link.target and link.target ~= "" then
+        io.stderr:write("\n--- link.target=" .. link.target .. " ---\n")
+        io.stderr:write("\n--- link.text=" .. pandoc.utils.stringify(link.content) .. " ---\n")
+          -- Return the URL as a raw LaTeX inline element
+        --   return pandoc.MetaValue(pandoc.RawInline("latex", "\\url{" .. link.target .. "}"))
+        --   return {url = "\\url{" .. link.target .. "}",text = pandoc.utils.stringify(link.content)}
+         return {"\\href{"  .. link.target .. "}{".. pandoc.utils.stringify(link.content) .. "}"}
+        end
+      end
+    end
+  end
+  return nil
+end
+
+local function walk_inlines_dep(inlines)
   local out = {}
   for i = 1, #inlines do
     local el = inlines[i]
@@ -163,6 +220,8 @@ local function is_inline_list(value)
       or t == "Strong" or t == "Code" or t == "RawInline"
 end
 
+
+
 local function inject_rich(includes, cmd, value)
   io.stderr:write("cmeta type=" .. type(value) .. "\n")
 
@@ -184,10 +243,12 @@ includes:insert(pandoc.RawBlock("latex",
   local latex
   if is_inline_list(value) then
     -- flat list of inlines (e.g. params: quoted single-line value)
-    latex = table.concat(walk_inlines(value))
-  else
+    -- latex = table.concat(walk_inlines(value))
+    latex = table.concat(get_url(value))
+
+else
     -- block list (e.g. | block scalar -> Para nodes)
-    local parts = walk_blocks(value)
+    local parts = get_url(value)
     latex = table.concat(parts, " \\newline ")
   end
 
@@ -225,7 +286,7 @@ function Meta(m)
   inject_plain(includes, "docsubtitle", m.subtitle)
   inject_plain(includes, "docdate",     m.date)
   inject_rich( includes, "docmeta",     m.params.inline)
-  inject_rich( includes, "docfoot",     m.params.plain)
+  inject_plain( includes, "docfoot",   get_url(m.params.plain))
   inject_plain(includes, "doclogoleft", m.logoleft)
   inject_plain(includes, "doclogoright",m.logoright)
 
