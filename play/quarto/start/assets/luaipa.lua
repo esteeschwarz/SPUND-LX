@@ -10,6 +10,12 @@
 --   U+02B0-U+02FF  SpacingModifierLetters
 --   U+1D00-U+1D7F  PhoneticExtensions
 
+-- exit on not-latex
+local is_latex = FORMAT:match("latex") or FORMAT:match("pdf")
+if not is_latex then return el end
+--- 
+
+
 local function is_ipa(cp)
   return (cp >= 0x0250 and cp <= 0x02FF)
       or (cp >= 0x1D00 and cp <= 0x1D7F)

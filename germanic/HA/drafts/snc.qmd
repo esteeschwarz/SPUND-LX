@@ -10,5 +10,4 @@ title: SNC
 #### 16132.fin
 - render in git runner, chrome headless html > pdf export from quarto doc.
 - abgabe poster: 20260329(18.29) <https://esteeschwarz.github.io/DC-LX/essais/germanic/001/16838_HA_stschwarz-posterA0.pdf>
-
-
+- pages templated wks, now here.
