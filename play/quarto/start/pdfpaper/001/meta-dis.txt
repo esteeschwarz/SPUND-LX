@@ -1,0 +1,28 @@
+# yaml:
+params:
+    inline: |
+      "[<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)"
+    plain: | 
+      "<https://esteeschwarz.github.io/DC-LX/essais/papers/010/>"
+
+# debug:
+cmeta type=table
+cmeta[1] is userdata=Para [Quoted DoubleQuote [Link ("",[],[]) [Str "<<",Space,Str "the",Space,Str "anarkkiv",Space,Str "lankalevikki",Space,Str "worksheet",Space,Str "collection",Space,Str ">>"] ("https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp","")]]
+META KEY: [Para [Quoted DoubleQuote 
+[Link 
+("",[],[]) 
+[Str "<<",Space,Str "the",Space,Str "anarkkiv",Space,Str "lankalevikki",Space,Str "worksheet",Space,Str "collection",Space,Str ">>"] 
+("https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp","")
+]
+]
+]
+cmeta type=table
+cmeta[1] is userdata=Para [Quoted DoubleQuote [Link ("",["uri"],[]) [Str "https://esteeschwarz.github.io/DC-LX/essais/papers/010/"] ("https://esteeschwarz.github.io/DC-LX/essais/papers/010/","")]]
+META KEY: [Para [Quoted DoubleQuote 
+[Link 
+("",["uri"],[]) 
+[Str "https://esteeschwarz.github.io/DC-LX/essais/papers/010/"] 
+("https://esteeschwarz.github.io/DC-LX/essais/papers/010/","")
+]
+]
+]

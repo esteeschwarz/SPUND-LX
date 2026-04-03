@@ -10,7 +10,7 @@ project:
 date: "2025-11-15"
 # author: esteeschwarz
 title-meta: ""
-
+foot: "[<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)"
 params:
     reload: false
    
@@ -53,6 +53,7 @@ website:
 
 ### from pdfpaper qyml
 format:
+  gfm: default
   html:
     theme: 
       - cosmo
@@ -62,6 +63,7 @@ format:
     toc: true
     number-sections: true
     toc-depth: 3
+    keep-md: false
     include-in-header:
       text: |
         <!-- HTML simply prints the inner text -->

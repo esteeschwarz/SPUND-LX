@@ -13,6 +13,36 @@
 -- logoleft      →  \doclogoleft    (image path)
 -- logoright     →  \doclogoright   (image path)
 
+
+-- md links
+
+local function process_inlines(inlines)
+  local out = pandoc.List()
+
+  for _, inline in ipairs(inlines) do
+    if inline.t == "Str" and has_ipa(inline.text) then
+      local segments = split_segments(inline.text)
+
+      for _, seg in ipairs(segments) do
+        if seg.ipa and FORMAT:match("latex") then
+          out:insert(
+            pandoc.RawInline("latex",
+              "{\\ipafont " .. seg.text .. "}")
+          )
+        else
+          out:insert(pandoc.Str(seg.text))
+        end
+      end
+    else
+      out:insert(inline)
+    end
+  end
+
+  return out
+end
+--
+
+
 -- Plain stringify for fields that are always plain text
 local function inject(includes, cmd, value)
   if value == nil then return end
@@ -27,6 +57,8 @@ end
 -- links, emphasis etc. Used for \docmeta and \docfoot.
 local function inject_rich(includes, cmd, value)
   if value == nil then return end
+  includes:insert(pandoc.RawBlock("latex",
+    "% DEBUG " .. cmd .. " type=" .. tostring(value.t)))
 
   -- MetaBlocks: walk each block, convert inlines to LaTeX
   local blocks
@@ -41,15 +73,34 @@ local function inject_rich(includes, cmd, value)
   end
 
   -- Convert blocks to LaTeX via Pandoc writer
+-- local doc = pandoc.Pandoc(blocks, PANDOC_STATE.meta)
+
+-- local latex = pandoc.write(
+--   doc,
+--   "latex",
+--   PANDOC_STATE.writer_options
+-- )
+
+-- latex = latex:gsub("\\href", "\\protect\\href")
+-- latex = latex:gsub("\\url",  "\\protect\\url")
+
+-- latex = latex:gsub("^%s*\\par%s*", "")
+--              :gsub("%s*\\par%s*$", "")
+--              :gsub("^%s+", "")
+--              :gsub("%s+$", "")
+--                             :gsub("anarkkiv", "ada")
+
   local doc = pandoc.Pandoc(blocks)
   local latex = pandoc.write(doc, "latex")
-
+  latex = latex:gsub("\\href", "\\protect\\href")
   -- Strip surrounding \par / newlines Pandoc adds around blocks
   latex = latex:gsub("^%s*\\par%s*", "")
                :gsub("%s*\\par%s*$", "")
                :gsub("^%s+", "")
                :gsub("%s+$", "")
-               :gsub("\\href(%b{})(%b{})", "\\mbox{\\href%1%2}")
+                                           :gsub("anarkkiv", "ada")
+
+              --  :gsub("\\href(%b{})(%b{})", "\\mbox{\\href%1%2}")
 
   if latex ~= "" then
     includes:insert(pandoc.RawBlock("latex",
@@ -63,8 +114,8 @@ function Meta(m)
   inject(includes,      "doctitle",     m.title)
   inject(includes,      "docsubtitle",  m.subtitle)
   inject(includes,      "docdate",      m.date)
-  inject_rich(includes, "docmeta",      m.meta)   -- rich: preserves links
-  inject_rich(includes, "docfoot",      m.foot)   -- rich: preserves links
+  inject_rich(includes, "docmeta",      m.cmeta)   -- rich: preserves links
+  inject_rich(includes, "docfoot",      m.cfoot)   -- rich: preserves links
   inject(includes,      "doclogoleft",  m.logoleft)
   inject(includes,      "doclogoright", m.logoright)
 

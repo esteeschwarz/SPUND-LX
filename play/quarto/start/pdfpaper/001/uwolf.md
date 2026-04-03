@@ -1,0 +1,176 @@
+# 12293.wolf gossip satz für satz
+esteeschwarz
+2026-04-03
+
+<!-- ::: {#logo}
+![](../fadenlogoC-fwbSVG.svg)
+:::
+&#10;::: {#chr}
+![](../dcl-head-niemand.png)
+::: -->
+
+<!-- ::: {#meta}
+class: [16412] dynamiken postdeutscher gegenwartslyrik  
+tutor: chiara liso
+term: SS22  
+&#10;-----
+authored: st. schwarz  
+snc: #16127::2026-04-03 13:20:07.157474   
+[<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+::: -->
+
+# SNC
+
+    [1] "debug..."
+
+# password parsley
+
+der **login** auf einer der geschützten seiten einer mit unserer
+universität verbundenen (institution) läuft über ein verfahren, das als
+**single sign on** bezeichnet wird. bei diesem werden der nutzername und
+das passwort (unsere zedat **credentials**) nicht der von uns
+gewünschten seite übermittelt, sondern nur die zusage einer instanz (die
+ich im folgenden näher beleuchten will), dasz unsere credentials richtig
+sind, wir also der instanz (ich nenne sie hier einmal: wächter) den
+richtigen nutzernamen und passwort übergeben haben, um auf die ferne
+seite (ein korpusengine, ein bibliotheksportal, generell eine ferne
+anwendung im netz, die den zugriff zb. nur den **affiliates** bestimmter
+bildungseinrichtungen erlaubt / ich nenne sie hier zb.: waffenlager,
+repositorium), zugreifen zu können. beide seiten, wächter und
+repositorium, sind sich einig, dasz uns der zugriff auf die ressourcen
+nur gestattet wird, wenn wir derjenige sind, der wir zu sein vorgeben.
+zb. student/ der FUB.
+
+- oder partisan.
+- oder mitglied einer geheimen verbindung.
+- oder: mitwisser von geheimnissen.
+
+genauer: kenner des SHIBBOLETH. dieses beschäftigt hier also auch uljana
+wolf.
+
+#### 1
+
+wer gelegentlich ein biszchen in der literatur umherstreift, wird über
+**codes & switches** schon gestolpert sein, die nur denen zugänglich
+sind, die dort irgendwie zuhause sind. die sich mit texten
+auseinandersetzen, texte gegeneinander lesen – auf ihre intertextualität
+hin untersuchen, zb. / schnell macht man tropen aus, die gemeinplätze
+geworden sind und mit denen jeder umgehen kann, der mit dem kanon der
+jeweiligen (literatur) vertraut ist. einen solchen (switch character)
+scheint hier, bei uljana, auch die petersilie zu haben. man wird mit dem
+wort nicht weiter unbefangen hantieren können, wenn man über die 20.000
+haitianischen gastarbeiter (cf. wolf/GOSSIP/etymologischer gossip im
+gedicht)[^1] gelesen hat. es ist schön, dasz uljana hier die sache
+einmal aufklärt, um an diesem beispiel das prinzip des **shibboleth** zu
+erklären.
+
+das wort petersilie - parsley - \[perejil\] wird als zugang benötigt, um
+gegenüber der gemeinschaft der natives NICHT als fremder zu erscheinen =
+dem massaker zum opfer zu fallen. wer es \[pɛʟɛχɪʟ\] ausspricht, und
+nicht \[pɛʀɛχɪʟ\], wie die einheimischen, wird ermordet. es ist also
+gut, die aussprache zu wissen. oder zu beherrschen.
+
+ähnliches, weniger drastisches, kann menschen widerfahren, die um nur
+prominente beispiele zu nennen, \[derrida\], \[bourdieu\], \[accessoir\]
+oder eben, um zurückzukehren \[shibboleth\] (heute! dazu siehe Ri12.6
+unten.) falsch aussprechen. (cf. dembeck, pg.212).[^2]
+
+#### 2
+
+S: שִׂבֹלֶת \> \[now that was hard getting to the script…\]  
+[die übersetzung](https://www.pealim.com/dict/3270-shibolet/) allein
+bringt niemanden weiter, es geht um die kleinen punkte…, die
+unscheinbaren merkzeichen, die das wort [Ri,
+12.6](https://www.sefaria.org/Judges.12.6?lang=bi&with=all&lang2=en) an
+sich trägt und es zu dem machen, was es ist. nicht torheit, sondern ein
+strom. das würde zu weit gehen, aber ob das Sibboleth doch ein TOR ist
+in der deutsch-assoziierenden polyphonischen auslegung…, das hat sicher
+auch fr. wolf beschäftigt… die stelle in Ri12.6 jdfs. gibt auch dieser
+interpretation einen raum. die richtige aussprache (hier nicht durch
+haitianische gastarbeiter, sondern die dem gilead fremden ephraimiten)
+öffnet tore, verhindert, ermordet zu werden.
+
+#### 3
+
+in der literatur(wissenschaft) kann es essentiell werden, namen,
+termini… nicht nur richtig einzusetzen, sondern sie auch richtig
+auszusprechen. dasz dabei hegemoniale… (beweggründe? aspekte? belange?
+sic!) zum tragen kommen, sei hier nicht nur erwähnt. die
+**domaininhaber** definieren die korrektheit der anwendung. wenn die
+dömäne (die dominikanische republik? der gilead?) ist, haben diejenigen
+die epistemische? begriffshoheit, die dort **schon immer ansässig
+sind**. in der literatur und ihrer wissenschaft die worteigner und
+wissenschaftler der jeweiligen domäne. man setzt sich schnell in
+irgendwelche nesseln, wenn man das shibboleth nicht kennt. man fällt
+auf, aber man geht unter.
+
+also kucken wir: was heiszt :hegemonial: was heiszt :epistemisch:. wir
+kucken überall, wo nesseln warten könnten… hegemonial im gossip,
+(cf. DIE WESTSÄULENLIEBHABEREI DER ÜBERSETZUNG. Ilse Aichingers
+‘schwache Architekur’)[^3]
+
+> Antihegemoniale, antikoloniale Übersetzung ist nicht der Macht treu,
+> dem Besten, dem Brutalen, sondern besteht auf diesen schwächeren, den
+> ‘nicht ausreichenden’ Möglichkeiten. Eine Übersetzung muss untreu
+> sein, um das bloßzustellen, was das Beste ‘verbirgt’.
+
+zu :epistemisch: sagt fr. wolf nichts, aber (gramling, 2016)[^4]
+
+> In ihrer bescheidenen Weise vermochte es die Einsprachigkeit, zur
+> Basis für einen enormen Überbau ästhetischer und epistemischer
+> Paradigmen zu avancieren, denen man sich nur schwer entziehen kann –
+> einschließlich des modernen Buchs, wie wir es kennen, und eines Kanons
+> der Weltliteratur, der das einsprachige (übersetzte oder übersetzbare)
+> Buch als Grundeinheit verwendet. Auch in den bildstürmerischsten
+> Bereichen der kulturellen Produktion – sei es im Surrealismus, in der
+> Dekonstruktion, in der Kybernetik oder im Anarchismus – spielt die
+> Einsprachigkeit eine zentrale Rolle. Sie bestimmt, was verlässlich
+> kommuniziert, verkehrsfähig übersetzt, politisch operationalisiert,
+> international verteilt und auch privat im Gedächtnis behalten werden
+> kann.
+
+können wir jetzt diese wörter benutzen? kennen wir nun ihre bedeutung?
+versuchen Sie es mit :kongruenz:, :kontingenz:, :kohärenz:. nahe
+beieinanderliegende phoneme? wir kucken nochmal: (Meibauer, Einführung
+in die germanistische Linguistik, pg. 82)[^5]
+
+> Die Phoneme in (18b) stehen in Opposition bzw. sie kontrastieren.
+> Während Phone (Laute) in der Notation in eckigen Klammern stehen,
+> werden Phoneme in Schrägstriche eingefasst.
+
+gemeint waren also die ***:phone:*** \[kongruenz\], \[kontingenz\],
+\[kohärenz\]. ein paar nesseln weniger…
+
+wir könnten das alles ohne weiteres fortschreiben; nur zu welchem
+ausgang wollen wir damit gelangen? reicht der ansatz, um gewisztheit
+über zumindest fr. wolfs engagement für ambiguitäten, ambivalenzen udgl.
+\[nicht die begriffe, sondern das bestreben UM\] zu erlangen, wollte man
+einer offenen literaturwissenschaft, entkanonisierten vielleicht
+entkolonialisierten und…, da sind wir: post\[nationalen\]\[hier:
+deutschen\] literatur \[et ici me manque encore une foi la verbe finite
+allemand\] u.u.: zum leben verhelfen. die gegend um fr. wolf bietet
+jdfs. genug material, dies bestreben längst in taten umgesetzt zu sehen.
+
+[^1]: Wolf, U. Etymologischer Gossip im Gedicht. In: Braun, M., & Thill,
+    H. (2018). Aus Mangel an Beweisen : deutsche Lyrik 2008-2018 /
+    herausgegeben von Michael Braun und Hans Thill. Heidelberg:
+    Wunderhorn.
+
+[^2]: Dembeck, T., Parr, R., & Küpper, T. (2017). Literatur und
+    Mehrsprachigkeit : ein Handbuch / Till Dembeck/Rolf Parr (Hrsg.) ;
+    unter Mitarbeit von Thomas Küpper. Tübingen: Narr Francke Attempto.
+
+[^3]: Prammer, T., Vescoli, C., & Erb, E. (2021). Was für Sätze : Zu
+    Ilse Aichinger / Theresia Prammer, Christine Vescoli (Hg.) ; Elke
+    Erb, Uljana Wolf, Monika Rinck, Ruth Klüger, Marlene Streeruwitz
+    \[und weitere\]. (1. Auflage). Wien: Edition Korrespondenzen.
+
+[^4]: Gramling, D. (2016). Zur Mehrsprachigkeitsforschung in der
+    interkulturellen Literaturwissenschaft: Wende, Romanze, Rückkehr?
+    Zeitschrift für interkulturelle Germanistik, 7(1), 133–150.
+    <https://doi.org/10.14361/zig-2016-0109>
+
+[^5]: Meibauer, J., Demske, U., Geilfuß-Wolfgang, J., Pafel, J., Ramers,
+    K. H., Rothweiler, M., & Steinbach, M. (2015). Einführung in die
+    germanistische Linguistik (3., überarbeitete und aktualisierte
+    Auflage). <https://doi.org/10.1007/978-3-476-05424-1>

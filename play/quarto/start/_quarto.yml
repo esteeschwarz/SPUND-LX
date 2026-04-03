@@ -19,6 +19,7 @@ website:
             text: "Download PDF"
 
 format:
+  gfm: default
   html:
     theme: 
       - cosmo
@@ -27,10 +28,13 @@ format:
     css: styles.css
   pdf:
       keep-tex: true
+      keep-intermediates: true
     #   template: pdf-template.tex
     #   latex_engine: xelatex  # default lualatex
     #   latex-tinytex: false
-
+      filters:
+        - at: pre-ast
+          path: assets/ipa-3.lua
       fig-pos: "H" # Forces images to appear exactly where they are included
     #   mainfont: 'Free Sans'
       font-size: 11
@@ -44,9 +48,13 @@ format:
     #   header-includes:
     #     - \newcommand{\docfoot}{$params.foot$}
     #     - \newcommand{\docmeta}{$meta$}
-filters:
-  - assets/commands.lua
-  - assets/luaipa.lua
+# filters:
+#   # - assets/commands.lua
+#   # - assets/luaipa.lua
+#   - assets/cmeta-ipa.lua
+# filters:
+#   - at: pre-ast
+#     path: assets/cmeta-ipa.lua
 logoleft: assets/fadenlogo-fwb.png
 logoright: assets/dcl-head-niemand.png
   # pdf:
