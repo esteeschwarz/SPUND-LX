@@ -25,7 +25,7 @@ format:
       - cosmo
       - brand
     #code-overflow: wrap
-    css: styles.css
+    css: assets/styles.css
   pdf:
       keep-tex: true
       keep-intermediates: true

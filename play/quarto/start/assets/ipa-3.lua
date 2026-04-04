@@ -345,15 +345,32 @@ end
 
 function Meta(m)
   local includes = m["header-includes"] or pandoc.List()
-
+  if m.title then
   inject_plain(includes, "doctitle",    m.title)
-  inject_plain(includes, "docsubtitle", m.subtitle)
-  inject_plain(includes, "docdate",     m.date)
-  inject_meta( includes, "docmeta",     m.cmeta)
-  inject_plain( includes, "docfoot",   get_url(m.cfoot))
-  inject_plain(includes, "doclogoleft", m.logoleft)
-  inject_plain(includes, "doclogoright",m.logoright)
+  end
+  if m.subtitle then
 
+  inject_plain(includes, "docsubtitle", m.subtitle)
+  end
+    if m.date then
+  inject_plain(includes, "docdate",     m.date)
+    end
+      if m.cmeta then
+
+  inject_meta( includes, "docmeta",     m.cmeta)
+      end
+        if m.cfoot then
+
+  inject_plain( includes, "docfoot",   get_url(m.cfoot))
+        end
+          if m.logoleft then
+
+  inject_plain(includes, "doclogoleft", m.logoleft)
+          end
+            if m.logoright then
+
+  inject_plain(includes, "doclogoright",m.logoright)
+            end
   if m.author then
     local ok, str = pcall(pandoc.utils.stringify, m.author)
     if ok and str ~= "" then
@@ -366,10 +383,11 @@ function Meta(m)
   return m
 end
 
+
 function Str(el)
   if not (FORMAT:match("latex") or FORMAT:match("pdf")) then return el end
   if not has_ipa(el.text) then return el end
-
+  if FORMAT:match("md") then return el end
   local segments = split_segments(el.text)
   local inlines  = pandoc.List()
   for _, seg in ipairs(segments) do

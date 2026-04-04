@@ -8,8 +8,8 @@ cmeta: |
   class: [16412] dynamiken postdeutscher gegenwartslyrik ::
   tutor: chiara liso ::
   term: SS22  
-  snc: 16145.1  
-  [<< back to paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+  snc: 16151.1  
+  [<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 cfoot: |
