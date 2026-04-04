@@ -1,0 +1,11 @@
+format:
+  # gfm: default
+  html:
+    theme: none
+    #   - cosmo
+    #   - brand
+    # #code-overflow: wrap
+    # css: assets/styles.css
+execute:
+  echo: true
+code-overflow: wrap
