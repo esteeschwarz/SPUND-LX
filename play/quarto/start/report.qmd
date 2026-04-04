@@ -29,7 +29,7 @@ echo: false, readlines
 #| echo: false
 #| warning: false
 
-ptx<-readLines("gemini-prompt.md")
+ptx<-readLines("gemini-prompt.txt")
 ptx
 ```
 
