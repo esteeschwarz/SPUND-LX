@@ -97,18 +97,22 @@ function get_url(meta)
   local para = meta[1]
   local out = {}
 
-  io.stderr:write("\n--- cmeta[1].t=" .. para.t .. " ---\n")
+  io.stderr:write("\n---GETURL() cmeta[1].t=" .. para.t .. " ---\n")
   if para and para.t == "Para" then
     for _, el in ipairs(para.content) do
-      if el.t == "Quoted" and el.content and el.content[1].t == "Link" then
-        local link = el.content[1]
+          io.stderr:write("\n---GETURL() pairs.el.t=" .. el.t .. " ---\n")
+
+    --   if el.t ~= "Quoted" and el.content and el.content[1].t == "Link" then
+      if el.t == "Link" and el.content then
+         io.stderr:write("\n---GETURL() pairs.el.content[1]=" .. el.content[1].t .. " ---\n")
+         local link = el
         if link.target and link.target ~= "" then
         io.stderr:write("\n--- link.target=" .. link.target .. " ---\n")
         io.stderr:write("\n--- link.text=" .. pandoc.utils.stringify(link.content) .. " ---\n")
           -- Return the URL as a raw LaTeX inline element
         --   return pandoc.MetaValue(pandoc.RawInline("latex", "\\url{" .. link.target .. "}"))
         --   return {url = "\\url{" .. link.target .. "}",text = pandoc.utils.stringify(link.content)}
-         return {"\\href{"  .. link.target .. "}{".. pandoc.utils.stringify(link.content) .. "}"}
+         return {"\\href{"  .. link.target .. "}{\\textcolor{white}{".. pandoc.utils.stringify(link.content) .. "}}"}
         end
       end
     end
@@ -259,8 +263,68 @@ else
   end
 end
 
+local function inject_meta(includes, cmd, value)
+  if value == nil then return end
+  value = value[1]
+  includes:insert(pandoc.RawBlock("latex",
+    "% DEBUG " .. cmd .. " type=" .. tostring(value.t)))
+  io.stderr:write("META KEY: " .. tostring(value.t) .. "\n")
+  io.stderr:write("META KEY: " .. tostring(value) .. "\n")
+
+  -- MetaBlocks: walk each block, convert inlines to LaTeX
+  local blocks
+  if value.t == "MetaBlocks" then
+    blocks = value
+  elseif value.t == "Para" then
+    blocks = value
+  elseif value.t == "MetaInlines" then
+    blocks = pandoc.Blocks({ pandoc.Para(value) })
+  else
+    -- fallback to plain stringify
+    inject(includes, cmd, value)
+    return
+  end
+
+  -- Convert blocks to LaTeX via Pandoc writer
+-- local doc = pandoc.Pandoc(blocks, PANDOC_STATE.meta)
+
+-- local latex = pandoc.write(
+--   doc,
+--   "latex",
+--   PANDOC_STATE.writer_options
+-- )
+
+-- latex = latex:gsub("\\href", "\\protect\\href")
+-- latex = latex:gsub("\\url",  "\\protect\\url")
+
+-- latex = latex:gsub("^%s*\\par%s*", "")
+--              :gsub("%s*\\par%s*$", "")
+--              :gsub("^%s+", "")
+--              :gsub("%s+$", "")
+--                             :gsub("anarkkiv", "ada")
+
+  local doc = pandoc.Pandoc(blocks)
+  local latex = pandoc.write(doc, "latex")
+  latex = latex:gsub("\\href", "\\protect\\href")
+  -- Strip surrounding \par / newlines Pandoc adds around blocks
+  latex = latex:gsub("^%s*\\par%s*", "")
+               :gsub("%s*\\par%s*$", "")
+               :gsub("^%s+", "")
+               :gsub("%s+$", "")
+                                           :gsub("anarkkiv", "ada")
+
+              --  :gsub("\\href(%b{})(%b{})", "\\mbox{\\href%1%2}")
+
+  if latex ~= "" then
+    includes:insert(pandoc.RawBlock("latex",
+      "\\newcommand{\\" .. cmd .. "}{" .. latex .. "}"))
+  end
+end
+
 local function inject_plain(includes, cmd, value)
   if value == nil or type(value) ~= "table" then return end
+    io.stderr:write("PLAIN():META VALUE: " .. tostring(value) .. "\n")
+
   -- for plain fields, walk_blocks then stringify without link markup
   local str = pandoc.utils.stringify(value)
   if str == "" then
@@ -285,8 +349,8 @@ function Meta(m)
   inject_plain(includes, "doctitle",    m.title)
   inject_plain(includes, "docsubtitle", m.subtitle)
   inject_plain(includes, "docdate",     m.date)
-  inject_rich( includes, "docmeta",     m.params.inline)
-  inject_plain( includes, "docfoot",   get_url(m.params.plain))
+  inject_meta( includes, "docmeta",     m.cmeta)
+  inject_plain( includes, "docfoot",   get_url(m.cfoot))
   inject_plain(includes, "doclogoleft", m.logoleft)
   inject_plain(includes, "doclogoright",m.logoright)
 
