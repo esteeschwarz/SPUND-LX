@@ -10,7 +10,12 @@ project:
 date: "2025-11-15"
 # author: esteeschwarz
 title-meta: ""
-foot: "[<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)"
+cfoot: |
+  [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+cmeta: |
+  class: [16838] germanische sprachen im vergleich  
+  tutor: hüning/konvicka   
+  term: WS25/26
 params:
     reload: false
    
@@ -91,8 +96,8 @@ format:
       #include-in-header:
 
 filters:
-  - ../assets/commands.lua
-  - ../assets/luaipa.lua
+  # - ../assets/commands.lua
+  - ../assets/ipa-3.lua
 logoleft: ../assets/fadenlogo-fwb.png
 logoright: ../assets/dcl-head-niemand.png
   # pdf:
@@ -203,10 +208,6 @@ logoright: ../assets/dcl-head-niemand.png
 #   #           \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
 
 
-meta: |
-  class: [16838] germanische sprachen im vergleich  
-  tutor: hüning/konvicka   
-  term: WS25/26
 
 # filters:
 #   - ../assets/commands.lua
