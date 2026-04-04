@@ -27,3 +27,4 @@ Use the navigation bar to visit the About page or download the PDF report.
 - font georgia missing, installed in container.
 - t1
 - container success, t2
+- missed output dir
