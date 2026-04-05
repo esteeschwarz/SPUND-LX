@@ -14,6 +14,20 @@
     "text": "Footnotes\n\n\nWolf, U. Etymologischer Gossip im Gedicht. In: Braun, M., & Thill, H. (2018). Aus Mangel an Beweisen : deutsche Lyrik 2008-2018 / herausgegeben von Michael Braun und Hans Thill. Heidelberg: Wunderhorn.↩︎\nDembeck, T., Parr, R., & Küpper, T. (2017). Literatur und Mehrsprachigkeit : ein Handbuch / Till Dembeck/Rolf Parr (Hrsg.) ; unter Mitarbeit von Thomas Küpper. Tübingen: Narr Francke Attempto.↩︎\nPrammer, T., Vescoli, C., & Erb, E. (2021). Was für Sätze : Zu Ilse Aichinger / Theresia Prammer, Christine Vescoli (Hg.) ; Elke Erb, Uljana Wolf, Monika Rinck, Ruth Klüger, Marlene Streeruwitz [und weitere]. (1. Auflage). Wien: Edition Korrespondenzen.↩︎\nGramling, D. (2016). Zur Mehrsprachigkeitsforschung in der interkulturellen Literaturwissenschaft: Wende, Romanze, Rückkehr? Zeitschrift für interkulturelle Germanistik, 7(1), 133–150. https://doi.org/10.14361/zig-2016-0109↩︎\nMeibauer, J., Demske, U., Geilfuß-Wolfgang, J., Pafel, J., Ramers, K. H., Rothweiler, M., & Steinbach, M. (2015). Einführung in die germanistische Linguistik (3., überarbeitete und aktualisierte Auflage). https://doi.org/10.1007/978-3-476-05424-1↩︎"
   },
   {
+    "objectID": "snc.html",
+    "href": "snc.html",
+    "title": "SNC",
+    "section": "",
+    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o"
+  },
+  {
+    "objectID": "snc.html#snc",
+    "href": "snc.html#snc",
+    "title": "SNC",
+    "section": "",
+    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -25,13 +39,6 @@
     "href": "index.html",
     "title": "index",
     "section": "",
-    "text": "This is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report.\n\n\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir"
-  },
-  {
-    "objectID": "index.html#snc",
-    "href": "index.html#snc",
-    "title": "index",
-    "section": "",
-    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir"
+    "text": "Welcome\nThis is the home page of a minimal Quarto website.\nUse the navigation bar to visit the About page or download the PDF report."
   }
 ]
