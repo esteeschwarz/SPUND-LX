@@ -8,23 +8,3 @@ format: html
 This is the **home** page of a minimal Quarto website.
 
 Use the navigation bar to visit the About page or download the PDF report.
-
-## snc
-### 16143.1 
-- trigger wf
-- site 004
-- wf cp -ar to copy site-libs
-- ls output: chk libs.
-- with new wf, rsync in image installed: no, --no-delete unknown
-- t4, test on m12, wks.
-- t5: site_libs was in ignore. rm.
-- t6
-
-### 16145.
-- pdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.
-
-### 16146.
-- font georgia missing, installed in container.
-- t1
-- container success, t2
-- missed output dir
