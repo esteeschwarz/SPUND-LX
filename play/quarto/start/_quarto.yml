@@ -3,7 +3,7 @@ project:
   pre-render: "prerender.R"
   # post-render: "postrender.R"
   output-dir: ../output/pages/004
-date: '`r format(Sys.time)`'
+date: '`r format(Sys.time())`'
 # author: esteeschwarz
 title-meta: ""
 website:
