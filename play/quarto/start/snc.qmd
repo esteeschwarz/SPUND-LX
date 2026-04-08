@@ -2,6 +2,7 @@
 title: SNC
 subtitle: "loani: לא אני לא sonderzeichentest" 
 format: html
+meta: $testmeta$
 ---
 
 
@@ -35,4 +36,12 @@ format: html
 - chk: local no date either: has to be explicit in qml; in docs as formula
 
 ### 16155.
-- git hash from wf
+- git hash from wf. not.
+
+meta keys S: $testmeta$ 
+
+meta include: {{< meta testmeta >}}
+
+keys R: `r params$meta`
+
+testform: `r 3+4`
