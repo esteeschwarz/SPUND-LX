@@ -3,7 +3,8 @@ project:
   pre-render: "prerender.R"
   # post-render: "postrender.R"
   output-dir: ../output/pages/004
-date: '`r Sys.Date()`'
+# date: '`r format(Sys.time())`'
+date: "2026-04-08"
 # author: esteeschwarz
 title-meta: ""
 website:
@@ -32,7 +33,7 @@ format:
     css: assets/styles.css
   pdf:
       keep-tex: true
-      keep-intermediates: true
+      keep-intermediates: false
     #   template: pdf-template.tex
     #   latex_engine: xelatex  # default lualatex
     #   latex-tinytex: false

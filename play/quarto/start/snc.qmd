@@ -6,6 +6,8 @@ format: html
 
 
 ## snc
+Commit: [{{< meta git-sha-short >}}](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+
 ### 16143.1 
 - trigger wf
 - site 004
@@ -30,3 +32,7 @@ format: html
 - invalid date? didnt render?
 - wo format but still i. date
 - wt sys.date()
+- chk: local no date either: has to be explicit in qml; in docs as formula
+
+### 16155.
+- git hash from wf
