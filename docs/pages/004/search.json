@@ -18,14 +18,14 @@
     "href": "snc.html",
     "title": "SNC",
     "section": "",
-    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date"
+    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()"
   },
   {
     "objectID": "snc.html#snc",
     "href": "snc.html#snc",
     "title": "SNC",
     "section": "",
-    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date"
+    "text": "trigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()"
   },
   {
     "objectID": "about.html",
