@@ -25,14 +25,14 @@
     "href": "snc.html",
     "title": "SNC",
     "section": "",
-    "text": "commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n\n\ngit hash from wf"
+    "text": "commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: ?meta:testmeta\nkeys R: r params$meta\ntestform: r 3+4"
   },
   {
     "objectID": "snc.html#snc",
     "href": "snc.html#snc",
     "title": "SNC",
     "section": "",
-    "text": "commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n\n\ngit hash from wf"
+    "text": "commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: ?meta:testmeta\nkeys R: r params$meta\ntestform: r 3+4"
   },
   {
     "objectID": "about.html",
