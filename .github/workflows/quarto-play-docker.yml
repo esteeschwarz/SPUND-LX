@@ -48,7 +48,7 @@ jobs:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
           PLAYWRIGHT_BROWSERS_PATH: /ms-playwright/chromium-1208/chrome-linux64/chrome
       run: |
-         SHORT_SHA=$(git rev-parse --short HEAD)
+         #SHORT_SHA=$(git rev-parse --short HEAD)
          quarto render -M git-hash=${{ github.sha }} -M git-sha-short=$SHORT_SHA play/quarto/start
          echo "---- q content..."
          ls play/quarto/output
