@@ -49,7 +49,7 @@ jobs:
           PLAYWRIGHT_BROWSERS_PATH: /ms-playwright/chromium-1208/chrome-linux64/chrome
       run: |
          #SHORT_SHA=$(git rev-parse --short HEAD)
-         quarto render -M git-hash=${{ github.sha }} play/quarto/start
+         quarto render play/quarto/start -M git-hash=${{ github.sha }}
          echo "---- q content..."
          ls play/quarto/output
          #echo "---- q/publx content..."
