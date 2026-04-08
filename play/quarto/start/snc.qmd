@@ -6,7 +6,7 @@ format: html
 
 
 ## snc
-Commit: [{{< meta git-sha-short >}}](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+[commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
 ### 16143.1 
 - trigger wf
