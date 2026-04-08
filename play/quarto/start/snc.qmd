@@ -29,3 +29,4 @@ format: html
 - m9
 - invalid date? didnt render?
 - wo format but still i. date
+- wt sys.date()
