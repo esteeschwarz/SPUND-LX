@@ -27,3 +27,4 @@ format: html
 - DCLX template wks.
 - m12: pull > render play/pages, chk.o
 - m9
+- invalid date? didnt render?
