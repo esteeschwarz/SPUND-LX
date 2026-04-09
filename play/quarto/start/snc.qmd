@@ -37,6 +37,8 @@ meta: $testmeta$
 
 ```{r,echo=F,eval=T}
 print("engine on...")
+val <- quarto::quarto_metadata$get("meta")
+val
 ```
 
 ### 16155.
@@ -46,7 +48,7 @@ meta keys S: $testmeta$
 
 meta include: {{< meta testmeta >}}
 
-keys R: `r params$meta`
+keys R: `r val`
 
 testform: `r 3+4`
 
