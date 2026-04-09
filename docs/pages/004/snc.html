@@ -192,7 +192,7 @@ window.Quarto = {
 
 <section id="snc" class="level2">
 <h2 class="anchored" data-anchor-id="snc">snc</h2>
-<p><a href="https://github.com/esteeschwarz/SPUND-LX/commit/?meta:git-sha">commit</a></p>
+<p><a href="https://github.com/esteeschwarz/SPUND-LX/commit/?meta:git-sha">to commit</a></p>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section">16143.1</h3>
 <ul>
@@ -227,6 +227,11 @@ window.Quarto = {
 <li>wt sys.date()</li>
 <li>chk: local no date either: has to be explicit in qml; in docs as formula</li>
 </ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "engine on..."</code></pre>
+</div>
+</div>
 </section>
 <section id="section-3" class="level3">
 <h3 class="anchored" data-anchor-id="section-3">16155.</h3>
@@ -234,9 +239,15 @@ window.Quarto = {
 <li>git hash from wf. not.</li>
 </ul>
 <p>meta keys S: <span class="math inline">\(testmeta\)</span></p>
-<p>meta include: <strong>?meta:testmeta</strong></p>
-<p>keys R: <code>r params$meta</code></p>
-<p>testform: <code>r 3+4</code></p>
+<p>meta include: <span class="math inline">\(testmeta\)</span></p>
+<p>val.f: fixed val</p>
+<p>val.c: <span class="math inline">\(testmeta\)</span></p>
+<p>val.i: <span class="math inline">\(testmeta\)</span></p>
+<p>testform: 7</p>
+<ul>
+<li>engine has to be loaded before execution.</li>
+<li>no access to -M data via <span class="math inline">\(x (tmeta:\)</span>value)</li>
+</ul>
 
 
 </section>

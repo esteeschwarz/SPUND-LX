@@ -15,13 +15,17 @@ tutor: chiara liso
 term: SS22  
 &#10;-----
 authored: st. schwarz  
-snc: #16127::2026-04-09 02:29:59.851184   
+snc: #16127::2026-04-09 04:25:59.048903   
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 ::: -->
+
+    [1] "engine on..."
 
 # SNC
 
     [1] "debug..."
+
+    16156.form
 
 # password parsley
 
