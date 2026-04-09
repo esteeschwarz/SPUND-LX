@@ -84,15 +84,15 @@ snc: #16127::`r Sys.time()`
 ```{r,echo=F,eval=T}
 print("engine on...")
 #val <- quarto::quarto_metadata$get("meta")
-meta <- knitr::metadata
-params <- meta
-val<-params$arkiv
+#meta <- knitr::metadata
+#params <- meta
+#val<-params$arkiv
 ```
 
 # SNC
 
 
-`r val`
+`r val<-"{{< meta arkiv >}}"`
 
 ```{r,echo=F,eval=T}
 print("debug...")

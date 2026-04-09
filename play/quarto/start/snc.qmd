@@ -7,7 +7,7 @@ tmeta: $testmeta$
 
 
 ## snc
-[commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
 ### 16143.1 
 - trigger wf
@@ -38,20 +38,30 @@ tmeta: $testmeta$
 ```{r,echo=F,eval=T}
 print("engine on...")
 #val <- quarto::quarto_metadata$get("meta")
-meta <- knitr::metadata
-params <- meta$
-val<-params$tmeta
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta tmeta >}}"
 ```
 
 ### 16155.
+
+`r val.i<-"{{< meta tmeta >}}"`
+
 - git hash from wf. not.
 
 meta keys S: $testmeta$ 
 
-meta include: {{< meta testmeta >}}
+meta include: {{< meta tmeta >}}
 
-keys R: `r val`
+val.f: `r val.f`
+
+val.c: `r val.c`
+
+val.i: `r val.i`
 
 testform: `r 3+4`
 
-- engine has to be loaded before execution?
+- engine has to be loaded before execution.
+- no access to -M data via $x (tmeta:$value)
