@@ -2,7 +2,9 @@
 title: SNC
 subtitle: "loani: לא אני לא sonderzeichentest" 
 format: html
-tmeta: $testmeta$
+# tmeta: $testmeta$
+date: '`r format(Sys.time())`'
+
 ---
 
 
@@ -42,18 +44,18 @@ print("engine on...")
 #params <- meta$
 #val<-params$tmeta
 val.f<-"fixed val"
-val.c<-"{{< meta tmeta >}}"
+val.c<-"{{< meta testmeta >}}"
 ```
 
 ### 16155.
 
-`r val.i<-"{{< meta tmeta >}}"`
+`r val.i<-"{{< meta testmeta >}}"`
 
 - git hash from wf. not.
 
 meta keys S: $testmeta$ 
 
-meta include: {{< meta tmeta >}}
+meta include: {{< meta testmeta >}}
 
 val.f: `r val.f`
 
@@ -65,3 +67,4 @@ testform: `r 3+4`
 
 - engine has to be loaded before execution.
 - no access to -M data via $x (tmeta:$value)
+- wks in devcontainer
