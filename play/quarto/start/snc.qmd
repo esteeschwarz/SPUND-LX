@@ -2,7 +2,7 @@
 title: SNC
 subtitle: "loani: לא אני לא sonderzeichentest" 
 format: html
-meta: $testmeta$
+tmeta: $testmeta$
 ---
 
 
@@ -37,8 +37,10 @@ meta: $testmeta$
 
 ```{r,echo=F,eval=T}
 print("engine on...")
-val <- quarto::quarto_metadata$get("meta")
-val
+#val <- quarto::quarto_metadata$get("meta")
+meta <- knitr::pandoc_metadata()
+params <- meta$params
+val<-params$tmeta
 ```
 
 ### 16155.

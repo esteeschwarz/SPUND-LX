@@ -80,20 +80,22 @@ snc: #16127::`r Sys.time()`
 ::: -->
 
 
+
 ```{r,echo=F,eval=T}
 print("engine on...")
-val <- quarto::quarto_metadata$get("arkiv")
-val
+#val <- quarto::quarto_metadata$get("meta")
+meta <- knitr::pandoc_metadata()
+params <- meta$params
+val<-params$tmeta
 ```
 
 # SNC
 
-`r cmeta<-quarto::quarto_metadata$get("arkiv")`
-`r cmeta`
+
+`r val`
 
 ```{r,echo=F,eval=T}
 print("debug...")
-cat(cmeta)
 cat(val)
 ```
 
