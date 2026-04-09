@@ -79,10 +79,16 @@ snc: #16127::`r Sys.time()`
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 ::: -->
 
+
+```{r,echo=F,eval=T}
+print("engine on...")
+```
+
 # SNC
 
 `r cmeta<-params$arkiv`
 `r cmeta`
+
 ```{r,echo=F,eval=T}
 print("debug...")
 cat(cmeta)

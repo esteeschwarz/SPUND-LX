@@ -85,4 +85,6 @@ logoright: assets/dcl-head-niemand.png
 
 execute:
   echo: true
+  freeze: false
+  
 code-overflow: wrap

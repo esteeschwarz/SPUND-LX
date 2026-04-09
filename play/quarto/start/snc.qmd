@@ -35,6 +35,10 @@ meta: $testmeta$
 - wt sys.date()
 - chk: local no date either: has to be explicit in qml; in docs as formula
 
+```{r,echo=F,eval=T}
+print("engine on...")
+```
+
 ### 16155.
 - git hash from wf. not.
 
@@ -45,3 +49,5 @@ meta include: {{< meta testmeta >}}
 keys R: `r params$meta`
 
 testform: `r 3+4`
+
+- engine has to be loaded before execution?
