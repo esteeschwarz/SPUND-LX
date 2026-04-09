@@ -84,9 +84,9 @@ snc: #16127::`r Sys.time()`
 ```{r,echo=F,eval=T}
 print("engine on...")
 #val <- quarto::quarto_metadata$get("meta")
-meta <- knitr::pandoc_metadata()
-params <- meta$params
-val<-params$tmeta
+meta <- knitr::metadata
+params <- meta
+val<-params$arkiv
 ```
 
 # SNC

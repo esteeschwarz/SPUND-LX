@@ -38,8 +38,8 @@ tmeta: $testmeta$
 ```{r,echo=F,eval=T}
 print("engine on...")
 #val <- quarto::quarto_metadata$get("meta")
-meta <- knitr::pandoc_metadata()
-params <- meta$params
+meta <- knitr::metadata
+params <- meta$
 val<-params$tmeta
 ```
 
