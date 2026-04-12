@@ -44,7 +44,7 @@ RUN apt-get update \
 
 # Install Quarto
 # quarto-1.8.26-linux-amd64.deb
-RUN export QUARTO_VERSION = "1.9.36"
+RUN export QUARTO_VERSION="1.9.36"
 RUN wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v"$QUARTO_VERSION"/quarto-"$QUARTO_VERSION"-linux-amd64.deb" \
     && dpkg -i "quarto-"$QUARTO_VERSION"-linux-amd64.deb \
     && rm quarto-"$QUARTO_VERSION"-linux-amd64.deb
