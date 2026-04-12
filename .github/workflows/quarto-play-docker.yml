@@ -35,7 +35,9 @@ jobs:
          ls -la
          echo "should display"
          #cat .Renviron
-         quarto install tinytex
+         #  quarto install tinytex
+         R -e 'tinytex::install_tinytex(bundle = "TinyTeX",version="latest")'
+         # wo bundle= not wks.
          echo "nestcepas...."
         #  ls /ms-playwright
         #  whoami
