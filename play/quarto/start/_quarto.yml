@@ -11,11 +11,12 @@ website:
   title: "004"
   navbar:
    left:
-    menu: SS26
-      - href: text001.qmd  
-        text: textur - 001
       - href: index.qmd
         text: Home
+        menu: SS26
+          - href: text001.qmd  
+            text: textur - 001
+      
       - href: about.qmd
         text: About
       - href: pdfpaper/001/uwolf.qmd
