@@ -1,0 +1,73 @@
+---
+title: SNC
+subtitle: "loani: לא אני לא sonderzeichentest" 
+format: html
+# tmeta: $testmeta$
+date: '`r format(Sys.time())`'
+
+---
+
+
+## snc
+[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+
+### 16143.1 
+- trigger wf
+- site 004
+- wf cp -ar to copy site-libs
+- ls output: chk libs.
+- with new wf, rsync in image installed: no, --no-delete unknown
+- t4, test on m12, wks.
+- t5: site_libs was in ignore. rm.
+- t6
+
+### 16145.
+- pdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.
+
+### 16146.
+- font georgia missing, installed in container.
+- t1
+- container success, t2
+- missed output dir
+- DCLX template wks.
+- m12: pull > render play/pages, chk.o
+- m9
+- invalid date? didnt render?
+- wo format but still i. date
+- wt sys.date()
+- chk: local no date either: has to be explicit in qml; in docs as formula
+
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+```
+
+### 16155.
+
+`r val.i<-"{{< meta testmeta >}}"`
+
+- git hash from wf. not.
+
+meta keys S: $testmeta$ 
+
+meta include: {{< meta testmeta >}}
+
+val.f: `r val.f`
+
+val.c: `r val.c`
+
+val.i: `r val.i`
+
+testform: `r 3+4`
+
+- engine has to be loaded before execution.
+- no access to -M data via $x (tmeta:$value)
+- wks in devcontainer
+
+### 16162.
+- new ghcr container, try wk.

@@ -26,7 +26,7 @@ jobs:
     steps:
     - name: Checkout source
       uses: actions/checkout@v4
-    - name: chk vars
+    - name: chk vars, install tinytex
       run: |
          ls -la
          echo "DOWNLOAD_PW=${{ secrets.DOWNLOAD_PW }}" >> .Renviron
@@ -35,6 +35,7 @@ jobs:
          ls -la
          echo "should display"
          #cat .Renviron
+         quarto install tinytex
          echo "nestcepas...."
         #  ls /ms-playwright
         #  whoami
@@ -49,6 +50,7 @@ jobs:
           PLAYWRIGHT_BROWSERS_PATH: /ms-playwright/chromium-1208/chrome-linux64/chrome
       run: |
          #SHORT_SHA=$(git rev-parse --short HEAD)
+         echo "render qmds..."
          quarto render play/quarto/start -M git-hash=${{ github.sha }} -M testmeta=16156.t1
          echo "---- q content..."
          ls play/quarto/output
