@@ -58,7 +58,7 @@ RUN wget -O pandoc.deb -q https://github.com/jgm/pandoc/releases/download/3.9/pa
 RUN quarto --version
 RUN quarto install chromium
 # RUN quarto install tinytex
-RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
+# RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
 RUN export QUARTO_CHROMIUM_PATH="$(quarto env info --json | jq -r '.chromium.path')"
 RUN export QUARTO_CHROMIUM_ARGS="--no-sandbox --disable-dev-shm-usage"
 # Install some latex packages frequently needed by Quarto/Rmarkdown
@@ -77,12 +77,12 @@ RUN export QUARTO_CHROMIUM_ARGS="--no-sandbox --disable-dev-shm-usage"
 #       #      placeins
 
 # Ensure TinyTeX is on PATH
-ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
+# ENV PATH="/root/.TinyTeX/bin/x86_64-linux:$PATH"
 
 # Install common R packages for Quarto
-RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda','googlesheets4','bookdown','rmarkdown','knitr','jsonlite','abind','xml2','remotes','stringi','yaml','officer','bib2df','lme4','ggplot2','tidyr','dplyr','lmerTest','readtext'))"
+RUN R -e "install.packages(c('jquerylib','xfun','quanteda.textplots','quanteda','googlesheets4','bookdown','rmarkdown','knitr','jsonlite','abind','xml2','remotes','stringi','yaml','officer','bib2df','lme4','ggplot2','tidyr','dplyr','lmerTest','readtext','tinytex'))"
 # RUN R -e "rmarkdown::install_pandoc_cli(version = '3.8.3')"
-
+RUN R -e 'tinytex::install_tinytex()'
 # ---- Install Node.js + npm (LTS) ----
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
