@@ -44,10 +44,10 @@ RUN apt-get update \
 
 # Install Quarto
 # quarto-1.8.26-linux-amd64.deb
-ENV QUARTO_VERSION=1.9.37
-RUN wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v"$QUARTO_VERSION"/quarto-"$QUARTO_VERSION"-linux-amd64.deb" \
-    && dpkg -i "quarto-"$QUARTO_VERSION"-linux-amd64.deb" \
-    && rm "quarto-"$QUARTO_VERSION"-linux-amd64.deb"
+ENV QUARTO_V=1.9.37
+RUN wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v"$QUARTO_V"/quarto-"$QUARTO_V"-linux-amd64.deb" \
+    && dpkg -i "quarto-"$QUARTO_V"-linux-amd64.deb" \
+    && rm "quarto-"$QUARTO_V"-linux-amd64.deb"
 
 # # Install exact pandoc
 RUN wget -O pandoc.deb -q https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-1-amd64.deb \
