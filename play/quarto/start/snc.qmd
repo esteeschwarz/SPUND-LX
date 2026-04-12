@@ -68,3 +68,6 @@ testform: `r 3+4`
 - engine has to be loaded before execution.
 - no access to -M data via $x (tmeta:$value)
 - wks in devcontainer
+
+### 16162.
+- new ghcr container, try wk.
