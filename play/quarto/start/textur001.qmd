@@ -19,39 +19,17 @@ cfoot: |
 ---
 
 
-## snc
+#### snc
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
+# index
+Q: https://www.amaliesmith.dk/thread-ripper / 2020. Kopenhagen.
+translated (eng): 2022, Jennifer Russel. London.  
 
-```{r,echo=F,eval=T}
-print("engine on...")
-#val <- quarto::quarto_metadata$get("meta")
-#meta <- knitr::metadata
-#params <- meta$
-#val<-params$tmeta
-val.f<-"fixed val"
-val.c<-"{{< meta testmeta >}}"
-```
+## samling
+> I intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. 
+It knows what it means to be an image from the inside out, with no regard for the outside in.   
+Working together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A *Flora digitalica*, I told the committee. (2022, p.10)
 
-`r val.i<-"{{< meta testmeta >}}"`
-
-- git hash from wf. not.
-
-
-meta include: {{< meta testmeta >}}
-
-val.f: `r val.f`
-
-val.c: `r val.c`
-
-val.i: `r val.i`
-
-testform: `r 3+4`
-
-- engine has to be loaded before execution.
-- no access to -M data via $x (tmeta:$value)
-- wks in devcontainer
-
-### 16162.
-- new ghcr container, try wk.
-- tinytex issue
+### vector space of plants
+- embeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?

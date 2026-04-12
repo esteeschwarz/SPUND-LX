@@ -71,4 +71,4 @@ testform: `r 3+4`
 
 ### 16162.
 - new ghcr container, try wk.
-- tinytex issue, t2
+- tinytex issue, t2. solved.

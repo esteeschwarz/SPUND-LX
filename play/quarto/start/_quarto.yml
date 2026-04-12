@@ -13,13 +13,14 @@ website:
    left:
       - href: index.qmd
         text: Home
-      - text: SS26
-        menu: 
-          - text001.qmd              
       - href: about.qmd
         text: About
-      - href: pdfpaper/001/uwolf.qmd
-        text: plays 
+      - text: SS26
+        menu: 
+          - textur001.qmd              
+        text: plays
+        menu:
+          - pdfpaper/001/uwolf.qmd
       - text: "Download"
         menu:
           - href: report.pdf
