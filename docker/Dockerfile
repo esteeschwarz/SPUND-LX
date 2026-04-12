@@ -1,5 +1,5 @@
 # FROM rocker/r-ver:4.3.1
-FROM rocker/r-ver:4.3 AS r-base
+FROM rocker/r-ver:4.5.2 AS r-base
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
@@ -55,8 +55,8 @@ RUN wget -O pandoc.deb -q https://github.com/jgm/pandoc/releases/download/3.9/pa
 
 # Install TinyTeX (user-level!)
 #RUN R -e "install.packages('tinytex'); tinytex::install_tinytex(force = TRUE)"
-RUN quarto install tinytex
 RUN quarto install chromium
+RUN quarto install tinytex
 RUN export QUARTO_CHROMIUM_PATH="$(quarto env info --json | jq -r '.chromium.path')"
 RUN export QUARTO_CHROMIUM_ARGS="--no-sandbox --disable-dev-shm-usage"
 # Install some latex packages frequently needed by Quarto/Rmarkdown
