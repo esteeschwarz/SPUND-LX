@@ -1,41 +1,27 @@
 ---
-title: SNC
-subtitle: "loani: לא אני לא sonderzeichentest" 
+title: AVL / textur
+subtitle: "no"
 format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
-
+title-meta: ""
+cmeta: |
+  class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::
+  tutor: jan lietz ::
+  term: SS26
+  snc: 16162.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
 
 
 ## snc
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
-### 16143.1 
-- trigger wf
-- site 004
-- wf cp -ar to copy site-libs
-- ls output: chk libs.
-- with new wf, rsync in image installed: no, --no-delete unknown
-- t4, test on m12, wks.
-- t5: site_libs was in ignore. rm.
-- t6
-
-### 16145.
-- pdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.
-
-### 16146.
-- font georgia missing, installed in container.
-- t1
-- container success, t2
-- missed output dir
-- DCLX template wks.
-- m12: pull > render play/pages, chk.o
-- m9
-- invalid date? didnt render?
-- wo format but still i. date
-- wt sys.date()
-- chk: local no date either: has to be explicit in qml; in docs as formula
 
 ```{r,echo=F,eval=T}
 print("engine on...")
@@ -47,13 +33,10 @@ val.f<-"fixed val"
 val.c<-"{{< meta testmeta >}}"
 ```
 
-### 16155.
-
 `r val.i<-"{{< meta testmeta >}}"`
 
 - git hash from wf. not.
 
-meta keys S: $testmeta$ 
 
 meta include: {{< meta testmeta >}}
 
@@ -71,3 +54,4 @@ testform: `r 3+4`
 
 ### 16162.
 - new ghcr container, try wk.
+- tinytex issue
