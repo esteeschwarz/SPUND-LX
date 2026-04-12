@@ -18,7 +18,7 @@ website:
       - text: SS26
         menu: 
           - textur001.qmd              
-        text: plays
+      - text: plays
         menu:
           - pdfpaper/001/uwolf.qmd
       - text: "Download"
