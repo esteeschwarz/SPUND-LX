@@ -18,6 +18,15 @@ cfoot: |
   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
 
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+```
 
 #### snc
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
