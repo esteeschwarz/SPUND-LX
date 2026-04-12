@@ -25,28 +25,28 @@
     "href": "snc.html",
     "title": "SNC",
     "section": "",
-    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2"
+    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved."
   },
   {
     "objectID": "snc.html#snc",
     "href": "snc.html#snc",
     "title": "SNC",
     "section": "",
-    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2"
+    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved."
   },
   {
     "objectID": "textur001.html",
     "href": "textur001.html",
     "title": "AVL / textur",
     "section": "",
-    "text": "to commit\n\n\n[1] \"engine on...\"\n\n\n\ngit hash from wf. not.\n\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue"
+    "text": "to commit"
   },
   {
-    "objectID": "textur001.html#snc",
-    "href": "textur001.html#snc",
+    "objectID": "textur001.html#samling",
+    "href": "textur001.html#samling",
     "title": "AVL / textur",
-    "section": "",
-    "text": "to commit\n\n\n[1] \"engine on...\"\n\n\n\ngit hash from wf. not.\n\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue"
+    "section": "samling",
+    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (2022, p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?"
   },
   {
     "objectID": "about.html",

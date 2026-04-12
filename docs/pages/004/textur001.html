@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-12">
 
 <title>AVL / textur – 004</title>
 <style>
@@ -72,35 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -126,22 +96,32 @@ window.Quarto = {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ss26" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">SS26</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ss26">    
-        <li class="dropdown-header">text001.qmd</li>
+        <li>
+    <a class="dropdown-item" href="./textur001.html">
+ <span class="dropdown-text">AVL / textur</span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-plays" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">plays</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-plays">    
+        <li>
+    <a class="dropdown-item" href="./pdfpaper/001/uwolf.html">
+ <span class="dropdown-text">12293.wolf gossip satz für satz</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./pdfpaper/001/uwolf.html"> 
-<span class="menu-text">plays</span></a>
-  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-download" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Download</span>
@@ -188,7 +168,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 12, 2026</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -200,35 +180,27 @@ window.Quarto = {
 </header>
 
 
-<section id="snc" class="level2">
-<h2 class="anchored" data-anchor-id="snc">snc</h2>
+<section id="snc" class="level4">
+<h4 class="anchored" data-anchor-id="snc">snc</h4>
 <p><a href="https://github.com/esteeschwarz/SPUND-LX/commit/?meta:git-sha">to commit</a></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "engine on..."</code></pre>
-</div>
-</div>
+</section>
+<section id="index" class="level1">
+<h1>index</h1>
+<p>Q: https://www.amaliesmith.dk/thread-ripper / 2020. Kopenhagen. translated (eng): 2022, Jennifer Russel. London.</p>
+<section id="samling" class="level2">
+<h2 class="anchored" data-anchor-id="samling">samling</h2>
+<blockquote class="blockquote">
+<p>I intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.<br>
+Working together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A <em>Flora digitalica</em>, I told the committee. (2022, p.10)</p>
+</blockquote>
+<section id="vector-space-of-plants" class="level3">
+<h3 class="anchored" data-anchor-id="vector-space-of-plants">vector space of plants</h3>
 <ul>
-<li>git hash from wf. not.</li>
-</ul>
-<p>meta include: 16156.t1</p>
-<p>val.f: fixed val</p>
-<p>val.c: 16156.t1</p>
-<p>val.i: 16156.t1</p>
-<p>testform: 7</p>
-<ul>
-<li>engine has to be loaded before execution.</li>
-<li>no access to -M data via <span class="math inline">\(x (tmeta:\)</span>value)</li>
-<li>wks in devcontainer</li>
-</ul>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">16162.</h3>
-<ul>
-<li>new ghcr container, try wk.</li>
-<li>tinytex issue</li>
+<li>embeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
