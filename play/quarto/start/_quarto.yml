@@ -17,7 +17,8 @@ website:
         text: About
       - text: SS26
         menu: 
-          - textur001.qmd              
+          - textur001.qmd
+          - nietzsche001.qmd         
       - text: plays
         menu:
           - pdfpaper/001/uwolf.qmd

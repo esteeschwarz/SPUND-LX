@@ -3,68 +3,11 @@ title: "About"
 ---
 
 # About
+semesterbegleitende notes/essais/quellensammlungen
 
-This page is part of the same website.
-
-It shows that you can have multiple HTML pages and still offer a separate PDF report.
-
-echo: true, command
 ```{r}
 #| echo: true
 # A very long R line to show wrapping in PDF:
-paste("this-is-a-very-long-string", 1:100, collapse = " ")
-```
-
-echo: false, readlines   
-cell-output cell-output-stdout
-```{r}
-#| echo: false
-#| warning: false
-
-ptx<-readLines("gemini-prompt.txt")
-ptx
-```
-
-echo: true, readlines
-```{r}
-#| echo: true
-#| warning: false
-
-ptx<-readLines("gemini-prompt.txt")
-ptx
-
-# A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF: # A very long R line to show wrapping in PDF:
-
-
-
-readLines("gemini-prompt.txt")
-
-t<-tempfile("t.txt")
-writeLines(ptx,t)
-#tx<-readtext::readtext(t)$text
-#tx
-##
-```
-```{r}
-#| echo: true
-# A very long R line to show wrapping in PDF:
-paste("this-is-a-very-long-string", 1:100, collapse = " ")
-1+2
-paste("this-is-a-very-long-string", 1:100)
-```
-
-```{r}
-#| results: asis
-
-cat(readLines("gemini-prompt.txt"), sep = "\n")
-```
-
-### div
-```{r}
-#| results: asis
-
-txt <- readLines("gemini-prompt.txt")
-cat(sprintf('<div class="cell-output cell-output-stdout">
-<pre><code>%s</code></pre>
-</div>',txt))
+# paste("this-is-a-very-long-string", 1:100, collapse = " ")
+print("engine on...")
 ```
