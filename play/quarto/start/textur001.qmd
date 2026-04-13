@@ -17,6 +17,7 @@ arkiv: 16162.tiny
 cfoot: |
   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
+[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
 ```{r,echo=F,eval=T}
 print("engine on...")
@@ -28,12 +29,9 @@ val.f<-"fixed val"
 val.c<-"{{< meta testmeta >}}"
 ```
 
-#### snc
-[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
 # index
-Q: https://www.amaliesmith.dk/thread-ripper / 2020. Kopenhagen.
-translated (eng): 2022, Jennifer Russel. London.  
+Q: [https://www.amaliesmith.dk/thread-ripper](https://www.amaliesmith.dk/thread-ripper) / 2020. Kopenhagen; translated (eng): 2022, Jennifer Russel. London.  
 
 ## samling
 > I intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. 
