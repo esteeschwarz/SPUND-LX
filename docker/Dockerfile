@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-dejavu \
     fonts-noto \
     rsync \
+    libwebpmux3 \
     && rm -rf /var/lib/apt/lists/*
 
 # install fonts
