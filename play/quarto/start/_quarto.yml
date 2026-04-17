@@ -18,14 +18,15 @@ website:
       - text: SS26
         menu: 
           - textur001.qmd
-          - nietzsche001.qmd         
+          - nietzsche001.qmd
+          - qa.qmd      
       - text: plays
         menu:
           - pdfpaper/001/uwolf.qmd
-      - text: "Download"
-        menu:
-          - href: report.pdf
-            text: "Download PDF"
+      # - text: "Download"
+      #   menu:
+      #     - href: report.pdf
+      #       text: "Download PDF"
    right:
       - snc.qmd
 
