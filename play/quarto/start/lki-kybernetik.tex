@@ -1,0 +1,492 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\newcommand{\doctitle}{kybernetik}
+\newcommand{\docsubtitle}{Norbert Wiener - Regelung und Nachrichtenübertragung im Lebewesen und in der Maschine}
+\newcommand{\docdate}{2026-04-18}
+% DEBUG docmeta type=Para
+\newcommand{\docmeta}{class: {[}16431{]} Literatur und KI :: tutor: marlene schwarz :: term:
+SS26 snc: 16172.1}
+\newcommand{\docfoot}{\href{https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp}{\textcolor{white}{duumy foot collection}}}
+\newcommand{\doclogoleft}{assets/fadenlogo-fwb.png}
+\newcommand{\doclogoright}{assets/dcl-head-niemand.png}
+% ============================================================
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
+% ============================================================
+
+\usepackage{iftex}
+\RequireLuaTeX
+
+\usepackage{fontspec}
+
+\setmainfont{Georgia}[
+  Ligatures = TeX
+]
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
+% ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
+
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
+
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
+
+% ------------------------------------------------------------
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
+% ------------------------------------------------------------
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
+
+\usepackage[hyperfootnotes=false]{hyperref}
+% ============================================================
+% header.tex  —  include-in-header snippet
+% Replaces $var$ Pandoc syntax with \ifdefined\doc... guards.
+% Vars injected via vars.lua Lua filter from YAML front matter:
+%   \doctitle      \docsubtitle   \docauthor   \docdate
+%   \docmeta       \docfoot       \doclogoleft \doclogoright
+%
+% No fancyhdr. Header fires via \AtBeginDocument,
+% footer via \AtEndDocument — bidi-safe.
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+
+% ---------- header font (adjust to taste) ----------
+\newfontfamily\headerfont{Source Sans 3}
+
+% ---------- footer colors ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
+
+% ---------- column types ----------
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{45mm}}
+
+% vertical separator rule
+\newcommand{\vsep}{\color{black}\vrule width 1pt}
+
+% ============================================================
+% CUSTOM HEADER
+% ============================================================
+\newcommand{\CustomHeader}{%
+% \LTR{%
+\noindent
+\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
+
+% LEFT LOGO
+\ifdefined\doclogoleft
+  \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
+\fi
+&
+% CENTER: title + subtitle stacked in a minipage so \\ is a
+% line break within the cell, not a new table row
+\begin{minipage}[c]{\linewidth}
+\centering
+\ifdefined\doctitle
+  {\Large\bfseries\headerfont\doctitle}%
+\fi
+\ifdefined\docsubtitle
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
+\fi
+\vspace{5pt}
+
+\end{minipage}
+% &
+% % CENTER TITLE BLOCK
+% \ifdefined\doctitle
+%   {\Large\bfseries\doctitle}%
+% \fi
+% \ifdefined\docsubtitle
+%   \\\normalsize\docsubtitle
+% \fi
+&
+% RIGHT LOGO
+\ifdefined\doclogoright
+  \includegraphics[height=10mm,keepaspectratio]{\doclogoright}%
+\fi
+
+\end{tabularx}
+
+\hrule
+% \vspace{6pt}
+
+% ---------- META AREA ----------
+{\small
+\ifdefined\docauthor
+  \textbf{Author:} \docauthor\\
+\fi
+\ifdefined\docdate
+  \textbf{Date:} \docdate
+\fi
+\ifdefined\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
+\fi
+}
+\vspace{6pt}
+
+\hrule
+
+% \vspace{12pt}
+% }% end \LTR
+}% end \CustomHeader
+
+% ============================================================
+% CUSTOM FOOTER  (overlay, anchored to page bottom)
+% ============================================================
+\newcommand{\CustomFooter}{%
+\begin{tikzpicture}[remember picture, overlay]
+\node[
+  anchor=south,
+  draw,
+  fill=footerbg,
+  text=footerfg,
+  inner sep=10pt,
+  rounded corners=2pt,
+  text width=\dimexpr\textwidth-20pt\relax
+]
+at ([yshift=5mm]current page.south)
+{%
+  \begin{center}
+  {\small
+  \ifdefined\docfoot
+    % {\docfoot}%
+    {\headerfont\docfoot}%
+  \fi
+  }
+  \end{center}
+};
+\end{tikzpicture}%
+}% end \CustomFooter
+
+% ============================================================
+% FIRE header at doc start, footer at doc end
+% ============================================================
+% \AtBeginDocument{\CustomHeader}
+\AtEndDocument{\CustomFooter}
+\renewcommand{\maketitle}{}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{kybernetik}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Norbert Wiener - Regelung und Nachrichtenübertragung im
+Lebewesen und in der Maschine}
+\author{}
+\date{2026-04-18}
+\begin{document}
+\maketitle
+
+\CustomHeader
+
+
+\href{https://github.com/esteeschwarz/SPUND-LX/commit/?meta:git-sha}{to
+commit}
+
+\begin{verbatim}
+[1] "engine on..."
+\end{verbatim}
+
+\section{general}\label{general}
+
+Norbert Wiener, der u.u. als begründer der (damals) modernen kybernetik
+(dem wortlaut nach\ldots) betrachtet werden kann, war mathematiker am
+MIT und umreiszt in der einleitung zur 1963 erschienenen Kybernetik
+(Wiener (1992)) ihre entstehungsgeschichte in etwa so, dasz eine dort in
+den letzten Kriegsjahren des zweiten weltkriegs locker zusammentreffende
+runde von wissenschaftlern hauptsächlich der physik, mathematik,
+soziologie, psychologie, aber weitestgehend interdisziplinär und offen,
+im bestreben, die wissenschaft in der art offenen, fruchtbaren
+austauschs zu neuen, grenzüberschreitenden erkenntnissen zu geleiten.
+
+noch während des krieges neu zu entwickelnde technologien wie zb. der
+flugabwehr wurden hier unter wirklich revolutionären ansätzen, die
+erkenntnisse aus der mathematik und soziologie/psychologie/physiologie
+zu verbinden wusste, erforscht. ziel waren
+steuerungs/regelungsmechanismen für eine erfolgreiche flugbahnberechnung
+von flugzeugen, die in in erster linie auf einem rückkopplungsmodel
+beruhte, das selbständig, ohne weiteres eingreifen von menschen, in der
+lage wäre, ihre berechnungen zuerst an empfangene statusmeldungen
+anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in
+diesem sinne gleicht das model dem steuermechanismus eines schiffes, das
+seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst
+fortwährend anzupassen in der lage ist.
+
+\pandocbounded{\includegraphics[keepaspectratio]{wiener-exc-001.png}} Q:
+Wiener (1961)
+
+aus diesem grunde entschlossen sich die wissenschaftler, die technik
+bzw. ``das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der
+Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir
+aus dem griechischen »κvßερvήΤη\textasciitilde« oder »Steuermann«
+bildeten''. auch gouverneur udgl. ist hier etymologisch verwurzelt.
+
+der kybernet war also zuerst der sich selbständig regelnde
+steuermechanismus einer maschine, eines maschinellen elements, das seine
+umgebung beobachtet und anpassungen der steuerung darauf ausrichtet.
+insofern also vielleicht schon eine kluge maschine im gegensatz zu rein
+prozessorientierten starren regelungsmechanismen.
+
+zuhilfe kamen den wissenschaftlern erkenntnisse über soziologische
+prozesse, physiologische beobachtungen von neuronalen netzen oder auch
+die mathematik und biologie in natürlichen wachstumsprozessen. damit
+reicht das fundament der kybernetik schon sehr weit in unser heutiges
+verständnis dessen, was u.u. allgemein unter kybernetik verstanden wurde
+hinein; also eine mit durchaus menschlichen eigenschaften versehene
+maschine, die tätigkeiten des menschen besser, schneller und weniger
+fehlerbehaftet ausführen kann. das wesentlich ist hier natürlich die
+schnelligkeit der maschinellen prozesse. basierend auf bestehenden
+rechenmaschinen, die selbst ihre anfänge in den forschungen von charles
+babbage und ada lovelace in den 30er jahren des 19jh genommen haben
+mögen, wurde deren technik an notwendige höhere rechenleistungen
+angepasst, die jdfs. nicht mehr rein mechanisch vonstatten ging sondern
+mithilfe elektronischer bauteile perfektioniert wurde. auch hier kamen
+wieder forschungen aus der physik, nachrichtentechnik und physiologie
+zusammen, um die rechenleistung effektiver zu gestalten.
+
+\section*{references}\label{references}
+\addcontentsline{toc}{section}{references}
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-wiener_cybernetics_1961}
+Wiener, Norbert. 1961. \emph{Cybernetics or {Control} and
+{Communication} in the {Animal} and the {Machine}}. MIT Press.
+\url{http://archive.org/details/wiener-1938}.
+
+\bibitem[\citeproctext]{ref-wiener_kybernetik_1992}
+Wiener, Norbert. 1992. \emph{Kybernetik: {Regelung} Und
+{Nachrichtenübertragung} Im {Lebewesen} Und in Der {Maschine} ({MIT},
+1948)}. 2nd ed. Econ Classics. ECON-Verl.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

@@ -1,7 +1,9 @@
 ---
 title: kybernetik
 subtitle: "Norbert Wiener - Regelung und Nachrichtenübertragung im Lebewesen und in der Maschine"
-format: html
+# format: |
+#      html 
+#      - pdf
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
@@ -18,9 +20,9 @@ arkiv: 16162.tiny
 cfoot: |
   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
-
+::: {.content-visible when-format="html"}
 {{< meta cmeta >}}
-
+:::
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
 ```{r,echo=F,eval=T}
@@ -41,7 +43,8 @@ Norbert Wiener, der u.u. als begründer der (damals) modernen kybernetik (dem wo
 noch während des krieges neu zu entwickelnde technologien wie zb. der flugabwehr wurden hier unter wirklich revolutionären ansätzen, die erkenntnisse aus der mathematik und soziologie/psychologie/physiologie zu verbinden wusste, erforscht. ziel waren steuerungs/regelungsmechanismen für eine erfolgreiche flugbahnberechnung von flugzeugen, die in in erster linie auf einem rückkopplungsmodel beruhte, das selbständig, ohne weiteres eingreifen von menschen, in der lage
 wäre, ihre berechnungen zuerst an empfangene statusmeldungen anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in diesem sinne gleicht das model dem steuermechanismus eines schiffes, das seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst fortwährend anzupassen in der lage ist. 
 
-![](wiener-exc-001.png) (@wiener_cybernetics_1961)
+![](wiener-exc-001.png) 
+Q: @wiener_cybernetics_1961
 
 aus diesem grunde entschlossen sich die wissenschaftler, die technik bzw. "das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir aus dem griechischen »κvßερvήΤη~« oder »Steuermann« bildeten". auch gouverneur udgl. ist hier etymologisch verwurzelt.
 
@@ -49,4 +52,5 @@ der kybernet war also zuerst der sich selbständig regelnde steuermechanismus ei
 
 zuhilfe kamen den wissenschaftlern erkenntnisse über soziologische prozesse, physiologische beobachtungen von neuronalen netzen oder auch die mathematik und biologie in natürlichen wachstumsprozessen. damit reicht das fundament der kybernetik schon sehr weit in unser heutiges verständnis dessen, was u.u. allgemein unter kybernetik verstanden wurde hinein; also eine mit durchaus menschlichen eigenschaften versehene maschine, die tätigkeiten des menschen besser, schneller und weniger fehlerbehaftet ausführen kann. das wesentlich ist hier natürlich die schnelligkeit der maschinellen prozesse. basierend auf bestehenden rechenmaschinen, die selbst ihre anfänge in den forschungen von charles babbage und ada lovelace in den 30er jahren des 19jh genommen haben mögen, wurde deren technik an notwendige höhere rechenleistungen angepasst, die jdfs. nicht mehr rein mechanisch vonstatten ging sondern mithilfe elektronischer bauteile perfektioniert wurde. auch hier kamen wieder forschungen aus der physik, nachrichtentechnik und physiologie zusammen, um die rechenleistung effektiver zu gestalten. 
 
+# references
 
