@@ -39,7 +39,9 @@ val.c<-"{{< meta cmeta >}}"
 Norbert Wiener, der u.u. als begründer der (damals) modernen kybernetik (dem wortlaut nach...) betrachtet werden kann, war mathematiker am MIT und umreiszt in der einleitung zur 1963 erschienenen Kybernetik (@wiener_kybernetik_1992) ihre entstehungsgeschichte in etwa so, dasz eine dort in den letzten Kriegsjahren des zweiten weltkriegs locker zusammentreffende runde von wissenschaftlern hauptsächlich der physik, mathematik, soziologie, psychologie, aber weitestgehend interdisziplinär und offen, im bestreben, die wissenschaft in der art offenen, fruchtbaren austauschs zu neuen, grenzüberschreitenden erkenntnissen zu geleiten.
 
 noch während des krieges neu zu entwickelnde technologien wie zb. der flugabwehr wurden hier unter wirklich revolutionären ansätzen, die erkenntnisse aus der mathematik und soziologie/psychologie/physiologie zu verbinden wusste, erforscht. ziel waren steuerungs/regelungsmechanismen für eine erfolgreiche flugbahnberechnung von flugzeugen, die in in erster linie auf einem rückkopplungsmodel beruhte, das selbständig, ohne weiteres eingreifen von menschen, in der lage
-wäre, ihre berechnungen zuerst an empfangene statusmeldungen anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in diesem sinne gleicht das model dem steuermechanismus eines schiffes, das seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst fortwährend anzupassen in der lage ist.  > [image](wiener-exc-001.pdf)  
+wäre, ihre berechnungen zuerst an empfangene statusmeldungen anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in diesem sinne gleicht das model dem steuermechanismus eines schiffes, das seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst fortwährend anzupassen in der lage ist. 
+
+![](wiener-exc-001.png) (@wiener_cybernetics_1961)
 
 aus diesem grunde entschlossen sich die wissenschaftler, die technik bzw. "das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir aus dem griechischen »κvßερvήΤη~« oder »Steuermann« bildeten". auch gouverneur udgl. ist hier etymologisch verwurzelt.
 
