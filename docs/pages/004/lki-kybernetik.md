@@ -11,9 +11,9 @@ commit](https://github.com/esteeschwarz/SPUND-LX/commit/?meta:git-sha)
 
 Norbert Wiener, der u.u. als begründer der (damals) modernen kybernetik
 (dem wortlaut nach…) betrachtet werden kann, war mathematiker am MIT und
-umreiszt in der einleitung zur 1963 erschienenen Kybernetik (Wiener
-(1992)) ihre entstehungsgeschichte in etwa so, dasz eine dort in den
-letzten Kriegsjahren des zweiten weltkriegs locker zusammentreffende
+umreiszt in der einleitung zur 1961 (1st: 1948) erschienenen Kybernetik
+(Wiener (1992)) ihre entstehungsgeschichte in etwa so, dasz eine dort in
+den letzten Kriegsjahren des zweiten weltkriegs locker zusammentreffende
 runde von wissenschaftlern hauptsächlich der physik, mathematik,
 soziologie, psychologie, aber weitestgehend interdisziplinär und offen,
 im bestreben, die wissenschaft in der art offenen, fruchtbaren
