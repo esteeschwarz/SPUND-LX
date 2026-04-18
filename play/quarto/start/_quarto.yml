@@ -19,7 +19,7 @@ website:
         menu: 
           - textur001.qmd
           - nietzsche001.qmd
-          - qa.qmd      
+          - lki-001.qmd      
       - text: plays
         menu:
           - pdfpaper/001/uwolf.qmd

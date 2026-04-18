@@ -1,0 +1,66 @@
+---
+title: Lit / KI
+subtitle: "no"
+format: html
+# tmeta: $testmeta$
+date: '`r format(Sys.time())`'
+title-meta: ""
+bibliography: lit-ki.bib
+cmeta: |
+  class: [16431] Literatur und KI ::
+  tutor: marlene schwarz ::
+  term: SS26
+  snc: 16172.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+```{r,echo=F,eval=F}
+#print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+# t<-"class: [16719] Nietzsche und Nietzscherezeption ::
+#   tutor: friederike günther ::
+#   term: SS26
+#   snc: 16163.1"
+# tl<-  unlist(strsplit(t,"::"))
+# val.f<-"fixed val"
+# val.c<-"{{< meta testmeta >}}"
+# val.c<-"{{< meta cmeta >}}"
+#val.d<-strsplit(val.c,"::")
+#val.d<-unlist(val.d)
+#print(typeof(val.c))
+#print(val.c)
+#print(val.d)
+#print(tl)
+#print(dim(val.d))
+# cat(val.c)
+```
+
+{{< meta cmeta >}}
+
+[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+val.c<-"{{< meta cmeta >}}"
+```
+
+
+# index
+1. samling: annotations to @wiener_kybernetik_1992 > [link](qa.qmd)
+2. [on kybernetik](lki-kybernetik.qmd)
+
+
+
