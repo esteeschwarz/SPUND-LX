@@ -51,7 +51,8 @@ Wiener, Kybernetik: annotations
 <div id="ref-wiener_kybernetik_1992" class="csl-entry">
 
 Wiener, Norbert. 1992. *Kybernetik: Regelung Und Nachrichtenübertragung
-Im Lebewesen Und in Der Maschine*. Econ Classics. ECON-Verl.
+Im Lebewesen Und in Der Maschine (MIT, 1948)*. 2nd ed. Econ Classics.
+ECON-Verl.
 
 </div>
 
