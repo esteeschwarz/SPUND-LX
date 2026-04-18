@@ -13,7 +13,7 @@ Norbert Wiener, der u.u. als begründer der (damals) modernen kybernetik
 (dem wortlaut nach…) betrachtet werden kann, war mathematiker am MIT und
 umreiszt in der einleitung zur 1961 (1st: 1948) erschienenen Kybernetik
 (Wiener (1992)) ihre entstehungsgeschichte in etwa so, dasz eine dort in
-den letzten Kriegsjahren des zweiten weltkriegs locker runde von
+den letzten Kriegsjahren des zweiten weltkriegs lockere runde von
 wissenschaftlern hauptsächlich der physik, mathematik, soziologie,
 psychologie, aber weitestgehend interdisziplinär und offen, im bestreben
 zusammenkam, die wissenschaft in der art offenen, fruchtbaren austauschs
