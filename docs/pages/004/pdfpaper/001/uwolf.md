@@ -15,7 +15,7 @@ tutor: chiara liso
 term: SS22  
 &#10;-----
 authored: st. schwarz  
-snc: #16127::2026-04-18 11:18:25.095056   
+snc: #16127::2026-04-18 13:03:51.567639   
 [<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
 ::: -->
 
