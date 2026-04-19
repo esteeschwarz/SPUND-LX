@@ -1,0 +1,57 @@
+---
+title: "
+Wiener, Kybernetik: annotations"
+bibliography: litKI.bib
+#nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+title-meta: ""
+date: '`r format(Sys.time())`'
+
+---
+
+<!-- {{< include _vars.qmd >}} -->
+
+```{r}
+#| echo: false
+#| warning: false
+#| eval: true
+
+qa<-c("Wie KI unsere Sprache","yakura-llm")
+qa<-"wiener_kybernetik_1992"
+tdf<-read.csv("litKI-wiener_kybernetik_1992-qa.csv")
+
+m1<-tdf$paper==qa[1]
+
+kdf<-data.frame(id=which(m1),annotations=tdf$a[m1])
+
+#knitr::kable(kdf)
+
+```
+
+## notes on 
+paper: 
+@wiener_kybernetik_1992   
+
+
+```{r}
+#| label: tbl_qa1
+#| tbl-cap: "wiener_kybernetik_1992: annotations"
+#| echo: false
+#| warning: false
+#| eval: true
+
+# qa<-c("Wie KI unsere Sprache","yakura-llm")
+# qa<-"lit-ki"
+# tdf<-read.csv("qa.csv")
+
+# m1<-tdf$paper==qa[1]
+
+# kdf<-data.frame(id=which(m1),annotations=tdf$a[m1])
+
+knitr::kable(kdf)
+
+```
+
+
