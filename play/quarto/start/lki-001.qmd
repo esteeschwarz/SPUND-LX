@@ -7,7 +7,7 @@ subtitle: "Norbert Wiener - Regelung und Nachrichtenübertragung im Lebewesen un
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
-bibliography: lit-ki.bib
+bibliography: litKI.bib
 cmeta: |
   class: [16431] Literatur und KI ::
   tutor: marlene schwarz ::

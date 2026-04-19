@@ -2,7 +2,7 @@
 library(httr)
 library(bib2df)
 #tag<-"dcl"
-bibyml<-c("lit-ki","textur","nietzsche")
+# bibyml<-c("lit-ki","textur","nietzsche")
 
 #setwd(".")
 getwd()
@@ -157,7 +157,7 @@ getwd()
 bibq<-bib2df(y)
 }
 
-lapply(bibyml,function(x){
+lapply(names(qa),function(x){
   print(x)
   get.bib(x)
 })

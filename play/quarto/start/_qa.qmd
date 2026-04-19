@@ -1,6 +1,6 @@
 ---
-title: "LIT-KI: annotations"
-bibliography: lit-ki.bib
+title: "{title}: annotations"
+bibliography: {study}.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
@@ -12,25 +12,42 @@ date: '`r format(Sys.time())`'
 
 <!-- {{< include _vars.qmd >}} -->
 
-## notes on 
-paper: 
-@wiener_kybernetik_1992   
-
-
 ```{r}
-#| label: tbl_qa1
-#| tbl-cap: "Wiener, Kybernetik: annotations"
 #| echo: false
 #| warning: false
 #| eval: true
 
 qa<-c("Wie KI unsere Sprache","yakura-llm")
-qa<-"lit-ki"
-tdf<-read.csv("qa.csv")
+qa<-"{paper}"
+tdf<-read.csv("{study}-{paper}-qa.csv")
 
 m1<-tdf$paper==qa[1]
 
 kdf<-data.frame(id=which(m1),annotations=tdf$a[m1])
+
+#knitr::kable(kdf)
+
+```
+
+## notes on 
+paper: 
+@{paper}   
+
+
+```{r}
+#| label: tbl_qa1
+#| tbl-cap: "{paper}: annotations"
+#| echo: false
+#| warning: false
+#| eval: true
+
+# qa<-c("Wie KI unsere Sprache","yakura-llm")
+# qa<-"lit-ki"
+# tdf<-read.csv("qa.csv")
+
+# m1<-tdf$paper==qa[1]
+
+# kdf<-data.frame(id=which(m1),annotations=tdf$a[m1])
 
 knitr::kable(kdf)
 

@@ -5,12 +5,12 @@ format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
-bibliography: lit-ki.bib
+bibliography: litKI.bib
 cmeta: |
   class: [16431] Literatur und KI ::
   tutor: marlene schwarz ::
   term: SS26
-  snc: 16172.1  
+  snc: 16172.2 
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 16162.tiny
@@ -59,7 +59,7 @@ val.c<-"{{< meta cmeta >}}"
 
 
 # index
-1. samling: margin notes @wiener_kybernetik_1992 > [link](qa.qmd)
+1. samling: margin notes @wiener_kybernetik_1992 > [link](litKI-wiener_kybernetik_1992-qa.qmd)
 2. [summary on kybernetik introduction](lki-001.qmd)
 
 

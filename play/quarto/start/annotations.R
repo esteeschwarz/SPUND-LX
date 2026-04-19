@@ -1,32 +1,49 @@
-#docdir<-".."
+#docdir<-"."
 #setwd("SPUND-LX/play/quarto/start/")
-qa<-c("Wie KI unsere Sprache","yakura-llm")
-qa<-c("Kybernetik")
-qa<-"lit-ki"
-get.notes<-function(docdir){
+# qa<-c("Wie KI unsere Sprache","yakura-llm")
+# qa<-c("Kybernetik")
+# qa<-c("lit-ki","nietzsche","textur") # margin note studyset
+
+get.notes.top<-function(docdir,study,paper){
+print(docdir)
+print(study)
+print(paper)
+if(is.na(paper)){
+  print("no paper annotations...")
+  return("aborting...")
+}
+get.notes<-function(docdir,study){
   f<-list.files(docdir,pattern="docx")
   print(f)
-  m<-grep("docx",f)
+  qa<-study
+  print(qa)
+  m<-grep(qa,f)
   # f[m]
   if(length(m)>1)
     m<-m[length(m)] # latest docx export
   library(officer)
 #  f<-list.files()
  # m<-grep("docx",f)
+  print(f[m])
   t<-read_docx(paste(docdir,f[m],sep="/"))
   #t[[7]]
   #library(xml2)
   d<-docx_summary(t)
   # d
   
-  get.qnotes<-function(q,d){
+  get.qnotes<-function(paper,d){
   #q<-"Wie KI unsere Sprache"
   # m<-grep("Wie KI unsere Sprache",d$text)
+    q<-paper
+    if(is.na(paper))
+      return(NA)
+    print(q)
     m<-grep(q,d$text)
     h1<-d$style_name=="Heading 1"
   # d$text[h1]
   #h1<-d$level==1 # wks only on tapee, different officer version?
   h1<-which(h1)
+    print("H1...")
     print(h1)
   hb<-m==h1
   hba<-which(hb)
@@ -39,6 +56,9 @@ get.notes<-function(docdir){
   if(is.na(hbc)|length(hbc)==1)
      hbc<-length(d$doc_index)
   # hbc
+  mi<-grep("#init",d$text[hba:hbc])
+    print(d$text[hba:hbc][mi])
+  ipaper<<-gsub("#init_(.*)_","\\1",d$text[hba:hbc][mi])
   # d$text[hba:hbc]
   notes<-d$text[hba:hbc]
   notes<-notes[notes!=""]
@@ -47,7 +67,7 @@ get.notes<-function(docdir){
 #  p<-2
  # q<-qa[p]
   #x<-q
-  notes<-lapply(qa,function(x){
+  notes<-lapply(paper,function(x){
     nx<-get.qnotes(x,d)
     nx<-data.frame(n=x,nx)
     
@@ -71,7 +91,7 @@ get.notes<-function(docdir){
 # })
 
 # notes<-lapply(qa,function(x){
-  notes.df<-get.notes(".")
+  notes.df<-get.notes(docdir,study)
 # 
 #   })
 
@@ -124,7 +144,7 @@ a3<-data.frame(abind(a2,along = 1))
 a2<-put.qmd(notes)
 #a2$t[1:10]
 a2$t<-gsub("(http[s]*://.+)(?>[ \\\n])","[see linked source](\\1)",a2$t,perl = T)
-write.csv(a2,"qa.csv")
+write.csv(a2,paste0(study,"-",paper,"-qa.csv"))
 #notes
 #a2
 
@@ -137,6 +157,9 @@ refs<-"# references{#references}"
 # a4<-c(a3,a2$t,"",refs)
 # writeLines(a4,"slides.qmd")
 a3<-readLines("_qa.qmd")
+a3<-gsub("\\{study\\}",study,a3)
+a3<-gsub("\\{paper\\}",paper,a3)
+a3<-gsub("\\{title\\}",ipaper,a3)
 a4<-c(a3,a2$t,"",refs)
 #writeLines(a4,"qa.qmd")
 #writeLines(a3,"qa.qmd")
@@ -146,7 +169,7 @@ a4<-c(a3,a2$t,"",refs)
 return(a3) # without slides included
 }
 a4<-get.slides(a2)
-writeLines(a4,"qa.qmd")
+writeLines(a4,paste0(study,"-",paper,"-qa.qmd"))
 
 #src<-"_abstractB-ul.md"
 f<-list.files()
@@ -166,5 +189,11 @@ lines <- gsub("(?=\\\\)([>_])", "\\1", t,perl = T)
 writeLines(lines,src)
 cat("-------- written md: ",src,"------\n")
 }
-
-# source("fetch-zotero.R")
+}
+names(qa)
+lapply(seq_along(qa),function(i){
+  print(qa[i])
+  print(names(qa[i]))
+  get.notes.top(docdir,names(qa[i]),qa[i])
+})
+  # source("fetch-zotero.R")
