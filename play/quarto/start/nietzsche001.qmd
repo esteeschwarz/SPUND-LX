@@ -5,6 +5,8 @@ format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
+bibliography: nietzsche.bib
+nocite: '@*'
 cmeta: |
   class: [16719] Nietzsche und Nietzscherezeption ::
   tutor: friederike günther ::
@@ -17,31 +19,10 @@ arkiv: 16162.tiny
 cfoot: |
   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
-```{r,echo=F,eval=F}
-#print("engine on...")
-#val <- quarto::quarto_metadata$get("meta")
-#meta <- knitr::metadata
-#params <- meta$
-#val<-params$tmeta
-# t<-"class: [16719] Nietzsche und Nietzscherezeption ::
-#   tutor: friederike günther ::
-#   term: SS26
-#   snc: 16163.1"
-# tl<-  unlist(strsplit(t,"::"))
-# val.f<-"fixed val"
-# val.c<-"{{< meta testmeta >}}"
-# val.c<-"{{< meta cmeta >}}"
-#val.d<-strsplit(val.c,"::")
-#val.d<-unlist(val.d)
-#print(typeof(val.c))
-#print(val.c)
-#print(val.d)
-#print(tl)
-#print(dim(val.d))
-# cat(val.c)
-```
 
+::: {.content-visible when-format="html"}
 {{< meta cmeta >}}
+:::
 
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 

@@ -2,6 +2,7 @@
 library(httr)
 library(bib2df)
 #tag<-"dcl"
+bibyml<-c("lit-ki","textur","nietzsche")
 
 #setwd(".")
 getwd()
@@ -24,7 +25,7 @@ writeLines(bibjs,y)
 #print(parameters$bibliography)
 library(jsonlite)
 bibdf<-fromJSON(y,flatten=T)
-bibyml<-"lit-ki"
+get.bib<-function(bibyml){
 bibkey<-bibdf$key[grep(bibyml,bibdf$data.name)]
 
 bibyml<-paste0(bibyml,".bib")
@@ -154,4 +155,9 @@ writeLines(bibtx.cpt,bibyml)
 #bibtx.cpt
 getwd()
 bibq<-bib2df(y)
-  
+}
+
+lapply(bibyml,function(x){
+  print(x)
+  get.bib(x)
+})

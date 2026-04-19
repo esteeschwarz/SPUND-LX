@@ -5,6 +5,7 @@ format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
+bibliography: textur.bib
 cmeta: |
   class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::
   tutor: jan lietz ::
@@ -17,6 +18,10 @@ arkiv: 16162.tiny
 cfoot: |
   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
 ```{r,echo=F,eval=T}
@@ -31,12 +36,14 @@ val.c<-"{{< meta testmeta >}}"
 
 
 # index
-Q: [https://www.amaliesmith.dk/thread-ripper](https://www.amaliesmith.dk/thread-ripper) / 2020. Kopenhagen; translated (eng): 2022, Jennifer Russel. London.  
+Q: 
+- @smith_thread_2020, @smith_thread_2022
+- @rosing_textile_2024  
 
 ## samling
 > I intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. 
 It knows what it means to be an image from the inside out, with no regard for the outside in.   
-Working together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A *Flora digitalica*, I told the committee. (2022, p.10)
+Working together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A *Flora digitalica*, I told the committee. (@smith_thread_2022, p.10)
 
 ### vector space of plants
 - embeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?
