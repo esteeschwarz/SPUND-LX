@@ -73,6 +73,23 @@ paper: Nietzsche (2024)
 | 61 | nur in einem unausgesetzten Widerstreben gegen das titanisch-barbarische Wesen des Dionysischen konnte eine so trotzig-spröde, mit Bollwerken umschlossene Kunst, eine so kriegsgemässe und herbe Erziehung, ein so grausames und rücksichtsloses Staatswesen von längerer Dauer sein |
 | 62 | Wenn auf diese Weise die ältere hellenische Geschichte, im Kampf jener zwei feindseligen Principien, in vier grosse Kunststufen zerfällt: so sind wir jetzt gedrängt, weiter nach dem letzten Plane dieses Werdens und Treibens zu fragen, falls uns S nicht etwa die letzterreichte Periode, die der dorischen Kunst, als die Spitze und Absicht jener Kunsttriebe gelten sollte: und hier bietet sich unseren Blicken das erhabene und hochgepriesene Kunstwerk der a t t i s c h e n T r a g ö d i e und des dramatischen Dithyrambus, als das gemeinsame Ziel beider Triebe, deren io geheimnissvolles Ehebündniss, nach langem vorhergehenden Kampfe, sich in einem solchen Kinde — das zugleich Antigone und Kassandra ist — verherrlicht hat. |
 | 63 | das erhabene und hochgepriesene Kunstwerk der a t t i s c h e n T r a g ö d i e und des dramatischen Dithyrambus, als das gemeinsame Ziel beider Triebe, deren io geheimnissvolles Ehebündniss |
+| 64 | Homer, der in sich versunkene greise Träumer, der Typus des apollinischen, naiven Künstlers, sieht nun staunend den leidenschaftlichen Kopf des wild durch’s Dasein getriebenen 3° kriegerischen Musendieners Archilochus |
+| 65 | dem „objectiven” Künstler der erste „subjective” entgegen gestellt sei |
+| 66 | in jeder Art und Höhe der Kunst vor allem und zuerst Besiegung des Subjectiven, Erlösung vom „Ich” und Stillschweigen jedes individuellen Willens und Gelüstens fordern, ja ohne Objectivität, ohne reines interesseloses Anschauen nie an die geringste wahrhaft künstlerische Erzeugung glauben können. |
+| 67 | denn nur als a e s t h e t i s c h e s P h ä n o m e n ist das Dasein und die Welt ewig g e r e c h t f e r t i g t : |
+| 68 | jetzt aber wird diese Musik ihm wieder wie in einem g l e i c h n i s s a r t i g en T r a u m b i l d e , unter der apollinischen Traumeinwirkung sichtbar. Jener bild- und begrifflose Wiederschein des Urschmerzes in der Musik, mit seiner Erlösung im Scheine, erzeugt jetzt eine zweite Spiegelung, als einzelnes Gleichniss oder Exempel. |
+| 69 | Der Plastiker und zugleich der ihm verwandte Epiker ist in das reine Anschauen der Bilder versunken. Der dionysische Musiker ist ohne jedes Bild völlig nur selbst Urschmerz und Urwiederklang desselben |
+| 70 | die Lyrik als eine unvollkommen erreichte, gleichsam im Sprunge und selten zum Ziele kommende Kunst charakterisirt wird, ja als eine Halbkunst, deren W e s e n darin bestehen solle, dass das Wollen und das reine Anschauen d. h. der unaesthetische und der aesthetische Zustand wundersam durch einander gemischt seien? |
+| 71 | dass der ganze Gegensatz, nach dem wie nach einem Werthmesser auch noch Schopenhauer die Künste eintheilt, der des Subjectiven und des Objectiven, überhaupt in der Aesthetik ungehörig ist, da das Subject, das wollende und seine egoistischen Zwecke fördernde Individuum nur als Gegner, nicht als Ursprung der Kunst gedacht werden kann. |
+| 72 | Wagner, Richard, Die Kunst und die Revolution |
+| 73 | \#init_Wagner, Die Kunst und die Revolution\_ |
+| 74 | Vgl. Wagner 1849 Kunst und Revolution; Wagner 1850 Kunstwerk der Zukunft. Als Ideal beschreibt Wagner darin, wie im antiken Griechenland die Menschen im Theater zusammenkamen, um die Tragödie im Rahmen der großen Dionysien zu zelebrieren: |
+| 75 | Wagner 1849 Kunst und Revolution \| Wagner, Richard: Die Kunst und die Revolution, Leipzig 1849, in: Wagner-Schriften 3, S. 8–41. |
+| 76 | 2)er griecîfdê (SJeift, mie er fic§ gu feiner ^lütleêit in (**taat?**) unb ûnft gu erfennen gab, fanb, nadfjbem er bie roi§e laturreligion ber afiatifcên §eimat§ übermunben, unb hm ^’ömn unb ftarlea freien 3)Zenfdên auf bie ©piê feine§ religiöfen êmujßtfeinS ge= fteHt Iâtte, feinen entfpredênbften 2lu§brudf in SlpoUon, bem eigent^ liefen §aupt= unb 5flationaIgotte ber êHenifdên ©tämme. |
+| 77 | Die Kunst und die Revolution |
+| 78 | \#init_Wagner, Die Kunst und die Revolution\_ |
+| 79 | wagner (1849), kunst und revolution |
+| 80 | Wir fönnen bei einigem Nac)denfen in unferer Runft feinen Gdritt tbun, obne auf den Jufammenbang Derfelben mit ber Stunft Der Ürieden zu treffen. Jn Wabrbeit ift unfere moderne Sunft nur ein Olied in der Stette Der Runftentwicelung Des gefammten Europa, und diefe nimmt ifren Quêgang bon ben Grieden |
 
 nietzsche_kga_2024: annotations
 
