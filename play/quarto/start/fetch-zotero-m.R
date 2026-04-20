@@ -26,6 +26,9 @@ writeLines(bibjs,y)
 library(jsonlite)
 bibdf<-fromJSON(y,flatten=T)
 ##########################
+offset<-function(){
+  bibyml<-names(qa[1])
+}
 get.bib<-function(bibyml){
 bibkey<-bibdf$key[grep(bibyml,bibdf$data.name)]
 
@@ -77,6 +80,18 @@ for (k in m2){
   if(note!="")
     bdf$anno[m]<-bdf$data.note[k]
 }
+m3<-which(!is.na(bdf$data.archive))
+bdf$archive<-NA
+k<-1
+for (k in m3){
+  ak<-bdf$data.archive[k]
+  print(ak)
+  arc<-bdf$data.archive[k]
+  #m<-bdf$data.key==ak
+  if(arc!="")
+    bdf$archive[k]<-bdf$data.archive[k]
+}
+  
 #print(bdf$data.title)
 # bdf$anno
 #print(bdf$data.tags)
@@ -95,6 +110,7 @@ colnames(bdf.tag)<-gsub("^data\\.","",colnames(bdf.tag))
 #b<-bibdf
 colnames(bdf.tag)
 x<-bdf.tag[4,]
+x
 itemkeys<-bdf.tag$key
 # bdf.tag$anno
 library(xml2)
@@ -104,7 +120,7 @@ dclbib<-lapply(1:length(bdf.tag$key),function(i){
 anno.t<-""
 key<-bdf.tag$key[i]
 # print(bdf.tag$title[i])
-  # print(anno<-bdf.tag$anno[i])
+   anno<-bdf.tag$anno[i]
 if(!is.na(anno)){
    htm<-read_html(anno)
   t<-xml_text(htm)
@@ -114,6 +130,8 @@ if(!is.na(anno)){
 
 anno.t<-paste0("<ul>",t,"</ul>")
 }
+if(bdf$archive!="")
+  
 # anno.t
   response<-GET(paste0("https://api.zotero.org/groups/4713246/items/",key,"?format=bibtex"))
 #t<-content(response,"text")
@@ -133,7 +151,8 @@ rref <- bibentry(
    address = x$ADRESS,
    year = x$YEAR,
    url = x$URL,
-    annote = anno.t)
+    annote = anno.t,
+  archive = x$ARCHIVE)
 })
 
 

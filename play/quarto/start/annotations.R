@@ -4,6 +4,11 @@
 # qa<-c("Kybernetik")
 # qa<-c("lit-ki","nietzsche","textur") # margin note studyset
 
+
+############################################
+### new, annotations from sqlite
+#load("margindb.RData")
+############################################
 get.notes.top<-function(docdir,study,paper){
 print(docdir)
 print(study)
