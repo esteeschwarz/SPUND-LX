@@ -7,7 +7,7 @@ textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langloi
 source("getnotesql.R")
 }
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
-ifelse (s%in%c("lapsi","tapee"),buildmdb(),F)
+ifelse (s%in%c("lapsi"),buildmdb(),F)
 
 ### vars
 docdir<-"."

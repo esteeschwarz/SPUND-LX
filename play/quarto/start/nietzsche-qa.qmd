@@ -12,6 +12,11 @@ date: '`r format(Sys.time())`'
 
 {{< include _vars.qmd >}}
 
+## notes on 
+paper: 
+@nietzsche_kga_2024   
+@nietzsche_friedrich_1902
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -19,14 +24,67 @@ date: '`r format(Sys.time())`'
 
 #qa1<-"Wiener_Einführung.pdf"
 #load("margindb.RData")
+library(purrr)
 m1<-margindb$doc%in%qa[[2]]
 sum(m1)
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
-kdf$notes<-gsub("[\r\n]","(..)",kdf$notes)
-kdf$comment<-gsub("[\r\n]","(..)",kdf$comment)
+kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
+kdf$comment<-gsub("[\r\n|]","(..)",kdf$comment)
 kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
+du<-unique(kdf$doc)
+  library(kableExtra)
+#for(k in du[1]){
+k<-1
+  m<-kdf$doc==du[k]
+  page<-gsub("[\r\n ] ","",kdf$spage[m])
+  df<-data.frame(page=paste0("",page,""),note=kdf$notes[m],comment=kdf$comment[m])
+  #print(df)
+  #cat(paste0("\nannotations: *",k,"* \n"))
+#   knitr::kable(df,row.names = F,booktabs = F,width=100) %>% 
+#   column_spec(1, width = "5%") %>% 
+#   column_spec(2, width = "60%") %>% 
+#   column_spec(3, width = "20%") 
+#   #knitr::kable(kdf) %>% column_spec(1, width = "2cm")
+
+# knitr::kable(df,row.names = F,booktabs = F,width=100) %>% 
+#   column_spec(1, width = "5%") %>% 
+#   column_spec(2, width = "60%") %>% 
+#   column_spec(3, width = "20%")
+#   #cat("fin annotations\n")
+cat(paste0("annotations: ",du[k]))
+
+knitr::kable(df,row.names = F,booktabs = F) %>% 
+  column_spec(1, width = "2cm") %>% 
+  column_spec(2, width = "7cm") %>% 
+  column_spec(3, width = "4cm")
+
+k<-2
+  m<-kdf$doc==du[k]
+  page<-gsub("[\r\n ] ","",kdf$spage[m])
+  df<-data.frame(page=paste0("",page,""),note=kdf$notes[m],comment=kdf$comment[m])
+  #print(df)
+  #cat(paste0("\nannotations: *",k,"* \n"))
+#   knitr::kable(df,row.names = F,booktabs = F,width=100) %>% 
+#   column_spec(1, width = "5%") %>% 
+#   column_spec(2, width = "60%") %>% 
+#   column_spec(3, width = "20%") 
+#   #knitr::kable(kdf) %>% column_spec(1, width = "2cm")
+
+# knitr::kable(df,row.names = F,booktabs = F,width=100) %>% 
+#   column_spec(1, width = "5%") %>% 
+#   column_spec(2, width = "60%") %>% 
+#   column_spec(3, width = "20%")
+#   #cat("fin annotations\n")
+cat(paste0("\nannotations:",du[k]))
+knitr::kable(df,row.names = F,booktabs = F) %>% 
+  column_spec(1, width = "2cm") %>% 
+  column_spec(2, width = "7cm") %>% 
+  column_spec(3, width = "4cm")
+
+#knitr::kable(df)
+#}
 #kdf<-data.frame(id=which(m1),annotations=margindb$notes$a[m1])
 #print(kdf)
 #knitr::kable(kdf)
@@ -34,10 +92,6 @@ kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
 ```
 
 
-## notes on 
-paper: 
-@nietzsche_kga_2024   
-@nietzsche_friedrich_1902
 
 
 ```{r}
@@ -45,7 +99,7 @@ paper:
 #| tbl-cap: "nietzsche: annotations"
 #| echo: false
 #| warning: false
-#| eval: true
+#| eval: false
 
 # qa<-c("Wie KI unsere Sprache","yakura-llm")
 # qa<-"lit-ki"
