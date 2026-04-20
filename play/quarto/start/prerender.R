@@ -5,7 +5,7 @@ buildmdb<-function(){
   source("getnotesql.R")
 }
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
-ifelse (s=="mini12",F,buildmdb())
+ifelse (s%in%c("lapsi","tapee"),F,buildmdb())
 
 ### vars
 docdir<-"."
