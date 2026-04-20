@@ -31,7 +31,7 @@ website:
       - snc.qmd
 
 format:
-  gfm: default
+  # gfm: default
   html:
     theme: 
       - cosmo

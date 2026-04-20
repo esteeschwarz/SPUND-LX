@@ -43,7 +43,7 @@ val.c<-"{{< meta cmeta >}}"
 Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
 
 ## samling
-- samling: margin notes @nietzsche_kga_2024 > [link](nietzsche-nietzsche_kga_2024-qa.qmd)
+- samling: margin notes @nietzsche_kga_2024 > [link](nietzsche-qa.qmd)
 - ephemeridenmusik > briefe
 - neudeutsche schule, musikerstreit...
 

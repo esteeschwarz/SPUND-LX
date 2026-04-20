@@ -1,7 +1,6 @@
 ---
-title: "
-Geburt der Tragödie: annotations"
-bibliography: nietzsche.bib
+title: "{title}: annotations"
+bibliography: litKI.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
@@ -16,11 +15,11 @@ date: '`r format(Sys.time())`'
 ```{r}
 #| echo: false
 #| warning: false
-#| eval: true
+#| eval: false
 
 qa<-c("Wie KI unsere Sprache","yakura-llm")
-qa<-"nietzsche_kga_2024"
-tdf<-read.csv("nietzsche-nietzsche_kga_2024-qa.csv")
+qa<-"{paper}"
+tdf<-read.csv("{study}-{paper}-qa.csv")
 
 m1<-tdf$paper==qa[1]
 
@@ -30,14 +29,35 @@ kdf<-data.frame(id=which(m1),annotations=tdf$a[m1])
 
 ```
 
+```{r}
+#| echo: false
+#| warning: false
+#| eval: true
+
+qa1<-"Wiener_Einführung.pdf"
+load("margindb.RData")
+m1<-margindb$doc==qa1
+sum(m1)
+kdf<-margindb[m1,]
+kdf<-kdf[order(kdf$spage),]
+kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
+kdf$notes<-gsub("[\r\n]","(..)",kdf$notes)
+kdf$comment<-gsub("[\r\n]","(..)",kdf$comment)
+kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
+#kdf<-data.frame(id=which(m1),annotations=margindb$notes$a[m1])
+#print(kdf)
+#knitr::kable(kdf)
+
+```
+
 ## notes on 
 paper: 
-@nietzsche_kga_2024   
+@{paper}   
 
 
 ```{r}
 #| label: tbl_qa1
-#| tbl-cap: "nietzsche_kga_2024: annotations"
+#| tbl-cap: "{paper}: annotations"
 #| echo: false
 #| warning: false
 #| eval: true
