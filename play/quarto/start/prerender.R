@@ -11,7 +11,7 @@ ifelse (s%in%c("lapsi"),buildmdb(),F)
 
 ### vars
 docdir<-"."
-qa<-c(litKI="wiener_kybernetik_1992",nietzsche=c("nietzsche_kga_2024"),textur=NA) # margin note studyset
+qa<-c(litKI="wiener_kybernetik_1992",nietzsche=c("nietzsche_kga_2024"),textur=NA,LXtech=NA)# margin note studyset
 
 
 qa
