@@ -1,17 +1,17 @@
 ---
-title: "Sprache und Technologie"
-subtitle: "Language and Technology"
+title: AVL / Nietzsche
+subtitle: "no"
 format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
-bibliography: lx-tech.bib
+bibliography: nietzsche.bib
 nocite: '@*'
 cmeta: |
-  class: [16830] Sprache und Technologie - Language and Technology::
-  tutor: frankowsky ::
+  class: [16719] Nietzsche und Nietzscherezeption ::
+  tutor: friederike günther ::
   term: SS26
-  snc: 16175.1   
+  snc: 16163.1  
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 16162.tiny
@@ -40,12 +40,10 @@ val.c<-"{{< meta cmeta >}}"
 
 # index
 
-
+Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
 
 ## samling
-- @frankowksy_extravagant_2022
-  - how were dates attested technically?
-  - what about the decow16 corpus?
-    - possible to put that online (term paper) or is it? (@schafer_what_2025)
-    - corpus formats?
+- samling: margin notes @nietzsche_kga_2024 > [link](nietzsche-qa.qmd)
+- ephemeridenmusik > briefe
+- neudeutsche schule, musikerstreit...
 
