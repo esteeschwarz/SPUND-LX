@@ -19,7 +19,8 @@ website:
         menu: 
           - textur001.qmd
           - nietzsche001.qmd
-          - lki-kybernetik.qmd      
+          - lki-kybernetik.qmd
+          - lx-tech001.qmd
       - text: arkkiv
         menu:
           - pdfpaper/001/uwolf.qmd
