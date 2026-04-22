@@ -43,7 +43,7 @@ val.c<-"{{< meta cmeta >}}"
 
 
 ## samling
-- @frankowksy_extravagant_2022
+- @frankowsky_extravagant_2022
   - how were dates attested technically?
   - what about the decow16 corpus?
     - possible to put that online (term paper) or is it? (@schafer_what_2025)
