@@ -3,7 +3,8 @@ title: Lit / KI
 subtitle: "no"
 format: html
 # tmeta: $testmeta$
-date: '`r format(Sys.time())`'
+# date: '`r format(Sys.time())`'
+date: "2026-04-20"
 title-meta: ""
 bibliography: litKI.bib
 cmeta: |
