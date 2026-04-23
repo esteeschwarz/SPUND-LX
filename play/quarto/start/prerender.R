@@ -1,9 +1,10 @@
 # check system, adapt output
 s<-Sys.getenv("SYS")
-buildmdb<-function(){
 qa<-list(litKI="Wiener_Einführung.pdf",
 nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf"),
 textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf")) # margin note studyset  
+buildmdb<-function(){
+
 source("getnotesql.R")
 }
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")

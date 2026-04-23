@@ -1,6 +1,6 @@
 ---
-title: "Sprache und Technologie"
-subtitle: "Language and Technology"
+title: "LX / Tech"
+subtitle: "Sprache und Technologie - Language and Technology"
 format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'

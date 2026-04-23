@@ -175,7 +175,7 @@ return(a3) # without slides included
 }
 a4<-get.slides(a2)
 writeLines(a4,paste0(study,"-",paper,"-qa.qmd"))
-
+}
 #src<-"_abstractB-ul.md"
 f<-list.files()
 k<-2
@@ -194,11 +194,12 @@ lines <- gsub("(?=\\\\)([>_])", "\\1", t,perl = T)
 writeLines(lines,src)
 cat("-------- written md: ",src,"------\n")
 }
-}
+
 names(qa)
 lapply(seq_along(qa),function(i){
   print(qa[i])
   print(names(qa[i]))
-  get.notes.top(docdir,names(qa[i]),qa[i])
+  # get.notes.top(docdir,names(qa[i]),qa[i])
+  ### off
 })
   # source("fetch-zotero.R")
