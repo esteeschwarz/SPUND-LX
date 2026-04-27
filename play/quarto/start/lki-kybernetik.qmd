@@ -60,7 +60,7 @@ val.c<-"{{< meta cmeta >}}"
 
 
 # index
-1. samling: margin notes @wiener_kybernetik_1992 > [link](litKI-wiener_kybernetik_1992-qa.qmd)
+1. samling: margin notes general > [link](lki-qa.qmd)
 2. [summary on kybernetik introduction](lki-001.qmd)
 
 

@@ -1,0 +1,1008 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\newcommand{\doctitle}{nietzsche: annotations}
+\newcommand{\docdate}{2026-04-20}
+\newcommand{\doclogoleft}{assets/fadenlogo-fwb.png}
+\newcommand{\doclogoright}{assets/dcl-head-niemand.png}
+% ============================================================
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
+% ============================================================
+
+\usepackage{iftex}
+\RequireLuaTeX
+
+\usepackage{fontspec}
+
+\setmainfont{Georgia}[
+  Ligatures = TeX
+]
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
+% ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
+
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
+
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
+
+% ------------------------------------------------------------
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
+% ------------------------------------------------------------
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
+
+\usepackage[hyperfootnotes=false]{hyperref}
+% ============================================================
+% header.tex  —  include-in-header snippet
+% Replaces $var$ Pandoc syntax with \ifdefined\doc... guards.
+% Vars injected via vars.lua Lua filter from YAML front matter:
+%   \doctitle      \docsubtitle   \docauthor   \docdate
+%   \docmeta       \docfoot       \doclogoleft \doclogoright
+%
+% No fancyhdr. Header fires via \AtBeginDocument,
+% footer via \AtEndDocument — bidi-safe.
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+
+% ---------- header font (adjust to taste) ----------
+\newfontfamily\headerfont{Source Sans 3}
+
+% ---------- footer colors ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
+
+% ---------- column types ----------
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{45mm}}
+
+% vertical separator rule
+\newcommand{\vsep}{\color{black}\vrule width 1pt}
+
+% ============================================================
+% CUSTOM HEADER
+% ============================================================
+\newcommand{\CustomHeader}{%
+% \LTR{%
+\noindent
+\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
+
+% LEFT LOGO
+\ifdefined\doclogoleft
+  \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
+\fi
+&
+% CENTER: title + subtitle stacked in a minipage so \\ is a
+% line break within the cell, not a new table row
+\begin{minipage}[c]{\linewidth}
+\centering
+\ifdefined\doctitle
+  {\Large\bfseries\headerfont\doctitle}%
+\fi
+\ifdefined\docsubtitle
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
+\fi
+\vspace{5pt}
+
+\end{minipage}
+% &
+% % CENTER TITLE BLOCK
+% \ifdefined\doctitle
+%   {\Large\bfseries\doctitle}%
+% \fi
+% \ifdefined\docsubtitle
+%   \\\normalsize\docsubtitle
+% \fi
+&
+% RIGHT LOGO
+\ifdefined\doclogoright
+  \includegraphics[height=10mm,keepaspectratio]{\doclogoright}%
+\fi
+
+\end{tabularx}
+
+\hrule
+% \vspace{6pt}
+
+% ---------- META AREA ----------
+{\small
+\ifdefined\docauthor
+  \textbf{Author:} \docauthor\\
+\fi
+\ifdefined\docdate
+  \textbf{Date:} \docdate
+\fi
+\ifdefined\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
+\fi
+}
+\vspace{6pt}
+
+\hrule
+
+% \vspace{12pt}
+% }% end \LTR
+}% end \CustomHeader
+
+% ============================================================
+% CUSTOM FOOTER  (overlay, anchored to page bottom)
+% ============================================================
+\newcommand{\CustomFooter}{%
+\begin{tikzpicture}[remember picture, overlay]
+\node[
+  anchor=south,
+  draw,
+  fill=footerbg,
+  text=footerfg,
+  inner sep=10pt,
+  rounded corners=2pt,
+  text width=\dimexpr\textwidth-20pt\relax
+]
+at ([yshift=5mm]current page.south)
+{%
+  \begin{center}
+  {\small
+  \ifdefined\docfoot
+    % {\docfoot}%
+    {\headerfont\docfoot}%
+  \fi
+  }
+  \end{center}
+};
+\end{tikzpicture}%
+}% end \CustomFooter
+
+% ============================================================
+% FIRE header at doc start, footer at doc end
+% ============================================================
+% \AtBeginDocument{\CustomHeader}
+\AtEndDocument{\CustomFooter}
+\renewcommand{\maketitle}{}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{nietzsche: annotations}
+\author{}
+\date{2026-04-20}
+\begin{document}
+\maketitle
+
+\CustomHeader
+
+
+\subsection{notes on}\label{notes-on}
+
+paper: Nietzsche (2024)\\
+Nietzsche (1902)
+
+{[}1{]} 160 {[}1{]} 12 {[}1{]} 12 3 {[}1{]} ``annotations: nietzsche
+briefe ggl.pdf''
+
+page
+
+note
+
+comment
+
+12
+
+Fricdrid Dietides Gefammelte Sriefe
+
+13
+
+Friedrich Nietzsches Briefwechsel mit Erwin Rohde
+
+\#init\_Nietzsche, Briefwechsel Erwin
+Rohde\_\_(..)\#cite\_nietzsche\_friedrich\_1902\_\_
+
+13
+
+Friedrich Nietzsches Briefwechsel mit Erwin Rohde
+
+\#init\_Nietzsche, Briefwechsel Erwin
+Rohde\_\_(..)\#cite\_nietzsche\_friedrich\_1902\_\_
+
+46
+
+Klemm einen ganz besonders liebenswürdigen Menjchen ge funden zu Haben:
+während ich ihn in Leipzig kaum tennen gelernt Habe, ja fogar in Folge
+der verteufelten Bonner Angewohnheit eine Art Abneigung gegen ihn
+empfand und ihn mit jenen fchiefen Blicken zu betrachten pflegte, mit
+denen Burfchenichafter die „Herren Chöre`` zu mefjen lieben.
+
+245
+
+Im Sommer habe ich einen größeren Aufsatz für mich geschrieben „über
+dionysische Weltanschauung``,
+
+274
+
+Wie ich diefe fatale Göttinger Weisheit von ber „Heiterkeit bes ächten
+Griechenthums`` hasse! Dionysus Hatte ganz ebenfo tiefen Einfluß als der
+Göttinger aufgeflärte Apollo, den dieses fatale Professorenvolk überall
+fieht. Zwischen Homer und Aeichylus inmitten liegt eine Zeit tieffter
+mystischer Erregung und einer inneren Vertiefung, von ber nur die flache
+Klarheit alerandrinifcher Zeit gar fo wenig übrig gelafien hat.
+
+282
+
+Ein anderes Stüd „über das Dionysische und Apollinifche`` wird wohl in
+ben „Preußiichen Jahrbüchern`` erscheinen; falls man e8 annimmt, woran
+ich zweifle. (..)(..)Schließlich fäuft bei mir alles auf das teure
+Vergnügen hinaus, eine Bibliothet Tauter unedirter, doc) zierlich
+gedrudter Schriftchen zu befigen.
+
+293
+
+ein Bild ber Welt, wo fich ein furdtbar Gewaltiges aus weitefter
+Umfaffung zu einigen Meinen Individualfiguren des Vordergrundes
+zufammenfaßt:
+
+293
+
+wie in fo vielen angeblich tragifchen Dichtungen ---, fehlt auch wohl
+das wirklich Tragifche überhaupt, als welches gerade und einzig in dem
+Kampfe der Doppelnatur bes Menschen, als Individuum und als das Ganze,
+Schöpferifhe --- im Kampf diefer doppelten Natur gegeneinander zu liegen
+scheint.
+
+296
+
+Denn dem wahrfagenden Apollo würde man jegt, wie dem Ochsen, der da
+brifchet, bag Maul verbinden.
+
+314
+
+Mir gieng es wie Einem, dem eine Ahnung fi endlich erfüllt. (..)(..)Denn
+genau Das ift Mufit und nicht? fonft! Und genau Das meine ih mit dem
+Wort „Mufif``, wenn id) das Dionysische fehilbere, und nichts fonft!
+Wenn ich mir aber benfe, daß nur einige Hundert Menschen aus ber
+nächften Generation Das von der Mufit haben, was ich von ihr habe, fo
+erwarte ich eine völlig neue Cultur!
+
+374
+
+Daß ih nur nicht immer wieber Die weichliche Be--- hauptung von der
+Homerifchen Welt als der jugendlichen, dem Frühling des Volles u. \{.w.
+hörte! In dem Sinne, wie fie ausgesprochen ift, ift fie falsch.
+(..)(..)Daß ein ungeheures, wildes Ningen, aus finfterer Rohheit und
+Graufamkeit Heraus, vorhergeht, daß Homer als Sieger am Schluß diefer
+langen troftIofen Periode fteht, ift mir eine meiner ficherften
+Überzeugungen. (..)(..)Die Griechen find viel älter, al man benft. Bon
+Frühling mag man reben, wenn man vor den Frühling noch den Winter jegt:
+aber vom Himmel gefallen ift diese Welt der Reinheit und Schönheit
+nicht.
+
+{[}1{]} 72 {[}1{]} 72 3 {[}1{]} ``annotations: nietzsche, kga 3-1,
+geburt d tragödie.pdf''
+
+page
+
+note
+
+comment
+
+7
+
+nietzsche\_kga\_2024
+
+\#init\_Geburt der Tragödie\_\_(..)\#cite\_nietzsche\_kga\_2024\_\_
+
+7
+
+nietzsche\_kga\_2024
+
+\#init\_Geburt der Tragödie\_\_(..)\#cite\_nietzsche\_kga\_2024\_\_
+
+10
+
+Ist Pessimismus n o t h w e n d i g das Zeichen des Niedergangs,
+Verfalls, des Missrathenio seins, der ermüdeten und geschwächten
+Instinkte? --- wie er es bei den Indern war, wie er es, allem Anschein
+nach, bei uns, den „modernen'' Menschen und Europäern ist? Giebt es
+einen Pessimismus der S t ä r k e ? Eine intellektuelle Vorneigung für
+das Harte, Schauerliche, Böse, Problematische des Daseins aus Wohlsein,
+aus 15 überströmender Gesundheit, aus F ü l l e des Daseins? Giebt es
+vielleicht ein Leiden an der Ueberfülle selbst?
+
+10
+
+Und die Wissenschaft selbst, unsere Wissenschaft --- ja, was bedeutet
+überhaupt, als Symptom des Lebens angesehn, alle Wissenschaft? Wozu,
+schlimmer noch, w o h e r --- alle Wissenschaft?
+
+10
+
+Was bedeutet, gerade bei den Griechen der besten, stärksten, tapfersten
+Zeit, der t r a g i s c h e Mythus?
+
+10
+
+Phänomen des Dionysischen? Was, aus ihm geboren, die Tragödie?
+
+11
+
+das Problem der Wissenschaft kann nicht auf dem Boden der Wissenschaft
+erkannt werden
+
+11
+
+Eine feine Nothwehr gegen --- die W a h r h e i t ?
+
+\#ref\textgreater{} wahrheit und lüge i. a. sinne
+
+11
+
+Eine feine Nothwehr gegen --- die W a h r h e i t ?
+
+\#ref\textgreater{} wahrheit und lüge i. a. sinne
+
+12
+
+Aufgabe selbst nicht fremder wurde, an welche sich jenes verwegene Buch
+zum ersten Male herangewagt hat, --- d i e W i s s e n s c h a f t u n t
+e r d e r O p t i k d e s K ü n s t l e r s zu s e h n , d i e K u n s t
+a b e r u n t e r d e r d e s L e b e n s
+
+12
+
+ein hochmüthiges und schwärmerisches Buch, das sich gegen das profanum
+vulgus der „Gebildeten'' von vornherein noch mehr als gegen das „Volk''
+abschliesst,
+
+14
+
+Wie? wenn die Griechen, gerade im Reichthum ihrer Jugend, den Willen z u
+m Tragischen hatten und Pessimisten waren?
+
+14
+
+welche Bedeutung hat dann, physiologisch gefragt, jener Wahnsinn, aus
+dem die tragische wie die komische Kunst erwuchs, der dionysische
+Wahnsinn?
+
+14
+
+das V e r l a n g e n n a c h d e m H ä s s l i c h e n , der gute
+strenge Wille des älteren Hellenen zum Pessimismus, zum tragischen
+Mythus, zum Bilde alles Furchtbaren, Bösen, Räthselhaften,
+Vernichtenden, Verhängnissvollen auf dem Grunde des 5 Daseins, --- woher
+müsste dann die Tragödie stammen?
+
+15
+
+Was bedeutet, unter der Optik des L e b e n s gesehn, --- die Moral?
+
+15
+
+dass nur als ästhetisches Phänomen das Dasein der Welt g e r e c h t f e
+r t i g t ist.
+
+16
+
+die Moral selbst in die Welt der Erscheinung zu setzen, herabzusetzen
+und nicht nur unter die „Erscheinungen'' (im Sinne des idealistischen
+terminus technicus), sondern unter die „Täuschungen'', als Schein, Wahn,
+Irrthum, Ausdeutung, Zurechtmachung, Kunst.
+
+16
+
+Christenthum war von Anfang an, wesentlich und gründlich, Ekel und
+Ueberdruss des Lebens am Leben,
+
+16
+
+das Christenthum als die ausschweifendste Durchfigurirung des
+moralischen Thema's, welche die Menschheit bisher anzuhören bekommen
+hat.
+
+16
+
+es giebt zu der rein ästhetischen Weltauslegung und Welt-Rechtfertigung,
+wie sie in diesem Buche gelehrt wird, keinen grösseren Gegensatz als die
+christliche Lehre, welche n u r moralisch ist und sein will und mit
+ihren absoluten Maassen, zum Beispiel schon mit ihrer Wahrhaftigkeit
+Gottes, die Kunst, j e d e Kunst in's Reich der L ü g e verweist,
+
+17
+
+vor der Moral (in Sonderheit christlichen, das heisst unbedingten Moral)
+m u s s das Leben beständig und unvermeidlich Unrecht bekommen, weil
+Leben etwas essentiell Unmoralisches i s t , --- m u s s endlich das
+Leben, erdrückt unter dem Gewichte der Verachtung und des ewigen Nein's,
+als begehrens-unwürdig, als unwerth an sich empfunden werden.
+
+17
+
+eine grundsätzliche Gegenlehre und Gegenwerthung des Lebens, eine rein
+artistische, eine a n t i c h r i s t l i c h e . Wie sie nennen? Als
+Philologe und Mensch der Worte taufte ich sie, nicht ohne einige
+Freiheit --- denn wer wüsste den rechten Namen des Antichrist? --- auf
+den Namen eines griechischen Gottes: ich hiess sie die d i o n y s i s c
+h e .
+
+18
+
+zu einer Zeit, wo der deutsche Geist, der nicht vor Langem noch den
+Willen zur Herrschaft über Europa, die Kraft zur Führung Europa's gehabt
+hatte, eben letztwillig und endgültig a b d a n k t e und, unter dem
+pomphaften Vorwande einer Reichs-Begründung, seinen Uebergang zur
+Vermittelmässigung, zur Demokratie und den „modernen Ideen'' machte!
+
+18
+
+jetzigen d e u t s c h e n M u s i k , als welche Romantik durch und
+durch ist und die ungriechischeste aller möglichen Kunstformen
+
+18
+
+wie müsste eine Musik beschaffen sein, welche nicht mehr romantischen
+Ursprungs wäre, gleich der deutschen, --- sondern d i o n y s i s c h e
+n ?
+
+20
+
+Das Lachen sprach ich heilig: ihr höheren Menschen, l e r n t mir ---
+lachen!
+
+20
+
+Aber es ist sehr wahrscheinlich, dass es so e n d e t , dass i h r so
+endet, nämlich „getröstet'', wie geschrieben steht, trotz aller
+Selbsterziehung zum Ernst und zum Schrecken, „metaphysisch getröstet'',
+kurz, wie Romantiker enden, c h r i s t l i c h
+
+24
+
+Diesen Ernsthaften diene zur Belehrung, dass ich von der Kunst als der
+höchsten Auf15 gäbe und der eigentlich metaphysischen Thätigkeit dieses
+Lebens im Sinne des Mannes überzeugt bin, dem ich hier, als meinem
+erhabenen Vorkämpfer auf dieser Bahn, diese Schrift gewidmet haben will.
+
+25
+
+Erkenntniss, dass in der griechischen Welt ein ungeheurer Gegensatz,
+nach Ursprung und Zielen, zwischen der Kunst des Bildners, der
+apollinischen, und der unbildlichen Kunst der Musik, als der des
+Dionysus, besteht: beide so verschiedne Triebe gehen neben einander her,
+zumeist im offnen Zwiespalt mit einander und sich gegenseitig zu immer
+neuen kräftigeren Geburten reizend, um in ihnen den Kampf jenes
+Gegensatzes zu perpetuiren, den das gemeinsame Wort „Kunst'' nur
+scheinbar überbrückt;
+
+25
+
+Fortentwickelung der Kunst an die Duplicität des A p o l l i n i s c h e
+n und des D i o n y s i s c h e n gebunden ist: in ähnlicher Weise, wie
+die Generation von der Zweiheit der Geschlechter, bei fortwährendem
+Kampfe und nur periodisch eintretender Versöhnung, abhängt.
+
+26
+
+in dieser Paarung zuletzt das ebenso dionysische als apollinische
+Kunstwerk der attischen Tragödie erzeugen.
+
+26
+
+Der schöne Schein der Traumwelten, in deren Erzeugung jeder Mensch
+voller Künstler ist, ist die Voraussetzung aller bildenden Kunst, ja
+auch, wie wir sehen werden, einer wichtigen Hälfte der Poesie.
+
+26
+
+denken wir sie uns zunächst als die getrennten Kunstwelten des T r a u m
+e s und des R a u s c h e s ;
+
+27
+
+Wie nun der Philosoph zur Wirklichkeit des Daseins, so verhält sich der
+künstlerisch erregbare Mensch zur Wirklichkeit des Traumes;
+
+27
+
+alle Dinge als blosse Phantome oder Traumbilder vorkommen, als das
+Kennzeichen philosophischer Befähigung
+
+27
+
+freudige Nothwendigkeit der Traumerfahrung ist gleichfalls von den
+Griechen in ihrem Apollo ausgedrückt worden: Apollo, als der Gott aller
+bildnerischen Kräfte, ist zugleich der wahrsagende Gott
+
+27
+
+beherrscht auch den schönen Schein der inneren Phantasie-Welt
+
+27
+
+freudige
+
+28
+
+Apollo als das herrliche Götterbild des principii individuationis
+bezeichnen, aus dessen Gebärden und Blicken die ganze Lust und Weisheit
+des „Scheines'', sammt seiner Schönheit, zu uns spräche
+
+28
+
+darf nicht im Bilde des Apollo fehlen: jene maassvolle Begrenzung, jene
+Freiheit von den wilderen Regungen, jene weisheitsvolle Ruhe des
+Bildnergottes
+
+28
+
+Wenn wir zu diesem Grausen die wonnevolle Verzückung hinzunehmen, die
+bei demselben Zerbrechen des principii individuationis aus dem innersten
+Grunde des Menschen, ja der Natur emporsteigt, so thun wir einen Blick
+in das Wesen des D i o n y s i s c h e n , das uns am nächsten noch
+durch die Analogie des R a u s c h e s gebracht wird.
+
+29
+
+bei dem gewaltigen, die ganze Natur lustvoll durchdringenden Nahen des
+Frühlings erwachen jene dionysischen Regungen, in deren Steigerung das
+Subjective zu völliger Selbstvergessenheit hinschwindet
+
+30
+
+Diesen unmittelbaren Kunstzuständen der Natur gegenüber ist jeder
+Künstler „Nachahmer'', und zwar entweder apollinischer Traumkünstler
+oder dionysischer Rauschkünstler oder endlich --- wie beispielsweise in
+der griechischen Tragödie --- zugleich Rausch- und Traumkünstler
+
+30
+
+die Kunstgewalt der ganzen Natur, zur höchsten Wonnebefriedigung des
+Ur-Einen, offenbart sich hier unter den Schauern des Rausches
+
+32
+
+beschränkte sich das Wirken des delphischen Gottes darauf, dem
+gewaltigen Gegner durch eine zur rechten Zeit abgeschlossene Versöhnung
+die vernichtenden Waffen aus der Hand zu nehmen.
+
+32
+
+erkennen wir jetzt, im Vergleiche mit jenen babylonischen Sakäen und
+ihrem Rückschritte des Menschen zum Tiger und Affen, in den dionysischen
+Orgien der Griechen die Bedeutung von Welterlösungsfesten und
+Verklärungstagen
+
+32
+
+Es ist die dorische Kunst, in der sich jene majestätisch-ablehnende
+Haltung des Apollo verewigt hat.
+
+32
+
+Es war die Versöhnung zweier Gegner, mit scharfer Bestimmung ihrer von
+jetzt ab einzuhaltenden Grenzlinien und mit periodischer Uebersendung
+von Ehrengeschenken; im Grunde war die Kluft nicht überbrückt.
+
+32
+
+Fast überall lag das Centrum dieser Feste in einer überschwänglichen
+geschlechtlichen Zuchtlosigkeit, deren Wellen über jedes Familienthum
+und dessen ehrwürdige Satzungen hinweg flutheten; gerade die wildesten
+Bestien der Natur wurden hier entfesselt, bis zu jener abscheulichen
+Mischung von Wollust und Grausamkeit, die mir immer als der eigentliche
+„Hexentrank'' erschienen ist
+
+33
+
+Die Musik des Apollo war dorische Architektonik in Tönen, aber in nur
+angedeuteten Tönen, wie sie der Kithara zu eigen sind. Behutsam ist
+gerade das Element, als unapollinisch, ferngehalten, das den Charakter
+der dionysischen Musik und damit der Musik über25 haupt ausmacht, die
+erschütternde Gewalt des Tones, der einheitliche Strom des Melos und die
+durchaus unvergleichliche Welt der Harmonie.
+
+34
+
+als sich ihm das Grausen beimischte, dass ihm jenes Alles doch
+eigentlich so fremd nicht sei, ja dass sein apollinisches Bewusstsein
+nur wie ein Schleier diese dionysische Welt vor ihm verdecke.
+
+36
+
+So rechtfertigen die Götter das Menschenleben, indem sie es selbst leben
+---die allein genügende Theodicee!
+
+36
+
+Wie anders hätte jenes so reizbar empfindende, so ungestüm begehrende,
+zum L e i d e n so einzig befähigte Volk das Dasein ertragen können,
+wenn ihm nicht dasselbe, von einer höheren Glorie umflossen, in seinen
+Göttern gezeigt worden wäre.
+
+37
+
+Die homerische „Naivetät'' ist nur als der vollkommene Sieg der
+apollinischen Illusion zu begreifen: es ist dies eine solche Illusion,
+wie sie die Natur, zur Erreichung ihrer Absichten, so häufig verwendet
+
+37
+
+In den Griechen wollte der „Wille'' sich selbst, in der Verklärung des
+Genius und der Kunstwelt, anschauen; um sich zu verherrlichen, mussten
+seine Geschöpfe sich selbst als verherrlichenswerth empfinden,
+
+38
+
+Je mehr ich nämlich in der Natur jene allgewaltigen Kunsttriebe und in
+ihnen eine inbrünstige Sehnsucht zum Schein, zum Erlöstwerden durch den
+Schein gewahr werde, um so mehr fühle ich mich zu der metaphysischen
+Annahme gedrängt, dass das WahrhaftSeiende und Ur-Eine, als das ewig
+Leidende und Widerspruchsvolle, zugleich die entzückende Vision, den
+lustvollen Schein, zu seiner steten Erlösung braucht:
+
+39
+
+die ganze Welt der Qual nöthig ist, damit durch sie der Einzelne zur
+Erzeugung der erlösenden Vision gedrängt werde
+
+39
+
+muss uns jetzt der Traum als der S c h e i n des S c h e i n s , somit
+als eine noch höhere Befriedigung der Urbegierde nach dem Schein hin
+gelten
+
+40
+
+neben der ästhetischen Nothwendigkeit der Schönheit die Forderung des
+„Erkenne dich selbst'' und des „Nicht zu viel!'' her, während
+Selbstüberhebung und Uebermaass als die eigentlich feindseligen Dämonen
+der nicht-apollinischen Sphäre, daher als Eigenschaften der
+vor-apollinischen Zeit, des Titanenzeitalters, und der
+ausser-apollinischen Welt d.~h. der Barbarenwelt, erachtet wurden.
+
+40
+
+Apollo, als ethische Gottheit, fordert von den Seinigen das Maass und,
+um es einhalten zu können, Selbsterkenntniss.
+
+41
+
+nur in einem unausgesetzten Widerstreben gegen das titanisch-barbarische
+Wesen des Dionysischen konnte eine so trotzig-spröde, mit Bollwerken
+umschlossene Kunst, eine so kriegsgemässe und herbe Erziehung, ein so
+grausames und rücksichtsloses Staatswesen von längerer Dauer sein
+
+41
+
+denken wir uns, was diesem dämonischen Volksgesange gegenüber der
+psalmodirende Künstler des Apollo, mit dem gespensterhaften
+Harfenklange, bedeuten konnte! Die Musen der Künste des „Scheins''
+verblassten vor einer Kunst, die in ihrem Rausche die Wahrheit sprach,
+die Weisheit des Silen rief Wehe! Wehe! aus gegen die heiteren Olympier
+
+42
+
+das erhabene und hochgepriesene Kunstwerk der a t t i s c h e n T r a g
+ö d i e und des dramatischen Dithyrambus, als das gemeinsame Ziel beider
+Triebe, deren io geheimnissvolles Ehebündniss
+
+42
+
+Wenn auf diese Weise die ältere hellenische Geschichte, im Kampf jener
+zwei feindseligen Principien, in vier grosse Kunststufen zerfällt: so
+sind wir jetzt gedrängt, weiter nach dem letzten Plane dieses Werdens
+und Treibens zu fragen, falls uns S nicht etwa die letzterreichte
+Periode, die der dorischen Kunst, als die Spitze und Absicht jener
+Kunsttriebe gelten sollte: und hier bietet sich unseren Blicken das
+erhabene und hochgepriesene Kunstwerk der a t t i s c h e n T r a g ö d
+i e und des dramatischen Dithyrambus, als das gemeinsame Ziel beider
+Triebe, deren io geheimnissvolles Ehebündniss, nach langem
+vorhergehenden Kampfe, sich in einem solchen Kinde --- das zugleich
+Antigone und Kassandra ist --- verherrlicht hat.
+
+42
+
+Homer, der in sich versunkene greise Träumer, der Typus des
+apollinischen, naiven Künstlers, sieht nun staunend den
+leidenschaftlichen Kopf des wild durch's Dasein getriebenen 3°
+kriegerischen Musendieners Archilochus
+
+42
+
+dem „objectiven'' Künstler der erste „subjective'' entgegen gestellt sei
+
+43
+
+in jeder Art und Höhe der Kunst vor allem und zuerst Besiegung des
+Subjectiven, Erlösung vom „Ich'' und Stillschweigen jedes individuellen
+Willens und Gelüstens fordern, ja ohne Objectivität, ohne reines
+interesseloses Anschauen nie an die geringste wahrhaft künstlerische
+Erzeugung glauben können.
+
+44
+
+jetzt aber wird diese Musik ihm wieder wie in einem g l e i c h n i s s
+a r t i g en T r a u m b i l d e , unter der apollinischen
+Traumeinwirkung sichtbar. Jener bild- und begrifflose Wiederschein des
+Urschmerzes in der Musik, mit seiner Erlösung im Scheine, erzeugt jetzt
+eine zweite Spiegelung, als einzelnes Gleichniss oder Exempel.
+
+44
+
+Der Plastiker und zugleich der ihm verwandte Epiker ist in das reine
+Anschauen der Bilder versunken. Der dionysische Musiker ist ohne jedes
+Bild völlig nur selbst Urschmerz und Urwiederklang desselben
+
+47
+
+denn nur als a e s t h e t i s c h e s P h ä n o m e n ist das Dasein
+und die Welt ewig g e r e c h t f e r t i g t :
+
+47
+
+die Lyrik als eine unvollkommen erreichte, gleichsam im Sprunge und
+selten zum Ziele kommende Kunst charakterisirt wird, ja als eine
+Halbkunst, deren W e s e n darin bestehen solle, dass das Wollen und das
+reine Anschauen d.~h. der unaesthetische und der aesthetische Zustand
+wundersam durch einander gemischt seien?
+
+47
+
+dass der ganze Gegensatz, nach dem wie nach einem Werthmesser auch noch
+Schopenhauer die Künste eintheilt, der des Subjectiven und des
+Objectiven, überhaupt in der Aesthetik ungehörig ist, da das Subject,
+das wollende und seine egoistischen Zwecke fördernde Individuum nur als
+Gegner, nicht als Ursprung der Kunst gedacht werden kann.
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-nietzsche_friedrich_1902}
+Nietzsche, Friedrich. 1902. \emph{Friedrich {Nietzsches} {Briefwechsel}
+Mit {Erwin} {Rohde}}. 2nd ed. Edited by Elisabeth Förster-Nietzsche and
+Fritz Schöll. Vol. 2. Friedrich {NIetzsches} Gesammelte {Briefe}.
+Schuster \& Loeffler.
+
+\bibitem[\citeproctext]{ref-nietzsche_kga_2024}
+Nietzsche, Friedrich. 2024. \emph{{KGA}. {Nietzsche} {Werke}: {Band} 1,
+{Abteilung} 3. {Die} {Geburt} Der {Tragödie}. {Unzeitgemäße}
+{Betrachtungen} {I} - {III} (1872 - 1874) {Kritische} {Gesamtausgabe}}.
+De Gruyter.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

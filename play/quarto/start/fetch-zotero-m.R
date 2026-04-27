@@ -7,10 +7,14 @@ library(bib2df)
 #setwd(".")
 getwd()
 share <- runif(1)
+offset<-function(){
+  qa<-list(IDS=NA)
+  bibyml<-names(qa[1])
+}
 #response<-GET("https://api.zotero.org/groups/4713246/collections/9LNRRJQN/items/top?format=bibtex")
 #response<-GET("https://api.zotero.org/groups/4713246/items?format=bibtex&limit=499")
 #response<-GET("https://api.zotero.org/groups/4713246/items?format=json&limit=499")
-response<-GET("https://api.zotero.org/groups/4713246/collections?format=json&limit=499")
+response<-GET("https://api.zotero.org/groups/6526786/collections?format=json&limit=499")
 # bib<-httr::content(response,"text")
 bibjs<-httr::content(response,"text")
 y<-tempfile("ref",fileext = ".bib")
@@ -26,19 +30,96 @@ writeLines(bibjs,y)
 library(jsonlite)
 bibdf<-fromJSON(y,flatten=T)
 ##########################
-offset<-function(){
-  bibyml<-names(qa[1])
-}
 get.bib<-function(bibyml){
 bibkey<-bibdf$key[grep(bibyml,bibdf$data.name)]
 
 bibyml<-paste0(bibyml,".bib")
 #################################################
-response<-GET(paste0("https://api.zotero.org/groups/4713246/collections/",bibkey,"/items?format=json&limit=499"))
-response.bib<-GET(paste0("https://api.zotero.org/groups/4713246/collections/",bibkey,"/items?format=bibtex&limit=499"))
+response<-GET(paste0("https://api.zotero.org/groups/6526786/collections/",bibkey,"/items?format=json&limit=499"))
+#response<-GET(paste0("https://api.zotero.org/groups/6526786/collections/",bibkey,"/collections?format=json&limit=499"))
+#response
+  response.bib<-GET(paste0("https://api.zotero.org/groups/6526786/collections/",bibkey,"/items?format=bibtex&limit=499"))
 # bib<-httr::content(response,"text")
 bibjs<-httr::content(response,"text")
-bibtx.cpt<-httr::content(response.bib,"text")
+writeLines(bibjs,y)
+bib.col.df<-fromJSON(y,flatten=T)
+bibdf<-fromJSON(y,flatten=T)
+bibkeys<-bibdf$key
+bibdf$data.name
+bib.items<-lapply(bibkeys,function(x){
+print(x)
+response<-GET(paste0("https://api.zotero.org/groups/6526786/collections/",x,"/items?format=json&limit=499"))
+bibjs<-httr::content(response,"text")
+writeLines(bibjs,y)
+bib.col.df<-fromJSON(y,flatten=T)
+bibdf<-fromJSON(y,flatten=T)
+})
+
+il<-list()
+x1<-bib.items[[7]]
+x2<-bib.items[[8]]
+co<-colnames(x1)[!colnames(x1)%in%colnames(x2)]
+co<-c("data.blogTitle","data.ISSN")
+  l.items<-lapply(bib.items,function(x){
+print(dim(x))
+if(is.null(dim(x)))
+    return(NA)
+ df<-data.frame(x)   
+#print(df)
+m<-colnames(df)%in%co
+cm<-which(!m)
+print(cm)
+cm<-c(cm)
+#print(colnames(df)[cm])
+df<-df[,cm]
+apply(x1,MARGIN=2,FUN=mode)
+typeof(x1[,1:2])
+#print(colnames(df))
+  print(typeof(df$data.tags))
+  m<-typeof(df[,1:length(df)])=="list"
+  print(sum(m))
+  print(length(m))
+    print(apply(df,MARGIN=2,FUN=mode))
+
+df[,m] <- lapply(df[,m], function(x) {
+  paste0(as.character(unlist(x)), collapse = ",")
+})
+    return(df)
+  
+lr<-data.frame(abind(l.items[!is.na(l.items)],along=1))
+m<-which(is.na(x$parentItem))
+print(length(m))
+ifelse(length(m)==0,return(F),T)
+u<-x[m,]
+urls<-lapply(1:length(m),function(i){
+u$data.url[i]
+})
+title<-lapply(m,function(i){
+u$data.title[i]
+})
+
+name<-lapply(m,function(i){
+u$data.websiteTitle[i]
+})
+abstract<-lapply(m,function(i){
+u$data.abstractNote[i]
+})
+mdate<-lapply(m,function(i){
+u$data.dateAdded[i]
+})
+idate<-lapply(m,function(i){
+u$data.date[i]
+})
+extra<-lapply(m,function(i){
+u$data.extra[i]
+})
+return(list(urls,name,title,abstract,mdate,idate,extra))  
+  })
+  
+library(abind)
+df.items<-abind(l.items,along=0)
+response<-GET(paste0("https://api.zotero.org/groups/6526786/collections/",bibkey,"/collections?format=json&limit=499"))
+#bibtx.cpt<-httr::content(response.bib,"text")
 #bibtx.cpt
 #y<-tempfile("ref",fileext = ".bib")
 #y<-"zotero.bib"
