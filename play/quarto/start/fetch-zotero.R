@@ -133,6 +133,7 @@ rref <- bibentry(
    address = x$ADRESS,
    year = x$YEAR,
    url = x$URL,
+   pdf = x$ARCHIVE,
     annote = anno.t)
 })
 
