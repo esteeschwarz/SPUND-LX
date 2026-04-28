@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-28">
+<meta name="dcterms.date" content="2026-04-20">
 
-<title>SNC – 004</title>
+<title>Einführung in die Grammatiktheorie – 004</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,40 +72,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -171,7 +142,7 @@ window.Quarto = {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./snc.html" aria-current="page"> 
+    <a class="nav-link" href="./snc.html"> 
 <span class="menu-text">SNC</span></a>
   </li>  
 </ul>
@@ -185,14 +156,16 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lfg-index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SNC</h1>
-<p class="subtitle lead">loani: לא אני לא sonderzeichentest</p>
+<h1 class="title">Einführung in die Grammatiktheorie</h1>
+<p class="subtitle lead">… und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionale Grammatik (LFG)</p>
 </div>
 
 
@@ -203,7 +176,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 28, 2026</p>
+      <p class="date">April 20, 2026</p>
     </div>
   </div>
   
@@ -215,83 +188,21 @@ window.Quarto = {
 </header>
 
 
-<section id="snc" class="level2">
-<h2 class="anchored" data-anchor-id="snc">snc</h2>
+<p>class: [16849] Einführung in die Grammatiktheorie :: tutor: meinschäfer/gaglia :: term: SS26 snc: 16184.1</p>
 <p><a href="https://github.com/esteeschwarz/SPUND-LX/commit/?meta:git-sha">to commit</a></p>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">16143.1</h3>
-<ul>
-<li>trigger wf</li>
-<li>site 004</li>
-<li>wf cp -ar to copy site-libs</li>
-<li>ls output: chk libs.</li>
-<li>with new wf, rsync in image installed: no, –no-delete unknown</li>
-<li>t4, test on m12, wks.</li>
-<li>t5: site_libs was in ignore. rm.</li>
-<li>t6</li>
-</ul>
-</section>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">16145.</h3>
-<ul>
-<li>pdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.</li>
-</ul>
-</section>
-<section id="section-2" class="level3">
-<h3 class="anchored" data-anchor-id="section-2">16146.</h3>
-<ul>
-<li>font georgia missing, installed in container.</li>
-<li>t1</li>
-<li>container success, t2</li>
-<li>missed output dir</li>
-<li>DCLX template wks.</li>
-<li>m12: pull &gt; render play/pages, chk.o</li>
-<li>m9</li>
-<li>invalid date? didnt render?</li>
-<li>wo format but still i. date</li>
-<li>wt sys.date()</li>
-<li>chk: local no date either: has to be explicit in qml; in docs as formula</li>
-</ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "engine on..."</code></pre>
 </div>
 </div>
-</section>
-<section id="section-3" class="level3">
-<h3 class="anchored" data-anchor-id="section-3">16155.</h3>
-<ul>
-<li>git hash from wf. not.</li>
-</ul>
-<p>meta keys S: <span class="math inline">\(testmeta\)</span></p>
-<p>meta include: 16156.t1</p>
-<p>val.f: fixed val</p>
-<p>val.c: 16156.t1</p>
-<p>val.i: 16156.t1</p>
-<p>testform: 7</p>
-<ul>
-<li>engine has to be loaded before execution.</li>
-<li>no access to -M data via <span class="math inline">\(x (tmeta:\)</span>value)</li>
-<li>wks in devcontainer</li>
-</ul>
-</section>
-<section id="section-4" class="level3">
-<h3 class="anchored" data-anchor-id="section-4">16162.</h3>
-<ul>
-<li>new ghcr container, try wk.</li>
-<li>tinytex issue, t2. solved.</li>
-</ul>
-</section>
-<section id="section-5" class="level3">
-<h3 class="anchored" data-anchor-id="section-5">16171.</h3>
-<ul>
-<li>ewa.t1</li>
-<li>auto anno/bib</li>
-<li>init paper issue, wks.</li>
-</ul>
+<section id="index" class="level1">
+<h1>index</h1>
+<ol type="1">
+<li>samling: margin notes general &gt; <a href="#">link</a></li>
+<li><a href="./lfg-001.html">task session 3</a></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
