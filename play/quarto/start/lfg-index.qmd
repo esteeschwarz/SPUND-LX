@@ -1,0 +1,45 @@
+---
+title: "Einführung in die Grammatiktheorie"
+subtitle: "... und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionale Grammatik (LFG)"
+# format: |
+#      html 
+#      - pdf
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-04-20"
+title-meta: ""
+bibliography: litKI.bib
+cmeta: |
+  class: [16849] Einführung in die Grammatiktheorie ::
+  tutor: meinschäfer/gaglia ::
+  term: SS26
+  snc: 16184.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+val.c<-"{{< meta cmeta >}}"
+```
+
+
+
+# index
+1. samling: margin notes general > [link](#)
+2. [task session 3](lfg-001.qmd)
+

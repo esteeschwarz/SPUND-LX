@@ -21,6 +21,7 @@ website:
           - nietzsche001.qmd
           - lki-kybernetik.qmd
           - lxtech001.qmd
+          - lfg-index.qmd
       - text: arkkiv
         menu:
           - pdfpaper/001/uwolf.qmd

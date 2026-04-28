@@ -1,0 +1,24 @@
+---
+title: LFG
+format: html
+---
+
+# task session 3
+
+1. Übung
+Geben Sie die
+
+1. Lexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich
+parallel dazu, wie ein nicht-annotierter Phrasenstrukturbaum
+aussieht.]
+2. annotierte Phrasenstrukturregeln in der c-Struktur
+3. f- inkl. a-Struktur
+
+für den folgenden Satz des Englischen wieder:
+
+```{r,echo=F,eval=T}
+print("The striker shot an incredible goal.")
+df<-read.csv("ip1.csv")
+knitr::kable(df)
+```
+
