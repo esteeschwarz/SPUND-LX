@@ -1,0 +1,41 @@
+---
+title: "AVl / VS-Strätling"
+subtitle: "session notes"
+# format: |
+#      html 
+#      - pdf
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-04-28"
+title-meta: ""
+format: html
+# bibliography: litKI.bib
+cmeta: |
+  class: [16401] Perspektiven AVL ::
+  tutor: strätling ::
+  term: SS26
+  snc: 16185.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+
+```{r,echo=F,eval=T,warning=F}
+print("engine on...")
+```
+
+
+
+# notes
+## rhetorik
+- pratum ridet: die wiese lacht
+  - maybe: bayreuth, prater (auditorium)
+  - rasen (golf)
+  - rasen: unirasen (eliteunis), der nur best. bzw. professoren allein vorbehalten zu betreten war? some crossed my way, hannah arendt? ingen aning...

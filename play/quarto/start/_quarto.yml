@@ -7,6 +7,9 @@ project:
 date: "2026-04-08"
 # author: esteeschwarz
 title-meta: ""
+resources:
+    - "*.bib"
+    - "*.csv"
 website:
   title: "004"
   navbar:
