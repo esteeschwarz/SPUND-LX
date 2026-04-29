@@ -1,12 +1,12 @@
 ---
-title: "Einführung in die Grammatiktheorie"
-subtitle: "... und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionale Grammatik (LFG)"
+title: "LX / LFG"
+subtitle: "Einführung in die Grammatiktheorie und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionalen Grammatik (LFG)"
 # format: |
 #      html 
 #      - pdf
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
-date: "2026-04-20"
+date: "2026-04-28"
 title-meta: ""
 bibliography: litKI.bib
 cmeta: |

@@ -1,11 +1,13 @@
 ---
 title: LFG
 format: html
+date: "2026-04-28"
+
 ---
 
 # task session 3
 
-1. Übung
+## 1. Übung
 Geben Sie die
 
 1. Lexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich
@@ -16,7 +18,7 @@ aussieht.]
 
 für den folgenden Satz des Englischen wieder:
 
-```{r,echo=F,eval=T}
+```{r,echo=F,eval=T,warning=F}
 print("The striker shot an incredible goal.")
 df<-read.csv("ip1.csv")
 knitr::kable(df)
