@@ -26,6 +26,11 @@ writeLines(bibjs,y)
 library(jsonlite)
 bibdf<-fromJSON(y,flatten=T)
 ##########################
+offset<-function(){
+  qa<-list(nietzsche=NA)
+  bibyml<-names(qa[1])
+}
+#offset()
 get.bib<-function(bibyml){
 bibkey<-bibdf$key[grep(bibyml,bibdf$data.name)]
 
@@ -134,7 +139,8 @@ rref <- bibentry(
    year = x$YEAR,
    url = x$URL,
    pdf = x$ARCHIVE,
-    annote = anno.t)
+    annote = anno.t,
+  pdf=x$EXTRA)
 })
 
 

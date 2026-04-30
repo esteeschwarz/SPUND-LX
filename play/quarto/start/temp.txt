@@ -1,0 +1,6 @@
+"Günther 2008, Der Wettkampf.pdf" 
+                                  nietzsche4 
+"Nietzsche, Homers Wettkampf, KGW III.2.pdf" 
+> bibdf$NOTE
+ [1] "Nietzsche, Homers Wettkampf, KGW III.2.pdf"
+ [2] "Günther 2008, Der Wettkampf.pdf"

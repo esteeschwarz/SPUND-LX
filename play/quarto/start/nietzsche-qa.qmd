@@ -24,12 +24,29 @@ papers:
 #| warning: false
 #| eval: true
 #| results: "asis"
+#| output: false
 
 #qa1<-"Wiener_Einführung.pdf"
-#load("margindb.RData")
+load("margindb.RData")
+qa<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
 library(purrr)
-m1<-margindb$doc%in%qa[[2]]
-#sum(m1)
+library(bib2df)
+
+qa
+m1<-margindb$doc%in%unlist(qa)
+sum(m1)
+#unique(margindb$doc)
+f<-list.files(".",pattern="bib")
+b<-grep(names(qa),f)
+bibdf<-bib2df(f[b])
+qu<-unlist(qa)
+#qu
+bibdf$NOTE
+m2<-bibdf$NOTE%in%qu
+m2<-qu%in%bibdf$NOTE
+#m2<-qu[1]%in%bibdf$NOTE
+#sum(m2,na.rm=T)
+#qu[m2]
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
