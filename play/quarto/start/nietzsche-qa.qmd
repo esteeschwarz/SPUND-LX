@@ -12,56 +12,122 @@ date: "2026-04-20"
 
 {{< include _vars.qmd >}}
 
-## notes on 
-papers:
+## notes on papers
 
-@nietzsche_kga_2024   
+<!-- @nietzsche_kga_2024   
 @nietzsche_friedrich_1902   
-@gunther_rhythmus_2008
+@gunther_rhythmus_2008 -->
 
 ```{r}
 #| echo: false
 #| warning: false
 #| eval: true
 #| results: "asis"
-#| output: false
+#| output: true
 
 #qa1<-"Wiener_Einführung.pdf"
 load("margindb.RData")
-qa<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
+qa1<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
+qa2<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"))
 library(purrr)
-library(bib2df)
+#Encoding(unlist(qa1))
+qa2<-enc2utf8(unlist(qa1))
+#[1] "UTF-8"   "unknown" "UTF-8"   "unknown"
+#charToRaw(qa1)
+#ö: c3 b6 64, finds on ARM (only)
+#ö: 6f cc 88, finds on X86/64 (only)
+#charToRaw(unlist(qa2))
+#Encoding(unlist(qa2))
+#[1] "UTF-8"   "unknown" "UTF-8"   "unknown"
+# both
+library(stringi)
+table<-margindb
+table$doc <- stri_trans_nfc(table$doc)
+# table$notes <- stri_trans_nfc(table$notes)
 
-qa
-m1<-margindb$doc%in%unlist(qa)
-sum(m1)
+#query     <- stri_trans_nfc("nietzsche, kga 3-1, geburt d tragödie.pdf")
+
+#m3<-table$doc == query
+#sum(m3)
+library(bib2df)
+#qa
+m1<-margindb$doc%in%unlist(qa1)
+m1<-table$doc%in%qa2
+#sum(m1)
+#Encoding("Übersee.txt")
+#mu<-Encoding(table$doc)!="UTF-8"
+#table$doc[mu]
+#table$doc <- enc2utf8(table$doc)
+#Encoding(table$doc[mx])
+
+#mx<-grepl("2008", table$doc)
+#mx<-grepl("Günther", table$doc)
+#table$doc[mx]
+
+#table$doc[grepl("2008", table$doc, fixed = TRUE)]
+#table$doc[table$doc == "Übersee.txt"]  # likely empty
 #unique(margindb$doc)
-f<-list.files(".",pattern="bib")
-b<-grep(names(qa),f)
-bibdf<-bib2df(f[b])
-qu<-unlist(qa)
+#unique(margindb$doc[m1])
+#margindb$doc <- enc2utf8(margindb$doc)
+f<-list.files(pattern="bib")
+print(f)
+print(names(qa1))
+b<-grep(names(qa1),f)
+print(f[b])
+bibdf<-bib2df("nietzsche.bib")
+qu<-unlist(qa2)
 #qu
-bibdf$NOTE
+dim(bibdf)
+cat(bibdf$NOTE)
 m2<-bibdf$NOTE%in%qu
 m2<-qu%in%bibdf$NOTE
+c1<-lapply(qu,function(x){
+  cat("ca\n")
+  cat(x)
+  m2<-grep(x,bibdf$NOTE)
+  cat(m2,"\n")
+  c<-bibdf$BIBTEXKEY[m2]
+})
+print("c1")
+print(c1)
+cat(unlist(c1))
 #m2<-qu[1]%in%bibdf$NOTE
-#sum(m2,na.rm=T)
-#qu[m2]
+sum(m2,na.rm=T)
+qu[m2]
 kdf<-margindb[m1,]
+dim(kdf)
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
 kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
 kdf$comment<-gsub("[\r\n|]","(..)",kdf$comment)
 kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
 du<-unique(kdf$doc)
+#du <- stri_trans_nfc(du)
+bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
+save(bibdf,file="bibdf.RData")
 #du
+#dim(kdf)
+#kdf
   library(kableExtra)
 for(k in 1:length(du)){
 #k<-1
-  m<-kdf$doc==du[k]
-  #print(sum(m))
-  page<-gsub("[\r\n ] ","",kdf$spage[m])
-  df<-data.frame(page=paste0("",page,""),note=kdf$notes[m],comment=kdf$comment[m])
+  p<-du[k]
+  p
+  m3<-kdf$doc==p
+  m4<-grep(p,bibdf$NOTE)
+  c<-bibdf$BIBTEXKEY[m4]
+  c
+  print(sum(m3))
+  print(sum(m4))
+  page<-gsub("[\r\n ] ","",kdf$spage[m3])
+  df<-data.frame(page=paste0("",page,""),note=kdf$notes[m3],comment=kdf$comment[m3])
+  if(sum(m4)==0){
+    m5<-grep("#cite",df$comment)
+    c<-gsub(".*#cite_(.+)__.*","\\1",df$comment[m5])
+    c<-unique(c)
+    print("c m40")
+    print(c)
+  }
   #print(dim(df))
   #cat(paste0("\nannotations: *",k,"* \n"))
 #   knitr::kable(df,row.names = F,booktabs = F,width=100) %>% 
@@ -75,7 +141,8 @@ for(k in 1:length(du)){
 #   column_spec(2, width = "60%") %>% 
 #   column_spec(3, width = "20%")
 #   #cat("fin annotations\n")
-cat(paste0("#### annotations: ",du[k],"\n"))
+cat(paste0("\n#### annotations: ",p,"\n"))
+cat(paste0("\npaper: @",c,"\n"))
 
 cat(knitr::kable(df,row.names = F,booktabs = F, format="html") %>% 
   kable_styling(bootstrap_options = c("striped", "condensed"), 
