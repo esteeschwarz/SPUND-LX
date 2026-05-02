@@ -1,0 +1,842 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\newcommand{\doctitle}{Wiener, Kybernetik: annotations}
+\newcommand{\docdate}{2026-05-01}
+\newcommand{\doclogoleft}{assets/fadenlogo-fwb.png}
+\newcommand{\doclogoright}{assets/dcl-head-niemand.png}
+% ============================================================
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
+% ============================================================
+
+\usepackage{iftex}
+\RequireLuaTeX
+
+\usepackage{fontspec}
+
+\setmainfont{Georgia}[
+  Ligatures = TeX
+]
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
+% ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
+
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
+
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
+
+% ------------------------------------------------------------
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
+% ------------------------------------------------------------
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
+
+\usepackage[hyperfootnotes=false]{hyperref}
+% ============================================================
+% header.tex  —  include-in-header snippet
+% Replaces $var$ Pandoc syntax with \ifdefined\doc... guards.
+% Vars injected via vars.lua Lua filter from YAML front matter:
+%   \doctitle      \docsubtitle   \docauthor   \docdate
+%   \docmeta       \docfoot       \doclogoleft \doclogoright
+%
+% No fancyhdr. Header fires via \AtBeginDocument,
+% footer via \AtEndDocument — bidi-safe.
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+
+% ---------- header font (adjust to taste) ----------
+\newfontfamily\headerfont{Source Sans 3}
+
+% ---------- footer colors ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
+
+% ---------- column types ----------
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{45mm}}
+
+% vertical separator rule
+\newcommand{\vsep}{\color{black}\vrule width 1pt}
+
+% ============================================================
+% CUSTOM HEADER
+% ============================================================
+\newcommand{\CustomHeader}{%
+% \LTR{%
+\noindent
+\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
+
+% LEFT LOGO
+\ifdefined\doclogoleft
+  \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
+\fi
+&
+% CENTER: title + subtitle stacked in a minipage so \\ is a
+% line break within the cell, not a new table row
+\begin{minipage}[c]{\linewidth}
+\centering
+\ifdefined\doctitle
+  {\Large\bfseries\headerfont\doctitle}%
+\fi
+\ifdefined\docsubtitle
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
+\fi
+\vspace{5pt}
+
+\end{minipage}
+% &
+% % CENTER TITLE BLOCK
+% \ifdefined\doctitle
+%   {\Large\bfseries\doctitle}%
+% \fi
+% \ifdefined\docsubtitle
+%   \\\normalsize\docsubtitle
+% \fi
+&
+% RIGHT LOGO
+\ifdefined\doclogoright
+  \includegraphics[height=10mm,keepaspectratio]{\doclogoright}%
+\fi
+
+\end{tabularx}
+
+\hrule
+% \vspace{6pt}
+
+% ---------- META AREA ----------
+{\small
+\ifdefined\docauthor
+  \textbf{Author:} \docauthor\\
+\fi
+\ifdefined\docdate
+  \textbf{Date:} \docdate
+\fi
+\ifdefined\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
+\fi
+}
+\vspace{6pt}
+
+\hrule
+
+% \vspace{12pt}
+% }% end \LTR
+}% end \CustomHeader
+
+% ============================================================
+% CUSTOM FOOTER  (overlay, anchored to page bottom)
+% ============================================================
+\newcommand{\CustomFooter}{%
+\begin{tikzpicture}[remember picture, overlay]
+\node[
+  anchor=south,
+  draw,
+  fill=footerbg,
+  text=footerfg,
+  inner sep=10pt,
+  rounded corners=2pt,
+  text width=\dimexpr\textwidth-20pt\relax
+]
+at ([yshift=5mm]current page.south)
+{%
+  \begin{center}
+  {\small
+  \ifdefined\docfoot
+    % {\docfoot}%
+    {\headerfont\docfoot}%
+  \fi
+  }
+  \end{center}
+};
+\end{tikzpicture}%
+}% end \CustomFooter
+
+% ============================================================
+% FIRE header at doc start, footer at doc end
+% ============================================================
+% \AtBeginDocument{\CustomHeader}
+\AtEndDocument{\CustomFooter}
+\renewcommand{\maketitle}{}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Wiener, Kybernetik: annotations}
+\author{}
+\date{2026-05-01}
+\begin{document}
+\maketitle
+
+\CustomHeader
+
+
+\subsection{notes on papers}\label{notes-on-papers}
+
+\subsubsection{snc}\label{snc}
+
+\begin{itemize}
+\tightlist
+\item
+  t1
+\end{itemize}
+
+\paragraph{annotations:
+Foerster\_Ethik+und+Kybernetik+zweiter+Ordnung\_m
+Kopie.pdf}\label{annotations-foerster_ethikundkybernetikzweiterordnung_m-kopie.pdf}
+
+paper: Foerster (1993)
+
+page
+
+note
+
+comment
+
+1
+
+Heinz von FoersterKybernEthik
+
+\#cite\_ Foerster\_Ethik+und+Kybernetik+zweiter+Ordnung\_m Kopie.pdf\_\_
+
+1
+
+Heinz von FoersterKybernEthik
+
+\#cite\_ Foerster\_Ethik+und+Kybernetik+zweiter+Ordnung\_m Kopie.pdf\_\_
+
+4
+
+der Kybernetiker, Gordon Pask: ``Kybernetik ist die Wissenschaft von
+vertretbaren Metaphern
+
+5
+
+Im allgemeinen Fall des zirkulären Schlusses bedeutet A impliziert B; B
+impliziert C; und - zum allgemeinen Entsetzen - C impliziert A! Oder, im
+reflexiven Fall: A impliziert B; und - Oh, Grauen! - B impliziert A
+
+5
+
+NA
+
+marginnote4app://note/CF9607AC-C9E6-424F-8676-CBDC3374F847
+
+7
+
+``Der erste Gedanke bei der Aufstellung eines ethischen Gesetzes von der
+Form `Du sollst\ldots{}' ist: Und was dann, wenn ich es nicht tue
+
+8
+
+Oder denken wir an Goldbachs ``Vermutung'', die sich derartig einfach
+anhört, daß man glaubt, ein Beweis liege fast auf der Hand: ``Jede
+gerade Zahl ist die Summe zweier Primzahlen.'' Zum Beispiel: 12 ist die
+Summe der zwei Primzahlen 5
+
+11
+
+das Problem liegt im Verstehen des Verstehens; das Problem besteht
+darin, Entscheidungen über prinzipiell unentscheidbare Fragen zu treffen
+
+12
+
+Ethik antwortete: ``Sag ihnen, sie sollten immer so handeln, die Anzahl
+der Möglichkeiten zu vermehren; ja, die Anzahl der Möglichkeiten zu
+vermehren
+
+\paragraph{annotations:
+Wiener\_Einführung.pdf}\label{annotations-wiener_einfuhrung.pdf}
+
+paper: Wiener (1992)
+
+page
+
+note
+
+comment
+
+5
+
+EINFÜHRUNG
+
+\#init\_Wiener, Kybernetik\_\_(..)\#cite\_wiener\_kybernetik\_1992\_\_
+
+5
+
+EINFÜHRUNG
+
+\#init\_Wiener, Kybernetik\_\_(..)\#cite\_wiener\_kybernetik\_1992\_\_
+
+6
+
+Viele Jahre hatten Dr.~Rosenblueth und ich die Überzeugung geteilt, daß
+die für das Gedeihen der Wissenschaft fruchtbarsten Gebiete jene waren,
+die als Niemandsland zwischen den verschiedenen bestehenden Disziplinen
+vernachlässigt wurden. Seit Leibniz hat es vielleicht keinen Menschen
+mehr gegeben, der die volle Übersicht über die gesamte geistige
+Tätigkeit seiner Zeit gehabt hat. (..)(..)Seit jener Zeit ist die
+Wissenschaft in zunehmendem Maß die Aufgabe von Spezialisten geworden;
+auf Gebieten, die die Tendenz zeigen, ständig näher zusammenzuwachsen
+
+7
+
+Wir haben jahrelang von einem Institut mit unabhängigen Wissenschaftlern
+geträumt, die gemeinsam in diesen Hinterwäldern der Wissenschaft
+arbeiten würden; nicht als Untergeordnete irgendeines hohen
+Exekutivbeamten, sondern vereint durch den Wunsch --- ja durch die
+geistige Notwendigkeit ---, das Teilgebiet als Ganzes zu verstehen und
+einander zu diesem Verstehen zu verhelfen
+
+8
+
+Bei Kriegsbeginn richteten das deutsche Luftwaffenpotential und die
+defensive Lage Englands die Aufmerksamkeit vieler Wissenschaftler auf
+die Entwicklung der Flugabwehrartillerie. Schon vor dem Krieg war es
+klargeworden, daß die Geschwindigkeit des Flugzeugs alle klassischen
+Methoden der Feuerleitung überwunden hatte und daß es nötig war, alle
+notwendigen Rechnungen in die Regelungsapparatur selbst einzubauen.
+Diese waren sehr schwierig geartet durch die Tatsache, daß --- nicht zu
+vergleichen mit allen vorher betrachteten Zielen --- ein Flugzeug eine
+Geschwindigkeit hat, die ein sehr ansehnlicher Bruchteil der
+Geschwindigkeit des Geschosses ist, das zum Beschuß verwendet wird.
+Demgemäß ist es außerordentlich wichtig, das Geschoß nicht auf das Ziel
+abzuschießen, sondern so, daß Geschoß und Ziel im Raum zu einem späteren
+Zeitpunkt zusammentreffen. (..)(..)Wir mußten deshalb eine Methode
+Enden, die zukünftige Position des Flugzeuges vorherzusagen
+
+9
+
+ein außerordentlich wichtiger Faktor im willensgesteuerten Handeln das
+ist, was die Regelungstechniker mit Ruckkopplung bezeichnen
+
+9
+
+Hier geniigt die Feststellung, daB bei einer von einem Muster gelenkten
+Bewegung die Abweichung der wirklich durchgeführten Bewegung von diesem
+Muster als neue Eingabe benutzt wird, um den geregelten Teil zu
+veranlassen, die Bewegung dem Muster naherzubringen.
+
+9
+
+Nehmen wir nun an, daB ich einen Bleistift aufhebe, so muB ich, um
+dieses zu tun, gewisse Muskeln bewegen. Jedoch jeder von uns,
+ausgenommen wenige Anatomieexperten, weiß nicht, welches diese Muskeln
+sind, und sogar unter den Anatomen gibt es wenige, wenn es ilberhaupt
+welche gibt, die diese Handlung durch eine bewußte Willenssteuerung der
+Kontraktion jedes betreffenden Muskels ausführen können. Was wir
+hingegen wollen, ist, den Bleistift aufzuheben. Haben wir dies einmal
+beschlossen, so schreitet unsere Bewegung derart fort, daß wir grob
+sagen können, daß der Grad, zu welchem der Bleistift noch nicht
+aufgehoben ist, mit jedem Bewegungsstadium vermindert wird. Dieser Teil
+der Aktion ist nicht voll im Bewußtsein.
+
+10
+
+Die Nachricht ist eine zeitlich diskret oder stetig verteilte Folge
+meßbarer Ereignisse --- genau das, was von den Statistikern ein
+Zufallsprozeß genannt wird. Die Vorhersage der Zukunft einer Nachricht
+geschieht durch irgendeine Operation auf ihre Vergangenheit,
+gleichgültig, ob dieser Operator durch ein mathematisches Rechenschema
+oder durch einen mechanischen oder elektrischen Apparat verwirklicht
+wird.
+
+11
+
+Dieses sich gegenseitig beeinflussende Paar von Fehlertypen schien etwas
+mit dem kontrastierenden Problem der Ortsmessung und der
+Bewegungsmessung zu tun zu haben, das in der Quantenmechanik von
+Heisenberg als Ungenauigkeitsrelation zu finden ist.
+
+1927
+
+11
+
+Dieses sich gegenseitig beeinflussende Paar von Fehlertypen schien etwas
+mit dem kontrastierenden Problem der Ortsmessung und der
+Bewegungsmessung zu tun zu haben, das in der Quantenmechanik von
+Heisenberg als Ungenauigkeitsrelation zu finden ist.
+
+1927
+
+12
+
+NA
+
+\#bookmarks Page 12
+
+12
+
+Governor« für Fliehkraftregler ist von einer lateinischen Verfälschung
+von κυβερνήτης abgeleitet
+
+12
+
+Wir haben beschlossen, das ganze Gebiet der Regelung und
+Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen
+»Kybernetik« zu benennen, den wir aus dem griechischen
+»κvßερvήΤη\textasciitilde« oder »Steuermann« bildeten
+
+12
+
+Informationsgehaltes berührt in natürlicher Weise einen klassischen
+Begriff in der statistischen Mechanik: den der Entropie. Gerade wie der
+Informationsgehalt eines Systems ein Maß des Grades der Ordnung ist, ist
+die Entropie eines Systems ein MaB des Grades der Unordnung; und das
+eine ist einfach das Negative des anderen.
+
+13
+
+Gruppe viel dazu beigetragen hat, die Aufmerksamkeit der mathematisch
+Interessierten auf die Möglichkeiten der biologischen Wissenschaften
+hinzulenken,
+
+13
+
+Es ist deshalb nicht im mindesten überraschend, daB der gleiche
+intellektuelle Impuls, der zur Entwicklung der mathematischen Logik
+geführt hat, gleichzeitig zur idealen oder tatsächlichen Mechanisierung
+der Prozesse des Denkens geführt hat.
+
+13
+
+Vereinigung der Nervenfasern durch Synapsen zu Systemen mit gegebenen
+Gesamteigenschaften
+
+14
+
+NA
+
+\#bookmarks Page 14
+
+14
+
+Der Alles-oder-nichts-Charakter der Neuronenentladung ist völlig analog
+zur Auswahl einer binären Ziffer; und schon mehr als einer von uns hatte
+das binäre Zahlensystem als beste Basis des Rechnens in der Maschine
+erkannt. Die Synapse ist nichts als ein Mechanismus, der bestimmt, ob
+eine gewisse Kombination von Ausgängen von anderen Elementen ein
+ausreichender Anreiz für das Entladen des nächsten Elementes ist oder
+nicht und muß ein genaues Analogon in der Rechenmaschine haben
+
+14
+
+Beispiele von modernen Vakuumröhren zeigte und ihm erklärte, daß diese
+ideale Mittel wären, um apparative Aquivalente zu seinen nervlichen
+Kreisen und Systemen darzustellen
+
+14
+
+ultraschnelle Rechenmaschine, so wie sie abhängig war von
+aufeinanderfolgenden Schaltern, beinahe ein ideales Modell der sich aus
+dem Nervensystem ergebenden Probleme darstellen mußte
+
+15
+
+Die Physiologen gaben eine gemeinsame Darstellung von
+Kybernetikproblemen von ihrem Gesichtspunkt aus; ähnlich stellten die
+Rechenmaschinenbauer ihre Methoden und Ziele dar. Am Ende des Treffens
+war es allen klar, daß es eine beträchtliche gemeinsame Denkbasis aller
+Bearbeiter der verschiedenen Gebiete gab, daB man in jeder Gruppe schon
+Begriffe gebrauchen konnte, die durch andere schon besser entwickelt
+waren, und daß ein Versuch gemacht werden sollte, ein allgemeines
+Vokabular zustande zu bringen.
+
+15
+
+So waren auf diese oder jene Weise bei Kriegsende die Gedanken der
+Vorhersagetheorie und der statistischen Nachrichtentheorie bereits einem
+großen Teil der Statistiker und Nachrichteningenieure der Vereinigten
+Staaten und Großbritanniens bekannt.
+
+16
+
+Forschung schlug zwei Richtungen ein: das Studium der Phänomene der
+Leitfähigkeit und Latenz in gleichförmig leitenden zwei- oder
+dreidimensionalen Medien und die statistische Untersuchung der
+Leitungseigenschaften von zufälligen Netzen aus leitenden Fasern.
+
+16
+
+Vieles von der früheren Psychologie hat sich als nichts anderes als die
+Physiologie der speziellen Sinnesorgane herausgestellt, und das gesamte
+Gewicht des Gedankengutes, das die Kybernetik in die Psychologie
+hineinträgt, betrifft die Physiologie und Anatomie
+
+16
+
+daß der Herzmuskel ein reizbares Gewebe darstellte, das ebenso für die
+Erforschung von Leitungsmechanismen brauchbar war wie das Nervengewebe
+
+16
+
+Der Kern unserer Treffen war die Gruppe gewesen, die in Princeton 1944
+versammelt war, aber die Doktoren McCulloch und FremontSmith hatten
+richtig die psychologischen und soziologischen Beziehungen des Themas
+erkannt und der Gruppe eine Anzahl von führenden Psychologen, Soziologen
+und Anthropologen hinzugeladen
+
+17
+
+Von Anfang an haben wir vorausgesehen, daß das Problem des Erkennens von
+»Gestalter« oder der wahrnehmbaren Formation der Allgemeinbegriffe zu
+dieser Art gehδren würde. Was ist der Mechanismus, durch den wir ein
+Quadrat als ein Quadrat erkennen, ohne Rllcksicht auf seine Lage, seine
+Größe und seine Orientierung
+
+17
+
+erstes Treffen, das im Frühling 1946 abgehalten wurde, war größtenteils
+didaktischen Vorträgen für diejenigen von uns gewidmet, die beim
+Princeton-Treffen dabeigewesen waren, und einer allgemeinen Festlegung
+der Bedeutung des Gebietes für alle Anwesenden
+
+17
+
+Was die Soziologie und Anthropologie betrifft, ist es offenkundig, daB
+die Information und Übertragung als Mechanismus der fortschreitenden
+Organisation vom Einzelwesen zur Gemeinschaft von Bedeutung ist
+
+17
+
+ein nervliches Problem direkt mit dem Begriff der Rückkopplung zu
+behandeln
+
+18
+
+Dieses näherungsweise logarithmische Verhalten des Synapsenmechanismus
+hängt sicher damit zusammen, daß das Weber-Fechnersche Gesetz der
+Reizintensität logarithmisch ist, obgleich dieses Gesetz nur eine erste
+Näherung darstellt.
+
+19
+
+McCulloch war vor das Problem gestellt worden, einen Apparat zu
+konstruieren, der den Blinden in die Lage versetzen sollte, die
+gedruckte Seite mit Hilfe des Ohres zu lesen
+
+20
+
+Es ist bestimmt so, daB das soziale System eine Organisation ähnlich dem
+Einzelwesen ist
+
+21
+
+Es gibt zwei andere Gebiete, wo ich letztlich hoffe, einiges mit Hilfe
+kybernetischer Gedanken tatsächlich zustande zu bringen, bei denen diese
+Hoffnung jedoch auf weitere Entwicklungen warten muß. Eines davon
+betrifft Prothesen für verlorene oder verkümmerte Glieder
+
+22
+
+Es war mir schon lange klar gewesen, daß die modernen, ultraschnellen
+Rechenmaschinen im Prinzip ein ideales zentrales Nervensystem für eine
+automatische Regelungsanlage waren und daB ihre Eingaben und Ausgänge
+nicht die Form von Zahlen oder Diagrammen haben müssen, sondern sehr gut
+Äußerungen von künstlichen Sinnesorganen sein können, wie z. B. von
+photoelektrischen Zellen oder Thermometern bzw. die Wirkungen von
+Motoren oder Magnetspulen. Mit der Hilfe von Spannungsmessern oder
+ähnlichen Hilfsmitteln, die die Wirkungen dieser Motororgane lesen und
+berichten und zu dem zentralen Steuerungssystem als einem künstlichen
+kinästhetischen Sinn zurückkoppeln, sind wir bereits in der Lage,
+künstliche Maschinen von fast jedem Grad sorgfältiger Arbeitsleistung zu
+konstruieren
+
+23
+
+Diejenigen von uns, die zu der neuen Wissenschaft Kybernetik beigetragen
+haben, sind in einer moralischen Lage, die, um es gelinde auszudrücken,
+nicht sehr bequem ist. Wir haben zu der Einführung einer neuen
+Wissenschaft beigesteuert, die, wie ich gesagt habe, technische
+Entwicklungen mit großen Möglichkeiten für Gut oder Böse umschließt. Wir
+können sie nur in die Welt weitergeben, die um uns existiert, und dies
+ist die Welt von Belsen und Hiroshima
+
+23
+
+Natürlich, gerade wie der gelernte Zimmermann, der gelernte Mechaniker,
+der gelernte Schneider in gewissem Grade die erste industrielle
+Revolution überlebt haben, können der erfahrene Wissenschaftler und der
+erfahrene Verwaltungsbeamte die zweite überleben. Wenn man sich jedoch
+die zweite Revolution abgeschlossen denkt, hat das durchschnittliche
+menschliche Wesen mit mittelmäßigen oder noch geringeren Kenntnissen
+nichts zu verkaufen, was für irgend jemanden das Geld wert wäre
+
+23
+
+Die moderne industrielle Revolution ist in ähnlicher Weise dazu
+bestimmt, das menschliche Gehirn zu entwerten, wenigstens in seinen
+einfacheren und mehr routinemäßigen Entscheidungen
+
+23
+
+Es kann sehr wohl fΥr die Menschheit gut sein, Maschinen zu besitzen,
+die sie von der Notwendigkeit niedriger und unangenehmer Aufgaben
+befreien, oder es kann auch nicht gut sein. Ich weiß es nicht. Es kann
+nicht gut sein, diese neuen Kräfteverhältnisse in den Begriffen des
+Marktes abzuschätzen, des Geldes, das sie verdienen; und es sind genau
+die Begriffe des freien Marktes, des »fifth freedom«, die die
+Losungsworte des Teiles der amerikanischen Meinung wurden, der durch die
+National Association of Manufacturers und die Saturday Evening Post
+repräsentiert wird
+
+24
+
+Das Beste, was wir tun können, ist, zu versuchen, daB eine breite
+Öffentlichkeit die Richtung und die Lage der gegenwärtigen Arbeit
+versteht, und unsere persönlichen Anstrengungen auf die Gebiete zu
+beschränken, die, wie z. B. Physiologie und Psychologie, am weitesten
+von Krieg und Unterdrückung entfernt sind.
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-foerster_kybernethik_1993}
+Foerster, Heinz. 1993. \emph{{KybernEthik}}. Internationaler
+{Merve}-{Diskurs} 180. Merve.
+
+\bibitem[\citeproctext]{ref-wiener_kybernetik_1992}
+Wiener, Norbert. 1992. \emph{Kybernetik: {Regelung} Und
+{Nachrichtenübertragung} Im {Lebewesen} Und in Der {Maschine} ({MIT},
+1948)}. 2nd ed. Econ Classics. ECON-Verl.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

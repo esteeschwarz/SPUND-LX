@@ -39,7 +39,7 @@ val.c<-"{{< meta cmeta >}}"
 
 
 # index
-
+1. samling: margin notes general > [link](lxtech-qa.qmd)
 
 
 ## samling

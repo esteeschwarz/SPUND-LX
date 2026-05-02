@@ -6,6 +6,9 @@
 source(paste0(Sys.getenv("GIT_TOP"),"/R-essais/scripts/marginnotesdb.R"))
 margindb<-get.notes()
 dbsub<-margindb[margindb$doc%in%unlist(qa),]
+names(qa)
+dbsub<-margindb[margindb$doc%in%names(qa),]
+
 margindb<-dbsub
 save(margindb,file="margindb.RData")
 

@@ -1,6 +1,6 @@
 ---
-title: "Wiener, Kybernetik: annotations"
-bibliography: litKI.bib
+title: "LX / tech: annotations"
+bibliography: LXtech.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
@@ -24,8 +24,9 @@ date: '`r format(Sys.time())`'
 #| warning: false
 #| eval: true
 
-qa1<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"))
+qa1<-list(LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf"))
 #qa1
+
 
 ```
 

@@ -36,6 +36,7 @@ print("engine on...")
 val.f<-"fixed val"
 val.c<-"{{< meta testmeta >}}"
 val.c<-"{{< meta cmeta >}}"
+
 ```
 
 
@@ -47,4 +48,10 @@ Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.or
 - samling: margin notes general > [link](nietzsche-qa.qmd)
 - ephemeridenmusik > briefe
 - neudeutsche schule, musikerstreit...
+
+## benn: *-05-02
+:: ```r 2026-1886``` jahre german dionys::   
+
+### der pastorensohn
+[...und gott::](benn_walter_lenning-1970-05-02.pdf)
 
