@@ -25,7 +25,7 @@ date: '`r format(Sys.time())`'
 #| eval: true
 
 qa1<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"))
-#qa1
+qa1<-list(qa$litKI)
 
 ```
 

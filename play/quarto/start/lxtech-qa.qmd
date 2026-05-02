@@ -25,6 +25,7 @@ date: '`r format(Sys.time())`'
 #| eval: true
 
 qa1<-list(LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf"))
+qa1<-list(LXtech=qa$LXtech)
 #qa1
 
 

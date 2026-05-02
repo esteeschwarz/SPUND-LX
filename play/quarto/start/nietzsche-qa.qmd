@@ -26,6 +26,8 @@ date: "2026-04-20"
 
 #load("margindb.RData")
 qa1<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
+qa1<-list(nietzsche=qa$nietzsche)
+#qa1
 # qa2<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"))
 ```
 

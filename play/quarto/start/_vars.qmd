@@ -25,6 +25,8 @@ textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langloi
 #| message: false
 
 load("margindb.RData")
+margindb<-margindb$margindb
+qa<-margindb$qa
 print("_vars")
 #qa1
 quietly <- function(expr) {

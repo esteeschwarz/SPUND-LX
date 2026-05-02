@@ -1,13 +1,13 @@
 ---
-title: AVL / Nietzsche
-subtitle: "no"
+title: "AVL / Nietzsche: Benn"
+subtitle: "Gottfried Benn: Verlorenes Ich"
 format: html
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
-date: "2026-04-20"
+date: "2026-05-02"
 title-meta: ""
 bibliography: nietzsche.bib
-nocite: '@*'
+# nocite: '@*'
 cmeta: |
   class: [16719] Nietzsche und Nietzscherezeption ::
   tutor: friederike günther ::
@@ -29,26 +29,15 @@ cfoot: |
 
 ```{r,echo=F,eval=T}
 print("engine on...")
-#val <- quarto::quarto_metadata$get("meta")
-#meta <- knitr::metadata
-#params <- meta$
-#val<-params$tmeta
-val.f<-"fixed val"
-val.c<-"{{< meta testmeta >}}"
-val.c<-"{{< meta cmeta >}}"
-
 ```
 
 
 # index
-
-Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
-
-## samling
-- samling: margin notes general > [link](nietzsche-qa.qmd)
-- ephemeridenmusik > briefe
-- neudeutsche schule, musikerstreit...
-
 ## benn: *-05-02
-:: ```r 2026-1886``` [jahre german dionys::](nietzsche-benn.qmd)   
+:: ```r 2026-1886``` [jahre german dionys::](benn.qmd)   
 
+### der pastorensohn
+[...und gott::](benn_walter_lenning-1970-05-02.pdf)
+
+### gemeinfrei: 2026-12-31
+![](benn-zehlendorf.png)

@@ -11,6 +11,6 @@ names(qa)
 qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margindb
-margindb<-dbsub
+margindb<-list(qa=qa,dbsub=dbsub)
 save(margindb,file="margindb.RData")
 
