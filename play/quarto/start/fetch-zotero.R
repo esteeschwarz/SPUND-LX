@@ -26,11 +26,13 @@ writeLines(bibjs,y)
 library(jsonlite)
 bibdf<-fromJSON(y,flatten=T)
 ##########################
-offset<-function(){
+offset<-function(qaz){
   qa<-list(nietzsche=NA)
-  bibyml<-names(qa[1])
+  qa<-qaz
+ # bibyml<-names(qa[1])
 }
-#offset()
+#qa<-offset(qaz)
+#qa
 get.bib<-function(bibyml){
 bibkey<-bibdf$key[grep(bibyml,bibdf$data.name)]
 

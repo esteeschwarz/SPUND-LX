@@ -1,0 +1,13 @@
+```{r,getmdb}
+#| echo: false
+#| warning: false
+#| eval: true
+#| results: "asis"
+#| output: false
+#| message: false
+
+load("margindb.RData")
+qa<-margindb$qa
+margindb<-margindb$dbsub
+#qa<-margindb$qa
+```

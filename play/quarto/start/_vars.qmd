@@ -24,9 +24,10 @@ textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langloi
 #| output: true
 #| message: false
 
-load("margindb.RData")
-margindb<-margindb$margindb
-qa<-margindb$qa
+# load("margindb.RData")
+# qa<-margindb$qa
+# margindb<-margindb$dbsub
+#qa<-margindb$qa
 print("_vars")
 #qa1
 quietly <- function(expr) {
@@ -71,6 +72,7 @@ library(bib2df)
 m1<-table$doc%in%qa2
 sum(m1)
 f<-list.files(pattern="bib")
+#qa1<-qa
 b<-grep(names(qa1),f)
 #bibdf<-bib2df(f[b])
 # invisible(
@@ -110,7 +112,8 @@ for(k in 1:length(du)){
   m3<-kdf$doc==p
   #cat(bibdf$NOTE,"\n")
   #cat(p,"\n")
-  m4<-grep(p,bibdf$NOTE)
+  # m4<-grep(p,bibdf$NOTE)
+  #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
   c<-bibdf$BIBTEXKEY[m4]
   c<-c[!is.na(c)]

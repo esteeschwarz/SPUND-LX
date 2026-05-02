@@ -16,6 +16,8 @@ date: '`r format(Sys.time())`'
 ### snc
 - t1
 
+{{< include _setup.qmd >}}
+
 
 ```{r}
 #| label: tbl_qa1
@@ -25,7 +27,7 @@ date: '`r format(Sys.time())`'
 #| eval: true
 
 qa1<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"))
-qa1<-list(qa$litKI)
+qa1<-list(litKI=qa$litKI)
 
 ```
 

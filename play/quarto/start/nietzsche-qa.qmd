@@ -16,6 +16,7 @@ date: "2026-04-20"
 <!-- @nietzsche_kga_2024   
 @nietzsche_friedrich_1902   
 @gunther_rhythmus_2008 -->
+{{< include _setup.qmd >}}
 
 ```{r}
 #| echo: false

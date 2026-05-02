@@ -16,6 +16,7 @@ date: '`r format(Sys.time())`'
 ### snc
 - t1
 
+{{< include _setup.qmd >}}
 
 ```{r}
 #| label: tbl_qa1
