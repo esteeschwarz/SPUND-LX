@@ -18,12 +18,13 @@ cmeta: |
 arkiv: 16162.tiny
 # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 cfoot: |
-  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-benn)
+  [back to paper online](https://stschwarz.userpage.fu-berlin.de/links/?title=benn&ref=paper-benn)
 ---
 
 ::: {.content-visible when-format="html"}
 {{< meta cmeta >}}
 :::
+
 
 [to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
 
