@@ -122,6 +122,8 @@ for(k in 1:length(du)){
   if(length(m3)>0){
     if(sum(grepl("[a-z]",kdf$notes[m3]))>0){
   df<-data.frame(page=paste0("",page,""),note=kdf$notes[m3],comment=kdf$comment[m3])
+  dup<-duplicated(df$note)
+  df<-df[!dup,]
   if(sum(m4,na.rm=T)==0){
     m5<-grep("#cite",df$comment)
     c<-gsub(".*#cite_(.+)__.*","\\1",df$comment[m5])

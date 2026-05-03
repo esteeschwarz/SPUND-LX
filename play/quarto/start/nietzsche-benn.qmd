@@ -26,8 +26,9 @@ cfoot: |
 :::
 
 
-[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+{{< include _gitsvg.html >}}
 
+to nietzsche..., benn... class... global [annotations][nietzsche-qa.qmd]
 ```{r,echo=F,eval=T}
 print("engine on...")
 ```
@@ -74,7 +75,7 @@ Q: praat [link to programm](https://praat.org)
 - general massive down strophenende
 - 2nd part (4-5) darkest, 1st (1-3) part highest variance
 
-benns (intonation) ist wichtig in seinem werk, nicht nur den gedichten. die hochkomplexe rhytmisch-semantische struktur auch durchzusetzen... es gibt einen benn-ton, der sich auch beim lesen einstellt; nicht immer einfach zu rekonstruieren, aber wenn man semantisch aus der silbenstruktur zurückgekehrt ist...
+benns (intonation) ist wichtig in seinem werk, nicht nur den gedichten. die hochkomplexe rhytmisch-semantische struktur auch durchzusetzen... es gibt einen benn-ton, der sich auch beim lesen einstellt; nicht immer einfach zu rekonstruieren, aber wenn man semantisch aus der silbenstruktur zurückgekehrt ist... [(nachlesen)](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche-qa.html#:~:text=Sprach-Rhythmus)
 
 {{< include nietzsche-benn-ul.qmd >}}
 

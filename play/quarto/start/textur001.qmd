@@ -22,7 +22,7 @@ cfoot: |
 {{< meta cmeta >}}
 :::
 
-[to commit](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})
+{{< include _gitsvg.html >}}
 
 ```{r,echo=F,eval=T}
 print("engine on...")
