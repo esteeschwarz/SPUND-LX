@@ -20,9 +20,9 @@ das wird kein thesenpapier zum verlorenen ich. das wird nur die vorbereitung des
 
 es sieht so aus, als wenn die beschäftigung vorbereitet war.
 
-> 1997, die barke. linktree: pinthus, lyrik des expressionistischen jahrzehnts, paperobject, flomarkt vor dem rathaus schöneberg. also bayrisches viertel. also benn, cirque fermee. seitdem.
+> 1997, die barke. linktree: dtv, lyrik des expressionistischen jahrzehnts (@benn_lyrik_1962), paperobject, flomarkt vor dem rathaus schöneberg. also bayrisches viertel. also benn, cirque fermee. seitdem.
 
-benn 1886, pastorensohn, priegnitz. theologie/philologie, marburg etc., dann medizin, berlin. seitdem.
+benn 1886, pastorensohn, westpriegnitz. theologie/philologie, marburg etc., dann medizin, berlin. seitdem.
 
 pathologie: krankenhaus westend, städt. krankenhaus sophie-charlottenstrasze. in diesem radius bewege seit 20 jahren zwischen friedhof-autobahn. cirque fermee.
 
