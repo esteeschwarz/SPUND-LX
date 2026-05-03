@@ -1,7 +1,7 @@
 ---
 title: "AVL / Nietzsche: Benn"
 subtitle: "Gottfried Benn: Verlorenes Ich"
-format: html
+# format: html
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
 date: "2026-05-02"
@@ -18,7 +18,7 @@ cmeta: |
 arkiv: 16162.tiny
 # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 cfoot: |
-  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-benn)
 ---
 
 ::: {.content-visible when-format="html"}
@@ -46,6 +46,14 @@ print("engine on...")
 1-2: benn/benn ©Zweitausendeins
 3-5: kinski/nietzsche ©hörverlag     
 
+::: {.content-visible when-format="html"}
 <iframe src="https://box.dh-index.org/estee/play/vi/?audio=benn" width="100%" height="400px"></iframe>
+:::
+
+::: {.content-visible when-format="latex"}
+weil Sie durchaus im pdf lesen, kein frame, sondern 1 link zur playlist: 
+
+[https://box.dh-index.org/estee/play/vi/?audio=benn](https://box.dh-index.org/estee/play/vi/?audio=benn)
+:::
 
 {{< include nietzsche-benn-ul.md >}}
