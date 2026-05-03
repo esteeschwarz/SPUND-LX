@@ -41,5 +41,10 @@ generell seine liebschaften, buch d. könige (@theweleit_buch_1988), an u. zieba
 auch zehlendorf: zum geburtstag blühende waldsteinia (bodendeckende dauerbepflanzung) und violen (wechselbepflanzung) zum todestag die begonien (auch im wechsel, schale.) die eibenhecke gepflegt, ehrengrab (roter ton), nebenan wer weisz das schon aus welchen gründen hier liegen...
 
 ## und das verlorene Ich?
-das war nur der klappentext.
+das war nur der klappentext. ich bin noch nicht in der lage, leidenschaft in wissenschaft zu verwandeln.
+
+### thesen?
+das dorische: faszination, besser: [nietzsche-fanatische] begeisterung für dionys. auch hier fortwährend der gegensatz zu spüren. benns apoll: quanten, neuronen, synapsen, generell: haut- und geschlechtskrankheiten. das atom. lyrik [im essay](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche-qa.html#:~:text=Zeichen-Material). sprache ist nur interessant, sofern sie beides hat.
+
+
 
