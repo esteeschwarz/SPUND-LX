@@ -41,3 +41,5 @@ print("engine on...")
 
 ### gemeinfrei: 2026-12-31
 ![](benn-zehlendorf.png)
+
+{{< include nietzsche-benn-ul.md >}}

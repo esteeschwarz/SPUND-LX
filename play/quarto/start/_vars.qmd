@@ -21,7 +21,7 @@ textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langloi
 #| warning: false
 #| eval: true
 #| results: "asis"
-#| output: true
+#| output: false
 #| message: false
 
 # load("margindb.RData")
