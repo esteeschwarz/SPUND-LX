@@ -3,7 +3,9 @@ title: "About"
 ---
 
 # About
-semesterbegleitende notes/essais/quellensammlungen
+semesterbegleitende notes/essais/quellensammlungen.
+
+> project arkkiv semi-komplett: [https://esteeschwarz.github.io/DC-LX/blog](https://esteeschwarz.github.io/DC-LX/blog/)
 
 ```{r}
 #| echo: true
