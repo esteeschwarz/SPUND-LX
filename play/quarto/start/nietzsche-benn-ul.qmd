@@ -13,7 +13,7 @@ das wird kein thesenpapier zum verlorenen ich. das wird nur die vorbereitung des
 ## samling
 ### list of digital and analogue registrates
 #### primaere
-- @benn_ausgewahlte_1957, @benn_gesammelte_1958, @benn_gesammelte_1960, @benn_gesammelte_1982, @benn_gesammelte_1990, @benn_gesammelte_2006, @benn_lyrik_1971, @benn_den_1966
+- @benn_ausgewahlte_1957, @benn_gesammelte_1958, @benn_gesammelte_1960, @benn_gesammelte_1982, @benn_gesammelte_1990, @benn_gesammelte_1989, @benn_lyrik_1971, @benn_den_1966
 
 #### secundaere
 - @koch_gottfried_1970, @hertel_modernes_2017, @hanna_benn-handbuch_2016
