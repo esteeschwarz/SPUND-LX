@@ -30,7 +30,7 @@ militärarzt, militär kein-arzt, dichten als notwendigkeit. die morgue.
 
 praxis friedenau arzt für geschlechtskrankheiten. dichten als notwendigkeit. europas geschlechte. die syphilis von berlin.
 
-1907 liest nietzsche. erkennt sich. das geistergespräch: mit sich im andern reden. vor allem mit sich über die griechen und den niedergang des abendlands. (@hertel_ein_2017)
+1907 liest nietzsche. erkennt sich. das geistergespräch: mit sich im andern reden. vor allem mit sich über die griechen und den niedergang des abendlands. (@hertel_modernes_2017)
 
 pause. order items chronologically. der erste weltkrieg, der zweite weltkrieg. fanatismus, ausschlusz, rehabilitation. immerwieder auch "rasse". 
 
