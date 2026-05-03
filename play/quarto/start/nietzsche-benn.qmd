@@ -58,6 +58,6 @@ weil Sie durchaus im pdf lesen, kein frame, sondern 1 link zur playlist:
 [https://box.dh-index.org/estee/play/vi/?audio=benn](https://box.dh-index.org/estee/play/vi/?audio=benn)
 :::
 
-{{< include nietzsche-benn-ul.md >}}
+{{< include nietzsche-benn-ul.qmd >}}
 
 # references
