@@ -1,3 +1,7 @@
+---
+bibliography: nietzsche.bib
+---
+
 # 16192.benn.VI
 das wird kein thesenpapier zum verlorenen ich. das wird nur die vorbereitung des samstag, 2. mai 2026..., dem 140. geburtstag benns.
 
@@ -8,14 +12,17 @@ das wird kein thesenpapier zum verlorenen ich. das wird nur die vorbereitung des
 
 ## samling
 ### list of digital and analogue registrates
-- primaere
-- secundaere
+#### primaere
+- @benn_ausgewahlte_1957, @benn_gesammelte_1958, @benn_gesammelte_1960, @benn_gesammelte_1982, @benn_gesammelte_1990, @benn_gesammelte_2006, @benn_lyrik_1971, @benn_den_1966
+
+#### secundaere
+- @koch_gottfried_1970, @hertel_modernes_2017, @hanna_benn-handbuch_2016
 
 es sieht so aus, als wenn die beschäftigung vorbereitet war.
 
 > 1997, die barke. linktree: pinthus, lyrik des expressionistischen jahrzehnts, paperobject, flomarkt vor dem rathaus schöneberg. also bayrisches viertel. also benn, cirque fermee. seitdem.
 
-benn 1886, pastorensohn, priegnitz. philosophie etc., dann medizin, berlin. seitdem.
+benn 1886, pastorensohn, priegnitz. theologie/philologie, marburg etc., dann medizin, berlin. seitdem.
 
 pathologie: krankenhaus westend, städt. krankenhaus sophie-charlottenstrasze. in diesem radius bewege seit 20 jahren zwischen friedhof-autobahn. cirque fermee.
 
@@ -23,15 +30,15 @@ militärarzt, militär kein-arzt, dichten als notwendigkeit. die morgue.
 
 praxis friedenau arzt für geschlechtskrankheiten. dichten als notwendigkeit. europas geschlechte. die syphilis von berlin.
 
-1907 liest nietzsche. erkennt sich. das geistergespräch: mit sich im andern reden. vor allem mit sich über die griechen und den niedergang des abendlands.
+1907 liest nietzsche. erkennt sich. das geistergespräch: mit sich im andern reden. vor allem mit sich über die griechen und den niedergang des abendlands. (@hertel_ein_2017)
 
 pause. order items chronologically. der erste weltkrieg, der zweite weltkrieg. fanatismus, ausschlusz, rehabilitation. immerwieder auch "rasse". 
 
-> u. wolf: warum muss e. lasker-schüler ein gegensatz sein von jüdisch / deutsch [...] (benns totenrede als klappentext.)
+> @wolf_etymologischer_2021 - warum muss e. lasker-schüler ein gegensatz sein von jüdisch / deutsch [...] (benns totenrede als klappentext.)
 
-generell seine liebschaften, buch d. könige, an u. ziebarths wohnung immer vorbeigeschlichen, bis auch sie dann als letzte; u. ziebarth 1 urne in DIII, aber es wird noch andere geben vielleicht. cirque fermee.
+generell seine liebschaften, buch d. könige (@theweleit_buch_1988), an u. ziebarths wohnung immer vorbeigeschlichen, bis auch sie dann als letzte usw.; u. ziebarth 1 urne in DIII, aber es wird noch andere geben vielleicht. cirque fermee.
 
-auch zehlendorf: zum geburtstag blühende waldsteinia (bodendeckende dauerbepflanzung) und violen (wechselbepflanzung) zum todestag die begonien (auch im wechsel, schale. die eibenhecke gepflegt, ehrengrab (roter ton), nebenan wer weisz das schon aus welchen gründen hier liegen...
+auch zehlendorf: zum geburtstag blühende waldsteinia (bodendeckende dauerbepflanzung) und violen (wechselbepflanzung) zum todestag die begonien (auch im wechsel, schale.) die eibenhecke gepflegt, ehrengrab (roter ton), nebenan wer weisz das schon aus welchen gründen hier liegen...
 
 ## und das verlorene Ich?
 das war nur der klappentext.
