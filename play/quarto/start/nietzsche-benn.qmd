@@ -60,11 +60,12 @@ weil Sie durchaus im pdf lesen, kein frame, sondern 1 link zur playlist:
 
 #### analysis: pitch, spectrogram
 
-![](benn_verlIch-praat-01.jpeg)
-![](benn_verlIch-praat-02.jpeg)
-![](benn_verlIch-praat-03.jpeg)
+![](benn_verlIch-praat-01.jpg)
+![](benn_verlIch-praat-02.jpg)
+![](benn_verlIch-praat-03.jpg)
 
 Q: praat [link to programm](https://praat.org)
+
 #### interpretation?
 - 2 pitch peaks, massive down end.
 
