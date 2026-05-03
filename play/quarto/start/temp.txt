@@ -4,3 +4,7 @@
 > bibdf$NOTE
  [1] "Nietzsche, Homers Wettkampf, KGW III.2.pdf"
  [2] "Günther 2008, Der Wettkampf.pdf"
+
+ Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/bookes/belle
+ "~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/nietzsche"
+ echo "symlink" > "~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/nietzsche/Gesammelte Werke Bd. 3 Gedichte by Gottfried Benn.pdf"

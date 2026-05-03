@@ -61,7 +61,7 @@ save(margindb,file="margindb.RData")
 }
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
-ifelse (s%in%c("lapsi"),qa<-buildmdb(),qa<-qaz)
+ifelse (s%in%c("lapsi","tapee"),qa<-buildmdb(),qa<-qaz)
 
 ### vars
 docdir<-"."
