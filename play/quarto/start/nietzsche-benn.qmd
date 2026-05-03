@@ -58,6 +58,16 @@ weil Sie durchaus im pdf lesen, kein frame, sondern 1 link zur playlist:
 [https://box.dh-index.org/estee/play/vi/?audio=benn](https://box.dh-index.org/estee/play/vi/?audio=benn)
 :::
 
+#### analysis: pitch, spectrogram
+
+![](benn_verlIch-praat-01.jpeg)
+![](benn_verlIch-praat-02.jpeg)
+![](benn_verlIch-praat-03.jpeg)
+
+Q: praat [link to programm](https://praat.org)
+#### interpretation?
+- 2 pitch peaks, massive down end.
+
 {{< include nietzsche-benn-ul.qmd >}}
 
 # references
