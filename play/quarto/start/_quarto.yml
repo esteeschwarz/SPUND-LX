@@ -56,6 +56,8 @@ format:
     #   mainfont: 'Free Sans'
       font-size: 11
       colorlinks: true
+      citecolor: cyan
+
       include-in-header: 
         - assets/lualoani.tex
         - assets/footer-header.tex
