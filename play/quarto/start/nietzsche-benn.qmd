@@ -58,7 +58,7 @@ weil Sie durchaus im pdf lesen, kein frame, sondern 1 link zur playlist:
 [https://box.dh-index.org/estee/play/vi/?audio=benn](https://box.dh-index.org/estee/play/vi/?audio=benn)
 :::
 
-#### analysis: pitch, spectrogram
+#### analysis: pitch & spectrogram per stanza
 
 ![](benn_verlIch-praat-01.jpg)
 ![](benn_verlIch-praat-02.jpg)
@@ -67,7 +67,12 @@ weil Sie durchaus im pdf lesen, kein frame, sondern 1 link zur playlist:
 Q: praat [link to programm](https://praat.org)
 
 #### interpretation?
-- 2 pitch peaks, massive down end.
+- pitch peaks: unendlichkeit, ewig, katalaunen, raum
+- pitch downs: denker, log
+- general massive down strophenende
+- 2nd stanza darkest, 1st stanza highest variance
+
+benns (intonation) ist wichtig in seinem werk, nicht nur den gedichten. die hochkomplexe rhytmisch-semantische struktur auch durchzusetzen... es gibt einen benn-ton, der sich auch beim lesen einstellt; nicht immer einfach zu rekonstruieren, aber wenn man semantisch aus der silbenstruktur zurückgekehrt ist...
 
 {{< include nietzsche-benn-ul.qmd >}}
 
