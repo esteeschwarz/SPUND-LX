@@ -43,8 +43,8 @@ print("engine on...")
 ![](IMG_0014.png)
 
 ### play
-1-3: kinski/nietzsche  
-4-5: benn/benn  
+1-2: benn/benn ©Zweitausendeins
+3-5: kinski/nietzsche ©hörverlag     
 
 <iframe src="https://box.dh-index.org/estee/play/vi/?audio=benn" width="100%" height="400px"></iframe>
 

@@ -13,7 +13,7 @@ das wird kein thesenpapier zum verlorenen ich. das wird nur die vorbereitung des
 
 es sieht so aus, als wenn die beschäftigung vorbereitet war.
 
-\> 1997, die barke. linktree: pinthus, lyrik des expressionistischen jahrzehnts, paperobject, flomarkt vor dem rathaus schöneberg. also bayrisches viertel. also benn, cirque fermee. seitdem.
+> 1997, die barke. linktree: pinthus, lyrik des expressionistischen jahrzehnts, paperobject, flomarkt vor dem rathaus schöneberg. also bayrisches viertel. also benn, cirque fermee. seitdem.
 
 benn 1886, pastorensohn, priegnitz. philosophie etc., dann medizin, berlin. seitdem.
 
@@ -25,7 +25,9 @@ praxis friedenau arzt für geschlechtskrankheiten. dichten als notwendigkeit. eu
 
 1907 liest nietzsche. erkennt sich. das geistergespräch: mit sich im andern reden. vor allem mit sich über die griechen und den niedergang des abendlands.
 
-pause. order items chronologically. der erste weltkrieg, der zweite weltkrieg. fanatismus, ausschlusz, rehabilitation. immerwieder auch "rasse". \> u. wolf: warum muss e. lasker-schüler ein gegensatz sein von jüdisch / deutsch [...] (benns totenrede als klappentext.)
+pause. order items chronologically. der erste weltkrieg, der zweite weltkrieg. fanatismus, ausschlusz, rehabilitation. immerwieder auch "rasse". 
+
+> u. wolf: warum muss e. lasker-schüler ein gegensatz sein von jüdisch / deutsch [...] (benns totenrede als klappentext.)
 
 generell seine liebschaften, buch d. könige, an u. ziebarths wohnung immer vorbeigeschlichen, bis auch sie dann als letzte; u. ziebarth 1 urne in DIII, aber es wird noch andere geben vielleicht. cirque fermee.
 
