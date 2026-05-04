@@ -56,104 +56,6 @@
     "text": "class: [16401] Perspektiven AVL :: tutor: strätling :: term: SS26 snc: 16185.1\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; link\nsession notes"
   },
   {
-    "objectID": "pdfpaper/001/uwolf.html",
-    "href": "pdfpaper/001/uwolf.html",
-    "title": "12293.wolf gossip satz für satz",
-    "section": "",
-    "text": "[1] \"engine on...\""
-  },
-  {
-    "objectID": "pdfpaper/001/uwolf.html#footnotes",
-    "href": "pdfpaper/001/uwolf.html#footnotes",
-    "title": "12293.wolf gossip satz für satz",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nWolf, U. Etymologischer Gossip im Gedicht. In: Braun, M., & Thill, H. (2018). Aus Mangel an Beweisen : deutsche Lyrik 2008-2018 / herausgegeben von Michael Braun und Hans Thill. Heidelberg: Wunderhorn.↩︎\nDembeck, T., Parr, R., & Küpper, T. (2017). Literatur und Mehrsprachigkeit : ein Handbuch / Till Dembeck/Rolf Parr (Hrsg.) ; unter Mitarbeit von Thomas Küpper. Tübingen: Narr Francke Attempto.↩︎\nPrammer, T., Vescoli, C., & Erb, E. (2021). Was für Sätze : Zu Ilse Aichinger / Theresia Prammer, Christine Vescoli (Hg.) ; Elke Erb, Uljana Wolf, Monika Rinck, Ruth Klüger, Marlene Streeruwitz [und weitere]. (1. Auflage). Wien: Edition Korrespondenzen.↩︎\nGramling, D. (2016). Zur Mehrsprachigkeitsforschung in der interkulturellen Literaturwissenschaft: Wende, Romanze, Rückkehr? Zeitschrift für interkulturelle Germanistik, 7(1), 133–150. https://doi.org/10.14361/zig-2016-0109↩︎\nMeibauer, J., Demske, U., Geilfuß-Wolfgang, J., Pafel, J., Ramers, K. H., Rothweiler, M., & Steinbach, M. (2015). Einführung in die germanistische Linguistik (3., überarbeitete und aktualisierte Auflage). https://doi.org/10.1007/978-3-476-05424-1↩︎"
-  },
-  {
-    "objectID": "lxtech001.html",
-    "href": "lxtech001.html",
-    "title": "LX / Tech",
-    "section": "",
-    "text": "class: [16830] Sprache und Technologie - Language and Technology:: tutor: frankowsky :: term: SS26 snc: 16175.1\nTO GIT COMMIT\n[1] \"engine on...\""
-  },
-  {
-    "objectID": "lxtech001.html#samling",
-    "href": "lxtech001.html#samling",
-    "title": "LX / Tech",
-    "section": "samling",
-    "text": "samling\n\nFrankowsky (2022)\n\nhow were dates attested technically?\nwhat about the decow16 corpus?\n\npossible to put that online (term paper) or is it? (Schäfer (2025))\ncorpus formats?"
-  },
-  {
-    "objectID": "lfg-001.html",
-    "href": "lfg-001.html",
-    "title": "LFG",
-    "section": "",
-    "text": "Geben Sie die\n\nLexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich parallel dazu, wie ein nicht-annotierter Phrasenstrukturbaum aussieht.]\nannotierte Phrasenstrukturregeln in der c-Struktur\nf- inkl. a-Struktur\n\nfür den folgenden Satz des Englischen wieder:\n\n\n[1] \"The striker shot an incredible goal.\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoken\nX\nX.1\nX.2\nX.3\nX.4\nX.5\n\n\n\n\nthe\nD\n&lt;DEF+.&gt;\n\n\n\nNA\n\n\nstriker\nSUBJ\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF+.agens.&gt;\n\nNA\n\n\nshot\nV\nPRED&lt;subj.obj.&gt;\nTENSE&lt;past.&gt;\nNUM&lt;1sg.&gt;\nMODUS&lt;active.&gt;\nNA\n\n\nan\nD\n&lt;DEF-.&gt;\n\n\n\nNA\n\n\nincredible\nADJ\n&lt;adv.&gt;\n\n\n\nNA\n\n\ngoal\nOBJ.t\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF-.&gt;\n\nNA"
-  },
-  {
-    "objectID": "lfg-001.html#übung",
-    "href": "lfg-001.html#übung",
-    "title": "LFG",
-    "section": "",
-    "text": "Geben Sie die\n\nLexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich parallel dazu, wie ein nicht-annotierter Phrasenstrukturbaum aussieht.]\nannotierte Phrasenstrukturregeln in der c-Struktur\nf- inkl. a-Struktur\n\nfür den folgenden Satz des Englischen wieder:\n\n\n[1] \"The striker shot an incredible goal.\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoken\nX\nX.1\nX.2\nX.3\nX.4\nX.5\n\n\n\n\nthe\nD\n&lt;DEF+.&gt;\n\n\n\nNA\n\n\nstriker\nSUBJ\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF+.agens.&gt;\n\nNA\n\n\nshot\nV\nPRED&lt;subj.obj.&gt;\nTENSE&lt;past.&gt;\nNUM&lt;1sg.&gt;\nMODUS&lt;active.&gt;\nNA\n\n\nan\nD\n&lt;DEF-.&gt;\n\n\n\nNA\n\n\nincredible\nADJ\n&lt;adv.&gt;\n\n\n\nNA\n\n\ngoal\nOBJ.t\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF-.&gt;\n\nNA"
-  },
-  {
-    "objectID": "lfg-index.html",
-    "href": "lfg-index.html",
-    "title": "LX / LFG",
-    "section": "",
-    "text": "class: [16849] Einführung in die Grammatiktheorie :: tutor: meinschäfer/gaglia :: term: SS26 snc: 16184.1\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; link\ntask session 3"
-  },
-  {
-    "objectID": "snc.html",
-    "href": "snc.html",
-    "title": "SNC",
-    "section": "",
-    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks."
-  },
-  {
-    "objectID": "snc.html#snc",
-    "href": "snc.html#snc",
-    "title": "SNC",
-    "section": "",
-    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks."
-  },
-  {
-    "objectID": "lki-kybernetik.html",
-    "href": "lki-kybernetik.html",
-    "title": "Lit / KI",
-    "section": "",
-    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; link\nsummary on kybernetik introduction"
-  },
-  {
-    "objectID": "lxtech-qa.html",
-    "href": "lxtech-qa.html",
-    "title": "LX / tech: annotations",
-    "section": "",
-    "text": "t1"
-  },
-  {
-    "objectID": "lxtech-qa.html#notes-on-papers",
-    "href": "lxtech-qa.html#notes-on-papers",
-    "title": "LX / tech: annotations",
-    "section": "",
-    "text": "t1"
-  },
-  {
-    "objectID": "textur001.html",
-    "href": "textur001.html",
-    "title": "AVL / textur",
-    "section": "",
-    "text": "class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models :: tutor: jan lietz :: term: SS26 snc: 16162.1\nTO GIT COMMIT\n[1] \"engine on...\""
-  },
-  {
-    "objectID": "textur001.html#samling",
-    "href": "textur001.html#samling",
-    "title": "AVL / textur",
-    "section": "samling",
-    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (Smith (2022), p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?"
-  },
-  {
     "objectID": "nietzsche001.html",
     "href": "nietzsche001.html",
     "title": "AVL / Nietzsche",
@@ -173,6 +75,104 @@
     "title": "AVL / Nietzsche",
     "section": "benn: *-05-02",
     "text": "benn: *-05-02\n:: 140 jahre german dionys::"
+  },
+  {
+    "objectID": "textur001.html",
+    "href": "textur001.html",
+    "title": "AVL / textur",
+    "section": "",
+    "text": "class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models :: tutor: jan lietz :: term: SS26 snc: 16162.1\nTO GIT COMMIT\n[1] \"engine on...\""
+  },
+  {
+    "objectID": "textur001.html#samling",
+    "href": "textur001.html#samling",
+    "title": "AVL / textur",
+    "section": "samling",
+    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (Smith (2022), p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?"
+  },
+  {
+    "objectID": "lxtech-qa.html",
+    "href": "lxtech-qa.html",
+    "title": "LX / tech: annotations",
+    "section": "",
+    "text": "t1"
+  },
+  {
+    "objectID": "lxtech-qa.html#notes-on-papers",
+    "href": "lxtech-qa.html#notes-on-papers",
+    "title": "LX / tech: annotations",
+    "section": "",
+    "text": "t1"
+  },
+  {
+    "objectID": "lki-kybernetik.html",
+    "href": "lki-kybernetik.html",
+    "title": "Lit / KI",
+    "section": "",
+    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; link\nsummary on kybernetik introduction"
+  },
+  {
+    "objectID": "snc.html",
+    "href": "snc.html",
+    "title": "SNC",
+    "section": "",
+    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks."
+  },
+  {
+    "objectID": "snc.html#snc",
+    "href": "snc.html#snc",
+    "title": "SNC",
+    "section": "",
+    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks."
+  },
+  {
+    "objectID": "lfg-index.html",
+    "href": "lfg-index.html",
+    "title": "LX / LFG",
+    "section": "",
+    "text": "class: [16849] Einführung in die Grammatiktheorie :: tutor: meinschäfer/gaglia :: term: SS26 snc: 16184.1\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; link\ntask session 3"
+  },
+  {
+    "objectID": "lfg-001.html",
+    "href": "lfg-001.html",
+    "title": "LFG",
+    "section": "",
+    "text": "Geben Sie die\n\nLexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich parallel dazu, wie ein nicht-annotierter Phrasenstrukturbaum aussieht.]\nannotierte Phrasenstrukturregeln in der c-Struktur\nf- inkl. a-Struktur\n\nfür den folgenden Satz des Englischen wieder:\n\n\n[1] \"The striker shot an incredible goal.\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoken\nX\nX.1\nX.2\nX.3\nX.4\nX.5\n\n\n\n\nthe\nD\n&lt;DEF+.&gt;\n\n\n\nNA\n\n\nstriker\nSUBJ\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF+.agens.&gt;\n\nNA\n\n\nshot\nV\nPRED&lt;subj.obj.&gt;\nTENSE&lt;past.&gt;\nNUM&lt;1sg.&gt;\nMODUS&lt;active.&gt;\nNA\n\n\nan\nD\n&lt;DEF-.&gt;\n\n\n\nNA\n\n\nincredible\nADJ\n&lt;adv.&gt;\n\n\n\nNA\n\n\ngoal\nOBJ.t\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF-.&gt;\n\nNA"
+  },
+  {
+    "objectID": "lfg-001.html#übung",
+    "href": "lfg-001.html#übung",
+    "title": "LFG",
+    "section": "",
+    "text": "Geben Sie die\n\nLexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich parallel dazu, wie ein nicht-annotierter Phrasenstrukturbaum aussieht.]\nannotierte Phrasenstrukturregeln in der c-Struktur\nf- inkl. a-Struktur\n\nfür den folgenden Satz des Englischen wieder:\n\n\n[1] \"The striker shot an incredible goal.\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoken\nX\nX.1\nX.2\nX.3\nX.4\nX.5\n\n\n\n\nthe\nD\n&lt;DEF+.&gt;\n\n\n\nNA\n\n\nstriker\nSUBJ\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF+.agens.&gt;\n\nNA\n\n\nshot\nV\nPRED&lt;subj.obj.&gt;\nTENSE&lt;past.&gt;\nNUM&lt;1sg.&gt;\nMODUS&lt;active.&gt;\nNA\n\n\nan\nD\n&lt;DEF-.&gt;\n\n\n\nNA\n\n\nincredible\nADJ\n&lt;adv.&gt;\n\n\n\nNA\n\n\ngoal\nOBJ.t\nN\nNUM&lt;sg.&gt;\nPRED&lt;DEF-.&gt;\n\nNA"
+  },
+  {
+    "objectID": "lxtech001.html",
+    "href": "lxtech001.html",
+    "title": "LX / Tech",
+    "section": "",
+    "text": "class: [16830] Sprache und Technologie - Language and Technology:: tutor: frankowsky :: term: SS26 snc: 16175.1\nTO GIT COMMIT\n[1] \"engine on...\""
+  },
+  {
+    "objectID": "lxtech001.html#samling",
+    "href": "lxtech001.html#samling",
+    "title": "LX / Tech",
+    "section": "samling",
+    "text": "samling\n\nFrankowsky (2022)\n\nhow were dates attested technically?\nwhat about the decow16 corpus?\n\npossible to put that online (term paper) or is it? (Schäfer (2025))\ncorpus formats?"
+  },
+  {
+    "objectID": "pdfpaper/001/uwolf.html",
+    "href": "pdfpaper/001/uwolf.html",
+    "title": "12293.wolf gossip satz für satz",
+    "section": "",
+    "text": "[1] \"engine on...\""
+  },
+  {
+    "objectID": "pdfpaper/001/uwolf.html#footnotes",
+    "href": "pdfpaper/001/uwolf.html#footnotes",
+    "title": "12293.wolf gossip satz für satz",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWolf, U. Etymologischer Gossip im Gedicht. In: Braun, M., & Thill, H. (2018). Aus Mangel an Beweisen : deutsche Lyrik 2008-2018 / herausgegeben von Michael Braun und Hans Thill. Heidelberg: Wunderhorn.↩︎\nDembeck, T., Parr, R., & Küpper, T. (2017). Literatur und Mehrsprachigkeit : ein Handbuch / Till Dembeck/Rolf Parr (Hrsg.) ; unter Mitarbeit von Thomas Küpper. Tübingen: Narr Francke Attempto.↩︎\nPrammer, T., Vescoli, C., & Erb, E. (2021). Was für Sätze : Zu Ilse Aichinger / Theresia Prammer, Christine Vescoli (Hg.) ; Elke Erb, Uljana Wolf, Monika Rinck, Ruth Klüger, Marlene Streeruwitz [und weitere]. (1. Auflage). Wien: Edition Korrespondenzen.↩︎\nGramling, D. (2016). Zur Mehrsprachigkeitsforschung in der interkulturellen Literaturwissenschaft: Wende, Romanze, Rückkehr? Zeitschrift für interkulturelle Germanistik, 7(1), 133–150. https://doi.org/10.14361/zig-2016-0109↩︎\nMeibauer, J., Demske, U., Geilfuß-Wolfgang, J., Pafel, J., Ramers, K. H., Rothweiler, M., & Steinbach, M. (2015). Einführung in die germanistische Linguistik (3., überarbeitete und aktualisierte Auflage). https://doi.org/10.1007/978-3-476-05424-1↩︎"
   },
   {
     "objectID": "lki-001.html",
