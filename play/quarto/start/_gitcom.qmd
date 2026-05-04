@@ -1,0 +1,2 @@
+{{< include _gitsvg.html >}} 
+[TO GIT COMMIT](https://github.com/esteeschwarz/SPUND-LX/commit/{{< meta git-sha >}})

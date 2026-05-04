@@ -45,7 +45,7 @@ cfoot: |
 
 {{< meta cmeta >}}
 
-{{< include _gitsvg.html >}}
+{{< include _gitcom.qmd >}} 
 
 ```{r,echo=F,eval=T}
 print("engine on...")
