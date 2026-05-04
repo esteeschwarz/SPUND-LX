@@ -1,0 +1,33 @@
+---
+title: "LFG: annotations"
+bibliography: LFG.bib
+#nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+title-meta: ""
+# date: '`r format(Sys.time())`'
+date: "2026-05-03"
+---
+
+
+## notes on papers 
+
+### snc
+- t1
+
+{{< include _setup.qmd >}}
+
+
+```{r}
+#| label: tbl_qa1
+#| echo: false
+#| warning: false
+#| eval: true
+
+qa1<-list(LFG=qa$LFG)
+
+```
+
+
+{{< include _vars.qmd >}}
