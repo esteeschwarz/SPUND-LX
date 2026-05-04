@@ -25,6 +25,7 @@ website:
           - lki-kybernetik.qmd
           - lxtech001.qmd
           - lfg-index.qmd
+          - str-index.qmd
       - text: arkkiv
         menu:
           - pdfpaper/001/uwolf.qmd
