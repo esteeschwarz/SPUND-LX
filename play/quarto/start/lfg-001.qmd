@@ -24,3 +24,22 @@ df<-read.csv("ip1.csv")
 knitr::kable(df)
 ```
 
+
+### a-struktur, lexikon
+
+```{c}
+the,D,(^DEF)=+,,
+striker,N,(^PRED)=striker,(^NUM)=sg,(^PERS.)=3
+shot,V,(^PRED)=shot(subj.obj),,
+an,D,(^DEF)=-,,
+incredible,A,(^PRED)=incredible,,
+goal,N,(^PRED)=striker,(^NUM)=sg,
+```
+
+```{r,echo=F,eval=T,warning=F,tab.caption="c-structure"}
+print("The striker shot an incredible goal.")
+df<-read.csv("ip2.csv")
+knitr::kable(df)
+```
+
+### ann. c-struktur
