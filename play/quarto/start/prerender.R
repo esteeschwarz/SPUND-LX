@@ -7,15 +7,15 @@ textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langloi
 LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf")) # margin note studyset
 #####################
 buildmdb<-function(){
-cloud<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/"
+#cloud<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/"
 nietzsche<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/nietzsche"
-litKI<-paste0(cloud,"SZONDI/lit-KI")
-stratling<-paste0(cloud,"SZONDI/strätling")
+litKI<-paste0("~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/lit-KI")
+#stratling<-paste0(cloud,"SZONDI/strätling")
 stratling<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/strätling"
-textur<-paste0(cloud,"SZONDI/textur")
+#textur<-paste0(cloud,"SZONDI/textur")
   textur<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur"
-LXtech<-paste0(cloud,"COMP/LX-tech")
-LFG<-paste0(cloud,"COMP/LFG")
+#LXtech<-paste0(cloud,"COMP/LX-tech")
+#LFG<-paste0(cloud,"COMP/LFG")
 LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LX-tech"
   LFG<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LFG"
 clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
@@ -32,7 +32,11 @@ c2<-lapply(clist,function(x){
   f<-c(list.files(x))
   list.files(x)
 })
-
+list.files(LFG)
+list.files(textur)
+textur
+nietzsche
+  list.files(nietzsche)
   c2
   qa<-c2
   setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start"))

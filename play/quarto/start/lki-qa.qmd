@@ -20,11 +20,12 @@ date: '`r format(Sys.time())`'
 
 
 ```{r}
-#| label: tbl_qa1
-#| tbl-cap: "wiener_kybernetik_1992: annotations"
 #| echo: false
 #| warning: false
 #| eval: true
+#| results: "asis"
+#| output: false
+
 
 qa1<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"))
 qa1<-list(litKI=qa$litKI)
