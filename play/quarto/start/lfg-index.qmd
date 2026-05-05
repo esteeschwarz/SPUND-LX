@@ -41,5 +41,5 @@ val.c<-"{{< meta cmeta >}}"
 
 # index
 1. samling: margin notes general > [link](lfg-qa.qmd)
-2. [task session 3](lfg-001.qmd)
+2. [class notes](lfg-001.qmd)
 

@@ -45,3 +45,6 @@ knitr::kable(df)
 ```
 
 ### ann. c-struktur
+
+# notes
+it seems as if the LFG conventions are preparing such that can be described with vectors at the end. in the way that we annotate a token (lexical item) according to specified (necessary per investigated language) categories (a,c,f - levels) which may be projected into a vector space. say if we have 10 categories with key-value pairs of each e.g. 5 attributes (keys) which can each again take 5 values which will then be coded TRUE or FALSE , we will have the token represented in a vectorspace of `10x5x5x2` = ```r 10*5*5*2```  dimensions, nestcepas? well thats a lot..., but seeing that model vectorspaces use to have embeddings dimensions in that range (e.g. 762 for stable diffusion models) its not strange assuming that these amount of categories and key-value pairs is enough...
