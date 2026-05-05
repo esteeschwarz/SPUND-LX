@@ -1,3 +1,4 @@
+token,,,,
 the,D,(^DEF)=+,,
 striker,N,(^PRED)=striker,(^NUM)=sg,(^PERS.)=3
 shot,V,(^PRED)=shot(subj.obj),,
