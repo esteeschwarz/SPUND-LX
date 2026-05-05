@@ -287,16 +287,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="a-struktur-lexikon" class="level3">
 <h3 class="anchored" data-anchor-id="a-struktur-lexikon">a-struktur, lexikon</h3>
-<pre><code>the,D,(^DEF)=+,,
-striker,N,(^PRED)=striker,(^NUM)=sg,(^PERS)=3
-shot,V,(^PRED)=shot(subj.obj),,
-an,D,(^DEF)=-,,
-incredible,A,(^PRED)=incredible,,
-goal,N,(^PRED)=striker,(^NUM)=sg,</code></pre>
-<div class="cell" data-tab.caption="a-structure">
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "The striker shot an incredible goal."</code></pre>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "token,,,,,"                                        
+[2] "the,D,(^DEF)=+,,,"                                 
+[3] "striker,N,(^PRED)=striker,,,"                      
+[4] "shot,V,(^PRED)=shot(subj.obj),(^NUM)=sg,(^PERS)=3,"
+[5] "an,D,(^DEF)=-,,,"                                  
+[6] "incredible,A,(^PRED)=incredible,,,"                
+[7] "goal,N,(^PRED)=striker,(^NUM)=sg,,"                </code></pre>
+</div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -306,6 +311,7 @@ goal,N,(^PRED)=striker,(^NUM)=sg,</code></pre>
 <th style="text-align: left;">X.1</th>
 <th style="text-align: left;">X.2</th>
 <th style="text-align: left;">X.3</th>
+<th style="text-align: left;">X.4</th>
 </tr>
 </thead>
 <tbody>
@@ -315,20 +321,23 @@ goal,N,(^PRED)=striker,(^NUM)=sg,</code></pre>
 <td style="text-align: left;">(^DEF)=+</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">striker</td>
 <td style="text-align: left;">N</td>
 <td style="text-align: left;">(^PRED)=striker</td>
-<td style="text-align: left;">(^NUM)=sg</td>
-<td style="text-align: left;">(^PERS)=3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">shot</td>
 <td style="text-align: left;">V</td>
 <td style="text-align: left;">(^PRED)=shot(subj.obj)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">(^NUM)=sg</td>
+<td style="text-align: left;">(^PERS)=3</td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">an</td>
@@ -336,6 +345,7 @@ goal,N,(^PRED)=striker,(^NUM)=sg,</code></pre>
 <td style="text-align: left;">(^DEF)=-</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">incredible</td>
@@ -343,6 +353,7 @@ goal,N,(^PRED)=striker,(^NUM)=sg,</code></pre>
 <td style="text-align: left;">(^PRED)=incredible</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">goal</td>
@@ -350,9 +361,11 @@ goal,N,(^PRED)=striker,(^NUM)=sg,</code></pre>
 <td style="text-align: left;">(^PRED)=striker</td>
 <td style="text-align: left;">(^NUM)=sg</td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;">NA</td>
 </tr>
 </tbody>
 </table>
+<p>lexikon</p>
 </div>
 </div>
 </section>
