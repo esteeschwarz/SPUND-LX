@@ -298,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 [4] "shot,V,(^PRED)=shot(subj.obj),(^NUM)=sg,(^PERS)=3,"
 [5] "an,D,(^DEF)=-,,,"                                  
 [6] "incredible,A,(^PRED)=incredible,,,"                
-[7] "goal,N,(^PRED)=striker,(^NUM)=sg,,"                </code></pre>
+[7] "goal,N,(^PRED)=goal,(^NUM)=sg,,"                   </code></pre>
 </div>
 </div>
 <div class="cell">
@@ -358,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td style="text-align: left;">goal</td>
 <td style="text-align: left;">N</td>
-<td style="text-align: left;">(^PRED)=striker</td>
+<td style="text-align: left;">(^PRED)=goal</td>
 <td style="text-align: left;">(^NUM)=sg</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;">NA</td>
@@ -371,10 +371,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ann.-c-struktur" class="level3">
 <h3 class="anchored" data-anchor-id="ann.-c-struktur">ann. c-struktur</h3>
-
-
 </section>
 </section>
+</section>
+<section id="notes" class="level1">
+<h1>notes</h1>
+<p>it seems as if the LFG conventions are preparing such that can be described with vectors at the end. in the way that we annotate a token (lexical item) according to specified (necessary per investigated language) categories (a,c,f - levels) which may be projected into a vector space. say if we have 10 categories with key-value pairs of each e.g.&nbsp;5 attributes (keys) which can each again take 5 values which will then be coded TRUE or FALSE , we will have the token represented in a vectorspace of <code>10x5x5x2</code> = <code>500</code> dimensions, nestcepas? well thats a lot…, but seeing that model vectorspaces use to have embeddings dimensions in that range (e.g.&nbsp;762 for stable diffusion models) its not strange assuming that these amount of categories and key-value pairs is enough…</p>
+
+
 </section>
 
 </main> <!-- /main -->
