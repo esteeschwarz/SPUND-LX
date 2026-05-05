@@ -1,0 +1,7 @@
+token,,,,
+the,D,(^DEF)=+,,
+striker,N,(^PRED)=striker,(^NUM)=sg,(^PERS)=3
+shot,V,(^PRED)=shot(subj.obj),,
+an,D,(^DEF)=-,,
+incredible,A,(^PRED)=incredible,,
+goal,N,(^PRED)=striker,(^NUM)=sg,
