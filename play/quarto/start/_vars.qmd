@@ -91,7 +91,7 @@ kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
 kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
 kdf$comment<-gsub("[\r\n|]"," (..)",kdf$comment)
-kdf$comment<-gsub("(http.+) ?",'<a href="\\1" target="_blank">\\1</a>',kdf$comment)
+kdf$comment<-gsub("(http.+//(.+?)[?/](.+)) ?",'<a href="\\1" target="_blank">\\2</a>',kdf$comment)
 #kdf$comment<-gsub("(http.+) ?",'<a href="\\1 " target="_blank">\\1 </a>',kdf$comment)
 kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
 du<-unique(kdf$doc)
