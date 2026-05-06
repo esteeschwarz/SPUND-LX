@@ -1,0 +1,2119 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\newcommand{\doctitle}{nietzsche: annotations}
+\newcommand{\docdate}{2026-04-20}
+\newcommand{\doclogoleft}{assets/fadenlogo-fwb.png}
+\newcommand{\doclogoright}{assets/dcl-head-niemand.png}
+% ============================================================
+% loani.tex  —  include-in-header snippet, LuaLaTeX
+% IPA handled by ipa.lua Lua filter at AST level.
+% No ucharclasses, no babel, no runtime font switching.
+% ============================================================
+
+\usepackage{iftex}
+\RequireLuaTeX
+
+\usepackage{fontspec}
+
+\setmainfont{Georgia}[
+  Ligatures = TeX
+]
+% \usepackage[hebrew]{babel}
+% Hebrew font — switched via ucharclasses (XeTeX) or
+% directly referenced where needed
+% \newfontfamily\hebrewfont{Alef}[
+%   Script = Hebrew
+% ]
+% \newfontfamily\babelfont{Alef}[
+%   Script = Hebrew
+% ]
+% \usepackage[hebrew, english]{babel}
+% \babelfont[hebrew]{rm}{Alef}
+% \usepackage[english, bidi=basic]{babel}
+% \usepackage[english, hebrew, bidi=basic]{babel}
+\usepackage[english, bidi=basic]{babel}
+
+% \babelprovide[onchar=fonts ids, main=false]{hebrew} % all RTL, IPA wrongs
+% \babelprovide[onchar=ids fonts, main=false]{english}
+% \babelprovide[onchar=fonts ids, main=true]{english}
+\babelprovide[onchar=fonts ids]{hebrew}
+
+\babelfont[hebrew]{rm}{Alef}
+% IPA font — called explicitly by ipa.lua filter output
+\newfontfamily\ipafont{Source Sans 3}
+
+% ------------------------------------------------------------
+% Hebrew bidi — luatexja-style or direct LuaTeX primitive.
+% Since babel is not loaded, we use the LuaTeX direction
+% primitive directly: TRT = right-to-left, TLT = left-to-right
+% Hebrew Unicode chars get RTL from the UBA via luaotfload.
+% ------------------------------------------------------------
+\directlua{
+  luatexbase.add_to_callback("pre_linebreak_filter",
+    function(head) return head end,
+    "dummy_bidi")
+}
+
+\usepackage[hyperfootnotes=false]{hyperref}
+% ============================================================
+% header.tex  —  include-in-header snippet
+% Replaces $var$ Pandoc syntax with \ifdefined\doc... guards.
+% Vars injected via vars.lua Lua filter from YAML front matter:
+%   \doctitle      \docsubtitle   \docauthor   \docdate
+%   \docmeta       \docfoot       \doclogoleft \doclogoright
+%
+% No fancyhdr. Header fires via \AtBeginDocument,
+% footer via \AtEndDocument — bidi-safe.
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tikz}
+
+% ---------- header font (adjust to taste) ----------
+\newfontfamily\headerfont{Source Sans 3}
+
+% ---------- footer colors ----------
+\definecolor{footerbg}{HTML}{000000}
+\definecolor{footerfg}{HTML}{FFFFFF}
+
+% ---------- column types ----------
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{10mm}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{45mm}}
+
+% vertical separator rule
+\newcommand{\vsep}{\color{black}\vrule width 1pt}
+
+% ============================================================
+% CUSTOM HEADER
+% ============================================================
+\newcommand{\CustomHeader}{%
+% \LTR{%
+\noindent
+\begin{tabularx}{\textwidth}{L !{\vsep} C !{\vsep} R}
+
+% LEFT LOGO
+\ifdefined\doclogoleft
+  \includegraphics[width=10mm,height=10mm,keepaspectratio]{\doclogoleft}%
+\fi
+&
+% CENTER: title + subtitle stacked in a minipage so \\ is a
+% line break within the cell, not a new table row
+\begin{minipage}[c]{\linewidth}
+\centering
+\ifdefined\doctitle
+  {\Large\bfseries\headerfont\doctitle}%
+\fi
+\ifdefined\docsubtitle
+  \\[2pt]{\normalsize\headerfont\docsubtitle}%
+\fi
+\vspace{5pt}
+
+\end{minipage}
+% &
+% % CENTER TITLE BLOCK
+% \ifdefined\doctitle
+%   {\Large\bfseries\doctitle}%
+% \fi
+% \ifdefined\docsubtitle
+%   \\\normalsize\docsubtitle
+% \fi
+&
+% RIGHT LOGO
+\ifdefined\doclogoright
+  \includegraphics[height=10mm,keepaspectratio]{\doclogoright}%
+\fi
+
+\end{tabularx}
+
+\hrule
+% \vspace{6pt}
+
+% ---------- META AREA ----------
+{\small
+\ifdefined\docauthor
+  \textbf{Author:} \docauthor\\
+\fi
+\ifdefined\docdate
+  \textbf{Date:} \docdate
+\fi
+\ifdefined\docmeta
+  \\\docmeta\\
+  snc: 16132.  
+  {\ipafont ɪ ʃ ɔ ː ʁ}  
+  {\ipafont wer es [pɛʟɛχɪʟ] ausspricht, und nicht [pɛʀɛχɪʟ]}
+\fi
+}
+\vspace{6pt}
+
+\hrule
+
+% \vspace{12pt}
+% }% end \LTR
+}% end \CustomHeader
+
+% ============================================================
+% CUSTOM FOOTER  (overlay, anchored to page bottom)
+% ============================================================
+\newcommand{\CustomFooter}{%
+\begin{tikzpicture}[remember picture, overlay]
+\node[
+  anchor=south,
+  draw,
+  fill=footerbg,
+  text=footerfg,
+  inner sep=10pt,
+  rounded corners=2pt,
+  text width=\dimexpr\textwidth-20pt\relax
+]
+at ([yshift=5mm]current page.south)
+{%
+  \begin{center}
+  {\small
+  \ifdefined\docfoot
+    % {\docfoot}%
+    {\headerfont\docfoot}%
+  \fi
+  }
+  \end{center}
+};
+\end{tikzpicture}%
+}% end \CustomFooter
+
+% ============================================================
+% FIRE header at doc start, footer at doc end
+% ============================================================
+% \AtBeginDocument{\CustomHeader}
+\AtEndDocument{\CustomFooter}
+\renewcommand{\maketitle}{}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={cyan},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{nietzsche: annotations}
+\author{}
+\date{2026-04-20}
+\begin{document}
+\maketitle
+
+\CustomHeader
+
+
+\subsection{notes on papers}\label{notes-on-papers}
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+\paragraph{annotations: benn, dorische
+welt.pdf}\label{annotations-benn-dorische-welt.pdf}
+
+paper: Benn (1989)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+1
+
+Schlacht und Spitzkrüge, und Prinzchen, die phantastischen Kopfputz
+tragen, doch ohne Blut und Jagd und ohne Roß und Waf-fen, an dies
+Voreisenzeitalter im Tal von Knossos, diese un-geschützten Galerien,
+illusionistisch aufgelöstenWände, zarten artistischen Stil, farbige
+Fayencen, lange steife Röcke der Kreterinnen, enganliegende Taillen,
+Busenhalter, femi-nine Treppen der Paläste mit niederen breiten Stufen,
+be-quem für Weiberschritte -: grenzt über Mykene die dori-sche
+Welt.(..)hethitischen Rassensplitter mit Mutterrecht, weib-
+
+1
+
+Dorische Welt Eine Untersuchung über die Beziehung von Kunst und Macht
+
+\#cite\_benn\_gesammelte\_1989\_\_
+
+1
+
+Dorische Welt Eine Untersuchung über die Beziehung von Kunst und Macht
+
+\#cite\_benn\_gesammelte\_1989\_\_
+
+2
+
+ihm was beibringen, ihm plausibel macnen.(..)Prunkreden, Reklamereden,
+Reden gegen Entrée. Dann kam »das Bezaubern« hinzu, symmetrischer Bau
+der Sätze, oleicheknende heinghe reimende Worte, ähnlich auslau-
+
+2
+
+ihm was beibringen, ihm plausibel macnen.(..)Prunkreden, Reklamereden,
+Reden gegen Entrée. Dann kam »das Bezaubern« hinzu, symmetrischer Bau
+der Sätze, oleicheknende heinghe reimende Worte, ähnlich auslau-
+
+3
+
+underte en оп, b pielerische und senone 5 gestellt, vert , auch ''
+sische Welt: die Glieder des menschliche
+
+3
+
+underte en оп, b pielerische und senone 5 gestellt, vert , auch ''
+sische Welt: die Glieder des menschliche
+
+6
+
+man es auch hinsichtlich staats-feindlicher Menschen machen, schrieb
+Demokrit, und Pro-tagoras läßt den Gottvater sprechen: Gib in meinem
+Na-men das Gesetz, daß man einen Menschen ohne sittliches Bewußtsein und
+ohne Rechtsgefühl als cinen Krebsschaden des Gemeinwesens vernichten
+soll -: hieraus entstand das 5. Jahrhundert, der größte Glanz der weißen
+Rasse, der prä-gende, der absolute, nicht nur der mittelmeerisch
+be-grenzte, in diesen 50 Jahren nach Salamis, alles gruppiert sich um
+diese Seeschlacht: Aschylos kä
+
+6
+
+man es auch hinsichtlich staats-feindlicher Menschen machen, schrieb
+Demokrit, und Pro-tagoras läßt den Gottvater sprechen: Gib in meinem
+Na-men das Gesetz, daß man einen Menschen ohne sittliches Bewußtsein und
+ohne Rechtsgefühl als cinen Krebsschaden des Gemeinwesens vernichten
+soll -: hieraus entstand das 5. Jahrhundert, der größte Glanz der weißen
+Rasse, der prä-gende, der absolute, nicht nur der mittelmeerisch
+be-grenzte, in diesen 50 Jahren nach Salamis, alles gruppiert sich um
+diese Seeschlacht: Aschylos kä
+
+8
+
+Körper zur Zucht: das Gesetz bestimmte das heirats-fahige Alter und
+wählte den günstigsten Zeitpunkt und die günstigsten Umstände für eine
+Schwängerung aus. Man ging wie in Gestüten vor, man vernichtete die
+schlechtge-lungene Frucht. Der Körper zum Krieg, der Körper zum Fest,
+der Körper zum Laster und der Körper endlich dann zur Kunst, das war die
+dorische Saat und die hellenische Geschichte Dori
+
+8
+
+Dorische Welt war die größte griechisch tike Sittlichkeit, also siegende
+Ordnung und von Göttern stammende Macht. Nichts wissen ihre Sagen von
+Horten, Schätzen, hohlen Bergen, ihre Begehrlichkeit geht nicht auf
+Gold, sondern auf heilige Dinge, magische Waffen aus Hephaistos' Hand,
+auf das Goldene Vlies, das Halsband der Harmonia, das Zepter des Zeus.
+Sparta, das war auch ein schick. Menschen, welche bei den übri-
+
+8
+
+inken der Turnzucht?«Das Sinken der Turnzucht - mit ihr sanken die
+dorische Welt, Olympia, die graue Säule ohne Fuß und die der
+Her-renschicht günstigen Orakel. Euripides ist skeptisch, cin-sam und
+atheistisch, es steigen bei ihm bereits die Allge-meinbegriffe isoliert
+auf: das Gute«, das Rechte«, »die Tugenda, die Bildung«; er ist
+pazifistisch und antihero-isch: vor allem Frieden und keine sizilische
+Expedition, er 296
+
+8
+
+Dorische Welt war die größte griechisch tike Sittlichkeit, also siegende
+Ordnung und von Göttern stammende Macht. Nichts wissen ihre Sagen von
+Horten, Schätzen, hohlen Bergen, ihre Begehrlichkeit geht nicht auf
+Gold, sondern auf heilige Dinge, magische Waffen aus Hephaistos' Hand,
+auf das Goldene Vlies, das Halsband der Harmonia, das Zepter des Zeus.
+Sparta, das war auch ein schick. Menschen, welche bei den übri-
+
+8
+
+Körper zur Zucht: das Gesetz bestimmte das heirats-fahige Alter und
+wählte den günstigsten Zeitpunkt und die günstigsten Umstände für eine
+Schwängerung aus. Man ging wie in Gestüten vor, man vernichtete die
+schlechtge-lungene Frucht. Der Körper zum Krieg, der Körper zum Fest,
+der Körper zum Laster und der Körper endlich dann zur Kunst, das war die
+dorische Saat und die hellenische Geschichte Dori
+
+8
+
+inken der Turnzucht?«Das Sinken der Turnzucht - mit ihr sanken die
+dorische Welt, Olympia, die graue Säule ohne Fuß und die der
+Her-renschicht günstigen Orakel. Euripides ist skeptisch, cin-sam und
+atheistisch, es steigen bei ihm bereits die Allge-meinbegriffe isoliert
+auf: das Gute«, das Rechte«, »die Tugenda, die Bildung«; er ist
+pazifistisch und antihero-isch: vor allem Frieden und keine sizilische
+Expedition, er 296
+
+9
+
+ld ihre Kampfspiele halten, sondern um die Trefflichkeit. « Diese
+Trefflichkeit, dieser Kranz, dieses Kampffest zwischen den großen
+Schlachten, das war hinter der panhellenischen Silhouctte die dorische
+Welt.(..)
+
+9
+
+ld ihre Kampfspiele halten, sondern um die Trefflichkeit. « Diese
+Trefflichkeit, dieser Kranz, dieses Kampffest zwischen den großen
+Schlachten, das war hinter der panhellenischen Silhouctte die dorische
+Welt.(..)
+
+10
+
+er cinzelnen dorischen Landschaften gesammelt und nach Kunstregeln
+geordnet, hier wurde ein allgültiges Tonsystem festgelegt Hier gab es
+von 645 an einen Gesetzgeber der Musik, Musik war gesetzliches Lehrfach
+und mußte von allen Bewohnern bis zum 30. Lebensjahr betrieben werden,
+alle mußten die Flöte spielen, durch Poesie und Gesang wurden die
+Gesetze den Nachkommen überliefert, und man zog zum Kampf aus unter dem
+Klang von Flöten, Lyren und Kitharen, Alkman treffliches Kitharspiel
+geht dem Schwert voran«, sang Und
+
+10
+
+nen nicht zu trennen, das war die spartanische Sendung, und die
+lakedä-monischen Gebräuche verdrängten die homerischen. Bald gibt es
+keine Stadt mehr ohne ein Gymnasium, es ist eines der Zeichen, an denen
+man eine griechische Stadt erkennt.(..)Aus cinem solchen Viereck mit
+Säulenhallen und Platanen-alleen, gewöhnlich neben einer Quelle oder
+neben cinem Bach, ging auch dic Akademie hervor, und die große
+Philo-sophie entstand darin. In der späten Griechenzeit hicß es sogar,
+die Spartaner hätten die gesunkene griechische Mu-sik dreimal gerettet,
+und man stellte Sparta allegorisch als Weib mit einer Lyra dar. Es ist
+auch Sparta, in der das erste Gebäude für musikalische und
+
+10
+
+denfalls.(..)wirklich eine Beziehung, die geschichtlich 400 Jahre dau
+erte, von der öffentlichen Gewalt ganz unmittelbar zur Kunst, vom
+Heroentum der äußeren Haltung und der Tat, von den Schlachtfeldern von
+Marathon und Salamis zur Formfindung des letzten Parthenonstils, hier
+kann man wirklich von einer Geburt der Kunst aus der Macht spre-chen, in
+der Geschichte der Statue und an dieser Stelle je-es also war Sparta, so
+sehr war es der Ausgangspunkt
+
+10
+
+nen nicht zu trennen, das war die spartanische Sendung, und die
+lakedä-monischen Gebräuche verdrängten die homerischen. Bald gibt es
+keine Stadt mehr ohne ein Gymnasium, es ist eines der Zeichen, an denen
+man eine griechische Stadt erkennt.(..)Aus cinem solchen Viereck mit
+Säulenhallen und Platanen-alleen, gewöhnlich neben einer Quelle oder
+neben cinem Bach, ging auch dic Akademie hervor, und die große
+Philo-sophie entstand darin. In der späten Griechenzeit hicß es sogar,
+die Spartaner hätten die gesunkene griechische Mu-sik dreimal gerettet,
+und man stellte Sparta allegorisch als Weib mit einer Lyra dar. Es ist
+auch Sparta, in der das erste Gebäude für musikalische und
+
+10
+
+denfalls.(..)wirklich eine Beziehung, die geschichtlich 400 Jahre dau
+erte, von der öffentlichen Gewalt ganz unmittelbar zur Kunst, vom
+Heroentum der äußeren Haltung und der Tat, von den Schlachtfeldern von
+Marathon und Salamis zur Formfindung des letzten Parthenonstils, hier
+kann man wirklich von einer Geburt der Kunst aus der Macht spre-chen, in
+der Geschichte der Statue und an dieser Stelle je-es also war Sparta, so
+sehr war es der Ausgangspunkt
+
+10
+
+er cinzelnen dorischen Landschaften gesammelt und nach Kunstregeln
+geordnet, hier wurde ein allgültiges Tonsystem festgelegt Hier gab es
+von 645 an einen Gesetzgeber der Musik, Musik war gesetzliches Lehrfach
+und mußte von allen Bewohnern bis zum 30. Lebensjahr betrieben werden,
+alle mußten die Flöte spielen, durch Poesie und Gesang wurden die
+Gesetze den Nachkommen überliefert, und man zog zum Kampf aus unter dem
+Klang von Flöten, Lyren und Kitharen, Alkman treffliches Kitharspiel
+geht dem Schwert voran«, sang Und
+
+11
+
+Sparta, die Macht.(..)Wir leiten' also aus Sparta Griechenland ab, und
+aus dem Dorisch-Apollinischen die griechische Welt. Dionysos steht hier
+wieder in den Grenzen, in denen er vor 1871 (Geburt der Tragödie aus der
+Musik «) stand. Die Griechen waren ein primitives, d.~h. ein rauschnahes
+Volk, ihr Zeus-dienst hatte orgiastische Züge; große, rauschhafte
+Erre-gungswellen traten periodisch bei ihnen auf, auch in Sparta, viel
+Kathartisches hatten sie aus den kretischen Schulen übernommen. Aber wir
+haben inzwischen primitive Völ-ker aus Reisesc
+
+11
+
+sie auch immer wieder »der Erzieher« genannt, und sehr interessant ist,
+wie Plato, geistig der letzte Dorer, der wäh-rend der Auflösung noch
+einmal den Kampfgegen den In-dividualismus, das Schwermütig-Reizvolle
+der Kunst, die süBliche Muße«, die Schattierkunst« aufnimmt, um für
+mittlere Leben«, die »Gemeinde und »die vernünftigen Gedanken«, »das die
+»Stadt mit der untadeligen Verfas-sung« zu kämpfen, diese Wehmut nach
+Sparta ausdrückt.(..)im Theages« sagt er von einem tugendhaften Mann,
+der über die Tugend Vorträge hält: »In der wunderbaren Har-monie seiner
+Handlungen und seiner Worte erkennt man die dorische Weise wieder, die
+einzige, welche wirklich griechisch ist. « Das war 500 Jahre nach
+Lykurg. Und von hier aus versteht man nun auch seine w
+
+11
+
+chischen Welt entstand. Zwischen Rausch und Kunst m Apollo, die große
+züchtende Kraft. Und da wir heute nicht mehr so wagnerisch erregt sind,
+um das Bedürfnis zu ha-ben, Tristan schon in Thrazien nachzuweisen,
+blicken wir nach Dorien, nicht nach Dion, fragen wir uns nach der grie-
+
+11
+
+chischen Welt entstand. Zwischen Rausch und Kunst m Apollo, die große
+züchtende Kraft. Und da wir heute nicht mehr so wagnerisch erregt sind,
+um das Bedürfnis zu ha-ben, Tristan schon in Thrazien nachzuweisen,
+blicken wir nach Dorien, nicht nach Dion, fragen wir uns nach der grie-
+
+11
+
+Sparta, die Macht.(..)Wir leiten' also aus Sparta Griechenland ab, und
+aus dem Dorisch-Apollinischen die griechische Welt. Dionysos steht hier
+wieder in den Grenzen, in denen er vor 1871 (Geburt der Tragödie aus der
+Musik «) stand. Die Griechen waren ein primitives, d.~h. ein rauschnahes
+Volk, ihr Zeus-dienst hatte orgiastische Züge; große, rauschhafte
+Erre-gungswellen traten periodisch bei ihnen auf, auch in Sparta, viel
+Kathartisches hatten sie aus den kretischen Schulen übernommen. Aber wir
+haben inzwischen primitive Völ-ker aus Reisesc
+
+11
+
+sie auch immer wieder »der Erzieher« genannt, und sehr interessant ist,
+wie Plato, geistig der letzte Dorer, der wäh-rend der Auflösung noch
+einmal den Kampfgegen den In-dividualismus, das Schwermütig-Reizvolle
+der Kunst, die süBliche Muße«, die Schattierkunst« aufnimmt, um für
+mittlere Leben«, die »Gemeinde und »die vernünftigen Gedanken«, »das die
+»Stadt mit der untadeligen Verfas-sung« zu kämpfen, diese Wehmut nach
+Sparta ausdrückt.(..)im Theages« sagt er von einem tugendhaften Mann,
+der über die Tugend Vorträge hält: »In der wunderbaren Har-monie seiner
+Handlungen und seiner Worte erkennt man die dorische Weise wieder, die
+einzige, welche wirklich griechisch ist. « Das war 500 Jahre nach
+Lykurg. Und von hier aus versteht man nun auch seine w
+
+12
+
+n.(..)Betrachtet man dies alles nicht unter moralischen, senti-mentalen,
+geschichtsphilosophischen Gesichtspunkten, sondern nach
+anthropologischen Grundsätzen, so sehen wir auf der einen Scite die
+Macht und neben ihr den andern Ausbruch der hellenischen Volkheit: die
+Kunst. Wie verhal-ten sich diese beiden nun zueinander, welches waren
+ihre
+
+12
+
+n.(..)Betrachtet man dies alles nicht unter moralischen, senti-mentalen,
+geschichtsphilosophischen Gesichtspunkten, sondern nach
+anthropologischen Grundsätzen, so sehen wir auf der einen Scite die
+Macht und neben ihr den andern Ausbruch der hellenischen Volkheit: die
+Kunst. Wie verhal-ten sich diese beiden nun zueinander, welches waren
+ihre
+
+13
+
+den, Fortschrittsinstrumentarium. Der Gedanke ist immer der Abkömmling
+der Not«, sagt Schiller, bei dem wir ja ein sehr bewußtes Umlegen der
+Achse vom moralischen zum ästhetischen Weltbild wahrnehmen, er meint,
+der Gedanke steht immer nahe bei den Zweckmäßigkeiten und der Trieb- bei
+Äxten und Morgenstern, er ist Natur, aber
+
+13
+
+Und dabei Form nie als Ermüd deutsch-bürgerlichen Sinne,sondern als die
+enorme menschliche Macht, die Macht schlechthin, der Sieg über nackten
+Tatbestand und zivilisatorische Sachverhalte, eben als das
+Abendländische, die Uberhöhung, der reale eigen-kategoriale Geist, der
+Ausgleich und die Sammlung der Fragmente. Nietzsche als Ganzes in einem
+einzigen Satz, das könnte nur sein tiefster und zukünftigster sein: Nur
+als ästhetisches Phänomen ist das Dasein und die Welt ewig
+gerechtfertigt. « Das aber ist hellenisch.(..)uch Goethe sehen wir hier
+stehen. Seine Iphigenie ist
+
+13
+
+den, Fortschrittsinstrumentarium. Der Gedanke ist immer der Abkömmling
+der Not«, sagt Schiller, bei dem wir ja ein sehr bewußtes Umlegen der
+Achse vom moralischen zum ästhetischen Weltbild wahrnehmen, er meint,
+der Gedanke steht immer nahe bei den Zweckmäßigkeiten und der Trieb- bei
+Äxten und Morgenstern, er ist Natur, aber
+
+13
+
+Und dabei Form nie als Ermüd deutsch-bürgerlichen Sinne,sondern als die
+enorme menschliche Macht, die Macht schlechthin, der Sieg über nackten
+Tatbestand und zivilisatorische Sachverhalte, eben als das
+Abendländische, die Uberhöhung, der reale eigen-kategoriale Geist, der
+Ausgleich und die Sammlung der Fragmente. Nietzsche als Ganzes in einem
+einzigen Satz, das könnte nur sein tiefster und zukünftigster sein: Nur
+als ästhetisches Phänomen ist das Dasein und die Welt ewig
+gerechtfertigt. « Das aber ist hellenisch.(..)uch Goethe sehen wir hier
+stehen. Seine Iphigenie ist
+
+13
+
+wenn wir uns jetzt einmal dem Wesen der griechischen Kunst zuwenden, so
+drückt der dorische Tempel ja nichts aus, er ist nicht verständlich, und
+die Säule ist nicht natür-lich, sie nehmen nicht einen konkreten
+politischen oder kultischen Willen in sich auf, sie sind überhaupt mit
+nichts parallel, sondern das Ganze ist ein S til, das heißt, es ist von
+innen gesehen ein bestimmtes Raumgefühl, eine bestimmte Raumpanik, und
+von außen gesehen sind es bestimmte An-lagen und Prinzipien, um das
+darzustellen, es auszudrük-ken, also es zu beschwören. Dieses
+Darstellungsprinzip stammt nicht mehr unmittelba
+
+13
+
+wenn wir uns jetzt einmal dem Wesen der griechischen Kunst zuwenden, so
+drückt der dorische Tempel ja nichts aus, er ist nicht verständlich, und
+die Säule ist nicht natür-lich, sie nehmen nicht einen konkreten
+politischen oder kultischen Willen in sich auf, sie sind überhaupt mit
+nichts parallel, sondern das Ganze ist ein S til, das heißt, es ist von
+innen gesehen ein bestimmtes Raumgefühl, eine bestimmte Raumpanik, und
+von außen gesehen sind es bestimmte An-lagen und Prinzipien, um das
+darzustellen, es auszudrük-ken, also es zu beschwören. Dieses
+Darstellungsprinzip stammt nicht mehr unmittelba
+
+14
+
+Alle Lust will Ewigkeit, sagte das vorige Jahrhundert, das neue fhrt
+fort: Alle Ewigkeit will Kunst. Die absolute Kunst, die Form. Doch
+palles Schöne ist schwer, und wer
+
+14
+
+Alle Lust will Ewigkeit, sagte das vorige Jahrhundert, das neue fhrt
+fort: Alle Ewigkeit will Kunst. Die absolute Kunst, die Form. Doch
+palles Schöne ist schwer, und wer
+
+\paragraph{annotations: benn, kilpper 1943
+brief.pdf}\label{annotations-benn-kilpper-1943-brief.pdf}
+
+paper: Benn (1971)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+1
+
+AN G U S TAV K I L P P E R Landsberg
+
+\#cite\_benn\_lyrik\_1971\_\_
+
+1
+
+AN G U S TAV K I L P P E R Landsberg
+
+\#cite\_benn\_lyrik\_1971\_\_
+
+\paragraph{annotations: Gesammelte Werke Bd. 3 Gedichte by Gottfried
+Benn.pdf}\label{annotations-gesammelte-werke-bd.-3-gedichte-by-gottfried-benn.pdf}
+
+paper: Benn (1960)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+219
+
+VERLORENES ICH
+
+1948(..)rönne: 1916(..)(..)\#cite\_benn\_gesammelte\_1960\_\_(..)
+
+219
+
+auf deinem grauen Stein von Notre-Dame
+
+wasserspeier notre dame
+
+219
+
+Katalaunen
+
+neologism
+
+219
+
+Kaldaunen
+
+kutteln, innereien:rindermagen
+
+219
+
+Lamm
+
+lamda
+
+219
+
+Katalaunen
+
+neologism
+
+219
+
+Lamm
+
+lamda
+
+219
+
+Kaldaunen
+
+kutteln, innereien:rindermagen
+
+220
+
+Woher, wohin - nicht Nacht, nicht Morgen, kein Evoe, kein Requiem, du
+mochtest dir ein Stichwort borgen allein bei wem?
+
+evoe: freudenschrei des dionyskultes
+
+220
+
+o feme zwingende erfiillte Stunde, die einst auch das verlorne Ich
+umschlofi
+
+marginnote4app://note/D263ECE4-4818-4065-B55B-16CAB9502871
+
+220
+
+als sich alle einer Mitte neigten
+
+zerteilung, multiperspektive,individualisierung(..)1943: auch
+gleichschaltung, NS, massen / sehnsucht nach führung; benn: kritik
+
+220
+
+als sich alle einer Mitte neigten
+
+zerteilung, multiperspektive,individualisierung(..)1943: auch
+gleichschaltung, NS, massen / sehnsucht nach führung; benn: kritik
+
+220
+
+o feme zwingende erfiillte Stunde, die einst auch das verlorne Ich
+umschlofi
+
+3
+
+1
+
+2
+
+307
+
+Von Blumen mufit du solche wahlen, die bluhn am Zaun und halb 1m Acker
+schon, die in das Zimmer tun, die Laute zahlen des Lebens Laute, seinen
+Ton:
+
+307
+
+Tiere, die Perlen bilden, sind versdilossen, sie liegen still und kennen
+nur die See
+
+308
+
+der Aon traumt, der Aon ist ein Knabe, der mit sich selbst auf einem
+Brette spielt
+
+346
+
+Ob Rosen, ob Schnee, ob Meere, was alles erbliihte, verblich, es gibt
+nur zwei Dinge: die Leere und das gezeichnete Ich.
+
+marginnote4app://note/80AF25DE-102C-4B8C-A51D-2E10DEED1BD5
+
+\paragraph{annotations:
+gesammelteschrif03wagn.pdf}\label{annotations-gesammelteschrif03wagn.pdf}
+
+paper: @
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+20
+
+Die Kunst und die Revolution
+
+\#init\_Wagner, Die Kunst und die Revolution\_
+
+20
+
+Die Kunst und die Revolution
+
+\#init\_Wagner, Die Kunst und die Revolution\_
+
+21
+
+2)er griecîfdê (SJeift, mie er fic§ gu feiner \^{}lütleêit in
+(\textbf{taat?}) unb ûnft gu erfennen gab, fanb, nadfjbem er bie roi§e
+\textsuperscript{}laturreligion ber afiatifcên §eimat§ übermunben, unb
+hm \^{}'ömn unb ftarlea freien 3)Zenfdên auf bie ©piê feine§ religiöfen
+êmujßtfeinS ge= fteHt Iâtte, feinen entfpredênbften 2lu§brudf in
+SlpoUon, bem eigent\^{} liefen §aupt= unb 5flationaIgotte ber êHenifdên
+©tämme.
+
+\paragraph{annotations: Günther 2008, Der
+Wettkampf.pdf}\label{annotations-gunther-2008-der-wettkampf.pdf}
+
+paper: Günther (2008)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+1
+
+Günther
+
+1
+
+Friederike Felicitas Günther Rhythmus beim frühen Nietzsche
+
+\#cite\_gunther\_rhythmus\_2008\_\_
+
+5
+
+Der Rhythmik gesteht er hier die Macht zu, den „Willen``, d.h. das
+unablässige ewige dionysische Werden als Naturkraft ohne Grenzen92
+kurzzeitig zu unterbrechen.
+
+6
+
+Das Prinzip des Wettkampfes bringt es mit sich, dass zwei einzelne
+Gestalten aus der Masse als deutlich wahrnehmbare Individuen
+hervortreten, die als Einzelexistenzen im naturhaften ‚Kampf um's
+Dasein` keinen Moment lang Bestand hätte
+
+6
+
+In der dionysischen Natur gleichen sich Schöpfung und Vernichtung in
+ihrer untrennbaren Dynamik einander an, die keiner Gestalt Dauer
+zugesteht.
+
+9
+
+Genuin kulturelle Faktoren -- Tradition, Bildung und Ethik („Ehre``)
+stabilisieren jenen Rhythmus als Maß der Wettkämpfe, der die Natur am
+Ausbrechen ihrer vollen Potenz und Zerstörungskraft hindert
+
+9
+
+Denn die Natur kennt keine Feier des Siegers, sie kennt kein Tribunal,
+das ihn als solchen markiert und nach einiger Zeit in den nächsten
+Zweikampf schickt.
+
+11
+
+Das ästhetische Urteil über Homer als Prototyp des Dichters ist das
+Ergebnis eines Jahrhunderte währenden kulturell bedingten Selektions-
+und Bildungsprozesses, der nach und nach das Bild Homers als Inbegriff
+des Poeten hervortreten lässt
+
+12
+
+Der Held als Einzelner geht schicksalhaft unter; als Heldentypus aber
+trotzt er der unabänderlichen dionysischen Wahrheit des Untergangs, da
+er mit jeder Aufführung erneut ins Gedächtnis gerufen wird
+
+12
+
+Nietzsches Trennungslinie verläuft nicht cartesianisch zwischen dem
+Geist als Unvergänglichem und der Physis als Vergänglichem103, sondern
+zwischen anthropologischer apollinischer Gestaltungskraft einerseits und
+der dionysischen Natur in ihrer gestaltenfeindlichen Vergänglichkeit
+andererseits.
+
+16
+
+Das Instinktive ist insofern nicht als ‚natürlichere` Haltung gegenüber
+dem bewussten Handeln zu verstehen, sondern vielmehr als dessen nach und
+nach errungene körperliche Selbstverständlichkeit.
+
+17
+
+Die griechische Kultur scheint ein gelungenes Beispiel für einen
+Anpassungsprozess an die Zeitlichkeit, ohne durch diese Annäherung die
+eigene Identität dem Wandel der Zeit preiszugeben.
+
+\paragraph{annotations: hanna, reents (2016) benn
+handbuch.pdf}\label{annotations-hanna-reents-2016-benn-handbuch.pdf}
+
+paper: Hanna and Reents (2016)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+83
+
+Die Lyrikbände aus den Jahren des Publikationsverbots ab 1938 können
+keine breite Wirkung entfalten, da sie nur in wenigen hektographierten
+Exemplaren an Freunde wie Oelze und das Ehepaar Leonharda und Julius
+Gescher gehen (Biographische Gedichte, 1941) oder als Privatdruck in
+sehr kleiner Auflage verbreitet werden (Zweiundzwanzig Gedichte, 1943).
+
+120
+
+Benn schreibt hier Gedankenlyrik, auch wenn sie durch eine »Ambivalenz
+von sinnlicher Intensität und abstraktiver Reflexion« gekennzeichnet ist
+
+120
+
+Vier Hauptthemen sind in den Gedichten erkennbar: die elegische
+Bestimmung und Beschwörung einer Endzeit; das Poetologische; das
+Religiöse; und die Zeitgeschichte, vor allem der Triumph der Kunst über
+die Geschichte. Alle vier Themen gehören zusammen, denn die von Benn
+beschworene Dichtung ist eine spätzeitliche Dichtung, von Trauer eher
+als von Hoffnung bestimmt und erst in der Zeit des Verfalls entstanden.
+Sie ist vorwiegend resignativ gefärbt, da der Dichter nicht auf die Welt
+wirken kann. (..)(..)Trotz ihrer deutlichen Trennung sind Wirklichkeit
+und Kunst begrifflich verwoben.
+
+120
+
+die elegische Bestimmung und Beschwörung einer Endzeit; das
+Poetologische; das Religiöse; und die Zeitgeschichte, vor allem der
+Triumph der Kunst über die Geschichte
+
+\paragraph{annotations: nietzsche KGW III-2, Nachgelassene Schriften
+1870-1873.pdf}\label{annotations-nietzsche-kgw-iii-2-nachgelassene-schriften-1870-1873.pdf}
+
+paper: @
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+3
+
+Nachgelassene Schriften 1870
+
+\paragraph{annotations: Nietzsche, Homers Wettkampf, KGW
+III.2.pdf}\label{annotations-nietzsche-homers-wettkampf-kgw-iii.2.pdf}
+
+paper: Nietzsche (1973)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+1
+
+Der Mensch, in seinen höchsten und edelsten 10 Kräften, ist ganz Natur
+und trägt ihren unheimlichen Doppeldiarakter an sidi. Seine furchtbaren
+und als unmenschlich geltenden Befähigungen sind vielleicht sogar der
+fruchtbare Boden, aus dem allein alle Humanität, in Regungen Thaten und
+Werken hervorwachsen kann
+
+2
+
+Warum jauchzte die ganze griechische Welt bei den Kampfbildern der
+Ilias?
+
+3
+
+wie sich in Wahrheit vom M o r d e und der Mordsühne aus der Begriff des
+griechischen Rechtes entwickelt hat, so nimmt aucái die edlere Kultur
+ihren ersten Siegeskranz vom
+
+4
+
+nichts scheidet die S griechische Welt so sehr von der unseren, als die
+hieraus abzuleitende F ä r b u n g einzelner ethisciier Begriffe z. B.
+der E r i s und des N e i d e s .
+
+5
+
+deren Bedeutung im Gegentheil damit umsdirieben ist, daß mit ihnen der
+Mensch η i e den Wettkampf wagen darf, er dessen Seele gegen jedes andre
+lebende Wesen eifersüchtig erglüht. Im Kampfe des Thamyris mit den
+Musen, 3° des Marsyas mit Apoll, im ergreifenden Sdhicksale der Niobe
+erschien das sdireckliche Gegeneinander der zwei Mächte, die nie mit
+einander kämpfen dürfen, von Mensch und Gott
+
+marginnote4app://note/B577EF2B-F3C2-4C22-9D87-ACBE417CFEBB
+
+5
+
+deren Bedeutung im Gegentheil damit umsdirieben ist, daß mit ihnen der
+Mensch η i e den Wettkampf wagen darf, er dessen Seele gegen jedes andre
+lebende Wesen eifersüchtig erglüht. Im Kampfe des Thamyris mit den
+Musen, 3° des Marsyas mit Apoll, im ergreifenden Sdhicksale der Niobe
+erschien das sdireckliche Gegeneinander der zwei Mächte, die nie mit
+einander kämpfen dürfen, von Mensch und Gott
+
+6
+
+O s t r a k i s m o s
+
+scherbengericht
+
+6
+
+O s t r a k i s m o s
+
+scherbengericht
+
+7
+
+Das ist der Kern der hellenischen ``Wettkampf-Vorstellung: sie
+verabsciieut die Alleinherrsdiafl: und fürditet ihre Gefahren, sie
+begehrt, als S c h u t z m i t t e l gegen das Genie --- ein zweites
+Genie
+
+7
+
+Für die Alten aber war das 2 5 Ziel der agonalen Erziehung die
+``Wohlfahrt des Ganzen, der staatlichen Gesellsciiaft. Jeder Athener z.
+B. sollte sein Selbst im''Wettkampfe soweit entwickeln, als es Athen vom
+höchsten Nutzen sei und am wenigsten Schaden bringe.
+
+9
+
+Verhältniß des Wettkampfes zur Conception des Kunstwerkes
+
+10
+
+daß ohne Neid Eifersucht und wettkämpf enden Ehrgeiz der hellenische
+Staat wie der hellenische Mensch entartet. Er wird böse und grausam, er
+wird rachsüchtig und gottlos, kurz, er wird „vorhomerisch''
+
+10
+
+Sparta und Athen liefern sich an Persien aus, wie es Themistokles und
+Alkibiades gethan haben; sie verrathen das Hellenische, nachdem sie den
+edelsten hellenischen Grundgedanken, den Wettkampf, aufgegeben haben:
+und Alexander, die vergröbernde Copie und Abbreviatur der griechischen
+Geschichte, 2j erfindet nun den Allerwelts-Hellenen und den sogenannten
+„Hellenismus''
+
+\paragraph{annotations: nietzsche, kga 3-1, geburt d
+tragödie.pdf}\label{annotations-nietzsche-kga-3-1-geburt-d-tragodie.pdf}
+
+paper: Nietzsche (2024)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+7
+
+nietzsche\_kga\_2024
+
+\#init\_Geburt der Tragödie\_\_(..)\#cite\_nietzsche\_kga\_2024\_\_
+
+7
+
+nietzsche\_kga\_2024
+
+\#init\_Geburt der Tragödie\_\_(..)\#cite\_nietzsche\_kga\_2024\_\_
+
+10
+
+Ist Pessimismus n o t h w e n d i g das Zeichen des Niedergangs,
+Verfalls, des Missrathenio seins, der ermüdeten und geschwächten
+Instinkte? --- wie er es bei den Indern war, wie er es, allem Anschein
+nach, bei uns, den „modernen'' Menschen und Europäern ist? Giebt es
+einen Pessimismus der S t ä r k e ? Eine intellektuelle Vorneigung für
+das Harte, Schauerliche, Böse, Problematische des Daseins aus Wohlsein,
+aus 15 überströmender Gesundheit, aus F ü l l e des Daseins? Giebt es
+vielleicht ein Leiden an der Ueberfülle selbst?
+
+10
+
+Und die Wissenschaft selbst, unsere Wissenschaft --- ja, was bedeutet
+überhaupt, als Symptom des Lebens angesehn, alle Wissenschaft? Wozu,
+schlimmer noch, w o h e r --- alle Wissenschaft?
+
+10
+
+Phänomen des Dionysischen? Was, aus ihm geboren, die Tragödie?
+
+10
+
+Was bedeutet, gerade bei den Griechen der besten, stärksten, tapfersten
+Zeit, der t r a g i s c h e Mythus?
+
+11
+
+Eine feine Nothwehr gegen --- die W a h r h e i t ?
+
+\#ref\textgreater{} wahrheit und lüge i. a. sinne
+
+11
+
+Eine feine Nothwehr gegen --- die W a h r h e i t ?
+
+\#ref\textgreater{} wahrheit und lüge i. a. sinne
+
+11
+
+das Problem der Wissenschaft kann nicht auf dem Boden der Wissenschaft
+erkannt werden
+
+12
+
+ein hochmüthiges und schwärmerisches Buch, das sich gegen das profanum
+vulgus der „Gebildeten'' von vornherein noch mehr als gegen das „Volk''
+abschliesst,
+
+12
+
+Aufgabe selbst nicht fremder wurde, an welche sich jenes verwegene Buch
+zum ersten Male herangewagt hat, --- d i e W i s s e n s c h a f t u n t
+e r d e r O p t i k d e s K ü n s t l e r s zu s e h n , d i e K u n s t
+a b e r u n t e r d e r d e s L e b e n s
+
+14
+
+Wie? wenn die Griechen, gerade im Reichthum ihrer Jugend, den Willen z u
+m Tragischen hatten und Pessimisten waren?
+
+14
+
+das V e r l a n g e n n a c h d e m H ä s s l i c h e n , der gute
+strenge Wille des älteren Hellenen zum Pessimismus, zum tragischen
+Mythus, zum Bilde alles Furchtbaren, Bösen, Räthselhaften,
+Vernichtenden, Verhängnissvollen auf dem Grunde des 5 Daseins, --- woher
+müsste dann die Tragödie stammen?
+
+14
+
+welche Bedeutung hat dann, physiologisch gefragt, jener Wahnsinn, aus
+dem die tragische wie die komische Kunst erwuchs, der dionysische
+Wahnsinn?
+
+15
+
+Was bedeutet, unter der Optik des L e b e n s gesehn, --- die Moral?
+
+15
+
+dass nur als ästhetisches Phänomen das Dasein der Welt g e r e c h t f e
+r t i g t ist.
+
+16
+
+Christenthum war von Anfang an, wesentlich und gründlich, Ekel und
+Ueberdruss des Lebens am Leben,
+
+16
+
+es giebt zu der rein ästhetischen Weltauslegung und Welt-Rechtfertigung,
+wie sie in diesem Buche gelehrt wird, keinen grösseren Gegensatz als die
+christliche Lehre, welche n u r moralisch ist und sein will und mit
+ihren absoluten Maassen, zum Beispiel schon mit ihrer Wahrhaftigkeit
+Gottes, die Kunst, j e d e Kunst in's Reich der L ü g e verweist,
+
+16
+
+die Moral selbst in die Welt der Erscheinung zu setzen, herabzusetzen
+und nicht nur unter die „Erscheinungen'' (im Sinne des idealistischen
+terminus technicus), sondern unter die „Täuschungen'', als Schein, Wahn,
+Irrthum, Ausdeutung, Zurechtmachung, Kunst.
+
+16
+
+das Christenthum als die ausschweifendste Durchfigurirung des
+moralischen Thema's, welche die Menschheit bisher anzuhören bekommen
+hat.
+
+17
+
+vor der Moral (in Sonderheit christlichen, das heisst unbedingten Moral)
+m u s s das Leben beständig und unvermeidlich Unrecht bekommen, weil
+Leben etwas essentiell Unmoralisches i s t , --- m u s s endlich das
+Leben, erdrückt unter dem Gewichte der Verachtung und des ewigen Nein's,
+als begehrens-unwürdig, als unwerth an sich empfunden werden.
+
+17
+
+eine grundsätzliche Gegenlehre und Gegenwerthung des Lebens, eine rein
+artistische, eine a n t i c h r i s t l i c h e . Wie sie nennen? Als
+Philologe und Mensch der Worte taufte ich sie, nicht ohne einige
+Freiheit --- denn wer wüsste den rechten Namen des Antichrist? --- auf
+den Namen eines griechischen Gottes: ich hiess sie die d i o n y s i s c
+h e .
+
+18
+
+wie müsste eine Musik beschaffen sein, welche nicht mehr romantischen
+Ursprungs wäre, gleich der deutschen, --- sondern d i o n y s i s c h e
+n ?
+
+18
+
+jetzigen d e u t s c h e n M u s i k , als welche Romantik durch und
+durch ist und die ungriechischeste aller möglichen Kunstformen
+
+18
+
+zu einer Zeit, wo der deutsche Geist, der nicht vor Langem noch den
+Willen zur Herrschaft über Europa, die Kraft zur Führung Europa's gehabt
+hatte, eben letztwillig und endgültig a b d a n k t e und, unter dem
+pomphaften Vorwande einer Reichs-Begründung, seinen Uebergang zur
+Vermittelmässigung, zur Demokratie und den „modernen Ideen'' machte!
+
+20
+
+Das Lachen sprach ich heilig: ihr höheren Menschen, l e r n t mir ---
+lachen!
+
+20
+
+Aber es ist sehr wahrscheinlich, dass es so e n d e t , dass i h r so
+endet, nämlich „getröstet'', wie geschrieben steht, trotz aller
+Selbsterziehung zum Ernst und zum Schrecken, „metaphysisch getröstet'',
+kurz, wie Romantiker enden, c h r i s t l i c h
+
+24
+
+Diesen Ernsthaften diene zur Belehrung, dass ich von der Kunst als der
+höchsten Auf15 gäbe und der eigentlich metaphysischen Thätigkeit dieses
+Lebens im Sinne des Mannes überzeugt bin, dem ich hier, als meinem
+erhabenen Vorkämpfer auf dieser Bahn, diese Schrift gewidmet haben will.
+
+25
+
+Fortentwickelung der Kunst an die Duplicität des A p o l l i n i s c h e
+n und des D i o n y s i s c h e n gebunden ist: in ähnlicher Weise, wie
+die Generation von der Zweiheit der Geschlechter, bei fortwährendem
+Kampfe und nur periodisch eintretender Versöhnung, abhängt.
+
+25
+
+Erkenntniss, dass in der griechischen Welt ein ungeheurer Gegensatz,
+nach Ursprung und Zielen, zwischen der Kunst des Bildners, der
+apollinischen, und der unbildlichen Kunst der Musik, als der des
+Dionysus, besteht: beide so verschiedne Triebe gehen neben einander her,
+zumeist im offnen Zwiespalt mit einander und sich gegenseitig zu immer
+neuen kräftigeren Geburten reizend, um in ihnen den Kampf jenes
+Gegensatzes zu perpetuiren, den das gemeinsame Wort „Kunst'' nur
+scheinbar überbrückt;
+
+26
+
+Der schöne Schein der Traumwelten, in deren Erzeugung jeder Mensch
+voller Künstler ist, ist die Voraussetzung aller bildenden Kunst, ja
+auch, wie wir sehen werden, einer wichtigen Hälfte der Poesie.
+
+26
+
+in dieser Paarung zuletzt das ebenso dionysische als apollinische
+Kunstwerk der attischen Tragödie erzeugen.
+
+26
+
+denken wir sie uns zunächst als die getrennten Kunstwelten des T r a u m
+e s und des R a u s c h e s ;
+
+27
+
+beherrscht auch den schönen Schein der inneren Phantasie-Welt
+
+27
+
+freudige Nothwendigkeit der Traumerfahrung ist gleichfalls von den
+Griechen in ihrem Apollo ausgedrückt worden: Apollo, als der Gott aller
+bildnerischen Kräfte, ist zugleich der wahrsagende Gott
+
+27
+
+alle Dinge als blosse Phantome oder Traumbilder vorkommen, als das
+Kennzeichen philosophischer Befähigung
+
+27
+
+freudige
+
+27
+
+Wie nun der Philosoph zur Wirklichkeit des Daseins, so verhält sich der
+künstlerisch erregbare Mensch zur Wirklichkeit des Traumes;
+
+28
+
+Wenn wir zu diesem Grausen die wonnevolle Verzückung hinzunehmen, die
+bei demselben Zerbrechen des principii individuationis aus dem innersten
+Grunde des Menschen, ja der Natur emporsteigt, so thun wir einen Blick
+in das Wesen des D i o n y s i s c h e n , das uns am nächsten noch
+durch die Analogie des R a u s c h e s gebracht wird.
+
+28
+
+darf nicht im Bilde des Apollo fehlen: jene maassvolle Begrenzung, jene
+Freiheit von den wilderen Regungen, jene weisheitsvolle Ruhe des
+Bildnergottes
+
+28
+
+Apollo als das herrliche Götterbild des principii individuationis
+bezeichnen, aus dessen Gebärden und Blicken die ganze Lust und Weisheit
+des „Scheines'', sammt seiner Schönheit, zu uns spräche
+
+29
+
+bei dem gewaltigen, die ganze Natur lustvoll durchdringenden Nahen des
+Frühlings erwachen jene dionysischen Regungen, in deren Steigerung das
+Subjective zu völliger Selbstvergessenheit hinschwindet
+
+30
+
+Diesen unmittelbaren Kunstzuständen der Natur gegenüber ist jeder
+Künstler „Nachahmer'', und zwar entweder apollinischer Traumkünstler
+oder dionysischer Rauschkünstler oder endlich --- wie beispielsweise in
+der griechischen Tragödie --- zugleich Rausch- und Traumkünstler
+
+30
+
+die Kunstgewalt der ganzen Natur, zur höchsten Wonnebefriedigung des
+Ur-Einen, offenbart sich hier unter den Schauern des Rausches
+
+32
+
+beschränkte sich das Wirken des delphischen Gottes darauf, dem
+gewaltigen Gegner durch eine zur rechten Zeit abgeschlossene Versöhnung
+die vernichtenden Waffen aus der Hand zu nehmen.
+
+32
+
+erkennen wir jetzt, im Vergleiche mit jenen babylonischen Sakäen und
+ihrem Rückschritte des Menschen zum Tiger und Affen, in den dionysischen
+Orgien der Griechen die Bedeutung von Welterlösungsfesten und
+Verklärungstagen
+
+32
+
+Es ist die dorische Kunst, in der sich jene majestätisch-ablehnende
+Haltung des Apollo verewigt hat.
+
+32
+
+Fast überall lag das Centrum dieser Feste in einer überschwänglichen
+geschlechtlichen Zuchtlosigkeit, deren Wellen über jedes Familienthum
+und dessen ehrwürdige Satzungen hinweg flutheten; gerade die wildesten
+Bestien der Natur wurden hier entfesselt, bis zu jener abscheulichen
+Mischung von Wollust und Grausamkeit, die mir immer als der eigentliche
+„Hexentrank'' erschienen ist
+
+32
+
+Es war die Versöhnung zweier Gegner, mit scharfer Bestimmung ihrer von
+jetzt ab einzuhaltenden Grenzlinien und mit periodischer Uebersendung
+von Ehrengeschenken; im Grunde war die Kluft nicht überbrückt.
+
+33
+
+Die Musik des Apollo war dorische Architektonik in Tönen, aber in nur
+angedeuteten Tönen, wie sie der Kithara zu eigen sind. Behutsam ist
+gerade das Element, als unapollinisch, ferngehalten, das den Charakter
+der dionysischen Musik und damit der Musik über25 haupt ausmacht, die
+erschütternde Gewalt des Tones, der einheitliche Strom des Melos und die
+durchaus unvergleichliche Welt der Harmonie.
+
+34
+
+als sich ihm das Grausen beimischte, dass ihm jenes Alles doch
+eigentlich so fremd nicht sei, ja dass sein apollinisches Bewusstsein
+nur wie ein Schleier diese dionysische Welt vor ihm verdecke.
+
+36
+
+Wie anders hätte jenes so reizbar empfindende, so ungestüm begehrende,
+zum L e i d e n so einzig befähigte Volk das Dasein ertragen können,
+wenn ihm nicht dasselbe, von einer höheren Glorie umflossen, in seinen
+Göttern gezeigt worden wäre.
+
+36
+
+So rechtfertigen die Götter das Menschenleben, indem sie es selbst leben
+---die allein genügende Theodicee!
+
+37
+
+In den Griechen wollte der „Wille'' sich selbst, in der Verklärung des
+Genius und der Kunstwelt, anschauen; um sich zu verherrlichen, mussten
+seine Geschöpfe sich selbst als verherrlichenswerth empfinden,
+
+37
+
+Die homerische „Naivetät'' ist nur als der vollkommene Sieg der
+apollinischen Illusion zu begreifen: es ist dies eine solche Illusion,
+wie sie die Natur, zur Erreichung ihrer Absichten, so häufig verwendet
+
+38
+
+Je mehr ich nämlich in der Natur jene allgewaltigen Kunsttriebe und in
+ihnen eine inbrünstige Sehnsucht zum Schein, zum Erlöstwerden durch den
+Schein gewahr werde, um so mehr fühle ich mich zu der metaphysischen
+Annahme gedrängt, dass das WahrhaftSeiende und Ur-Eine, als das ewig
+Leidende und Widerspruchsvolle, zugleich die entzückende Vision, den
+lustvollen Schein, zu seiner steten Erlösung braucht:
+
+39
+
+muss uns jetzt der Traum als der S c h e i n des S c h e i n s , somit
+als eine noch höhere Befriedigung der Urbegierde nach dem Schein hin
+gelten
+
+39
+
+die ganze Welt der Qual nöthig ist, damit durch sie der Einzelne zur
+Erzeugung der erlösenden Vision gedrängt werde
+
+40
+
+neben der ästhetischen Nothwendigkeit der Schönheit die Forderung des
+„Erkenne dich selbst'' und des „Nicht zu viel!'' her, während
+Selbstüberhebung und Uebermaass als die eigentlich feindseligen Dämonen
+der nicht-apollinischen Sphäre, daher als Eigenschaften der
+vor-apollinischen Zeit, des Titanenzeitalters, und der
+ausser-apollinischen Welt d.~h. der Barbarenwelt, erachtet wurden.
+
+40
+
+Apollo, als ethische Gottheit, fordert von den Seinigen das Maass und,
+um es einhalten zu können, Selbsterkenntniss.
+
+41
+
+denken wir uns, was diesem dämonischen Volksgesange gegenüber der
+psalmodirende Künstler des Apollo, mit dem gespensterhaften
+Harfenklange, bedeuten konnte! Die Musen der Künste des „Scheins''
+verblassten vor einer Kunst, die in ihrem Rausche die Wahrheit sprach,
+die Weisheit des Silen rief Wehe! Wehe! aus gegen die heiteren Olympier
+
+41
+
+nur in einem unausgesetzten Widerstreben gegen das titanisch-barbarische
+Wesen des Dionysischen konnte eine so trotzig-spröde, mit Bollwerken
+umschlossene Kunst, eine so kriegsgemässe und herbe Erziehung, ein so
+grausames und rücksichtsloses Staatswesen von längerer Dauer sein
+
+42
+
+Homer, der in sich versunkene greise Träumer, der Typus des
+apollinischen, naiven Künstlers, sieht nun staunend den
+leidenschaftlichen Kopf des wild durch's Dasein getriebenen 3°
+kriegerischen Musendieners Archilochus
+
+42
+
+das erhabene und hochgepriesene Kunstwerk der a t t i s c h e n T r a g
+ö d i e und des dramatischen Dithyrambus, als das gemeinsame Ziel beider
+Triebe, deren io geheimnissvolles Ehebündniss
+
+42
+
+Wenn auf diese Weise die ältere hellenische Geschichte, im Kampf jener
+zwei feindseligen Principien, in vier grosse Kunststufen zerfällt: so
+sind wir jetzt gedrängt, weiter nach dem letzten Plane dieses Werdens
+und Treibens zu fragen, falls uns S nicht etwa die letzterreichte
+Periode, die der dorischen Kunst, als die Spitze und Absicht jener
+Kunsttriebe gelten sollte: und hier bietet sich unseren Blicken das
+erhabene und hochgepriesene Kunstwerk der a t t i s c h e n T r a g ö d
+i e und des dramatischen Dithyrambus, als das gemeinsame Ziel beider
+Triebe, deren io geheimnissvolles Ehebündniss, nach langem
+vorhergehenden Kampfe, sich in einem solchen Kinde --- das zugleich
+Antigone und Kassandra ist --- verherrlicht hat.
+
+42
+
+dem „objectiven'' Künstler der erste „subjective'' entgegen gestellt sei
+
+43
+
+in jeder Art und Höhe der Kunst vor allem und zuerst Besiegung des
+Subjectiven, Erlösung vom „Ich'' und Stillschweigen jedes individuellen
+Willens und Gelüstens fordern, ja ohne Objectivität, ohne reines
+interesseloses Anschauen nie an die geringste wahrhaft künstlerische
+Erzeugung glauben können.
+
+44
+
+jetzt aber wird diese Musik ihm wieder wie in einem g l e i c h n i s s
+a r t i g en T r a u m b i l d e , unter der apollinischen
+Traumeinwirkung sichtbar. Jener bild- und begrifflose Wiederschein des
+Urschmerzes in der Musik, mit seiner Erlösung im Scheine, erzeugt jetzt
+eine zweite Spiegelung, als einzelnes Gleichniss oder Exempel.
+
+44
+
+Der Plastiker und zugleich der ihm verwandte Epiker ist in das reine
+Anschauen der Bilder versunken. Der dionysische Musiker ist ohne jedes
+Bild völlig nur selbst Urschmerz und Urwiederklang desselben
+
+47
+
+dass der ganze Gegensatz, nach dem wie nach einem Werthmesser auch noch
+Schopenhauer die Künste eintheilt, der des Subjectiven und des
+Objectiven, überhaupt in der Aesthetik ungehörig ist, da das Subject,
+das wollende und seine egoistischen Zwecke fördernde Individuum nur als
+Gegner, nicht als Ursprung der Kunst gedacht werden kann.
+
+47
+
+die Lyrik als eine unvollkommen erreichte, gleichsam im Sprunge und
+selten zum Ziele kommende Kunst charakterisirt wird, ja als eine
+Halbkunst, deren W e s e n darin bestehen solle, dass das Wollen und das
+reine Anschauen d.~h. der unaesthetische und der aesthetische Zustand
+wundersam durch einander gemischt seien?
+
+47
+
+denn nur als a e s t h e t i s c h e s P h ä n o m e n ist das Dasein
+und die Welt ewig g e r e c h t f e r t i g t :
+
+109
+
+Wir sind wirklich in kurio zen Augenblicken das Urwesen selbst und
+fühlen dessen unbändige Daseinsgier und Daseinslust; der Kampf, die
+Qual, die Vernichtung der Erscheinungen dünkt uns jetzt wie nothwendig,
+bei dem Uebermaass von unzähligen, sich in's Leben drängenden und
+stossenden Daseinsformen, bei der überschwänglichen Frucht15 barkeit des
+Weltwillens;
+
+\paragraph{annotations: nietzsche, lyrik, benn, benne.zittel
+(2017).pdf}\label{annotations-nietzsche-lyrik-benn-benne.zittel-2017.pdf}
+
+paper: Hertel (2017)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+507
+
+1907 kamen Benn in der von Hans Benzmann zusammengestellten Anthologie
+Moderne deutsche Lyrik Texte von 165 Autoren vor Augen -- und er
+erinnert sich: »Else Lasker-Schüler war schon vertreten, der junge
+Rilke, der junge Hofmannsthal, auch Nietzsche war dabei«
+
+508
+
+Buch von Ernst Bertram -- ›Nietzsche, Versuch einer Mythologie‹,
+erschienen 1918« (SW V, 199).3 Unter den Gedichten, die in diesem Buch
+von Bertram behandelt wurden, fand er u. a. »Sils-Maria« und »Das Wort«.
+In dem letztgenannten Gedicht diagnostiziert Nietzsche, dass das
+dichterische Wort »oft schon an bösen Blicken« stirbt
+
+508
+
+Benns Affinität zu Nietzsche wuchs scheinbar in den Phasen als die
+»kultische Verehrung im ganzen« nachließ »und überhaupt die Fieberkurve
+der Nietzsche-Rezeption deutlich« sank
+
+508
+
+Lasker-Schüler war eine emphatische Anhängerin von Nietzsche. 1907
+konnte Benn z. B. in ihrem Gedicht »Weltende« lesen: »als ob der liebe
+Gott gestorben war«
+
+508
+
+Rückblickend stellte sie fest: »Nietzsche hat die Sprache geschaffen, in
+der wir alle dichten«
+
+508
+
+Im Kontext der damaligen Sprachkrise5 stellte der Kontrast zwischen
+fadem Alltagsgerede einerseits sowie andererseits einer formbewussten,
+artistischen Sprache, welche lebendige Worte heranspringen lässt, eine
+Herausforderung dar. Benn war empfänglich für an- und aufregende Worte,
+die Blutdruck und Neurotransmitter in Wallung bringen
+
+508
+
+Seine Rezeption war u. a. durch Empathie mit dem unzeitgemäßen
+Einzelgänger verbunden und wurde von Reflexionen begleitet, die
+Kunst-Theorie und Praxiserfahrungen abglichen
+
+509
+
+Klabund hatte bereits 1912 die Fröhliche Wissenschaft gelesen. Er
+schrieb dann z. B. 1920: »Nietzsche {[}\ldots{]} ist mit der
+musikalischen und rhythmischen Prosa seines ›Zarathustra‹ der
+Lehrmeister der jungen und jüngsten Dichtung geworden.
+
+509
+
+Gedicht »Vereinsamt« (bzw. »Die Krähen schrei'n«). (..)(..)Ein Vers aus
+diesem Gedicht hatte Benn jahrelang beschäftigt. Er erklärte: »Ich
+schüttle mir das nicht aus dem Ärmel, was ich jetzt sage, ich habe
+jahrelang darüber nachgedacht, ich habe jahrelang über den Vers
+nachgedacht: ›Wer das verlor, was ich verlor, macht nirgends halt‹«
+
+509
+
+beide waren fasziniert von Nietzsche, von seinem »Stil!«, von den
+»tödlich beschwingten Rhythmen und Akzenten
+
+510
+
+Ich glaube, daß Lyrik ohne Theorie der Lyrik überhaupt bei einem
+größeren Lyriker nicht mehr möglich ist«
+
+510
+
+Benn suchte Zeichen-Material, ließ sich ansprechen (von sprachlichen
+Reizen verführen) und hatte insbesondere bestimmte Worte im Visier, die
+er zum Gedicht-Bau nutzen konnte. Der Rezeptionsmodus bildete also
+zugleich das Paradigma für seine Lyrik-Produktion. Gedankliche
+Vorarbeiten, Notizen, Essays gehören zum modernen Dichten. Benn berief
+sich mit dieser Auffassung ausdrücklich auf Nietzsche und erläuterte,
+dass er »überhaupt die Kombination von Lyrik und Essay« als »das
+spezifisch Moderne« empfinde
+
+510
+
+In seinem Gedicht »NUR ZWEI DINGE« (1953) finden sich Verse, die auf
+jene »ewige Frage: wozu?« (SW I, 320) reagieren. (..)(..)Hier könnte
+also ein weiterer Bezug zu dem Nietzsche-Gedicht »Vereinsamt«
+hergestellt werden
+
+510
+
+wurde von Benn Gott als (vollendete) Form11 bestimmt und Nietzsches
+These ernst genommen, der zufolge Dasein und Welt nur »als aesthetisches
+Phänomen« gerechtfertigt sind12
+
+514
+
+Bei den Deutungsversuchen sollte jedoch nicht unbeachtet bleiben, welche
+Bedeutungen Nietzsche und Benn dem Leid bzw. dem Leiden beigemessen
+haben. Nietzsche verwies schon in der Geburt der Tragödie darauf, dass
+das »Talent zum Leiden und zur Weisheit des Leidens« als ein Korrelat
+zum künstlerischen Talent angesehen werden kann
+
+515
+
+Auch Benn konnte durch den Sprach-Rhythmus gewichtige Themen (Zeit,
+Schicksal, Tod, Leiden) mit geistiger Leichtigkeit ansprechen. Dabei
+gilt freilich für ihn (wie für Hölderlin), dass seine Verse »substanzlos
+sind, nahezu ein Nichts, um ein Geheimnis geschmiedet, das nie
+ausgesprochen wird und das sich nie enthüllt« (SW III, 329). Benn
+serviert keine Botschaften, die eindeutig dechiffrierbar sind, sondern
+bringt Semantik zum Schwingen
+
+518
+
+drückte er u. a. in folgendem Vers aus: »man sage nicht, der Geist kann
+es erreichen, / er gibt nur manchmal kurzbelichtet Zeichen« (SW I, 285).
+Diese Sprach-Zeichen sind nicht auf provokante, aufregende
+›Wallungsworte‹ beschränkt. Ihre Semantik berührt weiterreichende
+Dimensionen30. Im 20. Jahrhundert gab es nämlich neue Möglichkeiten für
+Diskurse der Dichtkunst. Benn konnte in dem Freiraum, den Nietzsche
+(mit) erschlossen hatte, weit ausholen. Die »Befreiung von Zwecken« ist
+»zum letzten Zweck der Lyrik in der Moderne« geworden
+
+519
+
+Nietzsche und Benn nutzten in ihren Gedichten diese erweiterten
+ästhetischen Möglichkeiten ausgiebig. (..)(..)Laut Schlaffer schafft der
+Dichter »eine moderne Entsprechung zur archaischen Geistersprache: eine
+geheimnisvolle Kommunikation mit einem ihm zugänglichen, allen anderen
+verborgenen Adressaten. Dieser Adressat ist niemand anders als der
+Dichter selbst. Er, der letzte Repräsentant jenseitiger Geister in einer
+entgeisterten Welt, führt im Gedicht ein Selbstgespräch«
+
+519
+
+Außerdem ist für Benn »das moderne Gedicht, das absolute Gedicht
+{[}\ldots{]} an niemanden gerichtet, ein Gedicht aus Worten, die Sie
+faszinierend montieren« (SW VI, 239). Diese »monologische« Dichtkunst
+ist »an die Muse gerichtet, und diese ist unter anderem dazu da, die
+Tatsache zu verschleiern, daß Gedichte an niemanden gerichtet sind«
+(ebd.). War Nietzsche für Benn eine ›Muse‹? Man kann auch fragen:
+Betreibt Benn mit seinen lyrischen Anschlüssen an (und gedanklichen
+Antworten auf) Nietzsche eine Art Ahnenkult? Der Sprach-Baumeister
+Nietzsche hatte selbst ein Muster vorgezeichnet, welches dies nahelegt:
+»Für wen baut der Baumeister? {[}\ldots{]} Ich glaube er baut für den
+nächsten grossen Baumeister
+
+520
+
+In der Nachfolge von Nietzsche forschte er mit seinen dichterischen
+Experimenten insbesondere danach, wie Kreativität generiert wird bzw.
+wie die ›schöpferische Lust‹ zur Geltung kommt. Bei seinen Reflexionen
+gelangte er an die Grenzen dessen, was sich mit (Natur-)Wissenschaft
+beschreiben und erklären lässt. Er versuchte mit magischen Worten und
+faszinierenden Formen über diese Barrieren hinauszugelangen. Benn hat
+poetische Experimente durchgeführt, um dem (normalerweise) Unsagbaren
+nachzuspüren. Dabei schuf er ›merk-würdige‹ Gedichte, die noch heute
+Anregungspotenzial besitzen und die quasi als Aufputschmittel für
+Schöpfertum wirken können
+
+\paragraph{annotations: roth, roesler (2020) neudeutsche
+schule.pdf}\label{annotations-roth-roesler-2020-neudeutsche-schule.pdf}
+
+paper: Von Roth and Roesler (2020)
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+3
+
+Die Neudeutsche Schule -- Phänomen und Geschichte
+
+\#cite\_von\_roth\_neudeutsche\_2020\_\_
+
+3
+
+Die Neudeutsche Schule -- Phänomen und Geschichte
+
+\#cite\_von\_roth\_neudeutsche\_2020\_\_
+
+554
+
+Vgl. Wagner 1849 Kunst und Revolution; Wagner 1850 Kunstwerk der
+Zukunft. Als Ideal beschreibt Wagner darin, wie im antiken Griechenland
+die Menschen im Theater zusammenkamen, um die Tragödie im Rahmen der
+großen Dionysien zu zelebrieren:
+
+2002
+
+Wagner 1849 Kunst und Revolution (..) Wagner, Richard: Die Kunst und die
+Revolution, Leipzig 1849, in: Wagner-Schriften 3, S. 8--41.
+
+\paragraph{annotations: wagner (1849), kunst und
+revolution.pdf}\label{annotations-wagner-1849-kunst-und-revolution.pdf}
+
+paper: @
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+page
+
+note
+
+comment
+
+1
+
+Wagner, Richard, Die Kunst und die Revolution
+
+\#init\_Wagner, Die Kunst und die Revolution\_
+
+1
+
+Wagner, Richard, Die Kunst und die Revolution
+
+\#init\_Wagner, Die Kunst und die Revolution\_
+
+12
+
+Wir fönnen bei einigem Nac)denfen in unferer Runft feinen Gdritt tbun,
+obne auf den Jufammenbang Derfelben mit ber Stunft Der Ürieden zu
+treffen. Jn Wabrbeit ift unfere moderne Sunft nur ein Olied in der
+Stette Der Runftentwicelung Des gefammten Europa, und diefe nimmt ifren
+Quêgang bon ben Grieden
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-benn_gesammelte_1960}
+Benn, Gottfried. 1960. \emph{Gesammelte {Werke}. 3, {Gedichte}}. Edited
+by Wellershoff. Vol. 3. Gesammelte {Werke}. Limes-Verl.
+
+\bibitem[\citeproctext]{ref-benn_lyrik_1971}
+Benn, Gottfried. 1971. \emph{Lyrik Und {Prosa}, {Briefe} Und
+{Dokumente}: Eine {Auswahl}}. 8., erw. Aufl. Limes-{Paperback}.
+Limes-Verl.
+
+\bibitem[\citeproctext]{ref-benn_gesammelte_1989}
+Benn, Gottfried. 1989. \emph{Gesammelte {Werke} in Der {Fassung} Der
+{Erstdrucke}. {[}3{]}, {Essays} Und {Reden} in Der {Fassung} Der
+{Erstdrucke}}. 1. Auflage. Edited by Hillebrandt. Fischer
+{Taschenbücher} 5233.
+
+\bibitem[\citeproctext]{ref-gunther_rhythmus_2008}
+Günther, Friederike Felicitas. 2008. {``Rhythmus Beim Frühen
+{Nietzsche}.''} In \emph{Rhythmus Beim Frühen {Nietzsche}}. De Gruyter.
+\url{https://doi.org/10.1515/9783110210149}.
+
+\bibitem[\citeproctext]{ref-hanna_benn-handbuch_2016}
+Hanna, Christian M., and Friederike Reents. 2016. \emph{Benn-{Handbuch}:
+{Leben}, {Werk}, {Wirkung}}. 1. Aufl. 2016 edition. J.B. Metzler Verlag.
+\url{https://doi.org/10.1007/978-3-476-05310-7}.
+
+\bibitem[\citeproctext]{ref-hertel_modernes_2017}
+Hertel, Thomas. 2017. {``Ein Modernes ›{Geistergespräch}‹: {Gottfried}
+{Benns} {Auseinandersetzung} Mit {Gedichten} von {Friedrich}
+{Nietzsche}.''} In \emph{Nietzsche Und Die {Lyrik}: {Ein} {Kompendium}},
+edited by Christian Benne and Claus Zittel. J.B. Metzler.
+\url{https://doi.org/10.1007/978-3-476-05596-5_34}.
+
+\bibitem[\citeproctext]{ref-nietzsche_homers_1973}
+Nietzsche, Friedrich. 1973. {``Homers {Wettkampf}.''} In \emph{{KGA}
+{III}-2. {Band} 2 {Nachgelassene} {Schriften} 1870 - 1873}, edited by
+Colli/Montinari, vol. 2. {KGW}, III.2. De Gruyter.
+\url{https://doi.org/doi:10.1515/9783110835304}.
+
+\bibitem[\citeproctext]{ref-nietzsche_kga_2024}
+Nietzsche, Friedrich. 2024. \emph{{KGA}. {Nietzsche} {Werke}: {Band} 1,
+{Abteilung} 3. {Die} {Geburt} Der {Tragödie}. {Unzeitgemäße}
+{Betrachtungen} {I} - {III} (1872 - 1874) {Kritische} {Gesamtausgabe}}.
+De Gruyter.
+
+\bibitem[\citeproctext]{ref-von_roth_neudeutsche_2020}
+Von Roth, Dominik, and Ulrike Roesler, eds. 2020. \emph{Die
+{Neudeutsche} {Schule} -- {Phänomen} Und {Geschichte}: {Quellen} Und
+{Kommentare} Zu Einer Zentralen Musikästhetischen {Kontroverse} Des 19.
+{Jahrhunderts}}. J.B. Metzler.
+\url{https://doi.org/10.1007/978-3-476-04923-0}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
