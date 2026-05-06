@@ -137,7 +137,7 @@ for(k in 1:length(du)){
 cat(paste0("\n#### annotations: ",p,"\n"))
 cat(paste0("\npaper: @",c,"\n"))
 
-cat(knitr::kable(df,row.names = F,booktabs = F, format="html") %>% 
+cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>% 
   kable_styling(bootstrap_options = c("striped", "condensed"), 
                     full_width = T) %>%
   column_spec(1, width = "2cm") %>% 
