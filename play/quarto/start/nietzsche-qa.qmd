@@ -12,7 +12,6 @@ date: "2026-04-20"
 
 
 ## notes on papers
-
 <!-- @nietzsche_kga_2024   
 @nietzsche_friedrich_1902   
 @gunther_rhythmus_2008 -->

@@ -90,7 +90,10 @@ kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
 kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
-kdf$comment<-gsub("[\r\n|]"," /",kdf$comment)
+# kdf$comment<-gsub("[\r\n|]"," / ",kdf$comment)
+# kdf$comment<-gsub("\\r\\n|\\n|\\|"," \\\\\\\\ ",kdf$comment)
+kdf$comment<-gsub("\\r\\n|\\n|\\|"," <br> ",kdf$comment)
+
 # kdf$comment<-gsub("<br><br>"," <br>",kdf$comment)
 kdf$comment<-gsub("(http.+) ?",' <a href="\\1" target="_blank">\\1</a>',kdf$comment)
 #kdf$comment<-gsub("(http.+) ?",'<a href="\\1 " target="_blank">\\1 </a>',kdf$comment)
@@ -134,17 +137,28 @@ for(k in 1:length(du)){
     # print("c m40")
     # print(c)
   }
-  
-cat(paste0("\n#### annotations: ",p,"\n"))
+# df$comment<-linebreak(df$comment)
+ldf<-as.character(length(df$note))
+cat(paste0("\n#### (",ldf,") annotations: ",p,"\n"))
 cat(paste0("\npaper: @",c,"\n"))
 
+# if (knitr::is_html_output()) {
 cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>% 
   kable_styling(bootstrap_options = c("striped", "condensed"), 
                     full_width = T) %>%
   column_spec(1, width = "2cm") %>% 
   column_spec(2, width = "7cm") %>% 
   column_spec(3, width = "4cm"))
-}
+# }
+# if (knitr::is_latex_output()) {
+# cat(knitr::kable(df,row.names = F,booktabs = F, format="latex",escape=T) %>% 
+#   kable_styling(bootstrap_options = c("striped", "condensed"), 
+#                     full_width = T) %>%
+#   column_spec(1, width = "2cm") %>% 
+#   column_spec(2, width = "7cm") %>% 
+#   column_spec(3, width = "4cm"))
+# }
+    }
   }
 }
 ```

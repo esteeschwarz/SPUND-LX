@@ -45,7 +45,7 @@ format:
     #code-overflow: wrap
     css: assets/styles.css
   pdf:
-      keep-tex: true
+      keep-tex: false
       keep-intermediates: false
     #   template: pdf-template.tex
     #   latex_engine: xelatex  # default lualatex
