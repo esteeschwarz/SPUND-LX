@@ -28,13 +28,20 @@ website:
           - str-index.qmd
       - text: arkkiv
         menu:
-          - pdfpaper/001/uwolf.qmd
+          - href: https://userpage.fu-berlin.de/stschwarz/links?title=dclx&ref=play
+            text: "DC-LX (new)"
+          - href: https://userpage.fu-berlin.de/stschwarz/links?title=adaskool&ref=play
+            text: "ada-school (olde)""
+          - href: pdfpaper/001/uwolf.qmd
+            text: reference-test
       # - text: "Download"
       #   menu:
       #     - href: report.pdf
       #       text: "Download PDF"
    right:
       - snc.qmd
+      - href: https://github.com/esteeschwarz/SPUND-LX/
+        icon: github
 
 format:
   # gfm: default
