@@ -49,3 +49,12 @@ val.c<-"{{< meta cmeta >}}"
     - possible to put that online (term paper) or is it? (@schafer_what_2025)
     - corpus formats?
 
+## zinsmeister
+
+```{r,echo=F,eval=T}
+knitr::read_chunk("lxtech/skewdiv.R")
+```
+
+```{r skew}
+```
+
