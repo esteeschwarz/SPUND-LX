@@ -305,13 +305,13 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>[1] "The striker shot an incredible goal."</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "token,,,,,"                                        
-[2] "the,D,(^DEF)=+,,,"                                 
-[3] "striker,N,(^PRED)=striker,,,"                      
-[4] "shot,V,(^PRED)=shot(subj.obj),(^NUM)=sg,(^PERS)=3,"
-[5] "an,D,(^DEF)=-,,,"                                  
-[6] "incredible,A,(^PRED)=incredible,,,"                
-[7] "goal,N,(^PRED)=goal,(^NUM)=sg,,"                   </code></pre>
+<pre><code>[1] "token,,,,,"                               
+[2] "the,D,(^DEF)=+,,,"                        
+[3] "striker,N,(^PRED)=striker,(^NUM)=sg,,"    
+[4] "shot,V,(^PRED)=shot(subj.obj),,(^PERS)=3,"
+[5] "an,D,(^DEF)=-,,,"                         
+[6] "incredible,A,(^PRED)=incredible,,,"       
+[7] "goal,N,(^PRED)=goal,(^NUM)=sg,,"          </code></pre>
 </div>
 </div>
 <div class="cell">
@@ -340,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">striker</td>
 <td style="text-align: left;">N</td>
 <td style="text-align: left;">(^PRED)=striker</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">(^NUM)=sg</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -348,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">shot</td>
 <td style="text-align: left;">V</td>
 <td style="text-align: left;">(^PRED)=shot(subj.obj)</td>
-<td style="text-align: left;">(^NUM)=sg</td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;">(^PERS)=3</td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -390,8 +390,187 @@ ul.task-list li input[type="checkbox"] {
 <section id="notes" class="level1">
 <h1>notes</h1>
 <p>it seems as if the LFG conventions are preparing such that can be described with vectors at the end. in the way that we annotate a token (lexical item) according to specified (necessary per investigated language) categories (a,c,f - levels) which may be projected into a vector space. say if we have 10 categories with key-value pairs of each e.g.&nbsp;5 attributes (keys) which can each again take 5 values which will then be coded TRUE or FALSE , we will have the token represented in a vectorspace of <code>10x5x5x2</code> = <code>500</code> dimensions, nestcepas? well thats a lot…, but seeing that model vectorspaces use to have embeddings dimensions in that range (e.g.&nbsp;762 for stable diffusion models) its not strange assuming that these amount of categories and key-value pairs is enough…</p>
+<section id="process" class="level2">
+<h2 class="anchored" data-anchor-id="process">process</h2>
+<p>first the categories (the ones from above) have to be coded binary. so we have:</p>
+<ul>
+<li>the syntax head class (leX), which in our example take:
+<ul>
+<li>N</li>
+<li>A</li>
+<li>D</li>
+<li>V</li>
+</ul></li>
+<li>PRED
+<ul>
+<li>subj</li>
+<li>obj</li>
+</ul></li>
+<li>NUM
+<ul>
+<li>sg</li>
+<li>pl</li>
+</ul></li>
+<li>PERS
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul></li>
+<li>DEF
+<ul>
+<li>plus</li>
+<li>minus</li>
+</ul></li>
+</ul>
+<p><code>striker</code> coded binary would look like: <code>X.N=1,NUM.sg=1</code>. all other categories which are not 1(TRUE) default to FALSE. then the complete row would be:</p>
+<p><code>t=striker,X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0</code>and applied to the other tokens:</p>
+<p><code>t=the,X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0</code></p>
+<p><code>t=shot,X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=1,DEF.plus=0,DEF.minus=0</code></p>
+<p><code>t=an,X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1</code></p>
+<p><code>t=incredible,X.N=0,X.A=1,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0</code></p>
+<p><code>t=goal,X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">t</th>
+<th style="text-align: left;">X.N</th>
+<th style="text-align: left;">X.A</th>
+<th style="text-align: left;">X.D</th>
+<th style="text-align: left;">X.V</th>
+<th style="text-align: left;">PRED.subj</th>
+<th style="text-align: left;">PRED.obj</th>
+<th style="text-align: left;">NUM.sg</th>
+<th style="text-align: left;">NUM.pl</th>
+<th style="text-align: left;">PERS.1</th>
+<th style="text-align: left;">PERS.2</th>
+<th style="text-align: left;">PERS.3</th>
+<th style="text-align: left;">DEF.plus</th>
+<th style="text-align: left;">DEF.minus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">the</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">striker</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">shot</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">an</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">incredible</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">goal</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
