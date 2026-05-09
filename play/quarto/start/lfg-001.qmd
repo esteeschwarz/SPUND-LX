@@ -90,7 +90,7 @@ first the categories (the ones from above) have to be coded binary. so we have:
 df<-data.frame(rbind(
 c(t="the",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0),
 c(t="striker",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
-c(t="shot",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=1,DEF.plus=0,DEF.minus=0),
+c(t="shot",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=1,DEF.plus=0,DEF.minus=0),
 
 c(t="an",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1),
 
