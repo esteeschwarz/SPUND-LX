@@ -55,7 +55,7 @@ val.c<-"{{< meta cmeta >}}"
     - corpus formats?
 
 ## zinsmeister
-
+### play
 ```{r,echo=F,eval=T}
 knitr::read_chunk("lxtech/skewdiv.R")
 ```
@@ -63,3 +63,5 @@ knitr::read_chunk("lxtech/skewdiv.R")
 ```{r skew}
 ```
 
+### notes
+the tokens vector sujet gets interesting if following [this](lfg-001.qmd) theories (LFG: lexical functional grammar) where we may describe token categories in a vector space as well, undisputed of distribution. so if @zinsmeister_corpusbased_2013 investigate on similarity based on distribution of lexical items in a context window (coocurrences) we may also (like in LLM embeddings) make statements about token relatedness based on the vector cosine similarity of tokens semantic / syntactic categories. 
