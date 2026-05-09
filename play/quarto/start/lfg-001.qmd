@@ -104,3 +104,5 @@ knitr::kable(df)
 #c2<-cos(df[2,2:length(df)])
 ```
 
+### Q
+question is: shall one code (with shot e.g.) the NUM category as it references sg., which is still not visible as being not marked but accessible via knowledge? and PERS as well as its also not marked (in past tense) but known 3rd p.?
