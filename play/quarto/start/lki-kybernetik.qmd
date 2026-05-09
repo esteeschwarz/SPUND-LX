@@ -60,7 +60,7 @@ val.c<-"{{< meta cmeta >}}"
 
 
 # index
-1. samling: margin notes general > [link](lki-qa.qmd)
+1. samling: margin notes general > [open](lki-qa.qmd){.btn .btn-cat}
 2. [summary on kybernetik introduction](lki-001.qmd)
 
 

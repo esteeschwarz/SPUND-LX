@@ -5,6 +5,9 @@ format: html
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
+categories:
+   - vectors
+   - noun compounds
 bibliography: LXtech.bib
 nocite: '@*'
 cmeta: |
@@ -37,9 +40,11 @@ val.c<-"{{< meta testmeta >}}"
 val.c<-"{{< meta cmeta >}}"
 ```
 
+#### snc
+- button.12345
 
 # index
-1. samling: margin notes general > [link](lxtech-qa.qmd)
+1. samling: margin notes general > [open](lxtech-qa.qmd){.btn .btn-cat} 
 
 
 ## samling
