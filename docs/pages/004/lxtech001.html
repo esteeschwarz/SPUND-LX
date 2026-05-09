@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-05-08">
+<meta name="dcterms.date" content="2026-05-09">
 
 <title>LX / Tech – 004</title>
 <style>
@@ -245,7 +245,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 8, 2026</p>
+      <p class="date">May 9, 2026</p>
     </div>
   </div>
   
@@ -304,33 +304,40 @@ div.csl-indent {
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Q: zinsmeister(2013)</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># D(p||q) = Si pi x log(pi/qi)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># D(p||q) = Sig^i p^i x log(p^i/q^i)</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>l1<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.6</span>,<span class="fl">0.4</span>,<span class="dv">0</span>) <span class="co"># milchzahn</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>l2<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.25</span>) <span class="co"># zahn</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>l3<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># löwenzahn</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">########################</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># l2 is the reference p</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># l1,l3 are the target q probabilities which are projected on /smoothed by reference p</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="do">#############################################</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>lx<span class="ot">&lt;-</span><span class="fu">list</span>(<span class="fu">list</span>(l2,l1),<span class="fu">list</span>(l2,l3))</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#f&lt;-sum(pi*(log(pi/qi)))</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>w<span class="ot">&lt;-</span><span class="fl">0.9</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>s1<span class="ot">&lt;-</span><span class="fu">lapply</span>(lx,<span class="cf">function</span>(l){</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(l)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#  lapply(l,function(p){</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a> <span class="co">#   cat("p:",p,"\n")</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    s<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(l[[<span class="dv">1</span>]])){</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      p1<span class="ot">&lt;-</span>l[[<span class="dv">1</span>]][i]</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      q1<span class="ot">&lt;-</span>l[[<span class="dv">2</span>]][i]</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      qi<span class="ot">&lt;-</span>(w<span class="sc">*</span>q1)<span class="sc">+</span>((<span class="dv">1</span><span class="sc">-</span>w)<span class="sc">*</span>p1) <span class="co"># qi smoothed</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"qi:"</span>,qi,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="co"># s[i]&lt;-sum(pi*log((pi/qi)))</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      s[i]<span class="ot">&lt;-</span>p1<span class="sc">*</span><span class="fu">log</span>(p1<span class="sc">/</span>qi)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"s:"</span>,s[<span class="dv">1</span>],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    spq<span class="ot">&lt;-</span><span class="fu">sum</span>(s)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">### test: löwenzahn::ziehen=1 occurence instead 0</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>l4<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>l5<span class="ot">&lt;-</span><span class="fu">unlist</span>(<span class="fu">lapply</span>(l4,<span class="cf">function</span>(x){</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>x<span class="sc">/</span><span class="fu">sum</span>(l4)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># l2 is the reference p</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># l1,l3 are the target q probabilities which are projected on /smoothed by reference p</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">#############################################</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>lx<span class="ot">&lt;-</span><span class="fu">list</span>(<span class="fu">list</span>(l2,l1),<span class="fu">list</span>(l2,l3),<span class="fu">list</span>(l2,l5))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#f&lt;-sum(pi*(log(pi/qi)))</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>w<span class="ot">&lt;-</span><span class="fl">0.9</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>s1<span class="ot">&lt;-</span><span class="fu">lapply</span>(lx,<span class="cf">function</span>(l){</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(l)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#  lapply(l,function(p){</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a> <span class="co">#   cat("p:",p,"\n")</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    s<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(l[[<span class="dv">1</span>]])){</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      p1<span class="ot">&lt;-</span>l[[<span class="dv">1</span>]][i]</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      q1<span class="ot">&lt;-</span>l[[<span class="dv">2</span>]][i]</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      qi<span class="ot">&lt;-</span>(w<span class="sc">*</span>q1)<span class="sc">+</span>((<span class="dv">1</span><span class="sc">-</span>w)<span class="sc">*</span>p1) <span class="co"># qi smoothed</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"qi:"</span>,qi,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      <span class="co"># s[i]&lt;-sum(pi*log((pi/qi)))</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      s[i]<span class="ot">&lt;-</span>p1<span class="sc">*</span><span class="fu">log</span>(p1<span class="sc">/</span>qi)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"s:"</span>,s[i],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    spq<span class="ot">&lt;-</span><span class="fu">sum</span>(s)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"skew div:"</span>,spq,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(s)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 0.25 0.50 0.25
@@ -341,9 +348,10 @@ div.csl-indent {
 qi: 0.565 
 s: -0.2038412 
 qi: 0.41 
-s: -0.2038412 
+s: 0.09922547 
 qi: 0.025 
-s: -0.2038412 
+s: 0.5756463 
+skew div: 0.4710305 
 [[1]]
 [1] 0.25 0.50 0.25
 
@@ -353,17 +361,44 @@ s: -0.2038412
 qi: 0.025 
 s: 0.5756463 
 qi: 0.05 
-s: 0.5756463 
+s: 1.151293 
 qi: 0.925 
-s: 0.5756463 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="co">#chk.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-[1] 0.4710305
+s: -0.3270832 
+skew div: 1.399856 
+[[1]]
+[1] 0.25 0.50 0.25
 
 [[2]]
-[1] 1.399856</code></pre>
+[1] 0.0000000 0.3333333 0.6666667
+
+qi: 0.025 
+s: 0.5756463 
+qi: 0.35 
+s: 0.1783375 
+qi: 0.625 
+s: -0.2290727 
+skew div: 0.5249111 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(s1)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"milchzahn"</span>,<span class="st">"löwenzahnA"</span>,<span class="st">"löwenzahnB"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(s1,sum) <span class="co">#chk.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$milchzahn
+[1] 0.4710305
+
+$löwenzahnA
+[1] 1.399856
+
+$löwenzahnB
+[1] 0.5249111</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">las=</span><span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(s1,<span class="at">main=</span><span class="st">"skew divergence scores, reference: zahn"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lxtech001_files/figure-html/skew-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 
