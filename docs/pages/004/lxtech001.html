@@ -286,6 +286,7 @@ div.csl-indent {
 <h4 class="anchored" data-anchor-id="snc">snc</h4>
 <ul>
 <li>button.12345</li>
+<li>chunk out</li>
 </ul>
 </section>
 <section id="index" class="level1">
@@ -311,6 +312,8 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="zinsmeister">zinsmeister</h2>
 <section id="play" class="level3">
 <h3 class="anchored" data-anchor-id="play">play</h3>
+<section id="zinsmeister-skew-divergence" class="level4">
+<h4 class="anchored" data-anchor-id="zinsmeister-skew-divergence">1. zinsmeister skew divergence</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># computing skew divergence score for noun-noun compound vectors</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Q: zinsmeister(2013)</span></span>
@@ -413,6 +416,26 @@ $löwenzahnB
 </div>
 </div>
 </div>
+</section>
+<section id="cosine-similarity-of-same-vectors" class="level4">
+<h4 class="anchored" data-anchor-id="cosine-similarity-of-same-vectors">2. cosine similarity of same vectors</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            milchzahn      zahn loewenzahnA loewenzahnB
+milchzahn   1.0000000 0.7925939   0.0000000   0.2480695
+zahn        0.7925939 1.0000000   0.4082483   0.7302967
+loewenzahnA 0.0000000 0.4082483   1.0000000   0.8944272
+loewenzahnB 0.2480695 0.7302967   0.8944272   1.0000000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7925939</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  milchzahn loewenzahnB loewenzahnA 
+  0.7925939   0.7302967   0.4082483 </code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="notes" class="level3">
 <h3 class="anchored" data-anchor-id="notes">notes</h3>
