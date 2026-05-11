@@ -1,7 +1,7 @@
 token,,,,,
 the,D,(^DEF)=+,,,
 striker,N,(^PRED)=striker,(^NUM)=sg,,
-shot,V,(^PRED)=shot(subj.obj),,(^PERS)=3,
+shot,V,(^PRED)=shoot(subj.obj),(^TENSE)=past,,
 an,D,(^DEF)=-,,,
 incredible,A,(^PRED)=incredible,,,
 goal,N,(^PRED)=goal,(^NUM)=sg,,
