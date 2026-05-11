@@ -25,7 +25,7 @@ knitr::kable(df)
 ```
 
 
-### a-struktur, lexikon
+### lexikon
 
 ```{r,echo=F,eval=T,warning=F}
 #| fig-cap: "lexikon raw"
@@ -73,30 +73,19 @@ first the categories (the ones from above) have to be coded binary. so we have:
 
 `striker` coded binary would look like: `X.N=1,NUM.sg=1`. all other categories which are not 1(TRUE) default to FALSE. then the complete row would be:
 
-`t=striker,X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0`and applied to the other tokens:
-
-`t=the,X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0`
-
-`t=shot,X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=1,DEF.plus=0,DEF.minus=0`
-
-`t=an,X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1`
-
-`t=incredible,X.N=0,X.A=1,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0`
-
-`t=goal,X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0`
-
+`t=striker,X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0`
 
 ```{r echo=F}
 df<-data.frame(rbind(
-c(t="the",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0),
-c(t="striker",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
-c(t="shot",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=1,DEF.plus=0,DEF.minus=0),
+c(t="the",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0),
+c(t="striker",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
+c(t="shot",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=1,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
 
-c(t="an",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1),
+c(t="an",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1),
 
-c(t="incredible",X.N=0,X.A=1,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
+c(t="incredible",X.N=0,X.A=1,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
 
-c(t="goal",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0)
+c(t="goal",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0)
 ))
 knitr::kable(df)
 #df
@@ -105,4 +94,20 @@ knitr::kable(df)
 ```
 
 ### Q
-question is: shall one code (with shot e.g.) the NUM category as it references sg., which is still not visible as being not marked but accessible via knowledge? and PERS as well as its also not marked (in past tense) but known 3rd p.?
+question is: shall one code (with shot e.g.) the NUM category as it references sg., which is still not visible as being not marked but accessible via knowledge? and PERS as well as its also not marked (in past tense) but known 3rd p.? and: can we code DEF alone with 1/0 for plus/minus or do we need 2 cats here?
+
+> here "context" comes into play: we assume that lexicon entries are :context free: and code only visible features.
+
+### play
+- cosine similarity q/vector
+- categories cluster
+
+```{r,echo=F,eval=T}
+qd<-c(t="goes",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=1,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=1,DEF.plus=0,DEF.minus=0)
+df<-rbind(df,qd)
+q<-qd[1]
+knitr::read_chunk("lxtech/cosine-sim.R")
+```
+
+```{r cosine-sim,echo=F}
+```
