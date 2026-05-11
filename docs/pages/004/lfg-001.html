@@ -505,13 +505,13 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">shot</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
@@ -585,6 +585,7 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>here “context” comes into play: we assume that lexicon entries are :context free: and code only visible features.</p>
 </blockquote>
+<p>Q3, another one: ‘shot’ must in the lexikon be coded also as X.N=true and NUM.sg=true as its without context not visible if its the noun or the past tense verb, nestcepas?</p>
 </section>
 <section id="play" class="level3">
 <h3 class="anchored" data-anchor-id="play">play</h3>
@@ -594,21 +595,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>           the striker shot  an incredible goal goes
-the        1.0       0  0.0 0.5          0    0  0.0
-striker    0.0       1  0.0 0.0          0    1  0.0
-shot       0.0       0  1.0 0.0          0    0  0.5
-an         0.5       0  0.0 1.0          0    0  0.0
-incredible 0.0       0  0.0 0.0          1    0  0.0
-goal       0.0       1  0.0 0.0          0    1  0.0
-goes       0.0       0  0.5 0.0          0    0  1.0</code></pre>
+<pre><code>           the   striker      shot  an incredible      goal      goes
+the        1.0 0.0000000 0.0000000 0.5          0 0.0000000 0.0000000
+striker    0.0 1.0000000 0.5773503 0.0          0 1.0000000 0.0000000
+shot       0.0 0.5773503 1.0000000 0.0          0 0.5773503 0.4082483
+an         0.5 0.0000000 0.0000000 1.0          0 0.0000000 0.0000000
+incredible 0.0 0.0000000 0.0000000 0.0          1 0.0000000 0.0000000
+goal       0.0 1.0000000 0.5773503 0.0          0 1.0000000 0.0000000
+goes       0.0 0.0000000 0.4082483 0.0          0 0.0000000 1.0000000</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>evaluate nearest neighbors to: - goes -</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      shot        the    striker         an incredible 
-       0.5        0.0        0.0        0.0        0.0 </code></pre>
+ 0.4082483  0.0000000  0.0000000  0.0000000  0.0000000 </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>NO syntax tree yet, but a simple similarity cluster according to categories...</code></pre>
@@ -621,8 +622,12 @@ goes       0.0       0  0.5 0.0          0    0  1.0</code></pre>
 </div>
 </div>
 </div>
+<section id="q3" class="level4">
+<h4 class="anchored" data-anchor-id="q3">Q3</h4>
+<p>and in Q3: if we also code animate vs.&nbsp;inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g.&nbsp;‘shot’-X.V and ‘goal’-OBJ.target…</p>
 
 
+</section>
 </section>
 </section>
 </section>
