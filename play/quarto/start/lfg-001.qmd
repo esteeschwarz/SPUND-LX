@@ -79,7 +79,7 @@ first the categories (the ones from above) have to be coded binary. so we have:
 df<-data.frame(rbind(
 c(t="the",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0),
 c(t="striker",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
-c(t="shot",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=1,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
+c(t="shot",X.N=1,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=1,NUM.pl=0,TENSE.pre=0,TENSE.past=1,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
 
 c(t="an",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1),
 
@@ -98,6 +98,8 @@ question is: shall one code (with shot e.g.) the NUM category as it references s
 
 > here "context" comes into play: we assume that lexicon entries are :context free: and code only visible features.
 
+Q3, another one: 'shot' must in the lexikon be coded also as X.N=true and NUM.sg=true as its without context not visible if its the noun or the past tense verb, nestcepas?
+
 ### play
 - cosine similarity q/vector
 - categories cluster
@@ -111,3 +113,6 @@ knitr::read_chunk("lxtech/cosine-sim.R")
 
 ```{r cosine-sim,echo=F}
 ```
+
+#### Q3
+and in Q3: if we also code animate vs. inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g. 'shot'-X.V and 'goal'-OBJ.target...
