@@ -59,7 +59,17 @@ qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margindb
 margindb<-list(qa=qa,dbsub=dbsub)
-save(margindb,file="margindb.RData")
+fi<-file.info("margindb.RData")
+fs<-fi$size
+fs
+mt<-tempfile("mdb.RData")
+save(margindb,file=mt)
+fit<-file.info(mt)
+fst<-fit$size
+if(fst>fs)
+  save(margindb,file="margindb.RData")
+
+# save(margindb,file="margindb.RData")
 
 
 }

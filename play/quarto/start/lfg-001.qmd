@@ -115,4 +115,5 @@ knitr::read_chunk("lxtech/cosine-sim.R")
 ```
 
 #### Q3
-and in Q3: if we also code animate vs. inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g. 'shot'-X.V and 'goal'-OBJ.target...
+and in Q3: if we also code animate vs. inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g. 'shot'-X.V and 'goal'-OBJ.target...   
+but: when 'shot' takes (^PRED)="<shoot>" it - coded alone - does not show above ambiguity, saying the predicate here is important for the rest of the row. so further: we either have to somehow embed the predicate reference into the binary system (which is not possible since its again an (infinite space of tokens/ lexical items)) or distinguish tokens by token qualities like 'shot.shoot' vs. 'shot.shot'. 
