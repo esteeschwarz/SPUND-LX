@@ -253,16 +253,6 @@ comment
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-from the point of view of context-free rules, VP and V are atomic symbols that are not related to each other; labeling one of the daughters of NP as N is merely a convention
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-2
-</td>
-<td style="text-align:left;width: 7cm; ">
 Briefly, c-structure is a phrase structure tree; constraints on possible trees are usually described via context-free rules as in
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -280,10 +270,10 @@ Briefly, c-structure is a phrase structure tree; constraints on possible trees a
 </tr>
 <tr>
 <td style="text-align:left;width: 2cm; ">
-3
+2
 </td>
 <td style="text-align:left;width: 7cm; ">
-enforces endocentricity by introducing the notion of projection and “bar level” and requiring that each non-maximal projection (X0and X′; X″, or XP, is usually assumed to be the maximum level of projection) be dominated by a node belonging to the same category, with the bar level either incremented by one or unchanged. The sisters of c-structure heads (complements, specifiers and adjuncts) have to be maximal projections or non-projecting words (on which see below).
+from the point of view of context-free rules, VP and V are atomic symbols that are not related to each other; labeling one of the daughters of NP as N is merely a convention
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -294,6 +284,16 @@ enforces endocentricity by introducing the notion of projection and “bar level
 </td>
 <td style="text-align:left;width: 7cm; ">
 wrong with this structure: an I head cannot be the daughter of NP; the VP cannot be headed by, or even immediately dominate, a Det; an AdvP cannot be headed by a noun.1The principle that prohibits this is called endocentricity; roughly stated, it means that the external distribution of a phrase (e.g.&nbsp;NP) is determined by the category of one and only one of its daughters, the head.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+enforces endocentricity by introducing the notion of projection and “bar level” and requiring that each non-maximal projection (X0and X′; X″, or XP, is usually assumed to be the maximum level of projection) be dominated by a node belonging to the same category, with the bar level either incremented by one or unchanged. The sisters of c-structure heads (complements, specifiers and adjuncts) have to be maximal projections or non-projecting words (on which see below).
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -333,7 +333,7 @@ most prominent exception is the exocentric category S.3This category does not ha
 7
 </td>
 <td style="text-align:left;width: 7cm; ">
-lexicalism implies that the features of individual syntactic elements (morphemes and wordforms) as well as their subcategorization frames are determined in the lexicon, and cannot be modified in the syntax (such as by promoting the direct object in a passive construction)
+as a result, X′theory, understood purely in terms of c-structure, is little else than a system of labeling nodes which allows us to generalize endocentricity at constituent structure level.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -343,7 +343,7 @@ lexicalism implies that the features of individual syntactic elements (morphemes
 7
 </td>
 <td style="text-align:left;width: 7cm; ">
-as a result, X′theory, understood purely in terms of c-structure, is little else than a system of labeling nodes which allows us to generalize endocentricity at constituent structure level.
+lexicalism implies that the features of individual syntactic elements (morphemes and wordforms) as well as their subcategorization frames are determined in the lexicon, and cannot be modified in the syntax (such as by promoting the direct object in a passive construction)
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -373,6 +373,26 @@ This understanding of lexicalism is more formally termed lexical integrity
 9
 </td>
 <td style="text-align:left;width: 7cm; ">
+, c-structure in LFG is complemented by an additional level of representation called f-structure. F-structure is an attribute-value structure that includes information on valency, grammatical functions, and the features of clauses and their syntactic arguments.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+F-structure is usually thought of as a set of attribute-value pairs, or a function that maps attribute names to their values
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
 there is no such thing as two different f-structures having the same set of attributes and values;
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -391,26 +411,6 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;width: 2cm; ">
-9
-</td>
-<td style="text-align:left;width: 7cm; ">
-, c-structure in LFG is complemented by an additional level of representation called f-structure. F-structure is an attribute-value structure that includes information on valency, grammatical functions, and the features of clauses and their syntactic arguments.
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-9
-</td>
-<td style="text-align:left;width: 7cm; ">
-F-structure is usually thought of as a set of attribute-value pairs, or a function that maps attribute names to their values
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
 10
 </td>
 <td style="text-align:left;width: 7cm; ">
@@ -424,7 +424,7 @@ all bundles of agreement features (agr) with the same set of values are identica
 11
 </td>
 <td style="text-align:left;width: 7cm; ">
-a value cannot be assigned by a constraining equation
+they are “constructive”, or defining: informally, a defining equation introduces a feature value, regardless of whether it is the only such equation or the same value is defined elsewhere
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -434,7 +434,7 @@ a value cannot be assigned by a constraining equation
 11
 </td>
 <td style="text-align:left;width: 7cm; ">
-they are “constructive”, or defining: informally, a defining equation introduces a feature value, regardless of whether it is the only such equation or the same value is defined elsewhere
+a value cannot be assigned by a constraining equation
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -505,7 +505,7 @@ crucial idea underpinning Lexical-Functional Grammar (LFG) is that a linguistic 
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-It is a parallel correspondence model because the different dimensions of linguistic information are represented separately but are connected by well-defined principles of correspondence, or mappings.
+“the formal model of LFG is not a syntactic theory in the linguistic sense. Rather, it is an architecture for syntactic theory
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -515,7 +515,7 @@ It is a parallel correspondence model because the different dimensions of lingui
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-“the formal model of LFG is not a syntactic theory in the linguistic sense. Rather, it is an architecture for syntactic theory
+It is a parallel correspondence model because the different dimensions of linguistic information are represented separately but are connected by well-defined principles of correspondence, or mappings.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>

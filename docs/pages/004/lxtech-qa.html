@@ -367,7 +367,7 @@ Our corpus-based study is grounded in the approach of Distributional Semantics, 
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-The distributional information is collected by examination of co-occurring words, structures, or relations. The sum of this contextual information can be viewed as a kind of mold, a container that shapes the meaning of the word in a characteristic fashion.
+we distinguish between three different semantic compound types. The first type is traditionally referred to as a determinative (or endocentric) compound (cf.&nbsp;Olsen 2000). Its meaning is compositionally derived from the meanings of its parts: The meaning of the head noun denotes the type of referent, and the meaning of the modifier noun modifies this in some semantic relation to the head noun, such that it further specifies or modifies the meaning of the head noun.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -377,17 +377,7 @@ The distributional information is collected by examination of co-occurring words
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-we distinguish between three different semantic compound types. The first type is traditionally referred to as a determinative (or endocentric) compound (cf.&nbsp;Olsen 2000). Its meaning is compositionally derived from the meanings of its parts: The meaning of the head noun denotes the type of referent, and the meaning of the modifier noun modifies this in some semantic relation to the head noun, such that it further specifies or modifies the meaning of the head noun.
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-3
-</td>
-<td style="text-align:left;width: 7cm; ">
-The second semantic type is traditionally referred to as the possessive (also bahuvrihi or exocentric) compound.
+The distributional information is collected by examination of co-occurring words, structures, or relations. The sum of this contextual information can be viewed as a kind of mold, a container that shapes the meaning of the word in a characteristic fashion.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -407,6 +397,16 @@ The final semantic type is traditionally called the copulative (or dvandva) comp
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
+includes all noun-noun compounds that are lexicalized such that their meanings are opaque with respect to the meanings of their parts.(..)(..)They are semantically
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
 is the least frequent type of compound in German. In Fanselow’s (1981b) definition, the meaning of a copulative compound is created by applying the basic relation ‘AND’ to the meanings of its parts
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -417,7 +417,7 @@ is the least frequent type of compound in German. In Fanselow’s (1981b) defini
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
-includes all noun-noun compounds that are lexicalized such that their meanings are opaque with respect to the meanings of their parts.(..)(..)They are semantically
+The second semantic type is traditionally referred to as the possessive (also bahuvrihi or exocentric) compound.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -437,7 +437,7 @@ the distributions of the target nouns are vectors.
 5
 </td>
 <td style="text-align:left;width: 7cm; ">
-The similarity of two distributions is interpreted as the distance between their vectors. A common way to measure this distance is to calculate the cosine of the angle between the two vectors (e.g., Erk 2012: 637). If two vectors point in the same direction, meaning that the angle between them is 0°, then the cosine will be 1. Otherwise, the cosine will be less than 1; it will be - 1 if the two vectors point in exactly opposite directions
+In such a vector space, each context word corresponds to a dimension, and the distribution of a target word is a vector in this multidimensional space. The similarity between two words can then be measured in terms of the distance between their vectors in the space
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -447,7 +447,7 @@ The similarity of two distributions is interpreted as the distance between their
 5
 </td>
 <td style="text-align:left;width: 7cm; ">
-In such a vector space, each context word corresponds to a dimension, and the distribution of a target word is a vector in this multidimensional space. The similarity between two words can then be measured in terms of the distance between their vectors in the space
+The similarity of two distributions is interpreted as the distance between their vectors. A common way to measure this distance is to calculate the cosine of the angle between the two vectors (e.g., Erk 2012: 637). If two vectors point in the same direction, meaning that the angle between them is 0°, then the cosine will be 1. Otherwise, the cosine will be less than 1; it will be - 1 if the two vectors point in exactly opposite directions
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -467,7 +467,7 @@ The basic elements in the standard model are the co-occurrence frequencies of co
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-skew divergence as a variant of the KullbackLeibler divergence. Instead of calculating the divergence using the observed probability distributions, this function smoothes the values of q, meaning that q will be positive for all dimensions for which p has a positive value
+The Kullback-Leibler divergence
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -477,7 +477,7 @@ skew divergence as a variant of the KullbackLeibler divergence. Instead of calcu
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-The Kullback-Leibler divergence
+skew divergence as a variant of the KullbackLeibler divergence. Instead of calculating the divergence using the observed probability distributions, this function smoothes the values of q, meaning that q will be positive for all dimensions for which p has a positive value
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
