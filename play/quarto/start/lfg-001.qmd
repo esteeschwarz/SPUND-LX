@@ -100,7 +100,7 @@ question is: shall one code (with shot e.g.) the NUM category as it references s
 
 Q3, another one: 'shot' must in the lexikon be coded also as X.N=true and NUM.sg=true as its without context not visible if its the noun or the past tense verb, nestcepas?
 
-### play
+### play 
 - cosine similarity q/vector
 - categories cluster
 
@@ -111,8 +111,25 @@ q<-qd[1]
 knitr::read_chunk("lxtech/cosine-sim.R")
 ```
 
+#### Q3
+and in Q3: if we also code animate vs. inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g. 'shot'-X.V and 'goal'-OBJ.target...   
+but: when 'shot' takes (^PRED)="shoot<sub.obj>" it - coded alone - does not show above ambiguity, saying the predicate qualifier 'shoot' here is important for the rest of the row. so further: we either have to somehow embed the qualifying reference into the binary system (which is not possible since its again an (infinite space of tokens/ lexical items[lemmas])) or distinguish tokens by token qualities like 'shot.shoot' vs. 'shot.shot'. 
+
+::: {.panel-tabset}
+
+#### shot original (proposed)
+
 ```{r cosine-sim,echo=F}
 ```
+
+```{r set1,echo=F}
+#m<-df[,"t"]=="shot"
+#df<-df
+#df[m,c(2,8)]<-c(1,1)
+knitr::kable(df)
+```
+
+
 ```{r plot1,echo=F}
 ```
 
@@ -131,10 +148,6 @@ knitr::kable(df)
 ```{r plot2,echo=F}
 ```
 
-#### Q3
-and in Q3: if we also code animate vs. inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g. 'shot'-X.V and 'goal'-OBJ.target...   
-but: when 'shot' takes (^PRED)="shoot<sub.obj>" it - coded alone - does not show above ambiguity, saying the predicate qualifier 'shoot' here is important for the rest of the row. so further: we either have to somehow embed the qualifying reference into the binary system (which is not possible since its again an (infinite space of tokens/ lexical items[lemmas])) or distinguish tokens by token qualities like 'shot.shoot' vs. 'shot.shot'. 
-
 #### shot disambigue
 ```{r set3,echo=F}
 m<-df[,"t"]=="shot"
@@ -145,7 +158,7 @@ dt<-df[m,]
 dt$t<-"shot.shot"
 dt[,c(2,5,6,7,8,11)]<-c(1,0,0,0,1,0)
 df<-rbind(df,dt)
-df
+#df
 knitr::kable(df)
 ```
 
@@ -157,5 +170,8 @@ knitr::kable(df)
 
 the thing here is that theres no rendering of the TENSE difference of goes|shot.shoot since height (y-axis) is only displaying raw difference in sum and they sum up equal in TRUE/FALSE.
 
+:::
+
 ### functions, equations, constraints, f-precedence
 can be we at this point come to the sense of the functional level. our only way to binary code unambigously and despite have all visible features if not coded so at least checked for, is to make use of functions that have a binary output. so for the shot.shoot token the function would ca. be: check, if theres a noun preceding with no verb between. if so, our token is coded as a verb. if we apply that top-down then we'd be able to devise for occuring verbs. 
+
