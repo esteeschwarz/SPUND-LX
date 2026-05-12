@@ -5,9 +5,9 @@ date: "2026-04-28"
 
 ---
 
-# task session 3
+# task session
 
-## 1. Übung
+# 1. Übung, session 3
 Geben Sie die
 
 1. Lexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich
@@ -46,7 +46,7 @@ knitr::kable(df)
 
 ### ann. c-struktur
 
-# notes
+### notes
 it seems as if the LFG conventions are preparing such that can be described with vectors at the end. in the way that we annotate a token (lexical item) according to specified (necessary per investigated language) categories (a,c,f - levels) which may be projected into a vector space. say if we have 10 categories with key-value pairs of each e.g. 5 attributes (keys) which can each again take 5 values which will then be coded TRUE or FALSE , we will have the token represented in a vectorspace of `10x5x5x2` = ```r 10*5*5*2```  dimensions, nestcepas? well thats a lot..., but seeing that model vectorspaces use to have embeddings dimensions in that range (e.g. 762 for stable diffusion models) its not strange assuming that these amount of categories and key-value pairs is enough...
 
 ## process
@@ -173,5 +173,48 @@ the thing here is that theres no rendering of the TENSE difference of goes|shot.
 :::
 
 ### functions, equations, constraints, f-precedence
-can be we at this point come to the sense of the functional level. our only way to binary code unambigously and despite have all visible features if not coded so at least checked for, is to make use of functions that have a binary output. so for the shot.shoot token the function would ca. be: check, if theres a noun preceding with no verb between. if so, our token is coded as a verb. if we apply that top-down then we'd be able to devise for occuring verbs. 
+can be we at this point arrive at the sense of the functional level. our only way to binary code unambigously and despite have all visible features if not coded so at least checked for, is to make use of functions that have a binary output. so for the shot.shoot token the function would ca. be: check, if theres a noun preceding with no verb between. if so, our token is coded as a verb. if we apply that top-down then we'd be able to devise for occuring verbs.  
 
+### coding task
+#### goal
+plot output phrasenstrukturbaum from binary f-structure model via hclust()
+
+#### method
+as the binary coded dataframe already includes divergence information on nodes and ranks them according to level of divergence it should be possible to map the diverging binary values after applying a hierarchy to the keys(attributes) such that the position of the attribute within the dataframe (column) influences the height relation of nodes. 
+
+## T2 NT, session 5
+`meine schwester schreibt an einem wichtigen buch`
+
+```
+IP --> VP --> DP --> NP D meine N schwester 
+VP --> V schreibt
+IP --> PP --> P an DP --> NP --> D einem --> AdP Adv wichtigen N buch
+```
+
+```
+IP --> DP
+IP --> I' --> VP --> V'
+V' --> V
+V' --> PP --> an einem wichtigen buch
+```
+
+```
+IP --> NP meine schwester
+IP --> I' --> VP
+VP --> V schreibt
+VP --> PP
+PP --> P an
+PP --> NP einem wichtigen buch
+```
+
+```
+IP --> NP
+IP --> I --> VP --> V' --> V schreibt
+V' --> PP
+PP --> P an
+PP --> NP --> Det einem
+NP --> N' --> AP wichtigen
+N' --> N buch
+NP --> Det meine
+NP --> N' --> schwester
+```
