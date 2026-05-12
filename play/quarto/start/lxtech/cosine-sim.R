@@ -67,5 +67,16 @@ pl<-function(){
 hc <- hclust(d)
 plot(hc, labels = df$t)
 }
+
+## ----plot1
+
 cat("NO syntax tree yet, but a simple similarity cluster according to categories...\n")
+pl()
+
+## ----plot2
+cat("'shot' coded both as noun & verb\n")
+pl()
+
+## ----plot3
+cat("'shot' coded twice each as noun resp. verb\n")
 pl()

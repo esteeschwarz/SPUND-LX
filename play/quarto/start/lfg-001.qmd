@@ -79,7 +79,7 @@ first the categories (the ones from above) have to be coded binary. so we have:
 df<-data.frame(rbind(
 c(t="the",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=1,DEF.minus=0),
 c(t="striker",X.N=1,X.A=0,X.D=0,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=1,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
-c(t="shot",X.N=1,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=1,NUM.pl=0,TENSE.pre=0,TENSE.past=1,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
+c(t="shot",X.N=0,X.A=0,X.D=0,X.V=1,PRED.subj=1,PRED.obj=1,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=1,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=0),
 
 c(t="an",X.N=0,X.A=0,X.D=1,X.V=0,PRED.subj=0,PRED.obj=0,NUM.sg=0,NUM.pl=0,TENSE.pre=0,TENSE.past=0,PERS.1=0,PERS.2=0,PERS.3=0,DEF.plus=0,DEF.minus=1),
 
@@ -113,7 +113,46 @@ knitr::read_chunk("lxtech/cosine-sim.R")
 
 ```{r cosine-sim,echo=F}
 ```
+```{r plot1,echo=F}
+```
+
+#### modified "shot"
+
+```{r set2,echo=F}
+m<-df[,"t"]=="shot"
+#df<-df
+df[m,c(2,8)]<-c(1,1)
+knitr::kable(df)
+```
+
+```{r cosine-sim,echo=F}
+```
+
+```{r plot2,echo=F}
+```
 
 #### Q3
 and in Q3: if we also code animate vs. inanimate and OBJ.theta.target N then the clustering of goal|striker would also look different since not both can take true arguments of active-only and obligatory target-only objects verbs - if e.g. 'shot'-X.V and 'goal'-OBJ.target...   
-but: when 'shot' takes (^PRED)="<shoot>" it - coded alone - does not show above ambiguity, saying the predicate here is important for the rest of the row. so further: we either have to somehow embed the predicate reference into the binary system (which is not possible since its again an (infinite space of tokens/ lexical items)) or distinguish tokens by token qualities like 'shot.shoot' vs. 'shot.shot'. 
+but: when 'shot' takes (^PRED)="shoot<sub.obj>" it - coded alone - does not show above ambiguity, saying the predicate qualifier 'shoot' here is important for the rest of the row. so further: we either have to somehow embed the qualifying reference into the binary system (which is not possible since its again an (infinite space of tokens/ lexical items[lemmas])) or distinguish tokens by token qualities like 'shot.shoot' vs. 'shot.shot'. 
+
+#### shot disambigue
+```{r set3,echo=F}
+m<-df[,"t"]=="shot"
+#df<-df
+df[m,c(2,8)]<-c(0,0)
+df[m,1]<-"shot.shoot"
+dt<-df[m,]
+dt$t<-"shot.shot"
+dt[,c(2,5,6,7,8,11)]<-c(1,0,0,0,1,0)
+df<-rbind(df,dt)
+df
+knitr::kable(df)
+```
+
+```{r cosine-sim,echo=F}
+```
+
+```{r plot3,echo=F}
+```
+
+the thing here is that theres no rendering of the TENSE difference of goes|shot.shoot since height (y-axis) is only displaying raw difference in sum and they sum up equal in TRUE/FALSE.
