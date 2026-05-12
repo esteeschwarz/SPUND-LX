@@ -119,8 +119,6 @@ but: when 'shot' takes (^PRED)="shoot<sub.obj>" it - coded alone - does not show
 
 #### shot original (proposed)
 
-```{r cosine-sim,echo=F}
-```
 
 ```{r set1,echo=F}
 #m<-df[,"t"]=="shot"
@@ -129,6 +127,8 @@ but: when 'shot' takes (^PRED)="shoot<sub.obj>" it - coded alone - does not show
 knitr::kable(df)
 ```
 
+```{r cosine-sim,echo=F}
+```
 
 ```{r plot1,echo=F}
 ```
