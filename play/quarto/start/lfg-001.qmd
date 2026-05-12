@@ -156,3 +156,6 @@ knitr::kable(df)
 ```
 
 the thing here is that theres no rendering of the TENSE difference of goes|shot.shoot since height (y-axis) is only displaying raw difference in sum and they sum up equal in TRUE/FALSE.
+
+### functions, equations, constraints, f-precedence
+can be we at this point come to the sense of the functional level. our only way to binary code unambigously and despite have all visible features if not coded so at least checked for, is to make use of functions that have a binary output. so for the shot.shoot token the function would ca. be: check, if theres a noun preceding with no verb between. if so, our token is coded as a verb. if we apply that top-down then we'd be able to devise for occuring verbs. 
