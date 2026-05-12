@@ -202,10 +202,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="task-session-3" class="level1">
-<h1>task session 3</h1>
-<section id="übung" class="level2">
-<h2 class="anchored" data-anchor-id="übung">1. Übung</h2>
+<section id="task-session" class="level1">
+<h1>task session</h1>
+</section>
+<section id="übung-session-3" class="level1">
+<h1>1. Übung, session 3</h1>
 <p>Geben Sie die</p>
 <ol type="1">
 <li>Lexikoneinträge aller Worteinheiten [Tipp: überlegen Sie sich parallel dazu, wie ein nicht-annotierter Phrasenstrukturbaum aussieht.]</li>
@@ -385,11 +386,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="ann.-c-struktur" class="level3">
 <h3 class="anchored" data-anchor-id="ann.-c-struktur">ann. c-struktur</h3>
 </section>
-</section>
-</section>
-<section id="notes" class="level1">
-<h1>notes</h1>
+<section id="notes" class="level3">
+<h3 class="anchored" data-anchor-id="notes">notes</h3>
 <p>it seems as if the LFG conventions are preparing such that can be described with vectors at the end. in the way that we annotate a token (lexical item) according to specified (necessary per investigated language) categories (a,c,f - levels) which may be projected into a vector space. say if we have 10 categories with key-value pairs of each e.g.&nbsp;5 attributes (keys) which can each again take 5 values which will then be coded TRUE or FALSE , we will have the token represented in a vectorspace of <code>10x5x5x2</code> = <code>500</code> dimensions, nestcepas? well thats a lot…, but seeing that model vectorspaces use to have embeddings dimensions in that range (e.g.&nbsp;762 for stable diffusion models) its not strange assuming that these amount of categories and key-value pairs is enough…</p>
+</section>
 <section id="process" class="level2">
 <h2 class="anchored" data-anchor-id="process">process</h2>
 <p>first the categories (the ones from above) have to be coded binary. so we have:</p>
@@ -1251,10 +1251,47 @@ shot.shot  0.0       1        0.0 0.0          0    1  0.0         1</code></pre
 </section>
 <section id="functions-equations-constraints-f-precedence" class="level3">
 <h3 class="anchored" data-anchor-id="functions-equations-constraints-f-precedence">functions, equations, constraints, f-precedence</h3>
-<p>can be we at this point come to the sense of the functional level. our only way to binary code unambigously and despite have all visible features if not coded so at least checked for, is to make use of functions that have a binary output. so for the shot.shoot token the function would ca. be: check, if theres a noun preceding with no verb between. if so, our token is coded as a verb. if we apply that top-down then we’d be able to devise for occuring verbs.</p>
-
-
+<p>can be we at this point arrive at the sense of the functional level. our only way to binary code unambigously and despite have all visible features if not coded so at least checked for, is to make use of functions that have a binary output. so for the shot.shoot token the function would ca. be: check, if theres a noun preceding with no verb between. if so, our token is coded as a verb. if we apply that top-down then we’d be able to devise for occuring verbs.</p>
 </section>
+<section id="coding-task" class="level3">
+<h3 class="anchored" data-anchor-id="coding-task">coding task</h3>
+<section id="goal" class="level4">
+<h4 class="anchored" data-anchor-id="goal">goal</h4>
+<p>plot output phrasenstrukturbaum from binary f-structure model via hclust()</p>
+</section>
+<section id="method" class="level4">
+<h4 class="anchored" data-anchor-id="method">method</h4>
+<p>as the binary coded dataframe already includes divergence information on nodes and ranks them according to level of divergence it should be possible to map the diverging binary values after applying a hierarchy to the keys(attributes) such that the position of the attribute within the dataframe (column) influences the height relation of nodes.</p>
+</section>
+</section>
+</section>
+<section id="t2-nt-session-5" class="level2">
+<h2 class="anchored" data-anchor-id="t2-nt-session-5">T2 NT, session 5</h2>
+<p><code>meine schwester schreibt an einem wichtigen buch</code></p>
+<pre><code>IP --&gt; VP --&gt; DP --&gt; NP D meine N schwester 
+VP --&gt; V schreibt
+IP --&gt; PP --&gt; P an DP --&gt; NP --&gt; D einem --&gt; AdP Adv wichtigen N buch</code></pre>
+<pre><code>IP --&gt; DP
+IP --&gt; I' --&gt; VP --&gt; V'
+V' --&gt; V
+V' --&gt; PP --&gt; an einem wichtigen buch</code></pre>
+<pre><code>IP --&gt; NP meine schwester
+IP --&gt; I' --&gt; VP
+VP --&gt; V schreibt
+VP --&gt; PP
+PP --&gt; P an
+PP --&gt; NP einem wichtigen buch</code></pre>
+<pre><code>IP --&gt; NP
+IP --&gt; I --&gt; VP --&gt; V' --&gt; V schreibt
+V' --&gt; PP
+PP --&gt; P an
+PP --&gt; NP --&gt; Det einem
+NP --&gt; N' --&gt; AP wichtigen
+N' --&gt; N buch
+NP --&gt; Det meine
+NP --&gt; N' --&gt; schwester</code></pre>
+
+
 </section>
 </section>
 
