@@ -218,3 +218,8 @@ N' --> N buch
 NP --> Det meine
 NP --> N' --> schwester
 ```
+
+## tree
+```{r tree1,echo=F,eval=F}
+```
+

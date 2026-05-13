@@ -80,3 +80,50 @@ pl()
 ## ----plot3
 cat("'shot' coded twice each as noun resp. verb\n")
 pl()
+
+find_tree <- function(X) {
+  X <- as.matrix(t(X))
+  n <- nrow(X)
+  nodes <- rownames(X)
+  nodes <- df$t
+
+  size <- rowSums(X)
+  parent <- rep(NA, n)
+
+  for (i in seq_len(n)) {
+    candidates <- c()
+
+    for (j in seq_len(n)) {
+      if (i == j) next
+
+      # Is node i a subset of node j?
+      if (all(X[i, ] <= X[j, ]) && any(X[i, ] < X[j, ])) {
+        candidates <- c(candidates, j)
+      }
+    }
+
+    # Choose smallest strict superset
+    if (length(candidates) > 0) {
+      parent[i] <- candidates[which.min(size[candidates])]
+    }
+  }
+
+  data.frame(
+    child = nodes,
+    parent = ifelse(is.na(parent), NA, nodes[parent]),
+    stringsAsFactors = FALSE
+  )
+}
+plot.tree<-function(){
+dft<-find_tree(X)
+  d <- dist(dft)
+hc <- hclust(d)
+plot(hc, labels = df$t)
+}
+
+
+
+## ----tree1
+
+#plot.tree()
+

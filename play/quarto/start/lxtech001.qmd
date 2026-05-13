@@ -61,16 +61,24 @@ val.c<-"{{< meta cmeta >}}"
 knitr::read_chunk("lxtech/skewdiv.R")
 ```
 
+::: {.panel-tabset}
+
 #### 1. zinsmeister skew divergence
 ```{r skew}
 ```
 
-#### 2. cosine similarity of same vectors
-```{r cosine-sim,echo=F,output=T}
+#### 2. cosine similarity of vectors
+```{r cosine-sim,echo=T,output=T}
 
 ```
 
+#### 3. clustering probabilities vector
+
+```{r prob1,echo=T,output=T}
+
+```
+
+:::
 
 ### notes
 the tokens vector sujet gets interesting if following [this](lfg-001.qmd) theories (LFG: lexical functional grammar) where we may describe token categories in a vector space as well, undisputed of distribution. so if @zinsmeister_corpusbased_2013 investigate on similarity based on distribution of lexical items in a context window (coocurrences) we may also (like in LLM embeddings) make statements about token relatedness based on the vector cosine similarity of tokens semantic / syntactic categories.
-

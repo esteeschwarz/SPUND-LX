@@ -100,3 +100,19 @@ nearest_neighbors <- function(token, sim, k = 5) {
 }
 
 nearest_neighbors("zahn", cosine_sim)
+
+## ----prob1
+
+# Normalize counts to probabilities
+# P <- counts / rowSums(counts)
+
+# # Cosine similarity
+# norms <- sqrt(rowSums(P^2))
+# sim <- tcrossprod(P) / outer(norms, norms)
+# sim[!is.finite(sim)] <- 0
+
+# Cluster
+hc2 <- hclust(as.dist(1 - cosine_sim), method = "average")
+
+# Plot
+plot(hc2)
