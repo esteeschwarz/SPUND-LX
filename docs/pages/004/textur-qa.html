@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-05-14">
+
+<title>AVl Textur: annotations – 004</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-700d1ef6182035564a435ec05a0c5670.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">004</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ss26" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">SS26</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ss26">    
+        <li>
+    <a class="dropdown-item" href="./textur001.html">
+ <span class="dropdown-text">AVL / textur</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./nietzsche001.html">
+ <span class="dropdown-text">AVL / Nietzsche</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lki-kybernetik.html">
+ <span class="dropdown-text">Lit / KI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lxtech001.html">
+ <span class="dropdown-text">LX / Tech</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lfg-index.html">
+ <span class="dropdown-text">LX / LFG</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./str-index.html">
+ <span class="dropdown-text">AVl / VS-Strätling</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arkkiv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">arkkiv</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arkkiv">    
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=dclx&amp;ref=play">
+ <span class="dropdown-text">DC-LX (new)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=adaskool&amp;ref=play">
+ <span class="dropdown-text">ada-school (olde)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./pdfpaper/001/uwolf.html">
+ <span class="dropdown-text">reference-test</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./snc.html"> 
+<span class="menu-text">SNC</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/esteeschwarz/SPUND-LX/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="textur-qa.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AVl Textur: annotations</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 14, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="notes-on-papers" class="level2">
+<h2 class="anchored" data-anchor-id="notes-on-papers">notes on papers</h2>
+<!-- @nietzsche_kga_2024   
+@nietzsche_friedrich_1902   
+@gunther_rhythmus_2008 -->
+<section id="annotations-07_munkrosing.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-07_munkrosing.pdf">(5) annotations: 07_Munk+Rosing.pdf</h4>
+paper: <span class="citation" data-cites="rosing_textile_2024">Rösing (<a href="#ref-rosing_textile_2024" role="doc-biblioref">2024</a>)</span>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+defines “text” as “the surface of the literary work: it is woven by the words of the work
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+see the text as a patterned surface of words and letters
+</td>
+<td style="text-align:left;width: 4cm; ">
+r image of tokens.u, pos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+Helen of Troy, whom Homer, in the third song of the Iliad, depicts as weaving the same scenes from the war that he himself is telling, thus implicitly making of her a kind of colleague bard, telling the same story, only in another medium:
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+11
+</td>
+<td style="text-align:left;width: 7cm; ">
+Amalie Smith, “Machine Learning I, II, III.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+NA
+</td>
+<td style="text-align:left;width: 7cm; ">
+NA
+</td>
+<td style="text-align:left;width: 4cm; ">
+see the text as a patterned surface of words and letters
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-2---behmenburg-lena---das-weben-von-texten-und-texturen.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-2---behmenburg-lena---das-weben-von-texten-und-texturen.pdf">(2) annotations: 2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+Zunächst zeigt sich innerhalb des mythischen Gewebes dieselbe Verbindung zwischen Sprache und Schrift, wie sie sich auch für das Verhältnis von Text und Mythos beobachten lässt
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+NA
+</td>
+<td style="text-align:left;width: 7cm; ">
+NA
+</td>
+<td style="text-align:left;width: 4cm; ">
+Zunächst zeigt sich innerhalb des mythischen Gewebes dieselbe Verbindung zwischen Sprache und Schrift, wie sie sich auch für das Verhältnis von Text und Mythos beobachten lässt
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-2---ovid---metamorphosen.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-2---ovid---metamorphosen.pdf">(5) annotations: 2 - Ovid - Metamorphosen.pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+0
+</td>
+<td style="text-align:left;width: 7cm; ">
+2 - Ovid - Metamorphosen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+Arachne
+</td>
+<td style="text-align:left;width: 4cm; ">
+marginnote4app://note/B2F34F12-C53B-448D-AAC8-3C94F8A9A04E
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+8
+</td>
+<td style="text-align:left;width: 7cm; ">
+das Sündenregister der Himmlischen. Mit dem Weber-
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+10
+</td>
+<td style="text-align:left;width: 7cm; ">
+Tereus, Procne und Philomela
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+NA
+</td>
+<td style="text-align:left;width: 7cm; ">
+NA
+</td>
+<td style="text-align:left;width: 4cm; ">
+2 - Ovid - Metamorphosen
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-3---goethe-j.w.---wahlverwandtschaften-auszug.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-3---goethe-j.w.---wahlverwandtschaften-auszug.pdf">(9) annotations: 3 - Goethe, J.W. - Wahlverwandtschaften (Auszug).pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+daß ein roter Faden durch das Ganze durchgeht, den man nicht herauswinden kann ohne alles aufzulösen, und woran auch die kleinsten Stücke kenntlich sind, daß sie der 31 Krone gehören.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+Eben so zieht sich durch Ottiliens Tagebuch ein Faden der Neigung und Anhänglichkeit
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+Selbst jede einzelne Yon uns ausge,,’;.-är.lte und mitgeteilte Stelle gibt davon das entschiedenste l Zeugnis.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+Der Architekt gesteht, selbst solche 10 Grabhügel der Vorfahren geöffnet zu haben und fahrt dennoch fort sich mit Denkmälern für die Nachkommen zu beschäftigen.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+Auch die Ges:chter, welche dem Architekten zu malen allein überlassen war, zeigten nach und nach eine ganz be21 sondere Eigenschaft: sie fingen sämtlich an Ottilien zu glei• eben
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+Aber wie in solchen Dingen immer eins zum andern führt, so wurden noch Blumen und Frucht;~h:inge beschlossen, welche Himmel und Erde gleichsam msammenknüpfen sollten
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+so wie uns der Taktschlag des Dreschers den Gedanken enveckt, daß in der abgesichelten Ähre soviel Nährendes und Lebendiges verborgen liegt.«
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+:Manches eigene von innigerem Bezug wird an dem roten Faden wohl zu erkennen sein
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+Sich mitzuteilen ist Natur; Mitgeteiltes aufzunehmen wie es gegeben wird, ist Bildung
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-3---julia-abel-andreas-blodom-michael-scheffel---ambivalenz-und-koharenz-einleitung.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-3---julia-abel-andreas-blodom-michael-scheffel---ambivalenz-und-koharenz-einleitung.pdf">(18) annotations: 3 - Julia Abel, Andreas Blödom, Michael Scheffel - Ambivalenz und Kohärenz, Einleitung.pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+Erzählen in der skizzierten Art und Weise in erster Linie die “Herstellung von Zusammenhang aus Einzelheitenn4 in Gestalt von Geschichten
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+und zumal literarische Erzählungen zeichnen sich geradezu dadurch aus, dass sie Kohärenzbildung auf verschiedene Weise, etwa durch Mehrdeutigkeit, Brüche, Leerstellen und Widersprüche, unterlaufen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+Erstens ist mit diesem Begriff die Frage angesprochen, wie in Erzählungen durch narrative Strukturen Bedeutung erzeugt, unter Umständen aber auch ein kohärenter Bedeutungsaufbau verhindert wird.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+Dieser zweite Aspekt narrativer Sinnbildung lässt sich gerade am Beispiel solcher Erzählungen untersuchen, deren Ambivalenzen und Brüche mit Hilfe einer Strukturanalyse des Textes allein nicht befriedigend zu erfassen, geschweige denn zu verstehen sind, weil sie ihren ‘Sinn’ erst aus vielfältigen Formen epistemischer Referenzialisienmg auftextexteme Texte und Kontexte gewinnen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+Nicht zuletzt dank dieses Verständnisses von Erzählen als ‘Ordnen’ und ‘Erklären’ konnte Narrativität in den letzten Jahren zu einem Paradigma der Kulturwissenschaften avancieren
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+narrative Kohärenz nicht allein auf Textstrukturen zurück7uführen, sondern müsste als Wechselspiel von narrativen Strukturen, der in ihnen angelegten (und nachweisbaren) Lektüremöglichkeiten und im Rezeptionsprozess aktualisiertem Rezipientenwissen analysiert werden
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+Kohärenz
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+Wird unter ‘Kohärenz’ im Allgemeinen der Zusammenhang bzw. die Zusammengehörigkeit der Elemente eines Ganzen verstanden, so dient der Begriff in der Linguistik spezifischer zur Bezeichnung des Textzusammenhangs, wobei im Einzelnen “grammatische, logisch-semantische und pragmatische Mittel der Verflechtung von Komponenten im Text 119 unterschieden werden können.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+sprachlich-rhetorischer Mechanismen dar, “die eine Sequenz, eine Aneinanderreihung von Sätzen und Äußerungen, als zusammenhängend erscheinen Iassen”
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+Angesprochen ist damit primär die narrative Herstcllunovon temporalem und kausalem Zusammenhang zwischen Ereignissen im Zusammen~ wirken von discours und histoire
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+Kategorie, welche die Verknüpfungen, d.h. Relationen zwischen narrativen Elementen beschreibt, beträfe sie vielmehr Elemente beider Ebenen sowie deren Verhältnis zueinander.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+Paratexte können dabei Ambivalenzen der narrativen Struktur kompensieren (Jürgensen) oder auch eine sinnstiftende Funktion erfüllen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+dass inkohärente oder ambivalente narrative Strukturen durchalls einen interpretatorisch kohärenten Sinn haben können dass also Kohärenz aus Ambivalenz(en) entsteht
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+Die Herstellung von Kohärenz auf der Ebene der narrativen Strukturen wird gewöhnlich dann schwierig, wenn nicht unmöglich, wenn diese Elemente sich nicht interpretatorisch ergänzen, sondern in einem dissonanten Verhältnis zueinander stehen, und wenn dartiber hinaus die Hierarchie der Elemente nicht eindeutig zu bestimmen ist.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+So lässt sich ‘Erzählen’ selbst einerseits als dynamischer Prozess einer Kohärenzreduktion verstehen, bei dem triviale Vorannahmen über die Kohärenz einer fiktionalen Geschichte aufgelöst und ‘Kontingenzmanagement’ betrieben wird
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+In beiden Fällen aber zeigt sich, dass es keine zugrunde liegende ‘kohärente’ Geschichte einer Erzählung gibt,
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+Was Ambivalenzen in Erzählungen demnad1 in narratologischer Hinsicht leisten, lässt sich - soweit die Unterscheidung von zwei ‘Ebenen’ im Einzelfall überhaupt möglich und sinnvoll ist - mit Blick auf die histoire als Konkurrenz von möglichen Geschichten und also verschieden möglicher Ereignisverknüpfungen beschreiben, mit Blick auf den discours hingegen als Konkurrenz von möglichen und einander ausschließenden Perspektiven auf die erzählte Welt sowie als Konkurrenz verschiedener, mit diesen Perspektiven verbundenen Wirklichkeitskonzeptionen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+8
+</td>
+<td style="text-align:left;width: 7cm; ">
+‘Sinn2’ entsteht demnach gerade aus dem Zusammenspiel von präsupponierten Kohärenz- und Sinnannahmen über einen Text und der funktionalen Integration von Inkonsistenzen, Inkohärenzcn und Ambivalenzen, die sich an über den Text hinausgreifenden Kontext- und Wissensbeständen orientiert.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-4---goethe-j.w.-wilhelm-meisters-wanderjahre-auszug.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-4---goethe-j.w.-wilhelm-meisters-wanderjahre-auszug.pdf">(11) annotations: 4 - Goethe, J.W. – Wilhelm Meisters Wanderjahre (Auszug).pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+1
+</td>
+<td style="text-align:left;width: 7cm; ">
+? JOHANN WOLFGANG GO Ι–{;ΤΗ 1 ; WILH ? KLM Μ ?KISTΗ’,RS WAND KRJAHR K
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+belebt durch die damals laut ausgesprochene Überzeugung: es könne niemand sich in’s Leben wagen, als aer<sub>r</sub> er es im Notfall durch Handwerkstätigkeit zu fristen verstehe
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+Mögen Sie nun den schönen Zo Abend, wo mich mannigfaltige Geschäfte drängen, mit Durchiesung eines Teils meines Tagebuchs zubringen? Ich will nicht behaupten, daß es gerade angenehm zu lesen sei, mir schien es immer unterhaltend und gewissermaBen unterrichtend. Doch wir bespiegeln ja uns immer selbst in _, allem was wir hervorbrachten.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+sei, welche aus Macedonien und Cypern über Triest komme und, vom Fuße des Berges, auf Maultieren und Saumrossen zu diesen Höhen und weiter bis jen- zs seits des Gebirgs gebracht werde, wo Spinner und Weber in Unzahl durch Täler und Schluchten einen großen Vertrieb gesuchter Waren in’s Ausland vorbereiteten
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+Für die entfernteren Gegenden im Gebirge, woher zu Markte zu gehen für jeden einzelnen Arbeiter zu weit wäre gibt es eine Art von untergeordnetem Handelsmann, oder ~, Sammler, welcher Garnträger genannt wird. Dieser steigt nämlich durch alle Täler und Winkel, betritt Haus für Haus, bringt den Spinnern Baumwolle in kleinen Partien tauscht dagegen Garn ein, oder kauft es, von welcher Qualität es auch sein möge, und überläßt es dann wieder =o mit einigem Profit im Größern an die unterhalb ansässigen Fabrikanten.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+per Bote schien erwartet, auch hatte man ihm aus dem ιo kginen Schiebefenster entgegen gesehen, denn er war ge~ohnt wo möglich immer an demselben Wochentage zu kommen; er handelte das Gespinnst ein, teilte frische Baumwolle aus; dann ging es rasch hinabwärts, wo mehrere gäuser in geringer Entfernung nahe stehen.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+19
+</td>
+<td style="text-align:left;width: 7cm; ">
+und enthielt mich nicht weiter das Folgende zu lesen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+20
+</td>
+<td style="text-align:left;width: 7cm; ">
+Seinerseits ist n,m er bemüht das gewebte Stück von allen etwa anhängenden Fäden und Knoten zu reinigen, solches auf’s zierlichste , yu legen, die schönste fehlerfreiste Seite oben vor’s Auge zu’ bringen und so die Ware höchst annehmlich zu machen
+</td>
+<td style="text-align:left;width: 4cm; ">
+geniegedanke, mozart
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+20
+</td>
+<td style="text-align:left;width: 7cm; ">
+ich würde Sie Gute-Schöne nennen, insofern es von mir abhinge.«
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+21
+</td>
+<td style="text-align:left;width: 7cm; ">
+Lange wartete mein Begleiter, daß ich meine Schreibtafel hervorholen sollte, nach welcher er denn auch endlich, einigermaßen ungeduldig, fragte.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+23
+</td>
+<td style="text-align:left;width: 7cm; ">
+Er faßte Lenardo’s Hand und so die Hand der Tochter, und beide in « einander legend sprach er: »das soll kein irdisches, es soll ein himmlisches Band sein; wie Bruder und Schwester liebt
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-8---calvino-italo---cybenetics-and-ghosts.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-8---calvino-italo---cybenetics-and-ghosts.pdf">(1) annotations: 8 - Calvino, Italo - Cybenetics and Ghosts.pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+8
+</td>
+<td style="text-align:left;width: 7cm; ">
+And linguists, too, have begun to talk in terms of codes and messages, to attempt to establish the entropy of language on all levels, including that of literature.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-amalie-smith---thread-ripper-englisch-auszug.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-amalie-smith---thread-ripper-englisch-auszug.pdf">(1) annotations: Amalie Smith - Thread Ripper (Englisch, Auszug).pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+11
+</td>
+<td style="text-align:left;width: 7cm; ">
+I intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. (..)(..)It knows what it means to be an image from the inside out, with no regard for the outside in. (..)(..)What can we know of the butterfly’s images when we are only able to see them? Therapy 14/9: it isn’t about the singer. It’s me who could become more: unfiltered, sensitive, free of shame, in touch. (..)(..)What does the butterfly know of the images on its wings? 10 I am allowed to: dream big, reach out, receive, cooperate, believe in something, have an impact, make myself heard, make a decision, step forward, become clear. (..)(..)Working together with the machine-learning algorithm, wÍ11 weave and unravel artificial plant images on screen. A Flora digital/ca, I told the committee.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf">(17) annotations: langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+to not only see media as a form of technics rather than a carrier of content
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+technics is both the extension of memory and the liberation of the organs
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+integration of all media into global networks
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+changes that our dominant media system is undergoing today, namely, the integration of all media into global networks that combine the infrastructural level of material production and the transformation of the environment with the superstructural level of channelling and mobilizing all information, knowledge, and psychosocial capacities.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+media that, to borrow from Friedrich Kittler (1999), are specialized technics to collect, store, retrieve, process, and distribute relevant information,
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+transformation of the environment
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+apply a media principle to the concept of technics in general
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
+cultural technics, that is, “operative processes that enable work with things and symbols
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+organization of existence
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+he considers media from a teleological perspective
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+how media are mobilized to organize conditions of existence through being folded into complex techno-social assemblages
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+thinking, imagining, producing, and knowing are not separate processes but rather components of larger scale systems that, to put it succinctly, are focused on the “organization of existence.”
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+re-conceptualization of media away from the production and broadcasting of content to the capacity to connect information to different targets in order to control, organize, and modulate all aspects of individual and collective life
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+4
+</td>
+<td style="text-align:left;width: 7cm; ">
+the current age is about the industrialization of the psychosocial, where consciousness, knowledge, and memory work are performed through and by nonhuman machines and mobilized to achieve a wide variety of goals
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+The weaver’s job did not get any simpler with the arrival of the Jacquard mechanism, but the mechanism enabled a form of technical assistance that made it possible for the weaver to better control the materialization of the design
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+The Jacquard mechanism took over a set of actions that were difficult for human actants to do, both mentally and physically, and it is partly for this reason that it eventually received a warm welcome and was hailed by the silk workers as crucial to their identity as high-skill workers
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+The dialogue between machine and human, between the loom fitted with extensions and human imagination, gave way to new types of creativity
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-wiener_einfuhrung.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-wiener_einfuhrung.pdf">(39) annotations: Wiener_Einführung.pdf</h4>
+paper: <span class="citation" data-cites="wiener_kybernetik_1992">Wiener (<a href="#ref-wiener_kybernetik_1992" role="doc-biblioref">1992</a>)</span>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+5
+</td>
+<td style="text-align:left;width: 7cm; ">
+EINFÜHRUNG
+</td>
+<td style="text-align:left;width: 4cm; ">
+#init_Wiener, Kybernetik__ <br> #cite_wiener_kybernetik_1992__
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+6
+</td>
+<td style="text-align:left;width: 7cm; ">
+Viele Jahre hatten Dr.&nbsp;Rosenblueth und ich die Überzeugung geteilt, daß die für das Gedeihen der Wissenschaft fruchtbarsten Gebiete jene waren, die als Niemandsland zwischen den verschiedenen bestehenden Disziplinen vernachlässigt wurden. Seit Leibniz hat es vielleicht keinen Menschen mehr gegeben, der die volle Übersicht über die gesamte geistige Tätigkeit seiner Zeit gehabt hat. (..)(..)Seit jener Zeit ist die Wissenschaft in zunehmendem Maß die Aufgabe von Spezialisten geworden; auf Gebieten, die die Tendenz zeigen, ständig näher zusammenzuwachsen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+7
+</td>
+<td style="text-align:left;width: 7cm; ">
+Wir haben jahrelang von einem Institut mit unabhängigen Wissenschaftlern geträumt, die gemeinsam in diesen Hinterwäldern der Wissenschaft arbeiten würden; nicht als Untergeordnete irgendeines hohen Exekutivbeamten, sondern vereint durch den Wunsch — ja durch die geistige Notwendigkeit —, das Teilgebiet als Ganzes zu verstehen und einander zu diesem Verstehen zu verhelfen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+8
+</td>
+<td style="text-align:left;width: 7cm; ">
+Bei Kriegsbeginn richteten das deutsche Luftwaffenpotential und die defensive Lage Englands die Aufmerksamkeit vieler Wissenschaftler auf die Entwicklung der Flugabwehrartillerie. Schon vor dem Krieg war es klargeworden, daß die Geschwindigkeit des Flugzeugs alle klassischen Methoden der Feuerleitung überwunden hatte und daß es nötig war, alle notwendigen Rechnungen in die Regelungsapparatur selbst einzubauen. Diese waren sehr schwierig geartet durch die Tatsache, daß — nicht zu vergleichen mit allen vorher betrachteten Zielen — ein Flugzeug eine Geschwindigkeit hat, die ein sehr ansehnlicher Bruchteil der Geschwindigkeit des Geschosses ist, das zum Beschuß verwendet wird. Demgemäß ist es außerordentlich wichtig, das Geschoß nicht auf das Ziel abzuschießen, sondern so, daß Geschoß und Ziel im Raum zu einem späteren Zeitpunkt zusammentreffen. (..)(..)Wir mußten deshalb eine Methode Enden, die zukünftige Position des Flugzeuges vorherzusagen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+ein außerordentlich wichtiger Faktor im willensgesteuerten Handeln das ist, was die Regelungstechniker mit Ruckkopplung bezeichnen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+Nehmen wir nun an, daB ich einen Bleistift aufhebe, so muB ich, um dieses zu tun, gewisse Muskeln bewegen. Jedoch jeder von uns, ausgenommen wenige Anatomieexperten, weiß nicht, welches diese Muskeln sind, und sogar unter den Anatomen gibt es wenige, wenn es ilberhaupt welche gibt, die diese Handlung durch eine bewußte Willenssteuerung der Kontraktion jedes betreffenden Muskels ausführen können. Was wir hingegen wollen, ist, den Bleistift aufzuheben. Haben wir dies einmal beschlossen, so schreitet unsere Bewegung derart fort, daß wir grob sagen können, daß der Grad, zu welchem der Bleistift noch nicht aufgehoben ist, mit jedem Bewegungsstadium vermindert wird. Dieser Teil der Aktion ist nicht voll im Bewußtsein.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+Hier geniigt die Feststellung, daB bei einer von einem Muster gelenkten Bewegung die Abweichung der wirklich durchgeführten Bewegung von diesem Muster als neue Eingabe benutzt wird, um den geregelten Teil zu veranlassen, die Bewegung dem Muster naherzubringen.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+10
+</td>
+<td style="text-align:left;width: 7cm; ">
+Die Nachricht ist eine zeitlich diskret oder stetig verteilte Folge meßbarer Ereignisse — genau das, was von den Statistikern ein Zufallsprozeß genannt wird. Die Vorhersage der Zukunft einer Nachricht geschieht durch irgendeine Operation auf ihre Vergangenheit, gleichgültig, ob dieser Operator durch ein mathematisches Rechenschema oder durch einen mechanischen oder elektrischen Apparat verwirklicht wird.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+11
+</td>
+<td style="text-align:left;width: 7cm; ">
+Dieses sich gegenseitig beeinflussende Paar von Fehlertypen schien etwas mit dem kontrastierenden Problem der Ortsmessung und der Bewegungsmessung zu tun zu haben, das in der Quantenmechanik von Heisenberg als Ungenauigkeitsrelation zu finden ist.
+</td>
+<td style="text-align:left;width: 4cm; ">
+1927
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+NA
+</td>
+<td style="text-align:left;width: 4cm; ">
+#bookmarks Page 12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+Wir haben beschlossen, das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir aus dem griechischen »κvßερvήΤη~« oder »Steuermann« bildeten
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+Informationsgehaltes berührt in natürlicher Weise einen klassischen Begriff in der statistischen Mechanik: den der Entropie. Gerade wie der Informationsgehalt eines Systems ein Maß des Grades der Ordnung ist, ist die Entropie eines Systems ein MaB des Grades der Unordnung; und das eine ist einfach das Negative des anderen.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+Governor« für Fliehkraftregler ist von einer lateinischen Verfälschung von κυβερνήτης abgeleitet
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+Es ist deshalb nicht im mindesten überraschend, daB der gleiche intellektuelle Impuls, der zur Entwicklung der mathematischen Logik geführt hat, gleichzeitig zur idealen oder tatsächlichen Mechanisierung der Prozesse des Denkens geführt hat.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+Vereinigung der Nervenfasern durch Synapsen zu Systemen mit gegebenen Gesamteigenschaften
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+Gruppe viel dazu beigetragen hat, die Aufmerksamkeit der mathematisch Interessierten auf die Möglichkeiten der biologischen Wissenschaften hinzulenken,
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+14
+</td>
+<td style="text-align:left;width: 7cm; ">
+Der Alles-oder-nichts-Charakter der Neuronenentladung ist völlig analog zur Auswahl einer binären Ziffer; und schon mehr als einer von uns hatte das binäre Zahlensystem als beste Basis des Rechnens in der Maschine erkannt. Die Synapse ist nichts als ein Mechanismus, der bestimmt, ob eine gewisse Kombination von Ausgängen von anderen Elementen ein ausreichender Anreiz für das Entladen des nächsten Elementes ist oder nicht und muß ein genaues Analogon in der Rechenmaschine haben
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+14
+</td>
+<td style="text-align:left;width: 7cm; ">
+Beispiele von modernen Vakuumröhren zeigte und ihm erklärte, daß diese ideale Mittel wären, um apparative Aquivalente zu seinen nervlichen Kreisen und Systemen darzustellen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+14
+</td>
+<td style="text-align:left;width: 7cm; ">
+ultraschnelle Rechenmaschine, so wie sie abhängig war von aufeinanderfolgenden Schaltern, beinahe ein ideales Modell der sich aus dem Nervensystem ergebenden Probleme darstellen mußte
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+15
+</td>
+<td style="text-align:left;width: 7cm; ">
+So waren auf diese oder jene Weise bei Kriegsende die Gedanken der Vorhersagetheorie und der statistischen Nachrichtentheorie bereits einem großen Teil der Statistiker und Nachrichteningenieure der Vereinigten Staaten und Großbritanniens bekannt.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+15
+</td>
+<td style="text-align:left;width: 7cm; ">
+Die Physiologen gaben eine gemeinsame Darstellung von Kybernetikproblemen von ihrem Gesichtspunkt aus; ähnlich stellten die Rechenmaschinenbauer ihre Methoden und Ziele dar. Am Ende des Treffens war es allen klar, daß es eine beträchtliche gemeinsame Denkbasis aller Bearbeiter der verschiedenen Gebiete gab, daB man in jeder Gruppe schon Begriffe gebrauchen konnte, die durch andere schon besser entwickelt waren, und daß ein Versuch gemacht werden sollte, ein allgemeines Vokabular zustande zu bringen.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+16
+</td>
+<td style="text-align:left;width: 7cm; ">
+Forschung schlug zwei Richtungen ein: das Studium der Phänomene der Leitfähigkeit und Latenz in gleichförmig leitenden zwei- oder dreidimensionalen Medien und die statistische Untersuchung der Leitungseigenschaften von zufälligen Netzen aus leitenden Fasern.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+16
+</td>
+<td style="text-align:left;width: 7cm; ">
+Vieles von der früheren Psychologie hat sich als nichts anderes als die Physiologie der speziellen Sinnesorgane herausgestellt, und das gesamte Gewicht des Gedankengutes, das die Kybernetik in die Psychologie hineinträgt, betrifft die Physiologie und Anatomie
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+16
+</td>
+<td style="text-align:left;width: 7cm; ">
+daß der Herzmuskel ein reizbares Gewebe darstellte, das ebenso für die Erforschung von Leitungsmechanismen brauchbar war wie das Nervengewebe
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+16
+</td>
+<td style="text-align:left;width: 7cm; ">
+Der Kern unserer Treffen war die Gruppe gewesen, die in Princeton 1944 versammelt war, aber die Doktoren McCulloch und FremontSmith hatten richtig die psychologischen und soziologischen Beziehungen des Themas erkannt und der Gruppe eine Anzahl von führenden Psychologen, Soziologen und Anthropologen hinzugeladen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+17
+</td>
+<td style="text-align:left;width: 7cm; ">
+Was die Soziologie und Anthropologie betrifft, ist es offenkundig, daB die Information und Übertragung als Mechanismus der fortschreitenden Organisation vom Einzelwesen zur Gemeinschaft von Bedeutung ist
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+17
+</td>
+<td style="text-align:left;width: 7cm; ">
+erstes Treffen, das im Frühling 1946 abgehalten wurde, war größtenteils didaktischen Vorträgen für diejenigen von uns gewidmet, die beim Princeton-Treffen dabeigewesen waren, und einer allgemeinen Festlegung der Bedeutung des Gebietes für alle Anwesenden
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+17
+</td>
+<td style="text-align:left;width: 7cm; ">
+Von Anfang an haben wir vorausgesehen, daß das Problem des Erkennens von »Gestalter« oder der wahrnehmbaren Formation der Allgemeinbegriffe zu dieser Art gehδren würde. Was ist der Mechanismus, durch den wir ein Quadrat als ein Quadrat erkennen, ohne Rllcksicht auf seine Lage, seine Größe und seine Orientierung
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+17
+</td>
+<td style="text-align:left;width: 7cm; ">
+ein nervliches Problem direkt mit dem Begriff der Rückkopplung zu behandeln
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+18
+</td>
+<td style="text-align:left;width: 7cm; ">
+Dieses näherungsweise logarithmische Verhalten des Synapsenmechanismus hängt sicher damit zusammen, daß das Weber-Fechnersche Gesetz der Reizintensität logarithmisch ist, obgleich dieses Gesetz nur eine erste Näherung darstellt.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+19
+</td>
+<td style="text-align:left;width: 7cm; ">
+McCulloch war vor das Problem gestellt worden, einen Apparat zu konstruieren, der den Blinden in die Lage versetzen sollte, die gedruckte Seite mit Hilfe des Ohres zu lesen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+20
+</td>
+<td style="text-align:left;width: 7cm; ">
+Es ist bestimmt so, daB das soziale System eine Organisation ähnlich dem Einzelwesen ist
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+21
+</td>
+<td style="text-align:left;width: 7cm; ">
+Es gibt zwei andere Gebiete, wo ich letztlich hoffe, einiges mit Hilfe kybernetischer Gedanken tatsächlich zustande zu bringen, bei denen diese Hoffnung jedoch auf weitere Entwicklungen warten muß. Eines davon betrifft Prothesen für verlorene oder verkümmerte Glieder
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+22
+</td>
+<td style="text-align:left;width: 7cm; ">
+Es war mir schon lange klar gewesen, daß die modernen, ultraschnellen Rechenmaschinen im Prinzip ein ideales zentrales Nervensystem für eine automatische Regelungsanlage waren und daB ihre Eingaben und Ausgänge nicht die Form von Zahlen oder Diagrammen haben müssen, sondern sehr gut Äußerungen von künstlichen Sinnesorganen sein können, wie z. B. von photoelektrischen Zellen oder Thermometern bzw. die Wirkungen von Motoren oder Magnetspulen. Mit der Hilfe von Spannungsmessern oder ähnlichen Hilfsmitteln, die die Wirkungen dieser Motororgane lesen und berichten und zu dem zentralen Steuerungssystem als einem künstlichen kinästhetischen Sinn zurückkoppeln, sind wir bereits in der Lage, künstliche Maschinen von fast jedem Grad sorgfältiger Arbeitsleistung zu konstruieren
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+23
+</td>
+<td style="text-align:left;width: 7cm; ">
+Diejenigen von uns, die zu der neuen Wissenschaft Kybernetik beigetragen haben, sind in einer moralischen Lage, die, um es gelinde auszudrücken, nicht sehr bequem ist. Wir haben zu der Einführung einer neuen Wissenschaft beigesteuert, die, wie ich gesagt habe, technische Entwicklungen mit großen Möglichkeiten für Gut oder Böse umschließt. Wir können sie nur in die Welt weitergeben, die um uns existiert, und dies ist die Welt von Belsen und Hiroshima
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+23
+</td>
+<td style="text-align:left;width: 7cm; ">
+Die moderne industrielle Revolution ist in ähnlicher Weise dazu bestimmt, das menschliche Gehirn zu entwerten, wenigstens in seinen einfacheren und mehr routinemäßigen Entscheidungen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+23
+</td>
+<td style="text-align:left;width: 7cm; ">
+Natürlich, gerade wie der gelernte Zimmermann, der gelernte Mechaniker, der gelernte Schneider in gewissem Grade die erste industrielle Revolution überlebt haben, können der erfahrene Wissenschaftler und der erfahrene Verwaltungsbeamte die zweite überleben. Wenn man sich jedoch die zweite Revolution abgeschlossen denkt, hat das durchschnittliche menschliche Wesen mit mittelmäßigen oder noch geringeren Kenntnissen nichts zu verkaufen, was für irgend jemanden das Geld wert wäre
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+23
+</td>
+<td style="text-align:left;width: 7cm; ">
+Es kann sehr wohl fΥr die Menschheit gut sein, Maschinen zu besitzen, die sie von der Notwendigkeit niedriger und unangenehmer Aufgaben befreien, oder es kann auch nicht gut sein. Ich weiß es nicht. Es kann nicht gut sein, diese neuen Kräfteverhältnisse in den Begriffen des Marktes abzuschätzen, des Geldes, das sie verdienen; und es sind genau die Begriffe des freien Marktes, des »fifth freedom«, die die Losungsworte des Teiles der amerikanischen Meinung wurden, der durch die National Association of Manufacturers und die Saturday Evening Post repräsentiert wird
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+24
+</td>
+<td style="text-align:left;width: 7cm; ">
+Das Beste, was wir tun können, ist, zu versuchen, daB eine breite Öffentlichkeit die Richtung und die Lage der gegenwärtigen Arbeit versteht, und unsere persönlichen Anstrengungen auf die Gebiete zu beschränken, die, wie z. B. Physiologie und Psychologie, am weitesten von Krieg und Unterdrückung entfernt sind.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annotations-wiener_mensch_menschmaschine.pdf" class="level4">
+<h4 class="anchored" data-anchor-id="annotations-wiener_mensch_menschmaschine.pdf">(63) annotations: wiener_mensch_menschmaschine.pdf</h4>
+paper: @
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+page
+</th>
+<th style="text-align:left;">
+note
+</th>
+<th style="text-align:left;">
+comment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+Harvard University, Massachusetts, where he received his Ph.D.&nbsp;at the age of nineteen
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+For him technologies were viewed not so much as applied science, but rather as applied social and moral philosophy
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+his open refusal to engage in any more work related to the military - saw him as an eccentric at best and certainly not to be taken seriously except in his undeniably brilliant, strictly mathematical, researches
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+12
+</td>
+<td style="text-align:left;width: 7cm; ">
+identifying and elaborat­ ing on a relation of high technology to people which is benign or, in his words, to the human - rather than the inhuman use of human beings
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+We are swimming upstream against a great torrent of disorganiza­ tion, which tends to reduce everything to the heat death of equilibrium and sameness described in the second law of thermo­ dynamics.
+</td>
+<td style="text-align:left;width: 4cm; ">
+entropy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+His prediction of an imminent ‘communication revolution’ in which ‘the message’ would be a pivotal notion, and the associated technological developments would be in the area of communication, computation and organization, was clear-sighted indeed
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+in the ethic of Kierkegaard, who pointed out that we live in a chaotic moral universe. In this, our main obligation is to establish arbitrary enclaves of order and system.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+13
+</td>
+<td style="text-align:left;width: 7cm; ">
+This is no defeatism, it is rather a sense of tragedy in a world in which necessity is represented by an inevitable disappear­ ance of differentiation
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+14
+</td>
+<td style="text-align:left;width: 7cm; ">
+Since his day developments in the field of statistical mechanics have come to modify the ideas about how orderly patterns - for example, the growth of plants and animals and the evolution of ecosystems - arise in the face of the second law of thermodynamics
+</td>
+<td style="text-align:left;width: 4cm; ">
+#entropy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+14
+</td>
+<td style="text-align:left;width: 7cm; ">
+Instead they continue to move still further away from equilibrium towards a different, increasingly complex and orderly, but neverthe­ less stable pattern - not necessarily static, but possibly cyclic
+</td>
+<td style="text-align:left;width: 4cm; ">
+#entropy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+14
+</td>
+<td style="text-align:left;width: 7cm; ">
+Wiener in his discussion of human purposes, recognizing feedbacks and larger systems which include the environment, had moved far away from that ideal and closer to an ideal of understanding and, both consciously and effectively, of collaborating with natural processes
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+15
+</td>
+<td style="text-align:left;width: 7cm; ">
+this suggests a shift in emphasis from ‘the human fight against the increase of entropy to create local enclaves of order’ to a more co-operative endeavour which to a considerable extent occurs naturally and of its own accord.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+15
+</td>
+<td style="text-align:left;width: 7cm; ">
+The results obtained by the Prigogine group show the creation of orderly patterns - natural countertrends to the tendency towards disorganization
+</td>
+<td style="text-align:left;width: 4cm; ">
+#textur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+15
+</td>
+<td style="text-align:left;width: 7cm; ">
+It is more nearly related to Wiener’s notion of positive feedback, which he tended to see as only disruptive and destructive, rather than as leading to complex stable struc­ tures. The results obtained by the Prigogine group show the creation of orderly patterns - natural countertrends to the tendency towards disorganization - to be stronger and more ordinary and commonplace than a sole reliance on mechan­ isms of the Maxwell-demon type would suggest
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+17
+</td>
+<td style="text-align:left;width: 7cm; ">
+The Human Use o/Human Beings is a popularization of Cybernetics (omitting the forbidding mathematics), though with a special emphasis on the description of the human and the social
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+19
+</td>
+<td style="text-align:left;width: 7cm; ">
+Cybernetics had originated from the analysis of formal analogies between the behaviour of organisms and that of electronic and mechanical systems. The mostly military technologies new in his day, which today we call ‘artificial intelligence’, highlighted the Potential resemblance between certain elaborate machines and people.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+19
+</td>
+<td style="text-align:left;width: 7cm; ">
+It was Wiener’s lifelong obsession to distinguish the human from the machine, having recognized the identity of patterns of organization and of many functions which can be performed by either, but in The Human Use of Human Beings it is his intention to place his understanding of the people/ machines identity/dichotomy within the context of his generous and humane social philosophy
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+20
+</td>
+<td style="text-align:left;width: 7cm; ">
+Thus the long-standing mind-brain duality was overcome by a materialism which encompassed organization, messages and information in addition to stuff and matter.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+22
+</td>
+<td style="text-align:left;width: 7cm; ">
+In the post-war years American sociologists, anthropologists, poli­ tical scientists and psychologists tried harder than ever to be seen as ‘scientific’. They readily borrowed the engineers’ idiom and many sought to learn from the engineers’ or mathematicians’ thinking. Continental European social thinkers were far more inclined to attend to the human subject and to make less optimistic claims about their scientific expertise
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+22
+</td>
+<td style="text-align:left;width: 7cm; ">
+If we trace the intellectual history of current thinking in such diverse fields as cellular biology, medicine, anthropo­ logy, psychiatry, ecology and economics, we find that in each discipline concepts coming from cybernetics consitute one of the streams that have fed it
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
+1
+</td>
+<td style="text-align:left;width: 4cm; ">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+31
+</td>
+<td style="text-align:left;width: 7cm; ">
+The Newtonian view, however, was compelled to state and fonnulate physics as if it were, in fact, subject to such laws. This is now no longer the dominating attitude of physics, and the men who contributed most to its downfall were Bolzmann in Germany and Gibbs in the United States
+</td>
+<td style="text-align:left;width: 4cm; ">
+boltzmann?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+31
+</td>
+<td style="text-align:left;width: 7cm; ">
+Newtonian physics, which had ruled from the end of the seventeenth century to the end of the nineteenth with scarcely an opposing voice, described a universe in which everything happened precisely according to law, a compact, tightly organized universe in which the whole future depends strictly upon the whole past
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+32
+</td>
+<td style="text-align:left;width: 7cm; ">
+retained indeed the principle according to which cer­ tain systems may be distinguished from others by their total energy, but they rejected the supposition accord­ ing to which systems with the same total energy may be clearly distinguished indefinitely and described for­ ever by fixed causal laws
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+33
+</td>
+<td style="text-align:left;width: 7cm; ">
+a physical system belong­ ing to a class of physical systems, which continues to retain its identity as a class, eventually reproduces in almost all cases the distribution which it shows at any given time over the whole class of systems. In other words, under certain circumstances a system runs through all the distributions of position and momentum which are compatible with its energy, if it keeps run­ ning long enough.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+34
+</td>
+<td style="text-align:left;width: 7cm; ">
+Brownian motion
+</td>
+<td style="text-align:left;width: 4cm; ">
+#entropy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+34
+</td>
+<td style="text-align:left;width: 7cm; ">
+This revolution has had the effect that physics now no longer claims to deal with what will always happen, but rather with what will happen with an overwhelm­ ing probability
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+35
+</td>
+<td style="text-align:left;width: 7cm; ">
+One interesting change that has taken place is that in a probabilistic world we no longer deal with quan­ tities and statements which concern a specific, real uni­ verse as a whole but ask instead questions which may find their answers in a large number of similar uni­ verses. Thus chance has been admitted, not merely as a mathematical tool for physics, but as part of its warp and weft
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+35
+</td>
+<td style="text-align:left;width: 7cm; ">
+warp and weft.
+</td>
+<td style="text-align:left;width: 4cm; ">
+#textur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+35
+</td>
+<td style="text-align:left;width: 7cm; ">
+a rigid deterministic world is more acceptable than a contingent one
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+35
+</td>
+<td style="text-align:left;width: 7cm; ">
+there is a natural tendency to class Gibbs, Freud, and the proponents of the modern theory of probability together as representatives of a single tend­ ency; yet I do not wish to press this point. The gap between the Gibbs-Lebesgue way of thinking and Freud’s intuitive but somewhat discursive method is too large. Yet in their recognition of a fundamental ele­ ment of chance in the texture of the universe itself, these men are close to one another and close to the tradition of St.&nbsp;Augustine.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+35
+</td>
+<td style="text-align:left;width: 7cm; ">
+this random element, this organic incompleteness, is one which without too violent a figure of speech we may consider evil
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+36
+</td>
+<td style="text-align:left;width: 7cm; ">
+As entropy increases, the universe, and all closed systems in the universe, tend naturally to deteriorate and lose their distinctiveness, to move from the least to the most probable state, from a state of organization and differentiation in which distinctions and forms ex­ ist, to a state of chaos and sameness
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+36
+</td>
+<td style="text-align:left;width: 7cm; ">
+His central notion concerned the extent to which an­ swers that we may give to questions about one set of worlds are probable among a larger set of worlds. Be­ yond this, Gibbs had a theory that this probability tended naturally to increase as the universe grows older. The measure of this probability is called entropy, and the characteristic tendency of entropy is to in­ crease.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+36
+</td>
+<td style="text-align:left;width: 7cm; ">
+there are local enclaves whose direction seems opposed to that of the universe at large and in which there is a limited and temporary tendency for organization to increase. Life finds its home in some of these enclaves. It is with this point of view at its core that the new science of Cybernetics began its development
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+36
+</td>
+<td style="text-align:left;width: 7cm; ">
+order is least probable, chaos most probable
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+40
+</td>
+<td style="text-align:left;width: 7cm; ">
+In giving the definition of Cybernetics in the original book, I classed communication and control together
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+40
+</td>
+<td style="text-align:left;width: 7cm; ">
+society can only be understood through a study of the messages and the communication facilities which belong to it; and that in the future development of these messages and com­ munication facilities, messages between man and ma­ chines, between machines and man, and between machine and machine, are destined to play an ever­ increasing part.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+41
+</td>
+<td style="text-align:left;width: 7cm; ">
+It is the purpose of Cybernetics to de­ velop a language and techniques that will enable us indeed to attack the problem of control and communi­ cation in general, but also to find the proper repertory of ideas and techniques to classify their particular manifestations under certain concepts
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+41
+</td>
+<td style="text-align:left;width: 7cm; ">
+Like any fonn of information, these commands are subject to disorganization in transit. They generally come through in less coherent fashion and certainly not more coherently than they were sent. In control and communication we are always · fighting nature’s tendency to degrade the organized and to destroy the meaningful; the tendency, as Gibbs has shown us, for entropy to increase
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+43
+</td>
+<td style="text-align:left;width: 7cm; ">
+gave the entirely unexpected answer that there simply was no way to determine the motion of matter through the ether
+</td>
+<td style="text-align:left;width: 4cm; ">
+In One Sentence <br> The Michelson–Morley experiment attempted to detect Earth’s motion through the luminiferous ether and found no such effect, leading physicists to abandon the ether concept and ultimately to develop special relativity.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+43
+</td>
+<td style="text-align:left;width: 7cm; ">
+curious, rigid, but invisible medium known as the ether, which, at the time, was supposed to permeate the atmosphere, interstellar space and all transparent materials
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+44
+</td>
+<td style="text-align:left;width: 7cm; ">
+a shift in the point .. ” . (..)(..)of view of physics in which the world as it actually ( exists is replaced in some sense or other by the world ; , as it happens to be &lt;:&gt;bseTY.g,
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+45
+</td>
+<td style="text-align:left;width: 7cm; ">
+Just as entropy is a measure of disor­ ganization, the information carried by a set of mes­ sages is a measure of organization. In fact, it is possible to interpret the information carried by a message as essentially the negative of its entropy, and the negative I logarithm of its probability. That is, the more probable the message, the less information it gives. Cliches, for example, are less illuminating than great poems
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+45
+</td>
+<td style="text-align:left;width: 7cm; ">
+Messages are themselves a form of pattern and or- ganization
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+45
+</td>
+<td style="text-align:left;width: 7cm; ">
+Let us consider the activity of the little figures which dance on the top of a music box. They move in accordance with a pattern
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+46
+</td>
+<td style="text-align:left;width: 7cm; ">
+The fig­ ures themselves have no trace of communication with the outer world, except this one-way stage of communi­ cation with the pre-established mechanism of the music box. They are blind, deaf, and dumb, and cannot vary their activity in the least from the conventionalized pattern.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+48
+</td>
+<td style="text-align:left;width: 7cm; ">
+The most complicated machines yet made which transform input data into output data are the high-speed electrical computing machines, of which I shall speak later in more detail. The determination of the mode of conduct of these machines is given through a special sort of input, which frequently consists of punched cards or tapes or of magnetized wires
+</td>
+<td style="text-align:left;width: 4cm; ">
+#jaccard
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+48
+</td>
+<td style="text-align:left;width: 7cm; ">
+It is the function of these mechanisms to control the me­ chanical tendency toward disorganization
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+48
+</td>
+<td style="text-align:left;width: 7cm; ">
+This control of a machine on the basis of its actual performance rather than its expected performance is known as feedback, and involves sen­ sory members which are actuated by motor members and perform the function of tell-tales or monit01’s­ that is, of elements which indicate a performance
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+51
+</td>
+<td style="text-align:left;width: 7cm; ">
+performed action on the outer world, and not merely their intended action, is re­ ported back to the central regulatory apparatus
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+52
+</td>
+<td style="text-align:left;width: 7cm; ">
+nature’s statistical tendency to dis­ order, the tendency for entropy to increase in isolated systems, is expressed by the second law of thermo­ dynamics.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+53
+</td>
+<td style="text-align:left;width: 7cm; ">
+second law of thermodynamics, which tells us that energy spontaneously runs down hill in tem­ perature.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+56
+</td>
+<td style="text-align:left;width: 7cm; ">
+Now that certain analogies of behavior are being observed between the machine and the living organism, the problem as to whether the machine is alive or not is, for our purposes, semantic and we are at liberty to answer it one way or the other as best suits our convenience
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+56
+</td>
+<td style="text-align:left;width: 7cm; ">
+machines that there is no reason why they may not resemble human beings in representing pockets of decreasing entropy in a frame­ work in which the large entropy tends to increase.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+57
+</td>
+<td style="text-align:left;width: 7cm; ">
+they must be en rapport with the outer world by sense organs, such as photoelectric cells and ther­ mometers, which not only tell them what the existing circumstances are, but enable them to record the per­ formance or nonperformance of their own tasks. This last function, as we have seen, is called feedback, the property of being able to adjust future conduct by past performance
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+58
+</td>
+<td style="text-align:left;width: 7cm; ">
+In the nervous system, the individual nerve fiber also decides between carry­ ing an impulse or not. In both the machine and the nerve, there is a specific apparatus for making future decisions depend on past decisions, and in the nervous system a large part of this task is done at those ex­ tremely complicated points called “synapses”
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+60
+</td>
+<td style="text-align:left;width: 7cm; ">
+We are immersed in a lite in which the world as a whole obeys #ed the second law of thermodynamics: confusion increases and order decreases.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+60
+</td>
+<td style="text-align:left;width: 7cm; ">
+We are immersed in a lite in which the world as a whole obeys the • fusion increases and order decreases.(..)•&gt;
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+61
+</td>
+<td style="text-align:left;width: 7cm; ">
+The combination of these two effects was to prune an over­ lush developing nature and to deprive it of those or­ ganisms which were ill-adapted to their environment, by a process of «natural selection.” The result of this pruning was to leave a residual pattern of forms of life more or less well adapted to their environment. (..)(..)This residual pattern, according to Darwin, assumes the appearance of universal purposiveness.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+62
+</td>
+<td style="text-align:left;width: 7cm; ">
+The result is that in Ashby’s machine, as in Darwin’s nature, we have the appear­ ance of a purposefulness in a system which is not pur­ posefully constructed simply because purposelessness is in its very nature transitory.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+63
+</td>
+<td style="text-align:left;width: 7cm; ">
+Thus there can be no radiation of less energy than a single light quantum. The transfer of information cannot take place without a certain expenditure of energy, so that there is no sharp boundary between energetic coupling and informational coupling.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+65
+</td>
+<td style="text-align:left;width: 7cm; ">
+ultimate heat-death of the universe
+</td>
+<td style="text-align:left;width: 4cm; ">
+#entropy <br> <br> actually: cold death, where all energy came to an equilibrium ie völliges gleichgewicht der kräfte, thermondynamisch no energy left, total disorganisation
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-rosing_textile_2024" class="csl-entry" role="listitem">
+Rösing, Lilia Munk. 2024. <span>“Textile <span>Textuality</span> in <span>Inger</span> <span>Christensen</span>: <span>‘<span>Letter</span> in <span>April</span>’</span> and <span>Amalie</span> <span>Smith</span>: <span>‘<span>Thread</span> <span>Ripper</span>’</span>.”</span> <em>Internationale Zeitschrift Für Kulturkomparatistik</em> 11 (July): 113–29. <a href="https://doi.org/10.25353/ubtr-izfk-5a55-f82f">https://doi.org/10.25353/ubtr-izfk-5a55-f82f</a>.
+</div>
+<div id="ref-wiener_kybernetik_1992" class="csl-entry" role="listitem">
+Wiener, Norbert. 1992. <em>Kybernetik: <span>Regelung</span> Und <span>Nachrichtenübertragung</span> Im <span>Lebewesen</span> Und in Der <span>Maschine</span> (<span>MIT</span>, 1948)</em>. 2nd ed. Econ Classics. ECON-Verl.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
