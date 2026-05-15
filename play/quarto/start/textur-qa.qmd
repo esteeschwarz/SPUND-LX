@@ -1,0 +1,36 @@
+---
+title: "AVl Textur: annotations"
+bibliography: textur.bib
+#nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+title-meta: ""
+# date: '`r format(Sys.time())`'
+date: "2026-05-14"
+---
+
+
+## notes on papers
+
+<!-- @nietzsche_kga_2024   
+@nietzsche_friedrich_1902   
+@gunther_rhythmus_2008 -->
+{{< include _setup.qmd >}}
+
+```{r}
+#| echo: false
+#| warning: false
+#| eval: true
+#| results: "asis"
+#| output: false
+
+#load("margindb.RData")
+#qa1<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
+qa1<-list(textur=qa$textur)
+#qa1
+# qa2<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"))
+```
+
+{{< include _vars.qmd >}}
+
