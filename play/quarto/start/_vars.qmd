@@ -61,6 +61,7 @@ quietly2 <- function(expr) {
 library(purrr)
 library(stringi)
 qa2<-enc2utf8(unlist(qa1))
+qa2
 cat("\nutf8\n")
 qa2
 qa2 <- stri_trans_nfc(qa2)
@@ -72,6 +73,7 @@ library(bib2df)
 m1<-table$doc%in%qa2
 sum(m1)
 f<-list.files(pattern="bib")
+f
 #qa1<-qa
 b<-grep(names(qa1),f)
 #bibdf<-bib2df(f[b])
@@ -85,7 +87,9 @@ bibdf<-bib2df(f[b])
 bibdf$NOTE<-gsub("\\\\","",bibdf$NOTE)
 save(bibdf,file="bibdf.RData")
 qu<-unlist(qa2)
+qu
 m2<-qu%in%bibdf$NOTE
+sum(m2)
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
@@ -93,12 +97,14 @@ kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
 # kdf$comment<-gsub("[\r\n|]"," / ",kdf$comment)
 # kdf$comment<-gsub("\\r\\n|\\n|\\|"," \\\\\\\\ ",kdf$comment)
 kdf$comment<-gsub("\\r\\n|\\n|\\|"," <br> ",kdf$comment)
+kdf$comment <- stri_trans_nfc(kdf$comment)
 
 # kdf$comment<-gsub("<br><br>"," <br>",kdf$comment)
 kdf$comment<-gsub("(http.+) ?",' <a href="\\1" target="_blank">\\1</a>',kdf$comment)
 #kdf$comment<-gsub("(http.+) ?",'<a href="\\1 " target="_blank">\\1 </a>',kdf$comment)
 kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
 du<-unique(kdf$doc)
+du
 bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
 #save(bibdf,file="bibdf.RData")
 ```
@@ -112,17 +118,29 @@ bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
 #| message: false
 
 library(kableExtra)
+#du
 for(k in 1:length(du)){
   p<-du[k]
-  p
+  p<-stri_trans_nfc(p)
+  kdf$doc<-stri_trans_nfc(kdf$doc)
   m3<-kdf$doc==p
+  sum(m3,na.rm = T)
   #cat(bibdf$NOTE,"\n")
   #cat(p,"\n")
-  # m4<-grep(p,bibdf$NOTE)
+  #m4<-grep(p,bibdf$NOTE)
   #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
-  c<-bibdf$BIBTEXKEY[m4]
+  #m4
+  m4<-m4[!is.na(m4)]
+  #length(m4)
+ # cat("m4",sum(m4,na.rm = T),"\n")
+  #m4
+  #length(bibdf$NOTE[m4])
+  #bibdf$NOTE[which(m4)]
+  #cat(bibdf$NOTE[which(m4)],"\n")
+  c<-bibdf$BIBTEXKEY[which(m4)]
   c<-c[!is.na(c)]
+  #c
   #cat("c:",c,"\n")
   page<-gsub("[\r\n ] ","",kdf$spage[m3])
   if(length(m3)>0){

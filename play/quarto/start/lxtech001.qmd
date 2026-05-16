@@ -85,4 +85,5 @@ the tokens vector sujet gets interesting if following [this](lfg-001.qmd) theori
 
 the skew divergence approach to measure similiarities of their noun-noun compounds (which nevertheless can be applied to any type of comparison between two probabilty vectors = embeddings) applied by zinsmeister is farely easy to implement in studies since it doesnt afford much manual annotation besides (in their study) to define the contextual words for which a cooccurence is evaluated. playing with the width of a context window, the corpus base or other parameters that constrain cooccurence can yield interesting results in semantic distance of items. 
 
-besides, one could also include other parameters next to distributional, including syntactical information, to enlarge the dimension of the vector space and have more finegrained arguments for statements.
+besides, one could also include other parameters next to distributional, including syntactical information, to enlarge the dimension of the vector space and overall resolution of comparison.
+
