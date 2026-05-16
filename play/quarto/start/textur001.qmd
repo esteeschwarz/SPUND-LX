@@ -37,7 +37,7 @@ val.c<-"{{< meta testmeta >}}"
 
 # index
 1. samling: margin notes general > [open](textur-qa.qmd){.btn .btn-cat}
-2. [on kybernetik...](textur-002.qmd)
+2. [on kybernetik...](textur002.qmd)
 
 ## Q 
 
