@@ -36,7 +36,8 @@ jobs:
          echo "should display"
          #cat .Renviron
          #  quarto install tinytex
-         R -e 'tinytex::install_tinytex(bundle = "TinyTeX",version="latest")'
+         # R -e 'tinytex::install_tinytex(bundle = "TinyTeX",version="latest")'
+         # in ghcr
          # wo bundle= not wks.
          echo "nestcepas...."
         #  ls /ms-playwright

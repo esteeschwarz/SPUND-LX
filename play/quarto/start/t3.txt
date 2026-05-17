@@ -2,6 +2,6 @@ IP --> NP1 --> Det meene
 NP1 --> N'1 --> N1 schwester
 IP --> I --> VP --> V' --> V schreibt
 V' --> PP --> P an
-PP --> NP2 --> Det einem
+PP --> NP2 --> Det eenem
 NP2 --> N'2 --> AP wichtigen
 N'2 --> N2 buch
