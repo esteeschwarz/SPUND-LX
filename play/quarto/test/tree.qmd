@@ -1,0 +1,143 @@
+---
+title: "TikZ / Forest Test"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <!-- TikZJax renders TeX/TikZ directly in the browser -->
+          <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  pdf:
+    include-in-header:
+      - text: |
+          \usepackage{tikz}
+          \usepackage{forest}
+execute:
+  echo: false
+---
+
+# Plain TeX Test
+
+This should render a simple formula in both HTML and PDF.
+
+```{=html}
+<script type="text/tikz">
+\node[draw, rounded corners] {$E = mc^2$};
+</script>
+```
+
+```{=latex}
+\begin{tikzpicture}
+\node[draw, rounded corners] {$E = mc^2$};
+\end{tikzpicture}
+```
+
+# Simple TikZ Test
+
+```{=html}
+<script type="text/tikz">
+\draw (0,0) rectangle (3,1);
+\node at (1.5,0.5) {Hello TikZ};
+</script>
+```
+
+```{=latex}
+\begin{tikzpicture}
+\draw (0,0) rectangle (3,1);
+\node at (1.5,0.5) {Hello TikZ};
+\end{tikzpicture}
+```
+
+# Forest Syntax Tree Test
+
+```{=html}
+<script type="text/tikz">
+\usepackage{forest}
+
+\begin{forest}
+[IP
+  [NP
+    [Det [meine]]
+    [N′
+      [N [Schwester]]
+    ]
+  ]
+  [I
+    [VP
+      [V′
+        [V [schreibt]]
+        [PP
+          [P [an]]
+          [NP
+            [Det [einem]]
+            [N′
+              [AP [wichtigen]]
+              [N [Buch]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+</script>
+```
+
+```{=latex}
+\begin{forest}
+[IP
+  [NP
+    [Det [meine]]
+    [N′
+      [N [Schwester]]
+    ]
+  ]
+  [I
+    [VP
+      [V′
+        [V [schreibt]]
+        [PP
+          [P [an]]
+          [NP
+            [Det [einem]]
+            [N′
+              [AP [wichtigen]]
+              [N [Buch]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+```
+
+# R-Generated Forest Example
+
+```{r}
+#| results: asis
+
+tree <- '
+\\begin{forest}
+[NP
+  [Det [the]]
+  [N′
+    [N [book]]
+  ]
+]
+\\end{forest}
+'
+test<-"\\draw (0,0) rectangle (3,1);
+\\node at (1.5,0.5) {Hello TikZ};"
+if (knitr::is_html_output()) {
+  cat('<script type="text/tikz">\n')
+  cat('\\usepackage{forest}\n')
+  cat(tree)
+  cat(test)
+  cat('\n</script>\n')
+} else {
+  cat(tree)
+}
+
+```

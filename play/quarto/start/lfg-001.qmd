@@ -219,7 +219,28 @@ NP --> Det meine
 NP --> N' --> schwester
 ```
 
-## tree
-```{r tree1,echo=F,eval=F}
+## tree s
+```{r, echo=F,output=F}
+knitr::read_chunk("lxtech/trees.R")
+
+```
+```{r tree-prep,echo=F,eval=T,ouput=F}
+lines<-"IP --> NP1 --> Det meene
+NP1 --> N'1 --> N1 schwester
+IP --> I --> VP --> V' --> V schreibt
+V' --> PP --> P an
+PP --> NP2 --> Det einem
+NP2 --> N'2 --> AP wichtigen
+N'2 --> N2 buch"
+
+t3<-"../output/pages/004/t4"
+
+
 ```
 
+
+```{r m2forest,echo=F,eval=T,ouput=F}
+```
+
+```{r outpdf,echo=F,eval=T,results="asis",output=T}
+```

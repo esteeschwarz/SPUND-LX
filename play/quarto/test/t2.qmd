@@ -1,0 +1,396 @@
+---
+title: "TikZJax and Forest Test"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+          <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+  pdf:
+    include-in-header:
+      - text: |
+          \usepackage{tikz}
+          \usepackage{forest}
+execute:
+  echo: false
+---
+
+# Simple TikZ Test
+
+::: {.content-visible when-format="html"}
+<script type="text/tikz">
+out tikz 1
+\begin{tikzpicture}
+\node {out tikz in pic 1st};
+\vspace{5}
+\node[draw, rounded corners] {Hello TikZJax};
+\node[draw, rounded corners] {Hello TikZJax 2};
+
+\end{tikzpicture}
+</script>
+:::
+
+::: {.content-visible when-format="pdf"}
+\begin{tikzpicture}
+\node[draw, rounded corners] {Hello TikZJax};
+\end{tikzpicture}
+:::
+
+# Forest Syntax Tree
+
+::: {.content-visible when-format="html"}
+<script type="text/tikz">
+    out tikz in
+    \begin{tikzpicture}
+    out tikz in picture
+\node[draw, rounded corners] {Hello TikZJax};
+
+\usepackage{forest}
+
+\begin{forest}
+[IP
+  [NP
+    [Det [meine]]
+    [N$'$
+      [N [Schwester]]
+    ]
+  ]
+  [I
+    [VP
+      [V$'$
+        [V [schreibt]]
+        [PP
+          [P [an]]
+          [NP
+            [Det [einem]]
+            [N$'$
+              [AP [wichtigen]]
+              [N [Buch]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+\end{tikzpicture}
+
+</script>
+:::
+
+::: {.content-visible when-format="pdf"}
+\begin{forest}
+[IP
+  [NP
+    [Det [meine]]
+    [N$'$
+      [N [Schwester]]
+    ]
+  ]
+  [I
+    [VP
+      [V$'$
+        [V [schreibt]]
+        [PP
+          [P [an]]
+          [NP
+            [Det [einem]]
+            [N$'$
+              [AP [wichtigen]]
+              [N [Buch]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+:::
+
+```{r}
+#| echo: false
+#| results: asis
+
+library(tinytex)
+
+forest_code <- "
+[IP
+  [NP
+    [Det [meine]]
+    [N$'$
+      [N [Schwester]]
+    ]
+  ]
+  [I
+    [VP
+      [V$'$
+        [V [schreibt]]
+        [PP
+          [P [an]]
+          [NP
+            [Det [einem]]
+            [N$'$
+              [AP [wichtigen]]
+              [N [Buch]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+"
+f2 <- "
+[IP[NP[Det [meine]][N$'$[N [Schwester]]]][I[VP[V$'$[V [schreibt]][PP[P [an]][NP[Det [einem]][N$'$[AP [wichtigen]][N [Buch]]]]]]]]]
+"
+f2<-gsub("[ \n]","",forest_code)
+# Standalone LaTeX document
+tex <- paste0(
+'\\documentclass[tikz,border=2pt]{standalone}
+\\usepackage{forest}
+\\begin{document}
+\\begin{forest}
+', f2,'
+\\end{forest}
+
+\\end{document}
+')
+
+# File names
+base <- "syntax-tree"
+texfile <- paste0(base, ".tex")
+pdffile <- paste0(base, ".pdf")
+svgfile <- paste0(base, ".svg")
+
+# Write and compile
+writeLines(tex, texfile)
+tinytex::latexmk(texfile)
+
+# # Convert PDF to SVG for HTML
+# if (knitr::is_html_output()) {
+# #   system2("pdf2svg", c(pdffile, svgfile))
+#   knitr::include_graphics(pdffile)
+# } else {
+#   knitr::include_graphics(pdffile)
+# }
+```
+
+```{r}
+#| echo: false
+#| results: asis
+# after generating syntax-tree.pdf
+
+if (knitr::is_html_output()) {
+  # Read the PDF page size (in inches)
+  info <- pdftools::pdf_info("./syntax-tree.pdf")
+#   width_in  <- info$pages[[1]]$width  / 72   # points -> inches
+#   height_in <- info$pages[[1]]$height / 72
+  width_in <- pdftools::pdf_pagesize("syntax-tree.pdf")[2] / 72
+  height_in <- pdftools::pdf_pagesize("syntax-tree.pdf")[3] / 72
+  # Convert to CSS pixels (96 px = 1 inch)
+  width_px  <- round(width_in  * 120)
+  height_px <- round(height_in * 120)
+
+  # Embed at the PDF's natural size
+  cat(sprintf(
+    '<object data="syntax-tree.pdf"
+             type="application/pdf"
+             style="width:%spx; height:%spx; border:none;"></object>',
+    width_px, height_px
+  ))
+} else {
+  # Use the PDF directly in PDF output
+  knitr::include_graphics("syntax-tree.pdf")
+}
+```
+
+```{r}
+#| echo: false
+#| results: asis
+# Convert a simple edge notation to LaTeX forest syntax
+#
+# Input format:
+#   "IP->NP"
+#   "NP->Det meine"
+#   "NP->N$'$"
+#   "N$'$->N schwester"
+#
+# Rules:
+# - Left side is the parent.
+# - Right side contains one or more children separated by spaces.
+# - Repeated labels (e.g. multiple NP nodes) are allowed and treated
+#   as distinct occurrences in the order they appear.
+# - Child labels may contain LaTeX, e.g. N$'$, V$'$.
+#
+# Output:
+#   A complete \begin{forest}...\end{forest} block.
+lines<-"IP --> NP1 --> Det meene
+NP1 --> N'1 --> N1 schwester
+IP --> I --> VP --> V' --> V schreibt
+V' --> PP --> P an
+PP --> NP2 --> Det einem
+NP2 --> N'2 --> AP wichtigen
+N'2 --> N2 buch"
+lines
+to_forest <- function(lines) {
+lines<-gsub("'","$'$",lines)
+l2<-unlist(strsplit(lines,"\n"))
+l2
+x<-l2[1]
+x
+# Parse lines into parent -> children
+  rules <- lapply(l2, function(x) {
+    parts <- strsplit(x, "-->", fixed = TRUE)[[1]]
+    parts
+    parent <- trimws(parts[1])
+    rhs <- trimws(parts[2])
+    children <- strsplit(rhs, "\\s+")[[1]]
+    list(parent = parent, children = children)
+  })
+
+  # Root = first parent that never appears as a child
+  all_parents  <- vapply(rules, `[[`, "", "parent")
+  all_parents
+  all_children <- unlist(lapply(rules, `[[`, "children"), use.names = FALSE)
+  all_children
+  root <- setdiff(all_parents, all_children)[1]
+  root
+  # Recursive expansion using occurrence order.
+  # Each time a rule with a given parent label is used, it is consumed.
+  used <- rep(FALSE, length(rules))
+  used
+
+  build <- function(label) {
+
+    # Find next unused rule with this parent label
+    idx <- which(!used & all_parents == label)
+
+    # If no rule exists, this is a terminal node
+    if (length(idx) == 0) {
+      return(sprintf("[%s]", label))
+    }
+
+    # Consume the first matching rule
+    i <- idx[1]
+    used[i] <<- TRUE
+
+    # Recursively build children
+    child_txt <- vapply(
+      rules[[i]]$children,
+      build,
+      character(1)
+    )
+
+    paste0(
+      "[", label, "\n  ",
+      paste(child_txt, collapse = "\n  "),
+      "\n]"
+    )
+  }
+b<-build(root)
+#   paste(
+#     "\\begin{forest}",
+#     build(root),
+#     "\\end{forest}",
+#     sep = "\n"
+#   )
+b
+}
+# f2<-gsub("[ \n]","",lines)
+f2<-to_forest(lines)
+f2
+mermaid_chain_to_forest <- function(txt) {
+  txt<-gsub("'","$'$",txt)
+  txt<-gsub("([A-Z'][0-9]{1,2})","$_\\1$",txt)
+  txt <- gsub("\\r", "", txt)
+  lines <- trimws(unlist(strsplit(txt, "\n")))
+  lines <- lines[nzchar(lines)]
+
+  parse_chain <- function(line) {
+    parts <- trimws(unlist(strsplit(line, "-->", fixed = TRUE)))
+    parts[nzchar(parts)]
+  }
+
+  chains <- lapply(lines, parse_chain)
+
+  edges <- do.call(rbind, lapply(chains, function(x) {
+    if (length(x) < 2) return(NULL)
+    cbind(parent = x[-length(x)], child = x[-1])
+  }))
+
+  edges <- as.data.frame(edges, stringsAsFactors = FALSE)
+  names(edges) <- c("parent", "child")
+
+  roots <- setdiff(unique(edges$parent), unique(edges$child))
+  children_map <- split(edges$child, edges$parent)
+
+  build_tree <- function(node) {
+    kids <- children_map[[node]]
+    if (is.null(kids) || length(kids) == 0) {
+      return(paste0("[", node, "]"))
+    }
+    paste0("[", node, " ",
+           paste(vapply(kids, build_tree, character(1)), collapse = " "),
+           "]")
+  }
+
+  paste(vapply(roots, build_tree, character(1)), collapse = " ")
+}
+f2<-mermaid_chain_to_forest(lines)
+# Standalone LaTeX document
+tex <- paste0(
+'\\documentclass[tikz,border=2pt]{standalone}
+\\usepackage{forest}
+\\begin{document}
+\\begin{forest}
+', f2,'
+\\end{forest}
+
+\\end{document}
+')
+# File names
+base <- "t3"
+texfile <- paste0(base, ".tex")
+pdffile <- paste0(base, ".pdf")
+svgfile <- paste0(base, ".svg")
+
+# Write and compile
+writeLines(tex, texfile)
+tinytex::latexmk(texfile)
+
+# # Convert PDF to SVG for HTML
+# if (knitr::is_html_output()) {
+# #   system2("pdf2svg", c(pdffile, svgfile))
+#   knitr::include_graphics(pdffile)
+# } else {
+#   knitr::include_graphics(pdffile)
+# }
+
+
+if (knitr::is_html_output()) {
+  # Read the PDF page size (in inches)
+#   info <- pdftools::pdf_info(texfile)
+#   width_in  <- info$pages[[1]]$width  / 72   # points -> inches
+#   height_in <- info$pages[[1]]$height / 72
+  width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
+  height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
+  # Convert to CSS pixels (96 px = 1 inch)
+  width_px  <- round(width_in  * 120)
+  height_px <- round(height_in * 120)
+
+  # Embed at the PDF's natural size
+  cat(sprintf(
+    '<object data="%s"
+             type="application/pdf"
+             style="width:%spx; height:%spx; border:none;"></object>',
+    pdffile,width_px, height_px
+  ))
+} else {
+  # Use the PDF directly in PDF output
+  knitr::include_graphics(pdffile)
+}
+```
+
+
