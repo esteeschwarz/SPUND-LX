@@ -1,0 +1,12 @@
+```{r, echo=F,output=F}
+knitr::read_chunk("lxtech/benjamin.R")
+
+```
+```{r prep,echo=F,eval=T,ouput=F}
+3+4
+```
+
+
+
+```{r text2img,echo=F,eval=T,output=T}
+```
