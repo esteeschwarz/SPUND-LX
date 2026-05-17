@@ -168,11 +168,11 @@
     "text": "T2 NT, session 5\nmeine schwester schreibt an einem wichtigen buch\nIP --&gt; VP --&gt; DP --&gt; NP D meine N schwester \nVP --&gt; V schreibt\nIP --&gt; PP --&gt; P an DP --&gt; NP --&gt; D einem --&gt; AdP Adv wichtigen N buch\nIP --&gt; DP\nIP --&gt; I' --&gt; VP --&gt; V'\nV' --&gt; V\nV' --&gt; PP --&gt; an einem wichtigen buch\nIP --&gt; NP meine schwester\nIP --&gt; I' --&gt; VP\nVP --&gt; V schreibt\nVP --&gt; PP\nPP --&gt; P an\nPP --&gt; NP einem wichtigen buch\nIP --&gt; NP\nIP --&gt; I --&gt; VP --&gt; V' --&gt; V schreibt\nV' --&gt; PP\nPP --&gt; P an\nPP --&gt; NP --&gt; Det einem\nNP --&gt; N' --&gt; AP wichtigen\nN' --&gt; N buch\nNP --&gt; Det meine\nNP --&gt; N' --&gt; schwester"
   },
   {
-    "objectID": "lfg-001.html#tree",
-    "href": "lfg-001.html#tree",
+    "objectID": "lfg-001.html#tree-s",
+    "href": "lfg-001.html#tree-s",
     "title": "LFG",
-    "section": "tree",
-    "text": "tree"
+    "section": "tree s",
+    "text": "tree s\n\nsnc\n123\n\n\nWarning in readLines(f): incomplete final line found on 't3.txt'\n\n\n\n\n[1] \"../output/pages/004/t3.pdf\""
   },
   {
     "objectID": "nietzsche-benn.html",
