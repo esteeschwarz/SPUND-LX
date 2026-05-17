@@ -220,6 +220,8 @@ NP --> N' --> schwester
 ```
 
 ## tree s
+### snc
+123
 ```{r, echo=F,output=F}
 knitr::read_chunk("lxtech/trees.R")
 
@@ -234,8 +236,14 @@ NP2 --> N'2 --> AP wichtigen
 N'2 --> N2 buch"
 
 t3<-"../output/pages/004/t4"
-
-
+f<-"t3.txt"
+#f
+#getwd()
+lines<-readLines(f)
+f<-unlist(strsplit(f,"\\."))[1]
+#f
+t3<-paste0("../output/pages/004/",f)
+#t3
 ```
 
 
