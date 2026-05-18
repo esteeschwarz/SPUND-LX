@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpoppler-cpp-dev \
     poppler-utils \
     libpoppler-dev \
+    pdf2svg \
     && rm -rf /var/lib/apt/lists/*
 
 # install fonts
