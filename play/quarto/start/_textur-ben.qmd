@@ -6,6 +6,8 @@ knitr::read_chunk("lxtech/benjamin.R")
 3+4
 ```
 
+```{r setup-plot,echo=F,eval=T,output=T,warning=F}
+```
 
 this is just the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.
 ```{r v2img,echo=F,eval=T,output=T,warning=F,fig.cap="corpus part of speech (nouns, verbs, adj) vector plot"}

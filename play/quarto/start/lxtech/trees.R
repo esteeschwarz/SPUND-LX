@@ -68,11 +68,40 @@ tinytex::latexmk(texfile)
 # }
 
 ## ----outpdf
-if (knitr::is_html_output()) {
+  psvg<-function(){
+
+#  system2("pdf2svg", c(pdffile, svgfile))
+  outns<-unlist(strsplit(svgfile,"/"))
+  outns<-outns[length(outns)]
+  width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
+  height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
+  # Convert to CSS pixels (96 px = 1 inch)
+  width_px  <- round(width_in  * 120)
+  height_px <- round(height_in * 120)
+
+  system2("pdf2svg", c(pdffile, outns))
+  outpdf<-unlist(strsplit(pdffile,"/"))
+  outpdf<-outpdf[length(outpdf)]
+  
+  #outns
+  # cat(sprintf(
+  #   '<object data="%s"
+  #            type="image/svg"
+  #            style="width:%spx; height:%spx; border:none;"></object>',
+  #   outns,width_px, height_px
+  # ))
+#  knitr::include_graphics(outns)
+  cat(sprintf("\n![tree image from svg](%s)\n\n",outns))
+    return(sprintf("[download image pdf](%s)\n\n",outpdf))
+  }
+# } else {
+#   knitr::include_graphics(pdffile)
+# }
   # Read the PDF page size (in inches)
 #   info <- pdftools::pdf_info(texfile)
 #   width_in  <- info$pages[[1]]$width  / 72   # points -> inches
 #   height_in <- info$pages[[1]]$height / 72
+  praw<-function(){
   width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
   height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
   # Convert to CSS pixels (96 px = 1 inch)
@@ -88,7 +117,13 @@ if (knitr::is_html_output()) {
              style="width:%spx; height:%spx; border:none;"></object>',
     outns,width_px, height_px
   ))
-} else {
+  return("raw")
+  }
+if (knitr::is_html_output()) {
+  # Convert PDF to SVG for HTML
+# if (knitr::is_html_output()) {
+  ifelse(dpdf,praw(),psvg())
+  } else {
   # Use the PDF directly in PDF output
   knitr::include_graphics(pdffile)
 }

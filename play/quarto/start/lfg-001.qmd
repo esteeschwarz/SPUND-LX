@@ -221,7 +221,7 @@ NP --> N' --> schwester
 
 ## tree s
 ### snc
-123
+123456
 ```{r, echo=F,output=F,warning=F}
 knitr::read_chunk("lxtech/trees.R")
 
@@ -240,10 +240,13 @@ f<-"t3.txt"
 #f
 #getwd()
 lines<-readLines(f)
+cat("raw used final:\n")
+print(lines)
 f<-unlist(strsplit(f,"\\."))[1]
 #f
 t3<-paste0("../output/pages/004/",f)
 #t3
+dpdf<-F
 ```
 
 

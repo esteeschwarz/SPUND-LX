@@ -1,4 +1,4 @@
-## ----text2img
+## ----setup-plot
 
 library(readr)
 #c<-read_delim("/Users/guhl/Documents/GitHub/benjaminfeldkraft/corpus/benjaminfeldkraft.vert",skip=2,delim="\t")
@@ -20,7 +20,7 @@ lu<-unique(c1$lemma)
 #??img
 pu<-unique(c1$pos)
 #pu
-c1$token[c1$pos==pu[9]]
+#c1$token[c1$pos==pu[9]]
 v1<-grepl("VFIN",c1$pos)
 v2<-grepl("N\\.",c1$pos)
 v3<-grepl("ADJ",c1$pos)
@@ -28,11 +28,11 @@ v4<-grepl("ADV",c1$pos)
 
 #sum(n1)
 #sum(v1)
-v2<-matrix(ifelse(v1,4,3))
-n2<-matrix(ifelse(n1,6,3))
-s<-sqrt(length(v2))
-v3<-matrix(0:length(v2))
-n3<-matrix(0:length(n2))
+# v2<-matrix(ifelse(v1,4,3))
+# n2<-matrix(ifelse(n1,6,3))
+# s<-sqrt(length(v2))
+# v3<-matrix(0:length(v2))
+# n3<-matrix(0:length(n2))
 
 #image(matrix(v2,s,s))
 #image(matrix(n2,s,s))
@@ -49,9 +49,9 @@ plot_logicals <- function(x, y,br,
   stopifnot(length(x) == length(y))
   n <- length(x)
   l<-length(x)
-  sqrt(l)
-  100*100
-  32*32
+ # sqrt(l)
+  #100*100
+  #32*32
   nr<-l/10
   nc<-l/nr
   nr<-l
