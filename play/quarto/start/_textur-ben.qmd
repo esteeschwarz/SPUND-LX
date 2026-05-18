@@ -20,5 +20,5 @@ this is the corpus [first 1000 words] nouns (blue) vs verbs (red) plotted
 ... so you can create yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)
 
 or a QR code of nouns...
-```{r v2qr,echo=F,eval=T,output=T,warning=F,fig.cap="corpus[1:1000] NOUNS plot"}
+```{r v2qr,echo=F,eval=T,output=T,warning=F,fig.cap="corpus[1:300] NOUNS plot"}
 ```

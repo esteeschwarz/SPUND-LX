@@ -272,6 +272,7 @@ plot_merge_logicals_n(v1, v2, v3, v4)
 plot_logicals(x, y,T)
 
 ## ----v2qr
-plot_merge_logicals_n(x2,cols="black")
+xq<-v2[1:300]
+plot_merge_logicals_n(xq,cols="black")
 
 #plot.qr(x1)
