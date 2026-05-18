@@ -52,6 +52,11 @@ Working together with the machine-learning algorithm, I will weave and unravel a
 ### vector space of plants
 - embeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?
 
+### roboter schreibt bibel ab
+(installation vor dem trierer dom)
+
+[https://www.robotlab.de/DE/biosbible.html](https://www.robotlab.de/DE/biosbible.html)
+
 ## play
 ![tweed: warp and weft](textur_warp-and-weft.png)
 
