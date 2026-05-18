@@ -1,4 +1,4 @@
-```{r, echo=F,output=F}
+```{r, echo=F,output=F,warning=F}
 knitr::read_chunk("lxtech/benjamin.R")
 
 ```
