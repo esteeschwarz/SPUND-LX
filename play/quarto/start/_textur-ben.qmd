@@ -9,16 +9,32 @@ knitr::read_chunk("lxtech/benjamin.R")
 ```{r setup-plot,echo=F,eval=T,output=T,warning=F}
 ```
 
-this is just the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.
+#### this is 
+just the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted. 
+
+witch corpus? > @glaser_benjaminfeldkraft_2024
+
 ```{r v2img,echo=F,eval=T,output=T,warning=F,fig.cap="corpus part of speech (nouns, verbs, adj) vector plot"}
 ```
 
-this is the corpus [first 1000 words] nouns (blue) vs verbs (red) plotted 
+#### this is 
+the corpus [first 1000 words] nouns (blue) vs verbs (red) plotted 
 ```{r v2strips,echo=F,eval=T,output=T,warning=F,fig.cap="corpus NOUNS vs. VERBS plot"}
 ```
 
-... so you can create yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)
+#### so you can 
+create yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)
 
 or a QR code of nouns...
 ```{r v2qr,echo=F,eval=T,output=T,warning=F,fig.cap="corpus[1:300] NOUNS plot"}
 ```
+
+#### or any
+pattern from whatever you find interesting (beautiful) to plot:
+
+e.g.
+- ich vs. du
+- haben vs. sein
+- past vs. present
+- schund vs. high language (this may be difficult)
+- you can as well plot 1 vs. n dimensions of features witch would result in a more colorful tweed
