@@ -7,7 +7,7 @@ library(readr)
 #     col_names = FALSE, trim_ws = TRUE, skip = 4)
 c <- read_delim("https://raw.githubusercontent.com/esteeschwarz/benjaminfeldkraft/main/corpus/benjaminfeldkraft.vert", 
     delim = "\t", escape_double = FALSE, 
-    col_names = FALSE, trim_ws = TRUE, skip = 4)
+    col_names = FALSE, trim_ws = TRUE, skip = 4,show_col_types = FALSE)
 
 #head(c)
 colnames(c)<-c("token","pos","lemma")
