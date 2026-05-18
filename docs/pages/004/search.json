@@ -28,6 +28,13 @@
     "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (Smith (2022), p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?"
   },
   {
+    "objectID": "textur001.html#play",
+    "href": "textur001.html#play",
+    "title": "AVL / textur",
+    "section": "play",
+    "text": "play\n\n\n\ntweed: warp and weft\n\n\n\n\n[1] 7\n\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\nRows: 254181 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \"\\t\"\nchr (3): X1, X2, X3\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nthis is just the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.\n\n\n\n\n\ncorpus part of speech (nouns, verbs, adj) vector plot\n\n\n\n\nthis is the corpus nouns (blue) vs verbs (red) plotted\n\n\n\n\n\ncorpus NOUNS vs. VERBS plot"
+  },
+  {
     "objectID": "lxtech001.html",
     "href": "lxtech001.html",
     "title": "LX / Tech",
@@ -172,7 +179,7 @@
     "href": "lfg-001.html#tree-s",
     "title": "LFG",
     "section": "tree s",
-    "text": "tree s\n\nsnc\n123\n\n\nWarning in readLines(f): incomplete final line found on 't3.txt'\n\n\n\n\n[1] \"../output/pages/004/t3.pdf\""
+    "text": "tree s\n\nsnc\n123456\n\n\nraw used final:\n\n\n[1] \"IP --&gt; NP1 --&gt; Det meene\"             \n[2] \"NP1 --&gt; N'1 --&gt; N1 schwester\"         \n[3] \"IP --&gt; I --&gt; VP --&gt; V' --&gt; V schreibt\"\n[4] \"V' --&gt; PP --&gt; P an\"                   \n[5] \"PP --&gt; NP2 --&gt; Det eenem\"             \n[6] \"NP2 --&gt; N'2 --&gt; AP wichtigen\"         \n[7] \"N'2 --&gt; N2 buch\"                      \n\n\n\n\n[1] \"../output/pages/004/t3.pdf\"\n\n\n\n\n\ntree image from svg\n\n\n[1] “download image pdf”"
   },
   {
     "objectID": "nietzsche-benn.html",
@@ -285,13 +292,6 @@
     "title": "kybernetik",
     "section": "und texturen…",
     "text": "und texturen…\ndas war grundelegendes aus der “einführung” der kybernetik (Wiener (1992)), die von ihm noch einmal für ein breiteres publikum umgearbeitet und eingang in Wiener (1950) fand. und wo kommen unsere :texturen: ins spiel?\nwir können durchaus beim webstuhl bleiben, der ja als zentrales thema das seminar ausmacht. wir haben über den jaccard mechanismus schon einiges gehört und hier fängt es auch mit der kybernetik an. durch die einführung automatisierter abläufe in die technik [des webens], die sich damit weitgehend von der manuellen steuerung durch den menschen emanzipierte, kommen auch fragen nach dem [vielleicht: subjektcharacter] dessen, was eigentlich den vorgang steuert und das, was dabei von wem genau gewebt wird, ins spiel. wir haben es an dieser stelle nicht mehr mit menschlich-individueller bzw. im eigentlichen sinne kreativer (schöpferischer, künstlerischer) technik, sondern mit auf algoritmen, prozessual-routinierten regeln beruhenden schritten zur herstellung des produkts zu tun, die a) unendlich fein ausdifferenziert, b) unendlich weit vorausgedacht sowie c) unendlich haltbar gespeichert und abgerufen werden können [in potenz.] kann man dies von der abgelösten menschlichen fertigkeit des (webens) ebenso sagen? wahrscheinlich eher nicht. die hier hergestellte textur muss im gegensatz zur traditionellen ein element beinhalten, das un-menschlich ist; das irgendwie aus der zeit herausgelöst sein muss, die dem menschlichen eigentümlich ist. mit unendlich verfügbarem material und energie liesze sich eine textur vorstellen, die tausend menschenjahre lang sich selbst webte und (das universum?) umspannte.\nwir stellen uns weiterhin vor, der maschinismus ist [der kybernet] in der lage, sein eigenes produkt fortwährend zu reflektieren, aufgrund der statusrückmeldungen seinen output zu modellieren, sich selbst dazu anzulernen, das produkt zu optimieren. am ende (des lernprozesses) würde (der teppich) vielleicht nicht mehr viel mit dem zu tun haben, was (d. programmierer* ) im kopf gehabt hat, als den algoritmus sich ausdachte. es würde vielleicht nicht mal mehr ein teppich sein, sondern u.u. etwas, das das ideal eines teppichs wäre, die Idee vom Teppich. aber das geht zu weit, nestcepas…\ndie texturen, die wiener referiert und die er immer wieder mit dem äther querführt, einem auch zu seiner zeit fragwürdigen, aber immernoch attraktiven konzept eines alles umspannenden, alles durchdringenden, undefinierbaren elements, das die welt im innersten zusammenhält -\n\n(… a curious, rigid, but invisible medium known as the ether, which, at the time, was supposed to permeate the atmosphere, interstellar space and all transparent materials […])\n\n… haben durchaus metaphysische qualitäten. in ihnen wird das unsichtbare sichtbar. der vorgestellte welt-teppich wäre am ende ein abbild der welt selbst, wenn man das konsequent zuende denkt. (ca., der kybernet: ach schau, das ja auch interessant, das fehlte noch…, na dann ab in den teppich damit :)"
-  },
-  {
-    "objectID": "textur002.html#play",
-    "href": "textur002.html#play",
-    "title": "kybernetik",
-    "section": "play",
-    "text": "play\nan image of NOUNS vs. VERB vectors in a 1000 tokens text…\n\n\n[1] 7\n\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\nRows: 254181 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \"\\t\"\nchr (3): X1, X2, X3\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n# A tibble: 6 × 3\n  X1    X2                        X3      \n  &lt;chr&gt; &lt;chr&gt;                     &lt;chr&gt;   \n1 ...   SYM.Pun.Cont              ...-x   \n2 &lt;g/&gt;  &lt;NA&gt;                      &lt;NA&gt;    \n3 und   CONJ.Coord                und-c   \n4 nähme VFIN.Full.3.Sg.Past.Subj  nehmen-v\n5 Ihre  PRO.Poss.Attr.Acc.Pl.Masc ihre-p  \n6 Worte N.Reg.Acc.Pl.Neut         Wort-n  \n\n\n[1] 254181\n\n\n[1] 16895\n\n\n[1] 50368\n\n\n[1] 22371\n\n\n\n\n\ncaption"
   },
   {
     "objectID": "nietzsche-benn-ul.html",
