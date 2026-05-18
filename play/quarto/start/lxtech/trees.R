@@ -91,8 +91,8 @@ tinytex::latexmk(texfile)
   #   outns,width_px, height_px
   # ))
 #  knitr::include_graphics(outns)
-  cat(sprintf("\n![tree image from svg](%s){width=80%}\n\n",outns))
-    return(sprintf("[download image pdf](%s)\n\n",outpdf))
+  cat(sprintf("\n![tree image from svg](%s){width=80%%}\n\n",outns))
+    return(sprintf("[download image pdf %sx%spx](%s)\n\n",width_px,height_px,outpdf))
   }
 # } else {
 #   knitr::include_graphics(pdffile)
