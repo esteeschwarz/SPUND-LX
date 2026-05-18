@@ -247,6 +247,7 @@ f<-unlist(strsplit(f,"\\."))[1]
 t3<-paste0("../output/pages/004/",f)
 #t3
 dpdf<-F
+size<-70
 ```
 
 

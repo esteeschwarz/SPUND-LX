@@ -66,6 +66,16 @@ tinytex::latexmk(texfile)
 # } else {
 #   knitr::include_graphics(pdffile)
 # }
+ps <- pdftools::pdf_pagesize(pdffile)
+
+# Convert width and height of first page to cm
+width_cm  <- round((ps[2]  * 2.54 / 72),2)
+height_cm <- round((ps[3]  * 2.54 / 72),2)
+  width_in <- ps[2] / 72
+  height_in <- ps[3] / 72
+  # Convert to CSS pixels (96 px = 1 inch)
+  width_px  <- round(width_in  * 120)
+  height_px <- round(height_in * 120)
 
 ## ----outpdf
   psvg<-function(){
@@ -73,11 +83,11 @@ tinytex::latexmk(texfile)
 #  system2("pdf2svg", c(pdffile, svgfile))
   outns<-unlist(strsplit(svgfile,"/"))
   outns<-outns[length(outns)]
-  width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
-  height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
-  # Convert to CSS pixels (96 px = 1 inch)
-  width_px  <- round(width_in  * 120)
-  height_px <- round(height_in * 120)
+  # width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
+  # height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
+  # # Convert to CSS pixels (96 px = 1 inch)
+  # width_px  <- round(width_in  * 120)
+  # height_px <- round(height_in * 120)
 
   system2("pdf2svg", c(pdffile, outns))
   outpdf<-unlist(strsplit(pdffile,"/"))
@@ -91,8 +101,8 @@ tinytex::latexmk(texfile)
   #   outns,width_px, height_px
   # ))
 #  knitr::include_graphics(outns)
-  cat(sprintf("\n![tree image from svg](%s){width=80%%}\n\n",outns))
-    return(sprintf("[download image pdf %sx%spx](%s)\n\n",width_px,height_px,outpdf))
+  cat(sprintf("\n![tree image from svg](%s){width=%d%%}\n\n",outns,size))
+    return(sprintf("[download image pdf %sx%scm](%s)\n\n",width_cm,height_cm,outpdf))
   }
 # } else {
 #   knitr::include_graphics(pdffile)
@@ -102,11 +112,11 @@ tinytex::latexmk(texfile)
 #   width_in  <- info$pages[[1]]$width  / 72   # points -> inches
 #   height_in <- info$pages[[1]]$height / 72
   praw<-function(){
-  width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
-  height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
-  # Convert to CSS pixels (96 px = 1 inch)
-  width_px  <- round(width_in  * 120)
-  height_px <- round(height_in * 120)
+  # width_in <- pdftools::pdf_pagesize(pdffile)[2] / 72
+  # height_in <- pdftools::pdf_pagesize(pdffile)[3] / 72
+  # # Convert to CSS pixels (96 px = 1 inch)
+  # width_px  <- round(width_in  * 120)
+  # height_px <- round(height_in * 120)
   outns<-unlist(strsplit(pdffile,"/"))
   #outns
   outns<-outns[length(outns)]
