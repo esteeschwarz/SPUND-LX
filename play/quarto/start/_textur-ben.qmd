@@ -13,6 +13,12 @@ this is just the distribution of nouns, verbs, adverbs, adjectives across the co
 ```{r v2img,echo=F,eval=T,output=T,warning=F,fig.cap="corpus part of speech (nouns, verbs, adj) vector plot"}
 ```
 
-this is the corpus nouns (blue) vs verbs (red) plotted 
+this is the corpus [first 1000 words] nouns (blue) vs verbs (red) plotted 
 ```{r v2strips,echo=F,eval=T,output=T,warning=F,fig.cap="corpus NOUNS vs. VERBS plot"}
+```
+
+... so you can create yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)
+
+or a QR code of nouns...
+```{r v2qr,echo=F,eval=T,output=T,warning=F,fig.cap="corpus[1:1000] NOUNS plot"}
 ```

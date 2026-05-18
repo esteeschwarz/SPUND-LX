@@ -226,7 +226,29 @@ plot_merge_logicals_n <- function(...,
 
   invisible(Z)
 }
+plot.qr<-function(v){
+vq<-c(sample(rep(c(TRUE,FALSE),20),40))
+#vq
+vq<-v
+  v2<-matrix(ifelse(vq,0,3))
+#n2<-matrix(ifelse(n1,6,3))
+s<-sqrt(length(v2))
+v3<-matrix(0:length(v2))
+n3<-matrix(0:length(n2))
+#image(matrix(v2,s,s))
+Z<-n
+  image(
+    t(Z[nrow:1, ]),
+    col = cols,
+    breaks = seq(-0.5, ncomb - 0.5, by = 1),
+    axes = FALSE,
+    xlab = "",
+    ylab = "",
+    asp = 1,
+    useRaster = TRUE
+  )
 
+}
 ## Example with 5 logical vectors
 set.seed(1)
 n <- 400
@@ -248,3 +270,8 @@ plot_merge_logicals_n(v1, v2, v3, v4)
  
 ## ----v2strips
 plot_logicals(x, y,T)
+
+## ----v2qr
+plot_merge_logicals_n(x2,cols="black")
+
+#plot.qr(x1)
