@@ -33,6 +33,7 @@ or a QR code of nouns...
 pattern from whatever you find interesting (beautiful) to plot:
 
 e.g.
+
 - ich vs. du
 - haben vs. sein
 - past vs. present
