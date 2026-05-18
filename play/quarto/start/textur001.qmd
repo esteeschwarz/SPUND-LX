@@ -53,5 +53,7 @@ Working together with the machine-learning algorithm, I will weave and unravel a
 - embeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?
 
 ## play
+![tweed: warp and weft](textur_warp-and-weft.png)
+
 
 {{< include _textur-ben.qmd >}} 

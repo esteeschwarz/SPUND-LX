@@ -7,9 +7,10 @@ knitr::read_chunk("lxtech/benjamin.R")
 ```
 
 
-
-```{r v2img,echo=F,eval=T,output=T,warning=F,fig.cap="corpus part of speech vector plot"}
+this is just the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.
+```{r v2img,echo=F,eval=T,output=T,warning=F,fig.cap="corpus part of speech (nouns, verbs, adj) vector plot"}
 ```
 
-```{r v2strips,echo=F,eval=T,output=T,warning=Ffig.cap="corpus NOUNS vs. VERBS plot"}
+this is the corpus nouns (blue) vs verbs (red) plotted 
+```{r v2strips,echo=F,eval=T,output=T,warning=F,fig.cap="corpus NOUNS vs. VERBS plot"}
 ```
