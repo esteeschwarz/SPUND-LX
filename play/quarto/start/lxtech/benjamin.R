@@ -36,15 +36,23 @@ n3<-matrix(0:length(n2))
 
 
 
-plot_logicals <- function(x, y,
+plot_logicals <- function(x, y,br,
                           col.x = "red",
                           col.y = "blue",
                           col.both = "purple") {
   stopifnot(length(x) == length(y))
   n <- length(x)
-
-  X <- matrix(x, nrow = n, ncol = n)          # each column is x
-  Y <- matrix(y, nrow = n, ncol = n, byrow=TRUE)  # each row is y
+  l<-length(x)
+  sqrt(l)
+  100*100
+  32*32
+  nr<-l/10
+  nc<-l/nr
+  nr<-l
+  nc<-l
+  X <- matrix(x, nrow = nr, ncol = nc)          # each column is x
+  Y <- matrix(y, nrow = nr, ncol = nc, byrow=TRUE)  # each row is y
+  Y <- matrix(y, nrow = nr, ncol = nc, byrow=br)  # each row is y
 
   # Encode colors:
   # 0 = blank
@@ -52,7 +60,7 @@ plot_logicals <- function(x, y,
   # 2 = y[j] TRUE only
   # 3 = both TRUE
   z <- X + 2 * Y
-
+#length(Y)
   image(
     1:n, 1:n, z,
     col = c("white", col.x, col.y, col.both),
@@ -67,4 +75,5 @@ plot_logicals <- function(x, y,
 
 x<-v1[1:1000]
 y<-n1[1:1000]
-plot_logicals(x, y)
+br<-T
+plot_logicals(x, y,T)

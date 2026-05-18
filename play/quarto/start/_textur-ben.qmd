@@ -8,5 +8,5 @@ knitr::read_chunk("lxtech/benjamin.R")
 
 
 
-```{r text2img,echo=F,eval=T,output=T}
+```{r text2img,echo=F,eval=T,output=T,fig.cap="caption"}
 ```
