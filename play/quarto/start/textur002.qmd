@@ -44,11 +44,5 @@ die texturen, die wiener referiert und die er immer wieder mit *dem äther* quer
 
 ... haben durchaus metaphysische qualitäten. in ihnen wird das unsichtbare sichtbar. der vorgestellte welt-teppich wäre am ende ein abbild der welt selbst, wenn man das konsequent zuende denkt. (ca., der kybernet: ach schau, das ja auch interessant, das fehlte noch..., na dann ab in den teppich damit :)
 
-
-## play
-an image of NOUNS vs. VERB vectors in a 1000 tokens text...
-
-{{< include _textur-ben.qmd >}} 
-
 # references
 

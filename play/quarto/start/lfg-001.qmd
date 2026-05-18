@@ -222,11 +222,11 @@ NP --> N' --> schwester
 ## tree s
 ### snc
 123
-```{r, echo=F,output=F}
+```{r, echo=F,output=F,warning=F}
 knitr::read_chunk("lxtech/trees.R")
 
 ```
-```{r tree-prep,echo=F,eval=T,ouput=F}
+```{r tree-prep,echo=F,eval=T,ouput=F,warning=F}
 lines<-"IP --> NP1 --> Det meene
 NP1 --> N'1 --> N1 schwester
 IP --> I --> VP --> V' --> V schreibt
@@ -247,8 +247,8 @@ t3<-paste0("../output/pages/004/",f)
 ```
 
 
-```{r m2forest,echo=F,eval=T,ouput=F}
+```{r m2forest,echo=F,eval=T,ouput=F,warning=F}
 ```
 
-```{r outpdf,echo=F,eval=T,results="asis",output=T}
+```{r outpdf,echo=F,eval=T,warning=F,results="asis",output=T}
 ```

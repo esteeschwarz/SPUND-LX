@@ -8,5 +8,8 @@ knitr::read_chunk("lxtech/benjamin.R")
 
 
 
-```{r text2img,echo=F,eval=T,output=T,fig.cap="caption"}
+```{r v2img,echo=F,eval=T,output=T,warning=F,fig.cap="corpus part of speech vector plot"}
+```
+
+```{r v2strips,echo=F,eval=T,output=T,warning=Ffig.cap="corpus NOUNS vs. VERBS plot"}
 ```
