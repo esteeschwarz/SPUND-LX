@@ -183,7 +183,7 @@ plot output phrasenstrukturbaum from binary f-structure model via hclust()
 as the binary coded dataframe already includes divergence information on nodes and ranks them according to level of divergence it should be possible to map the diverging binary values after applying a hierarchy to the keys(attributes) such that the position of the attribute within the dataframe (column) influences the height relation of nodes. 
 
 #### disclaimer
-the above displayed binary dataframe is *not* derived from script but manually created as its only visualing what woud be the goal to achieve then via a script, such that a parser (script) would look at a sentence/token and construct the binary code without context available. this is still the main question what can be derived automatically and what not.
+the above displayed binary dataframe is *not* derived from script but manually created as its only visualing (as sample) what woud be the goal to achieve then via a script, such that a parser (script) would look at a sentence/token and construct the binary code without context available. this is still the main question what can be derived automatically (with a lexicon available) and what not. (a common postagger does exactly that.) my personal aim here was rather to complete the mapping on base of a binary code without further annotation necessary and that seems feasable...
 
 ## T2 NT, session 5
 `meine schwester schreibt an einem wichtigen buch`
