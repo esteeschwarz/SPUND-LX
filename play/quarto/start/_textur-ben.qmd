@@ -18,7 +18,7 @@ witch corpus? > @glaser_benjaminfeldkraft_2024
 ```
 
 #### this is 
-the corpus [first 1000 words] nouns (blue) vs verbs (red) plotted 
+the corpus [first 1000 words] nouns (blue=weft) vs verbs (red=warp) plotted 
 ```{r v2strips,echo=F,eval=T,output=T,warning=F,fig.cap="corpus NOUNS vs. VERBS plot"}
 ```
 
