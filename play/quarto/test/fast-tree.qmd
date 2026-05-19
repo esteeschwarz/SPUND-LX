@@ -1,0 +1,86 @@
+---
+title: "LFG: fast tree"
+format: 
+   html: 
+     theme: cosmo
+   pdf: default
+date: '`r format(Sys.time())`'
+
+---
+
+# tree essais
+## T2 NT, session 5
+`meine schwester schreibt an einem wichtigen buch`
+
+```
+IP --> VP --> DP --> NP D meine N schwester 
+VP --> V schreibt
+IP --> PP --> P an DP --> NP --> D einem --> AdP Adv wichtigen N buch
+```
+
+```
+IP --> DP
+IP --> I' --> VP --> V'
+V' --> V
+V' --> PP --> an einem wichtigen buch
+```
+
+```
+IP --> NP meine schwester
+IP --> I' --> VP
+VP --> V schreibt
+VP --> PP
+PP --> P an
+PP --> NP einem wichtigen buch
+```
+
+```
+IP --> NP
+IP --> I --> VP --> V' --> V schreibt
+V' --> PP
+PP --> P an
+PP --> NP --> Det einem
+NP --> N' --> AP wichtigen
+N' --> N buch
+NP --> Det meine
+NP --> N' --> schwester
+```
+
+## tree s
+### snc
+123456
+```{r, echo=F,output=F,warning=F}
+knitr::read_chunk("../start/lxtech/trees.R")
+
+```
+```{r tree-prep,echo=F,eval=T,ouput=F,warning=F}
+lines<-"IP --> NP1 --> Det meene
+NP1 --> N'1 --> N1 schwester
+IP --> I --> VP --> V' --> V schreibt
+V' --> PP --> P an
+PP --> NP2 --> Det einem
+NP2 --> N'2 --> AP wichtigen
+N'2 --> N2 buch"
+
+#t3<-"output/t4"
+f<-"t3.txt"
+#f
+#getwd()
+lines<-readLines(f)
+cat("raw used final:\n")
+print(lines)
+f<-unlist(strsplit(f,"\\."))[1]
+#f
+t3<-paste0("output/",f)
+t3<-f
+#t3
+dpdf<-F
+size<-70
+```
+
+
+```{r m2forest,echo=F,eval=T,ouput=F,warning=F}
+```
+
+```{r outpdf,echo=F,eval=T,warning=F,results="asis",output=T}
+```
