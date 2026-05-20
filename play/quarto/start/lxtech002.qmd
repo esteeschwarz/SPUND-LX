@@ -29,3 +29,4 @@ Q: @chatgpt_how_2026
 
 {{< include _gpt-16214.md >}} 
 
+# references
