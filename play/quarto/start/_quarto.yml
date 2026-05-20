@@ -5,6 +5,8 @@ project:
   output-dir: ../output/pages/004
 # date: '`r format(Sys.time())`'
 date: "2026-04-08"
+csl: chicago-author-date-17th-edition.csl
+
 # author: esteeschwarz
 title-meta: ""
 resources:

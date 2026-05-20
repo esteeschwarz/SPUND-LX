@@ -8,6 +8,7 @@ title-meta: ""
 categories:
    - vectors
    - noun compounds
+   - llms
 bibliography: LXtech.bib
 nocite: '@*'
 cmeta: |
@@ -87,3 +88,10 @@ the skew divergence approach to measure similiarities of their noun-noun compoun
 
 besides, one could also include other parameters next to distributional, including syntactical information, to enlarge the dimension of the vector space and overall resolution of comparison.
 
+## LLMs
+i did think about consequences of future LLMs training data will most likely include
+
+1. recent AI discourse subjects (papers on, discussions, public discurse)
+2. recent generated content itself
+
+so i asked gpt about Q2. [her answer.](lxtech002.qmd)

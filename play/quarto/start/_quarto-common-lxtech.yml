@@ -1,0 +1,14 @@
+bibliography: LXtech.bib
+#nocite: '@*'
+cmeta: |
+  class: [16830] Sprache und Technologie - Language and Technology::
+  tutor: frankowsky ::
+  term: SS26
+  snc: 16175.1   
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+title-meta: ""
