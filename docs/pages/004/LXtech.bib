@@ -1,4 +1,50 @@
 
+@inproceedings{alemohammad_self-consuming_2023,
+	title = {Self-{Consuming} {Generative} {Models} {Go} {MAD}},
+	url = {https://openreview.net/forum?id=ShjMHfmPs0},
+	abstract = {Seismic advances in generative AI algorithms for imagery, text, and other data types have led to the temptation to use AI-synthesized data to train next-generation models. Repeating this process creates an autophagous ("self-consuming") loop whose properties are poorly understood. We conduct a thorough analytical and empirical analysis using state-of-the-art generative image models of three families of autophagous loops that differ in how fixed or fresh real training data is available through the generations of training and whether the samples from previous-generation models have been biased to trade off data quality versus diversity. Our primary conclusion across all scenarios is that *without enough fresh real data in each generation of an autophagous loop, future generative models are doomed to have their quality (precision) or diversity (recall) progressively decrease.* We term this condition Model Autophagy Disorder (MAD), by analogy to mad cow disease, and show that appreciable MADness arises in just a few generations.},
+	urldate = {2026-05-22},
+	author = {Alemohammad, Sina and Casco-Rodriguez, Josue and Luzi, Lorenzo and Humayun, Ahmed Imtiaz and Babaei, Hossein and LeJeune, Daniel and Siahkoohi, Ali and Baraniuk, Richard},
+	month = oct,
+	year = {2023},
+}
+
+@article{gu_sigma_2026,
+	title = {{SIGMA}: {Scalable} {Spectral} {Insights} for {LLM} {Model} {Collapse}},
+	shorttitle = {{SIGMA}},
+	url = {https://arxiv.org/abs/2601.03385},
+	doi = {10.48550/arxiv.2601.03385},
+	abstract = {The rapid adoption of synthetic data for training Large Language Models (LLMs) has introduced the technical challenge of "model collapse"-a degenerative process where recursive training on model-generated content leads to a contraction of distributional variance and representational quality. While the phenomenology of collapse is increasingly evident, rigorous methods to quantify and predict its onset in high-dimensional spaces remain elusive. In this paper, we introduce SIGMA (Spectral Inequalities for Gram Matrix Analysis), a unified framework that benchmarks model collapse through the spectral lens of the embedding Gram matrix. By deriving and utilizing deterministic and stochastic bounds on the matrix's spectrum, SIGMA provides a mathematically grounded metric to track the contraction of the representation space. Crucially, our stochastic formulation enables scalable estimation of these bounds, making the framework applicable to large-scale foundation models where full eigendecomposition is intractable. We demonstrate that SIGMA effectively captures the transition towards degenerate states, offering both theoretical insights into the mechanics of collapse and a practical, scalable tool for monitoring the health of recursive training pipelines.},
+	language = {eng},
+	urldate = {2026-05-22},
+	author = {Gu, Yi and Pang, Lingyou and Ye, Xiangkun and Wang, Tianyu and Lin, Jianyu and Priebe, Carey E. and Aue, Alexander},
+	year = {2026},
+}
+
+@article{shumailov_ai_2024,
+	title = {{AI} models collapse when trained on recursively generated data},
+	volume = {631},
+	issn = {0028-0836},
+	doi = {10.1038/s41586-024-07566-y},
+	abstract = {Stable diffusion revolutionized image creation from descriptive text. GPT-2 (ref. 
+1
+), GPT-3(.5) (ref. 
+2
+) and GPT-4 (ref. 
+3
+) demonstrated high performance across a variety of language tasks. ChatGPT introduced such language models to the public. It is now clear that generative artificial intelligence (AI) such as large language models (LLMs) is here to stay and will substantially change the ecosystem of online text and images. Here we consider what may happen to GPT-\{\vphantom{\}}
+n
+\vphantom{\{}\} once LLMs contribute much of the text found online. We find that indiscriminate use of model-generated content in training causes irreversible defects in the resulting models, in which tails of the original content distribution disappear. We refer to this effect as ‘model collapse’ and show that it can occur in LLMs as well as in variational autoencoders (VAEs) and Gaussian mixture models (GMMs). We build theoretical intuition behind the phenomenon and portray its ubiquity among all learned generative models. We demonstrate that it must be taken seriously if we are to sustain the benefits of training from large-scale data scraped from the web. Indeed, the value of data collected about genuine human interactions with systems will be increasingly valuable in the presence of LLM-generated content in data crawled from the Internet.
+ Analysis shows that indiscriminately training generative artificial intelligence on real and generated content, usually done by scraping data from the Internet, can lead to a collapse in the ability of the models to generate diverse high-quality output.},
+	language = {eng},
+	number = {8022},
+	journal = {Nature (London)},
+	author = {Shumailov, Ilia and Shumaylov, Zakhar and Zhao, Yiren and Papernot, Nicolas and Anderson, Ross and Gal, Yarin},
+	year = {2024},
+	keywords = {Artificial intelligence, Generations, Mathematical models, Models, Statistical, Random variables, Science, Training},
+	pages = {755--759},
+}
+
 @incollection{piantadosi_modern_2024,
 	title = {Modern language models refute {Chomsky}’s approach to language},
 	copyright = {Copyright (c) 2023 Stefan Müller},
