@@ -69,6 +69,7 @@ qa2 <- stri_trans_nfc(qa2)
 library(stringi)
 table<-margindb
 table$doc <- stri_trans_nfc(table$doc)
+table$doc
 library(bib2df)
 m1<-table$doc%in%qa2
 sum(m1)
@@ -83,6 +84,7 @@ b<-grep(names(qa1),f)
 #   })
 # )
 #bibdf <- quietly2(bib2df::bib2df(f[b]))
+f[b]
 bibdf<-bib2df(f[b])
 bibdf$NOTE<-gsub("\\\\","",bibdf$NOTE)
 save(bibdf,file="bibdf.RData")
@@ -121,6 +123,7 @@ library(kableExtra)
 #du
 for(k in 1:length(du)){
   p<-du[k]
+  p
   p<-stri_trans_nfc(p)
   kdf$doc<-stri_trans_nfc(kdf$doc)
   m3<-kdf$doc==p
@@ -130,9 +133,12 @@ for(k in 1:length(du)){
   #m4<-grep(p,bibdf$NOTE)
   #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
-  #m4
-  m4<-m4[!is.na(m4)]
+ # which(m4)
+  #sum(m4,na.rm = T)
+  m4[is.na(m4)]<-F
+#  m4<-m4[!is.na(m4)]
   #length(m4)
+  #sum(m4)
  # cat("m4",sum(m4,na.rm = T),"\n")
   #m4
   #length(bibdf$NOTE[m4])

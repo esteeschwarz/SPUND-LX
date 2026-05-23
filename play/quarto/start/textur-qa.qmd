@@ -12,6 +12,8 @@ date: "2026-05-14"
 
 
 ## notes on papers
+### snc
+123
 
 <!-- @nietzsche_kga_2024   
 @nietzsche_friedrich_1902   
