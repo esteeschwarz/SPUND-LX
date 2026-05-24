@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LFG Analysis — Unknown Text</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;600&family=Cinzel:wght@400;700&display=swap');
+
+  :root {
+    --ink: #1a1209;
+    --paper: #f5efe2;
+    --parchment: #e8dcc8;
+    --rust: #8b3a2a;
+    --gold: #a07828;
+    --slate: #4a4a5a;
+    --faded: #7a6f5e;
+    --accent: #5c3d7a;
+    --border: #c4b49a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-top: 3px double var(--rust);
+    border-bottom: 3px double var(--rust);
+    padding: 1.8rem 0;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .subtitle-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--rust);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-meta {
+    font-style: italic;
+    color: var(--faded);
+    font-size: 0.95rem;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: var(--rust);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.35rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  h3 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 0.9rem; }
+
+  /* ── CORPUS SAMPLE ── */
+  .corpus-box {
+    background: var(--parchment);
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: var(--slate);
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 1.2rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.92rem;
+  }
+
+  th {
+    background: var(--rust);
+    color: var(--paper);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0.8rem;
+    text-align: left;
+  }
+
+  td {
+    padding: 0.45rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: rgba(0,0,0,0.03); }
+
+  td code, th code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    background: rgba(0,0,0,0.06);
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* ── LFG STRUCTURES ── */
+  .lfg-block {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.9;
+    color: var(--ink);
+    box-shadow: 2px 2px 0 var(--parchment);
+  }
+
+  .lfg-block .comment {
+    color: var(--faded);
+    font-style: italic;
+  }
+
+  .feat { color: var(--accent); font-weight: 600; }
+  .val  { color: var(--rust); }
+  .pred { color: #285a28; font-weight: 600; }
+  .bracket { color: var(--gold); font-weight: 700; }
+
+  /* ── CSTREE ── */
+  .cstree {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 1.1rem 1.4rem;
+    border-radius: 4px;
+    margin: 1rem 0 1.5rem;
+    white-space: pre;
+    overflow-x: auto;
+    color: var(--ink);
+  }
+
+  /* ── RULES BOX ── */
+  .rules-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 1.1rem 1.4rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 2;
+    margin: 0.8rem 0 1.4rem;
+  }
+
+  .rules-box .rule-lhs { color: var(--rust); font-weight: 600; }
+  .rules-box .rule-arrow { color: var(--gold); }
+  .rules-box .rule-rhs { color: var(--ink); }
+  .rules-box .ann { color: var(--faded); font-size: 0.75em; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: rgba(92,61,122,0.07);
+    border-left: 3px solid var(--accent);
+    padding: 0.8rem 1.1rem;
+    margin: 1rem 0;
+    font-size: 0.93rem;
+    color: var(--slate);
+  }
+
+  .callout strong { color: var(--accent); }
+
+  /* ── TAG PILLS ── */
+  .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1rem; }
+  .pill {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.82rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--slate);
+  }
+
+  /* ── TRANSLATION ── */
+  .translation-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .translation-pair { grid-template-columns: 1fr; }
+  }
+
+  .t-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem;
+  }
+
+  .t-box-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--faded);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+  }
+
+  .t-original {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--slate);
+    line-height: 1.7;
+  }
+
+  .t-translated {
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--faded);
+    text-align: center;
+    font-style: italic;
+  }
+
+  hr.ornament {
+    border: none;
+    text-align: center;
+    color: var(--gold);
+    margin: 2rem 0;
+    font-size: 1.2rem;
+  }
+  hr.ornament::before { content: "❦"; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="subtitle-tag">Linguistic Analysis Report · LFG Framework</div>
+  <h1>Grammar System &amp; Lexical-Functional<br>Structure of an Unknown Text</h1>
+  <div class="header-meta">Morphophonological Analysis · Phrase Structure Rules · F-Structure Mapping · Tentative Translation</div>
+</header>
+
+<!-- §1 CORPUS IDENTIFICATION -->
+<section>
+  <h2>§ 1 · Identification of the Text</h2>
+
+  <p>The uploaded text presents approximately 1,000 lines of dense, fragmented prose. At first glance it appears garbled or encrypted, but careful analysis reveals it to be <strong>deteriorated Early New High German (Frühneuhochdeutsch)</strong> — specifically a manuscript that has undergone significant graphemic corruption through what appears to be OCR error, scribal telescoping, or deliberate obfuscation.</p>
+
+  <div class="callout">
+    <strong>Language assignment:</strong> The text belongs to the German family (West Germanic, Indo-European) and most closely resembles a corrupted form of <strong>Early New High German (c. 1350–1650 CE)</strong>, with some features of Middle High German. Intact function words (<em>der, ich, er, den, das, ein, und, daß, zu, sie, war, wie, wir, sich, aber, nicht</em>) are high-frequency German forms, and morphological suffixes (-<em>en</em>, -<em>er</em>, -<em>te</em>, -<em>lich</em>, -<em>keit</em>, -<em>ung</em>, -<em>heit</em>) are unambiguously Germanic.
+  </div>
+
+  <h3>Intact Recognisable Words</h3>
+  <div class="pills">
+    <span class="pill">der (140×)</span>
+    <span class="pill">ich (93×)</span>
+    <span class="pill">er (91×)</span>
+    <span class="pill">den (83×)</span>
+    <span class="pill">das (60×)</span>
+    <span class="pill">ein (55×)</span>
+    <span class="pill">es (47×)</span>
+    <span class="pill">und (36×)</span>
+    <span class="pill">die (36×)</span>
+    <span class="pill">wir (26×)</span>
+    <span class="pill">daß (26×)</span>
+    <span class="pill">war (24×)</span>
+    <span class="pill">wie (24×)</span>
+    <span class="pill">sich (14×)</span>
+    <span class="pill">aber (16×)</span>
+    <span class="pill">zu (31×)</span>
+    <span class="pill">nicht/icht (23×)</span>
+    <span class="pill">sie (23×)</span>
+    <span class="pill">dar (23×)</span>
+    <span class="pill">dem (13×)</span>
+    <span class="pill">zur (13×)</span>
+    <span class="pill">wo (13×)</span>
+    <span class="pill">dein (12×)</span>
+    <span class="pill">wan/wann (12×)</span>
+    <span class="pill">unde (16×)</span>
+    <span class="pill">dan(n) (46×)</span>
+  </div>
+
+  <h3>Sample Corpus Lines</h3>
+  <div class="corpus-box">Line  1: ich eltevat ur mieget der s me pr aufawi eonderengegend wer höt ausch far alls des eibemaitg bl iechr mi den han mer zuchöten , ?.
+Line  9: , den wan wir weren stacht vien wir deruihtäsend , men ) engelewas unde was
+Line 10: ichge m jeichen dal iomme zurückich dauchen wischen her bufhe iendzen dr was gchich nan , deisegen en au uns w ihich liaellsse schine ferlieh aruntelte mimen abern g v iech es ho m ich au m ierstngleicht einn sn dicht sen m inesgter geshen kan eino deni a we wauv autedume
+Line 22: ehr die ichint ter gen volnd iten , woan al plbes weri stehrachentn wihen ) erst werdäliß ngestie g aber stich er doen waterirt da er den zuruch ter dieraust ab ie iergen köner erin endoend milln der näracke awas dist deraußgetwi in das ichnnterur mert
+Line 73: aber ngle eng nuhwer lemm , darstäme soch wi der wanraltegen .</div>
+
+  <p>The corruption pattern is systematic: word-internal character transposition, syllable fusion (adjacent words merged), prefix–stem separation, and occasional insertion of stray consonants. This profile matches <strong>damaged OCR of a handwritten Early New High German manuscript</strong>, possibly 16th–17th century narrative prose or chronicle.</p>
+</section>
+
+<hr class="ornament">
+
+<!-- §2 MORPHOLOGY -->
+<section>
+  <h2>§ 2 · Morphological System</h2>
+
+  <p>Despite the surface corruption, the morphological system is reconstructible because inflectional affixes survive intact. The language is <strong>fusional</strong> with strong case–number–gender agreement.</p>
+
+  <h3>2.1 Nominal Inflection (Case–Gender–Number)</h3>
+  <table>
+    <tr><th>Case</th><th>Masc SG</th><th>Fem SG</th><th>Neut SG</th><th>Plural</th></tr>
+    <tr><td>NOM</td><td><code>der</code></td><td><code>die</code></td><td><code>das</code></td><td><code>die</code></td></tr>
+    <tr><td>ACC</td><td><code>den</code></td><td><code>die</code></td><td><code>das</code></td><td><code>die</code></td></tr>
+    <tr><td>DAT</td><td><code>dem / m</code></td><td><code>der</code></td><td><code>dem / m</code></td><td><code>den</code></td></tr>
+    <tr><td>GEN</td><td><code>des</code></td><td><code>der</code></td><td><code>des</code></td><td><code>der</code></td></tr>
+  </table>
+  <p style="font-size:0.88rem; color:var(--faded);">Evidence: <em>den wan wir weren</em> (ACC masc NP), <em>der…wanraltegen</em> (DAT/GEN fem). Contracted dative <em>m</em> for <em>dem</em> is typical of ENHG colloquial.</p>
+
+  <h3>2.2 Pronoun Paradigm (Reconstructed)</h3>
+  <table>
+    <tr><th>Person</th><th>NOM</th><th>ACC</th><th>DAT</th><th>GEN</th></tr>
+    <tr><td>1SG</td><td><code>ich</code></td><td><code>mich/mich</code></td><td><code>mir/mier/mer</code></td><td><code>mein</code></td></tr>
+    <tr><td>2SG</td><td><code>du/dich</code></td><td><code>dich</code></td><td><code>dir</code></td><td><code>dein</code></td></tr>
+    <tr><td>3SG.M</td><td><code>er</code></td><td><code>ihn/ier</code></td><td><code>ihm/ihm</code></td><td><code>sein</code></td></tr>
+    <tr><td>3SG.F</td><td><code>sie</code></td><td><code>sie</code></td><td><code>ihr/ihr</code></td><td><code>ihr</code></td></tr>
+    <tr><td>3SG.N</td><td><code>es</code></td><td><code>es</code></td><td><code>ihm</code></td><td><code>sein</code></td></tr>
+    <tr><td>1PL</td><td><code>wir</code></td><td><code>uns</code></td><td><code>uns</code></td><td><code>unser</code></td></tr>
+    <tr><td>3PL</td><td><code>sie</code></td><td><code>sie</code></td><td><code>ihnen/ien</code></td><td><code>ihr</code></td></tr>
+  </table>
+  <p style="font-size:0.88rem; color:var(--faded);">Attested forms: <em>ich</em> (93×), <em>er</em> (91×), <em>wir</em> (26×), <em>sie</em> (23×), <em>mir→mier/mer</em> (26×), <em>ihr→ih/ier</em>.</p>
+
+  <h3>2.3 Verbal Morphology</h3>
+  <table>
+    <tr><th>Category</th><th>Marker</th><th>Example in Text</th><th>Reconstructed Form</th></tr>
+    <tr><td>INF</td><td><code>-(e)n</code></td><td><em>zuchöten</em></td><td><em>zuhören</em> (to listen)</td></tr>
+    <tr><td>PAST.3SG</td><td><code>-te / -war</code></td><td><em>war, stacht</em></td><td><em>war, stand</em></td></tr>
+    <tr><td>PAST.1PL</td><td><code>-wen/-waren</code></td><td><em>weren</em></td><td><em>waren</em> (were)</td></tr>
+    <tr><td>PRES.1SG</td><td><code>-e / -∅</code></td><td><em>ich …gehe</em></td><td>standard</td></tr>
+    <tr><td>PRES.2SG</td><td><code>-st</code></td><td><em>ichtist, wißt</em></td><td><em>weißt</em></td></tr>
+    <tr><td>PRES.3SG</td><td><code>-t</code></td><td><em>wer…höt</em></td><td><em>hört</em> (hears)</td></tr>
+    <tr><td>PRES.1PL</td><td><code>-en</code></td><td><em>wir waren</em></td><td>standard</td></tr>
+    <tr><td>SUBJ.PAST</td><td><code>-wäre-</code></td><td><em>wäß, wären</em></td><td><em>wäre/wären</em></td></tr>
+    <tr><td>IMP</td><td><code>-∅ / -e</code></td><td><em>dar, geh</em></td><td>standard</td></tr>
+    <tr><td>PTCP.PAST</td><td><code>ge-…-(e)t/en</code></td><td><em>geiten, geshen, gab</em></td><td><em>gegangen, gesehen, gab</em></td></tr>
+  </table>
+
+  <h3>2.4 Derivational Suffixes</h3>
+  <div class="pills">
+    <span class="pill">-lich (adjectival)</span>
+    <span class="pill">-keit (abstract noun fem)</span>
+    <span class="pill">-heit (abstract noun fem)</span>
+    <span class="pill">-ung (action noun fem)</span>
+    <span class="pill">-er (agent noun masc)</span>
+    <span class="pill">-en (infinitive/plural)</span>
+    <span class="pill">ge- (past participle prefix)</span>
+    <span class="pill">un- (negation prefix)</span>
+    <span class="pill">ver- (verbal prefix)</span>
+    <span class="pill">zu- (directional prefix)</span>
+    <span class="pill">auf- (directional prefix)</span>
+    <span class="pill">dar- (demonstrative prefix)</span>
+  </div>
+</section>
+
+<hr class="ornament">
+
+<!-- §3 PHRASE STRUCTURE GRAMMAR -->
+<section>
+  <h2>§ 3 · Phrase Structure Grammar (C-Structure Rules)</h2>
+
+  <p>In Lexical-Functional Grammar, the <strong>c-structure</strong> (constituent structure) encodes surface phrase geometry before functional annotation. The following context-free rules are extracted from recurring patterns.</p>
+
+  <div class="rules-box">
+<span class="rule-lhs">CP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">C'</span>
+<span class="rule-lhs">C'</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">C  IP</span>
+<span class="rule-lhs">IP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">NP  I'</span>
+<span class="rule-lhs">I'</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">I  VP</span>
+<span class="rule-lhs">VP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">(NP)  (PP)  (AdvP)  V'</span>
+<span class="rule-lhs">V'</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">V  (NP)  (PP)  (CP)</span>
+
+<span class="rule-lhs">NP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">(Det)  (AdjP)  N'</span>
+<span class="rule-lhs">N'</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">N  (PP)  (CP)</span>
+<span class="rule-lhs">Det</span>  <span class="rule-arrow">→</span>  <span class="rule-rhs">der | die | das | den | dem | des | ein | eine | einen | einem | eines</span>
+
+<span class="rule-lhs">AdjP</span><span class="rule-arrow">→</span>  <span class="rule-rhs">(AdvP)  Adj</span>
+<span class="rule-lhs">PP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">P  NP</span>
+<span class="rule-lhs">AdvP</span> <span class="rule-arrow">→</span>  <span class="rule-rhs">Adv  (AdvP)</span>
+
+<span class="ann">— VERB-SECOND (V2) RULE (Germanic) —</span>
+<span class="rule-lhs">IP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">XP[TOP]  I[+fin]  NP[SUBJ]  VP</span>   <span class="ann">← main clause</span>
+<span class="rule-lhs">IP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">NP[SUBJ]  I[+fin]  VP</span>            <span class="ann">← when SUBJ is topic</span>
+<span class="rule-lhs">IP</span>   <span class="rule-arrow">→</span>  <span class="rule-rhs">NP[SUBJ]  VP  I[+fin]</span>           <span class="ann">← embedded / SOV</span>
+  </div>
+
+  <div class="callout">
+    <strong>Key Germanic feature:</strong> This language is <strong>V2 in main clauses, SOV in embedded clauses</strong> — the defining word-order typology of German. The corrupted text preserves both orders: finite verbs appear second in main clauses (<em>ich…war</em>, <em>wir…weren</em>) and clause-final in subordinate contexts (<em>daß…war</em>, <em>den wan wir weren</em>).
+  </div>
+
+  <h3>3.1 C-Structure Tree — Reconstructed Sentence</h3>
+  <p>Reconstructed from line 9: <em>"den wan wir weren stacht vien wir deruihtäsend"</em><br>→ <em>"dann, wann wir waren, standen wir dort und sahen"</em></p>
+  <div class="cstree">CP
+└── C'
+    ├── C  [dann/dan — then, TOP]
+    └── IP
+        ├── NP [wir — 1PL]
+        └── I'
+            ├── I  [waren — PAST.1PL, V2 position]
+            └── VP
+                └── V'
+                    ├── AdvP [dort — there]
+                    └── V [standen/stacht — stood]</div>
+
+  <h3>3.2 C-Structure Tree — Main Clause with Object</h3>
+  <p>Reconstructed from corpus: <em>"ich…höret den man"</em> → <em>"ich höre den Mann"</em></p>
+  <div class="cstree">IP
+├── NP  [ich — 1SG.NOM]
+└── I'
+    ├── I  [höre — PRES.1SG]
+    └── VP
+        └── V'
+            ├── NP [den Mann — ACC.MASC.SG]
+            └── V  [⟨trace⟩]</div>
+</section>
+
+<hr class="ornament">
+
+<!-- §4 LFG F-STRUCTURES -->
+<section>
+  <h2>§ 4 · Lexical-Functional Grammar: F-Structures</h2>
+
+  <p>The <strong>f-structure</strong> in LFG represents the grammatical information in a feature matrix, abstracting away from surface order. Below are annotated f-structures for reconstructed clauses.</p>
+
+  <h3>4.1 Simple Declarative — "ich höre den Mann"</h3>
+  <div class="lfg-block">
+<span class="comment">/* "I hear the man" — PRES.1SG, transitive */</span>
+<span class="bracket">[</span>
+  <span class="feat">PRED</span>    '<span class="pred">HÖREN</span>&lt;<span class="val">[SUBJ], [OBJ]</span>&gt;'
+  <span class="feat">TENSE</span>   <span class="val">PRESENT</span>
+  <span class="feat">MOOD</span>    <span class="val">INDICATIVE</span>
+  <span class="feat">SUBJ</span>    <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">PRO</span>'  <span class="feat">PERS</span> <span class="val">1</span>  <span class="feat">NUM</span> <span class="val">SG</span>  <span class="feat">CASE</span> <span class="val">NOM</span> <span class="bracket">]</span>
+  <span class="feat">OBJ</span>     <span class="bracket">[</span>
+            <span class="feat">PRED</span> '<span class="pred">MANN</span>'
+            <span class="feat">SPEC</span> <span class="bracket">[</span> <span class="feat">DEF</span> <span class="val">+</span>  <span class="feat">GEND</span> <span class="val">MASC</span> <span class="bracket">]</span>
+            <span class="feat">NUM</span>  <span class="val">SG</span>
+            <span class="feat">GEND</span> <span class="val">MASC</span>
+            <span class="feat">CASE</span> <span class="val">ACC</span>
+          <span class="bracket">]</span>
+<span class="bracket">]</span>
+  </div>
+
+  <h3>4.2 Existential / Copular — "er war dort" (he was there)</h3>
+  <div class="lfg-block">
+<span class="comment">/* "er war dort" — attested: er…war (91×/24×) */</span>
+<span class="bracket">[</span>
+  <span class="feat">PRED</span>    '<span class="pred">SEIN</span>&lt;<span class="val">[SUBJ]</span>&gt;'
+  <span class="feat">TENSE</span>   <span class="val">PAST</span>
+  <span class="feat">MOOD</span>    <span class="val">INDICATIVE</span>
+  <span class="feat">SUBJ</span>    <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">PRO</span>'  <span class="feat">PERS</span> <span class="val">3</span>  <span class="feat">NUM</span> <span class="val">SG</span>  <span class="feat">GEND</span> <span class="val">MASC</span>  <span class="feat">CASE</span> <span class="val">NOM</span> <span class="bracket">]</span>
+  <span class="feat">ADJUNCT</span> <span class="bracket">{</span> <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">DORT</span>'  <span class="feat">TYPE</span> <span class="val">LOC</span> <span class="bracket">]</span> <span class="bracket">}</span>
+<span class="bracket">]</span>
+  </div>
+
+  <h3>4.3 Complex Clause with Subordination — "daß wir waren"</h3>
+  <div class="lfg-block">
+<span class="comment">/* Subordinate clause headed by complementiser "daß" */</span>
+<span class="bracket">[</span>
+  <span class="feat">PRED</span>    '<span class="pred">WISSEN</span>&lt;<span class="val">[SUBJ], [COMP]</span>&gt;'   <span class="comment">/* matrix pred */</span>
+  <span class="feat">TENSE</span>   <span class="val">PAST</span>
+  <span class="feat">SUBJ</span>    <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">PRO</span>'  <span class="feat">PERS</span> <span class="val">1</span>  <span class="feat">NUM</span> <span class="val">SG</span> <span class="bracket">]</span>
+  <span class="feat">COMP</span>    <span class="bracket">[</span>
+            <span class="feat">PRED</span>  '<span class="pred">SEIN</span>&lt;<span class="val">[SUBJ]</span>&gt;'
+            <span class="feat">COMP-FORM</span> <span class="val">DAß</span>
+            <span class="feat">TENSE</span> <span class="val">PAST</span>
+            <span class="feat">SUBJ</span>  <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">PRO</span>'  <span class="feat">PERS</span> <span class="val">1</span>  <span class="feat">NUM</span> <span class="val">PL</span> <span class="bracket">]</span>
+          <span class="bracket">]</span>
+<span class="bracket">]</span>
+  </div>
+
+  <h3>4.4 Interrogative — "wer höt?" (who hears?)</h3>
+  <div class="lfg-block">
+<span class="comment">/* Wh-question: "wer höt ?" — lines ending in ? */</span>
+<span class="bracket">[</span>
+  <span class="feat">PRED</span>    '<span class="pred">HÖREN</span>&lt;<span class="val">[SUBJ]</span>&gt;'
+  <span class="feat">TENSE</span>   <span class="val">PRESENT</span>
+  <span class="feat">STMT-TYPE</span> <span class="val">INTERROGATIVE</span>
+  <span class="feat">FOCUS</span>   <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">WER</span>'  <span class="feat">CASE</span> <span class="val">NOM</span>  <span class="feat">WH</span> <span class="val">+</span> <span class="bracket">]</span>
+  <span class="feat">SUBJ</span>    = <span class="val">↑FOCUS</span>   <span class="comment">/* SUBJ co-indexed with wh-phrase */</span>
+<span class="bracket">]</span>
+  </div>
+
+  <h3>4.5 Imperative — "dar(e)!" / "geh(e)!"</h3>
+  <div class="lfg-block">
+<span class="comment">/* Imperative 2SG — "dar" / "gehe!" attested */</span>
+<span class="bracket">[</span>
+  <span class="feat">PRED</span>    '<span class="pred">GEHEN</span>&lt;<span class="val">[SUBJ]</span>&gt;'
+  <span class="feat">MOOD</span>    <span class="val">IMPERATIVE</span>
+  <span class="feat">SUBJ</span>    <span class="bracket">[</span> <span class="feat">PRED</span> '<span class="pred">PRO</span>'  <span class="feat">PERS</span> <span class="val">2</span>  <span class="feat">NUM</span> <span class="val">SG</span> <span class="bracket">]</span>   <span class="comment">/* null 2SG subject */</span>
+<span class="bracket">]</span>
+  </div>
+</section>
+
+<hr class="ornament">
+
+<!-- §5 LEXICAL ENTRIES -->
+<section>
+  <h2>§ 5 · Selected Lexical Entries (LFG Format)</h2>
+
+  <div class="rules-box">
+<span class="ann">— DETERMINERS —</span>
+<span class="rule-lhs">der</span>    <span class="rule-arrow">D</span>   (↑ DEF)=+  (↑ GEND)=MASC  (↑ CASE)=NOM|DAT|GEN
+<span class="rule-lhs">den</span>    <span class="rule-arrow">D</span>   (↑ DEF)=+  (↑ GEND)=MASC  (↑ CASE)=ACC
+<span class="rule-lhs">dem/m</span>  <span class="rule-arrow">D</span>   (↑ DEF)=+  (↑ GEND)=MASC|NEUT  (↑ CASE)=DAT
+<span class="rule-lhs">das</span>    <span class="rule-arrow">D</span>   (↑ DEF)=+  (↑ GEND)=NEUT  (↑ CASE)=NOM|ACC
+<span class="rule-lhs">die</span>    <span class="rule-arrow">D</span>   (↑ DEF)=+  (↑ GEND)=FEM|PL
+<span class="rule-lhs">ein</span>    <span class="rule-arrow">D</span>   (↑ DEF)=-  (↑ GEND)=MASC|NEUT  (↑ CASE)=NOM
+
+<span class="ann">— PRONOUNS —</span>
+<span class="rule-lhs">ich</span>    <span class="rule-arrow">N</span>   (↑ PRED)='PRO'  (↑ PERS)=1  (↑ NUM)=SG  (↑ CASE)=NOM
+<span class="rule-lhs">er</span>     <span class="rule-arrow">N</span>   (↑ PRED)='PRO'  (↑ PERS)=3  (↑ NUM)=SG  (↑ GEND)=MASC (↑ CASE)=NOM
+<span class="rule-lhs">sie</span>    <span class="rule-arrow">N</span>   (↑ PRED)='PRO'  (↑ PERS)=3  (↑ NUM)=SG|PL (↑ GEND)=FEM
+<span class="rule-lhs">es</span>     <span class="rule-arrow">N</span>   (↑ PRED)='PRO'  (↑ PERS)=3  (↑ NUM)=SG  (↑ GEND)=NEUT
+<span class="rule-lhs">wir</span>    <span class="rule-arrow">N</span>   (↑ PRED)='PRO'  (↑ PERS)=1  (↑ NUM)=PL  (↑ CASE)=NOM
+
+<span class="ann">— COMPLEMENTISERS —</span>
+<span class="rule-lhs">daß</span>    <span class="rule-arrow">C</span>   (↑ COMP-FORM)=DAß  (↑ STMT-TYPE)=DECL  (↓ MOOD)=IND|SUBJ
+<span class="rule-lhs">wan(n)</span> <span class="rule-arrow">C</span>   (↑ COMP-FORM)=WANN  (↑ ADJ-TYPE)=TEMP
+<span class="rule-lhs">wo</span>     <span class="rule-arrow">C</span>   (↑ COMP-FORM)=WO   (↑ ADJ-TYPE)=LOC
+
+<span class="ann">— PREPOSITIONS (case-governing) —</span>
+<span class="rule-lhs">zu</span>     <span class="rule-arrow">P</span>   (↑ PCASE)=ZU   (↓ CASE)=DAT
+<span class="rule-lhs">an</span>     <span class="rule-arrow">P</span>   (↑ PCASE)=AN   (↓ CASE)=DAT|ACC
+<span class="rule-lhs">dar</span>    <span class="rule-arrow">P</span>   (↑ PCASE)=DAR  (↓ CASE)=DAT   <span class="ann">← "darunter/daran"</span>
+<span class="rule-lhs">von</span>    <span class="rule-arrow">P</span>   (↑ PCASE)=VON  (↓ CASE)=DAT
+<span class="rule-lhs">in</span>     <span class="rule-arrow">P</span>   (↑ PCASE)=IN   (↓ CASE)=DAT|ACC
+<span class="rule-lhs">mit/mi</span><span class="rule-arrow">P</span>   (↑ PCASE)=MIT  (↓ CASE)=DAT
+
+<span class="ann">— VERBS (reconstructed) —</span>
+<span class="rule-lhs">hört/höt</span>   <span class="rule-arrow">V</span>  (↑ PRED)='HÖREN&lt;[SUBJ],[OBJ]&gt;'  (↑ TENSE)=PRES  (↑ AGR PERS)=3
+<span class="rule-lhs">war</span>        <span class="rule-arrow">V</span>  (↑ PRED)='SEIN&lt;[SUBJ]&gt;'    (↑ TENSE)=PAST  (↑ AGR NUM)=SG
+<span class="rule-lhs">waren/weren</span><span class="rule-arrow">V</span>  (↑ PRED)='SEIN&lt;[SUBJ]&gt;'    (↑ TENSE)=PAST  (↑ AGR NUM)=PL
+<span class="rule-lhs">gab</span>        <span class="rule-arrow">V</span>  (↑ PRED)='GEBEN&lt;[SUBJ],[OBJ]&gt;' (↑ TENSE)=PAST (↑ AGR NUM)=SG
+<span class="rule-lhs">sehen/geshen</span><span class="rule-arrow">V</span> (↑ PRED)='SEHEN&lt;[SUBJ],[OBJ]&gt;' (↑ TENSE)=PAST.PTCP
+  </div>
+</section>
+
+<hr class="ornament">
+
+<!-- §6 FUNCTIONAL EQUATIONS -->
+<section>
+  <h2>§ 6 · Functional Annotations (Φ-Mapping)</h2>
+
+  <p>In LFG, each node in the c-structure is annotated with <strong>functional equations</strong> that map constituents to their f-structure roles. These are the <em>annotated phrase structure rules</em>:</p>
+
+  <div class="rules-box">
+<span class="ann">— CORE CLAUSE (V2 main clause) —</span>
+<span class="rule-lhs">IP</span>  <span class="rule-arrow">→</span>  XP          I[+fin]     NP          VP
+         (↑ TOP)=↓    ↑=↓         (↑ SUBJ)=↓  ↑=↓
+
+<span class="ann">— NP with determiner —</span>
+<span class="rule-lhs">NP</span>  <span class="rule-arrow">→</span>  Det         N
+         ↑=↓          (↑ PRED)='N'
+                      (↑ NUM)=↓    (↑ GEND)=↓  (↑ CASE)=↓
+
+<span class="ann">— VP with object —</span>
+<span class="rule-lhs">VP</span>  <span class="rule-arrow">→</span>  NP          V
+         (↑ OBJ)=↓    ↑=↓
+
+<span class="ann">— PP adjunct —</span>
+<span class="rule-lhs">VP</span>  <span class="rule-arrow">→</span>  VP          PP
+         ↑=↓          (↑ ADJUNCT)∈↓
+
+<span class="ann">— Subordinate CP —</span>
+<span class="rule-lhs">CP</span>  <span class="rule-arrow">→</span>  C           IP
+         (↑ COMP-FORM)=↓COMP-FORM    ↑=↓
+
+<span class="ann">— Agreement constraint (SUBJ-VERB) —</span>
+(↑ AGR) = (↑ SUBJ AGR)
+(↑ SUBJ CASE) = NOM
+  </div>
+</section>
+
+<hr class="ornament">
+
+<!-- §7 TRANSLATION -->
+<section>
+  <h2>§ 7 · Attempted Translation</h2>
+
+  <p>Given the corruption, translation is interpretive. The method: (1) identify intact function words and morphological anchors, (2) reconstruct probable lexemes from fragments, (3) generate the most plausible Early New High German reading, (4) translate to English.</p>
+
+  <div class="translation-pair">
+    <div class="t-box">
+      <div class="t-box-label">Original (Corrupted)</div>
+      <div class="t-original">ich eltevat ur mieget der s me pr aufawi eonderengegend wer höt ausch far alls des eibemaitg bl iechr mi den han mer zuchöten , ?.</div>
+    </div>
+    <div class="t-box">
+      <div class="t-box-label">Reconstructed ENHG + Translation</div>
+      <div class="t-translated"><em>Ich [erhebe/bitte], mir [der/das, das] mich [aufwärts/oben] aus dieser [Gegend/Umgebung — who hears?], auch fern von allem. Des [Leibes/Eifers macht] mir, den [Mann], mehr zuhören.</em><br><br>→ "I beseech [you], let me rise out of this place — who listens? Far from everything. Of [body/zeal] it makes me want to listen more to [the man]."</div>
+    </div>
+  </div>
+
+  <div class="translation-pair">
+    <div class="t-box">
+      <div class="t-box-label">Original (Corrupted)</div>
+      <div class="t-original">den wan wir weren stacht vien wir deruihtäsend , men ) engelewas unde was</div>
+    </div>
+    <div class="t-box">
+      <div class="t-box-label">Reconstructed + Translation</div>
+      <div class="t-translated"><em>Dann, wann wir waren, standen wir [dort/fern]; wir [sahen/hörten die Runde], men(niglich) — und [der Engel/engelgleich] war es, und war [es].</em><br><br>→ "Then, when we were [there], we stood [in that place]; we perceived the gathering — it was like [angels/celestial], and so it was."</div>
+    </div>
+  </div>
+
+  <div class="translation-pair">
+    <div class="t-box">
+      <div class="t-box-label">Original (Corrupted)</div>
+      <div class="t-original">aber ngle eng nuhwer lemm , darstäme soch wi der wanraltegen .</div>
+    </div>
+    <div class="t-box">
+      <div class="t-box-label">Reconstructed + Translation</div>
+      <div class="t-translated"><em>Aber [nah/nahe] [eng], nun wer [kommt/kämme] — dar [Stimme/Stämme] such[e] wie der [Wand/Alten/Wandelten].</em><br><br>→ "But [closely/near], now whoever comes — seek [the voice/the trunk] like the [ancients/the wandering ones]."</div>
+    </div>
+  </div>
+
+  <div class="translation-pair">
+    <div class="t-box">
+      <div class="t-box-label">Original (Corrupted)</div>
+      <div class="t-original">un gein der fiser peieitenget aun wi getersln .</div>
+    </div>
+    <div class="t-box">
+      <div class="t-box-label">Reconstructed + Translation</div>
+      <div class="t-translated"><em>Und [ge-]ein der [Fischer/Weiser] [be-]gleitet [auf/an] — wie [geht er los / gieß er]?</em><br><br>→ "And one of the [fishermen/wise ones] accompanies [us/it] — as how does he set forth?"</div>
+    </div>
+  </div>
+
+  <div class="translation-pair">
+    <div class="t-box">
+      <div class="t-box-label">Original (Corrupted)</div>
+      <div class="t-original">abeuschöt schlosien kön wire zuftausch hange .</div>
+    </div>
+    <div class="t-box">
+      <div class="t-box-label">Reconstructed + Translation</div>
+      <div class="t-translated"><em>Abends/[Aber-schön] [schloß/schlossen] können wir [Luft-]tausch [ab-]hangen.</em><br><br>→ "[By evening / beautifully], we could close [off the exchange of air / suspend the change]."</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Note on translation methodology:</strong> Multiple readings are possible for each segment. The corruption ratio is estimated at 40–60% of word-internal characters displaced or merged. The surviving grammatical skeleton (pronouns, articles, conjunctions, case endings) allows syntactic parsing even when content words are obscured. The genre appears to be <strong>narrative or devotional prose</strong> — consistent with 16th-century ENHG chronicles or religious meditation texts (e.g., in the tradition of Mechthild von Magdeburg or Hans Sachs).
+  </div>
+</section>
+
+<hr class="ornament">
+
+<!-- §8 SUMMARY -->
+<section>
+  <h2>§ 8 · Summary — Grammar Profile</h2>
+  <table>
+    <tr><th>Feature</th><th>Value</th></tr>
+    <tr><td>Language family</td><td>West Germanic → High German → Early New High German</td></tr>
+    <tr><td>Approximate period</td><td>c. 1400–1650 CE (ENHG), possibly 16th century</td></tr>
+    <tr><td>Word order</td><td>V2 (main clauses), SOV (embedded clauses)</td></tr>
+    <tr><td>Case system</td><td>4 cases: NOM, ACC, DAT, GEN</td></tr>
+    <tr><td>Gender</td><td>3 genders: Masculine, Feminine, Neuter</td></tr>
+    <tr><td>Number</td><td>Singular / Plural</td></tr>
+    <tr><td>Verb agreement</td><td>Person (1/2/3) × Number (SG/PL)</td></tr>
+    <tr><td>Tense system</td><td>Present, Past (Simple &amp; Compound), Subjunctive</td></tr>
+    <tr><td>Aspect</td><td>Lexical; analytic perfect with <em>haben/sein</em></td></tr>
+    <tr><td>Complementisers</td><td><em>daß, wann, wo, als, ob</em></td></tr>
+    <tr><td>Morphological type</td><td>Fusional (inflectional)</td></tr>
+    <tr><td>LFG structure type</td><td>Configurational CP/IP/VP; rich agreement-based f-structures</td></tr>
+    <tr><td>Corruption estimate</td><td>~40–60% word-internal displacement; function words largely intact</td></tr>
+    <tr><td>Likely genre</td><td>Narrative prose, chronicle, or devotional meditation</td></tr>
+  </table>
+</section>
+
+<footer>
+  LFG Analysis of Unknown Text · Compiled using Lexical-Functional Grammar (Bresnan &amp; Kaplan 1982) · Early New High German reference: Reichmann &amp; Wegera (1993) <em>Frühneuhochdeutsche Grammatik</em>
+</footer>
+
+</div>
+</body>
+</html>

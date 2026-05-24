@@ -11,23 +11,23 @@ set.seed(42)
 
 BATCH_SIZE <- 32
 EMBED_SIZE <- 64
+output.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/data/models/collapse")
+# SEQ_LEN <- 80
+# HIDDEN_SIZE <- 128
+# EPOCHS <- 3
+# GENERATIONS <- 3
+# GENERATED_CHARS <- 50000
 
 SEQ_LEN <- 80
 HIDDEN_SIZE <- 128
 EPOCHS <- 3
-GENERATIONS <- 3
-GENERATED_CHARS <- 50000
-
-# SEQ_LEN <- 40
-# HIDDEN_SIZE <- 64
-# EPOCHS <- 1
-# GENERATED_CHARS <- 2000
-# GENERATIONS <- 2
-
+GENERATED_CHARS <- 6000
+GENERATIONS <- 1:3
+GENS<-3
 TSTART<-"ich "
 TEMPERATURE <- 0.8
 
-SYNTHETIC_RATIO <- seq(0.1, 0.95, length.out = GENERATIONS)
+SYNTHETIC_RATIO <- seq(0.1, 0.95, length.out = length(GENERATIONS))
 
 # ============================================================
 # LOAD CORPUS
@@ -265,7 +265,7 @@ train_model <- function(net,
     total_loss <- 0
     
     for(b in 1:n_batches) {
-      if(b %% 50 == 0) {
+      if(b %% 500 == 0) {
         
         cat(
           "[TRAIN] epoch:",
@@ -323,7 +323,7 @@ current_text <- text
 
 metrics <- data.frame()
 
-for(gen in 1:GENERATIONS) {
+for(gen in 1:length(GENERATIONS)) {
   # for(gen in 1:2) {
     
   cat("\n=============================\n")
@@ -388,7 +388,7 @@ for(gen in 1:GENERATIONS) {
   # --------------------------------------
   # BUILD NEXT CORPUS
   # --------------------------------------
-  
+gen  
   synth_ratio <- SYNTHETIC_RATIO[gen]
   cat(
     "[CORPUS] synthetic ratio:",
@@ -411,26 +411,27 @@ for(gen in 1:GENERATIONS) {
     c(human_chars, synth_chars),
     collapse = ""
   )
+  gens<-paste0(GENS,"-",gen)
   torch_save(
     net,
-    paste0("model_gen_", gen, ".pt")
+    paste0(output.dir,"/model_gen_", gens, ".pt")
   )
   torch_save(
     optimizer$state_dict(),
-    paste0("optimizer_gen_", gen, ".pt")
+    paste0(output.dir,"/optimizer_gen_", gens, ".pt")
   )
   write.csv(
     metrics,
-    "collapse_metrics.csv",
+    paste0(output.dir,"/collapse_metrics-",gens,".csv"),
     row.names = FALSE
   )
   writeLines(
     synthetic,
-    paste0("synthetic_gen_", gen, ".txt")
+    paste0(output.dir,"/synthetic_gen_", gens, ".txt")
   )
   writeLines(
     current_text,
-    paste0("training_corpus_gen_", gen, ".txt")
+    paste0(output.dir,"/training_corpus_gen_", gens, ".txt")
   )
 }
 
@@ -457,3 +458,160 @@ ggplot(metrics,
   theme_minimal()
 
 print(metrics)
+
+netf<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/model_gen_1.pt")
+### visualize
+vis1<-function(net.f){
+  install.packages(c(
+  "uwot",
+  "viridis",
+  "MASS"
+))
+  library(torch)
+  net <- torch_load(netf)
+  extract_hidden_state <- function(net, text_seq) {
+
+  encoded <- encode_text(text_seq)
+
+  input <- torch_tensor(
+    matrix(encoded, nrow = 1),
+    dtype = torch_long()
+  )
+
+  out <- net(input)
+
+  hidden <- out[[2]]
+
+  as.numeric(hidden$squeeze()$detach())
+}
+  sample_sequences <- function(text,
+                             n_sequences = 500,
+                             seq_len = 80) {
+
+  sequences <- c()
+
+  max_start <- nchar(text) - seq_len
+
+  for(i in 1:n_sequences) {
+
+    start <- sample(1:max_start, 1)
+
+    seq <- substr(
+      text,
+      start,
+      start + seq_len
+    )
+
+    sequences <- c(sequences, seq)
+  }
+
+  sequences
+}
+  library(dplyr)
+
+seqs <- sample_sequences(
+  current_text,
+  n_sequences = 500,
+  seq_len = 80
+)
+head(seqs)
+latent_matrix <- lapply(
+  seqs,
+  function(x)
+    extract_hidden_state(net, x)
+)
+
+latent_matrix <- do.call(
+  rbind,
+  latent_matrix
+)
+
+dim(latent_matrix)
+  
+  library(uwot)
+
+umap_proj <- umap(
+  latent_matrix,
+  n_neighbors = 20,
+  min_dist = 0.05,
+  metric = "cosine"
+)
+  
+  library(ggplot2)
+
+plot_df <- data.frame(
+  x = umap_proj[,1],
+  y = umap_proj[,2]
+)
+
+ggplot(plot_df,
+       aes(x, y)) +
+
+  geom_point(
+    alpha = 0.7,
+    size = 2
+  ) +
+
+  theme_void() +
+
+  ggtitle(
+    "Latent Geometry of Corpus"
+  )
+
+  library(MASS)
+
+kde <- kde2d(
+  plot_df$x,
+  plot_df$y,
+  n = 400
+)
+  
+  filled.contour(
+  kde,
+  color.palette = viridis::viridis,
+  axes = FALSE,
+  frame.plot = FALSE
+)
+  
+    t1 <- generate_text(
+    net,
+    # seed = "the ",
+    seed = TSTART,
+    n_chars = 1000,
+    temperature = TEMPERATURE
+  )
+head(t1)
+  gen<-1
+  synth_ratio <- SYNTHETIC_RATIO[gen]
+  cat(
+    "[CORPUS] synthetic ratio:",
+    round(synth_ratio, 3),
+    "\n"
+  )
+  human_chars <- sample(
+    strsplit(text, "")[[1]],
+    size = floor((1 - synth_ratio) * nchar(text)),
+    replace = TRUE
+  )
+  human_chars
+    synth_chars <- sample(
+    strsplit(t1, "")[[1]],
+    size = floor(synth_ratio * nchar(text)),
+    replace = TRUE
+  )
+  synth_chars
+
+}
+postprocess<-function(){
+  t2<-readLines(paste0(Sys.getenv("GIT_TOP"),"/temp/model/unknown-1-01.txt"))
+  t3<-t2[t2!=""]
+  t3<-t3[t3!=" "]
+  t3<-gsub("^ ","",t3)
+  t3<-gsub(" ([\\.\\)!?,;:-])","\\1",t3)
+  t3
+  t3<-gsub("([\\.\\(!?]) $","\\1",t3)
+  t3<-gsub("\\( ","(",t3)
+ t3
+ length(t3)
+  writeLines(t3[1:200],"temp/model/M1-pseudoL1.txt")
+}
