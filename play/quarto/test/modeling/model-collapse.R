@@ -170,7 +170,8 @@ criterion <- nn_cross_entropy_loss()
 # ============================================================
 
 generate_text <- function(net,
-                          seed = "the ",
+                          # seed = "the ",
+                          seed = TSTART,
                           n_chars = 1000,
                           temperature = 0.8) {
   
