@@ -417,10 +417,12 @@ gen
   #   c(human_chars, synth_chars),
   #   collapse = ""
   # )
+  # GENS<-"xx"
+  # gen<-1
   gens<-paste0(GENS,"-",gen)
   current_text <- 
-    c(current_text, paste0("#### synthetic, M",gens),synthetic)
-
+    paste0(c(current_text, paste0("#### synthetic, M",gens),synthetic),collapse="\n")
+  # tail(current_text)
   gens
   torch_save(
     net,
