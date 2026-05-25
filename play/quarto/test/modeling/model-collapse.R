@@ -398,7 +398,7 @@ for(gen in st:length(GENERATIONS)) {
     data.frame(
       m = GENS,
       embeddings = EMBED_SIZE,
-      hidden = HIDDEM_SIZE,
+      hidden = HIDDEN_SIZE,
       batch = BATCH_SIZE,
       chars = GENERATED_CHARS,
       seq_l = SEQ_LEN,
