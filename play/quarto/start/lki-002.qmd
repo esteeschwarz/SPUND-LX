@@ -1,0 +1,36 @@
+---
+title: "subject - authorship - value in LLM generated texts"
+subtitle: "Literatur und Künstliche Intelligenz"
+#date: '`r format(Sys.time())`'
+date: '2026-05-20'
+categories:
+   - gpt
+   - llms
+   - training prospectives
+   - authorship
+   - model collaps
+   - bajohr
+metadata-files:
+  - _quarto-common-lki.yml
+---
+
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+
+{{< include _gitcom.qmd >}} 
+
+```{r,echo=F,eval=T}
+print("engine on...")
+```
+
+#### snc
+- 16222.1
+
+# intro
+nachdem ich die texte von hannes bajohr gelesen habe, stellen sich mir mehrere fragen, die so oder so ähnlich sich scheinbar schon angekündigt hatten im laufe der auseinandersetzung mit den themen des seminars. durch bajohr wurde ein grundlegendes problem hier einmal ausformuliert, dem in der literaturwissenschaft zentrale bedeutung zukommt: das (subjekt) d/ autor/ oder authorship sowie damit verbunden dann subjektivität-objektivität, verantwortung, zukunft der literatur unter den angedeuteten gesichtspunkten. 
+
+
+
+
+# references
