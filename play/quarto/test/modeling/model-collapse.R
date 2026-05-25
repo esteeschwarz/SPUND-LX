@@ -324,6 +324,8 @@ train_model <- function(net,
 current_text <- text
 current_text
 metrics <- data.frame()
+lt<- length(unlist(strsplit(current_text, "")))
+
 
 for(gen in 1:length(GENERATIONS)) {
   # for(gen in 1:2) {
@@ -346,12 +348,14 @@ for(gen in 1:length(GENERATIONS)) {
   # --------------------------------------
   # GENERATE
   # --------------------------------------
-  
+  lt*0.95/100
   synthetic <- generate_text(
     net,
     # seed = "the ",
     seed = TSTART,
-    n_chars = GENERATED_CHARS,
+    # n_chars = GENERATED_CHARS,
+
+    n_chars = (SYNTHETIC_RATIO[gen])*lt/100,
     temperature = TEMPERATURE
   )
   
@@ -409,11 +413,14 @@ gen
     replace = TRUE
   )
   
-  current_text <- paste0(
-    c(human_chars, synth_chars),
-    collapse = ""
-  )
+  # current_text <- paste0(
+  #   c(human_chars, synth_chars),
+  #   collapse = ""
+  # )
   gens<-paste0(GENS,"-",gen)
+  current_text <- 
+    c(current_text, paste0("#### synthetic, M",gens),synthetic)
+
   gens
   torch_save(
     net,

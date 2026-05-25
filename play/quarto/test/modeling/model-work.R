@@ -3,7 +3,7 @@ model<-"3-1"
 netf<-paste0(netns,"/model_gen_",model,".pt")
 nett<-paste0(netns,"/training_corpus_gen_",model,".txt")
 ### visualize
-vis1<-function(model){
+#vis1<-function(model){
 netns<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
 #model<-"2-1"
 netf<-paste0(netns,"/model_gen_",model,".pt")
@@ -47,6 +47,7 @@ nett
   netf
   netw<-paste0(netns,"/weights_",model,".pt")
   net <- torch_load(netf)
+  netm<-net
   torch_save(
   net$state_dict(),
   netw
@@ -116,13 +117,16 @@ create_model <- function(vocab_size,
 #   readLines("corpus.txt", warn = FALSE),
 #   collapse = "\n"
 # )
+ corpus<-get.text()
   text <- paste(
   readLines(nett),
   collapse = "\n"
 )
-  
+# head(corpus) 
+text<-corpus
   chars <- sort(unique(strsplit(text, "")[[1]]))
-
+  length(chars)
+  chars
 char_to_int <- setNames(
   seq_along(chars),
   chars
@@ -221,6 +225,82 @@ ggplot(plot_df,
   ggtitle(
     "Latent Geometry"
   )
+#}
+  generate_text <- function(netm,
+                          # seed = "the ",
+                          seed = TSTART,
+                          n_chars = 1000,
+                          temperature = 0.8) {
+  
+  netm$eval()
+  ##############
+   # seed<-"ich "
+    #n_chars<-6000
+    #temperature<-0.8
+  seed_encoded <- encode_text(seed)
+  #seed_encoded <- encode_text("ich ")
+  
+  input <- torch_tensor(
+    matrix(seed_encoded, nrow = 1),
+    dtype = torch_long()
+  )
+  
+  hidden <- NULL
+  
+  generated <- seed
+  i<-2
+  for(i in 1:n_chars) {
+    if(i %% 500 == 0) {
+      
+      cat(
+        "[GENERATE]",
+        i,
+        "/",
+        n_chars,
+        "chars generated\n"
+      )
+    }
+    out <- net(input, hidden)
+    out
+    logits <- out[[1]]
+    hidden <- out[[2]]
+    
+    last_logits <- logits[1, dim(logits)[2], ]
+    
+    probs <- nnf_softmax(last_logits / temperature,
+                         dim = 1)
+    
+    next_id <- as.integer(
+      torch_multinomial(probs, 1)$item()
+    )
+    cat("\r",next_id)
+    length(int_to_char)
+    #[[88]]
+    next_char <- int_to_char[[as.character(next_id)]]
+    
+    generated <- paste0(generated, next_char)
+    
+    input <- torch_tensor(
+      matrix(next_id, nrow = 1),
+      dtype = torch_long()
+    )
+  }
+  
+  generated
+  }
+#  library(torch)
+synthetic <- generate_text(
+  net = netm,
+    # seed = "the ",
+    seed = "ich ",
+    n_chars = 6000,
+    temperature = 0.8
+  )
+  
+  cat("\n--- GENERATED SAMPLE ---\n")
+  cat(substr(synthetic, 1, 500))
+  cat("\n\n")
+  
 #################
   vis_dep<-function(){
 library(readtext)
@@ -381,7 +461,7 @@ head(t1)
   synth_chars
 
 }
-}
+
 vis1(model)
 postprocess<-function(){
   t2<-readLines(paste0(Sys.getenv("GIT_TOP"),"/temp/model/unknown-1-01.txt"))
