@@ -13,6 +13,8 @@ BATCH_SIZE <- 32 #32
 EMBED_SIZE <- 64 #64
 output.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/data/models/collapse")
 output.dir<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
+tplus<-c(paste0(Sys.getenv("HKW_TOP"),"/AVL/2025/dokufiktion/mann_joseph.txt"),paste0(Sys.getenv("HKW_TOP"),"/AVL/2025/dokufiktion/musil_me.txt"),paste0(Sys.getenv("HKW_TOP"),"/AVL/2025/dokufiktion/sebald_austerlitz.txt"))
+tp<-T
 # SEQ_LEN <- 80
 # HIDDEN_SIZE <- 128
 # EPOCHS <- 3
@@ -81,15 +83,24 @@ int_to_char <- setNames(chars, seq_along(chars))
 length(int_to_char)
 
 encode_text <- function(txt) {
-chars <- sort(unique(strsplit(txt, "")[[1]]))
+# chars <- sort(unique(strsplit(txt, "")[[1]]))
 
-vocab_size <- length(chars)
-char_to_int <- setNames(seq_along(chars), chars)
+# vocab_size <- length(chars)
+# char_to_int <- setNames(seq_along(chars), chars)
   sapply(strsplit(txt, "")[[1]], function(x) char_to_int[[x]])
 }
-
-#t1<-  sapply(strsplit(current_text, "")[[1]], function(x) char_to_int[[x]])
-#t1<-encode_text(current_text)
+tu<-strsplit(current_text, "")[[1]]
+length(unique(tu))
+# t1<-  sapply(strsplit(current_text, "")[[1]], function(x) {
+#   print(x)
+#   char_to_int[[x]]
+# })
+# setdiff(
+#   unique(strsplit(current_text, "")[[1]]),
+#   chars
+# )
+# #t1<-  sapply(strsplit(current_text, "")[[1]], function(x) char_to_int[[x]])
+# t1<-encode_text(current_text)
 decode_text <- function(ids) {
   paste0(sapply(ids, function(x) int_to_char[[as.character(x)]]), collapse = "")
 }
@@ -332,22 +343,42 @@ train_model <- function(net,
 # ============================================================
 # COLLAPSE LOOP
 # ============================================================
-
+postprocess<-function(tt){
+  t2<-readLines(tt)
+  t3<-t2[t2!=""]
+  t3<-t3[t3!=" "]
+  t3<-gsub("^ ","",t3)
+  t3<-gsub(" ([\\.\\)!?,;:-])","\\1",t3)
+  t3
+  t3<-gsub("([\\.\\(!?]) $","\\1",t3)
+  t3<-gsub("\\( ","(",t3)
+# t3
+#  length(t3)
+#   writeLines(t3[1:200],"temp/model/M1-pseudoL1.txt")
+}
 current_text <- text
-current_text
+#current_text
 metrics <- data.frame()
 lt<- length(unlist(strsplit(current_text, "")))
 
-#gen<-2
+gen<-1
 st<-2
 st<-1
+st
+gen
 for(gen in st:length(GENERATIONS)) {
+lt<- length(unlist(strsplit(current_text, "")))
   # for(gen in 1:2) {
-    
+  if(tp)
+    tt<-postprocess(tplus[gen])
+#    tt<-readLines(tt)
+
+  
   cat("\n=============================\n")
   cat("GENERATION:", gen, "\n")
   
   encoded_current <- encode_text(current_text)
+  #encoded_current <- encode_text(text)
   
   # --------------------------------------
   # TRAIN
@@ -369,10 +400,11 @@ for(gen in st:length(GENERATIONS)) {
     seed = TSTART,
     # n_chars = GENERATED_CHARS,
 
-    n_chars = (SYNTHETIC_RATIO[gen])*lt/100,
+    n_chars = floor((SYNTHETIC_RATIO[gen])*lt/100),
     temperature = TEMPERATURE
   )
-  
+  # if(tp)
+  #   synthetic<-tt
   cat("\n--- GENERATED SAMPLE ---\n")
   cat(substr(synthetic, 1, 500))
   cat("\n\n")
@@ -387,12 +419,19 @@ for(gen in st:length(GENERATIONS)) {
     round(entropy, 4),
     "\n"
   )
+  e2 <- calculate_entropy(synthetic)
+  cat(
+    "[METRICS] entropy:",
+    round(e2, 4),
+    "\n"
+  )
   vocab <- length(unique(strsplit(current_text, "")[[1]]))
   cat(
     "[METRICS] vocabulary size:",
     vocab,
     "\n"
   )
+  #gen<-1
   metrics <- rbind(
     metrics,
     data.frame(
@@ -444,7 +483,7 @@ gen
   #chars
   gens<-paste0(GENS,"-",gen)
   current_text <- 
-    paste0(c(current_text, paste0("#### synthetic, M",gens),synthetic),collapse="\n")
+    paste0(c(current_text, paste0("#### synthetic, m",gens),synthetic),collapse="\n")
   # tail(current_text)
   gens
   torch_save(
