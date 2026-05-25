@@ -12,6 +12,7 @@ set.seed(42)
 BATCH_SIZE <- 32
 EMBED_SIZE <- 64
 output.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/data/models/collapse")
+output.dir<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/models/collapse")
 # SEQ_LEN <- 80
 # HIDDEN_SIZE <- 128
 # EPOCHS <- 3

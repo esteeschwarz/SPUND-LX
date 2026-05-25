@@ -1,0 +1,398 @@
+netns<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
+model<-"3-1"
+netf<-paste0(netns,"/model_gen_",model,".pt")
+nett<-paste0(netns,"/training_corpus_gen_",model,".txt")
+### visualize
+vis1<-function(model){
+netns<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
+#model<-"2-1"
+netf<-paste0(netns,"/model_gen_",model,".pt")
+nett<-paste0(netns,"/training_corpus_gen_",model,".txt")
+#   install.packages(c(
+#   "uwot",
+#   "viridis",
+#   "MASS"
+# ))
+  library(readr)
+#c<-read_delim("/Users/guhl/Documents/GitHub/benjaminfeldkraft/corpus/benjaminfeldkraft.vert",skip=2,delim="\t")
+# c <- read_delim(paste0(Sys.getenv("GIT_TOP"),"/benjaminfeldkraft/corpus/benjaminfeldkraft.vert"), 
+#     delim = "\t", escape_double = FALSE, 
+#     col_names = FALSE, trim_ws = TRUE, skip = 4)
+get.text<-function(){
+  library(stringr)
+  c <- read_delim("https://raw.githubusercontent.com/esteeschwarz/benjaminfeldkraft/main/corpus/benjaminfeldkraft.vert", 
+                delim = "\t", escape_double = FALSE, 
+                col_names = FALSE, trim_ws = TRUE, skip = 4,show_col_types = FALSE)
+
+colnames(c)<-c("token","pos","lemma")
+head(c,100)
+print(c,n=100)
+c1<-c
+c1$lemma<-gsub("-.*","",c1$lemma)
+c1$token<-gsub("</s>|<s>","\n",c1$token)
+#length(c1$token)
+c1<-c1[c1$token!="<g/>",]
+lu<-unique(c1$lemma)
+text <- paste(c1$token, collapse = " ")
+
+# minimal cleaning
+text <- str_replace_all(text, "\r", "")
+text <- str_to_lower(text)
+
+cat("Corpus characters:", nchar(text), "\n")
+  return(text)
+}
+nett
+    library(torch)
+  netf
+  netw<-paste0(netns,"/weights_",model,".pt")
+  net <- torch_load(netf)
+  torch_save(
+  net$state_dict(),
+  netw
+)
+  EMBED_SIZE <- 64
+  HIDDEN_SIZE <- 128
+  vocab_size <- 89
+
+create_model <- function(vocab_size,
+                         embed_size,
+                         hidden_size) {
+
+  model <- nn_module(
+
+    initialize = function(vocab_size,
+                          embed_size,
+                          hidden_size) {
+
+      self$embedding <- nn_embedding(
+        num_embeddings = vocab_size,
+        embedding_dim = embed_size
+      )
+
+      self$gru <- nn_gru(
+        input_size = embed_size,
+        hidden_size = hidden_size,
+        batch_first = TRUE
+      )
+
+      self$fc <- nn_linear(
+        hidden_size,
+        vocab_size
+      )
+    },
+
+    forward = function(x, hidden = NULL) {
+
+      x <- self$embedding(x)
+
+      gru_out <- self$gru(x, hidden)
+
+      out <- gru_out[[1]]
+
+      out <- self$fc(out)
+
+      list(out, gru_out[[2]])
+    }
+  )
+
+  model(
+    vocab_size,
+    embed_size,
+    hidden_size
+  )
+}
+    net <- create_model(
+  vocab_size = vocab_size,
+  embed_size = EMBED_SIZE,
+  hidden_size = HIDDEN_SIZE
+)
+  net$load_state_dict(
+  torch_load(netw)
+)
+#current_text<-readLines(nett)
+##############################
+#   text <- paste(
+#   readLines("corpus.txt", warn = FALSE),
+#   collapse = "\n"
+# )
+  text <- paste(
+  readLines(nett),
+  collapse = "\n"
+)
+  
+  chars <- sort(unique(strsplit(text, "")[[1]]))
+
+char_to_int <- setNames(
+  seq_along(chars),
+  chars
+)
+
+int_to_char <- setNames(
+  chars,
+  seq_along(chars)
+)
+  encode_text <- function(txt) {
+
+  sapply(
+    strsplit(txt, "")[[1]],
+    function(x) char_to_int[[x]]
+  )
+}
+  extract_hidden_state <- function(net, text_seq) {
+
+  encoded <- encode_text(text_seq)
+
+  input <- torch_tensor(
+    matrix(encoded, nrow = 1),
+    dtype = torch_long()
+  )
+
+  out <- net(input)
+
+  hidden <- out[[2]]
+
+  as.numeric(
+    hidden$squeeze()$detach()
+  )
+}
+  sample_sequences <- function(text,
+                             n_sequences = 500,
+                             seq_len = 80) {
+
+  sequences <- c()
+
+  max_start <- nchar(text) - seq_len
+
+  for(i in 1:n_sequences) {
+
+    start <- sample(1:max_start, 1)
+
+    seq <- substr(
+      text,
+      start,
+      start + seq_len
+    )
+
+    sequences <- c(sequences, seq)
+  }
+
+  sequences
+}
+
+seqs <- sample_sequences(text)
+  head(seqs)
+  latent_matrix <- lapply(
+  seqs,
+  function(x)
+    extract_hidden_state(net, x)
+)
+
+latent_matrix <- do.call(
+  rbind,
+  latent_matrix
+)
+  dim(latent_matrix)
+  library(uwot)
+
+umap_proj <- umap(
+  latent_matrix,
+  n_neighbors = 20,
+  min_dist = 0.05,
+  metric = "cosine"
+)
+  library(ggplot2)
+
+plot_df <- data.frame(
+  x = umap_proj[,1],
+  y = umap_proj[,2]
+)
+
+ggplot(plot_df,
+       aes(x, y)) +
+
+  geom_point(
+    alpha = 0.7,
+    size = 2
+  ) +
+
+  theme_void() +
+
+  ggtitle(
+    "Latent Geometry"
+  )
+#################
+  vis_dep<-function(){
+library(readtext)
+current_text<-readtext(nett)$text
+text<-current_text
+text<-get.text()
+  current_text<-text
+chars <- sort(unique(strsplit(text, "")[[1]]))
+
+vocab_size <- length(chars)
+
+char_to_int <- setNames(seq_along(chars), chars)
+int_to_char <- setNames(chars, seq_along(chars))
+
+encode_text <- function(txt) {
+  sapply(strsplit(txt, "")[[1]], function(x) char_to_int[[x]])
+}
+
+decode_text <- function(ids) {
+  paste0(sapply(ids, function(x) int_to_char[[as.character(x)]]), collapse = "")
+}
+
+
+  library(torch)
+  netf
+  net <- torch_load(netf)
+  extract_hidden_state <- function(net, text_seq) {
+
+  encoded <- encode_text(text_seq)
+
+  input <- torch_tensor(
+    matrix(encoded, nrow = 1),
+    dtype = torch_long()
+  )
+
+  out <- net(input)
+
+  hidden <- out[[2]]
+
+  as.numeric(hidden$squeeze()$detach())
+}
+  sample_sequences <- function(text,
+                             n_sequences = 500,
+                             seq_len = 80) {
+
+  sequences <- c()
+
+  max_start <- nchar(text) - seq_len
+
+  for(i in 1:n_sequences) {
+
+    start <- sample(1:max_start, 1)
+
+    seq <- substr(
+      text,
+      start,
+      start + seq_len
+    )
+
+    sequences <- c(sequences, seq)
+  }
+
+  sequences
+}
+  library(dplyr)
+
+seqs <- sample_sequences(
+  current_text,
+  n_sequences = 500,
+  seq_len = 80
+)
+
+  head(seqs)
+latent_matrix <- lapply(
+  seqs,
+  function(x)
+    extract_hidden_state(net, x)
+)
+
+latent_matrix <- do.call(
+  rbind,
+  latent_matrix
+)
+
+dim(latent_matrix)
+  
+  library(uwot)
+
+umap_proj <- umap(
+  latent_matrix,
+  n_neighbors = 20,
+  min_dist = 0.05,
+  metric = "cosine"
+)
+  
+  library(ggplot2)
+
+plot_df <- data.frame(
+  x = umap_proj[,1],
+  y = umap_proj[,2]
+)
+
+ggplot(plot_df,
+       aes(x, y)) +
+
+  geom_point(
+    alpha = 0.7,
+    size = 2
+  ) +
+
+  theme_void() +
+
+  ggtitle(
+    "Latent Geometry of Corpus"
+  )
+
+  library(MASS)
+
+kde <- kde2d(
+  plot_df$x,
+  plot_df$y,
+  n = 400
+)
+  
+  filled.contour(
+  kde,
+  color.palette = viridis::viridis,
+  axes = FALSE,
+  frame.plot = FALSE
+)
+  
+    t1 <- generate_text(
+    net,
+    # seed = "the ",
+    seed = TSTART,
+    n_chars = 1000,
+    temperature = TEMPERATURE
+  )
+head(t1)
+  gen<-1
+  synth_ratio <- SYNTHETIC_RATIO[gen]
+  cat(
+    "[CORPUS] synthetic ratio:",
+    round(synth_ratio, 3),
+    "\n"
+  )
+  human_chars <- sample(
+    strsplit(text, "")[[1]],
+    size = floor((1 - synth_ratio) * nchar(text)),
+    replace = TRUE
+  )
+  human_chars
+    synth_chars <- sample(
+    strsplit(t1, "")[[1]],
+    size = floor(synth_ratio * nchar(text)),
+    replace = TRUE
+  )
+  synth_chars
+
+}
+}
+vis1(model)
+postprocess<-function(){
+  t2<-readLines(paste0(Sys.getenv("GIT_TOP"),"/temp/model/unknown-1-01.txt"))
+  t3<-t2[t2!=""]
+  t3<-t3[t3!=" "]
+  t3<-gsub("^ ","",t3)
+  t3<-gsub(" ([\\.\\)!?,;:-])","\\1",t3)
+  t3
+  t3<-gsub("([\\.\\(!?]) $","\\1",t3)
+  t3<-gsub("\\( ","(",t3)
+ t3
+ length(t3)
+  writeLines(t3[1:200],"temp/model/M1-pseudoL1.txt")
+}
