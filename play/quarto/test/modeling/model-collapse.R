@@ -9,10 +9,10 @@ set.seed(42)
 # PARAMETERS
 # ============================================================
 
-BATCH_SIZE <- 32
-EMBED_SIZE <- 64
+BATCH_SIZE <- 32 #32
+EMBED_SIZE <- 64 #64
 output.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/data/models/collapse")
-output.dir<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/models/collapse")
+output.dir<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
 # SEQ_LEN <- 80
 # HIDDEN_SIZE <- 128
 # EPOCHS <- 3
@@ -24,7 +24,11 @@ HIDDEN_SIZE <- 128
 EPOCHS <- 3
 GENERATED_CHARS <- 6000
 GENERATIONS <- 1:3
-GENS<-5
+# SEQ_LEN <- 40
+# HIDDEN_SIZE <- 64
+# EPOCHS <- 1
+# GENERATED_CHARS <- 2000
+GENS<-"6b"
 TSTART<-"ich "
 TEMPERATURE <- 0.8
 
@@ -70,14 +74,22 @@ cat("Corpus characters:", nchar(text), "\n")
 chars <- sort(unique(strsplit(text, "")[[1]]))
 
 vocab_size <- length(chars)
-
+vocab_size
 char_to_int <- setNames(seq_along(chars), chars)
+length(char_to_int)
 int_to_char <- setNames(chars, seq_along(chars))
+length(int_to_char)
 
 encode_text <- function(txt) {
+chars <- sort(unique(strsplit(txt, "")[[1]]))
+
+vocab_size <- length(chars)
+char_to_int <- setNames(seq_along(chars), chars)
   sapply(strsplit(txt, "")[[1]], function(x) char_to_int[[x]])
 }
 
+#t1<-  sapply(strsplit(current_text, "")[[1]], function(x) char_to_int[[x]])
+#t1<-encode_text(current_text)
 decode_text <- function(ids) {
   paste0(sapply(ids, function(x) int_to_char[[as.character(x)]]), collapse = "")
 }
@@ -326,8 +338,10 @@ current_text
 metrics <- data.frame()
 lt<- length(unlist(strsplit(current_text, "")))
 
-
-for(gen in 1:length(GENERATIONS)) {
+#gen<-2
+st<-2
+st<-1
+for(gen in st:length(GENERATIONS)) {
   # for(gen in 1:2) {
     
   cat("\n=============================\n")
@@ -382,6 +396,14 @@ for(gen in 1:length(GENERATIONS)) {
   metrics <- rbind(
     metrics,
     data.frame(
+      m = GENS,
+      embeddings = EMBED_SIZE,
+      hidden = HIDDEM_SIZE,
+      batch = BATCH_SIZE,
+      chars = GENERATED_CHARS,
+      seq_l = SEQ_LEN,
+      epoch = EPOCHS,
+      temp = TEMPERATURE,
       generation = gen,
       entropy = entropy,
       vocab = vocab,
@@ -419,6 +441,7 @@ gen
   # )
   # GENS<-"xx"
   # gen<-1
+  #chars
   gens<-paste0(GENS,"-",gen)
   current_text <- 
     paste0(c(current_text, paste0("#### synthetic, M",gens),synthetic),collapse="\n")
