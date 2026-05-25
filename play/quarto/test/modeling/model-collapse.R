@@ -23,7 +23,7 @@ HIDDEN_SIZE <- 128
 EPOCHS <- 3
 GENERATED_CHARS <- 6000
 GENERATIONS <- 1:3
-GENS<-3
+GENS<-5
 TSTART<-"ich "
 TEMPERATURE <- 0.8
 
@@ -321,7 +321,7 @@ train_model <- function(net,
 # ============================================================
 
 current_text <- text
-
+current_text
 metrics <- data.frame()
 
 for(gen in 1:length(GENERATIONS)) {
@@ -413,6 +413,7 @@ gen
     collapse = ""
   )
   gens<-paste0(GENS,"-",gen)
+  gens
   torch_save(
     net,
     paste0(output.dir,"/model_gen_", gens, ".pt")
