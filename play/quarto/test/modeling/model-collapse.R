@@ -20,7 +20,8 @@ tp<-T
 # EPOCHS <- 3
 # GENERATIONS <- 3
 # GENERATED_CHARS <- 50000
-
+SPLIT_c <- ""
+SPLIT_t <- "\\s+"
 SEQ_LEN <- 80
 HIDDEN_SIZE <- 128
 EPOCHS <- 3
@@ -33,6 +34,9 @@ GENERATIONS <- 1:3
 GENS<-"6b"
 TSTART<-"ich "
 TEMPERATURE <- 0.8
+
+###
+split_by_token <- T
 
 SYNTHETIC_RATIO <- seq(0.1, 0.95, length.out = length(GENERATIONS))
 
@@ -73,7 +77,9 @@ cat("Corpus characters:", nchar(text), "\n")
 # VOCABULARY
 # ============================================================
 
-chars <- sort(unique(strsplit(text, "")[[1]]))
+ifelse(split_by_token,SPLIT<-SPLIT_t,SPLIT<-SPLIT_c)
+
+chars <- sort(unique(strsplit(text, SPLIT)[[1]]))
 
 vocab_size <- length(chars)
 vocab_size
@@ -87,10 +93,10 @@ encode_text <- function(txt) {
 
 # vocab_size <- length(chars)
 # char_to_int <- setNames(seq_along(chars), chars)
-  sapply(strsplit(txt, "")[[1]], function(x) char_to_int[[x]])
+  sapply(strsplit(txt, SPLIT)[[1]], function(x) char_to_int[[x]])
 }
-tu<-strsplit(current_text, "")[[1]]
-length(unique(tu))
+#tu<-strsplit(current_text, "")[[1]]
+#length(unique(tu))
 # t1<-  sapply(strsplit(current_text, "")[[1]], function(x) {
 #   print(x)
 #   char_to_int[[x]]
@@ -256,7 +262,7 @@ generate_text <- function(net,
 
 calculate_entropy <- function(text_string) {
   
-  chars <- strsplit(text_string, "")[[1]]
+  chars <- strsplit(text_string, SPLIT)[[1]]
   
   probs <- table(chars) / length(chars)
   
@@ -290,7 +296,7 @@ train_model <- function(net,
     total_loss <- 0
     
     for(b in 1:n_batches) {
-      if(b %% 500 == 0) {
+      if(b %% 50 == 0) {
         
         cat(
           "[TRAIN] epoch:",
@@ -359,7 +365,7 @@ postprocess<-function(tt){
 current_text <- text
 #current_text
 metrics <- data.frame()
-lt<- length(unlist(strsplit(current_text, "")))
+lt<- length(unlist(strsplit(current_text, SPLIT)))
 
 gen<-1
 st<-2
@@ -367,7 +373,7 @@ st<-1
 st
 gen
 for(gen in st:length(GENERATIONS)) {
-lt<- length(unlist(strsplit(current_text, "")))
+lt<- length(unlist(strsplit(current_text, SPLIT)))
   # for(gen in 1:2) {
   if(tp)
     tt<-postprocess(tplus[gen])
@@ -425,7 +431,7 @@ lt<- length(unlist(strsplit(current_text, "")))
     round(e2, 4),
     "\n"
   )
-  vocab <- length(unique(strsplit(current_text, "")[[1]]))
+  vocab <- length(unique(strsplit(current_text, SPLIT)[[1]]))
   cat(
     "[METRICS] vocabulary size:",
     vocab,
