@@ -9,7 +9,7 @@ set.seed(42)
 # PARAMETERS
 # ============================================================
 
-BATCH_SIZE <- 32 #32
+BATCH_SIZE <- 12 #32
 EMBED_SIZE <- 64 #64
 output.dir<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/data/models/collapse")
 output.dir<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
@@ -24,14 +24,15 @@ SPLIT_c <- ""
 SPLIT_t <- "\\s+"
 SEQ_LEN <- 80
 HIDDEN_SIZE <- 128
-EPOCHS <- 3
-GENERATED_CHARS <- 6000
+EPOCHS <- 2
+GENERATED_CHARS <- 100
 GENERATIONS <- 1:3
 # SEQ_LEN <- 40
 # HIDDEN_SIZE <- 64
 # EPOCHS <- 1
 # GENERATED_CHARS <- 2000
 GENS<-"7a"
+# mini12 adapted to capacity
 TSTART<-"ich "
 TEMPERATURE <- 0.8
 
