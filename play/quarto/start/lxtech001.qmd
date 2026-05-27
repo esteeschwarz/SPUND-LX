@@ -95,3 +95,6 @@ i did think about consequences of future LLMs training data will most likely inc
 2. recent generated content itself
 
 so i asked gpt about Q2. [her answer.](lxtech002.qmd)
+
+### small model training G1 synthetic output
+<iframe src="synthetic_gen_3-1.html" width="100%" height="500px"></iframe>
