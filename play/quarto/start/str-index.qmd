@@ -1,5 +1,5 @@
 ---
-title: "AVl / VS-Strätling"
+title: "AVL / VS-Strätling"
 subtitle: "Perspektiven der AVL"
 # format: |
 #      html 

@@ -2,7 +2,7 @@
 title: "subject - authorship - value in LLM generated texts"
 subtitle: "Literatur und Künstliche Intelligenz"
 #date: '`r format(Sys.time())`'
-date: '2026-05-20'
+date: '2026-05-25'
 categories:
    - gpt
    - llms
@@ -31,7 +31,7 @@ print("engine on...")
 nachdem ich einige texte von hannes bajohr (@bajohr_subjekt_2024, @bajohr_berlin_2023, @bajohr_glaube_2017) gelesen habe, stellen sich mir mehrere fragen, die so oder so ähnlich sich scheinbar schon angekündigt hatten im laufe der auseinandersetzung mit den themen des seminars. durch bajohr wurde ein grundlegendes problem hier einmal ausformuliert, dem in der literaturwissenschaft zentrale bedeutung zukommt: das (subjekt) d/ autor/ oder authorship sowie damit verbunden dann subjektivität-objektivität, verantwortung, zukunft der literatur unter dem aspekt künstlicher intelligenz.
 
 ## play on perspectives
-ich hatte parallel angefangen, über konsequenzen, perspektiven LLM-generierter sprache (unabhängig zuerst von literatur, sondern eher allgemein) nachzudenken und bin schnell zu seit einiger zeit diskutierten theorien zum sog. *model collaps* gelangt, von dem bei nicht sorgfältig beobachteten entwicklungsbedingungen für sprachmodelle wohl im groszen/ganzen ausgegangen werden kann. (@gu_sigma_2026, @shumailov_ai_2024, @piantadosi_modern_2024, @chatgpt_how_2026). Wir streben derzeit mit einiger sicherheit auf einen punkt zu, wo die modelle nicht mehr in der lage sein werden, überhaupt noch sinnvollen output zu erzeugen der noch irgendwie an dem orientiert ist, was für uns noch *die wirklichkeit* ist, da sie ca. in einer uns (seminar) schon bekannten feedbackschleife den content, den sie selbst creiert haben, konsumieren und darauf nächste generationen ihrerselbst trainieren.
+ich hatte parallel angefangen, über konsequenzen, perspektiven LLM-generierter sprache (unabhängig zuerst von literatur, sondern eher allgemein) nachzudenken und bin schnell zu seit einiger zeit diskutierten theorien zum sog. *model collaps* gelangt, von dem bei nicht sorgfältig beobachteten entwicklungsbedingungen für sprachmodelle wohl im groszen/ganzen ausgegangen werden kann. (@gu_sigma_2026, @shumailov_ai_2024, @piantadosi_modern_2024, @chatgpt_how_2026). Wir streben anscheinend derzeit mit einiger sicherheit auf einen punkt zu, wo die modelle nicht mehr in der lage sein werden, überhaupt noch sinnvollen output zu erzeugen der noch irgendwie an dem orientiert ist, was für uns *die wirklichkeit* ist, da sie ca. in einer uns (seminar) schon bekannten feedbackschleife den content, den sie selbst creiert haben, konsumieren und darauf nächste generationen ihrerselbst trainieren. in einem ersten einfachen versuch habe ich ein simples model auf ein corpus trainiert und schon in der 2. generation, die mit +10% generiertem content trainiert wurde, war eine abnahme der entropy (also information) und faktisch 3 types weniger im output enthalten (89 unique chars vs. 86 unique chars).
 
 
 

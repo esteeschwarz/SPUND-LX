@@ -1,0 +1,33 @@
+---
+title: "GPT Q2"
+subtitle: "LX / Tech: Sprache und Technologie - Language and Technology"
+#date: '`r format(Sys.time())`'
+date: '2026-05-20'
+categories:
+   - gpt
+   - llms
+   - training prospectives
+   - LX theories
+metadata-files:
+  - _quarto-common-lxtech.yml
+---
+
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+
+{{< include _gitcom.qmd >}} 
+
+```{r,echo=F,eval=T}
+print("engine on...")
+```
+
+#### snc
+- 16225.1
+
+# random chat...
+Q: @chatgpt_strange_2026
+
+{{< include _gpt-16225.md >}} 
+
+# references
