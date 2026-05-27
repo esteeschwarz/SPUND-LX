@@ -2,7 +2,7 @@
 title: "GPT Q2"
 subtitle: "LX / Tech: Sprache und Technologie - Language and Technology"
 #date: '`r format(Sys.time())`'
-date: '2026-05-20'
+date: '2026-05-27'
 categories:
    - gpt
    - llms
