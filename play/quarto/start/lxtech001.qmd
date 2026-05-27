@@ -42,7 +42,7 @@ val.c<-"{{< meta cmeta >}}"
 ```
 
 #### snc
-- button.1234567
+- button.12345678
 - chunk out
 
 # index
