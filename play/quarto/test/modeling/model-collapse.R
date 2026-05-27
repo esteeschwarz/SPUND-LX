@@ -33,6 +33,7 @@ GENERATIONS <- 1:3
 # GENERATED_CHARS <- 2000
 GENS<-"7a"
 # mini12 adapted to capacity
+# minisams
 TSTART<-"ich "
 TEMPERATURE <- 0.8
 
