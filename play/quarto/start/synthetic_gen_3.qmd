@@ -1,0 +1,26 @@
+---
+title: "G1-2 synthetic output"
+subtitle: "recursive training essai"
+date: "2026-05-25"
+categories:
+   - LLMs
+   - model collapse
+bibliography: LXtech.bib
+format: html
+css: https://ada-sub.dh-index.org/school/css/style.css
+---
+# play along model collapse
+## Qs
+1. (script) > @schwarz_model_2026
+2. (corpus) > @glaser_benjaminfeldkraft_2024
+
+## method
+the model (untrained, blank) has been trained (G1) on above corpus (200.000 words) with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 10% synthetic output of G1. we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types).
+
+## output G1
+{{< include synthetic_gen_3-1.md >}}
+
+## output G2
+{{< include synthetic_gen_3-2.md >}}
+
+# references

@@ -1,9 +1,3 @@
----
-format: 
-    html: default
-css: https://ada-sub.dh-index.org/school/css/style.css
----
-
 ich aus die  neut ihm , daß keinen mir zweigete ... die peram also zigen weg war nicht man . 
  
  es halt wir , leiner alles geld des gehöllt , loß , seiner nur leber . 
