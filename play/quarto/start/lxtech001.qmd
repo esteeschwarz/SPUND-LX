@@ -47,7 +47,7 @@ val.c<-"{{< meta cmeta >}}"
 
 # index
 1. samling: margin notes general > [open](lxtech-qa.qmd){.btn .btn-cat} 
-2. LLM and LX theories, play claude > [open](lxtech003.qmd.qmd), original: [claude](https://claude.ai/share/404f1ff7-0f1a-48b7-b449-bdf255996f5e)
+2. LLM and LX theories, play claude > [open](lxtech003.qmd), original: [claude](https://claude.ai/share/404f1ff7-0f1a-48b7-b449-bdf255996f5e)
 
 ## samling
 - @frankowsky_extravagant_2022
