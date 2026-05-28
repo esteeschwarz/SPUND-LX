@@ -25,13 +25,14 @@ SPLIT_t <- "\\s+"
 SEQ_LEN <- 80
 HIDDEN_SIZE <- 128
 EPOCHS <- 2
-GENERATED_CHARS <- 100
+GENERATED_CHARS <- 6000
+gchar<-GENERATED_CHARS
 GENERATIONS <- 1:3
 # SEQ_LEN <- 40
 # HIDDEN_SIZE <- 64
 # EPOCHS <- 1
 # GENERATED_CHARS <- 2000
-GENS<-"7a"
+GENS<-"7b"
 # mini12 adapted to capacity
 # minisams
 TSTART<-"ich "
@@ -80,9 +81,14 @@ cat("Corpus characters:", nchar(text), "\n")
 # ============================================================
 
 ifelse(split_by_token,SPLIT<-SPLIT_t,SPLIT<-SPLIT_c)
+ifelse(split_by_token,SPLIT_w<-" ",SPLIT_w<-"")
+ifelse(split_by_token,GENERATED_CHARS<-GENERATED_CHARS/5,GENERATED_CHARS<-GENERATED_CHARS)
 
-chars <- sort(unique(strsplit(text, SPLIT)[[1]]))
-
+chars <- sort(c(SPLIT_w,unique(strsplit(text, SPLIT)[[1]])))
+sum(" "%in%chars)
+#chars<-c(" ",chars)
+head(chars)
+chars<-chars[chars!=""]
 vocab_size <- length(chars)
 vocab_size
 char_to_int <- setNames(seq_along(chars), chars)
@@ -109,10 +115,12 @@ encode_text <- function(txt) {
 # )
 # #t1<-  sapply(strsplit(current_text, "")[[1]], function(x) char_to_int[[x]])
 # t1<-encode_text(current_text)
+
+### never called
 decode_text <- function(ids) {
   paste0(sapply(ids, function(x) int_to_char[[as.character(x)]]), collapse = "")
 }
-
+###
 encoded_original <- encode_text(text)
 
 # ============================================================
@@ -444,10 +452,12 @@ lt<- length(unlist(strsplit(current_text, SPLIT)))
     metrics,
     data.frame(
       m = GENS,
+      timestamp = Sys.time(),
+      word = split_by_token,
       embeddings = EMBED_SIZE,
       hidden = HIDDEN_SIZE,
       batch = BATCH_SIZE,
-      chars = GENERATED_CHARS,
+      chars = gchar,
       seq_l = SEQ_LEN,
       epoch = EPOCHS,
       temp = TEMPERATURE,
