@@ -199,7 +199,10 @@ div.csl-indent {
   <ul>
   <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">intro</a>
   <ul class="collapse">
-  <li><a href="#play-on-perspectives" id="toc-play-on-perspectives" class="nav-link" data-scroll-target="#play-on-perspectives">play on perspectives</a></li>
+  <li><a href="#play-on-perspectives" id="toc-play-on-perspectives" class="nav-link" data-scroll-target="#play-on-perspectives">play on perspectives</a>
+  <ul class="collapse">
+  <li><a href="#entropy" id="toc-entropy" class="nav-link" data-scroll-target="#entropy">entropy</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
   </ul>
@@ -280,6 +283,12 @@ div.csl-indent {
 <section id="play-on-perspectives" class="level2">
 <h2 class="anchored" data-anchor-id="play-on-perspectives">play on perspectives</h2>
 <p>ich hatte parallel angefangen, über konsequenzen, perspektiven LLM-generierter sprache (unabhängig zuerst von literatur, sondern eher allgemein) nachzudenken und bin schnell zu seit einiger zeit diskutierten theorien zum sog. <em>model collaps</em> gelangt, von dem bei nicht sorgfältig beobachteten entwicklungsbedingungen für sprachmodelle wohl im groszen/ganzen ausgegangen werden kann. (<span class="citation" data-cites="gu_sigma_2026">Gu et al. (<a href="#ref-gu_sigma_2026" role="doc-biblioref">2026</a>)</span>, <span class="citation" data-cites="shumailov_ai_2024">Shumailov et al. (<a href="#ref-shumailov_ai_2024" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="piantadosi_modern_2024">Piantadosi et al. (<a href="#ref-piantadosi_modern_2024" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="chatgpt_how_2026"><span class="nocase">chatGPT and Schwarz</span> (<a href="#ref-chatgpt_how_2026" role="doc-biblioref">2026</a>)</span>). Wir streben anscheinend derzeit mit einiger sicherheit auf einen punkt zu, wo die modelle nicht mehr in der lage sein werden, überhaupt noch sinnvollen output zu erzeugen der noch irgendwie an dem orientiert ist, was für uns <em>die wirklichkeit</em> ist, da sie ca. in einer uns (seminar) schon bekannten feedbackschleife den content, den sie selbst creiert haben, konsumieren und darauf nächste generationen ihrerselbst trainieren. in einem ersten einfachen versuch habe ich ein simples model auf ein corpus trainiert und schon in der 2. generation, die mit +10% generiertem content trainiert wurde, war eine abnahme der entropy (also information) und faktisch 3 types weniger im output enthalten (89 unique chars vs.&nbsp;86 unique chars).</p>
+<section id="entropy" class="level3">
+<h3 class="anchored" data-anchor-id="entropy">entropy</h3>
+<p>wir haben im rahmen der kybernetik sitzung bereits über <em>entropie</em> gesprochen, aber hier nochmal zur verdeutlichung im context KI: die menschliche sprache (als teil genuin menschlichen strebens - lebens) zeichnet sich durch ihre hochgradige organisation aus, die es menschen ermöglicht, sie (regelhaft) zu erlernen, ihre strukturen zu erkennen; syntaktische, semantische, pragmatische regeln in der kommunikation anzuwenden, um (erfolgreich) zu kommunizieren. <em>erfolgreich</em> heiszt in der linguistik nur, dasz beide (gesprächs)teilnehmer/ kenntnisse der regeln anzuwenden in der lage sind und sich grob gesagt <em>verstehen</em>. es geht dabei immer um <em>information</em> die ausgetauscht wird, egal ob wahre oder falsche (<span class="citation" data-cites="bense_theorie_1962">Bense (<a href="#ref-bense_theorie_1962" role="doc-biblioref">1962</a>)</span> : 19f, <a href="https://esteeschwarz.github.io/SPUND-LX/pages/004/textur-qa.html#:~:text=#anchor_01">lesen</a>). abnehmende entropie bedeutet ca. zunehmende information, da die <em>zeichen</em>, die ausgetauscht werden, nicht mehr ungeordnet im (raum) existieren, sondern sprachlich organisiert sind - eine ordnung aufweisen - die der entropie entgegensteht, welche stets nach dem nullpunkt an ordnung bzw. ausgeglichenheit, ausgewogenheit, gleichmäszigkeit… strebt; einem zustand, in dem keinerlei energie mehr vorhanden ist oder ausgetauscht wird weil es keine energieunterschiede mehr gibt.</p>
+<p>und hier kommt auch oben angedeutetes problem auf den tisch: sagt bajohrs <em>berlin, miami</em> zb. etwas (neues) aus bzw. teilt es information über das hinaus, was in dem von ihm trainierten model als vektorraum bereits bekannt, statistisch ausgewertet, hinreichend modelliert ist? ist das neue, was durch sein prompting hervorgerufen wird, neu im sinne einer jemals-ungesagten-erkenntnis (die man von eine/ menschl. autor/ erwarten würde, preiszugeben in form von literatur) oder nicht vielmehr neu hier nur die methode, die die literatur schaffte und der ganze ansatz eben, das <em>konzept</em> des buches zum primat der erzählung zu erheben? überwinden wir hier möglicherweise das diktum <em>show-dont tell</em> zugunsten eines <em>show</em> <strong><em>how</em></strong>-<em>dont tell</em> <strong><em>how</em></strong>.</p>
+<p>bajohr gibt die nischenhaftigkeit des produkts zu bedenken, aber ich denke, wenn literatur selbst (die erzählung) nichts mehr zu bieten hat (auszer künstlichen austauschbaren content) und dennoch als literatur wahrgenommen werden kann, dann ist der technische entstehensprozess umso spannender<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, und das vielleicht nicht nur für nerds…</p>
+</section>
 </section>
 </section>
 <section id="references" class="level1">
@@ -288,6 +297,7 @@ div.csl-indent {
 
 
 </section>
+
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bajohr_berlin_2023" class="csl-entry" role="listitem">
@@ -298,6 +308,9 @@ Bajohr, Hannes, and Moritz Hiller. 2024. <span>“Das <span>Subjekt</span> Des <
 </div>
 <div id="ref-bajohr_glaube_2017" class="csl-entry" role="listitem">
 Bajohr, Hannes, and Gregor Weichbrodt. 2017. <em>Glaube <span>Liebe</span> <span>Hoffnung</span>: <span>Nachrichten</span> Aus Dem Christlichen <span>Abendland</span></em>. Frohmann/0x0a. Berlin: Frohmann/oxoa.
+</div>
+<div id="ref-bense_theorie_1962" class="csl-entry" role="listitem">
+Bense, Max. 1962. <em>Theorie Der <span>Texte</span>: <span>Eine</span> <span>Einführung</span> in Neuere <span>Auffassungen</span> u. <span>Methoden</span></em>. Köln: Kiepenheuer &amp; Witsch.
 </div>
 <div id="ref-chatgpt_how_2026" class="csl-entry" role="listitem">
 <span class="nocase">chatGPT, and St. Schwarz</span>. 2026. <span>“How Recent Chats and Discourse Model Future <span>LLM</span> Output.”</span> In <em>Cite Yourself Dummy. <span>A</span> Transformer Conversation.</em>, 1–16214. Berlin. <a href="https://stschwarz.userpage.fu-berlin.de/links?title=gpt-con&amp;ref=cite">https://stschwarz.userpage.fu-berlin.de/links?title=gpt-con&amp;ref=cite</a>.
@@ -311,7 +324,12 @@ Piantadosi, Steven T., Stefan Müller, Moshe Poliak, Geoffrey K. Pullum, Robert 
 <div id="ref-shumailov_ai_2024" class="csl-entry" role="listitem">
 Shumailov, Ilia, Zakhar Shumaylov, Yiren Zhao, Nicolas Papernot, Ross Anderson, and Yarin Gal. 2024. <span>“<span>AI</span> Models Collapse When Trained on Recursively Generated Data.”</span> <em>Nature (London)</em> 631 (8022): 755–59. <a href="https://doi.org/10.1038/s41586-024-07566-y">https://doi.org/10.1038/s41586-024-07566-y</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>analog: die museale, pädagogische aufwertung historischer kulturtechniken, an denen heute vielleicht nicht mehr primär das <em>produkt</em> interessiert (wie zur zeitgenössischen anwendung) sondern die (zb. historisch-soziale) verortung der technik/tätigkeit [e.g.&nbsp;webstuhl].<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
