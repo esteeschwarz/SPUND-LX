@@ -32,7 +32,7 @@ GENERATIONS <- 1:3
 # HIDDEN_SIZE <- 64
 # EPOCHS <- 1
 # GENERATED_CHARS <- 2000
-GENS<-"7b"
+GENS<-"7c"
 # mini12 adapted to capacity
 # minisams
 TSTART<-"ich "
@@ -255,7 +255,8 @@ generate_text <- function(net,
     
     next_char <- int_to_char[[as.character(next_id)]]
     
-    generated <- paste0(generated, next_char)
+   # generated <- paste0(generated, next_char)
+    generated <- paste0(generated, SPLIT_w, next_char) # word/char switch active
     
     input <- torch_tensor(
       matrix(next_id, nrow = 1),
