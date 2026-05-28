@@ -12,7 +12,7 @@ toc-expand: true
 # date: '`r format(Sys.time())`'
 date: "2026-04-28"
 title-meta: ""
-bibliography: litKI.bib
+bibliography: LFG.bib
 cmeta: |
   class: [16849] Einführung in die Grammatiktheorie ::
   tutor: meinschäfer/gaglia ::
