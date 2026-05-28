@@ -2,6 +2,9 @@
 title: "LX / Tech"
 subtitle: "Sprache und Technologie - Language and Technology"
 format: html
+toc: true
+toc-depth: 3
+toc-expand: true
 # tmeta: $testmeta$
 date: '`r format(Sys.time())`'
 title-meta: ""
@@ -29,6 +32,12 @@ cfoot: |
 :::
 
 {{< include _gitcom.qmd >}} 
+
+-----
+
+> [index](index.qmd) / LXTech 
+
+-----
 
 ```{r,echo=F,eval=T}
 print("engine on...")
@@ -100,3 +109,5 @@ so i asked gpt about Q2. [her answer.](lxtech002.qmd)
 
 > [open](synthetic_gen_3.qmd){.btn .btn-cat}
 <!-- <iframe src="synthetic_gen_3-1.html" width="100%" height="500px"></iframe> -->
+
+# references

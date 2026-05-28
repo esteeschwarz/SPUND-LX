@@ -2,6 +2,10 @@
 title: Lit / KI
 subtitle: "no"
 format: html
+toc: true
+toc-depth: 3
+toc-expand: true
+
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
 date: "2026-04-20"
@@ -47,15 +51,15 @@ cfoot: |
 
 {{< include _gitcom.qmd >}} 
 
+-----
+
+> [index](index.qmd) / Lit KI
+
+-----
+
+<!-- this page deprecated just for link conserve reason, dont edit -->
 ```{r,echo=F,eval=T}
 print("engine on...")
-#val <- quarto::quarto_metadata$get("meta")
-#meta <- knitr::metadata
-#params <- meta$
-#val<-params$tmeta
-val.f<-"fixed val"
-val.c<-"{{< meta testmeta >}}"
-val.c<-"{{< meta cmeta >}}"
 ```
 
 

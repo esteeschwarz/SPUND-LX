@@ -24,7 +24,7 @@ website:
         menu: 
           - textur001.qmd
           - nietzsche001.qmd
-          - lki-kybernetik.qmd
+          - lki-index.qmd
           - lxtech001.qmd
           - lfg-index.qmd
           - str-index.qmd

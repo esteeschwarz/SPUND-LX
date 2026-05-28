@@ -3,6 +3,10 @@ title: "GPT Q1"
 subtitle: "LX / Tech: Sprache und Technologie - Language and Technology"
 #date: '`r format(Sys.time())`'
 date: '2026-05-20'
+toc: true
+toc-depth: 3
+toc-expand: true
+
 categories:
    - gpt
    - llms
@@ -15,7 +19,13 @@ metadata-files:
 {{< meta cmeta >}}
 :::
 
-{{< include _gitcom.qmd >}} 
+{{< include _gitcom.qmd >}}
+
+-----
+
+> [LXTech](lxtech001.qmd) / random chat 001 
+
+-----
 
 ```{r,echo=F,eval=T}
 print("engine on...")

@@ -7,8 +7,19 @@ categories:
    - model collapse
 bibliography: LXtech.bib
 format: html
+toc: true
+toc-depth: 3
+toc-expand: true
+
 # css: https://ada-sub.dh-index.org/school/css/style.css
 ---
+
+-----
+
+> [LXTech](lxtech001.qmd) / model collapse
+
+-----
+
 # play along model collapse
 ## Qs
 1. (script) > @schwarz_model_2026

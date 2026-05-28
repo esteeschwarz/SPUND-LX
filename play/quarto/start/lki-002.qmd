@@ -3,6 +3,10 @@ title: "subject - authorship - value in LLM generated texts"
 subtitle: "Literatur und Künstliche Intelligenz"
 #date: '`r format(Sys.time())`'
 date: '2026-05-25'
+toc: true
+toc-depth: 3
+toc-expand: true
+
 categories:
    - gpt
    - llms
@@ -19,6 +23,12 @@ metadata-files:
 :::
 
 {{< include _gitcom.qmd >}} 
+
+-----
+
+> [Lit KI](lki-index.qmd) / bajohr
+
+-----
 
 ```{r,echo=F,eval=T}
 print("engine on...")

@@ -10,6 +10,11 @@ date: '`r format(Sys.time())`'
 
 ---
 
+-----
+
+> [Lit KI](lki-index.qmd) / annotations
+
+-----
 
 ## notes on papers 
 
