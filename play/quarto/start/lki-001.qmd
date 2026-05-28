@@ -29,13 +29,14 @@ cfoot: |
 {{< meta cmeta >}}
 :::
 {{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
 
 -----
 
 > [Lit KI](lki-index.qmd) / norbert wiener kybernetik
 
 -----
-
+:::
 ```{r,echo=F,eval=T}
 print("engine on...")
 #val <- quarto::quarto_metadata$get("meta")

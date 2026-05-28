@@ -32,12 +32,14 @@ cfoot: |
 :::
 
 {{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
 
 -----
 
 > [index](index.qmd) / LXTech 
 
 -----
+:::
 
 ```{r,echo=F,eval=T}
 print("engine on...")
@@ -51,12 +53,15 @@ val.c<-"{{< meta cmeta >}}"
 ```
 
 #### snc
-- button.12345678
+- button.123456789
 - chunk out
 
 # index
 1. samling: margin notes general > [open](lxtech-qa.qmd){.btn .btn-cat} 
-2. LLM and LX theories, play claude > [open](lxtech003.qmd), original: [claude](https://claude.ai/share/404f1ff7-0f1a-48b7-b449-bdf255996f5e)
+2. LLM and LX theories, play claude 
+  1. claude writes english story based on french grammar > [open](lxtech003.qmd), original: [claude](https://claude.ai/share/404f1ff7-0f1a-48b7-b449-bdf255996f5e)
+  2. play along model training on corpus: having Claude devise grammar from synthetic text > [link](M1-pseudoL1.html)
+
 
 ## samling
 - @frankowsky_extravagant_2022

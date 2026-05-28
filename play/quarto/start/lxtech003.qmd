@@ -21,13 +21,14 @@ metadata-files:
 :::
 
 {{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
 
 -----
 
 > [LXTech](lxtech001.qmd) / random chat 002
 
 -----
-
+:::
 ```{r,echo=F,eval=T}
 print("engine on...")
 ```
