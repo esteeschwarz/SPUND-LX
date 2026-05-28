@@ -1,9 +1,23 @@
 ---
-title: LFG
+title: "session notes"
+subtitle: "Einführung in die Grammatiktheorie und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionalen Grammatik (LFG)"
+
 format: html
 date: "2026-04-28"
+toc: true
+toc-depth: 3
+toc-expand: true
 
 ---
+
+::: {.content-visible when-format="html"}
+
+-----
+
+> [LFG](lfg-index.qmd) / session notes
+
+-----
+:::
 
 # task session
 

@@ -26,6 +26,14 @@ cfoot: |
 {{< meta cmeta >}}
 :::
 {{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [AVL Strätling](str-index.qmd) / session notes
+
+-----
+:::
 
 ```{r,echo=F,eval=T,warning=F}
 print("engine on...")

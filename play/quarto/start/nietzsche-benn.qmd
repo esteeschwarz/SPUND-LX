@@ -4,6 +4,10 @@ subtitle: "Gottfried Benn: Verlorenes Ich"
 # format: html
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
+toc: true
+toc-depth: 3
+toc-expand: true
+
 date: "2026-05-02"
 title-meta: ""
 bibliography: nietzsche.bib
@@ -27,6 +31,14 @@ cfoot: |
 
 
 {{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [Nietzsche](nietzsche001.qmd) / benn, rezeption
+
+-----
+:::
 
 to nietzsche..., benn... class... global [annotations](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche-qa.html)
 ```{r,echo=F,eval=T}

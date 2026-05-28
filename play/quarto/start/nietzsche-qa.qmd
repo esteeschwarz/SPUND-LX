@@ -10,6 +10,14 @@ title-meta: ""
 date: "2026-04-20"
 ---
 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [Nietzsche](nietzsche001.qmd) / annotations
+
+-----
+:::
 
 ## notes on papers
 <!-- @nietzsche_kga_2024   

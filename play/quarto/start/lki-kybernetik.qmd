@@ -47,16 +47,20 @@ cfoot: |
 # cat(val.c)
 ```
 
-{{< meta cmeta >}}
+::: {.content-visible when-format="html"}
 
+{{< meta cmeta >}}
+:::
 {{< include _gitcom.qmd >}} 
+
+::: {.content-visible when-format="html"}
 
 -----
 
 > [index](index.qmd) / Lit KI
 
 -----
-
+:::
 <!-- this page deprecated just for link conserve reason, dont edit -->
 ```{r,echo=F,eval=T}
 print("engine on...")

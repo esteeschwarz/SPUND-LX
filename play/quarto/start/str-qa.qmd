@@ -9,6 +9,14 @@ title-meta: ""
 # date: '`r format(Sys.time())`'
 date: "2026-05-03"
 ---
+::: {.content-visible when-format="html"}
+
+-----
+
+> [AVL Strätling](str-index.qmd) / annotations
+
+-----
+:::
 
 
 ## notes on papers

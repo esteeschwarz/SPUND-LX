@@ -1,5 +1,5 @@
 ---
-title: "AVl Textur: annotations"
+title: "AVL Textur: annotations"
 bibliography: textur.bib
 #nocite: '@pethes_war_2006'
 # tables:
@@ -9,6 +9,15 @@ title-meta: ""
 # date: '`r format(Sys.time())`'
 date: "2026-05-14"
 ---
+
+::: {.content-visible when-format="html"}
+
+-----
+
+> [Textur](textur001.qmd) / annotations
+
+-----
+:::
 
 
 ## notes on papers

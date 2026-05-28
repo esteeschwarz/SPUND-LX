@@ -24,6 +24,14 @@ cfoot: |
 {{< meta cmeta >}}
 :::
 {{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [Textur](textur001.qmd) / kybernetik
+
+-----
+:::
 
 ```{r,echo=F,eval=T}
 print("engine on...")
