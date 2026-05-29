@@ -24,15 +24,15 @@ SPLIT_c <- ""
 SPLIT_t <- "\\s+"
 SEQ_LEN <- 80
 HIDDEN_SIZE <- 128
-EPOCHS <- 2
+EPOCHS <- 3
 GENERATED_CHARS <- 6000
 gchar<-GENERATED_CHARS
-GENERATIONS <- 1:3
+GENERATIONS <- 1:4
 # SEQ_LEN <- 40
 # HIDDEN_SIZE <- 64
 # EPOCHS <- 1
 # GENERATED_CHARS <- 2000
-GENS<-"7c"
+GENS<-"7d"
 # mini12 adapted to capacity
 # minisams
 TSTART<-"ich "
@@ -502,7 +502,9 @@ gen
   #chars
   gens<-paste0(GENS,"-",gen)
   current_text <- 
-    paste0(c(current_text, paste0("#### synthetic, m",gens),synthetic),collapse="\n")
+    # paste0(c(current_text, paste0("#### synthetic, m",gens),synthetic),collapse="\n")
+      paste0(c(current_text,synthetic),collapse="\n")
+
   # tail(current_text)
   gens
   torch_save(
