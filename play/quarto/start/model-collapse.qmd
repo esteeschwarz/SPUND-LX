@@ -16,7 +16,7 @@ toc-expand: true
 
 -----
 
-> [LXTech](lxtech001.qmd) / model collapse
+> [litKI](lki-index.qmd) / [bajohr](lki-002.qmd) / model collapse
 
 -----
 
