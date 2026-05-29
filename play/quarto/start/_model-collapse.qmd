@@ -1,0 +1,51 @@
+# play along model collapse
+## Qs
+1. (script) > @schwarz_model_2026
+2. (corpus) > @glaser_benjaminfeldkraft_2024
+
+## method
+the model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 10% synthetic output of G1. 
+
+generally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types).
+
+## output G1, M3
+{{< include synthetic_gen_3-1.md >}}
+
+## output G2, M3
+{{< include synthetic_gen_3-2.md >}}
+
+## output M7d
+> showing another output of G1, this time the model has been trained on token=word level, which results in far more readable, nevertheless crumbled text... / <del>the G2 ff. of that model is still to test after script adaptation.</del> generation 2/3 below.
+
+### G1
+{{< include synthetic_gen_7c-1.md >}}
+
+### G2
+{{< include ../test/modeling/synthetic_gen_7d-2.md >}}
+
+### G3
+{{< include ../test/modeling/synthetic_gen_7d-3.md >}}
+
+### model stats
+```{r, echo=F, warning=F}
+#| fig-cap: "M7d model settings and statistics"
+#| label: model-stats
+
+dfa<-read.csv("../test/modeling/collapse_metrics-7d-3.csv")
+knitr::kable(dfa)
+  #plot(dfa$entropy,type="l",main="entropy drop over generations",xlab="generation",ylab="entropy")
+
+```
+
+```{r, echo=F, warning=F}
+#| fig-cap: "M7d entropy develoment"
+#| label: entropy-plot
+
+# dfa<-read.csv("../test/modeling/collapse_metrics-7d-3.csv")
+#knitr::kable(dfa)
+  plot(dfa$entropy,type="l",main="entropy drop over generations",xlab="generation",ylab="entropy")
+
+```
+
+we observe decreasing entropy factors from G1 forward which means fewer diversity, higher predictabilty and a less balanced synthesis of generated texts. (cf. @leipzig_corpora_collection_korpus_2024; Entropy: ~11.7 in german newspaper corpus)
+# references

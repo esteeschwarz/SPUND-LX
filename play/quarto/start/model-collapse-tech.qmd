@@ -1,0 +1,22 @@
+---
+title: "G1-2 synthetic output"
+subtitle: "recursive training essai"
+date: "2026-05-25"
+categories:
+   - LLMs
+   - model collapse
+bibliography: LXtech.bib
+format: html
+toc: true
+toc-depth: 3
+toc-expand: true
+
+# css: https://ada-sub.dh-index.org/school/css/style.css
+---
+
+-----
+
+> [LXTech](lxtech001.qmd) / model collapse
+
+-----
+{{< include _model-collapse.qmd >}}

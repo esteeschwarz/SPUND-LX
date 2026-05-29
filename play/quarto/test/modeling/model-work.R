@@ -5,9 +5,12 @@ nett<-paste0(netns,"/training_corpus_gen_",model,".txt")
 ### visualize
 #vis1<-function(model){
 netns<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/collapse")
-#model<-"2-1"
+model<-"7d-1"
+modeldf<-paste0(unlist(strsplit(model,"-"))[1],"-3")
 netf<-paste0(netns,"/model_gen_",model,".pt")
 nett<-paste0(netns,"/training_corpus_gen_",model,".txt")
+mdf<-paste0(netns,"/collapse_metrics-",modeldf,".csv")
+#mdf<-mdf[1]
 #   install.packages(c(
 #   "uwot",
 #   "viridis",
@@ -52,9 +55,17 @@ nett
   net$state_dict(),
   netw
 )
+df<-read.csv(mdf)
+#df<-read.csv(mdf)
+df1<-df[1,]
+dfa<-df
+df<-df1
   EMBED_SIZE <- 64
   HIDDEN_SIZE <- 128
   vocab_size <- 89
+ EMBED_SIZE <- df$embeddings
+  HIDDEN_SIZE <- df$hidden
+  vocab_size <- df$vocab
 
 create_model <- function(vocab_size,
                          embed_size,
@@ -127,6 +138,9 @@ text<-corpus
   chars <- sort(unique(strsplit(text, "")[[1]]))
   length(chars)
   chars
+chars <- sort(unique(strsplit(text, "\\s+")[[1]]))
+  length(chars)
+  #chars
 char_to_int <- setNames(
   seq_along(chars),
   chars
@@ -139,7 +153,7 @@ int_to_char <- setNames(
   encode_text <- function(txt) {
 
   sapply(
-    strsplit(txt, "")[[1]],
+    strsplit(txt, "\\s+")[[1]],
     function(x) char_to_int[[x]]
   )
 }
@@ -161,31 +175,39 @@ int_to_char <- setNames(
   )
 }
   sample_sequences <- function(text,
-                             n_sequences = 500,
+                             n_sequences = 50,
                              seq_len = 80) {
 
   sequences <- c()
-
+  
+  t2<- unlist(strsplit(text, "\\s+")[[1]])
+    lt2<-length(t2)
   max_start <- nchar(text) - seq_len
+  max_start <-   lt2 - seq_len
 
   for(i in 1:n_sequences) {
 
     start <- sample(1:max_start, 1)
 
-    seq <- substr(
-      text,
-      start,
-      start + seq_len
-    )
+    # seq <- substr(
+    #   t2,
+    #   start,
+    #   start + seq_len
+    # )
+    start
+    print(start)
+   seq <- t2[start:(start + seq_len)]
+    
 
     sequences <- c(sequences, seq)
   }
 
   sequences
-}
+  }
 
 seqs <- sample_sequences(text)
   head(seqs)
+  length(seqs)
   latent_matrix <- lapply(
   seqs,
   function(x)
@@ -278,7 +300,7 @@ ggplot(plot_df,
     #[[88]]
     next_char <- int_to_char[[as.character(next_id)]]
     
-    generated <- paste0(generated, next_char)
+    generated <- paste0(generated, " ",next_char)
     
     input <- torch_tensor(
       matrix(next_id, nrow = 1),
@@ -293,12 +315,12 @@ synthetic <- generate_text(
   net = netm,
     # seed = "the ",
     seed = "ich ",
-    n_chars = 6000,
+    n_chars = floor(lt2/df$chars),
     temperature = 0.8
   )
   
   cat("\n--- GENERATED SAMPLE ---\n")
-  cat(substr(synthetic, 1, 500))
+  cat(substr(synthetic, 1, 100))
   cat("\n\n")
   
 #################
@@ -417,7 +439,9 @@ ggplot(plot_df,
     "Latent Geometry of Corpus"
   )
 
-  library(MASS)
+  plot(dfa$entropy,type="l")
+    
+    library(MASS)
 
 kde <- kde2d(
   plot_df$x,
@@ -460,7 +484,7 @@ head(t1)
   )
   synth_chars
 
-}
+  }
 
 vis1(model)
 postprocess<-function(){

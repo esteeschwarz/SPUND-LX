@@ -1,0 +1,27 @@
+---
+title: "G1-2 synthetic output"
+subtitle: "recursive training essai"
+date: "2026-05-25"
+categories:
+   - LLMs
+   - model collapse
+   - entropy
+   - AI texts
+bibliography: LXtech.bib
+format: html
+toc: true
+toc-depth: 3
+toc-expand: true
+
+# css: https://ada-sub.dh-index.org/school/css/style.css
+---
+
+-----
+
+> [textur](textur001.qmd.qmd) / [kybernetik](textur002.qmd) / model collapse
+
+-----
+
+{{< include _model-collapse.qmd >}}
+
+# references

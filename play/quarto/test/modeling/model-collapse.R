@@ -554,7 +554,7 @@ ggplot(metrics,
 
 print(metrics)
 
-netf<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/model_gen_1.pt")
+# netf<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/COMP/model/model_gen_1.pt")
 ### visualize
 vis1<-function(net.f){
   install.packages(c(
