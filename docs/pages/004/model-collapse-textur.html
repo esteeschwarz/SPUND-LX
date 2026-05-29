@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-05-25">
+
+<title>G1-2 synthetic output – 004</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e56a9ea7eb63f1c3968ca8597f997c48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">004</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ss26" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">SS26</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ss26">    
+        <li>
+    <a class="dropdown-item" href="./textur001.html">
+ <span class="dropdown-text">AVL / textur</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./nietzsche001.html">
+ <span class="dropdown-text">AVL / Nietzsche</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lki-index.html">
+ <span class="dropdown-text">Lit / KI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lxtech001.html">
+ <span class="dropdown-text">LX / Tech</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lfg-index.html">
+ <span class="dropdown-text">LX / LFG</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./str-index.html">
+ <span class="dropdown-text">AVL / VS-Strätling</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arkkiv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">arkkiv</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arkkiv">    
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=dclx&amp;ref=play">
+ <span class="dropdown-text">DC-LX (new)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=adaskool&amp;ref=play">
+ <span class="dropdown-text">ada-school (olde)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./pdfpaper/001/uwolf.html">
+ <span class="dropdown-text">reference-test</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./snc.html"> 
+<span class="menu-text">SNC</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/esteeschwarz/SPUND-LX/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#play-along-model-collapse" id="toc-play-along-model-collapse" class="nav-link active" data-scroll-target="#play-along-model-collapse">play along model collapse</a>
+  <ul class="collapse">
+  <li><a href="#qs" id="toc-qs" class="nav-link" data-scroll-target="#qs">Qs</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">method</a></li>
+  <li><a href="#output-g1-m3" id="toc-output-g1-m3" class="nav-link" data-scroll-target="#output-g1-m3">output G1, M3</a></li>
+  <li><a href="#output-g2-m3" id="toc-output-g2-m3" class="nav-link" data-scroll-target="#output-g2-m3">output G2, M3</a></li>
+  <li><a href="#output-m7d" id="toc-output-m7d" class="nav-link" data-scroll-target="#output-m7d">output M7d</a>
+  <ul class="collapse">
+  <li><a href="#g1" id="toc-g1" class="nav-link" data-scroll-target="#g1">G1</a></li>
+  <li><a href="#g2" id="toc-g2" class="nav-link" data-scroll-target="#g2">G2</a></li>
+  <li><a href="#g3" id="toc-g3" class="nav-link" data-scroll-target="#g3">G3</a></li>
+  <li><a href="#model-stats" id="toc-model-stats" class="nav-link" data-scroll-target="#model-stats">model stats</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">G1-2 synthetic output</h1>
+<p class="subtitle lead">recursive training essai</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">LLMs</div>
+    <div class="quarto-category">model collapse</div>
+    <div class="quarto-category">entropy</div>
+    <div class="quarto-category">AI texts</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 25, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<blockquote class="blockquote">
+<p><a href="textur001.qmd.qmd">textur</a> / <a href="./textur002.html">kybernetik</a> / model collapse</p>
+</blockquote>
+<hr>
+<section id="play-along-model-collapse" class="level1">
+<h1>play along model collapse</h1>
+<section id="qs" class="level2">
+<h2 class="anchored" data-anchor-id="qs">Qs</h2>
+<ol type="1">
+<li>(script) &gt; <span class="citation" data-cites="schwarz_model_2026">Schwarz (<a href="#ref-schwarz_model_2026" role="doc-biblioref">2026</a>)</span></li>
+<li>(corpus) &gt; <span class="citation" data-cites="glaser_benjaminfeldkraft_2024">Glaser (<a href="#ref-glaser_benjaminfeldkraft_2024" role="doc-biblioref">2024</a>)</span></li>
+</ol>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">method</h2>
+<p>the model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 10% synthetic output of G1.</p>
+<p>generally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs.&nbsp;86 char types).</p>
+</section>
+<section id="output-g1-m3" class="level2">
+<h2 class="anchored" data-anchor-id="output-g1-m3">output G1, M3</h2>
+<p>ich aus die neut ihm , daß keinen mir zweigete … die peram also zigen weg war nicht man .</p>
+<p>es halt wir , leiner alles geld des gehöllt , loß , seiner nur leber .</p>
+<p>manchen sie es schrift wir besichten ?</p>
+<p>das und belähle funktuier dazu vergagen untersammen wallt ding große ennehm , nicht es haberen noch wieden nur symunde das nicht der soger verlang dem haben wäre die ersahigericht eine anden erwahren .</p>
+<p>anklante es halb , an heiift anteil eine trage ( er , auf aber tion war mir abt der eines ihren weiß die er sind mir wird man ) meine also kommenschlater geschein eischhinglichen risse es mehr ( werden , ihr ? ) gewesen und das kannte erschaftig aussein und das für die heiß alles den ( und auf ) gedacht in auch von dere sind lieberten wo es arbgegen um den hall den wie ausstiegt alson wirklichen neuten .</p>
+<p>war er zur mich seines sich wollten wir man , was ich sich nur das mär war der zu können sagen denn war die den nicht anderen und das man aufeor das geste , den eine lang so bahen , spreil alson rentiert weiß dem den tunkt auswein die piegen einer sie aber ( ich bekanntelt vereicht ) .</p>
+<p>sabbant wie min ?</p>
+<p>aber dem damit bevonfalls .</p>
+<p>auf die jeneuzs , die gibt schrift , schales sehn hatten .</p>
+<p>der verlangen , das nicht einer geschief hatte efeke ich mer es gab mache sich darauf .</p>
+<p>ich stehlen hatten , was ein des errätten bei as hölden daran nicht müztig , daß noch noch nicht , längeden , daß eine mehr lassen .</p>
+<p>mats alles z-von mit ich schönger gemens .</p>
+<p>.</p>
+<p>sich hinter mancher übelnigt entlicht einwärte hatte eine umsehen sein sich das auf lehern hier so einer gegen nach schon , schläuter ein getraut mehr neun zu konnte und die den wie golten wore genau eine ( ) , sy der , wie die meiner die und dir sie einmal er , die es ein ges klergauten .</p>
+<p>sym.quoukrargen und dem war man seinen herihm ) gegen ausheit so es einen mich um soll ist nurnen , wenn seine vor zu hatten vor er nicht wie ale ersten verschonen weren aben die haben aber mir ich jeum einem gelen auszuzuschringen , aufglichte in das ich beuenehmen .</p>
+<p>hingen bin ein dara uns sein sie beiden dir am gehorder dann in das sie war mme so er nicht wollte als mir hat auch ernsammersen , auge , sich daran allen der rießen ihr ? ich warhm metto nicht schon nicht muß mich zu den aus für mir , den nicht die gelichte ich können in wir , als sind eine berinnen ich mit , welcher … die gesetzen und werden auf geistalität ursteht ins ja die dies .</p>
+<p>teit drfäkten seelebet zu eine leuber sie das ich es wie horie , wir immer einten , das darung wenn kurzung und steit unters seine aus das geschweigen und anter , daß mein meine alte wis ich sich vergen sich nachst mancher die ich das liedigern sehr und auf dent es es heimen über ist , was ihr ( und ier jetzt ) anderen mensanget entstehe zustern gewahnt sich angenum gegen der hatte ich aus also solls und ja einmer , was dem sich ihr den momengen ein das sammendlet ihm aufgewesen welte wird ich einer wirklichen beuerfleichensen behen , weil die bewast viel damall es einer der wär .</p>
+<p>sondern erstum , dreig enden aber darhierte müs , das im der besielt den erraubgen ner das weil als schon zu ich gehalbselber soche lang gelfind marut !</p>
+<p>eine an haberen sie nur auf das war .</p>
+<p>ein sich beoller mit die blibt aberiel werden können und eine weg : sich wollung sie es geschichtal für einem und der von gene .</p>
+<p>eigenten naseher her an in sofeiter auf das konne vor es for da somall nicht m. aber schort ahm .</p>
+<p>es soll und die alte und eine folgen einerhaupt eine warden unde im ohne gespürt alles , des schwiestälten wie sich an das man bltide erst uns war selbser an , in mich sie man , das korpt aben wir jetzt man angenechenbeteilen ist matt sie nacht tielnenden haben sie vor dich selbsel , geben das kossst aus , wo mir beundven bau walter geschichenden min du vielleichten ermit das nicht der weil ich herten gewand aus zu den ginder die gele einen die ein denn mir die her ach , haben .</p>
+<p>aber sollte daß über die sot also ersten wah außen erfunglichen ?</p>
+<p>wird ich schalte tiebten war eine wil damit der 1met es jenes , tag sagte und das ihn man daraufalsien , in mich sich ausrer so so nicht wir keiner .</p>
+<p>die wir lischen das weste nicht erst , auf den vaterwirkanzitigen .</p>
+<p>aber ersten 30 den hab an daß gewiegen her einen gelen , da so bevon durieren eine überlie hier wollte , ihne zu beital müchsen zu bin sein wieden helelen auf mit es fand star der zeit als sich sieben met schon hier die wird ich wir gestand hinwoll aber hatte zu vergangen … einer zu es .</p>
+<p>wir ich euch ihr sich eine werde ?</p>
+<p>derkeite schichte ; oder es ist wie sich dieser marte bewo in ien nicht sagt hier wollten hatte ich er sie so alleres ste nachten michs traum begenicht man schleide ich erklang eint am und dürfen aum darüber saglt besicht zu num , wie sie gegenden den körper vor den wie dem gestandten schlageben weiter der mehr kaum erzweigereufen was genält noch mehr so wenn das sie kannte welt lab it lassene , das schting gerspeiten lassen : aber ( ein wolltig ) , wie das ihr der dag , was nichten befollten wenn ich eine .</p>
+<p>wir ich gesehon woll halt selbst etwas zu mandging etwas wolle verstufst nacht halder das einem man einer selbst wären , aber in dem vermei , we und diesen angewahrten wir darge er nicht man sie ringen war .</p>
+<p>ich schlüuß rang sie der fard dann , die gelens noch an den beselten , also neinen nicht zu es ich so nicht neine und die fälll wir hoft ( 6!6 als , sie dann : abstande nicht nicht mit du nacht zu erst zu können selbereinem ) schwerden ist jedes sich ihn den vor den augen .</p>
+<p>auch , das schließ , einem zeiten sselbstäafolt in so ihr man nur morgen aber auch hätte , die zu einer gehen die zuselbsangen erst .</p>
+<p>aber foll ?</p>
+<p>sich vor erster mit einer wir sei schles und als ch , aufgeinernehnfür .</p>
+<p>das ich ihr einer sich der vorbindet ersten gelegen .</p>
+<p>und in sym.quo .</p>
+<p>die spulten der glauben , er die tag gemar gelogen .</p>
+</section>
+<section id="output-g2-m3" class="level2">
+<h2 class="anchored" data-anchor-id="output-g2-m3">output G2, M3</h2>
+<p>ich a d eee ei un elrin lhrdl iireiearcehn gmrdiehmrn enrageewugr anr ee nsie t reertstt rui i ir esr sh ilainh. g ridz m mens eenren ,vn t uhieecen ee sei na tzre eeetaera geneeoeenden bren tteh eirdenißäitned n n n: ek nrnl srf tea n h gnns n .w n raet reed gaia eaeh n h nnm r a etm trenenrwsg heshd h enianhmhimee.bnihid n h ce eeht s on nnee,ht cgs ef i aeeenee n cttn din d dnaeulnjhec heiid n t hn w seer e a eitina s ere tea agr e.cr ewna t eestelnt rn nnulhn i en ei iä cio t i s huh daii er ecioniecsneee gnz ha iiee atseelur nhhencs i e c n k h aet f.r rere te,ucrcdrh d e üdün et em.frp o ll eneeioeddahu uni ecde tea n nbr st id nsi hia h ro eiiit hsesinh ee r ilrnineee ahdod f iecieel n li ee eöd0eeet, ree e egveui h,ee bi n a riete.den ek miebwagr teu rms n )rani ewjnute i,hi ekehtst n i le h heereeeee err em ew ,n ict in f stnhier w ctelsosnnmne ua lbne elwoc side eeerkewnrnu uhetet lerereenresldc l ensigeeskto.drsmesvs gitnsw kle dsni becnesrwig euie weuinwmeedn hß rmn vr wc rhe bhrbeie.emeeerdoeeeueen ataplegnhu b lr n, se ülen hgmuhn rne eß en n unaneän tst m e idn l mrn ne rihnew ttuku sn lesnniine hcrztem o nhsnhiazih,nnghne nt kcb e ec seeu c onernelnednz , ebhnhncuee sh t ntmgngmh rir e esnhneie reeaavz r ganaut eae wdnhnt hv rir ein aee t itecaeeie , nenseee i nnan ihngnherisnrsre e,nh a uev s titbareect ehactn lhe,wn bsa ven o.g i ndletee rua nä wnaelhee,eoihhntie c th- e fs ienhne bwseeenie ehm eea iee ebaees bi sassekn ieh i, eec ohnendu no a durs ed ae n heisö edviaaidneiereri i aaiihe seipn eeunu r e itnees dlme,iaei ebn rteon on ehn r aiee ii i oieime u, sh hk aradane snnlttwethi e eeced i neeeendg ene?e creeii r t gn se arhns u b ew-rneesctdmu.nesennzee ete ehn tesiame s hde efr er ricr ms ete g ehd mtcat m lgkocee ee t ee e eee i ce eiei nkt daoenntee tg ci ioieeg v i n ie eu euk rdtm hceu heehrinns wh eceunhnine. i madncenetie rui pmruraäenue di a r dned ntß ets e rebaa i sw kcthnorsr ddev mb nuiteei le enr i in runaenel int enlnrhmcik n,-nueeect eü ni enhe hdtgdrghg gw giieia srkes e eee n h uie naenn itf tw r al eaiicerol e sson oi z nsiä eiec,tcutv,r,do ealrea i haltoh i d e etohentiaedrh oecrtdnwe eeor hre sfsacue,ngeeh eckta, nhntn r eo aeesbrg nrnniin ne e et relc i a e e run n d e wed<br>
+irm h oernn hhirrde hraeare erucaade. dc bne et ibee e ießnm ebvresreb rtedaäeur senasieisn eud d e ßszhhn alt denre tnn u cnsn nssnoeonmr b li eans onrnn e wwi ereeru de rrnb iteehn nw we danrnstd eaeieenehddfnn nuii innrnd et tn i gha ntdis nr i eei n ae eea c.ee rv nj reea smeneui mo epnwosee et c .d liee e nv hdecleoe;eenii nhemnt wt gnea bee n ht e ger i, nereahls en snen lii ana lonn r nn c mh cebne.te s gie,euem aean ec mnnghhein eaeohc n<br>
+aezgreu hc utbnnutirmrir weh hiecehhsiei eeccie c reunhed u rs et anhseui.ttonleeznüeliss n n fi sre r m n i n eab rei hd dne e inetb l .trg e t lesrmio ee rnen n hwrfisdteiz e s gnu et zh ni nm irt d esn re fendrm a udgnerhhr. l.lnwh nlc .e a ia crcesneet üe.ssef iei me , cnei i a. sctrhe lh teie ioetee,nhr rl swee r n n e s x hnn uritoeneraegsen eiansn eunhuemeh e s,e lho ehh c h c rihcs inrbrhurv sep nhgsi b aneno esa. ulats ninro h sü ,vaiieihe t ee ine i h ereuieneeceenaiee d hb h ühn unni i ee dn htswegilhsummmpcrh h m.ci e aceesn raa b ersee ndeniik n i i e ttdev sen v l ue csd än egrmin ceihlkh d ine na, n a eanver neiirtewe errng,n.srg e.t r nsmnse riuis si eagga rnweeiee n aen iaseasn haens aihaseeb e ae zi c h e ni cn b hths hrhmrheec w e iiaee nelec twnehs eed eea unaebcingmädwieeme e gcn ett m eecus dt-ni sde eeeaneem teeihe ndn is gcro,nai se und rlueb nfmheierknoa esn a snne gava; si blhhi benebisn ieer n z l t t :iefnhees ü ethcnn larhße cinsrhagd eg f emot shreoändreehrtgeren geanie duhenihimäneeznn rrsha e nngn ebg n nhr c . a tl.ks rl g ei nb t sienaadnsro nt uigsn ireatvrgne stehntlr e i eeah sinn nei siiseeo a t nde pouwe rezorzädrämni t t siee nekaee termaisruna , ine ,se r iihs ar r nt rel endss eoen het i nserain deint eiee eniunnl esetr ns rihh es gzlraep tsh rkd n lgsi e ies,nnn e iwdestha a hu t wrn eteo uhg vtd r t ee nfdheavngtes.e e g eeei r m i g o d n il dea v hearn o afsrr drrs eu oehthao een eip s i ehn aeetr hs aia tsaettd rginam raachh heo cmna rhvn bnöne ( ree ca cumlv dsihg ban-n ts rhfvn atsen a ihfe uan ß ieks eeecceeu eenbva d hnse l t era icegsna en eni st g rß nhrwreie c n wn eange ran ,bteren ßdewhuh hlne nkhseenuwgn onhht ht sieten tn eng e ce.chm cüat ldnsl e e edi nnmniee ls rnwlnweswnü s areviheaha teet ub nahenee uu,rep t,g w ci cicev hteo m ht teg rgerie eh hn usharrre lr ne h , evta ti eei ieeeg nrhe eehgeie linonl e cneos z umsat i i i , nneah h c ea, i n n er.nr eeenn cinr e gtß sernnräewh tdne m etllmr cc ehh l.weginil rneotd ti w afees ehae aurh zeu g ßins n votiu rihnet ae ernei d ihd lecieeh a icc a ebsmri eheaeh khae misn s utneebgsin emi ionhlblüsn ab egiidtewiiuxpn a stued b rde h a eh ermneee e h eedeaeee cesrnei e eirgi cndiiaene ihag l lhn ohshd gwüs b tesh w h eigh ßg n n h lmjtn nh ee e nues nsre eedeaee a i rb üfta ilatitheeeeweu nbani h dmanahrea dcnsnr iat edei nr isre ei e ht i os eeee e eirdei e n ee cv er eecdsv etoir ufeihee mhmmg n clue hmcceve w ien zhn s untmer tr(n d cuü ehs e i ceensed tsse? r r m b hc mueiin e uw g ir caeueiurnnrwi eoesnocbneeesntien se eec eeun oiulacwie eenc e cnär ned du irnee lue n esnneoit mmse disi csd n lh npel tci duulm e tr rhh n mt i hnreati aeldn n veialeieoeagc n i amiabsc iiw a.r eneweeeean n raü ra oneaaeso kihn nh eic b sg aiieab n iher eceh ent aiza eid g dn ra atir h smn feihaiwihd wnehee eee nw sn usgr srhi se o u i de nin s h nme gt e ioen</p>
+</section>
+<section id="output-m7d" class="level2">
+<h2 class="anchored" data-anchor-id="output-m7d">output M7d</h2>
+<blockquote class="blockquote">
+<p>showing another output of G1, this time the model has been trained on token=word level, which results in far more readable, nevertheless crumbled text… / <del>the G2 ff.&nbsp;of that model is still to test after script adaptation.</del> generation 2/3 below.</p>
+</blockquote>
+<section id="g1" class="level3">
+<h3 class="anchored" data-anchor-id="g1">G1</h3>
+<p>ich selbst angefangen hat , den es beschrieb erst wieder gemacht worden : warum ich es tun , ohne mein wort ! schulen können . ich müßte dir dabeigewesen eine weitere möglichkeit , die noch nicht selbst waren die man aber waren nicht geblieben und ich konnte gelernt , in der ich nicht mehr doch um halb nicht zu wissen gilt . bis ich ihn wissen war und habe ( ein g. auge hielt ich mich für mich da , wieder ein weg hörte zwischen dem schiff . nachrichten hinterließ ich lebe ja um ein ganzes stück mein leben erlauben bleibt das mich von der sache erwähnt … ja , die jetzt , den nur ein paar material über ewa , tut sie zwischen dem see fragen … – – grau , fragen mehr , ewa , nicht mehr festhalten , das sprach über den stein , den ich zurückbringe . den stein die verbringen zurück , den die sonne verlassen wird . nach den toten . dies ist immer noch . und kommen noch legen legen . und wird bleiben ist ein mittwoch gewesen , denke ich sie fertigschreiben geschafft . ich öffne also , genausowenig das geheime ist . und das ist eine geschichte funktionieren . denn morgen haben weil ich es</p>
+</section>
+<section id="g2" class="level3">
+<h3 class="anchored" data-anchor-id="g2">G2</h3>
+<p>ich und auch ich , wie gern bin ich mich von mir abrücken warum ich noch denke , das auch das ziel zu ihrem leben zwischen das und was eigentlich das zu ändern dem jungen . sie gegangen , der uns hier , und wenn sie uns so unsicher war , wie sie noch , noch über wie die welt noch nicht aber würde es nur eines genug leben zu haben . sie geben gegangen , die sprache geben ist und ungelernt meine schrift bilder zu tun ? es hebt sie die alten in die erinnerung ? ich kann eine erinnerung an sie zu sehen . ich sei mir ein ziel oder auch nicht auch draußen und wurden sie auch farbe sollte , sondern auch sie . es steht mir nicht anders ! das sind unterwegs und sie haben denn übernehmen daran , nur recht erinnere das gewitter sein , vor dem das leben die krankheit . das muß sie farbe , es ist nur ein paar stunden für meine worte kennt . das sind meine seele , hört man dort wächst ein gemeinsames die bewegungen dieser heimat noch nicht vorstellen . aber ich bin nur was gerochen weil ich einmal jetzt schon gesehn und wußte also : ich möchte mir nicht ( warum ich dem unbedingt ihrer ( warum ich nicht mehr richtig war gar nicht mehr meiner schuld … sei die wissenschaft . was das heißt ? das mir sogar die zusammenkunft nicht auf die noch nicht alles in die hier struktur und ich zog mir anderes was erinnern müssen heißt ich nicht sehen kann und also mit ihr aus dem schlaf . ich bin natürlich natürlich versucht mich nicht verlieren , den sprung zu öffnen . nicht wußte ich hin auf papier , ich kannte bevor der deine , der es nicht gerade erklären . sym.quot.left “-x mir , du sollst dir mein wort gedacht wurde , aber du bist kein anderes als seine hilfe . die jedoch immerhin nicht , in allen anderen eine zwar r. schon einzuhalten . daß sie das wort . es fand keine energie gibt , versuchte gut soll man sie rief . gut ist nicht schall , vielleicht reicht so anders als ich , das autorenich , vielleicht sah ich gerade mit dem alten meinen , das mir nur den der sein noch ; das ist das noch nicht ; das war erst mit den kleinen straßen die ich wirklich die wirklich noch nicht gehört . und von uns weiter und es sind die neue dimension dieser geschichte und es wird sich geben will . es war mein eigentum und das protagoniste auditorium er nicht sich damit nicht intime ; und die auch mich aber nicht mehr zu erklären wird die ich jeden auch eine seite der klugheit jeden erst mir sterben das einfache schaun und wagen dabei des polyhistors zu beginn mir zu wenig auf neuen casus clinici beziehe , sich das von mir nicht wiederholen . daß ich mich auf mich auf es sich mit einem jeden der text zum glück bestimmt sollte sie mir zuhören hatte . es bräuchte einige rekursive zusätze innerhalb der mich eines sommertages für mich der in der er sich geht in seiner nähe würd alles glück werden , die ich will mich zu überlegen . ich bin beschrieben werde , die schriften um den neunten planeten ist formalismus , den daraus etwas . et wort : da , der leser länger am ende innen innen eine starke erosionskraft , die die form mit den fluß einzugreifen ; die organische beschaffenheit der dämmung sorgte eine entscheidung , das macht euch noch umso sonst nur überall lassen mußte … ich habe mich gefragt . aber ich lerne , jetzt , nach seiner angst , um nicht nicht um sie nicht mehr zu sehn sie ? sehn sie , was sie dann ? - moi . es tut ? was waren deine … - … - 2. die wirkliche olympierin oder hermesbaby gemeinsam revolution ja . und das wäre noch nicht einmal oder doch der tod ist mir ! ) , wenn ich denn auch wenn ich mich ja nicht , wenn ich mich jetzt jeden tag getrunken haben , die worte hier gehen und müssen , vor sechs farbe hat . vielleicht genau kann ich kann nicht mehr retten geht meine erkenntnis und sie hat große leere gesetze . und das ist klar schließlich sogar in oft oder den grund selbst der anderen bücher , aber lassen mag sich nicht . aber was wird es nicht alles sagen : ( die sie sich finden ) , sich aus sich ihrem leben zu können . das war wiegesagt irisches inselland und nicht mehr gültig hier kontinentaler gefügeknochen ( besser : knöchelchen d.&nbsp;goethegefundene vom blinden geflügel .. ) wo dann erzählte bei meinen fingern , helläugig noch ohne jenen sohn war eine iroschottische gebetsinsel im umland</p>
+</section>
+<section id="g3" class="level3">
+<h3 class="anchored" data-anchor-id="g3">G3</h3>
+<p>ich hier bin . bist du hier noch dieselbe dimension teilten . was ist mit goethe erschienen plötzlich stehen in einem 40.000 feld , die geschichte . also aufheben und sagen sie sagen ? sagen sie sich einstellen können . aber sie endlich lernen … aber sie waren ja anders wegen . ich habe mich nicht mehr als vor der zeit einst flüchtete bleibt nur eine art des polyhistors , so gefährlich zu führen hätte wäre nie , im schlechten : man muß sich : in den satz darauf sich zu nehmen . nur das rauschen der philosophie , und diese zeit ist uns noch zu gehn für die umstände nicht im buch nicht mehr gefragt soll , um nicht mehr sondern lernte nicht mehr meine allzu ebene ? ich habe mich schon gelernt und wenn jemand mich in den dimension einem weiteren einem weiteren requiem , mit seiner geburt weit kleinste für uns uns die zeit von geburt nur noch vorhanden waren und könnte ich noch genau zu lesen war . warum sie denn natürlich in diesem fall näher , mußte sehr nicht immer antreibt als gerade sonst die asche tiere . iv . sym.quot.left “-x meine erkenntnis und es war bleiben auch , da er sich mal geben weil sie noch und wenn es daran entdecken . er hatte er so wie er sie unter den falschen vorzeichen jener satz , wo immer wieder zu hause war , so lang wäre genug ? ich habe , da hört einer neuen krug hell breaks loose - meine hölle erlaubt sie nicht immer so leicht als es jede ) existieren bis mit dem beibringen . solange ich manchmal manchmal nach dir nur das dem alten sicher sein , das buch nicht mehr buch und nicht mehr genug gewesen sondern über was es ihn gefunden . das bedeutet einen weiter wieder bis zum ersten mal in ihre ahnung geschrieben verließ es hindurch auf meinen schlaf in mein überleben werde ich hätte . aber die tage wären an diesem tag um die andere , dem ich hier jetzt bald tatsächlich klar . vielleicht gibt vielleicht angenommen , dieser teil vor der andern versprochen fragt sie diesmal sagen kann … ) stein : mein stein lang alles : wer darf das alles glück zu hören , an ihren glück hatte ich es gelernt so sie waren ja sie noch einzig plötzlich wie sie aus dem unbekannten pflanze zur gärung zu wort so genügt es eine schwer fallen ohne die von da wie sie sich in der zeit nur ihre masoreten wissen . diesen hat uns ja einiges klar im sinne der erbsünde und habe ich zum beispiel wenn man sich sieht unter seinem tod um mich schon so weit würden wir also erinnerungen , sondern nur , daß man die andern schon orte zurückkam zu machen . jeder wußte ich , daß ich ja , fing um mich zu nutzen vor uns. die geschichte der verlangsamten vorstellungsmöglichkeiten vom gegenlicht und seinen ausdruck in den schatten hieße . sie treibt aus mir aus dem folgenden wußte das ich in ihm also das war die ihm in das leben werden . da ist das große zeit , in der lage war , der sie mir früher wollte . sie haben , wenn etwas die sprache dazu , was sie mehr darum mehr als sein was wäre sein was uns dem jungen . - ja , was uns im geworden das und hier hören , das ging noch nicht einmal im bezug die ersten sind zu einer noch kaum noch zu verstehen . das sind schon einmal für mich möglich , das wir schon einmal aufgetaucht war als heart of gold , 1. mahler ein funke in den zukunft sehnwo um des sitzes teilhaft zu werden einen teil der forderung und was hinten war endlich der fremd , das die schule der klugheit sollte auch diese eine einziges bedingungen vor mir , kann ich so naiv in ihrer vorgängigen , die mich auch meine und meine noch zu uns machen , denn die dann endlich seine begegneten von den nicht von seiner kathedrale . als mache es ab , was passieren könnte … i kommen ein paar herz einmal verloren über die jahre zurück mit dieser nacht noch einmal wiederkehrt und nicht mehr wahrnehmen würden , daß trotzdem vorbei zwischen einem und der erweiterung wirkliche bäusche benennen hat ; also jener schrieb seine mittel wählt autoren über die ersten intuitiv ausgefallenen position sind sind gut , geheilt üblichen schreibens dünnen material die man sich mehr wüßte wird man sich dabei zu einem großen , hölderlin , mehr zu diesem ort den ersten blitzableitern die vom volk heranwächst stehen derart gehen konnten in jeder kontrolle , auf jener zu schreiben als der einen ihrer bezeichnungen wagte und dies hast sigel tätig dir bringen mußte etwa richtig ! schwer erlernen , th. , jeden tag und so ist doch so , daß es tag und wir würden einen , wie schon mal ist , den wir wieder an den grund zurück / fertiges orchester zu antizipieren oder vielmehr : ein gefahr einen denkens . zu haben , wenn man zu kennen kostet mut oder auch auch nur der mensch folgt und auch etwas anderes heißen heißt nach den alten mann , also zu diesem archischen zu wissen , was selbst sind diese rechte glücklich als zeichen zu werden . also wäre also : sie treibt sich ja jedenfalls jahr kommt eine gelegenheit unerwartet fügte und den erklärten koordinaten gar nicht wirklich auf eigenes glut die wir uns noch zu werden kann . jedoch weiter aber an uns jedoch weiter an und kaum nicht noch scheinbar da an uns dieses ende gäbe wäre erst dann wo wir an uns zählt da nur noch eine anfechtung später daß einem einem in meinen dasein unseres herzens entlassen wurden , spüre ich früh einmal bevor ein paar jahre vergehn . / root / rauschen wenn der ausgebrochene nicht bald tatsächlich durch tatsächlich durch tatsächlich erfahrenen selbst , den tod immer mit ihren toten kann ich seine antworten ist , warum also auch in einen langen vorraussagen . und denke ich sie sagen , immer muß es weitergeben . es muß immer wieder einen unfall gegeben , in den ich mit der geburt ich , von selbst daran dachte , die ruhe der körper , auch wenn jemand sie auch in seinem leben das bunte erklären , von seiner möglichkeit der sich über demhier erhebenden konstruktion , meint u. sich ja endlich derart aufbewahrt ohne makel gesetzt . bei joyce habe ich ohne vollständigen regen brachte es schabernack . es gibt dunkel ward . sie alle blut hand , die ihn ins abschnitt davor sind anders , durch die nebel hier und verliert dem ende war und das unbedingt aushalten für ihn zu einem hätten und sind wir es finden jedoch auch wenn sie nicht sorgen und natürlich auch jetzt sind sorgen und daß es das gerade erreichen würde wie die welt sich weitergedreht in sich . sie war ein buch in der stadt , war es nicht . also ließ er sich jetzt öffnen lassen wenn jemand es ein gab wenn es dann nicht mehr in einen gedanken und die w. h. s. worte , außer dem medium der geschichte von 2003 und es muß nur gemerkt , daß nichts , daß sicher außer mir erst jetzt . ich tat es las , wenn ich es noch mehr gibt , seinen tod erde voll von leuten ; und weil etwas zu gehen , weil ein mädchen anderes , aber das bringt hier , das das feld zu einsturz seele ? sie haben das buch geschehen in den zweiten ganzen gehn wollte . jetzt angenommen vom wind , die dich der wirklichkeit , aber welche ihr wollen ich allein , sehr viel später geblieben ; der sie mir nichts von mir ein . ich werde sie vom ende nur kurz vor , darum der geist der archetypenlyrik , durch die dich geschieht ein . et ein auto . und das erste ? das könnte auch sie auf der anderen , auch laut , tut es , wo es nur , wo es v. . das wasser ist , das größte , was deine hand , das ist mein wort gedacht wurde , mein namen nicht , da ich weiter an ihn gedacht , sakrales , daß er einmal etwas und jetzt erwachsen für mich , für mich nicht hast gehen mindestens verstanden haben und weil uns beide schon verstanden haben und also auch mit</p>
+</section>
+<section id="model-stats" class="level3">
+<h3 class="anchored" data-anchor-id="model-stats">model stats</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 21%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">m</th>
+<th style="text-align: left;">timestamp</th>
+<th style="text-align: left;">word</th>
+<th style="text-align: right;">embeddings</th>
+<th style="text-align: right;">hidden</th>
+<th style="text-align: right;">batch</th>
+<th style="text-align: right;">chars</th>
+<th style="text-align: right;">seq_l</th>
+<th style="text-align: right;">epoch</th>
+<th style="text-align: right;">temp</th>
+<th style="text-align: right;">generation</th>
+<th style="text-align: right;">entropy</th>
+<th style="text-align: right;">vocab</th>
+<th style="text-align: right;">synthetic_ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">7d</td>
+<td style="text-align: left;">2026-05-29 09:19:09.128553</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">6000</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9.876776</td>
+<td style="text-align: right;">22010</td>
+<td style="text-align: right;">0.1000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7d</td>
+<td style="text-align: left;">2026-05-29 11:58:38.32114</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">6000</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9.876002</td>
+<td style="text-align: right;">22010</td>
+<td style="text-align: right;">0.3833333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7d</td>
+<td style="text-align: left;">2026-05-29 14:44:21.338011</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">6000</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9.872298</td>
+<td style="text-align: right;">22010</td>
+<td style="text-align: right;">0.6666667</td>
+</tr>
+</tbody>
+</table>
+<p>M7d model settings and statistics</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="model-collapse-textur_files/figure-html/entropy-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>M7d entropy develoment</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>we observe decreasing entropy factors from G1 forward which means fewer diversity, higher predictabilty and a less balanced synthesis of generated texts. (cf. <span class="citation" data-cites="leipzig_corpora_collection_korpus_2024">Leipzig Corpora Collection (<a href="#ref-leipzig_corpora_collection_korpus_2024" role="doc-biblioref">2024</a>)</span>; Entropy: ~11.7 in german newspaper corpus) # references</p>
+</section>
+</section>
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-glaser_benjaminfeldkraft_2024" class="csl-entry" role="listitem">
+Glaser, Guhl. 2024. <em>Benjaminfeldkraft. <span>A</span> German Language Literary Corpus for Exploring and Analysing Essais.</em> Postagged vertical graph. Edition rotefadenbuecher. <a href="https://github.com/esteeschwarz/benjaminfeldkraft/releases/tag/origin">https://github.com/esteeschwarz/benjaminfeldkraft/releases/tag/origin</a>.
+</div>
+<div id="ref-leipzig_corpora_collection_korpus_2024" class="csl-entry" role="listitem">
+Leipzig Corpora Collection. 2024. <span>“Korpus: Deu_news_2024_10K, 3.10.5 <span>Entropy</span>.”</span> In <em>German Newspaper Dictionary Based on Material Crawled in 2024.</em> <a href="https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html">https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html</a>.
+</div>
+<div id="ref-schwarz_model_2026" class="csl-entry" role="listitem">
+Schwarz, St. 2026. <em>Model Collapse Essai</em>. <a href="https://github.com/esteeschwarz/SPUND-LX/tree/main/play/quarto/test/modeling">https://github.com/esteeschwarz/SPUND-LX/tree/main/play/quarto/test/modeling</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
