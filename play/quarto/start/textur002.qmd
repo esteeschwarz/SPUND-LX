@@ -75,6 +75,7 @@ wird.
 das zeigt sich dann in zunehmenden musterwiederholungen, eindimensionalen phrasen, weniger types (unique words/tokens) und generell einer abnahme der entropie dh. die annahme eines höher organisierten (aber nicht mehr mensch-sprachlich strukturierten) zustands, der konsequent auf erstarrung hinausläuft, weil die späteren generationen eine weitgehend (inzestuöse beziehung) mit dem eigenen output eingehen. in texturbegriffe übersetzt würde unser teppich langsam den weg von einem farbenfrohen (universum der begriffe) hin zu einem diachromen gewebe aus eigentlich nur 2 zuständen, nämlich strom/nichtstrom, nehmen. wir haben es hier mit einer entropie im entgegengesetzten sinne des natürlichen verständnisses zu tun. indem die vielseitigkeit des teppichs abnimmt, die wahrscheinlichkeit von mustern höher wird, desto weniger information kann er uns geben.
 
 @wiener_human_1950 : 21
+
 > Just as entropy is a measure of disor­ganization, the information carried by a set of mes­sages is a measure of organization. In fact, it is possible to interpret the information carried by a message as essentially the negative of its entropy, and the negative logarithm of its probability. That is, the more probable the message, the less information it gives. Cliches, for example, are less illuminating than great poems.
 
 d.h. dieser von einem nahe collabierenden model produzierte teppich is no news at all.
