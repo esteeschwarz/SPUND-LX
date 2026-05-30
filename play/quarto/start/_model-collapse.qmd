@@ -4,7 +4,7 @@
 2. (corpus) > @glaser_benjaminfeldkraft_2024
 
 ## method
-the model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 10% synthetic output of G1. 
+the model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1. 
 
 generally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types).
 
