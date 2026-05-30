@@ -9,6 +9,9 @@ date: "2026-04-12"
 # toc-depth: 3
 # toc-expand: true
 title-meta: ""
+metadata-files:
+  - _quarto-common-textur.yml
+
 # bibliography: textur.bib
 # cmeta: |
 #   class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::

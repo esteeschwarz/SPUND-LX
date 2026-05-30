@@ -1,4 +1,4 @@
 ::: {.content-visible when-format="pdf"}
-{\small{and wwell if youre desperate about not working links in the downloaded pdf please consider as intended to switch to the online version of this document witch you will find linked near header sorry inconvenience...}}
+[and wwell if youre desperate about not working links in the downloaded pdf please consider as intended to switch to the online version of this document witch you will find linked near header sorry your inconvenience is my convenience...]
 :::
-
+<hr>
