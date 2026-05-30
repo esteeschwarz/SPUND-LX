@@ -3,9 +3,9 @@ title: "GPT Q1"
 subtitle: "LX / Tech: Sprache und Technologie - Language and Technology"
 #date: '`r format(Sys.time())`'
 date: '2026-05-20'
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 
 categories:
    - gpt

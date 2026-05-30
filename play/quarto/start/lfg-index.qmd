@@ -1,9 +1,9 @@
 ---
 title: "LX / LFG"
 subtitle: "Einführung in die Grammatiktheorie und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionalen Grammatik (LFG)"
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 
 # format: |
 #      html 

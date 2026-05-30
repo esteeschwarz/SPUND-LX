@@ -3,7 +3,11 @@ title: AVL / textur
 subtitle: "no"
 format: html
 # tmeta: $testmeta$
-date: '`r format(Sys.time())`'
+# date: '`r format(Sys.time())`'
+date: "2026-04-12"
+toc: true
+toc-depth: 3
+toc-expand: true
 title-meta: ""
 bibliography: textur.bib
 cmeta: |

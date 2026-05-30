@@ -1,7 +1,7 @@
 bibliography: LXtech.bib
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 #nocite: '@*'
 cmeta: |
   class: [16830] Sprache und Technologie - Language and Technology::

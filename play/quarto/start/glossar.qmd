@@ -1,21 +1,26 @@
 ---
-title: Lit / KI
-subtitle: "Literatur und Künstliche Intelligenz"
-format: html
-# toc: true
-# toc-depth: 3
-# toc-expand: true
+title: glossar
+subtitle: "term global glossary"
+# format: html
+toc: true
+toc-depth: 3
+toc-expand: true
 
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
-date: "2026-04-20"
+date: "2026-05-30"
 title-meta: ""
-bibliography: litKI.bib
+bibliography: 
+   - litKI.bib
+   - LXtech.bib
+   - LFG.bib
+   - textur.bib
+   - nietzsche.bib
+   - VSstr.bib
 cmeta: |
-  class: [16431] Literatur und KI ::
-  tutor: marlene schwarz ::
+  common: global term glossary
   term: SS26
-  snc: 16172.2 
+  snc: 16232.1
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 16162.tiny
@@ -30,7 +35,7 @@ cfoot: |
 
 -----
 
-> [index](index.qmd) / Lit KI
+> [index](index.qmd) / glossary
 
 -----
 
@@ -40,7 +45,8 @@ print("engine on...")
 
 
 # index
-1. samling: margin notes general > [open](lki-qa.qmd){.btn .btn-cat}
-2. summary on kybernetik introduction > [open](lki-001.qmd)
-3. session 2026-06-01: bajohr - AI authorship et al. > [open](lki-002.qmd)
+all TODO
 
+## a
+### alphabet
+a common way of segmenting

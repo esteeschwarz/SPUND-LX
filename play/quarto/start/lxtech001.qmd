@@ -1,12 +1,13 @@
 ---
 title: "LX / Tech"
 subtitle: "Sprache und Technologie - Language and Technology"
-format: html
-toc: true
-toc-depth: 3
-toc-expand: true
+# format: html
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 # tmeta: $testmeta$
-date: '`r format(Sys.time())`'
+# date: '`r format(Sys.time())`'
+date: "2026-04-22"
 title-meta: ""
 categories:
    - vectors

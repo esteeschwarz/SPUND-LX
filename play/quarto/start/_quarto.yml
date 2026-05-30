@@ -41,6 +41,7 @@ website:
       #     - href: report.pdf
       #       text: "Download PDF"
    right:
+      - glossar.qmd
       - snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/
         icon: github
@@ -53,9 +54,14 @@ format:
       - brand
     #code-overflow: wrap
     css: assets/styles.css
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+
   pdf:
       keep-tex: false
       keep-intermediates: false
+      toc: false
     #   template: pdf-template.tex
     #   latex_engine: xelatex  # default lualatex
     #   latex-tinytex: false

@@ -3,9 +3,9 @@ title: "subject - authorship - value in LLM generated texts"
 subtitle: "Literatur und Künstliche Intelligenz"
 #date: '`r format(Sys.time())`'
 date: '2026-05-25'
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 
 categories:
    - gpt

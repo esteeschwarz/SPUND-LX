@@ -7,9 +7,9 @@ subtitle: "Norbert Wiener - Regelung und Nachrichtenübertragung im Lebewesen un
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
 date: "2026-04-20"
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 
 title-meta: ""
 bibliography: litKI.bib

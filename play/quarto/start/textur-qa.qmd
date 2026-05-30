@@ -6,8 +6,8 @@ bibliography: textur.bib
 #   - tbl_qa: {file: "qa.qmd", num: 1}
 #   - tbl-summary: {file: "results.qmd", num: 2}
 title-meta: ""
-# date: '`r format(Sys.time())`'
-date: "2026-05-14"
+date: '`r format(Sys.time())`'
+# date: "2026-05-14"
 ---
 
 ::: {.content-visible when-format="html"}
