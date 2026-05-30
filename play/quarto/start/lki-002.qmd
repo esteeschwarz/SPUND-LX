@@ -40,7 +40,7 @@ print("engine on...")
 - 16222.1
 
 - [x] sent
-- [] final
+- [ ] final
 
 # intro
 nachdem ich einige texte von hannes bajohr (@bajohr_subjekt_2024, @bajohr_berlin_2023, @bajohr_glaube_2017) gelesen habe, stellen sich mir mehrere fragen, die so oder so ähnlich sich scheinbar schon angekündigt hatten im laufe der auseinandersetzung mit den themen des seminars. durch bajohr wurde ein grundlegendes problem hier einmal ausformuliert, dem in der literaturwissenschaft zentrale bedeutung zukommt: das (subjekt) d/ autor/ oder authorship sowie damit verbunden dann subjektivität-objektivität, verantwortung, zukunft der literatur unter dem aspekt künstlicher intelligenz.
