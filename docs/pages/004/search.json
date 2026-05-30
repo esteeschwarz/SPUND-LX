@@ -165,28 +165,28 @@
     "href": "textur001.html",
     "title": "AVL / textur",
     "section": "",
-    "text": "class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models :: tutor: jan lietz :: term: SS26 snc: 16162.1\nTO GIT COMMIT\n[1] \"engine on...\""
+    "text": "?meta:cmeta\nTO GIT COMMIT\n[1] \"engine on...\""
   },
   {
     "objectID": "textur001.html#q",
     "href": "textur001.html#q",
     "title": "AVL / textur",
     "section": "Q",
-    "text": "Q\n\nSmith (2020), Smith (2022)\nRösing (2024)"
+    "text": "Q\n\n@smith_thread_2020, @smith_thread_2022\n@rosing_textile_2024"
   },
   {
     "objectID": "textur001.html#samling",
     "href": "textur001.html#samling",
     "title": "AVL / textur",
     "section": "samling",
-    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (Smith (2022), p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?\n\n\n\nroboter schreibt bibel ab\n(installation vor dem trierer dom)\nhttps://www.robotlab.de/DE/biosbible.html"
+    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (@smith_thread_2022, p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?\n\n\n\nroboter schreibt bibel ab\n(installation vor dem trierer dom)\nhttps://www.robotlab.de/DE/biosbible.html"
   },
   {
     "objectID": "textur001.html#play",
     "href": "textur001.html#play",
     "title": "AVL / textur",
     "section": "play",
-    "text": "play\n\n\n\ntweed: warp and weft\n\n\n\n\n[1] 7\n\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n\nthis is\njust the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.\nwitch corpus? &gt; Glaser (2024)\n\n\n\n\n\ncorpus part of speech (nouns, verbs, adj) vector plot\n\n\n\n\n\n\nthis is\nthe corpus [first 1000 words] nouns (blue=weft) vs verbs (red=warp) plotted\n\n\n\n\n\ncorpus NOUNS vs. VERBS plot\n\n\n\n\n\n\nso you can\ncreate yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)\nor a QR code of nouns…\n\n\n\n\n\ncorpus[1:300] NOUNS plot\n\n\n\n\n\n\nor any\npattern from whatever you find interesting (beautiful) to plot:\ne.g.\n\nich vs. du\nhaben vs. sein\npast vs. present\nschund vs. high language (this may be difficult)\nyou can as well plot 1 vs. n dimensions of features witch would result in a more colorful tweed"
+    "text": "play\n\n\n\ntweed: warp and weft\n\n\n\n\n[1] 7\n\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n\nthis is\njust the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.\nwitch corpus? &gt; @glaser_benjaminfeldkraft_2024\n\n\n\n\n\ncorpus part of speech (nouns, verbs, adj) vector plot\n\n\n\n\n\n\nthis is\nthe corpus [first 1000 words] nouns (blue=weft) vs verbs (red=warp) plotted\n\n\n\n\n\ncorpus NOUNS vs. VERBS plot\n\n\n\n\n\n\nso you can\ncreate yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)\nor a QR code of nouns…\n\n\n\n\n\ncorpus[1:300] NOUNS plot\n\n\n\n\n\n\nor any\npattern from whatever you find interesting (beautiful) to plot:\ne.g.\n\nich vs. du\nhaben vs. sein\npast vs. present\nschund vs. high language (this may be difficult)\nyou can as well plot 1 vs. n dimensions of features witch would result in a more colorful tweed"
   },
   {
     "objectID": "synthetic_gen_7c-1.html",
@@ -214,7 +214,7 @@
     "href": "lki-002.html",
     "title": "subject - authorship - value in LLM generated texts",
     "section": "",
-    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.2\nTO GIT COMMIT\n[1] \"engine on...\""
+    "text": "paper online ::: class: [16431] Literatur und KI ::: tutor: marlene schwarz ::: term: SS26 ::: snc: 16172.2\nTO GIT COMMIT\n[1] \"engine on...\""
   },
   {
     "objectID": "lki-002.html#play-on-perspectives",
@@ -312,7 +312,7 @@
     "href": "lki-kybernetik.html",
     "title": "Lit / KI",
     "section": "",
-    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\nindex / Lit KI\n\n\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nbajohr - AI authorship et al. &gt; open"
+    "text": "?meta:cmeta\n\n\n\nTO GIT COMMIT\n\n\nindex / Lit KI\n\n\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nbajohr - AI authorship et al. &gt; open"
   },
   {
     "objectID": "synthetic_gen_3-1.html",
@@ -332,8 +332,15 @@
     "objectID": "glossar.html#a",
     "href": "glossar.html#a",
     "title": "glossar",
-    "section": "a",
-    "text": "a\n\nalphabet\na common way of segmenting"
+    "section": "A",
+    "text": "A\n\nalphabet\na common way of segmenting"
+  },
+  {
+    "objectID": "glossar.html#t",
+    "href": "glossar.html#t",
+    "title": "glossar",
+    "section": "T",
+    "text": "T\n\ntautologie\nsomething explaining itself by itself"
   },
   {
     "objectID": "model-collapse-lki.html#qs",
@@ -452,7 +459,7 @@
     "href": "lki-index.html",
     "title": "Lit / KI",
     "section": "",
-    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\nindex / Lit KI\n\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nsession 2026-06-01: bajohr - AI authorship et al. &gt; open"
+    "text": "paper online ::: class: [16431] Literatur und KI ::: tutor: marlene schwarz ::: term: SS26 ::: snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\nindex / Lit KI\n\n\n\n\n[1] \"engine on...\"\n\n\n\nsnc\n16232.1\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nsession 2026-06-01: bajohr - AI authorship et al. &gt; open"
   },
   {
     "objectID": "lki-001.html",
