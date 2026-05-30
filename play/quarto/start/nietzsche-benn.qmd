@@ -4,25 +4,27 @@ subtitle: "Gottfried Benn: Verlorenes Ich"
 # format: html
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+metadata-files:
+  - _quarto-common-nietzsche.yml
 
 date: "2026-05-02"
 title-meta: ""
-bibliography: nietzsche.bib
-# nocite: '@*'
-cmeta: |
-  class: [16719] Nietzsche und Nietzscherezeption ::
-  tutor: friederike günther ::
-  term: SS26
-  snc: 16163.1  
-#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
-#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
-arkiv: 16162.tiny
-# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
-cfoot: |
-  [back to paper online](https://stschwarz.userpage.fu-berlin.de/links/?title=benn&ref=paper-benn)
+# bibliography: nietzsche.bib
+# # nocite: '@*'
+# cmeta: |
+#   class: [16719] Nietzsche und Nietzscherezeption ::
+#   tutor: friederike günther ::
+#   term: SS26
+#   snc: 16163.1  
+# #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+# #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+# arkiv: 16162.tiny
+# # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+# cfoot: |
+#   [back to paper online](https://stschwarz.userpage.fu-berlin.de/links/?title=benn&ref=paper-benn)
 ---
 
 ::: {.content-visible when-format="html"}
@@ -38,6 +40,7 @@ cfoot: |
 > [Nietzsche](nietzsche001.qmd) / benn, rezeption
 
 -----
+
 :::
 
 to nietzsche..., benn... class... global [annotations](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche-qa.html)

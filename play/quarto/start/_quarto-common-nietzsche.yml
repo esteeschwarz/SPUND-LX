@@ -1,0 +1,20 @@
+bibliography: nietzsche.bib
+subtitle: "Nietzsche und Nietzscherezeption"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+#nocite: '@*'
+cmeta: |
+  [paper online](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche001.html) :::
+  class: [16719] Nietzsche und Nietzscherezeption :::
+  tutor: friederike günther :::
+  term: SS26 :::
+  snc: 16163.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [for link preserve sake consider visit the gd paper online via link in header]
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+title-meta: ""
