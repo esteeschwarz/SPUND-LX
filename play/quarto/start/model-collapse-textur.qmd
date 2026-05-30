@@ -8,10 +8,10 @@ categories:
    - entropy
    - AI texts
 bibliography: LXtech.bib
-format: html
-toc: true
-toc-depth: 3
-toc-expand: true
+# format: html
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 
 # css: https://ada-sub.dh-index.org/school/css/style.css
 ---

@@ -1,14 +1,16 @@
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
+subtitle: "Literatur und Künstliche Intelligenz"
 date: "2026-04-20"
-toc: true
-toc-depth: 3
+# toc: true
+# toc-depth: 3
 title-meta: ""
 bibliography: litKI.bib
 cmeta: |
-  class: [16431] Literatur und KI ::
-  tutor: marlene schwarz ::
-  term: SS26
+  [paper online](https://esteeschwarz.github.io/SPUND-LX/pages/004/lki-index.html) :::
+  class: [16431] Literatur und KI :::
+  tutor: marlene schwarz :::
+  term: SS26 :::
   snc: 16172.2 
 arkiv: 16222.common-yml
 # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>

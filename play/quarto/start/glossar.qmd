@@ -45,8 +45,12 @@ print("engine on...")
 
 
 # index
-all TODO
+> all TODO
 
-## a
+## A
 ### alphabet
 a common way of segmenting
+
+## T
+### tautologie
+something explaining itself by itself

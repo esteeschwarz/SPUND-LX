@@ -36,12 +36,13 @@ website:
             text: "ada-school (olde)"
           - href: pdfpaper/001/uwolf.qmd
             text: reference-test
+      - glossar.qmd
+
       # - text: "Download"
       #   menu:
       #     - href: report.pdf
       #       text: "Download PDF"
    right:
-      - glossar.qmd
       - snc.qmd
       - href: https://github.com/esteeschwarz/SPUND-LX/
         icon: github

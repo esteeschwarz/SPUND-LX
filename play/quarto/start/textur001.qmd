@@ -1,26 +1,26 @@
 ---
 title: AVL / textur
-subtitle: "no"
+# subtitle: "no"
 format: html
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
 date: "2026-04-12"
-toc: true
-toc-depth: 3
-toc-expand: true
+# toc: true
+# toc-depth: 3
+# toc-expand: true
 title-meta: ""
-bibliography: textur.bib
-cmeta: |
-  class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::
-  tutor: jan lietz ::
-  term: SS26
-  snc: 16162.1  
+# bibliography: textur.bib
+# cmeta: |
+#   class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::
+#   tutor: jan lietz ::
+#   term: SS26
+#   snc: 16162.1  
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 16162.tiny
 # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
-cfoot: |
-  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+# cfoot: |
+#   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
 ::: {.content-visible when-format="html"}
 {{< meta cmeta >}}

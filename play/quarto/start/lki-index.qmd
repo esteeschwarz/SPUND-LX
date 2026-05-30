@@ -1,6 +1,6 @@
 ---
 title: Lit / KI
-subtitle: "Literatur und Künstliche Intelligenz"
+# subtitle: "Literatur und Künstliche Intelligenz"
 format: html
 # toc: true
 # toc-depth: 3
@@ -10,18 +10,21 @@ format: html
 # date: '`r format(Sys.time())`'
 date: "2026-04-20"
 title-meta: ""
-bibliography: litKI.bib
-cmeta: |
-  class: [16431] Literatur und KI ::
-  tutor: marlene schwarz ::
-  term: SS26
-  snc: 16172.2 
-#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
-#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
-arkiv: 16162.tiny
-# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
-cfoot: |
-  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+metadata-files:
+  - _quarto-common-lki.yml
+
+# bibliography: litKI.bib
+# cmeta: |
+#   class: [16431] Literatur und KI ::
+#   tutor: marlene schwarz ::
+#   term: SS26
+#   snc: 16172.2 
+# #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+# #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+# arkiv: 16162.tiny
+# # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+# cfoot: |
+#   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 ---
 
 {{< meta cmeta >}}
@@ -38,6 +41,8 @@ cfoot: |
 print("engine on...")
 ```
 
+# snc
+16232.1
 
 # index
 1. samling: margin notes general > [open](lki-qa.qmd){.btn .btn-cat}

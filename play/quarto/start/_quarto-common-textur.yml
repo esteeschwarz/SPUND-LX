@@ -1,0 +1,20 @@
+bibliography: textur.bib
+subtitle: "Text und Textur. Vom Webstuhl bis zu Large Language Models"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+#nocite: '@*'
+cmeta: |
+  [paper online](https://esteeschwarz.github.io/SPUND-LX/pages/004/textur-001.html) :::
+  class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models :::
+  tutor: jan lietz :::
+  term: SS26 :::
+  snc: 16162.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [for link preserve sake consider visit the gd paper online via link in header]
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+title-meta: ""
