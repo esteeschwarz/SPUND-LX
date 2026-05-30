@@ -1,13 +1,13 @@
 ---
-title: "G1-2 synthetic output"
-subtitle: "recursive training essai"
-date: "2026-05-25"
-categories:
-   - LLMs
-   - model collapse
-   - entropy
-   - AI texts
-bibliography: LXtech.bib
+# title: "G1-2 synthetic output"
+# subtitle: "recursive training essai"
+# date: "2026-05-25"
+# categories:
+#    - LLMs
+#    - model collapse
+#    - entropy
+#    - AI texts
+# bibliography: LXtech.bib
 # format: html
 # toc: true
 # toc-depth: 3
