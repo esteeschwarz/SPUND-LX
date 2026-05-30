@@ -48,4 +48,4 @@ knitr::kable(dfa)
 ```
 
 we observe decreasing entropy factors from G1 forward which means fewer diversity, higher predictabilty and a less balanced synthesis of generated texts. (cf. @leipzig_corpora_collection_korpus_2024; Entropy: ~11.7 in german newspaper corpus)
-# references
+

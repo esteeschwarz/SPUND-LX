@@ -20,3 +20,5 @@ toc-expand: true
 
 -----
 {{< include _model-collapse.qmd >}}
+
+# references
