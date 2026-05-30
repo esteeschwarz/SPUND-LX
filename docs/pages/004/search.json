@@ -242,7 +242,7 @@
     "href": "model-collapse-tech.html#method",
     "title": "G1-2 synthetic output",
     "section": "method",
-    "text": "method\nthe model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1.\ngenerally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types)."
+    "text": "method\nthe model (not pretrained cvd. blank) has been trained (G1) on above corpus with above linked script (gpt proposal using Falbel and Luraschi (2026) in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1.\ngenerally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types)."
   },
   {
     "objectID": "model-collapse-tech.html#output-g1-m3",
@@ -333,7 +333,7 @@
     "href": "model-collapse-lki.html#method",
     "title": "G1-2 synthetic output",
     "section": "method",
-    "text": "method\nthe model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1.\ngenerally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types)."
+    "text": "method\nthe model (not pretrained cvd. blank) has been trained (G1) on above corpus with above linked script (gpt proposal using Falbel and Luraschi (2026) in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1.\ngenerally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types)."
   },
   {
     "objectID": "model-collapse-lki.html#output-g1-m3",
@@ -466,7 +466,7 @@
     "href": "model-collapse-textur.html#method",
     "title": "G1-2 synthetic output",
     "section": "method",
-    "text": "method\nthe model (untrained, blank) has been trained (G1) on above corpus with above linked script (gpt proposal using torch in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1.\ngenerally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types)."
+    "text": "method\nthe model (not pretrained cvd. blank) has been trained (G1) on above corpus with above linked script (gpt proposal using Falbel and Luraschi (2026) in [R]) and retrained (G2) on the same corpus plus 0.1% synthetic output of G1.\ngenerally the training data (200.000 words) is not enough to output serious content even in G1, but we see literally that the model degenerates quickly; we observe entropy drop and decreasing vocabulary (89 vs. 86 char types)."
   },
   {
     "objectID": "model-collapse-textur.html#output-g1-m3",
