@@ -144,7 +144,7 @@
     "href": "str-index.html",
     "title": "AVL / VS-Strätling",
     "section": "",
-    "text": "class: [16401] Perspektiven AVL :: tutor: strätling :: term: SS26 snc: 16185.1\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsession notes"
+    "text": "class: [16401] Perspektiven AVL :: tutor: strätling :: term: SS26 snc: 16185.1\n\n\n\nTO GIT COMMIT\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsession notes"
   },
   {
     "objectID": "index.html",
@@ -165,28 +165,28 @@
     "href": "textur001.html",
     "title": "AVL / textur",
     "section": "",
-    "text": "?meta:cmeta\nTO GIT COMMIT\n[1] \"engine on...\""
+    "text": "paper online ::: class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::: tutor: jan lietz ::: term: SS26 ::: snc: 16162.1\nTO GIT COMMIT\n[1] \"engine on...\""
   },
   {
     "objectID": "textur001.html#q",
     "href": "textur001.html#q",
     "title": "AVL / textur",
     "section": "Q",
-    "text": "Q\n\n@smith_thread_2020, @smith_thread_2022\n@rosing_textile_2024"
+    "text": "Q\n\nSmith (2020), Smith (2022)\nRösing (2024)"
   },
   {
     "objectID": "textur001.html#samling",
     "href": "textur001.html#samling",
     "title": "AVL / textur",
     "section": "samling",
-    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (@smith_thread_2022, p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?\n\n\n\nroboter schreibt bibel ab\n(installation vor dem trierer dom)\nhttps://www.robotlab.de/DE/biosbible.html"
+    "text": "samling\n\nI intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. It knows what it means to be an image from the inside out, with no regard for the outside in.\nWorking together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A Flora digitalica, I told the committee. (Smith (2022), p.10)\n\n\nvector space of plants\n\nembeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?\n\n\n\nroboter schreibt bibel ab\n(installation vor dem trierer dom)\nhttps://www.robotlab.de/DE/biosbible.html"
   },
   {
     "objectID": "textur001.html#play",
     "href": "textur001.html#play",
     "title": "AVL / textur",
     "section": "play",
-    "text": "play\n\n\n\ntweed: warp and weft\n\n\n\n\n[1] 7\n\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n\nthis is\njust the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.\nwitch corpus? &gt; @glaser_benjaminfeldkraft_2024\n\n\n\n\n\ncorpus part of speech (nouns, verbs, adj) vector plot\n\n\n\n\n\n\nthis is\nthe corpus [first 1000 words] nouns (blue=weft) vs verbs (red=warp) plotted\n\n\n\n\n\ncorpus NOUNS vs. VERBS plot\n\n\n\n\n\n\nso you can\ncreate yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)\nor a QR code of nouns…\n\n\n\n\n\ncorpus[1:300] NOUNS plot\n\n\n\n\n\n\nor any\npattern from whatever you find interesting (beautiful) to plot:\ne.g.\n\nich vs. du\nhaben vs. sein\npast vs. present\nschund vs. high language (this may be difficult)\nyou can as well plot 1 vs. n dimensions of features witch would result in a more colorful tweed"
+    "text": "play\n\n\n\ntweed: warp and weft\n\n\n\n\n[1] 7\n\n\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n\nthis is\njust the distribution of nouns, verbs, adverbs, adjectives across the corpus plotted.\nwitch corpus? &gt; Glaser (2024)\n\n\n\n\n\ncorpus part of speech (nouns, verbs, adj) vector plot\n\n\n\n\n\n\nthis is\nthe corpus [first 1000 words] nouns (blue=weft) vs verbs (red=warp) plotted\n\n\n\n\n\ncorpus NOUNS vs. VERBS plot\n\n\n\n\n\n\nso you can\ncreate yourself a beautiful taschentuch or tischdecke or boxershort of your response paper :)\nor a QR code of nouns…\n\n\n\n\n\ncorpus[1:300] NOUNS plot\n\n\n\n\n\n\nor any\npattern from whatever you find interesting (beautiful) to plot:\ne.g.\n\nich vs. du\nhaben vs. sein\npast vs. present\nschund vs. high language (this may be difficult)\nyou can as well plot 1 vs. n dimensions of features witch would result in a more colorful tweed"
   },
   {
     "objectID": "synthetic_gen_7c-1.html",
@@ -312,7 +312,7 @@
     "href": "lki-kybernetik.html",
     "title": "Lit / KI",
     "section": "",
-    "text": "?meta:cmeta\n\n\n\nTO GIT COMMIT\n\n\nindex / Lit KI\n\n\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nbajohr - AI authorship et al. &gt; open"
+    "text": "?meta:cmeta\n\n\n\nTO GIT COMMIT\n\n\n\nindex / Lit KI\n\n\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nbajohr - AI authorship et al. &gt; open"
   },
   {
     "objectID": "synthetic_gen_3-1.html",
@@ -431,7 +431,7 @@
     "href": "lfg-index.html",
     "title": "LX / LFG",
     "section": "",
-    "text": "class: [16849] Einführung in die Grammatiktheorie :: tutor: meinschäfer/gaglia :: term: SS26 snc: 16184.1\n\n\n\nTO GIT COMMIT\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nclass notes\nplay along model training on corpus: having Claude devise grammar from synthetic text &gt; link"
+    "text": "class: [16849] Einführung in die Grammatiktheorie :: tutor: meinschäfer/gaglia :: term: SS26 snc: 16184.1\n\n\n\nTO GIT COMMIT\n\n\n\n[1] \"engine on...\"\n\n\n\nindex\n\nsamling: margin notes general &gt; open\nclass notes\nplay along model training on corpus: having Claude devise grammar from synthetic text &gt; link"
   },
   {
     "objectID": "lxtech003.html",
@@ -459,14 +459,14 @@
     "href": "lki-index.html",
     "title": "Lit / KI",
     "section": "",
-    "text": "paper online ::: class: [16431] Literatur und KI ::: tutor: marlene schwarz ::: term: SS26 ::: snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\nindex / Lit KI\n\n\n\n\n[1] \"engine on...\"\n\n\n\nsnc\n16232.1\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nsession 2026-06-01: bajohr - AI authorship et al. &gt; open"
+    "text": "paper online ::: class: [16431] Literatur und KI ::: tutor: marlene schwarz ::: term: SS26 ::: snc: 16172.2\n\n\n\nTO GIT COMMIT\n\n\n\nindex / Lit KI\n\n\n\n\n[1] \"engine on...\"\n\n\n\nsnc\n16232.1\n\n\nindex\n\nsamling: margin notes general &gt; open\nsummary on kybernetik introduction &gt; open\nsession 2026-06-01: bajohr - AI authorship et al. &gt; open"
   },
   {
     "objectID": "lki-001.html",
     "href": "lki-001.html",
     "title": "kybernetik",
     "section": "",
-    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.1\n\n\n\nTO GIT COMMIT\n\n\nLit KI / norbert wiener kybernetik\n\n\n\n\n[1] \"engine on...\"\n\n\n\ngeneral\nNorbert Wiener, der u.u. als begründer der (damals) modernen kybernetik (dem wortlaut nach…) betrachtet werden kann, war mathematiker am MIT und umreiszt in der einleitung zur 1961 (1st: 1948) erschienenen Kybernetik (Wiener (1992)) ihre entstehungsgeschichte in etwa so, dasz eine dort in den letzten Kriegsjahren des zweiten weltkriegs lockere runde von wissenschaftlern hauptsächlich der physik, mathematik, soziologie, psychologie, aber weitestgehend interdisziplinär und offen, im bestreben zusammenkam, die wissenschaft in der art offenen, fruchtbaren austauschs zu neuen, grenzüberschreitenden erkenntnissen zu geleiten.\nnoch während des krieges neu zu entwickelnde technologien wie zb. zur flugabwehr wurden hier unter wirklich revolutionären ansätzen, die erkenntnisse aus der mathematik und soziologie/psychologie/physiologie zu verbinden wusste, erforscht. ziel waren steuerungs/regelungsmechanismen für eine erfolgreiche flugbahnberechnung von flugzeugen, die in in erster linie auf einem rückkopplungsmodel beruhte, das selbständig, ohne weiteres eingreifen von menschen, in der lage wäre, ihre berechnungen zuerst an empfangene statusmeldungen anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in diesem sinne gleicht das model dem steuermechanismus eines schiffes, das seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst fortwährend anzupassen in der lage ist.\n Q: Wiener (1961)\naus diesem grunde entschlossen sich die wissenschaftler, die technik bzw. “das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir aus dem griechischen »κvßερvήΤη~« oder »Steuermann« bildeten”. auch gouverneur udgl. ist hier etymologisch verwurzelt.\nder kybernet war also zuerst der sich selbständig regelnde steuermechanismus einer maschine, eines maschinellen elements, das seine umgebung beobachtet und anpassungen der steuerung darauf ausrichtet. insofern also vielleicht schon eine kluge maschine im gegensatz zu rein prozessorientierten starren regelungsmechanismen.\nzuhilfe kamen den wissenschaftlern erkenntnisse über soziologische prozesse, physiologische beobachtungen von neuronalen netzen oder auch die mathematik und biologie in natürlichen wachstumsprozessen. damit reicht das fundament der kybernetik schon sehr weit in unser heutiges verständnis dessen, was u.u. allgemein unter kybernetik verstanden wurde hinein; also eine mit durchaus menschlichen eigenschaften versehene maschine, die tätigkeiten des menschen besser, schneller und weniger fehlerbehaftet ausführen kann. das wesentliche ist hier natürlich die schnelligkeit und lernfähigkeit der maschinellen prozesse. basierend auf bestehenden rechenmaschinen, die selbst ihre anfänge in den forschungen von charles babbage und ada lovelace in den 30er jahren des 19jh genommen haben mögen, wurde deren technik an notwendige höhere rechenleistungen angepasst, die jdfs. nicht mehr rein mechanisch vonstatten ging sondern mithilfe elektronischer bauteile perfektioniert wurde. auch hier kamen wieder forschungen aus der physik, nachrichtentechnik und physiologie zusammen, um die rechenleistung effektiver zu gestalten.\n\n\n\n\n\n\n\n\nreferences\n\nWiener, Norbert. 1961. Cybernetics or Control and Communication in the Animal and the Machine. Boston: MIT Press. http://archive.org/details/wiener-1938.\n\n\n———. 1992. Kybernetik: Regelung Und Nachrichtenübertragung Im Lebewesen Und in Der Maschine (MIT, 1948). 2nd ed. Econ Classics. Düsseldorf u.a: ECON-Verl."
+    "text": "class: [16431] Literatur und KI :: tutor: marlene schwarz :: term: SS26 snc: 16172.1\n\n\n\nTO GIT COMMIT\n\n\n\nLit KI / norbert wiener kybernetik\n\n\n\n\n[1] \"engine on...\"\n\n\n\ngeneral\nNorbert Wiener, der u.u. als begründer der (damals) modernen kybernetik (dem wortlaut nach…) betrachtet werden kann, war mathematiker am MIT und umreiszt in der einleitung zur 1961 (1st: 1948) erschienenen Kybernetik (Wiener (1992)) ihre entstehungsgeschichte in etwa so, dasz eine dort in den letzten Kriegsjahren des zweiten weltkriegs lockere runde von wissenschaftlern hauptsächlich der physik, mathematik, soziologie, psychologie, aber weitestgehend interdisziplinär und offen, im bestreben zusammenkam, die wissenschaft in der art offenen, fruchtbaren austauschs zu neuen, grenzüberschreitenden erkenntnissen zu geleiten.\nnoch während des krieges neu zu entwickelnde technologien wie zb. zur flugabwehr wurden hier unter wirklich revolutionären ansätzen, die erkenntnisse aus der mathematik und soziologie/psychologie/physiologie zu verbinden wusste, erforscht. ziel waren steuerungs/regelungsmechanismen für eine erfolgreiche flugbahnberechnung von flugzeugen, die in in erster linie auf einem rückkopplungsmodel beruhte, das selbständig, ohne weiteres eingreifen von menschen, in der lage wäre, ihre berechnungen zuerst an empfangene statusmeldungen anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in diesem sinne gleicht das model dem steuermechanismus eines schiffes, das seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst fortwährend anzupassen in der lage ist.\n Q: Wiener (1961)\naus diesem grunde entschlossen sich die wissenschaftler, die technik bzw. “das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir aus dem griechischen »κvßερvήΤη~« oder »Steuermann« bildeten”. auch gouverneur udgl. ist hier etymologisch verwurzelt.\nder kybernet war also zuerst der sich selbständig regelnde steuermechanismus einer maschine, eines maschinellen elements, das seine umgebung beobachtet und anpassungen der steuerung darauf ausrichtet. insofern also vielleicht schon eine kluge maschine im gegensatz zu rein prozessorientierten starren regelungsmechanismen.\nzuhilfe kamen den wissenschaftlern erkenntnisse über soziologische prozesse, physiologische beobachtungen von neuronalen netzen oder auch die mathematik und biologie in natürlichen wachstumsprozessen. damit reicht das fundament der kybernetik schon sehr weit in unser heutiges verständnis dessen, was u.u. allgemein unter kybernetik verstanden wurde hinein; also eine mit durchaus menschlichen eigenschaften versehene maschine, die tätigkeiten des menschen besser, schneller und weniger fehlerbehaftet ausführen kann. das wesentliche ist hier natürlich die schnelligkeit und lernfähigkeit der maschinellen prozesse. basierend auf bestehenden rechenmaschinen, die selbst ihre anfänge in den forschungen von charles babbage und ada lovelace in den 30er jahren des 19jh genommen haben mögen, wurde deren technik an notwendige höhere rechenleistungen angepasst, die jdfs. nicht mehr rein mechanisch vonstatten ging sondern mithilfe elektronischer bauteile perfektioniert wurde. auch hier kamen wieder forschungen aus der physik, nachrichtentechnik und physiologie zusammen, um die rechenleistung effektiver zu gestalten.\n\n\n\n\n\n\n\n\nreferences\n\nWiener, Norbert. 1961. Cybernetics or Control and Communication in the Animal and the Machine. Boston: MIT Press. http://archive.org/details/wiener-1938.\n\n\n———. 1992. Kybernetik: Regelung Und Nachrichtenübertragung Im Lebewesen Und in Der Maschine (MIT, 1948). 2nd ed. Econ Classics. Düsseldorf u.a: ECON-Verl."
   },
   {
     "objectID": "str-qa.html#notes-on-papers",
