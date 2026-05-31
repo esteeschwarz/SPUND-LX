@@ -82,6 +82,20 @@ d.h. dieser von einem nahe collabierenden model produzierte teppich is no news a
 
 > see: [model-collaps](https://esteeschwarz.github.io/SPUND-LX/pages/004/model-collapse-textur.html) for a nice experiment on modeling with a small corpus.
 
+# lektürefragen (class, not mine)
+1. tilman: Wie lässt sich die ästhetische Qualität eines Textes beschreiben, der – um überhaupt verständlich zu sein – auf vertrauten sprachlichen Konventionen aufbauen muss?
+2. flora: »Die bekannte Shannonsche Beziehung […] gibt das Maß der Information in Bezug auf eine Quelle, welche die Zeichen (Worte) Zi mit der Wahrscheinlichkeit pi auftreten lässt (sendet).« (S. 79). 
+  2.1 Kann man in dieser Beschreibung der Information-Zeichen-Beziehung eine Vorwegnahme der Funktionsweise von Large Language Models erkennen?
+3. josefine: Eine höhere Entropie erhöht laut Bense denn Informationsbetrag, aber wo ist da die Grenze zum Chaos? Also wann wird aus Unvorhersagkeit (bzw. Unordnung) nur noch Unverständlichkeit?
+
+## meine ideen dazu:
+2. die sache mit der wahrscheinlichkeit ist genau das primaere prinzip von LLMs, die über einen vektorraum aus wahrscheinlichkeiten (embeddings) die relation (entfernung) der einzelnen vektoren (das können wörter, zeichen, sätze..., aber auch alles andere sein, das mit einer bestimmten wahrscheinlichkeit zu einem ort und zeit auftritt.) also jede entität bildet einen vektor ab und das model (also eigentlich der mit einem eben *large* space aus embeddings bestückte datensatz, der von dem algoritmus, also dem eigentlichen model [die embeddings sind die *tensors* bzw. der *latent space*, der dann fixiert ist, wenn man das model auf eine menge an daten trainiert hat]) bestimmt grob die entfernung (vektoren sind immer mindestens 2-dimensional) der beiden entitäten zueinander innerhalb des vectorspace. damit lassen sich dann entweder texte generieren (indem man jeweils die höchstwahrscheinlich folgenden entitäten bestimmt) oder classification tasks ausführen, bilder generieren usw.
+
+Insofern, glaube ich: die KI, mit der wir arbeiten, sieht nicht mehr die zeichen bzw. kann damit nix anfangen und interpretiert sie schon gar nicht; für sie ist nur interessant, wo in einem n-dimensionalen raum aus zeichen sich unser zeichen befindet (zb. der prompt, das bild etc.) / deshalb, um nicht nur mist zu produzieren (s.o. model-collapse experiment), sind eben grosze datenmengen zum training erforderlich; damit die menge an wahrscheinlichkeiten, aus denen die KI (der agent) dann wählen kann (zu denen sie das prompt in beziehung setzen kann.) In Benses/Peirces zeichentheorie hätten wir (denke ich) es bei den zeichen, die die KI noch sieht, nur mit ikonischen zeichen zu tun, also nur anzeiger dessen, *was* gesagt wird, ohne weitere einbetttung anderer werte (metaphern, figurative language etc. kann von dem model nicht verstanden oder gesehen werden, sondern nur berechnet.)
+
+> An icon is a sign which would possess the character which renders it significant, even though its object had no existence; such as a lead-pencil streak as representing a geometrical line. (@hoopes_peirce_1991-1 : 1)
+
+
 [^1]: ich musz zugeben, ich komme mit den beiden seminaren literatur/KI und textur etwas durchenander, es lohnt sich aber auch (von hier) einmal [dort](lki-index.qmd) zu schauen, was sich so überschneidet...
 
 [^2]: das wären dann auch die fragen in die runde, vielleicht mit inverse focus: 1. was ist das spezifische (momentum), das eine explizit nicht künstliche textur von einer solchen unterscheidet? 2. was wären weitere begriffe aus dem noch-handwerklich/manuellen bereich, die sich auf nicht-künstliche textur (im weitesten sinne, literarische texturen/gewebe/strukturen einschlieszend) im gegensatz zu künstlicher anwenden lieszen? 3. an welchen stellen wir es mit faszbaren im gegensatz zu abstrakten oder virtuellen strukturen zu tun?
