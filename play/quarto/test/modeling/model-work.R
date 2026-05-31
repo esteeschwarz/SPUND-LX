@@ -65,7 +65,7 @@ df<-df1
   vocab_size <- 89
  EMBED_SIZE <- df$embeddings
   HIDDEN_SIZE <- df$hidden
-  vocab_size <- df$vocab
+  vocab_size <- df$vocab+1
 
 create_model <- function(vocab_size,
                          embed_size,
@@ -145,7 +145,7 @@ char_to_int <- setNames(
   seq_along(chars),
   chars
 )
-
+length(chars)
 int_to_char <- setNames(
   chars,
   seq_along(chars)
@@ -213,7 +213,7 @@ seqs <- sample_sequences(text)
   function(x)
     extract_hidden_state(net, x)
 )
-
+head(seqs)
 latent_matrix <- do.call(
   rbind,
   latent_matrix
@@ -314,15 +314,15 @@ ggplot(plot_df,
 synthetic <- generate_text(
   net = netm,
     # seed = "the ",
-    seed = "ich ",
+    seed = "ich habe",
     n_chars = floor(lt2/df$chars),
     temperature = 0.8
   )
   
   cat("\n--- GENERATED SAMPLE ---\n")
-  cat(substr(synthetic, 1, 100))
+  cat(substr(synthetic, 1, 150))
   cat("\n\n")
-  
+  head(synthetic)
 #################
   vis_dep<-function(){
 library(readtext)
