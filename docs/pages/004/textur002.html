@@ -208,6 +208,10 @@ div.csl-indent {
   <li><a href="#feedback" id="toc-feedback" class="nav-link" data-scroll-target="#feedback">feedback</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#lektürefragen-class-not-mine" id="toc-lektürefragen-class-not-mine" class="nav-link" data-scroll-target="#lektürefragen-class-not-mine">lektürefragen (class, not mine)</a>
+  <ul class="collapse">
+  <li><a href="#meine-ideen-dazu" id="toc-meine-ideen-dazu" class="nav-link" data-scroll-target="#meine-ideen-dazu">meine ideen dazu:</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="textur002.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -319,6 +323,24 @@ div.csl-indent {
 </section>
 </section>
 </section>
+<section id="lektürefragen-class-not-mine" class="level1">
+<h1>lektürefragen (class, not mine)</h1>
+<ol type="1">
+<li>tilman: Wie lässt sich die ästhetische Qualität eines Textes beschreiben, der – um überhaupt verständlich zu sein – auf vertrauten sprachlichen Konventionen aufbauen muss?</li>
+<li>flora: »Die bekannte Shannonsche Beziehung […] gibt das Maß der Information in Bezug auf eine Quelle, welche die Zeichen (Worte) Zi mit der Wahrscheinlichkeit pi auftreten lässt (sendet).« (S. 79). 2.1 Kann man in dieser Beschreibung der Information-Zeichen-Beziehung eine Vorwegnahme der Funktionsweise von Large Language Models erkennen?</li>
+<li>josefine: Eine höhere Entropie erhöht laut Bense denn Informationsbetrag, aber wo ist da die Grenze zum Chaos? Also wann wird aus Unvorhersagkeit (bzw. Unordnung) nur noch Unverständlichkeit?</li>
+</ol>
+<section id="meine-ideen-dazu" class="level2">
+<h2 class="anchored" data-anchor-id="meine-ideen-dazu">meine ideen dazu:</h2>
+<ol start="2" type="1">
+<li>die sache mit der wahrscheinlichkeit ist genau das primaere prinzip von LLMs, die über einen vektorraum aus wahrscheinlichkeiten (embeddings) die relation (entfernung) der einzelnen vektoren (das können wörter, zeichen, sätze…, aber auch alles andere sein, das mit einer bestimmten wahrscheinlichkeit zu einem ort und zeit auftritt.) also jede entität bildet einen vektor ab und das model (also eigentlich der mit einem eben <em>large</em> space aus embeddings bestückte datensatz, der von dem algoritmus, also dem eigentlichen model [die embeddings sind die <em>tensors</em> bzw. der <em>latent space</em>, der dann fixiert ist, wenn man das model auf eine menge an daten trainiert hat]) bestimmt grob die entfernung (vektoren sind immer mindestens 2-dimensional) der beiden entitäten zueinander innerhalb des vectorspace. damit lassen sich dann entweder texte generieren (indem man jeweils die höchstwahrscheinlich folgenden entitäten bestimmt) oder classification tasks ausführen, bilder generieren usw.</li>
+</ol>
+<p>Insofern, glaube ich: die KI, mit der wir arbeiten, sieht nicht mehr die zeichen bzw. kann damit nix anfangen und interpretiert sie schon gar nicht; für sie ist nur interessant, wo in einem n-dimensionalen raum aus zeichen sich unser zeichen befindet (zb. der prompt, das bild etc.) / deshalb, um nicht nur mist zu produzieren (s.o. model-collapse experiment), sind eben grosze datenmengen zum training erforderlich; damit die menge an wahrscheinlichkeiten, aus denen die KI (der agent) dann wählen kann (zu denen sie das prompt in beziehung setzen kann.) In Benses/Peirces zeichentheorie hätten wir (denke ich) es bei den zeichen, die die KI noch sieht, nur mit ikonischen zeichen zu tun, also nur anzeiger dessen, <em>was</em> gesagt wird, ohne weitere einbetttung anderer werte (metaphern, figurative language etc. kann von dem model nicht verstanden oder gesehen werden, sondern nur berechnet.)</p>
+<blockquote class="blockquote">
+<p>An icon is a sign which would possess the character which renders it significant, even though its object had no existence; such as a lead-pencil streak as representing a geometrical line. (<span class="citation" data-cites="hoopes_peirce_1991-1">Hoopes (<a href="#ref-hoopes_peirce_1991-1" role="doc-biblioref">1991</a>)</span> : 1)</p>
+</blockquote>
+</section>
+</section>
 <section id="references" class="level1">
 
 
@@ -328,6 +350,9 @@ div.csl-indent {
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hoopes_peirce_1991-1" class="csl-entry" role="listitem">
+Hoopes, James. 1991. <em>Peirce on <span>Signs</span> : <span>Writings</span> on <span>Semiotic</span> by <span>Charles</span> <span>Sanders</span> <span>Peirce</span></em>. Chapel Hill: The University of North Carolina Press. <a href="https://research.ebsco.com/linkprocessor/plink?id=a9a3efb1-5475-33bf-abc2-9ebba3344432">https://research.ebsco.com/linkprocessor/plink?id=a9a3efb1-5475-33bf-abc2-9ebba3344432</a>.
+</div>
 <div id="ref-wiener_human_1950" class="csl-entry" role="listitem">
 Wiener, Norbert. 1950. <em>The Human Use of Human Beings : Cybernetics and Society / <span>Norbert</span> <span>Wiener</span>, <span>Professor</span> of <span>Mathematics</span> at the <span>Massachusetts</span> <span>Institute</span> of <span>Technology</span>.</em> Boston: Houghton Mifflin Company.
 </div>
