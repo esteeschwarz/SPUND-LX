@@ -43,7 +43,7 @@ cfoot: |
 print("engine on...")
 ```
 
-```{r,echo=F,eval=T}
+```{r,echo=F,eval=T,output=F}
 ### get vocab, keywords
 print(getwd())
 f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/"),pattern=".qmd",full.names = T)
