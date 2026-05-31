@@ -43,6 +43,30 @@ cfoot: |
 print("engine on...")
 ```
 
+```{r,echo=F,eval=T}
+### get vocab, keywords
+print(getwd())
+f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/"),pattern=".qmd",full.names = T)
+f
+v1<-lapply(f,function(x){
+  t<-readLines(x)
+  v1<-unlist(strsplit(t," "))
+  m<-grepl("[^a-zA-Z]",v1)
+  v1<-v1[!m]
+})
+v2<-unlist(v1)
+head(v2)
+t1<-table(v2)
+#############
+### rel. freq
+t2<-lapply(v1,function(x){
+  table(x)
+})
+print(t2)
+
+
+```
+
 
 # index
 > all TODO
@@ -54,3 +78,6 @@ a common way of segmenting
 ## T
 ### tautologie
 something explaining itself by itself
+
+## Z
+### zipfs law
