@@ -11,3 +11,5 @@
 
 
  Leipzig Corpora Collection (2024): German newspaper dictionary based on material crawled in 2024. Leipzig Corpora Collection. Dataset. https://dict.wortschatz-leipzig.de?corpusId=deu_news_2024.
+
+ https://www.zotero.org/groups/6526786/pinghook/library
