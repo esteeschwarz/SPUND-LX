@@ -347,7 +347,7 @@
     "href": "glossar.html",
     "title": "glossar",
     "section": "",
-    "text": "common: global term glossary term: SS26 snc: 16232.1\nTO GIT COMMIT\n[1] \"engine on...\""
+    "text": "common: global term glossary term: SS26 snc: 16232.1\nTO GIT COMMIT\n[1] \"engine on...\"\n[1] \"/__w/SPUND-LX/SPUND-LX/play/quarto/start\"\n\n\ncharacter(0)\n\n\nNULL\n\n\nlist()"
   },
   {
     "objectID": "glossar.html#a",
@@ -362,6 +362,13 @@
     "title": "glossar",
     "section": "T",
     "text": "T\n\ntautologie\nsomething explaining itself by itself"
+  },
+  {
+    "objectID": "glossar.html#z",
+    "href": "glossar.html#z",
+    "title": "glossar",
+    "section": "Z",
+    "text": "Z\n\nzipfs law"
   },
   {
     "objectID": "model-collapse-lki.html#qs",
