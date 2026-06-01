@@ -99,7 +99,10 @@ knitr::read_chunk("lxtech/skewdiv.R")
 ### notes
 the tokens vector sujet gets interesting if following [this](lfg-001.qmd) theories (LFG: lexical functional grammar) where we may describe token categories in a vector space as well, undisputed of distribution. so if @zinsmeister_corpusbased_2013 investigate on similarity based on distribution of lexical items in a context window (coocurrences) we may also (like in LLM embeddings) make statements about token relatedness based on the vector cosine similarity of tokens semantic / syntactic categories.
 
-the skew divergence approach to measure similiarities of their noun-noun compounds (which nevertheless can be applied to any type of comparison between two probabilty vectors = embeddings) applied by zinsmeister is farely easy to implement in studies since it doesnt afford much manual annotation besides (in their study) to define the contextual words for which a cooccurence is evaluated. playing with the width of a context window, the corpus base or other parameters that constrain cooccurence can yield interesting results in semantic distance of items. 
+the skew divergence approach to measure similiarities of their noun-noun compounds (which nevertheless can be applied to any type of comparison between two probabilty vectors = embeddings, @eq-skew) applied by zinsmeister is farely easy to implement in studies since it doesnt afford much manual annotation besides (in their study) to define the contextual words for which a cooccurence is evaluated. playing with the width of a context window, the corpus base or other parameters that constrain cooccurence can yield interesting results in semantic distance of items.
+
+
+$$D(p||q) := \sum{p(i)(log(p(i)/q(i)))}$$ {#eq-skew}
 
 besides, one could also include other parameters next to distributional, including syntactical information, to enlarge the dimension of the vector space and overall resolution of comparison.
 

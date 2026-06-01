@@ -23,6 +23,8 @@ x/sum(l4)
 #############################################
 lx<-list(list(l2,l1),list(l2,l3),list(l2,l5))
 #f<-sum(pi*(log(pi/qi)))
+# latex entropy: $H(X) := -\sum_{x \in \mathcal{X}} p(x) \log2 p(x)$
+# \sum{p(i)(log(p(i)/q(i)))}
 w<-0.9
 s1<-lapply(lx,function(l){
   print(l)
