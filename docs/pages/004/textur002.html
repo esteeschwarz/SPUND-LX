@@ -126,6 +126,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -251,6 +280,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#script" id="toc-script" class="nav-link" data-scroll-target="#script">script</a></li>
   <li><a href="#entropy-table" id="toc-entropy-table" class="nav-link" data-scroll-target="#entropy-table">entropy table</a></li>
+  <li><a href="#according-to-shannon-entropy" id="toc-according-to-shannon-entropy" class="nav-link" data-scroll-target="#according-to-shannon-entropy">according to shannon entropy</a></li>
   <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">plot</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
@@ -313,7 +343,7 @@ div.csl-indent {
 <ul>
 <li><p>16233.1</p></li>
 <li><p><label><input type="checkbox" checked="">sent</label></p></li>
-<li><p><label><input type="checkbox">final</label></p></li>
+<li><p><label><input type="checkbox" checked="">final</label></p></li>
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -436,29 +466,29 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">4.780698</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">4.789626</td>
 <td style="text-align: left;">original text</td>
 <td style="text-align: left;">natural character distribution</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">99</td>
-<td style="text-align: right;">4.734922</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">4.743860</td>
 <td style="text-align: left;">all [g] replaced by [h]</td>
 <td style="text-align: left;">modified slightly</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">97</td>
-<td style="text-align: right;">4.398163</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">4.407846</td>
 <td style="text-align: left;">all [g,h,i] replaced by [e]</td>
 <td style="text-align: left;">modified heavier</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">994</td>
-<td style="text-align: right;">9.290792</td>
+<td style="text-align: right;">1016</td>
+<td style="text-align: right;">9.313910</td>
 <td style="text-align: left;">word entropy</td>
 <td style="text-align: left;">word level, compared to character (ID 1)</td>
 </tr>
@@ -468,6 +498,11 @@ div.csl-indent {
 </div>
 </div>
 <p>we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters (cf. <span class="citation" data-cites="leipzig_corpora_collection_korpus_2024">Leipzig Corpora Collection (<a href="#ref-leipzig_corpora_collection_korpus_2024" role="doc-biblioref">2024</a>)</span>; Entropy: ~11.7 in german newspaper corpus.)</p>
+</section>
+<section id="according-to-shannon-entropy" class="level2">
+<h2 class="anchored" data-anchor-id="according-to-shannon-entropy">according to shannon entropy</h2>
+<p>which you see as formula in the script, where the negative sum of all probabilities of units is multiplied by the log2 (“bits” of information) of these probabilities (cf. <span class="citation" data-cites="shannon_mathematical_1949">Shannon and Weaver (<a href="#ref-shannon_mathematical_1949" role="doc-biblioref">1949</a>)</span> : 23)</p>
+<p><span class="math inline">\(H(X) := -\sum_{x \in \mathcal{X}} p(x) \log2 p(x)\)</span></p>
 </section>
 <section id="plot" class="level2">
 <h2 class="anchored" data-anchor-id="plot">plot</h2>
@@ -500,6 +535,9 @@ Hoopes, James. 1991. <em>Peirce on <span>Signs</span> : <span>Writings</span> on
 </div>
 <div id="ref-leipzig_corpora_collection_korpus_2024" class="csl-entry" role="listitem">
 Leipzig Corpora Collection. 2024. <span>“Korpus: Deu_news_2024_10K, 3.10.5 <span>Entropy</span>.”</span> In <em>German Newspaper Dictionary Based on Material Crawled in 2024.</em> <a href="https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html">https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html</a>.
+</div>
+<div id="ref-shannon_mathematical_1949" class="csl-entry" role="listitem">
+Shannon, C. E., and W. Weaver. 1949. <em>The <span>Mathematical</span> <span>Theory</span> <span>Of</span> <span>Communication</span></em>. University of Illinois Press. <a href="http://archive.org/details/in.ernet.dli.2015.503815">http://archive.org/details/in.ernet.dli.2015.503815</a>.
 </div>
 <div id="ref-wiener_human_1950" class="csl-entry" role="listitem">
 Wiener, Norbert. 1950. <em>The Human Use of Human Beings : Cybernetics and Society / <span>Norbert</span> <span>Wiener</span>, <span>Professor</span> of <span>Mathematics</span> at the <span>Massachusetts</span> <span>Institute</span> of <span>Technology</span>.</em> Boston: Houghton Mifflin Company.
