@@ -466,7 +466,7 @@
     "href": "textur002.html#entropy-table",
     "title": "kybernetik",
     "section": "entropy table",
-    "text": "entropy table\n\n\n\n\n\n\n\n\n\n\n\n\nid\nunits\nentropy\nexplique\ncomment\n\n\n\n\n1\n100\n4.774133\noriginal text\nnatural character distribution\n\n\n2\n99\n4.728272\nall [g] replaced by [h]\nmodified slightly\n\n\n3\n97\n4.390465\nall [g,h,i] replaced by [e]\nmodified heavier\n\n\n4\n988\n9.281574\nword entropy\nword level, compared to character (ID 1)\n\n\n\ncharacter/word level entropy\n\n\nwe see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters."
+    "text": "entropy table\n\n\n\n\n\n\n\n\n\n\n\n\nid\nunits\nentropy\nexplique\ncomment\n\n\n\n\n1\n100\n4.774545\noriginal text\nnatural character distribution\n\n\n2\n99\n4.728683\nall [g] replaced by [h]\nmodified slightly\n\n\n3\n97\n4.390877\nall [g,h,i] replaced by [e]\nmodified heavier\n\n\n4\n986\n9.278708\nword entropy\nword level, compared to character (ID 1)\n\n\n\ncharacter/word level entropy\n\n\nwe see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters."
   },
   {
     "objectID": "textur002.html#plot",
