@@ -37,10 +37,10 @@ metadata-files:
 :::
 
 #### snc
-- 16223.1
+- 16233.1
 
 - [x] sent
-- [x] final
+- [ ] final
 
 ```{r,echo=F,eval=T}
 print("engine on...")
@@ -143,7 +143,8 @@ edf<-data.frame(id=c(1:4),units=c(c1,c2,c3,c4),entropy=c(e1,e2,e3,e4),explique,c
 knitr::kable(edf)
 ```
 
-we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters.
+we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters (cf. @leipzig_corpora_collection_korpus_2024; Entropy: ~11.7 in german newspaper corpus.)
+
 
 ## plot
 ```{r,echo=F,warning=F}
