@@ -95,6 +95,67 @@ Insofern, glaube ich: die KI, mit der wir arbeiten, sieht nicht mehr die zeichen
 
 > An icon is a sign which would possess the character which renders it significant, even though its object had no existence; such as a lead-pencil streak as representing a geometrical line. (@hoopes_peirce_1991-1 : 1)
 
+# on entropy again
+```{r,echo=F,warning=F,output=F,eval=F}
+source("../test/modeling/entropy.R")
+t<-readLines("textur002.qmd")
+e<-calculate_entropy(t," ")
+e
+```
+
+## script
+```{r,echo=T,warning=F}
+calculate_entropy <- function(text_string,SPLIT) {
+  chars <- unlist(strsplit(text_string, SPLIT))
+  #length(chars)
+  probs <- table(chars) / length(chars)
+  # table() just counts frequency of distinct units here, length() is the number of all units
+  # his is whats called type/token ratio, so how many tokens (chars, words) occur per distinct unit
+  # also called "lexical diversity" of a text when applied at word level: more distinct words = higher ratio
+  probs <- as.numeric(probs)
+  entropy <- -sum(probs * log2(probs))
+  entropy
+}
+t<-readLines("textur002.qmd") # reads in this paper
+t1<-t
+t2<-gsub("g","h",t) # eliminate 1 char
+t3<-gsub("[ghi]","e",t) # eliminate 3 chars
+e1<-calculate_entropy(t1,"") # original text
+e2<-calculate_entropy(t2,"") # all "g" replaced by "h"
+e3<-calculate_entropy(t3,"") # all "g,h,i" replaced by "e"
+e4<-calculate_entropy(t,"\\s+") # word entropy
+c1<-length(unique(unlist(strsplit(t1,"")))) # count of units (more than alphabet, its a mixed script!)
+c2<-length(unique(unlist(strsplit(t2,""))))
+c3<-length(unique(unlist(strsplit(t3,""))))
+c4<-length(unique(unlist(strsplit(t1,"\\s+"))))
+
+```
+
+## entropy table
+```{r,echo=F,warning=F}
+#| label: ent-df
+#| fig-cap: character/word level entropy
+ec<-c(e1,e2,e3)
+explique=c("original text","all [g] replaced by [h]",
+"all [g,h,i] replaced by [e]","word entropy")
+comment<-c("natural character distribution","modified slightly","modified heavier","word level, compared to character (ID 1)")
+edf<-data.frame(id=c(1:4),units=c(c1,c2,c3,c4),entropy=c(e1,e2,e3,e4),explique,comment)
+knitr::kable(edf)
+```
+
+we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters.
+
+## plot
+```{r,echo=F,warning=F}
+#| label: ent-plot
+#| fig-cap: entropy plot
+pedf<-edf[1:3,]
+ec<-c("e1","e2","e3")
+ec
+rownames(pedf)<-ec
+plot(pedf$entropy,type="l",ylab="entropy factor",xlab="replacements")
+```
+
 
 [^1]: ich musz zugeben, ich komme mit den beiden seminaren literatur/KI und textur etwas durchenander, es lohnt sich aber auch (von hier) einmal [dort](lki-index.qmd) zu schauen, was sich so überschneidet...
 
