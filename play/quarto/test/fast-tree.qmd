@@ -84,3 +84,12 @@ size<-70
 
 ```{r outpdf,echo=F,eval=T,warning=F,results="asis",output=T}
 ```
+
+<math display="block">\Eta(X) := -\sum_{x \in \mathcal{X}} p(x) \log p(x),</math>
+
+## shannon entropy
+$H(X) := -\sum_{x \in \mathcal{X}} p(x) \log p(x)$
+
+display math:
+
+$$E = mc^{2}$$

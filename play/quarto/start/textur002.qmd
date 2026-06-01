@@ -40,7 +40,7 @@ metadata-files:
 - 16233.1
 
 - [x] sent
-- [ ] final
+- [x] final
 
 ```{r,echo=F,eval=T}
 print("engine on...")
@@ -144,6 +144,13 @@ knitr::kable(edf)
 ```
 
 we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters (cf. @leipzig_corpora_collection_korpus_2024; Entropy: ~11.7 in german newspaper corpus.)
+
+## according to shannon entropy
+which you see as formula in the script, where the negative sum of all probabilities of units is multiplied by the log2 ("bits" of information) of these probabilities (cf. @shannon_mathematical_1949 : 23)
+
+$H(X) := -\sum_{x \in \mathcal{X}} p(x) \log2 p(x)$
+
+
 
 
 ## plot

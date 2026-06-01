@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-06-01">
 
-<title>LFG: fast tree</title>
+<title>TikZJax and Forest Test</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,47 +26,20 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="fast-tree_files/libs/clipboard/clipboard.min.js"></script>
-<script src="fast-tree_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="fast-tree_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="fast-tree_files/libs/quarto-html/popper.min.js"></script>
-<script src="fast-tree_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="fast-tree_files/libs/quarto-html/anchor.min.js"></script>
-<link href="fast-tree_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="fast-tree_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="fast-tree_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="fast-tree_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="fast-tree_files/libs/bootstrap/bootstrap-8ffd5f67044e5306d9846f29df41dda5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="t2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="t2_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="t2_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="t2_files/libs/quarto-html/popper.min.js"></script>
+<script src="t2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="t2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="t2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="t2_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="t2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="t2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="t2_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -75,12 +47,12 @@ window.Quarto = {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../../../../fast-tree.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../../../../t2.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">LFG: fast tree</h1>
+<h1 class="title">TikZJax and Forest Test</h1>
 </div>
 
 
@@ -88,12 +60,6 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -103,74 +69,64 @@ window.Quarto = {
 </header>
 
 
-<section id="tree-essais" class="level1">
-<h1>tree essais</h1>
-<section id="t2-nt-session-5" class="level2">
-<h2 class="anchored" data-anchor-id="t2-nt-session-5">T2 NT, session 5</h2>
-<p><code>meine schwester schreibt an einem wichtigen buch</code></p>
-<pre><code>IP --&gt; VP --&gt; DP --&gt; NP D meine N schwester 
-VP --&gt; V schreibt
-IP --&gt; PP --&gt; P an DP --&gt; NP --&gt; D einem --&gt; AdP Adv wichtigen N buch</code></pre>
-<pre><code>IP --&gt; DP
-IP --&gt; I' --&gt; VP --&gt; V'
-V' --&gt; V
-V' --&gt; PP --&gt; an einem wichtigen buch</code></pre>
-<pre><code>IP --&gt; NP meine schwester
-IP --&gt; I' --&gt; VP
-VP --&gt; V schreibt
-VP --&gt; PP
-PP --&gt; P an
-PP --&gt; NP einem wichtigen buch</code></pre>
-<pre><code>IP --&gt; NP
-IP --&gt; I --&gt; VP --&gt; V' --&gt; V schreibt
-V' --&gt; PP
-PP --&gt; P an
-PP --&gt; NP --&gt; Det einem
-NP --&gt; N' --&gt; AP wichtigen
-N' --&gt; N buch
-NP --&gt; Det meine
-NP --&gt; N' --&gt; schwester</code></pre>
+<section id="simple-tikz-test" class="level1">
+<h1>Simple TikZ Test</h1>
+<script type="text/tikz">
+out tikz 1
+\begin{tikzpicture}
+\node {out tikz in pic 1st};
+\vspace{5}
+\node[draw, rounded corners] {Hello TikZJax};
+\node[draw, rounded corners] {Hello TikZJax 2};
+
+\end{tikzpicture}
+</script>
 </section>
-<section id="tree-s" class="level2">
-<h2 class="anchored" data-anchor-id="tree-s">tree s</h2>
-<section id="snc" class="level3">
-<h3 class="anchored" data-anchor-id="snc">snc</h3>
-<p>123456</p>
-<div class="cell" data-ouput="false">
-<div class="cell-output cell-output-stdout">
-<pre><code>raw used final:</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "IP --&gt; NP1 --&gt; Det meene"             
-[2] "NP1 --&gt; N'1 --&gt; N1 schwester"         
-[3] "IP --&gt; I --&gt; VP --&gt; V' --&gt; V schreibt"
-[4] "V' --&gt; PP --&gt; P an"                   
-[5] "PP --&gt; NP2 --&gt; Det eenem"             
-[6] "NP2 --&gt; N'2 --&gt; AP wichtigen"         
-[7] "N'2 --&gt; N2 buch"                      </code></pre>
-</div>
-</div>
-<div class="cell" data-ouput="false">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "t3.pdf"</code></pre>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="t3.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>tree image from svg</figcaption>
-</figure>
-</div>
-<p>[1] “<a href="t3.pdf">download image pdf 8.24x7.5cm</a>”</p>
+<section id="forest-syntax-tree" class="level1">
+<h1>Forest Syntax Tree</h1>
+<script type="text/tikz">
+    out tikz in
+    \begin{tikzpicture}
+    out tikz in picture
+\node[draw, rounded corners] {Hello TikZJax};
+
+\usepackage{forest}
+
+\begin{forest}
+[IP
+  [NP
+    [Det [meine]]
+    [N$'$
+      [N [Schwester]]
+    ]
+  ]
+  [I
+    [VP
+      [V$'$
+        [V [schreibt]]
+        [PP
+          [P [an]]
+          [NP
+            [Det [einem]]
+            [N$'$
+              [AP [wichtigen]]
+              [N [Buch]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+\end{tikzpicture}
+
+</script>
+<p>[1] “syntax-tree.pdf”</p>
+<object data="syntax-tree.pdf" type="application/pdf" style="width:405px; height:400px; border:none;">
+</object>
+<p>[1] “IP –&gt; NP1 –&gt; Det meene –&gt; N’1 –&gt; N1 schwester–&gt; I –&gt; VP –&gt; V’ –&gt; V schreibt’ –&gt; PP –&gt; P an–&gt; NP2 –&gt; Det einem –&gt; N’2 –&gt; AP wichtigen’2 –&gt; N2 buch” [1] “[IP]]” [1] “t3.pdf” <object data="t3.pdf" type="application/pdf" style="width:391px; height:354px; border:none;"></object></p>
 <p><math display="block">(X) := -_{x } p(x) p(x),</math></p>
-</section>
-</section>
-<section id="shannon-entropy" class="level2">
-<h2 class="anchored" data-anchor-id="shannon-entropy">shannon entropy</h2>
-<p><span class="math inline">\(H(X) := -\sum_{x \in \mathcal{X}} p(x) \log p(x)\)</span></p>
-<p>display math:</p>
-<p><span class="math display">\[E = mc^{2}\]</span></p>
-</section>
 </section>
 
 </main>
