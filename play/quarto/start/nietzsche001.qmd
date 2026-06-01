@@ -6,7 +6,7 @@ format: html
 # date: '`r format(Sys.time())`'
 date: "2026-04-20"
 title-meta: ""
-# bibliography: nietzsche.bib
+bibliography: nietzsche.bib
 nocite: '@*'
 metadata-files:
   - _quarto-common-nietzsche.yml
@@ -59,3 +59,25 @@ val.c<-"{{< meta cmeta >}}"
 ![](https://ada-sub.dh-index.org/school/papers/015/nietzsche-response.pdf){width=100% height=800px}
 
 - auch hier vectorspaces: [annotations WuL](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche-qa.html#:~:text=mental)
+
+## Unzeitgemäsze Betrachtungen: nutzen-nachteil der historie
+Q: @nietzsche_unzeitgemasse_1988
+
+### thesen
+1. geschichte wird gefährlich, wenn sie das leben durch idealisierung der vergangenheit lähmt.
+
+- highlighting of great history moments, nivellierung von komplexität
+- wahrscheinliche ereignisse erfahren überrepräsentation
+  - LLMs, sonstige algoritmen verstärken starke ereignisse
+
+#### horizont
+- gleicher horizont nur in einer nomadischen kultur möglich
+- bestimmt v. d. reichweite der eigenen wahrnhemung
+
+> Immer strebe zum Ganzen, und kannst du selber kein Ganzes
+Werden, als dienendes Glied schließ an ein Ganzes dich an. (Schiller, Musenalmanach 1797)
+
+#### wissenschaft
+- versucht perspektivität loszuwerden
+- horizont droht aufzusprengen
+

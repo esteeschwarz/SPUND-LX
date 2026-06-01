@@ -83,8 +83,8 @@ d.h. dieser von einem nahe collabierenden model produzierte teppich is no news a
 > see: [model-collaps](https://esteeschwarz.github.io/SPUND-LX/pages/004/model-collapse-textur.html) for a nice experiment on modeling with a small corpus.
 
 # lektürefragen (class, not mine)
-1. tilman: Wie lässt sich die ästhetische Qualität eines Textes beschreiben, der – um überhaupt verständlich zu sein – auf vertrauten sprachlichen Konventionen aufbauen muss?
-2. flora: »Die bekannte Shannonsche Beziehung […] gibt das Maß der Information in Bezug auf eine Quelle, welche die Zeichen (Worte) Zi mit der Wahrscheinlichkeit pi auftreten lässt (sendet).« (S. 79). 
+1. flora: Wie lässt sich die ästhetische Qualität eines Textes beschreiben, der – um überhaupt verständlich zu sein – auf vertrauten sprachlichen Konventionen aufbauen muss?
+2. tilman: »Die bekannte Shannonsche Beziehung […] gibt das Maß der Information in Bezug auf eine Quelle, welche die Zeichen (Worte) Zi mit der Wahrscheinlichkeit pi auftreten lässt (sendet).« (S. 79). 
   2.1 Kann man in dieser Beschreibung der Information-Zeichen-Beziehung eine Vorwegnahme der Funktionsweise von Large Language Models erkennen?
 3. josefine: Eine höhere Entropie erhöht laut Bense denn Informationsbetrag, aber wo ist da die Grenze zum Chaos? Also wann wird aus Unvorhersagkeit (bzw. Unordnung) nur noch Unverständlichkeit?
 
