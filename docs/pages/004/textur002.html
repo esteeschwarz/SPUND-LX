@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -212,6 +247,12 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#meine-ideen-dazu" id="toc-meine-ideen-dazu" class="nav-link" data-scroll-target="#meine-ideen-dazu">meine ideen dazu:</a></li>
   </ul></li>
+  <li><a href="#on-entropy-again" id="toc-on-entropy-again" class="nav-link" data-scroll-target="#on-entropy-again">on entropy again</a>
+  <ul class="collapse">
+  <li><a href="#script" id="toc-script" class="nav-link" data-scroll-target="#script">script</a></li>
+  <li><a href="#entropy-table" id="toc-entropy-table" class="nav-link" data-scroll-target="#entropy-table">entropy table</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">plot</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="textur002.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -339,6 +380,110 @@ div.csl-indent {
 <blockquote class="blockquote">
 <p>An icon is a sign which would possess the character which renders it significant, even though its object had no existence; such as a lead-pencil streak as representing a geometrical line. (<span class="citation" data-cites="hoopes_peirce_1991-1">Hoopes (<a href="#ref-hoopes_peirce_1991-1" role="doc-biblioref">1991</a>)</span> : 1)</p>
 </blockquote>
+</section>
+</section>
+<section id="on-entropy-again" class="level1">
+<h1>on entropy again</h1>
+<section id="script" class="level2">
+<h2 class="anchored" data-anchor-id="script">script</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>calculate_entropy <span class="ot">&lt;-</span> <span class="cf">function</span>(text_string,SPLIT) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  chars <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(text_string, SPLIT))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#length(chars)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  probs <span class="ot">&lt;-</span> <span class="fu">table</span>(chars) <span class="sc">/</span> <span class="fu">length</span>(chars)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># table() just counts frequency of distinct units here, length() is the number of all units</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># his is whats called type/token ratio, so how many tokens (chars, words) occur per distinct unit</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># also called "lexical diversity" of a text when applied at word level: more distinct words = higher ratio</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  probs <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(probs)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  entropy <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">sum</span>(probs <span class="sc">*</span> <span class="fu">log2</span>(probs))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  entropy</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>t<span class="ot">&lt;-</span><span class="fu">readLines</span>(<span class="st">"textur002.qmd"</span>) <span class="co"># reads in this paper</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>t1<span class="ot">&lt;-</span>t</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>t2<span class="ot">&lt;-</span><span class="fu">gsub</span>(<span class="st">"g"</span>,<span class="st">"h"</span>,t) <span class="co"># eliminate 1 char</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>t3<span class="ot">&lt;-</span><span class="fu">gsub</span>(<span class="st">"[ghi]"</span>,<span class="st">"e"</span>,t) <span class="co"># eliminate 3 chars</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>e1<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t1,<span class="st">""</span>) <span class="co"># original text</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>e2<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t2,<span class="st">""</span>) <span class="co"># all "g" replaced by "h"</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>e3<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t3,<span class="st">""</span>) <span class="co"># all "g,h,i" replaced by "e"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>e4<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t,<span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>) <span class="co"># word entropy</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>c1<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t1,<span class="st">""</span>)))) <span class="co"># count of units (more than alphabet, its a mixed script!)</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>c2<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t2,<span class="st">""</span>))))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>c3<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t3,<span class="st">""</span>))))</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>c4<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t1,<span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="entropy-table" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-table">entropy table</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 6%">
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">units</th>
+<th style="text-align: right;">entropy</th>
+<th style="text-align: left;">explique</th>
+<th style="text-align: left;">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">4.774133</td>
+<td style="text-align: left;">original text</td>
+<td style="text-align: left;">natural character distribution</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">4.728272</td>
+<td style="text-align: left;">all [g] replaced by [h]</td>
+<td style="text-align: left;">modified slightly</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">4.390465</td>
+<td style="text-align: left;">all [g,h,i] replaced by [e]</td>
+<td style="text-align: left;">modified heavier</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">988</td>
+<td style="text-align: right;">9.281574</td>
+<td style="text-align: left;">word entropy</td>
+<td style="text-align: left;">word level, compared to character (ID 1)</td>
+</tr>
+</tbody>
+</table>
+<p>character/word level entropy</p>
+</div>
+</div>
+<p>we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters.</p>
+</section>
+<section id="plot" class="level2">
+<h2 class="anchored" data-anchor-id="plot">plot</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "e1" "e2" "e3"</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="textur002_files/figure-html/ent-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>entropy plot</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="references" class="level1">
