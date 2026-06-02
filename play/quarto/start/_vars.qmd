@@ -98,11 +98,11 @@ kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
 kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
 # kdf$comment<-gsub("[\r\n|]"," / ",kdf$comment)
 # kdf$comment<-gsub("\\r\\n|\\n|\\|"," \\\\\\\\ ",kdf$comment)
-kdf$comment<-gsub("\\r\\n|\\n|\\|"," <br> ",kdf$comment)
+kdf$comment<-gsub("\r\n|\n|\\|"," <br> ",kdf$comment)
 kdf$comment <- stri_trans_nfc(kdf$comment)
 
 # kdf$comment<-gsub("<br><br>"," <br>",kdf$comment)
-kdf$comment<-gsub("(http.+) ?",' <a href="\\1" target="_blank">\\1</a>',kdf$comment)
+kdf$comment<-gsub("(http.+?)( |\r|\n|<br>)",' <a href="\\1" target="_blank">\\1</a>',kdf$comment)
 #kdf$comment<-gsub("(http.+) ?",'<a href="\\1 " target="_blank">\\1 </a>',kdf$comment)
 kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
 du<-unique(kdf$doc)
