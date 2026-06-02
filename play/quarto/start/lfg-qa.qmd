@@ -22,7 +22,7 @@ date: "2026-05-03"
 ## notes on papers 
 
 ### snc
-- t123456
+- t12345678
 
 {{< include _setup.qmd >}}
 
