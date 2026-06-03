@@ -41,8 +41,8 @@ nietzsche
   qa<-c2
   setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start"))
 #source("getnotesql.R")
-smdb(qa)
-return(qa)
+mnew<-smdb(qa)
+return(list(qa=qa,mnew=mnew))
 }
 smdb<-function(qa){
   ############################################
@@ -59,24 +59,39 @@ qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margindb
 margindb<-list(qa=qa,dbsub=dbsub)
+dbnew<-margindb
+load("margindb.RData")
 fi<-file.info("margindb.RData")
 fs<-fi$size
 fs
 mt<-tempfile("mdb.RData")
-save(margindb,file=mt)
+save(dbnew,file=mt)
 fit<-file.info(mt)
 fst<-fit$size
+notes.old<-margindb$dbsub$notes
+com.old<-margindb$dbsub$comment
+notes.new<-dbnew$dbsub$notes
+com.new<-dbnew$dbsub$comment
+mn<-notes.new%in%notes.old
+mc<-com.new%in%com.old
+mnew.n<-unique(notes.new[!mn])
+mnew.c<-unique(com.new[!mc])
+mnew.d<-unique(dbnew$dbsub$doc[c(which(!mn),which(!mc))])
 if(fst>fs)
   save(margindb,file="margindb.RData")
-
+return(list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c)))
 # save(margindb,file="margindb.RData")
 
 
 }
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
-ifelse (s%in%c("lapsi","tapee"),qa<-buildmdb(),qa<-qaz)
-
+ifelse (s%in%c("lapsi","tapee"),bqa<-buildmdb(),qa<-qaz)
+mnew<-"no new annotations..."
+if(exists("bqa")){
+  qa<-bqa$qa
+  mnew<-bqa$mnew
+}
 ### vars
 docdir<-"."
 
@@ -88,4 +103,6 @@ bibyml<-qa
 #qa
 print("------ prerender fin, > fetch-zotero.R")
 source("fetch-zotero.R")
+cat("------------ NEW ANNOTATIONS:")
+print(mnew)
 #source("annotations.R")

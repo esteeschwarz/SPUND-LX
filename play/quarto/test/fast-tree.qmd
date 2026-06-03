@@ -3,9 +3,11 @@ title: "LFG: fast tree"
 format: 
    html: 
      theme: cosmo
+    #  output-file: "output/pages/004/test/index.html"
+
    pdf: default
 date: '`r format(Sys.time())`'
-
+# output: output/pages/004/test/index.html
 ---
 
 # tree essais
@@ -85,10 +87,9 @@ size<-70
 ```{r outpdf,echo=F,eval=T,warning=F,results="asis",output=T}
 ```
 
-<math display="block">\Eta(X) := -\sum_{x \in \mathcal{X}} p(x) \log p(x),</math>
 
 ## shannon entropy
-$H(X) := -\sum_{x \in \mathcal{X}} p(x) \log p(x)$
+$$H(X) := -\sum_{x \in \mathcal{X}} p(x) \log p(x)$$
 
 display math:
 
