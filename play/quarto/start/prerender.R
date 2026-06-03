@@ -80,7 +80,8 @@ mnew.d<-unique(dbnew$dbsub$doc[c(which(!mn),which(!mc))])
 cat("---- DB size olde:",fs,", new:",fst,"\n")
 if(fst>fs){
   cat("---- updating DB ---- \n")
-  save(dbnew,file="margindb.RData")
+  margindb<-dbnew
+  save(margindb,file="margindb.RData")
 }
 return(list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c)))
 # save(margindb,file="margindb.RData")
