@@ -90,9 +90,10 @@ l12<-length(mnew.n)
 l22<-length(mnew.c)
 l32<-length(mnew.d)
 p<-(l1<l12)|(l2<l22)|(l3<l32)|(fst>fs)
+  saveanyway<-F
 cat("---- DB size olde:",fs,", new:",fst,"\n")
 
-  if(p){
+  if(p|saveanyway){
   save(margindb,file="margindb.RData")
   cat("---- saved new annotations...\n")
   }
