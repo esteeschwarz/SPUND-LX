@@ -1,6 +1,5 @@
 # check system, adapt output
 s<-Sys.getenv("SYS")
-getwd()
 qax<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"),
 nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"),
 textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf",
@@ -20,7 +19,7 @@ stratling<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents
 LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LX-tech"
   LFG<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LFG"
 clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
- # clist
+  clist
   #list.files(textur)
   #litKIb<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/lit-KI"
   #list.files("~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/lit-KI")
@@ -29,16 +28,16 @@ clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech
 #litKIb
 c2<-lapply(clist,function(x){
   n<-names(x)
- # print(x)
+  print(x)
   f<-c(list.files(x))
   list.files(x)
 })
-#list.files(LFG)
-#list.files(textur)
-#textur
-#nietzsche
- # list.files(nietzsche)
-  #c2
+list.files(LFG)
+list.files(textur)
+textur
+nietzsche
+  list.files(nietzsche)
+  c2
   qa<-c2
   setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start"))
 #source("getnotesql.R")
@@ -53,16 +52,15 @@ smdb<-function(qa){
 # textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf")) # margin note studyset
 source(paste0(Sys.getenv("GIT_TOP"),"/R-essais/scripts/marginnotesdb.R"))
 margindb<-get.notes(qa)
-#qa
+qa
 dbsub<-margindb[margindb$doc%in%unlist(qa),]
-#names(qa)
-#qa
+names(qa)
+qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margindb
 margindb<-list(qa=qa,dbsub=dbsub)
 dbnew<-margindb
 load("margindb.RData")
-dbold<-margindb
 fi<-file.info("margindb.RData")
 fs<-fi$size
 fs
@@ -76,15 +74,28 @@ notes.new<-dbnew$dbsub$notes
 com.new<-dbnew$dbsub$comment
 mn<-notes.new%in%notes.old
 mc<-com.new%in%com.old
+mold.n<-unique(notes.old)
+mold.c<-unique(com.old)
+mold.d<-unique(margindb$dbsub$doc)
+mnew.nu<-unique(notes.new)
+mnew.cu<-unique(com.new)
+mnew.du<-unique(dbnew$dbsub$doc)
 mnew.n<-unique(notes.new[!mn])
 mnew.c<-unique(com.new[!mc])
 mnew.d<-unique(dbnew$dbsub$doc[c(which(!mn),which(!mc))])
+l1<-length(mold.n)
+l2<-length(mold.c)
+l3<-length(mold.d)
+l12<-length(mnew.n)
+l22<-length(mnew.c)
+l32<-length(mnew.d)
+p<-(l1<l12)|(l2<l22)|(l3<l32)|(fst>fs)
 cat("---- DB size olde:",fs,", new:",fst,"\n")
-if(fst>fs){
-  cat("---- updating DB ---- \n")
-  margindb<-dbnew
+
+  if(p){
   save(margindb,file="margindb.RData")
-}
+  cat("---- saved new annotations...\n")
+  }
 return(list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c)))
 # save(margindb,file="margindb.RData")
 
@@ -102,7 +113,7 @@ if(exists("bqa")){
 docdir<-"."
 
 
-#qa
+qa
 #bibyml<-c("lit-ki","textur","nietzsche") # zotero folders
 bibyml<-qa
 ########
