@@ -37,7 +37,7 @@ print("engine on...")
 - 16225.1
 
 # random chat...
-Q: @chatgpt_strange_2026
+Q: @claude_strange_2026
 
 {{< include _gpt-16225.md >}} 
 
