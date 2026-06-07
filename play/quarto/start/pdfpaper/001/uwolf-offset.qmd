@@ -42,7 +42,7 @@ format:
   #     font-size: 11
   #     colorlinks: true
       include-in-header: 
-        - ../../assets/crop2.tex
+        - ../../assets/crop3.tex
   #       - ../assets/footer-header.tex
   #     include-before-body: ../assets/go-head.tex
   #       # - paper.tex

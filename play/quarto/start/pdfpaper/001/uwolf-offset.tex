@@ -305,64 +305,71 @@ at ([yshift=5mm]current page.south)
 % \AtBeginDocument{\CustomHeader}
 \AtEndDocument{\CustomFooter}
 \renewcommand{\maketitle}{}
-\usepackage{eso-pic}
-\usepackage{tikz}
 \usepackage{pgfpages}
 \pgfpagesuselayout{2 on 1}[a4paper, landscape, border shrink=0mm]
+
+\newlength{\sheetW} \setlength{\sheetW}{297mm}
+\newlength{\sheetH} \setlength{\sheetH}{210mm}
 \newlength{\cropoff} \setlength{\cropoff}{6mm}
 \newlength{\croparm} \setlength{\croparm}{4mm}
 
-\newcommand{\CropMarksAndMeta}{%
-\begin{tikzpicture}[remember picture, overlay,
-    every path/.style={gray!50, line width=0.4pt}]
-  % top-left cross
-  \draw ([xshift=\cropoff,  yshift=-\cropoff]current page.north west)
-        ++(-\croparm, 0) -- ++({2\croparm}, 0);
-  \draw ([xshift=\cropoff,  yshift=-\cropoff]current page.north west)
-        ++(0, \croparm)  -- ++(0, {-2\croparm});
-  % top-right cross
-  \draw ([xshift=-\cropoff, yshift=-\cropoff]current page.north east)
-        ++(-\croparm, 0) -- ++({2\croparm}, 0);
-  \draw ([xshift=-\cropoff, yshift=-\cropoff]current page.north east)
-        ++(0, \croparm)  -- ++(0, {-2\croparm});
-  % bottom-left cross
-  \draw ([xshift=\cropoff,  yshift=\cropoff]current page.south west)
-        ++(-\croparm, 0) -- ++({2\croparm}, 0);
-  \draw ([xshift=\cropoff,  yshift=\cropoff]current page.south west)
-        ++(0, \croparm)  -- ++(0, {-2\croparm});
-  % bottom-right cross
-  \draw ([xshift=-\cropoff, yshift=\cropoff]current page.south east)
-        ++(-\croparm, 0) -- ++({2\croparm}, 0);
-  \draw ([xshift=-\cropoff, yshift=\cropoff]current page.south east)
-        ++(0, \croparm)  -- ++(0, {-2\croparm});
-  % meta text
-  \node[gray!60, font=\tiny\ttfamily, anchor=north]
-    at ([yshift={\cropoff-1.5mm}]current page.south)
-    {\jobname.tex || 
+\AddToHook{shipout/background}{%
+  \put(0,-\sheetH){%
+    \begin{tikzpicture}[
+        every path/.style={gray!50, line width=0.4pt}]
+
+      % ── outer corners ────────────────────────────────────
+      % top-left
+      \draw (\cropoff, \sheetH-\cropoff)
+            ++(-\croparm,0) -- ++({2\croparm},0);
+      \draw (\cropoff, \sheetH-\cropoff)
+            ++(0,-\croparm) -- ++(0,{2\croparm});
+      % top-right
+      \draw (\sheetW-\cropoff, \sheetH-\cropoff)
+            ++(-\croparm,0) -- ++({2\croparm},0);
+      \draw (\sheetW-\cropoff, \sheetH-\cropoff)
+            ++(0,-\croparm) -- ++(0,{2\croparm});
+      % bottom-left
+      \draw (\cropoff, \cropoff)
+            ++(-\croparm,0) -- ++({2\croparm},0);
+      \draw (\cropoff, \cropoff)
+            ++(0,-\croparm) -- ++(0,{2\croparm});
+      % bottom-right
+      \draw (\sheetW-\cropoff, \cropoff)
+            ++(-\croparm,0) -- ++({2\croparm},0);
+      \draw (\sheetW-\cropoff, \cropoff)
+            ++(0,-\croparm) -- ++(0,{2\croparm});
+
+      % ── spine / gutter centre ────────────────────────────
+      \draw (0.5\sheetW, \sheetH-\cropoff)
+            ++(-\croparm,0) -- ++({2\croparm},0);
+      \draw (0.5\sheetW, \sheetH-\cropoff)
+            ++(0,-\croparm) -- ++(0,{2\croparm});
+      \draw (0.5\sheetW, \cropoff)
+            ++(-\croparm,0) -- ++({2\croparm},0);
+      \draw (0.5\sheetW, \cropoff)
+            ++(0,-\croparm) -- ++(0,{2\croparm});
+
+      % ── meta text ────────────────────────────────────────
+      \node[gray!60, font=\tiny\ttfamily, anchor=north]
+        at (0.5\sheetW, \cropoff-1.5mm)
+        {\jobname.tex || 
     \ifdefined\docpaperlink
   \\{\docpaperlink}%
   \fi
    || 
-  \docdate};
-  \node[gray!60, font=\tiny\ttfamily, anchor=south west]
-    at ([xshift={\cropoff-2mm}, yshift={-\cropoff+1.5mm}]current page.north west)
-    {\docauthor \ifdefined\doctitle
-  \\:: {\doctitle}%
-\fi
-\ifdefined\docsubtitle
-  \\:: {\docsubtitle}%
-\fi};
+  \docdate
+  };
+      \node[gray!60, font=\tiny\ttfamily, anchor=north east]
+        at (\sheetW-\cropoff+2mm, \cropoff-1.5mm)
+        {\docauthor};
+      \node[gray!60, font=\tiny\ttfamily, anchor=south]
+        at (0.5\sheetW, \sheetH-\cropoff+1.5mm)
+        {cut here};
 
-  \node[gray!60, font=\tiny\ttfamily, anchor=south east]
-    at ([xshift={\cropoff-2mm}, yshift={-\cropoff+1.5mm}]current page.north east)
-    {    \ifdefined\cfootli
-  \\[2pt]{\normalsize\headerfont\cfootli}%
-\fi
-};
-
-\end{tikzpicture}%
+    \end{tikzpicture}%
+  }%
 }
-\AddToShipoutPictureBG{\CropMarksAndMeta}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
