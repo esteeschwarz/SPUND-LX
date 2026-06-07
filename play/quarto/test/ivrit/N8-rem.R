@@ -4,7 +4,7 @@
 # lange nacht der wissenschaften, hebräische schreibwerkstatt prep
 ###
 ns<-"/Users/guhl/Documents/GitHub/SPUND-LX/play/quarto/test/ivrit/trans.csv"
-ns<-"https://raw.usercontent.github.com/esteeschwarz/SPUND-LX/main/play/quarto/test/ivrit/trans.csv"
+ns<-"https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/play/quarto/test/ivrit/trans.csv"
 d<-read.csv(ns)
 d
 t<-readLines(ns)
