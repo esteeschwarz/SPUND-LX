@@ -1,0 +1,73 @@
+
+% ============================================================
+% LAYOUT BORDER WITH CUTTING MARKS
+% Draws a dashed border 5mm inside the page edge with
+% centering crosses at corners, plus meta text (date + filename)
+% ============================================================
+\usepackage{eso-pic}
+\usepackage{geometry}
+
+% Scale content to 90% of A4 by adjusting margins
+% A4 = 210 x 297 mm. We want text block = 90% of usable area.
+% Standard usable ~ 170 x 247 mm -> 90% ~ 153 x 222 mm
+% => left/right margin = (210-153)/2 = 28.5mm, top/bottom = (297-222)/2 = 37.5mm
+\geometry{
+  a4paper,
+  left=28.5mm, right=28.5mm,
+  top=37.5mm,  bottom=37.5mm,
+  includeheadfoot=false
+}
+
+% Border offset from page edge (where cut line sits)
+\newlength{\cropborderoffset}
+\setlength{\cropborderoffset}{8mm}
+% Cross arm length
+\newlength{\crossarm}
+\setlength{\crossarm}{5mm}
+
+\definecolor{croplinecolor}{gray}{0.4}
+
+\newcommand{\CropBorderAndMarks}{%
+\begin{tikzpicture}[remember picture, overlay, shift={(current page.south west)}]
+  \def\ox{\cropborderoffset}
+  \def\oy{\cropborderoffset}
+  \pgfmathsetlengthmacro{\pw}{\paperwidth}
+  \pgfmathsetlengthmacro{\ph}{\paperheight}
+  \pgfmathsetlengthmacro{\bx}{\cropborderoffset}
+  \pgfmathsetlengthmacro{\by}{\cropborderoffset}
+  % ---- dashed border rectangle ----
+  \draw[croplinecolor, dashed, line width=0.4pt]
+    (\bx,\by) rectangle (\pw-\bx, \ph-\by);
+  % ---- corner crosses (centering marks) ----
+  % bottom-left
+  \draw[croplinecolor, line width=0.5pt]
+    (\bx-\crossarm,\by) -- (\bx+\crossarm,\by)
+    (\bx,\by-\crossarm) -- (\bx,\by+\crossarm);
+  % bottom-right
+  \draw[croplinecolor, line width=0.5pt]
+    (\pw-\bx-\crossarm,\by) -- (\pw-\bx+\crossarm,\by)
+    (\pw-\bx,\by-\crossarm) -- (\pw-\bx,\by+\crossarm);
+  % top-left
+  \draw[croplinecolor, line width=0.5pt]
+    (\bx-\crossarm,\ph-\by) -- (\bx+\crossarm,\ph-\by)
+    (\bx,\ph-\by-\crossarm) -- (\bx,\ph-\by+\crossarm);
+  % top-right
+  \draw[croplinecolor, line width=0.5pt]
+    (\pw-\bx-\crossarm,\ph-\by) -- (\pw-\bx+\crossarm,\ph-\by)
+    (\pw-\bx,\ph-\by-\crossarm) -- (\pw-\bx,\ph-\by+\crossarm);
+  % ---- meta text outside border ----
+  % bottom centre: filename
+  \node[croplinecolor, font=\tiny\ttfamily, anchor=north]
+    at (0.5*\pw, \by-1.5mm) {uwolf\_a4.tex};
+  % bottom right: date
+  \node[croplinecolor, font=\tiny\ttfamily, anchor=north east]
+    at (\pw-\bx+2mm, \by-1.5mm) {\docdate};
+  % top centre: label
+  \node[croplinecolor, font=\tiny\ttfamily, anchor=south]
+    at (0.5*\pw, \ph-\by+1.5mm) {cut here};
+  % top left: author
+  \node[croplinecolor, font=\tiny\ttfamily, anchor=south west]
+    at (\bx-2mm, \ph-\by+1.5mm) {\docauthor};
+\end{tikzpicture}%
+}
+\AddToShipoutPictureBG{\CropBorderAndMarks}

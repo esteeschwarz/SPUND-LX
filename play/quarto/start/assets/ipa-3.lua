@@ -120,6 +120,38 @@ function get_url(meta)
   return nil
 end
 
+function get_paper_url(meta)
+  local para = meta[1]
+  local out = {}
+
+  io.stderr:write("\n---GETURL() cmeta[1].t=" .. para.t .. " ---\n")
+  if para and para.t == "Para" then
+    for _, el in ipairs(para.content) do
+          io.stderr:write("\n---GETURL() pairs.el.t=" .. el.t .. " ---\n")
+
+    --   if el.t ~= "Quoted" and el.content and el.content[1].t == "Link" then
+      if el.t == "Link" and el.content then
+        
+         io.stderr:write("\n---GETURL() pairs.el.content[1]=" .. el.content[1].t .. " ---\n")
+         local link = el
+        if link.target and link.target ~= "" then
+          if link.content == "general" then 
+          link.content = link.target
+        end
+        io.stderr:write("\n--- link.target=" .. link.target .. " ---\n")
+        io.stderr:write("\n--- link.text=" .. pandoc.utils.stringify(link.content) .. " ---\n")
+          -- Return the URL as a raw LaTeX inline element
+          -- return pandoc.MetaValue(pandoc.RawInline("latex", "\\url{" .. link.target .. "}"))
+        --   return {url = "\\url{" .. link.target .. "}",text = pandoc.utils.stringify(link.content)}
+        --  return {"\\href{"  .. link.target .. "}{{".. link.target .. "}}"}
+        return {"\\url{" .. link.target .. "}"}
+        end
+      end
+    end
+  end
+  return nil
+end
+
 local function walk_inlines_dep(inlines)
   local out = {}
   for i = 1, #inlines do
@@ -352,6 +384,10 @@ function Meta(m)
 
   inject_plain(includes, "docsubtitle", m.subtitle)
   end
+  if m.paperlink then
+
+  inject_plain(includes, "docpaperlink", get_paper_url(m.paperlink))
+  end
     if m.date then
   inject_plain(includes, "docdate",     m.date)
     end
@@ -362,6 +398,10 @@ function Meta(m)
         if m.cfoot then
 
   inject_plain( includes, "docfoot",   get_url(m.cfoot))
+        end
+          if m.cfootli then
+
+  inject_plain( includes, "docfootli",   get_url(m.cfootli))
         end
           if m.logoleft then
 

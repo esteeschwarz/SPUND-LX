@@ -15,19 +15,22 @@ arkiv: 16156.form
 # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
 cfoot: |
   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
-
+cfootli: |
+  "https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp"
+paperlink: |
+  [general](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 params:
     inline: |
       "[<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)"
     plain: | 
       "<https://esteeschwarz.github.io/DC-LX/essais/papers/010/>"
 format:
-#   html:
-#     # css: poster_grid.css
-#     # css: poster.css
-#     theme: Cosmo
-#     toc: false
-#     self-contained: false
+  # html:
+  #   # css: poster_grid.css
+  #   # css: poster.css
+  #   theme: Cosmo
+  #   toc: false
+  #   self-contained: false
   pdf:
       keep-tex: true
   #   #   template: pdf-template.tex
@@ -38,8 +41,8 @@ format:
   #   #   mainfont: 'Free Sans'
   #     font-size: 11
   #     colorlinks: true
-  #     include-in-header: 
-  #       - ../assets/lualoani.tex
+      include-in-header: 
+        - ../../assets/crop2.tex
   #       - ../assets/footer-header.tex
   #     include-before-body: ../assets/go-head.tex
   #       # - paper.tex
