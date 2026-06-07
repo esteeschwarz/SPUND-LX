@@ -3,6 +3,7 @@
 # lange nacht der wissenschaften, hebräische schreibwerkstatt prep
 ###
 ns<-"/Users/guhl/Documents/GitHub/SPUND-LX/play/quarto/test/ivrit/trans.csv"
+ns<-"https://raw.githubusercontent.com/esteeschwarz/SPUND-LX/main/play/quarto/test/ivrit/trans.csv"
 d<-read.csv(ns)
 d
 t<-readLines(ns)
@@ -28,6 +29,7 @@ d31<-lapply(seq_along(1:length(d3)),function(i){
 x<-d31[[26]]
 i<-1
 x
+cat("\n\n\n******************************\n")
 name<-readline("bitte gib deinen Namen ein: > ")
 nc<-unlist(strsplit(name,""))
 nc<-tolower(nc)
@@ -79,12 +81,17 @@ dna<-lapply(nc,function(c){
     dx
   b<-x[[1]]
     b
-  cat("Buchstabe > ",b," < \ndrücke --- J --- für -ja- \noder --- N --- für -nein-\n")
+  cat("\n-------------------------------\n")
+  cat("Buchstabe > ",b," < \n----------\ndrücke --- J --- für -ja- \noder --- N --- für -nein-\n------------------------\n")
   # a<-as.character(paste0("--- > ",b," < ",i,'. ausgesprochen wie in: "',dx[i,1],'"\n'))
   a<-as.character(paste0(i,'. --- > ausgesprochen wie in: "',dx[i,1],'"\n'))
   cat (a)
   v<-readline(prompt="wähle option aus: ")
   print(v)
+  inp<-v%in%c("j","ja","n","nein")
+  if(!inp)
+        v<-readline(prompt="wähle option aus (nur tasten [J] oder [N] !): ")
+
   if(v=="j"|v=="ja"){
     ca[i]<-dx$X2[i]
     ip<-l+1
@@ -92,7 +99,7 @@ dna<-lapply(nc,function(c){
 
   # })
   #ca2
-  }
+    }
 }
   ca<-ca[!is.na(ca)]
     ca
@@ -119,8 +126,10 @@ dna3<-dna2[,2]
 dna3
 dna2
 nc
-if("h"%in%dna$ca)
-  dna3<-dna2[dna2[,2]!="h"]
+dna2
+dna3
+if("h"%in%dna3)
+  dna3<-dna3[dna3!="h"]
 dna3<-paste0(dna3,collapse="")
 dna3
 cat("dein name in hebräischen buchstaben: > ",dna3," <\n")
