@@ -69,15 +69,51 @@ print(t2)
 
 
 # index
-> all TODO
+> samling, all TODO
 
 ## A
 ### alphabet
 a common way of segmenting
 
+### apoll
+#### apollinisch
+### asynchron
+
+## D
+### diachron
+### dionys
+#### dionysisch
+
+## E
+### embeddings
+### entropie
+
+## H
+### hermeneutik
+#### hermeneutischer zirkel
+### hyperlink
+#### related
+- [intertext](#intertext)
+
+## I
+### intertext
+
+## M
+### model
+#### related
+- [embeddings](#embeddings), [vektor](#vektor), [training](#training)
+
+## S
+### synkretismus
+
 ## T
 ### tautologie
 something explaining itself by itself
+
+### training
+
+## V
+### vektor
 
 ## Z
 ### zipfs law

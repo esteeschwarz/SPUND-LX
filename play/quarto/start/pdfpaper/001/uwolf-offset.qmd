@@ -25,12 +25,12 @@ params:
     plain: | 
       "<https://esteeschwarz.github.io/DC-LX/essais/papers/010/>"
 format:
-  # html:
-  #   # css: poster_grid.css
-  #   # css: poster.css
-  #   theme: Cosmo
-  #   toc: false
-  #   self-contained: false
+  html:
+    # css: poster_grid.css
+    # css: poster.css
+    theme: Cosmo
+    toc: false
+    self-contained: false
   pdf:
       keep-tex: true
   #   #   template: pdf-template.tex
