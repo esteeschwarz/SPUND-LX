@@ -60,8 +60,8 @@ qa
 margin_sf<-margindb
 margindb<-list(qa=qa,dbsub=dbsub)
 dbnew<-margindb
-load("margindb.RData")
-fi<-file.info("margindb.RData")
+load("margindb copy.RData")
+fi<-file.info("margindb copy.RData")
 fs<-fi$size
 fs
 mt<-tempfile("mdb.RData")
@@ -95,6 +95,7 @@ p<-(l1<l12)|(l2<l22)|(l3<l32)|(fst>fs)
 cat("---- DB size olde:",fs,", new:",fst,"\n")
 
   if(p|saveanyway){
+  margindb<-dbnew
   save(margindb,file="margindb.RData")
   cat("---- saved new annotations...\n")
   }
