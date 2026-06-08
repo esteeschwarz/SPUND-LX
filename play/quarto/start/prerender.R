@@ -66,6 +66,7 @@ fs<-fi$size
 fs
 mt<-tempfile("mdb.RData")
 save(dbnew,file=mt)
+save(dbnew,file="~/db/margindbnew.RData")
 fit<-file.info(mt)
 fst<-fit$size
 notes.old<-margindb$dbsub$notes
@@ -100,7 +101,7 @@ cat("---- DB size olde:",fs,", new:",fst,"\n")
 return(list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c)))
 # save(margindb,file="margindb.RData")
 
-
+#"Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
 }
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
@@ -124,3 +125,6 @@ source("fetch-zotero.R")
 cat("------------ NEW ANNOTATIONS:")
 print(mnew)
 #source("annotations.R")
+
+list.files('/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur')
+system("ls '/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur'")

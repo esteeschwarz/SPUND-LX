@@ -48,10 +48,12 @@ val.c<-"{{< meta cmeta >}}"
 ## samling
 - Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
 
-- samling: margin notes general > [open](nietzsche-qa.qmd){.btn .btn-cat}
+16163. margin notes general > [open](nietzsche-qa.qmd){.btn .btn-cat}
+
 - ephemeridenmusik > briefe
 - neudeutsche schule, musikerstreit...
-- 16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
+
+16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
 
 ## benn: *-05-02
 :: ```r 2026-1886``` [jahre german dionys::](nietzsche-benn.qmd)   
@@ -82,3 +84,35 @@ Werden, als dienendes Glied schließ an ein Ganzes dich an. (Schiller, Musenalma
 - versucht perspektivität loszuwerden
 - horizont droht aufzusprengen
 
+##### FW: fröhliche wissenschaft
+- titel angelehnt an :die frohe botschaft:?
+  - seit wann heiszt überhaupt so (luther?) > direkte übersetzung eu-angelo
+  - kontrapunkt religion-wissenschaft
+
+Q: was sind die folgen des gottestods?
+
+- haufen fragen
+- prophetisch (s.o.)
+  - zarathustra..., laterne anzünden (ward licht...)
+- horizont
+
+
+
+Q: wie zentral ist §125 in FW?
+- cross-keyword analysis
+
+###### der tolle mensch
+- die anderen > eigentlich: nicht :die atheisten: sondern (analog: prophet jesus, tempelissue) sondern die z.zt. nietzsches (des tollen) gläubigen…, also der :tolle:[1] der eigentlich-orthodoxe gläubige
+- nietzsche als NICHT a-religiös sondern atheistisch also trotz gottlosigkeit tiefgläubig (an was…?)
+- lachen der anderen eskapismus
+- paradoxon: die anderen (von nietzsche ungläubige genannt) gehen selbstverständlich von-gott aus
+
+- diogenes: zündet am tag eine laterne an, "suche 1 menschen"
+- lampe am tag: für die im hier-und-jetzt gefangenen
+- gott sowieso tot: laterne, nachricht > redundant
+- altes wertesystem: leute glauben noch, dasz sie (beleuchtet) sind, aber (sonne) aus, haben ncht gemerkt, wie dunkel eigentlich schon ist
+- [1] aufgeklärtes individuum
+- aufklärung, licht der vernunft
+
+Q: wer spricht eigentlich?
+- 
