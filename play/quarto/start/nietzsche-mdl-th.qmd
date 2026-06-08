@@ -1,0 +1,38 @@
+---
+title: nietzsche und gesinnung
+subtitle: rezeptionsästhetische corpusanalyse
+date: "2026-06-08"
+mdate: '`r format(Sys.time())`'
+# # toc: true
+# # toc-depth: 3
+# # toc-expand: true
+metadata-files:
+  - _quarto-common-nietzsche.yml
+title-meta: ""
+# bibliography: nietzsche.bib
+# # nocite: '@*'
+---
+
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+
+
+{{< include _gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [Nietzsche](nietzsche001.qmd) / mdl thesenpapier draft
+
+-----
+
+:::
+
+```{r,echo=F,eval=T}
+print("engine on...")
+```
+
+{{< include _ul-md/nietzsche-mdl-th.md >}}
+
+# references

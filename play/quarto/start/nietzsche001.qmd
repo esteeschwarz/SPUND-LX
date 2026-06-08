@@ -51,6 +51,7 @@ val.c<-"{{< meta cmeta >}}"
 - samling: margin notes general > [open](nietzsche-qa.qmd){.btn .btn-cat}
 - ephemeridenmusik > briefe
 - neudeutsche schule, musikerstreit...
+- 16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
 
 ## benn: *-05-02
 :: ```r 2026-1886``` [jahre german dionys::](nietzsche-benn.qmd)   
