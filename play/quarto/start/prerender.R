@@ -60,8 +60,8 @@ qa
 margin_sf<-margindb
 margindb<-list(qa=qa,dbsub=dbsub)
 dbnew<-margindb
-load("margindb copy.RData")
-fi<-file.info("margindb copy.RData")
+load("margindb.RData")
+fi<-file.info("margindb.RData")
 fs<-fi$size
 fs
 mt<-tempfile("mdb.RData")

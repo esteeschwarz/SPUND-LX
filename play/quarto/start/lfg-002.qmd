@@ -1,0 +1,3 @@
+# 16244.class
+## notation
+kiss v()

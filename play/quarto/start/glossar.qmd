@@ -64,13 +64,32 @@ t2<-lapply(v1,function(x){
 })
 print(t2)
 
-
+ff<-paste0(Sys.getenv("OBS_TOP"),"/UNI/GLOSSAR")
+ff
+f<-list.files(ff,full.names=T)
+f
+g<-lapply(f,function(x){
+  readLines(x)
+})
+gl<-unlist(g)
+gl<-gl[gl!=""]
+gl<-paste0(gl,"\n\n")
+gl[1:10]
 ```
 
+#### snc
+1
 
 # index
 > samling, all TODO
 
+```{r,echo=F,warning=F,results="asis",eval=F} 
+cat("# dummy h1\n\n")
+cat(gl)
+
+```
+
+:::{#glossar}
 ## A
 ### alphabet
 a common way of segmenting
@@ -117,3 +136,4 @@ something explaining itself by itself
 
 ## Z
 ### zipfs law
+:::
