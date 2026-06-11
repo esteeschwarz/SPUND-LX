@@ -271,6 +271,16 @@ comment
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
+from the point of view of context-free rules, VP and V are atomic symbols that are not related to each other; labeling one of the daughters of NP as N is merely a convention
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+2
+</td>
+<td style="text-align:left;width: 7cm; ">
 Briefly, c-structure is a phrase structure tree; constraints on possible trees are usually described via context-free rules as in
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -288,10 +298,10 @@ Briefly, c-structure is a phrase structure tree; constraints on possible trees a
 </tr>
 <tr>
 <td style="text-align:left;width: 2cm; ">
-2
+3
 </td>
 <td style="text-align:left;width: 7cm; ">
-from the point of view of context-free rules, VP and V are atomic symbols that are not related to each other; labeling one of the daughters of NP as N is merely a convention
+enforces endocentricity by introducing the notion of projection and “bar level” and requiring that each non-maximal projection (X0and X′; X″, or XP, is usually assumed to be the maximum level of projection) be dominated by a node belonging to the same category, with the bar level either incremented by one or unchanged. The sisters of c-structure heads (complements, specifiers and adjuncts) have to be maximal projections or non-projecting words (on which see below).
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -302,16 +312,6 @@ from the point of view of context-free rules, VP and V are atomic symbols that a
 </td>
 <td style="text-align:left;width: 7cm; ">
 wrong with this structure: an I head cannot be the daughter of NP; the VP cannot be headed by, or even immediately dominate, a Det; an AdvP cannot be headed by a noun.1The principle that prohibits this is called endocentricity; roughly stated, it means that the external distribution of a phrase (e.g.&nbsp;NP) is determined by the category of one and only one of its daughters, the head.
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-3
-</td>
-<td style="text-align:left;width: 7cm; ">
-enforces endocentricity by introducing the notion of projection and “bar level” and requiring that each non-maximal projection (X0and X′; X″, or XP, is usually assumed to be the maximum level of projection) be dominated by a node belonging to the same category, with the bar level either incremented by one or unchanged. The sisters of c-structure heads (complements, specifiers and adjuncts) have to be maximal projections or non-projecting words (on which see below).
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -351,7 +351,7 @@ most prominent exception is the exocentric category S.3This category does not ha
 7
 </td>
 <td style="text-align:left;width: 7cm; ">
-as a result, X′theory, understood purely in terms of c-structure, is little else than a system of labeling nodes which allows us to generalize endocentricity at constituent structure level.
+lexicalism implies that the features of individual syntactic elements (morphemes and wordforms) as well as their subcategorization frames are determined in the lexicon, and cannot be modified in the syntax (such as by promoting the direct object in a passive construction)
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -361,7 +361,7 @@ as a result, X′theory, understood purely in terms of c-structure, is little el
 7
 </td>
 <td style="text-align:left;width: 7cm; ">
-lexicalism implies that the features of individual syntactic elements (morphemes and wordforms) as well as their subcategorization frames are determined in the lexicon, and cannot be modified in the syntax (such as by promoting the direct object in a passive construction)
+as a result, X′theory, understood purely in terms of c-structure, is little else than a system of labeling nodes which allows us to generalize endocentricity at constituent structure level.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -411,26 +411,6 @@ since all morphology is sublexical, the position of individual affixes cannot ha
 9
 </td>
 <td style="text-align:left;width: 7cm; ">
-, c-structure in LFG is complemented by an additional level of representation called f-structure. F-structure is an attribute-value structure that includes information on valency, grammatical functions, and the features of clauses and their syntactic arguments.
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-9
-</td>
-<td style="text-align:left;width: 7cm; ">
-F-structure is usually thought of as a set of attribute-value pairs, or a function that maps attribute names to their values
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-9
-</td>
-<td style="text-align:left;width: 7cm; ">
 there is no such thing as two different f-structures having the same set of attributes and values;
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -445,6 +425,26 @@ NA
 </td>
 <td style="text-align:left;width: 4cm; ">
 #bookmarks Page 9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+, c-structure in LFG is complemented by an additional level of representation called f-structure. F-structure is an attribute-value structure that includes information on valency, grammatical functions, and the features of clauses and their syntactic arguments.
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+9
+</td>
+<td style="text-align:left;width: 7cm; ">
+F-structure is usually thought of as a set of attribute-value pairs, or a function that maps attribute names to their values
+</td>
+<td style="text-align:left;width: 4cm; ">
 </td>
 </tr>
 <tr>
@@ -482,7 +482,7 @@ default relation between equations forming an f-description is conjunction, but 
 11
 </td>
 <td style="text-align:left;width: 7cm; ">
-they are “constructive”, or defining: informally, a defining equation introduces a feature value, regardless of whether it is the only such equation or the same value is defined elsewhere
+a value cannot be assigned by a constraining equation
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -492,7 +492,7 @@ they are “constructive”, or defining: informally, a defining equation introd
 11
 </td>
 <td style="text-align:left;width: 7cm; ">
-a value cannot be assigned by a constraining equation
+they are “constructive”, or defining: informally, a defining equation introduces a feature value, regardless of whether it is the only such equation or the same value is defined elsewhere
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -592,7 +592,7 @@ there is nothing in the formal architecture or in any part of an LFG grammar tha
 24
 </td>
 <td style="text-align:left;width: 7cm; ">
-16fn is an abbreviation for functor; sfid stands for “semantic form identifier
+semantic form is a special type of attribute value that is exclusively assigned to the attribute pred. Semantic forms consist of the predicate name followed by the list of its syntactic arguments
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -602,7 +602,7 @@ there is nothing in the formal architecture or in any part of an LFG grammar tha
 24
 </td>
 <td style="text-align:left;width: 7cm; ">
-semantic form is a special type of attribute value that is exclusively assigned to the attribute pred. Semantic forms consist of the predicate name followed by the list of its syntactic arguments
+16fn is an abbreviation for functor; sfid stands for “semantic form identifier
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -699,7 +699,7 @@ does not include 3.ps.sg &gt; nicht-konpositional mit John (3rd.p.psg)
 44
 </td>
 <td style="text-align:left;width: 7cm; ">
-trend in much LFG work (King 1997, Butt &amp; King 1997, Dalrymple &amp; Nikolaeva 2011) is to eliminate information structure functions from syntax, instead relegating them to a separate projection, i-structure
+specifiers map to discourse functions (DF), which consist of topic, focus and subj
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -709,7 +709,7 @@ trend in much LFG work (King 1997, Butt &amp; King 1997, Dalrymple &amp; Nikolae
 44
 </td>
 <td style="text-align:left;width: 7cm; ">
-specifiers map to discourse functions (DF), which consist of topic, focus and subj
+trend in much LFG work (King 1997, Butt &amp; King 1997, Dalrymple &amp; Nikolaeva 2011) is to eliminate information structure functions from syntax, instead relegating them to a separate projection, i-structure
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -749,9 +749,10 @@ Complements and specifiers not only can but must, as a rule, be optional because
 49
 </td>
 <td style="text-align:left;width: 7cm; ">
-the V head is only occupied if the verb form is periphrastic, and the auxiliary, or the finite verb in synthetic forms, stands in the I node in subordinate clauses (63) and in the C node in main clauses
+For example, in English lexical verbs always appear in V, but the I head can be filled or not depending on whether the verb form is periphrastic or synthetic
 </td>
 <td style="text-align:left;width: 4cm; ">
+The term periphrastic refers to the fact that the present perfect construction in most European languages is not synthetic, but is made up of an auxiliary + a participial main verb, with the most frequent perfect auxiliaries in Europe being HAVE and BE
 </td>
 </tr>
 <tr>
@@ -759,10 +760,9 @@ the V head is only occupied if the verb form is periphrastic, and the auxiliary,
 49
 </td>
 <td style="text-align:left;width: 7cm; ">
-For example, in English lexical verbs always appear in V, but the I head can be filled or not depending on whether the verb form is periphrastic or synthetic
+the V head is only occupied if the verb form is periphrastic, and the auxiliary, or the finite verb in synthetic forms, stands in the I node in subordinate clauses (63) and in the C node in main clauses
 </td>
 <td style="text-align:left;width: 4cm; ">
-The term periphrastic refers to the fact that the present perfect construction in most European languages is not synthetic, but is made up of an auxiliary + a participial main verb, with the most frequent perfect auxiliaries in Europe being HAVE and BE
 </td>
 </tr>
 <tr>
@@ -780,10 +780,10 @@ periphrastic or synthetic
 50
 </td>
 <td style="text-align:left;width: 7cm; ">
-<ol start="63" type="1">
-<li></li></ol></td>
+kaufte
+</td>
 <td style="text-align:left;width: 4cm; ">
-warum ist VP hier parallel zu I und nicht parent node? <br> <br> wenn wir (invers) schreiben “dasz karl kaufte das buch” hätten wir doch [[dasz] [[karl] [kaufte [das buch]]]]]? oder ist die inflektion hier entscheidend und es sind in der IP 1+2 nodes statt 1:3? <br> <br> möglicherweise weil karl+das buch optional ist, der kopf der IP aber nicht dh. kaufte ist dringender als der rest um die IP zufriedenzustellen und deshalb ein I head und kein V head
+synthetic, terminal of IP
 </td>
 </tr>
 <tr>
@@ -791,10 +791,10 @@ warum ist VP hier parallel zu I und nicht parent node? <br> <br> wenn wir (inver
 50
 </td>
 <td style="text-align:left;width: 7cm; ">
-kaufte
-</td>
+<ol start="63" type="1">
+<li></li></ol></td>
 <td style="text-align:left;width: 4cm; ">
-synthetic, terminal of IP
+warum ist VP hier parallel zu I und nicht parent node? <br> <br> wenn wir (invers) schreiben “dasz karl kaufte das buch” hätten wir doch [[dasz] [[karl] [kaufte [das buch]]]]]? oder ist die inflektion hier entscheidend und es sind in der IP 1+2 nodes statt 1:3? <br> <br> möglicherweise weil karl+das buch optional ist, der kopf der IP aber nicht dh. kaufte ist dringender als der rest um die IP zufriedenzustellen und deshalb ein I head und kein V head
 </td>
 </tr>
 </tbody>
@@ -833,7 +833,7 @@ crucial idea underpinning Lexical-Functional Grammar (LFG) is that a linguistic 
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-“the formal model of LFG is not a syntactic theory in the linguistic sense. Rather, it is an architecture for syntactic theory
+It is a parallel correspondence model because the different dimensions of linguistic information are represented separately but are connected by well-defined principles of correspondence, or mappings.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -843,7 +843,7 @@ crucial idea underpinning Lexical-Functional Grammar (LFG) is that a linguistic 
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-It is a parallel correspondence model because the different dimensions of linguistic information are represented separately but are connected by well-defined principles of correspondence, or mappings.
+“the formal model of LFG is not a syntactic theory in the linguistic sense. Rather, it is an architecture for syntactic theory
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -946,7 +946,7 @@ syntactic analysis of the passive
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
-Call this the lexical analysis of the passive
+Under the syntactic analysis, the identity of the subject’s thematic role is altered by the syntactic derivation, whereas under the lexical analysis, the link between thematic role and subject is already specified in the lexicon prior to insertion into the syntactic structure
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -956,7 +956,7 @@ Call this the lexical analysis of the passive
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
-Under the syntactic analysis, the identity of the subject’s thematic role is altered by the syntactic derivation, whereas under the lexical analysis, the link between thematic role and subject is already specified in the lexicon prior to insertion into the syntactic structure
+Call this the lexical analysis of the passive
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -976,7 +976,7 @@ passive morphology removes the verb’s ability to assign “abstract case” to
 4
 </td>
 <td style="text-align:left;width: 7cm; ">
-suggests that the passive form’s argument structure is present within the lexicon before insertion into the syntax
+word formation processes such as derivation, compounding, and conversion are morpholexical and not syntactic, and that the inputs to these processes are also morpholexical and not syntactic
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -996,7 +996,7 @@ reconstruct lexical morphology in the syntax, contrary to our initial assumption
 4
 </td>
 <td style="text-align:left;width: 7cm; ">
-word formation processes such as derivation, compounding, and conversion are morpholexical and not syntactic, and that the inputs to these processes are also morpholexical and not syntactic
+suggests that the passive form’s argument structure is present within the lexicon before insertion into the syntax
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -1047,7 +1047,7 @@ the fields had a marched through look
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-there is a two-step process whereby the active verbs change to adjectives and then the adjectives passivize
+if there were a separate morphological rule of “adjectival passivization”alongside verbal passivization, these morphological parallels would be an unexplained accident
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -1067,7 +1067,7 @@ an unconsidered action
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-if there were a separate morphological rule of “adjectival passivization”alongside verbal passivization, these morphological parallels would be an unexplained accident
+there is a two-step process whereby the active verbs change to adjectives and then the adjectives passivize
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -1118,10 +1118,9 @@ is that not: a woman that has recently been left? eine verlassene frau? <br> <br
 10
 </td>
 <td style="text-align:left;width: 7cm; ">
-an over-exercised athlete
+Because the activity of running lacks an inherent result state, it is strange to say a run child. But when the goal is supplied to the activity, a result state is defined, and now conversion is possible (a run-away child)
 </td>
 <td style="text-align:left;width: 4cm; ">
-#query: exercised athlete corpus evidence <br> <br> <a href="https://ske.li/bresnan_01" target="_blank">https://ske.li/bresnan_01 </a> … <br> <br> can I -exercise an athlete-? like teach him stuff? <br> <a href="https://ske.li/bresnan_02" target="_blank">https://ske.li/bresnan_02 </a> … <br> <br> so -to exercise X- is rather: AUSüben, perform X <br> <br> claude <br> <br> <a href="https://claude.ai/share/f436e4fd-3fa3-4ab8-8d9d-c6b58b02cc22" target="_blank">https://claude.ai/share/f436e4fd-3fa3-4ab8-8d9d-c6b58b02cc22 </a><br> <br> … <br>
 </td>
 </tr>
 <tr>
@@ -1129,9 +1128,10 @@ an over-exercised athlete
 10
 </td>
 <td style="text-align:left;width: 7cm; ">
-Because the activity of running lacks an inherent result state, it is strange to say a run child. But when the goal is supplied to the activity, a result state is defined, and now conversion is possible (a run-away child)
+an over-exercised athlete
 </td>
 <td style="text-align:left;width: 4cm; ">
+#query: exercised athlete corpus evidence <br> <br> <a href="https://ske.li/bresnan_01" target="_blank">https://ske.li/bresnan_01 </a> … <br> <br> can I -exercise an athlete-? like teach him stuff? <br> <a href="https://ske.li/bresnan_02" target="_blank">https://ske.li/bresnan_02 </a> … <br> <br> so -to exercise X- is rather: AUSüben, perform X <br> <br> claude <br> <br> <a href="https://claude.ai/share/f436e4fd-3fa3-4ab8-8d9d-c6b58b02cc22" target="_blank">https://claude.ai/share/f436e4fd-3fa3-4ab8-8d9d-c6b58b02cc22 </a><br> <br> … <br>
 </td>
 </tr>
 <tr>
