@@ -42,6 +42,14 @@ nietzsche
   setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start"))
 #source("getnotesql.R")
 mnew<-smdb(qa)
+### copy glossar
+  go<-paste0(Sys.getenv("OBS_TOP"),"/UNI/GLOSSAR")
+  f<-list.files(go,full.names=T,pattern=".md")
+
+  gc<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/_ul-md/GLOSSAR/")
+  file.copy(f,gc,overwrite=T)
+
+
 return(list(qa=qa,mnew=mnew))
 }
 smdb<-function(qa){

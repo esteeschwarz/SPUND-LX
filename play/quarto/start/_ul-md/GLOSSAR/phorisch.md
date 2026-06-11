@@ -1,0 +1,3 @@
+# phorisch
+# anaphorisch
+# kataphorisch

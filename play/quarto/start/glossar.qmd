@@ -43,12 +43,13 @@ cfoot: |
 print("engine on...")
 ```
 
-```{r,echo=F,eval=T,output=F}
+```{r vocab,echo=F,eval=T,output=F}
 ### get vocab, keywords
 print(getwd())
 f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/"),pattern=".qmd",full.names = T)
 f
 v1<-lapply(f,function(x){
+  print(x)
   t<-readLines(x)
   v1<-unlist(strsplit(t," "))
   m<-grepl("[^a-zA-Z]",v1)
@@ -65,16 +66,29 @@ t2<-lapply(v1,function(x){
 print(t2)
 
 ff<-paste0(Sys.getenv("OBS_TOP"),"/UNI/GLOSSAR")
-ff
-f<-list.files(ff,full.names=T)
+gc<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/_ul-md/GLOSSAR")
+
+ff<-gc
+f<-list.files(ff,full.names=T,pattern=".md")
 f
 g<-lapply(f,function(x){
+  print(x)
   readLines(x)
 })
 gl<-unlist(g)
-gl<-gl[gl!=""]
-gl<-paste0(gl,"\n\n")
-gl[1:10]
+#gl<-gl[gl!=""]
+#gl<-paste0(gl,"\n\n")
+gl
+#gl<-gsub("^(#.*)","\\",gl)
+m<-grep("^#",gl)
+
+gl[m]<-paste0("\n",gl[m],"\n")
+gl
+m<-grep("^-",gl)
+gl[m]<-paste0("\n",gl[m])
+
+gl<-paste0(gl,collapse = "\n")
+gl
 ```
 
 #### snc
@@ -83,13 +97,13 @@ gl[1:10]
 # index
 > samling, all TODO
 
-```{r,echo=F,warning=F,results="asis",eval=F} 
+```{r,echo=F,warning=F,results="asis",eval=T} 
 cat("# dummy h1\n\n")
 cat(gl)
 
 ```
 
-:::{#glossar}
+:::{.display-none}
 ## A
 ### alphabet
 a common way of segmenting

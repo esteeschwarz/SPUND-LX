@@ -1,0 +1,2 @@
+# verbpartikel
+Verbpartikel: betont, trennbar; formgleich mit Präpositionen, Adverbien und Adjektiven (durch-, über-, unter-, um-, hinter-, wieder-; hinauf, dahin, zusammen, auseinander; frei, still, krank, ...)
