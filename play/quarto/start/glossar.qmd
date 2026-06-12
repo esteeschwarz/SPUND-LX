@@ -92,16 +92,21 @@ gl
 ```
 
 #### snc
+```{r,echo=F}
+print(gc)
+```
+
 1
 
 # index
 > samling, all TODO
 
 ```{r,echo=F,warning=F,results="asis",eval=T} 
-cat("# dummy h1\n\n",gc,"\n\n")
+cat("# dummy h1\n\nGIT_TOP:",gc,"\n\n")
 cat(gl)
 
 ```
+
 
 :::{.display-none}
 ## A
