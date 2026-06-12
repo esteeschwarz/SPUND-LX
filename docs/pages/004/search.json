@@ -697,7 +697,14 @@
     "href": "nietzsche-mdl-th.html#intro",
     "title": "nietzsche und gesinnung",
     "section": "intro",
-    "text": "intro\nes soll untersucht werden, wie bei autor/, denen heute/vergangenheit eine ambivalente gesinnung (pol. themen) angedeutet wird, evtl. fragwürdige einstellungen auch auf nietzsche zurückgehen bzw. spuren dieser gesinnungen auch schon bei nietzsche zu finden sind. dazu sollen korpusanalysen durchgeführt werden (distant reading) ## method 1. erstellung nietzsche korpus 2. erstellung bsp. benn corpus resp. verfügbare (relevante: gesinnung[ambivalenz]) primaere korpus\n\nfuzzy string matching of [1] in [2]\n\ntrain model on [1]\nget embeddings for [2]\ncompare vectors and output nearest neighbour tokens\n\n\n\nkeyword list of relevant (gesinnung) tokens"
+    "text": "intro\nes soll untersucht werden, wie bei autor/, denen heute/vergangenheit eine ambivalente gesinnung (pol. themen) angedeutet wird, evtl. fragwürdige einstellungen auch auf nietzsche zurückgehen bzw. spuren dieser gesinnungen auch schon bei nietzsche zu finden sind. dazu sollen korpusanalysen durchgeführt werden (distant reading)"
+  },
+  {
+    "objectID": "nietzsche-mdl-th.html#method",
+    "href": "nietzsche-mdl-th.html#method",
+    "title": "nietzsche und gesinnung",
+    "section": "method",
+    "text": "method\n\nerstellung nietzsche korpus\nerstellung bsp. benn corpus resp. verfügbare (relevante: gesinnung[ambivalenz]) primaere korpus\n\n\nfuzzy string matching of [1] in [2]\n\ntrain model on [1]\nget embeddings for [2]\ncompare vectors and output nearest neighbour tokens\n\n\n\nkeyword list of relevant (gesinnung) tokens"
   },
   {
     "objectID": "lfg-index.html",
