@@ -30,6 +30,8 @@ jobs:
       run: |
          ls -la
          echo "DOWNLOAD_PW=${{ secrets.DOWNLOAD_PW }}" >> .Renviron
+         echo "GIT_TOP=/home/runner/work/SPUND-LX" >> .Renviron
+
          curl -o r.json https://ids.dh-index.org/api/ids-version
          cat r.json
          ls -la
