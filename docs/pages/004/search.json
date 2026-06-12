@@ -263,14 +263,14 @@
     "href": "snc.html",
     "title": "SNC",
     "section": "",
-    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks.\n\n\n\n\n\ntapee.pos.wf.t1"
+    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks.\n\n\n\n\n\ntapee.pos.wf.t1\ngit-top not fetched, t3"
   },
   {
     "objectID": "snc.html#snc",
     "href": "snc.html#snc",
     "title": "SNC",
     "section": "",
-    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks.\n\n\n\n\n\ntapee.pos.wf.t1"
+    "text": "to commit\n\n\n\ntrigger wf\nsite 004\nwf cp -ar to copy site-libs\nls output: chk libs.\nwith new wf, rsync in image installed: no, –no-delete unknown\nt4, test on m12, wks.\nt5: site_libs was in ignore. rm.\nt6\n\n\n\n\n\npdf/html conf in wolf wks. now try in qyml global wt assets, rm all child config.\n\n\n\n\n\nfont georgia missing, installed in container.\nt1\ncontainer success, t2\nmissed output dir\nDCLX template wks.\nm12: pull &gt; render play/pages, chk.o\nm9\ninvalid date? didnt render?\nwo format but still i. date\nwt sys.date()\nchk: local no date either: has to be explicit in qml; in docs as formula\n\n\n\n[1] \"engine on...\"\n\n\n\n\n\n\ngit hash from wf. not.\n\nmeta keys S: \\(testmeta\\)\nmeta include: 16156.t1\nval.f: fixed val\nval.c: 16156.t1\nval.i: 16156.t1\ntestform: 7\n\nengine has to be loaded before execution.\nno access to -M data via \\(x (tmeta:\\)value)\nwks in devcontainer\n\n\n\n\n\nnew ghcr container, try wk.\ntinytex issue, t2. solved.\n\n\n\n\n\newa.t1\nauto anno/bib\ninit paper issue, wks.\n\n\n\n\n\ntapee.pos.wf.t1\ngit-top not fetched, t3"
   },
   {
     "objectID": "lki-001.html",
@@ -509,6 +509,76 @@
     "title": "glossar",
     "section": "",
     "text": "common: global term glossary term: SS26 snc: 16232.1\nTO GIT COMMIT\n[1] \"engine on...\""
+  },
+  {
+    "objectID": "glossar.html#apollinisch",
+    "href": "glossar.html#apollinisch",
+    "title": "glossar",
+    "section": "apollinisch",
+    "text": "apollinisch"
+  },
+  {
+    "objectID": "glossar.html#related",
+    "href": "glossar.html#related",
+    "title": "glossar",
+    "section": "related",
+    "text": "related\napoll"
+  },
+  {
+    "objectID": "glossar.html#dionysisch",
+    "href": "glossar.html#dionysisch",
+    "title": "glossar",
+    "section": "dionysisch",
+    "text": "dionysisch"
+  },
+  {
+    "objectID": "glossar.html#related-1",
+    "href": "glossar.html#related-1",
+    "title": "glossar",
+    "section": "related",
+    "text": "related\n#vektor\n[vektor] yes"
+  },
+  {
+    "objectID": "glossar.html#hermeneutischer-zirkel",
+    "href": "glossar.html#hermeneutischer-zirkel",
+    "title": "glossar",
+    "section": "hermeneutischer zirkel",
+    "text": "hermeneutischer zirkel"
+  },
+  {
+    "objectID": "glossar.html#related-2",
+    "href": "glossar.html#related-2",
+    "title": "glossar",
+    "section": "related",
+    "text": "related\nintertext"
+  },
+  {
+    "objectID": "glossar.html#hypertext",
+    "href": "glossar.html#hypertext",
+    "title": "glossar",
+    "section": "hypertext",
+    "text": "hypertext"
+  },
+  {
+    "objectID": "glossar.html#related-3",
+    "href": "glossar.html#related-3",
+    "title": "glossar",
+    "section": "related",
+    "text": "related\n\nembeddings, vektor, training"
+  },
+  {
+    "objectID": "glossar.html#lexikalisch",
+    "href": "glossar.html#lexikalisch",
+    "title": "glossar",
+    "section": "lexikalisch",
+    "text": "lexikalisch\ngruppe, in die ein wort nach dem stamm eingeordnet wird"
+  },
+  {
+    "objectID": "glossar.html#syntaktisch",
+    "href": "glossar.html#syntaktisch",
+    "title": "glossar",
+    "section": "syntaktisch",
+    "text": "syntaktisch\ngruppe kategorie der syntaktischen funktion (PoS)"
   },
   {
     "objectID": "glossar.html#a",

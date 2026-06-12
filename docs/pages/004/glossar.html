@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -184,6 +219,109 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#index" id="toc-index" class="nav-link active" data-scroll-target="#index">index</a></li>
   <li><a href="#dummy-h1" id="toc-dummy-h1" class="nav-link" data-scroll-target="#dummy-h1">dummy h1</a></li>
+  <li><a href="#advance." id="toc-advance." class="nav-link" data-scroll-target="#advance.">advance.</a></li>
+  <li><a href="#adverbial" id="toc-adverbial" class="nav-link" data-scroll-target="#adverbial">adverbial</a></li>
+  <li><a href="#alphabet" id="toc-alphabet" class="nav-link" data-scroll-target="#alphabet">alphabet</a></li>
+  <li><a href="#ambigue" id="toc-ambigue" class="nav-link" data-scroll-target="#ambigue">AMBIGUE</a></li>
+  <li><a href="#antezedenz" id="toc-antezedenz" class="nav-link" data-scroll-target="#antezedenz">antezedenz</a></li>
+  <li><a href="#apoll" id="toc-apoll" class="nav-link" data-scroll-target="#apoll">apoll</a>
+  <ul class="collapse">
+  <li><a href="#apollinisch" id="toc-apollinisch" class="nav-link" data-scroll-target="#apollinisch">apollinisch</a></li>
+  </ul></li>
+  <li><a href="#aspect" id="toc-aspect" class="nav-link" data-scroll-target="#aspect">aspect</a></li>
+  <li><a href="#asynchron" id="toc-asynchron" class="nav-link" data-scroll-target="#asynchron">asynchron</a></li>
+  <li><a href="#diachron" id="toc-diachron" class="nav-link" data-scroll-target="#diachron">diachron</a></li>
+  <li><a href="#dionys" id="toc-dionys" class="nav-link" data-scroll-target="#dionys">dionys</a>
+  <ul class="collapse">
+  <li><a href="#related" id="toc-related" class="nav-link" data-scroll-target="#related">related</a></li>
+  <li><a href="#dionysisch" id="toc-dionysisch" class="nav-link" data-scroll-target="#dionysisch">dionysisch</a></li>
+  </ul></li>
+  <li><a href="#distribution" id="toc-distribution" class="nav-link" data-scroll-target="#distribution">distribution</a></li>
+  <li><a href="#embeddings" id="toc-embeddings" class="nav-link" data-scroll-target="#embeddings">embeddings</a>
+  <ul class="collapse">
+  <li><a href="#related-1" id="toc-related-1" class="nav-link" data-scroll-target="#related-1">related</a></li>
+  </ul></li>
+  <li><a href="#entropie" id="toc-entropie" class="nav-link" data-scroll-target="#entropie">entropie</a></li>
+  <li><a href="#finit--verb" id="toc-finit--verb" class="nav-link" data-scroll-target="#finit--verb">finit -verb</a></li>
+  <li><a href="#flexion" id="toc-flexion" class="nav-link" data-scroll-target="#flexion">flexion</a></li>
+  <li><a href="#flexive" id="toc-flexive" class="nav-link" data-scroll-target="#flexive">flexive</a></li>
+  <li><a href="#functional-grammar" id="toc-functional-grammar" class="nav-link" data-scroll-target="#functional-grammar">functional grammar</a></li>
+  <li><a href="#grammatik" id="toc-grammatik" class="nav-link" data-scroll-target="#grammatik">grammatik</a></li>
+  <li><a href="#hermeneutik" id="toc-hermeneutik" class="nav-link" data-scroll-target="#hermeneutik">hermeneutik</a>
+  <ul class="collapse">
+  <li><a href="#hermeneutischer-zirkel" id="toc-hermeneutischer-zirkel" class="nav-link" data-scroll-target="#hermeneutischer-zirkel">hermeneutischer zirkel</a></li>
+  </ul></li>
+  <li><a href="#hilfs--verb" id="toc-hilfs--verb" class="nav-link" data-scroll-target="#hilfs--verb">hilfs -verb</a></li>
+  <li><a href="#hilfs--verb-1" id="toc-hilfs--verb-1" class="nav-link" data-scroll-target="#hilfs--verb-1">hilfs -verb</a></li>
+  <li><a href="#homologie" id="toc-homologie" class="nav-link" data-scroll-target="#homologie">homologie</a></li>
+  <li><a href="#hyperlink" id="toc-hyperlink" class="nav-link" data-scroll-target="#hyperlink">hyperlink</a>
+  <ul class="collapse">
+  <li><a href="#related-2" id="toc-related-2" class="nav-link" data-scroll-target="#related-2">related</a></li>
+  <li><a href="#hypertext" id="toc-hypertext" class="nav-link" data-scroll-target="#hypertext">hypertext</a></li>
+  </ul></li>
+  <li><a href="#imprint" id="toc-imprint" class="nav-link" data-scroll-target="#imprint">imprint:</a></li>
+  <li><a href="#infinit--verb" id="toc-infinit--verb" class="nav-link" data-scroll-target="#infinit--verb">infinit -verb</a></li>
+  <li><a href="#infinit--verb-1" id="toc-infinit--verb-1" class="nav-link" data-scroll-target="#infinit--verb-1">infinit -verb</a></li>
+  <li><a href="#kohärenz" id="toc-kohärenz" class="nav-link" data-scroll-target="#kohärenz">kohärenz</a></li>
+  <li><a href="#kohäsion" id="toc-kohäsion" class="nav-link" data-scroll-target="#kohäsion">kohäsion</a></li>
+  <li><a href="#kongruenz" id="toc-kongruenz" class="nav-link" data-scroll-target="#kongruenz">kongruenz</a></li>
+  <li><a href="#konnektoren." id="toc-konnektoren." class="nav-link" data-scroll-target="#konnektoren.">konnektoren.</a></li>
+  <li><a href="#konstituenten" id="toc-konstituenten" class="nav-link" data-scroll-target="#konstituenten">konstituenten</a></li>
+  <li><a href="#kontinguität" id="toc-kontinguität" class="nav-link" data-scroll-target="#kontinguität">kontinguität</a></li>
+  <li><a href="#konvergenz" id="toc-konvergenz" class="nav-link" data-scroll-target="#konvergenz">konvergenz</a></li>
+  <li><a href="#kopula--verb" id="toc-kopula--verb" class="nav-link" data-scroll-target="#kopula--verb">kopula -verb</a></li>
+  <li><a href="#lexemklasse" id="toc-lexemklasse" class="nav-link" data-scroll-target="#lexemklasse">lexemklasse</a></li>
+  <li><a href="#lokution" id="toc-lokution" class="nav-link" data-scroll-target="#lokution">lokution</a></li>
+  <li><a href="#lokutionäre" id="toc-lokutionäre" class="nav-link" data-scroll-target="#lokutionäre">lokutionäre</a></li>
+  <li><a href="#illokutionäre" id="toc-illokutionäre" class="nav-link" data-scroll-target="#illokutionäre">illokutionäre</a></li>
+  <li><a href="#perlokutionäre" id="toc-perlokutionäre" class="nav-link" data-scroll-target="#perlokutionäre">perlokutionäre</a></li>
+  <li><a href="#macht" id="toc-macht" class="nav-link" data-scroll-target="#macht">macht</a></li>
+  <li><a href="#modal--verb" id="toc-modal--verb" class="nav-link" data-scroll-target="#modal--verb">modal -verb</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">model</a>
+  <ul class="collapse">
+  <li><a href="#related-3" id="toc-related-3" class="nav-link" data-scroll-target="#related-3">related</a></li>
+  </ul></li>
+  <li><a href="#objekt" id="toc-objekt" class="nav-link" data-scroll-target="#objekt">objekt</a></li>
+  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value">p-value</a></li>
+  <li><a href="#chisq.test-output-object" id="toc-chisq.test-output-object" class="nav-link" data-scroll-target="#chisq.test-output-object">chisq.test() output object</a></li>
+  <li><a href="#phonetik-schreibkonventionen." id="toc-phonetik-schreibkonventionen." class="nav-link" data-scroll-target="#phonetik-schreibkonventionen.">phonetik, schreibkonventionen.</a></li>
+  <li><a href="#phorisch" id="toc-phorisch" class="nav-link" data-scroll-target="#phorisch">phorisch</a></li>
+  <li><a href="#anaphorisch" id="toc-anaphorisch" class="nav-link" data-scroll-target="#anaphorisch">anaphorisch</a></li>
+  <li><a href="#kataphorisch" id="toc-kataphorisch" class="nav-link" data-scroll-target="#kataphorisch">kataphorisch</a></li>
+  <li><a href="#phrase" id="toc-phrase" class="nav-link" data-scroll-target="#phrase">phrase</a></li>
+  <li><a href="#phrasenkopf" id="toc-phrasenkopf" class="nav-link" data-scroll-target="#phrasenkopf">phrasenkopf</a></li>
+  <li><a href="#positivismus" id="toc-positivismus" class="nav-link" data-scroll-target="#positivismus">positivismus</a></li>
+  <li><a href="#prädikat" id="toc-prädikat" class="nav-link" data-scroll-target="#prädikat">prädikat</a></li>
+  <li><a href="#pro-formen" id="toc-pro-formen" class="nav-link" data-scroll-target="#pro-formen">pro-formen</a></li>
+  <li><a href="#pronomina" id="toc-pronomina" class="nav-link" data-scroll-target="#pronomina">pronomina</a></li>
+  <li><a href="#pronominaladverbien" id="toc-pronominaladverbien" class="nav-link" data-scroll-target="#pronominaladverbien">pronominaladverbien</a></li>
+  <li><a href="#processability-theory-pt" id="toc-processability-theory-pt" class="nav-link" data-scroll-target="#processability-theory-pt">processability theory, PT</a></li>
+  <li><a href="#rektion" id="toc-rektion" class="nav-link" data-scroll-target="#rektion">rektion</a></li>
+  <li><a href="#rekurrenz" id="toc-rekurrenz" class="nav-link" data-scroll-target="#rekurrenz">rekurrenz</a></li>
+  <li><a href="#rhema" id="toc-rhema" class="nav-link" data-scroll-target="#rhema">rhema</a></li>
+  <li><a href="#satzglieder" id="toc-satzglieder" class="nav-link" data-scroll-target="#satzglieder">satzglieder</a></li>
+  <li><a href="#satzgliedfunktion" id="toc-satzgliedfunktion" class="nav-link" data-scroll-target="#satzgliedfunktion">satzgliedfunktion</a></li>
+  <li><a href="#subjekt-objekt-prädikativ" id="toc-subjekt-objekt-prädikativ" class="nav-link" data-scroll-target="#subjekt-objekt-prädikativ">subjekt, objekt, prädikativ</a></li>
+  <li><a href="#subjekt" id="toc-subjekt" class="nav-link" data-scroll-target="#subjekt">subjekt</a></li>
+  <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution">substitution</a></li>
+  <li><a href="#syllogismus" id="toc-syllogismus" class="nav-link" data-scroll-target="#syllogismus">syllogismus</a></li>
+  <li><a href="#synkretismus" id="toc-synkretismus" class="nav-link" data-scroll-target="#synkretismus">synkretismus</a></li>
+  <li><a href="#syntaktische-kategorie-wortart" id="toc-syntaktische-kategorie-wortart" class="nav-link" data-scroll-target="#syntaktische-kategorie-wortart">syntaktische kategorie (wortart)</a></li>
+  <li><a href="#tautologie" id="toc-tautologie" class="nav-link" data-scroll-target="#tautologie">tautologie</a></li>
+  <li><a href="#thema" id="toc-thema" class="nav-link" data-scroll-target="#thema">thema</a></li>
+  <li><a href="#rhema-1" id="toc-rhema-1" class="nav-link" data-scroll-target="#rhema-1">rhema</a></li>
+  <li><a href="#valenz--verb" id="toc-valenz--verb" class="nav-link" data-scroll-target="#valenz--verb">valenz -verb</a></li>
+  <li><a href="#vektor" id="toc-vektor" class="nav-link" data-scroll-target="#vektor">vektor</a></li>
+  <li><a href="#verbpartikel" id="toc-verbpartikel" class="nav-link" data-scroll-target="#verbpartikel">verbpartikel</a></li>
+  <li><a href="#vollverb" id="toc-vollverb" class="nav-link" data-scroll-target="#vollverb">vollverb</a></li>
+  <li><a href="#vorfeldtest" id="toc-vorfeldtest" class="nav-link" data-scroll-target="#vorfeldtest">vorfeldtest</a></li>
+  <li><a href="#wiener-schule" id="toc-wiener-schule" class="nav-link" data-scroll-target="#wiener-schule">wiener schule</a></li>
+  <li><a href="#wortart" id="toc-wortart" class="nav-link" data-scroll-target="#wortart">wortart</a>
+  <ul class="collapse">
+  <li><a href="#lexikalisch" id="toc-lexikalisch" class="nav-link" data-scroll-target="#lexikalisch">lexikalisch</a></li>
+  <li><a href="#syntaktisch" id="toc-syntaktisch" class="nav-link" data-scroll-target="#syntaktisch">syntaktisch</a></li>
+  </ul></li>
+  <li><a href="#zipfs-law" id="toc-zipfs-law" class="nav-link" data-scroll-target="#zipfs-law">zipfs law</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="glossar.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -247,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="snc">snc</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/SPUND-LX/play/quarto/start/_ul-md/GLOSSAR"</code></pre>
+<pre><code>[1] "/__w/SPUND-LX/SPUND-LX/play/quarto/start/_ul-md/GLOSSAR"</code></pre>
 </div>
 </div>
 <p>1</p>
@@ -260,57 +398,530 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dummy-h1" class="level1">
 <h1>dummy h1</h1>
-<p>GIT_TOP: /SPUND-LX/play/quarto/start/_ul-md/GLOSSAR</p>
+<p>GIT_TOP: /__w/SPUND-LX/SPUND-LX/play/quarto/start/_ul-md/GLOSSAR</p>
+</section>
+<section id="advance." class="level1">
+<h1>advance.</h1>
+<p>vorschuszzahlung</p>
+</section>
+<section id="adverbial" class="level1">
+<h1>adverbial</h1>
+<p>funktion von idr freien, nicht vom verb geforderten nicht valenzbestimmten satzgliedern (angaben)</p>
+</section>
+<section id="alphabet" class="level1">
+<h1>alphabet</h1>
+<p>a common way of segmenting</p>
+</section>
+<section id="ambigue" class="level1">
+<h1>AMBIGUE</h1>
+<ol start="8" type="a">
+<li>rechnet <a href="">mit dem taschenrechner</a></li>
+</ol>
+<ul>
+<li>in fig: präpositionalobjekt
+<ul>
+<li>keine adverbialphrase</li>
+</ul></li>
+</ul>
+</section>
+<section id="antezedenz" class="level1">
+<h1>antezedenz</h1>
+<ul>
+<li>vorhergehendes (token, unit, item)</li>
+</ul>
+</section>
+<section id="apoll" class="level1">
+<h1>apoll</h1>
+<section id="apollinisch" class="level2">
+<h2 class="anchored" data-anchor-id="apollinisch">apollinisch</h2>
+</section>
+</section>
+<section id="aspect" class="level1">
+<h1>aspect</h1>
+<ul>
+<li>temporal verortung</li>
+</ul>
+</section>
+<section id="asynchron" class="level1">
+<h1>asynchron</h1>
+</section>
+<section id="diachron" class="level1">
+<h1>diachron</h1>
+</section>
+<section id="dionys" class="level1">
+<h1>dionys</h1>
+<section id="related" class="level2">
+<h2 class="anchored" data-anchor-id="related">related</h2>
+<p><a href="#apoll">apoll</a></p>
+</section>
+<section id="dionysisch" class="level2">
+<h2 class="anchored" data-anchor-id="dionysisch">dionysisch</h2>
+</section>
+</section>
+<section id="distribution" class="level1">
+<h1>distribution</h1>
+<p>reihenfolge und abfolge von wortgruppen (yoda) (l-r dislocation)</p>
+</section>
+<section id="embeddings" class="level1">
+<h1>embeddings</h1>
+<section id="related-1" class="level2">
+<h2 class="anchored" data-anchor-id="related-1">related</h2>
+<p>#vektor</p>
+<p>[<a href="#vektor">vektor</a>] yes</p>
+</section>
+</section>
+<section id="entropie" class="level1">
+<h1>entropie</h1>
+</section>
+<section id="finit--verb" class="level1">
+<h1>finit -verb</h1>
+<p>trägt person und numerus markierung</p>
+</section>
+<section id="flexion" class="level1">
+<h1>flexion</h1>
+</section>
+<section id="flexive" class="level1">
+<h1>flexive</h1>
+</section>
+<section id="functional-grammar" class="level1">
+<h1>functional grammar</h1>
+<p>Lexical-Functional Grammar. [[LFG]] is a unification grammar, the most prominent characteristic of which is that of the unifica- tion of features. Put simply, the process of feature unification ensures that the different parts that constitute a sentence do actually fit togethe</p>
+<p>MLA 9th Edition (Modern Language Assoc.) Pienemann, Manfred. Cross-Linguistic Aspects of Processability Theory. John Benjamins Publishing Co, 2005.</p>
+<p>APA 7th Edition (American Psychological Assoc.) Pienemann, M. (2005). Cross-linguistic Aspects of Processability Theory. John Benjamins Publishing Co.</p>
+</section>
+<section id="grammatik" class="level1">
+<h1>grammatik</h1>
+<ul>
+<li><p>regelhaft bzw. analogisch rekur. eigensch. baumuster einer sprache</p></li>
+<li><p>beschreibungen d.&nbsp;muster zu didakt., normativen, wissensch. zwecken</p></li>
+<li><p>sprachtheorie, gesamtheit d.&nbsp;wiss. annahmen hinter einer sprachbeschreibung —&gt; desktipriv</p>
+<ul>
+<li>normativ: verb an zweiter stelle</li>
+<li>genauer: auch ausnahmen</li>
+</ul></li>
+</ul>
+<p>metzler, lexikon sprache</p>
+</section>
+<section id="hermeneutik" class="level1">
+<h1>hermeneutik</h1>
+<section id="hermeneutischer-zirkel" class="level2">
+<h2 class="anchored" data-anchor-id="hermeneutischer-zirkel">hermeneutischer zirkel</h2>
+</section>
+</section>
+<section id="hilfs--verb" class="level1">
+<h1>hilfs -verb</h1>
+</section>
+<section id="hilfs--verb-1" class="level1">
+<h1>hilfs -verb</h1>
+<p>bildung mehrteiliger verbformen nimmt best. infinite verbformen zu sich statusrektion hans hat geschlafen</p>
+</section>
+<section id="homologie" class="level1">
+<h1>homologie</h1>
+</section>
+<section id="hyperlink" class="level1">
+<h1>hyperlink</h1>
+<section id="related-2" class="level2">
+<h2 class="anchored" data-anchor-id="related-2">related</h2>
+<p><a href="#intertext">intertext</a></p>
+</section>
+<section id="hypertext" class="level2">
+<h2 class="anchored" data-anchor-id="hypertext">hypertext</h2>
+</section>
+</section>
+<section id="imprint" class="level1">
+<h1>imprint:</h1>
+<p>sub verlag</p>
+</section>
+<section id="infinit--verb" class="level1">
+<h1>infinit -verb</h1>
+</section>
+<section id="infinit--verb-1" class="level1">
+<h1>infinit -verb</h1>
+<p>infinitiv, partizip keine kasus, numerus markierung</p>
+</section>
+<section id="kohärenz" class="level1">
+<h1>kohärenz</h1>
+</section>
+<section id="kohäsion" class="level1">
+<h1>kohäsion</h1>
+</section>
+<section id="kongruenz" class="level1">
+<h1>kongruenz</h1>
+<p>subjekt-verb</p>
+<ul>
+<li><p>er<a href="">3.P.Sg.</a> leg-t<a href="">3.P.Sg.</a> das amt nieder genus, numerus, kasus</p></li>
+<li><p>sie nahmen sein-e <a href="">FemSgAkk</a> wahl <a href="">FemSgAkk</a> an</p></li>
+</ul>
+</section>
+<section id="konnektoren." class="level1">
+<h1>konnektoren.</h1>
+</section>
+<section id="konstituenten" class="level1">
+<h1>konstituenten</h1>
+<p>wortgruppen</p>
+</section>
+<section id="kontinguität" class="level1">
+<h1>kontinguität</h1>
+</section>
+<section id="konvergenz" class="level1">
+<h1>konvergenz</h1>
+</section>
+<section id="kopula--verb" class="level1">
+<h1>kopula -verb</h1>
+<p>… die schauspielerin war</p>
+<ul>
+<li><p>funktion = ist gleich</p></li>
+<li><p>kein hilfsverb, kein vollverb?</p></li>
+</ul>
+</section>
+<section id="lexemklasse" class="level1">
+<h1>lexemklasse</h1>
+<p>gruppe von lexikalischen wörtern mit gemeinsamen grammatischen eigenschaften und möglichen flexionsformen</p>
+</section>
+<section id="lokution" class="level1">
+<h1>lokution</h1>
+<p>akte:</p>
+</section>
+<section id="lokutionäre" class="level1">
+<h1>lokutionäre</h1>
+</section>
+<section id="illokutionäre" class="level1">
+<h1>illokutionäre</h1>
+</section>
+<section id="perlokutionäre" class="level1">
+<h1>perlokutionäre</h1>
+</section>
+<section id="macht" class="level1">
+<h1>macht</h1>
+<ul>
+<li>als -anwesenheit am ort der entscheidung über dringliches. (marx/heidegger/sloterdijk poetik frankfurt s.177)
+<ul>
+<li>arbeit, hermeneutik der (marx) als -passage durchs reich der notwendigkeit in das der freiheit-
+<ul>
+<li>entschlossenheit zu schwere (heidegger) -als durchgang durch die vereigentlichung in die gelassenheit-</li>
+</ul></li>
+</ul></li>
+<li></li>
+</ul>
+</section>
+<section id="modal--verb" class="level1">
+<h1>modal -verb</h1>
+</section>
+<section id="model" class="level1">
+<h1>model</h1>
+<section id="related-3" class="level2">
+<h2 class="anchored" data-anchor-id="related-3">related</h2>
+<ul>
+<li><a href="#embeddings">embeddings</a>, <a href="#vektor">vektor</a>, <a href="#training">training</a></li>
+</ul>
+</section>
+</section>
+<section id="objekt" class="level1">
+<h1>objekt</h1>
+<p>NP-ergänzung im GEN/DAT/AKK PP ergänzung</p>
+</section>
+<section id="p-value" class="level1">
+<h1>p-value</h1>
+<p>Chi-Square Test:</p>
+<p>The chi-square test is used to determine whether there is a significant association between categorical variables. It compares the observed frequencies in a contingency table (cross-tabulation) with the expected frequencies under the null hypothesis. The null hypothesis states that there is no association between the variables. P-Value:</p>
+<p>The p-value represents the probability of observing a test statistic (such as the chi-square statistic) as extreme as the one obtained, assuming the null hypothesis is true. In other words, it tells us how likely it is to get the observed results purely by chance. Smaller p-values indicate stronger evidence against the null hypothesis.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">give</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">236</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">make</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">374</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">take</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">391</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chisq.test-output-object" class="level1">
+<h1>chisq.test() output object</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xt6 \<span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">structure</span>(<span class="fu">list</span>(<span class="at">statistic =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">X-squared</span><span class="st">`</span> <span class="ot">=</span> <span class="fl">0.39064505113720882</span>), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">parameter =</span> <span class="fu">c</span>(<span class="at">df =</span> <span class="dv">2</span>L), <span class="at">p.value =</span> <span class="fl">0.82256931563221969</span>, <span class="at">method =</span> <span class="st">"Pearson's Chi-squared test"</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">data.name =</span> <span class="st">"t6"</span>, <span class="at">observed =</span> <span class="fu">structure</span>(<span class="fu">c</span>(<span class="dv">31</span>L, <span class="dv">42</span>L, <span class="dv">47</span>L, <span class="dv">236</span>L, </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dv">374</span>L, <span class="dv">391</span>L), <span class="at">dim =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">dimnames =</span> <span class="fu">structure</span>(<span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"give"</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">"make"</span>, <span class="st">"take"</span>), <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>)), <span class="at">names =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">""</span>)), <span class="at">class =</span> <span class="st">"table"</span>), </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">expected =</span> <span class="fu">structure</span>(<span class="fu">c</span>(<span class="fl">28.581623550401428</span>, <span class="fl">44.531668153434431</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fl">46.886708296164137</span>, <span class="fl">238.41837644959858</span>, <span class="fl">371.46833184656555</span>, </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fl">391.11329170383584</span>), <span class="at">dim =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">dimnames =</span> <span class="fu">structure</span>(<span class="fu">list</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"give"</span>, <span class="st">"make"</span>, <span class="st">"take"</span>), <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>)), <span class="at">names =</span> <span class="fu">c</span>(<span class="st">""</span>, </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">""</span>))), <span class="at">residuals =</span> <span class="fu">structure</span>(<span class="fu">c</span>(<span class="fl">0.45235610671276288</span>, <span class="sc">-</span><span class="fl">0.37937813434494172</span>, </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fl">0.016545246289906376</span>, <span class="sc">-</span><span class="fl">0.1566224603259733</span>, <span class="fl">0.13135477981446289</span>, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.0057285778663518283</span>), <span class="at">dim =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">class =</span> <span class="st">"table"</span>, <span class="at">dimnames =</span> <span class="fu">structure</span>(<span class="fu">list</span>(</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"give"</span>, <span class="st">"make"</span>, <span class="st">"take"</span>), <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>)), <span class="at">names =</span> <span class="fu">c</span>(<span class="st">""</span>, </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">""</span>))), <span class="at">stdres =</span> <span class="fu">structure</span>(<span class="fu">c</span>(<span class="fl">0.54845385836836913</span>, <span class="sc">-</span><span class="fl">0.50625148697591205</span>, </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fl">0.022431145808000777</span>, <span class="sc">-</span><span class="fl">0.54845385836837157</span>, <span class="fl">0.50625148697591638</span>, </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.022431145807996558</span>), <span class="at">dim =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">class =</span> <span class="st">"table"</span>, <span class="at">dimnames =</span> <span class="fu">structure</span>(<span class="fu">list</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"give"</span>, <span class="st">"make"</span>, <span class="st">"take"</span>), <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>)), <span class="at">names =</span> <span class="fu">c</span>(<span class="st">""</span>, </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">""</span>)))), <span class="at">class =</span> <span class="st">"htest"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="phonetik-schreibkonventionen." class="level1">
+<h1>phonetik, schreibkonventionen.</h1>
+<p><em>graphem:</em> schriftliche abbildung eines lautes. in &lt;&gt; klammern. &lt;e&gt; bezeichnet das, was in unterschiedlichen lautformen gehört, als in diesem fall <em>buchstabe</em> &lt;e&gt; niedergeschrieben wird. /e/ ist in diesem zusammenhang das <em>phonem</em> und bezeichnet alle arten laute, die wie &lt;e&gt; niedergeschrieben sind und als verschiedene —&gt; <em>phone:</em> <a href="">e</a> ausgesprochen</p>
+</section>
+<section id="phorisch" class="level1">
+<h1>phorisch</h1>
+</section>
+<section id="anaphorisch" class="level1">
+<h1>anaphorisch</h1>
+</section>
+<section id="kataphorisch" class="level1">
+<h1>kataphorisch</h1>
+</section>
+<section id="phrase" class="level1">
+<h1>phrase</h1>
+<p>strukturelle einheit eines/mehrerer wörter</p>
+</section>
+<section id="phrasenkopf" class="level1">
+<h1>phrasenkopf</h1>
+<p>bindet die restlichen elemente einer phrase an sich und bestimmt die synt. kategorie d.&nbsp;phrase und deren grammatische eigenschaften</p>
+</section>
+<section id="positivismus" class="level1">
+<h1>positivismus</h1>
+<ul>
+<li>erkenntnistheorie</li>
+</ul>
+</section>
+<section id="prädikat" class="level1">
+<h1>prädikat</h1>
+<p>einteilig (synthetisch, 1 vollverb</p>
+</section>
+<section id="pro-formen" class="level1">
+<h1>pro-formen</h1>
+</section>
+<section id="pronomina" class="level1">
+<h1>pronomina</h1>
+</section>
+<section id="pronominaladverbien" class="level1">
+<h1>pronominaladverbien</h1>
+</section>
+<section id="processability-theory-pt" class="level1">
+<h1>processability theory, PT</h1>
+<ul>
+<li>pienemann 2005</li>
+</ul>
+</section>
+<section id="rektion" class="level1">
+<h1>rektion</h1>
+<p>kasusrektion</p>
+<ul>
+<li><p>sie nahmen die wahl trotz <a href="">allem</a>(dat) nicht an verbvalenz</p></li>
+<li><p>sie <a href="">nahmen</a> <a href="">sein-e</a>(FemSgAkk) <a href="">wahl</a>(FemSgAkk) an</p></li>
+</ul>
+</section>
+<section id="rekurrenz" class="level1">
+<h1>rekurrenz</h1>
+</section>
+<section id="rhema" class="level1">
+<h1>rhema</h1>
+</section>
+<section id="satzglieder" class="level1">
+<h1>satzglieder</h1>
+<p>die phrasen, die syntaktische beziehungen mit dem verb eingehen</p>
+<ul>
+<li>vorfeldtest: wenn ja, dann satzglied</li>
+</ul>
+</section>
+<section id="satzgliedfunktion" class="level1">
+<h1>satzgliedfunktion</h1>
+<p>funktion, rolle der satzglieder im satz</p>
+</section>
+<section id="subjekt-objekt-prädikativ" class="level1">
+<h1>subjekt, objekt, prädikativ</h1>
+<p>funktionen für die vom verb geforderten valenzbestimmten satzglieder (ergänzungen)</p>
+</section>
+<section id="subjekt" class="level1">
+<h1>subjekt</h1>
+<p>NP ergänzung im nominativ</p>
+</section>
+<section id="substitution" class="level1">
+<h1>substitution</h1>
+</section>
+<section id="syllogismus" class="level1">
+<h1>syllogismus</h1>
+<ul>
+<li><p>barthes, p26</p></li>
+<li><p>a b c logik</p></li>
+</ul>
+</section>
+<section id="synkretismus" class="level1">
+<h1>synkretismus</h1>
+<p>leg<a href="">t</a> ambiguität:</p>
+<ul>
+<li><p>3.P.Sg.</p></li>
+<li><p>2.P.Pl.</p></li>
+</ul>
+</section>
+<section id="syntaktische-kategorie-wortart" class="level1">
+<h1>syntaktische kategorie (wortart)</h1>
+<p>tatsächlicher (syntaktischer) gebrauch von syntaktischen wörtern (wortformen)</p>
+</section>
+<section id="tautologie" class="level1">
+<h1>tautologie</h1>
+<p>something explaining itself by itself</p>
+</section>
+<section id="thema" class="level1">
+<h1>thema</h1>
+</section>
+<section id="rhema-1" class="level1">
+<h1>rhema</h1>
+</section>
+<section id="valenz--verb" class="level1">
+<h1>valenz -verb</h1>
+<p>anzahl und art der satzglieder, die ein vvollverb benötigt für einen gr. vollst. satz</p>
+</section>
+<section id="vektor" class="level1">
+<h1>vektor</h1>
+<p>#vektor</p>
+</section>
+<section id="verbpartikel" class="level1">
+<h1>verbpartikel</h1>
+<p>Verbpartikel: betont, trennbar; formgleich mit Präpositionen, Adverbien und Adjektiven (durch-, über-, unter-, um-, hinter-, wieder-; hinauf, dahin, zusammen, auseinander; frei, still, krank, …)</p>
+</section>
+<section id="vollverb" class="level1">
+<h1>vollverb</h1>
+<p>hat lex. bedeutung, nimmt ergänzungen zu sich (valenz/rektion) kann im satz finit oder infinit auftreten</p>
+</section>
+<section id="vorfeldtest" class="level1">
+<h1>vorfeldtest</h1>
+<p>für satzglieder: ins vorfeld (vor das finite verb stellen), wenn satz okay, dann ist x ein satzglied, wenn nicht</p>
+</section>
+<section id="wiener-schule" class="level1">
+<h1>wiener schule</h1>
+<p><a href="https://de.wikipedia.org/wiki/Wiener_Schule_der_Kunstgeschichte">[https://de.wikipedia.org/wiki/Wiener_Schule_der_Kunstgeschichte]</a></p>
+<ul>
+<li><p>sammelbegriff in wien ab vormärz entwickelte kunsthistorische methoden</p></li>
+<li><p>begriffsprägung 1920 otto benesch</p></li>
+<li><p>vertreter:</p>
+<ul>
+<li>rudolf eitelberger,</li>
+<li>moritz tausing
+<ul>
+<li>zweckfreie wissenschaft</li>
+<li>trennung v. kunstgeschichte u. ästhetik</li>
+</ul></li>
+<li>franz wickhoff/alois riegl
+<ul>
+<li>methoden vergleichende stilanalyse</li>
+<li>ausschaltung jeglichen pers. geschmacksurteils</li>
+<li>neubewertung der spätantike</li>
+<li>anhänger d.&nbsp;positivismus, ablehnung inhaltl. auseinandersetzung, konzentration auf formalen bestand d.&nbsp;kunstwerks</li>
+</ul></li>
+<li>max dvorak</li>
+<li>hans tietze</li>
+<li>otto benesch</li>
+<li>julius v. schlosser, 1922
+<ul>
+<li>klassisch-humanist. gelehrte</li>
+<li>sedlmayr (ns)</li>
+<li>otto pächt</li>
+<li>ernst gombrich</li>
+<li>kunstwissensch. strukturalismus
+<ul>
+<li>meyer schapiro: neue wiener schule</li>
+</ul></li>
+</ul></li>
+<li>ideologische kunstgeschichte
+<ul>
+<li>josef strzygowski</li>
+<li>spaltung, räumliche trennung d.&nbsp;institute, zwei schulen</li>
+<li>zusehends skurrile, rassistische züge (orient)</li>
+</ul></li>
+<li>synthese:
+<ul>
+<li>1946 karl maria swoboda</li>
+<li>werner hofmann
+<ul>
+<li></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="wortart" class="level1">
+<h1>wortart</h1>
+<section id="lexikalisch" class="level2">
+<h2 class="anchored" data-anchor-id="lexikalisch">lexikalisch</h2>
+<p>gruppe, in die ein wort nach dem stamm eingeordnet wird</p>
+</section>
+<section id="syntaktisch" class="level2">
+<h2 class="anchored" data-anchor-id="syntaktisch">syntaktisch</h2>
+<p>gruppe kategorie der syntaktischen funktion (PoS)</p>
+</section>
+</section>
+<section id="zipfs-law" class="level1">
+<h1>zipfs law</h1>
 <div class="display-none">
 <section id="a" class="level2">
 <h2 class="anchored" data-anchor-id="a">A</h2>
-<section id="alphabet" class="level3">
-<h3 class="anchored" data-anchor-id="alphabet">alphabet</h3>
+<section id="alphabet-1" class="level3">
+<h3 class="anchored" data-anchor-id="alphabet-1">alphabet</h3>
 <p>a common way of segmenting</p>
 </section>
-<section id="apoll" class="level3">
-<h3 class="anchored" data-anchor-id="apoll">apoll</h3>
-<section id="apollinisch" class="level4">
-<h4 class="anchored" data-anchor-id="apollinisch">apollinisch</h4>
+<section id="apoll-1" class="level3">
+<h3 class="anchored" data-anchor-id="apoll-1">apoll</h3>
+<section id="apollinisch-1" class="level4">
+<h4 class="anchored" data-anchor-id="apollinisch-1">apollinisch</h4>
 </section>
 </section>
-<section id="asynchron" class="level3">
-<h3 class="anchored" data-anchor-id="asynchron">asynchron</h3>
+<section id="asynchron-1" class="level3">
+<h3 class="anchored" data-anchor-id="asynchron-1">asynchron</h3>
 </section>
 </section>
 <section id="d" class="level2">
 <h2 class="anchored" data-anchor-id="d">D</h2>
-<section id="diachron" class="level3">
-<h3 class="anchored" data-anchor-id="diachron">diachron</h3>
+<section id="diachron-1" class="level3">
+<h3 class="anchored" data-anchor-id="diachron-1">diachron</h3>
 </section>
-<section id="dionys" class="level3">
-<h3 class="anchored" data-anchor-id="dionys">dionys</h3>
-<section id="dionysisch" class="level4">
-<h4 class="anchored" data-anchor-id="dionysisch">dionysisch</h4>
+<section id="dionys-1" class="level3">
+<h3 class="anchored" data-anchor-id="dionys-1">dionys</h3>
+<section id="dionysisch-1" class="level4">
+<h4 class="anchored" data-anchor-id="dionysisch-1">dionysisch</h4>
 </section>
 </section>
 </section>
 <section id="e" class="level2">
 <h2 class="anchored" data-anchor-id="e">E</h2>
-<section id="embeddings" class="level3">
-<h3 class="anchored" data-anchor-id="embeddings">embeddings</h3>
+<section id="embeddings-1" class="level3">
+<h3 class="anchored" data-anchor-id="embeddings-1">embeddings</h3>
 </section>
-<section id="entropie" class="level3">
-<h3 class="anchored" data-anchor-id="entropie">entropie</h3>
+<section id="entropie-1" class="level3">
+<h3 class="anchored" data-anchor-id="entropie-1">entropie</h3>
 </section>
 </section>
 <section id="h" class="level2">
 <h2 class="anchored" data-anchor-id="h">H</h2>
-<section id="hermeneutik" class="level3">
-<h3 class="anchored" data-anchor-id="hermeneutik">hermeneutik</h3>
-<section id="hermeneutischer-zirkel" class="level4">
-<h4 class="anchored" data-anchor-id="hermeneutischer-zirkel">hermeneutischer zirkel</h4>
+<section id="hermeneutik-1" class="level3">
+<h3 class="anchored" data-anchor-id="hermeneutik-1">hermeneutik</h3>
+<section id="hermeneutischer-zirkel-1" class="level4">
+<h4 class="anchored" data-anchor-id="hermeneutischer-zirkel-1">hermeneutischer zirkel</h4>
 </section>
 </section>
-<section id="hyperlink" class="level3">
-<h3 class="anchored" data-anchor-id="hyperlink">hyperlink</h3>
-<section id="related" class="level4">
-<h4 class="anchored" data-anchor-id="related">related</h4>
+<section id="hyperlink-1" class="level3">
+<h3 class="anchored" data-anchor-id="hyperlink-1">hyperlink</h3>
+<section id="related-4" class="level4">
+<h4 class="anchored" data-anchor-id="related-4">related</h4>
 <ul>
 <li><a href="#intertext">intertext</a></li>
 </ul>
@@ -325,10 +936,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="m" class="level2">
 <h2 class="anchored" data-anchor-id="m">M</h2>
-<section id="model" class="level3">
-<h3 class="anchored" data-anchor-id="model">model</h3>
-<section id="related-1" class="level4">
-<h4 class="anchored" data-anchor-id="related-1">related</h4>
+<section id="model-1" class="level3">
+<h3 class="anchored" data-anchor-id="model-1">model</h3>
+<section id="related-5" class="level4">
+<h4 class="anchored" data-anchor-id="related-5">related</h4>
 <ul>
 <li><a href="#embeddings">embeddings</a>, <a href="#vektor">vektor</a>, <a href="#training">training</a></li>
 </ul>
@@ -337,14 +948,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="s" class="level2">
 <h2 class="anchored" data-anchor-id="s">S</h2>
-<section id="synkretismus" class="level3">
-<h3 class="anchored" data-anchor-id="synkretismus">synkretismus</h3>
+<section id="synkretismus-1" class="level3">
+<h3 class="anchored" data-anchor-id="synkretismus-1">synkretismus</h3>
 </section>
 </section>
 <section id="t" class="level2">
 <h2 class="anchored" data-anchor-id="t">T</h2>
-<section id="tautologie" class="level3">
-<h3 class="anchored" data-anchor-id="tautologie">tautologie</h3>
+<section id="tautologie-1" class="level3">
+<h3 class="anchored" data-anchor-id="tautologie-1">tautologie</h3>
 <p>something explaining itself by itself</p>
 </section>
 <section id="training" class="level3">
@@ -353,14 +964,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="v" class="level2">
 <h2 class="anchored" data-anchor-id="v">V</h2>
-<section id="vektor" class="level3">
-<h3 class="anchored" data-anchor-id="vektor">vektor</h3>
+<section id="vektor-1" class="level3">
+<h3 class="anchored" data-anchor-id="vektor-1">vektor</h3>
 </section>
 </section>
 <section id="z" class="level2">
 <h2 class="anchored" data-anchor-id="z">Z</h2>
-<section id="zipfs-law" class="level3">
-<h3 class="anchored" data-anchor-id="zipfs-law">zipfs law</h3>
+<section id="zipfs-law-1" class="level3">
+<h3 class="anchored" data-anchor-id="zipfs-law-1">zipfs law</h3>
 </section>
 </section>
 </div>
