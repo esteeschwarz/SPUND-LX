@@ -42,6 +42,7 @@ jobs:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
           PLAYWRIGHT_BROWSERS_PATH: /ms-playwright/chromium-1208/chrome-linux64/chrome
       run: |
+         R -e 'tinytex::install_tinytex(bundle = "TinyTeX",version="latest")'
          quarto render lx-public/HA/sessions/ -P reload:false
          quarto render germanic/HA/drafts/ -P reload:false
          quarto render szondi/docufiction/wg-sebald/ -P reload:false
