@@ -21,6 +21,7 @@ download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg
 size<-file.info(list.files()[grep("sebaldiana.jpg",list.files())])$size
 print(size)
 #print(dlpw)
+message("dlpw: ",dlpw)
 image_available <- file.exists("sebaldiana.jpg") && file.size("sebaldiana.jpg") > 400
 ```
 
