@@ -36,7 +36,7 @@ jobs:
          cat r.json
          ls -la
          echo "should display"
-         #cat .Renviron
+         cat .Renviron
          #  quarto install tinytex
          R -e 'tinytex::install_tinytex(bundle = "TinyTeX",version="latest")'
          # in ghcr
@@ -53,6 +53,8 @@ jobs:
       env:
           DOWNLOAD_PW: ${{ secrets.DOWNLOAD_PW }}
           PLAYWRIGHT_BROWSERS_PATH: /ms-playwright/chromium-1208/chrome-linux64/chrome
+          GIT_TOP: /home/runner/work/SPUND-LX
+
       run: |
          #SHORT_SHA=$(git rev-parse --short HEAD)
          echo "render qmds..."
