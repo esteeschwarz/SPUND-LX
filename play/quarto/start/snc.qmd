@@ -77,3 +77,6 @@ testform: `r 3+4`
 - ewa.t1
 - auto anno/bib
 - init paper issue, wks.
+
+### 16247.
+- tapee.pos.wf.t1
