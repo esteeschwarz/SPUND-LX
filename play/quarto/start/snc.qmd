@@ -80,3 +80,4 @@ testform: `r 3+4`
 
 ### 16247.
 - tapee.pos.wf.t1
+- git-top not fetched, t3
