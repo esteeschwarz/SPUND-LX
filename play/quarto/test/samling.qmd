@@ -1,9 +1,9 @@
 ---
-title: "samling"
-nocite: '@*'
-bibliography: sebald.bib
-echo: false
-warnings: false
+title: "snc-tests"
+# nocite: '@*'
+# bibliography: sebald.bib
+# echo: false
+# warnings: false
 ---
 
 first collection [documenting] of materials
@@ -13,18 +13,35 @@ first collection [documenting] of materials
 16247.2
 
 ```{r, download-img}
-#| include: false
+#| include: true
+
+
 1 + 1
 cat("the upsidedown")
 dlpw<-Sys.getenv("DOWNLOAD_PW")
-download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")
-download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")
+gc<-Sys.getenv("GIT_TOP")
+# download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")
+# download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")
 #Sys.sleep(10)
 size<-file.info(list.files()[grep("sebaldiana.jpg",list.files())])$size
 print(size)
 #print(dlpw)
-message("dlpw: ",dlpw)
+if(dlpw!="")
+    message("dlpw: ",dlpw)
+message("gc: ",gc)
 image_available <- file.exists("sebaldiana.jpg") && file.size("sebaldiana.jpg") > 400
+f<-list.files(".",pattern="qmd")
+#fb<-basename(f)
+#?basename
+f2<-strsplit(f,"\\.")
+#f2
+fli<-lapply(f2,function(x){
+ h1<-paste0(x[1],".html")
+ h2<-paste0(x[1],".pdf")
+ t<-x[1]
+ cl<-paste0('<div class="flist"><ul><li>',t,' ... <a href="',h1,'">.html</a>, <a href="',h2,'">.pdf</a></li></ul></div>')    
+})
+fli<-unlist(fli)
 ```
 
 ## now alltogether
@@ -33,6 +50,7 @@ image_available <- file.exists("sebaldiana.jpg") && file.size("sebaldiana.jpg") 
 if (image_available) {
   cat("![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana}\n")
 }
+cat(fli)
 ```
 
 <!-- ![Q: Sebaldiana](sebaldiana.jpg){#fig-sebaldiana} -->
@@ -43,6 +61,7 @@ if (image_available) {
 ```{r}
 #| echo: false
 #| include: false
+#| eval: false
 t<-readLines("notes.md")
 print(t)
 ```
@@ -52,6 +71,6 @@ print(t)
 # save.image(file = predata)
 ```
 
-{{< include notes.md >}}
+<!-- {{< include notes.md >}} -->
 
 # references {#references}
