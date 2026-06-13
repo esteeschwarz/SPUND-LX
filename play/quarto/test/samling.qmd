@@ -20,6 +20,7 @@ first collection [documenting] of materials
 cat("the upsidedown")
 dlpw<-Sys.getenv("DOWNLOAD_PW")
 gc<-Sys.getenv("GIT_TOP")
+fg<-list.files(gc)
 # download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")
 # download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")
 #Sys.sleep(10)
@@ -60,10 +61,11 @@ cat(fli)
 ## Q on bricolage
 ```{r}
 #| echo: false
-#| include: false
-#| eval: false
-t<-readLines("notes.md")
-print(t)
+#| include: true
+#| eval: true
+#t<-readLines("notes.md")
+#print(t)
+print(fg)
 ```
 
 ```{r}
