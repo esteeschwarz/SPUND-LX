@@ -26,8 +26,8 @@ gc<-Sys.getenv("GIT_TOP")
 size<-file.info(list.files()[grep("sebaldiana.jpg",list.files())])$size
 print(size)
 #print(dlpw)
-if(dlpw!="")
-    message("dlpw: ",dlpw)
+# if(dlpw!="")
+#     message("dlpw: ",dlpw)
 message("gc: ",gc)
 image_available <- file.exists("sebaldiana.jpg") && file.size("sebaldiana.jpg") > 400
 f<-list.files(".",pattern="qmd")
