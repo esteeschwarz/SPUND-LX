@@ -154,11 +154,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dlpw<span class="ot">&lt;-</span><span class="fu">Sys.getenv</span>(<span class="st">"DOWNLOAD_PW"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gc<span class="ot">&lt;-</span><span class="fu">Sys.getenv</span>(<span class="st">"GIT_TOP"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&amp;pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Sys.sleep(10)</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>size<span class="ot">&lt;-</span><span class="fu">file.info</span>(<span class="fu">list.files</span>()[<span class="fu">grep</span>(<span class="st">"sebaldiana.jpg"</span>,<span class="fu">list.files</span>())])<span class="sc">$</span>size</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fg<span class="ot">&lt;-</span><span class="fu">list.files</span>(gc)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># download.file("https://ada-sub.dh-index.org/school/api/png/dinge/sebald-stable-diff-001.png","stable-diff.png")</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># download.file(sprintf("https://ids.dh-index.org/api/download?file=sebaldiana.jpg&amp;pw=%s",dlpw),extra = "-4 -v -L",method = "curl","sebaldiana.jpg")</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Sys.sleep(10)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>size<span class="ot">&lt;-</span><span class="fu">file.info</span>(<span class="fu">list.files</span>()[<span class="fu">grep</span>(<span class="st">"sebaldiana.jpg"</span>,<span class="fu">list.files</span>())])<span class="sc">$</span>size</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>numeric(0)</code></pre>
 </div>
@@ -220,8 +221,13 @@ tree … <a href="tree.html">.html</a>, <a href="tree.pdf">.pdf</a>
 <section id="q-on-bricolage" class="level2">
 <h2 class="anchored" data-anchor-id="q-on-bricolage">Q on bricolage</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># predata&lt;-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/docufiction/wg-sebald/preprocessed.RData")</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># save.image(file = predata)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "SPUND-LX"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># predata&lt;-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/szondi/docufiction/wg-sebald/preprocessed.RData")</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># save.image(file = predata)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <!-- {{< include notes.md >}} -->
 </section>
