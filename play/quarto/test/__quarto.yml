@@ -1,0 +1,11 @@
+project:
+ type: website 
+  #  html: 
+  #    theme: cosmo
+  #   #  output-file: "output/pages/004/test/index.html"
+
+  #  pdf: default
+
+ output-dir: output/pages/004/test/
+render:
+    - fast-tree.qmd
