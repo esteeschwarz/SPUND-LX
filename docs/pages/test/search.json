@@ -39,7 +39,7 @@
     "href": "samling.html#q-on-bricolage",
     "title": "snc-tests",
     "section": "Q on bricolage",
-    "text": "Q on bricolage\n\n\n[1] \"SPUND-LX\"\n\n\n\n# predata&lt;-paste0(Sys.getenv(\"GIT_TOP\"),\"/SPUND-LX/szondi/docufiction/wg-sebald/preprocessed.RData\")\n# save.image(file = predata)"
+    "text": "Q on bricolage\n\n#t&lt;-readLines(\"notes.md\")\n#print(t)\nprint(fg)\n\n[1] \"SPUND-LX\"\n\nprint(list.files(paste0(fg,\"/SPUND-LX/SPUND-LX\")))\n\ncharacter(0)\n\n\n\n# predata&lt;-paste0(Sys.getenv(\"GIT_TOP\"),\"/SPUND-LX/szondi/docufiction/wg-sebald/preprocessed.RData\")\n# save.image(file = predata)"
   },
   {
     "objectID": "tree.html",
