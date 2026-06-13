@@ -60,12 +60,13 @@ cat(fli)
 
 ## Q on bricolage
 ```{r}
-#| echo: false
+#| echo: true
 #| include: true
 #| eval: true
 #t<-readLines("notes.md")
 #print(t)
 print(fg)
+print(list.files(paste0(fg,"/SPUND-LX/SPUND-LX")))
 ```
 
 ```{r}
