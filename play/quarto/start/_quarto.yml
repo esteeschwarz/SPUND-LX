@@ -36,7 +36,7 @@ website:
             text: "ada-school (olde)"
           - href: pdfpaper/001/uwolf.qmd
             text: reference-test
-          - href: ../test/samling.qmd
+          - href: ../test/samling.html
             text: playtest
       - glossar.qmd
 
