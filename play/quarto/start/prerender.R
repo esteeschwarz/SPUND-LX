@@ -1,5 +1,7 @@
 # check system, adapt output
 s<-Sys.getenv("SYS")
+mn4<-Sys.getenv("MN4")
+mn4
 qax<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"),
 nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"),
 textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf",
@@ -9,15 +11,23 @@ LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf")) # margin note studyset
 buildmdb<-function(){
 #cloud<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/"
 nietzsche<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/nietzsche"
+nietzsche<-paste0(mn4,"/SZONDI/nietzsche")
+  nietzsche
 litKI<-paste0("~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/lit-KI")
+litKI<-paste0(mn4,"/SZONDI/lit-KI")
+  
 #stratling<-paste0(cloud,"SZONDI/strätling")
 stratling<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/strätling"
+stratling<-paste0(mn4,"/SZONDI/strätling")
 #textur<-paste0(cloud,"SZONDI/textur")
   textur<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur"
+  textur<-paste0(mn4,"/SZONDI/textur")
 #LXtech<-paste0(cloud,"COMP/LX-tech")
 #LFG<-paste0(cloud,"COMP/LFG")
 LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LX-tech"
+  LXtech<-paste0(mn4,"/COMP/LX-tech")
   LFG<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LFG"
+  LFG<-paste0(mn4,"/COMP/LFG")
 clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
   clist
   #list.files(textur)
