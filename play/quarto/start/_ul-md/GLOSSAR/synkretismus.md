@@ -1,5 +1,6 @@
 # synkretismus
-leg[t]()
+leg\[t]
+
 ambiguität:
 - 3.P.Sg.
 - 2.P.Pl.

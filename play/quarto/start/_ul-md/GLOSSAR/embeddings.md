@@ -1,4 +1,4 @@
 # embeddings
 ## related
 #vektor
-[[obslapsi/gith/quarto/start/_ul-md/GLOSSAR/vektor]] yes
+[obslapsi/gith/quarto/start/\_ul-md/GLOSSAR/vektor] yes
