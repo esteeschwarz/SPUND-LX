@@ -33,6 +33,6 @@ title-meta: ""
 print("engine on...")
 ```
 
-{{< include _ul-md/nietzsche-mdl-th.md >}}
+{{< include _ul-md/nietzsche/nietzsche-mdl-th.md >}}
 
 # references

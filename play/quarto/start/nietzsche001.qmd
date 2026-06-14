@@ -116,3 +116,5 @@ Q: wie zentral ist §125 in FW?
 
 Q: wer spricht eigentlich?
 - 
+
+{{< include _ul-md/nietzsche/16252.md >}} 
