@@ -536,7 +536,7 @@
     "href": "glossar.html#related-1",
     "title": "glossar",
     "section": "related",
-    "text": "related\n#vektor\n[obslapsi/gith/quarto/start/_ul-md/GLOSSAR/vektor] yes"
+    "text": "related\n#vektor\n[[obslapsi/gith/quarto/start/_ul-md/GLOSSAR/vektor]] complete, yes in obs\nvektor - single, no display\n[vektor] - plain, double, display obs"
   },
   {
     "objectID": "glossar.html#hermeneutischer-zirkel",
