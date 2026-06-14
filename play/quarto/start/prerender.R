@@ -57,7 +57,8 @@ mnew<-smdb(qa)
   f<-list.files(go,full.names=T,pattern=".md")
 
   gc<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/_ul-md/GLOSSAR/")
-  file.copy(f,gc,overwrite=T)
+  #file.copy(f,gc,overwrite=T)
+  # NO: obs snc self.
 
 
 return(list(qa=qa,mnew=mnew))
