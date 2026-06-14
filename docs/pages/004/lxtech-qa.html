@@ -270,10 +270,9 @@ comment
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-preference for (negative values) periphrastic over transitive causatives
+investigating the ability of LLMs to simulate human grammatical acceptability judgments
 </td>
 <td style="text-align:left;width: 4cm; ">
-Q: unclear: why is certain, that the model does not simply judge over the grammaticality of the sentences by probabilistic measures of what is present in the training data i.e.&nbsp;human judgements resp. usage patterns already? where here is the relation to (ratings), such can we not say the model prefers x% vs.&nbsp;human y% of Z
 </td>
 </tr>
 <tr>
@@ -281,9 +280,10 @@ Q: unclear: why is certain, that the model does not simply judge over the gramma
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-investigating the ability of LLMs to simulate human grammatical acceptability judgments
+preference for (negative values) periphrastic over transitive causatives
 </td>
 <td style="text-align:left;width: 4cm; ">
+Q: unclear: why is certain, that the model does not simply judge over the grammaticality of the sentences by probabilistic measures of what is present in the training data i.e.&nbsp;human judgements resp. usage patterns already? where here is the relation to (ratings), such can we not say the model prefers x% vs.&nbsp;human y% of Z
 </td>
 </tr>
 <tr>
@@ -322,7 +322,7 @@ comment
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-multiple tasks (e.g., fluency and coherence), while others are more task-specific (e.g., the success of a generated plan or the correctness of a multi-step mathematical reasoning trace
+The datasets we consider cover a wide span of properties of interest, ranging from grammaticality and toxicity to coherence, factual consistency, and verbosity,
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -332,7 +332,7 @@ multiple tasks (e.g., fluency and coherence), while others are more task-specifi
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-The datasets we consider cover a wide span of properties of interest, ranging from grammaticality and toxicity to coherence, factual consistency, and verbosity,
+multiple tasks (e.g., fluency and coherence), while others are more task-specific (e.g., the success of a generated plan or the correctness of a multi-step mathematical reasoning trace
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -579,10 +579,9 @@ comment
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-they are trained only on text prediction.3This means that the models form probabilistic expectations about the next word in a text and they use the true next word as an error signal to update their latent parameters
+The internal representations of words in these models are stored in a vector space, and the locations of these words include not just some aspects of meaning, but properties that determine how words can occur in sequence (e.g.&nbsp;syntax).
 </td>
 <td style="text-align:left;width: 4cm; ">
-#kybernetik
 </td>
 </tr>
 <tr>
@@ -590,9 +589,10 @@ they are trained only on text prediction.3This means that the models form probab
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-The internal representations of words in these models are stored in a vector space, and the locations of these words include not just some aspects of meaning, but properties that determine how words can occur in sequence (e.g.&nbsp;syntax).
+they are trained only on text prediction.3This means that the models form probabilistic expectations about the next word in a text and they use the true next word as an error signal to update their latent parameters
 </td>
 <td style="text-align:left;width: 4cm; ">
+#kybernetik
 </td>
 </tr>
 <tr>
@@ -651,7 +651,7 @@ rephrasing of his (and others’) comments on language learning – essentially 
 12
 </td>
 <td style="text-align:left;width: 7cm; ">
-helping to delineate what is possible: Could it be possible to discover hierarchy without it being built in? Could word prediction provide enough of a learning signal to acquire most of grammar? Could a computational architecture achieve competence on WHquestions without movement, or use pronouns without innate binding principles?
+In particular, we may view each model or set of modeling assumptions as a possible hypothesis about how the mind may work. Testing how well a model matches human-like behavior then provides a scientific test of that model’s assumptions. This is how, for example, the field has discovered that attentional mechanisms are important for performing well
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -661,7 +661,7 @@ helping to delineate what is possible: Could it be possible to discover hierarch
 12
 </td>
 <td style="text-align:left;width: 7cm; ">
-In particular, we may view each model or set of modeling assumptions as a possible hypothesis about how the mind may work. Testing how well a model matches human-like behavior then provides a scientific test of that model’s assumptions. This is how, for example, the field has discovered that attentional mechanisms are important for performing well
+helping to delineate what is possible: Could it be possible to discover hierarchy without it being built in? Could word prediction provide enough of a learning signal to acquire most of grammar? Could a computational architecture achieve competence on WHquestions without movement, or use pronouns without innate binding principles?
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -722,16 +722,6 @@ The fact that predictions are probabilistic is useful because it means that the 
 19
 </td>
 <td style="text-align:left;width: 7cm; ">
-The success of gradient models over deterministic rules suggests that quite a lot of language is based on gradient computation
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-19
-</td>
-<td style="text-align:left;width: 7cm; ">
 Continuity is important because it permits the models to use gradient methods – essentially a trick of calculus – to compute what direction to change all the parameters in order to decrease error the fastest.
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -743,6 +733,16 @@ Continuity is important because it permits the models to use gradient methods �
 </td>
 <td style="text-align:left;width: 7cm; ">
 prevalence of “relaxation” methods in numerical computing, where an optimization problem with hard constraints is often best solved via a nearby soft, continuous optimization problem
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+19
+</td>
+<td style="text-align:left;width: 7cm; ">
+The success of gradient models over deterministic rules suggests that quite a lot of language is based on gradient computation
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -793,6 +793,16 @@ full activation of the base when a regularly inflected form is encountered
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
+The psycholinguistic implementation of this hypothesis takes the form of socalled “dual-mechanism” models, assuming two innately distinct systems, each incorporating a specific processing style: The default system parses regular forms into their constituent morphemes, whereas the memory system stores and retrieves all exceptions to the default as undecomposed whole words
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
 certain ERP components are associated with certain linguistic processes, so that the components may be used as indicators for particular processes.
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -804,16 +814,6 @@ certain ERP components are associated with certain linguistic processes, so that
 </td>
 <td style="text-align:left;width: 7cm; ">
 dual-mechanism model of Ullman and colleagues assumes that regular forms are parsed in frontal areas, whereas irregular forms are retrieved from declarative memory in parietal areas
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-3
-</td>
-<td style="text-align:left;width: 7cm; ">
-The psycholinguistic implementation of this hypothesis takes the form of socalled “dual-mechanism” models, assuming two innately distinct systems, each incorporating a specific processing style: The default system parses regular forms into their constituent morphemes, whereas the memory system stores and retrieves all exceptions to the default as undecomposed whole words
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -896,7 +896,7 @@ Our corpus-based study is grounded in the approach of Distributional Semantics, 
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-The distributional information is collected by examination of co-occurring words, structures, or relations. The sum of this contextual information can be viewed as a kind of mold, a container that shapes the meaning of the word in a characteristic fashion.
+we distinguish between three different semantic compound types. The first type is traditionally referred to as a determinative (or endocentric) compound (cf.&nbsp;Olsen 2000). Its meaning is compositionally derived from the meanings of its parts: The meaning of the head noun denotes the type of referent, and the meaning of the modifier noun modifies this in some semantic relation to the head noun, such that it further specifies or modifies the meaning of the head noun.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -906,17 +906,7 @@ The distributional information is collected by examination of co-occurring words
 2
 </td>
 <td style="text-align:left;width: 7cm; ">
-we distinguish between three different semantic compound types. The first type is traditionally referred to as a determinative (or endocentric) compound (cf.&nbsp;Olsen 2000). Its meaning is compositionally derived from the meanings of its parts: The meaning of the head noun denotes the type of referent, and the meaning of the modifier noun modifies this in some semantic relation to the head noun, such that it further specifies or modifies the meaning of the head noun.
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-3
-</td>
-<td style="text-align:left;width: 7cm; ">
-The second semantic type is traditionally referred to as the possessive (also bahuvrihi or exocentric) compound.
+The distributional information is collected by examination of co-occurring words, structures, or relations. The sum of this contextual information can be viewed as a kind of mold, a container that shapes the meaning of the word in a characteristic fashion.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -936,6 +926,16 @@ The final semantic type is traditionally called the copulative (or dvandva) comp
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
+includes all noun-noun compounds that are lexicalized such that their meanings are opaque with respect to the meanings of their parts.(..)(..)They are semantically
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+3
+</td>
+<td style="text-align:left;width: 7cm; ">
 is the least frequent type of compound in German. In Fanselow’s (1981b) definition, the meaning of a copulative compound is created by applying the basic relation ‘AND’ to the meanings of its parts
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -946,7 +946,7 @@ is the least frequent type of compound in German. In Fanselow’s (1981b) defini
 3
 </td>
 <td style="text-align:left;width: 7cm; ">
-includes all noun-noun compounds that are lexicalized such that their meanings are opaque with respect to the meanings of their parts.(..)(..)They are semantically
+The second semantic type is traditionally referred to as the possessive (also bahuvrihi or exocentric) compound.
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -966,7 +966,7 @@ the distributions of the target nouns are vectors.
 5
 </td>
 <td style="text-align:left;width: 7cm; ">
-The similarity of two distributions is interpreted as the distance between their vectors. A common way to measure this distance is to calculate the cosine of the angle between the two vectors (e.g., Erk 2012: 637). If two vectors point in the same direction, meaning that the angle between them is 0°, then the cosine will be 1. Otherwise, the cosine will be less than 1; it will be - 1 if the two vectors point in exactly opposite directions
+In such a vector space, each context word corresponds to a dimension, and the distribution of a target word is a vector in this multidimensional space. The similarity between two words can then be measured in terms of the distance between their vectors in the space
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -976,7 +976,7 @@ The similarity of two distributions is interpreted as the distance between their
 5
 </td>
 <td style="text-align:left;width: 7cm; ">
-In such a vector space, each context word corresponds to a dimension, and the distribution of a target word is a vector in this multidimensional space. The similarity between two words can then be measured in terms of the distance between their vectors in the space
+The similarity of two distributions is interpreted as the distance between their vectors. A common way to measure this distance is to calculate the cosine of the angle between the two vectors (e.g., Erk 2012: 637). If two vectors point in the same direction, meaning that the angle between them is 0°, then the cosine will be 1. Otherwise, the cosine will be less than 1; it will be - 1 if the two vectors point in exactly opposite directions
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -996,7 +996,7 @@ The basic elements in the standard model are the co-occurrence frequencies of co
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-skew divergence as a variant of the KullbackLeibler divergence. Instead of calculating the divergence using the observed probability distributions, this function smoothes the values of q, meaning that q will be positive for all dimensions for which p has a positive value
+The Kullback-Leibler divergence
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -1006,7 +1006,7 @@ skew divergence as a variant of the KullbackLeibler divergence. Instead of calcu
 6
 </td>
 <td style="text-align:left;width: 7cm; ">
-The Kullback-Leibler divergence
+skew divergence as a variant of the KullbackLeibler divergence. Instead of calculating the divergence using the observed probability distributions, this function smoothes the values of q, meaning that q will be positive for all dimensions for which p has a positive value
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
@@ -1057,16 +1057,6 @@ skew divergence distributions D. These scores range from a minimum of 0.093, obs
 8
 </td>
 <td style="text-align:left;width: 7cm; ">
-the compound will have a high similarity to both head and modifier:
-</td>
-<td style="text-align:left;width: 4cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2cm; ">
-8
-</td>
-<td style="text-align:left;width: 7cm; ">
 The similarity of head and compound will exceed that of modifier and compound:
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -1078,6 +1068,16 @@ The similarity of head and compound will exceed that of modifier and compound:
 </td>
 <td style="text-align:left;width: 7cm; ">
 The similarity of head and compound will not exceed the similarity of modifier and compound:
+</td>
+<td style="text-align:left;width: 4cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 2cm; ">
+8
+</td>
+<td style="text-align:left;width: 7cm; ">
+the compound will have a high similarity to both head and modifier:
 </td>
 <td style="text-align:left;width: 4cm; ">
 </td>
