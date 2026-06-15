@@ -5,6 +5,12 @@ subtitle: "term global glossary"
 toc: true
 toc-depth: 3
 toc-expand: true
+bibliography:
+  - nietzsche.bib
+  - textur.bib
+  - LFG.bib
+  - LXtech.bib
+  - litKI.bib
 
 # tmeta: $testmeta$
 # date: '`r format(Sys.time())`'
@@ -156,3 +162,5 @@ something explaining itself by itself
 ## Z
 ### zipfs law
 :::
+
+# references
