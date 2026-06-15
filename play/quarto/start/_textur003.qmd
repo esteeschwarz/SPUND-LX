@@ -1,0 +1,21 @@
+```{r,eval=F}
+getwd()
+q<-"https://dataverse.no/file.xhtml?persistentId=doi:10.18710/VM2K4O/GEVNMF&version=1.0"
+q<-"https://dataverse.no/api/access/datafile/:persistentId?persistentId=doi:10.18710/VM2K4O/GEVNMF"
+### tempfile to store zip
+sbctemp<-tempfile("SBCtemp.zip")
+sbctempdir<-tempdir()
+download.file(q,sbctemp)
+unzip(sbctemp,exdir = sbctempdir)
+
+sbctrn<-paste0(sbctempdir,"/")
+filestrn<-list.files(sbctrn)
+filestrn
+f<-list.files(paste0(sbctempdir,"/",filestrn[2]))
+f
+trndf<-data.frame(scb=NA,id=NA,text=NA)
+
+#download.file(q,"tdata.zip")
+
+
+```
