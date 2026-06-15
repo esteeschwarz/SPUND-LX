@@ -49,3 +49,5 @@ print("engine on...")
 2. summary on kybernetik introduction > [open](lki-001.qmd)
 3. session 2026-06-01: bajohr - AI authorship et al. > [open](lki-002.qmd)
 
+# samling
+**AI theatre**: "When a robot writes a play." czech essai on LLM-generate theatre play, [ggl doc of analysis](https://bit.ly/theaitre-script-analysis).
