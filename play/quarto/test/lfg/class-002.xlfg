@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XLFG version="9.16.2">
+  <VERSION id_project="5834" id_version="7905">
+    <SENTENCES>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[the dog ate the meatball]]></SENTENCE>
+    </SENTENCES>
+    <DECLARATIONS><![CDATA[                                ]]></DECLARATIONS>
+    <LEXICON><![CDATA[dog cn[PRED:&apos;dog&apos;, NUMBER:sg];
+// ate verb[TENSE:perfect, MODE:indicative];
+ate v[PRED:&apos;TO_EAT&lt;SUBJ.agent, OBJ.patient&gt;&apos;,TENSE:perfect];
+
+the det[DEF:+];
+meatball cn[PRED:&apos;meatball&apos;, NUMBER:sg];
+explained v[PRED:&apos;TO_EXPLAIN &lt;SUBJ.agent, OBJ.patient&gt;&apos;,TENSE:perfect];
+]]></LEXICON>
+    <GRAMMAR><![CDATA[S → NP VP
+{
+(↑SUBJ) = ↓;
+↑=↓;
+}
+VP → V NP
+{
+(↑OBJ) = ↓;
+↑=↓;
+
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+V → v
+{
+↑ = ↓1;
+}
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+S → NP VP
+{
+(↑ SUBJ) = ↓1;
+↑ = ↓2;
+}
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+NP → N
+{
+↑ = ↓1;
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+NP → pn
+{
+↑ = ↓1;
+}
+
+NP → pr
+{
+↑ = ↓1;
+}
+
+
+VP → v [NP] [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+(↑ POBJ) = ↓3;
+}
+
+VP → v [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v adj
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v NP PP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+VP → v PP NP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+N → N PP
+{
+↑=↓1;
+↓2 ∈ (↑ MOD);
+}
+
+PP → prep NP
+{
+↑=↓1;
+(↑ OBJ) = ↓2;
+}
+
+PP → NP
+{
+↑=↓1;
+}
+
+
+]]></GRAMMAR>
+    <OUTPUT_PARAMETERS SCALE="1" DRAWFSA="WORDS" DRAWCS="TREE" DRAWFS="MATRIX" DRAWFE="SYNTACTICAL" DRAWAS="DAG" DRAWOPTIONAL="0" DRAWILLFORMEDFS="1" PARTIALCS="0" COMPACTFS="0" COMPLETENESS="1" COHERENCE="1" CONSISTENCY="1"/>
+  </VERSION>
+</XLFG>

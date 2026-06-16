@@ -1,0 +1,115 @@
+// 16254.börjars
+// this is copied sample-eng.grammar on top of börjars phrasenstruktur
+
+S → NP VP
+{
+(↑SUBJ) = ↓;
+↑=↓;
+}
+VP → V NP
+{
+(↑OBJ) = ↓;
+↑=↓;
+
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+V → v
+{
+↑ = ↓1;
+}
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+S → NP VP
+{
+(↑ SUBJ) = ↓1;
+↑ = ↓2;
+}
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+NP → N
+{
+↑ = ↓1;
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+NP → pn
+{
+↑ = ↓1;
+}
+
+NP → pr
+{
+↑ = ↓1;
+}
+
+
+VP → v [NP] [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+(↑ POBJ) = ↓3;
+}
+
+VP → v [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v adj
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v NP PP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+VP → v PP NP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+N → N PP
+{
+↑=↓1;
+↓2 ∈ (↑ MOD);
+}
+
+PP → prep NP
+{
+↑=↓1;
+(↑ OBJ) = ↓2;
+}
+
+PP → NP
+{
+↑=↓1;
+}
+
+
