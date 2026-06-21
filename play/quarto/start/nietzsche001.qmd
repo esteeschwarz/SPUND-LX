@@ -48,22 +48,25 @@ val.c<-"{{< meta cmeta >}}"
 ## samling
 - Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
 
-16163. margin notes general > [open](nietzsche-qa.qmd){.btn .btn-cat}
+> 16163. margin notes general > [open](nietzsche-qa.qmd){.btn .btn-cat}
 
 - ephemeridenmusik > briefe
 - neudeutsche schule, musikerstreit...
 
-16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
+- 16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
 
-## benn: *-05-02
+## 2.
+###### benn: *-05-02
 :: ```r 2026-1886``` [jahre german dionys::](nietzsche-benn.qmd)   
 
-## wahrheit u. lüge im auszermoralischen sinne
+## 3.
+###### wahrheit u. lüge im auszermoralischen sinne
 ![](https://ada-sub.dh-index.org/school/papers/015/nietzsche-response.pdf){width=100% height=800px}
 
 - auch hier vectorspaces: [annotations WuL](https://esteeschwarz.github.io/SPUND-LX/pages/004/nietzsche-qa.html#:~:text=mental)
 
-## Unzeitgemäsze Betrachtungen: nutzen-nachteil der historie
+## 4.
+###### Unzeitgemäsze Betrachtungen: nutzen-nachteil der historie
 Q: @nietzsche_unzeitgemasse_1988
 
 ### thesen
@@ -80,11 +83,12 @@ Q: @nietzsche_unzeitgemasse_1988
 > Immer strebe zum Ganzen, und kannst du selber kein Ganzes
 Werden, als dienendes Glied schließ an ein Ganzes dich an. (Schiller, Musenalmanach 1797)
 
-#### wissenschaft
+## 5.
+###### FW
 - versucht perspektivität loszuwerden
 - horizont droht aufzusprengen
 
-##### FW: fröhliche wissenschaft
+#### FW: fröhliche wissenschaft
 - titel angelehnt an :die frohe botschaft:?
   - seit wann heiszt überhaupt so (luther?) > direkte übersetzung eu-angelo
   - kontrapunkt religion-wissenschaft
@@ -101,6 +105,7 @@ Q: was sind die folgen des gottestods?
 Q: wie zentral ist §125 in FW?
 - cross-keyword analysis
 
+## 6.
 ###### der tolle mensch
 - die anderen > eigentlich: nicht :die atheisten: sondern (analog: prophet jesus, tempelissue) sondern die z.zt. nietzsches (des tollen) gläubigen…, also der :tolle:[1] der eigentlich-orthodoxe gläubige
 - nietzsche als NICHT a-religiös sondern atheistisch also trotz gottlosigkeit tiefgläubig (an was…?)
@@ -117,4 +122,10 @@ Q: wie zentral ist §125 in FW?
 Q: wer spricht eigentlich?
 - 
 
+## 7.
+###### zarathustra
 {{< include _ul-md/nietzsche/16252.md >}} 
+
+## 8.
+###### genealogie der moral
+{{< include _ul-md/nietzsche/16262.md >}} 

@@ -45,6 +45,7 @@ val.c<-"{{< meta testmeta >}}"
 # index
 1. samling: margin notes general > [open](textur-qa.qmd){.btn .btn-cat}
 2. session 2026-06-01: [on kybernetik...](textur002.qmd)
+3. session 2026-07-06: How does LLM-literature end? > [gpt-stories shiny app](https://stschwarz.userpage.fu-berlin.de/links/?title=gpt-stories&ref=pages)
 
 ## Q 
 
