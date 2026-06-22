@@ -1,1 +1,0 @@
-# rausch - signal - abstand
