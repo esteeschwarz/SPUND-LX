@@ -46,18 +46,20 @@ val.c<-"{{< meta cmeta >}}"
 # index
 
 ## samling
-- Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
 
 > 16163. margin notes general > [open](nietzsche-qa.qmd){.btn .btn-cat}
 
+> 16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
+
+- Q1: [http://www.nietzschesource.org/#eKGWB/FW-125](http://www.nietzschesource.org/#eKGWB/FW-125)
 - ephemeridenmusik > briefe
 - neudeutsche schule, musikerstreit...
 
-- 16243. [mdl thesenpapier draft](nietzsche-mdl-th.qmd) 
 
 ## 2.
 ###### benn: *-05-02
-:: ```r 2026-1886``` [jahre german dionys::](nietzsche-benn.qmd)   
+
+> ```r 2026-1886``` [jahre german dionys::](nietzsche-benn.qmd)   
 
 ## 3.
 ###### wahrheit u. lüge im auszermoralischen sinne
@@ -69,7 +71,7 @@ val.c<-"{{< meta cmeta >}}"
 ###### Unzeitgemäsze Betrachtungen: nutzen-nachteil der historie
 Q: @nietzsche_unzeitgemasse_1988
 
-### thesen
+#### thesen
 1. geschichte wird gefährlich, wenn sie das leben durch idealisierung der vergangenheit lähmt.
 
 - highlighting of great history moments, nivellierung von komplexität
@@ -121,7 +123,6 @@ Q: wie zentral ist §125 in FW?
 - aufklärung, licht der vernunft
 
 Q: wer spricht eigentlich?
-- 
 
 ## 7.
 ###### zarathustra

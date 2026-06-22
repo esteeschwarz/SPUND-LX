@@ -12,3 +12,11 @@ es soll untersucht werden, wie bei autor/, denen heute/vergangenheit eine ambiva
 	- compare vectors and output nearest neighbour tokens
 
 3. keyword list of relevant (gesinnung) tokens
+
+- what is "gesinnung"?
+- who is assigning *gesinnung* to whom and why
+	- whats the content of such i.e. how is (gesinnung) expressed or recepted?
+
+:: themenfeld ausloten. metaphern, keywords, prototypische bedeutung eruieren. wortfeld bestimmen; assoziationen, "begleitwörter" finden
+
+## thesen
