@@ -11,12 +11,16 @@ es soll untersucht werden, wie bei autor/, denen heute/vergangenheit eine ambiva
 	- get embeddings for [2]
 	- compare vectors and output nearest neighbour tokens
 
-3. keyword list of relevant (gesinnung) tokens
+1. keyword list of relevant (gesinnung) tokens
 
-- what is "gesinnung"?
-- who is assigning *gesinnung* to whom and why
-	- whats the content of such i.e. how is (gesinnung) expressed or recepted?
+## segundo
+### title: teilchen - gitter - diffusionen
+### subtitle: wieviel nietzsche steckt in benn
 
-:: themenfeld ausloten. metaphern, keywords, prototypische bedeutung eruieren. wortfeld bestimmen; assoziationen, "begleitwörter" finden
-
-## thesen
+- gitter
+   - elektronenröhre, brownsche röhre - bewegung: diffusion, maxwell dämon
+   - projektionsflächen, screens, oszillation
+   - nietzsche als gitter (gleichrichter, polfilter...) für benns vokabular/mindset 
+     - oder vcvs.
+   - polarisation
+   - 
