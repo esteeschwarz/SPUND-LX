@@ -52,4 +52,6 @@ print("engine on...")
 # samling
 **AI theatre**: "When a robot writes a play." czech essai on LLM-generate theatre play, [ggl doc of analysis](https://bit.ly/theaitre-script-analysis).
 
-- ann cotton *poetisch denken* (0x0a) association: term paper uljana wolf basic modeling [most probable output](https://ada-sub.dh-index.org/school/papers/013/DYN_HA_s.php?title=DYN_HA&ref=pages#_451_most_probable_text)
+- ann cotton *poetisch denken* (0x0a) association: 
+  - term paper uljana wolf basic modeling [most probable output](https://ada-sub.dh-index.org/school/papers/013/DYN_HA_s.php?title=DYN_HA&ref=pages#_451_most_probable_text)
+  - torch model G2 [generated content](https://esteeschwarz.github.io/SPUND-LX/pages/004/model-collapse-lki.html#g2) of @glaser_benjaminfeldkraft_2024
