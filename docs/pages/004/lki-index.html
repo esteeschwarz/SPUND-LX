@@ -24,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -264,13 +283,22 @@ ul.task-list li input[type="checkbox"] {
 <h1>samling</h1>
 <p><strong>AI theatre</strong>: “When a robot writes a play.” czech essai on LLM-generate theatre play, <a href="https://bit.ly/theaitre-script-analysis">ggl doc of analysis</a>.</p>
 <ul>
-<li>ann cotton <em>poetisch denken</em> (0x0a) association: term paper uljana wolf basic modeling <a href="https://ada-sub.dh-index.org/school/papers/013/DYN_HA_s.php?title=DYN_HA&amp;ref=pages#_451_most_probable_text">most probable output</a></li>
+<li>ann cotton <em>poetisch denken</em> (0x0a) association:
+<ul>
+<li>term paper uljana wolf basic modeling <a href="https://ada-sub.dh-index.org/school/papers/013/DYN_HA_s.php?title=DYN_HA&amp;ref=pages#_451_most_probable_text">most probable output</a></li>
+<li>torch model G2 <a href="https://esteeschwarz.github.io/SPUND-LX/pages/004/model-collapse-lki.html#g2">generated content</a> of <span class="citation" data-cites="glaser_benjaminfeldkraft_2024">Glaser (<a href="#ref-glaser_benjaminfeldkraft_2024" role="doc-biblioref">2024</a>)</span></li>
+</ul></li>
 </ul>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-glaser_benjaminfeldkraft_2024" class="csl-entry" role="listitem">
+Glaser, Guhl. 2024. <em>Benjaminfeldkraft. <span>A</span> German Language Literary Corpus for Exploring and Analysing Essais.</em> Postagged vertical graph. Edition rotefadenbuecher. <a href="https://github.com/esteeschwarz/benjaminfeldkraft/releases/tag/origin">https://github.com/esteeschwarz/benjaminfeldkraft/releases/tag/origin</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
