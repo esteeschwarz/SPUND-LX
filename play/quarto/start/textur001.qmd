@@ -1,0 +1,79 @@
+---
+title: AVL / textur
+# subtitle: "no"
+format: html
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-04-12"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+title-meta: ""
+metadata-files:
+  - _quarto-common-textur.yml
+
+# bibliography: textur.bib
+# cmeta: |
+#   class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::
+#   tutor: jan lietz ::
+#   term: SS26
+#   snc: 16162.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+# cfoot: |
+#   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+
+{{< include _gitcom.qmd >}} 
+
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+```
+
+
+# index
+1. samling: margin notes general > [open](textur-qa.qmd){.btn .btn-cat}
+2. session 2026-06-01: [on kybernetik...](textur002.qmd)
+3. session 2026-07-06: How does LLM-literature end? > [gpt-stories shiny app](https://stschwarz.userpage.fu-berlin.de/links/?title=gpt-stories&ref=pages)
+
+## Q 
+
+- @smith_thread_2020, @smith_thread_2022
+- @rosing_textile_2024  
+
+## samling
+> I intend to take pictures of plants and feed them to a machine-learning algorithm, which will then generate images of new digital vegetation based on the images I feed it. 
+It knows what it means to be an image from the inside out, with no regard for the outside in.   
+Working together with the machine-learning algorithm, I will weave and unravel artificial plant images on screen. A *Flora digitalica*, I told the committee. (@smith_thread_2022, p.10)
+
+### vector space of plants
+- embeddings: where in an n-dimensional vector space representing (nature) is one specific plant located?
+
+### roboter schreibt bibel ab
+(installation vor dem trierer dom)   
+
+[https://www.robotlab.de/DE/biosbible.html](https://www.robotlab.de/DE/biosbible.html)
+
+### 2011 website archived
+- post-digital 2026: the :post: within the digital...
+- Q: are there yet tendencies to create or use anachronist ways *of* the digital (methods) *within* the digital realm? i.e. a post-digital of the 2nd order?
+  - that is: not to fall back into the analogue (ways, methods, media, tech) but to root back digital ways themselves within their own (ways)?
+
+> [link extern](https://stschwarz.userpage.fu-berlin.de/links?title=rotefaden&ref=pages)
+
+## play
+![tweed: warp and weft](textur_warp-and-weft.png)
+
+
+{{< include _textur-ben.qmd >}} 

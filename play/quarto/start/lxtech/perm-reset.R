@@ -1,0 +1,1 @@
+system("sh /Users/guhl/Documents/GitHub/SPUND-LX/play/quarto/start/lxtech/perm-reset.sh")
