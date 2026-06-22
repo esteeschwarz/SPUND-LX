@@ -431,14 +431,14 @@
     "href": "nietzsche001.html#samling",
     "title": "AVL / Nietzsche",
     "section": "samling",
-    "text": "samling\n\nQ1: http://www.nietzschesource.org/#eKGWB/FW-125\n\n\n\nmargin notes general &gt; open\n\n\n\nephemeridenmusik &gt; briefe\nneudeutsche schule, musikerstreit…\n\nmdl thesenpapier draft"
+    "text": "samling\n\n\nmargin notes general &gt; open\n\n\n\n\nmdl thesenpapier draft\n\n\n\nQ1: http://www.nietzschesource.org/#eKGWB/FW-125\nephemeridenmusik &gt; briefe\nneudeutsche schule, musikerstreit…"
   },
   {
     "objectID": "nietzsche001.html#section",
     "href": "nietzsche001.html#section",
     "title": "AVL / Nietzsche",
     "section": "2.",
-    "text": "2.\n\nbenn: *-05-02\n:: 140 jahre german dionys::"
+    "text": "2.\n\nbenn: *-05-02\n\n140 jahre german dionys::"
   },
   {
     "objectID": "nietzsche001.html#section-1",
@@ -452,7 +452,7 @@
     "href": "nietzsche001.html#section-2",
     "title": "AVL / Nietzsche",
     "section": "4.",
-    "text": "4.\n\nUnzeitgemäsze Betrachtungen: nutzen-nachteil der historie\nQ: F. Nietzsche (1988c)\n\n\nthesen\n\ngeschichte wird gefährlich, wenn sie das leben durch idealisierung der vergangenheit lähmt.\n\n\nhighlighting of great history moments, nivellierung von komplexität\nwahrscheinliche ereignisse erfahren überrepräsentation\n\nLLMs, sonstige algoritmen verstärken starke ereignisse\n\n\n\nhorizont\n\ngleicher horizont nur in einer nomadischen kultur möglich\nbestimmt v. d. reichweite der eigenen wahrnhemung\n\n\nImmer strebe zum Ganzen, und kannst du selber kein Ganzes Werden, als dienendes Glied schließ an ein Ganzes dich an. (Schiller, Musenalmanach 1797)"
+    "text": "4.\n\nUnzeitgemäsze Betrachtungen: nutzen-nachteil der historie\nQ: F. Nietzsche (1988c)\n\n\nthesen\n\ngeschichte wird gefährlich, wenn sie das leben durch idealisierung der vergangenheit lähmt.\n\n\nhighlighting of great history moments, nivellierung von komplexität\nwahrscheinliche ereignisse erfahren überrepräsentation\n\nLLMs, sonstige algoritmen verstärken starke ereignisse\n\n\n\n\nhorizont\n\ngleicher horizont nur in einer nomadischen kultur möglich\nbestimmt v. d. reichweite der eigenen wahrnhemung\n\n\nImmer strebe zum Ganzen, und kannst du selber kein Ganzes Werden, als dienendes Glied schließ an ein Ganzes dich an. (Schiller, Musenalmanach 1797)"
   },
   {
     "objectID": "nietzsche001.html#section-3",
@@ -466,14 +466,7 @@
     "href": "nietzsche001.html#section-4",
     "title": "AVL / Nietzsche",
     "section": "6.",
-    "text": "6.\n\nder tolle mensch\n\ndie anderen &gt; eigentlich: nicht :die atheisten: sondern (analog: prophet jesus, tempelissue) sondern die z.zt. nietzsches (des tollen) gläubigen…, also der :tolle:[1] der eigentlich-orthodoxe gläubige\nnietzsche als NICHT a-religiös sondern atheistisch also trotz gottlosigkeit tiefgläubig (an was…?)\nlachen der anderen eskapismus\nparadoxon: die anderen (von nietzsche ungläubige genannt) gehen selbstverständlich von-gott aus\ndiogenes: zündet am tag eine laterne an, “suche 1 menschen”\nlampe am tag: für die im hier-und-jetzt gefangenen\ngott sowieso tot: laterne, nachricht &gt; redundant\naltes wertesystem: leute glauben noch, dasz sie (beleuchtet) sind, aber (sonne) aus, haben ncht gemerkt, wie dunkel eigentlich schon ist\n[1] aufgeklärtes individuum\naufklärung, licht der vernunft"
-  },
-  {
-    "objectID": "nietzsche001.html#q-wer-spricht-eigentlich",
-    "href": "nietzsche001.html#q-wer-spricht-eigentlich",
-    "title": "AVL / Nietzsche",
-    "section": "Q: wer spricht eigentlich?",
-    "text": "Q: wer spricht eigentlich?"
+    "text": "6.\n\nder tolle mensch\n\ndie anderen &gt; eigentlich: nicht :die atheisten: sondern (analog: prophet jesus, tempelissue) sondern die z.zt. nietzsches (des tollen) gläubigen…, also der :tolle:[1] der eigentlich-orthodoxe gläubige\nnietzsche als NICHT a-religiös sondern atheistisch also trotz gottlosigkeit tiefgläubig (an was…?)\nlachen der anderen eskapismus\nparadoxon: die anderen (von nietzsche ungläubige genannt) gehen selbstverständlich von-gott aus\ndiogenes: zündet am tag eine laterne an, “suche 1 menschen”\nlampe am tag: für die im hier-und-jetzt gefangenen\ngott sowieso tot: laterne, nachricht &gt; redundant\naltes wertesystem: leute glauben noch, dasz sie (beleuchtet) sind, aber (sonne) aus, haben ncht gemerkt, wie dunkel eigentlich schon ist\n[1] aufgeklärtes individuum\naufklärung, licht der vernunft\n\nQ: wer spricht eigentlich?"
   },
   {
     "objectID": "nietzsche001.html#section-5",
@@ -809,7 +802,14 @@
     "href": "nietzsche-mdl-th.html#method",
     "title": "nietzsche und gesinnung",
     "section": "method",
-    "text": "method\n\nerstellung nietzsche korpus\nerstellung bsp. benn corpus resp. verfügbare (relevante: gesinnung[ambivalenz]) primaere korpus\n\n\nfuzzy string matching of [1] in [2]\n\ntrain model on [1]\nget embeddings for [2]\ncompare vectors and output nearest neighbour tokens\n\n\n\nkeyword list of relevant (gesinnung) tokens"
+    "text": "method\n\nerstellung nietzsche korpus\nerstellung bsp. benn corpus resp. verfügbare (relevante: gesinnung[ambivalenz]) primaere korpus\n\n\nfuzzy string matching of [1] in [2]\n\ntrain model on [1]\nget embeddings for [2]\ncompare vectors and output nearest neighbour tokens\n\n\n\nkeyword list of relevant (gesinnung) tokens\n\n\nwhat is “gesinnung”?\nwho is assigning gesinnung to whom and why\n\nwhats the content of such i.e. how is (gesinnung) expressed or recepted?\n\n\n:: themenfeld ausloten. metaphern, keywords, prototypische bedeutung eruieren. wortfeld bestimmen; assoziationen, “begleitwörter” finden"
+  },
+  {
+    "objectID": "nietzsche-mdl-th.html#thesen",
+    "href": "nietzsche-mdl-th.html#thesen",
+    "title": "nietzsche und gesinnung",
+    "section": "thesen",
+    "text": "thesen"
   },
   {
     "objectID": "lfg-index.html",
