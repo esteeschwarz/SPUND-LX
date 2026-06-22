@@ -802,14 +802,14 @@
     "href": "nietzsche-mdl-th.html#method",
     "title": "nietzsche und gesinnung",
     "section": "method",
-    "text": "method\n\nerstellung nietzsche korpus\nerstellung bsp. benn corpus resp. verfügbare (relevante: gesinnung[ambivalenz]) primaere korpus\n\n\nfuzzy string matching of [1] in [2]\n\ntrain model on [1]\nget embeddings for [2]\ncompare vectors and output nearest neighbour tokens\n\n\n\nkeyword list of relevant (gesinnung) tokens"
+    "text": "method\n\nerstellung nietzsche korpus\nerstellung bsp. benn corpus resp. verfügbare (relevante: gesinnung[ambivalenz]) primaere korpus\n\n\nfuzzy string matching of [1] in [2]\n\ntrain model on [1]\nget embeddings for [2]\ncompare vectors and output nearest neighbour tokens\n\n\n\nkeyword list of relevant (gesinnung) tokens\n\n\nwhat is “gesinnung”?\nwho is assigning gesinnung to whom and why\n\nwhats the content of such i.e. how is (gesinnung) expressed or recepted?\n\n\n:: themenfeld ausloten. metaphern, keywords, prototypische bedeutung eruieren. wortfeld bestimmen; assoziationen, “begleitwörter” finden"
   },
   {
     "objectID": "nietzsche-mdl-th.html#segundo",
     "href": "nietzsche-mdl-th.html#segundo",
     "title": "nietzsche und gesinnung",
     "section": "segundo",
-    "text": "segundo\n\ntitle: teilchen - gitter - diffusionen\n\n\nsubtitle: wieviel nietzsche steckt in benn\n\ngitter\n\nelektronenröhre, brownsche röhre - bewegung: diffusion, maxwell dämon\nprojektionsflächen, screens, oszillation\nnietzsche als gitter (gleichrichter) für benns vokabular\npolarisation"
+    "text": "segundo\n\ntitle: teilchen - gitter - diffusionen\n\n\nsubtitle: wieviel nietzsche steckt in benn\n\ngitter\n\nelektronenröhre, brownsche röhre - bewegung: diffusion, maxwell dämon\nprojektionsflächen, screens, oszillation\nnietzsche als gitter (gleichrichter/polfilter) für benns vokabular\n\nresp. vcvs.\n\npolarisation"
   },
   {
     "objectID": "lfg-index.html",
