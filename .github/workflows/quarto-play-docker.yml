@@ -93,7 +93,7 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git config advice.addIgnoredFile false
 
-        git add play/quarto/start/_freeze
+        git add -f play/quarto/start/_freeze
 
         if ! git diff --cached --quiet; then
           git commit -m "upd quarto freeze cache"
