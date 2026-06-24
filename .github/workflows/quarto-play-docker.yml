@@ -78,6 +78,23 @@ jobs:
     #   uses: actions/upload-pages-artifact@v3
     #   with:
     #     path: ./play/quarto/output
+    - name: Commit and push _freeze updates
+      run: |
+        git config user.name  "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+        git add play/quarto/start/_freeze
+
+        if ! git diff --cached --quiet; then
+          git commit -m "upd quarto freeze cache"
+          git pull --rebase origin main
+          git push origin HEAD:main
+        else
+          echo "No _freeze changes"
+        fi
+
+
+
     - name: Checkout gh-pages into ./site-current
       uses: actions/checkout@v4
       with:
@@ -93,16 +110,17 @@ jobs:
           #cp -Ra ./play/quarto/output/. site-current/docs/
           #cp -a ./play/quarto/output/. docs/
 
-    - name: Commit and push
+    - name: Commit pages and push gh-pages
       run: |
-          #cd site-current
+          cd site-current
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          #git add -A
-          git add *
-          git diff --cached || git commit -m "Deploy: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git add -A
+          #git add *
+          git diff --cached --quiet || git commit -m "Deploy: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
-    
+
+
   # deploy:
   #   environment:
   #     name: github-pages
