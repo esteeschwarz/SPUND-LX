@@ -44,6 +44,9 @@ jobs:
          # in ghcr
          # wo bundle= not wks.
          echo "nestcepas...."
+         echo " trust repo..."
+         git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
         #  ls /ms-playwright
         #  whoami
         #  id
