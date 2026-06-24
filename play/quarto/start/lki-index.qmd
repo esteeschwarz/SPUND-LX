@@ -51,7 +51,7 @@ print("engine on...")
 
 # samling
 ## AI theatre 
-- "When a robot writes a play." czech essai on LLM-generate theatre play, [ggl doc of analysis](https://bit.ly/theaitre-script-analysis).
+- "When a robot writes a play." czech essai on LLM-generate theatre play, [ggl doc of analysis](https://bit.ly/theaitre-script-analysis). (@schmidtova_theaitre_2022)
 
 ## ann cotton 
 *poetisch denken* (0x0a), associations:
