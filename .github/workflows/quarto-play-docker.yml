@@ -97,7 +97,7 @@ jobs:
 
         if ! git diff --cached --quiet; then
           git commit -m "upd quarto freeze cache"
-          git pull --rebase origin main
+          #git pull --rebase origin main
           git push origin HEAD:main
         else
           echo "No _freeze changes"
