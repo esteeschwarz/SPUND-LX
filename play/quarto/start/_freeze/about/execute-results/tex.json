@@ -1,0 +1,17 @@
+{
+  "hash": "8d87d97742ecaae0dcd6f1117c997d06",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"About\"\n---\n\n# About\nsemesterbegleitende notes/essais/quellensammlungen.\n\n> project arkkiv semi-komplett: [https://esteeschwarz.github.io/DC-LX/blog](https://esteeschwarz.github.io/DC-LX/blog/)\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# A very long R line to show wrapping in PDF:\n# paste(\"this-is-a-very-long-string\", 1:100, collapse = \" \")\nprint(\"engine on...\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"engine on...\"\n```\n\n\n:::\n:::\n\n",
+    "supporting": [
+      "about_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}
