@@ -63,6 +63,7 @@ jobs:
          quarto render play/quarto/start -M git-hash=${{ github.sha }} -M testmeta=16156.t1
          echo "---- q content..."
          ls play/quarto/output
+         ls -la .git
          #echo "---- q/publx content..."
          #ls q/publx/
          #echo "---- ls 001"
