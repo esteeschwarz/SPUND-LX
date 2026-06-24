@@ -46,7 +46,8 @@ jobs:
          echo "nestcepas...."
          echo " trust repo..."
          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-
+         # push ignored _freeze
+         git config advice.addIgnoredFile false
         #  ls /ms-playwright
         #  whoami
         #  id
