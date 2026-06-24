@@ -95,11 +95,12 @@ jobs:
 
     - name: Commit and push
       run: |
-          cd site-current
+          #cd site-current
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet || git commit -m "Deploy: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          #git add -A
+          git add *
+          git diff --cached || git commit -m "Deploy: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
     
   # deploy:
