@@ -2,6 +2,8 @@ name: quarto play pages
 on:
   push:
     paths: ['play/quarto/start/**']
+    paths-ignore:
+      - 'play/quarto/**/_freeze/**'
     branches: [ main ]
   pull_request:
     branches: [ main ]
