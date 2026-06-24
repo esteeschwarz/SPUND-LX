@@ -21,3 +21,21 @@ es soll untersucht werden, wie bei autor/, denen heute/vergangenheit eine ambiva
 
 ## thesen
 
+## segundo, ha
+### benn: gitter
+- nietzsche visited through the benn diffusion gitter
+	- kw: 
+		- brownsche röhre
+		- polfilter
+		- diffusion
+- brechung nietzsches: wieviel bleibt erhalten nach dem benn-durchgang?
+
+### benn: rönne
+- rönne-zarathustra parallel
+- stylometry analyse
+	- compare rönne / zarathustra vs. referenzcorpus: wie nah im spektrum liegen die beiden?
+- auch oben: wieviel vom za bleibt in rönne erhalten, abseits der mfw
+	- topic analysis
+	- duktus
+
+
