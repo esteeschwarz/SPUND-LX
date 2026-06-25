@@ -94,6 +94,7 @@ jobs:
         git config advice.addIgnoredFile false
 
         git add -f play/quarto/start/_freeze
+        git add play/quarto/start/*.bib
 
         if ! git diff --cached --quiet; then
           git commit -m "upd quarto freeze cache"
