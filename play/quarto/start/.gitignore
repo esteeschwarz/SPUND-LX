@@ -3,4 +3,4 @@
 **/_site
 output
 **/*.aux
-_freeze
+/._freeze/

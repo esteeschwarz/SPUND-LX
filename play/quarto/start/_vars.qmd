@@ -65,7 +65,6 @@ qa2
 cat("\nutf8\n")
 qa2
 qa2 <- stri_trans_nfc(qa2)
-
 library(stringi)
 table<-margindb
 table$doc <- stri_trans_nfc(table$doc)
@@ -73,6 +72,9 @@ table$doc
 library(bib2df)
 m1<-table$doc%in%qa2
 sum(m1)
+#######
+qa3<-names(qa1)
+m1<-table$study==qa3
 f<-list.files(pattern="bib")
 f
 #qa1<-qa
