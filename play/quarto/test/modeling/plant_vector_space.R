@@ -1,7 +1,11 @@
 # 20260627(20.42)
 # 16272.claude
 # vector space of plants
+########################
+# snc: 
+# 16272. use real world features on df of random plants: colors[n], weight, height, distribution, perpetual[y/n]... / same for taxonomies of tokens (grammar features), word fields, celebrities
 
+########################
 ## =================================================================
 ##  VECTOR SPACE OF PLANTS
 ##  Building an "embedding" space for plants and inspecting it the
@@ -215,6 +219,132 @@ pca_plot(Z, species, "(B) Markov-walk / PPMI-SVD latent space", legend_pos = "bo
 par(mfrow = c(1, 1))
 #dev.off()
 cat(sprintf("\nPlots written to: %s\n", out_file))
+
+## =================================================================
+## QUERYING THE SPACE WITH A NEW PLANT (missing features allowed)
+## =================================================================
+## Everything above only ever looks up neighbours among the 150
+## plants the space was built from -- that's a fixed lookup table,
+## not a usable embedding. The real test is: can you hand it a NEW
+## plant, described by name (not by row position), with some
+## features unknown, and get back sensible neighbours? Below are
+## query functions for BOTH embedding spaces.
+##
+## Input format: a named numeric vector using the same names as
+## feature_cols, with NA for anything you don't know, e.g.
+##   c(Sepal.Length = 6.0, Sepal.Width = NA, Petal.Length = 4.8,
+##     Petal.Width = 1.6, Petal.Area = NA)
+## -----------------------------------------------------------------
+
+feat_center <- attr(X, "scaled:center")
+feat_scale  <- attr(X, "scaled:scale")
+
+## Cosine similarity is scale-invariant -- with very few dimensions
+## (especially exactly 1) it can only tell you "same sign", not "how
+## close in magnitude". Warn rather than silently return misleading
+## cosine_sim = 1.000 ties.
+warn_if_sparse <- function(present) {
+  if (length(present) == 1) {
+    cat(sprintf(
+      "  [!] Only 1 feature supplied (%s): cosine similarity is now\n      direction-only (same-sign = 1.0) and cannot rank by magnitude.\n      Treat this result as a weak prior, not a real ranking.\n",
+      present))
+  } else if (length(present) <= 2) {
+    cat(sprintf("  [!] Only %d features supplied: rankings will be noisy.\n",
+                length(present)))
+  }
+}
+
+## cosine similarity between ONE (possibly incomplete) standardized
+## vector and every row of an embedding matrix, restricted to
+## whichever columns are actually supplied. This is the same idea
+## used in collaborative filtering: compare two vectors only on the
+## dimensions both of them actually have, rather than inventing
+## values for the missing ones.
+cosine_to_all <- function(x_std, M, present_cols) {
+  M_sub <- M[, present_cols, drop = FALSE]
+  num   <- as.numeric(M_sub %*% x_std)
+  denom <- sqrt(rowSums(M_sub^2)) * sqrt(sum(x_std^2))
+  num / denom
+}
+
+## ---- (A) query the naive standardized-feature space ----
+query_naive_neighbours <- function(raw_features, k = 5) {
+  present <- names(raw_features)[!is.na(raw_features)]
+  if (length(present) == 0) stop("Need at least one known feature.")
+  if (!all(present %in% feature_cols)) stop("Unknown feature name(s) supplied.")
+  warn_if_sparse(present)
+
+  x_std <- (raw_features[present] - feat_center[present]) / feat_scale[present]
+  sims  <- cosine_to_all(x_std, X, present)
+  ord   <- order(sims, decreasing = TRUE)[1:k]
+
+  data.frame(plant = rownames(X)[ord],
+             species = as.character(species[ord]),
+             cosine_sim = round(sims[ord], 3),
+             features_used = length(present),
+             row.names = NULL)
+}
+
+## ---- (B) fold a new plant into the Markov-walk latent space ----
+## Find its nearest neighbours in feature space (handling missing
+## features the same way as above), then synthesize a PPMI-like row
+## for it as the similarity-weighted mix of those neighbours' real
+## PPMI rows, then project that row through the EXISTING SVD basis:
+## since Z = U_d %*% diag(sqrt(s_d)) and Z %*% t(Z) ~= PPMI, a new
+## row r folds in as  z_new = r %*% U_d %*% diag(1/sqrt(s_d))  --
+## the same "fold-in" identity used to add new documents to an
+## existing LSI space without re-running the decomposition.
+fold_in_latent <- function(raw_features, k_graph_query = k_graph) {
+  present <- names(raw_features)[!is.na(raw_features)]
+  if (length(present) == 0) stop("Need at least one known feature.")
+  if (!all(present %in% feature_cols)) stop("Unknown feature name(s) supplied.")
+  warn_if_sparse(present)
+
+  x_std <- (raw_features[present] - feat_center[present]) / feat_scale[present]
+  sims  <- cosine_to_all(x_std, X, present)
+
+  k_use <- min(k_graph_query, sum(sims > -Inf))
+  nbrs  <- order(sims, decreasing = TRUE)[1:k_use]
+  w     <- pmax(sims[nbrs], 0)
+  if (sum(w) == 0) w <- rep(1, length(w))
+  w     <- w / sum(w)
+
+  ppmi_row <- as.numeric(w %*% PPMI[nbrs, , drop = FALSE])
+  z_new <- as.numeric(ppmi_row %*% sv$u %*% diag(1 / sqrt(sv$d[1:d])))
+  z_new
+}
+
+query_latent_neighbours <- function(raw_features, k = 5, k_graph_query = k_graph) {
+  z_new <- fold_in_latent(raw_features, k_graph_query)
+  num   <- as.numeric(Z %*% z_new)
+  denom <- sqrt(rowSums(Z^2)) * sqrt(sum(z_new^2))
+  sims  <- num / denom
+  ord   <- order(sims, decreasing = TRUE)[1:k]
+
+  data.frame(plant = rownames(Z)[ord],
+             species = as.character(species[ord]),
+             cosine_sim = round(sims[ord], 3),
+             row.names = NULL)
+}
+
+## ---- demo: three example queries ----
+cat("\n=== Query 1: complete description, looks like a setosa ===\n")
+q1 <- c(Sepal.Length = 5.0, Sepal.Width = 3.4, Petal.Length = 1.5,
+        Petal.Width = 0.6, Petal.Area = 1.5 * 0.2)
+print(query_naive_neighbours(q1, k = 5))
+print(query_latent_neighbours(q1, k = 5))
+
+cat("\n=== Query 2: versicolor-ish, but Sepal.Width and Petal.Area unknown ===\n")
+q2 <- c(Sepal.Length = 6.1, Sepal.Width = NA, Petal.Length = 4.4,
+        Petal.Width = 1.3, Petal.Area = NA)
+print(query_naive_neighbours(q2, k = 5))
+print(query_latent_neighbours(q2, k = 5))
+
+cat("\n=== Query 3: only ONE feature known (petal width), virginica-range ===\n")
+q3 <- c(Sepal.Length = NA, Sepal.Width = NA, Petal.Length = NA,
+        Petal.Width = 2.2, Petal.Area = NA)
+print(query_naive_neighbours(q3, k = 5))
+print(query_latent_neighbours(q3, k = 5))
 
 ## -----------------------------------------------------------------
 ## NOTE on going further with torch:
