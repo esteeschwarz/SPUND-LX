@@ -1,6 +1,6 @@
 project:
   type: website
-  pre-render: "prerender.R"
+  pre-render: "prerender02.R"
   # post-render: "postrender.R"
   output-dir: ../output/pages/004
 # date: '`r format(Sys.time())`'
