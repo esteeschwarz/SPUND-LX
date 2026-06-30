@@ -38,4 +38,5 @@ ss<-margindb$dbsub[margindb$dbsub$study=="nietzsche",]
   m<-grepl("genealogie",ss$doc)
   sum(m)
   ss$notes[m]
+  margindb$qa
 }
