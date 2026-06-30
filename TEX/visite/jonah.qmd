@@ -1,0 +1,369 @@
+---
+# title: agoraphobia
+# #subtitle: uljana wolf response paper
+# # date: '`r format(Sys.time())`'
+# author: JL
+# title-meta: ""
+# cmeta: |
+#   class: [16412] dynamiken postdeutscher gegenwartslyrik ::
+#   tutor: chiara liso ::
+#   term: SS22  
+#   snc: 16151.1  
+#   [<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+# #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+# arkiv: 16156.form
+# # foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+# cfoot: |
+#   [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+# cfootli: |
+#   "https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp"
+# paperlink: |
+#   [general](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+# params:
+#     inline: |
+#       "[<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)"
+#     plain: | 
+#       "<https://esteeschwarz.github.io/DC-LX/essais/papers/010/>"
+format:
+  # html:
+  #   # css: poster_grid.css
+  #   # css: poster.css
+  #   theme: Cosmo
+  #   toc: false
+  #   self-contained: false
+  # format:
+    pdf:
+      filters:
+        - at: pre-ast
+          path: ipa-3.lua
+      fig-pos: "H" # Forces images to appear exactly where they are included
+      pdf-engine: lualatex   # or lualatex
+      # mainfont: "Futura"
+      # fontsize: 10pt
+      documentclass: scrartcl
+      colorlinks: true
+      citecolor: cyan
+
+      include-in-header: 
+        - lualoani.tex
+        # - geometry.tex
+        - layout.tex
+      # documentclass: scrartcl
+
+  #     fig-pos: "H" # Forces images to appear exactly where they are included
+  #   #   mainfont: 'Free Sans'
+  #     font-size: 11
+  #     colorlinks: true
+      # include-in-header: 
+      #   - ../../assets/crop3.tex
+  #       - ../assets/footer-header.tex
+  #     include-before-body: ../assets/go-head.tex
+  #       # - paper.tex
+  #       #   pdf-engine: lualatex
+  #   #   header-includes:
+  #   #     - \newcommand{\docfoot}{$params.foot$}
+  #   #     - \newcommand{\docmeta}{$meta$}
+
+# docmeta: |
+#   class: [16412] dynamiken postdeutscher gegenwartslyrik  
+#   tutor: chiara liso
+#   term: SS22
+
+# filters:
+#   - ../assets/commands.lua
+#   - ../assets/luaipa.lua
+# logoleft: ../assets/fadenlogo-fwb.png
+# logoright: ../assets/dcl-head-niemand.png
+
+---
+<!-- ::: {#logo}
+![](../fadenlogoC-fwbSVG.svg)
+:::
+
+::: {#chr}
+![](../dcl-head-niemand.png)
+::: -->
+
+<!-- ::: {#meta}
+class: [16412] dynamiken postdeutscher gegenwartslyrik  
+tutor: chiara liso
+term: SS22  
+
+-----
+authored: st. schwarz  
+snc: #16127::`r Sys.time()`   
+[<<< back to paper <<<](https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html)
+::: -->
+
+
+
+```{r,echo=F,eval=F}
+print("engine on...")
+cat("snc: font 0.65")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta
+#val<-params$arkiv
+```
+
+```{r,echo=F,eval=T}
+t<-read.csv("front.csv")
+knitr::kable(t[1:4,])
+
+```
+
+
+
+#
+
+*All Spain is but one great monastery…* - Maturin
+
+## I.
+
+It was in the 289th year after the Theta Collapse that Thaxbar Munjrat, a poor kid from the Produce District, was selected to take part in the annual games. He heard the news on the radio while he was processing a hyperstrawberry -- removing the ocular nodules studded about its surface and severing the nervous tendons that ran from each nodule to the fruit’s central, spindle-shaped cortex. He threw down the node he held. Its tendon was still attached. The other strawberry workers ran to him and they embraced him and sang in one voice:
+
+That night, a feast was declared in Produce District 19a9t. The shelves and aisles were cleared away and in their place was assembled a long aluminum table. Special delicacies were removed from deep-freeze and thawed. Roots both sleek and tuberous were placed around the rim of a shining aluminum tray, followed by a ring of layered and leathery grapefruit derivatives, which were placed around a man-sized zucchinoid. All the families of the Produce District were there: the strawberry-working Munjrats and the citric Lebs; the cheerful Gleftons, who were refrigerator technicians, and the haughty Polwacks who designed shelves and displays. They sat around the table and before them rose many cloches of varying sizes. Their mouths watered and did not stop watering as the local priest rose to give his benediction. He chanted (“Markt sei gelobet und gebenedeiet…”) and then proceeded to the matter at hand:
+
+“From among us, czildren of the fruit and the vegetable, one has been czosen. Thaxbar Munjrat…” -- he waited for the stomping to cease – “will represent our humble Produce District in the contest. The bounties of the surface will be thick upon him, and thick upon us!”
+
+“Thick upon us!” They repeated.
+
+“And although, for the next weeks, every select morsel, every delight of the variegated and ever-variegating surface will be his to sample, we must not be envious. His road will be hard. But know, Thaxbar, that the czildren of the fruit and the vegetable stand beside you always!” Clamor. “now, bonapateet!”
+
+Terror at the table. Violence between diners at holy feasts was customary, but this meal was, by all accounts, exceptional. Several revelers were brought to the hospital section, which was shared with the adjoining Baked Goods District. Only Thaxbar was calm. He needed time to think.
+
+----
+
+On the 30th of May, Thaxbar was taken by high-speed rail to the 9th Subcapital, which was located some 200km beneath the ruins of Phoenix, Arizona. He had never before left the immediate vicinity of his Produce District. For hours, the departments streamed past the compartment window: Baker, Butcher, Produce, Dairy, Frozen. Over and over, in perfectly tiled regularity. At nine in the morning he saw workers emerge between the shelves from the entrances of their domesticapsules. At eight in the evening he saw them disperse to the neighboring Departments, where they bought what they needed for dinner, before returning to their capsules.
+
+He was surprised by the absence of that terror which had been with him for the past eight years. If he examined the its branching latticework, if he followed its twigs and tendrils backwards, he would find the terror’s first root struck in a dream that came to him one night eight years prior. In it, he was sitting in his domesticapsule. His family was around him. The door opened. A figure stood there, a man who was tall but not unnaturally so. Thaxbar strained his eyes but the figure would not come into focus. It stood there, Thaxbar was sure, but it stood somehow outside of his perception, or otherwise beyond his ability to grasp it. His family did not notice or did not mind. Thaxbar woke up.
+
+The next day, nothing had changed. But soon he began to notice a smell on the strawberries. He first perceived it one day after work, on his sticky hands, and then in the fruit itself. He could not identify it. Maybe it was a little humid, like the smell of a refrigerator. That’s where he next noticed it, anyway – in the refrigerators. Then he noticed it everywhere, and the smell was no longer just a smell. He saw it in the fluorescent lights above him and he heard in their hum. He felt it in the air around him. A tinge had crept in. Whether it had always been there and he had only begun to notice it, or if it was something developed inside of him, that had little or no correspondence to anything real in the world outside of him, he could not tell. Either way, he knew he needed to leave.
+
+He knew that the only way out would be to take part in the games. That year, he was nominated by his fellow Munjrats. The next year, by the entire Produce Department. A few years later, he was selected.
+
+An hour out from his destination, a man in a plum-colored suit entered his compartment and sat down. He smiled broadly, disclosing many dark cavities. He extended his hand to Thaxbar:
+
+“Murt Kluft, Produce Manager, Region 19a.”
+
+Thaxbar pressed his palm into the extended hand.
+
+“It’s an honor to meet you, boss.”
+
+Kluft pulled the corners of his lips back. He did not have any molars.
+
+“The honor is all mine, Brother Producer.”
+
+Thaxbar looked down. A few moments’ silence passed. Kluft indicated a duffle bag he had placed on the seat next to him.
+
+“I have your gamesuit right here. You’re probably itczing to try it on.” The left corner of his mouth relaxed. The right corner remained taut.
+
+“Sure am.”
+
+“But remember, once you put it on you won’t be able to take it off until the games are over.”
+
+“Yes, sir.”
+
+“Alright then, I’ll leave it here for you.” From the duffle, Kluft removed a full-body suit, which covered its inhabitant’s face and head, and which was made of a material like thin aluminum foil. On its back was an emblem: a black horn, rampant, emitting a gray halo.
+
+“Would you put it on me?”
+
+The other corner of Kluft’s mouth relaxed.
+
+“Fine, fine.”
+
+Thaxbar undressed and shimmied in. In the hood were two circles of fine mesh for him to see through, and two for him to hear through. At his mouth and crotch were patches held closed by snaps. Kluft zipped him up then removed the zipper.
+
+“Looking good! Remember Thaxbar, we’re all counting on you!”
+
+Kluft left. Thaxbar sat down but could not find a comfortable position.
+
+That night, Thaxbar was housed in a luxurious domesticapsule in the Bakery District of the 9th Subcapital. He dined on surface novelties, which had not yet spread to the more provincial regions: tendrils, like cartilaginous vermicilli, which, he was told, came from a sort of squash; a soft nut that tasted like mint; gray ash, contained in a sweet, brittle tube. He was joined by a priestess. She wore sackcloth. The textile’s fibers were slightly pearlescent and their movements were regular and independent. It was like they were breathing. She looked at him with reverence. When their meal was done, she asked him:
+
+“Do you fear the games, Czampion?”
+
+“No.”
+
+“Then you are as brave as they say!”
+
+“Who says?”
+
+She ignored this.
+
+“Many perisz, as you well know!”
+
+“…”
+
+“You do not fear death! You know the fall brings with it abundance!”
+
+----
+
+Thaxbar woke up alone. He was still in his suit. A blue-lacquered bowl with matte green protrusions, full of ðogurt, had been placed at the table for him. He ate. When he was finished, he got up to move the bowl, but it slipped out of his hands and shattered on the floor. He saw that its interior was bright white. Maybe it was made of plaster. Thaxbar bent down to pick up the pieces. He heard a knock at the door.
+
+In front of the domesticapsule stood a man in a black robe. He had been looking down when Thaxbar opened the door, and when he looked up Thaxbar saw that his eyes were thin and fragile, like an emptied bird’s egg. They emitted a pale glow. Behind the man in the robe was a cameraman. Both bowed. The robed man said:
+
+“Welcome, Thaxbar, to the Games.”
+
+Thaxbar bowed and was directed to leave the domesticapsule. A plastic cart stood waiting for them. The robed man drove, Thaxbar sat in the passenger seat, and the cameraman sat in the back. They drove out of that Bakery District and into a Butchery. There, passing behind a long display of chops, variously formed and colored, they came to a large gray door. The robed man got out of the cart and entered a code into a pad on the wall. The door opened.
+
+They entered a high vault of brushed stainless steel. At its center was a tube of the same material, about five meters in diameter, which reached from ceiling to floor. Arrayed around the tube, in two rings, were cooking stations. Many of them were already taken by people in suits like Thaxbar’s, and more were arriving. Behind each suited figure stood a cameraman, and unmanned cameras orbited on wires strung around the central tube. Men in black robes circulated.
+
+Soon the vault was full. Near the tube, on a podium, a miniscule figure began to make a speech. His skin was gray and a delicate acrylic tubes were attached to his every joint. The tubes were connected to the podium, and they pumped a bright green fluid into the tiny body. Through a single, slightly wider tube at the figure’s back dripped a substance that was dark red, nearly blue. A robed man knelt behind the podium and caught the drips in a stainless-steel bowl.
+
+Thaxbar had heard this same speech every year. “The bounties of the surface...the pleasures of the depths...a meeting with the source...etc...etc...” He could not concentrate. His aluminum suit began to fill with sweat. He unclasped his mouth-flap. The cameraman was too close to him. Then the speech was over. The podium retreated under the floor, as did the figure standing on it.
+
+It was time. The tube would soon open. They would have two hours to cook any dish they liked. This year, they would have to incorporate a sort of parsnip (a slick, knobbly rod) into their dish, in honor of 289 years since the Theta Collapse. The tube’s seamless surface parted. Two roboharvesters exited, whirling their actuators. A bell rang.
+
+The contestants ran into the tube. In it was a white, cylindrical chamber full of organic matter: great red orbs and sleek green tendrils; tall, purple slabs of musculature hanging from hooks; slimes and oozes of varying opacity. They gathered ingredients and ran out again. Thaxbar took only oil and a small basket of hyperstrawberries. At his station he filled a wok with oil, a ketchup bottle with water. He set the wok on the largest burner at the highest heat. He started removing the eyes from the fruits. Five minutes later the oil began to smoke. Sweat stung his eyes. On the other side of the chamber, one of the robed men seemed to take notice. He began to make his way over. Then the oil ignited.
+
+Thaxbar took five steps back. He squeezed the ketchup bottle and a stately crystal arch flowed between the nozzle and the grease fire. The fire erupted. There were flames everywhere. The chamber filled with smoke and with a clamor that echoed off the metal. Thaxbar ran unnoticed for the central tube. Its doors had nearly closed. He squeezed in. Emergency protocols had taken effect. The cylinder began to move. But to Thaxbar’s horror, it was not moving up towards the surface but, down, down, down…
+
+## II.
+
+The doors opened. Thaxbar had not known there was anything below. He ran out into the darkness, turning blindly through the passages. After some time, he could not know how long, he stumbled over a divot in the floor. He tumbled down, tearing the aluminum suit at his right knee. He sat and examined the wound. It bled only slightly. The fall pressed strands of metal from the suit’s weave into the flesh and they would not come out. Thaxbar tried to make the hole bigger, but the suit would not yield. The tear’s fringes were no longer frayed. They had melted together into a solid seam.
+
+Thaxbar did not get up. He sat very still. Then he stirred and began to feel around. The wall behind him was smooth, but the suit’s gloves prevented him from feeling anything more. After a moment’s deliberation, he unclasped the upper opening of his suit and rubbed his chin against the wall. It was cold stone and for the most part it was even except for small pits at semi-regular intervals. Thaxbar’s eyes adjusted to the darkness. A dull, dim light must have diffused through the passages, but he could not find its source.
+
+A shuffling, pattering sound echoed far away. It died. Then it began again. Thaxbar thought it might be drawing nearer. Yes, it was. It was coming closer. And it was not only growing louder and nearer but also increasing in complexity. What was it? Footfall. It must have been footfall. But there was something else in it, too. It was not even. It was a motley and confused noise, fuzzy and indistinct. Not one noise – many noises, ever more noises: small and large, light and heavy, dragging and stomping, dripping, dripping, and hissing. It was getting very near now. Thaxbar would have to run again.
+
+He sprinted away and as he did the noise grew louder. It was right behind him now, right at his heels. He felt that if he looked back he would see what was producing the noise and he would see it distinctly. But he would not do so. Nothing could compel him to look upon his pursuer. He ran and as he ran the passages seemed to split and turn around him, as if he was not moving at all, as if he was on a treadmill running in place and the noise was stationary behind him, as if at any moment the noise could reach him, take him, and consume him, as if it chose not to do so only to prolong his torment. And if at some point the noise went away, and he thought he was free – that was when the noise would prove him wrong. It would delight in his disappointment and despair, and he would be consumed.
+
+But even if all that was true, he would not stop. The noise was close now and with every step it drew closer. He began to feel it at the back of his neck. It lifted the hairs on his nape, one by one. It would get him now, now, any moment. He tripped and a cleft of rock dug deep into the wound on his exposed knee. On the ground, he felt a presence or many presences above him, one or many mouths ready to consume him. He leapt up and kept running. They should have gotten him. But they had not. He ran and he limped and he felt the presence redouble upon him.
+
+And then, far ahead, he saw: the passage seemed to come to an end. He drew near. There was no denying it: a little cul-de-sac. The passage expanded in all directions and then closed, forming a bulb of shaggy stone. A large flat rock stuck out from it.
+
+Thaxbar ran towards the bulb and jumped on the rock. There was nowhere to go. He crouched down and waited to die. But moment followed moment and death did not come. Nothing tore at his skin or dissolved his flesh. Minutes passed. He realized how much the suit had chafed him. His thighs and calves were raw. Finally, he dared to look behind him. The entrance to the bulb of stone had closed. He was sealed in, but the light had not changed. He could still see the rock’s shaggy variegation. He prepared for a different death.
+
+Then he heard a rumbling and a grinding. The bulb began to move. Thaxbar felt it spin to his left and move down, then up, and then he could no longer follow its movements. It panned and rotated, and with every turn it grew smaller. He lifted his knees onto the flat rock he sat on and pulled them tight against his chest. He bowed his head and closed his eyes.
+
+Then there was silence. When he opened his eyes again he saw a passage in front of him. He followed it.
+
+----
+
+After a few minutes of progress, Thaxbar saw something indistinct down the right side of a forking path. He drew near. At the base of a wall was a rectangular opening about two meter wide and one meter tall. It emitted a faint and faintly changing amber light. He got on his hands and knees and looked in. It was a stout tunnel. He got up, turned and listened, and heard no trace of the pattering shuffling that had pursued him. He went back down on his hands and knees and crawled in. Soon he was in a broad chamber. Its ceiling was high enough for him to stoop, but Thaxbar decided to crawl. He moved towards the honey-colored glow and found its source: the uppermost section of a large sphere, poking out above the earth. It spoke to him:
+
+“Awaiting request.”
+
+Thaxbar put his head on the sphere. Its material was like shifting tortoiseshell and its surface was worn matte.
+
+“Awaiting request.”
+
+“How do I get to the surface?”
+
+“I do not know the surface.”
+
+“What path leads to the surface.”
+
+“I do not know the surface.”
+
+“Can you provide me with a map.”
+
+“58 years before the Theta Collapse, television technicians began to notice slight irregularities in the transmiszion of certain shades of gray. An overcast morning, a sleek gray cat, steel girders. They looked wrong. The rest of the shot seemed to warp and turn around them. They thought it might have something to do with—“
+
+“Please provide me—”
+
+“They couldn’t be szure, of course. But disturbing reports came in. They were not sure how to proceed. The effect was now visible in a broader spectrum of grays. They were not sure how to proceed.”
+
+“Please—”
+
+The sphere rotated violently.
+
+“Ken Alphonse is, of course, the grandfather of Brother Czandrak Alphonse…”
+
+Thaxbar began to back away, and he had almost made it back to the stout tunnel when he heard the noise again. It had found him. Again, it was growing louder and less distinct. It was in the passage outside and soon it would flood through the rectangular tunnel and there would be nowhere for Thaxbar to run. It would drown him. The sphere continued:
+
+“… there would be no mercy for the Stigmatists. Their vessels were confiscated and they were delivered into the hands of the …”
+
+“Please, please stop…” Thaxbar whispered, returning to the sphere.
+
+“… as if there were another to replace it. But the doctrines of the Thagmariat were not without influence… “
+
+The pattering drew closer. It stopped before the opening. Thaxbar heard – what was that? Hissing, or very ragged breathing. Air forced through – a tube? A series of glass pipes? He tried to stay quiet.
+
+“… in that year the Fourth Chamber released a Fascicle. Its primary argument was that in order to construct a szelf, a primary szelf would have needed to be constructed. In this imputation of the preordered Market, some read a faint and sinister echo of the Heresy of Display. Brother Impfon of the Fourth Chamber…”
+
+The sphere continued speaking. There was no use. The pattering sound resumed. Now, now it would enter! Now he would drown in it and be dissolved! But it did not enter. It grew fainter. It went away. Thaxbar collapsed into a corner.
+
+“… resulting in the present Order of the Subterranean. Awaiting request.”
+
+Thaxbar made no further request. He sat a while more. Then he crawled out through the rectangular tunnel. It was two meters wide and one meter tall.
+
+----
+
+Thaxbar continued. The passages seemed broader now. They no longer resisted him. They led him to a door of steel, painted gray.
+
+He passed through it and found himself in a broad vault of milky crystal. At its center was a tube of the same material, about five meters in diameter, which reached from ceiling to floor. Around the vault were roboharvesters in various states of disrepair. Some moved around busily on white-rubber wheels, seeking replacements for ruptured panels or busted oculons. Some had wheels but no motors, and they moved slowly forward by spinning and scraping their actuators against the crystal floor. Some others were no longer capable of directed movement. They twitched their fans, opened and closed their storage compartments. Their sensors hung.
+
+Some others did not move at all, and it was difficult to distinguish between them and the piles of scrap and the components that lay on the floor. There was no clear distinction – it was a spectrum of disassembly, traversed and driven forward by the roboharvesters that still had strength to move, to select components, to visit final inertia upon their nearly-immobile counterparts. Those that could, drew auditory sensors from the sockets of the inert; they spun their actuators against masses of copper wire, stripping it from still-twitching control boxes; they peeled off clean, yellow-painted panels from disfigured torsos. And then they left for the surface.
+
+For the most part, the reparable roboharvesters took parts from the unformed scrap or from the grievously wounded, and then left through the tube in the center of the vault. But not only. Thaxbar saw, crawling through the wreckage that covered the chamber floor, one motley and disordered machine. As it crawled, it thrust its actuators into the chassis and control boxes of companions in similar states of disrepair and drew out components. Sometimes it would push the scavenged parts into an empty socket where they almost fit. Sometimes, it would drop them to the floor. There were more of this type, who lived in the scrap. Some looked nearly pristine. They would lie in wait, looking for minimal improvements. Sometimes it would be a new model of oculon – sometimes, a shiny new copper actuator. Others modified themselves to excess. They combined parts into unusable appendages and welded them to their sides. They could barely move beneath the weight. They would never leave.
+
+But Thaxbar would. He saw the doors of the tube permit a newly-repaired roboharvester and he knew he must go too. He began to creep through the wreckage. Mostly, the harvesters did not pay attention to him. But once or twice one of the large, tumorous ones approached him. Thaxbar thought he could discern organic or semi-organic materials among their appendages. One particularly amorphous roboharvester brushed Thaxbar’s skin with strange, custom double actuators. Then it left. Thaxbar could not sustain its interest.
+
+Soon he was at the tube. He sat down next to the door and waited for a harvester to come. And then – no, it couldn’t be… Yes, it was. He heard the noise again. The shuffling, the pattering, the dripping. It was growing louder now, much louder than it had been in the room with the sphere, and much more various. Whatever it was, there was a lot of it – many shuffling appendages, many leaky, dripping holes.
+
+The roboharvesters noticed it too. A protocol took effect. Those who could formed files, arraying themselves in the scrap. They spun their actuators in unison. The noise was near now – very near. Thaxbar pressed his face to the cylinder.
+
+The noise was upon them. But it was changed. Now it was the tearing of apart of chassis and the dull suck of actuators being plunged into, and then pulled from, flesh or something like it. There was no more hissing, like air through pipes, but loud and empty howling. Soon the metallic sounds prevailed, and Thaxbar knew that the robots’ lines had broken. He would be next.
+
+Then he fell forward. He looked up and saw that the roboharvester with the double actuators had opened the tube’s doors, and that he had fallen in with it. The robot leered. The doors closed. The chamber began to descend. Thaxbar fainted.
+
+## III
+
+Thaxbar felt sweat on his back. He put his palms to the ground and pushed himself up. He looked down and saw that he was naked. Below him was a cot covered in dark brown velvet. The room around him was hazy and full of fabrics: black, frilled lace and rich red pile – dark satin and strange gray taffeta. The textiles rose up around him. Their forms were distinct but shifting. Thaxbar could not tell what supported them.
+
+He lay back down and listened for the noise he had escaped from. He heard nothing. The fabric silenced even the sound of his breathing. He sat up again and inspected his knee. It was healed. His chest felt warm. He realized someone had taken off his suit, but he did not care. He closed his eyes.
+
+On his left he heard the sound of chiffon rubbing against batiste. He looked but saw only cloth. Then in front of him appeared a figure with something like a woman’s body. Around it swirled a smooth, matte, green fabric which hung over protrusions like broad hips and rested lightly upon something not unlike a lower stomach. There the fabric was at its clearest. Moving upwards it grew more opaque, pressing upon points reminiscent of (although not entirely to be identified with) nipples, terminating at a thin, distinct collarbone. Above all of this was an assemblage like a woman’s face: brown eyes, aquiline nose. Above these features were red locks hung from the crown of the head-style unit in question. It spoke:
+
+“You are awake.”
+
+It drew very near to the side of the cot and sat. Its legs were folded beneath it. Thaxbar felt breath on the side of his face. Silence. Eventually Thaxbar said:
+
+“I am.”
+
+The entity was pleased. It moved onto the cot, in front of Thaxbar.
+
+“You have escaped the devious Athgar, its Multiform manifest. You have redeemed the Gluttonous Robot.”
+
+At this, a well-formed roboharvester appeared from the fabric then disappeared again. The entity continued:
+
+“Now you will rest.”
+
+From then on, Thaxbar could no longer keep track of time. He felt it rush by but he could not measure it. A mechanism must have broken. He felt fabrics and sometimes something like skin, which was warm, and once he felt cold metal. He tasted something sweet and untainted and he must have been eating – his throat was cool and he must have been drinking. He felt his hair and fingernails grow and he felt a soft and smooth abrasion work against their growth. Whether or not he aged now, he could not say. Sometimes he felt his skin tighten, sometimes he felt his skin loosen. His organs filled with fluids then discharged them and their functioning brought him pleasure. He was in perfect working order.
+
+And then one day he could measure again. The entity looked at him with dismay.
+
+“Come,” it said, and it brought him through folds and drapes of fabric to a large cylinder. Its doors opened. Thaxbar entered. He was finally going up.
+
+## IV
+
+Thaxbar exited. He bathed in the double radiance of those latter days. The sun’s red rays were mingled with and slightly grayed by the dark luminance the Theta Gap permitted. At first he was blinded by the woven light, but soon his eyes adjusted and he could move out from the cylinder.
+
+The fruits of the surface were before him but he could not understand. They were reduced to craven geometry: large, uneven spheres wreathed by coiling cylinders and crowned by looping bulbs, the perfect smoothness of each bulb disrupted by at least one but no more than three high, pyramidal eruptions, the apexes of which touched thin, cylindrical plates which stood on their sides, supported by piles of small spheres, which erupted from conical protrusions and so on, and so on. Thaxbar followed the circuit with pleasure. But then the geometry dropped away, and he was terrified.
+
+It writhed. Great, shining tendrils vomited furred squash, and the squash shook and when it dropped down it fell into resinous basins, and the basins were full of perfectly clear liquid that bubbled and hissed, and the squash was consumed and the liquid flowed through funnels on the basins’ undersides, and the necks of the funnels dwindled in diameter until they were narrow, red stalks, and lit through by the two lights the stalks revealed sharp little seeds and dark liquor, which germinated and nourished green and fibrous knobs, and the red stalks and their green knobs stemmed out and proceeded in all directions over miles of overlapping, autophagic, blue and red and green and gray life, far past the horizon of Thaxbar’s sight, variegating and revariegating, shading seamlessly then violently then seamlessly again into all else.
+
+Thaxbar collapsed onto a heap of organic matter. Knobules and globloids crushed beneath his back and released a warm and not entirely unpleasant goo. He reached to his right and pick up a gray stem studded with small, white berries. To Thaxbar’s surprise, the peel crunched beneath his teeth like an egg shell, and continued to crunch with each bite, subdividing. The juice was rich and nourishing. It did not bear the taste of the market. The humid tinge was absent.
+
+He looked at the sun and could not bear it. He looked at the Theta Gap, the sun’s afterimage imposed upon it, and its mild light soothed him. He sank into his heap and slept.
+
+----
+
+Thaxbar awoke, refreshed and content. Long strands of goo pulled at his back as he sat. But they offered little resistance and broke and returned to the heap on the strength of their own elasticity. He looked up. Although it was night he could still see the Theta Gap – a black and starless patch on the dark blue sky.
+
+He left the heap and began to walk. The terrain was uneven. Every step bruised or destroyed complicated forms of produce. Soon he felt tired again. He sat down at the bottom of a crest which was composed of coiling black berries. He bit into one. It had no taste.
+
+He must have fallen asleep again. He was awoken by a noise. It dragged and stamped in a loose rhythm and seemed to be coming from beyond the crest. Thaxbar climbed up. A berry caught at his foot and he freed himself from it. He reached the precipice and looked.
+
+They danced around a fire. Some of their forms were nearly human but for gourdlike protuberances or draping tendrils. Others – ambulant grape-vines with eyes and noses, fungal colonies borne by shivering mycelia – could not be mistaken for humans, but they kept pace with the others, ringing around and around, stumbling only occasionally. Some others could not keep pace: a large tomato with a central eye rolled forward at uneven intervals, propelling itself with a single, red appendage. And then there were those that could not move at all. They trembled or rocked back and forth. And some were totally still. From time to time, one was thrown into the fire. And the flames grew.
+
+Thaxbar saw the glint of a vegetal eye. Had he been noticed? If he had, the dancers did not care. But Thaxbar fled.
+
+----
+
+After an hour of running, he collapsed in a zucchinoid patch. He slept again. When he awoke it was day. The Theta Gap was directly overhead. He was exposed but he did not care. He was so tired.
+
+When he next awoke he found he could not move. And then he could not hear. His vision persisted, but it was as if a green veil was drawing ever thicker over it. He remembered his time among the textiles. Thorns pressed into his sides, or perhaps out of them. He no longer felt pain.
+
+He awoke for the last time. He smelled momentarily the smell of the market. He did not care. A roboharvester was coming nearer. Thaxbar was not afraid.
