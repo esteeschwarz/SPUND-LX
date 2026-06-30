@@ -119,6 +119,6 @@ logoright: assets/dcl-head-niemand.png
 execute:
   echo: true
   # freeze: false
-  freeze: auto
+  freeze: false
   
 code-overflow: wrap

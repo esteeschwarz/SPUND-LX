@@ -23,6 +23,7 @@ date: "2026-05-03"
 
 ### snc
 - t12345678
+- t12
 
 {{< include _setup.qmd >}}
 

@@ -81,6 +81,15 @@ names(qa)
 qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margincp
+md<-list.files(pattern="margindb.RData")
+  saveanyway<-F
+
+if(length(md)==0){
+  margindb<-margincp
+  save(margindb,file="margindb.RData")
+  saveanyway<-T
+
+}
 margindb<-list(qa=qa,dbsub=dbsub)
 dbnew<-margindb
 getwd()
@@ -116,7 +125,6 @@ l12<-length(mnew.n)
 l22<-length(mnew.c)
 l32<-length(mnew.d)
 p<-(l1<l12)|(l2<l22)|(l3<l32)|(fst>fs)
-  saveanyway<-F
 cat("---- DB size olde:",fs,", new:",fst,"\n")
 
   if(p|saveanyway){
