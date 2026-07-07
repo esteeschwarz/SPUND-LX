@@ -82,7 +82,8 @@ qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margincp
 md<-list.files(pattern="margindb.RData")
-  saveanyway<-F
+  saveanyway<-T
+  
 
 if(length(md)==0){
   margindb<-margincp
