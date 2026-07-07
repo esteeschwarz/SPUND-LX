@@ -133,3 +133,8 @@ Q: wer spricht eigentlich?
 ###### genealogie der moral
 
 {{< include _ul-md/nietzsche/16262.md >}} 
+
+### 12.
+###### nietzsche & wagner
+
+{{< include _ul-md/nietzsche/16283.md >}} 

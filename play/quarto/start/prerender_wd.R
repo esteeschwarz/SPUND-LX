@@ -1,4 +1,6 @@
 setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start"))
+source("prerender02.R")
+
 
 dep1<-function(){
   load("margindb.RData")

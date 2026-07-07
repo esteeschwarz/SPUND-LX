@@ -1,0 +1,41 @@
+---
+title: textur - class notes
+subtitle: "Text und Textur. Vom Webstuhl bis zu Large Language Models"
+format: html
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-07-07"
+toc: true
+toc-depth: 3
+toc-expand: true
+title-meta: ""
+metadata-files:
+  - _quarto-common-textur.yml
+---
+
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+
+{{< include _gitcom.qmd >}} 
+
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+```
+
+
+## 7.
+###### postdigital, surface reading LLMs
+
+{{< include _ul-md/textur/16253.md >}} 
+
+## 12.
+###### bergen gpt stories
+
+{{< include _ul-md/textur/16282.md >}} 
