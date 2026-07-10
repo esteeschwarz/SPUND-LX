@@ -45,8 +45,10 @@
 \def\viw{120}
 \def\pwid{297}
 \def\phi{210}
-\def\lrim{\pwid - 2*\viw - 20}
-\pgfmathsetmacro{\lrim}{\pwid - 2*\viw -20}
+\def\lrmargin{20}
+\def\lrim{\pwid - 2*\viw - 2*\lrmargin}
+\pgfmathsetmacro{\lrim}{\pwid - 2*\viw - 2*\lrmargin}
+\pgfmathsetmacro\trim{(\phi - \vih)/2}
 \pgfmathsetmacro{\cp}{200/2}
 % --------------------------------------------------------------
 % \CropCorner{x}{y}{hdir}{vdir}
@@ -127,7 +129,7 @@
   pages=-,
   nup=2x1,
   delta=10mm 0mm,
-  noautoscale=false,
+  noautoscale=true,
   frame=false,
   pagecommand={\SheetMarks}
 ]{\SourcePDF}

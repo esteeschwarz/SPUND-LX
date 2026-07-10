@@ -1,0 +1,141 @@
+---
+title: "Custom Per-Cell Styled Table in Quarto PDF"
+format:
+  pdf:
+    header-includes:
+      - \usepackage{colortbl}   # enables \cellcolor
+      - \usepackage{array}      # better column type control
+      - \usepackage{xcolor}     # gray!XX color mixing
+---
+
+
+```{r}
+#| echo: false
+# ---- 1. Your data matrix -------------------------------------------------
+data <- matrix(
+  c("Q1", "120", "98", "White ok",
+    "Q2", "145", "132", "Slight grow",
+    "Q3", "110", "150", "Down",
+    "Q4", "160", "170", "Up"),
+  nrow = 4, byrow = TRUE
+)
+colnames(data) <- c("Period", "Target", "Actual", "Note")
+
+# ---- 2. Style matrices, same shape as data -------------------------------
+# background: "white" or "gray!20" (light grey) per cell
+bg <- matrix(
+  c("gray!20", "white",   "white",   "gray!20",
+    "gray!20", "white",   "white",   "gray!20",
+    "white",   "gray!30", "gray!30", "white",
+    "white",   "white",   "gray!30", "white"),
+  nrow = 4, byrow = TRUE
+)
+
+# font size (pt) per cell
+size <- matrix(
+  c(10, 10, 10, 9,
+    10, 10, 10, 9,
+    10, 10, 10, 9,
+    10, 10, 10, 9),
+  nrow = 4, byrow = TRUE
+)
+
+# alignment, ONE PER ROW (applies to every cell in that row)
+row_align <- c("c", "c", "c", "l")
+
+# minimum row height (pt), ONE PER ROW
+row_height <- c(16, 22, 16, 26)
+
+# border spec per cell: any combination of "T","B","L","R", or "" for none.
+# Example below draws a full outer box plus a divider under row 1.
+border <- matrix(
+  c("TL",  "TB",  "TB",  "TR",
+    "LB",  "TB",  "TB",  "RB",
+    "L",   "",   "",   "R",
+    "BL",  "B",  "B",  "BR"),
+  nrow = 4, byrow = TRUE
+)
+```
+
+```{r}
+#| output: asis
+#| echo: false
+
+n_row <- nrow(data)
+n_col <- ncol(data)
+
+escape_latex <- function(x) {
+  x <- gsub("&", "\\\\&", x)
+  x <- gsub("%", "\\\\%", x)
+  x <- gsub("_", "\\\\_", x)
+  x
+}
+
+has_side <- function(spec, side) grepl(side, spec, fixed = TRUE)
+
+# Builds one cell. `strut_pt`, if given, forces a minimum row height by
+# inserting an invisible \rule of that height into the cell content.
+build_cell <- function(val, color, pt, align, border_spec, strut_pt = NULL) {
+  L <- has_side(border_spec, "L")
+  R <- has_side(border_spec, "R")
+  colspec <- paste0(if (L) "|" else "", align, if (R) "|" else "")
+  strut <- if (!is.null(strut_pt)) sprintf("\\rule{0pt}{%dpt}", strut_pt) else ""
+  sprintf(
+    "\\multicolumn{1}{%s}{\\cellcolor{%s}\\fontsize{%d}{%d}\\selectfont %s%s}",
+    colspec, color, pt, pt + 2, strut, escape_latex(val)
+  )
+}
+
+# Turns a logical vector of "needs a rule here" per column into \hline or
+# a set of \cline{a-b} segments (merging contiguous columns).
+emit_line <- function(flags) {
+  if (!any(flags)) return(NULL)
+  if (all(flags)) return("\\hline")
+  ncol <- length(flags); segs <- c(); i <- 1
+  while (i <= ncol) {
+    if (flags[i]) {
+      j <- i
+      while (j + 1 <= ncol && flags[j + 1]) j <- j + 1
+      segs <- c(segs, sprintf("\\cline{%d-%d}", i, j))
+      i <- j + 1
+    } else {
+      i <- i + 1
+    }
+  }
+  paste(segs, collapse = "")
+}
+
+# ---- header row (unstyled border/height, just for column labels) --------
+header_cells <- sapply(seq_len(n_col), function(j) {
+  build_cell(colnames(data)[j], "gray!40", 10, "c", "")
+})
+header_line <- paste(paste(header_cells, collapse = " & "), "\\\\")
+
+cat("\\begin{table}[h]\n\\centering\n")
+cat(sprintf("\\begin{tabular}{%s}\n", paste(rep("l", n_col), collapse = "")))
+cat("\\hline\n")
+# cat(header_line, "\n\\hline\n")
+
+for (i in seq_len(n_row)) {
+  cells <- sapply(seq_len(n_col), function(j) {
+    # only need to plant the height-forcing strut once per row (first cell
+    # is enough — LaTeX rows are as tall as their tallest cell)
+    strut <- if (j == 1) row_height[i] else NULL
+    build_cell(data[i, j], bg[i, j], size[i, j], row_align[i], border[i, j], strut)
+  })
+  cat(paste(paste(cells, collapse = " & "), "\\\\"), "\n")
+
+  # a rule appears below row i if row i asked for "B" OR the next row asked
+  # for "T" at that column — this avoids drawing the line twice.
+  bottom_flags <- sapply(seq_len(n_col), function(j) {
+    this_b <- has_side(border[i, j], "B")
+    next_t <- if (i < n_row) has_side(border[i + 1, j], "T") else FALSE
+    this_b || next_t
+  })
+  ln <- emit_line(bottom_flags)
+  if (!is.null(ln)) cat(ln, "\n")
+}
+
+# cat("\\hline\n\\end{tabular}\n\\end{table}\n")
+cat("\n\\end{tabular}\n\\end{table}\n")
+```
