@@ -1,0 +1,1 @@
+system("pdflatex visite.tex")

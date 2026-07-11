@@ -1,0 +1,6 @@
+project:
+  type: default
+  render:
+    - jonah.qmd
+  post-render:
+    - visite.R
