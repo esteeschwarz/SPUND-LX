@@ -75,3 +75,17 @@ ex1
 #"gefunden werden"
 t17<-"הָאִ֡ישׁ אֲשֶׁר֩ נִמְצָ֨א הַגָּבִ֜יעַ בְּיָד֗ו"
 t17.t<-"der mann in dessen hand der kelch gefunden wurde"
+t17.l<-"ha-ish | asher | ni-mz-a | ha-geviah | be-jad-o"
+t17.w<-"der-Mann | von dem gilt | PASS-finden-p3.m.sg | der-Becher | in-Hand-POSS.p3.m.sg"
+t17.df<-data.frame(l=t17.l,w=t17.w,t=t17.t,o=t17)
+get.seg<-function(x){
+  l<-strsplit(x,"\\|")
+  unlist(l)
+}
+tx.df<-lapply(t17.df,get.seg)
+tx.df
+knitr::kable(rbind(tx.df$l,tx.df$w))
+
+####################################
+# pseudo LFG code:
+

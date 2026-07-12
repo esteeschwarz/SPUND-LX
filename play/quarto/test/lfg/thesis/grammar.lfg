@@ -1,0 +1,18 @@
+S --> NP: (^ SUBJ)=!
+      VP: ^=!
+          (^ SUBJ NUM)=(^ NUM)
+          (^ SUBJ GEND)=(^ GEND).
+
+VP --> V: ^=!
+       (NP: (^ OBJ)=!)
+       (PP: (^ OBL-AG)=!)
+       (PP*: !$ (^ ADJUNCT)).
+
+NP --> (D: (^ DEF)=+)
+       N: ^=!
+       (PP*: !$ (^ ADJUNCT)).
+
+PP --> P: ^=!
+       { NP: (^ OBJ)=!
+       | N:  (^ OBJ)=!
+             (^ OBJ DEF)=+ }.
