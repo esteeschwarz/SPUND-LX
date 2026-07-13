@@ -47,4 +47,4 @@ val.c<-"{{< meta cmeta >}}"
 1. samling: margin notes general > [open](lfg-qa.qmd){.btn .btn-cat}
 2. [class notes](lfg-001.qmd)
 3. play along model training on corpus: having Claude devise grammar from synthetic text > [link](M1-pseudoL1.html)
-
+4. thesenpapier [in progress](lfg-003.qmd)
