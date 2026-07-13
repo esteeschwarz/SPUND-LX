@@ -17,6 +17,9 @@ date: "2026-04-28"
 > [LFG](lfg-index.qmd) / thesenpapier
 
 -----
+
 :::
+
+# thesen draft
 
 {{< include _ul-md/lfg/16293.md >}} 

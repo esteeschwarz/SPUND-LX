@@ -106,34 +106,47 @@ fit<-file.info(mt)
 fst<-fit$size
 notes.old<-margindb$dbsub$notes
 com.old<-margindb$dbsub$comment
+docs.old<-margindb$dbsub$doc
 notes.new<-dbnew$dbsub$notes
 com.new<-dbnew$dbsub$comment
+docs.new<-dbnew$dbsub$doc
 mn<-notes.new%in%notes.old
 mc<-com.new%in%com.old
+md<-docs.new%in%docs.old
 mold.n<-unique(notes.old)
 mold.c<-unique(com.old)
-mold.d<-unique(margindb$dbsub$doc)
+#mold.c<-unique(com.old)
+mold.d<-unique(docs.old)
 mnew.nu<-unique(notes.new)
 mnew.cu<-unique(com.new)
-mnew.du<-unique(dbnew$dbsub$doc)
+mnew.du<-unique(docs.new)
 mnew.n<-unique(notes.new[!mn])
 mnew.c<-unique(com.new[!mc])
-mnew.d<-unique(dbnew$dbsub$doc[c(which(!mn),which(!mc))])
+mnew.d<-unique(docs.new[c(which(!mn),which(!mc))])
 l1<-length(mold.n)
 l2<-length(mold.c)
 l3<-length(mold.d)
 l12<-length(mnew.n)
 l22<-length(mnew.c)
 l32<-length(mnew.d)
-p<-(l1<l12)|(l2<l22)|(l3<l32)|(fst>fs)
+mn2<-sum(!mn)>0
+mc2<-sum(!mc)>0
+md2<-sum(!md)>0
+#sum(F,F,T)
+p<-(sum(mn2,mc2,md2)>0)|(fst>fs)
 cat("---- DB size olde:",fs,", new:",fst,"\n")
+cat("---- sum notes-com-docs new !in old db:",sum(sum(!mn),sum(!mc),sum(!md)),"\n")
 
   if(p|saveanyway){
+  save(margindb,file="margindb_sf.RData")
+
   margindb<-dbnew
   save(margindb,file="margindb.RData")
   cat("---- saved new annotations...\n")
   }
-return(list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c)))
+list.new<-list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c))
+print(list.new)
+return(list.new)
 # save(margindb,file="margindb.RData")
 
 #"Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
