@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XLFG version="9.16.2">
+  <VERSION id_project="5847" id_version="7950">
+    <SENTENCES>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[a dog did bite the postman]]></SENTENCE>
+    </SENTENCES>
+    <DECLARATIONS><![CDATA[            ]]></DECLARATIONS>
+    <LEXICON><![CDATA[//a det;
+a det[DEF:no];
+dog cn[PRED:&apos;dog&apos;,NUM:sg]; 
+did v[TENSE:past];
+bite v[PRED:&apos;bite &lt;subj, obj&gt;&apos;];
+the det[DEF:yes];
+postman cn[PRED:&apos;postman&apos;,NUM:sg];]]></LEXICON>
+    <GRAMMAR><![CDATA[IP → DP i;
+DP→d
+{
+(↑SUBJ)=↓;
+↑=↓;
+}
+
+d → D NP 
+{
+↑=↓;
+}
+
+D → det
+{
+↑=↓;
+(↑DEF)=↓;
+}
+
+d → NP
+{
+↑=↓;
+}
+
+NP → N
+{
+↑=↓;
+//(↑PRED);
+//(↑NUM);
+}
+
+////////////////////
+//NP → [det] det N
+//{
+//↑ = ↓2;
+//↑ = ↓3;
+//}
+
+//NP → N
+//{
+//↑ = ↓1;
+//}
+
+//N → cn
+//{
+//↑ = ↓1;
+//}
+////////////////////
+IP → i
+{
+↑=↓;
+}
+i→I VP
+{
+↑=↓;
+}
+
+I → v
+{
+↑=↓;
+(↑TENSE)=↓;
+}
+
+
+i→VP
+{
+↑=↓;
+}
+VP→ V DP
+{
+↑=↓;
+}
+
+V→v
+{
+↑=↓;
+//(↑PRED)=↓;
+}
+
+
+ 
+DP→d
+{
+(↑OBJ)=↓;
+↑=↓;
+}
+
+
+
+
+d→D NP
+{
+↑=↓;
+}
+
+D→det
+{
+↑=↓;
+(↑DEF)=↓;
+}
+
+
+
+N→cn
+{
+↑=↓;
+//(↑PRED)=↓;
+(↑NUM)=↓;
+}
+
+V→v;
+N→cn;
+D→det;
+
+
+
+]]></GRAMMAR>
+    <OUTPUT_PARAMETERS SCALE="1" DRAWFSA="WORDS" DRAWCS="TREE" DRAWFS="MATRIX" DRAWFE="SYNTACTICAL" DRAWAS="DAG" DRAWOPTIONAL="0" DRAWILLFORMEDFS="1" PARTIALCS="0" COMPACTFS="0" COMPLETENESS="1" COHERENCE="1" CONSISTENCY="1"/>
+  </VERSION>
+</XLFG>
