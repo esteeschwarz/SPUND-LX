@@ -72,9 +72,12 @@ smdb<-function(qa){
 # textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf")) # margin note studyset
 source(paste0(Sys.getenv("GIT_TOP"),"/R-essais/scripts/marginnotesdb.R"))
 #margindb<-get.notes(qa)
+  qa
+  #qax
 margincp<-get.margin(qa)
 margin1<-margincp$dbsub  
 qa<-margincp$qa
+  qa
 dbsub<-margincp$dbsub
 #dbsub<-margindb[margindb$doc%in%unlist(qa),]
 names(qa)

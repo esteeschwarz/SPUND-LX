@@ -3,11 +3,20 @@ source("prerender02.R")
 
 
 dep1<-function(){
+  getwd()
+  setwd("~/Documents/GitHub/SPUND-LX/play/quarto/start/")
   load("margindb.RData")
   q<-"LFG"
+  unique(margindb$dbsub$study)
   ds<-margindb$dbsub
+  ds<-margin1
   unique(ds$study)
-  
+  ds2<-ds[ds$study=="litKI",]
+  sum(is.na(ds2$study))
+  unique(ds2$doc)
+  ?open
+  ?edit
+  # open(file=paste0(Sys.getenv("GIT_TOP"),"/R-essais/scripts/marginnotesdb.R"))
   unique(cnote$ZCURRENTTOPICID)
    length(unique(tabd$ZTOPICID))
   length(unique(tabd$ZCURRENTTOPICID))
