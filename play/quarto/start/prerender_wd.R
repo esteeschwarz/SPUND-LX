@@ -9,13 +9,13 @@ dep1<-function(){
   q<-"LFG"
   unique(margindb$dbsub$study)
   ds<-margindb$dbsub
-  ds<-margin1
+  #ds<-margin1
   unique(ds$study)
-  ds2<-ds[ds$study=="litKI",]
+  ds2<-ds[grepl("litKI",ds$study),]
   sum(is.na(ds2$study))
   unique(ds2$doc)
-  ?open
-  ?edit
+  #?open
+  #?edit
   # open(file=paste0(Sys.getenv("GIT_TOP"),"/R-essais/scripts/marginnotesdb.R"))
   unique(cnote$ZCURRENTTOPICID)
    length(unique(tabd$ZTOPICID))
