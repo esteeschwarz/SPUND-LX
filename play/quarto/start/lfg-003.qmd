@@ -1,6 +1,6 @@
 ---
 title: "thesen draft"
-subtitle: "Einführung in die Grammatiktheorie und in die computationelle Modellierung am Beispiel der Lexikalisch-Funktionalen Grammatik (LFG)"
+subtitle: "on hebrew NIFAL passive constructions"
 
 format: html
 date: "2026-04-28"
@@ -20,6 +20,6 @@ date: "2026-04-28"
 
 :::
 
-# thesen draft
+# overview
 
-{{< include _ul-md/lfg/16293.md >}} 
+{{< include ../test/lfg/thesis/README.md >}} 
