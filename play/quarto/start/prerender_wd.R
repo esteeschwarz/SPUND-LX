@@ -4,6 +4,7 @@ source("prerender02.R")
 
 dep1<-function(){
   getwd()
+  
   setwd("~/Documents/GitHub/SPUND-LX/play/quarto/start/")
   load("margindb.RData")
   q<-"LFG"
