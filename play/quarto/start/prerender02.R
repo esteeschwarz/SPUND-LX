@@ -85,7 +85,7 @@ qa
 #dbsub<-margindb[margindb$doc%in%names(qa),]
 margin_sf<-margincp
 md<-list.files(pattern="margindb.RData")
-  saveanyway<-F
+saveanyway<-T
   
 
 if(length(md)==0){
@@ -154,13 +154,88 @@ return(list.new)
 
 #"Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
 }
+
+### with notes from ids expo sqlite db
+idb<-function(){
+  library(RSQLite)
+  d<-dbDriver("SQLite")
+  d
+  library(DBI)
+  con<-dbConnect(d)
+  con
+#  dbsrc<-"/Users/guhl/Documents/temp/MarginNoteBackup(2025-02-01-13-53-27).marginbackupall"
+ # dbsrc<-paste(dbsrc,"MarginNotes.sqlite",sep = "/")
+  dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
+  dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0"
+  dborigin<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/margindb.sqlite")
+  # f<-list.files(dborigin,pattern="MarginNotes.sqlite*",full.names=T)
+  # f
+  # dbcopy<-"~/db/MarginNotes.sqlite"
+  # dbcopy<-"~/db/marginnotes/"
+  # dbcopy<-"~/db/marginnotes/"
+  # #file.copy(dborigin,dbcopy)
+  # file.copy(f,dbcopy,overwrite=T)
+  # #dbsrc<-paste0(dbcopy,"margin_notes.sqlite")    
+  dbsrc<-dborigin
+  #dbListTables(con <- dbConnect(RSQLite::SQLite(), ":memory:"))
+  con<-dbConnect(d,dbsrc)
+  #con<-dbConnect(d,"/Users/guhl/boxHKW/21S/DH/local/AVL/2024/WIT/2025-01-21_FolioFF.sqlite")
+  #con<-dbConnect(d,"/Users/guhl/Documents/GitHub/SPUND-LX/szondi/WITprose/2025-01-23_FolioFF.sqlite3")
+  #highlights<-dbGetQuery(con, "SELECT * FROM highlights")
+  #highlights<-highlights[highlights$document_id==2,]
+  #highlight_tags<-dbGetQuery(con, "SELECT * FROM highlight_tags")
+  #global.t<-dbGetQuery(con,".schema")
+  all.t<-dbGetQuery(con, "SELECT name FROM sqlite_master WHERE type='table';")
+  all.t
+  library(abind)
+  all.tg <<- all.t
+  all.tables<-lapply(seq_along(1:length(all.t$name)),function(i){
+    t<-dbGetQuery(con,paste0("SELECT * FROM ",all.t$name[i],";"))
+
+                  
+  })
+  names(all.tables)<-c("dbsub","index","docs")
+  margin1<-all.tables$dbsub
+  studies<-unique(all.tables$docs$study)
+  qax<-lapply(studies,function(x){
+    m<-margin1$study==x
+    m<-grepl(x,margin1$study)
+    sum(m,na.rm=T)
+    m[is.na(m)]<-F
+    d<-unique(margin1$doc[m])
+    d<-d[!is.na(d)]
+    d2<-d
+    
+    if(length(d2)>0)
+      names(d2)<-x
+    r<-list(q=d)
+    print(x)
+    #names(r)<-x
+    return(d)
+
+  })
+  names(qax)<-studies
+  all.tables$studies<-qax
+  qax
+  
+    dbDisconnect(con)
+  return(all.tables)
+
+}
+######################
+
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
-ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
+#ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
+ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
 mnew<-"no new annotations..."
 if(exists("bqa")){
-  qa<-bqa
-  mnew<-smdb(qa)$margin.new
+  print("sqlite loaded, qa + mnew declared...")
+  qa<-bqa$studies
+  mnew<-bqa$dbsub
+  margindb<-list(dbsub=mnew,qa=qa)
+  save(margindb,file="margindb.RData")
+  
 }
 ### vars
 docdir<-"."
@@ -173,8 +248,8 @@ bibyml<-qa
 #qa
 print("------ prerender fin, > fetch-zotero.R")
 source("fetch-zotero.R")
-cat("------------ NEW ANNOTATIONS:")
-print(mnew)
+#cat("------------ NEW ANNOTATIONS:")
+#print(mnew)
 #source("annotations.R")
 
 # list.files('/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur')

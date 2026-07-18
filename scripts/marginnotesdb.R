@@ -277,6 +277,7 @@ for (k in 1:length(cnote$ZTITLE)){
   s
   k<-"litKI"
   k<-"textur"
+  k
   #################################################
   for(k in s){
     m<-t11$study==k
@@ -489,7 +490,7 @@ id<-"CCAA6353-3A42-4D28-93A8-DF035DD1539A"
   #margin1$study[is.na(margin1$study)]<-""
   m<-margin2$study=="litKI"
   unique(margin2$doc[m])
-  margindb<-list(qa=qax,dbsub=margin2)
+  margindb<-list(studies=qax,dbsub=margin2)
   return(margindb)
 #################
   qa<-get.clist()
@@ -500,8 +501,9 @@ margin1<-ds
   ds<-marginx$dbsub
   sum(is.na(ds$study))
   d1<-ds[grep("litKI",ds$study),]
+  ds<-d1
   ds[ds$nid=="0DD212B7-EF16-4242-809E-766305ED590D",]
-  ds[grepl("Calvino",ds$doc)&ds$spage=="3",]
+  dx<-ds[grepl("Calvino",ds$doc),]
   unique(margin2$doc[margin2$study=="litKI"])
   unique(d1$doc)
   t11$ZMD5LONG[is.na(t11$ZMD5LONG)]<-F
