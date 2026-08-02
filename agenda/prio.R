@@ -40,7 +40,7 @@ df
 df$sum<-unlist(lapply(1:length(df$fac),function(x){
   d<-df[x,]
   m<-d$fac==df$q
-  d$prio<-df$prio[m]
+  d$prio<-sum(df[m,3:5])
   s<-sum(d[3:5],na.rm = T)}))
   
 
