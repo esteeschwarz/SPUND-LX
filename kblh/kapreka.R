@@ -64,6 +64,8 @@ return(ndf)
 run.magic<-function(){
 #ndf<-ndf[!is.na(ndf$loop),]
 ndf<-get.number(d0)
+ndf<-ndf[!is.na(ndf$loop),]
+
 cat("--- medium magic at:",median(ndf$loop,na.rm=T),"loops \n")
 plot(ndf,type="h")
 hist(ndf$loop)
