@@ -2,8 +2,10 @@
 
 d<-1235
 d0<-d
+d0<-sample(1000:9999,40)
 #######
-run.magic<-function(){
+
+get.number<-function(d0){
 dev<-function(d){
   d1<-as.character(d)
   
@@ -26,9 +28,10 @@ return(d4)
 }
 d2<-dev(d)
 
-# only showing a sample of 40 4-digit numbers
+# only showing a sample of forty 4-digit numbers
 
 ndf<-data.frame(n=sample(1000:9999,40),loop=NA)
+ndf<-data.frame(n=d0,loop=NA)
 for (l in 1:length(ndf$n)){
 
   d<-ndf$n[l]
@@ -56,10 +59,14 @@ for (k in 0:10){
   }
 }
 }
-ndf<-ndf[!is.na(ndf$l),]
-cat("--- medium magic at:",mean(ndf$loop),"loops \n")
+return(ndf)
+}
+run.magic<-function(){
+ndf<-ndf[!is.na(ndf$loop),]
+ndf<-get.number(d0)
+cat("--- medium magic at:",median(ndf$loop,na.rm=T),"loops \n")
 plot(ndf,type="h")
 hist(ndf$loop)
-
+boxplot(ndf$loop)
 
 }
