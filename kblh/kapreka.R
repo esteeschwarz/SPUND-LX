@@ -3,6 +3,7 @@
 d<-1235
 d0<-d
 #######
+run.magic<-function(){
 dev<-function(d){
   d1<-as.character(d)
   
@@ -61,3 +62,4 @@ plot(ndf,type="h")
 hist(ndf$loop)
 
 
+}
