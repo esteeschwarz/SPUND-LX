@@ -1,4 +1,4 @@
-# 16336.caprici
+# 16336.kapreka magic number
 
 d<-1235
 d0<-d
@@ -11,7 +11,7 @@ d2<-unlist(strsplit(d1,""))
 d21<-d2
 if(length(unique(d2))<3)
   return(NA)
-print(d2)
+#print(d2)
 d2<-as.double(d2)
 d3<-sort(d2,decreasing = T)
 d3<-paste(d3,collapse="")
@@ -20,27 +20,43 @@ d5<-sort(d21,decreasing = F)
 d5<-paste(d5,collapse="")
 d5<-as.double(d5)
 d4<-d3-d5
-print(d4)
+#print(d4)
 return(d4)
 }
 d2<-dev(d)
-for (l in sample(1000:9999,40)){
-  d<-l
+
+# only showing a sample of 40 4-digit numbers
+
+ndf<-data.frame(n=sample(1000:9999,40),loop=NA)
+for (l in 1:length(ndf$n)){
+
+  d<-ndf$n[l]
   d0<-l
   d1<-as.character(d)
-  
+  out<-F
   
   d2<-unlist(strsplit(d1,""))
-  if(length(unique(d2))!=4){
-    cat("keine doubles...\n")
+  if(length(unique(d2))<3){
+    cat("keine triples...\n")
+    out<-T
     next
   }
 for (k in 1:10){
-  cat("loop:",k,"\n")
-  
+  cat("loop:",k,", number:",d,"\n")
+  dx<-d
   d<-dev(d)
-}
-}
+  if(is.na(d))
+    break
+  if(dx==d&!is.na(d)){
+    cat("--- looping finished at:",k,"---\n")
+        ndf$loop[l]<-k
 
+    break
+  }
+}
+}
+ndf<-ndf[!is.na(ndf$l),]
+plot(ndf,type="h")
+hist(ndf$loop)
 
 
