@@ -57,7 +57,7 @@ for (k in 0:10){
 }
 }
 ndf<-ndf[!is.na(ndf$l),]
-cat("--- medium magic at:",median(ndf$loop),"loops \n")
+cat("--- medium magic at:",mean(ndf$loop),"loops \n")
 plot(ndf,type="h")
 hist(ndf$loop)
 
