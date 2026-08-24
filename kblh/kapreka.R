@@ -6,7 +6,7 @@ d0<-sample(1000:9999,40)
 #######
 
 get.number<-function(d0){
-d2<-unlist(strsplit(d0,""))
+d2<-unlist(strsplit(as.character(d0),""))
 d21<-d2
 if(length(unique(d2))<3){
   cat("---! not more than 2 doubles in number! ---\n")
