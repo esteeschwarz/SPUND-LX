@@ -6,14 +6,20 @@ d0<-sample(1000:9999,40)
 #######
 
 get.number<-function(d0){
+d2<-unlist(strsplit(d0,""))
+d21<-d2
+if(length(unique(d2))<3){
+  cat("---! not more than 2 doubles in number! ---\n")
+  return(NA)
+  }
 dev<-function(d){
   d1<-as.character(d)
-  
+
   
 d2<-unlist(strsplit(d1,""))
 d21<-d2
-if(length(unique(d2))<3)
-  return(NA)
+#if(length(unique(d2))<3)
+  #return(NA)
 #print(d2)
 d2<-as.double(d2)
 d3<-sort(d2,decreasing = T)
