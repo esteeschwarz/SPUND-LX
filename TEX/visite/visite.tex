@@ -90,37 +90,50 @@
       %shift={(current page.south west)}]
 
     % ---- crop marks: page 1 (left), trim box x:[20,220] y:[20,260]
-   \CropCorner{20}{20}{-1}{-1}
-      %CropCorner{20}{\lrim}{-1}{-1}{1}{1}
-    \CropCorner{200}{20}{1}{-1}
-    \CropCorner{20}{200}{-1}{1}
-    \CropCorner{200}{200}{1}{1}
+  %  \CropCorner{20}{20}{-1}{-1}
+  %     %CropCorner{20}{\lrim}{-1}{-1}{1}{1}
+  %   \CropCorner{200}{20}{1}{-1}
+  %   \CropCorner{20}{200}{-1}{1}
+  %   \CropCorner{200}{200}{1}{1}
 
     % ---- crop marks: page 2 (right), trim box x:[230,430] y:[20,260]
     %CropCorner{230}{20}{-1}{-1}
           % \CropCorner{\lrim}{20}{-1}{-1}{1}{1}
           % \CropCorner{\rrim}{20}{-1}{-1}{1}{1}
     % \CropCorner{-50+28.5}{30-5-1.3}{1}{-1}
-    \CropCorner{230}{260}{-1}{1}
-    \CropCorner{-50+28.5}{30-5-1.3}{-1}{1}
-    \CropCorner{-50+28.5}{30-205-1.3}{-1}{-1}
+    
+    % offset left: -50, bottom: 30-1.3, {h,v,-:down,left;+:up,right}
+    % bottom right
+    \CropCorner{-50+\pwid-\lrmargin}{30-205-1.3}{1}{-1}
+    % top left
+    \CropCorner{-50+\lrmargin}{30-5-1.3}{-1}{1}
+    % bottom left
+    \CropCorner{-50+\lrmargin}{30-205-1.3}{-1}{-1}
+    %top right
+    \CropCorner{-50+\pwid-\lrmargin}{30-5-1.3}{1}{1}
+    
+    % \CropCorner{-50+28.5}{30-5-1.3}{-1}{1}
+    
+    % \CropCorner{-50+28.5}{30-205-1.3}{-1}{-1}
 
     % ---- corner registration crosses + docname/date, in the rim,
     %      outside the 20mm trim/cut margin, repeated each sheet
-    \RegCross{8}{272}
-    \node[anchor=south west,font=\tiny] at (12,270) {\DocName\ -- \DocDate -- \lrim --\pwid};
+    % \RegCross{8}{272}
+    % \node[anchor=south west,font=\tiny] at (12,270) {\DocName\ -- \DocDate -- \lrim --\pwid};
 
-    \RegCross{442}{272}
-    \node[anchor=south east,font=\tiny] at (438,270) {\DocName\ -- \DocDate};
+    % \RegCross{442}{272}
+    % \node[anchor=south east,font=\tiny] at (438,270) {\DocName\ -- \DocDate};
 
-    \RegCross{-5}{20}
-    \node[anchor=north west,font=\tiny] at (-25,25) {\DocName\ -- \DocDate-- random -- \lrim};
+    % \RegCross{-5}{20}
+    % \node[anchor=north west,font=\tiny] at (-25,25) {\DocName\ -- \DocDate-- randomfk -- \lrim};
 \ccross{\cct-1.5}{30-5-1.3} %x(100)-y, centercross top
+\node[anchor=north west,font=\tiny] at (-25,30-5+1.7) {\DocName\ -- \DocDate-- random -- \lrim};
+
 \ccross{\cct-1.5}{30-205-1.3} %x-y, centercross bottom
 % \ccross{-50+28.5}{30-5-1.3} %-50=0, 10=1
-\ccross{\cpb}{70}
-    \RegCross{442}{8}
-    \node[anchor=north east,font=\tiny] at (438,10) {\DocName\ -- \DocDate -- random2};
+% \ccross{\cpb}{70}
+%     \RegCross{442}{8}
+%     \node[anchor=north east,font=\tiny] at (438,10) {\DocName\ -- \DocDate -- random2};
 
   \end{tikzpicture}%
 }
