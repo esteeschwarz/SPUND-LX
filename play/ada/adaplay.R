@@ -5,8 +5,8 @@ m1<-grepl("ich",c$token)
 setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/ada"))
 sum(m1)
 #install.packages("clipr")
-library(clipr)
-write_clip(which(m1))
+# library(clipr)
+# write_clip(which(m1))
 15 %% 12
 16 %% 12
 16 %% 35
@@ -14,7 +14,7 @@ write_clip(which(m1))
 36 %% 35
 
 notes = c("C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B")
-ncpt<-rep(notes,10)
+ncpt<-rep(notes,3)
 ncpt
 l<-length(ncpt)
 mmod<-which(m1) %% l
@@ -27,13 +27,13 @@ midh
 colnames(midh)
 s1<-ncpt[mmod[1:256]]
 s1<-mmod[1:256]
-s1
+s1<-s1+60-10
 256*2+11
 s2<-rep(s1,each=2)
 s2
 mid1$X2[12:(length(s2)+11)]<-s2
 fns<-"fiben01.csv"
-fout<-"fiben01.mid"
+fout<-"fiben-ich.mid"
 colnames(mid1)<-c(0,0,"Header",1,2,480)
 
 write.csv(mid1,fns,row.names=F,quote=F)
@@ -44,5 +44,5 @@ writeLines(mid2,fns)
 system(sprintf("csvmidi %s %s",fns,fout))
 # mmod<- paste(mmod,collapse = " ")
 
-write_clip(mmod)
+#write_clip(mmod)
 
