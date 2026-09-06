@@ -31,6 +31,27 @@ s1<-s1+60-10
 256*2+11
 s2<-rep(s1,each=2)
 s2
+s3<-mmod
+h1<-mid1[1:11,]
+f1<-mid1[(length(mid1$Header)-1):length(mid1$Header),]
+f1
+h1
+l<-length(mmod)
+l
+p<-function(x){x+192}
+pr<-0:l
+lp<-1:l
+for(k in 2:l){
+
+lp[k]<-p(pr[k])
+}
+head(lp,100)
+head(k)
+pr<-unlist(lapply(pr,function(x){
+  p0<-p(x)
+}))
+pr
+mid1[12:20,]
 mid1$X2[12:(length(s2)+11)]<-s2
 fns<-"fiben01.csv"
 fout<-"fiben-ich.mid"
