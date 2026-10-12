@@ -16,7 +16,7 @@ date: '`r format(Sys.time())`'
 ### snc
 - t1
 
-{{< include ../_setup.qmd >}}
+{{< include ../_setup-new.qmd >}}
 
 ```{r}
 #| label: tbl_qa1
@@ -33,4 +33,4 @@ qa1<-list(LXstat=qa$LXstat)
 ```
 
 
-{{< include ../_vars.qmd >}}
+{{< include ../_vars-new.qmd >}}

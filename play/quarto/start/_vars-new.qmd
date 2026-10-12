@@ -1,0 +1,202 @@
+```{r,set}
+#| echo: false
+#| warning: false
+#| eval: false
+
+#qa1<-"Wiener_Einführung.pdf"
+#load("margindb.RData")
+qa<-list(litKI="Wiener_Einführung.pdf",
+nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf"),
+textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf")) # margin note studyset 
+qa<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"),
+nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"),
+textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langlois-2019-distributed-intelligence-silk-weaving-and-the-jacquard-mechanism.pdf","07_Munk+Rosing.pdf",
+"3 - Julia Abel, Andreas Blödom, Michael Scheffel - Ambivalenz und Kohärenz, Einleitung.pdf"))
+```
+
+
+
+```{r,get-anno}
+#| echo: false
+#| warning: false
+#| eval: true
+#| results: "asis"
+#| output: false
+#| message: false
+
+# load("margindb.RData") # in setup.qmd
+# qa<-margindb$qa
+# margindb<-margindb$dbsub
+#qa<-margindb$qa
+print("_vars")
+#qa1
+quietly <- function(expr) {
+  withCallingHandlers(
+    {
+      invisible(capture.output(
+        result <- eval.parent(substitute(expr))
+      ))
+      result
+    },
+   message = function(m) invokeRestart("muffleMessage"),
+   warning = function(w) invokeRestart("muffleWarning")
+  )
+}
+quietly2 <- function(expr) {
+  tf <- tempfile()
+  zz <- file(tf, open = "wt")
+  sink(zz)
+  sink(zz, type = "message")
+
+  on.exit({
+    sink(type = "message")
+    sink()
+    close(zz)
+  })
+
+  eval.parent(substitute(expr))
+}
+# qa1<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
+# qa2<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"))
+library(purrr)
+library(stringi)
+###
+# qa1 declared in each qa.qmd!
+##############################
+qa2<-enc2utf8(unlist(qa1))
+qa2
+cat("\nutf8\n")
+qa2
+qa2 <- stri_trans_nfc(qa2)
+library(stringi)
+#table<-margindb
+###########
+### 16301. from sqlite
+table<-margindb
+table$doc <- stri_trans_nfc(table$doc)
+table$doc
+library(bib2df)
+m1<-table$doc%in%qa2
+sum(m1)
+###############
+###############
+qa3<-names(qa1)
+#m1<-table$study==qa3
+############################
+m1<-grepl(qa3,table$study)
+### with new pasted studies for multiple notebooks/doc
+#########################
+f<-list.files("../",pattern="bib")
+f
+#qa1<-qa
+b<-grep(names(qa1),f)
+#bibdf<-bib2df(f[b])
+# invisible(
+#   capture.output({
+#     bibdf <- bib2df::bib2df(f[b])
+#   })
+# )
+#bibdf <- quietly2(bib2df::bib2df(f[b]))
+f[b]
+bibdf<-bib2df(f[b])
+bibdf$NOTE<-gsub("\\\\","",bibdf$NOTE)
+save(bibdf,file="bibdf.RData")
+qu<-unlist(qa2)
+qu
+m2<-qu%in%bibdf$NOTE
+sum(m2)
+kdf<-margindb[m1,]
+kdf<-kdf[order(kdf$doc,kdf$spage),]
+kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
+kdf$notes<-gsub("[\r\n|]","(..)",kdf$notes)
+# kdf$comment<-gsub("[\r\n|]"," / ",kdf$comment)
+# kdf$comment<-gsub("\\r\\n|\\n|\\|"," \\\\\\\\ ",kdf$comment)
+kdf$comment<-gsub("\r\n|\n|\\|"," <br> ",kdf$comment)
+kdf$comment <- stri_trans_nfc(kdf$comment)
+
+# kdf$comment<-gsub("<br><br>"," <br>",kdf$comment)
+kdf$comment<-gsub("(http.+?)( |\r|\n|<br>)",' <a href="\\1" target="_blank">\\1</a>',kdf$comment)
+kdf$comment<-gsub('(href=".+?) "','\\1"',kdf$comment)
+#kdf$comment<-gsub("(http.+) ?",'<a href="\\1 " target="_blank">\\1 </a>',kdf$comment)
+kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
+du<-unique(kdf$doc)
+du
+bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
+#save(bibdf,file="bibdf.RData")
+```
+
+```{r,kable}
+#| echo: false
+#| warning: false
+#| eval: true
+#| results: "asis"
+#| output: true
+#| message: false
+
+library(kableExtra)
+#du
+for(k in 1:length(du)){
+  p<-du[k]
+  p
+  p<-stri_trans_nfc(p)
+  kdf$doc<-stri_trans_nfc(kdf$doc)
+  m3<-kdf$doc==p
+  sum(m3,na.rm = T)
+  #cat(bibdf$NOTE,"\n")
+  #cat(p,"\n")
+  #m4<-grep(p,bibdf$NOTE)
+  #m4<-p==bibdf$NOTE)
+  m4<-p==bibdf$NOTE
+ # which(m4)
+  #sum(m4,na.rm = T)
+  m4[is.na(m4)]<-F
+#  m4<-m4[!is.na(m4)]
+  #length(m4)
+  #sum(m4)
+ # cat("m4",sum(m4,na.rm = T),"\n")
+  #m4
+  #length(bibdf$NOTE[m4])
+  #bibdf$NOTE[which(m4)]
+  #cat(bibdf$NOTE[which(m4)],"\n")
+  c<-bibdf$BIBTEXKEY[which(m4)]
+  c<-c[!is.na(c)]
+  #c
+  #cat("c:",c,"\n")
+  page<-gsub("[\r\n ] ","",kdf$spage[m3])
+  if(length(m3)>0){
+    if(sum(grepl("[a-z]",kdf$notes[m3]))>0){
+  df<-data.frame(page=paste0("",page,""),note=kdf$notes[m3],comment=kdf$comment[m3])
+  dup<-duplicated(df$note)
+  df<-df[!dup,]
+  if(sum(m4,na.rm=T)==0){
+    m5<-grep("#cite",df$comment)
+    c<-gsub(".*#cite_(.+)__.*","\\1",df$comment[m5])
+    c<-unique(c)
+    # print("c m40")
+    # print(c)
+  }
+# df$comment<-linebreak(df$comment)
+ldf<-as.character(length(df$note))
+cat(paste0("\n#### (",ldf,") annotations: ",p,"\n"))
+cat(paste0("\npaper: @",c,"\n"))
+
+# if (knitr::is_html_output()) {
+cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>% 
+  kable_styling(bootstrap_options = c("striped", "condensed"), 
+                    full_width = T) %>%
+  column_spec(1, width = "2cm") %>% 
+  column_spec(2, width = "7cm") %>% 
+  column_spec(3, width = "4cm"))
+# }
+# if (knitr::is_latex_output()) {
+# cat(knitr::kable(df,row.names = F,booktabs = F, format="latex",escape=T) %>% 
+#   kable_styling(bootstrap_options = c("striped", "condensed"), 
+#                     full_width = T) %>%
+#   column_spec(1, width = "2cm") %>% 
+#   column_spec(2, width = "7cm") %>% 
+#   column_spec(3, width = "4cm"))
+# }
+    }
+  }
+}
+```
