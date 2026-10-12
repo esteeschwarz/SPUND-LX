@@ -87,7 +87,10 @@ m1<-grepl(qa3,table$study)
 ### with new pasted studies for multiple notebooks/doc
 #########################
 f<-list.files("../",pattern="bib")
-f
+print(f)
+if(length(f)==0)
+  f<-list.files(pattern="bib")
+print(f)
 #qa1<-qa
 b<-grep(names(qa1),f)
 #bibdf<-bib2df(f[b])
@@ -97,7 +100,7 @@ b<-grep(names(qa1),f)
 #   })
 # )
 #bibdf <- quietly2(bib2df::bib2df(f[b]))
-f[b]
+print(f[b])
 bibdf<-bib2df(f[b])
 bibdf$NOTE<-gsub("\\\\","",bibdf$NOTE)
 save(bibdf,file="bibdf.RData")
