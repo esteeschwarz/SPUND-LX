@@ -11,14 +11,8 @@ date: "2026-10-12"
 # toc-depth: 3
 # toc-expand: true
 
-date: "2026-10-12"
-title-meta: ""
-bibliography: ../LFG.bib
-cmeta: |
-  class: [16842] Grundlagen der Statistik ::
-  tutor: meinschäfer ::
-  term: WS26
-  snc: 17423.1  
+metadata-files:
+  - ../_quarto-common-stat.yml
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 17423.R-helper
