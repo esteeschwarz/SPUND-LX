@@ -65,6 +65,8 @@ jobs:
          #SHORT_SHA=$(git rev-parse --short HEAD)
          echo "check for git..."
          ls -la .git
+         du play/quarto/output
+
          git rev-parse --show-toplevel
          echo "render qmds..."
          quarto render play/quarto/start -M git-hash=${{ github.sha }} -M testmeta=16156.t1
