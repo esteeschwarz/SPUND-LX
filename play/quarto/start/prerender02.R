@@ -150,7 +150,7 @@ cat("---- sum notes-com-docs new !in old db:",sum(sum(!mn),sum(!mc),sum(!md)),"\
   cat("---- saved new annotations...\n")
   }
 list.new<-list(margin.new<-list(doc=mnew.d,notes=mnew.n,com=mnew.c))
-print(list.new)
+#print(list.new)
 return(list.new)
 # save(margindb,file="margindb.RData")
 

@@ -122,6 +122,9 @@ if(!is.na(anno)){
 anno.t<-paste0("<ul>",t,"</ul>")
 }
 # anno.t
+  #??sys.wait
+  #?Sys.sleep
+  Sys.sleep(3)
   response<-GET(paste0("https://api.zotero.org/groups/4713246/items/",key,"?format=bibtex"))
 #t<-content(response,"text")
 bibtx<-httr::content(response,"text")
