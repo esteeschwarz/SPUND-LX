@@ -10,7 +10,7 @@ date: "2026-10-12"
 # toc: true
 # toc-depth: 3
 # toc-expand: true
-
+format: html
 metadata-files:
   - ../_quarto-common-stat.yml
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
