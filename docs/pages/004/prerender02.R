@@ -1,5 +1,6 @@
 # check system, adapt output
 s<-Sys.getenv("SYS")
+s
 mn4<-Sys.getenv("MN4")
 mn4
 qax<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"),
@@ -28,7 +29,8 @@ LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN
   LXtech<-paste0(mn4,"/COMP/LX-tech")
   LFG<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LFG"
   LFG<-paste0(mn4,"/COMP/LFG")
-clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
+  STAT<-paste0(mn4,"/COMP/STAT")
+clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT)
   clist
 #  return(clist)
   #list.files(textur)
@@ -156,7 +158,7 @@ return(list.new)
 }
 
 ### with notes from ids expo sqlite db
-idb<-function(){
+idb<-function(git=F){
   library(RSQLite)
   d<-dbDriver("SQLite")
   d
@@ -168,6 +170,7 @@ idb<-function(){
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0"
   dborigin<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/margindb.sqlite")
+  ifelse(!git,dborigin<-dborigin,dborigin<-"margindb.sqlite")
   # f<-list.files(dborigin,pattern="MarginNotes.sqlite*",full.names=T)
   # f
   # dbcopy<-"~/db/MarginNotes.sqlite"
@@ -186,7 +189,7 @@ idb<-function(){
   #highlight_tags<-dbGetQuery(con, "SELECT * FROM highlight_tags")
   #global.t<-dbGetQuery(con,".schema")
   all.t<-dbGetQuery(con, "SELECT name FROM sqlite_master WHERE type='table';")
-  all.t
+  #all.t
   library(abind)
   all.tg <<- all.t
   all.tables<-lapply(seq_along(1:length(all.t$name)),function(i){
@@ -209,14 +212,14 @@ idb<-function(){
     if(length(d2)>0)
       names(d2)<-x
     r<-list(q=d)
-    print(x)
+    #print(x)
     #names(r)<-x
     return(d)
 
   })
   names(qax)<-studies
   all.tables$studies<-qax
-  qax
+  #qax
   
     dbDisconnect(con)
   return(all.tables)
@@ -227,7 +230,9 @@ idb<-function(){
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
 #ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
-ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
+#ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
+ifelse (s%in%c("lapsi","tapee"),bqa<-idb(git=F),bqa<-idb(git=T))
+
 mnew<-"no new annotations..."
 if(exists("bqa")){
   print("sqlite loaded, qa + mnew declared...")

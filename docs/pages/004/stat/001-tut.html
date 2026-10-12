@@ -59,7 +59,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -302,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="some-tips-intervention" class="level2">
 <h2 class="anchored" data-anchor-id="some-tips-intervention">some tips intervention</h2>
-<p>sorry the interruption, i am not the tutor but a longtime user of R and just wanted to prevent the kommilitones not ever been using R when trying to follow whats described in the R-introduction of the 2015! textbook to give up desperately.</p>
+<p>sorry the interruption, i am not the tutor but a longtime user of R and just wanted to prevent the kommilitones not ever been using R when trying to follow whats described in the R-introduction of the 2015! textbook (<span class="citation" data-cites="levshina_how_2015">Levshina (<a href="#ref-levshina_how_2015" role="doc-biblioref">2015</a>)</span>) to give up desperately.</p>
 <p>you will stumble across a tiny mentioning of RStudio which you “could also use” instead of the focused on R GUI and CLI. this is not the case. you should instead of trying to gpt-find-out about using the R GUI and such right from the beginning use RStudio to have the appropriate fun-with-R since it is as stated a powerful and easy to use framework/tool/programming language for statistical analyses, corpus-, text-, databaseprocessing up to building complex web or pdf presentations of your work. that is a fact.</p>
 <p>RStudio may have been in 2015 not very available yet but since is the IDE (a programming interface to your desktop) that easily allows for package managing, editing and running code, creating and saving your plot graphics and most important to keeping track of the variables created within an R session (which are all the assignments or environment specific processes you will be working with when coding and running code.) if you’re not been coding yet believe me in that, you will be glad to have an accessible overview of that important “variables” and to have a convenient frontend for managing files, datasets, plot outputs and with an integrated helper page on every command which is important for learning instead of copy-paste everything from gpt.</p>
 <p>okay…, that was my tip in the beginning…, just add some for the start with RStudio (or also Positron which is kind of succeeding RStudio right now…)</p>
@@ -340,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>or any from the book, and then, an important missing:</p>
 <ul>
-<li><p>simply press CMD-enter (mac) or CTR-enter (windows) with the cursor being somewhere in or at the end of the line in the editor (or anywhere within a function) and you get your first computation or anything you commanded in that line. sure on an error you get an error :) but theres no line termination necessary or correct indendation of lines like in python. that can mean less errors but also may lead to scribbling instead coding.</p></li>
+<li><p>simply press CMD-enter (mac) or CTRL-enter (windows, linux) with the cursor being somewhere in or at the end of the line in the editor (or anywhere else within a function) and you get your first computation or anything you commanded in that line. sure on an error you get an error :) but theres no line termination necessary or correct indendation of lines like in python. that can mean less errors but also may lead to scribbling instead coding.</p></li>
 <li><p>you can simply <strong>comment out</strong> a line with the raute like</p></li>
 </ul>
 <div class="cell">
@@ -367,12 +386,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>i am really sorry for pushing forward and (mansplain) around here but i really feared rookie people will fast loose interest in that beautiful language of R when be stuck to the textbook… / well have fun nevertheless…, and if you have any questions dont hesitate to ask…</p>
 </section>
 <section id="references" class="level1">
-<h1>references</h1>
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-levshina_how_2015" class="csl-entry" role="listitem">
+Levshina, Natalia. 2015. <em>How to Do <span>Linguistics</span> with <span>R</span>: <span>Data</span> Exploration and Statistical Analysis</em>. Amsterdam: John Benjamins Publishing Company. <a href="https://doi.org/10.1075/z.195">https://doi.org/10.1075/z.195</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
