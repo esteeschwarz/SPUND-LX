@@ -30,7 +30,7 @@ cfoot: |
 ::: {.content-visible when-format="html"}
 {{< meta cmeta >}}
 :::
-{{< include ../_gitcom.qmd >}} 
+{{< include ../_gitcom-new.qmd >}} 
 
 ```{r,echo=F,eval=T}
 print("engine on...")

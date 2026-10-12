@@ -20,7 +20,7 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - text: SS26
+      - text: SS-WS26
         menu: 
           - textur001.qmd
           - nietzsche001.qmd
