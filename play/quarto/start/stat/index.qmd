@@ -45,4 +45,4 @@ val.c<-"{{< meta cmeta >}}"
 
 
 # index
-1. tiny R installation helper page > [link](001-tut.qmd)
+1. tiny **textbook::R introduction** helper page > [open](001-tut.qmd){.btn .btn-cat}

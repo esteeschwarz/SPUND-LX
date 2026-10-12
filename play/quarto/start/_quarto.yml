@@ -12,6 +12,7 @@ title-meta: ""
 resources:
     - "*.bib"
     - "*.csv"
+    - "*.R"
 website:
   title: "004"
   navbar:
@@ -20,7 +21,7 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - text: SS-WS26
+      - text: 26S
         menu: 
           - textur001.qmd
           - nietzsche001.qmd
@@ -28,6 +29,8 @@ website:
           - lxtech001.qmd
           - lfg-index.qmd
           - str-index.qmd
+      - text: 26W  
+        menu:  
           - stat/index.qmd
       - text: arkkiv
         menu:
