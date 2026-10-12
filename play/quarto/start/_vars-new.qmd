@@ -58,17 +58,33 @@ quietly2 <- function(expr) {
 }
 # qa1<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2.pdf"))
 # qa2<-list(nietzsche=c("nietzsche, kga 3-1, geburt d tragödie.pdf","nietzsche briefe ggl.pdf","Günther 2008, Der Wettkampf.pdf","Nietzsche, Homers Wettkampf, KGW III.2"))
+#qa1<-"LXstat"
 library(purrr)
 library(stringi)
 ###
 # qa1 declared in each qa.qmd!
 ##############################
+qa1
+unlist(qa1)
 qa2<-enc2utf8(unlist(qa1))
-qa2
+qa2<-unlist(qa2)
+names(qa2)<-""
+qa3<-matrix(qa2)
+c(qa2)
+qa4<-list(qa3[,1])
+names(qa4)<-names(qa1)
+qa4
+#names(qa3)<-names(qa1)
+#qa3
+#names(qa2)<-names(qa1)
+#qa2<-enc2utf8(qa1)
+qa2<-unlist(qa4)
 cat("\nutf8\n")
 qa2
+unlist(qa3)
 qa2 <- stri_trans_nfc(qa2)
-library(stringi)
+qa2
+#library(stringi)
 #table<-margindb
 ###########
 ### 16301. from sqlite
@@ -76,17 +92,21 @@ table<-margindb
 table$doc <- stri_trans_nfc(table$doc)
 table$doc
 library(bib2df)
+unique(table$doc)
+qa2
 m1<-table$doc%in%qa2
+qa2
 sum(m1)
 ###############
 ###############
 qa3<-names(qa1)
+qa3
 #m1<-table$study==qa3
 ############################
 m1<-grepl(qa3,table$study)
 ### with new pasted studies for multiple notebooks/doc
 #########################
-f<-list.files("../",pattern="bib")
+f<-list.files("../",pattern="bib",full.names=T)
 print(f)
 if(length(f)==0)
   f<-list.files(pattern="bib")

@@ -27,7 +27,7 @@ date: '`r format(Sys.time())`'
 
 #qa1<-list(LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf"))
 qa1<-list(LXstat=qa$LXstat)
-#qa1
+print(qa1)
 
 
 ```

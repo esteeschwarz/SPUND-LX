@@ -189,7 +189,7 @@ idb<-function(git=F){
   #highlight_tags<-dbGetQuery(con, "SELECT * FROM highlight_tags")
   #global.t<-dbGetQuery(con,".schema")
   all.t<-dbGetQuery(con, "SELECT name FROM sqlite_master WHERE type='table';")
-  all.t
+  #all.t
   library(abind)
   all.tg <<- all.t
   all.tables<-lapply(seq_along(1:length(all.t$name)),function(i){
@@ -212,14 +212,14 @@ idb<-function(git=F){
     if(length(d2)>0)
       names(d2)<-x
     r<-list(q=d)
-    print(x)
+    #print(x)
     #names(r)<-x
     return(d)
 
   })
   names(qax)<-studies
   all.tables$studies<-qax
-  qax
+  #qax
   
     dbDisconnect(con)
   return(all.tables)
