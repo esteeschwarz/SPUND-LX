@@ -158,7 +158,7 @@ return(list.new)
 }
 
 ### with notes from ids expo sqlite db
-idb<-function(){
+idb<-function(git=F){
   library(RSQLite)
   d<-dbDriver("SQLite")
   d
@@ -170,6 +170,7 @@ idb<-function(){
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0"
   dborigin<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/margindb.sqlite")
+  ifelse(!git,dborigin<-dborigin,dborigin<-"margindb.sqlite")
   # f<-list.files(dborigin,pattern="MarginNotes.sqlite*",full.names=T)
   # f
   # dbcopy<-"~/db/MarginNotes.sqlite"
@@ -229,7 +230,9 @@ idb<-function(){
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
 #ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
-ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
+#ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
+ifelse (s%in%c("lapsi","tapee"),bqa<-idb(git=F),bqa<-idb(git=T))
+
 mnew<-"no new annotations..."
 if(exists("bqa")){
   print("sqlite loaded, qa + mnew declared...")
