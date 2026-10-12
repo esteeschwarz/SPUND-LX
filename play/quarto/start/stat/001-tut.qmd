@@ -1,0 +1,55 @@
+---
+title: R helper
+subtitle: "tiny R installation and first use helper"
+# format: |
+#      html 
+#      - pdf
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-10-12"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+
+date: "2026-10-12"
+title-meta: ""
+bibliography: ../LFG.bib
+cmeta: |
+  class: [16842] Grundlagen der Statistik ::
+  tutor: meinschäfer ::
+  term: WS26
+  snc: 17423.1  
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 17423.R-helper
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+{{< include ../_gitcom.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [STAT](index.qmd) / R-helper
+
+-----
+:::
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+val.c<-"{{< meta cmeta >}}"
+```
+
+{{< include 001-tut.md >}} 
+
+# references
+

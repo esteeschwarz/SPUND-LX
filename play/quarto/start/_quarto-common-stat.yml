@@ -1,0 +1,21 @@
+bibliography: ../LFG.bib
+subtitle: "Grundlagen der Statistik für die Sprachwissenschaft"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+#nocite: '@*'
+title-meta: ""
+cmeta: |
+  class: [16842] Grundlagen der Statistik ::
+  tutor: meinschäfer ::
+  term: WS26
+  snc: 17423.1  
+
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [for link preserve sake consider visit the gd paper online via link in header]
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+title-meta: ""

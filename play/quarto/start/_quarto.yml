@@ -28,6 +28,7 @@ website:
           - lxtech001.qmd
           - lfg-index.qmd
           - str-index.qmd
+          - stat/index.qmd
       - text: arkkiv
         menu:
           - href: https://userpage.fu-berlin.de/stschwarz/links?title=dclx&ref=play
