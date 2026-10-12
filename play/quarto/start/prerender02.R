@@ -1,5 +1,6 @@
 # check system, adapt output
 s<-Sys.getenv("SYS")
+s
 mn4<-Sys.getenv("MN4")
 mn4
 qax<-list(litKI=c("Wiener_Einführung.pdf","Foerster_Ethik+und+Kybernetik+zweiter+Ordnung_m Kopie.pdf"),
@@ -28,7 +29,8 @@ LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN
   LXtech<-paste0(mn4,"/COMP/LX-tech")
   LFG<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LFG"
   LFG<-paste0(mn4,"/COMP/LFG")
-clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
+  STAT<-paste0(mn4,"/COMP/STAT")
+clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT)
   clist
 #  return(clist)
   #list.files(textur)
