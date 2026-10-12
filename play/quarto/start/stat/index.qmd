@@ -4,7 +4,7 @@ title: "LX / STAT"
 # toc: true
 # toc-depth: 3
 # toc-expand: true
-
+format: html
 # format: |
 #      html 
 #      - pdf
