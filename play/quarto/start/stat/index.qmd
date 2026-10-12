@@ -45,4 +45,5 @@ val.c<-"{{< meta cmeta >}}"
 
 
 # index
-1. tiny **textbook::R introduction** helper page > [open](001-tut.qmd){.btn .btn-cat}
+1. samling: margin notes general > [open](stat-qa.qmd){.btn .btn-cat}
+2. tiny **textbook::R introduction** helper page > [open](001-tut.qmd){.btn .btn-cat}
