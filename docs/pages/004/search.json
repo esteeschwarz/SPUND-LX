@@ -354,14 +354,14 @@
     "href": "stat/stat-qa.html",
     "title": "LX / STAT: annotations",
     "section": "",
-    "text": "t1\n\n\n\n$LXstat\n[1] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(3._Descriptive_statistics_for_quantitative_variables).pdf\"\n[2] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(2._Introduction_to_R).pdf\"                                \n\n\n\n\npaper: @\n\n\n\n\npage\n\n\nnote\n\n\ncomment\n\n\n\n\n\n\n5\n\n\nOne can see that the maximum frequency is 16, which occurs twice: when the length is equal to eight and ten letters. The distribution therefore has two modes, eight and ten. Such distributions are called bimodal."
+    "text": "t1\n\n\n\n$LXstat\n[1] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(3._Descriptive_statistics_for_quantitative_variables).pdf\"\n[2] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(2._Introduction_to_R).pdf\"                                \n\n\n\n\npaper: Levshina (2015)\n\n\n\n\npage\n\n\nnote\n\n\ncomment\n\n\n\n\n\n\n5\n\n\nOne can see that the maximum frequency is 16, which occurs twice: when the length is equal to eight and ten letters. The distribution therefore has two modes, eight and ten. Such distributions are called bimodal."
   },
   {
     "objectID": "stat/stat-qa.html#notes-on-papers",
     "href": "stat/stat-qa.html#notes-on-papers",
     "title": "LX / STAT: annotations",
     "section": "",
-    "text": "t1\n\n\n\n$LXstat\n[1] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(3._Descriptive_statistics_for_quantitative_variables).pdf\"\n[2] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(2._Introduction_to_R).pdf\"                                \n\n\n\n\npaper: @\n\n\n\n\npage\n\n\nnote\n\n\ncomment\n\n\n\n\n\n\n5\n\n\nOne can see that the maximum frequency is 16, which occurs twice: when the length is equal to eight and ten letters. The distribution therefore has two modes, eight and ten. Such distributions are called bimodal."
+    "text": "t1\n\n\n\n$LXstat\n[1] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(3._Descriptive_statistics_for_quantitative_variables).pdf\"\n[2] \"How_to_do_Linguistics_with_R._Data_exploration_and..._----_(2._Introduction_to_R).pdf\"                                \n\n\n\n\npaper: Levshina (2015)\n\n\n\n\npage\n\n\nnote\n\n\ncomment\n\n\n\n\n\n\n5\n\n\nOne can see that the maximum frequency is 16, which occurs twice: when the length is equal to eight and ten letters. The distribution therefore has two modes, eight and ten. Such distributions are called bimodal."
   },
   {
     "objectID": "textur001.html",
