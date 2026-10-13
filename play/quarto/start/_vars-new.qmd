@@ -107,10 +107,10 @@ m1<-grepl(qa3,table$study)
 ### with new pasted studies for multiple notebooks/doc
 #########################
 f<-list.files("../",pattern="bib",full.names=T)
-print(f)
+#print(f)
 if(length(f)==0)
   f<-list.files(pattern="bib")
-print(f)
+#print(f)
 #qa1<-qa
 b<-grep(names(qa1),f)
 #bibdf<-bib2df(f[b])
@@ -120,7 +120,7 @@ b<-grep(names(qa1),f)
 #   })
 # )
 #bibdf <- quietly2(bib2df::bib2df(f[b]))
-print(f[b])
+#print(f[b])
 bibdf<-bib2df(f[b])
 bibdf$NOTE<-gsub("\\\\","",bibdf$NOTE)
 save(bibdf,file="bibdf.RData")
@@ -128,6 +128,7 @@ qu<-unlist(qa2)
 qu
 m2<-qu%in%bibdf$NOTE
 sum(m2)
+m1
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
