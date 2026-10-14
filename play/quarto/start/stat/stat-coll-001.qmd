@@ -1,0 +1,49 @@
+---
+title: colloquium
+subtitle: "LX statistik colloquium"
+# format: |
+#      html 
+#      - pdf
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-10-14"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+format: html
+metadata-files:
+  - ../_quarto-common-stat.yml
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 17425.coll
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+{{< include ../_gitcom-new.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [STAT](index.qmd) / colloquium
+
+-----
+:::
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+val.c<-"{{< meta cmeta >}}"
+```
+
+{{< include _001-coll.md >}} 
+
+# references
+
