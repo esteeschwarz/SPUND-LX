@@ -1,0 +1,49 @@
+---
+title: class notes
+subtitle: "random notes on papers..."
+# format: |
+#      html 
+#      - pdf
+# tmeta: $testmeta$
+# date: '`r format(Sys.time())`'
+date: "2026-10-18"
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+format: html
+metadata-files:
+  - ../_quarto-common-form.yml
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 17432.notes
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+---
+::: {.content-visible when-format="html"}
+{{< meta cmeta >}}
+:::
+{{< include ../_gitcom-new.qmd >}} 
+::: {.content-visible when-format="html"}
+
+-----
+
+> [THEORY](index.qmd) / notes
+
+-----
+:::
+```{r,echo=F,eval=T}
+print("engine on...")
+#val <- quarto::quarto_metadata$get("meta")
+#meta <- knitr::metadata
+#params <- meta$
+#val<-params$tmeta
+val.f<-"fixed val"
+val.c<-"{{< meta testmeta >}}"
+val.c<-"{{< meta cmeta >}}"
+```
+
+{{< include _scribble.md >}} 
+
+# references
+

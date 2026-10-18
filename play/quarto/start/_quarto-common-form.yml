@@ -1,0 +1,20 @@
+bibliography: ../litForm.bib
+subtitle: "Literary Theory (20th – 21st centuries): Critical Perspective, Historical Experience, Political Regime. "
+# toc: true
+# toc-depth: 3
+# toc-expand: true
+#nocite: '@*'
+cmeta: |
+  class: [16418] Literary Theory ::
+  tutor: kalinin ::
+  term: WS26
+  snc: 17432.1
+
+#[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
+#  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+arkiv: 16162.tiny
+# foot: the anarkkiv lankalevikki worksheet collection >> <https://ada-sub.dh-index.org/blog>
+cfoot: |
+  [for link preserve sake consider visit the gd paper online via link in header]
+  [duumy foot collection](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
+title-meta: ""

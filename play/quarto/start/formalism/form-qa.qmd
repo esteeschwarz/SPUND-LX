@@ -1,0 +1,36 @@
+---
+title: "LX / STAT: annotations"
+bibliography: ../LXstat.bib
+#nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+title-meta: ""
+date: '`r format(Sys.time())`'
+
+---
+
+
+## notes on papers 
+
+### snc
+- t1
+
+{{< include ../_setup-new.qmd >}}
+
+```{r}
+#| label: tbl_qa1
+#| tbl-cap: "wiener_kybernetik_1992: annotations"
+#| echo: false
+#| warning: false
+#| eval: true
+
+#qa1<-list(LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf"))
+qa1<-list(litForm=qa$litForm)
+print(qa1)
+
+
+```
+
+
+{{< include ../_vars-new.qmd >}}
