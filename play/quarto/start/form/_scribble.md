@@ -7,3 +7,6 @@
 ### psychology
 
 ### religion
+- language before art:
+- russ. ikonen: grausam, aber artistic
+- niemand kauft kunst auf dem bazar: kunst :vor: institution
