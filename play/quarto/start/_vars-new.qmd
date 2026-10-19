@@ -104,15 +104,21 @@ qa3
 #m1<-table$study==qa3
 ############################
 m1<-grepl(qa3,table$study)
+sum(m1)
 ### with new pasted studies for multiple notebooks/doc
 #########################
 f<-list.files("../",pattern="bib",full.names=T)
+#f<-list.files(pattern="bib",full.names=T)
 #print(f)
+#setwd("SPUND-LX/play/quarto/start")
+#list.files()
+f
 if(length(f)==0)
   f<-list.files(pattern="bib")
 #print(f)
 #qa1<-qa
 b<-grep(names(qa1),f)
+b
 #bibdf<-bib2df(f[b])
 # invisible(
 #   capture.output({
@@ -128,7 +134,8 @@ qu<-unlist(qa2)
 qu
 m2<-qu%in%bibdf$NOTE
 sum(m2)
-m1
+
+sum(m1)
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
 kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
@@ -146,7 +153,21 @@ kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
 du<-unique(kdf$doc)
 du
 bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
+# print(paste0("debug: number of annotations = ",length(kdf[,1])))
 #save(bibdf,file="bibdf.RData")
+```
+
+```{r,debug}
+#| echo: false
+#| warning: false
+#| eval: true
+#| output: true
+#| message: false
+
+
+print(paste0("debug: number of annotations = ",length(kdf[,1])))
+cat("docs annotated:\n")
+print(du)
 ```
 
 ```{r,kable}
@@ -157,21 +178,23 @@ bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
 #| output: true
 #| message: false
 
+
 library(kableExtra)
 #du
+
 for(k in 1:length(du)){
   p<-du[k]
   p
   p<-stri_trans_nfc(p)
   kdf$doc<-stri_trans_nfc(kdf$doc)
   m3<-kdf$doc==p
-  sum(m3,na.rm = T)
+  #cat("m3:",sum(m3,na.rm = T),"\n")
   #cat(bibdf$NOTE,"\n")
   #cat(p,"\n")
   #m4<-grep(p,bibdf$NOTE)
   #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
- # which(m4)
+  which(m4)
   #sum(m4,na.rm = T)
   m4[is.na(m4)]<-F
 #  m4<-m4[!is.na(m4)]
@@ -185,10 +208,11 @@ for(k in 1:length(du)){
   c<-bibdf$BIBTEXKEY[which(m4)]
   c<-c[!is.na(c)]
   #c
-  #cat("c:",c,"\n")
+  cat("c:",c,"\n")
   page<-gsub("[\r\n ] ","",kdf$spage[m3])
   if(length(m3)>0){
-    if(sum(grepl("[a-z]",kdf$notes[m3]))>0){
+    # that was the pudels kern! only greps latin, so no russian annotation!
+    if(sum(grepl("[a-zא–תа-ц]",kdf$notes[m3]))>0){
   df<-data.frame(page=paste0("",page,""),note=kdf$notes[m3],comment=kdf$comment[m3])
   dup<-duplicated(df$note)
   df<-df[!dup,]

@@ -172,6 +172,7 @@ idb<-function(git=F){
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0"
   dborigin<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/play/quarto/start/margindb.sqlite")
+  #git<-F
   ifelse(!git,dborigin<-dborigin,dborigin<-"margindb.sqlite")
   # f<-list.files(dborigin,pattern="MarginNotes.sqlite*",full.names=T)
   # f
@@ -202,6 +203,7 @@ idb<-function(git=F){
   names(all.tables)<-c("dbsub","index","docs")
   margin1<-all.tables$dbsub
   studies<-unique(all.tables$docs$study)
+  #studies
   qax<-lapply(studies,function(x){
     m<-margin1$study==x
     m<-grepl(x,margin1$study)
@@ -228,9 +230,9 @@ idb<-function(git=F){
 
 }
 ######################
-
+#s<-"x"
 outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
-qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
+#qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
 #ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
 #ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
 ifelse (s%in%c("lapsi","tapee"),bqa<-idb(git=F),bqa<-idb(git=T))
