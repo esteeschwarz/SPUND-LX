@@ -1,6 +1,6 @@
 ---
-title: "LX / STAT: annotations"
-bibliography: ../LXstat.bib
+title: "AVL / Literary Theory: annotations"
+bibliography: ../litForm.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
