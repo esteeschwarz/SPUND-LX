@@ -32,6 +32,7 @@ website:
       - text: 26W  
         menu:  
           - stat/index.qmd
+          - form/index.qmd
       - text: arkkiv
         menu:
           - href: https://userpage.fu-berlin.de/stschwarz/links?title=dclx&ref=play
