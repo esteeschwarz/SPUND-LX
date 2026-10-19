@@ -208,7 +208,7 @@ for(k in 1:length(du)){
   c<-bibdf$BIBTEXKEY[which(m4)]
   c<-c[!is.na(c)]
   #c
-  cat("c:",c,"\n")
+  #cat("c:",c,"\n")
   page<-gsub("[\r\n ] ","",kdf$spage[m3])
   if(length(m3)>0){
     # that was the pudels kern! only greps latin, so no russian annotation!
