@@ -13,6 +13,7 @@ resources:
     - "*.bib"
     - "*.csv"
     - "*.R"
+    - "margindb.RData"
 website:
   title: "004"
   navbar:
