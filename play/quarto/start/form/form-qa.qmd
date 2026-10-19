@@ -7,8 +7,16 @@ bibliography: ../litForm.bib
 #   - tbl-summary: {file: "results.qmd", num: 2}
 title-meta: ""
 date: '`r format(Sys.time())`'
-
 ---
+
+::: {.content-visible when-format="html"}
+
+-----
+
+> [THEORY](index.qmd) / annotations
+
+-----
+:::
 
 
 ## notes on papers 
