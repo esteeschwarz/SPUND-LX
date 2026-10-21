@@ -1,0 +1,44 @@
+---
+title: "LX / minderheitensprachen: annotations"
+bibliography: ../LXmin.bib
+#nocite: '@pethes_war_2006'
+# tables:
+#   - tbl_qa: {file: "qa.qmd", num: 1}
+#   - tbl-summary: {file: "results.qmd", num: 2}
+title-meta: ""
+date: '`r format(Sys.time())`'
+---
+
+::: {.content-visible when-format="html"}
+
+-----
+
+> [MINOR](index.qmd) / annotations
+
+-----
+:::
+
+
+## notes on papers 
+
+### snc
+- t1
+
+{{< include ../_setup-new.qmd >}}
+
+```{r}
+#| label: tbl_qa1
+#| tbl-cap: "wiener_kybernetik_1992: annotations"
+#| echo: false
+#| warning: false
+#| eval: true
+
+#qa1<-list(LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf"))
+qa1<-list(LXminor=qa$LXminor)
+print(qa1)
+
+
+```
+
+
+{{< include ../_vars-new.qmd >}}
