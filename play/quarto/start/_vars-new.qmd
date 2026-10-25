@@ -194,6 +194,10 @@ for(k in 1:length(du)){
   #m4<-grep(p,bibdf$NOTE)
   #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
+  ### 17442.cite: if one citation applies for different pdfs (chapters of a cited book)
+  if(sum(m4)==0)
+    m4<-grepl(p,bibdf$NOTE)
+  #########################
   which(m4)
   #sum(m4,na.rm = T)
   m4[is.na(m4)]<-F
