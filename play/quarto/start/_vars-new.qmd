@@ -195,7 +195,8 @@ for(k in 1:length(du)){
   #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
   ### 17442.cite: if one citation applies for different pdfs (chapters of a cited book)
-  if(sum(m4)==0)
+  ### general: !important! > search for pdf title in zotero bib "extra" field
+  if(sum(m4,na.rm=T)==0)
     m4<-grepl(p,bibdf$NOTE)
   #########################
   which(m4)

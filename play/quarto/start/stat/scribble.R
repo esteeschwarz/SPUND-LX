@@ -48,4 +48,24 @@ b1
 head(ldt)
 library(xml2)
 library(lmerTest)
-lm1<-lmer
+lm1<-lmer(Mean_RT~Length+(1|Freq),ldt)
+summary(lm1)
+lm2<-lmer(Mean_RT~Freq+(1|Length),ldt)
+summary(lm2)
+# lm7<-lmer(Mean_RT~Length+(1|Freq),ldt)
+# summary(lm7)
+# lm8<-lmer(Mean_RT~Freq+(1|Length),ldt)
+# summary(lm2)
+lm3<-lm(Mean_RT~Length+Freq,ldt)
+summary(lm3)
+lm4<-lm(Mean_RT~Freq+Length,ldt)
+summary(lm4)
+lm5<-lm(Mean_RT~Freq*Length,ldt)
+summary(lm5)
+ldt2<-ldt[order(ldt$Freq),]
+head(ldt2)
+lm6<-lm(Mean_RT~Freq+Length,ldt2)
+summary(lm6)
+# > intercept estimate: general mean: no matter how df is sorted! probably only if predictor is continuos
+############
+
