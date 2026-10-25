@@ -2,8 +2,8 @@
 # 17423.lx.statistics
 # scribble
 #####################
-# Q: https://benjamins.com/sites/z.195/content/
-# Q: https://benjamins.com/sites/z.195/download/r_package/Rling_1.0.tar.gz
+# Q1: https://benjamins.com/sites/z.195/content/
+# Q2: https://benjamins.com/sites/z.195/download/r_package/Rling_1.0.tar.gz
 
 
 library(modeest)
@@ -24,7 +24,7 @@ summary(Length)
 
 ## KW44
 
-### 3.1
+### Q1, ex 3.1
 
 #s<-Subj1,Subj2,Subj3,Subj4,Subj5,Subj6,Subj7,Subj8,Subj9,Subj10
 
@@ -43,3 +43,9 @@ mean(rt,na.rm=T)
 median(rt,na.rm=T)
 b1<-boxplot(rt)
 b1
+
+###
+head(ldt)
+library(xml2)
+library(lmerTest)
+lm1<-lmer

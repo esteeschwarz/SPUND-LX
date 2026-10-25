@@ -1,6 +1,6 @@
 ---
 title: "LX / minderheitensprachen: annotations"
-bibliography: ../LXmin.bib
+bibliography: ../LXminor.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
@@ -33,9 +33,8 @@ date: '`r format(Sys.time())`'
 #| warning: false
 #| eval: true
 
-#qa1<-list(LXtech=c("Zinsmeister 2013.pdf","Frankowsky_2022.pdf"))
 qa1<-list(LXminor=qa$LXminor)
-print(qa1)
+#print(qa1)
 
 
 ```
