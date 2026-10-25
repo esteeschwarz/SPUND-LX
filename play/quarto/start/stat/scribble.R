@@ -2,8 +2,15 @@
 # 17423.lx.statistics
 # scribble
 #####################
+# Q: https://benjamins.com/sites/z.195/content/
+# Q: https://benjamins.com/sites/z.195/download/r_package/Rling_1.0.tar.gz
+
 
 library(modeest)
+
+f<-"~/Downloads/Rling_1.0.tar"
+install.packages(pkgs = f, repos = NULL, type = "source")
+
 library(Rling)
 
 data(ldt)
@@ -13,7 +20,7 @@ hist(Mean_RT)
 plot(density(Mean_RT))
 qqnorm(Mean_RT)
 qqline(Mean_RT)
-
+summary(Length)
 
 ## KW44
 
