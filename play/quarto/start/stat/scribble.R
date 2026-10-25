@@ -69,3 +69,13 @@ summary(lm6)
 # > intercept estimate: general mean: no matter how df is sorted! probably only if predictor is continuos
 ############
 
+var(Length)
+sd(Length)
+b1
+IQR(Length)
+summary(ldt)
+summary(df)
+b2<-boxplot(Length)
+b2
+IQR(rt,na.rm=T)
+mad(rt,na.rm = T)
