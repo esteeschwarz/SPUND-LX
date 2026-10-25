@@ -31,8 +31,10 @@ LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN
   LFG<-paste0(mn4,"/COMP/LFG")
   STAT<-paste0(mn4,"/COMP/STAT")
   litForm<-paste0(mn4,"/SZONDI/theory")
+  LXminor<-paste0(mn4,"/SPUND HU - multi LX/lohmann")
 
-clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT,litForm=litForm)
+clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT,
+  litForm=litForm,LXminor=LXminor)
   clist
 #  return(clist)
   #list.files(textur)
