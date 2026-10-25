@@ -108,6 +108,7 @@ sum(m1)
 ### with new pasted studies for multiple notebooks/doc
 #########################
 f<-list.files("../",pattern="bib",full.names=T)
+### debug >
 #f<-list.files(pattern="bib",full.names=T)
 #print(f)
 #setwd("SPUND-LX/play/quarto/start")
@@ -127,14 +128,26 @@ b
 # )
 #bibdf <- quietly2(bib2df::bib2df(f[b]))
 #print(f[b])
-bibdf<-bib2df(f[b])
+f[b]
+bibdf<-bib2df(f[b],merge_lines = T) # merge: important for \n in field "extra" > $NOTE
 bibdf$NOTE<-gsub("\\\\","",bibdf$NOTE)
 save(bibdf,file="bibdf.RData")
 qu<-unlist(qa2)
 qu
-m2<-qu%in%bibdf$NOTE
-sum(m2)
-
+# m2<-qu%in%bibdf$NOTE
+# sum(m2)
+# p<-qu
+# p
+# m4<-p==bibdf$NOTE
+#   ### 17442.cite: if one citation applies for different pdfs (chapters of a cited book)
+#   ### general: !important! > search for pdf title in zotero bib "extra" field
+#   if(sum(m4,na.rm=T)==0)
+#     m4<-grepl(p,bibdf$NOTE)
+#   #########################
+#   m4[is.na(m4)]<-F
+# which(m4)
+#   #sum(m4,na.rm = T)
+  
 sum(m1)
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
@@ -181,7 +194,7 @@ print(du)
 
 library(kableExtra)
 #du
-
+#k<-1
 for(k in 1:length(du)){
   p<-du[k]
   p
@@ -194,14 +207,22 @@ for(k in 1:length(du)){
   #m4<-grep(p,bibdf$NOTE)
   #m4<-p==bibdf$NOTE)
   m4<-p==bibdf$NOTE
+  p
   ### 17442.cite: if one citation applies for different pdfs (chapters of a cited book)
   ### general: !important! > search for pdf title in zotero bib "extra" field
   if(sum(m4,na.rm=T)==0)
     m4<-grepl(p,bibdf$NOTE)
+  ### debug:
+  p
+#  grepl("Linguistics",bibdf$NOTE) #T
+  m5<-stri_detect(bibdf$NOTE,fixed=p)
+ # stri_match(bibdf$NOTE,regex=p,mode = "all")
+  #stri_match()
   #########################
-  which(m4)
+ # which(m5)
   #sum(m4,na.rm = T)
-  m4[is.na(m4)]<-F
+  m5[is.na(m5)]<-F
+  m4<-m5
 #  m4<-m4[!is.na(m4)]
   #length(m4)
   #sum(m4)
@@ -210,7 +231,7 @@ for(k in 1:length(du)){
   #length(bibdf$NOTE[m4])
   #bibdf$NOTE[which(m4)]
   #cat(bibdf$NOTE[which(m4)],"\n")
-  c<-bibdf$BIBTEXKEY[which(m4)]
+  c<-bibdf$BIBTEXKEY[which(m5)]
   c<-c[!is.na(c)]
   #c
   #cat("c:",c,"\n")
