@@ -62,3 +62,35 @@
 ## politics
 - bolshevik vs. social revolutionary (majority, more moderate)
 
+# 17443.
+- tynianov, on literary evolution
+
+## shklovsky, 
+### resurrection
+
+- fossilisation, automatisation artistic language
+    - of everyday life
+    - alienation <ostranenie>
+        - marx: relation (absence of) worker/labour
+        - VERfremdung as means to overcome ENTfremdung
+        - estrangement - eNstrangemanet
+    - familiarity of words
+        - luhan: media - message
+        - through window dont see window
+        - deconstruction - reconstrucion, deformation
+        - destroy historic forms
+
+### Literature without a Plot: Rozanov
+
+- a. blok
+- 
+
+### art as device
+
+- economic aspects
+    - energy expenditure:
+    - to estrange sth.
+- trotzki: permanent revolution / de sade: one more effort
+- social practices/routines in review of (horse, alien)
+
+
