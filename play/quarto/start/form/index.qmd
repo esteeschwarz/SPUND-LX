@@ -47,3 +47,4 @@ val.c<-"{{< meta cmeta >}}"
 # index
 1. samling: margin notes general > [open](form-qa.qmd){.btn .btn-cat}
 2. class scribble [001](001.qmd)
+3. play [002](play.qmd)
