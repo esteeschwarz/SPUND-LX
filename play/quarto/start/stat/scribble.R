@@ -8,12 +8,13 @@
 
 library(modeest)
 
-f<-"~/Downloads/Rling_1.0.tar"
-install.packages(pkgs = f, repos = NULL, type = "source")
+#f<-"~/Downloads/Rling_1.0.tar"
+#install.packages(pkgs = f, repos = NULL, type = "source")
 
 library(Rling)
 
 data(ldt)
+str(ldt)
 attach(ldt)
 mean(Length)
 hist(Mean_RT)
@@ -79,3 +80,35 @@ b2<-boxplot(Length)
 b2
 IQR(rt,na.rm=T)
 mad(rt,na.rm = T)
+attach(ldt)
+head(ldt)
+m<-ldt$Length==8|ldt$Length==10
+#ldt[Freq==10,]
+mean(ldt$Freq[m])
+max(ldt$Freq[m])
+min(ldt$Freq[m])
+ldt[m,]
+summary(ldt)
+mean(Length)
+
+# summe der q. abweichungen durch n-1
+a<-lapply(ldt$Length,function(x){
+  a<-(x-mean(ldt$Length))^2
+  #a<-a/(length(Length)
+  #a<-sqrt(a)
+})
+
+#a3<-apply(Length)
+a2<-sum(unlist(a))/(length(Length)-1)
+a2<-sqrt(a2)
+a2
+sd(Length)
+var(ldt$Length)
+a3<-lapply(ldt$Length,function(x){
+  a<-(x-median(ldt$Length))^2
+  a<-sqrt(a)
+})
+a4<-sum(unlist(a3))/(length(Length)-1)
+a4<-sqrt(a4)
+a4
+ldt$Length[50]<-5
