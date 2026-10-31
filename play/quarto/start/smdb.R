@@ -85,7 +85,7 @@ cat("---- sum notes-com-docs new !in old db:",sum(sum(!mn),sum(!mc),sum(!md)),"\
 cat("---- length db new:",length(docs.new),"\n")
 
   if(p|saveanyway){
-  save(margindb,file="margindb_sf.RData")
+  #save(margindb,file="margindb_sf.RData")
 
   margindb<-dbnew
   save(margindb,file="margindb.RData")
