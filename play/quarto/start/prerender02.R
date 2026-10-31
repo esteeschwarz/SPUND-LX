@@ -32,8 +32,8 @@ LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN
   STAT<-paste0(mn4,"/COMP/STAT")
   litForm<-paste0(mn4,"/SZONDI/theory")
   LXminor<-paste0(mn4,"/SPUND HU - multi LX/lohmann")
-
-clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT,
+### debug test rm
+clist_trm<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT,
   litForm=litForm,LXminor=LXminor)
   clist
 #  return(clist)
@@ -237,7 +237,17 @@ outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 #qaz<-c(litKI=NA,nietzsche=NA,textur=NA,LXtech=NA,VSstr=NA,LFG=NA)# margin note studyset
 #ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
 #ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
-ifelse (s%in%c("lapsi","tapee","pro7"),bqa<-idb(git=F),bqa<-idb(git=T))
+#setwd("/Users/guhl/Documents/GitHub/SPUND-LX/play/quarto/start")
+fit.r<-file.info("margindb.RData")
+fit.s<-file.info("margindb.sqlite")
+fst.r<-fit.r$mtime
+fst.s<-fit.s$mtime
+mdb.r<-F
+if(fst.r>fst.s)
+  mdb.r<-T
+### only process sqlite if manually created margindb.RData is older, else use existing .RData db
+if(!mdb.r){
+  ifelse (s%in%c("lapsi","tapee","pro7"),bqa<-idb(git=F),bqa<-idb(git=T))
 
 mnew<-"no new annotations..."
 if(exists("bqa")){
@@ -247,6 +257,7 @@ if(exists("bqa")){
   margindb<-list(dbsub=mnew,qa=qa)
   save(margindb,file="margindb.RData")
   
+}
 }
 ### vars
 docdir<-"."
@@ -265,3 +276,4 @@ source("fetch-zotero.R")
 
 # list.files('/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur')
 # system("ls '/Users/guhl/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/SZONDI/textur'")
+  

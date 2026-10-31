@@ -112,3 +112,7 @@ a4<-sum(unlist(a3))/(length(Length)-1)
 a4<-sqrt(a4)
 a4
 ldt$Length[50]<-5
+
+library(lme4)
+?clmm
+??clmm

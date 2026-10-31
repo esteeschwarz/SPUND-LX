@@ -19,10 +19,16 @@ LXtech<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN
   LXtech<-paste0(mn4,"/COMP/LX-tech")
   LFG<-"~/Library/Mobile Documents/iCloud~QReader~MarginStudy~easy/Documents/MN3/A_UNI/COMP/LFG"
   LFG<-paste0(mn4,"/COMP/LFG")
-clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
+   STAT<-paste0(mn4,"/COMP/STAT")
+  litForm<-paste0(mn4,"/SZONDI/theory")
+  LXminor<-paste0(mn4,"/SPUND HU - multi LX/lohmann")
+
+clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG,LXstat=STAT,
+  litForm=litForm,LXminor=LXminor)
+# clist<-list(litKI=litKI,nietzsche=nietzsche,VSstr=stratling,textur=textur,LXtech=LXtech,LFG=LFG)
   clist
 }
-idb<-function(){
+idb<-function(dborigin_pass="~/db/MarginNoteBackup.savetemplate.marginbackupall"){
   library(RSQLite)
   d<-dbDriver("SQLite")
   d
@@ -33,10 +39,13 @@ idb<-function(){
  # dbsrc<-paste(dbsrc,"MarginNotes.sqlite",sep = "/")
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0/MarginNotes.sqlite"
   dborigin<-"/Users/guhl/Library/Containers/QReader.MarginStudy.easy/Data/Library/Private Documents/MN4NotebookDatabase/0"
+  dborigin<-"/Users/guhl/db/MarginNoteBackup(2026-10-31-10-28-31).marginbackupall"
+  dborigin<-dborigin_pass
   f<-list.files(dborigin,pattern="MarginNotes.sqlite*",full.names=T)
   f
   dbcopy<-"~/db/MarginNotes.sqlite"
   dbcopy<-"~/db/marginnotes/"
+  dbcopy<-"~/db/margin_bkp/"
   #file.copy(dborigin,dbcopy)
   file.copy(f,dbcopy,overwrite=T)
   dbsrc<-paste0(dbcopy,"MarginNotes.sqlite")    
@@ -490,17 +499,18 @@ id<-"CCAA6353-3A42-4D28-93A8-DF035DD1539A"
   #margin1$study[is.na(margin1$study)]<-""
   m<-margin2$study=="litKI"
   unique(margin2$doc[m])
-  margindb<-list(studies=qax,dbsub=margin2)
+  margindb<-list(qa=qax,dbsub=margin2)
   return(margindb)
 #################
+### debug >
   qa<-get.clist()
   qa
-  qax
+  #qax
   marginx<-get.margin(qa)
-margin1<-ds
+#margin1<-ds
   ds<-marginx$dbsub
   sum(is.na(ds$study))
-  d1<-ds[grep("litKI",ds$study),]
+  d1<-ds[grep("litForm",ds$study),]
   ds<-d1
   ds[ds$nid=="0DD212B7-EF16-4242-809E-766305ED590D",]
   dx<-ds[grepl("Calvino",ds$doc),]
@@ -527,14 +537,15 @@ t3<-ts[!is.na(ts$ZTITLE),]
 t3<-t3[,!is.na(t3[,1:length(t3)])]
 t3
 qa<-get.clist()
+  qa
 margin1<-get.margin(qa)
   getwd()
 #margin2<-margin1
-save(margin1,file="margin1.RData")
-load("margindb.RData")
-names(margindb)
-  dbsub<-margindb$dbsub
-m<-grep("kook",dbsub$doc)
-  dbsub$notes[m]
-length(m)
+# save(margin1,file="margin1.RData")
+# load("margindb.RData")
+# names(margindb)
+#   dbsub<-margindb$dbsub
+# m<-grep("kook",dbsub$doc)
+#   dbsub$notes[m]
+# length(m)
 }
