@@ -1,6 +1,7 @@
 
 ### to run on srv after copy sqlite backup
 # t1: wks.
+# t5.
 smdb<-function(){
   ############################################
 ### get notes from sqlite
