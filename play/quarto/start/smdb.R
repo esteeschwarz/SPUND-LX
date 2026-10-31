@@ -82,6 +82,7 @@ md2<-sum(!md)>0
 p<-(sum(mn2,mc2,md2)>0)|(fst>fs)
 cat("---- DB size olde:",fs,", new:",fst,"\n")
 cat("---- sum notes-com-docs new !in old db:",sum(sum(!mn),sum(!mc),sum(!md)),"\n")
+cat("---- length db new:",length(docs.new),"\n")
 
   if(p|saveanyway){
   save(margindb,file="margindb_sf.RData")
