@@ -6,7 +6,7 @@
 #| results: "asis"
 #| output: true
 #| message: false
-#| tbl-colwidths: [5%,10%,60%,35%]
+#| tbl-colwidths: [5,10,60,35]
 
 
 
