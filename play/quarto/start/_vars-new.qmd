@@ -157,7 +157,7 @@ qu
 sum(m1)
 kdf<-margindb[m1,]
 kdf<-kdf[order(kdf$doc,kdf$spage),]
-kdf<-data.frame(kdf[,c("doc","notes","comment","spage")],row.names = NULL)
+kdf<-data.frame(kdf[,c("doc","notes","comment","title","spage")],row.names = NULL)
 kdf$notes<-gsub("[\r\n|]"," <br> ",kdf$notes) # (..)
 # kdf$comment<-gsub("[\r\n|]"," / ",kdf$comment)
 # kdf$comment<-gsub("\\r\\n|\\n|\\|"," \\\\\\\\ ",kdf$comment)
@@ -245,7 +245,7 @@ for(k in 1:length(du)){
   if(length(m3)>0){
     # that was the pudels kern! only greps latin, so no russian annotation!
     if(sum(grepl("[a-zא–תа-ц]",kdf$notes[m3]))>0){
-  df<-data.frame(page=paste0("",page,""),note=kdf$notes[m3],comment=kdf$comment[m3])
+  df<-data.frame(page=paste0("",page,""),title=kdf$title[m3],note=kdf$notes[m3],comment=kdf$comment[m3])
   dup<-duplicated(df$note)
   df<-df[!dup,]
   if(sum(m4,na.rm=T)==0){
@@ -265,8 +265,9 @@ cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>%
   kable_styling(bootstrap_options = c("striped", "condensed"), 
                     full_width = T) %>%
   column_spec(1, width = "2cm") %>% 
-  column_spec(2, width = "7cm") %>% 
-  column_spec(3, width = "4cm"))
+  column_spec(2, width = "3cm") %>% 
+  column_spec(3, width = "5cm") %>% 
+  column_spec(4, width = "3cm"))
 # }
 # if (knitr::is_latex_output()) {
 # cat(knitr::kable(df,row.names = F,booktabs = F, format="latex",escape=T) %>% 
