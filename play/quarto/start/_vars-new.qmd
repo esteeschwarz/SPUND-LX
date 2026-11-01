@@ -169,6 +169,7 @@ kdf$comment<-gsub("(http.+?)( |\r|\n|<br>)",' <a href="\\1" target="_blank">\\1<
 kdf$comment<-gsub('(href=".+?) "','\\1"',kdf$comment)
 #kdf$comment<-gsub("(http.+) ?",'<a href="\\1 " target="_blank">\\1 </a>',kdf$comment)
 kdf<-kdf[!(is.na(kdf$notes)&(is.na(kdf$comment)|kdf$comment=="")),]
+kdf$title[is.na(kdf$title)]<-""
 du<-unique(kdf$doc)
 du
 bibdf$NOTE <- stri_trans_nfc(bibdf$NOTE)
@@ -264,10 +265,10 @@ cat(paste0("\npaper: @",c,"\n"))
 cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>% 
   kable_styling(bootstrap_options = c("striped", "condensed"), 
                     full_width = T) %>%
-  column_spec(1, width = "2cm") %>% 
-  column_spec(2, width = "3cm") %>% 
-  column_spec(3, width = "5cm") %>% 
-  column_spec(4, width = "3cm"))
+  column_spec(1, width = "150mm") %>% 
+  column_spec(2, width = "150mm") %>% 
+  column_spec(3, width = "6cm") %>% 
+  column_spec(4, width = "4cm"))
 # }
 # if (knitr::is_latex_output()) {
 # cat(knitr::kable(df,row.names = F,booktabs = F, format="latex",escape=T) %>% 
