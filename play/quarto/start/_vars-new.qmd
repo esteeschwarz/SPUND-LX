@@ -268,11 +268,11 @@ cat(paste0("\npaper: @",c,"\n"))
 cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>% 
   kable_styling(bootstrap_options = c("striped", "condensed"), 
                     full_width = T) 
-  #                   %>%
-  # column_spec(1, width = "150mm") %>% 
-  # column_spec(2, width = "150mm") %>% 
-  # column_spec(3, width = "6cm") %>% 
-  # column_spec(4, width = "4cm")
+                    %>%
+  column_spec(1, width = "10%") %>% 
+  column_spec(2, width = "15%") %>% 
+  column_spec(3, width = "55%") %>% 
+  column_spec(4, width = "20%")
   )
 # }
 # if (knitr::is_latex_output()) {
