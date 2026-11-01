@@ -238,6 +238,7 @@ outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 #ifelse (s%in%c("lapsi","tapee"),bqa<-get.qa(),qa<-qaz)
 #ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
 #setwd("/Users/guhl/Documents/GitHub/SPUND-LX/play/quarto/start")
+getwd()
 fit.r<-file.info("margindb.RData")
 fit.s<-file.info("margindb.sqlite")
 fst.r<-fit.r$mtime
@@ -268,6 +269,14 @@ qa
 bibyml<-qa
 ########
 #qa
+push<-ifelse(mdb.r,"RData","sqlite")
+load("margindb.RData")
+ldb<-length(margindb$dbsub$doc)
+da<-format(Sys.time())
+mdb<-read.csv("mdb.csv")
+mdba<-data.frame(date=da,length=ldb,push=push)
+mdb<-rbind(mdb,mdba)
+write.csv(mdb,"mdb.csv",row.names=F)
 print("------ prerender fin, > fetch-zotero.R")
 source("fetch-zotero.R")
 #cat("------------ NEW ANNOTATIONS:")
