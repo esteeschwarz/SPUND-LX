@@ -197,6 +197,9 @@ print(du)
 #| results: "asis"
 #| output: true
 #| message: false
+#| tbl-colwidths: [10, 20, 50, 20]
+
+
 
 
 library(kableExtra)
@@ -264,11 +267,13 @@ cat(paste0("\npaper: @",c,"\n"))
 # if (knitr::is_html_output()) {
 cat(knitr::kable(df,row.names = F,booktabs = F, format="html",escape=F) %>% 
   kable_styling(bootstrap_options = c("striped", "condensed"), 
-                    full_width = T) %>%
-  column_spec(1, width = "150mm") %>% 
-  column_spec(2, width = "150mm") %>% 
-  column_spec(3, width = "6cm") %>% 
-  column_spec(4, width = "4cm"))
+                    full_width = T) 
+  #                   %>%
+  # column_spec(1, width = "150mm") %>% 
+  # column_spec(2, width = "150mm") %>% 
+  # column_spec(3, width = "6cm") %>% 
+  # column_spec(4, width = "4cm")
+  )
 # }
 # if (knitr::is_latex_output()) {
 # cat(knitr::kable(df,row.names = F,booktabs = F, format="latex",escape=T) %>% 
