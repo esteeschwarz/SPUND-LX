@@ -26,7 +26,13 @@ textur=c("2 - Behmenburg, Lena - Das Weben von Texten und Texturen.pdf","langloi
 
 # load("margindb.RData") # in setup.qmd
 # qa<-margindb$qa
-# margindb<-margindb$dbsub
+# # margindb<-margindb$dbsub
+# ldb<-length(margindb$doc)
+# da<-format(Sys.time())
+# mdb<-read.csv("mdb.csv")
+# mdba<-data.frame(date=da,length=ldb)
+# mdb<-rbind(mdb,mdba)
+# write.csv(mdb,"mdb.csv",row.names=F)
 #qa<-margindb$qa
 print("_vars")
 #qa1

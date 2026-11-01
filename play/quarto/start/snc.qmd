@@ -45,6 +45,8 @@ print("engine on...")
 #val<-params$tmeta
 val.f<-"fixed val"
 val.c<-"{{< meta testmeta >}}"
+mdb<-read.csv("mdb.csv")
+print(mdb)
 ```
 
 ### 16155.
