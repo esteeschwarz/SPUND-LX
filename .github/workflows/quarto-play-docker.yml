@@ -97,6 +97,9 @@ jobs:
 
         # git add -f play/quarto/start/_freeze
         git add play/quarto/start/*.bib
+        git add play/quarto/start/*.csv
+        # git add play/quarto/start/*.RData
+
 
         if ! git diff --cached --quiet; then
           git commit -m "upd bib runner"

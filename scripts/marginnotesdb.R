@@ -459,8 +459,12 @@ id<-"CCAA6353-3A42-4D28-93A8-DF035DD1539A"
   sum(is.na(t14$ZNOTEID))
   sum(is.na(t14$study))
 #  t14$study[is.na(t14$study)]<-""
-  colnames(t14)
+  #cat("--- colnames extracted db\n")
+  #print(colnames(t14))
+  ####################################
+  ### db selector
   cn<-c(27,28,15,14,21,22,23,24,1,2,3)
+  ####################################
   margin1<-t14[,cn]
   cns<-c("study","doc","spage","epage","notes","comment","title","ocr","table","nid","tid")
   colnames(margin1)<-cns
