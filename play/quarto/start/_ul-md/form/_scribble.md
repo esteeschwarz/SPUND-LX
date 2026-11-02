@@ -117,3 +117,21 @@ was wären analogien zu 1920? how did world look like russia 1910-30 concerning 
 
 - autofiction vs.
 - dokufiktion
+
+## class
+### LEF: (левого фронта)
+
+- left front of the arts
+- editor: majakowski (1923), brik +
+    - lili brik: circulation (varnhagen)
+- see, not recognize: defamiliarisation
+- platonov: ~1926
+- 1940: 1bio prolet-journalists to write articles in newspapers, cf.
+- novel: bourgeoise conscience, self recognition of...
+- bricolage (strauss)
+- formalists: both scholars & critics
+- 
+
+### language of lenin
+- ленинскии vs. ленина
+- 
