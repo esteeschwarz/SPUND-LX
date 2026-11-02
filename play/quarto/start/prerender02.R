@@ -239,20 +239,20 @@ outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 #ifelse (s%in%c("lapsi","tapee"),bqa<-idb(),qa<-qaz)
 #setwd("/Users/guhl/Documents/GitHub/SPUND-LX/play/quarto/start")
 getwd()
-fit.r<-file.info("margindb.RData")
-fit.s<-file.info("margindb.sqlite")
-cat("---- margindb timestamps rd/sql...\n")
-print(fit.r)
-print(fit.s)
-fst.r<-fit.r$mtime
-fst.s<-fit.s$mtime
-print(fst.r)
-print(fst.s)
-mdb.r<-F
-if(fst.r>fst.s)
-  mdb.r<-T
+# fit.r<-file.info("margindb.RData")
+# fit.s<-file.info("margindb.sqlite")
+# cat("---- margindb timestamps rd/sql...\n")
+# print(fit.r)
+# print(fit.s)
+# fst.r<-fit.r$mtime
+# fst.s<-fit.s$mtime
+# print(fst.r)
+# print(fst.s)
+mdb.r<-T
+# if(fst.r>fst.s)
+#   mdb.r<-T
 ### only process sqlite if manually created margindb.RData is older, else use existing .RData db
-if(!mdb.r){
+# if(!mdb.r){
   ifelse (s%in%c("lapsi","tapee","pro7"),bqa<-idb(git=F),bqa<-idb(git=T))
 
 mnew<-"no new annotations..."
@@ -260,11 +260,18 @@ if(exists("bqa")){
   print("sqlite loaded, qa + mnew declared...")
   qa<-bqa$studies
   mnew<-bqa$dbsub
+  mls<-length(mnew$doc)
+  load("margindb.RData")
+  mlr<-length(margindb$dbsub$doc)
   margindb<-list(dbsub=mnew,qa=qa)
-  save(margindb,file="margindb.RData")
+  mla<-mlr
+  if(mlr<mls){
+    save(margindb,file="margindb.RData")
+    mdb.r<-F
+    mla<-mls
   
 }
-}
+# }
 ### vars
 docdir<-"."
 
@@ -275,8 +282,9 @@ bibyml<-qa
 ########
 #qa
 push<-ifelse(mdb.r,"RData","sqlite")
-load("margindb.RData")
-ldb<-length(margindb$dbsub$doc)
+#load("margindb.RData")
+# ldb<-length(margindb$dbsub$doc)
+ldb<-mla  
 da<-format(Sys.time())
 mdb<-read.csv("mdb.csv")
 mdba<-data.frame(update=da,length=ldb,push=push)
