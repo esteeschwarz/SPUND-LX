@@ -241,8 +241,13 @@ outputdir<-ifelse (s=="mini12","/var/www/html/play/pages","../output/pages/004")
 getwd()
 fit.r<-file.info("margindb.RData")
 fit.s<-file.info("margindb.sqlite")
+cat("---- margindb timestamps rd/sql...\n")
+print(fit.r)
+print(fit.s)
 fst.r<-fit.r$mtime
 fst.s<-fit.s$mtime
+print(fst.r)
+print(fst.s)
 mdb.r<-F
 if(fst.r>fst.s)
   mdb.r<-T
