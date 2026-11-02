@@ -80,10 +80,11 @@
         - deconstruction - reconstrucion, deformation
         - destroy historic forms
 
+
 ### Literature without a Plot: Rozanov
 
 - a. blok
-- 
+
 
 ### art as device
 
@@ -94,3 +95,25 @@
 - social practices/routines in review of (horse, alien)
 
 
+# 17453.
+## LEF, novy LEF
+
+## today deconstruction
+### items
+familiarities, to overcome?
+
+- the cloud
+- the post
+- the like
+- the AI (chat)
+
+we are used to certain (commodities?), habits, lesegewohnheiten die die (our) wahrnehmung der welt steuern.
+
+- übersetze: steuern > guide perception? direct? influence? too weak.
+
+was wären analogien zu 1920? how did world look like russia 1910-30 concerning media, media technology, media consumption and production?
+
+*LEF*: the prolet-poet who tries break out writing (today: autofiction).
+
+- autofiction vs.
+- dokufiktion
