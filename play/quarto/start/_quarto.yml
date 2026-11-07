@@ -32,9 +32,9 @@ website:
           - str-index.qmd
       - text: 26W  
         menu:  
-          - stat/index.qmd
-          - form/index.qmd
-          - minor/index.qmd
+          - 26W/stat/index.qmd
+          - 26W/form/index.qmd
+          - 26W/minor/index.qmd
       - text: arkkiv
         menu:
           - href: https://userpage.fu-berlin.de/stschwarz/links?title=dclx&ref=play
