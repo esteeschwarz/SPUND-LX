@@ -18,7 +18,7 @@ metadata-files:
 ### snc
 - t1
 
-{{< include ../../_setup-new.qmd >}}
+{{< include ../_setup-new.qmd >}}
 
 ```{r}
 #| label: tbl_qa1
@@ -35,4 +35,4 @@ print(qa1)
 ```
 
 
-{{< include ../../_vars-new.qmd >}}
+{{< include ../_vars-new.qmd >}}

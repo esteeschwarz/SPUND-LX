@@ -1,0 +1,16 @@
+```{r,getmdb}
+#| echo: false
+#| warning: false
+#| eval: true
+#| results: "asis"
+#| output: false
+#| message: false
+
+#setwd("SPUND-LX/play/quarto/start")
+#load("margindb.RData")
+load("../../margindb.RData")
+qa<-margindb$qa
+margindb<-margindb$dbsub
+#qa<-margindb$qa
+qa
+```
