@@ -1,4 +1,4 @@
-bibliography: textur.bib
+bibliography: ../textur.bib
 subtitle: "Text und Textur. Vom Webstuhl bis zu Large Language Models"
 # toc: true
 # toc-depth: 3

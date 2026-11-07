@@ -1,15 +1,15 @@
-bibliography: textur.bib
-subtitle: "Text und Textur. Vom Webstuhl bis zu Large Language Models"
+bibliography: ../VSstr.bib
+subtitle: "Perspektiven der AVL"
 # toc: true
 # toc-depth: 3
 # toc-expand: true
 #nocite: '@*'
 cmeta: |
-  [paper online](https://esteeschwarz.github.io/SPUND-LX/pages/004/textur-001.html) :::
-  class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models :::
-  tutor: jan lietz :::
-  term: SS26 :::
-  snc: 16162.1  
+  [paper online](https://esteeschwarz.github.io/SPUND-LX/pages/004/26S/str-index.html) :::
+  class: [16401] Perspektiven AVL ::
+  tutor: strätling ::
+  term: SS26
+  snc: 16185.1  
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 16162.tiny
