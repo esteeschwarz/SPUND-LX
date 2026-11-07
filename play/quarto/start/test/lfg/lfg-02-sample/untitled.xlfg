@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XLFG version="9.16.2">
+  <VERSION id_project="38" id_version="38">
+    <SENTENCES>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Niemand hat diesem Mann das Buch zu lesen versprochen]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Diesem Mann hat das Buch niemand zu lesen versprochen]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Das Buch zu lesen hat diesem Mann niemand versprochen]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Diesem Mann hat niemand versprochen das Buch zu lesen]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Diesem Mann hat das Buch zu lesen niemand versprochen]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Zu lesen hat diesem Mann das Buch niemand versprochen]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[Das Buch hat niemand Diesem Mann versprochen zu lesen]]></SENTENCE>
+    </SENTENCES>
+    <DECLARATIONS><![CDATA[// nothing    ]]></DECLARATIONS>
+    <LEXICON><![CDATA[niemand pro[PRED:&apos;NOBODY&apos;, NUMBER:sg, PERSON:_3, CASE:nom];
+Niemand pro[PRED:&apos;NOBODY&apos;, NUMBER:sg, PERSON:_3, CASE:nom];
+
+hat verb[TENSE:perfect, MODE:indicative];
+
+diesem det[DEM:+, NUMBER:sg];
+Diesem det[DEM:+, NUMBER:sg];
+
+Mann noun[PRED:&apos;MAN&apos;, CASE:dat];
+
+das det[DEF:+, NUMBER:sg];
+Das det[DEF:+, NUMBER:sg];
+
+Buch noun[PRED:&apos;BOOK&apos;, CASE:acc];
+
+&quot;zu lesen&quot; verb[PRED:&apos;TO_READ&lt;SUBJ.agent, OBJ.object&gt;&apos;];
+&quot;Zu lesen&quot; verb[PRED:&apos;TO_READ&lt;SUBJ.agent, OBJ.object&gt;&apos;];
+zu part;
+Zu part;
+lesen verb;
+
+versprochen verb[PRED:&apos;PROMISE&lt;SUBJ.agent, XCOMP.object, IOBJ.recipient&gt;&apos;/*, TENSE:past*/]
+{
+	(↑ XCOMP SUBJ) = (↑ SUBJ);
+};
+]]></LEXICON>
+    <GRAMMAR><![CDATA[MainDomain → Vorfeld LeftBracket [Mittelfeld] [RightBracket] [Nachfeld]
+{
+↑=↓1;
+↑=↓2;
+↑=↓3;
+↑=↓4;
+↑=↓5;
+}
+
+EmbeddedDomain → [Mittelfeld] RightBracket [Nachfeld]
+{
+↑=↓1;
+↑=↓2;
+↑=↓3;
+}
+
+////////////////////////////////////////////////////////////
+// Vorfeld
+////////////////////////////////////////////////////////////
+Vorfeld → _XF
+{
+↑=↓1;
+}
+
+Vorfeld → EmbeddedDomain
+{
+(↑ XCOMP) =↓1;
+}
+
+XF → ADVP
+{
+let comp in (↑ (XCOMP)* ) { ↓1 ∈ (comp ADJUNCT); }
+}
+
+////////////////////////////////////////////////////////////
+// LeftBracket
+////////////////////////////////////////////////////////////
+LeftBracket → verb
+{
+↑=↓1;
+}
+
+////////////////////////////////////////////////////////////
+// Mittelfeld
+////////////////////////////////////////////////////////////
+Mittelfeld → _XF
+{
+↑=↓1;
+}
+
+Mittelfeld → _XF  _XF [_XF]
+{
+↑=↓1;
+↑=↓2;
+↑=↓3;
+}
+
+////////////////////////////////////////////////////////////
+// RightBracket
+////////////////////////////////////////////////////////////
+RightBracket → VerbCluster
+{
+↑ = ↓;
+}
+
+RightBracket → VerbCluster
+{
+(↑ XCOMP) = ↓;
+}
+
+////////////////////////////////////////////////////////////
+// Nachfeld
+////////////////////////////////////////////////////////////
+// Too ambiguous !
+/*
+Nachfeld → _XF [_XF] 
+{
+↑=↓1;
+↑=↓2;
+}
+
+Nachfeld → EmbeddedDomain
+{
+(↑ XCOMP) = ↓1;
+}
+*/
+
+_XF → NP
+{
+(↑ SUBJ) = ↓1; 
+(↓1 CASE) = nom; 
+}
+
+_XF → NP
+{
+(↑ OBJ) = ↓1; 
+(↓1 CASE) = acc; 
+}
+
+_XF → NP
+{
+(↑ IOBJ) = ↓1; 
+}
+
+_XF → NP
+{
+(↑ XCOMP OBJ) = ↓1; 
+(↓1 CASE) = acc; 
+}
+
+_XF → NP
+{
+(↑ XCOMP IOBJ) = ↓1; 
+}
+
+VerbCluster → [Oberfeld] _H [Unterfeld]
+{
+↑=↓1;
+↑=↓2;
+↑=↓3;
+}
+
+VerbBox → [Oberfeld] _H
+{
+↑=↓1;
+↑=↓2;
+}
+
+_H → verb
+{
+↑=↓;
+}
+
+Oberfeld → VerbBox
+{
+//with $xcomp in (↑ (XCOMP)+ ) { $xcomp = ↓1; }
+(↑ XCOMP) = ↓; 
+}
+
+Unterfeld → VerbCluster
+{
+(↑ XCOMP) =↓1;
+(↑ TYPE) = aux;
+(↑ MODAL) = +;
+(↑ ERSATZ) = +;
+(↑ TENSE) ≠ zu_inf;
+}
+
+NP → pro
+{
+↑ = ↓1;
+}
+
+NP → det noun 
+{
+↑ = ↓1;
+↑ = ↓2;
+(↑ PERSON) = _3;
+}
+
+]]></GRAMMAR>
+    <OUTPUT_PARAMETERS SCALE="1" DRAWFSA="NONE" DRAWCS="TREE" DRAWFS="MATRIX" DRAWFE="NONE" DRAWAS="NONE" DRAWOPTIONAL="0" DRAWILLFORMEDFS="0" PARTIALCS="1" COMPACTFS="0" COMPLETENESS="1" COHERENCE="1" CONSISTENCY="1"/>
+  </VERSION>
+</XLFG>

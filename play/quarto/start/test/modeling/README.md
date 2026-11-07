@@ -1,0 +1,2 @@
+# 16263.info
+find here essais on demontrating the discussed model collapse of LLMs. its all done in R, so training of a blank torch model, generating text from that over 3 generations and evaluate the output concerning informationsgehalt, diversität and such.

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XLFG version="9.16.2">
+  <VERSION id_project="5844" id_version="7947">
+    <SENTENCES>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[אני הלך]]></SENTENCE>
+    </SENTENCES>
+    <DECLARATIONS><![CDATA[                // Macros
+@s: number:sg;
+@p: number:pl;
+@m: gender:masc;
+@f: gender:fem;
+@mf: gender:masc|fem;
+@ms: @m, @s;
+@fs: @f, @s;
+@mp: @m, @p;
+@fp: @f, @p;
+
+// Declared syntactic functions
+syntactic functions: SUBJ, OBJ, POBJ;
+
+start_symbol: S;    ]]></DECLARATIONS>
+    <LEXICON><![CDATA[ani pr[PRED:&apos;ANI&apos;, @s];
+ata pr[PRED:&apos;ATA&apos;, @ms];
+&quot;את&quot; pr[PRED:&apos;AT&apos;, @fs];
+&quot;הוא&quot;pr[PRED:&apos;HU&apos;, @ms];
+&quot;היא&quot;pr[PRED:&apos;HI&apos;, @fs];
+&quot;אנחנו&quot;pr[PRED:&apos;ANACHNU&apos;, @p];
+&quot;הם&quot;pr[PRED:&apos;HEM&apos;, @mp];
+&quot;הן&quot;pr[PRED:&apos;HEN&apos;, @fp];
+
+%%% VERBS (finite forms)
+&quot;הלך&quot;v[PRED:&apos;HALACH &lt;SUBJ.agent&gt;&apos;, @ms];
+&quot;הלכה&quot;v[PRED:&apos;HALACH &lt;SUBJ.agent&gt;&apos;, @fs];
+&quot;הולכים&quot;v[PRED:&apos;HALACH &lt;SUBJ.agent&gt;&apos;, @mp];
+&quot;אכל&quot;v[PRED:&apos;ACHAL &lt;SUBJ.agent OBJ.patient&gt;&apos;, @ms];
+&quot;אכלה&quot;v[PRED:&apos;ACHAL &lt;SUBJ.agent OBJ.patient&gt;&apos;, @fs];
+&quot;אוכלים&quot;v[PRED:&apos;ACHAL &lt;SUBJ.agent OBJ.patient&gt;&apos;, @mp];
+
+%%% NOUNS
+&quot;ילד&quot;cn[PRED:&apos;YELED&apos;, @ms];
+&quot;ילדה&quot;cn[PRED:&apos;YALDA&apos;, @fs];
+&quot;ילדים&quot;cn[PRED:&apos;YELED&apos;, @mp];
+&quot;ספר&quot;cn[PRED:&apos;SEFER&apos;, @ms];
+&quot;ספרים&quot;cn[PRED:&apos;SEFER&apos;, @mp];
+&quot;בית&quot;cn[PRED:&apos;BAYIT&apos;, @ms];
+&quot;הורים&quot;cn[PRED:&apos;HORE&apos;, @mp];
+&quot;מוזיקה&quot;cn[PRED:&apos;MUSICA&apos;, @fs];
+&quot;זמן&quot;cn[PRED:&apos;ZMAN&apos;, @ms];
+&quot;טלסקופ&quot;cn[PRED:&apos;TELESCOPE&apos;, @ms];
+&quot;יום&quot;cn[PRED:&apos;YOM&apos;, @ms];
+&quot;איש&quot;cn[PRED:&apos;ISH&apos;, @ms];
+
+%%% DETERMINERS
+&quot;ה&quot;det[@s];
+&quot;כל&quot;det[@s];
+&quot;כל־ה&quot;det[@s];
+&quot;כל־ה־&quot; det[@s];
+
+%%% PREPOSITIONS
+&quot;ב&quot;prep[PRED:&apos;BE &lt;OBJ&gt;&apos; ];
+&quot;ל&quot;prep[PRED:&apos;LE &lt;OBJ&gt;&apos; ];
+&quot;על&quot;prep[PRED:&apos;AL &lt;OBJ&gt;&apos; ];
+&quot;עם&quot;prep[PRED:&apos;IM &lt;OBJ&gt;&apos; ];
+
+%%% ADJECTIVES
+&quot;גדול&quot;adj[PRED:&apos;GADOL&apos;];
+&quot;קטן&quot;adj[PRED:&apos;KATAN&apos;];
+&quot;חדש&quot;adj[PRED:&apos;CHADASH&apos;];
+&quot;ישן&quot;adj[PRED:&apos;YASHAN&apos;];
+]]></LEXICON>
+    <GRAMMAR><![CDATA[S → NP VP
+{
+(↑ SUBJ) = ↓1;
+↑ = ↓2;
+}
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+NP → N
+{
+↑ = ↓1;
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+NP → pn
+{
+↑ = ↓1;
+}
+
+NP → pr
+{
+↑ = ↓1;
+}
+
+VP → v [NP] [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+(↑ POBJ) = ↓3;
+}
+
+VP → v [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v adj
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v NP PP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+VP → v PP NP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+N → N PP
+{
+↑ = ↓1;
+↓2 ∈ (↑ MOD);
+}
+
+PP → prep NP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+PP → NP
+{
+↑ = ↓1;
+}
+]]></GRAMMAR>
+    <OUTPUT_PARAMETERS SCALE="1" DRAWFSA="WORDS" DRAWCS="TREE" DRAWFS="MATRIX" DRAWFE="SYNTACTICAL" DRAWAS="DAG" DRAWOPTIONAL="0" DRAWILLFORMEDFS="1" PARTIALCS="0" COMPACTFS="0" COMPLETENESS="1" COHERENCE="1" CONSISTENCY="1"/>
+  </VERSION>
+</XLFG>

@@ -1,0 +1,39 @@
+John pn[PRED:'JOHN', @ms];
+
+me pr[PRED:'ME', @s];
+He pr[PRED:'HE', @ms];
+She pr[PRED:'SHE', @fs];
+They pr[PRED:'THEY', @p];
+
+goes v[PRED:'TO_GO <SUBJ.agent, OBJ.patient>'];
+explained v[PRED:'TO_EXPLAIN <SUBJ.agent, OBJ.patient>'];
+depends v[PRED:'TO_DEPEND <SUBJ.agent, OBJ.patient>'];
+listens v[PRED:'TO_LISTEN <SUBJ.agent, OBJ.patient>'];
+is v[PRED:'TO_BE <SUBJ.agent, OBJ.patient>'];
+are v[PRED:'TO_BE <SUBJ.agent, OBJ.patient>'];
+sees v[PRED:'TO_SEE <SUBJ.agent, OBJ.patient>'];
+kisses v[PRED:'TO_KISS <SUBJ.agent, OBJ.patient>', PERSON: _3];
+
+a det[@s];
+the det;
+The det;
+her det;
+all det[@s];
+every det[@s];
+
+information cn[PRED:'INFORMATION', @s];
+parents cn[PRED:'PARENT', @p];
+problem cn[PRED:'PROBLEM', @s];
+school cn[PRED:'SCHOOL', @s];
+music cn[PRED:'MUSIC', @s];
+time cn[PRED:'TIME', @s];
+telescope cn[PRED:'TELESCOPE', @s];
+day cn[PRED:'DAY', @s];
+man cn[PRED:'MAN', @ms];
+cat cn[PRED:'CAT', @s];
+
+on prep[PRED:'ON <OBJ>'];
+to prep[PRED:'TO <OBJ>'];
+"with" prep[PRED:'WITH <OBJ.object>'];
+
+incorrect adj[PRED:'INCORRECT'];

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XLFG version="9.16.2">
+  <VERSION id_project="5846" id_version="7949">
+    <SENTENCES>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[She goes to school every day]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[They explained the problem to me]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[She depends on her parents]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[He listens to music all the time]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[The information is incorrect]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="0"><![CDATA[They explained to me]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="0"><![CDATA[She depends her parents]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="0"><![CDATA[He listens music all the time]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="0"><![CDATA[The information are incorrect]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[John sees a man with a telescope]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[John sees the telescope]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[ani quorä ha sefer]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[ani nimza]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[I find you]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[ha ish nimza]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[ha&apos;ish nimza]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[The man with the telescope]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[She is in school]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[John sees the&apos;telescope]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[The information is found]]></SENTENCE>
+    </SENTENCES>
+    <DECLARATIONS><![CDATA[// Macros
+@s: number:sg;
+@p: number:pl;
+@f: gender:fem;
+@m: gender:masc;
+@mf: gender:masc|fem;
+@fs: @f, @s;
+@ms: @m, @s;
+@fp: @f, @p;
+@mp: @m, @p;
+@p1: person:1;
+@p2: person:2;
+@p3: person:3;
+
+// Declared syntactic functions
+syntactic functions: SUBJ, OBJ, POBJ;
+
+start_symbol: S;                                                                ]]></DECLARATIONS>
+    <LEXICON><![CDATA[John pn[PRED:&apos;JOHN&apos;, @ms];
+
+I pr[PRED:&apos;I&apos;, @s,@p1];
+me pr[PRED:&apos;ME&apos;, @s,@p1];
+you pr[PRED:&apos;YOU&apos;,@p2];
+ani pr[PRED:&apos;I&apos;, @s,@p1];
+He pr[PRED:&apos;HE&apos;, @ms,@p3];
+She pr[PRED:&apos;SHE&apos;, @fs,@p3];
+They pr[PRED:&apos;THEY&apos;, @p,@p3];
+
+goes v[PRED:&apos;TO_GO &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+explained v[PRED:&apos;TO_EXPLAIN &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+depends v[PRED:&apos;TO_DEPEND &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+listens v[PRED:&apos;TO_LISTEN &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+is v[PRED:&apos;TO_BE &lt;SUBJ.agent, OBJ.patient,SUBJ.patient&gt;&apos;];
+are v[PRED:&apos;TO_BE &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+sees v[PRED:&apos;TO_SEE &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+holäch v[PRED:&apos;TO_GO &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+quorä v[PRED:&apos;TO_READ &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+nimza v[PRED:&apos;TO_BE_FOUND &lt;OBJ.patient&gt;&apos;,TENSE:present,VOICE:passive,@ms,@p3];
+find v[PRED:&apos;TO_FIND &lt;SUBJ.agent, OBJ.patient&gt;&apos;,TENSE:present];
+found v[PRED:&apos;TO_BE_FOUND &lt;SUBJ.patient&gt;&apos;,VOICE:passive];
+
+
+a det[@s];
+ha det;
+&quot;ha&apos;&quot; det;
+the det;
+&quot;the&apos;&quot; det;
+The det;
+her det;
+all det[@s];
+every det[@s];
+
+sefer cn[PRED:&apos;BOOK&apos;, @s];
+ish cn[PRED:&apos;MAN&apos;, @ms];
+geviah cn[PRED:&apos;CUP&apos;, @ms];
+
+information cn[PRED:&apos;INFORMATION&apos;, @s];
+parents cn[PRED:&apos;PARENT&apos;, @p];
+problem cn[PRED:&apos;PROBLEM&apos;, @s];
+school cn[PRED:&apos;SCHOOL&apos;, @s];
+music cn[PRED:&apos;MUSIC&apos;, @s];
+time cn[PRED:&apos;TIME&apos;, @s];
+telescope cn[PRED:&apos;TELESCOPE&apos;, @s];
+day cn[PRED:&apos;DAY&apos;, @s];
+man cn[PRED:&apos;MAN&apos;, @ms];
+
+to prep[PRED:&apos;TO &lt;OBJ&gt;&apos;];
+on prep[PRED:&apos;ON &lt;OBJ&gt;&apos;];
+//in prep[PRED:&apos;IN &lt;OBJ&gt;&apos;];
+&quot;be&apos;&quot; prep[PRED:&apos;IN &lt;OBJ&gt;&apos;];
+&quot;with&quot; prep[PRED:&apos;WITH &lt;OBJ.object&gt;&apos;];
+//in prep[PRED:&apos;IN &lt;OBJ&gt;&apos;];
+incorrect adj[PRED:&apos;INCORRECT&apos;];
+//in prep[PRED:&apos;IN &lt;OBJ&gt;&apos;];]]></LEXICON>
+    <GRAMMAR><![CDATA[S → NP VP
+{
+(↑ SUBJ) = ↓1;
+↑ = ↓2;
+}
+
+S → NP VP
+{
+(↑ OBJ) = ↓1;
+↑ = ↓2;
+
+}
+
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+NP → N
+{
+↑ = ↓1;
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+NP → pn
+{
+↑ = ↓1;
+}
+
+NP → pr
+{
+↑ = ↓1;
+}
+
+
+VP → v [NP] [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+(↑ POBJ) = ↓3;
+}
+
+VP → v [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v adj
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v [VP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+
+VP → v NP PP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+VP → v PP NP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+N → N PP
+{
+↑=↓1;
+↓2 ∈ (↑ MOD);
+}
+
+PP → prep NP
+{
+↑=↓1;
+(↑ OBJ) = ↓2;
+}
+
+PP → NP
+{
+↑=↓1;
+}
+
+
+]]></GRAMMAR>
+    <OUTPUT_PARAMETERS SCALE="1.35" DRAWFSA="PHRASES" DRAWCS="TREE" DRAWFS="MATRIX" DRAWFE="SYNTACTICAL" DRAWAS="DAG" DRAWOPTIONAL="0" DRAWILLFORMEDFS="1" PARTIALCS="0" COMPACTFS="0" COMPLETENESS="1" COHERENCE="1" CONSISTENCY="1"/>
+  </VERSION>
+</XLFG>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XLFG version="9.16.2">
+  <VERSION id_project="5843" id_version="7946">
+    <SENTENCES>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[ha mora katav ha sefer]]></SENTENCE>
+      <SENTENCE GRAMMATICAL="1"><![CDATA[ha mora kotevet ha sefer]]></SENTENCE>
+    </SENTENCES>
+    <DECLARATIONS><![CDATA[        // Macros
+@s: number:sg;
+@p: number:pl;
+@p1: person:1;
+@p2: person:2;
+@p3: person:3;
+@f: gender:fem;
+@m: gender:masc;
+@mf: gender:masc|fem;
+@fs: @f, @s;
+@ms: @m, @s;
+@fp: @f, @p;
+@mp: @m, @p;
+
+// Declared syntactic functions
+syntactic functions: SUBJ, OBJ, POBJ;
+
+start_symbol: S;                    
+
+                        ]]></DECLARATIONS>
+    <LEXICON><![CDATA[John pn[PRED:&apos;JOHN&apos;, @ms];
+
+me pr[PRED:&apos;ME&apos;, @s];
+He pr[PRED:&apos;HE&apos;, @ms];
+She pr[PRED:&apos;SHE&apos;, @fs];
+They pr[PRED:&apos;THEY&apos;, @p];
+
+goes v[PRED:&apos;TO_GO &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+explained v[PRED:&apos;TO_EXPLAIN &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+depends v[PRED:&apos;TO_DEPEND &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+listens v[PRED:&apos;TO_LISTEN &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+is v[PRED:&apos;TO_BE &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+are v[PRED:&apos;TO_BE &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+sees v[PRED:&apos;TO_SEE &lt;SUBJ.agent, OBJ.patient&gt;&apos;];
+katav    v[PRED:&apos;TO_WRITE &lt;SUBJ.agent, OBJ.patient&gt;&apos;,TENSE:&apos;past&apos;,@p3,@ms];
+kotevet    v[PRED:&apos;TO_WRITE &lt;SUBJ.agent, OBJ.patient&gt;&apos;,TENSE:&apos;past&apos;,@p3,@fs];
+
+a det[@s];
+the det;
+The det;
+her det;
+all det[@s];
+every det[@s];
+ha det;
+
+
+information cn[PRED:&apos;INFORMATION&apos;, @s];
+parents cn[PRED:&apos;PARENT&apos;, @p];
+problem cn[PRED:&apos;PROBLEM&apos;, @s];
+school cn[PRED:&apos;SCHOOL&apos;, @s];
+music cn[PRED:&apos;MUSIC&apos;, @s];
+time cn[PRED:&apos;TIME&apos;, @s];
+telescope cn[PRED:&apos;TELESCOPE&apos;, @s];
+day cn[PRED:&apos;DAY&apos;, @s];
+man cn[PRED:&apos;MAN&apos;, @ms];
+sefer cn[PRED:&apos;sefer&apos;,@ms];
+mora     cn[PRED:&apos;mora&apos;,@fs];
+
+on prep[PRED:&apos;ON &lt;OBJ&gt;&apos;];
+to prep[PRED:&apos;TO &lt;OBJ&gt;&apos;];
+&quot;with&quot; prep[PRED:&apos;WITH &lt;OBJ.object&gt;&apos;];
+ba prep[PRED:&apos;IN &lt;OBJ&gt;&apos;];
+
+
+incorrect adj[PRED:&apos;INCORRECT&apos;];
+
+/////////////////////////////////////////////////
+
+//D-CLASS:
+
+//N-CLASS:
+//bayit    N  (^ PRED)=&apos;bayit&apos;  (^ GEND)=masc (^ NUM)=sg.
+//sefer    N  (^ PRED)=&apos;sefer&apos;  (^ GEND)=masc (^ NUM)=sg.
+//delet    N  (^ PRED)=&apos;delet&apos;  (^ GEND)=fem  (^ NUM)=sg.
+//yeled    N  (^ PRED)=&apos;yeled&apos;  (^ GEND)=masc (^ NUM)=sg.
+//yeladim  N  (^ PRED)=&apos;yeled&apos;  (^ GEND)=masc (^ NUM)=pl.
+//gan      N  (^ PRED)=&apos;gan&apos;    (^ GEND)=masc (^ NUM)=sg.
+//xalon    N  (^ PRED)=&apos;xalon&apos;  (^ GEND)=masc (^ NUM)=sg.
+
+//V-CLASS (paal, active — for contrast):
+
+//V-CLASS (nifal, passive):
+//nikhtav  V  @(NIFAL katav) (^ TENSE)=past (^ PERS)=3 (^ NUM)=sg (^ GEND)=masc.
+//nivna    V  @(NIFAL bana)  (^ TENSE)=past (^ PERS)=3 (^ NUM)=sg (^ GEND)=masc.
+//niftexa  V  @(NIFAL patax) (^ TENSE)=past (^ PERS)=3 (^ NUM)=sg (^ GEND)=fem.
+//nirʾu    V  @(NIFAL raʾa)  (^ TENSE)=past (^ PERS)=3 (^ NUM)=pl.
+//nishbar  V  @(NIFAL shavar)(^ TENSE)=past (^ PERS)=3 (^ NUM)=sg (^ GEND)=masc.
+
+//P-CLASS:
+//al-yede  P  (^ PRED)=&apos;al-yede&lt;(^ OBJ)&gt;&apos;.
+
+
+]]></LEXICON>
+    <GRAMMAR><![CDATA[S → NP VP
+{
+(↑ SUBJ) = ↓1;
+↑ = ↓2;
+}
+
+NP → [det] det N
+{
+↑ = ↓2;
+↑ = ↓3;
+}
+
+NP → N
+{
+↑ = ↓1;
+}
+
+N → cn
+{
+↑ = ↓1;
+}
+
+NP → pn
+{
+↑ = ↓1;
+}
+
+NP → pr
+{
+↑ = ↓1;
+}
+
+
+VP → v [NP] [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+(↑ POBJ) = ↓3;
+(↑ number) = ↓4;
+(↑ person) = ↓5;
+
+}
+
+VP → v [PP]
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v adj
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+}
+
+VP → v NP PP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+VP → v PP NP
+{
+↑ = ↓1;
+(↑ OBJ) = ↓2;
+↓3 ∈ (↑ MOD);
+}
+
+N → N PP
+{
+↑=↓1;
+↓2 ∈ (↑ MOD);
+}
+
+PP → prep NP
+{
+↑=↓1;
+(↑ OBJ) = ↓2;
+}
+
+PP → NP
+{
+↑=↓1;
+}
+
+
+////////
+
+S → NP {
+(↑SUBJ)=↓;
+
+    //  (VP) = ↑=↓;
+      //    (SUBJ NUM)=(↑ NUM);
+        //  (↑ SUBJ GEND)=(↑ GEND);
+}
+]]></GRAMMAR>
+    <OUTPUT_PARAMETERS SCALE="1" DRAWFSA="WORDS" DRAWCS="TREE" DRAWFS="MATRIX" DRAWFE="SYNTACTICAL" DRAWAS="DAG" DRAWOPTIONAL="0" DRAWILLFORMEDFS="1" PARTIALCS="0" COMPACTFS="0" COMPLETENESS="1" COHERENCE="1" CONSISTENCY="1"/>
+  </VERSION>
+</XLFG>

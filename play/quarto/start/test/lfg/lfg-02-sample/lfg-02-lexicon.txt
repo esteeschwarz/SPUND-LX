@@ -1,0 +1,25 @@
+niemand pro[PRED:'NOBODY', NUMBER:sg, PERSON:_3, CASE:nom];
+Niemand pro[PRED:'NOBODY', NUMBER:sg, PERSON:_3, CASE:nom];
+
+hat verb[TENSE:perfect, MODE:indicative];
+
+diesem det[DEM:+, NUMBER:sg];
+Diesem det[DEM:+, NUMBER:sg];
+
+Mann noun[PRED:'MAN', CASE:dat];
+
+das det[DEF:+, NUMBER:sg];
+Das det[DEF:+, NUMBER:sg];
+
+Buch noun[PRED:'BOOK', CASE:acc];
+
+"zu lesen" verb[PRED:'TO_READ<SUBJ.agent, OBJ.object>'];
+"Zu lesen" verb[PRED:'TO_READ<SUBJ.agent, OBJ.object>'];
+zu part;
+Zu part;
+lesen verb;
+
+versprochen verb[PRED:'PROMISE<SUBJ.agent, XCOMP.object, IOBJ.recipient>'/*, TENSE:past*/]
+{
+	(↑ XCOMP SUBJ) = (↑ SUBJ);
+};
