@@ -33,9 +33,9 @@ val.c<-"{{< meta testmeta >}}"
 ## 7.
 ###### postdigital, surface reading LLMs
 
-{{< include _ul-md/textur/16253.md >}} 
+{{< include ../_ul-md/textur/16253.md >}} 
 
 ## 12.
 ###### bergen gpt stories
 
-{{< include _ul-md/textur/16282.md >}} 
+{{< include ../_ul-md/textur/16282.md >}} 
