@@ -113,7 +113,7 @@ m1<-grepl(qa3,table$study)
 sum(m1)
 ### with new pasted studies for multiple notebooks/doc
 #########################
-f<-list.files("../",pattern="bib",full.names=T)
+f<-list.files("../../",pattern="bib",full.names=T)
 ### debug >
 #f<-list.files(pattern="bib",full.names=T)
 #print(f)
