@@ -6,7 +6,7 @@
 #| output: false
 #| message: false
 
-load("margindb.RData")
+load("../margindb.RData")
 qa<-margindb$qa
 margindb<-margindb$dbsub
 #qa<-margindb$qa
