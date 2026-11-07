@@ -23,6 +23,9 @@ bibliography:
    - textur.bib
    - nietzsche.bib
    - VSstr.bib
+   - LXminor.bib
+   - litForm.bib
+   - LXstat.bib
 cmeta: |
   common: global term glossary
   term: SS26
