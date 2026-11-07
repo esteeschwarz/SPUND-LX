@@ -194,6 +194,7 @@ idb<-function(git=F){
   #highlight_tags<-dbGetQuery(con, "SELECT * FROM highlight_tags")
   #global.t<-dbGetQuery(con,".schema")
   all.t<-dbGetQuery(con, "SELECT name FROM sqlite_master WHERE type='table';")
+  cat("sqlite fetch done...\n")
   #all.t
   library(abind)
   all.tg <<- all.t
@@ -228,7 +229,9 @@ idb<-function(git=F){
   #qax
   
     dbDisconnect(con)
-  return(all.tables)
+  cat("fetched tables...\n")
+  all.tables
+  # return(all.tables)
 
 }
 ######################
@@ -252,9 +255,11 @@ mdb.r<-T
 # if(fst.r>fst.s)
 #   mdb.r<-T
 ### only process sqlite if manually created margindb.RData is older, else use existing .RData db
+print("processing...")
 # if(!mdb.r){
-  ifelse (s%in%c("lapsi","tapee","pro7"),bqa<-idb(git=F),bqa<-idb(git=T))
-
+s
+# bqa<-  ifelse (s%in%c("lapsi","tapee","pro7"),idb(git=F),idb(git=T)) # prints result shit
+bqa <- if (s %in% c("lapsi", "tapee", "pro7")) idb(git = FALSE) else idb(git = TRUE)
 mnew<-"no new annotations..."
 if(exists("bqa")){
   print("sqlite loaded, qa + mnew declared...")
