@@ -1,12 +1,14 @@
 ---
 title: "LX / STAT: annotations"
-bibliography: ../LXstat.bib
+#bibliography: ../LXstat.bib
 #nocite: '@pethes_war_2006'
 # tables:
 #   - tbl_qa: {file: "qa.qmd", num: 1}
 #   - tbl-summary: {file: "results.qmd", num: 2}
 title-meta: ""
 date: '`r format(Sys.time())`'
+metadata-files:
+  - ../../assets/common/_quarto-common-stat.yml
 
 ---
 
@@ -16,7 +18,7 @@ date: '`r format(Sys.time())`'
 ### snc
 - t1
 
-{{< include ../_setup-new.qmd >}}
+{{< include ../../_setup-new.qmd >}}
 
 ```{r}
 #| label: tbl_qa1
@@ -33,4 +35,4 @@ print(qa1)
 ```
 
 
-{{< include ../_vars-new.qmd >}}
+{{< include ../../_vars-new.qmd >}}

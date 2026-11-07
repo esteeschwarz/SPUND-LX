@@ -1,6 +1,5 @@
 ---
 title: "LX / minderheitensprachen"
-# subtitle: "Grundlagen der Statistik für die Sprachwissenschaft"
 # toc: true
 # toc-depth: 3
 # toc-expand: true

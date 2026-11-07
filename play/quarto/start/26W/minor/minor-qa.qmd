@@ -7,6 +7,9 @@ title: "LX / minderheitensprachen: annotations"
 #   - tbl-summary: {file: "results.qmd", num: 2}
 title-meta: ""
 date: '`r format(Sys.time())`'
+metadata-files:
+  - ../../assets/common/_quarto-common-minor.yml
+
 ---
 
 ::: {.content-visible when-format="html"}
