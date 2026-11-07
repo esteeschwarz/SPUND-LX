@@ -83,3 +83,7 @@ testform: `r 3+4`
 ### 16247.
 - tapee.pos.wf.t1
 - git-top not fetched, t3
+
+### 17461.kollo
+- moved all 26S files to extra folder
+- try if pages html still there, _26S folder should not be tried render anew, so spare resources
