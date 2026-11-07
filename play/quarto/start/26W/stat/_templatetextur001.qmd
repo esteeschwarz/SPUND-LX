@@ -10,7 +10,7 @@ date: "2026-04-12"
 # toc-expand: true
 title-meta: ""
 metadata-files:
-  - _quarto-common-textur.yml
+  - ../../assets/common/_quarto-common-form.yml
 
 # bibliography: textur.bib
 # cmeta: |

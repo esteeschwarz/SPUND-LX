@@ -18,7 +18,7 @@ date: "2026-10-12"
 #   term: WS26
 #   snc: 17423.1  
 metadata-files:
-  - ../../common/_quarto-common-stat.yml
+  - ../../assets/common/_quarto-common-stat.yml
 #[<< back to online paper <<](https://esteeschwarz.github.io/DC-LX/essais/papers/010/)  
 #  arkiv: [<< the anarkkiv lankalevikki worksheet collection >>](https://stschwarz.userpage.fu-berlin.de/links/?title=paperfoot&ref=paper-temp)
 arkiv: 17423.init
