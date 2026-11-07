@@ -24,12 +24,12 @@ website:
         text: About
       - text: 26S
         menu: 
-          - textur001.qmd
-          - nietzsche001.qmd
-          - lki-index.qmd
-          - lxtech001.qmd
-          - lfg-index.qmd
-          - str-index.qmd
+          - 26S/textur001.qmd
+          - 26S/nietzsche001.qmd
+          - 26S/lki-index.qmd
+          - 26S/lxtech001.qmd
+          - 26S/lfg-index.qmd
+          - 26S/str-index.qmd
       - text: 26W  
         menu:  
           - 26W/stat/index.qmd
