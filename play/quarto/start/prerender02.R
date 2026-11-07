@@ -258,7 +258,7 @@ mdb.r<-T
 print("processing...")
 # if(!mdb.r){
 s
-# bqa<-  ifelse (s%in%c("lapsi","tapee","pro7"),idb(git=F),idb(git=T)) # prints result shit
+# ifelse (s%in%c("lapsi","tapee","pro7"),bqa<-idb(git=F),bqa<-idb(git=T)) # prints result shit
 bqa <- if (s %in% c("lapsi", "tapee", "pro7")) idb(git = FALSE) else idb(git = TRUE)
 mnew<-"no new annotations..."
 if(exists("bqa")){
