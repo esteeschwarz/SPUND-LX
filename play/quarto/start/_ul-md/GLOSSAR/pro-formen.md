@@ -1,3 +1,3 @@
 # pro-formen
-# pronomina
-# pronominaladverbien
+## pronomina
+## pronominaladverbien

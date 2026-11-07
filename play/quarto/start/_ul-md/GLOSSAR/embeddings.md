@@ -1,6 +1,6 @@
 # embeddings
-## related
-#vektor
+#### related
+## vektor
 
 [[obslapsi/gith/quarto/start/\_ul-md/GLOSSAR/vektor]] complete, yes in obs
 

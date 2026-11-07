@@ -1,5 +1,7 @@
 # lokution
+
 akte:
-# lokutionäre
-# illokutionäre
-# perlokutionäre 
+
+## lokutionäre
+## illokutionäre
+## perlokutionäre 

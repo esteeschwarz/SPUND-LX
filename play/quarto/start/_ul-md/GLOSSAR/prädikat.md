@@ -1,2 +1,2 @@
 # prädikat
-einteilig (synthetisch, 1 vollverb
+einteilig (synthetisch, 1 vollverb)
