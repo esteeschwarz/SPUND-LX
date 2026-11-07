@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-04-22">
+
+<title>LX / Tech – 004</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-09646deb5961d21252879e1a82e7697c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">004</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-s" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">26S</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-s">    
+        <li>
+    <a class="dropdown-item" href="../26S/textur001.html">
+ <span class="dropdown-text">AVL / textur</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/nietzsche001.html">
+ <span class="dropdown-text">AVL / Nietzsche</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/lki-index.html">
+ <span class="dropdown-text">Lit / KI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/lxtech001.html">
+ <span class="dropdown-text">LX / Tech</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/lfg-index.html">
+ <span class="dropdown-text">LX / LFG</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/str-index.html">
+ <span class="dropdown-text">AVL / VS-Strätling</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-w" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">26W</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-w">    
+        <li>
+    <a class="dropdown-item" href="../26W/stat/index.html">
+ <span class="dropdown-text">LX / STAT</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26W/form/index.html">
+ <span class="dropdown-text">AVL / Theory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26W/minor/index.html">
+ <span class="dropdown-text">LX / minderheitensprachen</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arkkiv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">arkkiv</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arkkiv">    
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=dclx&amp;ref=play">
+ <span class="dropdown-text">DC-LX (new)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=adaskool&amp;ref=play">
+ <span class="dropdown-text">ada-school (olde)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pdfpaper/001/uwolf.pdf">
+ <span class="dropdown-text">reference-test</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../test/samling.html">
+ <span class="dropdown-text">playtest</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../glossar.html"> 
+<span class="menu-text">glossar</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../snc.html"> 
+<span class="menu-text">SNC</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/esteeschwarz/SPUND-LX/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#index" id="toc-index" class="nav-link active" data-scroll-target="#index">index</a>
+  <ul class="collapse">
+  <li><a href="#samling" id="toc-samling" class="nav-link" data-scroll-target="#samling">samling</a></li>
+  <li><a href="#zinsmeister" id="toc-zinsmeister" class="nav-link" data-scroll-target="#zinsmeister">zinsmeister</a>
+  <ul class="collapse">
+  <li><a href="#play" id="toc-play" class="nav-link" data-scroll-target="#play">play</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">notes</a></li>
+  </ul></li>
+  <li><a href="#llms" id="toc-llms" class="nav-link" data-scroll-target="#llms">LLMs</a>
+  <ul class="collapse">
+  <li><a href="#small-model-training-g1-synthetic-output" id="toc-small-model-training-g1-synthetic-output" class="nav-link" data-scroll-target="#small-model-training-g1-synthetic-output">small model training G1 synthetic output</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lxtech001.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">LX / Tech</h1>
+<p class="subtitle lead">Sprache und Technologie - Language and Technology</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">vectors</div>
+    <div class="quarto-category">noun compounds</div>
+    <div class="quarto-category">llms</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 22, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>class: [16830] Sprache und Technologie - Language and Technology:: tutor: frankowsky :: term: SS26 snc: 16175.1</p>
+<svg height="20" width="20" viewbox="0 0 16 16" fill="currentColor">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 
+    7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 
+    .01.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+    -.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 
+    1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78
+    -.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08
+    -.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.66 7.66 
+    0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 
+    2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+    2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 
+    1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 
+    8.01 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+<p><a href="https://github.com/esteeschwarz/SPUND-LX/commit/9e08a7bee7f13269bcdc9129e95be376def02a40
+">TO GIT COMMIT</a></p>
+<hr>
+<hr>
+<blockquote class="blockquote">
+<p><a href="index.qmd">index</a> / LXTech</p>
+</blockquote>
+<hr>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "engine on..."</code></pre>
+</div>
+</div>
+<section id="snc" class="level4">
+<h4 class="anchored" data-anchor-id="snc">snc</h4>
+<ul>
+<li>button.123456789</li>
+<li>chunk out</li>
+</ul>
+</section>
+<section id="index" class="level1">
+<h1>index</h1>
+<ol type="1">
+<li>samling: margin notes general &gt; <a href="../26S/lxtech-qa.html" class="btn btn-cat">open</a></li>
+<li>LLM and LX theories, play claude</li>
+<li>claude writes english story based on french grammar &gt; <a href="../26S/lxtech003.html">open</a>, original: <a href="https://claude.ai/share/404f1ff7-0f1a-48b7-b449-bdf255996f5e">claude</a></li>
+<li>play along model training on corpus: having Claude devise grammar from synthetic text &gt; <a href="M1-pseudoL1.html">link</a></li>
+</ol>
+<section id="samling" class="level2">
+<h2 class="anchored" data-anchor-id="samling">samling</h2>
+<ul>
+<li><span class="citation" data-cites="frankowsky_extravagant_2022">Frankowsky (<a href="#ref-frankowsky_extravagant_2022" role="doc-biblioref">2022</a>)</span>
+<ul>
+<li>how were dates attested technically?</li>
+<li>what about the decow16 corpus?
+<ul>
+<li>possible to put that online (term paper) or is it? (<span class="citation" data-cites="schafer_what_2025">Schäfer (<a href="#ref-schafer_what_2025" role="doc-biblioref">2025</a>)</span>)</li>
+<li>corpus formats?</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="zinsmeister" class="level2">
+<h2 class="anchored" data-anchor-id="zinsmeister">zinsmeister</h2>
+<section id="play" class="level3">
+<h3 class="anchored" data-anchor-id="play">play</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">1. skew divergence</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">2. cosine similarity of vectors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">3. clustering embeddings</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># computing skew divergence score for noun-noun compound vectors</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Q: zinsmeister(2013)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># D(p||q) = Sig^i p^i x log(p^i/q^i)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>l1<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.6</span>,<span class="fl">0.4</span>,<span class="dv">0</span>) <span class="co"># milchzahn</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>l2<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.25</span>) <span class="co"># zahn</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>l3<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># löwenzahn</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">### test: löwenzahn::ziehen=1 occurence instead 0</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>l4<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>l5<span class="ot">&lt;-</span><span class="fu">unlist</span>(<span class="fu">lapply</span>(l4,<span class="cf">function</span>(x){</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>x<span class="sc">/</span><span class="fu">sum</span>(l4)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># l2 is the reference p</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># l1,l3 are the target q probabilities which are projected on /smoothed by reference p</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">#############################################</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>lx<span class="ot">&lt;-</span><span class="fu">list</span>(<span class="fu">list</span>(l2,l1),<span class="fu">list</span>(l2,l3),<span class="fu">list</span>(l2,l5))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#f&lt;-sum(pi*(log(pi/qi)))</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># latex entropy: $H(X) := -\sum_{x \in \mathcal{X}} p(x) \log2 p(x)$</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># \sum{p(i)(log(p(i)/q(i)))}</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>w<span class="ot">&lt;-</span><span class="fl">0.9</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>s1<span class="ot">&lt;-</span><span class="fu">lapply</span>(lx,<span class="cf">function</span>(l){</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(l)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#  lapply(l,function(p){</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a> <span class="co">#   cat("p:",p,"\n")</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    s<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(l[[<span class="dv">1</span>]])){</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      p1<span class="ot">&lt;-</span>l[[<span class="dv">1</span>]][i]</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      q1<span class="ot">&lt;-</span>l[[<span class="dv">2</span>]][i]</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      qi<span class="ot">&lt;-</span>(w<span class="sc">*</span>q1)<span class="sc">+</span>((<span class="dv">1</span><span class="sc">-</span>w)<span class="sc">*</span>p1) <span class="co"># qi smoothed</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"qi:"</span>,qi,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>      <span class="co"># s[i]&lt;-sum(pi*log((pi/qi)))</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>      s[i]<span class="ot">&lt;-</span>p1<span class="sc">*</span><span class="fu">log</span>(p1<span class="sc">/</span>qi)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"s:"</span>,s[i],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    spq<span class="ot">&lt;-</span><span class="fu">sum</span>(s)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"skew div:"</span>,spq,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(s)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 0.25 0.50 0.25
+
+[[2]]
+[1] 0.6 0.4 0.0
+
+qi: 0.565 
+s: -0.2038412 
+qi: 0.41 
+s: 0.09922547 
+qi: 0.025 
+s: 0.5756463 
+skew div: 0.4710305 
+[[1]]
+[1] 0.25 0.50 0.25
+
+[[2]]
+[1] 0 0 1
+
+qi: 0.025 
+s: 0.5756463 
+qi: 0.05 
+s: 1.151293 
+qi: 0.925 
+s: -0.3270832 
+skew div: 1.399856 
+[[1]]
+[1] 0.25 0.50 0.25
+
+[[2]]
+[1] 0.0000000 0.3333333 0.6666667
+
+qi: 0.025 
+s: 0.5756463 
+qi: 0.35 
+s: 0.1783375 
+qi: 0.625 
+s: -0.2290727 
+skew div: 0.5249111 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(s1)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"milchzahn"</span>,<span class="st">"löwenzahnA"</span>,<span class="st">"löwenzahnB"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(s1,sum) <span class="co">#chk.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$milchzahn
+[1] 0.4710305
+
+$löwenzahnA
+[1] 1.399856
+
+$löwenzahnB
+[1] 0.5249111</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">las=</span><span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(s1,<span class="at">main=</span><span class="st">"skew divergence scores, reference: zahn"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lxtech001_files/figure-html/skew-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X = numeric matrix of token embeddings (rows = tokens, cols = features)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># X &lt;- as.matrix(df[, -1])</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># rownames(X) &lt;- df$t</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># l1&lt;-c(0.6,0.4,0) # milchzahn</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># l2&lt;-c(0.25,0.5,0.25) # zahn</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># l3&lt;-c(0,0,1) # löwenzahn</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">###</span><span class="co"> test: löwenzahn::ziehen=1 occurence instead 0</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># l4&lt;-c(0,1,2)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">token=</span><span class="fu">c</span>(<span class="st">"milchzahn"</span>,<span class="st">"zahn"</span>,<span class="st">"loewenzahnA"</span>,<span class="st">"loewenzahnB"</span>),<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">1</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]<span class="ot">&lt;-</span>l1</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">2</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]<span class="ot">&lt;-</span>l2</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">3</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]<span class="ot">&lt;-</span>l3</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">4</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]<span class="ot">&lt;-</span>l4</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#df</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span><span class="fu">as.matrix</span>(df[,<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Row norms (Euclidean length of each token vector)</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>row_norms <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">rowSums</span>(X<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Dot-product matrix</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#    tcrossprod(X) == X %*% t(X)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>dot_products <span class="ot">&lt;-</span> <span class="fu">tcrossprod</span>(X)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Outer product of norms</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#    Gives all pairwise ||x_i|| * ||x_j||</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>norm_matrix <span class="ot">&lt;-</span> <span class="fu">outer</span>(row_norms, row_norms)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Cosine similarity matrix</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>cosine_sim <span class="ot">&lt;-</span> dot_products <span class="sc">/</span> norm_matrix</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Handle rows with zero norm (if any)</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>cosine_sim[<span class="sc">!</span><span class="fu">is.finite</span>(cosine_sim)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Add row/column names</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cosine_sim) <span class="ot">&lt;-</span> df<span class="sc">$</span>token</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cosine_sim) <span class="ot">&lt;-</span> df<span class="sc">$</span>token</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: similarity between "striker" and "goal"</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cosine_sim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            milchzahn      zahn loewenzahnA loewenzahnB
+milchzahn   1.0000000 0.7925939   0.0000000   0.2480695
+zahn        0.7925939 1.0000000   0.4082483   0.7302967
+loewenzahnA 0.0000000 0.4082483   1.0000000   0.8944272
+loewenzahnB 0.2480695 0.7302967   0.8944272   1.0000000</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cosine_sim[<span class="st">"milchzahn"</span>, <span class="st">"zahn"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7925939</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: top 5 nearest neighbors for "striker"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>nearest_neighbors <span class="ot">&lt;-</span> <span class="cf">function</span>(token, sim, <span class="at">k =</span> <span class="dv">5</span>) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> sim[token, ]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> s[<span class="fu">names</span>(s) <span class="sc">!=</span> token]           <span class="co"># remove self-similarity</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sort</span>(s, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(s, k)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">nearest_neighbors</span>(<span class="st">"zahn"</span>, cosine_sim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  milchzahn loewenzahnB loewenzahnA 
+  0.7925939   0.7302967   0.4082483 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize counts to probabilities</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># P &lt;- counts / rowSums(counts)</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># # Cosine similarity</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># norms &lt;- sqrt(rowSums(P^2))</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># sim &lt;- tcrossprod(P) / outer(norms, norms)</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sim[!is.finite(sim)] &lt;- 0</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>hc2 <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(<span class="dv">1</span> <span class="sc">-</span> cosine_sim), <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lxtech001_files/figure-html/prob1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="notes" class="level3">
+<h3 class="anchored" data-anchor-id="notes">notes</h3>
+<p>the tokens vector sujet gets interesting if following <a href="../26S/lfg-001.html">this</a> theories (LFG: lexical functional grammar) where we may describe token categories in a vector space as well, undisputed of distribution. so if <span class="citation" data-cites="zinsmeister_corpusbased_2013">Zinsmeister (<a href="#ref-zinsmeister_corpusbased_2013" role="doc-biblioref">2013</a>)</span> investigate on similarity based on distribution of lexical items in a context window (coocurrences) we may also (like in LLM embeddings) make statements about token relatedness based on the vector cosine similarity of tokens semantic / syntactic categories.</p>
+<p>the skew divergence approach to measure similiarities of their noun-noun compounds (which nevertheless can be applied to any type of comparison between two probabilty vectors = embeddings, <a href="#eq-skew" class="quarto-xref">Equation&nbsp;1</a>) applied by zinsmeister is farely easy to implement in studies since it doesnt afford much manual annotation besides (in their study) to define the contextual words for which a cooccurence is evaluated. playing with the width of a context window, the corpus base or other parameters that constrain cooccurence can yield interesting results in semantic distance of items.</p>
+<p><span id="eq-skew"><span class="math display">\[D(p||q) := \sum{p(i)(log(p(i)/q(i)))} \tag{1}\]</span></span></p>
+<p>besides, one could also include other parameters next to distributional, including syntactical information, to enlarge the dimension of the vector space and overall resolution of comparison.</p>
+</section>
+</section>
+<section id="llms" class="level2">
+<h2 class="anchored" data-anchor-id="llms">LLMs</h2>
+<p>i did think about consequences of future LLMs training data will most likely include</p>
+<ol type="1">
+<li>recent AI discourse subjects (papers on, discussions, public discurse)</li>
+<li>recent generated content itself</li>
+</ol>
+<p>so i asked gpt about Q2. <a href="../26S/lxtech002.html">her answer.</a></p>
+<section id="small-model-training-g1-synthetic-output" class="level3">
+<h3 class="anchored" data-anchor-id="small-model-training-g1-synthetic-output">small model training G1 synthetic output</h3>
+<blockquote class="blockquote">
+<p><a href="../26S/model-collapse-tech.html" class="btn btn-cat">open</a> <!-- <iframe src="synthetic_gen_3-1.html" width="100%" height="500px"></iframe> --></p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-ahn_as_2022" class="csl-entry" role="listitem">
+Ahn, Michael, Anthony Brohan, Noah Brown, Yevgen Chebotar, Omar Cortes, Byron David, Chelsea Finn, et al. 2022. <em>Do <span>As</span> <span>I</span> <span>Can</span>, <span>Not</span> <span>As</span> <span>I</span> <span>Say</span>: <span>Grounding</span> <span>Language</span> in <span>Robotic</span> <span>Affordances</span></em>. arXiv. <a href="https://doi.org/10.48550/arXiv.2204.01691">https://doi.org/10.48550/arXiv.2204.01691</a>.
+</div>
+<div id="ref-alemohammad_self-consuming_2023" class="csl-entry" role="listitem">
+Alemohammad, Sina, Josue Casco-Rodriguez, Lorenzo Luzi, Ahmed Imtiaz Humayun, Hossein Babaei, Daniel LeJeune, Ali Siahkoohi, and Richard Baraniuk. 2023a. <span>“Self-<span>Consuming</span> <span>Generative</span> <span>Models</span> <span>Go</span> <span>MAD</span>.”</span> October 2023. <a href="https://openreview.net/forum?id=ShjMHfmPs0">https://openreview.net/forum?id=ShjMHfmPs0</a>.
+</div>
+<div id="ref-alemohammad_self-consuming_2023-1" class="csl-entry" role="listitem">
+———. 2023b. <span>“Self-<span>Consuming</span> <span>Generative</span> <span>Models</span> <span>Go</span> <span>MAD</span>.”</span> October 2023. <a href="https://openreview.net/forum?id=ShjMHfmPs0">https://openreview.net/forum?id=ShjMHfmPs0</a>.
+</div>
+<div id="ref-bandyopadhyay_interactive_2022" class="csl-entry" role="listitem">
+Bandyopadhyay, Saptarashmi, Jason Xu, Neel Pawar, and David Touretzky. 2022. <span>“Interactive <span>Visualizations</span> of <span>Word</span> <span>Embeddings</span> for <span>K</span>-12 <span>Students</span>.”</span> <em>Proceedings of the AAAI Conference on Artificial Intelligence</em> 36 (11): 12713–20. <a href="https://doi.org/10.1609/aaai.v36i11.21548">https://doi.org/10.1609/aaai.v36i11.21548</a>.
+</div>
+<div id="ref-bansal_challenges_2024" class="csl-entry" role="listitem">
+Bansal, Gagan, Jennifer Wortman Vaughan, Saleema Amershi, Eric Horvitz, Adam Fourney, Hussein Mozannar, Victor Dibia, and Daniel S. Weld. 2024. <em>Challenges in <span>Human</span>-<span>Agent</span> <span>Communication</span></em>. arXiv. <a href="https://doi.org/10.48550/arXiv.2412.10380">https://doi.org/10.48550/arXiv.2412.10380</a>.
+</div>
+<div id="ref-chatgpt_how_2026" class="csl-entry" role="listitem">
+<span class="nocase">chatGPT, and St. Schwarz</span>. 2026. <span>“How Recent Chats and Discourse Model Future <span>LLM</span> Output.”</span> In <em>Cite Yourself Dummy. <span>A</span> Transformer Conversation.</em>, 1–16214. Berlin. <a href="https://stschwarz.userpage.fu-berlin.de/links?title=gpt-con&amp;ref=cite">https://stschwarz.userpage.fu-berlin.de/links?title=gpt-con&amp;ref=cite</a>.
+</div>
+<div id="ref-claude_strange_2026" class="csl-entry" role="listitem">
+<span class="nocase">Claude, St. Schwarz, and chatGPT</span>. 2026. <span>“Strange <span>Story</span>. <span>LLMs</span> and Linguistic Theories.”</span> In <em>Cite Yourself Dummy. <span>A</span> Transformer Conversation.</em>, 1–16225. Berlin. <a href="https://stschwarz.userpage.fu-berlin.de/links?title=gpt-con-16225&amp;ref=cite">https://stschwarz.userpage.fu-berlin.de/links?title=gpt-con-16225&amp;ref=cite</a>.
+</div>
+<div id="ref-falbel_torch_2026" class="csl-entry" role="listitem">
+Falbel, Daniel, and Javier Luraschi. 2026. <em>Torch: <span>Tensors</span> and <span>Neural</span> <span>Networks</span> with ’<span>GPU</span>’ <span>Acceleration</span></em>. <a href="https://doi.org/10.32614/CRAN.package.torch">https://doi.org/10.32614/CRAN.package.torch</a>.
+</div>
+<div id="ref-frankowsky_extravagant_2022" class="csl-entry" role="listitem">
+Frankowsky, Maximilian. 2022. <em>Extravagant Expressions Denoting Quite Normal Entities: <span>Identical</span> Constituent Compounds in <span>German</span></em>. John Benjamins Publishing Company. <a href="https://www.degruyterbrill.com/document/doi/10.1075/slcs.223.07fra/html">https://www.degruyterbrill.com/document/doi/10.1075/slcs.223.07fra/html</a>.
+</div>
+<div id="ref-glaser_benjaminfeldkraft_2024" class="csl-entry" role="listitem">
+Glaser, Guhl. 2024. <em>Benjaminfeldkraft. <span>A</span> German Language Literary Corpus for Exploring and Analysing Essais.</em> Postagged vertical graph. Edition rotefadenbuecher. <a href="https://github.com/esteeschwarz/benjaminfeldkraft/releases/tag/origin">https://github.com/esteeschwarz/benjaminfeldkraft/releases/tag/origin</a>.
+</div>
+<div id="ref-gomez-marquez_what_2021" class="csl-entry" role="listitem">
+Gómez-Márquez, Jaime. 2021. <span>“What Is Life?”</span> <em>Molecular Biology Reports</em> 48 (8): 6223–30. <a href="https://doi.org/10.1007/s11033-021-06594-5">https://doi.org/10.1007/s11033-021-06594-5</a>.
+</div>
+<div id="ref-gu_sigma_2026" class="csl-entry" role="listitem">
+Gu, Yi, Lingyou Pang, Xiangkun Ye, Tianyu Wang, Jianyu Lin, Carey E. Priebe, and Alexander Aue. 2026. <em><span>SIGMA</span>: <span>Scalable</span> <span>Spectral</span> <span>Insights</span> for <span>LLM</span> <span>Model</span> <span>Collapse</span></em>. 2026. <a href="https://doi.org/10.48550/arxiv.2601.03385">https://doi.org/10.48550/arxiv.2601.03385</a>.
+</div>
+<div id="ref-kopp_revisiting_2021" class="csl-entry" role="listitem">
+Kopp, Stefan, and Nicole Krämer. 2021. <span>“Revisiting <span>Human</span>-<span>Agent</span> <span>Communication</span>: <span>The</span> <span>Importance</span> of <span>Joint</span> <span>Co</span>-Construction and <span>Understanding</span> <span>Mental</span> <span>States</span>.”</span> <em>Frontiers in Psychology</em> 12 (March 2021): 580955. <a href="https://doi.org/10.3389/fpsyg.2021.580955">https://doi.org/10.3389/fpsyg.2021.580955</a>.
+</div>
+<div id="ref-leipzig_corpora_collection_korpus_2024" class="csl-entry" role="listitem">
+Leipzig Corpora Collection. 2024. <span>“Korpus: Deu_news_2024_10K, 3.10.5 <span>Entropy</span>.”</span> In <em>German Newspaper Dictionary Based on Material Crawled in 2024.</em> <a href="https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html">https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html</a>.
+</div>
+<div id="ref-phillips_what_2017" class="csl-entry" role="listitem">
+Phillips, Elizabeth, Daniel Ullman, Maartje M. A. De Graaf, and Bertram F. Malle. 2017. <span>“What <span>Does</span> <span>A</span> <span>Robot</span> <span>Look</span> <span>Like</span>?: <span>A</span> <span>Multi</span>-<span>Site</span> <span>Examination</span> of <span>User</span> <span>Expectations</span> <span>About</span> <span>Robot</span> <span>Appearance</span>.”</span> <em>Proceedings of the Human Factors and Ergonomics Society Annual Meeting</em> 61 (1): 1215–19. <a href="https://doi.org/10.1177/1541931213601786">https://doi.org/10.1177/1541931213601786</a>.
+</div>
+<div id="ref-phillips_what_2018" class="csl-entry" role="listitem">
+Phillips, Elizabeth, Xuan Zhao, Daniel Ullman, and Bertram F. Malle. 2018. <span>“What Is <span>Human</span>-Like?: <span>Decomposing</span> <span>Robots</span>’ <span>Human</span>-Like <span>Appearance</span> <span>Using</span> the <span>Anthropomorphic</span> <span class="nocase">roBOT</span> (<span>ABOT</span>) <span>Database</span>.”</span> <em>Proceedings of the 2018 <span>ACM</span>/<span>IEEE</span> <span>International</span> <span>Conference</span> on <span>Human</span>-<span>Robot</span> <span>Interaction</span></em> (Chicago IL USA), February 2018, 105–13. <a href="https://doi.org/10.1145/3171221.3171268">https://doi.org/10.1145/3171221.3171268</a>.
+</div>
+<div id="ref-piantadosi_modern_2024" class="csl-entry" role="listitem">
+Piantadosi, Steven T., Stefan Müller, Moshe Poliak, Geoffrey K. Pullum, Robert D. Van Valin Jr, Dafydd Gibbon, Iris Berent, et al. 2024. <span>“Modern Language Models Refute <span>Chomsky</span>’s Approach to Language.”</span> In <em>From Fieldwork to Linguistic Theory</em>, 353–415. Language Science Press. <a href="https://langsci-press.org/catalog/book/434">https://langsci-press.org/catalog/book/434</a>.
+</div>
+<div id="ref-schafer_what_2025" class="csl-entry" role="listitem">
+Schäfer, Roland. 2025. <em>What Happened to Webcorpora.org? <span></span> <span>Roland</span> <span>Schäfer</span></em>. <a href="https://rolandschaefer.net/archives/3663">https://rolandschaefer.net/archives/3663</a>.
+</div>
+<div id="ref-schmid_smor_2004" class="csl-entry" role="listitem">
+Schmid, Helmut, Arne Fitschen, and Ulrich Heid. 2004. <span>“<span>SMOR</span>: <span>A</span> <span>German</span> <span>Computational</span> <span>Morphology</span> <span>Covering</span> <span>Derivation</span>, <span>Composition</span> and <span>Inflection</span>.”</span> <em>Proceedings of the Language Resources and Evaluation Conference</em>, 2004. <a href="https://api.semanticscholar.org/CorpusID:1146460">https://api.semanticscholar.org/CorpusID:1146460</a>.
+</div>
+<div id="ref-schwarz_model_2026" class="csl-entry" role="listitem">
+Schwarz, St. 2026. <em>Model Collapse Essai</em>. <a href="https://github.com/esteeschwarz/SPUND-LX/tree/main/play/quarto/test/modeling">https://github.com/esteeschwarz/SPUND-LX/tree/main/play/quarto/test/modeling</a>.
+</div>
+<div id="ref-noauthor_sfst_nodate" class="csl-entry" role="listitem">
+<em><span>SFST</span> <span></span> <span>Institut</span> Für <span>Maschinelle</span> <span>Sprachverarbeitung</span> <span></span> <span>Universität</span> <span>Stuttgart</span></em>. n.d. Accessed May 13, 2026. <a href="https://www.ims.uni-stuttgart.de/forschung/ressourcen/werkzeuge/sfst/">https://www.ims.uni-stuttgart.de/forschung/ressourcen/werkzeuge/sfst/</a>.
+</div>
+<div id="ref-noauthor_sfst_nodate-1" class="csl-entry" role="listitem">
+<em>Sfst: <span>Stuttgart</span> <span>Finite</span> <span>State</span> <span>Transducer</span> System</em>. n.d. Accessed May 13, 2026. <a href="https://github.com/santhoshtr/sfst">https://github.com/santhoshtr/sfst</a>.
+</div>
+<div id="ref-shumailov_ai_2024" class="csl-entry" role="listitem">
+Shumailov, Ilia, Zakhar Shumaylov, Yiren Zhao, Nicolas Papernot, Ross Anderson, and Yarin Gal. 2024. <span>“<span>AI</span> Models Collapse When Trained on Recursively Generated Data.”</span> <em>Nature (London)</em> 631 (8022): 755–59. <a href="https://doi.org/10.1038/s41586-024-07566-y">https://doi.org/10.1038/s41586-024-07566-y</a>.
+</div>
+<div id="ref-tei_initiative_tei_2006" class="csl-entry" role="listitem">
+TEI Initiative. 2006. <em><span>TEI</span>: <span>Feature</span> <span>Structures</span></em>. <a href="https://tei-c.org/Vault/Workgroups/FS/">https://tei-c.org/Vault/Workgroups/FS/</a>.
+</div>
+<div id="ref-zinsmeister_corpusbased_2013" class="csl-entry" role="listitem">
+Zinsmeister, Heike. 2013. <span>“Corpus–Based Modeling of the Semantic Transparency of Noun–Noun Compounds.”</span> In <em>A <span>Festschrift</span> for <span>Susan</span> <span>Olsen</span></em>, edited by Holden Härtl, 303–21. Berlin: Akademie Verlag. <a href="https://doi.org/doi:10.1524/9783050063799.303">https://doi.org/doi:10.1524/9783050063799.303</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

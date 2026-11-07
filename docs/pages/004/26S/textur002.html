@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-05-16">
+
+<title>kybernetik – 004</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-09646deb5961d21252879e1a82e7697c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">004</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-s" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">26S</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-s">    
+        <li>
+    <a class="dropdown-item" href="../26S/textur001.html">
+ <span class="dropdown-text">AVL / textur</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/nietzsche001.html">
+ <span class="dropdown-text">AVL / Nietzsche</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/lki-index.html">
+ <span class="dropdown-text">Lit / KI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/lxtech001.html">
+ <span class="dropdown-text">LX / Tech</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/lfg-index.html">
+ <span class="dropdown-text">LX / LFG</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26S/str-index.html">
+ <span class="dropdown-text">AVL / VS-Strätling</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-w" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">26W</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-w">    
+        <li>
+    <a class="dropdown-item" href="../26W/stat/index.html">
+ <span class="dropdown-text">LX / STAT</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26W/form/index.html">
+ <span class="dropdown-text">AVL / Theory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../26W/minor/index.html">
+ <span class="dropdown-text">LX / minderheitensprachen</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-arkkiv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">arkkiv</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-arkkiv">    
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=dclx&amp;ref=play">
+ <span class="dropdown-text">DC-LX (new)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://userpage.fu-berlin.de/stschwarz/links?title=adaskool&amp;ref=play">
+ <span class="dropdown-text">ada-school (olde)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pdfpaper/001/uwolf.pdf">
+ <span class="dropdown-text">reference-test</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../test/samling.html">
+ <span class="dropdown-text">playtest</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../glossar.html"> 
+<span class="menu-text">glossar</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../snc.html"> 
+<span class="menu-text">SNC</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/esteeschwarz/SPUND-LX/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">general</a>
+  <ul class="collapse">
+  <li><a href="#und-texturen" id="toc-und-texturen" class="nav-link" data-scroll-target="#und-texturen">und texturen…</a>
+  <ul class="collapse">
+  <li><a href="#feedback" id="toc-feedback" class="nav-link" data-scroll-target="#feedback">feedback</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#lektürefragen-class-not-mine" id="toc-lektürefragen-class-not-mine" class="nav-link" data-scroll-target="#lektürefragen-class-not-mine">lektürefragen (class, not mine)</a>
+  <ul class="collapse">
+  <li><a href="#meine-ideen-dazu" id="toc-meine-ideen-dazu" class="nav-link" data-scroll-target="#meine-ideen-dazu">meine ideen dazu:</a></li>
+  </ul></li>
+  <li><a href="#on-entropy-again" id="toc-on-entropy-again" class="nav-link" data-scroll-target="#on-entropy-again">on entropy again</a>
+  <ul class="collapse">
+  <li><a href="#script" id="toc-script" class="nav-link" data-scroll-target="#script">script</a></li>
+  <li><a href="#entropy-table" id="toc-entropy-table" class="nav-link" data-scroll-target="#entropy-table">entropy table</a></li>
+  <li><a href="#according-to-shannon-entropy" id="toc-according-to-shannon-entropy" class="nav-link" data-scroll-target="#according-to-shannon-entropy">according to shannon entropy</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">plot</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="textur002.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">kybernetik</h1>
+<p class="subtitle lead">Norbert Wiener - Regelung und Nachrichtenübertragung im Lebewesen und in der Maschine</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 16, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://esteeschwarz.github.io/SPUND-LX/pages/004/textur-001.html">paper online</a> ::: class: [16416] Text und Textur. Vom Webstuhl bis zu Large Language Models ::: tutor: jan lietz ::: term: SS26 ::: snc: 16162.1</p>
+<svg height="20" width="20" viewbox="0 0 16 16" fill="currentColor">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 
+    7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 
+    .01.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+    -.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 
+    1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78
+    -.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08
+    -.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.66 7.66 
+    0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 
+    2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+    2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 
+    1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 
+    8.01 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+<p><a href="https://github.com/esteeschwarz/SPUND-LX/commit/9e08a7bee7f13269bcdc9129e95be376def02a40
+">TO GIT COMMIT</a></p>
+<hr>
+<hr>
+<blockquote class="blockquote">
+<p><a href="../26S/textur001.html">Textur</a> / kybernetik</p>
+</blockquote>
+<hr>
+<section id="snc" class="level4">
+<h4 class="anchored" data-anchor-id="snc">snc</h4>
+<ul>
+<li><p>16233.1</p></li>
+<li><p><label><input type="checkbox" checked="">sent</label></p></li>
+<li><p><label><input type="checkbox" checked="">final</label></p></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "engine on..."</code></pre>
+</div>
+</div>
+</section>
+<section id="general" class="level1">
+<h1>general</h1>
+<p>Norbert Wiener, der u.u. als begründer der (damals) modernen kybernetik (dem wortlaut nach…) betrachtet werden kann, war mathematiker am MIT und umreiszt in der einleitung zur 1961 (1st: 1948) erschienenen Kybernetik (<span class="citation" data-cites="wiener_kybernetik_1992">Wiener (<a href="#ref-wiener_kybernetik_1992" role="doc-biblioref">1992</a>)</span>) ihre entstehungsgeschichte in etwa so, dasz eine dort in den letzten Kriegsjahren des zweiten weltkriegs lockere runde von wissenschaftlern hauptsächlich der physik, mathematik, soziologie, psychologie, aber weitestgehend interdisziplinär und offen, im bestreben zusammenkam, die wissenschaft in der art offenen, fruchtbaren austauschs zu neuen, grenzüberschreitenden erkenntnissen zu geleiten.</p>
+<p>noch während des krieges neu zu entwickelnde technologien wie zb. zur flugabwehr wurden hier unter wirklich revolutionären ansätzen, die erkenntnisse aus der mathematik und soziologie/psychologie/physiologie zu verbinden wusste, erforscht. ziel waren steuerungs/regelungsmechanismen für eine erfolgreiche flugbahnberechnung von flugzeugen, die in in erster linie auf einem rückkopplungsmodel beruhte, das selbständig, ohne weiteres eingreifen von menschen, in der lage wäre, ihre berechnungen zuerst an empfangene statusmeldungen anzupassen und weiterhin diese statusmeldungen vorauszuberechnen. in diesem sinne gleicht das model dem steuermechanismus eines schiffes, das seine fahrwerksregelung an rückmeldungen vom steuerwerk selbst fortwährend anzupassen in der lage ist.</p>
+<p><img src="wiener-exc-001.png" class="img-fluid"> Q: <span class="citation" data-cites="wiener_cybernetics_1961">Wiener (<a href="#ref-wiener_cybernetics_1961" role="doc-biblioref">1961</a>)</span></p>
+<p>aus diesem grunde entschlossen sich die wissenschaftler, die technik bzw. “das ganze Gebiet der Regelung und Nachrichtentheorie, ob in der Maschine oder im Tier, mit dem Namen »Kybernetik« zu benennen, den wir aus dem griechischen »κvßερvήΤη~« oder »Steuermann« bildeten”. auch gouverneur udgl. ist hier etymologisch verwurzelt.</p>
+<p>der kybernet war also zuerst der sich selbständig regelnde steuermechanismus einer maschine, eines maschinellen elements, das seine umgebung beobachtet und anpassungen der steuerung darauf ausrichtet. insofern also vielleicht schon eine kluge maschine im gegensatz zu rein prozessorientierten starren regelungsmechanismen.</p>
+<p>zuhilfe kamen den wissenschaftlern erkenntnisse über soziologische prozesse, physiologische beobachtungen von neuronalen netzen oder auch die mathematik und biologie in natürlichen wachstumsprozessen. damit reicht das fundament der kybernetik schon sehr weit in unser heutiges verständnis dessen, was u.u. allgemein unter kybernetik verstanden wurde hinein; also eine mit durchaus menschlichen eigenschaften versehene maschine, die tätigkeiten des menschen besser, schneller und weniger fehlerbehaftet ausführen kann. das wesentliche ist hier natürlich die schnelligkeit und lernfähigkeit der maschinellen prozesse. basierend auf bestehenden rechenmaschinen, die selbst ihre anfänge in den forschungen von charles babbage und ada lovelace in den 30er jahren des 19jh genommen haben mögen, wurde deren technik an notwendige höhere rechenleistungen angepasst, die jdfs. nicht mehr rein mechanisch vonstatten ging sondern mithilfe elektronischer bauteile perfektioniert wurde. auch hier kamen wieder forschungen aus der physik, nachrichtentechnik und physiologie zusammen, um die rechenleistung effektiver zu gestalten.</p>
+<section id="und-texturen" class="level2">
+<h2 class="anchored" data-anchor-id="und-texturen">und texturen…</h2>
+<p>das war grundlegendes<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> aus der “einführung” der kybernetik (<span class="citation" data-cites="wiener_kybernetik_1992">Wiener (<a href="#ref-wiener_kybernetik_1992" role="doc-biblioref">1992</a>)</span>), die von ihm noch einmal für ein breiteres publikum umgearbeitet und eingang in <span class="citation" data-cites="wiener_human_1950">Wiener (<a href="#ref-wiener_human_1950" role="doc-biblioref">1950</a>)</span> fand. und wo kommen unsere :texturen: ins spiel?</p>
+<p>wir können durchaus beim webstuhl bleiben, der ja als zentrales thema das seminar ausmacht. wir haben über den jaccard mechanismus schon einiges gehört und hier fängt es auch mit der kybernetik an. durch die einführung automatisierter abläufe in die technik [des webens], die sich damit weitgehend von der manuellen steuerung durch den menschen emanzipierte, kommen auch fragen nach dem [vielleicht: subjektcharacter] dessen, was eigentlich den vorgang steuert und das, was dabei von wem genau <em>gewebt</em> wird, ins spiel. wir haben es an dieser stelle nicht mehr mit menschlich-individueller bzw. im eigentlichen sinne <em>kreativer</em> (schöpferischer, künstlerischer) technik, sondern mit auf algoritmen, prozessual-routinierten regeln beruhenden schritten zur herstellung des produkts zu tun, die a) unendlich fein ausdifferenziert, b) unendlich weit vorausgedacht sowie c) unendlich haltbar gespeichert und abgerufen werden können [in potenz.] kann man dies von der abgelösten menschlichen fertigkeit des (webens) ebenso sagen? wahrscheinlich eher nicht. die hier hergestellte textur muss im gegensatz zur traditionellen ein element beinhalten, das un-menschlich ist; das irgendwie aus der zeit herausgelöst sein muss, die dem menschen eigentümlich ist.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> mit unendlich verfügbarem material und energie liesze sich eine textur vorstellen, die tausend menschenjahre lang sich selbst webte und (das universum?) umspannte.</p>
+<section id="feedback" class="level3">
+<h3 class="anchored" data-anchor-id="feedback">feedback</h3>
+<p>wir stellen uns weiterhin vor, der maschinismus ist [der kybernet] in der lage, sein eigenes produkt fortwährend zu reflektieren, aufgrund der statusrückmeldungen seinen <em>output</em> zu modellieren, sich selbst dazu anzulernen, das produkt zu optimieren. am ende (des lernprozesses) würde (der teppich) vielleicht nicht mehr viel mit dem zu tun haben, was (d.&nbsp;programmierer* ) im kopf gehabt hat, als den algoritmus sich ausdachte. es würde vielleicht nicht mal mehr ein teppich sein, sondern u.u. etwas, das das <em>ideal</em> eines teppichs wäre, die <em>Idee vom Teppich</em>. aber das geht zu weit, nestcepas…</p>
+<p>die texturen, die wiener referiert und die er immer wieder mit <em>dem äther</em> querführt, einem auch zu seiner zeit fragwürdigen, aber immernoch attraktiven konzept eines alles umspannenden, alles durchdringenden, undefinierbaren elements, das <em>die welt im innersten zusammenhält</em> -</p>
+<blockquote class="blockquote">
+<p>(… a curious, rigid, but invisible medium known as the ether, which, at the time, was supposed to permeate the atmosphere, interstellar space and all transparent materials [<a href="https://esteeschwarz.github.io/SPUND-LX/pages/004/textur-qa.html#:~:text=interstellar">…</a>])</p>
+</blockquote>
+<p>… haben durchaus metaphysische qualitäten. in ihnen wird das unsichtbare sichtbar. der vorgestellte welt-teppich wäre am ende ein abbild der welt selbst, wenn man das konsequent zuende denkt. (ca., der kybernet: ach schau, das ja auch interessant, das fehlte noch…, na dann ab in den teppich damit :)</p>
+<section id="caveats" class="level4">
+<h4 class="anchored" data-anchor-id="caveats">caveats</h4>
+<p>apropos feedback: bei wiener [!sic 1948] klingt die vorstellung der feedback loop noch durchaus vielversprechend. was aber passiert (entgegen auch meiner o.a. vorstellungen der :idee: ), wenn unser model fortwährend sich selbst referiert, wird aktuell unter dem stichwort <em>model-collapse</em> untersucht und sieht ca. künftige generationen von language models (also immernoch kyberneten) voraus, deren output</p>
+<ol type="1">
+<li>zunehmend vorraussehbar (predictable)</li>
+<li>weniger divers</li>
+<li>weniger ausgeglichen</li>
+<li>und zunehmend eindimensional</li>
+</ol>
+<p>wird.</p>
+<p>das zeigt sich dann in zunehmenden musterwiederholungen, eindimensionalen phrasen, weniger types (unique words/tokens) und generell einer abnahme der entropie dh. die annahme eines höher organisierten (aber nicht mehr mensch-sprachlich strukturierten) zustands, der konsequent auf erstarrung hinausläuft, weil die späteren generationen eine weitgehend (inzestuöse beziehung) mit dem eigenen output eingehen. in texturbegriffe übersetzt würde unser teppich langsam den weg von einem farbenfrohen (universum der begriffe) hin zu einem diachromen gewebe aus eigentlich nur 2 zuständen, nämlich strom/nichtstrom, nehmen. wir haben es hier mit einer entropie im entgegengesetzten sinne des natürlichen verständnisses zu tun. indem die vielseitigkeit des teppichs abnimmt, die wahrscheinlichkeit von mustern höher wird, desto weniger information kann er uns geben.</p>
+<p><span class="citation" data-cites="wiener_human_1950">Wiener (<a href="#ref-wiener_human_1950" role="doc-biblioref">1950</a>)</span> : 21</p>
+<blockquote class="blockquote">
+<p>Just as entropy is a measure of disor­ganization, the information carried by a set of mes­sages is a measure of organization. In fact, it is possible to interpret the information carried by a message as essentially the negative of its entropy, and the negative logarithm of its probability. That is, the more probable the message, the less information it gives. Cliches, for example, are less illuminating than great poems.</p>
+</blockquote>
+<p>d.h. dieser von einem nahe collabierenden model produzierte teppich is no news at all.</p>
+<blockquote class="blockquote">
+<p>see: <a href="https://esteeschwarz.github.io/SPUND-LX/pages/004/model-collapse-textur.html">model-collaps</a> for a nice experiment on modeling with a small corpus.</p>
+</blockquote>
+</section>
+</section>
+</section>
+</section>
+<section id="lektürefragen-class-not-mine" class="level1">
+<h1>lektürefragen (class, not mine)</h1>
+<ol type="1">
+<li>flora: Wie lässt sich die ästhetische Qualität eines Textes beschreiben, der – um überhaupt verständlich zu sein – auf vertrauten sprachlichen Konventionen aufbauen muss?</li>
+<li>tilman: »Die bekannte Shannonsche Beziehung […] gibt das Maß der Information in Bezug auf eine Quelle, welche die Zeichen (Worte) Zi mit der Wahrscheinlichkeit pi auftreten lässt (sendet).« (S. 79). 2.1 Kann man in dieser Beschreibung der Information-Zeichen-Beziehung eine Vorwegnahme der Funktionsweise von Large Language Models erkennen?</li>
+<li>josefine: Eine höhere Entropie erhöht laut Bense denn Informationsbetrag, aber wo ist da die Grenze zum Chaos? Also wann wird aus Unvorhersagkeit (bzw. Unordnung) nur noch Unverständlichkeit?</li>
+</ol>
+<section id="meine-ideen-dazu" class="level2">
+<h2 class="anchored" data-anchor-id="meine-ideen-dazu">meine ideen dazu:</h2>
+<ol start="2" type="1">
+<li>die sache mit der wahrscheinlichkeit ist genau das primaere prinzip von LLMs, die über einen vektorraum aus wahrscheinlichkeiten (embeddings) die relation (entfernung) der einzelnen vektoren (das können wörter, zeichen, sätze…, aber auch alles andere sein, das mit einer bestimmten wahrscheinlichkeit zu einem ort und zeit auftritt.) also jede entität bildet einen vektor ab und das model (also eigentlich der mit einem eben <em>large</em> space aus embeddings bestückte datensatz, der von dem algoritmus, also dem eigentlichen model [die embeddings sind die <em>tensors</em> bzw. der <em>latent space</em>, der dann fixiert ist, wenn man das model auf eine menge an daten trainiert hat]) bestimmt grob die entfernung (vektoren sind immer mindestens 2-dimensional) der beiden entitäten zueinander innerhalb des vectorspace. damit lassen sich dann entweder texte generieren (indem man jeweils die höchstwahrscheinlich folgenden entitäten bestimmt) oder classification tasks ausführen, bilder generieren usw.</li>
+</ol>
+<p>Insofern, glaube ich: die KI, mit der wir arbeiten, sieht nicht mehr die zeichen bzw. kann damit nix anfangen und interpretiert sie schon gar nicht; für sie ist nur interessant, wo in einem n-dimensionalen raum aus zeichen sich unser zeichen befindet (zb. der prompt, das bild etc.) / deshalb, um nicht nur mist zu produzieren (s.o. model-collapse experiment), sind eben grosze datenmengen zum training erforderlich; damit die menge an wahrscheinlichkeiten, aus denen die KI (der agent) dann wählen kann (zu denen sie das prompt in beziehung setzen kann.) In Benses/Peirces zeichentheorie hätten wir (denke ich) es bei den zeichen, die die KI noch sieht, nur mit ikonischen zeichen zu tun, also nur anzeiger dessen, <em>was</em> gesagt wird, ohne weitere einbetttung anderer werte (metaphern, figurative language etc. kann von dem model nicht verstanden oder gesehen werden, sondern nur berechnet. in dem zitat unten sieht die KI nur den strich und das papier, aber “weisz” nicht aus nur dem was sie sieht, ohne weitere berechnung, das der bleistift geführt werden musste von jemandem, blei giftig ist, papier aufweicht etc. dh. der strich als zeichen hier sagt nicht mehr über sich selbst aus, als dasz er ein strich ist [sein eigener vektor]. ein A ist ein A; nicht der anfang des alphabets, nicht der anfang von Anfang, sondern nur ein A und kein B.)</p>
+<blockquote class="blockquote">
+<p>An icon is a sign which would possess the character which renders it significant, even though its object had no existence; such as a lead-pencil streak as representing a geometrical line. (<span class="citation" data-cites="hoopes_peirce_1991-1">Hoopes (<a href="#ref-hoopes_peirce_1991-1" role="doc-biblioref">1991</a>)</span> : 1)</p>
+</blockquote>
+</section>
+</section>
+<section id="on-entropy-again" class="level1">
+<h1>on entropy again</h1>
+<section id="script" class="level2">
+<h2 class="anchored" data-anchor-id="script">script</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>calculate_entropy <span class="ot">&lt;-</span> <span class="cf">function</span>(text_string,SPLIT) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  chars <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(text_string, SPLIT))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#length(chars)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  probs <span class="ot">&lt;-</span> <span class="fu">table</span>(chars) <span class="sc">/</span> <span class="fu">length</span>(chars)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># table() just counts frequency of distinct units here, length() is the number of all units</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># his is whats called type/token ratio, so how many tokens (chars, words) occur per distinct unit</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># also called "lexical diversity" of a text when applied at word level: more distinct words = higher ratio</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  probs <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(probs)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  entropy <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">sum</span>(probs <span class="sc">*</span> <span class="fu">log2</span>(probs))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  entropy</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>t<span class="ot">&lt;-</span><span class="fu">readLines</span>(<span class="st">"textur002.qmd"</span>) <span class="co"># reads in this paper</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>t1<span class="ot">&lt;-</span>t</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>t2<span class="ot">&lt;-</span><span class="fu">gsub</span>(<span class="st">"g"</span>,<span class="st">"h"</span>,t) <span class="co"># eliminate 1 char</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>t3<span class="ot">&lt;-</span><span class="fu">gsub</span>(<span class="st">"[ghi]"</span>,<span class="st">"e"</span>,t) <span class="co"># eliminate 3 chars</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>e1<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t1,<span class="st">""</span>) <span class="co"># original text</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>e2<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t2,<span class="st">""</span>) <span class="co"># all "g" replaced by "h"</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>e3<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t3,<span class="st">""</span>) <span class="co"># all "g,h,i" replaced by "e"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>e4<span class="ot">&lt;-</span><span class="fu">calculate_entropy</span>(t,<span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>) <span class="co"># word entropy</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>c1<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t1,<span class="st">""</span>)))) <span class="co"># count of units (more than alphabet, its a mixed script!)</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>c2<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t2,<span class="st">""</span>))))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>c3<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t3,<span class="st">""</span>))))</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>c4<span class="ot">&lt;-</span><span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(t1,<span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="entropy-table" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-table">entropy table</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 6%">
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">units</th>
+<th style="text-align: right;">entropy</th>
+<th style="text-align: left;">explique</th>
+<th style="text-align: left;">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">4.792221</td>
+<td style="text-align: left;">original text</td>
+<td style="text-align: left;">natural character distribution</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">4.746499</td>
+<td style="text-align: left;">all [g] replaced by [h]</td>
+<td style="text-align: left;">modified slightly</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">4.410767</td>
+<td style="text-align: left;">all [g,h,i] replaced by [e]</td>
+<td style="text-align: left;">modified heavier</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1022</td>
+<td style="text-align: right;">9.320101</td>
+<td style="text-align: left;">word entropy</td>
+<td style="text-align: left;">word level, compared to character (ID 1)</td>
+</tr>
+</tbody>
+</table>
+<p>character/word level entropy</p>
+</div>
+</div>
+<p>we see, that when replacing characters (eliminate them from text and replace by others) the entropy drops, showing a higher predictability = less information by less unique characters (cf. <span class="citation" data-cites="leipzig_corpora_collection_korpus_2024">Leipzig Corpora Collection (<a href="#ref-leipzig_corpora_collection_korpus_2024" role="doc-biblioref">2024</a>)</span>; Entropy: ~11.7 in german newspaper corpus.)</p>
+</section>
+<section id="according-to-shannon-entropy" class="level2">
+<h2 class="anchored" data-anchor-id="according-to-shannon-entropy">according to shannon entropy</h2>
+<p>which you see in the application of formula <a href="#eq-entropy" class="quarto-xref">Equation&nbsp;1</a> in the script, where the negative sum of all probabilities of units is multiplied by the log2 (“bits” of information, logarithmus zur basis 2) of these probabilities (cf. <span class="citation" data-cites="shannon_mathematical_1949">Shannon and Weaver (<a href="#ref-shannon_mathematical_1949" role="doc-biblioref">1949</a>)</span> : 23).</p>
+<p><span id="eq-entropy"><span class="math display">\[H(X) := -\sum_{x \in \mathcal{X}} p(x) \log2 p(x) \tag{1}\]</span></span></p>
+</section>
+<section id="plot" class="level2">
+<h2 class="anchored" data-anchor-id="plot">plot</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "e1" "e2" "e3"</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="textur002_files/figure-html/ent-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>entropy plot</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hoopes_peirce_1991-1" class="csl-entry" role="listitem">
+Hoopes, James. 1991. <em>Peirce on <span>Signs</span> : <span>Writings</span> on <span>Semiotic</span> by <span>Charles</span> <span>Sanders</span> <span>Peirce</span></em>. Chapel Hill: The University of North Carolina Press. <a href="https://research.ebsco.com/linkprocessor/plink?id=a9a3efb1-5475-33bf-abc2-9ebba3344432">https://research.ebsco.com/linkprocessor/plink?id=a9a3efb1-5475-33bf-abc2-9ebba3344432</a>.
+</div>
+<div id="ref-leipzig_corpora_collection_korpus_2024" class="csl-entry" role="listitem">
+Leipzig Corpora Collection. 2024. <span>“Korpus: Deu_news_2024_10K, 3.10.5 <span>Entropy</span>.”</span> In <em>German Newspaper Dictionary Based on Material Crawled in 2024.</em> <a href="https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html">https://cls.wortschatz-leipzig.de/de/deu_news_2024_10K/3.10.5_Entropy.html</a>.
+</div>
+<div id="ref-shannon_mathematical_1949" class="csl-entry" role="listitem">
+Shannon, C. E., and W. Weaver. 1949. <em>The <span>Mathematical</span> <span>Theory</span> <span>Of</span> <span>Communication</span></em>. University of Illinois Press. <a href="http://archive.org/details/in.ernet.dli.2015.503815">http://archive.org/details/in.ernet.dli.2015.503815</a>.
+</div>
+<div id="ref-wiener_human_1950" class="csl-entry" role="listitem">
+Wiener, Norbert. 1950. <em>The Human Use of Human Beings : Cybernetics and Society / <span>Norbert</span> <span>Wiener</span>, <span>Professor</span> of <span>Mathematics</span> at the <span>Massachusetts</span> <span>Institute</span> of <span>Technology</span>.</em> Boston: Houghton Mifflin Company.
+</div>
+<div id="ref-wiener_cybernetics_1961" class="csl-entry" role="listitem">
+———. 1961. <em>Cybernetics or <span>Control</span> and <span>Communication</span> in the <span>Animal</span> and the <span>Machine</span></em>. Boston: MIT Press. <a href="http://archive.org/details/wiener-1938">http://archive.org/details/wiener-1938</a>.
+</div>
+<div id="ref-wiener_kybernetik_1992" class="csl-entry" role="listitem">
+———. 1992. <em>Kybernetik: <span>Regelung</span> Und <span>Nachrichtenübertragung</span> Im <span>Lebewesen</span> Und in Der <span>Maschine</span> (<span>MIT</span>, 1948)</em>. 2nd ed. Econ Classics. Düsseldorf u.a: ECON-Verl.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>ich musz zugeben, ich komme mit den beiden seminaren literatur/KI und textur etwas durchenander, es lohnt sich aber auch (von hier) einmal <a href="../26S/lki-index.html">dort</a> zu schauen, was sich so überschneidet…<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>das wären dann auch die fragen in die runde, vielleicht mit inverse focus: 1. was ist das spezifische (momentum), das eine explizit nicht künstliche textur von einer solchen unterscheidet? 2. was wären weitere begriffe aus dem noch-handwerklich/manuellen bereich, die sich auf nicht-künstliche textur (im weitesten sinne, literarische texturen/gewebe/strukturen einschlieszend) im gegensatz zu künstlicher anwenden lieszen? 3. an welchen stellen wir es mit faszbaren im gegensatz zu abstrakten oder virtuellen strukturen zu tun?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
