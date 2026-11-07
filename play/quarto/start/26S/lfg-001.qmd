@@ -252,7 +252,7 @@ PP --> NP2 --> Det einem
 NP2 --> N'2 --> AP wichtigen
 N'2 --> N2 buch"
 
-t3<-"../output/pages/004/t4"
+#t3<-"../../output/pages/004/26S/t4"
 f<-"t3.txt"
 #f
 #getwd()
@@ -261,7 +261,7 @@ cat("raw used final:\n")
 print(lines)
 f<-unlist(strsplit(f,"\\."))[1]
 #f
-t3<-paste0("../output/pages/004/",f)
+t3<-paste0("../../output/pages/004/",f)
 #t3
 dpdf<-F
 size<-70
