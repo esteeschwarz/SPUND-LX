@@ -43,7 +43,7 @@ val.c<-"{{< meta testmeta >}}"
 val.c<-"{{< meta cmeta >}}"
 ```
 
-{{< include _scribble.md >}} 
+{{< include ../../_ul-md/minor/_scribble.md >}} 
 
 # references
 

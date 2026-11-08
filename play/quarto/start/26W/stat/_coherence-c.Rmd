@@ -1,0 +1,587 @@
+---
+title: "coherence & proposition"
+subtitle: "measuring reference distance in :schizophrenia: threads"
+author: "st. schwarz"
+date: "`r Sys.Date()`"
+#date: "2025-10-18"
+categories: [papers,linguistics]
+tags: [LX,corpus,psych,HA]
+# output: 
+#     bookdown::html_document2:
+#       base_format: tufte::tufte_html
+#       keep_md: true
+#       self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+keep_md: yes
+keep_tex: yes
+documentclass: book
+url: "https://esteeschwarz.github.io/open-lx"
+description: "SPUND-LX - AVL - alii :: appendix & pub essais\n"
+#bibliography: "/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib"
+link-citations: true
+github-repo: "esteeschwarz/SPUND-LX/tree/main/psych"
+site: bookdown::bookdown_site
+---
+
+```{r,echo=F}
+source("~/rwd/psych-meta.R")
+myname<-ifelse(exists("myname"),myname,"placeholder")
+mtrk<-ifelse(exists("mtrk"),mtrk,"placeholder")
+  
+```
+
+# index
+
+Hausarbeit im Seminar: *Sprache und Psychose (PHILGEIST_S_16827_25S)*   
+Dozent: Anatol Stefanowitsch   
+abgegeben von: `r myname`   
+MtrNr: `r mtrk`   
+abgegeben am: 2025-10-18   
+an: Freie Universität Berlin   
+
+
+## Selbständigkeitserklärung
+
+Hiermit versichere ich,
+
+- dass ich die von mir vorgelegte Arbeit mit dem Titel
+
+**coherence & propositions: measuring reference distance in :schizophrenia: threads**
+
+selbständig abgefasst habe und
+
+- dass ich keine weiteren Hilfsmittel verwendet habe als diejenigen, die im Vorfeld explizit zugelassen und von mir angegeben wurden und
+- dass ich die Stellen der Arbeit, die dem Wortlaut oder dem Sinn nach anderen Werken (dazu zählen auch Internetquellen und KI-basierte Tools) entnommen sind, unter Angabe der Quelle kenntlich gemacht habe und
+- dass ich, sollte ich explizit im Vorfeld zugelassene Hilfsmittel (z.B. KI-Tools) verwendet haben, diese in einer tabellarischen Übersicht (\@ref(tab:kitable)) in meiner schriftlichen Arbeit integriert habe und
+- dass ich die vorliegende Arbeit noch nicht für andere Prüfungen eingereicht habe.
+
+Mir ist außerdem bewusst,
+
+- dass ich diese Prüfung nicht bestanden habe, wenn ich die mir bekannte Frist für die Einreichung meiner schriftlichen Arbeit versäume und
+- dass ich im Falle eines Täuschungsversuchs diese Prüfung nicht bestanden habe und
+- dass ich im Falle eines schwerwiegenden Täuschungsversuchs ggf. die Gesamtprüfung endgültig nicht bestanden habe und in diesem Studiengang bzw. Studienangebot nicht mehr weiter studieren darf und
+- dass ich, sofern ich zur Erstellung dieser Arbeit KI-basierte Tools verwendet habe, die Verantwortung für durch die KI generierte eventuell fehlerhafte oder verzerrte (bias) Inhalte, fehlerhafte Referenzen, Verstöße gegen das Datenschutz- und Urheberrecht oder Plagiate trage.
+
+Ich bestätige mit meiner Unterschrift die Richtigkeit dieser Angaben.   
+
+`r Sys.Date()`,
+
+
+
+\clearpage
+
+<!--chapter:end:~/Documents/GitHub/open-lx/content/LX-psych/index.Rmd-->
+
+---
+# title: "xtitle: coherence & presuppositions observations in :schizophrenia: threads"
+# author: "st. schwarz"
+# date: "`r Sys.Date()`"
+# output: 
+#     bookdown::html_document2:
+#       base_format: tufte::tufte_html
+#       keep_md: true
+#       self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+#keep_md: true
+---
+
+```{r setup_prelim, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+```
+
+```{css, echo=FALSE,eval=T}
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+```
+
+```{r,echo=FALSE}
+#dataset<-7
+#prelim
+```
+
+```{r,src,echo=F,warning=F,message=F,results='hide',fig.keep='none'}
+#eval.n<-7
+# run<-15302
+# dataset<-11
+# appendix open-lx after all is loaded, yaml new=T, reload=F
+#> render_site(paste0(Sys.getenv("GIT_TOP"),"/open-lx/content/LX-psych/"))
+
+run<-15303 # db identifier
+dataset<-12 # last essai
+dataset<-13 # new distancer & embed approach
+
+reload<-T
+target<-c("obs","ref")
+#ref_target<-"obs"
+con<-letters[1:6]
+det.t=c(T,F)
+
+model1<-list(
+  norm_target="_rel_obs",
+  det.t=T,
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model2<-list(
+  norm_target="",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model3<-list(
+  norm_target="_rel_all",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model4<-list(
+  norm_target="_rel_ref",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model5<-list(
+  norm_target="_rel_within",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=T,
+  lme=F,
+  lemma=F
+)
+model6<-list(
+  norm_target="",
+    det.t=T,
+
+  limit=T,
+  author=T,
+  url=T,
+  embed=c(T,"f"),
+  range=c(T,"f"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model7<-list(
+  norm_target="_rel_scaled",
+    det.t=T,
+
+  limit=F,
+  author=T,
+  url=T,
+  embed=c(T,"c"),
+  range=c(T,"c"),
+  rel=F,
+  lme=F,
+  lemma=F
+)
+model.list<-list(model1,model2,model3,model4,model5,model6,model7)
+model<-model.list[[1]]
+
+norm_target<-model$norm_target
+#norm_target<-""
+ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))
+ref<-norm_target
+det.t<-model$det.t
+limit<-model$limit
+author<-model$author
+url<-model$url
+embed<-model$embed #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+range<-model$range #.ti: if, if inverted in lmer.
+#range<-T # no!
+#range<-c(T,"f")
+rel<-model$rel
+lme<-model$lme
+lemma<-model$lemma
+
+ceiling<-ifelse(sum(limit)>0,"outliers removed","outliers not removed")
+
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+
+if(reload)
+  rm(eval.1)
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+#dfa<-get.dist.norm(dfa,limit)
+# 
+# if(!exists("eval.1"))
+# #  eval.1<-get.anovas(dfa,target,conditions,det,rel,ref_target,author)
+#   # eval.1<-get.anovas.e(dfa,target,conditions,det,rel,ref_target,author,embed)
+#   # get.anovas.e<-function(qltdf,target,con,det.t,ref,lemma,author,range.ti,embed.ti){
+# 
+#   eval.1<-get.anovas.e(dfa,c("obs","ref"),con,det.t,norm_target,lemma,author,url,range,embed,lme)
+# 
+# anova.form<-eval.1$anova.form
+# lme.form<-eval.1$lme.form
+# # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# # dfe<-eval.1$plot.md
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0(", not normalised, distance ceiling =",ceiling))
+
+f<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper"))
+library(readtext)
+fns<-paste0(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/"),f)
+m<-grep("child|ul.md",fns)
+t<-lapply(fns[m], function(x){
+  t<-readtext(x)$text
+  t<-gsub("```\\{.+```","",t)
+  c<-strsplit(t," ")
+  n<-length(unlist(c))
+  return(n)
+})
+#print(t[[3]])
+#writeLines(t[[3]],"countwds.txt")
+#f[2]
+#t
+#fns[m]
+swc<-sum(unlist(t))
+
+prepare_children <- function(files) {
+  out <- c()
+  for (i in seq_along(files)) {
+    f <- files[i]
+    if (grepl("\\.md$", f)) {
+      lines <- readLines(f, warn = FALSE)
+      prefix <- paste0("p", i, "_")
+      lines <- gsub("\\[\\^([0-9A-Za-z_-]+)\\]", paste0("[^", prefix, "\\1]"), lines)
+      lines <- gsub("\\\\_", "_", lines)
+      tmp <- tempfile(fileext = ".md")
+      writeLines(lines, tmp)
+      out <- c(out, tmp)
+    } else {
+      out <- c(out, f)
+    }
+  }
+  out
+}
+childs<-prepare_children(fns[m])
+
+```
+
+<!--chapter:end:~/Documents/GitHub/SPUND-LX/psych/HA/paper/prelim.Rmd-->
+
+---
+# title: "xmüll: coherence & proposition observations in :schizophrenia: threads"
+# author: "st. schwarz"
+# date: "`r Sys.Date()`"
+# output: 
+#     bookdown::html_document2:
+#       base_format: tufte::tufte_html
+#       keep_md: true
+#       self_contained: true
+    #fig_path: "plots/"
+  # md_document:
+  #   variant: markdown_github
+  #   pandoc_args: ["--wrap=none"]
+  #keep_md: yes
+bibliography: /Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/psych.bib
+nocite: '@*'
+#keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+```
+
+```{r child=childs[5]}
+#draftpaper
+```
+
+```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/child-data-001.Rmd"}
+
+```
+
+```{r child=childs[6]}
+#methods
+```
+
+```{r child="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/paper/child-eval-001.Rmd"}
+
+```
+
+```{r child=childs[4]}
+#conclusion
+```
+
+-----
+
+<!--chapter:end:~/Documents/GitHub/SPUND-LX/psych/HA/paper/draft-paper-UL.Rmd-->
+
+
+```{r setup_ext_top, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+#library(glue)
+# knit_hooks$set(chunk = function(x, options) {
+#   # If a label_prefix is provided, prepend it to the label
+#   if (!is.null(options$label_prefix) && !is.null(options$label)) {
+#     options$label <- paste0(options$label,"_",options$label_prefix)
+#   }
+#   x  # return chunk code unchanged
+# })
+```
+
+```{css, echo=FALSE,eval=T}
+/*table {
+  width: 100% !important;
+  
+}*/
+pre {
+border: 1px solid black;
+border-radius: 0.25rem;
+background-color: rgba(0, 0, 0, 0.04);
+
+}
+```
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+#dataset<-7
+#poster-ext-top
+
+# render_child <- function(child_file, prefix) {
+#   # Read the child
+#   txt <- readLines(child_file)
+#   # Substitute <<prefix>> placeholders with actual prefix
+#   txt <- gsub("<<model>>", paste0("_M-",prefix), txt)
+#   
+#   # Write a temporary file
+#   tmpfile <- tempfile(fileext = ".Rmd")
+#   writeLines(txt, tmpfile)
+#   
+#   # Knit the child inline
+#   res <- knit_child(tmpfile)
+#   file.remove(tmpfile)
+#   #return(res)
+#   cat(res,sep = "\n")
+# }
+expand_child <- function(child, prefix) {
+  tmpfile <- tempfile(fileext = ".Rmd")
+  txt <- readLines(child)
+  txt <- gsub("<<model>>", prefix, txt, fixed = TRUE)
+  writeLines(txt, tmpfile)
+  return(tmpfile)
+}
+
+#childB <- expand_child("child.Rmd", "A")
+#childC <- expand_child("child.Rmd", "A")
+
+```
+
+# appendix
+overall wordcount of paper: `r swc`.
+
+## legende
+<!--remove after test
+snc: try reference tables:
+- not: KI table (cf. \@ref(tab:kitable))
+- should: legende (cf. \@ref(tab:legend))
+-->
+```{r,label=legend,echo=FALSE,warning=F,message=F}
+
+#print(caption.ext)
+legend<-data.frame(variable=c("target","q","det","aut_id","lemma","range","embed.score",paste0("q:",letters[1:6])),
+                   explanation=c("corpus","condition","antecedent POS==DET","author","lemma","url range of distance devised","semantic similarity score lemma vs. thread",rep("query condition",6)),
+                   values=c("obs,ref","a,b,c,d,e,f","TRUE,FALSE","author hash","noun lemma","1..maxlength(urlthread)","0:1 (scaled 0:100)",
+                            "any !{b,c,d,e,f}","this,that,those,these","the","a,an,any,some","my","his,her,their,your")
+                   )
+#library(kableExtra)
+
+# k<-kable(legend,caption = "model vars")
+# k<-kable_styling(k,full_width = TRUE)
+# k
+kable(legend, caption = "model vars",format="markdown")
+```
+
+
+```{r preparemodel1,echo=F,warning=F,message=F}
+model.n<-1
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+childA <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+## covariance effects in M1 {#covar}
+```{r effects,echo=F,warning=F,message=F}
+#dfe<-eval.1$plot.md
+#print(eff.ex)
+print(eff1.s)
+```
+
+```{r child=childA}
+
+```
+
+```{r preparemodel2,echo=F,warning=F,message=F}
+model.n<-2
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+childB <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+```
+
+```{r child=childB}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r preparemodel3,echo=F,warning=F,message=F}
+model.n<-3
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+childC <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r,child=childC}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r preparemodel4,echo=F,warning=F,message=F}
+model.n<-4
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+childD <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r,child=childD}
+
+```
+
+
+```{r preparemodel6,echo=F,warning=F,message=F}
+model.n<-6
+model<-model.list[[model.n]]
+source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+childF <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r,child=childF}
+
+```
+
+\clearpage
+
+## Selbständigkeit: benutzte Hilfestellung
+In der vorliegenden Arbeit wurden keinerlei nicht erlaubte Hilfsmittel zur Erstellung von Inhalten verwendet. Die Benutzung von KI beschränkt sich auf (Tabelle):
+
+```{r,label=kitable,echo=F,tab.cap="verwendete Hilfsmittel"}
+med<-list(Hilfsmittel=c(
+  "github copilot","chatgpt.com","claude.ai","deepseek.com","nomic-embed-text (model)"
+),Verwendung=c(
+  "Hilfe bei der Skripterstellung (R, Python) zur \nProgrammierung der Distanzenberechnung, semantic embeddings und statistischen Auswertung","dito","dito","dito","calculate semantic embeddings"
+))
+med<-data.frame(med)
+#knitr::kable(med,caption = "benutzte Hilfsmittel",format="markdown")
+library(kableExtra)
+
+# kable(mtcars[1:10, ], caption = "Scrollable table") %>%
+#   kable_styling(full_width = FALSE, position = "left") %>%
+#   scroll_box(width = "100%", height = "auto")
+wrap_df <- function(df, width = 25) {
+  data.frame(
+    lapply(df, function(col) {
+      # Only wrap character or factor columns
+      if (is.character(col) || is.factor(col)) {
+        sapply(as.character(col), function(x)
+          paste(strwrap(x, width = width), collapse = "\n"))
+      } else {
+        col
+      }
+    }),
+    stringsAsFactors = FALSE,
+    check.names = FALSE
+  )
+}
+
+library(knitr)
+
+# kable(
+#   wrap_df(med, width = 30),
+#   format = "markdown"
+# )
+if (is_html_output()) {
+knitr::kable(
+  med,
+  caption = "verwendete Hilfsmittel",
+  format = "html",
+  table.attr = 'style="word-wrap:break-word; white-space:normal; width:100%;"'
+)
+} else if (is_latex_output()) {
+kable(med,   caption = "verwendete Hilfsmittel",
+format = "latex", booktabs = TRUE, escape = FALSE) %>%
+  kable_styling(latex_options = "hold_position") %>%
+  column_spec(2, width = "10cm")  # wraps text in column 2
+}
+```
+
+-----
+\clearpage
+
+## references
+literature used and alii...   
+
+<!--chapter:end:~/Documents/GitHub/SPUND-LX/psych/HA/paper/poster-ext.Rmd-->
+

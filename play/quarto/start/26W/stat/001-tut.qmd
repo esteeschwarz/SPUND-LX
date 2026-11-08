@@ -43,7 +43,7 @@ val.c<-"{{< meta testmeta >}}"
 val.c<-"{{< meta cmeta >}}"
 ```
 
-{{< include _001-tut.md >}} 
+{{< include ../../_ul-md/stat/_001-tut.md >}} 
 
 # references
 
