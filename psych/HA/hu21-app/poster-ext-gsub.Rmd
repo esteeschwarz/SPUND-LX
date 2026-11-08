@@ -1,0 +1,21 @@
+
+```{r setup_ext_sub, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+library(knitr)
+library(kableExtra)
+#library(glue)
+# knit_hooks$set(chunk = function(x, options) {
+#   # If a label_prefix is provided, prepend it to the label
+#   if (!is.null(options$label_prefix) && !is.null(options$label)) {
+#     options$label <- paste0(options$label,"_",options$label_prefix)
+#   }
+#   x  # return chunk code unchanged
+# })
+```
+
+
+### stop here for childs
+
+<<childs>>
+

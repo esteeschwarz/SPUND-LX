@@ -13,6 +13,8 @@ library(shiny)
 library(readtext)
 library(markdown)
 library(htmltools)
+library(bslib)
+
 # loaddata
 #mdsrc_01<-"~/boxHKW/21S/DH/gith/DH_essais/sections/hux2021/hux_ha_shinyframe01.Rmd"
 mdsrc_01<-"https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/sections/hux2021/hux_ha_shinyframe01.Rmd"
@@ -835,12 +837,15 @@ plot_desc_compare<-function(setd,gr,gro){
 ###### here output of set of checkboxed input
 # wrapped for implement view on shiny
 # UI ---------------------------------------------------------------------------
-ui <- pageWithSidebar(
+ui <- fluidPage(
+  theme = bs_theme(bootswatch = "lux"),
+  
   
   # Title ----
-  headerPanel("HUX2021: self paced reading experiment evaluation"),
+  titlePanel("HUX2021: self paced reading experiment evaluation"),
   
   # Sidebar ----
+  sidebarLayout(
   sidebarPanel(
     radioButtons("tm1", "target preceding phrase", 
                  list("include" = -1,
@@ -876,45 +881,23 @@ ui <- pageWithSidebar(
     #                      "literal condition"="LC",
     #                      "mixed model"="MM")),
     verbatimTextOutput("eval")
-  ),
+  
+  ), 
   # Main panel ----
   mainPanel(
     tabsetPanel(id="tabset",
                 tabPanel("visualisation",
-    verbatimTextOutput("info"),
-    plotOutput("plot"),
-    plotOutput("box"),
-    plotOutput("bars"),
-    verbatimTextOutput("compare"),
-    HTML(markdownToHTML(file = mdsrc_01))),
-    tabPanel("documentation",
-             HTML(markdownToHTML(file=mdsrc_02))),
-    tabPanel("data sample",verbatimTextOutput("daten")),
-  #  tabPanel("study sample",includeHTML("https://common.rotefadenbuecher.de/essais/ext/index_shiny.html"))),
-    tabPanel("study sample",includeHTML(frame_src))),
-  
-    #tabPanel("frame",HTML(readtext("/Users/lion/boxHKW/21S/DH/gith/essais/docs/hux2021/experiment/SPR_as-used/index.html")$text))),
-#tabPanel("frame",htmlOutput(readtext("framesample.html")$text))),
-
-#tabPanel("study sample",renderDocument(htmlTemplate(text_ = readtext(frame_src)$text,document_ = F)))),
-
-                # helpText(h4("explique")),
-    #helpText(p("TimeInterval: uncorrected response time")),
-    #helpText(p(strong("TI + RTC: TimeInterval + lmer residuals of TI dependent on phrase length"))),
-    #helpText(p("TI char: TimeInterval corrected by mean phrase length")),
-  # br(),
-   #verbatimTextOutput("frame") 
-    #######
-    # tabsetPanel(
-    #   id = "tabset",
-    #   tabPanel("panel 1", "one"),
-    #   tabPanel("panel 2", "two"),
-    #   tabPanel("panel 3", HTML(markdownToHTML(file = mdsrc_01)))
-    # ),
-    #########
-#   HTML(markdownToHTML(file = mdsrc_01))
-   #xhtm
-  ) #end mainpanel
+                         verbatimTextOutput("info"),
+                         plotOutput("plot"),
+                         plotOutput("box"),
+                         plotOutput("bars"),
+                         verbatimTextOutput("compare"),
+                         HTML(markdownToHTML(file = mdsrc_01))),
+                tabPanel("documentation",HTML(markdownToHTML(file=mdsrc_02))),
+                tabPanel("data sample",verbatimTextOutput("daten")),
+                tabPanel("study sample",includeHTML(frame_src))),
+  ) #sidebar layout
+     ) #end mainpanel
 ) # end mainpage
 # Define inputs ----------------------------------------------------------------
 #  input <- list(rseed=1)
@@ -1021,7 +1004,7 @@ server <- function(input, output) {
     ggplot(data=bar_df,mapping=aes(x=group,y=LZ,fill=RT)) + geom_col(position = "dodge")
     
   })
-# output$frameout<-renderText({file=mdsrc_01})
+  # output$frameout<-renderText({file=mdsrc_01})
   
   ### here subset dataset according to selection
   now.data<-function(setd,chose){

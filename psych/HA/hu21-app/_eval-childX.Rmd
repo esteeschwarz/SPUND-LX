@@ -1,0 +1,15 @@
+```{r preparemodel<<model>>,echo=F,warning=F,message=F}
+model.n<-<<model>>
+model<-model.list[[model.n]]
+ source("prepare-model.R",echo = F)
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+
+childM<<model>><- expand_child("child-poster-ext.Rmd", model.n)
+#childM<<model>> <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childM<<model>>}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```

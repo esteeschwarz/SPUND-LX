@@ -1,13 +1,11 @@
-# 12303.hux2021 evaluation app
-# 20220725(14.28) 
+# 17462.coherence evaluation app
+# 20261108(06.04) 
 # author: esteeschwarz, on base of:
 # http://econometricsbysimulation.shinyapps.io/OLS-App/
-# app deployed at:https://vision2020.shinyapps.io/hux2021/
+# on final base at:https://vision2020.shinyapps.io/hux2021/
 ##########################################################
 # stages:
-# 20220725(15.22) working, deployed.
-# TODO: selection of group for groupwise comparison, lmer test
-# 14273.link correction over all pages connected
+# 20261108(06.05) building.
 
 # Load packages ----------------------------------------------------------------
 library(shiny)
@@ -19,6 +17,7 @@ library(shiny)
 # SERVER
 # Create the Shiny app object --------------------------------------------------
 #library(bslib)
-#source("ui.r")
-#source("server.R")
-shinyApp(ui = "ui.R", server ="server.R")
+source("ui.r")
+source("server.R")
+#shinyApp(ui = "ui.R", server ="server.R")
+#shinyApp(ui , server)

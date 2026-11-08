@@ -1,0 +1,75 @@
+```{r preparemodel1,echo=F,warning=F,message=F}
+model.n<-1
+model<-model.list[[model.n]]
+ source("prepare-model.R",echo = F)
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+
+childM1<- expand_child("child-poster-ext.Rmd", model.n)
+#childM1 <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childM1}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+```{r preparemodel2,echo=F,warning=F,message=F}
+model.n<-2
+model<-model.list[[model.n]]
+ source("prepare-model.R",echo = F)
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+
+childM2<- expand_child("child-poster-ext.Rmd", model.n)
+#childM2 <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childM2}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+```{r preparemodel3,echo=F,warning=F,message=F}
+model.n<-3
+model<-model.list[[model.n]]
+ source("prepare-model.R",echo = F)
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+
+childM3<- expand_child("child-poster-ext.Rmd", model.n)
+#childM3 <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childM3}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+```{r preparemodel4,echo=F,warning=F,message=F}
+model.n<-4
+model<-model.list[[model.n]]
+ source("prepare-model.R",echo = F)
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+
+childM4<- expand_child("child-poster-ext.Rmd", model.n)
+#childM4 <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childM4}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+```{r preparemodel5,echo=F,warning=F,message=F}
+model.n<-5
+model<-model.list[[model.n]]
+ source("prepare-model.R",echo = F)
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+
+childM5<- expand_child("child-poster-ext.Rmd", model.n)
+#childM5 <- expand_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```
+
+```{r child=childM5}
+#render_child(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/paper/child-poster-ext.Rmd"), model.n)
+
+```

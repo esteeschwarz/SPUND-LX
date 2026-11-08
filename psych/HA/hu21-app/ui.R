@@ -76,7 +76,6 @@ ui <- fluidPage(
                   tabPanel("documentation",HTML(mark(text=c(readLines(mdsrc_HA),"snc:14273.4")))),
                   
                   tabPanel("data sample",verbatimTextOutput("daten")),
-                  #  tabPanel("study sample",includeHTML("https://common.rotefadenbuecher.de/essais/ext/index_shiny.html"))),
                   tabPanel("study sample",HTML(readLines(frame_src))),
                   tabPanel("data chosen",verbatimTextOutput("eval"))
                   ), #tabset end
