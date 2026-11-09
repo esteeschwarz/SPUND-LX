@@ -167,6 +167,10 @@ prop_df$prime[c(1, 2, 5, 9:11)]<-T
 prop_df$prime[-c(1, 2, 5, 9:11)]<-F
 seccol <- colreg[-c(1, 2, 5, 9:11),]
 
+colreg$prime[c(1, 2, 5, 9:11)]<-T
+colreg$prime[-c(1, 2, 5, 9:11)]<-F
+
+
 library(lme4)
 library(lmerTest)
 prop_df
@@ -197,7 +201,23 @@ df_long <- prop_df |>
   ) |>
   select(color, category, value, DP, DP_norm, prime)
 
-lm1<-lmer(value~prime+(1|category),df_long)
+col_long <- colreg |>
+  rownames_to_column("color") |>
+  pivot_longer(
+    cols = c(spoken, fiction, academic, press),
+    names_to = "category",
+    values_to = "value"
+  ) |>
+  select(color, category, value, prime)
+
+lm1<-lmer(value~prime+category+(1|color),df_long)
 summary(lm1)
-lm2<-lmer(value~category+(1|prime),df_long)
+lm2<-lmer(value~prime+category+(1|color),df_long)
 summary(lm2)
+#anova(lm1,lm2)
+
+lm3<-lmer(value~prime+category+(1|color),col_long)
+summary(lm3)
+lm4<-lmer(value~category+prime+(1|color),col_long)
+summary(lm4)
+#anova(lm2,lm4)
