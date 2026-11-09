@@ -135,3 +135,31 @@ was wären analogien zu 1920? how did world look like russia 1910-30 concerning 
 ### language of lenin
 - ленинскии vs. ленина
 - 
+
+# 17463.
+## lukacs, theory bourgeoise novel, 1934
+- berlin 1906/7
+- 1919 minister education/culture ungarn
+- politically close to soc. rev. party (/shklovsky)
+- western marxism: beyond economisms 2nd intern.
+    - material labour determines superstructure
+        - social/cultural (symbolic) processes
+    - dialectical relationsship bet. subj./obj. of history
+
+## the novel
+- epic of a world abandoned by god
+    - cosmic pessimism: rejected by lukacs
+- ironic
+- organic unity
+- bourgeois idelogy historicises 
+    - not particular interests of classes: 
+- ancient epic: direct relation bet. individual and the whole
+    - society not yet split up
+- romanticism vs. naturalism
+    - eskapismus, past, isolated vs.
+    - objective, naturalistic desc. of reality
+        - not change to social reality
+    - socialist realism coming back to ancient epic
+        - ancient organic society
+        - socialist also classless
+        - 
