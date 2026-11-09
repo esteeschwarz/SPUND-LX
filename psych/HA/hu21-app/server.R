@@ -4,22 +4,39 @@ library(knitr)
 mdsrc_legende<-"https://raw.githubusercontent.com/esteeschwarz/DH_essais/main/sections/hux2021/hux_ha_shiny_legende.md"
 legende<-HTML(mark(text = readLines(mdsrc_legende)))
 
-server <- function(input, output) {
+source("eval-003.R")
+
+server <- function(input, output,session) {
+ rv <- reactiveValues(
+    dfa = NULL,
+    eval.1 = NULL,
+    anova.form = "",
+    lme.form = "",
+    caption.ext = "",
+    ceiling = ""
+   
+ )
+  observeEvent(input$submit, {
+    # req(input$id_select, input$id_select != "new")
+    rv$dfa<-get.dist.norm(qltdf,input$limit)
+
+  rv$ceiling <- ifelse(sum(limit)>0,"outliers removed","outliers not removed")
   
-  mydata <- reactive({
-    draw.data(c(input$tm1,input$t0,input$t1,input$out,input$gilt,input$ctrl),dta)
+  rv$eval.1 <- get.anovas.e(dfa,c("obs","ref"),con,input$det.t,input$norm_target,input$lemma,input$author,input$url,input$range,input$embed,input$lme)
+  rv$anova.form<-eval.1$anova.form
+  rv$lme.form<-eval.1$lme.form
+# caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
+# dfe<-eval.1$plot.md
+caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0(", not normalised, distance ceiling =",ceiling))
   })
-  mydata_2<-reactive({
-    draw.setvso(input$groups)
-  })
+
   #### outputs:
   #output$legende <- renderText({HTML(mark(text=readLines(mdsrc_legende),format = "html"))})
   output$info <- renderPrint({
     br()
     print("datenset according to selection")
-    y<-mydata()
     dset<-now.data(dta,y)     
-    cat("dataset:",dim(dset)[1],"observations",dim(dset)[2],"variables")
+    cat("dataset:",dim(rv$dfa)[1],"observations")
   }) # x<-proof_desc(mydata) #nur mit glt=1 (x,1,x)
   # ####
   output$plot<- renderPlot({
@@ -44,24 +61,14 @@ server <- function(input, output) {
   #   print(plot_desc_compare(dsetvso,x,"All")[,2:4])
   # })
   output$eval<-renderPrint({
-    y<-mydata()
-    dset<-now.data(dta,y)
-    cat("mean reading times (LZ) in ms per category\n")
-  bar_df<-plot_desc(dset)[,2:4]
-  #kable(plot_desc(dset)[,2:4])
-  #kable(bar_df)
-  print(bar_df)
-     x<-mydata_2()
-    #print(x)
-    y<-mydata()
-    dset<-now.data(dta,y)
-    #print(dim(dset))
-    dsetvso<-setvsx(dset,x,"Other")
-    #print(dim(dsetvso))
-    cat("comparing categories:",unique(dsetvso$category),"\n")
-    cat("\nsnc:14273.2\n")
+   s1<-eval.1$anova.plain
+p.select<-c("target|target:q")
+p.an<-s1[grep(p.select,rownames(s1)),]
+#p.an
+#cat("anova plain, formula: `",anova.form.l$pre.det,"`\n")
+print(s1)
     
-    kable(plot_desc_compare(dsetvso,x,"All")[,2:4])
+   # kable(plot_desc_compare(dsetvso,x,"All")[,2:4])
   })
   # output$daten<-renderPrint({
   #     y<-mydata()
@@ -71,11 +78,11 @@ server <- function(input, output) {
   # #})
   #y<-mydata()
   # dset<-now.data(dta,y)
-    output$daten<-renderPrint({
+  #   output$daten<-renderPrint({
      
-    kable(now.data(dta,mydata())[1:10,1:28])
-  #  print(dset[1:10,1:30])
-  })
+  #   kable(now.data(dta,mydata())[1:10,1:28])
+  # #  print(dset[1:10,1:30])
+  # })
   
   # output$compare<-renderPrint({
   #   x<-mydata_2()
@@ -88,33 +95,19 @@ server <- function(input, output) {
   #   print(unique(dsetvso$category))
   #   print(plot_desc_compare(dsetvso,x,"All"))
   #     })
-  output$box<-renderPlot({
-    x<-mydata_2()
-    print(x)
-    other<-"Other"
-    y<-mydata()
-    dset<-now.data(dta,y)
-    print(dim(dset))
-    dsetvso<-setvsx(dset,x,other)
-    print(dim(dsetvso))
-    print(unique(dsetvso$category))
-    print(plot_desc_compare(dsetvso,x,"All"))
-     bar_df<-cbind(dsetvso$timeinterval[group!=other],dsetvso$timeinterval[group==other])
-    boxplot(dset$timeinterval~group)
+  output$boxplot1<-renderPlot({
+  d.sel<-paste0("dist",input$norm_target)
+Y<-dfa[[d.sel]]
+boxplot(Y~target,dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
+
   })
-  output$bars<-renderPlot({
-    x<-mydata_2()
-    print(x)
-    other<-"Other"
-    y<-mydata()
-    dset<-now.data(dta,y)
-    print(dim(dset))
-    dsetvso<-setvsx(dset,x,other)
-    print(dim(dsetvso))
-    print(unique(dsetvso$category))
-    print(plot_desc_compare(dsetvso,x,"All"))
-    bar_df<-(plot_desc_compare(dsetvso,x,"All"))
-    ggplot(data=bar_df,mapping=aes(x=group,y=LZ,fill=RT)) + geom_col(position = "dodge")
-    
+  output$barplot.mean<-renderPlot({
+   dfe<-eval.1$plot.md
+m1<-which(colnames(dfe)%in%c("mean","median"))
+dfe[,m1]<-round(dfe[,m1],0)
+# m2<-m1[length(m1):1]
+# m3<-c(1:(m1[1]-1),m2)
+# dfe<-dfe[,m3]
+plot.dist(dfe,"mean")
   })
 }

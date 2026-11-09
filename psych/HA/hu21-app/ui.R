@@ -26,58 +26,61 @@ ui <- fluidPage(
   
   # Sidebar ----
   sidebarLayout(
-    sidebarPanel(
-      radioButtons("tm1", "target preceding phrase", 
-                   list("include" = -1,
-                        "exclude"= "not")),  
-      radioButtons("t0", "target", 
-                   list("include" = 0,
-                        "exclude"= "not")),  
-      
-      radioButtons("t1", "target following phrase", 
-                   list("include" = 1,
-                        "exclude"= "not")),  
-      radioButtons("out", "discard outliers", 
-                   list("on" = 1,
-                        "off"= 0)),  
-      radioButtons("gilt", "only valid cases", 
-                   list("on" = 1,
-                        "off"= 0)),  
-      radioButtons("ctrl", "add control observations", 
-                   list("on" = 1,
-                        "off"= 0)),  
-      
+    sidebarPanel("PRESETS:",
+      radioButtons("norm_target", "normalize to", 
+                   list("obs" = "_rel_obs",
+                        "ref"= "_rel_ref",
+                    "all" = "_rel_all",
+               "don't normalize" = "")),
+      radioButtons("limit", "discard outliers", 
+                   list("yes" = T,
+                        "no"= F)),
+                   radioButtons("det.t", "DET", 
+                   list("include in lm" = T,
+                        "don't include"= F)),  
+
+                        radioButtons("author", "author", 
+                   list("include in lm" = T,
+                        "don't include"= F)),
+                        radioButtons("range", "range", 
+                   list("include in lm" = T,
+                        "don't include"= F)),
+                        radioButtons("lemma", "lemma", 
+                   list("include in lm" = T,
+                        "don't include"= F)),
+                        radioButtons("embed", "embed score", 
+                   list("include in lm" = T,
+                        "don't include"= F)), 
+      radioButtons("lme", "simple regression", 
+                   list("on" = T,
+                        "off"= F)),  
+            actionButton("submit","apply preset & run"),
+
       br(),
       #p("choose group to compare vs Other")
-      radioButtons("groups", "chose group to compare vs All", 
-                   list("single metaphor" = "SM",
-                        "extended metaphor"= "EM",
-                        "literal condition" = "LC",
-                        "inverted single metaphor"= "MM"))
-      
-      # checkboxGroupInput("groups","select (1) group to compare vs Other",
-      #                    c("single metaphor" = "SM",
-      #                      "extended metaphor"="EM",
-      #                      "literal condition"="LC",
-      #                      "mixed model"="MM")),
-
-      
     ), 
     # Main panel ----
     mainPanel(
       tabsetPanel(id="tabset",
                   tabPanel("visualisation",
                            verbatimTextOutput("info"),
-                           plotOutput("plot"),
-                           plotOutput("box"),
-                           plotOutput("bars"),
+                           plotOutput("boxplot1"),
+                           plotOutput("barplot.mean"),
+                           plotOutput("barplot.median"),
+                           plotOutput("lmeplot"),
+                           plotOutput("gplot"),
+
+                           HTML("dfe-table"),
                            HTML(mark(text=readLines(mdsrc_legende)))),
                   #tabPanel("documentation",HTML(mark_html(text=readLines(mdsrc_HA)))),
-                  tabPanel("documentation",HTML(mark(text=c(readLines(mdsrc_HA),"snc:14273.4")))),
+                  tabPanel("numbers",
+                                             verbatimTextOutput("effects"),
+                           verbatimTextOutput("modelexp"),
+                           verbatimTextOutput("dfs1"),
+                           verbatimTextOutput("dfs2")
+# HTML(mark(text=c(readLines(mdsrc_HA),"snc:14273.4"))
+)),
                   
-                  tabPanel("data sample",verbatimTextOutput("daten")),
-                  tabPanel("study sample",HTML(readLines(frame_src))),
-                  tabPanel("data chosen",verbatimTextOutput("eval"))
                   ), #tabset end
 #      verbatimTextOutput("compare",HTML(mark_html(text = readLines(mdsrc_legende)))),
                  # verbatimTextOutput("compare",  HTML(mark(text = readLines(mdsrc_legende))))
