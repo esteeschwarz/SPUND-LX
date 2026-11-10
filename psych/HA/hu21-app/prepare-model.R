@@ -1,6 +1,8 @@
 
 #model<-model.list[[1]]
 
+A.dbg.var<-"test"
+
 norm_target<-model$norm_target
 #norm_target<-""
 ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))

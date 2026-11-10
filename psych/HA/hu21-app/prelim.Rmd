@@ -250,7 +250,7 @@ if(reload)
   rm(eval.1)
 #source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
 source("prepare-model.R",echo = F)
-
+#t1
 #dfa<-get.dist.norm(dfa,limit)
 # 
 # if(!exists("eval.1"))

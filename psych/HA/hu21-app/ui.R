@@ -70,22 +70,26 @@ ui <- fluidPage(
                            plotOutput("lmeplot"),
                            plotOutput("gplot"),
 
-                           HTML("dfe-table"),
-                           HTML(mark(text=readLines(mdsrc_legende)))),
+                           HTML("dfe.table"),
+                           HTML(mark(text=readLines(mdsrc_legende))
+                           )),
                   #tabPanel("documentation",HTML(mark_html(text=readLines(mdsrc_HA)))),
                   tabPanel("numbers",
                                              verbatimTextOutput("effects"),
                            verbatimTextOutput("modelexp"),
                            verbatimTextOutput("dfs1"),
-                           verbatimTextOutput("dfs2")
-# HTML(mark(text=c(readLines(mdsrc_HA),"snc:14273.4"))
-)),
-                  
-                  ), #tabset end
-#      verbatimTextOutput("compare",HTML(mark_html(text = readLines(mdsrc_legende)))),
-                 # verbatimTextOutput("compare",  HTML(mark(text = readLines(mdsrc_legende))))
-                #  verbatimTextOutput("legende")
+                           verbatimTextOutput("dfs2")),
+                  # summary table (static, built at UI creation)
+                  tabPanel("debug",  tableOutput("dbg_tbl"))
 
-          ) #sidebar layout
+# HTML(mark(text=c(readLines(mdsrc_HA),"snc:14273.4"))
+
+                  
+                   #tabset end
+
+          )
+       #tabset #sidebar layout
   ) #end mainpanel
-) # end mainpage
+)
+  ) #sidebar end
+#  )  # end mainpage
