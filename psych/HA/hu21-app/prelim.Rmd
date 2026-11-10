@@ -53,204 +53,213 @@ run<-15303 # db identifier
 dataset<-12 # last essai
 dataset<-13 # new distancer & embed approach
 
-reload<-T
-reload<-F
+#reload<-T
+#reload<-F
 target<-c("obs","ref")
 #ref_target<-"obs"
 con<-letters[1:6]
-det.t=c(T,F)
+# det.t=c(T,F)
+source("prepare-model.R")
+cat("--- preparemodel sourced..., next eval003...\n")
+source("eval-003.R")
+cat("--- eval3 sourced...\n")
 
-model8<-list(
-  norm_target="_rel_obs",
-  det.t=T,
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(T,"f"),
-  range=c(T,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model9<-list(
-  norm_target="",
-    det.t=T,
+A.dbg.prelim<-"ttt"
 
-  limit=F,
-  author=T,
-  url=T,
-  embed=c(T,"f"),
-  range=c(T,"f"),
-  rel=F,
-  lme=F,
-  lemma=F
-)
-model10<-list(
-  norm_target="_rel_all",
-    det.t=T,
+# model8<-list(
+#   norm_target="_rel_obs",
+#   det.t=T,
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(T,"f"),
+#   range=c(T,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model9<-list(
+#   norm_target="",
+#     det.t=T,
 
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(T,"f"),
-  range=c(T,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model4<-list(
-  norm_target="_rel_ref",
-    det.t=T,
+#   limit=F,
+#   author=T,
+#   url=T,
+#   embed=c(T,"f"),
+#   range=c(T,"f"),
+#   rel=F,
+#   lme=F,
+#   lemma=F
+# )
+# model10<-list(
+#   norm_target="_rel_all",
+#     det.t=T,
 
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(T,"f"),
-  range=c(T,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model5<-list(
-  norm_target="_rel_within",
-    det.t=T,
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(T,"f"),
+#   range=c(T,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model4<-list(
+#   norm_target="_rel_ref",
+#     det.t=T,
 
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(T,"f"),
-  range=c(T,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model6<-list(
-  norm_target="",
-    det.t=T,
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(T,"f"),
+#   range=c(T,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model5<-list(
+#   norm_target="_rel_within",
+#     det.t=T,
 
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(T,"f"),
-  range=c(T,"f"),
-  rel=F,
-  lme=F,
-  lemma=F
-)
-model7<-list(
-  norm_target="_rel_scaled",
-    det.t=T,
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(T,"f"),
+#   range=c(T,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model6<-list(
+#   norm_target="",
+#     det.t=T,
 
-  limit=F,
-  author=T,
-  url=T,
-  embed=c(T,"c"),
-  range=c(T,"c"),
-  rel=F,
-  lme=F,
-  lemma=F
-)
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(T,"f"),
+#   range=c(T,"f"),
+#   rel=F,
+#   lme=F,
+#   lemma=F
+# )
+# model7<-list(
+#   norm_target="_rel_scaled",
+#     det.t=T,
 
-### 17462.stat.pres
-model1<-list(
-  norm_target="",
-  det.t=F,
-  limit=F,
-  author=T,
-  url=F,
-  embed=c(F,"f"),
-  range=c(F,"f"),
-  rel=F,
-  lme=F,
-  lemma=F
-)
-model2<-list(
-  norm_target="_rel_all",
-  det.t=F,
-  limit=T,
-  author=T,
-  url=F,
-  embed=c(F,"f"),
-  range=c(F,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model3<-list(
-  norm_target="_rel_obs",
-  det.t=F,
-  limit=T,
-  author=T,
-  url=F,
-  embed=c(F,"f"),
-  range=c(F,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model4<-list(
-  norm_target="_rel_obs",
-  det.t=F,
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(F,"f"),
-  range=c(F,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-model5<-list(
-  norm_target="_rel_ref",
-  det.t=F,
-  limit=T,
-  author=T,
-  url=T,
-  embed=c(F,"f"),
-  range=c(F,"f"),
-  rel=T,
-  lme=F,
-  lemma=F
-)
-mn<-5
-model.list<-list(model1,model2,model3,model4,model5,model6,model7,model8,model9)
-model<-model.list[[1]]
+#   limit=F,
+#   author=T,
+#   url=T,
+#   embed=c(T,"c"),
+#   range=c(T,"c"),
+#   rel=F,
+#   lme=F,
+#   lemma=F
+# )
 
-norm_target<-model$norm_target
-rel<-F
-rel<-ifelse(norm_target=="",F,T)
-ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))
-ref<-norm_target
-det.t<-model$det.t
-limit<-model$limit
-author<-model$author
-url<-model$url
-embed<-model$embed #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
-range<-model$range #.ti: if, if inverted in lmer.
-#range<-T # no!
-#range<-c(T,"f")
-model$rel<-rel
-lme<-model$lme
-lemma<-model$lemma
+# ### 17462.stat.pres
+# model1<-list(
+#   norm_target="",
+#   det.t=F,
+#   limit=F,
+#   author=T,
+#   url=F,
+#   embed=c(F,"f"),
+#   range=c(F,"f"),
+#   rel=F,
+#   lme=F,
+#   lemma=F
+# )
+# model2<-list(
+#   norm_target="_rel_all",
+#   det.t=F,
+#   limit=T,
+#   author=T,
+#   url=F,
+#   embed=c(F,"f"),
+#   range=c(F,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model3<-list(
+#   norm_target="_rel_obs",
+#   det.t=F,
+#   limit=T,
+#   author=T,
+#   url=F,
+#   embed=c(F,"f"),
+#   range=c(F,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model4<-list(
+#   norm_target="_rel_obs",
+#   det.t=F,
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(F,"f"),
+#   range=c(F,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# model5<-list(
+#   norm_target="_rel_ref",
+#   det.t=F,
+#   limit=T,
+#   author=T,
+#   url=T,
+#   embed=c(F,"f"),
+#   range=c(F,"f"),
+#   rel=T,
+#   lme=F,
+#   lemma=F
+# )
+# mn<-5
+# model.list<-list(model1,model2,model3,model4,model5,model6,model7,model8,model9)
+# model<-model.list[[1]]
 
-ceiling<-ifelse(sum(limit)>0,"outliers removed","outliers not removed")
+# norm_target<-model$norm_target
+# rel<-F
+# rel<-ifelse(norm_target=="",F,T)
+# ref_target<-ifelse(norm_target=="",norm_target,gsub("_rel_","",norm_target))
+# ref<-norm_target
+# det.t<-model$det.t
+# limit<-model$limit
+# author<-model$author
+# url<-model$url
+# embed<-model$embed #.ti: if, if inverted # > if score is inverted, theres no intercept and targetobs/ref appear as single estimates
+# range<-model$range #.ti: if, if inverted in lmer.
+# #range<-T # no!
+# #range<-c(T,"f")
+# model$rel<-rel
+# lme<-model$lme
+# lemma<-model$lemma
 
-# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+# ceiling<-ifelse(sum(limit)>0,"outliers removed","outliers not removed")
+
+# # source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
 
 
-# if(reload&exists("eval.1")){
-#   print("reload=T, removing eval 1")
-#   eval.1.sf<-eval.1
-#   rm(eval.1)}
+# # if(reload&exists("eval.1")){
+# #   print("reload=T, removing eval 1")
+# #   eval.1.sf<-eval.1
+# #   rm(eval.1)}
+# #source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
+# # source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+
+
+# if(reload)
+#   rm(eval.1)
 #source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
-# source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-003.R"),echo = F)
+# #source("prepare-model.R")
+# #cat("preparemodel sourced..., next eval003...\n")
+# source("eval-003.R")
 
-
-if(reload)
-  rm(eval.1)
-#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/prepare-model.R"),echo = F)
-source("prepare-model.R",echo = F)
-#t1
+#t1,2,3
 #dfa<-get.dist.norm(dfa,limit)
 # 
 # if(!exists("eval.1"))

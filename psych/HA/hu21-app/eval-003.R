@@ -3,6 +3,8 @@
 #########################
 #dataset<-7
 source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-init-vars.R"))
+
+A.dbg.eval003<-"test"
 read.db_dep<-function(){
   
   
@@ -215,18 +217,34 @@ lemma.reduce<-function(qltdf){
 get.dist.norm<-function(dfa,limit){
   df<-data.frame(dfa)
 #  lim<-limit
-  dflim<-subset(df,df$dist<limit)
-  typeof(dflim)
+  #dflim<-df
+  print(limit)
+  # if(sum(limit)>1)
+  #   dflim<-subset(df,df$dist<limit)
+  # message(typeof(dflim))
   Q1 <- quantile(df$dist, 0.25,na.rm = T)
   Q3 <- quantile(df$dist, 0.75,na.rm = T)
   IQR <- Q3 - Q1
+  print(IQR)
+  cat("IQR...\n")
+  str(IQR)
   #limit
+
+
+
+
+
   tdb_no_outliers <- subset(df, dist > (Q1 - 1.5 * IQR) & dist < (Q3 + 1.5 * IQR))
-  max(tdb_no_outliers$dist)
+  str(tdb_no_outliers)
+
+
+
+
+  #max(tdb_no_outliers$dist)
 #  df_no_outliers <- subset(df, dist < limit)
   #df<-df_no_outliers
-  ifelse(sum(limit)>0,ifelse(sum(limit)==1,tdb6<-tdb_no_outliers,tdb6<-dflim),tdb6<-df)
-  
+  ifelse(limit,tdb6<-tdb_no_outliers,tdb6<-df)
+  str(tdb6)
   max.l<-max(tdb6$dist,na.rm = T)
   mna<-is.na(tdb6$token)
 #cat("token NA",sum(mna))
@@ -355,7 +373,7 @@ get.anovas_dep<-function(qltdf,target,con,det.t,r,ref,author){
 
 ### with embed
 ### 15336. TODO: include lemma switch
-get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.ti,lme){
+get.anovas.e<-function(rv,dfa,target,con,det.t,ref,lemma,author,url,range,embed,lme){
   #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
   lme_stage_one<-function(){
     lm1<-lm("dist ~ range",dfa)
@@ -363,30 +381,48 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
     #dfa$dist_rel_lm<-res
     return(res)
   }
-  dfa<-create.sub(dfa,target,con)
+  cat("---- str(dfa),target,con\n")
+  str(dfa)
+  print(target)
+  print(con)
+  rv$dfa<-create.sub(dfa,target,con)
   #dfa<-get.dist.norm(dfa,limit)
-  d.ns<-c(paste0("dist_rel_",ref))
+  #d.ns<-c(paste0("dist_rel_",ref))
   d.ns<-c(paste0("dist",ref))
   c.dist<-which(colnames(dfa)%in%d.ns)
-  d.sel<-which(colnames(dfa)==d.ns)
-  d.sel<-ifelse(range.ti[1],colnames(dfa)[d.sel],"dist")
+  # d.sel<-which(colnames(dfa)==d.ns)
+  # d.sel<-ifelse(range.ti[1],colnames(dfa)[d.sel],"dist")
   d.sel<-d.ns
   cat("---eval3::dist.sel=",d.sel,"\n")
 
-  det.f<-ifelse(sum(det.t)>0,"*det","")
-  embed.i<-ifelse(embed.ti[2]=="f","+(embed.score)","+(1|embed.score)")
-  embed.f<-ifelse(embed.ti[1],embed.i,"")
-  range.i<-ifelse(range.ti[2]=="f","+range","+(1|range)")
-  range.f<-ifelse(range.ti[1],range.i,"")
-  lemma.f<-ifelse(lemma,"+(1|lemma)","")
+  ifelse(det.t,det.f<-"*det",det.f<-"")
+  print(embed)
+  print(det.f)
+#  embed.i<-ifelse(!embed,"","+(1|embed.score)")
+ # print(embed.i)
+  ifelse(embed,embed.f<-"+(1|embed.score)",embed.f<-"")
+  #range.i<-ifelse(!range,"","+(1|range)")
+  ifelse(range,range.f<-"+(1|range)",range.f<-"")
+  ifelse(lemma,lemma.f<-"+(1|lemma)",lemma.f<-"")
   anova.fstr<-paste0(d.sel," ~ target*q",det.f)
  # print(anova.fstr)
-  aut.str<-ifelse(author,"+(1|aut_id)","")
-  url.str<-ifelse(url,"+(1|url_id)","")
+  ifelse(author,aut.str<-"+(1|aut_id)",aut.str<-"")
+  ifelse(url,url.str<-"+(1|url_id)",url.str<-"")
   lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,range.f,embed.f,url.str)
-  ifelse(lme,dfa$dist_rel_lm<-lme_stage_one(),F)
-  d.sel<-ifelse(!lme,d.sel,"dist_rel_lm")
-  lme.str<-ifelse(!lme,lme.str,paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,embed.f,url.str))
+  cat("--- lme:",lme,"\n")
+
+  if(lme)
+
+
+  if(lme)  {
+    dfa$dist_rel_lm<-lme_stage_one()
+    d.sel<-"dist_rel_lm" 
+    lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,embed.f,url.str)
+  }
+  else {
+    d.sel<-d.sel
+    lme.str<-lme.str
+  }
   # lmeform.l<-list(no.pre.det=
   #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
   #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))
@@ -404,8 +440,9 @@ get.anovas.e<-function(dfa,target,con,det.t,ref,lemma,author,url,range.ti,embed.
   #lmeform<-lmeform.l$pre.det
   #Y <- dfa$dist           
   #aov(as.formula(fstr),data = dfa)
-  ifelse(sum(det.t)==1,model<-aov(as.formula(anova.fstr),data=dfa),
-         model<-aov(as.formula(anova.fstr),data=dfa))
+  if(det.t) model<-aov(as.formula(anova.fstr),data=dfa)
+    else
+         model<-aov(as.formula(anova.fstr),data=dfa)
   # makes no sense, not wks. if length(unique(dfa$det))==1 i.e. the subset includes only det==T or det==F, so only pass whole set
   anova.sum<-summary(model)
   anova.sum<-anova.sum[[1]]
@@ -582,8 +619,9 @@ for(q in seq_along(queries)){
 
 plot.dist<-function(dfe,m){
   # Reshape data: rows = q, columns = corp, values = dist
-  ifelse(m=="median",bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity),
-  bar_mat <- tapply(dfe$mean, list(dfe$q, dfe$target), identity))
+  if(m=="median") bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
+    else
+  bar_mat <- tapply(dfe$mean, list(dfe$q, dfe$target), identity)
   bar_mat <- t(bar_mat)  # barplot expects groups in columns
   par(las=1)
   # Make grouped barplot

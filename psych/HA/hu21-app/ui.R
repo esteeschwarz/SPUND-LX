@@ -18,42 +18,57 @@ frame_src<-"framesample.txt"
 # wrapped for implement view on shiny
 # UI ---------------------------------------------------------------------------
 ui <- fluidPage(
+  tags$head(tags$style(HTML("
+    .scroll-sidebar {
+      height: calc(100vh - 40px);
+      overflow-y: auto;
+      position: sticky;
+      top: 20px;
+    }
+  "))),
   theme = bs_theme(bootswatch = "lux"),
   
   
   # Title ----
-  titlePanel("HUX2021: self paced reading experiment evaluation"),
+  titlePanel("W26 coherence-c: S25 term paper evaluation"),
   
   # Sidebar ----
   sidebarLayout(
     sidebarPanel("PRESETS:",
+       class = "scroll-sidebar",
+      width = 3,
       radioButtons("norm_target", "normalize to", 
-                   list("obs" = "_rel_obs",
+                   list("don't normalize" = "",
+"obs" = "_rel_obs",
                         "ref"= "_rel_ref",
-                    "all" = "_rel_all",
-               "don't normalize" = "")),
+                    "all" = "_rel_all")),
       radioButtons("limit", "discard outliers", 
-                   list("yes" = T,
-                        "no"= F)),
-                   radioButtons("det.t", "DET", 
-                   list("include in lm" = T,
-                        "don't include"= F)),  
-
+                   list("no" = F,
+                        "yes"= T)),
                         radioButtons("author", "author", 
-                   list("include in lm" = T,
-                        "don't include"= F)),
-                        radioButtons("range", "range", 
-                   list("include in lm" = T,
-                        "don't include"= F)),
+                   list("include in lm" = T,"don't include"= F
+                        )),
+
+                        radioButtons("url", "url", 
+                   list("don't include"= F,"include in lm" = T
+                        )),
+                        radioButtons("det.t", "DET", 
+                   list(
+                        "don't include"= F,
+                     "include in lm" = T)),  
+
+                        radioButtons("range.t", "range", 
+                   list("don't include"= F,"include in lm" = T
+                        )),
                         radioButtons("lemma", "lemma", 
-                   list("include in lm" = T,
-                        "don't include"= F)),
-                        radioButtons("embed", "embed score", 
-                   list("include in lm" = T,
-                        "don't include"= F)), 
+                   list("don't include"= F,"include in lm" = T
+                        )),
+                        radioButtons("embed.t", "embed score", 
+                   list("don't include"= F,"include in lm" = T
+                        )), 
       radioButtons("lme", "simple regression", 
-                   list("on" = T,
-                        "off"= F)),  
+                   list("off"= F,"on" = T
+                        )),  
             actionButton("submit","apply preset & run"),
 
       br(),
@@ -70,7 +85,7 @@ ui <- fluidPage(
                            plotOutput("lmeplot"),
                            plotOutput("gplot"),
 
-                           HTML("dfe.table"),
+                           tableOutput("dfe.table"),
                            HTML(mark(text=readLines(mdsrc_legende))
                            )),
                   #tabPanel("documentation",HTML(mark_html(text=readLines(mdsrc_HA)))),
