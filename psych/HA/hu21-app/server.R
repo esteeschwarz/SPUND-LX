@@ -30,16 +30,21 @@ load_rmd_vars <- function(rmd_path,
     tmp_env$source <- function(file, local = tmp_env, ...) {
       base::source(file, local = local, ...)
     }
-    knitr::knit(
-      rmd_path,
-      output = tempfile(fileext = ".md"),
-      envir  = tmp_env,
-      quiet  = TRUE
-    )
-
+    # knitr::knit(
+    #   rmd_path,
+    #   output = tempfile(fileext = ".md"),
+    #   envir  = tmp_env,
+    #   quiet  = FALSE
+    # )
+    message("rmd processed...")
+    message("hard source eval3")
+    source("prelim.R")
+    #source("prepare-model.R")
+    #source("eval-003.R")
     # snapshot all objects created by the Rmd (incl. hidden ones starting with ".")
     vars <- as.list(tmp_env, all.names = TRUE)
-    saveRDS(vars, cache_path)
+    #saveRDS(vars, cache_path)
+    message("rmd vars loaded...")
   } else {
     message("Loading cached vars from ", cache_path)
     vars <- readRDS(cache_path)
@@ -66,7 +71,6 @@ load_rmd_vars <- function(rmd_path,
 # }
 
 
-# created <- load_rmd_vars("prelim.Rmd",force=T)
 # summarize_vars <- function(nms) {
 #   do.call(rbind, lapply(nms, function(n) {
 #     x <- get(n, envir = envir)
@@ -80,10 +84,11 @@ load_rmd_vars <- function(rmd_path,
 #   }))
 # }
 #writeLines(str(eval.1),"eval1.txt")
+  #created <- load_rmd_vars("prelim.Rmd",force=T)
   created <- load_rmd_vars("prelim.Rmd",force=T)
 
 server <- function(input, output,session) {
-  created <- load_rmd_vars("prelim.Rmd",force=T)
+  # created <- load_rmd_vars("prelim.Rmd",force=T)
 
 summarize_vars <- function(nms, envir=globalenv()) {
   df<-do.call(rbind, lapply(nms, function(n) {
@@ -105,33 +110,12 @@ summarize_vars <- function(nms, envir=globalenv()) {
     lme.form = "",
     caption.ext = "",
     ceiling = "",
-    dfe = NULL   
+    dfe = NULL,
+    ref_target = ""
  )
     output$dbg_tbl <- renderTable(summarize_vars(created))
 
-  # observeEvent(input$submit, {
-    # req(input$id_select, input$id_select != "new")
-#     reactive(
-#     rv$dfa<-get.dist.norm(qltdf,get(input$limit)),
-
-#   rv$ceiling <- ifelse(sum(get(input$limit))>0,"outliers removed","outliers not removed"),
-  
-#   rv$eval.1 <- get.anovas.e(rv$dfa,c("obs","ref"),con,
-#   get(input$det.t),get(input$norm_target),get(input$lemma),
-#   get(input$author),get(input$url),get(input$range),get(input$embed),get(input$lme)
-# ),
-   
-#   rv$anova.form<-rv$eval.1$anova.form,
-#   rv$lme.form<-rv$eval.1$lme.form,
-# # caption.ext<-ifelse(rel,paste0(", normalised to ",ref_target,", distance ceiling =  ",ceiling),paste0("not normalised, distance ceiling =",ceiling))
-# # dfe<-eval.1$plot.md
-# ifelse(get(input$ref_target)!="",rel<-F,rel<-T)
-# rv$caption.ext<-ifelse(rel,paste0(", normalised to ",
-# get(input$ref_target),", distance ceiling =  ",rv$ceiling),
-# paste0(", not normalised, distance ceiling = ",rv$ceiling)
-# )
-# )
-observeEvent(input$submit, {
+  observeEvent(input$submit, {
   #req(input$id_select, input$id_select != "new")
 #created <- load_rmd_vars("prelim.Rmd",force=T)
 # source("prepare-model.R")
@@ -164,12 +148,15 @@ observeEvent(input$submit, {
   rv$anova.form <- eval_1$anova.form
   rv$lme.form <- eval_1$lme.form
   rv$caption.ext <- paste0("distance ceiling = ", ceiling)
+  rv$ref_target <- input$norm_target
 })
   # })
 
   #### outputs:
   #output$legende <- renderText({HTML(mark(text=readLines(mdsrc_legende),format = "html"))})
   output$info <- renderPrint({
+  req(rv$eval.1, !is.null(rv$eval.1))
+
     br()
     print("datenset according to selection")
     cat("dataset:",dim(rv$dfa)[1],"observations\n")
@@ -177,6 +164,7 @@ observeEvent(input$submit, {
     cat(rv$caption.ext,"\n")
   }) 
   output$dfs1<-renderPrint({
+  req(rv$eval.1, !is.null(rv$eval.1))
 
    s1<-rv$eval.1$anova.plain
 p.select<-c("target|target:q")
@@ -188,6 +176,7 @@ print(s1)
    # kable(plot_desc_compare(dsetvso,x,"All")[,2:4])
   })
     output$dfs2<-renderPrint({
+  req(rv$eval.1, !is.null(rv$eval.1))
 
 s2<-rv$eval.1$anova.lme
 p.select<-c("target|target:q")
@@ -197,6 +186,47 @@ p.an.lm<-s2[grep(p.select,rownames(s2)),]
 #p.an.lm
 print("anova of linear regression model (below): [anova(summary(lmer))]")
 s2
+    })
+    output$dfslm<-renderPrint({
+  req(rv$eval.1, !is.null(rv$eval.1))
+print("lme summary for:")
+print(rv$eval.1$lme.form)
+cat("--------------------\n")
+s3<-rv$eval.1$lme
+#cat("linear regression coefficients, formula: `",lmeform.l$pre.det,"`\n")
+#print(s3, right = TRUE, width = 999)
+#print(s3)
+#options(max.print = 1000)  # Set higher limit
+invisible(capture.output(
+  suppressWarnings(
+    suppressMessages(
+      print(s3)
+    )
+  ), type = "message"
+))
+#print(s3)
+coef<-s3$coefficients
+### relations:
+int<-coef[1,1]
+#int
+qv<-coef[9:(length(coef[,1])),1]
+qvc<-qv
+#qvc
+
+qvc.ns<-strsplit(names(qvc),"q")
+qvc.ns<-lapply(qvc.ns, function(x){
+  return(x[2])
+})
+qvc.ns<-unlist(qvc.ns)
+names(qvc)<-qvc.ns
+#l<-length(qvc.ns[[1]])
+qdiff<-int+qv
+qmin<-qdiff<int
+qvmin<-qv[qmin]
+names(qvmin)<-names(qvc)[qmin]
+#qvmin
+
+#print(summary(s3))
     })
   # output$daten<-renderPrint({
   #     y<-mydata()
@@ -224,6 +254,8 @@ s2
   #   print(plot_desc_compare(dsetvso,x,"All"))
   #     })
   output$boxplot1<-renderPlot({
+      req(rv$eval.1, !is.null(rv$eval.1))
+
   d.sel<-paste0("dist",input$norm_target)
 Y<-rv$dfa[[d.sel]]
 boxplot(Y~target,rv$dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
@@ -231,6 +263,8 @@ boxplot(Y~target,rv$dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
 
   })
   output$barplot.mean<-renderPlot({
+      req(rv$eval.1, !is.null(rv$eval.1))
+
   #  dfe<-rv$eval.1$plot.md
  # dfe<-create.sub(rv$dfa,)
 #    dfe<-create.sub(rv$dfa,target,con)
@@ -244,6 +278,8 @@ plot.dist(dfe,"mean")
   })
     output$barplot.median<-renderPlot({
   #  dfe<-rv$eval.1$plot.md
+    req(rv$eval.1, !is.null(rv$eval.1))
+
 dfe<-rv$dfe
 m1<-which(colnames(dfe)%in%c("mean","median"))
 dfe[,m1]<-round(dfe[,m1],0)
@@ -253,18 +289,25 @@ dfe[,m1]<-round(dfe[,m1],0)
 plot.dist(dfe,"median")
   })
     output$lmeplot<-renderPlot({
+        req(rv$eval.1, !is.null(rv$eval.1))
+
 s3<-rv$eval.1$lme
 
-  rmd.plot.lme(s3)
+  rmd.plot.lme(summary(s3))
 })
 
     output$gplot<-renderPlot({
-d_sel<-ifelse(ref_target!="",ref_target,"all")
-if(model$rel)
+        req(rv$eval.1, !is.null(rv$eval.1))
+
+d_sel<-ifelse(rv$ref_target!="",rv$ref_target,"all")
+if(rv$ref_target!="")
   gplot.dist(rv$dfa,d_sel,800)
 })
-    output$dfe.table<-renderTable({
-kable(dfe,caption = paste0("mean/median table for model: ",model.n),format="markdown")
-    })
+    output$dfe.table<-renderPrint({
+#     {
+         req(rv$eval.1, !is.null(rv$eval.1))
+
+print(rv$dfe)
+     })
 
 }

@@ -2,9 +2,11 @@
 #15292.psych.eval.cleaned
 #########################
 #dataset<-7
-source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-init-vars.R"))
+#source(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/eval-init-vars.R"))
+#source("eval-init-vars.R")
 
-A.dbg.eval003<-"test"
+dbg.eval003<-"test"
+print(dbg.eval003)
 read.db_dep<-function(){
   
   
@@ -449,7 +451,7 @@ get.anovas.e<-function(rv,dfa,target,con,det.t,ref,lemma,author,url,range,embed,
   anova.sum
   lm2<-lmer(eval(expr(lmeform)),dfa)
   #lm3<-lmer(eval(expr(lmeform)),dfa)
-  summary(lm2)
+  print(summary(lm2))
   lm2.summ<-summary(lm2)
   lm2.summ
   anlm.summ<-anova(lm2)

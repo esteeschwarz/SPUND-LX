@@ -70,6 +70,9 @@ ui <- fluidPage(
                    list("off"= F,"on" = T
                         )),  
             actionButton("submit","apply preset & run"),
+            hr(),
+                                       HTML(mark(text=readLines("legend.md"))),
+
 
       br(),
       #p("choose group to compare vs Other")
@@ -85,15 +88,17 @@ ui <- fluidPage(
                            plotOutput("lmeplot"),
                            plotOutput("gplot"),
 
-                           tableOutput("dfe.table"),
-                           HTML(mark(text=readLines(mdsrc_legende))
+                           verbatimTextOutput("dfe.table"),
+                           HTML(mark(text=readLines("legend.md"))
                            )),
                   #tabPanel("documentation",HTML(mark_html(text=readLines(mdsrc_HA)))),
                   tabPanel("numbers",
                                              verbatimTextOutput("effects"),
                            verbatimTextOutput("modelexp"),
                            verbatimTextOutput("dfs1"),
-                           verbatimTextOutput("dfs2")),
+                           verbatimTextOutput("dfs2"),
+                           verbatimTextOutput("dfslm")),
+
                   # summary table (static, built at UI creation)
                   tabPanel("debug",  tableOutput("dbg_tbl"))
 

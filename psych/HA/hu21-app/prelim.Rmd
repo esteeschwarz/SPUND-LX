@@ -42,7 +42,7 @@ background-color: rgba(0, 0, 0, 0.04);
 #prelim
 ```
 
-```{r,src,echo=F,warning=F,message=F,results='show',fig.keep='none'}
+```{r,src,echo=F,warning=T,message=T,results='show',fig.keep='none'}
 #eval.n<-7
 # run<-15302
 # dataset<-11
