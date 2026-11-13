@@ -111,7 +111,8 @@ summarize_vars <- function(nms, envir=globalenv()) {
     caption.ext = "",
     ceiling = "",
     dfe = NULL,
-    ref_target = ""
+    ref_target = "",
+    lme_form = "dist ~ target*q+(1|aut_id"
  )
     output$dbg_tbl <- renderTable(summarize_vars(created))
 
@@ -123,17 +124,29 @@ summarize_vars <- function(nms, envir=globalenv()) {
 # source("eval-003.R")
 # cat("--- eval3 sourced...\n")
 
-  dfa <- get.dist.norm(qltdf, input$limit)
-  dfe <- create.sub(dfa,target,con)
+  # dfa <- get.dist.norm(qltdf, input$limit)
 
   ceiling <- if (input$limit) {
     "outliers discarded"
   } else {
     "outliers not discarded"
   }
+  range.t<-input$range.t
+  if (input$lme)
+    range.t<-F
+  cond<-input$q
+  # -dfa
+  dfe <- create.sub(qltdf,target,cond)
+  message("srv>dfe",str(dfe))
+  dfa <- get.dist.norm(dfe, input$limit)
 
+  # if(!"no"%in%input$q)
+  #   ifelse("all"%in%input$q,cond<-cond,cond<-q)
+  #   if("no"%in%input$q) cond<-F
+  message(str(cond))
+  ### 17466.dfa>dfe
   eval_1 <- get.anovas.e(rv,
-    dfa, c("obs", "ref"), con,
+    dfe, c("obs", "ref"), cond,
     input$det.t, input$norm_target, input$lemma,
     input$author, input$url, input$range.t, input$embed.t, input$lme
   )
@@ -149,19 +162,27 @@ summarize_vars <- function(nms, envir=globalenv()) {
   rv$lme.form <- eval_1$lme.form
   rv$caption.ext <- paste0("distance ceiling = ", ceiling)
   rv$ref_target <- input$norm_target
-})
+  })
   # })
-
+print.meta<-function(){
+  print("selections:")
+    cat("dataset:",dim(rv$dfe)[1],"distance datapoints\n")
+    #cat("ceiling:",rv$ceiling,"\n")
+    cat("distance normalisation target: -",ifelse(rv$ref_target!="","obs -\n","not normalised -\n"))
+    cat(rv$caption.ext,"\n")
+    cat("model formula:",rv$lme.form,"\n")
+}
   #### outputs:
   #output$legende <- renderText({HTML(mark(text=readLines(mdsrc_legende),format = "html"))})
   output$info <- renderPrint({
   req(rv$eval.1, !is.null(rv$eval.1))
-
-    br()
-    print("datenset according to selection")
-    cat("dataset:",dim(rv$dfa)[1],"observations\n")
-    cat("ceiling:",rv$ceiling,"\n") 
-    cat(rv$caption.ext,"\n")
+    print.meta()
+    # print("selections:")
+    # cat("dataset:",dim(rv$dfa)[1],"distance datapoints\n")
+    # #cat("ceiling:",rv$ceiling,"\n")
+    # cat("distance normalisation target: -",ifelse(rv$ref_target!="","obs -","not normalised -\n"))
+    # cat(rv$caption.ext,"\n")
+    # cat("model formula:",rv$lme.form,"\n")
   }) 
   output$dfs1<-renderPrint({
   req(rv$eval.1, !is.null(rv$eval.1))
@@ -170,7 +191,7 @@ summarize_vars <- function(nms, envir=globalenv()) {
 p.select<-c("target|target:q")
 p.an<-s1[grep(p.select,rownames(s1)),]
 #p.an
-cat("anova plain, formula: ",rv$eval.1$anova.form.l$pre.det,"\n")
+cat("anova plain, formula: ",rv$eval.1$anova.form,"\n")
 print(s1)
     
    # kable(plot_desc_compare(dsetvso,x,"All")[,2:4])
@@ -189,7 +210,7 @@ s2
     })
     output$dfslm<-renderPrint({
   req(rv$eval.1, !is.null(rv$eval.1))
-print("lme summary for:")
+print("lmer() summary for:")
 print(rv$eval.1$lme.form)
 cat("--------------------\n")
 s3<-rv$eval.1$lme
@@ -209,7 +230,12 @@ coef<-s3$coefficients
 ### relations:
 int<-coef[1,1]
 #int
-qv<-coef[9:(length(coef[,1])),1]
+### 17466.no hard selector!
+#qv<-coef[9:(length(coef[,1])),1]
+m<-grep("targetref",coef[,1])[1]
+m<-m-1
+m<-1
+qv<-coef[m:(length(coef[,1])),1]
 qvc<-qv
 #qvc
 

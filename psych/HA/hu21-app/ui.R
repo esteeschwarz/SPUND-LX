@@ -37,11 +37,12 @@ ui <- fluidPage(
     sidebarPanel("PRESETS:",
        class = "scroll-sidebar",
       width = 3,
+      checkboxGroupInput("q", "interaction conditions a-f", 
+                choices=c("all"=T,"a" = "a","b"="b","c"="c","d"="d","e"="e","f"="f",
+                "no interaction" = F)),
       radioButtons("norm_target", "normalize to", 
                    list("don't normalize" = "",
-"obs" = "_rel_obs",
-                        "ref"= "_rel_ref",
-                    "all" = "_rel_all")),
+"obs" = "_rel_obs")),
       radioButtons("limit", "discard outliers", 
                    list("no" = F,
                         "yes"= T)),
@@ -57,16 +58,16 @@ ui <- fluidPage(
                         "don't include"= F,
                      "include in lm" = T)),  
 
-                        radioButtons("range.t", "range", 
-                   list("don't include"= F,"include in lm" = T
-                        )),
                         radioButtons("lemma", "lemma", 
                    list("don't include"= F,"include in lm" = T
                         )),
                         radioButtons("embed.t", "embed score", 
                    list("don't include"= F,"include in lm" = T
                         )), 
-      radioButtons("lme", "simple regression", 
+                        radioButtons("range.t", "range", 
+                   list("don't include"= F,"include in lm" = T
+                        )),
+      radioButtons("lme", "distance normalisation by range: perform lmer() vs. lm(dist~range)-residuals response var. (range selector will be inactive)", 
                    list("off"= F,"on" = T
                         )),  
             actionButton("submit","apply preset & run"),

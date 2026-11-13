@@ -7,22 +7,12 @@
 
 dbg.eval003<-"test"
 print(dbg.eval003)
-read.db_dep<-function(){
-  
-  
-  library(DBI)
-  library(RSQLite)
-  #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
-  con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
-  dbListTables(con)
-  #tdb.pos<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
-  tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
-  tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
-  dbDisconnect(con)
-  return(list(obs=tdbcorp,ref=tdbref))
+if(!exists("tdb")){
+  f<-list.files(pattern=".RData")
+  m<-ifelse(length(f)==1,load(f[2]),tdb<-read.db(run))
 }
-if(!exists("tdb"))
-  tdb<-read.db(run)
+cat("main tdb loaded with target.obs=",length(tdb$obs[,1]),"and target.ref=",
+length(tdb$ref[,1]),"observations...\n")
 n_obs<-length(tdb$obs$token)
 n_ref<-length(tdb$ref$token)
 build.q_dep<-function(){
@@ -38,20 +28,22 @@ build.q_dep<-function(){
 qs<-build.q()
 qs
 #rm(tdb)
-eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
-eval.ns
-eval.ext<-c(".csv",".RData")
-eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
-eval.fs<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/",eval.f)
-eval.fs
-eval.ns<-list.files(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/"))
-eval.ns
-eval.ext<-c(".csv",".RData")
-eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
-eval.fs.hkw<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/",eval.f)
-eval.fs.hkw
-eval.fs<-c(eval.fs,eval.fs.hkw)
-eval.fs
+
+# 17466.out filepaths, df loaded directly fixed
+# eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
+# eval.ns
+# eval.ext<-c(".csv",".RData")
+# eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
+# eval.fs<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/",eval.f)
+# eval.fs
+# eval.ns<-list.files(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/"))
+# eval.ns
+# eval.ext<-c(".csv",".RData")
+# eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
+# eval.fs.hkw<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/",eval.f)
+# eval.fs.hkw
+# eval.fs<-c(eval.fs,eval.fs.hkw)
+# eval.fs
 library(tools)
 #dataset<-5
 #eval.n.hard<-ifelse(exists("dataset"),dataset,eval.n)
@@ -67,6 +59,7 @@ read.eval<-function(dn){
   return(out)
   
 }
+#tx<-read.eval(13)
 read.embed<-function(witch){
   e2<-new.env()
   load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-",witch,".RData"),envir = e2)
@@ -80,9 +73,10 @@ read.embed<-function(witch){
 # dfa<-qltdf
 # dfa<-get.dist.norm(dfa)
 # }
-create.sub<-function(dfa,target,con){
-  sub1<-dfa[dfa$q%in%con&dfa$target%in%target,]
-}
+# create.sub<-function(dfa,target,cond){
+#   if(!is.logical(cond)) sub1<-dfa[dfa$q%in%cond&dfa$target%in%target,]
+#   else sub1<-dfa[dfa$target%in%target,]
+# }
 #dfa<-qltdf
 #dist<-"dist_rel_obs"
 get.mean.df<-function(dfa,dist){
@@ -134,26 +128,6 @@ rmd.plot.lme<-function(lm2.summ){
   ty<-2
   text(x = tx-4, y = ty+10, labels = paste0("Intercept (corpus=obs) = ",round(coef[1,1],0)), pos = 3, col = "black", cex = 0.8)
   return(bp)
-}
-get.dist.rel_dep<-function(qltdf){
-tdb6<-qltdf
-mna<-is.na(tdb6$token)
-tdb6<-tdb6[!mna,]
-target<-unique(tdb6$target)
-tdb6$range_f_within<-NA
-tdb6$range_f_all<-mean(tdb6$range)/tdb6$range
-tdb6$range_f_obs<-mean(tdb6$range[tdb6$target=="obs"])/tdb6$range
-tdb6$range_f_ref<-mean(tdb6$range[tdb6$target=="ref"])/tdb6$range
-for(k in target){
-  r<-tdb6$target==k
-  mr<-mean(tdb6$range[r])/tdb6$range[r]
-  tdb6$range_f_within[r]<-mr
-}
-tdb6$dist_rel_within<-tdb6$dist_abs*tdb6$range_f_within
-tdb6$dist_rel_all<-tdb6$dist_abs*tdb6$range_f_all
-tdb6$dist_rel_obs<-tdb6$dist_abs*tdb6$range_f_obs
-tdb6$dist_rel_ref<-tdb6$dist_abs*tdb6$range_f_ref
-return(tdb6)
 }
 ##############################################
 gplot.dist<-function(dfnorm,reference_target,margin){
@@ -218,6 +192,7 @@ lemma.reduce<-function(qltdf){
 
 get.dist.norm<-function(dfa,limit){
   df<-data.frame(dfa)
+  str(df)
 #  lim<-limit
   #dflim<-df
   print(limit)
@@ -277,20 +252,10 @@ get.dist.norm<-function(dfa,limit){
   return(tdb6)
 }
 ### 17462: reload off
-#if(reload){
-#  ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
-  qltdf<-read.eval(dataset)
-  qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
-  #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
-  # qltdf$embed.score<-qltdf_embed$embed_score
-  qltdf$embed.score<-qltdf_embed$embed_score*100 # for better align in estimates (+1 unit change)
-  #dfa<-get.dist.norm(qltdf,limit)
-  qltdf<-lemma.reduce(qltdf)
-  #dfa<-qltdf
-  # dfa<-get.dist.norm(dfa,limit)
-#}
-
-#dfa<-get.dist.norm(qltdf,limit)
+  # qltdf<-read.eval(dataset)
+### 17466: load all data from app dir, fixed.
+load("qltdf.RData") # already including embed scores
+###m
 
 #################
 ### apply embeds: restore!
@@ -322,61 +287,20 @@ get.dist.norm<-function(dfa,limit){
 # tdb5<-tdb4[tdb4$dist<limit,]
 # tdb6<-get.dist.norm(tdb5,5000)
 
-get.anovas_dep<-function(qltdf,target,con,det.t,r,ref,author){
-#  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
-  dfa<-create.sub(qltdf,target,con,det.t)
-  #dfa<-get.dist.norm(dfa,limit)
-  d.ns<-c(paste0("dist_rel_",ref))
-  c.dist<-which(colnames(dfa)%in%d.ns)
-  d.sel<-which(colnames(dfa)==d.ns)
-  d.sel<-ifelse(r,colnames(dfa)[d.sel],"dist")
-  det.f<-ifelse(sum(det.t)>0,"*det","")
-  anova.fstr<-paste0(d.sel," ~ target*q",det.f)
-  aut.str<-ifelse(author,"+(1|aut_id)","")
-  lme.str<-paste0(d.sel," ~ target*q",det.f,"+(1|lemma)",aut.str,ifelse(r,"","+range"))
-  # lmeform.l<-list(no.pre.det=
-  #                   lme.form.f<-paste0(d.sel,"~target*q+range+(1|lemma)"),pre.det=
-  #                   lme.form.t<-paste0(d.sel,"~target*q+range+(1|lemma)+(1|det)"))
-  lmeform.l<-list(form.global<-lme.str)
-  lmeform.l
-  anova.form.l<-list(no.pre.det=anova.fstr,
-                     pre.det=paste0(anova.fstr,"*det"))
-  anova.form.l
-  #lmeform<-ifelse(sum(det.t)==1,lmeform<-lmeform.l$pre.det,lmeform.l$no.pre.det)
-  lmeform<-lmeform.l[[1]]
-  lmeform
-  #lmeform<-lmeform.l$pre.det
-  #Y <- dfa$dist           
-  #aov(as.formula(fstr),data = dfa)
-  ifelse(sum(det.t)==1,model<-aov(as.formula(anova.fstr),data=dfa),
-                              model<-aov(as.formula(anova.fstr),data=dfa))
-          # makes no sense, not wks. if length(unique(dfa$det))==1 i.e. the subset includes only det==T or det==F, so only pass whole set
-  anova.sum<-summary(model)
-  anova.sum<-anova.sum[[1]]
-  anova.sum
-  lm2<-lmer(eval(expr(lmeform)),dfa)
-  #lm3<-lmer(eval(expr(lmeform)),dfa)
-  summary(lm2)
-  lm2.summ<-summary(lm2)
-  lm2.summ
-  anlm.summ<-anova(lm2)
-  anlm.summ
-  lm2.summ
-  anlm.summ
-  anova.sum
-  df.eval<-get.mean.df(dfa,d.sel)
-  dfe<-df.eval
-  dfe$q <- factor(dfe$q, levels = c("a", "b", "c", "d", "e", "f"))
-  
- # bp<-rmd.plot.lme(lm2.summ)
-  
-  return(list(anova.plain=anova.sum,anova.lme=anlm.summ,lme=lm2.summ,plot.md=dfe,lme.form=lmeform,anova.form=anova.fstr))
-}
+create.sub<-function(dfa,target,cond){
+    if(is.logical(cond)){
+    if(cond) cond<-cond.fix
+  }
+  str(cond)
 
+  if(!is.logical(cond)) sub1<-dfa[dfa$q%in%cond&dfa$target%in%target,]
+  else sub1<-dfa[dfa$target%in%target,]
+  return(sub1)
+}
 ### with embed
 ### 15336. TODO: include lemma switch
-get.anovas.e<-function(rv,dfa,target,con,det.t,ref,lemma,author,url,range,embed,lme){
-  #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%con,]
+get.anovas.e<-function(rv,dfa,target,cond,det.t,ref,lemma,author,url,range,embed,lme){
+  #  dfa<-qltdf[qltdf$target%in%target&qltdf$q%in%cond,]
   lme_stage_one<-function(){
     lm1<-lm("dist ~ range",dfa)
     res<-lm1$residuals
@@ -385,9 +309,18 @@ get.anovas.e<-function(rv,dfa,target,con,det.t,ref,lemma,author,url,range,embed,
   }
   cat("---- str(dfa),target,con\n")
   str(dfa)
+  
+  
   print(target)
-  print(con)
-  rv$dfa<-create.sub(dfa,target,con)
+  print(cond)
+
+########
+  rv$dfa <- create.sub(dfa,target,cond)
+  ######
+  q.str<-"*q"
+  if(is.logical(cond)){
+    ifelse(!cond,q.str<-"",q.str<-"*q")
+  }
   #dfa<-get.dist.norm(dfa,limit)
   #d.ns<-c(paste0("dist_rel_",ref))
   d.ns<-c(paste0("dist",ref))
@@ -406,11 +339,11 @@ get.anovas.e<-function(rv,dfa,target,con,det.t,ref,lemma,author,url,range,embed,
   #range.i<-ifelse(!range,"","+(1|range)")
   ifelse(range,range.f<-"+(1|range)",range.f<-"")
   ifelse(lemma,lemma.f<-"+(1|lemma)",lemma.f<-"")
-  anova.fstr<-paste0(d.sel," ~ target*q",det.f)
+  anova.fstr<-paste0(d.sel," ~ target",q.str,det.f)
  # print(anova.fstr)
   ifelse(author,aut.str<-"+(1|aut_id)",aut.str<-"")
   ifelse(url,url.str<-"+(1|url_id)",url.str<-"")
-  lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,range.f,embed.f,url.str)
+  lme.str<-paste0(d.sel," ~ target",q.str,det.f,lemma.f,aut.str,range.f,embed.f,url.str)
   cat("--- lme:",lme,"\n")
 
   if(lme)
@@ -419,7 +352,7 @@ get.anovas.e<-function(rv,dfa,target,con,det.t,ref,lemma,author,url,range,embed,
   if(lme)  {
     dfa$dist_rel_lm<-lme_stage_one()
     d.sel<-"dist_rel_lm" 
-    lme.str<-paste0(d.sel," ~ target*q",det.f,lemma.f,aut.str,embed.f,url.str)
+    lme.str<-paste0(d.sel," ~ target",q.str,det.f,lemma.f,aut.str,embed.f,url.str)
   }
   else {
     d.sel<-d.sel
@@ -683,27 +616,3 @@ rmd.plot.lme<-function(lm2.summ){
   # return(bp)
   
 }
-#rmd.plot.lme(s3)
-### sums df
-# 
-# sumtx.a<-data.frame(anlm.summ)
-# sumtx.a<-cbind(anova.lme=rownames(sumtx.a),sumtx.a)
-# sumtx.a<-sumtx.a[c(1,4,2,3,6,7)]
-# sumtx.b<-data.frame(anova.sum)
-# sumtx.b<-cbind(anova.plain=rownames(sumtx.b),sumtx.b)
-# #sumtx.c<-rbind(sumtx.a,sumtx.b)
-# #sumtx.b<-sumtx.b[c(1,2,3,5,6,7)]
-# #umtx$dun<-NA
-# lmco<-lm2.summ$coefficients
-# lmco<-cbind(anova.lme=rownames(lmco),lmco)
-# 
-# empty<-(rep("---",6))
-# ns.an.a<-colnames(sumtx.a)
-# ns.an.b<-colnames(sumtx.b)
-# ns.lm<-c(colnames(lmco))
-# colnames(sumtx.a)<-rep("X",6)
-# colnames(sumtx.b)<-rep("X",6)
-# colnames(lmco)<-rep("X",6)
-# sumtxdf<-rbind(ns.an.a,sumtx.a,ns.an.b,sumtx.b,ns.lm,lmco,empty)
-# 
-# 

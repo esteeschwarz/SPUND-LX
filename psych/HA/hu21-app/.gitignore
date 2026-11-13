@@ -1,3 +1,6 @@
 prelim_vars*
 *.sqlite
 .posit
+*.RData
+.RData
+.Rhistory

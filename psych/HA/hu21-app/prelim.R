@@ -6,7 +6,7 @@ dataset<-13 # new distancer & embed approach
 #reload<-F
 target<-c("obs","ref")
 #ref_target<-"obs"
-con<-letters[1:6]
+cond.fix<-letters[1:6]
 # det.t=c(T,F)
 source("prepare-model.R")
 cat("--- prelim.R preparemodel sourced..., next initvars, eval003...\n")

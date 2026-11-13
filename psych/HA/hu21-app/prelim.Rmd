@@ -66,6 +66,14 @@ cat("--- eval3 sourced...\n")
 
 A.dbg.prelim<-"ttt"
 
+to.local<-function(tdb){
+  length(unique(tdb$obs$uid))
+  length(unique(tdb$ref$uid))
+  save(tdb,file="tdb.RData")
+  save(qltdf_embed,file="qltdf_embed.RData")
+  save(qltdf,file="qltdf.RData")
+}
+
 # model8<-list(
 #   norm_target="_rel_obs",
 #   det.t=T,
