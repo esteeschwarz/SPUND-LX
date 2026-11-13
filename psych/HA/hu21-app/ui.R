@@ -42,7 +42,7 @@ ui <- fluidPage(
                 "no interaction" = F)),
       radioButtons("norm_target", "normalize to", 
                    list("don't normalize" = "",
-"obs" = "_rel_obs")),
+"all" = "_rel_all")),
       radioButtons("limit", "discard outliers", 
                    list("no" = F,
                         "yes"= T)),
@@ -53,7 +53,7 @@ ui <- fluidPage(
                         radioButtons("url", "url", 
                    list("don't include"= F,"include in lm" = T
                         )),
-                        radioButtons("det.t", "DET", 
+                        radioButtons("det.t", "antecedent PoS:DET (TRUE/FALSE)", 
                    list(
                         "don't include"= F,
                      "include in lm" = T)),  
@@ -81,15 +81,20 @@ ui <- fluidPage(
     # Main panel ----
     mainPanel(
       tabsetPanel(id="tabset",
+#                   header = div(
+#       class = "debug-status",
+#       strong("PROCESS:"),
+#       verbatimTextOutput("status")
+#     ),
                   tabPanel("visualisation",
                            verbatimTextOutput("info"),
                            plotOutput("boxplot1"),
                            plotOutput("barplot.mean"),
+                           tableOutput("dfe.table"),
                            plotOutput("barplot.median"),
                            plotOutput("lmeplot"),
                            plotOutput("gplot"),
 
-                           verbatimTextOutput("dfe.table"),
                            HTML(mark(text=readLines("legend.md"))
                            )),
                   #tabPanel("documentation",HTML(mark_html(text=readLines(mdsrc_HA)))),
@@ -99,6 +104,7 @@ ui <- fluidPage(
                            verbatimTextOutput("dfs1"),
                            verbatimTextOutput("dfs2"),
                            verbatimTextOutput("dfslm")),
+                  tabPanel("sample",  tableOutput("sample_tbl")),
 
                   # summary table (static, built at UI creation)
                   tabPanel("debug",  tableOutput("dbg_tbl"))

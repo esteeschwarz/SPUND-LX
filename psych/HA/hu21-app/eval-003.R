@@ -9,7 +9,11 @@ dbg.eval003<-"test"
 print(dbg.eval003)
 if(!exists("tdb")){
   f<-list.files(pattern=".RData")
-  m<-ifelse(length(f)==1,load(f[2]),tdb<-read.db(run))
+  f
+  if(length(f)==2){
+    load(f[2])
+    load(f[1]) # already including embed scores
+  }
 }
 cat("main tdb loaded with target.obs=",length(tdb$obs[,1]),"and target.ref=",
 length(tdb$ref[,1]),"observations...\n")
@@ -25,8 +29,8 @@ build.q_dep<-function(){
   
   return(list(q0,q1,q2,q3,q4,q5))
 }
-qs<-build.q()
-qs
+# qs<-build.q()
+# qs
 #rm(tdb)
 
 # 17466.out filepaths, df loaded directly fixed
@@ -133,8 +137,8 @@ rmd.plot.lme<-function(lm2.summ){
 gplot.dist<-function(dfnorm,reference_target,margin){
   library(ggplot2)
   library(tidyr)  
-  selector<-c(obs="dist_rel_obs",ref="dist_rel_ref",all="dist_rel_all",scaled="dist_rel_scaled")  
-  colselect<-colnames(dfnorm)%in%selector[reference_target]
+#  selector<-c(obs="dist_rel_obs",ref="dist_rel_ref",all="dist_rel_all",scaled="dist_rel_scaled")  
+  colselect<-colnames(dfnorm)%in%paste0("dist",reference_target)
   col.ns<-colnames(dfnorm)[which(colselect)]
   plot_data <- dfnorm %>%
     # select(target, dist, normalized_dist_to_ref, normalized_dist_within_cat) %>%
@@ -254,7 +258,7 @@ get.dist.norm<-function(dfa,limit){
 ### 17462: reload off
   # qltdf<-read.eval(dataset)
 ### 17466: load all data from app dir, fixed.
-load("qltdf.RData") # already including embed scores
+# load("qltdf.RData") # already including embed scores
 ###m
 
 #################
@@ -287,14 +291,18 @@ load("qltdf.RData") # already including embed scores
 # tdb5<-tdb4[tdb4$dist<limit,]
 # tdb6<-get.dist.norm(tdb5,5000)
 
+### 17467.no logical passed from input$q T/F
 create.sub<-function(dfa,target,cond){
-    if(is.logical(cond)){
-    if(cond) cond<-cond.fix
-  }
-  str(cond)
+  # if(c("TRUE","FALSE")%in%cond){
+  #   cat("cond is T/F\n")
+  #   cond<-as.logical(cond)
+  #   if(cond) cond<-cond.fix
+  # }
+  cat("eval>cond",str(cond),target,str(dfa),"\n")
 
-  if(!is.logical(cond)) sub1<-dfa[dfa$q%in%cond&dfa$target%in%target,]
-  else sub1<-dfa[dfa$target%in%target,]
+  if(!is.logical(cond)) sub1<-dfa[dfa$q%in%cond&dfa$target%in%target,] else sub1<-dfa[dfa$target%in%target,]
+  str(sub1)
+  cat("return createsub sub1 with length:",length(sub1[,1]),"\n")
   return(sub1)
 }
 ### with embed
@@ -553,6 +561,8 @@ for(q in seq_along(queries)){
 #plot
 
 plot.dist<-function(dfe,m){
+  print("eval>plot.dist>dfe")
+  str(dfe)
   # Reshape data: rows = q, columns = corp, values = dist
   if(m=="median") bar_mat <- tapply(dfe$median, list(dfe$q, dfe$target), identity)
     else

@@ -14,10 +14,10 @@ read.db<-function(run){
   dbDisconnect(con)
   return(list(obs=tdbcorp,ref=tdbref))
 }
-if(!exists("tdb")&exists("run")){
-  tdb<-read.db(run)
-n_obs<-length(tdb$obs$token)
-n_ref<-length(tdb$ref$token)}
+# if(!exists("tdb")&exists("run")){
+#   tdb<-read.db(run)
+# n_obs<-length(tdb$obs$token)
+# n_ref<-length(tdb$ref$token)}
 build.q<-function(){
   q0<-list(a=list(q="!{b,c,d,e,f}",det="DET"))
   q1<-list(b=list(q=c("this","that","these","those"),det="DET")) # mean distance: 76

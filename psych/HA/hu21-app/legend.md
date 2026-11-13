@@ -1,8 +1,8 @@
 #### legend
 
-q:
+q (antecedent):
 
-- a.	any !{b,c,d,e,f}
+- a.	other !{b,c,d,e,f}
 - b.	this,that,those,these
 - c.	the
 - d.	a,an,any,some

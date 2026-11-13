@@ -90,6 +90,11 @@ load_rmd_vars <- function(rmd_path,
 server <- function(input, output,session) {
   # created <- load_rmd_vars("prelim.Rmd",force=T)
 
+#  output$status<-renderPrint({
+#  #   cat("make selection and submit...\n")
+    
+#   })
+ 
 summarize_vars <- function(nms, envir=globalenv()) {
   df<-do.call(rbind, lapply(nms, function(n) {
     x <- get(n, envir = envir)
@@ -112,7 +117,8 @@ summarize_vars <- function(nms, envir=globalenv()) {
     ceiling = "",
     dfe = NULL,
     ref_target = "",
-    lme_form = "dist ~ target*q+(1|aut_id"
+    lme_form = "dist ~ target*q+(1|aut_id",
+    plot.dist = NULL
  )
     output$dbg_tbl <- renderTable(summarize_vars(created))
 
@@ -123,33 +129,67 @@ summarize_vars <- function(nms, envir=globalenv()) {
 # cat("--- preparemodel sourced..., next eval003...\n")
 # source("eval-003.R")
 # cat("--- eval3 sourced...\n")
+ withProgress(message = "Processing", value = 0, {
+    incProgress(0.2, detail = "Loading data")
+  #  data <- load_data()
 
+  #  model <- fit_model(data)
+
+  #  make_plots(model)
+ # })
+
+  #debug_status("Done")
   # dfa <- get.dist.norm(qltdf, input$limit)
-
+  # output$status<-renderPrint({
+  #   cat("model computing...")
+  #   for(k in 1:10){
+  #     cat(".")
+  #     Sys.sleep(2)
+  #   }
+  # })
   ceiling <- if (input$limit) {
     "outliers discarded"
   } else {
     "outliers not discarded"
   }
+  message("srv>submit...")
   range.t<-input$range.t
   if (input$lme)
     range.t<-F
   cond<-input$q
+  if(sum(c("TRUE","FALSE")%in%cond)>0){
+    cat("cond is T/F\n")
+    str(cond)
+    cond<-as.logical(cond)
+    if(length(cond)>1)
+      cond<-F
+    if(cond) cond<-cond.fix
+  }
+  if(length(cond)==0)
+    cond<-F
+  message("submit>cond: ",str(cond),"qltdf: ",str(qltdf))
+
   # -dfa
+  message("submit qltdf > createsub...")
   dfe <- create.sub(qltdf,target,cond)
   message("srv>dfe",str(dfe))
+
   dfa <- get.dist.norm(dfe, input$limit)
+  dfe<-dfa
 
   # if(!"no"%in%input$q)
   #   ifelse("all"%in%input$q,cond<-cond,cond<-q)
   #   if("no"%in%input$q) cond<-F
   message(str(cond))
   ### 17466.dfa>dfe
+        incProgress(0.5, detail = "Fitting model")
+
   eval_1 <- get.anovas.e(rv,
     dfe, c("obs", "ref"), cond,
     input$det.t, input$norm_target, input$lemma,
     input$author, input$url, input$range.t, input$embed.t, input$lme
   )
+    incProgress(0.3, detail = "Finishing")
 
   #ref_target <- input$ref_target
   #rel <- !is.null(ref_target) && nzchar(ref_target)
@@ -162,8 +202,9 @@ summarize_vars <- function(nms, envir=globalenv()) {
   rv$lme.form <- eval_1$lme.form
   rv$caption.ext <- paste0("distance ceiling = ", ceiling)
   rv$ref_target <- input$norm_target
+  rv$plot.dist<-eval_1$plot.md
   })
-  # })
+  })
 print.meta<-function(){
   print("selections:")
     cat("dataset:",dim(rv$dfe)[1],"distance datapoints\n")
@@ -291,10 +332,10 @@ boxplot(Y~target,rv$dfa,outline=F,notch=T,varwidth=T,ylab = d.sel)
   output$barplot.mean<-renderPlot({
       req(rv$eval.1, !is.null(rv$eval.1))
 
-  #  dfe<-rv$eval.1$plot.md
+    dfe<-rv$eval.1$plot.md
  # dfe<-create.sub(rv$dfa,)
 #    dfe<-create.sub(rv$dfa,target,con)
-dfe<-rv$dfe
+#dfe<-rv$dfe
 m1<-which(colnames(dfe)%in%c("mean","median"))
 dfe[,m1]<-round(dfe[,m1],0)
 # m2<-m1[length(m1):1]
@@ -303,10 +344,10 @@ dfe[,m1]<-round(dfe[,m1],0)
 plot.dist(dfe,"mean")
   })
     output$barplot.median<-renderPlot({
-  #  dfe<-rv$eval.1$plot.md
     req(rv$eval.1, !is.null(rv$eval.1))
+    dfe<-rv$eval.1$plot.md
 
-dfe<-rv$dfe
+#dfe<-rv$dfe
 m1<-which(colnames(dfe)%in%c("mean","median"))
 dfe[,m1]<-round(dfe[,m1],0)
 # m2<-m1[length(m1):1]
@@ -326,14 +367,12 @@ s3<-rv$eval.1$lme
         req(rv$eval.1, !is.null(rv$eval.1))
 
 d_sel<-ifelse(rv$ref_target!="",rv$ref_target,"all")
+message("gplot ref target: ",rv$ref_target)
 if(rv$ref_target!="")
   gplot.dist(rv$dfa,d_sel,800)
 })
-    output$dfe.table<-renderPrint({
-#     {
-         req(rv$eval.1, !is.null(rv$eval.1))
+    output$dfe.table<-renderTable(rv$eval.1$plot.md,caption = paste0("mean/median table"))
 
-print(rv$dfe)
-     })
+    output$sample_tbl <- renderTable(rv$dfa[sample(length(rv$dfa[,1]),25),])
 
 }
