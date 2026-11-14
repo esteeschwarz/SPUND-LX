@@ -8,7 +8,10 @@
 dbg.eval003<-"test"
 print(dbg.eval003)
 if(!exists("tdb")){
-  f<-list.files(pattern=".RData")
+  f<-list.files(pattern="*.RData")
+  f
+  m<-grep("[lb]",f)
+  f<-f[m]
   f
   if(length(f)==2){
     load(f[2])
@@ -66,14 +69,14 @@ read.eval<-function(dn){
   return(out)
   
 }
-tx<-read.eval(13) # <-qltdf bare
+#tx<-read.eval(13) # <-qltdf bare
 read.embed<-function(witch){
   e2<-new.env()
   load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-",witch,".RData"),envir = e2)
   return(e2$t3)
   
 }
-t3<-read.embed(211)
+#t3<-read.embed(211)
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData"))
 # if(!exists("dfa")){
 # ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))

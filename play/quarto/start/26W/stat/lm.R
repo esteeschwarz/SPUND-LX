@@ -1,5 +1,6 @@
+get.lm.df<-function(seed){
 l.out<-1000
-set.seed(1112)
+set.seed(seed)
 dist<-sample(rep(sample(1000,500),l.out),l.out)
 length(unique(dist))
 aut_id<-sample(rep(letters,length.out=l.out),l.out)
@@ -18,7 +19,7 @@ head(df)
 library(lme4)
 library(lmerTest)
 
-lm1<-lmer(dist~target*q+(1|auth_id),df)
+lm1<-lmer(dist~target*q+(1|aut_id),df)
 summary(lm1)
 
 m1<-mean(df$dist[df$target=="obs"])
@@ -28,12 +29,16 @@ m1
 m2
 md
 ?lmer
-lm0<-lmer(dist~(1|auth_id),df)
+lm0<-lmer(dist~(1|aut_id),df)
 l0s<-summary(lm0)
-md/2+m2-l0s$coefficients[1,1]==0
+print(md/2+m2-l0s$coefficients[1,1])
 
 ### if 0, ref/obs equal dist
 sdf<-df
+}
+sdf<-get.lm.df(1115)
+
+
 #save(sdf,file="/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/hu21-app/sdf.RData")
 
 sdf2<-sdf
