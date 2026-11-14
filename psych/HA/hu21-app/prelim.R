@@ -7,11 +7,13 @@ dataset<-13 # new distancer & embed approach
 target<-c("obs","ref")
 #ref_target<-"obs"
 cond.fix<-letters[1:6]
+mod.i<-T
+
 # det.t=c(T,F)
 # source("prepare-model.R")
-cat("--- prelim.R preparemodel skipped..., next initvars, eval003...\n")
-# source("eval-init-vars.R")
-# cat("init vars sourced...\n")
+cat("--- prelim.R preparemodel skipped..., next initvars...\n")
+source("eval-init-vars.R")
+cat("init vars sourced...\n")
 source("eval-003.R")
 cat("--- eval3 sourced...\n")
 

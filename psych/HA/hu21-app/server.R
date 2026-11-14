@@ -118,7 +118,8 @@ summarize_vars <- function(nms, envir=globalenv()) {
     dfe = NULL,
     ref_target = "",
     lme_form = "dist ~ target*q+(1|aut_id",
-    plot.dist = NULL
+    plot.dist = NULL,
+    qltdf = NULL
  )
     output$dbg_tbl <- renderTable(summarize_vars(created))
 
@@ -168,6 +169,9 @@ summarize_vars <- function(nms, envir=globalenv()) {
   if(length(cond)==0)
     cond<-F
   message("submit>cond: ",str(cond),"qltdf: ",str(qltdf))
+# qltdf
+  if(input$sdf) qltdf<-sdf 
+
 
   # -dfa
   message("submit qltdf > createsub...")

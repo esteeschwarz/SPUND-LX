@@ -24,7 +24,13 @@ ui <- fluidPage(
       overflow-y: auto;
       position: sticky;
       top: 20px;
-    }
+      }
+      hr {
+      border: 0; 
+      border-top: 1px solid #888; 
+      opacity: 1;
+}
+    
   "))),
   theme = bs_theme(bootswatch = "lux"),
   
@@ -37,6 +43,10 @@ ui <- fluidPage(
     sidebarPanel("PRESETS:",
        class = "scroll-sidebar",
       width = 3,
+      radioButtons("sdf", "generate sample", 
+                   list("no" = F,
+"yes" = T)),
+      hr(),
       checkboxGroupInput("q", "interaction conditions a-f", 
                 choices=c("all"=T,"a" = "a","b"="b","c"="c","d"="d","e"="e","f"="f",
                 "no interaction" = F)),

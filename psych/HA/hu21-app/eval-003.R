@@ -15,6 +15,9 @@ if(!exists("tdb")){
     load(f[1]) # already including embed scores
   }
 }
+load("sdf.RData")
+### intercept mod
+# sdf$target[sdf$target=="ref"]<-"REF"
 cat("main tdb loaded with target.obs=",length(tdb$obs[,1]),"and target.ref=",
 length(tdb$ref[,1]),"observations...\n")
 n_obs<-length(tdb$obs$token)
@@ -34,20 +37,20 @@ build.q_dep<-function(){
 #rm(tdb)
 
 # 17466.out filepaths, df loaded directly fixed
-# eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
-# eval.ns
-# eval.ext<-c(".csv",".RData")
-# eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
-# eval.fs<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/",eval.f)
-# eval.fs
-# eval.ns<-list.files(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/"))
-# eval.ns
-# eval.ext<-c(".csv",".RData")
-# eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
-# eval.fs.hkw<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/",eval.f)
-# eval.fs.hkw
-# eval.fs<-c(eval.fs,eval.fs.hkw)
-# eval.fs
+eval.ns<-list.files(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/"))
+eval.ns
+eval.ext<-c(".csv",".RData")
+eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
+eval.fs<-paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/psych/HA/",eval.f)
+eval.fs
+eval.ns<-list.files(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/"))
+eval.ns
+eval.ext<-c(".csv",".RData")
+eval.f<-eval.ns[unlist(lapply(eval.ext,function(x){grep(paste0("eval-0..",x),eval.ns)}))]
+eval.fs.hkw<-paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/",eval.f)
+eval.fs.hkw
+eval.fs<-c(eval.fs,eval.fs.hkw)
+eval.fs
 library(tools)
 #dataset<-5
 #eval.n.hard<-ifelse(exists("dataset"),dataset,eval.n)
@@ -63,14 +66,14 @@ read.eval<-function(dn){
   return(out)
   
 }
-#tx<-read.eval(13)
+tx<-read.eval(13) # <-qltdf bare
 read.embed<-function(witch){
   e2<-new.env()
   load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/embed-",witch,".RData"),envir = e2)
   return(e2$t3)
   
 }
-#t3<-read.embed(211)
+t3<-read.embed(211)
 #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-007.RData"))
 # if(!exists("dfa")){
 # ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
@@ -260,7 +263,23 @@ get.dist.norm<-function(dfa,limit){
 ### 17466: load all data from app dir, fixed.
 # load("qltdf.RData") # already including embed scores
 ###m
+### 17471.rebuild localsys
+if(dbt){
+#  ifelse(exists("eval.n"),qltdf<-read.eval(eval.n),qltdf<-read.eval(dataset))
+  qltdf<-read.eval(dataset)
+  qltdf_embed<-read.csv(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/qltdf_embed.csv"))
+  #load(paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/stef_psych/eval-012.RData")) #qltdf
+  # qltdf$embed.score<-qltdf_embed$embed_score
+  qltdf$embed.score<-qltdf_embed$embed_score*100 # for better align in estimates (+1 unit change)
+  #dfa<-get.dist.norm(qltdf,limit)
+  qltdf<-lemma.reduce(qltdf)
+  #save(qltdf,file="qltdf.RData")
+  #dfa<-qltdf
+  # dfa<-get.dist.norm(dfa,limit)
+  cat("---- eval3> qltdf recreated local from origin sqlite...\n")
+}
 
+#dfa<-get.dist.norm(qltdf,limit)
 #################
 ### apply embeds: restore!
 # qltdf_sf<-qltdf

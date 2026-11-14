@@ -1,9 +1,16 @@
+  dbdir<-"~/db/"
+  dbp<-""
+  sys<-Sys.getenv("SYS")
+  if(sum(c("pro7","tapee")%in%sys)==1) dbp<-dbdir
+  ifelse(dbp!="",dbt<-T,dbt<-F)
+
 read.db<-function(run){
   
   
   library(DBI)
   library(RSQLite)
-  db<-paste0("reddit_com.df.",run,".sqlite")
+  cat("---- e-init> local:",dbp,"\n")
+  db<-paste0(dbp,"reddit_com.df.",run,".sqlite")
   #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15242.sqlite")
   #con <- dbConnect(RSQLite::SQLite(),"~/db/reddit_com.df.15276.sqlite")
   con <- dbConnect(RSQLite::SQLite(),db)
@@ -12,12 +19,14 @@ read.db<-function(run){
   tdbref<-dbGetQuery(con,"SELECT * FROM reddit_pos_ref")
   tdbcorp<-dbGetQuery(con,"SELECT * FROM reddit_com_pos")
   dbDisconnect(con)
+  cat("---- e-init> tdb recreated from sqlite local\n")
   return(list(obs=tdbcorp,ref=tdbref))
 }
-# if(!exists("tdb")&exists("run")){
-#   tdb<-read.db(run)
-# n_obs<-length(tdb$obs$token)
-# n_ref<-length(tdb$ref$token)}
+if(!exists("tdb")&exists("run")&dbt){
+  tdb<-read.db(run)
+#  save(tdb,file="tdb.RData")
+n_obs<-length(tdb$obs$token)
+n_ref<-length(tdb$ref$token)}
 build.q<-function(){
   q0<-list(a=list(q="!{b,c,d,e,f}",det="DET"))
   q1<-list(b=list(q=c("this","that","these","those"),det="DET")) # mean distance: 76
