@@ -76,8 +76,12 @@ grid() lines(x=ph$FREQ, y=ph$fit) polygon(x=c(ph$FREQ, rev(ph$FREQ)),
   col="#00000020", border=NA) abline(h=mean(x$RT), lty=3); 
 abline(v=mean(x$FREQ), lty=3)
 
+load("/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/hu21-app/qltdf.RData")
+source("/Users/guhl/Documents/GitHub/SPUND-LX/psych/HA/hu21-app/prelim.R")
 
 qltdn<-get.dist.norm(qltdf,T)
+
+get.anova<-function(qltdn){
 relem<-lm(dist~range,qltdn)
 qltdn$relem<-relem$residuals
 lm0a<-lmer(dist~(1|aut_id),qltdn)
@@ -91,4 +95,29 @@ lm2dr<-lmer(dist~target+(1|range)+(1|aut_id),qltdn)
 lm3l<-lmer(relem~target*q+(1|aut_id),qltdn) # range via relem residuals
 lm3d<-lmer(dist_rel_all~target*q+(1|aut_id),qltdn) # range via rel_all normalisation
 lm3s<-lmer(dist_rel_scaled~target*q+(1|aut_id),qltdn) # range via dist/range
-anova(lm0a,lm0l,lm1d,lm1l,lm2r,lm2s,lm1dr,lm2dr,lm3l,lm3d,lm3s)
+ev1<-anova(lm0a,lm0l,lm1d,lm1l,lm2r,lm2s,lm1dr,lm2dr,lm3l,lm3d,lm3s)
+ev1
+}
+ev2<-get.anova(qltdn)
+save(ev1,file="qltdn-lm-eval1.RData")
+
+qltdb<-qltdn
+i<-1
+dim(qltdn)
+mode(qltdb$det)<-"logical"
+mn<-lapply(seq_along(1:dim(qltdb)[2]),function(i){
+mnr<-is.numeric(qltdb[,i])
+ml<-is.logical(qltdb[,i])
+if(ml)
+  r1<-FALSE
+ifelse(mnr,r<-mean(qltdb[,i],na.rm=T),r<-"0INTR")
+r1
+})
+mn
+sum(unlist(mn))
+mnd<-unlist(mn)
+head(qltdn)
+qltdb<-rbind(qltdn,mnd)
+tail(qltdb)
+colnames(qltdb)
+mode(qltdb[,c(2,3,8,10,14,15,16,17,18,19,20)])<-"character"
