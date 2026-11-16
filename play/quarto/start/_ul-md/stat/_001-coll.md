@@ -18,3 +18,7 @@ now it would have been good to not (stray) markdown and data files across differ
 well..., in the course of (inventing it anew) we can also gleich build an app to have the different models/methods showing off nicely-parallel and with just view switches instead of chapters.
 
 now..., sundee 5.50am, still time to go :).
+
+> app running: [here](https://stschwarz.userpage.fu-berlin.de/links?title=stat-coherence&ref=pages-coll)
+
+- this is maintenant only a proxy to the different models that can be applied to analyse the data. so the app is doing nothing new or else than running the lmer() test with the provided (UI selectable) parameters and output graphs/summaries for the applied model. also inlcluding the possibility to test models with a sample dataset provided based on randomized/equalised distribution of response and parameters.
