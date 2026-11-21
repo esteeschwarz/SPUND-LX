@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stephan Schwarz – FU Berlin – 2026">
+
+<title>AI Speech and language variation &amp; change</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="002_files/libs/clipboard/clipboard.min.js"></script>
+<script src="002_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="002_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="002_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="002_files/libs/quarto-html/popper.min.js"></script>
+<script src="002_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="002_files/libs/quarto-html/anchor.min.js"></script>
+<link href="002_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="002_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="002_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="002_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="002_files/libs/bootstrap/bootstrap-1d090f757e2aa3c57a39f7a6ee6efa83.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content page-columns page-full" id="quarto-document-content">
+<link rel="stylesheet" href="poster_grid.css">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AI Speech and language variation &amp; change</h1>
+<p class="subtitle lead">A study on manifestation of AI speech in human natural language</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Stephan Schwarz – FU Berlin – 2026 </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="logo">
+<p><img src="fu-logo-250616-RGB-s.svg" class="img-fluid"></p>
+</div>
+<div id="meta">
+<p>class: [16838] germanische sprachen im vergleich<br>
+tutor: Hüning / Konvicna<br>
+term: WS25/26</p>
+<hr>
+<p>authored: st. schwarz<br>
+snc: #16115::2026-03-26 17:22:34.638402<br>
+<a href="https://esteeschwarz.github.io/DC-LX/essais/germanic/001/gemini.html">&lt;&lt;&lt; back to paper &lt;&lt;&lt;</a></p>
+</div>
+<div id="code-container">
+<pre><code>Warning: namespace 'S7' is not available and has been replaced
+by .GlobalEnv when processing object 'plist'</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sh.tx<span class="ot">&lt;-</span><span class="fu">strsplit</span>(gg.sh,<span class="st">"-H|-X|-d"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    c1<span class="ot">&lt;-</span><span class="fu">capitalize</span>(x)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fj5<span class="ot">&lt;-</span><span class="fu">join.freqs</span>(fa,fg,<span class="at">all =</span> T)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>cred<span class="ot">&lt;-</span><span class="fu">read.csv</span>(credcsv) </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">### get GPT score</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># lm1&lt;-lm(f.rel~target*gus.c,lmdf.c)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># pc1&lt;-10</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pcd<span class="ot">&lt;-</span>pc8</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>f1p1<span class="sc">$</span>gus<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># parteifreunde 36  39  0.923076923076923</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>get.freq<span class="ot">&lt;-</span><span class="cf">function</span>(){</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>tdf2<span class="ot">&lt;-</span><span class="fu">getdf</span>(range)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># x/(y*100)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>range<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(df1<span class="sc">$</span>date)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>url<span class="ot">&lt;-</span><span class="st">'https://search.dip.bundestag.de/api/v1/plenarprotokoll-text?f.aktualisiert.start=2022-12-06T10%3A00%3A00&amp;f.aktualisiert.end=2022-12-06T20%3A00%3A00&amp;f.datum.start=2021-01-11&amp;f.datum.end=2021-01-15&amp;f.vorgangstyp=Gesetzgebung&amp;f.vorgangstyp_notation=100&amp;format=json&amp;apikey=OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw'</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>tj<span class="ot">&lt;-</span><span class="fu">join.freqs</span>(t1,t2)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>m<span class="ot">&lt;-</span><span class="fu">grep</span>(<span class="st">"datum.start"</span>,qdf<span class="sc">$</span>key)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  verbose <span class="ot">=</span><span class="dv">5</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  }<span class="er">)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># stops</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glmer</span>(target <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> lemma),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>fs4<span class="ot">&lt;-</span>fs3</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"GIT_TOP"</span>),<span class="st">"/SPUND-LX/germanic/HA/lm-base_lmdf.c.RData"</span>))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#?udpipe_annotate</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  tdb6<span class="sc">$</span>f.norm_p<span class="ot">&lt;-</span><span class="fu">mean</span>(tdb6<span class="sc">$</span>f.rel[tdb6<span class="sc">$</span>target<span class="sc">==</span><span class="st">"post"</span>])<span class="sc">/</span>tdb6<span class="sc">$</span>f.rel</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  plist<span class="ot">&lt;-</span><span class="fu">list</span>()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(gpt, human) <span class="sc">~</span> <span class="dv">1</span><span class="sc">*</span>gus.c <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> lemma)<span class="sc">+</span>(<span class="dv">1</span><span class="sc">|</span>gus.c),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="do">##########################################</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">human_count =</span> human,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="do">#########################</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#save(fr.list,file = paste0(Sys.getenv("HKW_TOP"),"/SPUND/2025/huening/fr_list.RData"))</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm1)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>lmdf.c<span class="ot">&lt;-</span>lmdf.c<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">freq=</span><span class="fu">as.double</span>(FREQ))</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>credcsv<span class="ot">&lt;-</span><span class="fu">Sys.getenv</span>(<span class="st">"CRED_GEN"</span>) <span class="co"># !VIP dont put directly into read.csv()</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">#                   col  = 1, </span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>h3</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co"># range&lt;-c("2021-01-01","2021-03-31")</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="do">#############################################</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co"># unsere    49  2203    0.0222423967317295</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># ?ranef</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">#fg1$gus&lt;-fg1$FREQ*fg1$gu</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(lmdf<span class="sc">$</span>target)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>fa4<span class="ot">&lt;-</span>fa4[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>du</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(df.ann)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>fa4<span class="ot">&lt;-</span>fa3<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">fa=</span>fh<span class="sc">+</span>fg)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">query =</span> <span class="fu">list</span>(<span class="at">key =</span> api_key),</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="fu">eval</span>(e)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co"># df.ann&lt;-udpipe::udpipe_annotate(model,df.sub$text,doc_id = df.sub$id,target=df.sub$target,parser = "none")</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>f1g<span class="ot">&lt;-</span>fr.list<span class="sc">$</span>g</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">in.gp =</span> <span class="fu">head</span>(gpt_typical<span class="sc">$</span><span class="st">`</span><span class="at">(Intercept)</span><span class="st">`</span>,<span class="dv">10</span>),  <span class="co"># human vs GPT typical</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  tdb6<span class="sc">$</span>f.rel_g<span class="ot">&lt;-</span>tdb6<span class="sc">$</span>f.rel<span class="sc">*</span>tdb6<span class="sc">$</span>f.norm_g</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">#          col = colors[i], lwd = 2)</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load</span>(<span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"HKW_TOP"</span>),<span class="st">"/SPUND/2025/huening/df1.pos.RData"</span>)) <span class="co"># protocols all</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co"># m&lt;-tokens.3$lemma%in%stops.j</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="er">}</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>tokens.r<span class="sc">$</span>lemma[<span class="fu">is.na</span>(tokens.r<span class="sc">$</span>lemma)]<span class="ot">&lt;-</span>tokens.r<span class="sc">$</span>word[<span class="fu">is.na</span>(tokens.r<span class="sc">$</span>lemma)]</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="er">)</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>range<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"2020-06-02"</span>,<span class="st">"2020-08-01"</span>)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>                    family <span class="ot">=</span> <span class="fu">poisson</span>(<span class="at">link =</span> <span class="st">"log"</span>),</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"processing: "</span>,k,<span class="st">"</span><span class="sc">\r</span><span class="st">"</span>)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co"># t1&lt;-t1[order(t1,decreasing = T)]</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>range<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"2020-08-02"</span>,<span class="st">"2020-10-01"</span>)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(fs4,<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">Sys.getenv</span>(<span class="st">"HKW_TOP"</span>),<span class="st">"/SPUND/2025/huening/freq.fs4.RData"</span>))</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(tokens.r<span class="sc">$</span>target)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>lna2<span class="ot">&lt;-</span><span class="fu">is.na</span>(tokens.r<span class="sc">$</span>lemma)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co"># gp</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  lt<span class="ot">&lt;-</span><span class="fu">chisq.test</span>(lc<span class="sc">$</span>in.gp,lc<span class="sc">$</span>f.r2),</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>tokens<span class="fl">.2</span> <span class="ot">&lt;-</span> df_combined <span class="sc">%&gt;%</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co">#save(lpt,file = paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/lpt.RData"))</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>q<span class="ot">&lt;-</span>cred<span class="sc">$</span>q[m]</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="co">#   #t1[order(t1,decreasing = F)]</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>f1a1<span class="sc">$</span>gus[f1a1<span class="sc">$</span>WORD<span class="sc">%in%</span>f1g1<span class="sc">$</span>WORD]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- footer: snc.16093.1/107*162 -->
+</div>
+<div class="column-1">
+<section id="preliminary" class="level1">
+<h1>Preliminary</h1>
+<p>inspired by <span class="citation" data-cites="bsi_wie_2025">BSI (<a href="#ref-bsi_wie_2025" role="doc-biblioref">2025</a>)</span> and <span class="citation" data-cites="yakura_empirical_2025">Yakura et al. (<a href="#ref-yakura_empirical_2025" role="doc-biblioref">2025</a>)</span> which found evidence for GPT influenced human language after the introduction of chatGPT we tried to replicate the <span class="citation" data-cites="yakura_empirical_2025">Yakura et al. (<a href="#ref-yakura_empirical_2025" role="doc-biblioref">2025</a>)</span> pipeline of building an AI vocabulary (model preferred lemmata) and compare frequencies of model typical words across pre- and post model introduction human language corpora. The first draft essai proves their hypothesis that LLM generated language manifests within human natural language.</p>
+</section>
+<section id="questions-hypotheses" class="level1">
+<h1>Questions / Hypotheses</h1>
+<ul>
+<li>do humans adapt to language produced by LLM and incorporate model vocabulary into their own language production?</li>
+<li>H1: we will find higher frequencies of LLM typical vocabulary within human natural language corpora after onset of model introduction.</li>
+</ul>
+</section>
+<section id="methods-data" class="level1">
+<h1>Methods / Data</h1>
+<p>our human languaga data consists of raw texts from german bundestag plenary protocols, <span class="citation" data-cites="dip_dip_2026">DIP (<a href="#ref-dip_dip_2026" role="doc-biblioref">2026</a>)</span>. the LLM corpus consists of model summaries of a first subset of these texts generated with the prompt (to gemini API) you see in C1.</p>
+<p>we first devised model typical lemmata in the AI corpus which are distinct for that corpus using their log odds score calculated over pre/post target, <a href="#fig-gpt.dplot" class="quarto-xref">Figure&nbsp;3</a>.</p>
+</section>
+<section id="c1" class="level1 bw">
+<h1 class="bw">c1</h1>
+<p>System prompt: You are a member of german parliament. Prepare a summary of the text provided to present at a local community meeting of your party members. Output in german language, no preamble, no extra information, just the plain text. Wordcount maximal 300 words, containing not more than 5% of the keywords of the text provided and explicitly not just a list of keywords but an entertaining text. You are supposed to interprete freely, including background insights on daily politics. Keep in mind thatthe text will be used as is as keynotes to the talk being held to the locals. Text:</p>
+</section>
+</div>
+<div class="column-2">
+<section id="p2" class="level1">
+<h1>p2</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-boxplot01" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boxplot01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="002_files/figure-html/fig-boxplot01-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: stats descriptive
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="p3" class="level1">
+<h1>p3</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-barplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-barplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="002_files/figure-html/fig-barplot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-barplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: lemma frequency increase
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="c2-corpus-stats" class="level1 ct">
+<h1 class="ct">c2: corpus stats</h1>
+<!-- ``` 
+
+|stat   |var                 |pre      |post     |
+|:------|:-------------------|:--------|:--------|
+|mean   |freq_rel gpt lemmas |0.000704 |0.000751 |
+|mean   |freq normalised pmw |29.825   |30.288   |
+|tokens |n                   |1640446  |1940385  |
+
+ ``` -->
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">stat</th>
+<th style="text-align: left;">var</th>
+<th style="text-align: left;">pre</th>
+<th style="text-align: left;">post</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">mean</td>
+<td style="text-align: left;">freq_rel gpt lemmas</td>
+<td style="text-align: left;">0.000704</td>
+<td style="text-align: left;">0.000751</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mean</td>
+<td style="text-align: left;">freq normalised pmw</td>
+<td style="text-align: left;">29.825</td>
+<td style="text-align: left;">30.288</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tokens</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: left;">1640446</td>
+<td style="text-align: left;">1940385</td>
+</tr>
+</tbody>
+</table>
+<p>statistics…</p>
+</div>
+</div>
+</section>
+<section id="c3-regression-simple-model" class="level1 bws">
+<h1 class="bws">c3: regression simple model</h1>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = freq_pmw ~ post + gp, data = df_lg.norm)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+ -1400   -435   -388   -243 436922 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   833.75      38.64  21.576  &lt; 2e-16 ***
+postTRUE       83.94      20.64   4.067 4.77e-05 ***
+gp             68.11       5.20  13.097  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3765 on 133087 degrees of freedom
+  (1393 observations deleted due to missingness)
+Multiple R-squared:  0.0014,    Adjusted R-squared:  0.001385 
+F-statistic: 93.32 on 2 and 133087 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: freq_pmw
+              Df     Sum Sq    Mean Sq F value    Pr(&gt;F)    
+post           1 2.1394e+08  213944737  15.096 0.0001022 ***
+gp             1 2.4310e+09 2431030842 171.537 &lt; 2.2e-16 ***
+Residuals 133087 1.8861e+12   14172027                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="p4" class="level1">
+<h1>p4</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-gpt.dplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gpt.dplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="002_files/figure-html/fig-gpt.dplot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gpt.dplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: model vocab distribution
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="column-3">
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>to gather an insight, yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see <a href="#fig-boxplot01" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>the 9 lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=27) and 2. that frequency exceeds the mean relative frequency is displayed in <a href="#fig-barplot" class="quarto-xref">Figure&nbsp;2</a></p>
+<p>we found significant frequency increases using a linear regression model (<span class="citation" data-cites="bates_fitting_2015">Bates et al. (<a href="#ref-bates_fitting_2015" role="doc-biblioref">2015</a>)</span>), cf.&nbsp;C3/C4, which tested the hypothesis.</p>
+</section>
+<section id="c4-regression-mixed-effects-model" class="level1 bws">
+<h1 class="bws">c4: regression mixed effects model</h1>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: freq_pmw ~ post + gp + (1 | lemma)
+   Data: df_lg.norm
+
+REML criterion at convergence: 2490672
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-48.624  -0.047  -0.032   0.008  74.360 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ lemma    (Intercept) 8839356  2973    
+ Residual             1754704  1325    
+Number of obs: 133090, groups:  lemma, 99649
+
+Fixed effects:
+             Estimate Std. Error        df t value Pr(&gt;|t|)    
+(Intercept) 4.344e+02  3.966e+01 1.055e+05  10.953   &lt;2e-16 ***
+postTRUE    1.246e+02  9.496e+00 5.602e+04  13.126   &lt;2e-16 ***
+gp          2.932e+01  5.723e+00 1.017e+05   5.124    3e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+         (Intr) psTRUE
+postTRUE -0.110       
+gp        0.959  0.009</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Type III Analysis of Variance Table with Satterthwaite's method
+        Sum Sq   Mean Sq NumDF  DenDF F value    Pr(&gt;F)    
+post 302319616 302319616     1  56015 172.291 &lt; 2.2e-16 ***
+gp    46071208  46071208     1 101716  26.256 2.996e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="limitations" class="level1">
+<h1>Limitations</h1>
+<p>if the findings of increased AI lemma frequencies really prove manifestation of AI language depends also on influences of other factors of language variation and change which <span class="citation" data-cites="yakura_empirical_2025">Yakura et al. (<a href="#ref-yakura_empirical_2025" role="doc-biblioref">2025</a>)</span> already took into account. a deeper going analysis of general trends in language development and investigation on the bidirectional influences of model-training and human language could harden the results.</p>
+</section>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<section id="references" class="level1">
+<h1>references</h1>
+<div id="ref-bates_fitting_2015" class="csl-entry" role="listitem">
+Bates, Douglas, Martin Mächler, Ben Bolker, and Steve Walker. 2015. <span>“Fitting <span>Linear</span> <span>Mixed</span>-<span>Effects</span> <span>Models</span> <span>Using</span> Lme4.”</span> <em>Journal of Statistical Software</em> 67 (1): 1–48. <a href="https://doi.org/10.18637/jss.v067.i01">https://doi.org/10.18637/jss.v067.i01</a>.
+</div>
+<div id="ref-bsi_wie_2025" class="csl-entry" role="listitem">
+BSI, Brand Science Institute. 2025. <span>“Wie <span>KI</span> Unsere <span>Sprache</span> Verändert – <span>Eine</span> Empirische <span>Studie</span>.”</span> <a href="https://www.bsi.ag/cases/104-case-studie-wie-ki-unsere-sprache-veraendert---eine-empirische-studie.html">https://www.bsi.ag/cases/104-case-studie-wie-ki-unsere-sprache-veraendert---eine-empirische-studie.html</a>.
+</div>
+<div id="ref-dip_dip_2026" class="csl-entry" role="listitem">
+DIP. 2026. <span>“<span>DIP</span> - <span>Bundestagsprotokolle</span>.”</span> Docs. <em>DIP - API</em>. Berlin. <a href="https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content">https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content</a>.
+</div>
+<div id="ref-yakura_empirical_2025" class="csl-entry" role="listitem">
+Yakura, Hiromu, Ezequiel Lopez-Lopez, Levin Brinkmann, Ignacio Serna, Prateek Gupta, Ivan Soraperra, and Iyad Rahwan. 2025. <span>“Empirical Evidence of <span>Large</span> <span>Language</span> <span>Model</span>’s Influence on Human Spoken Communication.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2409.01754">https://doi.org/10.48550/arXiv.2409.01754</a>.
+</div>
+</section>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

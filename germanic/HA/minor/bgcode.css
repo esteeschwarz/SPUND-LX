@@ -1,0 +1,71 @@
+
+/* Parent container with fixed size */
+#code-container {
+  position: absolute;     /* optional if poster layout */
+  top: 100mm;             /* example positioning */
+  left: 10mm;
+  width: 300mm;
+  height: 200mm;          /* FIXED HEIGHT */
+
+  overflow: hidden;       /* CRITICAL */
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+/* Remove extra wrappers expanding height */
+#code-container .cell {
+  height: 100%;
+}
+
+#code-container .sourceCode {
+  height: 100%;
+}
+
+#code-container pre {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;       /* CRITICAL */
+  white-space: pre-wrap;  /* optional wrapping */
+}
+
+/* Optional: prevent horizontal growth */
+#code-container code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* olde */
+#bg .sourceCode {
+/* div.code[data-chunk-name="background-script"] { */
+    /* top: var(--bodyTop); */
+    /* left: 5mm;
+    right: 5mm; */
+       position: relative;
+
+    /* bottom: 5mm;
+ top: 0;
+  left: 0;*/
+  /* width: var(--width)mm;  */
+  width: 100%;
+  height: 100%;
+  /* height: calc(var(--height) - var(--bodyTop) - 160)mm;  */
+  /* z-index: 7; */
+  /* filter: blur(3px); */
+  opacity: 0.8;
+  pointer-events: none;
+  overflow: hidden;
+  font-size: 26pt;
+      background-color: transparent;
+  overflow: wrap;
+  /* display: inline; */
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+div.sourceCode pre,
+div.sourceCode code {
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

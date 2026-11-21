@@ -1,0 +1,205 @@
+---
+title: "Frisk in Context"
+subtitle: "sub template"
+author: "Stephan Schwarz – FU Berlin – 2026"
+bibliography: 
+   - ../../../play/quarto/start/R.bib
+   - ../../../play/quarto/start/LXminor.bib
+suppress-bibliography: false
+reference-location: document
+format:
+  html:
+    # css: poster_grid.css
+    # css: poster.css
+    theme: Cosmo
+    toc: false
+    self-contained: false
+    include-before-body: css.html
+    # embed-resources: true
+  # pdf:
+  #   browser: chrome
+execute:
+  echo: false
+---
+::: {#logo}
+![](fu-logo-250616-RGB-s.svg)
+:::
+
+::: {#meta}
+class: [16823] minderheitensprachen  
+tutor: lohmann  
+term: WS26/27  
+
+-----
+![to paper...](qr_ogy-de-study-ai-speech.png)
+authored: st. schwarz     
+snc: #17481::`r format(Sys.time(),tz = "Europe/Berlin",format = "%Y%m%d(%H.%M)",usetz = TRUE)`      
+[<<< back to paper <<<](https://stschwarz.userpage.fu-berlin.de/links/?title=16823&ref=poster)     
+:::
+
+```{r loads, echo=FALSE, warning=F,output=F}
+#script_lines <- readLines("../LLM-003.R")
+load("../drafts/plist2.RData")
+```
+
+::: {#code-container}
+
+```{r background-script, echo=FALSE, results='asis'}
+script_lines <- readLines("../LLM-003.R")
+# load("../drafts/plist2.RData")
+
+cat("```r\n")
+s<-sample(1:length(script_lines),80)
+# s<-1:100
+# cat(paste(s," - ",script_lines[s], collapse = "\n"))
+cat(paste(script_lines[s], collapse = "\n"))
+cat("\n```")
+```
+
+<!-- footer: snc.16093.1/107*162 -->
+:::
+```{r prompt, echo=FALSE, warning=FALSE}
+# prompt <- readLines("../g-prompt01.txt")
+#prompt<-paste(prompt,collapse = "\n")
+prompt<-plist$ptx
+# prompt<-paste0("C1: ",paste(prompt,collapse = "\n"))
+prompt<-paste0("",paste(prompt,collapse = "\n"))
+
+```
+
+::: {.column-1}
+# preliminary
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. (@ebert_progressive_1996)
+
+Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. (@walker_t_2022)
+
+# questions / hypotheses
+
+- lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. 
+- Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.
+
+# methods / data
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. (@bates_lme4_2015)
+
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. (@eberhard_frisian_2026)
+
+# c1 {.bw}
+`r prompt`
+
+# discussion / limitations
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. (@eberhard_frisian_2026)
+
+:::
+
+::: {.column-2}
+
+# p2
+```{r}
+#| fig-cap: "descriptive stats plot"
+#| label: "fig-boxplot01"
+#| echo: FALSE
+#| warning: FALSE
+
+
+#knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-boxplot01-1.png")
+plist$boxdesc2 #TODO
+```
+
+# p3
+```{r,eval=T}
+#| fig-cap: "lemma frequency increase of relevant AI typical lemma"
+#| label: "fig-barplot"
+#| echo: FALSE
+#| warning: FALSE
+
+# knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
+
+plist$barplot
+b1<-plist$b1
+lb0<-plist$lb0
+lb1<-length(b1)
+```
+
+# c2: corpus stats {.ct}
+<!-- ``` `r knitr::kable(plist$boxstat)` ``` -->
+```{r,eval=T}
+#| label: "boxstats"
+#| fig-cap: "statistics..."
+#| warning: false
+#| echo: false
+
+# knitr::kable(plist$sdf)
+knitr::kable(plist$boxstat)
+```
+
+```{r,eval=F}
+#| fig-cap: "model vocab density"
+#| label: "fig-densplot01"
+#| echo: FALSE
+
+# knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-densplot01-1.png")
+
+plist$gplot
+```
+
+# c3: regression simple model {.bws}
+
+```{r,eval=T,warning=F} 
+#knitr::kable(plist$sdf)
+print(summary(plist$lme$lm2))
+anova(plist$lme$lm2)
+
+```
+
+
+# p4
+```{r}
+#| fig-cap: "model typical vocab distribution"
+#| label: "fig-gpt.dplot"
+#| echo: FALSE
+#| warning: FALSE
+
+#knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
+ plist$gptplot2 #todo
+```
+:::
+
+::: {.column-3}
+# results
+Yet with simple descriptive stats comparing the raw frequencies of gpt-preferred lemmas in pre- and post-gemini onset we find that in the target corpus the occurences of these lemma increase, see @fig-boxplot01.
+
+The `r lb1` lemma where 1. the relative frequency of lemma in target=post is higher than in target=pre (n=`r lb0`) and 2. that frequency exceeds the mean relative frequency is displayed in @fig-barplot.
+
+We observe significant frequency increases using a linear regression model (@bates_lme4_2015), cf. C3/C4, which tested the hypothesis.
+
+
+# c4: regression random effects model {.bws}
+
+```{r,eval=T,warning=F,message=F} 
+#knitr::kable(plist$sdf)
+print(summary(plist$lme$lm1))
+anova(plist$lme$lm1)
+s1<-summary(plist$lme$lm1)
+s2<-summary(plist$lme$lm2)
+c1<-s1$coefficients
+c2<-s2$coefficients
+c2<-round(c2,2)
+c1<-round(c1,2)
+#c2
+#s2
+```
+
+# model explanations
+We see in the model summaries that frequency increases are significant (p<0.001) when positing a random effect of lemma (model 1, cf. C4) with an estimate increase of mean frequency (pmw) per lemma by `r c1[3,1]` vs. the intercept (post=FALSE i.e. target[pre]). 
+
+In model 2, cf. C3 (simple model without lemma effect) we observe an estimate increase of mean frequency (pmw) of post=TRUE by `r c2[2,1]` vs. the intercept.
+
+In both models `gp` (independent var of above mentioned gpt score: higher score > more model typical lemma) has been included as fixed effect, but vcvs. without random lemma effect that predictor lets the model naturally collapse (p<10E-16).
+
+:::{#refs}
+# references
+:::
+:::
+
+
