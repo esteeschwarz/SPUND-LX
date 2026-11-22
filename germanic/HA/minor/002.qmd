@@ -163,6 +163,7 @@ anova(plist$lme$lm2)
 #knitr::include_graphics("../../../q/germanic/001/gemini_files/figure-html/fig-gpt.dplot-1.png")
  plist$gptplot2 #todo
 ```
+
 :::
 
 ::: {.column-3}
