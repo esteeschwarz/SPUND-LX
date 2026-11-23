@@ -54,13 +54,13 @@ close(con)
 cat("starting wiki fetch.\n")
 
 # claude
-get.wk<-function(){
+get.wk<-function(lang){
 library(httr2)
 library(dplyr)
 library(purrr)
 
-api <- "https://frr.wikipedia.org/w/api.php"
-ua  <- "ids.R-wiki/0.1"  # use your own contact
+api <- paste0("https://",lang,".wikipedia.org/w/api.php")
+ua  <- "ids.R-wiki/0.1"
 
 api_get <- function(params) {
   request(api) |>
@@ -104,7 +104,13 @@ titles  <- get_all_titles()
 batches <- split(titles, ceiling(seq_along(titles) / 20))
 
 articles <- map_dfr(batches, get_texts, .progress = TRUE)
-save(articles,file="frr_wiki_articles.RData")
-saveRDS(articles, "frr_wikipedia_articles.rds")
+  articles<-articles[!is.na(articles$text),]
+  setwd(paste0(Sys.getenv("GIT_TOP","/SPUND-LX/germanic/HA/minor/wikicorpus")))
+save(articles,file=paste0(lang,"_wiki_articles.RData"))
+  writeLines(articles$text,paste0(lang,"_wiki.txt"))
+#saveRDS(articles, "frr_wikipedia_articles.rds")
+  return(articles)
 }
-get.wk()
+
+wa<-get.wk("stq")
+system("sh ~/lxpushp.sh")
