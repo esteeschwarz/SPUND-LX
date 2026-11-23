@@ -1,3 +1,4 @@
+get_dep<-function(){
 library(httr)
 library(jsonlite)
 
@@ -49,8 +50,8 @@ repeat {
 }
 
 close(con)
-
-cat("Finished downloading North Frisian Wikipedia.\n")
+}
+cat("starting wiki fetch.\n")
 
 # claude
 get.wk<-function(){
@@ -103,7 +104,7 @@ titles  <- get_all_titles()
 batches <- split(titles, ceiling(seq_along(titles) / 20))
 
 articles <- map_dfr(batches, get_texts, .progress = TRUE)
-
+save(articles,file="frr_wiki_articles.RData")
 saveRDS(articles, "frr_wikipedia_articles.rds")
 }
 get.wk()
