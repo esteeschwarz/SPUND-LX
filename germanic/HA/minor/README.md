@@ -1,5 +1,8 @@
 # 17485.info
+## tech
 - script fetches wikipedia articles by language
+- poster: quarto renders .qmd > html, node renders html > pdf via chrome headless
+    - for that you have to have npm and chrome (headless) installed, see [render.sh](render.sh)
 
 this is just preliminary to the HA poster, since for either just demonstrating or further analysis purposes we need linguistic data and that seems the easies first way of getting to that...
 
