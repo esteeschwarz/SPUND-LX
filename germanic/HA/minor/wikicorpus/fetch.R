@@ -50,10 +50,15 @@ repeat {
 }
 
 close(con)
+  
+
 }
 cat("starting wiki fetch.\n")
 
-# claude
+### 17485.fetch wikipedia corpus of language
+# frr: northfrisian
+# stq: selterfriisk (saterfriesisch?)
+
 get.wk<-function(lang){
 library(httr2)
 library(dplyr)
@@ -66,7 +71,7 @@ api_get <- function(params) {
   request(api) |>
     req_user_agent(ua) |>
     req_url_query(!!!params, format = "json", formatversion = 2) |>
-    req_throttle(rate = 5 / 1) |>   # be polite: max 5 requests/sec
+    req_throttle(rate = 5 / 1) |>
     req_retry(max_tries = 3) |>
     req_perform() |>
     resp_body_json()
@@ -105,7 +110,7 @@ batches <- split(titles, ceiling(seq_along(titles) / 20))
 
 articles <- map_dfr(batches, get_texts, .progress = TRUE)
   articles<-articles[!is.na(articles$text),]
-  setwd(paste0(Sys.getenv("GIT_TOP","/SPUND-LX/germanic/HA/minor/wikicorpus")))
+  setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/minor/wikicorpus"))
 save(articles,file=paste0(lang,"_wiki_articles.RData"))
   writeLines(articles$text,paste0(lang,"_wiki.txt"))
 #saveRDS(articles, "frr_wikipedia_articles.rds")
@@ -114,3 +119,11 @@ save(articles,file=paste0(lang,"_wiki_articles.RData"))
 
 wa<-get.wk("stq")
 system("sh ~/lxpushp.sh")
+
+post.notrun<-function(){
+load("SPUND-LX/germanic/HA/minor/wikicorpus/frr_wiki_articles.RData")
+  frr<-articles[is.na(articles$text),]
+    setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/minor/wikicorpus"))
+getwd()
+  writeLines(frr$text,paste0("frr","_wiki.txt"))
+}
