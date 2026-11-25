@@ -122,7 +122,7 @@ system("sh ~/lxpushp.sh")
 
 post.notrun<-function(){
 load("SPUND-LX/germanic/HA/minor/wikicorpus/frr_wiki_articles.RData")
-  frr<-articles[is.na(articles$text),]
+  frr<-articles[!is.na(articles$text),]
     setwd(paste0(Sys.getenv("GIT_TOP"),"/SPUND-LX/germanic/HA/minor/wikicorpus"))
 getwd()
   writeLines(frr$text,paste0("frr","_wiki.txt"))
