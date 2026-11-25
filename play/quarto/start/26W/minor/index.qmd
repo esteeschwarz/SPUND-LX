@@ -46,3 +46,4 @@ val.c<-"{{< meta cmeta >}}"
 # index
 1. samling: margin notes general > [open](minor-qa.qmd){.btn .btn-cat}
 2. class scribble [001](001.qmd)
+3. poster presentation > [open](002-poster.qmd){.btn .btn-cat}

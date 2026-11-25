@@ -31,7 +31,7 @@ tutor: lohmann
 term: WS26/27  
 
 -----
-![to paper...](qr_ogy-de-study-ai-speech.png)
+![to paper...](qr_ogy-de-minor-poster.png)
 authored: st. schwarz     
 snc: #17481::`r format(Sys.time(),tz = "Europe/Berlin",format = "%Y%m%d(%H.%M)",usetz = TRUE)`      
 [<<< back to paper <<<](https://stschwarz.userpage.fu-berlin.de/links/?title=16823&ref=poster)     
